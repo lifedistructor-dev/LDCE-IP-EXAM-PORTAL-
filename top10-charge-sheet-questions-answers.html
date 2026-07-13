@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 10 Major Penalty Charge Sheet Questions</title>
+<style>
+  :root{
+    --post-red:#A0122A;
+    --post-red-dark:#7A0E20;
+    --post-blue:#0B3D6E;
+    --post-gold:#C9962C;
+    --bg-light:#FBF7F0;
+    --card-light:#FFFFFF;
+    --text-dark:#20222A;
+    --text-muted:#5A5F6B;
+    --bg-dark:#121418;
+    --card-dark:#1C1F26;
+    --text-dark-mode:#EDEEF2;
+    --border-light:#E7DFD0;
+    --border-dark:#2C303A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg-light);
+    color:var(--text-dark);
+    transition:background .3s,color .3s;
+    padding-bottom:60px;
+  }
+  body.dark{
+    background:var(--bg-dark);
+    color:var(--text-dark-mode);
+  }
+  header{
+    background:linear-gradient(135deg,var(--post-red) 0%,var(--post-red-dark) 100%);
+    color:#fff;
+    padding:22px 16px 28px;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+  header h1{
+    margin:0 0 6px;
+    font-size:1.3rem;
+    letter-spacing:.3px;
+  }
+  header p{
+    margin:0;
+    font-size:.85rem;
+    opacity:.9;
+  }
+  .gold-bar{
+    height:4px;
+    background:var(--post-gold);
+    width:100%;
+  }
+  .toolbar{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    padding:14px 12px;
+    flex-wrap:wrap;
+  }
+  .toolbar button{
+    border:none;
+    border-radius:20px;
+    padding:8px 16px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    background:var(--post-blue);
+    color:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  .toolbar button.secondary{
+    background:var(--post-gold);
+    color:#2A2000;
+  }
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 14px;
+  }
+  .intro-box{
+    background:var(--card-light);
+    border:1px solid var(--border-light);
+    border-left:5px solid var(--post-gold);
+    border-radius:10px;
+    padding:14px 16px;
+    margin:16px 0;
+    font-size:.85rem;
+    line-height:1.5;
+  }
+  body.dark .intro-box{
+    background:var(--card-dark);
+    border-color:var(--border-dark);
+  }
+  .qcard{
+    background:var(--card-light);
+    border:1px solid var(--border-light);
+    border-radius:12px;
+    margin-bottom:14px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  body.dark .qcard{
+    background:var(--card-dark);
+    border-color:var(--border-dark);
+  }
+  .qhead{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .qnum{
+    flex:0 0 auto;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:var(--post-blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:.9rem;
+  }
+  .qtitle{
+    flex:1;
+    font-size:.92rem;
+    font-weight:600;
+  }
+  .tier{
+    flex:0 0 auto;
+    font-size:1rem;
+  }
+  .arrow{
+    flex:0 0 auto;
+    display:inline-block;
+    transition:transform .25s;
+    color:var(--text-muted);
+    transform:rotate(-90deg);
+  }
+  .qcard.open .arrow{
+    transform:rotate(0deg);
+  }
+  .qbody{
+    display:none;
+    padding:0 16px 16px;
+  }
+  .qcard.open .qbody{
+    display:block;
+  }
+  .rule-tag{
+    display:inline-block;
+    background:rgba(160,18,42,.1);
+    color:var(--post-red);
+    border:1px solid var(--post-red);
+    font-size:.72rem;
+    font-weight:600;
+    padding:3px 9px;
+    border-radius:12px;
+    margin-bottom:10px;
+  }
+  body.dark .rule-tag{
+    background:rgba(201,150,44,.12);
+    color:var(--post-gold);
+    border-color:var(--post-gold);
+  }
+  .answer-text{
+    font-size:.85rem;
+    line-height:1.65;
+    color:var(--text-dark);
+    white-space:pre-line;
+  }
+  body.dark .answer-text{
+    color:var(--text-dark-mode);
+  }
+  .word-count{
+    margin-top:10px;
+    font-size:.72rem;
+    color:var(--text-muted);
+    text-align:right;
+  }
+  .speak-btn{
+    margin-top:10px;
+    border:1px solid var(--post-blue);
+    background:transparent;
+    color:var(--post-blue);
+    border-radius:16px;
+    padding:5px 12px;
+    font-size:.75rem;
+    cursor:pointer;
+  }
+  body.dark .speak-btn{
+    border-color:var(--post-gold);
+    color:var(--post-gold);
+  }
+  footer{
+    text-align:center;
+    font-size:.75rem;
+    color:var(--text-muted);
+    margin-top:20px;
+    padding:0 20px;
+  }
+  .black-btn{
+    display:inline-block;
+    margin:16px auto 0;
+    background:#1a1a1a;
+    color:#fff;
+    border:none;
+    padding:9px 18px;
+    border-radius:20px;
+    font-size:.8rem;
+    cursor:pointer;
+  }
+  .center{text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚖️ Top 10 Major Penalty Charge Sheet Questions</h1>
+  <p>Paper II — Articles of Charge | Model Answers (~200 words each) with Rule References</p>
+</header>
+<div class="gold-bar"></div>
+
+<div class="toolbar">
+  <button onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="secondary" onclick="expandAll()">⬇ Expand All</button>
+  <button class="secondary" onclick="collapseAll()">⬆ Collapse All</button>
+</div>
+
+<main>
+  <div class="intro-box">
+    <strong>How to use:</strong> Each card gives a ready draft "Article of Charge" (as used in a major penalty charge sheet under Rule 14 of CCS (CCA) Rules, 1965), with the rule violated tagged at the top. Tap a card to open it. Use 🔊 to listen. Practice rewriting in your own words for the exam.
+  </div>
+
+  <div id="cards"></div>
+
+  <div class="center">
+    <button class="black-btn" onclick="window.print()">🖨️ Download / Print as PDF</button>
+  </div>
+</main>
+
+<footer>
+  LDCE IP EXAM PORTAL &nbsp;|&nbsp; Paper II Charge Sheet Practice Set
+</footer>
+
+<script>
+const questions = [
+{
+  title: "Misappropriation of Government Money",
+  rule: "Ref: CCS (CCA) Rules 1965, Rule 14 | CCS (Conduct) Rules 1964, Rule 3(1)",
+  tier: "🔴",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while working as Postal Assistant/SPM at _______ Post Office during the period __/__/____ to __/__/____, misappropriated a sum of Rs. _______ belonging to Government by not depositing the cash collected from customers into the office cash chest, and instead using it for personal purposes.
+
+By this act, Shri _______ failed to maintain absolute integrity and devotion to duty as required under Rule 3(1)(i) and 3(1)(ii) of the CCS (Conduct) Rules, 1964. His conduct also amounts to unbecoming conduct under Rule 3(1)(iii), rendering him liable for major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: During the periodical inspection, cash verification revealed a shortage of Rs. _______, which could not be explained satisfactorily by the charged official. Records show that daily collections were not deposited on the same day as required under financial rules, and the amount was used for personal benefit, causing direct loss to Government revenue and breach of public trust reposed in him as custodian of Government money.`
+},
+{
+  title: "Fraud in Savings Bank Account",
+  rule: "Ref: CCS (CCA) Rules 1965, Rule 14 | POSB Manual Vol. I | IPC/BNS provisions on cheating",
+  tier: "🔴",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while posted as Postal Assistant, SB Branch, at _______ Post Office, committed fraud by making unauthorized withdrawals amounting to Rs. _______ from the Savings Bank account of depositor Shri/Smt. _______, without the knowledge or consent of the account holder, during __/__/____.
+
+This act is in violation of the procedure prescribed in the POSB Manual, Volume I, for withdrawal transactions, which requires proper verification of the withdrawal form and signature of the depositor. It also violates Rule 3(1) of the CCS (Conduct) Rules, 1964, as the official failed to maintain absolute integrity in discharge of duty.
+
+STATEMENT OF IMPUTATION: Investigation of the SB ledger and withdrawal forms revealed that the signature on the withdrawal form did not match the specimen signature of the depositor, and the amount withdrawn was never handed over to the account holder. This constitutes a serious fraud against a member of public and Government exchequer, causing financial loss and damage to the credibility of the Post Office Savings Bank system, making the charged official liable for major penalty.`
+},
+{
+  title: "Unauthorized Absence for more than 30 days",
+  rule: "Ref: CCS (Leave) Rules 1972, Rule 25 | CCS (CCA) Rules 1965, Rule 14 | FR 17-A",
+  tier: "🟠",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, working as _______ at _______ Post Office, remained absent from duty without sanction of leave for a continuous period of more than 30 days, from __/__/____ to __/__/____, thereby showing complete disregard to office discipline and rules governing leave.
+
+This unauthorized absence is in direct violation of Rule 25 of the CCS (Leave) Rules, 1972, which requires prior sanction for any absence from duty. It also amounts to a breach of Rule 3(1) of the CCS (Conduct) Rules, 1964, since the official failed to maintain devotion to duty, and is punishable under Fundamental Rule 17-A read with Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: The Attendance Register and office records show that no leave application was submitted, nor was any sanction granted, for the period mentioned above. Repeated notices sent to the official's registered address remained unanswered. Such prolonged unauthorized absence disrupted office functioning and public service delivery, and is treated as a grave act of indiscipline warranting major penalty proceedings, including possible removal from service.`
+},
+{
+  title: "Tampering with Official Records",
+  rule: "Ref: CCS (CCA) Rules 1965, Rule 14 | Postal Manual Vol. V (Records) | CCS (Conduct) Rules 1964",
+  tier: "🔴",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while working as _______ at _______ Post Office, tampered with official records, namely the Cash Book/Stock Register for the month of _______, by overwriting and altering entries to conceal a cash shortage, thereby presenting a false and misleading picture of the office accounts.
+
+This act is a serious violation of the record-keeping instructions contained in the Postal Manual, Volume V, and amounts to a breach of integrity under Rule 3(1) of the CCS (Conduct) Rules, 1964. Tampering with Government records to hide financial irregularity is treated as gross misconduct under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: During scrutiny by the Inspecting Officer, it was found that entries in the Cash Book had been overwritten with different ink, and figures did not tally with the daily transaction summary. This tampering was done deliberately to hide a shortfall in cash and mislead higher authorities during inspection, which is a serious act of dishonesty striking at the root of accountability in Government offices, warranting major penalty action.`
+},
+{
+  title: "Failure to account Government Cash",
+  rule: "Ref: GFR 2017, Rule 212 | CCS (CCA) Rules 1965, Rule 14",
+  tier: "🟠",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while holding the custody of the office cash chest at _______ Post Office, failed to properly account for Government cash amounting to Rs. _______, as revealed during the surprise verification conducted on __/__/____, thereby showing gross negligence in handling of public money.
+
+This failure is a violation of Rule 212 of the General Financial Rules, 2017, which requires every custodian of cash to maintain a true and correct account at all times. It also amounts to a lack of devotion to duty under Rule 3(1) of the CCS (Conduct) Rules, 1964, rendering the official liable for major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: The verification report shows that the physical cash balance did not match the balance recorded in the Cash Book, and the official could not produce any supporting vouchers or explanation for the difference. Such failure to safeguard and account for Government cash reflects serious negligence and breach of trust reposed in a Government servant handling public funds, justifying major penalty proceedings.`
+},
+{
+  title: "Forging Customer Signatures",
+  rule: "Ref: CCS (CCA) Rules 1965, Rule 14 | POSB Manual Vol. I | BNS 2023 provisions on forgery",
+  tier: "🔴",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, working as Postal Assistant at _______ Post Office, forged the signature of customer Shri/Smt. _______ on a withdrawal form/KYC document dated __/__/____ in order to fraudulently process a transaction without the knowledge or authorization of the customer concerned.
+
+This act of forgery is a grave violation of the procedure prescribed in the POSB Manual, Volume I, for verification of customer signatures before processing transactions, and constitutes a serious breach of integrity under Rule 3(1) of the CCS (Conduct) Rules, 1964. Such conduct is punishable with major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: Comparison of the signature on the disputed document with the specimen signature on record showed clear mismatch and signs of forgery. The customer, upon being contacted, denied having signed or authorized the said document. This act amounts to criminal breach of trust and forgery against a member of the public, seriously damaging the reputation and credibility of the Department, and warrants stringent major penalty action.`
+},
+{
+  title: "Loss of Registered Articles due to negligence",
+  rule: "Ref: Postal Manual Vol. VI | CCS (Conduct) Rules 1964, Rule 3(1)",
+  tier: "🟡",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while working as _______ at _______ Post Office, failed to safely handle and deliver a Registered Article bearing No. _______ booked on __/__/____, resulting in the said article being lost while in his custody, due to gross negligence in performance of official duties.
+
+This negligence is a clear violation of the handling and delivery procedures prescribed in the Postal Manual, Volume VI, for registered articles, and amounts to failure to maintain devotion to duty under Rule 3(1) of the CCS (Conduct) Rules, 1964, making the official liable for major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: Records show that the registered article was received at the office but was not entered in the delivery book, nor was it found in the beat records of the delivery staff. Despite search, the article could not be traced, causing loss to the customer and financial liability to the Department, which must compensate the sender as per rules. This repeated pattern of negligent handling reflects serious lapse in duty, warranting major penalty proceedings.`
+},
+{
+  title: "Violation of CCS (Conduct) Rules",
+  rule: "Ref: CCS (Conduct) Rules 1964, Rule 3 & Rule 15 | CCS (CCA) Rules 1965, Rule 14",
+  tier: "🟠",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while working as _______ at _______ office, engaged in private trade/business without prior permission of the competent authority during __/__/____, in violation of Rule 15 of the CCS (Conduct) Rules, 1964, and further failed to maintain absolute integrity and devotion to duty as required under Rule 3(1) of the said Rules.
+
+Such conduct is unbecoming of a Government servant and amounts to serious misconduct, rendering the charged official liable for major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: It has come to notice through credible information/complaint that the official has been running a private business alongside his Government duties without obtaining the mandatory permission required under the Conduct Rules. This dual engagement affected his official performance and attendance, and is a clear breach of the code of conduct expected from Government employees. Such violation undermines discipline in Government service and the trust reposed by the Department, justifying initiation of major penalty proceedings against the official.`
+},
+{
+  title: "Abuse of Official Position for personal gain",
+  rule: "Ref: CCS (Conduct) Rules 1964, Rule 3(1) | Prevention of Corruption Act 1988 | CCS (CCA) Rules 1965, Rule 14",
+  tier: "🔴",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while working as _______ at _______ office, abused his official position by demanding and accepting an illegal gratification of Rs. _______ from Shri/Smt. _______ for providing undue favour in processing of a Government service, during __/__/____.
+
+This act amounts to gross misconduct and violates Rule 3(1)(i) of the CCS (Conduct) Rules, 1964, which requires absolute integrity, and also attracts provisions of the Prevention of Corruption Act, 1988, relating to criminal misconduct by a public servant. The official is therefore liable for major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: A written complaint was received from the member of public alleging that the official demanded money to expedite a pending service, which was otherwise a routine entitlement. Preliminary inquiry corroborated the allegation through witness statements and documentary evidence. Abuse of official position for personal gain is a serious act of corruption that damages public trust in Government service and calls for stringent major penalty action, including possible dismissal from service.`
+},
+{
+  title: "Suppression of material facts causing financial loss to Government",
+  rule: "Ref: CCS (Conduct) Rules 1964, Rule 3(1) | GFR 2017 | CCS (CCA) Rules 1965, Rule 14",
+  tier: "🔴",
+  text: `ARTICLE OF CHARGE
+
+That Shri _______, while working as _______ at _______ office, deliberately suppressed material facts regarding a financial irregularity noticed during the internal audit conducted on __/__/____, and failed to report the matter to higher authorities in time, resulting in a financial loss of Rs. _______ to the Government.
+
+This suppression of material facts is a serious breach of Rule 3(1) of the CCS (Conduct) Rules, 1964, which requires a Government servant to act with honesty and full transparency, and is also against the reporting requirements laid down in the General Financial Rules, 2017. Such conduct renders the official liable for major penalty under Rule 14 of the CCS (CCA) Rules, 1965.
+
+STATEMENT OF IMPUTATION: It was found during subsequent higher audit that the irregularity was known to the official well in advance, but was deliberately concealed and not reported through proper channel, allowing the financial loss to continue and increase over time. This willful suppression of facts to avoid accountability is a serious act of dishonesty, causing avoidable loss to Government revenue, and warrants major penalty proceedings against the official concerned.`
+}
+];
+
+const container = document.getElementById('cards');
+questions.forEach((q, i) => {
+  const card = document.createElement('div');
+  card.className = 'qcard';
+  const wc = q.text.trim().split(/\s+/).length;
+  card.innerHTML = `
+    <div class="qhead" onclick="this.parentElement.classList.toggle('open')">
+      <div class="qnum">${i+1}</div>
+      <div class="qtitle">${q.title}</div>
+      <div class="tier">${q.tier}</div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="qbody">
+      <span class="rule-tag">${q.rule}</span>
+      <div class="answer-text">${q.text}</div>
+      <div class="word-count">~${wc} words</div>
+      <button class="speak-btn" onclick="speak(this, \`${q.text.replace(/`/g,"'").replace(/\n/g," ")}\`)">🔊 Listen</button>
+    </div>
+  `;
+  container.appendChild(card);
+});
+
+function toggleDark(){
+  document.body.classList.toggle('dark');
+}
+function expandAll(){
+  document.querySelectorAll('.qcard').forEach(c => c.classList.add('open'));
+}
+function collapseAll(){
+  document.querySelectorAll('.qcard').forEach(c => c.classList.remove('open'));
+}
+let currentUtterance = null;
+function speak(btn, text){
+  if(currentUtterance){
+    window.speechSynthesis.cancel();
+  }
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'en-IN';
+  utter.rate = 0.95;
+  currentUtterance = utter;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+
+</body>
+</html>

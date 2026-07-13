@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 10 Probable Drafting Questions - Paper II</title>
+<style>
+  :root{
+    --post-red:#A0122A;
+    --post-red-dark:#7A0E20;
+    --post-blue:#0B3D6E;
+    --post-gold:#C9962C;
+    --bg-light:#FBF7F0;
+    --card-light:#FFFFFF;
+    --text-dark:#20222A;
+    --text-muted:#5A5F6B;
+    --bg-dark:#121418;
+    --card-dark:#1C1F26;
+    --text-dark-mode:#EDEEF2;
+    --border-light:#E7DFD0;
+    --border-dark:#2C303A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg-light);
+    color:var(--text-dark);
+    transition:background .3s,color .3s;
+    padding-bottom:60px;
+  }
+  body.dark{
+    background:var(--bg-dark);
+    color:var(--text-dark-mode);
+  }
+  header{
+    background:linear-gradient(135deg,var(--post-red) 0%,var(--post-red-dark) 100%);
+    color:#fff;
+    padding:22px 16px 28px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+  header h1{
+    margin:0 0 6px;
+    font-size:1.35rem;
+    letter-spacing:.3px;
+  }
+  header p{
+    margin:0;
+    font-size:.85rem;
+    opacity:.9;
+  }
+  .gold-bar{
+    height:4px;
+    background:var(--post-gold);
+    width:100%;
+  }
+  .toolbar{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    padding:14px 12px;
+    flex-wrap:wrap;
+  }
+  .toolbar button{
+    border:none;
+    border-radius:20px;
+    padding:8px 16px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    background:var(--post-blue);
+    color:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  .toolbar button.secondary{
+    background:var(--post-gold);
+    color:#2A2000;
+  }
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 14px;
+  }
+  .intro-box{
+    background:var(--card-light);
+    border:1px solid var(--border-light);
+    border-left:5px solid var(--post-gold);
+    border-radius:10px;
+    padding:14px 16px;
+    margin:16px 0;
+    font-size:.85rem;
+    line-height:1.5;
+  }
+  body.dark .intro-box{
+    background:var(--card-dark);
+    border-color:var(--border-dark);
+  }
+  .qcard{
+    background:var(--card-light);
+    border:1px solid var(--border-light);
+    border-radius:12px;
+    margin-bottom:14px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  body.dark .qcard{
+    background:var(--card-dark);
+    border-color:var(--border-dark);
+  }
+  .qhead{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .qnum{
+    flex:0 0 auto;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:var(--post-blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:.9rem;
+  }
+  .qtitle{
+    flex:1;
+    font-size:.92rem;
+    font-weight:600;
+  }
+  .tier{
+    flex:0 0 auto;
+    font-size:1rem;
+  }
+  .arrow{
+    flex:0 0 auto;
+    display:inline-block;
+    transition:transform .25s;
+    color:var(--text-muted);
+    transform:rotate(-90deg);
+  }
+  .qcard.open .arrow{
+    transform:rotate(0deg);
+  }
+  .qbody{
+    display:none;
+    padding:0 16px 16px;
+  }
+  .qcard.open .qbody{
+    display:block;
+  }
+  .rule-tag{
+    display:inline-block;
+    background:rgba(160,18,42,.1);
+    color:var(--post-red);
+    border:1px solid var(--post-red);
+    font-size:.72rem;
+    font-weight:600;
+    padding:3px 9px;
+    border-radius:12px;
+    margin-bottom:10px;
+  }
+  body.dark .rule-tag{
+    background:rgba(201,150,44,.12);
+    color:var(--post-gold);
+    border-color:var(--post-gold);
+  }
+  .answer-text{
+    font-size:.85rem;
+    line-height:1.65;
+    color:var(--text-dark);
+    white-space:pre-line;
+  }
+  body.dark .answer-text{
+    color:var(--text-dark-mode);
+  }
+  .word-count{
+    margin-top:10px;
+    font-size:.72rem;
+    color:var(--text-muted);
+    text-align:right;
+  }
+  .speak-btn{
+    margin-top:10px;
+    border:1px solid var(--post-blue);
+    background:transparent;
+    color:var(--post-blue);
+    border-radius:16px;
+    padding:5px 12px;
+    font-size:.75rem;
+    cursor:pointer;
+  }
+  body.dark .speak-btn{
+    border-color:var(--post-gold);
+    color:var(--post-gold);
+  }
+  footer{
+    text-align:center;
+    font-size:.75rem;
+    color:var(--text-muted);
+    margin-top:20px;
+    padding:0 20px;
+  }
+  .black-btn{
+    display:inline-block;
+    margin:16px auto 0;
+    background:#1a1a1a;
+    color:#fff;
+    border:none;
+    padding:9px 18px;
+    border-radius:20px;
+    font-size:.8rem;
+    cursor:pointer;
+  }
+  .center{text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📄 Top 10 Probable Drafting Questions</h1>
+  <p>Paper II — Noting &amp; Drafting | Model Answers (~200 words each) with Rule References</p>
+</header>
+<div class="gold-bar"></div>
+
+<div class="toolbar">
+  <button onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="secondary" onclick="expandAll()">⬇ Expand All</button>
+  <button class="secondary" onclick="collapseAll()">⬆ Collapse All</button>
+</div>
+
+<main>
+  <div class="intro-box">
+    <strong>How to use:</strong> Each card below has a ready-to-write draft answer in simple English, with the relevant rule or regulation number tagged at the top. Tap a card to open it. Use 🔊 to listen. These drafts follow standard Government letter/memo format — practice writing them in your own words before the exam.
+  </div>
+
+  <div id="cards"></div>
+
+  <div class="center">
+    <button class="black-btn" onclick="window.print()">🖨️ Download / Print as PDF</button>
+  </div>
+</main>
+
+<footer>
+  LDCE IP EXAM PORTAL &nbsp;|&nbsp; Paper II Drafting Practice Set
+</footer>
+
+<script>
+const questions = [
+{
+  title: "Explanation Call Letter for Delay in Mail Processing",
+  rule: "Ref: CCS (Conduct) Rules 1964, Rule 3(1) | Postal Manual Vol. VI",
+  tier: "🔴",
+  text: `From: Senior Superintendent of Post Offices, Ahmedabad Division
+To: Shri _______, Postal Assistant, Mail Office
+
+Subject: Explanation call for delay in processing of mail bags dated __/__/____
+
+Sir/Madam,
+
+It has been observed during inspection that mail bags received on the above date were not processed and dispatched within the prescribed time limit. This delay caused late delivery of mail to the public, which is a serious lapse in duty.
+
+As per Rule 3(1) of the CCS (Conduct) Rules, 1964, every Government servant must maintain absolute devotion to duty and perform work with due diligence. Delay in mail processing directly violates this rule and affects the quality of postal service.
+
+You are therefore directed to submit a written explanation within 3 days from the receipt of this letter, stating the reasons for the delay. Your explanation will be examined, and if found unsatisfactory, further disciplinary action under the CCS (CCA) Rules, 1965 may be initiated against you.
+
+This may be treated as very urgent.
+
+Yours faithfully,
+Senior Superintendent of Post Offices`
+},
+{
+  title: "Letter calling for Report regarding Public Complaint",
+  rule: "Ref: Citizens' Charter, India Post | RTI Act 2005 spirit of transparency",
+  tier: "🟠",
+  text: `From: Superintendent of Post Offices
+To: Postmaster, _______ Post Office
+
+Subject: Complaint received from Shri _______ regarding non-delivery of registered article
+
+Sir/Madam,
+
+A complaint has been received from a member of public alleging that a registered article booked at your office was not delivered even after 15 days. This is a matter of concern as timely delivery is a basic commitment under the Citizens' Charter of the Department of Posts.
+
+You are requested to verify the facts from the office records, including the delivery register and track record of the article, and submit a factual report within 5 working days.
+
+The report should clearly mention the date of booking, date of dispatch, reason for delay if any, and present status of the article. If any staff negligence is found, suitable remarks may also be given, since Government servants are expected to attend to public grievances promptly and courteously.
+
+Please treat this matter with priority, as pending complaints reflect poorly on the image of the Department. Reply immediately on receipt.
+
+Yours faithfully,
+Superintendent of Post Offices`
+},
+{
+  title: "Warning Letter for Negligence in Duty",
+  rule: "Ref: CCS (CCA) Rules 1965, Rule 16 (Minor Penalty – Censure)",
+  tier: "🔴",
+  text: `From: Divisional Superintendent
+To: Shri _______, Sub Postmaster
+
+Subject: Warning for negligence in duty
+
+Sir/Madam,
+
+It has come to notice that important office records under your charge were found missing during the recent inspection. This shows a lack of care and negligence in maintaining Government property and records.
+
+Under Rule 3(1)(ii) of the CCS (Conduct) Rules, 1964, every Government servant shall maintain devotion to duty. Your conduct, as noted above, does not meet this standard, and if repeated, action under Rule 16 of the CCS (CCA) Rules, 1965, for imposing a minor penalty may be considered.
+
+You are hereby warned to be careful in future and to take proper custody of all records and Government property entrusted to you. Any repetition of such negligence will be viewed seriously, and formal disciplinary proceedings may be initiated without further notice.
+
+You are advised to acknowledge receipt of this letter and improve your performance immediately.
+
+Yours faithfully,
+Divisional Superintendent`
+},
+{
+  title: "Draft Letter for Recovery of Government Loss",
+  rule: "Ref: GFR 2017, Rule 212 | Fundamental Rule 45 (Pay recovery)",
+  tier: "🔴",
+  text: `From: Superintendent of Post Offices
+To: Shri _______, Postal Assistant
+
+Subject: Recovery of Government loss caused due to shortage in cash
+
+Sir/Madam,
+
+During the surprise check of your cash chest on __/__/____, a shortage of Rs. _______ was noticed as compared to the balance shown in the cash book. This amount represents a direct loss to Government funds, and you are held responsible as the custodian of the cash.
+
+As per Rule 212 of the General Financial Rules (GFR) 2017, any loss of Government money due to negligence or fraud by a Government servant must be recovered from the person responsible. Further, recovery from pay may be regulated under Fundamental Rule 45.
+
+You are therefore directed to deposit the shortage amount of Rs. _______ immediately, or submit your explanation within 3 days if you wish to contest this liability. Failure to respond will result in recovery being effected from your salary in suitable instalments, along with initiation of disciplinary proceedings for the loss caused to Government revenue.
+
+This is issued with the approval of the competent authority.
+
+Yours faithfully,
+Superintendent of Post Offices`
+},
+{
+  title: "Memo regarding Irregular Attendance",
+  rule: "Ref: CCS (Conduct) Rules 1964, Rule 3(3) | Office Attendance Register Rules",
+  tier: "🟠",
+  text: `MEMORANDUM
+
+To: Shri _______, Office Assistant
+
+Subject: Irregular attendance in office
+
+It has been observed from the Attendance Register that you have been habitually late in attending office during the last one month, without prior intimation or sanction of leave. This is against the standards of discipline expected from a Government servant.
+
+As per Rule 3(3) of the CCS (Conduct) Rules, 1964, every Government employee is expected to maintain punctuality and discipline in the discharge of official duties. Irregular attendance not only affects your own work but also disturbs the functioning of the office.
+
+You are advised to explain the reasons for such irregular attendance in writing within 3 days of receipt of this memo. You are further directed to be regular and punctual in office hours henceforth. Failure to improve may lead to this matter being reported for appropriate administrative action.
+
+This memo may be treated as a first and final caution in this regard.
+
+Superintendent of Post Offices`
+},
+{
+  title: "Letter forwarding Inspection Report",
+  rule: "Ref: Postal Manual Volume VI, Part I (Inspection procedure)",
+  tier: "🟡",
+  text: `From: Inspector of Posts
+To: Superintendent of Post Offices, _______ Division
+
+Subject: Forwarding of Inspection Report of _______ Post Office
+
+Sir/Madam,
+
+The inspection of the above-named Post Office was carried out on __/__/____ as per the prescribed inspection schedule laid down in the Postal Manual, Volume VI, Part I. The detailed Inspection Report, along with annexures, is forwarded herewith for kind perusal and further necessary action.
+
+During the inspection, certain irregularities were noticed, mainly relating to cash balance verification, stock register maintenance, and delay in disposal of pending dak. These points have been recorded in Part II of the report along with specific observations against each item.
+
+It is requested that the report may be reviewed, and suitable instructions may be issued to the Postmaster concerned for rectification of the irregularities pointed out. A compliance report may also be called for within one month, as per standard practice.
+
+This is submitted for your kind information and further orders please.
+
+Yours faithfully,
+Inspector of Posts`
+},
+{
+  title: "Draft Reply to Customer Complaint",
+  rule: "Ref: Citizens' Charter, Department of Posts | Consumer Protection Act 2019 (service standards)",
+  tier: "🟢",
+  text: `From: Postmaster, _______ Post Office
+To: Shri/Smt. _______
+
+Subject: Reply to your complaint dated __/__/____ regarding delayed delivery of parcel
+
+Dear Sir/Madam,
+
+This is with reference to your complaint regarding delay in delivery of your parcel booked vide Article No. _______. We regret the inconvenience caused to you due to this delay.
+
+On verification of records, it is found that the parcel reached our office on __/__/____ and was delivered to your address on __/__/____. The delay occurred due to heavy volume of mail during the festival season, which affected the normal delivery schedule.
+
+As per the Citizens' Charter of the Department of Posts, we are committed to providing timely and reliable service to all our customers, and we sincerely regret that this standard was not met in your case. We have already advised our delivery staff to avoid such delays in future.
+
+We value your feedback, as it helps us improve our services. Please feel free to contact this office for any further assistance.
+
+Thanking you,
+Postmaster`
+},
+{
+  title: "Letter directing rectification of Inspection Irregularities",
+  rule: "Ref: Postal Manual Volume VI, Part II (Compliance of Inspection Reports)",
+  tier: "🟡",
+  text: `From: Superintendent of Post Offices
+To: Postmaster, _______ Post Office
+
+Subject: Rectification of irregularities pointed out in Inspection Report
+
+Sir/Madam,
+
+The Inspection Report of your office dated __/__/____ has been examined. Several irregularities were noticed, including non-maintenance of the Stock Register, incorrect posting of cash book entries, and pending disposal of old dak items.
+
+As per the provisions of Postal Manual, Volume VI, Part II, all irregularities pointed out during inspection must be rectified within one month, and a compliance report submitted to the inspecting authority.
+
+You are directed to rectify all the irregularities mentioned in the report without delay. Specific attention should be given to updating the Stock Register and clearing pending dak on priority basis. A point-wise compliance report, duly verified, should reach this office within 30 days from the date of this letter.
+
+Failure to comply within the stipulated time will be viewed seriously, and the matter may be reported to higher authorities for further action.
+
+Yours faithfully,
+Superintendent of Post Offices`
+},
+{
+  title: "Draft Letter for submission of pending records",
+  rule: "Ref: Postal Manual Volume V (Records Management)",
+  tier: "🟢",
+  text: `From: Superintendent of Post Offices
+To: Postmaster, _______ Post Office
+
+Subject: Submission of pending records for the year _______
+
+Sir/Madam,
+
+It has been noticed that several important records, such as the Annual Stock Verification Report and the Cash Balance Report for the year _______, have not yet been submitted to this office, despite the due date having passed.
+
+As per the guidelines in Postal Manual, Volume V, relating to maintenance and submission of office records, all periodical records must be submitted to the higher office within the prescribed time to ensure proper monitoring and audit compliance.
+
+You are directed to prepare and submit all pending records mentioned above within 7 days from the receipt of this letter. Delay in submission of records not only affects departmental audit but also reflects poor office management.
+
+Please treat this as urgent, and confirm submission at the earliest to avoid further correspondence on this matter.
+
+Yours faithfully,
+Superintendent of Post Offices`
+},
+{
+  title: "Communication regarding unauthorized absence",
+  rule: "Ref: CCS (Leave) Rules 1972, Rule 25 | CCS (CCA) Rules 1965",
+  tier: "🔴",
+  text: `From: Superintendent of Post Offices
+To: Shri _______, Postal Assistant
+
+Subject: Unauthorized absence from duty with effect from __/__/____
+
+Sir/Madam,
+
+It is observed that you have been absent from duty since __/__/____ without any prior intimation, application for leave, or sanction from the competent authority. This is a clear case of unauthorized absence.
+
+As per Rule 25 of the CCS (Leave) Rules, 1972, no Government servant can remain absent from duty without proper sanction of leave. Unauthorized absence is treated as a breach of discipline and may attract action under the CCS (CCA) Rules, 1965, including loss of pay for the absence period.
+
+You are directed to report for duty immediately and submit a written explanation for your absence within 3 days of receipt of this letter. If you fail to respond or resume duty, it will be presumed that you are not interested in continuing service, and appropriate disciplinary action, including a charge sheet, will be initiated against you as per rules.
+
+This may be treated as final notice in the matter.
+
+Yours faithfully,
+Superintendent of Post Offices`
+}
+];
+
+const container = document.getElementById('cards');
+questions.forEach((q, i) => {
+  const card = document.createElement('div');
+  card.className = 'qcard';
+  const wc = q.text.trim().split(/\s+/).length;
+  card.innerHTML = `
+    <div class="qhead" onclick="this.parentElement.classList.toggle('open')">
+      <div class="qnum">${i+1}</div>
+      <div class="qtitle">${q.title}</div>
+      <div class="tier">${q.tier}</div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="qbody">
+      <span class="rule-tag">${q.rule}</span>
+      <div class="answer-text">${q.text}</div>
+      <div class="word-count">~${wc} words</div>
+      <button class="speak-btn" onclick="speak(this, \`${q.text.replace(/`/g,"'").replace(/\n/g," ")}\`)">🔊 Listen</button>
+    </div>
+  `;
+  container.appendChild(card);
+});
+
+function toggleDark(){
+  document.body.classList.toggle('dark');
+}
+function expandAll(){
+  document.querySelectorAll('.qcard').forEach(c => c.classList.add('open'));
+}
+function collapseAll(){
+  document.querySelectorAll('.qcard').forEach(c => c.classList.remove('open'));
+}
+let currentUtterance = null;
+function speak(btn, text){
+  if(currentUtterance){
+    window.speechSynthesis.cancel();
+  }
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'en-IN';
+  utter.rate = 0.95;
+  currentUtterance = utter;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+
+</body>
+</html>

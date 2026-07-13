@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 10 Noting Questions &amp; Answers | IP Exam Portal</title>
+<style>
+  :root{
+    --post-red:#c81e1e;
+    --post-red-dark:#8f1414;
+    --post-blue:#0b3d91;
+    --post-blue-dark:#062a66;
+    --gold:#c9971f;
+    --paper:#faf6ee;
+    --ink:#1e1b16;
+    --card:#ffffff;
+    --line:#e6ddc9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:linear-gradient(180deg,#fdf9f0 0%,var(--paper) 100%);
+    color:var(--ink);
+    padding-bottom:60px;
+  }
+  header{
+    background:linear-gradient(120deg,var(--post-red) 0%,var(--post-red-dark) 55%,var(--post-blue-dark) 100%);
+    color:#fff;
+    padding:28px 18px 24px;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:6px;
+    background:repeating-linear-gradient(90deg,var(--gold) 0 18px,#fff 18px 22px);
+  }
+  header h1{
+    margin:0 0 6px;
+    font-size:1.4rem;
+    letter-spacing:.3px;
+  }
+  header p{
+    margin:0;
+    font-size:.85rem;
+    opacity:.9;
+  }
+  .badge{
+    display:inline-block;
+    margin-top:10px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.4);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:.75rem;
+  }
+  .container{
+    max-width:760px;
+    margin:22px auto;
+    padding:0 14px;
+  }
+  .stat-strip{
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    margin-bottom:20px;
+  }
+  .stat{
+    flex:1;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    text-align:center;
+    padding:10px 4px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+  }
+  .stat b{display:block;font-size:1.1rem;color:var(--post-red-dark);}
+  .stat span{font-size:.68rem;color:#666;}
+
+  .qa-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:5px solid var(--post-blue);
+    border-radius:10px;
+    margin-bottom:14px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  .qa-head{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:14px 14px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .qa-num{
+    flex:none;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--post-red);
+    color:#fff;
+    font-weight:700;
+    font-size:.85rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .qa-title{
+    flex:1;
+    font-size:.95rem;
+    font-weight:600;
+    color:var(--post-blue-dark);
+    line-height:1.4;
+  }
+  .qa-arrow{
+    flex:none;
+    font-size:1rem;
+    color:var(--post-red);
+    transition:transform .25s ease;
+    margin-top:4px;
+  }
+  .qa-card.open .qa-arrow{transform:rotate(180deg);}
+  .qa-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+    background:#fffdf7;
+    border-top:1px dashed var(--line);
+  }
+  .qa-body-inner{
+    padding:14px 16px 18px 54px;
+    font-size:.87rem;
+    line-height:1.65;
+    color:#2b2620;
+  }
+  .qa-body-inner .subject{
+    font-weight:700;
+    color:var(--post-red-dark);
+    display:block;
+    margin-bottom:6px;
+  }
+  .wordcount{
+    display:inline-block;
+    margin-top:10px;
+    font-size:.7rem;
+    color:#8a8a8a;
+    border-top:1px solid var(--line);
+    padding-top:6px;
+  }
+
+  .toolbar{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin:18px 0 24px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    color:#fff;
+  }
+  .btn-red{background:var(--post-red);}
+  .btn-blue{background:var(--post-blue);}
+  .btn:active{opacity:.85;}
+
+  footer{
+    text-align:center;
+    font-size:.7rem;
+    color:#8a8a8a;
+    margin-top:30px;
+  }
+
+  @media print{
+    .toolbar,header .badge{display:none;}
+    .qa-body{max-height:none !important;}
+    .qa-card{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📝 Top 10 Most Probable Noting Questions</h1>
+  <p>Paper II &mdash; Noting &amp; Drafting Practice Bank</p>
+  <span class="badge">Answers in English • 200-word format • IP Exam</span>
+</header>
+
+<div class="container">
+
+  <div class="stat-strip">
+    <div class="stat"><b>10</b><span>Questions</span></div>
+    <div class="stat"><b>~200</b><span>Words/Ans</span></div>
+    <div class="stat"><b>EN</b><span>Answer Lang</span></div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn btn-red" onclick="toggleAll(true)">Expand All</button>
+    <button class="btn btn-blue" onclick="toggleAll(false)">Collapse All</button>
+  </div>
+
+  <!-- Q1 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">1</div>
+      <div class="qa-title">BO Inspection દરમિયાન Cash Shortage મળતાં કાર્યવાહી અંગે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Cash shortage detected during inspection of Branch Office &ndash; action to be taken</span>
+        During the periodical inspection of the Branch Office conducted on &mdash;, a shortage of Rs. &mdash; was noticed in the cash balance maintained by the Branch Postmaster (BPM), as verified against the cash book and physical cash count. The shortage was pointed out to the BPM on the spot and his explanation was obtained in writing.
+        As per Rule 33 of the General Financial Rules (GFR), 2017, any loss or shortage of public money, irrespective of the cause, must be immediately reported by the subordinate authority to the next higher authority and the Statutory Audit Officer, even if the amount is subsequently made good. As per Financial Handbook Volume I provisions on cash accountal, the shortage must be recovered from the official concerned immediately, and where recovery is not possible on the spot, the amount may be ordered for recovery from salary in suitable instalments with the approval of the competent authority. Simultaneously, a preliminary enquiry report is required to be submitted to the Divisional Office within three days, along with the BPM's explanation.
+        It is proposed that: (i) recovery proceedings be initiated against the BPM under the extant financial rules, (ii) the matter be reported to the Superintendent of Post Offices for further disciplinary action if warranted, and (iii) surprise cash verification of the BO be intensified for the next two quarters. Submitted for approval of the Sub Divisional Inspector.
+        <div class="wordcount">Word count: ~205</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">2</div>
+      <div class="qa-title">Postman દ્વારા Mail Delivery માં સતત વિલંબ થવા અંગે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Persistent delay in delivery of mail by Postman &ndash; corrective action</span>
+        Repeated complaints have been received from the public regarding delay in delivery of ordinary and registered articles in the beat assigned to Postman Shri &mdash;. On scrutiny of the delivery slips and beat register, it is observed that articles are being delivered two to three days beyond the prescribed norm, contrary to the Postal Manual Volume VI provisions on delivery norms.
+        The Postman was called for explanation, and it is stated that the delay was caused due to an increase in the number of delivery points without a corresponding review of the beat. However, similar delays have occurred in the past despite prior warning, indicating a pattern of negligence.
+        It is proposed that: (i) a formal warning be issued to the Postman under the CCS (CCA) Rules, 1965, with a copy placed in his service record, (ii) the beat be re-surveyed and re-distributed if genuinely overloaded, and (iii) daily delivery performance be monitored by the Sub Postmaster for the next one month. Continued default may attract disciplinary proceedings. Submitted for orders of the Assistant Superintendent of Post Offices.
+        <div class="wordcount">Word count: ~200</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">3</div>
+      <div class="qa-title">SB Account સંબંધિત Public Complaint ના નિકાલ માટે Note લખો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Complaint regarding Savings Bank account &ndash; redressal</span>
+        A complaint has been received from Shri/Smt. &mdash;, account holder of SB Account No. &mdash;, alleging that an amount of Rs. &mdash; withdrawn through his/her account was not credited/was wrongly debited. The complaint was forwarded by the CPMG office for early disposal.
+        On verification of the CBS ledger and voucher records, the transaction in question was examined. As per the Post Office Savings Bank Manual and POSB (CBS) procedural guidelines, all such discrepancies must be reconciled through the CBS back-office within seven working days of receipt of complaint, with the transaction log cross-checked against the physical voucher.
+        The Sub Postmaster has been directed to reconcile the account immediately and submit a factual report. Where the discrepancy is found genuine, the amount is to be credited back to the account under intimation to the depositor, with responsibility fixed on the official concerned if negligence is established. Where no discrepancy is found, a reasoned reply is to be issued to the complainant within the prescribed timeline under the Citizens' Charter. It is proposed that the reconciliation report be obtained and the complaint closed accordingly, with a copy endorsed to the Divisional Office. Submitted for approval.
+        <div class="wordcount">Word count: ~200</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">4</div>
+      <div class="qa-title">Staff Shortage ને કારણે Mail Processing પ્રભાવિત થવા અંગે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Shortage of staff affecting mail processing at the office</span>
+        It has been observed that mail processing at this office has been considerably delayed for the past few weeks due to shortage of sorting staff, two posts of Postal Assistant being vacant on account of retirement and transfer. As a result, the daily bag closing time is being missed, leading to onward transmission delays.
+        As per extant instructions, mail processing work is time-bound and any delay directly affects the delivery performance and Citizens' Charter compliance of the Division. The matter was discussed with the available staff, and it is noted that the existing strength is insufficient to handle the current volume within the prescribed hours even with maximum effort.
+        It is proposed that: (i) the vacant posts be filled on priority through transfer/promotion or engagement of substitute staff, (ii) until regular filling, staff may be temporarily diverted from counter duties during non-peak hours to assist in sorting, and (iii) overtime allowance be sanctioned for the interim period to clear the backlog. The matter is submitted for the kind consideration and orders of the Divisional Superintendent, with a request for early action to avoid further disruption of service.
+        <div class="wordcount">Word count: ~195</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">5</div>
+      <div class="qa-title">GDS દ્વારા Unauthorized Absence ના કેસમાં Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Unauthorized absence of Gramin Dak Sevak &ndash; disciplinary action</span>
+        Shri &mdash;, GDS BPM/Mail Deliverer of &mdash; Branch Office, has been absent from duty without prior intimation or sanctioned leave since &mdash;, resulting in disruption of BO functioning and mail delivery in the area. Repeated notices sent to his residential address have gone unanswered.
+        As per Rule 9 of the GDS (Conduct and Engagement) Rules, 2020, unauthorized absence constitutes misconduct attracting minor or major penalty, including compulsory discharge or removal from engagement. The disciplinary procedure to be followed for imposing such penalty is laid down under Rule 10 of the same Rules, which requires that a show-cause notice be issued calling upon the GDS to explain his absence within a reasonable time, failing which action will be taken ex-parte.
+        It is proposed that: (i) a final show-cause notice be issued through registered post and also affixed at the BO/residence, (ii) an alternate arrangement be made for BO functioning through a substitute or nearby BO merger to avoid public inconvenience, and (iii) if no response is received within 15 days, proceedings for discharge from GDS service be initiated as per the applicable rules. Submitted for approval of the Divisional Superintendent.
+        <div class="wordcount">Word count: ~195</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">6</div>
+      <div class="qa-title">Office Building Repair માટે Funds Sanction બાબતે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Sanction of funds for repair of office building</span>
+        The departmental building housing this office has developed cracks in the roof and the sanitary fittings are non-functional, as brought out in the inspection report dated &mdash;. The Junior Engineer (Civil), on physical inspection, has assessed the estimated cost of repair at Rs. &mdash;, which is within the delegated financial powers prescribed under the Manual for Procurement of Goods, Works and Consultancy Services.
+        As per the works procedure, repair works of this nature require a technically sanctioned estimate from the Engineering wing, followed by administrative approval of the competent authority before the work is put to tender/quotation. The estimate received has been examined and found to be in order and within the norms.
+        It is proposed that: (i) administrative approval for the estimated expenditure of Rs. &mdash; be accorded, (ii) the work be got executed through the e-Procurement portal following due tendering process as prescribed under GFR 2017 and DFPR 2024, and (iii) the expenditure be booked under the relevant Works head after obtaining budget allotment confirmation from the Circle Office. Submitted for kind approval of the competent authority.
+        <div class="wordcount">Word count: ~200</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">7</div>
+      <div class="qa-title">Official Records સમયસર Maintain ન કરવા બદલ Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Non-maintenance of official records in time &ndash; irregularity noticed</span>
+        During inspection of this office, it was observed that several important registers, including the Dead Stock Register and the Cash Book postings, have not been updated for the past two months. This is a serious lapse as timely maintenance of records is essential for accountability and audit purposes as prescribed under the Postal Manual and Records Retention Schedule.
+        The official responsible, Shri &mdash;, has been asked to explain the reason for the lapse. It is stated that heavy counter workload left insufficient time for record upkeep; however, maintenance of prescribed registers is a core responsibility that cannot be deferred regardless of workload, and the lapse reflects poor supervision at the office level.
+        It is proposed that: (i) the official be directed to update all pending records within seven days under the personal supervision of the Sub Postmaster, (ii) a suitable entry be made in the Annual Performance Appraisal Report (APAR) regarding this lapse, and (iii) a system of weekly review of registers be introduced to prevent recurrence. The matter is submitted for orders, with a request that compliance be reported within ten days.
+        <div class="wordcount">Word count: ~195</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">8</div>
+      <div class="qa-title">Employee Transfer Request અંગે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Request for transfer on mutual/compassionate grounds</span>
+        Shri/Smt. &mdash;, presently working as &mdash; at &mdash;, has submitted a request for transfer to &mdash; on grounds of &mdash; (spouse posting/medical/education of children). The request is supported by requisite documentary evidence, including medical certificates and the concerned certificates as applicable.
+        As per the extant Transfer Policy applicable to the cadre, requests on compassionate/mutual grounds may be considered outside the normal transfer cycle, subject to administrative feasibility, availability of vacancy at the requested station, and no adverse impact on the functioning of the current office. It is noted that a vacancy of the same cadre exists at the requested station.
+        It is proposed that: (i) the transfer request be recommended for approval as it satisfies the eligibility criteria under the policy and does not affect office functioning, given that a replacement can be arranged, and (ii) the transfer be effected preferably during the transfer season/or as a special case with the approval of the competent authority, subject to relieving formalities being completed in due course. Submitted for kind consideration and orders of the Divisional Superintendent.
+        <div class="wordcount">Word count: ~195</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">9</div>
+      <div class="qa-title">Fraud Suspected SB Transaction અંગે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Suspected fraudulent transaction in Savings Bank account &ndash; investigation</span>
+        It has come to notice that a withdrawal of Rs. &mdash; was made from SB Account No. &mdash; using a withdrawal form bearing a signature that does not match the specimen signature on record. The depositor has denied having made or authorized the withdrawal, raising a strong suspicion of fraud.
+        As per Rule 33 of the General Financial Rules (GFR), 2017, any loss or shortage of public money must be immediately reported to the next higher authority, irrespective of the cause or manner of detection. Further, as per Rule 34 of GFR 2017, losses exceeding Rs. 50,000 arising from suspected fraud must invariably be reported to the Police for investigation. The withdrawal form, specimen signature card, and CCTV footage, if available, are to be preserved as evidence.
+        It is proposed that: (i) the SB account be frozen with immediate effect and the depositor informed, (ii) the matter be reported to the Superintendent of Post Offices and the Vigilance Wing for detailed investigation, (iii) a First Information Report be lodged with the local police under Rule 34 of GFR 2017 as fraud is prima facie established, and (iv) the staff who processed the transaction be examined for possible complicity or negligence. Submitted for urgent orders of the competent authority.
+        <div class="wordcount">Word count: ~195</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="qa-card">
+    <div class="qa-head" onclick="toggleCard(this)">
+      <div class="qa-num">10</div>
+      <div class="qa-title">Leave Regularization માટે મળેલી અરજી અંગે Note તૈયાર કરો.</div>
+      <div class="qa-arrow">▼</div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner">
+        <span class="subject">Subject: Application for regularization of leave</span>
+        Shri/Smt. &mdash; remained absent from duty from &mdash; to &mdash; without prior sanction of leave due to sudden illness, and has now submitted an application along with a medical certificate requesting that the period be regularized as Earned Leave/Medical Leave, as admissible under the CCS (Leave) Rules, 1972.
+        On verification, it is seen that the medical certificate is issued by an authorized medical practitioner and the leave account of the official shows sufficient balance to cover the period of absence. As per Rule 25 of the CCS (Leave) Rules, 1972, a Government servant who remains absent after the expiry of leave is treated as willfully absent and is entitled to no leave salary for that period unless the leave is extended or the absence is regularized by the competent authority. As per Rule 32(2)(a) of the same Rules, the disciplinary authority is required to proceed against such absence without waiting for it to prolong. Since the absence is satisfactorily explained and supported by valid medical evidence, it may be regularized as leave of the kind due and admissible, at the discretion of the competent authority.
+        It is proposed that: (i) the period of absence from &mdash; to &mdash; be regularized as Medical Leave/Earned Leave as applicable, debiting the leave account accordingly, and (ii) the official be advised to obtain prior sanction for leave in future save in genuine emergencies. The case is submitted for approval of the competent authority, and the leave account may be updated accordingly upon sanction.
+        <div class="wordcount">Word count: ~190</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn btn-red" onclick="window.print()">🖨️ Print / Save PDF</button>
+  </div>
+
+  <footer>LDCE IP Exam Portal &middot; Paper II Noting &amp; Drafting Practice</footer>
+</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  const body = card.querySelector('.qa-body');
+  const isOpen = card.classList.contains('open');
+  if(isOpen){
+    card.classList.remove('open');
+    body.style.maxHeight = null;
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+function toggleAll(open){
+  document.querySelectorAll('.qa-card').forEach(card=>{
+    const body = card.querySelector('.qa-body');
+    if(open){
+      card.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    } else {
+      card.classList.remove('open');
+      body.style.maxHeight = null;
+    }
+  });
+}
+</script>
+
+</body>
+</html>
