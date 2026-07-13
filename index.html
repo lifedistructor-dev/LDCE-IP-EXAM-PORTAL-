@@ -273,7 +273,6 @@
         .cat-progress-fill { height: 100%; background: var(--primary); border-radius: var(--radius-pill); }
 
         /* ---- Translate widget ---- */
-        #google_translate_element.open { display: block !important; position: absolute; top: 60px; right: 16px; background: var(--surface); padding: 8px; border-radius: var(--radius); box-shadow: var(--shadow-lg); z-index: 250; }
         .goog-te-gadget { font-family: 'Inter', sans-serif !important; }
     </style>
 </head>
@@ -346,10 +345,6 @@
                 </div>
             </div>
             <div class="header-actions">
-                <div id="google_translate_element" style="display:none;"></div>
-                <button class="header-btn" id="translate-btn" onclick="toggleTranslateWidget()" title="Translate / ભાષા બદલો" aria-label="Translate page">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.5 6.5l1 3"/></svg>
-                </button>
                 <button class="header-btn" onclick="editProfile()" title="Edit profile" aria-label="Edit profile">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 </button>
@@ -2109,12 +2104,6 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'gu', includedLanguages: 'en,hi,gu,mr,ta,te,bn,kn,ml,pa,ur', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
     var ALL_CARD_IDS = [];
 
@@ -2425,12 +2414,6 @@
     }
     function closeProgressModal() {
         document.getElementById('progress-modal').classList.remove('open');
-    }
-
-    function toggleTranslateWidget() {
-        const el = document.getElementById('google_translate_element');
-        el.classList.toggle('open');
-        el.style.display = el.classList.contains('open') ? 'block' : 'none';
     }
 
     function showToast(msg) {
