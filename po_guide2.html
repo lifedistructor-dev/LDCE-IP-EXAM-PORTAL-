@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Post Office Guide Part-II | पोस्ट ऑफिस गाइड भाग-II | Foreign Post | IP Exam Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ip-red:#dc2626; --ip-red-dark:#b91c1c;
+  --ip-blue:#1e3a8a; --ip-blue-dark:#172554;
+  --ip-gold:#d97706;
+  --tier-red:#dc2626; --tier-orange:#ea580c; --tier-yellow:#ca8a04; --tier-green:#16a34a;
+  --cream:#fbf8f3; --ink:#1c1a16; --card:#ffffff; --line:#e7e0d3;
+  --muted:#6b6255;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans Devanagari','Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:15px;padding-bottom:40px;}
+.hi{font-weight:500;}
+.en{font-style:italic;color:var(--muted);font-size:0.92em;}
+a{color:inherit;}
+header.top{background:linear-gradient(135deg,var(--ip-blue) 0%,var(--ip-blue-dark) 100%);color:#fff;padding:22px 16px 30px;position:relative;overflow:hidden;}
+header.top::after{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(217,119,6,.35),transparent 70%);}
+header.top h1{font-size:21px;font-weight:800;letter-spacing:-.02em;position:relative;z-index:1;}
+header.top .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative;z-index:1;}
+header.top .sub .hi{color:#fef3c7;}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative;z-index:1;}
+.meta-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:600;backdrop-filter:blur(6px);}
+.excl-chip{background:rgba(220,38,38,.25);border-color:rgba(220,38,38,.5);}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 14px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.legend span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);}
+h2.sec{font-size:18px;font-weight:800;color:var(--ip-blue-dark);margin:30px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--ip-gold);display:flex;align-items:center;gap:8px;}
+h2.sec .num{background:var(--ip-blue-dark);color:#fff;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+h3.sub{font-size:14.5px;font-weight:700;color:var(--ip-red-dark);margin:18px 0 8px;padding-left:8px;border-left:4px solid var(--ip-red);}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);position:relative;}
+.card .tier{position:absolute;top:10px;right:10px;font-size:15px;}
+.card .clno{display:inline-block;background:#dbeafe;color:var(--ip-blue-dark);font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px;margin-right:6px;}
+.card h4{font-size:13.5px;font-weight:700;margin-bottom:4px;padding-right:22px;}
+.card h4 .en{display:block;font-size:11.5px;font-weight:500;}
+.card p{font-size:12.5px;color:#3a3527;margin-top:3px;}
+.card p.hi-line{font-weight:500;}
+.card p.en-line{font-style:italic;color:var(--muted);font-size:12px;}
+.card .fact{background:#fef9ee;border:1px dashed var(--ip-gold);border-radius:8px;padding:6px 9px;margin-top:6px;font-size:12px;font-weight:600;color:#7c4a03;}
+.card .q{margin-top:7px;font-size:11.5px;background:#f0f6ff;border-left:3px solid var(--ip-blue);padding:5px 8px;border-radius:0 6px 6px 0;color:var(--ip-blue-dark);}
+.card .q b{color:var(--ip-red-dark);}
+.tier-red{border-left:4px solid var(--tier-red);}
+.tier-orange{border-left:4px solid var(--tier-orange);}
+.tier-yellow{border-left:4px solid var(--tier-yellow);}
+.tier-green{border-left:4px solid var(--tier-green);}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0 16px;border-radius:10px;border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;min-width:480px;}
+table th{background:var(--ip-blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;font-size:11.5px;}
+table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table tr:nth-child(even) td{background:#faf8f4;}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:14px 0;}
+.mm-root{background:var(--ip-blue-dark);color:#fff;border-radius:10px;padding:10px 14px;font-weight:800;font-size:14px;text-align:center;}
+.mm-level1{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px;}
+.mm-chip{background:#fff;border:2px solid var(--ip-blue);border-radius:8px;padding:7px 9px;font-size:11px;font-weight:700;color:var(--ip-blue-dark);text-align:center;}
+.mm-chip.excluded{border-color:#d1d5db;color:#9ca3af;background:#f3f4f6;text-decoration:line-through;}
+.mm-arrow{text-align:center;color:var(--ip-gold);font-size:18px;margin:2px 0;}
+.mm-sub{font-size:10px;font-weight:500;color:var(--muted);margin-top:2px;text-decoration:none;display:block;}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:14px 0;}
+.flow-box{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;text-align:center;color:var(--ip-blue-dark);}
+.flow-box.decision{border-color:var(--ip-gold);background:#fffaf0;}
+.flow-box.end{border-color:var(--tier-green);background:#f0fdf4;color:#166534;}
+.flow-arrow{text-align:center;color:var(--muted);font-size:16px;padding:2px 0;}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0;}
+.flow-branch .flow-box{font-size:11px;}
+.branch-label{font-size:10.5px;font-weight:700;text-align:center;color:var(--ip-red-dark);margin-bottom:2px;}
+
+.timeline{position:relative;margin:16px 0 16px 6px;padding-left:20px;border-left:3px solid var(--ip-gold);}
+.tl-item{position:relative;padding-bottom:16px;}
+.tl-item::before{content:'';position:absolute;left:-26px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-red);}
+.tl-year{font-weight:800;color:var(--ip-red-dark);font-size:13px;}
+.tl-text{font-size:12px;margin-top:2px;}
+.mnemonic{background:linear-gradient(135deg,#fff7ed,#fef3c7);border:2px dashed var(--ip-gold);border-radius:12px;padding:12px 14px;margin:10px 0;}
+.mnemonic .label{font-weight:800;font-size:12px;color:var(--ip-red-dark);margin-bottom:4px;display:flex;align-items:center;gap:5px;}
+.mnemonic .body{font-size:12.5px;font-weight:600;color:#5c3a02;}
+.mnemonic .mean{font-size:11px;color:var(--muted);margin-top:3px;}
+
+.revision-box{background:var(--ip-blue-dark);color:#fff;border-radius:14px;padding:16px;margin:20px 0;}
+.revision-box h3{color:#fef3c7;font-size:15px;margin-bottom:10px;border:none;padding:0;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rev-item{background:rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:11.5px;}
+.rev-item b{color:var(--ip-gold);display:block;font-size:11px;margin-bottom:2px;}
+
+.lastday{background:#fef2f2;border:2px solid var(--ip-red);border-radius:14px;padding:14px 16px;margin:20px 0;}
+.lastday h3{color:var(--ip-red-dark);border:none;padding:0;font-size:15px;margin-bottom:8px;}
+.lastday ul{padding-left:18px;font-size:12px;}
+.lastday li{margin-bottom:5px;}
+
+.excl-note{background:#fef2f2;border:2px dashed var(--ip-red);border-radius:10px;padding:10px 14px;margin:14px 0;font-size:12.5px;color:var(--ip-red-dark);font-weight:600;text-align:center;}
+
+.tocbar{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;scrollbar-width:none;}
+.tocbar::-webkit-scrollbar{display:none;}
+.tocbar a{flex-shrink:0;font-size:11px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:5px 11px;color:var(--ip-blue-dark);text-decoration:none;white-space:nowrap;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(220,38,38,.4);cursor:pointer;z-index:100;display:flex;align-items:center;gap:6px;}
+@media print{ .pdf-btn,.tocbar{display:none;} }
+
+footer{text-align:center;font-size:11px;color:var(--muted);padding:24px 14px;}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>✈️ POST OFFICE GUIDE — PART II</h1>
+  <div class="sub"><span class="hi">विदेश डाक नियम | </span><span class="en">Rules & Regulations relating to the Foreign Post — IP Exam Notes</span></div>
+  <div class="meta-row">
+    <span class="meta-chip">📅 1986 Edition</span>
+    <span class="meta-chip">🏛️ Government of India</span>
+    <span class="meta-chip">📖 13 Sections</span>
+    <span class="meta-chip excl-chip">🚫 Section VII & VIII EXCLUDED (as requested)</span>
+  </div>
+</header>
+
+<div class="tocbar">
+  <a href="#s1">I. General</a>
+  <a href="#s2">II. Letter Post</a>
+  <a href="#s3">III. Article Types</a>
+  <a href="#s4">IV. Special Services</a>
+  <a href="#s5">V. Parcel Post</a>
+  <a href="#s6">VI. Money Orders</a>
+  <a href="#s9">IX. Customs</a>
+  <a href="#s10">X. Prohibitions</a>
+  <a href="#s11">XI. Complaints</a>
+  <a href="#revision">🎯 Revision</a>
+  <a href="#lastday">🔥 Last-Day</a>
+</div>
+
+<div class="wrap">
+
+<div class="legend">
+  <span style="color:var(--tier-red)">🔴 Very Important</span>
+  <span style="color:var(--tier-orange)">🟠 Frequently Asked</span>
+  <span style="color:var(--tier-yellow)">🟡 Conceptual</span>
+  <span style="color:var(--tier-green)">🟢 Quick Revision</span>
+</div>
+<h2 class="sec"><span class="num">🗺️</span>Chapter Breakdown / अध्याय संरचना</h2>
+<div class="mindmap">
+  <div class="mm-root">POST OFFICE GUIDE PART II — FOREIGN POST<br><span style="font-weight:500;font-size:11px">(Chapter → Sub-Chapter → Micro → Nano Topic)</span></div>
+  <div class="mm-arrow">↓</div>
+  <div class="mm-level1">
+    <div class="mm-chip">SECTION I – General<span class="mm-sub">Foreign Post def. → UPU → APPU</span></div>
+    <div class="mm-chip">SECTION II – Letter Post (General)<span class="mm-sub">Make-up→Address→Redirection→Undelivered</span></div>
+    <div class="mm-chip">SECTION III – Article Classes<span class="mm-sub">Letters→Cards→Printed Papers→Small Packets→Blind Lit.</span></div>
+    <div class="mm-chip">SECTION IV – Special Services<span class="mm-sub">Air Mail→Registration→Insurance→Bio Substances</span></div>
+    <div class="mm-chip">SECTION V – Parcel Post<span class="mm-sub">Weight/Size→Insurance→Compensation</span></div>
+    <div class="mm-chip">SECTION VI – Money Orders<span class="mm-sub">Foreign MO→TMO→Air Mail MO</span></div>
+    <div class="mm-chip excluded">SECTION VII – British/Irish Postal Orders<span class="mm-sub">EXCLUDED</span></div>
+    <div class="mm-chip excluded">SECTION VIII – V.P. & C.O.D. Services<span class="mm-sub">EXCLUDED</span></div>
+    <div class="mm-chip">SECTION IX – Customs Control<span class="mm-sub">Export/Import formalities</span></div>
+    <div class="mm-chip">SECTION X – Prohibitions & Restrictions<span class="mm-sub">UPU rules + Indian Acts</span></div>
+    <div class="mm-chip">SECTION XI – Enquiries & Complaints<span class="mm-sub">Time limits → Fees</span></div>
+    <div class="mm-chip">SECTION XII/XIII – Country-wise Details<span class="mm-sub">Reference tables (overview only)</span></div>
+  </div>
+</div>
+<div class="excl-note">🚫 Per your request, Section VII (British & Irish Postal Orders) and Section VIII (V.P. & C.O.D. Services) are NOT covered in this infographic.</div>
+<!-- ================= SECTION I ================= -->
+<h2 class="sec" id="s1"><span class="num">I</span>GENERAL <span class="en" style="margin-left:6px;font-size:12px">सामान्य</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.1</span>Definition of "Foreign Post"</h4>
+  <p class="hi-line">"Foreign Post" वह डाक सेवा है जो Part I के Clause 93 में परिभाषित "Inland Post" की परिधि में नहीं आती।</p>
+  <p class="en-line">The term "foreign post" applies to postal services which do not fall within the definition of "Inland Post" (Clause 93, Part I).</p>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.2</span>Categories of Foreign Postal Articles</h4>
+  <p class="hi-line">विदेश डाक में वस्तुएं मुख्यतः दो श्रेणियों में बंटी हैं: "Letter Post" और "Parcel Post"।</p>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.3</span>Universal Postal Union (UPU)<span class="en">High-frequency MCQ topic</span></h4>
+  <p class="hi-line">विश्व के लगभग सभी देश UPU के सदस्य हैं। सदस्य देशों के क्षेत्र एक ही "postal territory" माने जाते हैं और transit की स्वतंत्रता संपूर्ण संघ क्षेत्र में गारंटीड है। Universal Postal Convention सभी सदस्यों पर बाध्यकारी है। Bhutan, Bangladesh, Nepal के साथ विशेष रियायती व्यवस्थाएं हैं।</p>
+  <p class="en-line">Nearly all countries are UPU members; their territories form a single postal territory with guaranteed freedom of transit. The Universal Postal Convention binds all members; special favourable arrangements exist with Bhutan, Bangladesh & Nepal.</p>
+  <div class="q"><b>Q.</b> UPU का पूरा नाम क्या है? — <b>Ans: Universal Postal Union</b></div>
+</div>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.4-A</span>Asian-Pacific Postal Union (APPU)<span class="en">Extremely important dates</span></h4>
+  <p class="hi-line">APPU की स्थापना 1961 में हुई, मुख्यालय Manila (Philippines) में है। भारत 1973 में APPU का सदस्य बना। APPU सदस्य देश एक-दूसरे को surface letter post पर अंतरराष्ट्रीय दर के अधिकतम 85% रियायती दर दे सकते हैं (एयरमेल पर सामान्य अंतरराष्ट्रीय दर लागू)।</p>
+  <p class="en-line">APPU established in 1961, HQ at Manila, Philippines. India joined APPU in 1973. Members may offer concessional surface rates up to 85% of international rates (airmail follows normal international rates).</p>
+  <div class="fact">🔑 APPU established: 1961 | HQ: Manila | India joined: 1973 | Concessional rate ceiling: 85%</div>
+  <div class="q"><b>Q.</b> भारत APPU का सदस्य कब बना? — <b>Ans: 1973</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.5</span>General Applicability of Inland Regulations</h4>
+  <p class="hi-line">जहां तक Foreign Post के लिए विशेष नियम अधिसूचित नहीं हैं, वहां Inland Post के नियम विदेश डाक वस्तुओं पर भी लागू होते हैं।</p>
+</div>
+
+<!-- ================= SECTION II ================= -->
+<h2 class="sec" id="s2"><span class="num">II</span>GENERAL REGULATIONS — LETTER POST <span class="en" style="margin-left:6px;font-size:12px">पत्र डाक — सामान्य नियम</span></h2>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.6</span>Definition of "Letter Post"</h4>
+  <p class="hi-line">"Letter Post" में शामिल: Letters, Post Cards, Printed Papers (Books व Registered Newspapers सहित), Small Packets, Literature for the Blind, तथा Aerogrammes।</p>
+  <p class="en-line">Letter Post includes: Letters, Post Cards, Printed Papers (incl. Books & Registered Newspapers), Small Packets, Literature for the Blind, and Aerogrammes (no surface equivalent).</p>
+</div>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.18</span>Period of Detention & Warehousing Charge</h4>
+  <p class="hi-line">Ordinary/VP inward परिवहन वस्तु (>500 ग्राम) की 7 दिन में delivery न होने पर 8वें दिन से warehousing charge लगता है। Poste Restante वस्तुएं (VP छोड़कर) अधिकतम 1 माह तक रखी जाती हैं; VP Poste Restante केवल 7 दिन।</p>
+  <div class="fact">🔑 Warehousing charge starts: Day 8 | Poste Restante max detention: 1 month (VP: 7 days only)</div>
+  <div class="q"><b>Q.</b> Poste Restante वस्तु (गैर-VP) कितने समय तक रखी जाती है? — <b>Ans: 1 month</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.16</span>Withdrawal from Post & Alteration of Address</h4>
+  <p class="hi-line">प्रेषक किसी भी सदस्य देश को भेजी वस्तु को वापस मंगा सकता है या पता बदल सकता है, जब तक वह deliver न हो चुकी हो — Section XIII में सूचीबद्ध कुछ देशों को छोड़कर।</p>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.23</span>Customs Declaration Forms<span class="en">Very high MCQ weightage</span></h4>
+  <p class="hi-line">दो प्रकार के फॉर्म: (1) हरा Customs Label (C-1) — Rs.3,400 (918.30 Gold Francs) से कम मूल्य की वस्तुओं हेतु। (2) विस्तृत Declaration Form (C-2, CP-3) — Rs.3,400 से अधिक मूल्य व सभी बीमित पत्रों हेतु अनिवार्य।</p>
+  <div class="fact">🔑 Green label (C-1) threshold: below Rs.3,400 | Detailed form (C-2/CP-3): above Rs.3,400 or any insured letter</div>
+  <div class="q"><b>Q.</b> हरा Customs लेबल किस मूल्य तक की वस्तुओं के लिए है? — <b>Ans: Rs.3,400 से कम</b></div>
+</div>
+
+<!-- Decision Tree: Customs form -->
+<div class="flow">
+  <div class="flow-box decision">वस्तु का मूल्य कितना है? / What is the article's value?</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">&lt; Rs.3,400</div><div class="flow-box end">Green Label C-1 पर्याप्त</div></div>
+    <div><div class="branch-label">&gt; Rs.3,400 या बीमित</div><div class="flow-box end">Detailed Form C-2/CP-3 अनिवार्य</div></div>
+  </div>
+</div>
+<!-- ================= SECTION III ================= -->
+<h2 class="sec" id="s3"><span class="num">III</span>CONDITIONS FOR VARIOUS ARTICLE CLASSES <span class="en" style="margin-left:6px;font-size:12px">विभिन्न वस्तु श्रेणियों की शर्तें</span></h2>
+
+<h3 class="sub">Weight & Size Comparison Chart / भार-आकार तुलना तालिका</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.25,26,30,39,40,45,46,52,53</span>All Letter-Post Items — One Table</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Article</th><th>Max Weight</th><th>Size Limits</th></tr>
+  <tr><td>Letter</td><td>2 kg</td><td>Max: L+W+D≤900mm, greatest dim ≤600mm; Min: 90×140mm</td></tr>
+  <tr><td>Post Card</td><td>—</td><td>Max 105×148mm; Min 90×140mm</td></tr>
+  <tr><td>Printed Papers/Regd. Newspaper</td><td>2 kg (Books/pamphlets: 5 kg)</td><td>Same as letters</td></tr>
+  <tr><td>Small Packet</td><td>1 kg (500g for some countries)</td><td>Same as letters</td></tr>
+  <tr><td>Literature for the Blind</td><td>7 kg</td><td>Same as letters</td></tr>
+  <tr><td>Aerogramme</td><td>3 grams</td><td>Folded: 110×220mm max; 90×140mm min</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Letter-2, Blind-7, Packet-1, Aero-3gm" → <span class="hi">पत्र 2 किलो, अंध-साहित्य 7 किलो (सबसे ज्यादा!), स्मॉल पैकेट 1 किलो, एयरोग्राम केवल 3 ग्राम</span></div></div>
+  <div class="q"><b>Q.</b> Literature for the Blind पैकेट की अधिकतम भार-सीमा? — <b>Ans: 7 kg</b> (सबसे अधिक छूट)</div>
+</div>
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.28</span>Unpaid/Insufficiently Paid Letters — Handling Charge</h4>
+  <p class="hi-line">अपर्याप्त प्रीपेड पत्रों पर कमी वसूली जाती है, साथ ही अधिकतम Rs.2.50 की handling charge भी जोड़ी जाती है।</p>
+  <div class="fact">🔑 Max handling charge on deficiency = Rs.2.50</div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.43</span>Bulk Bag System</h4>
+  <p class="hi-line">एक Bulk Bag का भार न्यूनतम 5 kg, अधिकतम 30 kg होना चाहिए। रजिस्टर्ड bulk bag की हानि पर अधिकतम क्षतिपूर्ति Rs.1,130 (300 Gold Francs)। रिक्त बैग 3 दिन में लौटाने होते हैं।</p>
+  <div class="fact">🔑 Bulk bag weight: 5–30 kg | Compensation for lost registered bag: Rs.1,130 | Empty bag return: 3 days</div>
+</div>
+
+<!-- ================= SECTION IV ================= -->
+<h2 class="sec" id="s4"><span class="num">IV</span>SPECIAL SERVICES IN LETTER POST <span class="en" style="margin-left:6px;font-size:12px">विशेष सेवाएं</span></h2>
+
+<h3 class="sub">Registration & Insurance / रजिस्ट्रेशन एवं बीमा</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.71,77,78</span>Registration Liability & Insurance Limit<span class="en">Top MCQ topic</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Item</th><th>Limit</th></tr>
+  <tr><td>PO liability for lost Registered letter</td><td>Rs.220 (60 Gold Francs) per article</td></tr>
+  <tr><td>PO liability for lost registered Bulk Bag</td><td>Rs.1,110–1,130 (300 Gold Francs)</td></tr>
+  <tr><td>Max insurance value (any insured letter)</td><td>Rs.10,000 (India's adopted limit)</td></tr>
+  <tr><td>Compulsory insurance items</td><td>Coin, bullion, bank/currency notes, securities payable to bearer, traveller's cheques, platinum, precious stones, jewellery, gold/silver articles</td></tr>
+  <tr><td>Enquiry window for loss claim</td><td>1 year from posting</td></tr>
+  <tr><td>Recovered article — option period</td><td>3 months (sender/addressee to exercise option)</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"220 for Regd, 10000 for Insured" → <span class="hi">रजिस्टर्ड पत्र हानि पर सिर्फ Rs.220, पर बीमित पत्र अधिकतम Rs.10,000 तक बीमा हो सकता है</span></div></div>
+  <div class="q"><b>Q.</b> रजिस्टर्ड (अबीमित) विदेशी पत्र की हानि पर अधिकतम क्षतिपूर्ति? — <b>Ans: Rs.220 (60 Gold Francs)</b></div>
+</div>
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.60</span>Unpaid Airmail — 75%/50% Rule</h4>
+  <p class="hi-line">पत्र/कार्ड: यदि prepaid राशि surcharge का कम-से-कम 75% (letters) या combined charge का 50% (postcards/aerogrammes) है, तो हवाई मार्ग से भेजा जाएगा (कमी वसूल कर)। अन्यथा surface से भेजा जाएगा।</p>
+  <div class="fact">🔑 Letters: 75% threshold | Postcards/Aerogrammes: 50% threshold</div>
+</div>
+
+<h3 class="sub">Perishable Biological Substances / नाशवान जैविक पदार्थ</h3>
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.88</span>Authorised Laboratories & Transmission Conditions</h4>
+  <p class="hi-line">केवल सूचीबद्ध प्रयोगशालाओं (जैसे ICMR नई दिल्ली, National Institute of Nutrition हैदराबाद, Haffkine Institute Bombay आदि) के बीच भेजे जा सकते हैं। केवल पंजीकृत हवाई पत्र के रूप में स्वीकार्य। संक्रामक पदार्थों पर हल्का हरा लेबल अनिवार्य।</p>
+  <div class="fact">🔑 Mode: Registered + Air only | Label: light-green (infectious) / violet (non-infectious)</div>
+</div>
+
+<h3 class="sub">Reply Coupons / रिप्लाई कूपन</h3>
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4><span class="clno">Cl.89,90</span>International Reply Coupons (IRC)</h4>
+  <p class="hi-line">एक व्यक्ति को एक बार में अधिकतम 10 International Reply Coupons बेचे जा सकते हैं। UPU सदस्य देश में डाक टिकट के बदले भुनाए जा सकते हैं।</p>
+  <div class="fact">🔑 Max IRC sold at one time to one person = 10</div>
+</div>
+
+<!-- ================= SECTION V ================= -->
+<h2 class="sec" id="s5"><span class="num">V</span>PARCEL POST <span class="en" style="margin-left:6px;font-size:12px">पार्सल डाक</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.96,97</span>Weight & Size Limits — Foreign Parcels</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Item</th><th>Limit</th></tr>
+  <tr><td>Max length</td><td>1.05 metre</td></tr>
+  <tr><td>Length + greatest circumference</td><td>≤ 2 metres</td></tr>
+  <tr><td>Min size</td><td>90mm × 140mm</td></tr>
+  <tr><td>General max weight</td><td>20 kg (many countries: only 10 kg)</td></tr>
+  <tr><td>Air parcel weight limit</td><td>10 kg (Quemuy, Taiwan: only 3 kg)</td></tr>
+  <tr><td>Branch Office insurance limit</td><td>Rs.600</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> विदेशी पार्सल की सामान्य अधिकतम भार-सीमा? — <b>Ans: 20 kg</b></div>
+</div>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.124</span>Compensation for Loss/Damage — Weight-wise Table<span class="en">High-value MCQ table</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Parcel Weight</th><th>Max Compensation</th></tr>
+  <tr><td>Up to 5 kg</td><td>Rs.300</td></tr>
+  <tr><td>More than 5 kg, up to 10 kg</td><td>Rs.500</td></tr>
+  <tr><td>More than 10 kg, up to 15 kg</td><td>Rs.660</td></tr>
+  <tr><td>More than 15 kg, up to 20 kg</td><td>Rs.830</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"300-500-660-830 for 5-10-15-20" → <span class="hi">हर 5 किलो पर मुआवज़ा बढ़ता क्रम में: 300, 500, 660, 830</span></div></div>
+  <div class="q"><b>Q.</b> 8 किलो के अबीमित पार्सल हेतु अधिकतम क्षतिपूर्ति? — <b>Ans: Rs.500 (5-10kg स्लैब)</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.104</span>Undeliverable Parcel — Detention & Redirection</h4>
+  <p class="hi-line">7 दिनों में delivery न होने पर 8वें दिन से warehousing charge। Poste Restante पार्सल अधिकतम 1 माह (VP: 7 दिन)। Redirection fee = आधी parcel दर (अंदरूनी redirection हेतु)।</p>
+  <div class="fact">🔑 Same 7-day/8th-day rule as letters | Redirection fee = half rate</div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.126</span>"Franc de Droits" (Free of All Charges) Service</h4>
+  <p class="hi-line">प्रेषक कस्टम ड्यूटी व अन्य शुल्क अग्रिम जमा कर सकता है ताकि पार्सल पाने वाले को कोई शुल्क न देना पड़े। जमा राशि सामान्यतः घोषित मूल्य का 75% (न्यूनतम Rs.25)।</p>
+  <div class="fact">🔑 Deposit = 75% of declared value, min Rs.25</div>
+</div>
+
+<!-- ================= SECTION VI ================= -->
+<h2 class="sec" id="s6"><span class="num">VI</span>MONEY ORDERS <span class="en" style="margin-left:6px;font-size:12px">विदेशी मनी ऑर्डर</span></h2>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.129,130</span>Foreign MO — Countries & Currency</h4>
+  <p class="hi-line">विदेशी मनी ऑर्डर सेवा चुनिंदा देशों को उपलब्ध है — मुद्रा या तो Sterling, Rupee, US Dollar या Canadian Dollar में होती है (देश अनुसार तय)।</p>
+</div>
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.145,146</span>Telegraphic Money Orders (TMO) — Currency Groups</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Currency</th><th>Countries</th></tr>
+  <tr><td>Rupee TMO</td><td>Bhutan, Burma, Sri Lanka, Malawi, Malaysia, Mauritius, Seychelles</td></tr>
+  <tr><td>Sterling TMO</td><td>Great Britain & N. Ireland, Iraq, Ireland, Yemen (PDR)</td></tr>
+  </table></div>
+</div>
+
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4><span class="clno">Cl.144</span>Air Mail Money Orders</h4>
+  <p class="hi-line">वहीं सीमाएं व शर्तें लागू जो सामान्य विदेशी MO पर लागू होती हैं, केवल हवाई शुल्क (air mail charge) अतिरिक्त जोड़ा जाता है — डाक टिकट के रूप में भुगतान योग्य।</p>
+</div>
+
+<!-- EXCLUSION NOTE -->
+<div class="excl-note">🚫 Section VII (British & Irish Postal Orders) और Section VIII (V.P. & C.O.D. Services) यहाँ जानबूझकर शामिल नहीं किए गए हैं।</div>
+
+<!-- ================= SECTION IX ================= -->
+<h2 class="sec" id="s9"><span class="num">IX</span>CUSTOMS CONTROL <span class="en" style="margin-left:6px;font-size:12px">सीमा शुल्क नियंत्रण</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.179,180</span>Nature & Points of Control</h4>
+  <p class="hi-line">नियंत्रण Indian Customs Act, 1962 पर आधारित है, यह देश में प्रवेश/निकास बिंदु पर लगाया जाता है। जब्ती, जांच व शुल्क वसूली केवल चुनिंदा "Foreign Post Offices" या "Sub-Foreign Post Offices" में होती है। डाक विभाग केवल Customs निर्देशों का पालन करता है — जिम्मेदार नहीं होता।</p>
+  <div class="fact">🔑 Legal basis: Customs Act, 1962 | Execution points: Foreign Post Offices / Sub-Foreign Post Offices</div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.185</span>Customs Duty Payment & Delivery — Window Threshold</h4>
+  <p class="hi-line">Rs.50 से अधिक customs duty (कुछ बड़े शहरों में Rs.100 तक) वाली वस्तुएं केवल डाकघर की खिड़की पर वितरित होती हैं। पावती हेतु आवेदन डिलीवरी के 10 दिन के भीतर देना होगा।</p>
+  <div class="fact">🔑 Window-delivery threshold: &gt;Rs.50 (large cities: &gt;Rs.100) | Duty receipt application window: 10 days</div>
+  <div class="q"><b>Q.</b> Customs Duty रसीद के लिए आवेदन कितने दिनों में करना होगा? — <b>Ans: 10 days</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.186</span>Customs Clearance Fee</h4>
+  <p class="hi-line">जिस वस्तु पर Customs Duty लगती है, उस पर एक अतिरिक्त postal customs clearance fee भी वसूली जाती है (Duty से अलग)।</p>
+</div>
+<!-- ================= SECTION X ================= -->
+<h2 class="sec" id="s10"><span class="num">X</span>PROHIBITIONS & RESTRICTIONS <span class="en" style="margin-left:6px;font-size:12px">निषेध एवं प्रतिबंध</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.189-192</span>International Agreement-based Prohibitions<span class="en">3 categories</span></h4>
+  <p class="hi-line">base तीन प्रकार: (a) वस्तु की प्रकृति/श्रेणी पर आधारित (जैसे पत्रों में तीसरे पक्ष का पत्र नहीं) (b) सुरक्षा हेतु (विस्फोटक, तेज़ धार वाले औजार, जीवित प्राणी — मधुमक्खी/जोंक/रेशम कीट छोड़कर) (c) विशेष सामाजिक उद्देश्य हेतु (अफीम, मॉर्फिया, कोकीन व अन्य नशीले पदार्थ; अश्लील सामग्री)।</p>
+  <div class="fact">🔑 Living creatures allowed: Bees, Leeches, Silkworms only</div>
+  <div class="q"><b>Q.</b> कौन से जीवित प्राणी डाक द्वारा भेजे जा सकते हैं? — <b>Ans: Bees, Leeches, Silkworms</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.194</span>Restrictions under Indian Post Office Act</h4>
+  <p class="hi-line">लॉटरी सामग्री (सरकार-अधिकृत छोड़कर), Press & Registration of Books Act 1867 का उल्लंघन करने वाले समाचार पत्र, राजद्रोहात्मक सामग्री (IPC धारा 124-A), कानून-व्यवस्था के विरुद्ध सामग्री — सभी निषिद्ध।</p>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.197</span>FERA Restrictions — Gold/Currency/Jewellery Limits</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Item</th><th>Limit</th></tr>
+  <tr><td>Silver coins from Nepal (import)</td><td>Up to Nepalese Rs.20 at a time</td></tr>
+  <tr><td>Gandhi coins (export, per denomination)</td><td>Max 5 coins (max 2 "proof coins")</td></tr>
+  <tr><td>Jewellery/precious stones to Nepal</td><td>Up to Rs.2,000 per day</td></tr>
+  <tr><td>Jewellery to other countries</td><td>Without limit, with foreign exchange dealer certificate</td></tr>
+  <tr><td>PP Form waived if value less than</td><td>Rs.50 (no forex transaction)</td></tr>
+  </table></div>
+  <div class="fact">🔑 PP Form threshold: Rs.50 | Nepal jewellery/day limit: Rs.2,000</div>
+</div>
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.196</span>Import Value Ceilings (Personal Use) — Comparison</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Item Category</th><th>C.I.F. Value Ceiling</th></tr>
+  <tr><td>Drugs/medicines (individual)</td><td>Rs.200 at a time</td></tr>
+  <tr><td>Drugs/medicines (hospital)</td><td>Rs.1,000 at a time</td></tr>
+  <tr><td>Medical/surgical instruments (hospital)</td><td>Rs.2,000 at a time</td></tr>
+  <tr><td>X-ray films/diagnostic agents</td><td>Rs.1,000 at a time</td></tr>
+  <tr><td>Scientific instruments</td><td>Rs.1,000 at a time</td></tr>
+  <tr><td>Artist's materials (individual)</td><td>Rs.150 at a time</td></tr>
+  <tr><td>High purity chemicals</td><td>Rs.500 at a time</td></tr>
+  <tr><td>Technical/scientific books</td><td>Rs.500 at a time</td></tr>
+  <tr><td>Agricultural tractor spare parts</td><td>Rs.1,250 per financial year</td></tr>
+  <tr><td>General goods (Asian countries)</td><td>Rs.80</td></tr>
+  <tr><td>General goods (non-Asian countries)</td><td>Rs.160</td></tr>
+  </table></div>
+</div>
+
+<!-- ================= SECTION XI ================= -->
+<h2 class="sec" id="s11"><span class="num">XI</span>ENQUIRIES & COMPLAINTS <span class="en" style="margin-left:6px;font-size:12px">पूछताछ एवं शिकायतें</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.200</span>Time Limits for Enquiries — Master Table<span class="en">MOST asked topic in Part II</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Type</th><th>Time Limit</th></tr>
+  <tr><td>Letter mail / Parcel mail complaints</td><td>1 year from day after posting</td></tr>
+  <tr><td>Money Order complaints</td><td>1 year from date of issue</td></tr>
+  <tr><td>TMO delay complaints</td><td>Same period as foreign telegram complaints</td></tr>
+  <tr><td>British/Irish Postal Order enquiries</td><td>1 year from purchase (duplicate for &gt;£1 orders: up to 3 years)</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Everything = 1 Year in Foreign Post" → <span class="hi">विदेश डाक में लगभग हर शिकायत/पूछताछ की समय-सीमा 1 वर्ष है (अपवाद: महंगे British Postal Order duplicate = 3 वर्ष)</span></div></div>
+  <div class="q"><b>Q.</b> विदेशी पत्र/पार्सल की शिकायत की सामान्य समय-सीमा? — <b>Ans: 1 year</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.201</span>Enquiry Fee & Required Documents</h4>
+  <p class="hi-line">Enquiry Fee माफ है यदि Advice of Delivery शुल्क पहले ही चुकाया गया हो; Registered "Blind Literature" पैकेट के लिए भी शुल्क नहीं लगता। Accountable articles (Registered/Insured/VP/MO) की जांच हेतु मूल रसीद देनी आवश्यक है।</p>
+  <div class="fact">🔑 Fee waived for: Advice-of-Delivery-paid articles + Registered Blind Literature</div>
+</div>
+<!-- ================= SECTION XII & XIII (brief) ================= -->
+<h2 class="sec"><span class="num">XII/XIII</span>COUNTRY-WISE DETAILS <span class="en" style="margin-left:6px;font-size:12px">देश-विशिष्ट विवरण (संक्षिप्त)</span></h2>
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Reference Tables — Overview Only</h4>
+  <p class="hi-line">Section XII प्रत्येक देश के लिए विशिष्ट निषेध/प्रतिबंध सूचीबद्ध करता है (A–Z देश)। Section XIII प्रत्येक देश में उपलब्ध वैकल्पिक सेवाओं (बीमा, एयर पार्सल, 10kg से ऊपर सतह पार्सल) का विवरण देता है। ये विशुद्ध संदर्भ तालिकाएं हैं — परीक्षा में इनसे प्रत्यक्ष प्रश्न की संभावना कम, केवल सामान्य awareness के लिए है।</p>
+  <p class="en-line">Section XII lists country-specific prohibitions/restrictions (A–Z). Section XIII details optional services (insurance, air parcel, surface parcel above 10kg) available per country. These are pure reference tables — low direct MCQ probability, general awareness only.</p>
+</div>
+
+<!-- ============ MASTER TIME-LIMIT TABLE ============ -->
+<h2 class="sec"><span class="num">⏱️</span>MASTER TIME-LIMIT COMPARISON <span class="en" style="margin-left:6px;font-size:12px">सभी समय-सीमाएं एक तालिका में</span></h2>
+<div class="tbl-wrap"><table>
+<tr><th>Topic</th><th>Time Limit</th></tr>
+<tr><td>Undeliverable inward article — detention before warehousing</td><td>7 days</td></tr>
+<tr><td>Poste Restante detention (non-VP)</td><td>1 month</td></tr>
+<tr><td>Poste Restante detention (VP)</td><td>7 days</td></tr>
+<tr><td>Insured/Registered article loss enquiry window</td><td>1 year</td></tr>
+<tr><td>Recovered lost article — option to reclaim</td><td>3 months</td></tr>
+<tr><td>Letter mail/parcel mail complaint (general)</td><td>1 year</td></tr>
+<tr><td>Money Order complaint</td><td>1 year</td></tr>
+<tr><td>British/Irish Postal Order enquiry (normal)</td><td>1 year</td></tr>
+<tr><td>British Postal Order duplicate (&gt;£1 denomination)</td><td>Up to 3 years</td></tr>
+<tr><td>Customs duty receipt application</td><td>10 days</td></tr>
+<tr><td>Empty bulk bag return</td><td>3 days</td></tr>
+<tr><td>Drawback of duty claim processing (Customs)</td><td>Within 1 week</td></tr>
+</table></div>
+
+<!-- ============ COMPENSATION COMPENSATION ============ -->
+<h2 class="sec"><span class="num">💰</span>COMPENSATION MASTER TABLE <span class="en" style="margin-left:6px;font-size:12px">क्षतिपूर्ति तुलना तालिका</span></h2>
+<div class="tbl-wrap"><table>
+<tr><th>Article Type</th><th>Max Compensation</th></tr>
+<tr><td>Registered letter (uninsured, lost)</td><td>Rs.220 (60 Gold Francs)</td></tr>
+<tr><td>Registered Bulk Bag (lost)</td><td>Rs.1,130 (300 Gold Francs)</td></tr>
+<tr><td>Insured letter</td><td>Up to insured value (max Rs.10,000)</td></tr>
+<tr><td>Uninsured parcel ≤5 kg</td><td>Rs.300</td></tr>
+<tr><td>Uninsured parcel 5–10 kg</td><td>Rs.500</td></tr>
+<tr><td>Uninsured parcel 10–15 kg</td><td>Rs.660</td></tr>
+<tr><td>Uninsured parcel 15–20 kg</td><td>Rs.830</td></tr>
+<tr><td>Insured parcel</td><td>Up to insured value</td></tr>
+</table></div>
+<!-- ============ DECISION TREE: Compensation eligibility ============ -->
+<h2 class="sec"><span class="num">🔀</span>COMPENSATION ELIGIBILITY DECISION TREE</h2>
+<div class="flow">
+  <div class="flow-box decision">क्या वस्तु insured थी? / Was the article insured?</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">हाँ / Yes</div><div class="flow-box end">क्षतिपूर्ति = बीमित मूल्य तक (अधिकतम Rs.10,000 पत्र हेतु)</div></div>
+    <div><div class="branch-label">नहीं / No (Registered only)</div><div class="flow-box end">क्षतिपूर्ति = Rs.220 तक (पत्र) / भार-अनुसार स्लैब (पार्सल)</div></div>
+  </div>
+  <div class="flow-arrow">⚠️ शर्त: enquiry 1 वर्ष के भीतर करनी होगी, अन्यथा दावा अमान्य</div>
+</div>
+
+<!-- ============ TIMELINE ============ -->
+<h2 class="sec"><span class="num">📅</span>KEY HISTORICAL DATES <span class="en" style="margin-left:6px;font-size:12px">महत्वपूर्ण तिथियाँ</span></h2>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">1867</div><div class="tl-text">Press & Registration of Books Act (referenced for newspaper prohibitions)</div></div>
+  <div class="tl-item"><div class="tl-year">1884</div><div class="tl-text">Postal Life Insurance introduced (Part I context)</div></div>
+  <div class="tl-item"><div class="tl-year">1898</div><div class="tl-text">Indian Post Office Act (Section 12, 19, 61 referenced for penalties/prohibitions)</div></div>
+  <div class="tl-item"><div class="tl-year">1914</div><div class="tl-text">Destructive Insects & Pests Act (plants/insects import rules)</div></div>
+  <div class="tl-item"><div class="tl-year">1930</div><div class="tl-text">Dangerous Drugs Act (narcotics prohibition basis)</div></div>
+  <div class="tl-item"><div class="tl-year">1953</div><div class="tl-text">Coir Industry Act (export control reference)</div></div>
+  <div class="tl-item"><div class="tl-year">1961</div><div class="tl-text">Asian-Pacific Postal Union (APPU) established, HQ Manila</div></div>
+  <div class="tl-item"><div class="tl-year">1962</div><div class="tl-text">Customs Act enacted (Section 11, 20, 75 — core basis for Section IX & X)</div></div>
+  <div class="tl-item"><div class="tl-year">1973</div><div class="tl-text">India joined the APPU</div></div>
+  <div class="tl-item"><div class="tl-year">1986</div><div class="tl-text">Post Office Guide Part II — this edition published</div></div>
+</div>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-box" id="revision">
+  <h3>🎯 ONE-PAGE REVISION SHEET / एक-पृष्ठ रिवीज़न शीट</h3>
+  <div class="rev-grid">
+    <div class="rev-item"><b>UPU membership</b>Nearly all world countries</div>
+    <div class="rev-item"><b>APPU established / HQ</b>1961 / Manila</div>
+    <div class="rev-item"><b>India joined APPU</b>1973</div>
+    <div class="rev-item"><b>APPU concessional rate ceiling</b>85% of Intl. rate</div>
+    <div class="rev-item"><b>Letter weight limit</b>2 kg</div>
+    <div class="rev-item"><b>Literature for Blind weight</b>7 kg (highest)</div>
+    <div class="rev-item"><b>Aerogramme weight</b>3 grams</div>
+    <div class="rev-item"><b>Green Customs label (C-1) threshold</b>&lt;Rs.3,400</div>
+    <div class="rev-item"><b>Registered letter compensation</b>Rs.220</div>
+    <div class="rev-item"><b>Max insurance (any letter)</b>Rs.10,000</div>
+    <div class="rev-item"><b>Branch PO parcel insurance limit</b>Rs.600</div>
+    <div class="rev-item"><b>Parcel compensation (5/10/15/20kg)</b>300/500/660/830</div>
+    <div class="rev-item"><b>Foreign parcel max weight</b>20 kg (many: 10 kg)</div>
+    <div class="rev-item"><b>Bulk bag weight range</b>5–30 kg</div>
+    <div class="rev-item"><b>Customs duty window-delivery threshold</b>&gt;Rs.50 (&gt;Rs.100 metros)</div>
+    <div class="rev-item"><b>PP Form waiver threshold</b>Value &lt; Rs.50</div>
+    <div class="rev-item"><b>Standard enquiry/complaint time-limit</b>1 year</div>
+    <div class="rev-item"><b>Max IRC sold at a time</b>10</div>
+    <div class="rev-item"><b>Warehousing charge starts</b>Day 8</div>
+    <div class="rev-item"><b>Poste Restante detention</b>1 month (VP: 7 days)</div>
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION ============ -->
+<div class="lastday" id="lastday">
+  <h3>🔥 LAST-DAY REVISION NOTES / परीक्षा से एक दिन पहले</h3>
+  <ul>
+    <li><b>"1 वर्ष" रटें:</b> Part II में लगभग हर enquiry/complaint की समय-सीमा 1 वर्ष है — पत्र, पार्सल, मनी आदेश सब कुछ। यह Part I (जहां 3/6/12 माह मिश्रित हैं) से अलग है।</li>
+    <li><b>ट्रिकी तुलना:</b> Registered (uninsured) letter compensation = <b>Rs.220</b> जबकि Insured letter अधिकतम <b>Rs.10,000</b> तक — 45 गुना अंतर, भ्रमित न हों!</li>
+    <li><b>Weight limits का क्रम याद रखें:</b> Aerogramme (3gm) &lt; Small Packet (1kg) &lt; Letter/Printed Papers (2kg) &lt; Books (5kg) &lt; Literature for Blind (7kg) &lt; Parcel (20kg)।</li>
+    <li><b>APPU बनाम UPU:</b> UPU = विश्वव्यापी; APPU = केवल Asia-Pacific क्षेत्र, स्थापना 1961, भारत 1973 में शामिल हुआ — तारीखें न बदलें।</li>
+    <li><b>Customs threshold:</b> Rs.50 सामान्य शहरों के लिए, पर बड़े महानगरों (metros) में यह सीमा Rs.100 है — दोनों याद रखें।</li>
+    <li><b>Parcel compensation स्लैब:</b> हर 5 किलो पर राशि बढ़ती है पर बराबर अनुपात में नहीं (300→500→660→830) — याद रखने के लिए क्रम याद करें, गणना मत करें।</li>
+    <li>Section VII (British/Irish Postal Orders) और VIII (VP/COD) इस नोट्स में शामिल नहीं हैं — यदि सिलेबस में हैं तो अलग से तैयार करें।</li>
+    <li>Bulk Bag: वजन सीमा 5-30 किलो, गुम होने पर मुआवज़ा Rs.1,130 — Registration Fee अलग से bulk bags पर ही लगती है।</li>
+  </ul>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  ✈️ India Post IP Exam Portal · Post Office Guide Part II — Foreign Post (1986 Edition) · Sections VII & VIII excluded as requested · Prepared for departmental exam revision
+</footer>
+
+<button class="pdf-btn" onclick="window.print()">⬇️ Save as PDF</button>
+
+</body>
+</html>

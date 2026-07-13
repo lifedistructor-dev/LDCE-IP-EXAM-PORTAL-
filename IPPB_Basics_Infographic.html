@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Post Payments Bank (IPPB) — Basics | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+.header{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 55%,var(--blue) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .hi{font-size:1.15rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.95rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.85rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.85rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.76rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.75rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+.alertbox{background:#FFF3CD;border:2px solid var(--yellow);border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:0.78rem;}
+.alertbox b{color:var(--gold-dark);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">इंडिया पोस्ट पेमेंट्स बैंक (IPPB)</span></h1>
+  <div class="en">India Post Payments Bank — Basics, Objectives, Functions & Services</div>
+  <div class="sub">Department of Posts | Syllabus Item: India Post Payments Bank — Basics of IPPB Functioning</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">🏦 IPPB Basics</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="alertbox">⚠️ <b>महत्वपूर्ण नोट:</b> यह infographic एक सामान्य ज्ञान (UPSC-स्तरीय) स्रोत पर आधारित है — इसमें दिए गए कुछ आंकड़े (जैसे accounts संख्या, Post Office count) पुराने या अनुमानित हो सकते हैं। CBS Manual/Annual Report में दिए गए <b>वर्तमान आधिकारिक आंकड़े</b> (जैसे 1.64 लाख Access Points, 11.06 करोड़ Accounts) को प्राथमिकता दें — यह फाइल केवल Objectives/Functions/Features की Concept-level समझ हेतु है।</div>
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. IPPB क्या है? — परिचय</a>
+    <a href="#ch2">2. Payment Banks — अवधारणा</a>
+    <a href="#ch3">3. IPPB के उद्देश्य</a>
+    <a href="#ch4">4. IPPB के कार्य (Functions)</a>
+    <a href="#ch5">5. खातों के प्रकार व सीमाएं</a>
+    <a href="#ch6">6. सेवाएं (Services) व Products</a>
+    <a href="#ch7">7. मुख्य विशेषताएं (Features)</a>
+    <a href="#ch8">8. IPPB का प्रदर्शन (Performance)</a>
+    <a href="#ch9">9. अवसर व चुनौतियां</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">🏦 अध्याय 1 → IPPB क्या है? / What is IPPB?</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3><span class="hi">परिभाषा / Definition</span></h3>
+      <p class="hi">India Post Payments Bank (IPPB), India Post का एक अंग है, जो Department of Posts (Ministry of Communications, Government of India) के स्वामित्व में है। यह Savings Accounts, Money Transfer, तीसरे पक्ष के माध्यम से बीमा, तथा Bill/Utility Payments प्रदान करता है।</p>
+      <p class="en">IPPB is a component of India Post, owned by the Department of Posts, providing savings accounts, money transfers, insurance through third parties, and bill/utility payments.</p>
+    </div>
+
+    <table>
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>स्वामित्व</td><td>भारत सरकार (Ministry of Communications के अंतर्गत)</td></tr>
+      <tr><td>Launch वर्ष</td><td>2018</td></tr>
+      <tr><td>मुख्यालय (Headquarters)</td><td>New Delhi</td></tr>
+      <tr><td>लक्षित वर्ग</td><td>Unbanked व Underbanked जनसंख्या</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2018 में New Delhi से शुरू" — IPPB का वर्ष व मुख्यालय याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB किस मंत्रालय के अंतर्गत आता है? <b>(Ministry of Communications)</b> IPPB का मुख्यालय कहां है? <b>(New Delhi)</b> IPPB कब लॉन्च हुई? <b>(2018)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">💳 अध्याय 2 → Payment Banks — अवधारणा / Concept</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3 class="hi">Payment Banks क्या हैं?</h3>
+      <p class="hi">Payment Banks भारत में <b>2014</b> में शुरू किया गया एक नया प्रकार का बैंक है, जिसे Reserve Bank of India (RBI) द्वारा लाइसेंस दिया जाता है। ये मूल Banking सेवाएं प्रदान करते हैं — जमा स्वीकार करना, Debit Card जारी करना, धन हस्तांतरण।</p>
+      <p class="en">Payment banks were introduced in India in 2014, licensed by RBI to provide basic banking services — accept deposits, issue debit cards, and transfer money.</p>
+    </div>
+
+    <div class="penalty-box">🔴 <b>महत्वपूर्ण अपवाद (Exception):</b> Payment Banks को <b>पैसा उधार देने (Lending)</b> या <b>Credit Card जारी करने</b> की अनुमति नहीं है।</div>
+
+    <div class="dtree">
+      <div class="q">Q: Payment Bank नियमित Commercial Bank से कैसे अलग है?</div>
+      <div class="yn">➡ जमा स्वीकार कर सकते हैं ✅, Debit Card जारी कर सकते हैं ✅</div>
+      <div class="yn">➡ Loan नहीं दे सकते ❌, Credit Card जारी नहीं कर सकते ❌</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2014 में जन्मा, पर Loan से मना" — Payment Bank की मूल सीमा</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Payment Banks भारत में कब शुरू किए गए? <b>(2014)</b> Payment Banks क्या नहीं कर सकते? <b>(पैसा उधार देना या Credit Card जारी करना)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">🎯 अध्याय 3 → IPPB के उद्देश्य / Objectives</div>
+  <div class="chapter-body">
+
+    <div class="mindmap">
+      <div class="root">🎯 IPPB के मुख्य उद्देश्य</div>
+      <div class="branches">
+        <div class="branch">डाक सेवा का विशाल नेटवर्क — देश के हर क्षेत्र तक पहुंच</div>
+        <div class="branch">आम आदमी हेतु सुलभ, सस्ता व विश्वसनीय बैंक स्थापित करना</div>
+        <div class="branch">Department of Posts के Network का उपयोग करके Financial Inclusion</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Accessible-Inexpensive-Dependable" — IPPB के 3 मूल स्तंभ</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB किस नेटवर्क का उपयोग करके स्थापित हुआ? <b>(Department of Posts का व्यापक Network)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">⚙️ अध्याय 4 → IPPB के कार्य / Functions</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">मुख्य कार्य</h3>
+      <table>
+        <tr><th>कार्य / Function</th><th>विवरण</th></tr>
+        <tr><td>Social Security Payments</td><td>MNREGA वेतन, Direct Benefit Transfer (DBT)</td></tr>
+        <tr><td>तीसरे पक्ष की सेवाएं</td><td>बीमा व Mutual Funds तक पहुंच</td></tr>
+        <tr><td>Debit Card</td><td>निःशुल्क जारी, वार्षिक रखरखाव शुल्क <b>₹100</b></td></tr>
+        <tr><td>वित्तीय सेवाएं (डाकघर नेटवर्क से)</td><td>POSB Schemes, PLI, Mutual Funds, Money Remittance, Forex</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — 3 प्रकार के खाते</span>
+      <table>
+        <tr><th>खाता प्रकार</th></tr>
+        <tr><td>Safal</td></tr>
+        <tr><td>Basic Savings Bank Deposit Account (BSBDA)</td></tr>
+        <tr><td>Sugam</td></tr>
+      </table>
+      <p style="font-size:0.72rem;">BSBDA Small-Saral IPPB, कम लागत पर Forex सेवाएं भी प्रदान करता है।</p>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Deposit Limit:</b> IPPB Current/Savings Account में अधिकतम <b>₹1 लाख</b> जमा हो सकती है। ब्याज दर <b>4%</b> (savings account पर)।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Safal-BSBDA-Sugam = 3 खाते" — IPPB खातों के नाम याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB में अधिकतम जमा सीमा कितनी है? <b>(₹1 लाख)</b> Debit Card का वार्षिक शुल्क? <b>(₹100)</b> IPPB में कितने प्रकार के Savings Accounts हैं? <b>(3 — Safal, BSBDA, Sugam)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--red-dark);">💰 अध्याय 5 → खातों के प्रकार व सीमाएं / Account Types & Limits</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3 class="hi">End-of-Day (EOD) Balance नियम</h3>
+      <p class="hi">यदि किसी ग्राहक के खाते में <b>₹1 लाख से अधिक</b> राशि हो जाए, तो अतिरिक्त राशि स्वतः <b>Post Office Savings Account</b> में स्थानांतरित हो जाती है।</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: निकासी (Withdrawal) की सीमा क्या है?</div>
+      <div class="yn">➡ Regular व Digital Savings Accounts: निःशुल्क, असीमित निकासी</div>
+      <div class="yn">➡ Basic Savings Accounts: <b>4 निःशुल्क निकासी/माह</b></div>
+    </div>
+
+    <table>
+      <tr><th>सुविधा</th><th>नियम</th></tr>
+      <tr><td>न्यूनतम शेष राशि (Minimum Balance)</td><td>आवश्यक नहीं — शून्य बैलेंस से खाता खुल सकता है</td></tr>
+      <tr><td>खाता खोलने का माध्यम (Digital Savings)</td><td>Mobile App 'IPPB Mobile' से भी खुल सकता है</td></tr>
+      <tr><td>Post Office Savings Account से Linkage</td><td>अनुमति है — ग्राहक Link कर सकते हैं</td></tr>
+      <tr><td>Free Statement</td><td>प्रति तिमाही 1 (कम से कम 1 लेन-देन आवश्यक)</td></tr>
+      <tr><td>अतिरिक्त Statement शुल्क</td><td>₹50</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1 लाख से ज्यादा = POSA में शिफ्ट" — EOD नियम याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> ₹1 लाख से अधिक राशि होने पर क्या होता है? <b>(अतिरिक्त राशि Post Office Savings Account में स्थानांतरित)</b> Basic Savings Account में मासिक निःशुल्क निकासी सीमा? <b>(4)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#00695C;">🛎️ अध्याय 6 → सेवाएं व Products / Services</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Door Step Banking</span>
+      <p class="hi">खाता खोलना, नकद जमा/निकासी, धन हस्तांतरण, Recharge, Bill Payments, तथा Insurance/Loan/Investment जैसी तृतीय-पक्ष सेवाएं — सभी Doorstep Banking के माध्यम से उपलब्ध।</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">📲 IPPB के 9 Products/Services</div>
+      <div class="branches">
+        <div class="branch">QR Card</div>
+        <div class="branch">Doorstep Banking</div>
+        <div class="branch">Payments</div>
+        <div class="branch">Insurance</div>
+        <div class="branch">Merchant Banking (Business)</div>
+        <div class="branch">Savings Account</div>
+        <div class="branch">Current Account</div>
+        <div class="branch">Mobile/SMS/Missed Call/Phone Banking</div>
+      </div>
+    </div>
+
+    <table>
+      <tr><th>Fund Transfer विकल्प</th></tr>
+      <tr><td>RTGS</td></tr>
+      <tr><td>IMPS (तत्काल, 24x7 उपलब्ध)</td></tr>
+      <tr><td>NEFT</td></tr>
+    </table>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3 class="hi">Direct Benefit Transfer (DBT)</h3>
+      <p class="hi">DBT योजना बिचौलियों को हटाकर लाभ/सब्सिडी सीधे लाभार्थी के खाते में भेजने हेतु बनाई गई। IPPB ने DBT का लाभ उठाना आसान बनाया है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "IMPS = 24x7 तुरंत" — तीनों Transfer विकल्पों में सबसे तेज़</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB किन 3 माध्यमों से Fund Transfer प्रदान करता है? <b>(RTGS, IMPS, NEFT)</b> DBT का पूर्ण नाम? <b>(Direct Benefit Transfer)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#6A1B9A;">⭐ अध्याय 7 → मुख्य विशेषताएं / Major Features</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <table>
+        <tr><th>Feature</th><th>विवरण</th></tr>
+        <tr><td>तिमाही ब्याज दर</td><td>4% (सभी 3 प्रकार के खातों पर)</td></tr>
+        <tr><td>न्यूनतम शेष आवश्यकता</td><td>शून्य (Zero Balance) — दंड नहीं लगता</td></tr>
+        <tr><td>Regular/Digital Account निकासी</td><td>असीमित, निःशुल्क</td></tr>
+        <tr><td>Basic Savings Account निकासी</td><td>4 निःशुल्क/माह</td></tr>
+        <tr><td>Digital Account खोलना</td><td>'IPPB Mobile' App से संभव</td></tr>
+        <tr><td>Max EOD Balance</td><td>₹1 लाख (अधिक राशि POSA में स्वतः स्थानांतरित)</td></tr>
+        <tr><td>Free Statement</td><td>तिमाही 1 बार (शर्त: कम से कम 1 लेन-देन)</td></tr>
+        <tr><td>अतिरिक्त Statement शुल्क</td><td>₹50</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "4% ब्याज, Zero Balance, 1 लाख EOD" — Features का सार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB के सभी खातों पर ब्याज दर क्या है? <b>(4%, तिमाही)</b> न्यूनतम बैलेंस न रखने पर क्या दंड है? <b>(कोई दंड नहीं)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:#37474F;">📊 अध्याय 8 → IPPB का प्रदर्शन / Performance</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — ऐतिहासिक आंकड़े (स्रोत के अनुसार)</span>
+      <p class="hi">IPPB ने 5 करोड़ Digital व Paperless खाते खोले — 1.36 लाख Post Offices (जिनमें 1.20 लाख ग्रामीण) व 1.47 लाख Doorstep Banking Providers की सहायता से।</p>
+    </div>
+    <table>
+      <tr><th>बिंदु</th><th>विवरण (स्रोत अनुसार)</th></tr>
+      <tr><td>महिला खाताधारक</td><td>48%</td></tr>
+      <tr><td>पुरुष खाताधारक</td><td>52%</td></tr>
+      <tr><td>NPCI, RBI, UIDAI के साथ Interoperability</td><td>13 भाषाओं में उपलब्ध</td></tr>
+    </table>
+    <div class="penalty-box">⚠️ <b>ध्यान दें:</b> ये आंकड़े स्रोत दस्तावेज़ के अनुसार पुराने हो सकते हैं — Annual Report 2024-25 के अनुसार वर्तमान आंकड़े अधिक हैं (1.64 लाख Access Points, 11.06 करोड़ Accounts, 48% महिला)।</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB कितनी भाषाओं में सेवाएं प्रदान करता है? <b>(13)</b></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:#263238;">🚀 अध्याय 9 → अवसर व चुनौतियां / Opportunities & Challenges</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier green">🟢 त्वरित रिवीजन — अवसर (Opportunities)</span>
+      <div class="mindmap">
+        <div class="branches">
+          <div class="branch">Biometric/QR प्रमाणीकरण — Password-free पारदर्शिता</div>
+          <div class="branch">Digital India व Jan Dhan Yojana से संरेखण</div>
+          <div class="branch">व्यापक PoD Network से प्रतिस्पर्धात्मक बढ़त</div>
+          <div class="branch">Aadhaar से जुड़ाव — पारदर्शिता सुनिश्चित</div>
+          <div class="branch">रोजगार सृजन की संभावना</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — चुनौतियां (Challenges)</span>
+      <table>
+        <tr><th>चुनौती</th></tr>
+        <tr><td>निजी क्षेत्र (Fino, Airtel Payments Bank) से प्रतिस्पर्धा</td></tr>
+        <tr><td>Postmen के प्रशिक्षण हेतु उच्च व्यय व श्रम आवश्यक</td></tr>
+        <tr><td>प्रति लेन-देन उच्च सेवा शुल्क</td></tr>
+        <tr><td>तकनीकी रूप से उन्नत — जनता को शिक्षित करने में समय व प्रयास</td></tr>
+        <tr><td>व्यापार मॉडल पूर्णतः Transaction Fees पर निर्भर</td></tr>
+        <tr><td>सीधे Loan जारी न कर पाने से राजस्व सृजन में कठिनाई</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Fino-Airtel = प्रतिस्पर्धी" — Private Payment Bank Competitors याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB की सबसे बड़ी राजस्व चुनौती क्या है? <b>(Loan जारी न कर पाना — केवल Transaction Fees पर निर्भरता)</b> IPPB के 2 निजी प्रतिस्पर्धियों के नाम बताएं। <b>(Fino, Airtel Payments Bank)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>IPPB:</b> 2018 Launch | New Delhi HQ | Department of Posts के अंतर्गत</div>
+    <div class="rev-card"><b>Payment Banks:</b> 2014 शुरू, RBI licensed; कोई Loan/Credit Card नहीं</div>
+    <div class="rev-card"><b>3 खाते:</b> Safal, BSBDA, Sugam — सभी पर 4% ब्याज</div>
+    <div class="rev-card"><b>Deposit Limit:</b> ₹1 लाख EOD; अधिक राशि स्वतः POSA में transfer</div>
+    <div class="rev-card"><b>Debit Card:</b> निःशुल्क जारी; ₹100/वर्ष रखरखाव</div>
+    <div class="rev-card"><b>Withdrawal:</b> Regular/Digital = असीमित निःशुल्क; Basic = 4/माह निःशुल्क</div>
+    <div class="rev-card"><b>Fund Transfer:</b> RTGS, IMPS (24x7), NEFT</div>
+    <div class="rev-card"><b>Statement:</b> तिमाही 1 निःशुल्क; अतिरिक्त ₹50</div>
+    <div class="rev-card"><b>Products:</b> QR Card, Doorstep Banking, Payments, Insurance, Merchant Banking</div>
+    <div class="rev-card"><b>Challenges:</b> Fino/Airtel प्रतिस्पर्धा; Loan न दे पाना; Transaction fee पर निर्भरता</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>2018</b> = IPPB Launch वर्ष</li>
+    <li>🔢 <b>New Delhi</b> = IPPB मुख्यालय</li>
+    <li>🔢 <b>2014</b> = Payment Bank Concept शुरुआत (RBI licensed)</li>
+    <li>🔢 <b>3</b> = खातों के प्रकार (Safal, BSBDA, Sugam)</li>
+    <li>🔢 <b>4%</b> = तिमाही ब्याज दर (सभी accounts)</li>
+    <li>🔢 <b>₹1 लाख</b> = अधिकतम EOD Balance सीमा</li>
+    <li>🔢 <b>₹100</b> = Debit Card वार्षिक रखरखाव शुल्क</li>
+    <li>🔢 <b>4</b> = Basic Savings Account में मासिक निःशुल्क निकासी</li>
+    <li>🔢 <b>₹50</b> = अतिरिक्त Statement शुल्क</li>
+    <li>🔢 <b>13</b> = IPPB सेवा भाषाओं की संख्या (Interoperability के साथ)</li>
+    <li>🔢 <b>RTGS/IMPS/NEFT</b> = 3 Fund Transfer विकल्प</li>
+    <li>🔢 <b>Fino, Airtel Payments Bank</b> = मुख्य निजी प्रतिस्पर्धी</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: General/UPSC-level IPPB Overview &nbsp;|&nbsp; परीक्षा हेतु आंकड़ों की पुष्टि सदैव नवीनतम DoP Annual Report/CBS Manual से करें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

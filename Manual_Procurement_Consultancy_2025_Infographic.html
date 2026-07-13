@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>परामर्श सेवा क्रय नियमावली 2025 | Manual for Procurement of Consultancy Services | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#003057; --ip-gold:#D4A017;
+  --very-imp:#ffe1e1; --very-imp-b:#C8102E;
+  --freq:#fff1dd; --freq-b:#e08600;
+  --concept:#fffbd6; --concept-b:#cbb400;
+  --quick:#e2f7e6; --quick-b:#1f9d4d;
+  --bg:#f5f2ea; --card:#ffffff; --text:#26282b;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:70px;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),#8f0c22 60%,var(--ip-blue));
+  color:#fff; padding:18px 14px 22px; text-align:center;
+  border-bottom:6px solid var(--ip-gold);
+}
+.header h1{font-size:1.2rem; margin-bottom:4px;}
+.header .sub{font-size:.8rem; opacity:.95;}
+.header .meta{font-size:.74rem; margin-top:8px; opacity:.9;}
+.profile-bar{
+  background:var(--ip-blue); color:#fff; text-align:center; font-size:.78rem;
+  padding:6px 10px;
+}
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  padding:12px 8px; background:#fff; border-bottom:2px solid #eee;
+}
+.legend span{
+  font-size:.68rem; padding:4px 8px; border-radius:14px; font-weight:600;
+  border:1px solid #ddd;
+}
+.container{max-width:760px; margin:0 auto; padding:12px;}
+.section-title{
+  background:var(--ip-blue); color:#fff; padding:9px 14px; border-radius:8px 8px 0 0;
+  font-size:.93rem; font-weight:700; margin-top:22px; display:flex; align-items:center; gap:8px;
+}
+.card{
+  background:var(--card); border:1px solid #e2ddd0; border-radius:0 0 8px 8px;
+  padding:12px 14px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.tag{
+  display:inline-block; font-size:.66rem; font-weight:700; padding:2px 7px;
+  border-radius:10px; margin-right:4px; margin-bottom:2px;
+}
+.tag.vi{background:var(--very-imp); color:var(--very-imp-b); border:1px solid var(--very-imp-b);}
+.tag.fa{background:var(--freq); color:var(--freq-b); border:1px solid var(--freq-b);}
+.tag.co{background:var(--concept); color:#8a7a00; border:1px solid var(--concept-b);}
+.tag.qr{background:var(--quick); color:var(--quick-b); border:1px solid var(--quick-b);}
+h3.micro{color:var(--ip-red); font-size:.9rem; margin:10px 0 4px; border-left:4px solid var(--ip-red); padding-left:8px;}
+h4.nano{color:var(--ip-blue); font-size:.8rem; margin:6px 0 3px;}
+p, li{font-size:.83rem;}
+ul{padding-left:20px; margin:4px 0 8px;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.73rem;}
+th{background:var(--ip-blue); color:#fff; padding:6px 5px; text-align:left;}
+td{padding:6px 5px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#faf8f3;}
+.exam-q{
+  background:#eef3ff; border-left:4px solid #2255cc; padding:6px 10px; margin:6px 0;
+  font-size:.75rem; border-radius:0 6px 6px 0;
+}
+.exam-q b{color:#2255cc;}
+.mnemonic{
+  background:#fff4e0; border:1.5px dashed var(--ip-gold); padding:8px 10px; margin:8px 0;
+  border-radius:8px; font-size:.79rem;
+}
+.mnemonic b{color:#8a5a00;}
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:10px 0;}
+.flow-box{
+  background:#fff; border:2px solid var(--ip-blue); border-radius:8px; padding:8px 12px;
+  font-size:.75rem; text-align:center; width:92%; font-weight:600;
+}
+.flow-arrow{font-size:1.2rem; color:var(--ip-red);}
+.timeline{border-left:3px solid var(--ip-gold); margin-left:8px; padding-left:14px;}
+.tl-item{margin-bottom:14px; position:relative;}
+.tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:11px; height:11px;
+  background:var(--ip-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--ip-red);
+}
+.tl-date{font-weight:700; color:var(--ip-red); font-size:.78rem;}
+.tl-text{font-size:.78rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0;}
+.compare .old{background:#fdeaea; border:1px solid #e08c8c; border-radius:6px; padding:8px; font-size:.71rem;}
+.compare .new{background:#e7f7ea; border:1px solid #8fcf9f; border-radius:6px; padding:8px; font-size:.71rem;}
+.compare .hd{font-weight:700; text-align:center; margin-bottom:4px; font-size:.75rem;}
+.revision-sheet{
+  background:linear-gradient(160deg,#fff7e6,#fff);
+  border:2px solid var(--ip-gold); border-radius:10px; padding:14px; margin:14px 0;
+}
+.revision-sheet h2{color:var(--ip-red); font-size:1rem; margin-bottom:8px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px;}
+.rev-item{background:#fff; border-left:4px solid var(--ip-red); padding:6px 10px; font-size:.75rem; border-radius:0 6px 6px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mm-node{
+  background:#fff; border:2px solid var(--ip-red); border-radius:20px; padding:6px 12px;
+  font-size:.68rem; font-weight:700; color:var(--ip-blue); text-align:center;
+}
+.mm-node.center{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue); font-size:.78rem;}
+.penalty-badge{
+  display:inline-block; background:var(--ip-red); color:#fff; font-size:.68rem;
+  padding:2px 8px; border-radius:6px; font-weight:700;
+}
+.dtree{margin:10px 0; font-size:.75rem;}
+.dtree .q{background:var(--ip-blue); color:#fff; padding:6px 10px; border-radius:6px; margin-bottom:4px; font-weight:600;}
+.dtree .branch{padding-left:16px; border-left:2px dashed var(--ip-gold); margin-left:8px; margin-bottom:6px;}
+.dtree .ans{background:#f5f2ea; padding:5px 8px; border-radius:5px; margin:3px 0;}
+.alert{background:#fff3cd; border:1px solid #ffdf7e; padding:8px 10px; border-radius:6px; font-size:.75rem; margin:8px 0;}
+.footer-note{text-align:center; font-size:.7rem; color:#888; padding:20px 10px;}
+.pdf-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--ip-red); color:#fff;
+  border:none; border-radius:50%; width:54px; height:54px; font-size:1.4rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; z-index:99;
+}
+@media print{ .pdf-btn{display:none;} }
+.toc{background:#fff; border:1px solid #e2ddd0; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:.77rem;}
+.toc a{color:var(--ip-blue); text-decoration:none; display:block; padding:3px 0; border-bottom:1px dotted #ddd;}
+.small-note{font-size:.7rem; color:#666; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>💼 परामर्श सेवा क्रय नियमावली, 2025</h1>
+  <div class="sub">Manual for Procurement of Consultancy Services, Second Edition 2025 — Dept. of Expenditure</div>
+  <div class="meta">📌 IP Exam (Inspector Posts) — Paper I | विषय: Manuals on Procurement</div>
+</div>
+<div class="profile-bar">👤 Panthil Rajeshkumar Parmar | Office Assistant | Ahmedabad L-1</div>
+
+<div class="legend">
+  <span class="tag vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="tag fa">🟠 बार-बार पूछा गया</span>
+  <span class="tag co">🟡 अवधारणा समझें</span>
+  <span class="tag qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>📑 अनुक्रमणिका (Contents)</b>
+  <a href="#intro">परिचय व सिद्धांत (Ch 1)</a>
+  <a href="#ch2">आवश्यकता आकलन व योजना (Ch 2)</a>
+  <a href="#ch3">बोलीदाता भागीदारी व शासन (Ch 3)</a>
+  <a href="#ch4">बोली डिज़ाइन — चयन प्रणाली (Ch 4)</a>
+  <a href="#ch5">बोली आमंत्रण प्रक्रिया (Ch 5)</a>
+  <a href="#ch6">प्रतिभूतियाँ व भुगतान (Ch 6)</a>
+  <a href="#ch7">शॉर्टलिस्टिंग व EoI (Ch 7)</a>
+  <a href="#ch8">RfP मूल्यांकन व संविदा प्रदान (Ch 8)</a>
+  <a href="#ch9">विशेष प्रकार के जुड़ाव (Ch 9)</a>
+  <a href="#ch10">संविदा निगरानी (Ch 10)</a>
+  <a href="#compare">तीनों Manuals — तुलना चार्ट</a>
+  <a href="#rev">One-Page Revision Sheet</a>
+  <a href="#mnem">Memory Tricks</a>
+</div>
+
+<!-- MIND MAP -->
+<div class="section-title" id="intro">🧠 संपूर्ण नियमावली — माइंड मैप</div>
+<div class="card">
+  <div class="mindmap">
+    <div class="mm-node center">Manual for Procurement<br>of Consultancy Services 2025<br>(10 Chapters + 29 Annexures)</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch1 परिचय</div>
+    <div class="mm-node">Ch2 योजना</div>
+    <div class="mm-node">Ch3 शासन</div>
+    <div class="mm-node">Ch4 Bidding Design</div>
+    <div class="mm-node">Ch5 Bid Invite</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch6 Securities</div>
+    <div class="mm-node">Ch7 Shortlist-EoI</div>
+    <div class="mm-node">Ch8 RfP-Award</div>
+    <div class="mm-node">Ch9 विशेष जुड़ाव</div>
+    <div class="mm-node">Ch10 निगरानी</div>
+  </div>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>जारीकर्ता</td><td>व्यय विभाग (Department of Expenditure), वित्त मंत्रालय</td></tr>
+    <tr><td>प्रथम संस्करण</td><td>Model Tender Documents (MTD) Consultancy 2023 में जारी</td></tr>
+    <tr><td>द्वितीय संस्करण (वर्तमान)</td><td>अद्यतन अप्रैल 2025 तक के GFR/OM संदर्भ सहित</td></tr>
+    <tr><td>आधार दस्तावेज</td><td>GFR 2017 — Manual for Procurement of Goods 2024 को "Comprehensive Reference" माना गया है</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> किस मैनुअल को "Comprehensive Reference" कहा गया है जिसका संदर्भ अन्य मैनुअल्स (Works/Consultancy/Non-consultancy) में दिया जाता है? (उत्तर: Manual for Procurement of Goods, Second Edition 2024)</div>
+
+  <h3 class="micro">Five R's of Procurement <span class="tag co">🟡</span></h3>
+  <p>Right Quality, Right Quantity, Right Source, Right Time, Right Price — सभी Manuals में सामान्य सिद्धांत</p>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="section-title" id="ch2">📘 Chapter 2 — आवश्यकता आकलन व क्रय योजना</div>
+<div class="card">
+  <table>
+    <tr><th>चरण</th><th>दस्तावेज/प्रक्रिया</th></tr>
+    <tr><td>1</td><td>Need Assessment (आवश्यकता आकलन)</td></tr>
+    <tr><td>2</td><td>Procurement Proposal / Concept Paper तैयार करना</td></tr>
+    <tr><td>3</td><td>Terms of Reference (ToR) तैयार करना</td></tr>
+    <tr><td>4</td><td>लागत आकलन, बजट निर्धारण व स्वीकृति प्राप्त करना</td></tr>
+    <tr><td>5</td><td>अंतिम प्रशासनिक व बजटीय स्वीकृति</td></tr>
+    <tr><td>6</td><td>क्रय योजना (Procurement Plan) विकसित करना</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> ToR का पूर्ण रूप क्या है और यह किस चरण में तैयार होता है? (उत्तर: Terms of Reference — आवश्यकता आकलन के बाद)</div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="section-title" id="ch3">📗 Chapter 3 — बोलीदाता भागीदारी व शासन विषय</div>
+<div class="card">
+  <h3 class="micro">पात्रता मानदंड व कानूनी स्थिति <span class="tag co">🟡</span></h3>
+  <p>निविदा प्रक्रिया में भागीदारी हेतु पात्रता मानदंड व बोलीदाता की कानूनी स्थिति की जांच</p>
+
+  <h3 class="micro">Integrity Pact (IP) व शासन मुद्दे</h3>
+  <p>भ्रष्टाचार-निवारण करार; Independent External Monitor (IEM) की नियुक्ति व भूमिका</p>
+
+  <h3 class="micro">Debarment of Suppliers <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>अधिकतम अवधि</td><td><span class="penalty-badge">3 वर्ष</span> (GFR प्रावधान अनुसार — Goods/Works के समान)</td></tr>
+    <tr><td>Show-cause प्रक्रिया</td><td>Zero-day से <span class="penalty-badge">12 सप्ताह</span> में debarment प्रक्रिया पूर्ण</td></tr>
+    <tr><td>अंतरिम अवधि</td><td>अंतिम निर्णय तक फर्म debarred मानी जाती रहेगी</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Debarment प्रक्रिया Zero-day से कुल कितने सप्ताह में पूर्ण होनी चाहिए? (उत्तर: 12 सप्ताह)</div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="section-title" id="ch4">📕 Chapter 4 — बोली डिज़ाइन: चयन प्रणालियाँ व मोड <span class="tag vi" style="color:#fff;background:transparent;border:none;">🔴 सबसे महत्वपूर्ण अध्याय</span></div>
+<div class="card">
+  <h3 class="micro">परामर्शदाता चयन प्रणालियाँ (Systems of Selection) <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>प्रणाली</th><th>पूर्ण नाम</th><th>आधार</th></tr>
+    <tr><td>QCBS</td><td>Quality and Cost Based Selection</td><td>गुणवत्ता व मूल्य दोनों — भारित स्कोर</td></tr>
+    <tr><td>LCS</td><td>Least Cost System</td><td>केवल न्यूनतम मूल्य आधारित</td></tr>
+    <tr><td>FBS</td><td>Fixed Budget based Selection</td><td>निश्चित बजट के भीतर सर्वोत्तम गुणवत्ता</td></tr>
+    <tr><td>SSS</td><td>Single Source Selection</td><td>प्रत्यक्ष/एकल स्रोत चयन</td></tr>
+  </table>
+  <div class="alert">⚠️ ध्यान दें: Consultancy में "QCBS-LCS-FBS-SSS" चार प्रणालियाँ हैं, जबकि Works में केवल "LCS-QCBS-SSS" (FBS नहीं) होती हैं — यह अंतर परीक्षा में पूछा जा सकता है!</div>
+
+  <h3 class="micro">QCBS भारांक तालिका (Weighting Table) — Rule 192 GFR 2017 <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <table>
+    <tr><th>कार्य जटिलता</th><th>अनुशंसा</th><th>Quality/Cost भारांक</th></tr>
+    <tr><td>अत्यंत जटिल/विशिष्ट कार्य</td><td>उच्च तकनीकी भारांक सहित QCBS</td><td><span class="penalty-badge">80/20</span></td></tr>
+    <tr><td>मध्यम जटिलता</td><td>अधिकांश मामले इसी श्रेणी में</td><td><span class="penalty-badge">75-65 / 25-35</span></td></tr>
+    <tr><td>मानक/नियमित कार्य (जैसे Auditors, Procurement Agents)</td><td>LCS उपयुक्त</td><td><span class="penalty-badge">60-50 / 40-50</span></td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "80-70-60":</b> जटिलता घटने के साथ Quality भारांक भी घटता है — 80(अति जटिल) → 70(मध्यम) → 60(नियमित)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> अत्यंत जटिल/विशिष्ट परामर्श कार्य हेतु QCBS में अनुशंसित Quality:Cost भारांक क्या है? (उत्तर: 80:20)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> मानक/नियमित प्रकृति के कार्यों (जैसे Auditors) हेतु कौन सी प्रणाली उपयुक्त है? (उत्तर: LCS — Least Cost System)</div>
+
+  <h3 class="micro">निविदा मोड — मूल्य सीमा तालिका (परीक्षा गोल्ड) <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>मोड</th><th>पूर्ण नाम</th><th>मूल्य सीमा (Consultancy)</th></tr>
+    <tr><td>OTE</td><td>Open Tender Enquiry (NCB)</td><td>₹50 लाख से अधिक</td></tr>
+    <tr><td>GTE</td><td>Global Tender Enquiry (ICB)</td><td>₹200 करोड़ से नीचे प्रतिबंधित</td></tr>
+    <tr><td>LTE</td><td>Limited Tender Enquiry</td><td><span class="penalty-badge">₹50 लाख तक</span> (Goods के समान, Works से भिन्न!)</td></tr>
+    <tr><td>SLTE</td><td>Special LTE</td><td>₹50 लाख से अधिक (विशेष परिस्थिति)</td></tr>
+    <tr><td>PQB</td><td>Pre-Qualification Bidding</td><td>पूर्व-योग्य बोलीदाताओं तक सीमित</td></tr>
+    <tr><td>AVL</td><td>Approved Vendor List</td><td>दीर्घकालिक पूर्व-अनुमोदित सूची</td></tr>
+    <tr><td>PAC</td><td>Proprietary Article Certificate</td><td>एकल विशिष्ट स्रोत</td></tr>
+    <tr><td>STE (बिना PAC)</td><td>Single Tender Enquiry</td><td>विशेष परिस्थिति — तिमाही रिपोर्ट सचिव को देनी होगी</td></tr>
+    <tr><td>बिना उद्धरण क्रय</td><td>Direct without Quotation</td><td>₹50,000 तक</td></tr>
+    <tr><td>Purchase Committee</td><td>Direct by Committee</td><td>₹5 लाख तक</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "50K-5L-50L-200Cr":</b> बिना उद्धरण ₹50 हजार → समिति ₹5 लाख → LTE सीमा ₹50 लाख → GTE सीमा ₹200 करोड़</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Consultancy Services में LTE किस मूल्य तक प्रयोग होती है? (उत्तर: ₹50 लाख तक — Goods के समान, परंतु Works में यह ₹10 लाख है)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> STE (बिना PAC) से क्रय होने पर रिपोर्ट किसे व कितनी बार देनी होती है? (उत्तर: प्रत्येक तिमाही Secretary/Board को; Audit Committee कम से कम 10% मामलों की जांच कर सकती है)</div>
+</div>
+
+<!-- CHAPTER 5 -->
+<div class="section-title" id="ch5">📙 Chapter 5 — बोली आमंत्रण प्रक्रिया</div>
+<div class="card">
+  <h3 class="micro">दो-चरणीय दस्तावेज प्रक्रिया — REoI व RfP <span class="tag vi">🔴 Consultancy की विशिष्ट पहचान</span></h3>
+  <table>
+    <tr><th>दस्तावेज</th><th>पूर्ण नाम</th><th>उद्देश्य</th></tr>
+    <tr><td>REoI</td><td>Request for Expression of Interest</td><td>प्रारंभिक रुचि आमंत्रण — शॉर्टलिस्टिंग हेतु</td></tr>
+    <tr><td>RfP</td><td>Request for Proposal</td><td>शॉर्टलिस्ट परामर्शदाताओं से विस्तृत तकनीकी व वित्तीय प्रस्ताव</td></tr>
+  </table>
+  <div class="alert">⚠️ Goods/Works में सीधे "Tender Document" होता है, परंतु Consultancy में दो-चरणीय REoI→RfP प्रक्रिया विशिष्ट है — यह प्रमुख अंतर है!</div>
+  <p>अनिवार्य e-Publishing — Rule 159 GFR 2017 के अंतर्गत</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Consultancy Services में दो प्रमुख दस्तावेज कौन-कौन से हैं? (उत्तर: REoI व RfP)</div>
+</div>
+
+<!-- CHAPTER 6 -->
+<div class="section-title" id="ch6">📒 Chapter 6 — प्रतिभूतियाँ, मूल्य, भुगतान शर्तें <span class="tag vi">🔴 अति महत्वपूर्ण (संख्यात्मक प्रश्न संभावित)</span></div>
+<div class="card">
+  <h3 class="micro">बिड सिक्योरिटी / EMD (Rule 170 GFR 2017) <span class="tag vi">🔴 Consultancy की विशेष छूट</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>सामान्य प्रथा</td><td>परामर्श सेवाओं में सामान्यतः EMD/Bid Security नहीं ली जाती (Goods/Works से भिन्न!)</td></tr>
+    <tr><td>अपवाद</td><td>समय-गंभीर (time-critical) क्रय में Procuring Entity विकल्प रख सकती है</td></tr>
+    <tr><td>दर (यदि ली जाए)</td><td>अनुमानित मूल्य का 2% से 5%</td></tr>
+    <tr><td>वैधता</td><td>अंतिम बोली वैधता से 45 दिन अधिक</td></tr>
+  </table>
+  <div class="alert">⚠️ अति महत्वपूर्ण अंतर: Consultancy Manual में सामान्यतः EMD नहीं ली जाती (केवल समय-गंभीर मामलों में विकल्प) जबकि Goods/Works Manual में सामान्य रूप से EMD अनिवार्य होती है!</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> क्या Consultancy Services क्रय में सामान्यतः EMD ली जाती है? (उत्तर: नहीं, सामान्यतः नहीं ली जाती — केवल समय-गंभीर क्रय में विकल्प के रूप में)</div>
+
+  <h3 class="micro">Advance Payment (Rule 172(1) GFR 2017) <span class="tag fa">🟠</span></h3>
+  <table>
+    <tr><th>प्राप्तकर्ता</th><th>अधिकतम सीमा</th></tr>
+    <tr><td>निजी फर्म</td><td><span class="penalty-badge">30%</span> संविदा मूल्य का</td></tr>
+    <tr><td>राज्य/केंद्र सरकारी एजेंसी या PSE</td><td><span class="penalty-badge">40%</span> संविदा मूल्य का</td></tr>
+    <tr><td>Maintenance Contract</td><td>6 माह की देय राशि से अधिक नहीं</td></tr>
+    <tr><td>किस्तें</td><td>न्यूनतम 2 किस्तों में (असाधारण मामलों को छोड़कर)</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "30-40":</b> निजी फर्म को 30% अग्रिम; सरकारी एजेंसी/PSE को अधिक भरोसे से 40% अग्रिम</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> निजी फर्म को अधिकतम कितने % अग्रिम भुगतान दिया जा सकता है? (उत्तर: 30% संविदा मूल्य का)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> सरकारी एजेंसी/PSE को अधिकतम कितना अग्रिम मिल सकता है? (उत्तर: 40% संविदा मूल्य का)</div>
+</div>
+
+<!-- CHAPTER 7 -->
+<div class="section-title" id="ch7">📔 Chapter 7 — परामर्शदाताओं की शॉर्टलिस्टिंग व EoI</div>
+<div class="card">
+  <ul>
+    <li>Modes of EoI — विज्ञापन, वेबसाइट प्रकाशन आदि</li>
+    <li>REoI का मूल्यांकन — अनुभव, तकनीकी क्षमता के आधार पर शॉर्टलिस्टिंग</li>
+    <li>शॉर्टलिस्टिंग जोखिम व निवारण उपाय</li>
+  </ul>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> शॉर्टलिस्टिंग किस दस्तावेज के मूल्यांकन से होती है? (उत्तर: REoI — Request for Expression of Interest)</div>
+</div>
+
+<!-- CHAPTER 8 -->
+<div class="section-title" id="ch8">📕 Chapter 8 — RfP मूल्यांकन व संविदा प्रदान</div>
+<div class="card">
+  <div class="flow">
+    <div class="flow-box">Consultancy Evaluation Committee (CEC) गठन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">प्रारंभिक व तकनीकी-वाणिज्यिक मूल्यांकन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">गुणवत्ता मूल्यांकन — तकनीकी प्रस्ताव (Technical Score)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">लागत मूल्यांकन व भारित स्कोर गणना (QCBS/LCS/FBS अनुसार)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">विजेता बोलीदाता चयन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">सेवा विवरण फ्रीज़ हेतु वार्ता (Negotiations)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box" style="border-color:var(--ip-red); color:var(--ip-red);">संविदा प्रदान (Award of Contract)</div>
+  </div>
+  <h3 class="micro">Consultancy Evaluation Committee (CEC) <span class="tag fa">🟠</span></h3>
+  <p>बहु-सदस्यीय समिति — तकनीकी व वित्तीय दोनों प्रस्तावों का निष्पक्ष मूल्यांकन सुनिश्चित करती है</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Consultancy में बोली मूल्यांकन हेतु कौन सी समिति उत्तरदायी है? (उत्तर: Consultancy Evaluation Committee - CEC)</div>
+</div>
+
+<!-- CHAPTER 9 -->
+<div class="section-title" id="ch9">📗 Chapter 9 — विशेष प्रकार के जुड़ाव (Special Engagements) <span class="tag co">🟡</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्रकार</th><th>विवरण</th></tr>
+    <tr><td>Single Source Selection (SSS)</td><td>विशेष योग्यता/विशिष्टता के आधार पर एकल स्रोत चयन</td></tr>
+    <tr><td>Individual Consultants</td><td>व्यक्तिगत विशेषज्ञ चयन — अनुभव व योग्यता आधारित</td></tr>
+    <tr><td>Specialized Agencies/Institutions</td><td>विशिष्ट संस्थागत विशेषज्ञता हेतु</td></tr>
+    <tr><td>NGO चयन</td><td>गैर-सरकारी संगठनों का चयन — पारदर्शी मापदंड सहित</td></tr>
+    <tr><td>Procurement Consultants</td><td>क्रय प्रक्रिया में सहायता हेतु परामर्शदाता</td></tr>
+    <tr><td>Financial Advisors/Auditors</td><td>वित्तीय सलाह व लेखा परीक्षा हेतु विशेष चयन</td></tr>
+    <tr><td>Design Competition (Symbols/Logos)</td><td>सार्वजनिक प्रतियोगिता के माध्यम से चयन</td></tr>
+    <tr><td>Integrated IT Projects/Digital India</td><td>विशेष तकनीकी परामर्श — डिजिटल इंडिया परियोजनाओं हेतु</td></tr>
+  </table>
+</div>
+
+<!-- CHAPTER 10 -->
+<div class="section-title" id="ch10">📓 Chapter 10 — परामर्श सेवा संविदा की निगरानी <span class="tag vi">🔴</span></div>
+<div class="card">
+  <ul>
+    <li>Contract Management व Administration</li>
+    <li>आपूर्ति के दायरे व मात्रा नियंत्रण</li>
+    <li>समय नियंत्रण (Time Control)</li>
+    <li>लागत नियंत्रण — बिलिंग व भुगतान</li>
+    <li>असाइनमेंट समाप्ति व Post Contract Review</li>
+    <li>संविदा समाप्ति से पूर्व सेवा समाप्ति (Terminating Services)</li>
+  </ul>
+
+  <h3 class="micro">विवाद व संघर्ष समाधान (Disputes and Conflicts) <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <table>
+    <tr><th>विवाद राशि</th><th>मध्यस्थ न्यायाधिकरण संरचना</th></tr>
+    <tr><td>₹1 करोड़ तक</td><td>Sole Arbitrator (कार्यरत अधिकारी हो सकता है)</td></tr>
+    <tr><td>₹1 करोड़ से अधिक</td><td>3-सदस्यीय Arbitral Tribunal (Panel of three)</td></tr>
+  </table>
+  <table>
+    <tr><th>समय-सीमा</th><th>अवधि</th></tr>
+    <tr><td>Sole Arbitrator नियुक्ति</td><td>लिखित सूचना से <span class="penalty-badge">60 दिन</span> के भीतर</td></tr>
+    <tr><td>Tribunal नियुक्ति प्रक्रिया</td><td>नामांकन प्राप्ति से <span class="penalty-badge">30 दिन</span> के भीतर</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> ₹1 करोड़ से अधिक के परामर्श विवाद हेतु Arbitral Tribunal की संरचना क्या होगी? (उत्तर: 3-सदस्यीय पैनल — Goods/Works के समान)</div>
+</div>
+
+<!-- DECISION TREE -->
+<div class="section-title">🌳 निर्णय वृक्ष — कौन-सी चयन प्रणाली उपयुक्त है?</div>
+<div class="card dtree">
+  <div class="q">कार्य कितना जटिल/तकनीकी रूप से विशिष्ट है?</div>
+  <div class="branch">
+    <div class="ans">✅ अत्यंत जटिल/उच्च तकनीकी → QCBS (80:20 भारांक)</div>
+    <div class="ans">✅ मध्यम जटिलता → QCBS (65-75:25-35 भारांक)</div>
+    <div class="ans">✅ मानक/नियमित कार्य (Auditor आदि) → LCS उपयुक्त</div>
+    <div class="ans">✅ निश्चित बजट में सर्वोत्तम गुणवत्ता चाहिए → FBS</div>
+    <div class="ans">✅ केवल एक ही योग्य स्रोत उपलब्ध → SSS</div>
+  </div>
+  <div class="q">क्या EMD लेनी आवश्यक है?</div>
+  <div class="branch">
+    <div class="ans">✅ सामान्य परामर्श क्रय → नहीं (सामान्यतः EMD नहीं ली जाती)</div>
+    <div class="ans">⚠️ समय-गंभीर (time-critical) क्रय → हाँ, विकल्प के रूप में ली जा सकती है</div>
+  </div>
+</div>
+
+<!-- COMPARISON: 3 MANUALS -->
+<div class="section-title" id="compare">⚖️ तीनों Manuals — Goods vs Works vs Consultancy <span class="tag vi">🔴 अति महत्वपूर्ण Exam Trap</span></div>
+<div class="card">
+  <table>
+    <tr><th>बिंदु</th><th>📦 Goods (2024)</th><th>🏗️ Works (2025)</th><th>💼 Consultancy (2025)</th></tr>
+    <tr><td>LTE सीमा</td><td>₹50 लाख</td><td><b>₹10 लाख</b></td><td>₹50 लाख</td></tr>
+    <tr><td>GTE प्रतिबंध सीमा</td><td>₹200 करोड़</td><td>₹200 करोड़</td><td>₹200 करोड़</td></tr>
+    <tr><td>EMD सामान्यतः</td><td>ली जाती है (2-5%)</td><td>ली जाती है (2-5%)</td><td><b>सामान्यतः नहीं ली जाती</b></td></tr>
+    <tr><td>Performance Security</td><td>3-5%</td><td>3-10%</td><td>Goods जैसा लागू हो सकता है</td></tr>
+    <tr><td>चयन प्रणाली</td><td>L1 आधारित (केवल मूल्य)</td><td>LCS/QCBS/SSS</td><td><b>QCBS/LCS/FBS/SSS</b></td></tr>
+    <tr><td>प्रमुख दस्तावेज</td><td>Tender Document</td><td>Tender Document</td><td><b>REoI + RfP (दो-चरणीय)</b></td></tr>
+    <tr><td>मूल्यांकन समिति</td><td>Tender Committee (TC)</td><td>Tender Committee (TC)</td><td>Consultancy Evaluation Committee (CEC)</td></tr>
+    <tr><td>Arbitration स्लैब</td><td>₹1 करोड़ पर विभाजन</td><td>₹1 करोड़ पर विभाजन</td><td>₹1 करोड़ पर विभाजन (समान)</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "GWC अंतर":</b> Goods-Works-Consultancy में सबसे भिन्न विशेषताएँ: Works का "10 लाख LTE", Consultancy का "No EMD + REoI/RfP + CEC" — याद रखें ये तीन यूनिक पॉइंट्स</div>
+</div>
+
+<!-- AUTHORITIES TABLE -->
+<div class="section-title">👮 महत्वपूर्ण प्राधिकारी / Authorities <span class="tag fa">🟠</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्राधिकारी</th><th>भूमिका</th></tr>
+    <tr><td>Competent (Financial) Authority C(F)A</td><td>व्यय व क्रय स्वीकृति हेतु सक्षम</td></tr>
+    <tr><td>Consultancy Evaluation Committee (CEC)</td><td>RfP मूल्यांकन व संविदा प्रदान संस्तुति</td></tr>
+    <tr><td>Independent External Monitor (IEM)</td><td>Integrity Pact की निगरानी हेतु स्वतंत्र निरीक्षक</td></tr>
+    <tr><td>Appointing Authority (Arbitration)</td><td>मध्यस्थ नियुक्ति हेतु उत्तरदायी</td></tr>
+    <tr><td>Audit Committee</td><td>STE नामांकन मामलों में कम से कम 10% जांच</td></tr>
+  </table>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet — Last Day Revision</h2>
+  <div class="rev-grid">
+    <div class="rev-item">🔴 Manual for Procurement of Goods 2024 = "Comprehensive Reference" — अन्य मैनुअल्स इसका संदर्भ लेते हैं</div>
+    <div class="rev-item">🔴 चयन प्रणालियाँ: QCBS, LCS, FBS, SSS (4 प्रणालियाँ — Works से एक ज्यादा, FBS शामिल)</div>
+    <div class="rev-item">🔴 QCBS भारांक: अति जटिल=80:20, मध्यम=65-75:25-35, नियमित=50-60:40-50</div>
+    <div class="rev-item">🔴 LTE सीमा = ₹50 लाख (Goods समान, Works ₹10 लाख से भिन्न)</div>
+    <div class="rev-item">🔴 EMD सामान्यतः नहीं ली जाती (केवल time-critical क्रय में विकल्प)</div>
+    <div class="rev-item">🔴 Advance Payment: निजी फर्म 30%, सरकारी एजेंसी/PSE 40%; न्यूनतम 2 किस्तों में</div>
+    <div class="rev-item">🔴 प्रमुख दस्तावेज: REoI (शॉर्टलिस्टिंग) → RfP (विस्तृत प्रस्ताव) — दो-चरणीय अनूठी प्रक्रिया</div>
+    <div class="rev-item">🟠 मूल्यांकन समिति = CEC (Consultancy Evaluation Committee)</div>
+    <div class="rev-item">🟠 बिना उद्धरण क्रय = ₹50,000 तक; Purchase Committee = ₹5 लाख तक</div>
+    <div class="rev-item">🟠 STE (बिना PAC): तिमाही रिपोर्ट Secretary को; Audit Committee 10% जांच करे</div>
+    <div class="rev-item">🟠 Debarment अधिकतम 3 वर्ष; Show-cause प्रक्रिया 12 सप्ताह में पूर्ण</div>
+    <div class="rev-item">🟡 Arbitration: ₹1 करोड़ तक Sole Arbitrator; अधिक होने पर 3-सदस्यीय पैनल</div>
+    <div class="rev-item">🟢 GTE प्रतिबंध सीमा = ₹200 करोड़ (तीनों Manuals में समान)</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section-title" id="mnem">🧠 Memory Tricks / Mnemonics</div>
+<div class="card">
+  <div class="mnemonic">
+    <b>1️⃣ अध्याय क्रम "IPGB-SEE-SM":</b><br>
+    Intro → Planning → Governance → Bidding-design → Sourcing(bid-invite) → Evaluation(RfP) → Engagements(special) → Monitoring
+  </div>
+  <div class="mnemonic">
+    <b>2️⃣ चयन प्रणाली "QLFS":</b><br>
+    QCBS (गुणवत्ता+मूल्य) → LCS (केवल मूल्य) → FBS (निश्चित बजट) → SSS (एकल स्रोत) — जटिलता घटते क्रम में
+  </div>
+  <div class="mnemonic">
+    <b>3️⃣ QCBS भारांक "80-70-60":</b> अति जटिल कार्य में गुणवत्ता भारांक सबसे ऊँचा (80), नियमित कार्य में सबसे कम (60) — जटिलता के साथ गुणवत्ता का महत्व बढ़ता है
+  </div>
+  <div class="mnemonic">
+    <b>4️⃣ Advance "30-40":</b> प्राइवेट को कम भरोसा (30%), सरकारी/PSE को ज्यादा भरोसा (40%) — भरोसे के अनुसार % बढ़ता है
+  </div>
+  <div class="mnemonic">
+    <b>5️⃣ REoI-RfP क्रम:</b> "पहले रुचि (Interest) पूछो, फिर प्रस्ताव (Proposal) मांगो" — R.E-o-I से R-f-P की ओर क्रम
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<div class="section-title">✅ Quick Revision Points <span class="tag qr">🟢</span></div>
+<div class="card">
+  <ul>
+    <li>Consultancy Manual, Model Tender Document (MTD) 2023 के साथ मिलकर प्रयोग होता है</li>
+    <li>Corporate Guarantee/Indemnity Bond — EMD या Performance Security हेतु स्वीकार्य नहीं (Goods/Works समान नियम)</li>
+    <li>QCBS में JV/Consortium सावधानी आवश्यक — गुणवत्ता स्कोर में दोहरापन से बचाव हेतु</li>
+    <li>NGO चयन में पारदर्शी मापदंड व सार्वजनिक विज्ञापन आवश्यक</li>
+    <li>Design Competition (Logo/Symbol) — विशेष सार्वजनिक प्रतियोगिता प्रक्रिया अपनाई जाती है</li>
+    <li>Time-barred Claims के विरुद्ध भुगतान — विशेष सावधानी सहित ही स्वीकृत होते हैं</li>
+    <li>Post Contract Review व Concluding Assignment — गुणवत्ता प्रतिक्रिया हेतु महत्वपूर्ण चरण</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  📚 India Post IP Exam Preparation Portal | Manual for Procurement of Consultancy Services, Second Edition 2025<br>
+  यह इन्फोग्राफिक केवल परीक्षा तैयारी हेतु सारांश है — मूल मैनुअल (286 पृष्ठ) का पूर्ण अध्ययन आवश्यक
+</div>
+
+</div>
+
+<button class="pdf-btn" onclick="window.print()" title="PDF Download">⬇</button>
+
+</body>
+</html>

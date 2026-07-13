@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB CBS Manual — भाग 5 | PM CARES | Agency System | मृतक दावे | Jan Suraksha | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.header{background:linear-gradient(135deg,#6A1B9A 0%,var(--blue) 55%,var(--green) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .sub{margin-top:8px;font-size:0.88rem;opacity:0.92;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue);}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.74rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.74rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;font-size:0.75rem;}
+.compare .old{background:#FFEBEE;border-radius:8px;padding:8px;border:1px solid var(--red);}
+.compare .new{background:#E8F5E9;border-radius:8px;padding:8px;border:1px solid var(--green);}
+.compare b{display:block;margin-bottom:4px;}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>POSB (CBS) मैनुअल — भाग 5 (अंतिम भाग)</h1>
+  <div class="sub">अध्याय 17-20: PM CARES for Children | Agency System | मृतक दावा निपटान | जन सुरक्षा योजनाएं</div>
+  <div class="sub">(Corrected upto 31.12.2021 — Finacle CBS आधारित नवीनतम मैनुअल)</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">🏁 CBS Manual पूर्ण — भाग 5/5</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण</span>
+  <span>🟠 बार-बार पूछा गया</span>
+  <span>🟡 संकल्पनात्मक</span>
+  <span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची</h2>
+  <div class="toc-grid">
+    <a href="#ch17">17. PM CARES for Children Scheme 2021</a>
+    <a href="#ch18">18. Agency System (SAS व MPKBY)</a>
+    <a href="#ch19">19. मृतक दावा निपटान (Deceased Claims)</a>
+    <a href="#ch20a">20a. PMJJBY (जीवन बीमा)</a>
+    <a href="#ch20b">20b. PMSBY (दुर्घटना बीमा)</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH17 PM CARES -->
+<div class="chapter" id="ch17">
+  <div class="chapter-head" style="background:var(--red);">👶 अध्याय 17 → PM CARES for Children Scheme, 2021</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — नई व विशेष योजना</span>
+      <h3>योजना का परिचय</h3>
+      <p>शुरुआत: <b>06.10.2021</b>। COVID-19 महामारी के कारण <b>11.3.2020 से 31.12.2021</b> के बीच दोनों माता-पिता/अंतिम जीवित अभिभावक खो चुके 18 वर्ष से कम आयु के बच्चों के लिए। खाता <b>District Magistrate</b> के संयुक्त अभिभावक के रूप में खुलता है।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — राशि तालिका (उदाहरण)</span>
+      <h3>आयु-आधारित Upfront Lumpsum Contribution</h3>
+      <table>
+        <tr><th>खाता खोलते समय आयु</th><th>परिपक्वता (वर्ष)</th><th>प्रारंभिक राशि (₹)</th></tr>
+        <tr><td>1 वर्ष</td><td>17</td><td>2,87,870</td></tr>
+        <tr><td>10 वर्ष</td><td>8</td><td>5,56,550</td></tr>
+        <tr><td>17 वर्ष</td><td>1</td><td>9,29,370</td></tr>
+        <tr><td>18 वर्ष+</td><td>0</td><td>10,00,000 (सीधे)</td></tr>
+      </table>
+      <p style="font-size:0.72rem;">नोट: सभी आयु के लिए राशि PM-CARES Fund से खाता खुलने के <b>1 महीने के भीतर</b> जमा होती है, और <b>18 वर्ष होने पर ₹10 लाख</b> हो जाती है।</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: 18 वर्ष होने के बाद क्या होता है?</div>
+      <div class="yn">➡ खाता Single Account बन जाता है (₹10 लाख corpus)</div>
+      <div class="yn">➡ MIS (Monthly Income Scheme) दर से ब्याज — 18 से <b>23 वर्ष</b> तक</div>
+      <div class="yn">➡ 23 वर्ष होने पर — पूरी राशि का भुगतान व खाता बंद</div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>महत्वपूर्ण:</b> इस योजना में <b>Premature withdrawal/closure अनुमति नहीं</b> (केवल लाभार्थी की मृत्यु होने पर अपवाद, राशि PM-CARES Fund को वापस)।</div>
+
+    <table>
+      <tr><th>खाता प्रकार</th><th>विवरण</th></tr>
+      <tr><td>Basic Savings Account</td><td>लाभार्थी के नाम, शून्य बैलेंस से शुरू</td></tr>
+      <tr><td>PM CARES Scheme Account</td><td>Joint (लाभार्थी + District Magistrate), 18 वर्ष तक</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "18 पर 10 लाख, 23 पर बंद" — PM CARES का सार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PM CARES for Children Scheme कब शुरू हुई? <b>(06.10.2021)</b> खाता किसके संयुक्त अभिभावकत्व में खुलता है? <b>(District Magistrate)</b> 18 वर्ष पर कितनी राशि होती है? <b>(₹10 लाख)</b></div>
+  </div>
+</div>
+
+<!-- CH18 Agency -->
+<div class="chapter" id="ch18">
+  <div class="chapter-head" style="background:var(--blue);">🤝 अध्याय 18 → Agency System (SAS व MPKBY)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>दो प्रकार के एजेंट</h3>
+    </div>
+
+    <table>
+      <tr><th>Agent प्रकार</th><th>पूर्ण नाम</th><th>शुरुआत</th><th>कार्यक्षेत्र</th><th>Commission</th></tr>
+      <tr><td>SAS</td><td>Standardized Agency System</td><td>01.10.1960</td><td>TD, MIS, KVP, NSC-VIII</td><td><b>0.5%</b></td></tr>
+      <tr><td>MPKBY</td><td>Mahila Pradhan Kshetriya Bachat Yojana</td><td>01.04.1972</td><td>केवल RD (Recurring Deposit)</td><td><b>4%</b></td></tr>
+    </table>
+
+    <div class="penalty-box">🔴 <b>TDS:</b> Agent commission पर <b>Section 194-H</b> के तहत <b>5% TDS</b> कटता है।</div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Receipt Book Denominations</h3>
+      <table>
+        <tr><th>प्रकार</th><th>सीमा</th></tr>
+        <tr><td>Type (a)</td><td>₹1,000 तक</td></tr>
+        <tr><td>Type (b)</td><td>₹5,000 तक</td></tr>
+        <tr><td>Type (c)</td><td>₹10,000 तक</td></tr>
+        <tr><td>Crossed Cheque Receipt Book</td><td>कोई denomination नहीं (amount column खाली)</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Agency समाप्त होने पर Receipt Books का क्या होता है?</div>
+      <div class="yn">➡ Unused/Partially used receipt books लौटाना अनिवार्य</div>
+      <div class="yn">➡ Partially used books का संरक्षण काल: <b>3 वर्ष</b></div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SAS = 0.5% सब स्कीम, MPKBY = 4% सिर्फ RD" — Commission rate याद रखने का तरीका</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> MPKBY Agent किस योजना में निवेश करवा सकता है? <b>(केवल RD)</b> Commission दर? <b>(4%)</b> Agent commission पर TDS दर? <b>(5%, Section 194-H)</b></div>
+  </div>
+</div>
+
+<!-- CH19 Deceased Claims -->
+<div class="chapter" id="ch19">
+  <div class="chapter-head" style="background:var(--red-dark);">⚱️ अध्याय 19 → मृतक दावा निपटान / Settlement of Deceased Claim Cases</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — सीमा बदल गई है (हर वर्ष पूछा जाता है)</span>
+      <h3>दावा निपटान के आधार</h3>
+    </div>
+
+    <div class="compare">
+      <div class="old"><b>❌ पुराना नियम (Vol-II/III)</b>बिना Legal Evidence अधिकतम दावा सीमा <b>₹1,00,000</b></div>
+      <div class="new"><b>✅ CBS नया नियम (वर्तमान)</b>बिना Legal Evidence अधिकतम दावा सीमा <b>₹5,00,000</b> (Ministry of Finance द्वारा तय)</div>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: दावा निपटान किस आधार पर होता है?</div>
+      <div class="yn">➡ (a) नामांकन (Nomination) के आधार पर — तुरंत, राशि की कोई सीमा नहीं</div>
+      <div class="yn">➡ (b) कानूनी साक्ष्य (Succession Certificate/Probate/Letter of Administration)</div>
+      <div class="yn">➡ (c) बिना कानूनी साक्ष्य — <b>₹5 लाख तक</b>, मृत्यु के <b>6 महीने बाद</b> आवेदन संभव</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Sanctioning Authority तालिका</span>
+      <h3>बिना कानूनी साक्ष्य दावा मंजूरी की सीमा (पद अनुसार)</h3>
+      <table>
+        <tr><th>पद</th><th>सीमा (₹)</th></tr>
+        <tr><td>Sub Postmaster (Time Scale) / Lower Selection Grade</td><td>50,000</td></tr>
+        <tr><td>Sub/Deputy/Postmaster (Higher Selection Grade, Non-Gazetted)</td><td>1,00,000</td></tr>
+        <tr><td>Senior Postmaster/Dy. Chief Postmaster/Superintendent (Gazetted Group-B)</td><td>5,00,000</td></tr>
+        <tr><td>Chief Postmaster (GPO)/Sr. Superintendent (Gazetted Group-A)</td><td>5,00,000</td></tr>
+      </table>
+    </div>
+
+    <table>
+      <tr><th>दस्तावेज़ (बिना नामांकन/साक्ष्य दावे हेतु)</th></tr>
+      <tr><td>मृत्यु प्रमाणपत्र (मूल)</td></tr>
+      <tr><td>Passbook/Certificate मूल</td></tr>
+      <tr><td>Affidavit (Form-13)</td></tr>
+      <tr><td>Letter of Disclaimer (Form-14)</td></tr>
+      <tr><td>Bond of Indemnity (Form-15)</td></tr>
+    </table>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3>एकाधिक नामिती में प्राथमिकता</h3>
+      <p>यदि एक से अधिक नामिती हों व एक की मृत्यु हो जाए, तो उसका हिस्सा शेष जीवित नामितियों में उनके निर्धारित अनुपात में बंटता है। अंतिम जीवित/एकल नामिती की मृत्यु पर — दावा <b>नामिती के कानूनी उत्तराधिकारी</b> को मिलता है, मूल जमाकर्ता के उत्तराधिकारी को नहीं।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1 लाख से 5 लाख हुई सीमा, 6 महीने बाद आवेदन" — Deceased claim सीमा व प्रतीक्षा अवधि</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> बिना कानूनी साक्ष्य के वर्तमान में अधिकतम दावा सीमा क्या है? <b>(₹5,00,000)</b> Senior Postmaster किस सीमा तक दावा मंजूर कर सकता है? <b>(₹5,00,000)</b> दावा आवेदन मृत्यु के कितने समय बाद किया जा सकता है? <b>(6 महीने)</b></div>
+  </div>
+</div>
+
+<!-- CH20a PMJJBY -->
+<div class="chapter" id="ch20a">
+  <div class="chapter-head" style="background:#00695C;">☂️ अध्याय 20(a) → Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>मूल जानकारी (16.10.2021 संशोधित नियम)</h3>
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>प्रकार</td><td>जीवन बीमा (किसी भी कारण से मृत्यु)</td></tr>
+        <tr><td>आयु पात्रता</td><td>18-50 वर्ष</td></tr>
+        <tr><td>कवरेज राशि</td><td><b>₹2 लाख</b></td></tr>
+        <tr><td>वार्षिक प्रीमियम</td><td><b>₹330</b></td></tr>
+        <tr><td>Enrolment अवधि</td><td>1 जून से 31 मई</td></tr>
+        <tr><td>Lien Period (प्रतीक्षा अवधि)</td><td><b>30 दिन</b> (केवल दुर्घटना मृत्यु में छूट)</td></tr>
+        <tr><td>अधिकतम आयु (Termination)</td><td>55 वर्ष</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>देरी से Enrolment — Pro-rata Premium</h3>
+      <table>
+        <tr><th>महीने</th><th>प्रीमियम</th></tr>
+        <tr><td>जून-जुलाई-अगस्त</td><td>₹330 (पूर्ण)</td></tr>
+        <tr><td>सितंबर-अक्टूबर-नवंबर</td><td>₹258</td></tr>
+        <tr><td>दिसंबर-जनवरी-फरवरी</td><td>₹172</td></tr>
+        <tr><td>मार्च-अप्रैल-मई</td><td>₹86</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "18-50-330-2लाख-30दिन-55" — PMJJBY का पूरा सार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PMJJBY की वार्षिक प्रीमियम व कवरेज राशि क्या है? <b>(₹330 प्रीमियम, ₹2 लाख कवर)</b> Lien Period कितने दिनों का है? <b>(30 दिन)</b></div>
+  </div>
+</div>
+
+<!-- CH20b PMSBY -->
+<div class="chapter" id="ch20b">
+  <div class="chapter-head" style="background:#37474F;">🩹 अध्याय 20(b) → Pradhan Mantri Suraksha Bima Yojana (PMSBY)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>मूल जानकारी</h3>
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>प्रकार</td><td>दुर्घटना बीमा (मृत्यु/अपंगता)</td></tr>
+        <tr><td>आयु पात्रता</td><td><b>18-70 वर्ष</b> (PMJJBY से अधिक)</td></tr>
+        <tr><td>वार्षिक प्रीमियम</td><td><b>₹12</b> (PMJJBY से बहुत कम)</td></tr>
+        <tr><td>अधिकतम आयु (Termination)</td><td>70 वर्ष</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Benefits — 3-स्तरीय कवरेज</h3>
+      <table>
+        <tr><th>घटना</th><th>राशि</th></tr>
+        <tr><td>मृत्यु</td><td>₹2 लाख</td></tr>
+        <tr><td>दोनों आंख/हाथ/पैर की पूर्ण हानि, या 1 आंख + 1 हाथ/पैर</td><td>₹2 लाख</td></tr>
+        <tr><td>1 आंख या 1 हाथ/पैर की पूर्ण हानि</td><td>₹1 लाख</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "18-70-12-2लाख/1लाख" — PMSBY का पूरा सार (PMJJBY से सस्ता व व्यापक आयु सीमा)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PMSBY की वार्षिक प्रीमियम कितनी है? <b>(₹12)</b> आयु पात्रता? <b>(18-70 वर्ष)</b> आंशिक अपंगता (एक आंख/हाथ) पर कितनी राशि मिलती है? <b>(₹1 लाख)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>PM CARES:</b> शुरू 06.10.2021 | 18yr पर ₹10L | 23yr पर बंद | Premature नहीं</div>
+    <div class="rev-card"><b>Agency:</b> SAS(1960, 0.5%, TD/MIS/KVP/NSC) | MPKBY(1972, 4%, RD only) | TDS 5%</div>
+    <div class="rev-card"><b>Deceased Claim:</b> बिना साक्ष्य सीमा अब ₹5 लाख (पुरानी ₹1 लाख से बढ़ी) | 6 महीने बाद आवेदन</div>
+    <div class="rev-card"><b>Sanction Authority:</b> SPM(₹50K) | HSG PM(₹1L) | Sr.PM/Supdt(₹5L) | CPM/Sr.Supdt(₹5L)</div>
+    <div class="rev-card"><b>PMJJBY:</b> 18-50yr | ₹330/yr | ₹2L cover | 30 दिन lien | 55yr तक</div>
+    <div class="rev-card"><b>PMSBY:</b> 18-70yr | ₹12/yr | ₹2L(मृत्यु)/₹1L(आंशिक) | 70yr तक</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>06.10.2021</b> = PM CARES for Children Scheme शुरुआत</li>
+    <li>🔢 <b>₹10 लाख / 18yr / 23yr</b> = PM CARES corpus / MIS दर शुरू / अंतिम भुगतान</li>
+    <li>🔢 <b>1960 / 1972</b> = SAS / MPKBY Agency शुरुआत</li>
+    <li>🔢 <b>0.5% / 4%</b> = SAS / MPKBY Commission दर</li>
+    <li>🔢 <b>5%</b> = Agent Commission पर TDS (Section 194-H)</li>
+    <li>🔢 <b>₹5,00,000</b> = वर्तमान बिना-साक्ष्य deceased claim सीमा</li>
+    <li>🔢 <b>6 महीने</b> = मृत्यु के बाद दावा आवेदन की प्रतीक्षा अवधि</li>
+    <li>🔢 <b>₹50K / ₹1L / ₹5L</b> = SPM / HSG PM / Sr.PM sanction सीमाएं</li>
+    <li>🔢 <b>PMJJBY: 18-50yr, ₹330, ₹2L, 30 दिन, 55yr</b></li>
+    <li>🔢 <b>PMSBY: 18-70yr, ₹12, ₹2L/₹1L, 70yr</b></li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB (CBS) Manual, Corrected upto 31.12.2021 — अध्याय 17-20 (अंतिम भाग) &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

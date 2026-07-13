@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rules for Branch Offices — Chapter 3: Sorting | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#fefbf0,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#7c2d12,#1e3a8a);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(124,45,18,.3);}
+  header.hero h1{margin:0 0 6px;font-size:1.3rem;}
+  header.hero .sub{font-size:.85rem;opacity:.92;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.7rem;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.02rem;display:flex;align-items:center;gap:8px;}
+  .bi{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .bi .hi{font-weight:700;font-size:.92rem;color:#111827;}
+  .bi .en{font-style:italic;font-size:.8rem;color:#4b5563;margin-top:2px;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.78rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.74rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#7c2d12;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(124,45,18,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🗂️ Rules for Branch Offices — Chapter 3</h1>
+    <div class="sub">शाखा डाकघर नियम — अध्याय 3: छँटाई (Sorting)</div>
+    <div class="tag">7 Rules (59-65) · भाग 3/8</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Manuals <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Book of BO Rules <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Chapter III — Sorting (Rules 59-65) <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Letter box clearance, Check slips, Labelled bundles
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic — परिचय <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="bi">
+      <div class="hi">यह अध्याय letter-box clearance, certificate of posting, damaged articles, check slips व labelled bundles के 7 नियमों को कवर करता है।</div>
+      <div class="en">This chapter covers letter-box clearance, certificate of posting, damaged articles, check slips, and labelled bundles.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📮 Letter-Box Clearance (Rule 59) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <ul>
+      <li>🔴 Unpaid articles — पीछे की तरफ date-stamp; अन्य articles — postage stamp पर स्पष्ट रूप से deface करें।</li>
+      <li>🟠 Reply postcards की reply portion पर stamp नहीं लगाया जाता (जब दोनों हिस्से साथ posted हों)।</li>
+      <li>🟡 Letter-box की चाबी व plates सदैव BPM की custody में रहें — postmen/village postmen को केवल clearance के समय दी जाएँ।</li>
+      <li>🟢 दिन में एक से अधिक despatch वाले BO — hour-type date stamp इस्तेमाल करें।</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> Letter-box की चाबी व plates सामान्यतः किसके पास रहती हैं? <b>Ans: Branch Postmaster (BPM) की custody में</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 Certificate of Posting — MS-19 (Rule 60) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="bi rule">
+      <div class="hi">एक certificate में अधिकतम <b>3 articles</b> ही दर्ज किए जा सकते हैं।</div>
+      <div class="en">Maximum 3 articles can be entered in a single certificate of posting.</div>
+    </div>
+    <table>
+      <tr><th>Detail</th><th>Rule</th></tr>
+      <tr><td>Form</td><td>MS-19</td></tr>
+      <tr><td>अधिकतम articles प्रति certificate</td><td>3</td></tr>
+      <tr><td>Book में forms की संख्या</td><td>50</td></tr>
+      <tr><td>Fee भुगतान</td><td>Postage stamp certificate पर चिपकाकर</td></tr>
+      <tr><td>Plain paper certificate</td><td>स्वीकार्य — MS-19 फॉर्म पर चिपकाकर लौटाई जाए</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3 Articles, 50 Forms" — MS-19 certificate में 3 की सीमा, book में 50 forms होते हैं।</div>
+    <div class="exam-q"><b>Probable Q:</b> एक Certificate of Posting में अधिकतम कितने articles दर्ज किए जा सकते हैं? <b>Ans: 3</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — क्षतिग्रस्त/खुले Articles (Rule 61) <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="decision">
+      <div class="node">खुली अवस्था में मिले ➜ "Received open" लिखें</div><br>
+      <div class="node">फटी/क्षतिग्रस्त मिले ➜ "Received torn" / "Received damaged" लिखें</div><br>
+      <div class="node">खाली आवरण मिले ➜ "Without contents" लिखें</div><br>
+      <div class="node">संदिग्ध परिस्थिति ➜ जाँच करें, अपराधी का पता लगाने का प्रयास करें</div>
+    </div>
+    <div class="bi">
+      <div class="hi">विदेश भेजे जाने वाले क्षतिग्रस्त article को कभी भी envelope में नहीं रखा जाना चाहिए।</div>
+      <div class="en">A damaged article addressed to a foreign country must never be placed in an envelope.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> क्या विदेश भेजे जाने वाले क्षतिग्रस्त article को envelope में रखा जा सकता है? <b>Ans: नहीं, कभी नहीं</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Unpaid व असुरक्षित Articles (Rule 62) <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <div class="bi">
+      <div class="hi">ऐसे unpaid postage को branch office account में credit नहीं किया जाता, न ही journal (Pa-5) में उसकी particulars दर्ज होती हैं — सीधे "Postage due" stamp लगाकर आगे भेजा जाता है।</div>
+      <div class="en">Such unpaid postage is NOT credited in the BO account nor noted in the journal — simply stamped "Postage due" and forwarded.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔤 Address का Transcription (Rule 63) <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="flow">
+      <div class="step">क्षेत्रीय भाषा का पता, पर गंतव्य स्थान पर भाषा प्रचलित नहीं ➜ लाल स्याही में अंग्रेज़ी में transcribe करें</div>
+      <div class="step">विदेशी डाक हेतु सभी क्षेत्रीय भाषा के पते ➜ पूर्ण रूप से अंग्रेज़ी में transcribe अनिवार्य</div>
+      <div class="step">भाषा BPM को ज्ञात नहीं / BPM अंग्रेज़ी नहीं जानता ➜ Account Office भेजें (वहाँ transcription होगा)</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Transcription किस रंग की स्याही में किया जाता है? <b>Ans: लाल स्याही (Red Ink)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🎨 Check Slip — रंग-कोड प्रणाली (Rule 64) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>रंग / Colour</th><th>प्रयोग / Usage</th></tr>
+      <tr><td>🩷 Pink</td><td>सामान्य paid व unpaid bundles</td></tr>
+      <tr><td>⬜ White</td><td>सामान्य sorting bundles (Express + Deferred दोनों)</td></tr>
+      <tr><td>🟦 Blue ("Air Mail")</td><td>विदेशी Air Mail bundles</td></tr>
+    </table>
+    <div class="bi">
+      <div class="hi">Express bundle के लिए white check-slip पर <b>2 diagonal नीली पेंसिल रेखाएँ</b> बनाई जाती हैं।</div>
+      <div class="en">For an express bundle, the white check-slip is marked with 2 diagonal lines in blue pencil.</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Pink-Paid, White-Sort, Blue-Bahar(Foreign)" — रंग से bundle का प्रकार तुरंत पहचानें।</div>
+    <div class="exam-q"><b>Probable Q:</b> विदेशी Air Mail bundles के लिए check-slip का रंग? <b>Ans: नीला (Blue)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📦 Labelled Bundles — वर्गीकरण (Rule 65) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Bundle प्रकार</th><th>सीमा / Threshold</th></tr>
+      <tr><td>Station Bundle (paid या unpaid)</td><td>Articles की संख्या <b>15 से अधिक</b> होने पर तैयार</td></tr>
+      <tr><td>Territorial Bundle</td><td>Articles की संख्या <b>25 या अधिक</b> होने पर तैयार</td></tr>
+      <tr><td>Sorting Bundle — Express</td><td>तुरंत sort करने योग्य articles</td></tr>
+      <tr><td>Sorting Bundle — Deferred</td><td>बाद में निपटाए जा सकने वाले articles</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "15-Station, 25-Territorial" — station bundle >15, territorial bundle ≥25 articles पर बनता है।</div>
+    <div class="bi">
+      <div class="hi">Labelled bundle sorting में एक single article की तरह treated होता है और जिस office/section को addressed है, वहीं खोला जाता है। Labelled bundles "due" नहीं होते।</div>
+      <div class="en">A labelled bundle is treated as a single article in sorting; it's opened by the addressed office/section. Labelled bundles are NOT "due".</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Station Bundle कब तैयार किया जाता है? <b>Ans: जब किसी office के लिए articles की संख्या 15 से अधिक हो</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — Chapter 3 Overview</h2>
+    <div class="bi" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Letter-box</b>: Clear → Stamp → Sort</div></div>
+    <div class="bi" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Posting Certificate</b>: MS-19, max 3 articles</div></div>
+    <div class="bi" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Check Slips</b>: Pink/White/Blue color-code</div></div>
+    <div class="bi" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Bundles</b>: Station(&gt;15) / Territorial(≥25)</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. एक Certificate of Posting (MS-19) में अधिकतम कितने articles दर्ज हो सकते हैं?</div><div class="opts">A) 1 &nbsp; B) 2 &nbsp; C) 3 &nbsp; D) 5</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q2. MS-19 की एक book में कितने forms होते हैं?</div><div class="opts">A) 25 &nbsp; B) 50 &nbsp; C) 100 &nbsp; D) 20</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q3. Air Mail bundles के लिए check-slip का रंग?</div><div class="opts">A) Pink &nbsp; B) White &nbsp; C) Blue &nbsp; D) Yellow</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q4. Express bundle की पहचान कैसे की जाती है?</div><div class="opts">A) लाल रंग की स्लिप से &nbsp; B) White slip पर 2 diagonal नीली रेखाएँ &nbsp; C) Pink slip पर स्टार &nbsp; D) कोई पहचान नहीं</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q5. Station Bundle कब तैयार होता है?</div><div class="opts">A) Articles >10 &nbsp; B) Articles >15 &nbsp; C) Articles >20 &nbsp; D) Articles >25</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q6. Territorial Bundle की न्यूनतम article संख्या सीमा?</div><div class="opts">A) 15 &nbsp; B) 20 &nbsp; C) 25 &nbsp; D) 30</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q7. Transcription किस स्याही के रंग में की जाती है?</div><div class="opts">A) काली &nbsp; B) नीली &nbsp; C) लाल &nbsp; D) हरी</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q8. विदेश भेजे जाने वाले क्षतिग्रस्त article को envelope में रखा जा सकता है?</div><div class="opts">A) हाँ हमेशा &nbsp; B) नहीं, कभी नहीं &nbsp; C) केवल Superintendent की अनुमति से &nbsp; D) केवल insured articles के लिए</div><div class="ans">Answer: B</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Certificate of Posting (MS-19): अधिकतम <b>3 articles</b>; book में <b>50 forms</b></li>
+      <li>🔴 Check Slip रंग: <b>Pink</b>=paid/unpaid bundles; <b>White</b>=sorting bundles; <b>Blue</b>=Air Mail</li>
+      <li>🔴 Express bundle: white slip पर <b>2 diagonal नीली रेखाएँ</b></li>
+      <li>🔴 Station Bundle: articles <b>&gt;15</b>; Territorial Bundle: articles <b>≥25</b></li>
+      <li>🟠 Transcription: <b>लाल स्याही</b> में, regional language → English</li>
+      <li>🟡 क्षतिग्रस्त foreign-bound article — कभी envelope में न रखें</li>
+      <li>🟢 Labelled bundle — sorting में single article की तरह treated, "due" नहीं होते</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Chapter</td><td>III — Sorting (Rules 59-65)</td></tr>
+      <tr><td>Total Rules</td><td>7</td></tr>
+      <tr><td>Certificate of Posting Form</td><td>MS-19, max 3 articles, 50/book</td></tr>
+      <tr><td>Check Slip Colours</td><td>Pink (paid/unpaid), White (sorting), Blue (Air Mail)</td></tr>
+      <tr><td>Express Bundle Marker</td><td>White slip + 2 diagonal blue pencil lines</td></tr>
+      <tr><td>Station Bundle Threshold</td><td>&gt;15 articles</td></tr>
+      <tr><td>Territorial Bundle Threshold</td><td>≥25 articles</td></tr>
+      <tr><td>Transcription Ink Colour</td><td>Red</td></tr>
+      <tr><td>Damaged Foreign Article Rule</td><td>Never place in envelope</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

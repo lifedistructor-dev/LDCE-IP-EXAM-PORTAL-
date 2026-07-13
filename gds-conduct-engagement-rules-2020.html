@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDS Conduct & Engagement Rules 2020 | IP Exam Notes</title>
+<style>
+:root{
+  --red:#C8102E; --darkred:#8f0b21; --blue:#003087; --lightblue:#e8eefc;
+  --gold:#FFB81C; --gold-dark:#c98e00;
+  --imp1:#e74c3c; --imp2:#f39c12; --imp3:#f1c40f; --imp4:#27ae60;
+  --bg:#faf9f6; --card:#ffffff; --ink:#1c1c1c; --muted:#5a5a5a;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Arial,sans-serif; background:var(--bg); color:var(--ink);
+  line-height:1.5;
+}
+.hindi{font-weight:600;}
+.eng{color:var(--muted); font-style:italic; font-size:0.92em;}
+a{color:var(--blue);}
+
+/* ===== HEADER ===== */
+header.hero{
+  background:linear-gradient(135deg,var(--red) 0%, var(--darkred) 55%, var(--blue) 100%);
+  color:#fff; padding:28px 16px 34px; text-align:center; position:relative; overflow:hidden;
+}
+header.hero::before{
+  content:"डाक"; position:absolute; font-size:220px; font-weight:900; opacity:0.06;
+  top:-60px; left:-20px; color:#fff;
+}
+header.hero h1{margin:0 0 6px; font-size:1.6rem; letter-spacing:0.5px;}
+header.hero .sub{font-size:1rem; opacity:0.95;}
+header.hero .badge-row{margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+header.hero .badge{
+  background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.5);
+  padding:5px 12px; border-radius:20px; font-size:0.78rem;
+}
+.gold-strip{height:6px; background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+
+/* ===== NAV ===== */
+nav.toc{
+  background:var(--blue); position:sticky; top:0; z-index:50; padding:8px 6px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.25); overflow-x:auto; white-space:nowrap;
+}
+nav.toc a{
+  color:#fff; text-decoration:none; font-size:0.78rem; padding:6px 10px; border-radius:8px;
+  display:inline-block; margin:2px;
+}
+nav.toc a:hover, nav.toc a:active{background:var(--gold); color:#222;}
+
+.wrap{max-width:900px; margin:0 auto; padding:14px 12px 60px;}
+
+/* ===== SECTION HEADERS ===== */
+.chapter{
+  margin-top:34px; padding-bottom:8px; border-bottom:3px solid var(--gold);
+  display:flex; align-items:center; gap:10px;
+}
+.chapter .num{
+  background:var(--red); color:#fff; font-weight:800; width:38px; height:38px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1rem;
+}
+.chapter h2{margin:0; font-size:1.25rem; color:var(--blue);}
+.chapter h2 .eng{display:block; font-size:0.82rem; margin-top:2px;}
+
+.subchapter{
+  margin:18px 0 8px; font-size:1.02rem; font-weight:700; color:var(--darkred);
+  border-left:5px solid var(--red); padding:4px 10px; background:#fff3f2;
+}
+.subchapter .eng{display:block; font-size:0.78rem; font-weight:400; color:var(--muted);}
+
+.micro{
+  font-weight:700; margin:14px 0 6px; color:var(--blue); font-size:0.98rem;
+}
+.nano{font-size:0.9rem; color:var(--ink);}
+
+/* ===== CARDS ===== */
+.card{
+  background:var(--card); border-radius:var(--radius); padding:14px 16px; margin:10px 0;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08); border:1px solid #eee;
+}
+.card.def{border-left:6px solid var(--gold-dark); background:#fffaf0;}
+.card.rule{border-left:6px solid var(--blue); background:var(--lightblue);}
+.card.except{border-left:6px solid #8e44ad; background:#f7f0fb;}
+.card.penalty{border-left:6px solid var(--red); background:#fff0f0;}
+.card.date{border-left:6px solid #16a085; background:#eafaf6;}
+.card.authority{border-left:6px solid #d35400; background:#fef3ea;}
+
+/* ===== TAG / TIER LABELS ===== */
+.tag{
+  display:inline-block; font-size:0.72rem; font-weight:700; padding:3px 9px; border-radius:20px;
+  margin:2px 4px 2px 0; color:#fff;
+}
+.t1{background:var(--imp1);} /* very imp */
+.t2{background:var(--imp2); color:#222;} /* frequently asked */
+.t3{background:var(--imp3); color:#222;} /* conceptual */
+.t4{background:var(--imp4);} /* quick revision */
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:10px; background:#fff; padding:10px 14px; border-radius:12px;
+  border:1px dashed #ccc; font-size:0.82rem; margin:14px 0;
+}
+.legend span{display:flex; align-items:center; gap:6px;}
+.dot{width:12px; height:12px; border-radius:50%; display:inline-block;}
+
+/* ===== TABLE ===== */
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:0.85rem; background:#fff;}
+th{background:var(--blue); color:#fff; padding:8px 6px; text-align:left;}
+td{padding:7px 6px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#f7f8fc;}
+.table-wrap{overflow-x:auto; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08);}
+
+/* ===== FLOWCHART ===== */
+.flow{display:flex; flex-direction:column; align-items:center; gap:0; margin:16px 0;}
+.flow-box{
+  background:var(--blue); color:#fff; padding:10px 16px; border-radius:10px; text-align:center;
+  font-size:0.85rem; font-weight:600; max-width:90%; box-shadow:0 2px 5px rgba(0,0,0,0.15);
+}
+.flow-box.alt{background:var(--red);}
+.flow-box.gold{background:var(--gold-dark);}
+.flow-arrow{font-size:1.4rem; color:var(--red); line-height:1;}
+.flow-branch{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin:6px 0;}
+.flow-branch .flow-box{flex:1; min-width:130px;}
+
+/* ===== MIND MAP ===== */
+.mindmap{
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:14px 0;
+  position:relative;
+}
+.mindmap .center{
+  background:var(--red); color:#fff; padding:12px 20px; border-radius:50px; font-weight:800;
+  width:100%; text-align:center; margin-bottom:10px; font-size:0.95rem;
+}
+.mindmap .node{
+  background:#fff; border:2px solid var(--blue); color:var(--blue); padding:8px 12px; border-radius:10px;
+  font-size:0.8rem; font-weight:600; flex:1 1 140px; text-align:center;
+}
+
+/* ===== TIMELINE ===== */
+.timeline{border-left:4px solid var(--gold-dark); margin:16px 0 16px 10px; padding-left:18px;}
+.timeline .item{position:relative; margin-bottom:16px;}
+.timeline .item::before{
+  content:""; position:absolute; left:-24px; top:4px; width:14px; height:14px; border-radius:50%;
+  background:var(--red); border:3px solid #fff; box-shadow:0 0 0 2px var(--red);
+}
+.timeline .dt{font-weight:800; color:var(--red); font-size:0.85rem;}
+.timeline .desc{font-size:0.85rem;}
+
+/* ===== DECISION TREE ===== */
+.dtree{background:#fff; border:1px solid #ddd; border-radius:12px; padding:14px; margin:14px 0;}
+.dtree .q{font-weight:700; color:var(--blue); margin-bottom:6px;}
+.dtree .ans{margin-left:16px; font-size:0.85rem; padding:4px 0; border-left:3px solid var(--gold); padding-left:10px; margin-bottom:6px;}
+
+/* ===== EXAM Q BOX ===== */
+.examq{
+  background:#fff8e1; border:1.5px dashed var(--imp2); border-radius:10px; padding:8px 12px;
+  margin:8px 0; font-size:0.82rem;
+}
+.examq::before{content:"❓ संभावित प्रश्न / Likely Question: "; font-weight:700; color:var(--imp2);}
+
+/* ===== MNEMONIC ===== */
+.mnemonic{
+  background:linear-gradient(135deg,#fff3e0,#ffe0b2); border:2px solid var(--gold-dark); border-radius:12px;
+  padding:12px 16px; margin:10px 0; font-size:0.88rem;
+}
+.mnemonic strong{color:var(--darkred);}
+
+/* ===== REVISION SHEET ===== */
+.revision-sheet{
+  background:var(--blue); color:#fff; border-radius:16px; padding:18px; margin:20px 0;
+}
+.revision-sheet h3{margin-top:0; color:var(--gold);}
+.revision-sheet .grid{display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:640px){.revision-sheet .grid{grid-template-columns:1fr 1fr;}}
+.revision-sheet .box{background:rgba(255,255,255,0.1); border-radius:10px; padding:10px 12px; font-size:0.82rem;}
+.revision-sheet .box h4{margin:0 0 6px; color:var(--gold);}
+
+/* ===== FOOTER / LAST DAY NOTES ===== */
+.lastday{
+  background:#1c1c1c; color:#fff; border-radius:16px; padding:18px; margin:24px 0;
+}
+.lastday h3{color:var(--gold); margin-top:0;}
+.lastday ul{margin:0; padding-left:18px; font-size:0.85rem;}
+.lastday li{margin-bottom:6px;}
+
+/* toggle-able quiz */
+details{background:#fff; border:1px solid #eee; border-radius:10px; margin:8px 0; padding:6px 10px;}
+summary{cursor:pointer; font-weight:700; color:var(--blue); font-size:0.88rem;}
+
+.pill-row{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+.pill{background:var(--lightblue); color:var(--blue); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:600;}
+
+hr.sep{border:none; border-top:2px dotted #ccc; margin:22px 0;}
+
+.top-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--red); color:#fff; border-radius:50%;
+  width:42px; height:42px; display:flex; align-items:center; justify-content:center; text-decoration:none;
+  box-shadow:0 3px 8px rgba(0,0,0,0.3); font-size:1.1rem; z-index:60;
+}
+.center-text{text-align:center;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>📮 Gramin Dak Sevak (Conduct & Engagement) Rules, 2020</h1>
+  <div class="sub hindi">ग्रामीण डाक सेवक (आचरण एवं संबद्धता) नियम, 2020 — संपूर्ण Exam Notes</div>
+  <div class="badge-row">
+    <span class="badge">📅 Notified: 14.02.2020</span>
+    <span class="badge">📜 31 Rules (Supersedes 2011 Rules)</span>
+    <span class="badge">🎯 IP Exam Paper-I</span>
+  </div>
+</header>
+<div class="gold-strip"></div>
+
+<nav class="toc" id="top">
+  <a href="#ch1">1.परिभाषा</a>
+  <a href="#ch2">2.शर्तें</a>
+  <a href="#ch3">3.पात्रता</a>
+  <a href="#ch4">4.VDS</a>
+  <a href="#ch5">5.प्राधिकारी</a>
+  <a href="#ch6">6.पेंशन</a>
+  <a href="#ch7">7.अवकाश</a>
+  <a href="#ch8">8.समाप्ति</a>
+  <a href="#ch9">9.दंड</a>
+  <a href="#ch10">10.प्रक्रिया</a>
+  <a href="#ch11">11.अपील</a>
+  <a href="#ch12">12.आचरण</a>
+  <a href="#ch13">13.Schedule</a>
+  <a href="#rev">📝Revision</a>
+  <a href="#last">⏰LastDay</a>
+</nav>
+
+<div class="wrap">
+
+<div class="legend">
+  <span><span class="dot" style="background:var(--imp1)"></span>🔴 Very Important for Exam</span>
+  <span><span class="dot" style="background:var(--imp2)"></span>🟠 Frequently Asked</span>
+  <span><span class="dot" style="background:var(--imp3)"></span>🟡 Conceptual Understanding</span>
+  <span><span class="dot" style="background:var(--imp4)"></span>🟢 Quick Revision Point</span>
+</div>
+
+<!-- ================= CHAPTER 1 ================= -->
+<div class="chapter" id="ch1">
+  <div class="num">1</div>
+  <h2 class="hindi">प्रारंभिक एवं परिभाषाएँ <span class="eng">Preliminary & Definitions (Rule 1-3)</span></h2>
+</div>
+
+<div class="subchapter">1.1 लघु शीर्षक व प्रारंभ <span class="eng">Short Title & Commencement (Rule 1)</span></div>
+<div class="card rule">
+  <span class="tag t4">🟢 Quick</span>
+  ये नियम "GDS (Conduct & Engagement) Rules, 2020" कहलाते हैं और इनके <b>circulation (जारी होने)</b> की तारीख से लागू होते हैं (notification/publication की तारीख से नहीं)।
+</div>
+
+<div class="subchapter">1.2 प्रयोज्यता <span class="eng">Application (Rule 2)</span></div>
+<div class="card">यह नियम <b>Department of Posts, Ministry of Communications</b> के अधीन सभी Gramin Dak Sevaks पर लागू होते हैं।</div>
+
+<div class="subchapter">1.3 महत्वपूर्ण परिभाषाएँ <span class="eng">Key Definitions (Rule 3)</span></div>
+
+<div class="mindmap">
+  <div class="center">Rule 3 — Definitions 🗂️</div>
+  <div class="node">Engaging Authority</div>
+  <div class="node">Head of Circle = CPMG</div>
+  <div class="node">Head of Region = PMG</div>
+  <div class="node">Head of Division = SSPOs/SPOs</div>
+  <div class="node">Gramin Dak Sevak = BPM/ABPM/Dak Sevak</div>
+  <div class="node">Members of Family</div>
+  <div class="node">Record Officer (RMS)</div>
+</div>
+
+<div class="table-wrap">
+<table>
+<tr><th>पद <span class="eng">(Term)</span></th><th>अर्थ / Meaning</th></tr>
+<tr><td><b>Engaging Authority</b></td><td>वह प्राधिकारी जो GDS Rules के आधार पर GDS को नियुक्त/संबद्ध करने हेतु सशक्त है।</td></tr>
+<tr><td><b>Government</b></td><td>Central Government</td></tr>
+<tr><td><b>Gramin Dak Sevak (GDS)</b></td><td>(i) Branch Postmaster (BPM) (ii) Assistant Branch Postmaster (ABPM) (iii) Dak Sevak — <b>3 श्रेणियाँ</b> (पहले 5 category थीं, rationalise होकर 3 हुईं)</td></tr>
+<tr><td><b>Head of a Circle</b></td><td>Chief Postmaster General (CPMG)</td></tr>
+<tr><td><b>Head of a Division</b></td><td>Senior Superintendent/Superintendent of Postal or RMS Division</td></tr>
+<tr><td><b>Head of a Region</b></td><td>Postmaster General (Region)</td></tr>
+<tr><td><b>Members of Family</b></td><td>पत्नी/पति, बच्चे, सौतेले बच्चे तथा आश्रित व्यक्ति; केवल <b>विधवा व आश्रित पुत्री (widow & dependent daughter-in-law)</b> शामिल — तलाकशुदा या स्वतंत्र संतान शामिल नहीं</td></tr>
+<tr><td><b>Record Officer</b></td><td>RMS में Sub/Head Record Officer</td></tr>
+</table>
+</div>
+
+<div class="mnemonic">🧠 <strong>Memory Trick:</strong> "<b>B-A-D</b>" याद रखें — <b>B</b>PM, <b>A</b>BPM, <b>D</b>ak Sevak = 3 GDS categories। "BPM बॉस, ABPM सहायक, Dak Sevak डिलीवरी"</div>
+
+<div class="examq">GDS की कितनी श्रेणियाँ हैं और उन्हें किस OM द्वारा rationalise किया गया? <span class="hindi">(उत्तर: 3 श्रेणियाँ; OM No.17-31/2016-GDS dated 25.06.2018 & 22.07.2019)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 2 ================= -->
+<div class="chapter" id="ch2">
+  <div class="num">2</div>
+  <h2 class="hindi">सेवा की शर्तें <span class="eng">Terms & Conditions of Engagement (Rule 3-A)</span></h2>
+</div>
+
+<div class="card rule">
+<span class="tag t1">🔴 Very Important</span>
+<table>
+<tr><th>क्र.</th><th>शर्त / Condition</th><th>विवरण</th></tr>
+<tr><td>i</td><td>अधिकतम कार्य अवधि</td><td>प्रतिदिन <b>5 घंटे</b> से अधिक नहीं</td></tr>
+<tr><td>ii</td><td>अधिकतम आयु सेवा में रहने की</td><td><b>65 वर्ष</b> से अधिक नहीं (retention)</td></tr>
+<tr><td>iii</td><td>आजीविका का पर्याप्त साधन</td><td>GDS को undertaking देनी होगी कि उसके पास आय के अन्य स्रोत हैं</td></tr>
+<tr><td>iv</td><td>स्थानांतरण</td><td>public interest/administrative/vigilance ground पर एक post/unit से दूसरे में transfer हो सकता है</td></tr>
+<tr><td>v</td><td>Civil Service दर्जा</td><td>GDS <b>Union की Civil Service से बाहर</b> है</td></tr>
+<tr><td>vi</td><td>Central Govt कर्मचारी नहीं</td><td>GDS केंद्र सरकार के कर्मचारियों के समकक्ष होने का दावा नहीं कर सकता</td></tr>
+<tr><td>vii</td><td>निवास (Residence)</td><td>चयन के <b>1 माह के भीतर</b> engagement से पूर्व post village/delivery jurisdiction में निवास अनिवार्य</td></tr>
+<tr><td>viii</td><td>Post Office स्थान</td><td>BPM द्वारा उपलब्ध कराए गए उपयुक्त स्थान पर</td></tr>
+<tr><td>ix</td><td>Combination of duties</td><td>अनुमन्य / Permissible है</td></tr>
+</table>
+</div>
+
+<div class="examq">यदि GDS BPM अपनी delivery jurisdiction में निवास नहीं करता तो क्या कार्रवाई होगी? <span class="hindi">(उत्तर: Rule 10 के तहत disciplinary action, removal/dismissal तक)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 3 ================= -->
+<div class="chapter" id="ch3">
+  <div class="num">3</div>
+  <h2 class="hindi">पात्रता मानदंड <span class="eng">Eligibility Criteria for Engagement (Rule 3-B)</span></h2>
+</div>
+
+<div class="micro">I. आयु सीमा <span class="eng">Age Limit</span> 🔴</div>
+<div class="card rule">न्यूनतम आयु: <b>18 वर्ष</b>; अधिकतम आयु: <b>40 वर्ष</b> (vacancy notification की तारीख को)</div>
+
+<div class="table-wrap">
+<table>
+<tr><th>श्रेणी / Category</th><th>छूट / Relaxation</th></tr>
+<tr><td>SC/ST</td><td>5 वर्ष</td></tr>
+<tr><td>OBC</td><td>3 वर्ष</td></tr>
+<tr><td>EWS</td><td>कोई छूट नहीं (No relaxation)*</td></tr>
+<tr><td>PwD</td><td>10 वर्ष</td></tr>
+<tr><td>PwD + OBC</td><td>13 वर्ष</td></tr>
+<tr><td>PwD + SC/ST</td><td>15 वर्ष</td></tr>
+</table>
+</div>
+<div class="card except"><span class="tag t2">🟠 Frequently Asked</span> <b>EWS Note:</b> आयु में कोई छूट नहीं, परंतु SC/ST/OBC reservation से न आने वाले EWS को <b>10% reservation</b> engagement में मिलता है (letter No 17-09/2019 dated 26.02.2019)।<br><br>
+<b>Blind vs Low Vision Note:</b> "Blind" benchmark disability में upper age relaxation लागू नहीं; उसकी जगह "Low Vision" candidate पहचाना जाता है, अधिकतम आयु सीमा <b>56 वर्ष</b> (letter No.17-8/2017-GDS dated 26.02.2019)</div>
+
+<div class="micro">II. शैक्षणिक योग्यता <span class="eng">Educational Qualification</span> 🔴</div>
+<div class="card def">10वीं कक्षा (Secondary/Matriculation) उत्तीर्ण, जिसमें <b>Mathematics व English में पासिंग marks</b> (compulsory या elective subject के रूप में) — मान्यता प्राप्त Board से।</div>
+
+<div class="micro">III. स्थानीय भाषा का ज्ञान <span class="eng">Local Language</span></div>
+<div class="card">कम से कम 10वीं तक स्थानीय भाषा का अध्ययन (compulsory/elective) — राज्य सरकार या Constitution की 8th Schedule अनुसार</div>
+
+<div class="micro">IV. Basic Computer Training</div>
+<div class="card">कम से कम <b>60 दिन</b> की Basic Computer Training Course Certificate। यदि Matriculation/Class XII या उच्चतर में Computer विषय पढ़ा हो तो यह शर्त relax हो जाती है।</div>
+
+<div class="micro">V-VII. अन्य शर्तें</div>
+<div class="pill-row">
+  <span class="pill">V. निवास — Rule 3-A(vii) अनुसार</span>
+  <span class="pill">VI. साइकिल चलाने का ज्ञान (स्कूटर/मोटरसाइकिल भी मान्य)</span>
+  <span class="pill">VII. आजीविका का पर्याप्त साधन — चयन के 30 दिन में पूरा करना</span>
+  <span class="pill">VIII. Security Furnishing</span>
+</div>
+
+<div class="micro">VIII. SC/ST/OBC/PwD/EWS Representation 🟡</div>
+<div class="card">DoP OM No.19-11/97-ED&TRG dated 27.11.1997, No.17-08/2017-GDS dated 26.02.2019 व No.17-09/2019-GDS dated 26.02.2019 के अनुसार adequate representation सुनिश्चित की जाती है।</div>
+
+<div class="micro">IX. Certificate Production</div>
+<div class="card">SC/ST/OBC/Disability/EWS प्रमाणपत्र निर्धारित प्रारूप में देना अनिवार्य है।</div>
+
+<div class="micro">X. Time Related Continuity Allowance (TRCA) 🔴🔴</div>
+<div class="table-wrap">
+<table>
+<tr><th>Category</th><th>Min TRCA — 4 hrs/Level 1</th><th>Min TRCA — 5 hrs/Level 2</th></tr>
+<tr><td><b>BPM</b></td><td>₹12,000/-</td><td>₹14,500/-</td></tr>
+<tr><td><b>ABPM / Dak Sevak</b></td><td>₹10,000/-</td><td>₹12,000/-</td></tr>
+</table>
+</div>
+<div class="card date"><span class="tag t1">🔴</span> 01.07.2018 के बाद engaged GDS की initial TRCA fixation <b>Level-1 के प्रथम stage</b> पर होगी (Order 17-31/2016-GDS dt.25.06.2018 & letter 17-2/2018-GDS dt.22.03.2019)</div>
+
+<div class="micro">XI. Method of Engagement</div>
+<div class="card">Online engagement process। UR/OBC/EWS के <b>पुरुष</b> applicants को fee देनी होगी; सभी <b>महिला, SC/ST व PwD</b> उम्मीदवारों को fee से छूट।</div>
+
+<div class="micro">XII. Job Profile 🔴</div>
+
+<div class="flow">
+  <div class="flow-box gold">BPM (Branch Postmaster)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Branch PO/IPPB संचालन का Team Leader; counter operation, handheld device, mail conveyance & delivery की overall जिम्मेदारी; marketing/business procurement</div>
+</div>
+<div class="flow">
+  <div class="flow-box alt">ABPM (Assistant Branch Postmaster)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Sale of stamps, doorstep delivery/deposit, counter assistance, marketing, combined duty of BPM जब आदेश हो</div>
+</div>
+<div class="flow">
+  <div class="flow-box">Dak Sevak</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Departmental PO/RMS में sale, conveyance, delivery व IPPB कार्य; Postmaster/Sub Postmaster की सहायता</div>
+</div>
+<div class="card except"><span class="tag t2">🟠</span> <b>ध्यान दें:</b> IPPB का कार्य <b>incentive आधारित</b> है इसलिए TRCA गणना में शामिल <u>नहीं</u> किया जाता।</div>
+
+<div class="examq">IPPB कार्य TRCA गणना में शामिल है या नहीं? <span class="hindi">(उत्तर: नहीं, यह incentive basis पर है)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 4 ================= -->
+<div class="chapter" id="ch4">
+  <div class="num">4</div>
+  <h2 class="hindi">स्वैच्छिक सेवा-मुक्ति योजना <span class="eng">Voluntary Discharge Scheme (Rule 3-C)</span></h2>
+</div>
+<div class="card rule">
+<span class="tag t2">🟠 Frequently Asked</span>
+सभी GDS categories निम्न आधार पर VDS ले सकते हैं:
+<div class="pill-row">
+  <span class="pill">✅ 20 वर्ष की engagement अवधि पूर्ण होने पर</span>
+  <span class="pill">✅ Medical Grounds पर</span>
+</div>
+</div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 5 ================= -->
+<div class="chapter" id="ch5">
+  <div class="num">5</div>
+  <h2 class="hindi">Engaging Authority व शक्तियाँ <span class="eng">Rule 4-5</span></h2>
+</div>
+
+<div class="dtree">
+  <div class="q">🌳 Decision Tree — विवाद की स्थिति में कौन निर्णय करेगा?</div>
+  <div class="ans">Q: Engaging Authority कौन है, संदेह होने पर? → <b>Director General (Posts)</b> का निर्णय अंतिम</div>
+  <div class="ans">Q: Superior authority records मंगवा सकता है? → हाँ, Rule 31 Schedule के अंतर्गत कोई भी superior authority रिकॉर्ड मंगा सकती है</div>
+  <div class="ans">Q: पेनल्टी की शक्तियाँ किसके पास? → Schedule में उल्लिखित authority अथवा Circle/Region Head द्वारा विशेष आदेश से सशक्त कोई अन्य authority, परंतु <b>मूल नियुक्ति प्राधिकारी से निम्न स्तर की नहीं</b></div>
+</div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 6 ================= -->
+<div class="chapter" id="ch6">
+  <div class="num">6</div>
+  <h2 class="hindi">पेंशन/ग्रेच्युटी/सेवरेंस <span class="eng">Pension/Gratuity/Severance (Rule 6)</span></h2>
+</div>
+<div class="card penalty"><span class="tag t1">🔴</span> GDS <b>पेंशन के हकदार नहीं</b> हैं। हालांकि, वे <b>GDS Gratuity, Severance Amount या SDBS</b> के पात्र हो सकते हैं जैसा सरकार निर्धारित करे।</div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 7 ================= -->
+<div class="chapter" id="ch7">
+  <div class="num">7</div>
+  <h2 class="hindi">अवकाश <span class="eng">Leave (Rule 7, 7-A, 7-B)</span></h2>
+</div>
+
+<div class="table-wrap">
+<table>
+<tr><th>अवकाश प्रकार</th><th>पात्रता</th><th>नियम</th></tr>
+<tr><td>सामान्य Paid Leave</td><td>20 दिन/वर्ष (10 दिन प्रति half-year) बिना संचय</td><td>Rule 7</td></tr>
+<tr><td>Emergency Leave</td><td>अधिकतम 5 दिन/calendar year</td><td>Rule 7-A</td></tr>
+<tr><td>Maternity Leave (महिला GDS)</td><td>180 दिन (2 से कम living children होने पर)</td><td>Rule 7-B</td></tr>
+</table>
+</div>
+
+<div class="card except">
+<span class="tag t3">🟡 Conceptual</span>
+यदि Sevak अवकाश की समय-सीमा समाप्त होने पर काम पर वापस नहीं आता, या स्वीकृत leave से अधिक समय अनुपस्थित रहता है (exceptional परिस्थिति के अलावा), तो Rule 10 के procedure के बाद उसे <b>engagement से हटाया</b> जा सकता है।
+</div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 8 ================= -->
+<div class="chapter" id="ch8">
+  <div class="num">8</div>
+  <h2 class="hindi">सेवा-समाप्ति <span class="eng">Termination of Engagement (Rule 8)</span></h2>
+</div>
+
+<div class="flow">
+  <div class="flow-box gold">3 वर्ष से कम सतत सेवा वाला GDS</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">किसी भी समय <b>1 महीने का लिखित नोटिस</b> देकर समाप्त की जा सकती है</div>
+</div>
+
+<div class="table-wrap">
+<table>
+<tr><th>स्थिति</th><th>प्रावधान</th></tr>
+<tr><td>तत्काल समाप्ति (forthwith)</td><td>notice period के बराबर Basic TRCA + DA का भुगतान करना होगा</td></tr>
+<tr><td>Notice कम अवधि का</td><td>शेष अवधि के लिए राशि भुगतान (money order द्वारा)</td></tr>
+</table>
+</div>
+<div class="card except"><span class="tag t2">🟠</span> Rule के तहत termination होने पर GDS <b>Gratuity व Severance Amount का हकदार नहीं</b> रहता।</div>
+
+<div class="examq">3 वर्ष से कम सेवा वाले GDS की सेवा समाप्ति हेतु कितने नोटिस की आवश्यकता है? <span class="hindi">(उत्तर: 1 माह का लिखित नोटिस)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 9 ================= -->
+<div class="chapter" id="ch9">
+  <div class="num">9</div>
+  <h2 class="hindi">दंड की प्रकृति <span class="eng">Nature of Penalties (Rule 9)</span></h2>
+</div>
+
+<div class="mindmap">
+  <div class="center">🎯 Rule 9 — Penalties</div>
+</div>
+
+<div class="table-wrap">
+<table>
+<tr><th colspan="2" style="background:var(--imp4);color:#fff;">🟢 लघु दंड / Minor Penalties (i-v)</th></tr>
+<tr><td>(i)</td><td>Censure (भर्त्सना)</td></tr>
+<tr><td>(ii)</td><td>MTS/Postman/Mail Guard भर्ती परीक्षा से वंचित करना — अधिकतम 3 वर्ष तक</td></tr>
+<tr><td>(iii)</td><td>MTS में selection-cum-seniority भर्ती से वंचित — अधिकतम 3 वर्ष</td></tr>
+<tr><td>(iv)</td><td>TRCA से पूरी या आंशिक हानि की वसूली (सरकार को हुई क्षति हेतु)</td></tr>
+<tr><td>(v)</td><td>TRCA में वार्षिक वृद्धि रोकना — बिना cumulative प्रभाव, अधिकतम 3 वर्ष</td></tr>
+<tr><th colspan="2" style="background:var(--imp1);color:#fff;">🔴 गुरु दंड / Major Penalties (vi-ix)</th></tr>
+<tr><td>(vi)</td><td>TRCA slab में निम्न स्तर पर कमी — निर्धारित अवधि (3 वर्ष से अधिक), स्थायी नहीं</td></tr>
+<tr><td>(vii)</td><td>Compulsory Discharge — मौद्रिक लाभों (SDBS, GDS Gratuity प्रो-रेटा) के साथ</td></tr>
+<tr><td>(viii)</td><td>Removal from engagement — भविष्य में अयोग्यता नहीं</td></tr>
+<tr><td>(ix)</td><td>Dismissal from engagement — सामान्यतः भविष्य के लिए अयोग्य</td></tr>
+</table>
+</div>
+
+<div class="mnemonic">🧠 <strong>Mnemonic (Minor):</strong> "<b>C-D-D-R-W</b>" — Censure, Debar(exam), Debar(MTS), Recovery, Withhold increment<br>
+🧠 <strong>Mnemonic (Major):</strong> "<b>R-C-R-D</b>" — Reduction, Compulsory discharge, Removal, Dismissal</div>
+
+<div class="card"><span class="tag t2">🟠</span> Note: Recovery penalty (Rule 9(iv)) पूर्ण रूप से (fully), बिना किसी सीमा के लगाई जा सकती है।</div>
+
+<div class="examq">Rule 9 में कुल कितनी penalties हैं और major/minor का विभाजन कहाँ से होता है? <span class="hindi">(उत्तर: 9 penalties; (i)-(v) Minor, (vi)-(ix) Major)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 10 ================= -->
+<div class="chapter" id="ch10">
+  <div class="num">10</div>
+  <h2 class="hindi">दंड लगाने की प्रक्रिया <span class="eng">Procedure for Imposing Penalty (Rule 10 A-G)</span></h2>
+</div>
+
+<div class="subchapter">10-A: लघु दंड की प्रक्रिया <span class="eng">Minor Penalty Procedure</span></div>
+<div class="flow">
+  <div class="flow-box">(a) लिखित सूचना — प्रस्तावित कार्रवाई व आरोप की जानकारी + representation का अवसर</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box gold">(b) प्राप्त representation पर विचार करके निर्णय</div>
+</div>
+
+<div class="subchapter">10-B: गुरु दंड की प्रक्रिया <span class="eng">Major Penalty Procedure</span></div>
+<div class="card penalty"><span class="tag t1">🔴 अति महत्वपूर्ण</span> गुरु दंड केवल एक <b>औपचारिक Inquiry</b> के बाद ही लगाया जा सकता है, जिसमें आरोपों की सूचना व सुनवाई का उचित अवसर दिया गया हो।</div>
+
+<div class="subchapter">10-C: कार्यवाही अभिलेख <span class="eng">Record of Proceedings</span></div>
+<div class="card">(i) आरोप की सूचना की प्रति (ii) आरोप विवरण व साक्ष्य सूची (iii) Sevak का representation (iv) Inquiry कार्यवाही+रिपोर्ट (v) Inquiry Officer रिपोर्ट पर Sevak का representation (vi) Engaging Authority के निष्कर्ष (vii) दंड आदेश</div>
+
+<div class="subchapter">10-D & 10-E: Inquiry कब आवश्यक?</div>
+<div class="dtree">
+  <div class="q">🌳 Inquiry आवश्यक है या नहीं?</div>
+  <div class="ans"><b>Major Penalty:</b> भले ही GDS आरोप स्वीकार कर ले, Inquiry <u>अनिवार्य</u> है (सिवाय जब unconditionally accept कर ले, तब आवश्यक नहीं)</div>
+  <div class="ans"><b>Minor Penalty:</b> Inquiry <u>अनिवार्य नहीं</u> — Disciplinary Authority के विवेक पर, GDS के अनुरोध पर विचार करके निर्णय</div>
+</div>
+
+<div class="subchapter">10-F & 10-G: Discharge के बाद कार्यवाही</div>
+<div class="table-wrap">
+<table>
+<tr><th>स्थिति</th><th>प्रावधान</th></tr>
+<tr><td>65 वर्ष आयु पर discharge से पहले proceedings शुरू हो चुकी हों</td><td>discharge के बाद भी जारी व निष्कर्षित होंगी; अंतिम निर्णय President द्वारा</td></tr>
+<tr><td>65 वर्ष पर discharge, पर proceedings शुरू नहीं हुई (terminal benefits release नहीं हुए)</td><td>discharge के बाद institute हो सकती है</td></tr>
+<tr><td>Discharge के बाद नई proceedings (benefits release हो चुके)</td><td>President की <b>sanction</b> आवश्यक; घटना संस्थान से 4 वर्ष से अधिक पुरानी न हो</td></tr>
+</table>
+</div>
+<div class="card except">President को GDS gratuity, security amount, group insurance amount आदि से recovery का अधिकार सुरक्षित है, यदि grave misconduct/negligence साबित हो।</div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 11 (Rule 11-20) ================= -->
+<div class="chapter" id="ch11">
+  <div class="num">11</div>
+  <h2 class="hindi">Rule 10 अपवाद, Put Off Duty, अपील, Revision, Review <span class="eng">Rules 11-20</span></h2>
+</div>
+
+<div class="micro">Rule 11: Rule 10 कब लागू नहीं होता? 🟡</div>
+<div class="card except">
+<div class="pill-row">
+  <span class="pill">✅ आपराधिक दोषसिद्धि (Conviction on criminal charge) के आधार पर</span>
+  <span class="pill">✅ Enquiry करना practicable नहीं (कारण लिखित रूप से दर्ज करने पर)</span>
+  <span class="pill">✅ राज्य की सुरक्षा हित में (President संतुष्ट हों)</span>
+</div>
+</div>
+
+<div class="micro">Rule 12: Put Off Duty 🔴</div>
+<div class="table-wrap">
+<table>
+<tr><th>बिंदु</th><th>प्रावधान</th></tr>
+<tr><td>कब लागू</td><td>disciplinary proceeding contemplated/pending हो, या आपराधिक मामले में investigation/inquiry/trial चल रहा हो</td></tr>
+<tr><td>Fraud/Embezzlement केस</td><td>Inspector of Post Offices/ASP द्वारा तुरंत put off duty; Engaging Authority को सूचना अनिवार्य</td></tr>
+<tr><td>प्रभाव अवधि</td><td>यदि Engaging Authority स्वयं नहीं, तो order <b>15 दिन</b> में confirm/cancel होना चाहिए, अन्यथा प्रभावहीन</td></tr>
+<tr><td>Compensation (ex-gratia)</td><td>TRCA का <b>25%</b> + admissible DA प्रतिमाह</td></tr>
+<tr><td>90 दिन बाद बढ़ोतरी</td><td>+50% तक (यदि प्रलम्बन Sevak की गलती से नहीं)</td></tr>
+<tr><td>90 दिन बाद कमी</td><td>-50% तक (यदि प्रलम्बन Sevak की गलती से है)</td></tr>
+</table>
+</div>
+<div class="card except"><span class="tag t2">🟠</span> Absconding/unauthorized absence वाले GDS को ex-gratia compensation नहीं मिलेगा। यदि major penalty proceeding minor penalty में परिणत हो, तो पूर्ण TRCA+allowances का भुगतान होगा।</div>
+
+<div class="micro">Rule 13-18: अपील <span class="eng">Appeal</span> 🔴</div>
+<div class="flow">
+  <div class="flow-box">Rule 13: Appeal against Put-Off-Duty order → तत्काल Superior Authority को</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box alt">Rule 13(2): Appeal against Rule 9 penalty → उस authority को जो penalty authority से तत्काल superior हो</div>
+</div>
+<div class="table-wrap">
+<table>
+<tr><th>Rule</th><th>विषय</th><th>मुख्य बिंदु</th></tr>
+<tr><td>14</td><td>Limitation Period</td><td><b>3 महीने</b> (order प्राप्ति से); देरी sufficient cause होने पर माफ</td></tr>
+<tr><td>15</td><td>Form & Content</td><td>अलग से अपनी ओर से submit; disrespectful भाषा वर्जित</td></tr>
+<tr><td>16</td><td>Withholding</td><td>Rule 15 अनुपालन न होने / देरी / पुनरावृत्ति पर रोका जा सकता है; एक महीने में resubmit पर स्वीकार्य</td></tr>
+<tr><td>17</td><td>Transmission</td><td>बिना देरी सभी comments सहित Appellate Authority को भेजना</td></tr>
+<tr><td>18</td><td>Consideration</td><td>procedure compliance, findings justification, penalty adequacy की जाँच; enhanced penalty से पहले opportunity अनिवार्य</td></tr>
+</table>
+</div>
+
+<div class="micro">Rule 19: Revision 🟡</div>
+<div class="card rule">
+<b>कौन कर सकता है:</b> Regional PMG (PMG headed region) / Head of Circle / अन्य सशक्त authority — <b>suo-moto</b> या किसी समय।
+<div class="pill-row">
+  <span class="pill">Time Limit: Order की तारीख से 6 महीने के भीतर (Govt/Head of Circle/PMG द्वारा)</span>
+  <span class="pill">Appeal Time Limit (3 महीना) समाप्त होने से पहले नहीं</span>
+</div>
+Enhanced penalty से पूर्व opportunity of representation अनिवार्य। Major penalty enhance करने के लिए Rule 10 अनुसार inquiry (यदि पहले नहीं हुई) अनिवार्य।
+</div>
+
+<div class="micro">Rule 20: Review 🟡</div>
+<div class="card rule">
+<b>अधिकार:</b> President स्वयं मोशन या अन्यथा, नए साक्ष्य/सामग्री सामने आने पर।
+<div class="pill-row">
+  <span class="pill">Review Petition Time Limit: 2 वर्ष</span>
+  <span class="pill">नई साक्ष्य आधारित होना अनिवार्य</span>
+  <span class="pill">President की शक्ति plenary board (Member P व Member O) द्वारा प्रयुक्त</span>
+</div>
+</div>
+
+<div class="examq">Revision की समय-सीमा और Review की समय-सीमा में क्या अंतर है? <span class="hindi">(उत्तर: Revision — 6 माह; Review — 2 वर्ष, नई evidence आधारित)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 12 (Rule 21-29) ================= -->
+<div class="chapter" id="ch12">
+  <div class="num">12</div>
+  <h2 class="hindi">सामान्य आचरण नियम <span class="eng">General Conduct Rules (Rule 21-29)</span></h2>
+</div>
+
+<div class="table-wrap">
+<table>
+<tr><th>Rule</th><th>विषय / Topic</th><th>मुख्य बिंदु</th></tr>
+<tr><td>21</td><td>सामान्य <span class="eng">General</span></td><td>Absolute integrity बनाए रखना, duty के प्रति समर्पण, unbecoming आचरण से बचना</td></tr>
+<tr><td>21-A</td><td>Promptness & Courtesy</td><td>Discourteous व्यवहार या dilatory tactics वर्जित</td></tr>
+<tr><td>21-B</td><td>Sexual Harassment 🔴</td><td>कार्यस्थल पर sexual harassment वर्जित; workplace में परिवहन भी शामिल; प्रत्येक इंचार्ज को रोकथाम कदम उठाने अनिवार्य</td></tr>
+<tr><td>22</td><td>Politics & Elections</td><td>किसी political party/movement का सदस्य नहीं बन सकते; परिवार को भी रोकना कर्तव्य; मतदान कर सकते हैं पर voting पैटर्न प्रकट नहीं</td></tr>
+<tr><td>23</td><td>Strikes 🔴</td><td>Strike/coercion/duress वर्जित; strike अवधि TRCA कटौती व engagement break दोनों का कारण बन सकती है</td></tr>
+<tr><td>24</td><td>Criticism of Government</td><td>Central/State/foreign Govt की policy की आलोचना/embarrassment वर्जित (आधिकारिक क्षमता में statements exempt)</td></tr>
+<tr><td>25</td><td>Evidence before Committee</td><td>बिना पूर्व sanction के evidence देना वर्जित; Govt की नीति की आलोचना evidence में भी वर्जित</td></tr>
+<tr><td>26</td><td>Unauthorized Communication</td><td>दस्तावेज/जानकारी unauthorized रूप से communicate करना वर्जित</td></tr>
+<tr><td>27</td><td>Insolvency & Indebtedness</td><td>habitual indebtedness से बचना; legal proceeding होने पर Govt को सूचित करना अनिवार्य</td></tr>
+<tr><td>28</td><td>Vindication of Acts</td><td>बिना पूर्व sanction Court/Press का सहारा वर्जित</td></tr>
+<tr><td>29</td><td>Canvassing of Outside Influence 🔴</td><td>अपने हित के लिए राजनीतिक/बाहरी प्रभाव का उपयोग वर्जित</td></tr>
+</table>
+</div>
+
+<div class="micro">Rule 21-B: Sexual Harassment — विस्तृत परिभाषा 🔴</div>
+<div class="card penalty">
+<b>"Sexual Harassment" में शामिल:</b>
+<div class="pill-row">
+  <span class="pill">Physical contact/advances</span>
+  <span class="pill">Sexual favours की मांग</span>
+  <span class="pill">Sexually coloured remarks</span>
+  <span class="pill">Pornography दिखाना</span>
+  <span class="pill">अन्य अवांछित शारीरिक/मौखिक/गैर-मौखिक व्यवहार</span>
+</div>
+<b>"Workplace" में शामिल:</b> Department/undertaking/office/branch, hospitals, sports venues, तथा employment से जुड़ी परिवहन सुविधा।
+</div>
+
+<div class="micro">Rule 29-A: व्यवसाय हित के विरुद्ध कार्य 🟡</div>
+<div class="card except">GDS किसी भी बाहरी एजेंसी के साथ ऐसी गतिविधि नहीं कर सकता जो Post Office/IPPB के व्यवसाय के हित के लिए हानिकारक हो।</div>
+
+<div class="examq">Rule 23 (Strikes) के तहत strike period का क्या प्रभाव है? <span class="hindi">(उत्तर: TRCA कटौती + engagement में break; GDS gratuity/absorption seniority में भी count नहीं होता)</span></div>
+
+<hr class="sep">
+
+<!-- ================= CHAPTER 13 (Schedule 30-31) ================= -->
+<div class="chapter" id="ch13">
+  <div class="num">13</div>
+  <h2 class="hindi">व्याख्या, शक्तियों का प्रत्यायोजन व अनुसूची <span class="eng">Rule 30-31 & Schedule</span></h2>
+</div>
+
+<div class="card rule">
+<b>Rule 30 — Interpretation:</b> किसी भी व्याख्या संबंधी प्रश्न पर Government का निर्णय अंतिम होगा।<br><br>
+<b>Rule 31 — Delegation of Powers:</b> Government सामान्य/विशेष आदेश से, Rule 30 व 31 की शक्ति के अतिरिक्त, अन्य शक्तियाँ किसी officer/authority को प्रत्यायोजित कर सकती है।
+</div>
+
+<div class="micro">Schedule of Engaging Authority, Disciplinary Authority & Appellate Authority</div>
+<div class="table-wrap">
+<table>
+<tr><th>Sl.</th><th>Service</th><th>Engaging Authority</th><th>Appellate Authority</th></tr>
+<tr><td>1</td><td>GDS Branch Post Master</td><td>Deputy Superintendent of Post Offices</td><td>Chief PMG / PMG / Director Postal Services</td></tr>
+<tr><td>2</td><td>GDS Assistant BPM / Dak Sevaks</td><td>Senior/Deputy PM / Director / Sub-Postmasters / IPO/ASPOs</td><td>Head of the Division (incl. Director Postal Services/PMG)</td></tr>
+<tr><td>3</td><td>Railway Mail Service Dak Sevak</td><td>Inspector/Assistant Superintendent RMS, Head Record Officers</td><td>Head of the Division (incl. Director Postal Services/PMG)</td></tr>
+</table>
+</div>
+<div class="card except"><span class="tag t3">🟡</span> ध्यान दें: कोई भी appellate authority मूल Engaging Authority से <b>निम्न रैंक</b> की नहीं हो सकती।</div>
+
+<hr class="sep">
+
+<!-- ================= APPENDICES ================= -->
+<div class="chapter">
+  <div class="num">A</div>
+  <h2 class="hindi">Charge Sheet फॉर्म <span class="eng">Appendix I-III</span></h2>
+</div>
+<div class="table-wrap">
+<table>
+<tr><th>Appendix</th><th>प्रयोग</th><th>Rule Reference</th></tr>
+<tr><td>Appendix-I</td><td>Minor Penalty हेतु Standard Charge Sheet</td><td>Rule 10-A</td></tr>
+<tr><td>Appendix-II</td><td>Major Penalty (Inquiry सहित) हेतु Charge Sheet Initiation</td><td>Rule 10-B/10E</td></tr>
+<tr><td>Appendix-III</td><td>Major Penalty हेतु Standard Charge Sheet</td><td>Rule 10-B</td></tr>
+</table>
+</div>
+<div class="pill-row">
+  <span class="pill">Minor Penalty representation समय: 10 दिन</span>
+  <span class="pill">Major Penalty representation समय: 10 दिन</span>
+  <span class="pill">Ex-parte कार्यवाही: यदि representation प्रस्तुत नहीं की जाती</span>
+</div>
+
+</div><!-- end wrap for main content, revision sections below still in wrap-ish -->
+
+<div class="wrap">
+<!-- ================= ONE PAGE REVISION SHEET ================= -->
+<div class="revision-sheet" id="rev">
+  <h3>📝 One-Page Revision Sheet / एक-पृष्ठ पुनरावृत्ति शीट</h3>
+  <div class="grid">
+    <div class="box"><h4>आयु सीमा</h4>18-40 वर्ष; SC/ST+5, OBC+3, EWS+0(10% reservation), PwD+10/13/15</div>
+    <div class="box"><h4>शिक्षा</h4>10वीं pass (Maths+English compulsory marks)</div>
+    <div class="box"><h4>TRCA (Min)</h4>BPM: 12000/14500; ABPM/DS: 10000/12000</div>
+    <div class="box"><h4>Duty Hours</h4>अधिकतम 5 घंटे/दिन</div>
+    <div class="box"><h4>Retention Age</h4>65 वर्ष तक</div>
+    <div class="box"><h4>Leave</h4>Normal 20 दिन; Emergency 5 दिन; Maternity 180 दिन</div>
+    <div class="box"><h4>Termination Notice</h4>1 महीना (सेवा 3 वर्ष से कम)</div>
+    <div class="box"><h4>Penalties</h4>Minor (i-v): Censure से Withhold increment; Major (vi-ix): Reduction से Dismissal</div>
+    <div class="box"><h4>Put Off Duty Compensation</h4>25% TRCA + DA; ±50% (90 दिन बाद)</div>
+    <div class="box"><h4>Appeal Time Limit</h4>3 महीने</div>
+    <div class="box"><h4>Revision Time Limit</h4>6 महीने</div>
+    <div class="box"><h4>Review Time Limit</h4>2 वर्ष (नई evidence पर)</div>
+    <div class="box"><h4>Rule Notification Date</h4>14 फरवरी 2020</div>
+    <div class="box"><h4>Put Off Duty confirm समय</h4>15 दिन</div>
+    <div class="box"><h4>VDS पात्रता</h4>20 वर्ष सेवा / Medical grounds</div>
+    <div class="box"><h4>Computer Training</h4>न्यूनतम 60 दिन</div>
+  </div>
+</div>
+
+<!-- ================= MNEMONICS SECTION ================= -->
+<div class="chapter"><div class="num">🧠</div><h2 class="hindi">Memory Tricks & Mnemonics</h2></div>
+
+<div class="mnemonic">🔑 <strong>GDS की 3 Categories:</strong> "BAD" = <b>B</b>PM, <b>A</b>BPM, <b>D</b>ak Sevak</div>
+<div class="mnemonic">🔑 <strong>Age Relaxation क्रम (बढ़ते हुए):</strong> "OSP-13-15" = OBC(3) < SC/ST(5) < PwD(10) < PwD+OBC(13) < PwD+SC/ST(15)</div>
+<div class="mnemonic">🔑 <strong>Minor Penalties (5):</strong> "<b>CD-DR-W</b>" = Censure, Debar(exam), Debar(seniority), Recovery, Withhold-increment</div>
+<div class="mnemonic">🔑 <strong>Major Penalties (4):</strong> "<b>RCRD</b>" = Reduction, Compulsory-discharge, Removal, Dismissal</div>
+<div class="mnemonic">🔑 <strong>Appeal-Revision-Review समय:</strong> "3-6-24" महीने (Appeal=3, Revision=6, Review=24)</div>
+<div class="mnemonic">🔑 <strong>Duty घंटे-Retirement आयु:</strong> "5-65" = 5 घंटे duty, 65 वर्ष तक retention</div>
+<div class="mnemonic">🔑 <strong>Put Off Duty compensation:</strong> "25-15-50" = 25% TRCA, 15 दिन में confirm, ±50% बदलाव 90 दिन बाद</div>
+
+<!-- ================= QUICK QUIZ ================= -->
+<div class="chapter"><div class="num">Q</div><h2 class="hindi">त्वरित प्रश्नोत्तरी <span class="eng">Quick Self-Test (tap to reveal)</span></h2></div>
+
+<details><summary>1. GDS की कितनी categories हैं और कब rationalise हुईं?</summary><div class="nano">उत्तर: 3 categories (BPM, ABPM, Dak Sevak); OM dated 25.06.2018 & 22.07.2019 द्वारा 5 से 3 की गई।</div></details>
+<details><summary>2. न्यूनतम व अधिकतम TRCA (BPM, Level 1, 4 घंटे) कितना है?</summary><div class="nano">उत्तर: ₹12,000/-</div></details>
+<details><summary>3. GDS किस आयु तक सेवा में रह सकता है?</summary><div class="nano">उत्तर: 65 वर्ष</div></details>
+<details><summary>4. Major Penalty में inquiry कब आवश्यक नहीं?</summary><div class="nano">उत्तर: जब आरोप unconditionally स्वीकार कर लिया जाए</div></details>
+<details><summary>5. Appeal दाखिल करने की समय-सीमा क्या है?</summary><div class="nano">उत्तर: आदेश की प्रति प्राप्ति से 3 महीने</div></details>
+<details><summary>6. Put off duty compensation दर क्या है?</summary><div class="nano">उत्तर: TRCA का 25% + admissible DA प्रति माह; 90 दिन बाद ±50% तक परिवर्तन संभव</div></details>
+<details><summary>7. Review Petition कितने समय के भीतर दाखिल हो सकती है?</summary><div class="nano">उत्तर: 2 वर्ष के भीतर, नई evidence के आधार पर</div></details>
+<details><summary>8. GDS को पेंशन मिलती है क्या?</summary><div class="nano">उत्तर: नहीं, GDS Gratuity/Severance Amount/SDBS के हकदार हो सकते हैं</div></details>
+<details><summary>9. Sexual Harassment रोकने की जिम्मेदारी किसकी है?</summary><div class="nano">उत्तर: प्रत्येक Sevak जो workplace का इंचार्ज है</div></details>
+<details><summary>10. Voluntary Discharge Scheme (VDS) की पात्रता?</summary><div class="nano">उत्तर: 20 वर्ष सेवा पूर्ण होने पर या Medical grounds पर</div></details>
+
+<!-- ================= LAST DAY REVISION ================= -->
+<div class="lastday" id="last">
+  <h3>⏰ Last Day Revision Notes / अंतिम दिन पुनरावृत्ति नोट्स</h3>
+  <ul>
+    <li>🔴 <b>Notification Date:</b> 14.02.2020 — Rules effective from date of <u>circulation</u> (not notification date).</li>
+    <li>🔴 <b>3 GDS Categories:</b> BPM, ABPM, Dak Sevak (rationalised from 5 categories).</li>
+    <li>🔴 <b>Age:</b> 18-40 yrs; relaxations SC/ST-5, OBC-3, EWS-0(but 10% reservation), PwD-10/13/15.</li>
+    <li>🔴 <b>Duty hours:</b> Max 5 hrs/day; Retention age: 65 yrs.</li>
+    <li>🔴 <b>Min TRCA:</b> BPM ₹12000-14500; ABPM/DS ₹10000-12000.</li>
+    <li>🔴 <b>IPPB work excluded from TRCA calculation</b> — remember this exception!</li>
+    <li>🟠 <b>Penalties:</b> 5 Minor (i-v) + 4 Major (vi-ix) = 9 total under Rule 9.</li>
+    <li>🟠 <b>Major penalty needs inquiry compulsorily</b> even if charge accepted, unless unconditional acceptance.</li>
+    <li>🟠 <b>Appeal-Revision-Review:</b> 3 months - 6 months - 2 years.</li>
+    <li>🟡 <b>Put off duty:</b> 25% TRCA+DA ex-gratia; confirm within 15 days if not by Engaging Authority.</li>
+    <li>🟡 <b>Rule 11 exceptions to Rule 10:</b> Criminal conviction / not practicable to hold enquiry / security of State.</li>
+    <li>🟢 <b>No pension for GDS</b> — only Gratuity/Severance/SDBS.</li>
+    <li>🟢 <b>Termination notice:</b> 1 month (for GDS with less than 3 years continuous engagement).</li>
+    <li>🟢 <b>Leave:</b> 20 days normal, 5 days emergency, 180 days maternity.</li>
+    <li>🟢 <b>Appendix I:</b> Minor penalty charge sheet; <b>Appendix II & III:</b> Major penalty (with/without inquiry format).</li>
+  </ul>
+</div>
+
+<div class="center-text" style="margin:24px 0; font-size:0.8rem; color:var(--muted);">
+  📚 IP Exam Study Portal — Gramin Dak Sevak (Conduct & Engagement) Rules, 2020 | Source: DoP OM No.17-30/2019-GDS dated 14.02.2020
+</div>
+
+</div><!-- wrap end -->
+
+<a href="#top" class="top-btn" title="Top">↑</a>
+
+</body>
+</html>

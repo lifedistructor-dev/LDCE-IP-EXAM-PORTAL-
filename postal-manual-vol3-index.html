@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume III — Master Index | IPO Exam</title>
+<style>
+  :root{
+    --primary:#7f1d1d; --primary-light:#dc2626;
+    --accent:#1e3a8a; --green:#15803d; --green-light:#dcfce7;
+    --bg:#f8fafc; --surface:#fff; --text:#1e293b; --text-secondary:#64748b; --border:#e2e8f0;
+    --shadow:0 4px 12px rgba(0,0,0,.08); --radius:12px; --radius-lg:16px; --radius-pill:9999px;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.5;}
+  .header-gradient{background:linear-gradient(135deg,#7f1d1d 0%,#1e3a8a 100%);padding:24px 20px 40px;text-align:center;position:relative;overflow:hidden;}
+  .header-title{font-size:20px;font-weight:700;color:#fff;margin:0;}
+  .header-sub{color:rgba(255,255,255,.85);font-size:12px;margin-top:6px;}
+  .wave-divider{position:relative;height:36px;margin-top:-1px;}
+  .wave-divider svg{position:absolute;bottom:0;width:100%;height:36px;display:block;}
+  .back-btn{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:var(--radius-pill);z-index:2;}
+  .container{max-width:640px;margin:-16px auto 0;padding:0 16px 40px;}
+  .progress-card{background:var(--surface);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:16px;}
+  .progress-label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;}
+  .progress-track{width:100%;height:8px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--primary-light),var(--accent));border-radius:var(--radius-pill);width:0%;transition:width .5s;}
+  .part-card{background:var(--surface);border-radius:var(--radius);margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);border:1px solid var(--border);display:flex;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s;}
+  .part-card:active{transform:scale(0.98);}
+  .part-accent{width:5px;flex-shrink:0;background:var(--primary);}
+  .part-body{padding:14px 16px;flex:1;display:flex;align-items:center;gap:12px;min-width:0;}
+  .part-num{width:34px;height:34px;border-radius:50%;background:#fee2e2;color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+  .part-text{flex:1;min-width:0;}
+  .part-title{font-weight:700;font-size:13.5px;display:block;}
+  .part-sub{font-size:11.5px;color:var(--text-secondary);margin-top:2px;}
+  .part-arrow{color:var(--text-secondary);flex-shrink:0;}
+  .footer-note{text-align:center;font-size:11px;color:var(--text-secondary);margin-top:16px;}
+</style>
+</head>
+<body>
+
+<div class="header-gradient">
+  <a href="index.html" class="back-btn">← Home</a>
+  <h1 class="header-title">⚖️ Postal Manual Volume III</h1>
+  <div class="header-sub">CCS (CCA) Rules 1965 &amp; Administrative Powers — 4 Parts (Hindi + English)</div>
+</div>
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,25 1440,20 L1440,40 L0,40 Z"/></svg>
+</div>
+
+<div class="container">
+
+  <div class="progress-card">
+    <div class="progress-label"><span>📊 Parts Studied</span><span id="progress-count">0/4</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+
+  <a href="pmvol3-ch1-hindi.html" class="part-card" data-id="pmvol3-p1">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">1</div>
+      <div class="part-text">
+        <span class="part-title">Chapter 1 — Discipline</span>
+        <span class="part-sub">4 Stages, Suspension, Penalties, Appeal, Timelines</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="pmvol3-scheduleIA-hindi.html" class="part-card" data-id="pmvol3-p2">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">2</div>
+      <div class="part-text">
+        <span class="part-title">Schedule I-A — CCS (CCA) Rules 1965</span>
+        <span class="part-sub">Full statutory text — Rule 11 penalties, Appeal, Review</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="pmvol3-scheduleIB-hindi.html" class="part-card" data-id="pmvol3-p3">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">3</div>
+      <div class="part-text">
+        <span class="part-title">Schedule I-B — EDA Conduct Rules</span>
+        <span class="part-sub">15 EDA categories, 3 penalties, Leave, Appeal (3 months)</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="pmvol3-adminpowers-hindi.html" class="part-card" data-id="pmvol3-p4">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">4</div>
+      <div class="part-text">
+        <span class="part-title">Administrative Powers Schedules</span>
+        <span class="part-sub">11 Schedules — DG, Circle, Superintendent, Postmaster, RMS</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <div class="footer-note">Tap any part to open · Progress saved automatically on this device</div>
+
+</div>
+
+<script>
+  const ALL_PARTS = ['pmvol3-p1','pmvol3-p2','pmvol3-p3','pmvol3-p4'];
+  function getStudied(){ return JSON.parse(localStorage.getItem('pmvol3_studied') || '[]'); }
+  function updateProgress(){
+    const studied = getStudied().filter(id => ALL_PARTS.includes(id));
+    document.getElementById('progress-count').textContent = studied.length + '/' + ALL_PARTS.length;
+    document.getElementById('progress-fill').style.width = (studied.length / ALL_PARTS.length * 100) + '%';
+  }
+  document.querySelectorAll('.part-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.id;
+      let studied = getStudied();
+      if (!studied.includes(id)) {
+        studied.push(id);
+        localStorage.setItem('pmvol3_studied', JSON.stringify(studied));
+      }
+    });
+  });
+  updateProgress();
+</script>
+
+</body>
+</html>

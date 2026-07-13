@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB Manual Vol-III | Acts & Rules of Saving Schemes | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--gold-dark) 0%,var(--red-dark) 55%,var(--blue) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .hi{font-size:1.15rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.95rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.85rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.alertbox{background:#FFF3CD;border:2px solid var(--yellow);border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:0.78rem;}
+.alertbox b{color:var(--gold-dark);}
+
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.85rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.76rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.74rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;display:flex;align-items:center;gap:6px;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+.old-rate{text-decoration:line-through;color:#999;}
+.new-rate{color:var(--green);font-weight:700;}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">POSB मैनुअल भाग-III</span></h1>
+  <div class="en">Post Office Savings Bank Manual — Volume III</div>
+  <div class="sub">Acts & Rules of Saving Schemes | 13 Chapters — Acts, General Rules, Scheme Rules</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">⚖️ 13 Acts/Rules Summarized</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="alertbox">⚠️ <b>महत्वपूर्ण नोट:</b> यह Manual "Corrected upto 31-12-2006" संस्करण है। कुछ जमा सीमाएं (deposit limits) व ब्याज दरें तब से बदल चुकी हैं। इस infographic में जहां जरूरी हो, वर्तमान (2026) दरें भी <span class="new-rate">हरे रंग</span> में साथ दी गई हैं — परीक्षा में हमेशा नवीनतम DoP परिपत्र देखें।</div>
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. Govt. Savings Banks Act, 1873</a>
+    <a href="#ch2">2. Govt. Savings Certificates Act, 1959</a>
+    <a href="#ch3">3. Public Provident Fund Act, 1968</a>
+    <a href="#ch4">4. PO SB General Rules, 1981</a>
+    <a href="#ch5">5. PO Savings Accounts Rules, 1981</a>
+    <a href="#ch6">6. PO Recurring Deposit Rules, 1981</a>
+    <a href="#ch7">7. PO Time Deposit Rules, 1981</a>
+    <a href="#ch8">8. PO Monthly Income A/c Rules, 1987</a>
+    <a href="#ch9">9. Senior Citizens Savings Scheme Rules, 2004</a>
+    <a href="#ch10">10. Public Provident Fund Scheme, 1968</a>
+    <a href="#ch11">11. Kisan Vikas Patra Rules, 1988</a>
+    <a href="#ch12">12. NSC (VIII Issue) Rules, 1989</a>
+    <a href="#ch13">13. PO Savings Certificates Rules, 1960</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">⚖️ Chapter 1 → सरकारी बचत बैंक अधिनियम / Government Savings Banks Act, 1873 (5 of 1873)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">मूल जानकारी</h3>
+      <p class="hi">अधिनियमित: 28 जनवरी 1873। पूरे भारत में लागू (सिक्किम राज्य में भी 22.7.1983 से विस्तारित)। यह Post Office Savings Bank को नियंत्रित करने वाला मूल कानून है।</p>
+      <p class="en">Enacted 28 January 1873. Applies to whole of India (extended to Sikkim from 22.7.1983). This is the parent Act governing Post Office Savings Bank.</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: मृतक जमाकर्ता की संपत्ति — कब बिना Succession Certificate भुगतान?</div>
+      <div class="yn">➡ यदि 3 महीने में Probate/Letters of Admin/Succession Certificate प्रस्तुत नहीं होता</div>
+      <div class="yn">➡ और राशि निर्धारित सीमा (₹1 लाख, वर्तमान) से कम है → सक्षम अधिकारी भुगतान कर सकता है</div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>धारा 8:</b> यदि मृतक जमाकर्ता की जमा राशि <b>₹3,000</b> से अधिक न हो, तो Court Fees Act के तहत Probate/Letters of Administration पर कोर्ट फीस से छूट। <br>🔴 <b>धारा 7(2):</b> झूठा बयान देने पर IPC धारा 193 के तहत दंडनीय अपराध।</div>
+
+    <table>
+      <tr><th>धारा / Section</th><th>विषय</th></tr>
+      <tr><td>Sec. 4</td><td>Nomination by depositor</td></tr>
+      <tr><td>Sec. 4A</td><td>Payment on death of depositor</td></tr>
+      <tr><td>Sec. 5</td><td>Payment to be a full discharge</td></tr>
+      <tr><td>Sec. 8</td><td>₹3,000 तक Court Fee छूट</td></tr>
+      <tr><td>Sec. 7(2)</td><td>झूठे शपथ पत्र पर IPC 193 दंड</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1873 में बना, 3 हज़ार में छूट, 3 महीने की मोहलत" — Act year 1873, Rs. 3,000 court fee exemption, 3-month document deadline</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Government Savings Banks Act किस वर्ष अधिनियमित हुआ? <b>(1873)</b> मृतक जमा पर कोर्ट फीस छूट सीमा? <b>(₹3,000)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">📜 Chapter 2 → सरकारी बचत प्रमाणपत्र अधिनियम / Govt. Savings Certificates Act, 1959 (46 of 1959)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">मुख्य प्रावधान</h3>
+      <p class="hi">प्रवर्तन तिथि: 1 अगस्त 1960। यह अधिनियम NSC, KVP सहित सभी Savings Certificate श्रृंखलाओं पर लागू होता है। धारा 3 के तहत बिना निर्धारित प्राधिकारी की लिखित सहमति के प्रमाणपत्र का हस्तांतरण अमान्य है।</p>
+      <p class="en">Came into force 1 August 1960. Governs all Savings Certificate series (NSC, KVP etc). Sec. 3: no transfer valid without written consent of prescribed Authority.</p>
+    </div>
+
+    <table>
+      <tr><th>धारा / Section</th><th>विषय</th></tr>
+      <tr><td>Sec. 3</td><td>Restriction on transfer</td></tr>
+      <tr><td>Sec. 4</td><td>Holding by/on behalf of minors</td></tr>
+      <tr><td>Sec. 6</td><td>Nomination by holder</td></tr>
+      <tr><td>Sec. 7(4)</td><td>No nomination + no legal evidence within 3 months → discretionary payment up to prescribed limit</td></tr>
+      <tr><td>Sec. 10(2)</td><td>False statement on oath → IPC Sec. 193</td></tr>
+      <tr><td>Sec. 12(3)</td><td>Rules laid before Parliament for 30 days</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1959 का कानून, 1960 से लागू" — Act enacted 1959, in force from 1.8.1960</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Savings Certificate का हस्तांतरण किसकी सहमति के बिना अमान्य है? <b>(प्रिस्क्राइब्ड अथॉरिटी)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">🏛 Chapter 3 → लोक भविष्य निधि अधिनियम / Public Provident Fund Act, 1968 (23 of 1968)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">निकासी नियम (धारा 6)</h3>
+      <p class="hi">आंशिक निकासी केवल प्रथम सब्सक्रिप्शन के वर्ष की समाप्ति से <b>5 वर्ष</b> बाद अनुमत। पूर्ण शेष राशि की निकासी <b>15 वर्ष</b> बाद संभव।</p>
+      <p class="en">Partial withdrawal only after <b>5 years</b> from end of year of initial subscription. Full balance withdrawal after <b>15 years</b>.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-time">वर्ष 0:</span> प्रथम सब्सक्रिप्शन (Initial Subscription)</div>
+      <div class="tl-item"><span class="tl-time">+5 वर्ष:</span> आंशिक निकासी की अनुमति शुरू</div>
+      <div class="tl-item"><span class="tl-time">+15 वर्ष:</span> पूर्ण शेष राशि निकासी संभव (Maturity)</div>
+    </div>
+
+    <table>
+      <tr><th>धारा / Section</th><th>विषय</th></tr>
+      <tr><td>Sec. 6(1)</td><td>Partial withdrawal — 5 years बाद</td></tr>
+      <tr><td>Sec. 6(2)</td><td>Full withdrawal — 15 years बाद</td></tr>
+      <tr><td>Sec. 7</td><td>Loan facility</td></tr>
+      <tr><td>Sec. 8</td><td>Payment on death of subscriber (nominee/legal heir)</td></tr>
+      <tr><td>Sec. 9</td><td>Protection against attachment (न्यायालय कुर्की से सुरक्षा)</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "5 में आधा, 15 में पूरा" — 5 years = partial withdrawal, 15 years = full withdrawal</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PPF में आंशिक निकासी की अनुमति कब से मिलती है? <b>(5 वर्ष बाद)</b> पूर्ण निकासी? <b>(15 वर्ष बाद)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">📋 Chapter 4 → PO SB सामान्य नियम / PO SB General Rules, 1981 (GSR 662-E)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">मुख्य नियम</h3>
+      <p class="hi">प्रवर्तन: 1 अप्रैल 1982। <b>NRI</b> नया खाता नहीं खोल सकते (लेकिन resident से NRI बनने पर maturity तक Non-Repatriation आधार पर जारी रह सकता है)।</p>
+      <p class="en">In force from 1 April 1982. <b>NRIs cannot open new accounts</b>, but existing accounts continue on Non-Repatriation basis till maturity if depositor later becomes NRI.</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Joint Account किसके नाम खोला जा सकता है?</div>
+      <div class="yn">➡ दो वयस्क (Two Adults) या तीन वयस्क (Three Adults) — दोनों/सभी के नाम पर</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "NRI को No Entry" — NRIs cannot open new PO Savings accounts</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PO SB General Rules 1981 कब से प्रभावी हुए? <b>(1 अप्रैल 1982)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--blue-light);">💰 Chapter 5 → PO बचत खाता नियम / PO Savings Accounts Rules, 1981</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">खाता खोलने की पात्रता तालिका</h3>
+      <table>
+        <tr><th>खाता प्रकार</th><th>कौन खोल सकता है</th><th>अधिकतम शेष (1981 नियम)</th></tr>
+        <tr><td>Single Account</td><td>वयस्क (Adult)</td><td><span class="old-rate">₹1,00,000</span> <span class="new-rate">(वर्तमान: कोई ऊपरी सीमा नहीं)</span></td></tr>
+        <tr><td>Minor's Account</td><td>10 वर्ष+ नाबालिग स्वयं</td><td>₹1,00,000</td></tr>
+        <tr><td>Guardian on behalf of minor</td><td>Guardian</td><td>₹1,00,000</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "10 का नाबालिग, खुद का मालिक" — Minor aged 10+ can open/operate own SB account</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> कितनी उम्र का नाबालिग स्वयं Savings Account खोल सकता है? <b>(10 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#00695C;">🔁 Chapter 6 → आवर्ती जमा नियम / PO Recurring Deposit Rules, 1981 (GSR 666-E)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+      <h3 class="hi">मुख्य संख्याएं</h3>
+    </div>
+    <table>
+      <tr><th>नियम</th><th>विवरण</th></tr>
+      <tr><td>परिपक्वता अवधि (Rule 5)</td><td><b>5 वर्ष</b></td></tr>
+      <tr><td>कुल मासिक जमा (Rule 6)</td><td><b>60 किश्तें</b> (60 monthly deposits)</td></tr>
+      <tr><td>न्यूनतम मासिक जमा</td><td>₹10 (₹5 के गुणक में)</td></tr>
+      <tr><td>अनुमत डिफॉल्ट (Rule 7)</td><td><b>अधिकतम 4</b> — इससे अधिक होने पर खाता 'discontinued'</td></tr>
+      <tr><td>Discontinued खाता पुनर्जीवन अवधि</td><td>प्रथम डिफॉल्ट माह से <b>2 महीने</b> के भीतर</td></tr>
+      <tr><td>डिफॉल्ट पर ब्याज दंड</td><td>प्रति ₹5 पर <b>10 पैसे</b>/माह</td></tr>
+      <tr><td>Advance Deposit Rebate</td><td>6-11 किश्तें: ₹1; 12+ किश्तें: ₹4/12 किश्तें</td></tr>
+    </table>
+
+    <div class="flow">
+      <div class="box">डिफॉल्ट ≤ 4</div><span class="arrow">➡</span>
+      <div class="box">Maturity Date बढ़ती है</div>
+      <div class="box" style="background:var(--red);">डिफॉल्ट &gt; 4</div><span class="arrow">➡</span>
+      <div class="box" style="background:var(--red);">खाता Discontinued</div><span class="arrow">➡</span>
+      <div class="box">2 महीने में पुनर्जीवन संभव</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "60-4-2-10" → 60 installments, 4 defaults allowed, 2 months revival window, 10 paise/₹5 penalty</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> RD खाते में कितने डिफॉल्ट के बाद खाता "discontinued" माना जाता है? <b>(4 से अधिक)</b> पुनर्जीवन की समय सीमा? <b>(2 महीने)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:var(--gold-dark);">📆 Chapter 7 → सावधि जमा नियम / PO Time Deposit Rules, 1981 (GSR 664-E)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">खाता प्रकार</h3>
+      <p class="hi">4 प्रकार के TD खाते: <b>1-वर्ष, 2-वर्ष, 3-वर्ष, 5-वर्ष</b>। NRI नया TD खाता नहीं खोल सकते (existing account maturity तक Non-Repatriation आधार पर जारी)।</p>
+    </div>
+    <table>
+      <tr><th>Account Type</th><th>अवधि</th></tr>
+      <tr><td>1-Year</td><td>1 वर्ष</td></tr>
+      <tr><td>2-Year</td><td>2 वर्ष</td></tr>
+      <tr><td>3-Year</td><td>3 वर्ष</td></tr>
+      <tr><td>5-Year</td><td>5 वर्ष</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1-2-3-5" — TD account चार अवधियां</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Post Office Time Deposit के कितने प्रकार हैं? <b>(4 — 1/2/3/5 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:#6A1B9A;">💵 Chapter 8 → मासिक आय खाता नियम / PO Monthly Income Account Rules, 1987 (GSR 701-E)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">जमा सीमाएं (1987 नियम बनाम वर्तमान)</h3>
+      <table>
+        <tr><th>बिंदु</th><th>1987 Rule (यह Manual)</th><th class="new-rate">वर्तमान (2026)</th></tr>
+        <tr><td>Single Account अधिकतम</td><td class="old-rate">₹3,00,000</td><td class="new-rate">₹9,00,000</td></tr>
+        <tr><td>Joint Account अधिकतम</td><td class="old-rate">₹6,00,000</td><td class="new-rate">₹15,00,000</td></tr>
+        <tr><td>Maturity Period (Rule 5(2), 1987)</td><td class="old-rate">6 वर्ष</td><td class="new-rate">5 वर्ष</td></tr>
+      </table>
+    </div>
+    <div class="penalty-box">⚠️ इस Manual (2006 Corrected Edition) में पुरानी सीमाएं दी गई हैं। परीक्षा में वर्तमान दरें (हरे रंग में) प्राथमिकता दें, लेकिन Manual का मूल पाठ भी mock exam में पूछा जा सकता है।</div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-6 से 9-15 तक बढ़ी सीमा" — Old: 3L/6L → New: 9L/15L</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> MIS खाते में निकासी से पहले न्यूनतम प्रतीक्षा अवधि (Rule 5(2), 1987 के अनुसार) क्या थी? <b>(6 वर्ष; वर्तमान में 5 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:var(--red-dark);">👴 Chapter 9 → वरिष्ठ नागरिक बचत योजना नियम / SCSS Rules, 2004 (GSR 490-E)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — पात्रता आयु सबसे ज्यादा पूछी जाती है</span>
+      <h3 class="hi">पात्रता आयु / Eligibility Age</h3>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: SCSS खाता कौन खोल सकता है?</div>
+      <div class="yn">➡ (i) आयु <b>60 वर्ष</b> या अधिक — कोई भी व्यक्ति</div>
+      <div class="yn">➡ (ii) आयु <b>55-60 वर्ष</b> — VRS/Special VRS सेवानिवृत्त, retirement की <b>3 महीने</b> के भीतर खाता खोलना अनिवार्य</div>
+      <div class="yn">➡ (iii) रक्षा सेवा सेवानिवृत्त कर्मी — आयु सीमा से मुक्त (Defence retirees exempt from age limit)</div>
+    </div>
+
+    <table>
+      <tr><th>प्रावधान / Provision</th><th>नियम</th></tr>
+      <tr><td>Effective Date</td><td>2 अगस्त 2004</td></tr>
+      <tr><td>सामान्य आयु सीमा</td><td>60 वर्ष+</td></tr>
+      <tr><td>VRS सेवानिवृत्त</td><td>55-60 वर्ष, 3 महीने में खाता खोलना</td></tr>
+      <tr><td>रक्षा सेवा सेवानिवृत्त (Civilian excluded)</td><td>आयु सीमा लागू नहीं</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "60 सामान्य, 55 VRS वाला, 3 महीने में आना" — 60 yrs normal; 55+ VRS with 3-month window</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> VRS सेवानिवृत्त व्यक्ति (55-60 वर्ष) को SCSS खाता कितने समय में खोलना अनिवार्य है? <b>(3 महीने)</b> रक्षा सेवा सेवानिवृत्त किससे मुक्त हैं? <b>(आयु सीमा से)</b></div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#37474F;">🏛 Chapter 10 → लोक भविष्य निधि योजना / Public Provident Fund Scheme, 1968</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <p class="hi">यह Chapter 3 (PPF Act 1968) के तहत बनाई गई विस्तृत Scheme है, जो जमा सीमा, ब्याज गणना, निकासी शर्तें व ऋण सुविधा के विस्तृत नियम देती है।</p>
+      <p class="en">This is the detailed Scheme framed under the PPF Act 1968 (Chapter 3), specifying subscription limits, interest calculation, withdrawal terms, and loan facility rules.</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PPF Scheme किस Act के तहत बनाई गई? <b>(Public Provident Fund Act, 1968 — Section 3)</b></div>
+  </div>
+</div>
+
+<!-- CH11 -->
+<div class="chapter" id="ch11">
+  <div class="chapter-head" style="background:#00838F;">🌾 Chapter 11 → किसान विकास पत्र नियम / Kisan Vikas Patra Rules, 1988</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <p class="hi">KVP को Government Savings Certificates Act, 1959 के अंतर्गत जारी किया जाता है। यह 1.12.2011 को बंद हुआ और 23.9.2014 को पुनः शुरू किया गया (देखें Vol-II Chapter-1)।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> KVP Rules किस वर्ष बने? <b>(1988)</b></div>
+  </div>
+</div>
+
+<!-- CH12 -->
+<div class="chapter" id="ch12">
+  <div class="chapter-head" style="background:#4E342E;">📄 Chapter 12 → NSC (VIII निर्गम) नियम / National Savings Certificates (VIII Issue) Rules, 1989</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <p class="hi">NSC (VIII Issue) वर्तमान में सक्रिय राष्ट्रीय बचत प्रमाणपत्र श्रृंखला है (Vol-II Chapter-1 सूची अनुसार)। यह Rules 1989 में बनाए गए और आज भी प्रभावी हैं।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> वर्तमान में कौन सा NSC Issue सक्रिय है? <b>(VIII Issue, Rules 1989)</b></div>
+  </div>
+</div>
+
+<!-- CH13 -->
+<div class="chapter" id="ch13">
+  <div class="chapter-head" style="background:#263238;">📋 Chapter 13 → डाकघर बचत प्रमाणपत्र नियम / PO Savings Certificates Rules, 1960</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">खरीद सीमा तालिका / Purchase Limit Table (Rule 5)</h3>
+      <table>
+        <tr><th>निवेशक वर्ग / Class of Investor</th><th>सीमा (₹)</th></tr>
+        <tr><td>एक वयस्क या नाबालिग (Adult/Minor)</td><td>75,000</td></tr>
+        <tr><td>दो वयस्क संयुक्त रूप से (Two Adults Jointly)</td><td>1,50,000</td></tr>
+        <tr><td>Registered Trust/Society/Firm/Company</td><td>50,000</td></tr>
+        <tr><td>Co-operative Society/Local Authority (Tax-exempt)</td><td>1,00,000</td></tr>
+        <tr><td>Approved Gratuity Fund</td><td>1,00,000</td></tr>
+      </table>
+      <p class="hi" style="font-size:0.72rem;">नोट: यह सीमा 21.6.1975 से ₹50,000/1,00,000 से बढ़ाकर ₹75,000/1,50,000 की गई थी। (यह ऐतिहासिक Rule है — वर्तमान NSC/KVP में यह सीमा लागू नहीं, चालू प्रमाणपत्रों की जमा सीमा असीमित है।)</p>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "75-150 सिंगल-जॉइंट" — Adult=₹75,000, Joint=₹1,50,000 (historical 1960 Rules limit)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> 1960 Rules के अनुसार एक वयस्क के लिए अधिकतम प्रमाणपत्र धारण सीमा क्या थी? <b>(₹75,000)</b> दो वयस्क संयुक्त रूप से? <b>(₹1,50,000)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>GSB Act 1873:</b> Enacted 28.1.1873 | ₹3,000 court fee exemption | False oath → IPC 193</div>
+    <div class="rev-card"><b>GSC Act 1959:</b> In force 1.8.1960 | Transfer needs prescribed authority's written consent</div>
+    <div class="rev-card"><b>PPF Act 1968:</b> Partial withdrawal after 5 yrs | Full withdrawal after 15 yrs | Protected from attachment</div>
+    <div class="rev-card"><b>SB General Rules 1981:</b> In force 1.4.1982 | NRIs cannot open new accounts</div>
+    <div class="rev-card"><b>Savings A/c Rules 1981:</b> Minor 10+ can self-open account</div>
+    <div class="rev-card"><b>RD Rules 1981:</b> 5-yr maturity | 60 installments | Max 4 defaults | 2-month revival | 10 paise/₹5 penalty</div>
+    <div class="rev-card"><b>TD Rules 1981:</b> 4 types — 1/2/3/5 year accounts | NRIs restricted</div>
+    <div class="rev-card"><b>MIS Rules 1987:</b> Old limits 3L/6L, 6-yr maturity → Current: 9L/15L, 5-yr maturity</div>
+    <div class="rev-card"><b>SCSS Rules 2004:</b> Age 60+ normal | 55-60 VRS (3-month window) | Defence retirees age-exempt</div>
+    <div class="rev-card"><b>PO Savings Cert. Rules 1960:</b> Adult ₹75,000 | Joint ₹1,50,000 (historical limits)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (Acts के वर्ष व नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>1873 / 1959 / 1968</b> = GSB Act / GSC Act / PPF Act वर्ष</li>
+    <li>🔢 <b>₹3,000</b> = GSB Act, Sec.8 — court fee exemption on deceased deposit</li>
+    <li>🔢 <b>IPC 193</b> = झूठे शपथ पत्र (false statement) की सज़ा धारा</li>
+    <li>🔢 <b>5 / 15 वर्ष</b> = PPF आंशिक निकासी / पूर्ण निकासी अवधि</li>
+    <li>🔢 <b>1.4.1982</b> = PO SB General Rules 1981 प्रभावी तिथि</li>
+    <li>🔢 <b>60 / 60-4-2-10</b> = RD अवधि 5yr, mnemonic: 60 installments-4 defaults-2 month revival-10 paise penalty</li>
+    <li>🔢 <b>1/2/3/5 वर्ष</b> = TD खाते के प्रकार</li>
+    <li>🔢 <b>60 / 55</b> = SCSS सामान्य / VRS सेवानिवृत्त आयु सीमा</li>
+    <li>🔢 <b>3 महीने</b> = SCSS VRS सेवानिवृत्त हेतु खाता खोलने की समय सीमा</li>
+    <li>🔢 <b>₹75,000 / ₹1,50,000</b> = 1960 Rules — Adult/Joint खरीद सीमा (historical)</li>
+    <li>🔢 <b>30 दिन</b> = संसद में Rules प्रस्तुत करने की अवधि (GSC Act Sec. 12(3))</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB Manual Volume-III (Acts & Rules, Corrected upto 31-12-2006) &nbsp;|&nbsp; Compiled for exam revision — always cross-check monetary limits with latest DoP circulars
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB CBS Manual — भाग 1 | सामान्य, महत्वपूर्ण दस्तावेज़ व सामान्य नियम | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.header{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 60%,var(--blue) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .sub{margin-top:8px;font-size:0.88rem;opacity:0.92;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.78rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue);}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.78rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.75rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;font-size:0.75rem;}
+.compare .old{background:#FFEBEE;border-radius:8px;padding:8px;border:1px solid var(--red);}
+.compare .new{background:#E8F5E9;border-radius:8px;padding:8px;border:1px solid var(--green);}
+.compare b{display:block;margin-bottom:4px;}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>POSB (CBS) मैनुअल — भाग 1</h1>
+  <div class="sub">अध्याय 1-3: सामान्य नियम | महत्वपूर्ण दस्तावेज़ | सामान्य नियम व प्रक्रियाएं</div>
+  <div class="sub">(Corrected upto 31.12.2021 — Finacle CBS आधारित नवीनतम मैनुअल)</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">💻 CBS/Finacle संस्करण</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण</span>
+  <span>🟠 बार-बार पूछा गया</span>
+  <span>🟡 संकल्पनात्मक</span>
+  <span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. सामान्य (Savings Bank Offices, Supervisor कर्तव्य, कार्य विभाजन)</a>
+    <a href="#ch2">2. महत्वपूर्ण दस्तावेज़ (Passbook, Pay-in-Slip, SB-7/7A/7B/7C)</a>
+    <a href="#ch3">3. पात्रता व पहचान (KYC, Aadhaar, PAN)</a>
+    <a href="#ch4">4. नामांकन (अधिकतम 4 नामिती — नया नियम)</a>
+    <a href="#ch5">5. ब्याज भुगतान व निकासी नियम</a>
+    <a href="#ch6">6. फीस व शुल्क तालिका</a>
+    <a href="#ch7">7. TDS कटौती — धारा 194N</a>
+    <a href="#ch8">8. खाता बंद करना व स्थानांतरण</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">🏢 अध्याय 1 → सामान्य / General</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3>Savings Bank Offices — CBS में "Service Outlet (SOL)"</h3>
+      <p>सभी विभागीय डाकघर Core Banking Solution में <b>"Service Outlet (SOL)"</b> कहलाते हैं। सभी Post Offices (Branch Offices सहित) National (Small) Savings Schemes के तहत सभी प्रकार के खाते खोलने के लिए अधिकृत हैं, जब तक विशेष रूप से प्रतिबंधित न हो।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — पुराने नियम से बदलाव</span>
+      <h3>Supervisor की जिम्मेदारियां व कार्यकाल (नया नियम)</h3>
+      <div class="compare">
+        <div class="old"><b>❌ पुराना नियम (Vol-I, 1981)</b>Single/Double=4yr | A-Class=4yr | HO=5yr | अलग-अलग अवधि</div>
+        <div class="new"><b>✅ CBS मैनुअल का नया नियम</b>सभी प्रकार के कार्यालयों में एकसमान — <b>3 वर्ष</b></div>
+      </div>
+      <table>
+        <tr><th>कार्यालय प्रकार</th><th>कार्यकाल (CBS Manual)</th></tr>
+        <tr><td>Single/Double-handed offices</td><td><b>3 वर्ष</b></td></tr>
+        <tr><td>'A' Class व बड़े कार्यालय</td><td><b>3 वर्ष</b></td></tr>
+        <tr><td>HO व बड़े SO (full-time SB/SC Asst.)</td><td><b>3 वर्ष</b></td></tr>
+      </table>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">🔒 Head Postmaster की व्यक्तिगत जिम्मेदारी</div>
+      <div class="branches">
+        <div class="branch">✅ मृतक जमाकर्ताओं के दावों की मंजूरी व रिकॉर्ड सुरक्षा</div>
+        <div class="branch">✅ संदिग्ध लेन-देन की रिपोर्ट Divisional Head को गोपनीय रूप से</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>याद रखें:</b> "CBS में सब 3 साल" — पुराने अलग-अलग कार्यकाल (4-4-5) की जगह अब सभी में एकसमान 3 वर्ष</div>
+    <div class="exam-q">❓ <b>संभावित प्रश्न:</b> CBS मैनुअल के अनुसार SB/SC Counter Assistant का कार्यकाल कितना है? <b>(3 वर्ष — सभी प्रकार के कार्यालयों में एकसमान)</b> यह पुराने Vol-I नियम से कैसे अलग है? <b>(पुराने में 4/4/5 वर्ष अलग-अलग थे)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">📓 अध्याय 2 → महत्वपूर्ण दस्तावेज़ / Important Documents</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>दो प्रकार की Passbooks — नया CBS प्रावधान</h3>
+      <table>
+        <tr><th>Passbook Type</th><th>किन खातों के लिए</th></tr>
+        <tr><td><b>SB-5</b></td><td>SB / RD / MIS / SCSS / SSA / PPF</td></tr>
+        <tr><td><b>SB-5A</b></td><td>NSC / KVP / TD Accounts</td></tr>
+      </table>
+      <p>प्रविष्टियां केवल Passbook Printer से की जाती हैं (जहां उपलब्ध हो)। केवल RD/PPF की Penalty Fee व Rebate एंट्री हाथ से (manually) की जा सकती है — बाकी कोई भी प्रविष्टि हाथ से नहीं।</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Migrated (पुराने) खातों की Passbook का क्या होता है?</div>
+      <div class="yn">➡ पुरानी Passbook का पहला पृष्ठ नए खाली पृष्ठ के दाईं ओर पुनः-मुद्रित (re-printed) होता है</div>
+      <div class="yn">➡ शीर्षक पृष्ठ पर "CBS" शब्द छापा जाता है (स्थायी मार्कर से Counter Assistant द्वारा)</div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Time Limits:</b> Undelivered Passbook HO भेजनी है <b>30 दिनों</b> में; SBCO को भेजनी है यदि <b>3 महीने</b> तक claim न हो — पुराने Vol-I नियम जैसा ही।</div>
+
+    <table>
+      <tr><th>Form</th><th>उद्देश्य</th></tr>
+      <tr><td>SB-7</td><td>Withdrawal (निकासी)</td></tr>
+      <tr><td>SB-7A</td><td>Closure on Maturity (परिपक्वता पर बंद करना)</td></tr>
+      <tr><td>SB-7B</td><td>Premature Closure (समय-पूर्व बंद करना) — नया फॉर्म</td></tr>
+      <tr><td>SB-7C</td><td>Loan/Withdrawal from RD/PPF/SSA — नया फॉर्म</td></tr>
+      <tr><td>SB-28</td><td>Receipt for Depositor's Passbook</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SB-7 चारों भाई: withdraw(7), close(7A), premature(7B), loan(7C)"</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Premature Closure के लिए कौन सा फॉर्म प्रयोग होता है? <b>(SB-7B)</b> RD/PPF/SSA से Loan/Withdrawal हेतु? <b>(SB-7C)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">🪪 अध्याय 3 → पात्रता व पहचान / Eligibility & Identification (KYC)</div>
+  <div class="chapter-body">
+
+    <div class="mindmap">
+      <div class="root">👤 खाता खोलने की पात्रता</div>
+      <div class="branches">
+        <div class="branch">वयस्क, भारत का निवासी नागरिक</div>
+        <div class="branch">अभिभावक (guardian) — नाबालिग/अस्वस्थ मन के लिए, स्वयं भी भारत का निवासी नागरिक हो</div>
+        <div class="branch">10 वर्ष+ नाबालिग — स्वयं खाता खोल व संचालित कर सकता है</div>
+        <div class="branch">NRI बनने पर — खाता maturity तक जारी, केवल Non-Repatriation आधार पर</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — KYC नियम</span>
+      <h3>पहचान दस्तावेज़ (Identity Documents)</h3>
+      <table>
+        <tr><th>दस्तावेज़</th><th>नियम</th></tr>
+        <tr><td>Aadhaar</td><td>अनिवार्य; न हो तो enrolment proof या अन्य वैध दस्तावेज़</td></tr>
+        <tr><td>PAN / Form 60</td><td>खाता खोलने के <b>6 महीने</b> में जमा करना अनिवार्य</td></tr>
+        <tr><td>PAN न देने पर परिणाम</td><td>खाता <b>निष्क्रिय (non-operational)</b> हो जाता है</td></tr>
+        <tr><td>पता अपडेट करना</td><td>पते में बदलाव पर <b>3 महीने</b> में नया दस्तावेज़ जमा करें</td></tr>
+        <tr><td>Source of Funds Declaration</td><td>निवेश/मैच्योरिटी राशि <b>₹10 लाख</b> से अधिक होने पर आवश्यक</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Sukanya Samriddhi Account के लिए कौन सा विशेष दस्तावेज़ अनिवार्य है?</div>
+      <div class="yn">➡ बालिका का जन्म प्रमाणपत्र (Birth Certificate) — अनिवार्य, अन्य नाबालिग खातों की तरह वैकल्पिक नहीं</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6 में PAN, 3 में पता, 10 लाख में स्रोत" — PAN 6 months, address update 3 months, source declaration above Rs.10 lakh</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> खाता खोलने के कितने महीनों में PAN जमा करना अनिवार्य है? <b>(6 महीने)</b> न देने पर क्या होता है? <b>(खाता निष्क्रिय)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">✍️ अध्याय 4 → नामांकन / Nomination — बड़ा बदलाव</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+      <h3>अनिवार्य नामांकन व अधिकतम सीमा</h3>
+      <p><b>SB Order 13/2019 dated 18.12.2019</b> से सभी प्रकार के खातों/प्रमाणपत्रों में नामांकन <b>अनिवार्य</b> है (नाबालिग खाते सहित)। नामांकन अधिकतम <b>4 व्यक्तियों</b> के नाम किया जा सकता है।</p>
+    </div>
+
+    <div class="compare">
+      <div class="old"><b>❌ पुराना नियम (Vol-I)</b>नामांकन वैकल्पिक था; व्यक्तियों की संख्या पर स्पष्ट सीमा नहीं थी</div>
+      <div class="new"><b>✅ CBS नया नियम (2019 से)</b>नामांकन <b>अनिवार्य</b>; अधिकतम <b>4 नामिती</b> तक, प्रत्येक का % हिस्सा तय करना होगा</div>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: नामांकन में क्या-क्या जानकारी देनी अनिवार्य है?</div>
+      <div class="yn">➡ (i) नामिती(यों) के नाम</div>
+      <div class="yn">➡ (ii) प्रत्येक नामिती का % हिस्सा (Percentage Share)</div>
+      <div class="yn">➡ (iii) नामिती Beneficiary है या Trustee (कानूनी उत्तराधिकारियों के लिए ट्रस्टी के रूप में)</div>
+    </div>
+
+    <table>
+      <tr><th>स्थिति</th><th>नियम</th></tr>
+      <tr><td>Form</td><td>SB-AOF (नया खाता) या Form 10 (मौजूदा खाता)</td></tr>
+      <tr><td>साक्षी (Witness)</td><td>साक्षर के लिए आवश्यक नहीं; निरक्षर के लिए 2 साक्षी आवश्यक</td></tr>
+      <tr><td>1 अप्रैल 2018 से पहले खोले नाबालिग खाते</td><td>नामांकन नहीं — मृत्यु पर राशि अभिभावक को</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2019 में 4 का नियम" — SB Order 13/2019, अधिकतम 4 नामिती</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> नामांकन अनिवार्य करने वाला आदेश कौन सा है और कब जारी हुआ? <b>(SB Order 13/2019, dated 18.12.2019)</b> अधिकतम कितने नामिती बनाए जा सकते हैं? <b>(4)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:#00695C;">💰 अध्याय 5 → ब्याज भुगतान व निकासी नियम</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>ब्याज संबंधी मुख्य नियम</h3>
+      <ul style="font-size:0.8rem;">
+        <li>नियमों के विरुद्ध खोले/बनाए रखे गए खाते पर <b>कोई ब्याज नहीं</b>।</li>
+        <li>Matured लेकिन बंद न किए गए खाते पर <b>POSA दर से ब्याज जारी</b> रहता है (सभी बंद योजनाओं सहित)।</li>
+        <li>TD/MIS/SCSS में देय लेकिन न निकाली गई ब्याज राशि पर <b>अतिरिक्त ब्याज नहीं</b> मिलता।</li>
+        <li>गलती से जमा अतिरिक्त ब्याज — Accounts Office द्वारा तुरंत उलटा (reverse) जाता है।</li>
+      </ul>
+    </div>
+
+    <div class="penalty-box">🔴 <b>वसूली नियम:</b> गलती से अधिक भुगतान की गई राशि, <b>भू-राजस्व बकाया (arrears of land revenue)</b> की तरह वसूल की जाती है।</div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3>निकासी व ऋण (Loan) नियम</h3>
+      <p>नाबालिग/अस्वस्थ मन व्यक्ति के खाते से निकासी हेतु अभिभावक को प्रमाणपत्र देना अनिवार्य — "राशि उपयोग हेतु आवश्यक है और वह जीवित है"। शारीरिक रूप से असमर्थ (blind सहित) व्यक्ति अधिकृत व्यक्ति के माध्यम से Loan/Withdrawal सुविधा ले सकता है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Matured पर भी POSA दर" — post-maturity interest always at Post Office Savings Account rate</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Matured लेकिन बंद न किए गए खाते पर किस दर से ब्याज मिलता है? <b>(Post Office Savings Account दर)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#6A1B9A;">💳 अध्याय 6 → फीस व शुल्क तालिका / Fee-Charge Table (Rule 25)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+    </div>
+    <table>
+      <tr><th>सेवा / Service</th><th>राशि (₹)</th><th>GST</th></tr>
+      <tr><td>डुप्लीकेट Passbook जारी करना</td><td>50</td><td>18%</td></tr>
+      <tr><td>Statement of Account / Deposit Receipt</td><td>20</td><td>18%</td></tr>
+      <tr><td>खोए/क्षतिग्रस्त प्रमाणपत्र के बदले Passbook</td><td>10</td><td>18%</td></tr>
+      <tr><td>नामांकन रद्द/बदलाव</td><td>50</td><td>18%</td></tr>
+      <tr><td>खाता स्थानांतरण (Transfer)</td><td>100</td><td>18%</td></tr>
+      <tr><td>खाता गिरवी रखना (Pledging)</td><td>100</td><td>18%</td></tr>
+      <tr><td>चेक बुक (10 पन्नों तक/वर्ष)</td><td>निःशुल्क; उसके बाद ₹2/पन्ना</td><td>18%</td></tr>
+      <tr><td>चेक अनादरण (Dishonour) शुल्क</td><td>100</td><td>18%</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "50-20-10-50-100-100-100" → Duplicate PB(50), Statement(20), Cert PB(10), Nomination(50), Transfer(100), Pledge(100), Dishonour(100)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> नामांकन रद्द/बदलाव पर कितना शुल्क लगता है? <b>(₹50 + 18% GST)</b> खाता स्थानांतरण पर? <b>(₹100 + 18% GST)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:var(--red-dark);">💸 अध्याय 7 → TDS कटौती — धारा 194N / Section 194N</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — नया व जटिल विषय, जरूर पूछा जाता है</span>
+      <h3>Income Tax Act, 1961 की धारा 194N</h3>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: नकद निकासी पर TDS कब कटता है?</div>
+      <div class="yn">➡ <b>ITR भरने वाले (Filers):</b> ₹1 करोड़ से अधिक नकद निकासी पर → <b>2% TDS</b> (01.09.2019 से)</div>
+      <div class="yn">➡ <b>ITR न भरने वाले (Non-Filers):</b></div>
+      <div class="yn" style="margin-left:20px;">• ₹20 लाख–₹1 करोड़ के बीच → <b>2% TDS</b> (₹20 लाख से ऊपर की राशि पर)</div>
+      <div class="yn" style="margin-left:20px;">• ₹1 करोड़ से अधिक → <b>5% TDS</b> (₹1 करोड़ से ऊपर की राशि पर)</div>
+    </div>
+
+    <table>
+      <tr><th>श्रेणी</th><th>सीमा</th><th>दर</th><th>प्रभावी तिथि</th></tr>
+      <tr><td>ITR Filer</td><td>&gt; ₹1 करोड़</td><td>2%</td><td>01.09.2019</td></tr>
+      <tr><td>Non-Filer</td><td>₹20L – ₹1Cr</td><td>2%</td><td>01.07.2020</td></tr>
+      <tr><td>Non-Filer</td><td>&gt; ₹1 करोड़</td><td>5%</td><td>01.07.2020</td></tr>
+    </table>
+
+    <div class="penalty-box">🔴 <b>Penalty:</b> गलत/अमान्य PAN नंबर देने पर Income Tax Act की <b>धारा 272B</b> के तहत दंड। PAN अपडेट न होने पर उच्च दर से TDS कटौती।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Filer 1 करोड़-2%, Non-Filer 20 लाख-2%-1करोड़-5%" — याद रखने का सरल तरीका</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Non-ITR filer के लिए ₹1 करोड़ से अधिक नकद निकासी पर TDS दर क्या है? <b>(5%, 01.07.2020 से प्रभावी)</b> गलत PAN देने पर कौन सी धारा लागू होती है? <b>(धारा 272B)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:#37474F;">🔒 अध्याय 8 → खाता बंद करना व स्थानांतरण / Closure & Transfer</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3>खाता बंद करने के तरीके</h3>
+      <p>मैच्योरिटी राशि का भुगतान: (i) Savings Account में स्थानांतरण, (ii) Crossed Cheque, या (iii) नकद (यदि Income Tax Act की सीमा से कम हो)।</p>
+    </div>
+    <div class="dtree">
+      <div class="q">Q: e-Banking/Mobile Banking से खोला खाता कैसे बंद होता है?</div>
+      <div class="yn">➡ जमाकर्ता स्वयं e-Banking/Mobile Banking के माध्यम से बंद कर सकता है</div>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> मैच्योरिटी राशि के भुगतान के कितने तरीके निर्धारित हैं? <b>(3 — Transfer, Crossed Cheque, Cash within IT Act limit)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>Supervisor Tenure:</b> अब सभी कार्यालयों में एकसमान <b>3 वर्ष</b> (पुराना 4-4-5 खत्म)</div>
+    <div class="rev-card"><b>Passbooks:</b> SB-5 (SB/RD/MIS/SCSS/SSA/PPF) | SB-5A (NSC/KVP/TD)</div>
+    <div class="rev-card"><b>Passbook Timeline:</b> Undelivered → HO in 30 days; unclaimed 3 months → SBCO</div>
+    <div class="rev-card"><b>KYC:</b> Aadhaar अनिवार्य | PAN 6 महीने में | पता अपडेट 3 महीने में | Source Declaration &gt;₹10 लाख</div>
+    <div class="rev-card"><b>Nomination:</b> SB Order 13/2019 (18.12.2019) से अनिवार्य; अधिकतम 4 नामिती, %-हिस्सा अनिवार्य</div>
+    <div class="rev-card"><b>Fee Table:</b> Duplicate PB=₹50 | Nomination=₹50 | Transfer=₹100 | Pledge=₹100 | Dishonour=₹100 (+18% GST सभी पर)</div>
+    <div class="rev-card"><b>TDS 194N:</b> Filer &gt;1Cr=2%; Non-Filer 20L-1Cr=2%, &gt;1Cr=5%; गलत PAN=धारा 272B</div>
+    <div class="rev-card"><b>Forms:</b> SB-7(Withdrawal) | SB-7A(Closure) | SB-7B(Premature) | SB-7C(Loan RD/PPF/SSA)</div>
+    <div class="rev-card"><b>Post-maturity interest:</b> हमेशा POSA दर पर, बंद योजनाओं में भी</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>3 वर्ष</b> = CBS में Supervisor/Counter Assistant tenure (सभी कार्यालय एकसमान)</li>
+    <li>🔢 <b>SB-5 / SB-5A</b> = दो Passbook प्रकार</li>
+    <li>🔢 <b>30 दिन / 3 महीने</b> = Passbook HO भेजने / SBCO भेजने की समय सीमा</li>
+    <li>🔢 <b>6 महीने</b> = PAN जमा करने की समय सीमा</li>
+    <li>🔢 <b>3 महीने</b> = पता अपडेट करने की समय सीमा</li>
+    <li>🔢 <b>₹10 लाख</b> = Source of Funds Declaration की सीमा</li>
+    <li>🔢 <b>SB Order 13/2019, 18.12.2019</b> = अनिवार्य नामांकन का आदेश</li>
+    <li>🔢 <b>4</b> = अधिकतम नामिती संख्या</li>
+    <li>🔢 <b>₹50/₹20/₹10/₹50/₹100/₹100/₹100</b> = फीस तालिका (Duplicate PB/Statement/Cert PB/Nomination/Transfer/Pledge/Dishonour)</li>
+    <li>🔢 <b>2% / 5%</b> = TDS दरें (धारा 194N)</li>
+    <li>🔢 <b>₹20 लाख / ₹1 करोड़</b> = TDS सीमाएं (Non-Filer)</li>
+    <li>🔢 <b>धारा 272B</b> = गलत PAN पर दंड</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB (CBS) Manual, Corrected upto 31.12.2021 — अध्याय 1-3 &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

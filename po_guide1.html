@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Post Office Guide Part-I | पोस्ट ऑफिस गाइड भाग-I | IP Exam Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ip-red:#dc2626; --ip-red-dark:#b91c1c;
+  --ip-blue:#1e3a8a; --ip-blue-dark:#172554;
+  --ip-gold:#d97706;
+  --tier-red:#dc2626; --tier-orange:#ea580c; --tier-yellow:#ca8a04; --tier-green:#16a34a;
+  --cream:#fbf8f3; --ink:#1c1a16; --card:#ffffff; --line:#e7e0d3;
+  --muted:#6b6255;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans Devanagari','Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:15px;padding-bottom:40px;}
+.hi{font-weight:500;}
+.en{font-style:italic;color:var(--muted);font-size:0.92em;}
+a{color:inherit;}
+
+/* HEADER */
+header.top{background:linear-gradient(135deg,var(--ip-blue) 0%,var(--ip-blue-dark) 100%);color:#fff;padding:22px 16px 30px;position:relative;overflow:hidden;}
+header.top::after{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(217,119,6,.35),transparent 70%);}
+header.top h1{font-size:22px;font-weight:800;letter-spacing:-.02em;position:relative;z-index:1;}
+header.top .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative;z-index:1;}
+header.top .sub .hi{color:#fef3c7;}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative;z-index:1;}
+.meta-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:600;backdrop-filter:blur(6px);}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 14px;}
+
+/* TIER LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.legend span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);}
+
+/* SECTION HEADERS */
+h2.sec{font-size:18px;font-weight:800;color:var(--ip-blue-dark);margin:30px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--ip-gold);display:flex;align-items:center;gap:8px;}
+h2.sec .num{background:var(--ip-blue-dark);color:#fff;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+h3.sub{font-size:14.5px;font-weight:700;color:var(--ip-red-dark);margin:18px 0 8px;padding-left:8px;border-left:4px solid var(--ip-red);}
+
+/* CLAUSE CARD */
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);position:relative;}
+.card .tier{position:absolute;top:10px;right:10px;font-size:15px;}
+.card .clno{display:inline-block;background:var(--ip-blue-light,#dbeafe);color:var(--ip-blue-dark);font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px;margin-right:6px;}
+.card h4{font-size:13.5px;font-weight:700;margin-bottom:4px;padding-right:22px;}
+.card h4 .en{display:block;font-size:11.5px;font-weight:500;}
+.card p{font-size:12.5px;color:#3a3527;margin-top:3px;}
+.card p.hi-line{font-weight:500;}
+.card p.en-line{font-style:italic;color:var(--muted);font-size:12px;}
+.card .fact{background:#fef9ee;border:1px dashed var(--ip-gold);border-radius:8px;padding:6px 9px;margin-top:6px;font-size:12px;font-weight:600;color:#7c4a03;}
+.card .q{margin-top:7px;font-size:11.5px;background:#f0f6ff;border-left:3px solid var(--ip-blue);padding:5px 8px;border-radius:0 6px 6px 0;color:var(--ip-blue-dark);}
+.card .q b{color:var(--ip-red-dark);}
+
+.tier-red{border-left:4px solid var(--tier-red);}
+.tier-orange{border-left:4px solid var(--tier-orange);}
+.tier-yellow{border-left:4px solid var(--tier-yellow);}
+.tier-green{border-left:4px solid var(--tier-green);}
+/* TABLES */
+.tbl-wrap{overflow-x:auto;margin:10px 0 16px;border-radius:10px;border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;min-width:480px;}
+table th{background:var(--ip-blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;font-size:11.5px;}
+table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table tr:nth-child(even) td{background:#faf8f4;}
+table td .hi{display:block;}
+table td .en{display:block;font-size:10.8px;}
+
+/* MIND MAP / CHAPTER BREAKDOWN */
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:14px 0;}
+.mm-root{background:var(--ip-blue-dark);color:#fff;border-radius:10px;padding:10px 14px;font-weight:800;font-size:14px;text-align:center;}
+.mm-level1{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px;}
+.mm-chip{background:#fff;border:2px solid var(--ip-blue);border-radius:8px;padding:7px 9px;font-size:11.5px;font-weight:700;color:var(--ip-blue-dark);text-align:center;}
+.mm-arrow{text-align:center;color:var(--ip-gold);font-size:18px;margin:2px 0;}
+.mm-sub{font-size:10.5px;font-weight:500;color:var(--muted);margin-top:2px;}
+
+/* FLOWCHART / DECISION TREE using simple vertical boxes+arrows */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:14px 0;}
+.flow-box{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;text-align:center;color:var(--ip-blue-dark);}
+.flow-box.decision{border-color:var(--ip-gold);background:#fffaf0;}
+.flow-box.end{border-color:var(--tier-green);background:#f0fdf4;color:#166534;}
+.flow-arrow{text-align:center;color:var(--muted);font-size:16px;padding:2px 0;}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0;}
+.flow-branch .flow-box{font-size:11px;}
+.branch-label{font-size:10.5px;font-weight:700;text-align:center;color:var(--ip-red-dark);margin-bottom:2px;}
+
+/* TIMELINE */
+.timeline{position:relative;margin:16px 0 16px 6px;padding-left:20px;border-left:3px solid var(--ip-gold);}
+.tl-item{position:relative;padding-bottom:16px;}
+.tl-item::before{content:'';position:absolute;left:-26px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-red);}
+.tl-year{font-weight:800;color:var(--ip-red-dark);font-size:13px;}
+.tl-text{font-size:12px;margin-top:2px;}
+
+/* MNEMONIC BOX */
+.mnemonic{background:linear-gradient(135deg,#fff7ed,#fef3c7);border:2px dashed var(--ip-gold);border-radius:12px;padding:12px 14px;margin:10px 0;}
+.mnemonic .label{font-weight:800;font-size:12px;color:var(--ip-red-dark);margin-bottom:4px;display:flex;align-items:center;gap:5px;}
+.mnemonic .body{font-size:12.5px;font-weight:600;color:#5c3a02;}
+.mnemonic .mean{font-size:11px;color:var(--muted);margin-top:3px;}
+
+/* REVISION SHEET */
+.revision-box{background:var(--ip-blue-dark);color:#fff;border-radius:14px;padding:16px;margin:20px 0;}
+.revision-box h3{color:#fef3c7;font-size:15px;margin-bottom:10px;border:none;padding:0;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rev-item{background:rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:11.5px;}
+.rev-item b{color:var(--ip-gold);display:block;font-size:11px;margin-bottom:2px;}
+
+/* LAST DAY NOTES */
+.lastday{background:#fef2f2;border:2px solid var(--ip-red);border-radius:14px;padding:14px 16px;margin:20px 0;}
+.lastday h3{color:var(--ip-red-dark);border:none;padding:0;font-size:15px;margin-bottom:8px;}
+.lastday ul{padding-left:18px;font-size:12px;}
+.lastday li{margin-bottom:5px;}
+
+/* NAV */
+.tocbar{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;scrollbar-width:none;}
+.tocbar::-webkit-scrollbar{display:none;}
+.tocbar a{flex-shrink:0;font-size:11px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:5px 11px;color:var(--ip-blue-dark);text-decoration:none;white-space:nowrap;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(220,38,38,.4);cursor:pointer;z-index:100;display:flex;align-items:center;gap:6px;}
+@media print{ .pdf-btn,.tocbar{display:none;} }
+
+footer{text-align:center;font-size:11px;color:var(--muted);padding:24px 14px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>📮 POST OFFICE GUIDE — PART I</h1>
+  <div class="sub"><span class="hi">इनलैंड पोस्ट नियम | </span><span class="en">Rules & Regulations relating to Inland Post — IP Exam Notes</span></div>
+  <div class="meta-row">
+    <span class="meta-chip">📅 Corrected up to 1 July 1985</span>
+    <span class="meta-chip">🏛️ Issued by Director-General of Posts</span>
+    <span class="meta-chip">📖 7 Sections · 273 Clauses</span>
+  </div>
+</header>
+<div class="tocbar">
+  <a href="#s1">I. General</a>
+  <a href="#s2">II. Letter/Parcel</a>
+  <a href="#s3">III. Official</a>
+  <a href="#s4">IV. Prohibited</a>
+  <a href="#s5">V. Money Order</a>
+  <a href="#s6">VI. Philately</a>
+  <a href="#s7">VII. PLI</a>
+  <a href="#revision">🎯 Revision</a>
+  <a href="#lastday">🔥 Last-Day</a>
+</div>
+
+<div class="wrap">
+
+<div class="legend">
+  <span style="color:var(--tier-red)">🔴 Very Important</span>
+  <span style="color:var(--tier-orange)">🟠 Frequently Asked</span>
+  <span style="color:var(--tier-yellow)">🟡 Conceptual</span>
+  <span style="color:var(--tier-green)">🟢 Quick Revision</span>
+</div>
+
+<!-- MIND MAP -->
+<h2 class="sec"><span class="num">🗺️</span>Chapter Breakdown / अध्याय संरचना</h2>
+<div class="mindmap">
+  <div class="mm-root">POST OFFICE GUIDE PART I<br><span style="font-weight:500;font-size:11px">(Chapter → Sub-Chapter → Micro → Nano Topic)</span></div>
+  <div class="mm-arrow">↓</div>
+  <div class="mm-level1">
+    <div class="mm-chip">SECTION I – General<div class="mm-sub">Organisation→Hours→Posting→Delivery→Complaints</div></div>
+    <div class="mm-chip">SECTION II – Letter & Parcel<div class="mm-sub">Letters→Cards→Parcels→Registration→Insurance→VP</div></div>
+    <div class="mm-chip">SECTION III – Official Articles<div class="mm-sub">Service stamps→Govt correspondence</div></div>
+    <div class="mm-chip">SECTION IV – Prohibited Articles<div class="mm-sub">General→Local prohibitions</div></div>
+    <div class="mm-chip">SECTION V – Money Orders<div class="mm-sub">MO→TMO→Indian Postal Orders</div></div>
+    <div class="mm-chip">SECTION VI – Philately<div class="mm-sub">Domestic/Foreign Deposit A/c</div></div>
+    <div class="mm-chip">SECTION VII – Postal Life Insurance<div class="mm-sub">Eligibility→Plans→Claims</div></div>
+  </div>
+</div>
+<!-- ================= SECTION I ================= -->
+<h2 class="sec" id="s1"><span class="num">I</span>GENERAL <span class="en" style="margin-left:6px;font-size:12px">General Administration</span></h2>
+
+<h3 class="sub">Organisation / संगठन</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.1</span>Control<span class="en">Control of Postal Department</span></h4>
+  <p class="hi-line">डाक विभाग, डाइरेक्टर जनरल ऑफ पोस्ट्स (DG) के प्रशासनिक नियंत्रण में है। DG ही Postal Board के अध्यक्ष व Secretary, Deptt. of Posts हैं।</p>
+  <p class="en-line">Postal Department is under administrative control of the Director General of Posts, New Delhi. Country divided into 16 Postal Circles under a Postmaster General.</p>
+  <div class="fact">🔑 16 Postal Circles | Authority: Director General of Posts (DG)</div>
+  <div class="q"><b>Q.</b> डाक विभाग का प्रशासनिक प्रधान कौन है? / Who heads Postal Dept. administratively? — <b>Ans: DG Posts</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.2</span>Types of Post Offices<span class="en">Classification of offices</span></h4>
+  <p class="hi-line">डाकघर तीन प्रकार के होते हैं — (a) Head Post Office (b) Sub-Post Office (E.D. Sub-Office सहित) (c) E.D. Branch Post Office।</p>
+  <p class="en-line">Three classes: (a) Head Post Offices (b) Sub-Post Offices incl. E.D. Sub-Offices (c) E.D. Branch Post Offices.</p>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.3-4</span>Night & Mobile Post Offices</h4>
+  <p class="hi-line">Night PO: DG कार्य-समय रात 8:30 बजे तक बढ़ा सकते हैं व रविवार को भी खोल सकते हैं। Mobile PO: 12 प्रमुख शहरों में (Bombay, Calcutta, Delhi, Madras, Ahmedabad, Nagpur, Hyderabad, Bangalore, Kanpur, Poona, Jaipur, Bhilai)।</p>
+  <p class="en-line">Night PO working hours may be extended by DG up to 8:30 PM; open on Sundays too. Mobile POs operate in 12 industrial cities — book unregistered + registered (excl. insured/VP) articles.</p>
+  <div class="fact">🔑 Night PO max extension: 8:30 PM | Sunday restricted hours: 10:00–17:00 (single shift)</div>
+</div>
+
+<h3 class="sub">Business Hours & Holidays / कार्य समय एवं छुट्टियाँ</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.8</span>Post Office Holidays<span class="en">11 fixed National PO holidays</span></h4>
+  <div class="tbl-wrap"><table><tr><th>#</th><th>Holiday / छुट्टी</th></tr>
+  <tr><td>1</td><td>Republic Day (26 Jan)</td></tr>
+  <tr><td>2</td><td>Independence Day (15 Aug)</td></tr>
+  <tr><td>3</td><td>Gandhi Jayanti (2 Oct)</td></tr>
+  <tr><td>4</td><td>Idul-Zuha (Bakr-Id)</td></tr>
+  <tr><td>5</td><td>Muharram</td></tr>
+  <tr><td>6</td><td>Idul-Fitr</td></tr>
+  <tr><td>7</td><td>Good Friday</td></tr>
+  <tr><td>8</td><td>Christmas Day (25 Dec)</td></tr>
+  <tr><td>9</td><td>Buddha Purnima</td></tr>
+  <tr><td>10</td><td>Guru Nanak Birthday</td></tr>
+  <tr><td>11</td><td>Mahavir Jayanti</td></tr>
+  </table></div>
+  <div class="fact">🔑 11 fixed holidays + 5 circle-wise variable local holidays = कुल 16 दिन</div>
+  <div class="q"><b>Q.</b> राष्ट्रीय स्तर पर तय PO holidays कितनी हैं? — <b>Ans: 11 (+5 local variable)</b></div>
+</div>
+
+<h3 class="sub">Payment of Postage / डाक शुल्क भुगतान</h3>
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.11</span>Franking Machine<span class="en">Deposit & commission limits</span></h4>
+  <p class="hi-line">प्राइवेट लाइसेंसी: न्यूनतम अग्रिम जमा Rs.100, अधिकतम Rs.50,000; रिबेट 1½% मीटर रीसेट पर। सरकारी विभाग (hire scheme): जमा Rs.100 से Rs.9,900 के बीच।</p>
+  <p class="en-line">Private licensee deposit: min Rs.100, max Rs.50,000, rebate 1½% on reset. Govt hire scheme deposit: Rs.100–Rs.9,900.</p>
+  <div class="fact">🔑 Rebate = 1.5% | Error allowance claim window = within 3 months</div>
+</div>
+<h3 class="sub">Delivery / परिदान (Clauses 35–63)</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.35</span>Definition of Delivery</h4>
+  <p class="hi-line">पता-धारक के घर/कार्यालय पर, या पता-धारक, उसके नौकर, एजेंट या डाक प्राप्त करने हेतु अधिकृत व्यक्ति को सामान्य प्रचलित रीति से डाक अनुच्छेद देना ही "delivery" कहलाता है (Post Office Act के अनुसार)।</p>
+  <p class="en-line">Delivery at the house/office of addressee to him, his servant, agent, or authorised person in usual manner is "delivery" under the Post Office Act.</p>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.37,41,43</span>Detention & Delivery Time-Limits<span class="en">MOST asked numeric clause</span></h4>
+  <div class="tbl-wrap"><table><tr><th>Article Type</th><th>Rule / नियम</th></tr>
+  <tr><td>Refused Registered Article</td><td>Detained max <b>7 days</b> from presentation, then returned to sender</td></tr>
+  <tr><td>Damaged Registered/Parcel</td><td><b>7 days</b> inland / <b>15 days</b> foreign article notice to attend</td></tr>
+  <tr><td>Parcel (unclaimed, ≤10kg)</td><td>Notice → <b>7 days</b> → "Unclaimed" disposal</td></tr>
+  <tr><td>Insured article >Rs.500</td><td>Delivered only at PO window</td></tr>
+  <tr><td>VP article &gt;Rs.100</td><td>Intimation sent, paid at PO window</td></tr>
+  <tr><td>VP article ≤Rs.100</td><td>Delivered at residence by postman</td></tr>
+  <tr><td>VP article &gt;Rs.25 via village postman</td><td>Delivered only at PO (village postman restricted)</td></tr>
+  <tr><td>Customs duty due</td><td>&gt;Rs.50 window delivery (&gt;Rs.100 for 1st Class HOs)</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> Refused registered article कितने दिन डाकघर में रखा जाता है? — <b>Ans: 7 days</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.47</span>Payment of Money Orders (Delivery)</h4>
+  <p class="hi-line">सामान्यतः पते पर भुगतान। MO > Rs.500 सामान्यतः Village Postman द्वारा नहीं (कुछ मामलों में Rs.2000 तक Village Postman से भुगतान)।</p>
+  <p class="en-line">MO exceeding Rs.500 not normally paid by Village Postman — paid at PO window; in certain cases up to Rs.2,000 may be paid by Village Postman.</p>
+</div>
+
+<h3 class="sub">Poste Restante & Redirection / पोस्ट रेस्टान्ट व पुनर्निदेशन</h3>
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.64,67-73</span>Definitions & Redirection Rules</h4>
+  <p class="hi-line">Poste Restante: "To await arrival" या "To be kept till called for" अंकित लेख। Redirection सामान्यतः निःशुल्क; पार्सल पुनर्निदेशन शुल्क = आधा prepaid rate। पते बदलने संबंधी निर्देश 3 माह तक वैध।</p>
+  <p class="en-line">Redirection is free of charge (parcels: half the prepaid rate per redirection). Change-of-address instructions valid for 3 months only (unless renewed).</p>
+  <div class="fact">🔑 Redirection fee (parcel) = ½ prepaid rate | Instruction validity = 3 months</div>
+</div>
+
+<h3 class="sub">Undelivered Articles / अवितरित डाक</h3>
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.74</span>Detention Periods — Comparison</h4>
+  <div class="tbl-wrap"><table><tr><th>Article</th><th>Detention Period</th></tr>
+  <tr><td>Undeliverable articles (addressee not found)</td><td>7 days</td></tr>
+  <tr><td>Undelivered telegrams (in transit by post)</td><td>3 days</td></tr>
+  <tr><td>Undelivered registered newspapers</td><td>7 days (returned direct)</td></tr>
+  </table></div>
+</div>
+<h3 class="sub">Enquiries & Complaints / शिकायतें</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.78,81</span>Complaint Authority & Time-Limits<span class="en">HIGH exam-weightage table</span></h4>
+  <p class="hi-line">शिकायत स्थानीय Superintendent of Post Offices को संबोधित होनी चाहिए (First Class HPO के मामले में Postmaster स्वयं सक्षम)।</p>
+  <div class="tbl-wrap"><table><tr><th>Complaint Type / शिकायत</th><th>Time Limit / समय-सीमा</th></tr>
+  <tr><td>MO & VP articles</td><td>12 months (2 years for Field PO / seamen family allotment MOs)</td></tr>
+  <tr><td>Loss/damage of registered/insured article (compensation claim)</td><td>3 months from posting</td></tr>
+  <tr><td>Other complaints (inland post)</td><td>6 months from incident</td></tr>
+  <tr><td>Refund of telegraph charges on T.M.O.</td><td>2 months from issue</td></tr>
+  <tr><td>Miscarriage/loss of Postal Orders</td><td>12 months from last day of month of issue</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"MO-12, LOSS-3, OTHERS-6, TMO-2, IPO-12" → <span class="hi">MO और IPO साल-भर (12), नुकसान-दावा तीन माह, बाकी छह माह, TMO सिर्फ दो माह</span></div></div>
+  <div class="q"><b>Q.</b> Registered article की क्षति हेतु compensation claim की समय-सीमा? — <b>Ans: 3 months</b></div>
+</div>
+
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4><span class="clno">Cl.88,94</span>Small Coin & Cheque Acceptance</h4>
+  <p class="hi-line">एक रुपये और 50 पैसे के अतिरिक्त सिक्के केवल Re.1 तक ही वैध निविदा (legal tender)। चेक स्वीकृति हेतु न्यूनतम राशि Rs.20 व बैंक गारंटी (3 वर्ष हेतु renewable)।</p>
+  <p class="en-line">Coins other than Re.1/50 paise legal tender only up to Re.1. Cheque acceptance min amount Rs.20 with bank guarantee (renewable every 3 years).</p>
+</div>
+
+<!-- ================= SECTION II ================= -->
+<h2 class="sec" id="s2"><span class="num">II</span>LETTER & PARCEL POST <span class="en" style="margin-left:6px;font-size:12px">पत्र एवं पार्सल डाक</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.96-98</span>Definitions — Inland Post, Postal Article, Mail Classes</h4>
+  <p class="hi-line">"Inland Post" = भारत में स्थानों के बीच अथवा भारत व विदेश के बीच केंद्र सरकार द्वारा संचालित डाक। "Postal Article" की 10 श्रेणियाँ। प्रथम श्रेणी डाक = Letters, Post cards, Letter cards; शेष सभी द्वितीय श्रेणी।</p>
+  <div class="fact">🔑 10 classes of Postal Articles | First-class mail = Letters + Postcards + Letter Cards</div>
+</div>
+
+<h3 class="sub">Weight & Size Limits — Comparison Chart / भार-आकार तुलना तालिका</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.100,107,110,146</span>Weight/Size across Article types</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Article</th><th>Max Weight</th><th>Size Limits</th></tr>
+  <tr><td>Letter</td><td>2 kg</td><td>Roll: 80cm(max)/10cm(min); Other: 60cm max/11×7cm min</td></tr>
+  <tr><td>Letter Card</td><td>3 grams</td><td>Unfolded 30×21cm max / 20×14cm min</td></tr>
+  <tr><td>Post Card (private)</td><td>—</td><td>15×10.5cm max / 10×7cm min</td></tr>
+  <tr><td>Unregistered Parcel</td><td>4 kg</td><td>Length ≤1m; length+girth ≤1.8m</td></tr>
+  <tr><td>Registered Parcel (Branch PO)</td><td>10 kg</td><td>Same as above</td></tr>
+  <tr><td>Registered Parcel (other PO)</td><td>20 kg</td><td>Same as above</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Letter=2, Card=3gm, Parcel=4-10-20" → <span class="hi">पत्र 2 किलो, लेटर कार्ड 3 ग्राम, अपंजीकृत पार्सल 4 किलो, शाखा-पंजीकृत 10, अन्य पंजीकृत 20 किलो</span></div></div>
+  <div class="q"><b>Q.</b> Branch Post Office से registered parcel की अधिकतम भार-सीमा? — <b>Ans: 10 kg</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.101</span>Unpaid/Insufficiently Paid Letters</h4>
+  <p class="hi-line">अप्रीपेड पत्र पर दोहरा (double) डाक शुल्क; अपर्याप्त प्रीपेड पर कमी की दोहरी राशि वसूली जाती है।</p>
+</div>
+<h3 class="sub">Registration / रजिस्ट्रेशन (Clauses 162–171)</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.171</span>Cases where Registration is Compulsory</h4>
+  <p class="hi-line">अनिवार्य पंजीकरण: (a) 4 kg से अधिक पार्सल (b) बीमित वस्तु (c) कस्टम्स डिक्लेरेशन आवश्यक पार्सल (d) चेक/स्टाम्प/नोट युक्त पारदर्शी/असुरक्षित कवर (e) "Registered" शब्द अंकित लेख (f) दोबारा पोस्ट किया गया registered article (g) कोई भी VP article।</p>
+  <div class="fact">🔑 अपंजीकृत के लिए शुल्क वसूली = दोगुनी registration fee (delivery पर)</div>
+  <div class="q"><b>Q.</b> कौन-सा पार्सल अनिवार्यतः registered होना चाहिए? — <b>Ans: >4kg वजन का कोई भी पार्सल</b></div>
+</div>
+
+<!-- Decision Tree: Registration compulsory -->
+<div class="flow">
+  <div class="flow-box decision">क्या पार्सल इनमें से कोई शर्त पूरी करता है? / Does the article meet any condition?</div>
+  <div class="flow-arrow">↓ हाँ / Yes</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">Parcel &gt;4kg / Insured / VP</div><div class="flow-box end">Registration अनिवार्य / Compulsory</div></div>
+    <div><div class="branch-label">कोई शर्त नहीं / No condition met</div><div class="flow-box">वैकल्पिक (Optional Registration)</div></div>
+  </div>
+</div>
+
+<h3 class="sub">Insurance / बीमा (Clauses 172–185)</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.172,182-184</span>Insurance Limits & Compensation<span class="en">Very high weightage</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Item</th><th>Limit / Rule</th></tr>
+  <tr><td>Insurance at Branch PO</td><td>Up to Rs.600</td></tr>
+  <tr><td>Insurance at other authorised PO</td><td>Up to Rs.10,000</td></tr>
+  <tr><td>Insurance to/from Army PO</td><td>Up to Rs.500 each</td></tr>
+  <tr><td>Compensation payable</td><td>1 month after loss intimation given</td></tr>
+  <tr><td>Compulsory insurance (gold/bullion/currency notes etc.)</td><td>If value exceeds Rs.10,000 (also see Cl.209(9))</td></tr>
+  <tr><td>Claim window for loss intimation</td><td>3 months from date of posting</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> एक शाखा डाकघर में अधिकतम बीमा सीमा? — <b>Ans: Rs.600</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.170</span>Compensation for Registered (Uninsured) Articles</h4>
+  <p class="hi-line">Head of Circle सद्भावना (act of grace) के रूप में अधिकतम Rs.50 तक क्षतिपूर्ति दे सकते हैं — कानूनी दायित्व नहीं। दावा: हानि हेतु 3 माह, क्षति/सामग्री हानि हेतु 1 माह (VP के लिए 1 वर्ष, सेना संबंधी के लिए 6 माह)।</p>
+  <div class="fact">🔑 Compensation ceiling (registered, uninsured) = Rs.50 (as act of grace, NOT legal liability)</div>
+</div>
+
+<h3 class="sub">Value Payable (VP) Post / मूल्य-देय डाक (Clauses 186–197)</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.187,192,194</span>VP Post — Limits & Detention</h4>
+  <p class="hi-line">VP article की अधिकतम राशि Rs.1,000 से अधिक नहीं हो सकती। यदि वसूली योग्य राशि Rs.100 से अधिक हो तो बीमा अनिवार्य। पते वाले द्वारा 7 दिन में delivery न लेने पर 8वें दिन सामान वापस; लिखित आवेदन पर 7 दिन का विस्तार संभव।</p>
+  <div class="fact">🔑 Max VP amount = Rs.1,000 | Compulsory insurance if recoverable amount &gt;Rs.100 | Detention = 7+7 days | PO liability limited to 6 months (Cl.197)</div>
+  <div class="q"><b>Q.</b> VP article की अधिकतम धनराशि सीमा क्या है? — <b>Ans: Rs.1,000</b></div>
+</div>
+
+<!-- Decision tree VP delivery -->
+<div class="flow">
+  <div class="flow-box decision">VP राशि कितनी है? / How much is the VP amount?</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">≤ Rs.100</div><div class="flow-box end">Postman घर पर डिलीवर करेगा / Delivered at residence</div></div>
+    <div><div class="branch-label">&gt; Rs.100</div><div class="flow-box end">सूचना भेजी जाएगी, PO window पर भुगतान / Intimation sent, paid at PO window</div></div>
+  </div>
+  <div class="flow-arrow">विशेष स्थिति / Special case: &gt;Rs.25 via Village Postman → केवल PO पर वितरण (Delivered only at PO)</div>
+</div>
+<!-- ================= SECTION III ================= -->
+<h2 class="sec" id="s3"><span class="num">III</span>OFFICIAL POSTAL ARTICLES <span class="en" style="margin-left:6px;font-size:12px">सरकारी डाक वस्तुएं</span></h2>
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4><span class="clno">Cl.198-204</span>Service Postage & Official Correspondence</h4>
+  <p class="hi-line">सरकारी अधिकारी Service Stamps का उपयोग कर सकते हैं। बिना उचित शुल्क वाले पत्र "postage due" के रूप में charge होते हैं।</p>
+  <p class="en-line">Officials entitled to use service stamps for official correspondence; unpaid/insufficiently paid official articles charged as postage-due articles.</p>
+</div>
+
+<!-- ================= SECTION IV ================= -->
+<h2 class="sec" id="s4"><span class="num">IV</span>PROHIBITED ARTICLES <span class="en" style="margin-left:6px;font-size:12px">निषिद्ध वस्तुएं</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.209</span>General Prohibitions<span class="en">Frequently tested list</span></h4>
+  <div class="tbl-wrap"><table><tr><th>#</th><th>Prohibited Item / निषिद्ध वस्तु</th></tr>
+  <tr><td>1</td><td>किसी विधि के विरुद्ध वस्तु / Anything against any enactment in force</td></tr>
+  <tr><td>2</td><td>अश्लील / Indecent or obscene material</td></tr>
+  <tr><td>3</td><td>राजद्रोहात्मक/धमकी भरे शब्द / Seditious, threatening words on cover</td></tr>
+  <tr><td>4</td><td>विस्फोटक/ज्वलनशील पदार्थ / Explosive, inflammable substances</td></tr>
+  <tr><td>5</td><td>असुरक्षित तीक्ष्ण उपकरण / Unprotected sharp instruments</td></tr>
+  <tr><td>6</td><td>हानिकारक जीव / Noxious living creatures</td></tr>
+  <tr><td>7</td><td>लॉटरी सामग्री (सरकारी लॉटरी छोड़कर) / Lottery material (except Govt-authorised)</td></tr>
+  <tr><td>9</td><td>सोना/बुलियन >Rs.10,000 मूल्य / Gold coin or bullion exceeding Rs.10,000</td></tr>
+  </table></div>
+  <div class="fact">🔑 Gold/bullion prohibition threshold = Rs.10,000 (market value on date & place of posting)</div>
+  <div class="q"><b>Q.</b> सोना/बुलियन किस मूल्य से अधिक होने पर डाक द्वारा प्रेषण निषिद्ध है? — <b>Ans: Rs.10,000</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.210</span>Local Prohibitions<span class="en">State/region specific</span></h4>
+  <p class="hi-line">अफीम, मॉर्फिया, कोकीन, भांग आदि — कुछ राज्यों के बीच निषिद्ध (कतिपय लाइसेंसधारी रसायनज्ञों को छूट)। Port Blair/Nancowry — पक्षी की खाल/पंख निषिद्ध। J&K से "कुठ" (Kutch) निषिद्ध बिना विशेष परमिट।</p>
+  <p class="en-line">Opium, morphia, cocaine, hemp between certain states (licensed chemists exempted under conditions). Bird skins/feathers prohibited to/from Port Blair & Nancowry. "Kutch" from J&K needs special permit.</p>
+</div>
+<!-- ================= SECTION V ================= -->
+<h2 class="sec" id="s5"><span class="num">V</span>MONEY ORDERS <span class="en" style="margin-left:6px;font-size:12px">मनी ऑर्डर</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.215,217,235</span>Definitions & Value Limits</h4>
+  <p class="hi-line">"Money Order" = डाकघर द्वारा जारी धन-भुगतान आदेश। "Remitter" = भेजने वाला; "Payee" = प्राप्तकर्ता। एकल MO की अधिकतम राशि Rs.1,000; TMO की भी अधिकतम राशि Rs.1,000।</p>
+  <div class="fact">🔑 MO max value = Rs.1,000 | TMO max value = Rs.1,000 (no fraction of rupee)</div>
+  <div class="q"><b>Q.</b> एकल Money Order की अधिकतम सीमा कितनी है? — <b>Ans: Rs.1,000</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.220,229,230</span>MO Responsibility, Detention & Void Orders</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Situation</th><th>Rule</th></tr>
+  <tr><td>PO liability for wrong payment</td><td>Not responsible after 1 year from date of issue</td></tr>
+  <tr><td>Refused/undelivered MO detention</td><td>Max 7 days, then returned to remitter</td></tr>
+  <tr><td>Void MO claim window</td><td>1 year from issue (2 years for Field PO/seamen family allotment MOs)</td></tr>
+  </table></div>
+</div>
+
+<h3 class="sub">Indian Postal Orders (IPO) / भारतीय डाक आदेश</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.244,250,252</span>IPO Denominations & Validity</h4>
+  <p class="hi-line">6 मूल्यवर्ग: 50 पैसे, Rs.1 से Rs.10 के गुणज, Rs.20, Rs.30, Rs.40, Rs.50, Rs.100। जारी होने की तिथि से 6 माह तक बिना अतिरिक्त कमीशन भुगतान योग्य; 6-12 माह के बीच दूसरा कमीशन देकर वैध; 12 माह बाद जब्त (forfeited)।</p>
+  <div class="tbl-wrap"><table><tr><th>Denomination</th><th>Commission</th></tr>
+  <tr><td>50 paise – Rs.10</td><td>30 paise</td></tr>
+  <tr><td>Rs.20</td><td>60 paise</td></tr>
+  <tr><td>Rs.30</td><td>90 paise</td></tr>
+  <tr><td>Rs.40</td><td>Rs.1.20</td></tr>
+  <tr><td>Rs.50</td><td>Rs.1.50</td></tr>
+  <tr><td>Rs.100</td><td>Rs.3.00</td></tr>
+  </table></div>
+  <div class="fact">🔑 Payable without 2nd commission: 6 months | With 2nd commission: 6–12 months | Forfeited: after 12 months | Miscarriage claim: within 12 months</div>
+  <div class="q"><b>Q.</b> IPO कितने मूल्यवर्गों में उपलब्ध होते हैं? — <b>Ans: 6 (50 paise to Rs.100)</b></div>
+</div>
+
+<!-- Timeline for MO/IPO -->
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">0–6 Months</div><div class="tl-text">IPO/MO payable normally, no extra commission</div></div>
+  <div class="tl-item"><div class="tl-year">6–12 Months</div><div class="tl-text">IPO payable only with 2nd commission charged</div></div>
+  <div class="tl-item"><div class="tl-year">After 12 Months</div><div class="tl-text">IPO forfeited; Void MO claim window closes at 1 year (2 yrs for FPO)</div></div>
+</div>
+
+<!-- ================= SECTION VI ================= -->
+<h2 class="sec" id="s6"><span class="num">VI</span>PHILATELY <span class="en" style="margin-left:6px;font-size:12px">फिलेटली</span></h2>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">Cl.255-259</span>Definition & Deposit Account Systems</h4>
+  <p class="hi-line">Philately = डाक टिकटों के संग्रह व अध्ययन का शौक (विश्व का पहला डाक टिकट 1840 में इंग्लैंड में जारी हुआ)। Domestic Deposit A/c: न्यूनतम जमा Rs.50; हैंडलिंग शुल्क Rs.2/बार। Foreign Deposit A/c: केवल Bombay में, न्यूनतम जमा राशि रु.100 के बराबर विदेशी मुद्रा में।</p>
+  <div class="fact">🔑 World's 1st postage stamp: 1840 (England) | Domestic min deposit: Rs.50 | Foreign Deposit A/c location: Bombay only</div>
+  <div class="q"><b>Q.</b> विश्व का पहला डाक टिकट किस वर्ष जारी हुआ? — <b>Ans: 1840, England</b></div>
+</div>
+<!-- ================= SECTION VII ================= -->
+<h2 class="sec" id="s7"><span class="num">VII</span>POSTAL LIFE INSURANCE (PLI) <span class="en" style="margin-left:6px;font-size:12px">डाक जीवन बीमा</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.260</span>Introduction Date<span class="en">Extremely important date</span></h4>
+  <p class="hi-line">PLI की शुरुआत 1 फरवरी 1884 को डाक कर्मचारियों के कल्याण हेतु हुई थी।</p>
+  <p class="en-line">PLI was introduced on 1-2-1884 as a welfare measure for Postal employees.</p>
+  <div class="fact">🔑 PLI Introduced: 1 February 1884</div>
+  <div class="q"><b>Q.</b> PLI कब शुरू हुई थी? — <b>Ans: 1 February 1884</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">Cl.262</span>Types of PLI Policies</h4>
+  <div class="tbl-wrap"><table><tr><th>Plan</th><th>Feature</th></tr>
+  <tr><td>Whole Life Assurance</td><td>Premium till age 50/55/58/60/70; paid to nominee on death</td></tr>
+  <tr><td>Endowment Assurance</td><td>Premium till maturity age (30–60); paid on maturity or earlier death</td></tr>
+  <tr><td>Convertible Whole Life</td><td>Option to convert to Endowment within first 5 years</td></tr>
+  <tr><td>Anticipated Endowment</td><td>15-yr term (max age 45) or 20-yr term (max age 40); survival benefits at intervals</td></tr>
+  </table></div>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">Cl.263,264,270,271</span>Sum Assured, Loans & Surrender</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Item</th><th>Value</th></tr>
+  <tr><td>Sum assured (general plans)</td><td>Min Rs.100 – Max Rs.1,00,000</td></tr>
+  <tr><td>Sum assured (Anticipated Endowment)</td><td>Min Rs.5,000 – Max Rs.1,00,000</td></tr>
+  <tr><td>Loan eligibility – Endowment</td><td>Policy in force ≥ 3 years</td></tr>
+  <tr><td>Loan eligibility – Whole Life</td><td>Policy in force ≥ 5 years</td></tr>
+  <tr><td>Surrender eligibility</td><td>Policy in force ≥ 3 years</td></tr>
+  <tr><td>Income Tax Rebate</td><td>Section 80-C of I.T. Act</td></tr>
+  <tr><td>Bonus declared</td><td>Once every 3 years</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"3 for Endowment, 5 for Whole Life" → <span class="hi">एंडोमेंट में 3 साल बाद लोन/surrender, Whole Life में लोन हेतु 5 साल</span></div></div>
+  <div class="q"><b>Q.</b> Endowment Policy पर loan कब से लिया जा सकता है? — <b>Ans: पॉलिसी 3 वर्ष पूर्ण होने पर</b></div>
+</div>
+
+<!-- ============ COMPARISON: All Time Limits ============ -->
+<h2 class="sec"><span class="num">⏱️</span>MASTER TIME-LIMIT COMPARISON <span class="en" style="margin-left:6px;font-size:12px">सभी समय-सीमाएं एक तालिका में</span></h2>
+<div class="tbl-wrap"><table>
+<tr><th>Topic</th><th>Time Limit</th></tr>
+<tr><td>Refused registered article detention</td><td>7 days</td></tr>
+<tr><td>Damaged article notice (inland/foreign)</td><td>7 / 15 days</td></tr>
+<tr><td>Parcel unclaimed → disposal</td><td>7 days</td></tr>
+<tr><td>VP article detention (+ extension)</td><td>7 + 7 days</td></tr>
+<tr><td>Undeliverable article kept in PO</td><td>7 days</td></tr>
+<tr><td>Undelivered telegram kept in PO</td><td>3 days</td></tr>
+<tr><td>Change-of-address instruction validity</td><td>3 months</td></tr>
+<tr><td>Registered/insured loss compensation claim</td><td>3 months</td></tr>
+<tr><td>Registered damage/content-loss claim</td><td>1 month</td></tr>
+<tr><td>VP article compensation claim</td><td>1 year</td></tr>
+<tr><td>Insured article loss intimation</td><td>3 months</td></tr>
+<tr><td>Insurance compensation payment (after intimation)</td><td>1 month</td></tr>
+<tr><td>MO/VP complaint window</td><td>12 months (2 yrs Field PO)</td></tr>
+<tr><td>Other inland post complaints</td><td>6 months</td></tr>
+<tr><td>TMO telegraph charge refund claim</td><td>2 months</td></tr>
+<tr><td>IPO miscarriage/loss claim</td><td>12 months</td></tr>
+<tr><td>Void MO claim window</td><td>1 year (2 yrs Field PO)</td></tr>
+<tr><td>IPO payable without 2nd commission</td><td>6 months</td></tr>
+<tr><td>IPO forfeited</td><td>after 12 months</td></tr>
+<tr><td>VP complaint window</td><td>6 months</td></tr>
+<tr><td>PLI loan – Endowment / Whole Life</td><td>3 yrs / 5 yrs</td></tr>
+<tr><td>PLI surrender eligibility</td><td>3 years</td></tr>
+<tr><td>PLI bonus declaration cycle</td><td>every 3 years</td></tr>
+</table></div>
+<!-- ============ COMPLAINT FLOW ============ -->
+<h2 class="sec"><span class="num">🔀</span>COMPLAINT ESCALATION FLOW <span class="en" style="margin-left:6px;font-size:12px">शिकायत प्रक्रिया</span></h2>
+<div class="flow">
+  <div class="flow-box">Suggestion/Complaint Book at Post Office / डाकघर में शिकायत पुस्तिका</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Local Superintendent of Post Offices (या First Class HPO का Postmaster)</div>
+  <div class="flow-arrow">↓ यदि देरी/असंतोषजनक उत्तर</div>
+  <div class="flow-box">Circle Complaints/Vigilance Officer (Circle HQ)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box end">निपटान / Resolution</div>
+</div>
+
+<!-- ============ TIMELINE OF KEY DATES ============ -->
+<h2 class="sec"><span class="num">📅</span>KEY HISTORICAL DATES <span class="en" style="margin-left:6px;font-size:12px">महत्वपूर्ण तिथियाँ</span></h2>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">1840</div><div class="tl-text">World's first postage stamp issued (England)</div></div>
+  <div class="tl-item"><div class="tl-year">1867</div><div class="tl-text">Press & Registration of Books Act</div></div>
+  <div class="tl-item"><div class="tl-year">1 Feb 1884</div><div class="tl-text">Postal Life Insurance (PLI) introduced</div></div>
+  <div class="tl-item"><div class="tl-year">1908</div><div class="tl-text">Indian Explosive Substances Act</div></div>
+  <div class="tl-item"><div class="tl-year">1914</div><div class="tl-text">Destructive Insects & Pests Act</div></div>
+  <div class="tl-item"><div class="tl-year">1930</div><div class="tl-text">Dangerous Drugs Act</div></div>
+  <div class="tl-item"><div class="tl-year">1937</div><div class="tl-text">Petroleum Rules (flash-point test for inflammables)</div></div>
+  <div class="tl-item"><div class="tl-year">1 July 1985</div><div class="tl-text">Post Office Guide Part I — corrected up to this date</div></div>
+</div>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-box" id="revision">
+  <h3>🎯 ONE-PAGE REVISION SHEET / एक-पृष्ठ रिवीज़न शीट</h3>
+  <div class="rev-grid">
+    <div class="rev-item"><b>Postal Circles</b>16 Circles under DG Posts</div>
+    <div class="rev-item"><b>PO Holidays</b>11 fixed + 5 local</div>
+    <div class="rev-item"><b>Franking (private)</b>Rs.100–50,000 deposit</div>
+    <div class="rev-item"><b>Franking (govt hire)</b>Rs.100–9,900 deposit</div>
+    <div class="rev-item"><b>Letter weight</b>Max 2 kg</div>
+    <div class="rev-item"><b>Letter card weight</b>Max 3 grams</div>
+    <div class="rev-item"><b>Parcel weight (unreg./BO/other)</b>4 / 10 / 20 kg</div>
+    <div class="rev-item"><b>Insurance limit (BO/other/Army)</b>600 / 10,000 / 500</div>
+    <div class="rev-item"><b>Registered comp. (act of grace)</b>Max Rs.50</div>
+    <div class="rev-item"><b>VP max amount</b>Rs.1,000</div>
+    <div class="rev-item"><b>MO / TMO max value</b>Rs.1,000 each</div>
+    <div class="rev-item"><b>Gold/bullion prohibition</b>&gt;Rs.10,000</div>
+    <div class="rev-item"><b>IPO denominations</b>6 (50p–Rs.100)</div>
+    <div class="rev-item"><b>PLI introduced</b>1 Feb 1884</div>
+    <div class="rev-item"><b>PLI sum assured</b>Rs.100–1,00,000</div>
+    <div class="rev-item"><b>PLI loan (Endow/Whole)</b>3 yrs / 5 yrs</div>
+    <div class="rev-item"><b>Compensation-claim (loss)</b>3 months</div>
+    <div class="rev-item"><b>Compensation-claim (damage)</b>1 month</div>
+    <div class="rev-item"><b>Detention (registered/VP)</b>7 days (VP +7 more)</div>
+    <div class="rev-item"><b>1st stamp in world</b>1840, England</div>
+  </div>
+</div>
+<!-- ============ LAST DAY REVISION ============ -->
+<div class="lastday" id="lastday">
+  <h3>🔥 LAST-DAY REVISION NOTES / परीक्षा से एक दिन पहले</h3>
+  <ul>
+    <li><b>याद रखें:</b> हर "7 दिन" वाला नियम Delivery/Detention से जुड़ा है (refused article, damaged article-inland, parcel unclaimed, VP first detention, undeliverable article kept)।</li>
+    <li><b>ट्रिकी पॉइंट:</b> VP compensation claim = <b>1 वर्ष</b> जबकि सामान्य registered compensation claim सिर्फ <b>3 माह</b> — भ्रमित न हों!</li>
+    <li><b>संख्या याद करें:</b> MO सीमा = TMO सीमा = Rs.1,000 (दोनों बराबर)।</li>
+    <li><b>PLI शॉर्टकट:</b> 3-5-3 → Loan (Endowment)=3yrs, Loan(Whole Life)=5yrs, Surrender=3yrs।</li>
+    <li><b>Gold/Bullion</b> प्रतिबंध सीमा हमेशा <b>Rs.10,000</b> से जोड़ें (न कि 5,000 या 20,000)।</li>
+    <li><b>IPO का Life-Cycle:</b> 0-6 महीने (सामान्य) → 6-12 महीने (2nd commission सहित) → 12+ महीने (forfeited)।</li>
+    <li>Franking Machine के दो अलग deposit limits: Private licensee (Rs.100–50,000) बनाम Government hire (Rs.100–9,900) — exam में स्वैप हो सकते हैं!</li>
+    <li>Complaint authority = Superintendent of PO (सामान्यतः), Circle Complaints Officer = escalation स्तर।</li>
+  </ul>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  📮 India Post IP Exam Portal · Post Office Guide Part I (Corrected up to 1-7-1985) · Prepared for departmental exam revision
+</footer>
+
+<button class="pdf-btn" onclick="window.print()">⬇️ Save as PDF</button>
+
+</body>
+</html>

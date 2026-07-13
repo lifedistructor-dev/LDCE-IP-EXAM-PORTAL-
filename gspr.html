@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSPR 2018 – Trilingual Infographic | IP Exam</title>
+<style>
+:root{
+  --red:#C0392B;--orange:#E67E22;--yellow:#D4AC0D;--green:#1E8449;
+  --blue:#1A5276;--dark:#1C2833;--bg:#EEF2F5;--border:#D5D8DC;
+  --rb:#FADBD8;--ob:#FDEBD0;--yb:#FEF9E7;--gb:#D5F5E3;--ebb:#EBF5FB;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--dark);font-size:13.5px;}
+.hdr{background:linear-gradient(135deg,#0B3D91,#1A5276);color:#fff;padding:18px 16px;text-align:center;}
+.hdr h1{font-size:18px;margin-bottom:3px;}
+.hdr .sub{font-size:12px;color:#AED6F1;}
+.hdr .gu{font-size:12px;color:#FAD7A0;margin-bottom:10px;}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+.badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:3px 10px;font-size:11px;}
+.legend{display:flex;flex-wrap:wrap;gap:8px;background:#fff;padding:8px 14px;border-bottom:2px solid var(--border);}
+.leg{display:flex;align-items:center;gap:4px;font-size:11px;}
+.dot{width:11px;height:11px;border-radius:50%;}
+.toc{background:var(--blue);color:#fff;padding:14px 16px;}
+.toc h2{font-size:14px;text-align:center;border-bottom:2px solid var(--orange);padding-bottom:5px;margin-bottom:8px;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.toc-grid a{color:#AED6F1;font-size:11px;text-decoration:none;padding:2px 0;}
+.section{padding:12px 12px 0;}
+.sec-title{background:var(--blue);color:#fff;padding:7px 12px;border-radius:8px 8px 0 0;font-size:14px;}
+.sec-body{background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:12px;margin-bottom:14px;}
+.hi{font-weight:700;font-size:12px;display:block;color:var(--dark);}
+.en{font-style:italic;font-size:11px;color:#555;display:block;}
+.gu{font-size:11.5px;color:#1A5276;display:block;font-weight:600;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0;}
+.card{border-radius:7px;padding:9px 11px;}
+.card.red{border-left:4px solid var(--red);background:var(--rb);}
+.card.orange{border-left:4px solid var(--orange);background:var(--ob);}
+.card.yellow{border-left:4px solid var(--yellow);background:var(--yb);}
+.card.green{border-left:4px solid var(--green);background:var(--gb);}
+.card.blue{border-left:4px solid var(--blue);background:var(--ebb);}
+.card h4{font-size:11.5px;margin-bottom:4px;}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px;margin:6px 0;}
+.tbl th{background:var(--blue);color:#fff;padding:5px 7px;text-align:left;font-size:11px;}
+.tbl td{border:1px solid var(--border);padding:5px 7px;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#F8F9FA;}
+.tbl .r{background:var(--rb)!important;}
+.tbl .o{background:var(--ob)!important;}
+.tbl .g{background:var(--gb)!important;}
+.flow{display:flex;flex-direction:column;align-items:center;}
+.fbox{padding:7px 14px;border-radius:6px;font-size:11.5px;text-align:center;width:100%;max-width:340px;}
+.fbox.b{background:var(--blue);color:#fff;}
+.fbox.g{background:var(--green);color:#fff;}
+.fbox.r{background:var(--red);color:#fff;}
+.fbox.o{background:var(--orange);color:#fff;}
+.fbox.gray{background:#7F8C8D;color:#fff;}
+.farr{font-size:18px;color:var(--blue);line-height:1.2;text-align:center;}
+.fbranch{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;margin:3px 0;}
+.fbranch .fbox{max-width:100%;}
+.tl{padding-left:28px;position:relative;}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:3px;background:var(--blue);}
+.tl-i{position:relative;margin-bottom:10px;}
+.tl-dot{position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:2px solid #fff;box-shadow:0 0 0 2px var(--orange);}
+.tl-c{background:var(--ebb);border-radius:6px;padding:7px 9px;}
+.tl-c .reg{font-size:10px;background:var(--blue);color:#fff;padding:1px 5px;border-radius:10px;display:inline-block;margin-bottom:2px;}
+.mm{display:flex;flex-direction:column;align-items:center;gap:7px;}
+.mm-c{background:var(--blue);color:#fff;padding:8px 18px;border-radius:24px;font-weight:700;font-size:12.5px;text-align:center;}
+.mm-br{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;}
+.mm-n{border-radius:7px;padding:7px 9px;font-size:11px;text-align:center;border:2px solid var(--blue);}
+.mm-n.r{border-color:var(--red);background:var(--rb);}
+.mm-n.o{border-color:var(--orange);background:var(--ob);}
+.mm-n.g{border-color:var(--green);background:var(--gb);}
+.mm-n.b{background:var(--ebb);}
+.alert{border-radius:7px;padding:8px 11px;margin:6px 0;font-size:11.5px;}
+.alert.red{background:var(--rb);border-left:4px solid var(--red);}
+.alert.orange{background:var(--ob);border-left:4px solid var(--orange);}
+.alert.green{background:var(--gb);border-left:4px solid var(--green);}
+.alert.yellow{background:var(--yb);border-left:4px solid var(--yellow);}
+.alert strong{display:block;margin-bottom:2px;}
+.mcq{background:#F4F6F9;border:1px solid var(--border);border-radius:7px;padding:9px 11px;margin:7px 0;}
+.mcq .q{font-weight:700;font-size:11.5px;margin-bottom:5px;color:var(--blue);}
+.mcq .opts{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.mcq .opt{font-size:11px;padding:3px 6px;border-radius:4px;background:#fff;border:1px solid var(--border);}
+.mcq .opt.ans{background:var(--gb);border-color:var(--green);font-weight:700;}
+.mcq .hint{font-size:10.5px;color:#666;margin-top:4px;font-style:italic;}
+.mnem{background:linear-gradient(135deg,#0B3D91,#1A5276);color:#fff;border-radius:10px;padding:11px;margin:7px 0;}
+.mnem h4{font-size:12.5px;color:#FF9933;margin-bottom:7px;}
+.mnem .lts{display:flex;flex-wrap:wrap;gap:5px;}
+.mnem .lb{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:5px;padding:3px 7px;font-size:11px;text-align:center;}
+.mnem .lb span{color:#FF9933;font-weight:900;font-size:14px;display:block;}
+.ld{background:#1C2833;color:#ECF0F1;padding:12px;border-radius:10px;margin:7px 0;}
+.ld h3{color:#FF9933;border-bottom:1px solid #444;padding-bottom:5px;margin-bottom:8px;font-size:13px;}
+.ld-i{display:flex;gap:7px;margin-bottom:6px;font-size:11.5px;align-items:flex-start;}
+.ld-ic{flex-shrink:0;font-size:13px;}
+.ld-t .h{color:#AED6F1;font-weight:700;}
+.ld-t .e{color:#AAB7B8;font-style:italic;font-size:10.5px;display:block;}
+.ld-t .g{color:#FAD7A0;font-size:10.5px;display:block;}
+.ops{border:3px solid var(--blue);border-radius:10px;overflow:hidden;margin:7px 0;}
+.ops-h{background:var(--blue);color:#fff;padding:9px;text-align:center;font-weight:700;font-size:13px;}
+.ops-g{display:grid;grid-template-columns:1fr 1fr;}
+.ops-c{padding:6px 9px;border:1px solid var(--border);font-size:11px;}
+.ops-c .lbl{font-weight:700;color:var(--blue);font-size:9.5px;display:block;margin-bottom:1px;}
+.dt{background:#F8F9FA;border-radius:9px;padding:10px;}
+.dt-q{background:var(--blue);color:#fff;padding:7px 10px;border-radius:5px;font-size:11.5px;margin-bottom:7px;text-align:center;}
+.dt-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:5px;}
+.dt-y{background:var(--gb);border:2px solid var(--green);border-radius:5px;padding:5px 8px;font-size:11px;text-align:center;}
+.dt-n{background:var(--rb);border:2px solid var(--red);border-radius:5px;padding:5px 8px;font-size:11px;text-align:center;}
+.dt-lbl{text-align:center;font-size:9.5px;font-weight:700;margin-bottom:2px;}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border-radius:7px;overflow:hidden;border:1px solid var(--border);}
+.cmp-h{padding:7px;text-align:center;font-weight:700;font-size:11.5px;color:#fff;}
+.cmp-c{padding:5px 7px;font-size:11px;border-top:1px solid var(--border);}
+h3.sub{font-size:12.5px;color:var(--blue);border-left:3px solid var(--orange);padding-left:7px;margin:9px 0 5px;}
+.tag{background:var(--blue);color:#fff;font-size:9.5px;padding:1px 5px;border-radius:3px;margin-left:3px;}
+.sp{height:7px;}
+ul.chk li{list-style:none;padding:2px 0;font-size:11.5px;}
+ul.chk li::before{content:'✅ ';}
+ul.crs li{list-style:none;padding:2px 0;font-size:11.5px;}
+ul.crs li::before{content:'❌ ';}
+.rmap{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:6px 0;}
+.rmap-i{border-radius:5px;padding:7px 5px;text-align:center;font-size:10px;font-weight:700;border:2px solid var(--blue);background:var(--ebb);}
+.rmap-n{font-size:15px;font-weight:900;color:var(--blue);display:block;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>📮 सरकारी बचत प्रोत्साहन सामान्य नियम, 2018</h1>
+  <div class="sub">Government Savings Promotion General Rules, 2018 (GSPR 2018)</div>
+  <div class="gu">સરકારી બચત પ્રોત્સાહન સામાન્ય નિયમો, ૨૦૧૮ | IP/IPO Exam Visual Infographic</div>
+  <div class="badges">
+    <span class="badge">📅 5 अक्टूबर 2018</span>
+    <span class="badge">🏛 G.S.R. 1003(E)</span>
+    <span class="badge">📜 28 नियम / Rules</span>
+    <span class="badge">📂 2 अनुसूची / Schedules</span>
+    <span class="badge">📋 15 प्रपत्र / Forms</span>
+    <span class="badge">⚖ Min. of Finance (DEA)</span>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="leg"><div class="dot" style="background:var(--red)"></div>🔴 अत्यंत महत्वपूर्ण / Very Important</div>
+  <div class="leg"><div class="dot" style="background:var(--orange)"></div>🟠 अक्सर पूछा / Frequently Asked</div>
+  <div class="leg"><div class="dot" style="background:var(--yellow)"></div>🟡 वैचारिक / Conceptual</div>
+  <div class="leg"><div class="dot" style="background:var(--green)"></div>🟢 त्वरित / Quick Revision</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>📋 विषय-सूची / Contents / વિષય-સૂચી</h2>
+  <div class="toc-grid">
+    <a href="#overview">📂 अवलोकन / Overview</a><a href="#defs">📖 परिभाषाएँ / Definitions</a>
+    <a href="#elig">👤 पात्रता / Eligibility</a><a href="#open">🏦 खाता खोलना / Opening</a>
+    <a href="#kyc">🪪 KYC / पहचान</a><a href="#types">🔀 खाता प्रकार / Types</a>
+    <a href="#interest">💹 ब्याज / Interest</a><a href="#minor">👦 नाबालिग / Minor</a>
+    <a href="#nom">📝 नामांकन / Nomination</a><a href="#death">💀 मृत्यु भुगतान / Death</a>
+    <a href="#transfer">🔄 स्थानांतरण / Transfer</a><a href="#pledge">🔒 गिरवी / Pledging</a>
+    <a href="#close">🔐 खाता बंद / Closure</a><a href="#fees">💲 शुल्क / Fees</a>
+    <a href="#forms">📋 प्रपत्र / Forms</a><a href="#misc">⚖ निरसन व अन्य / Repeal</a>
+    <a href="#mnem">🧠 मेमोरी ट्रिक्स</a><a href="#mcqb">📝 MCQ बैंक</a>
+    <a href="#lastday">🔥 Last Day Revision</a><a href="#opsheet">📋 One-Page Sheet</a>
+  </div>
+</div>
+
+<!-- 1. OVERVIEW -->
+<div class="section" id="overview">
+  <div class="sec-title">📂 GSPR 2018 — अवलोकन / Overview / અવલોકન</div>
+  <div class="sec-body">
+    <div class="alert red">
+      <strong>🔴 मूल जानकारी / Basic Info / મૂળભૂત માહિતી</strong>
+      <span class="hi">G.S.R. 1003(E) | 5 अक्टूबर 2018 | वित्त मंत्रालय (आर्थिक कार्य विभाग)</span>
+      <span class="en">Made under Section 15 of Govt. Savings Promotion Act, 1873 (5 of 1873). In force from date of publication in Official Gazette.</span>
+      <span class="gu">GSPA ૧૮૭૩ ની કલમ ૧૫ હેઠળ બનેલા. રાજપત્રમાં પ્રકાશન તારીખથી અમલમાં.</span>
+    </div>
+    <div class="rmap">
+      <div class="rmap-i"><span class="rmap-n">28</span>नियम / Rules / નિયમો</div>
+      <div class="rmap-i"><span class="rmap-n">2</span>अनुसूची / Schedules</div>
+      <div class="rmap-i"><span class="rmap-n">15</span>प्रपत्र / Forms / ફોર્મ</div>
+      <div class="rmap-i"><span class="rmap-n">4</span>अधिकतम संयुक्त / Max Joint</div>
+      <div class="rmap-i"><span class="rmap-n">4</span>अधिकतम नामित / Max Nominees</div>
+      <div class="rmap-i"><span class="rmap-n">10</span>नाबालिग आयु / Minor Age (वर्ष)</div>
+    </div>
+    <h3 class="sub">🔴 नियम 26: निरसित नियम / Repealed Rules / રદ થયેલા નિયમો</h3>
+    <table class="tbl">
+      <tr><th>निरसित / Repealed</th></tr>
+      <tr class="r"><td>📌 Post Office Savings Bank General Rules, 1981</td></tr>
+      <tr class="r"><td>📌 Post Office Savings Certificates Rules, 1960</td></tr>
+      <tr class="r"><td>📌 Public Provident Fund Scheme, 1968</td></tr>
+    </table>
+    <div class="alert yellow">🟡 <b>नियम 25:</b> इन नियमों से पहले के मामलों में POSB General Rules 1981 लागू होंगे। <em>For matters prior to commencement, POSB General Rules 1981 apply.</em> <span class="gu">પહેલાંની બાબતોમાં POSB નિયમો ૧૯૮૧ લાગુ.</span></div>
+    <div class="mcq">
+      <div class="q">❓ GSPR 2018 किस अधिनियम की किस धारा के तहत बनाए गए?</div>
+      <div class="opts">
+        <div class="opt">A. GSPA 1873, धारा 12</div>
+        <div class="opt ans">B. GSPA 1873, धारा 15 ✅</div>
+        <div class="opt">C. PO Act 2023, धारा 13</div>
+        <div class="opt">D. IT Act 1961, धारा 15</div>
+      </div>
+      <div class="hint">💡 Section 15 of Government Savings Promotion Act, 1873 (5 of 1873)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. DEFINITIONS -->
+<div class="section" id="defs">
+  <div class="sec-title">📖 नियम 3: परिभाषाएँ / Definitions / વ્યાખ્યાઓ</div>
+  <div class="sec-body">
+    <div class="alert orange">🟠 <b>परिभाषाएँ परीक्षा में सर्वाधिक पूछी जाती हैं!</b> <em>Most frequently asked!</em> <span class="gu">વ્યાખ્યાઓ પરીક્ષામાં સૌથી વધુ પૂછાય છે!</span></div>
+    <table class="tbl">
+      <tr><th>नियम</th><th>परिभाषा / Definition / વ્યાખ્યા</th></tr>
+      <tr class="r"><td><b>3(a)</b></td><td><span class="hi">लेखा कार्यालय — खाता खोलने हेतु अधिकृत सरकारी बचत बैंक का कार्यालय</span><span class="en">Accounts Office = office of a Govt Savings Bank authorised to open an account</span><span class="gu">ખાતા કચેરી = ખાતું ખોલવા અધિકૃત સરકારી બચત બેંકની કચેરી</span></td></tr>
+      <tr class="r"><td><b>3(c)</b></td><td><span class="hi">पात्र शेष — ऋण के बकाया मूलधन/ब्याज की वसूली के बाद खाते में जमा राशि (अर्जित ब्याज सहित)</span><span class="en">Eligible Balance = credit balance incl. accrued interest, after recovery of outstanding loan principal/interest</span><span class="gu">પાત્ર બાકી = લોન વસૂલાત પછી ખાતાની જમા રકમ (વ્યાજ સહિત)</span></td></tr>
+      <tr class="r"><td><b>3(e)</b></td><td><span class="hi">🔴 संयुक्त खाता — एक से अधिक और अधिकतम 4 व्यक्तियों के नाम खाता</span><span class="en">Joint Account = in names of MORE THAN ONE and UPTO FOUR individuals</span><span class="gu">સંયુક્ત ખાતું = ૧ થી વધુ અને વધુમાં વધુ ૪ વ્યક્તિ</span></td></tr>
+      <tr><td><b>3(f)</b></td><td><span class="hi">परिपक्व खाता — अवधि/विस्तारित अवधि पूर्ण, भुगतान हेतु देय</span><span class="en">Matured Account = completed term/extended term, due for payment</span><span class="gu">પાકેલું ખાતું = મુદત પૂર્ણ, ચુકવણી બાકી</span></td></tr>
+      <tr class="o"><td><b>3(g)</b></td><td><span class="hi">🟠 NRI — भारतीय नागरिक/भारतीय मूल का व्यक्ति जो IT Act 1961 के अनुसार 'निवासी' नहीं</span><span class="en">NRI = citizen of India / person of Indian origin, NOT 'resident' as per Income Tax Act 1961</span><span class="gu">NRI = IT Act ૧૯૬૧ મુજબ 'રહેવાસી' ન હોય તેવો ભારતીય નાગરિક/મૂળ ભારતીય</span></td></tr>
+      <tr class="o"><td><b>3(h)</b></td><td><span class="hi">🟠 OVD (आधिकारिक वैध दस्तावेज) — पासपोर्ट, ड्राइविंग लाइसेंस, मतदाता पहचान पत्र, NREGA जॉब कार्ड (राज्य सरकार अधिकारी हस्ताक्षरित), NPR पत्र</span><span class="en">OVD = Passport, Driving Licence, Voter ID (ECI), MGNREGA job card, NPR letter</span><span class="gu">OVD = પાસપોર્ટ, DL, મતદાર ID, NREGA જોબ કાર્ડ, NPR પત્ર</span></td></tr>
+      <tr><td><b>3(i)</b></td><td><span class="hi">खाता संचालन — खोलना, जमा, स्थानांतरण, निकासी</span><span class="en">Operation = opening, deposit in, transfer of, withdrawal from</span><span class="gu">સંચાલન = ખોલવું, જમા, ટ્રાન્સફર, ઉપાડ</span></td></tr>
+      <tr><td><b>3(j)</b></td><td><span class="hi">पासबुक — भौतिक या इलेक्ट्रॉनिक रूप में दस्तावेज</span><span class="en">Passbook = document in PHYSICAL or ELECTRONIC form</span><span class="gu">પાસબુક = ભૌતિક કે ઇલેક્ટ્રોનિક દસ્તાવેજ</span></td></tr>
+      <tr><td><b>3(k)</b></td><td><span class="hi">एकल खाता — एक व्यक्ति के नाम खाता</span><span class="en">Single Account = in name of ONE individual</span><span class="gu">એકલ ખાતું = એક વ્યક્તિના નામે</span></td></tr>
+    </table>
+    <div class="mcq">
+      <div class="q">❓ संयुक्त खाते में अधिकतम कितने व्यक्ति हो सकते हैं?</div>
+      <div class="opts">
+        <div class="opt">A. 2</div><div class="opt">B. 3</div>
+        <div class="opt ans">C. 4 ✅</div><div class="opt">D. 5</div>
+      </div>
+      <div class="hint">💡 Rule 3(e) — more than one and upto FOUR individuals</div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. ELIGIBILITY -->
+<div class="section" id="elig">
+  <div class="sec-title">👤 नियम 4: पात्रता / Eligibility / પાત્રતા</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card red">
+        <h4>🔴 कौन खोल सकता है? <span class="tag">Rule 4(1)</span></h4>
+        <span class="hi">भारत का वयस्क निवासी नागरिक</span>
+        <span class="en">Adult RESIDENT CITIZEN of India. Guardian may open for minor/person of unsound mind — both guardian AND minor must be resident citizens.</span>
+        <span class="gu">ભારતનો પુખ્ત રહેવાસી નાગરિક. વાલી સગીર/અસ્વસ્થ મન વ્યક્તિ માટે ખોલી શકે — બંને રહેવાસી નાગરિક હોવા જોઈએ.</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 नाबालिग स्वयं <span class="tag">Rule 4(2)</span></h4>
+        <span class="hi">10 वर्ष की आयु प्राप्त नाबालिग स्वयं खाता खोल और चला सकता है</span>
+        <span class="en">Minor who has attained 10 YEARS may open AND operate account</span>
+        <span class="gu">૧૦ વર્ષ પૂર્ણ કરેલ સગીર જાતે ખાતું ખોલી અને ચલાવી શકે</span>
+      </div>
+    </div>
+    <h3 class="sub">🔴 NRI बनने पर — Decision Tree / NRI થાય તો</h3>
+    <div class="dt">
+      <div class="dt-q">जमाकर्ता खाता चालू रहते NRI बन जाए / Depositor becomes NRI during operation</div>
+      <div class="dt-row">
+        <div class="dt-y"><div class="dt-lbl">✅ अनुमत / Allowed</div>खाता परिपक्वता तक जारी<br><em>Account continues till maturity</em><br><span class="gu">ખાતું પાકતી મુદત સુધી ચાલુ</span></div>
+        <div class="dt-n"><div class="dt-lbl">❌ निषेध / Not Allowed</div>विस्तार नहीं + परिपक्वता बाद ब्याज नहीं + लाभ केवल non-repatriation आधार पर<br><em>NO extension; NO interest after maturity; benefits on NON-REPATRIATION basis only</em><br><span class="gu">વિસ્તરણ નહીં; પાકતી પછી વ્યાજ નહીં</span></div>
+      </div>
+    </div>
+    <div class="alert red">🔴 <b>नियम 4(4): नागरिकता समाप्त होने पर</b> — खाता उस माह के <b>पूर्ववर्ती माह के अंतिम दिन</b> से बंद माना जाएगा जिसमें नागरिकता समाप्त हुई। <em>Ceases to be citizen → account closed from LAST DAY of the PRECEDING month.</em> <span class="gu">નાગરિકતા સમાપ્ત → આગલા મહિનાના છેલ્લા દિવસથી ખાતું બંધ ગણાશે.</span></div>
+    <div class="mcq">
+      <div class="q">❓ नाबालिग द्वारा स्वयं खाता खोलने की न्यूनतम आयु?</div>
+      <div class="opts">
+        <div class="opt">A. 5 वर्ष</div><div class="opt">B. 8 वर्ष</div>
+        <div class="opt ans">C. 10 वर्ष ✅</div><div class="opt">D. 12 वर्ष</div>
+      </div>
+      <div class="hint">💡 Rule 4(2)</div>
+    </div>
+  </div>
+</div>
+<!-- 4. OPENING -->
+<div class="section" id="open">
+  <div class="sec-title">🏦 नियम 5: खाता खोलना / Opening of Account / ખાતું ખોલવું</div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="fbox b">Form-1 में आवेदन / Application in Form-1 / ફોર્મ-૧ માં અરજી</div>
+      <div class="farr">↓</div>
+      <div class="fbranch">
+        <div class="fbox g">व्यक्तिगत रूप से<br><em>In person at Accounts Office</em><br><span style="font-size:10px">રૂબરૂ જઈને</span></div>
+        <div class="fbox o">इलेक्ट्रॉनिक माध्यम<br><em>Internet/Mobile Banking (RBI approved procedure)</em><br><span style="font-size:10px">ઇલેક્ટ્રોનિક માધ્યમ</span></div>
+      </div>
+    </div>
+    <h3 class="sub">आवश्यक दस्तावेज / Documents Required / જરૂરી દસ્તાવેજો — Rule 5(2)</h3>
+    <ul class="chk">
+      <li>नाबालिग की आयु का प्रमाण / Proof of age of minor / સગીરની ઉંમરનો પુરાવો</li>
+      <li>हालिया पासपोर्ट साइज फोटो / Recent passport size photograph / તાજેતરનો ફોટો</li>
+      <li>मानसिक अस्पताल अधीक्षक का प्रमाणपत्र (विकृत चित्त हेतु) / Certificate from Superintendent of mental hospital (unsound mind) / માનસિક હૉસ્પિટલ પ્રમાણપત્ર</li>
+      <li>जमा राशि + Pay-in-Slip / Deposit + Pay-in-Slip / જમા રકમ + પે-ઇન-સ્લિપ</li>
+      <li>नियम 6 के पहचान दस्तावेज / Identity documents (Rule 6) / ઓળખ દસ્તાવેજો</li>
+    </ul>
+    <h3 class="sub">🟠 विशेष श्रेणियाँ / Special Categories / વિશેષ શ્રેણીઓ</h3>
+    <table class="tbl">
+      <tr><th>श्रेणी / Category</th><th>प्रावधान / Provision / જોગવાઈ</th></tr>
+      <tr class="o"><td>निरक्षर / अंधे / दृष्टिबाधित<br><em>Illiterate / Blind</em></td><td><span class="hi">व्यक्तिगत उपस्थिति अनिवार्य + कार्यालय को ज्ञात व्यक्ति साथ</span><span class="en">Personal visit mandatory + accompanied by person known to office. May authorise literate person to operate.</span><span class="gu">રૂબરૂ હાજરી ફરજિયાત + ઓફિસને જાણીતી વ્યક્તિ સાથે</span></td></tr>
+      <tr class="o"><td>निरक्षर की निकासी<br><em>Illiterate withdrawal</em></td><td><span class="hi">🔴 प्रत्येक निकासी पर अंगूठे का निशान — स्वतंत्र गवाह द्वारा साक्ष्यांकित</span><span class="en">Thumb impression witnessed by INDEPENDENT WITNESS on EACH withdrawal</span><span class="gu">દરેક ઉપાડ વખતે અંગૂઠાની છાપ — સ્વતંત્ર સાક્ષી</span></td></tr>
+      <tr><td>अंधा/निरक्षर + साक्षर<br><em>Blind/Illiterate + Literate</em></td><td><span class="en">May open JOINT account with literate depositor / સાક્ષર સાથે સંયુક્ત ખાતું ખોલી શકે</span></td></tr>
+      <tr class="o"><td>Autism, Cerebral Palsy, Mental Retardation, Multiple Disabilities</td><td><span class="hi">संरक्षक के माध्यम से; Medical Superintendent / Civil Surgeon / CMO का प्रमाणपत्र आवश्यक</span><span class="en">Through guardian; certificate from Medical Superintendent/Civil Surgeon/CMO of Central or State Govt required</span><span class="gu">વાલી મારફતે; મેડિકલ સુપ્રિ./સિવિલ સર્જન/CMO નું પ્રમાણપત્ર જરૂરી</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 5. KYC -->
+<div class="section" id="kyc">
+  <div class="sec-title">🪪 नियम 6: जमाकर्ता की पहचान / Identification (KYC) / ઓળખ</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card red">
+        <h4>🔴 आधार / Aadhaar <span class="tag">Rule 6(1)(a)</span></h4>
+        <span class="hi">आधार अनिवार्य → न हो तो एनरोलमेंट प्रमाण → वह भी न हो तो OVD की प्रमाणित प्रति + फोटो</span>
+        <span class="en">Aadhaar mandatory → else enrolment proof → else certified OVD copy + recent photo</span>
+        <span class="gu">આધાર ફરજિયાત → નહીં તો નોંધણી પુરાવો → નહીં તો OVD નકલ + ફોટો</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 PAN / Form 60 <span class="tag">Rule 6(1)(b)</span></h4>
+        <span class="hi">खाता खोलते समय PAN; न दिया हो तो <b>6 माह के भीतर</b> — अन्यथा खाता निष्क्रिय (operational नहीं रहेगा)</span>
+        <span class="en">PAN at opening; else within <b>6 MONTHS</b> — failing which account CEASES TO BE OPERATIONAL till submitted</span>
+        <span class="gu">PAN ૬ મહિનામાં ન આપો → ખાતું કાર્યરત બંધ</span>
+      </div>
+    </div>
+    <h3 class="sub">🟠 वर्तमान पता न होने पर वैकल्पिक दस्तावेज / Deemed OVDs for Address</h3>
+    <table class="tbl">
+      <tr><th>#</th><th>दस्तावेज / Document / દસ્તાવેજ</th></tr>
+      <tr><td>i</td><td>यूटिलिटी बिल — <b>2 माह से अधिक पुराना नहीं</b> (बिजली, टेलीफोन, पोस्टपेड मोबाइल, पाइप गैस, पानी) <em>Utility bill not older than 2 months</em></td></tr>
+      <tr><td>ii</td><td>संपत्ति या नगरपालिका कर रसीद <em>Property/Municipal tax receipt</em></td></tr>
+      <tr><td>iii</td><td>पेंशन/पारिवारिक पेंशन भुगतान आदेश (पते सहित) <em>Pension/family pension payment orders with address</em></td></tr>
+      <tr><td>iv</td><td>नियोक्ता का आवास आवंटन पत्र / leave & licence agreement <em>Employer accommodation allotment letter</em></td></tr>
+    </table>
+    <div class="alert orange">🟠 उपरोक्त दस्तावेज देने के <b>3 माह के भीतर</b> Aadhaar/PAN/अद्यतन OVD जमा करना अनिवार्य। <em>Submit Aadhaar/PAN/updated OVD within 3 MONTHS of above.</em> <span class="gu">ઉપરના દસ્તાવેજો પછી ૩ મહિનામાં આધાર/PAN/OVD આપવું ફરજિયાત.</span></div>
+    <div class="alert red">🔴 <b>पता परिवर्तन / Change of Address (Rule 6(6)):</b> <b>3 माह के भीतर</b> अद्यतन पहचान दस्तावेज जमा करें। <em>Submit updated identity document within 3 months.</em> <span class="gu">સરનામું બદલાય → ૩ મહિનામાં અપડેટેડ દસ્તાવેજ.</span></div>
+    <h3 class="sub">अन्य KYC बिंदु / Other KYC Points</h3>
+    <ul class="chk">
+      <li>संयुक्त खाता → <b>सभी</b> जमाकर्ताओं के पहचान दस्तावेज / Joint: ID docs of ALL depositors</li>
+      <li>नाबालिग/विकृत चित्त खाता → <b>संरक्षक</b> के दस्तावेज / Minor: GUARDIAN's ID docs</li>
+      <li>एजेंट से खोला खाता → एजेंट के हस्ताक्षर + एजेंसी विवरण भी / Agent: signature + agency particulars</li>
+    </ul>
+    <div class="mcq">
+      <div class="q">❓ PAN जमा न करने पर खाता कब निष्क्रिय होता है?</div>
+      <div class="opts">
+        <div class="opt">A. 3 माह बाद</div><div class="opt ans">B. 6 माह बाद ✅</div>
+        <div class="opt">C. 12 माह बाद</div><div class="opt">D. कभी नहीं</div>
+      </div>
+      <div class="hint">💡 Rule 6(1)(b) — 6 months; ceases to be operational till PAN submitted</div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. DEPOSIT MODES & TYPES -->
+<div class="section" id="types">
+  <div class="sec-title">🔀 नियम 7-8: जमा माध्यम व खाता प्रकार / Deposit Modes & Account Types</div>
+  <div class="sec-body">
+    <h3 class="sub">नियम 7: जमा के 4 माध्यम / 4 Modes of Deposit / જમાના ૪ માધ્યમ</h3>
+    <div class="cgrid">
+      <div class="card green"><h4>🟢 (i) नकद</h4><span class="en">Cash in Indian Rupees / ભારતીય રૂપિયામાં રોકડ</span></div>
+      <div class="card green"><h4>🟢 (ii) चेक/DD/Pay Order</h4><span class="en">Crossed cheque/DD/Pay Order in favour of authorised officer</span><span class="hi">🔴 चेक की <b>वसूली तिथि = जमा तिथि</b></span><span class="gu">ચેક વટાવ તારીખ = જમા તારીખ</span></div>
+      <div class="card green"><h4>🟢 (iii) SB निकासी फॉर्म</h4><span class="en">Signed withdrawal form of savings account in SAME Accounts Office</span></div>
+      <div class="card green"><h4>🟢 (iv) इलेक्ट्रॉनिक</h4><span class="en">Electronic transfer permitted by RBI / RBI માન્ય ઇ-ટ્રાન્સફર</span></div>
+    </div>
+    <div class="alert yellow">🟡 बाहरी (outstation) चेक → वसूली शुल्क जमाकर्ता देगा (SB खाते से डेबिट या नकद)। <em>Outstation cheque: collection charges by depositor.</em></div>
+    <h3 class="sub">नियम 8: खाता प्रकार — Mind Map</h3>
+    <div class="mm">
+      <div class="mm-c">खाता / Account / ખાતું</div>
+      <div class="mm-br">
+        <div class="mm-n r">एकल / Single<br><em>1 व्यक्ति / One person</em></div>
+        <div class="mm-n b">संयुक्त / Joint<br><em>2–4 व्यक्ति / 2 to 4 persons</em></div>
+      </div>
+      <div class="mm-br">
+        <div class="mm-n o"><b>Joint 'A'</b><br>सभी या जीवित सभी <b>मिलकर</b><br><em>ALL or survivors JOINTLY</em><br><span class="gu">બધા સાથે મળીને</span></div>
+        <div class="mm-n g"><b>Joint 'B'</b><br>कोई भी या जीवित <b>अलग-अलग</b><br><em>ANY of them SEVERALLY</em><br><span class="gu">કોઈપણ એક વ્યક્તિ</span></div>
+      </div>
+    </div>
+    <div class="alert red">🔴 <b>नियम 8(3) — अति महत्वपूर्ण!</b> एकल खाता ↔ संयुक्त खाता में <b>परिवर्तन नहीं</b> हो सकता। <em>Single account CANNOT be converted into Joint & vice-versa.</em> <span class="gu">એકલ ↔ સંયુક્ત રૂપાંતરણ શક્ય નથી.</span></div>
+    <div class="alert green">🟢 नियम 8(4)-(5): एकल खाताधारक उसी योजना में संयुक्त खाता (और उल्टा) खोल सकता है — कुल जमा सीमा/खातों की संख्या के अधीन। <em>Can open joint account under same scheme, subject to overall ceiling.</em></div>
+    <div class="mcq">
+      <div class="q">❓ Joint 'B' प्रकार खाते का संचालन कौन करता है?</div>
+      <div class="opts">
+        <div class="opt">A. सभी मिलकर</div><div class="opt ans">B. कोई भी एक (severally) ✅</div>
+        <div class="opt">C. केवल प्रथम धारक</div><div class="opt">D. संरक्षक</div>
+      </div>
+      <div class="hint">💡 Rule 8(2)(ii) — Joint B = ANY of the depositors or survivors severally</div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. INTEREST -->
+<div class="section" id="interest">
+  <div class="sec-title">💹 नियम 9: ब्याज का भुगतान / Payment of Interest / વ્યાજ</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <tr><th>स्थिति / Situation / પરિસ્થિતિ</th><th>ब्याज / Interest / વ્યાજ</th></tr>
+      <tr class="r"><td>🔴 नियमों के उल्लंघन में खोला खाता/जमा<br><em>Account/deposit in contravention of rules</em></td><td><b>कोई ब्याज नहीं / NO interest / વ્યાજ નહીં</b></td></tr>
+      <tr class="o"><td>🟠 जमाकर्ता NRI बन गया<br><em>Becomes NRI</em></td><td>परिपक्वता तक लागू दर; परिपक्वता के <b>बाद शून्य</b>; लाभ non-repatriation आधार<br><em>Applicable rate till maturity; NIL after</em></td></tr>
+      <tr class="r"><td>🔴 नागरिकता समाप्त<br><em>Ceases to be citizen</em></td><td>बंद होने तक <b>POSA (PO Savings Account) दर</b> पर<br><em>POSA rate till closure</em></td></tr>
+      <tr class="o"><td>🟠 परिपक्व पर बंद नहीं<br><em>Matured but not closed</em></td><td>पात्र शेष पर <b>POSA दर</b> से — बंद होने तक<br><em>POSA rate on eligible balance till closure</em></td></tr>
+      <tr class="g"><td>🟢 गलत जमा ब्याज<br><em>Erroneously credited interest</em></td><td><b>तत्काल वापस (reversed)</b> — जमाकर्ता को लिखित सूचना के साथ<br><em>Reversed immediately under written intimation</em></td></tr>
+    </table>
+    <div class="mcq">
+      <div class="q">❓ परिपक्व लेकिन बंद न किए गए खाते पर ब्याज किस दर से मिलता है?</div>
+      <div class="opts">
+        <div class="opt">A. योजना की दर</div><div class="opt ans">B. PO Savings Account दर ✅</div>
+        <div class="opt">C. कोई ब्याज नहीं</div><div class="opt">D. FD दर</div>
+      </div>
+      <div class="hint">💡 Rule 9(6) — POSA rate till closure</div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. MINOR -->
+<div class="section" id="minor">
+  <div class="sec-title">👦 नियम 10-11: नाबालिग/दिव्यांग खाता संचालन / Minor & Differently-abled</div>
+  <div class="sec-body">
+    <h3 class="sub">नियम 10: नाबालिग खाता / Minor's Account</h3>
+    <div class="flow">
+      <div class="fbox b">नाबालिग के नाम खाता / Account in minor's name</div>
+      <div class="farr">↓</div>
+      <div class="fbranch">
+        <div class="fbox g">संरक्षक ने खोला → संरक्षक चलाएगा<br><em>Opened by guardian → guardian operates</em></div>
+        <div class="fbox o">नाबालिग ने खोला → नाबालिग चलाएगा<br><em>Opened by minor → minor operates</em></div>
+      </div>
+    </div>
+    <div class="alert orange">🟠 <b>वयस्क होने पर (Rule 10(2)):</b> जमाकर्ता संशोधित आवेदन + दस्तावेज देगा; नए हस्ताक्षर को <b>खाता खोलने वाला संरक्षक साक्ष्यांकित (attest)</b> करेगा। <em>On attaining majority: revised application; signature ATTESTED by the guardian who opened it.</em> <span class="gu">પુખ્ત થાય ત્યારે નવી અરજી; સહી ખાતું ખોલનાર વાલી પ્રમાણિત કરે.</span></div>
+    <div class="alert red">🔴 <b>नाबालिग/विकृत चित्त की मृत्यु (Rule 10(3)):</b> पात्र शेष <b>नामित को</b>; परन्तु <b>1 अप्रैल 2018 से पहले</b> खोले खातों (जहाँ नामांकन अनुमत नहीं था) में <b>संरक्षक को</b>। <em>Death of minor: eligible balance to NOMINEE; for accounts before 1 Apr 2018 (no nomination) → to GUARDIAN.</em></div>
+    <h3 class="sub">नियम 11: शारीरिक अक्षमता / Physical Infirmity</h3>
+    <div class="alert yellow">🟡 शारीरिक अशक्तता/दिव्यांगता से खाता चलाने में असमर्थ जमाकर्ता — किसी <b>साक्षर व्यक्ति को लिखित प्राधिकार</b> देकर संचालन/निकासी करा सकता है (attested हस्ताक्षर नमूना + फोटो सहित)। प्राधिकार कभी भी वापस/परिवर्तित किया जा सकता है। <em>May authorise any literate individual IN WRITING with attested specimen signature + photo; may withdraw/vary anytime.</em> <span class="gu">સાક્ષર વ્યક્તિને લેખિત અધિકૃતિ આપી શકે; ગમે ત્યારે પાછી ખેંચી શકે.</span></div>
+  </div>
+</div>
+<!-- 9. NOMINATION -->
+<div class="section" id="nom">
+  <div class="sec-title">📝 नियम 14: नामांकन / Nomination / નામાંકન</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card red">
+        <h4>🔴 अधिकतम नामित</h4>
+        <span class="hi" style="font-size:16px;">4 व्यक्ति (एक या अधिक, अधिकतम 4)</span>
+        <span class="en">One or more, NOT EXCEEDING FOUR individuals</span>
+        <span class="gu">૧ કે વધુ, વધુમાં વધુ ૪ વ્યક્તિ</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 फॉर्म</h4>
+        <span class="hi" style="font-size:16px;">Form 10 (GSPR-10)</span>
+        <span class="en">Nomination / variation / cancellation — all in Form 10, before maturity</span>
+        <span class="gu">નામાંકન/ફેરફાર/રદ — ફોર્મ ૧૦ માં</span>
+      </div>
+    </div>
+    <h3 class="sub">नामांकन में क्या दें? / Contents of Nomination</h3>
+    <ul class="chk">
+      <li>नामितों के नाम / Names of nominee(s) / નામિતોના નામ</li>
+      <li>प्रत्येक का प्रतिशत हिस्सा / Percentage share of each / દરેકનો ટકાવારી હિસ્સો</li>
+      <li>स्वरूप: पूर्ण स्वामी (beneficiary) या विधिक वारिसों हेतु ट्रस्टी / Nature: absolute owner OR trustee for legal heirs</li>
+    </ul>
+    <div class="alert yellow">🟡 <b>नाबालिग नामित (Rule 14(2)):</b> जमाकर्ता Form 10 में एक व्यक्ति नियुक्त करेगा जो नामित की अवयस्कता के दौरान जमाकर्ता की मृत्यु होने पर राशि प्राप्त करेगा। <em>If nominee is minor: appoint an individual to receive payment during nominee's minority.</em></div>
+    <h3 class="sub">🔴 नामांकन स्वतः रद्द / Auto-Cancellation — Rule 14(6)</h3>
+    <div class="cgrid">
+      <div class="card red"><h4>❌ (i) सभी नामितों की मृत्यु</h4><span class="en">Death of ALL nominees / બધા નામિતોનું મૃત્યુ</span></div>
+      <div class="card red"><h4>❌ (ii) नियम 16 में प्रतिभूति के रूप में अंतरण</h4><span class="en">Transfer as security under Rule 16 / નિયમ ૧૬ હેઠળ ગીરવે</span></div>
+    </div>
+    <div class="alert orange">🟠 <b>गवाह नियम (Rule 14(8)):</b> निरक्षर जमाकर्ता का अंगूठा निशान → <b>2 गवाह</b> आवश्यक। साक्षर जमाकर्ता → <b>कोई गवाह नहीं</b>। <em>Illiterate: TWO witnesses. Literate: NO witness.</em> <span class="gu">અભણ: ૨ સાક્ષી | ભણેલા: સાક્ષી નહીં</span></div>
+    <div class="alert red">🔴 <b>1 अप्रैल 2018 से पहले</b> खोले नाबालिग/विकृत चित्त खातों में नामांकन <b>अनुमत नहीं</b> — मृत्यु पर राशि संरक्षक को। अन्य पुराने खाते (बिना नामांकन) → परिपक्वता से पहले नामांकन <b>तुरंत करें</b>। <em>Minor accounts before 1 Apr 2018: NO nomination allowed. Other old accounts: nominate immediately, before maturity.</em></div>
+    <div class="mcq">
+      <div class="q">❓ निरक्षर जमाकर्ता के नामांकन पर कितने गवाह चाहिए?</div>
+      <div class="opts">
+        <div class="opt">A. 1</div><div class="opt ans">B. 2 ✅</div>
+        <div class="opt">C. 3</div><div class="opt">D. आवश्यक नहीं</div>
+      </div>
+      <div class="hint">💡 Rule 14(8) — thumb impression attested by TWO witnesses</div>
+    </div>
+  </div>
+</div>
+
+<!-- 10. DEATH PAYMENT -->
+<div class="section" id="death">
+  <div class="sec-title">💀 नियम 15: मृत्यु पर भुगतान / Payment on Death / મૃત્યુ પર ચુકવણી</div>
+  <div class="sec-body">
+    <div class="alert red"><strong>🔴 परीक्षा में सर्वाधिक पूछा जाने वाला नियम! ₹5 लाख की सीमा याद रखें।</strong><em>Most asked rule! Remember the ₹5 LAKH limit.</em><span class="gu">સૌથી વધુ પૂછાતો નિયમ! ₹૫ લાખની મર્યાદા યાદ રાખો.</span></div>
+    <h3 class="sub">🔴 Decision Tree — मृत्यु पर दावा निपटान</h3>
+    <div class="dt">
+      <div class="dt-q">जमाकर्ता की मृत्यु / Depositor dies / થાપણદારનું મૃત્યુ</div>
+      <div class="dt-row">
+        <div class="dt-y"><div class="dt-lbl">✅ नामांकन है / Nomination EXISTS</div>नामित Form-11 में आवेदन + मृत्यु प्रमाण<br><em>Nominee applies in Form-11 + death proof</em><br><span class="gu">નામિત ફોર્મ-૧૧ + મૃત્યુ પુરાવો</span></div>
+        <div class="dt-n"><div class="dt-lbl">❌ नामांकन नहीं + 6 माह में succession certificate नहीं</div>राशि के आधार पर 2 रास्ते ↓<br><em>Two paths based on amount ↓</em></div>
+      </div>
+      <div class="dt-row">
+        <div class="dt-y"><div class="dt-lbl">💰 पात्र राशि ≤ ₹5 लाख</div><b>Accounts Office का अधिकृत अधिकारी</b> सही दावेदार को भुगतान कर सकता है<br>Form-11 + मृत्यु प्रमाण + पासबुक + शपथपत्र (F-13) + Disclaimer (F-14) + Indemnity Bond (F-15)<br><span class="gu">₹૫ લાખ સુધી: અધિકૃત અધિકારી ચૂકવી શકે</span></div>
+        <div class="dt-n"><div class="dt-lbl">💰 पात्र राशि > ₹5 लाख</div><b>न्यायालय का Succession Certificate अनिवार्य</b><br>+ Claim form + पासबुक + मृत्यु प्रमाणपत्र<br><span class="gu">₹૫ લાખથી વધુ: કોર્ટનું સક્સેશન સર્ટિફિકેટ ફરજિયાત</span></div>
+      </div>
+    </div>
+    <h3 class="sub">नामितों में वितरण / Distribution among Nominees</h3>
+    <ul class="chk">
+      <li>जमाकर्ता द्वारा निर्दिष्ट अनुपात में / In proportion specified by depositor</li>
+      <li>अनुपात निर्दिष्ट नहीं → <b>सभी जीवित नामितों में बराबर</b> / Not specified → EQUAL to all surviving nominees</li>
+      <li>कोई नामित मर जाए → उसका हिस्सा जीवित नामितों में <b>उनके हिस्सों के अनुपात में</b> / Deceased nominee's share → distributed among survivors in proportion to their shares</li>
+      <li>नामित नाबालिग → नियुक्त व्यक्ति को; न हो तो नाबालिग के संरक्षक को / Minor nominee → appointed person; else guardian</li>
+    </ul>
+    <h3 class="sub">🟠 नियम 17: सेना/वायुसेना/नौसेना कार्मिक / Armed Forces Personnel</h3>
+    <div class="alert orange">🟠 सैनिक की मृत्यु/desertion पर — Commanding Officer या Committee of Adjustment की मांग (requisition) पर भुगतान। <b>नामांकन होते हुए भी</b> लेखा कार्यालय इस मांग का पालन करने को <b>बाध्य</b> है। Army & Air Force (Disposal of Private Property) Act 1950 / Navy Act 1957 के अंतर्गत। <em>CO's requisition BINDING even if nomination exists.</em> <span class="gu">નામાંકન હોવા છતાં CO ની માંગણી બંધનકર્તા છે.</span></div>
+    <div class="mcq">
+      <div class="q">❓ बिना नामांकन/succession certificate के लेखा कार्यालय कितनी राशि तक भुगतान कर सकता है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹1 लाख</div><div class="opt">B. ₹2 लाख</div>
+        <div class="opt ans">C. ₹5 लाख ✅</div><div class="opt">D. ₹10 लाख</div>
+      </div>
+      <div class="hint">💡 Rule 15(6)(i) — upto ₹5 lakh with Form-11, affidavit, disclaimer, indemnity bond (within 6 months of death, if no probate/succession certificate produced)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 11. TRANSFER -->
+<div class="section" id="transfer">
+  <div class="sec-title">🔄 नियम 13: खाते का स्थानांतरण / Transfer of Account / ટ્રાન્સફર</div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="fbox b">Form-5 में आवेदन + निर्धारित शुल्क (₹100) + मूल पासबुक<br><em>Form-5 + prescribed fee + original passbook</em></div>
+      <div class="farr">↓</div>
+      <div class="fbox g">भारत में कहीं भी — एक लेखा कार्यालय से दूसरे में<br><em>Anywhere in India — same or ANOTHER Govt. Savings Bank</em><br><span style="font-size:10px">ભારતમાં ગમે ત્યાં — PO ↔ Bank પણ</span></div>
+    </div>
+    <div class="alert yellow">🟡 आवेदन <b>दोनों में से किसी भी</b> कार्यालय में दिया जा सकता है — जहाँ खाता है या जहाँ ले जाना है। <em>Application at EITHER office — current or intended.</em></div>
+    <h3 class="sub">🟠 अंतरण पर भेजे जाने वाले 7 मूल दस्तावेज / 7 Original Documents Forwarded</h3>
+    <table class="tbl">
+      <tr><th>#</th><th>दस्तावेज / Document</th></tr>
+      <tr><td>1</td><td>खाता खोलने का फॉर्म / Account Opening Form</td></tr>
+      <tr><td>2</td><td>जमाकर्ताओं के नमूना हस्ताक्षर / Specimen signatures</td></tr>
+      <tr><td>3</td><td>नामांकन विवरण / Particulars of nomination</td></tr>
+      <tr><td>4</td><td>पहचान दस्तावेज / Identity documents</td></tr>
+      <tr><td>5</td><td>अद्यतन खाता विवरण/लेजर / Updated Account Statement or Ledger</td></tr>
+      <tr><td>6</td><td>बचत प्रमाणपत्र की प्रमाणित प्रति (यदि हो) / Certified copy of Savings Certificate</td></tr>
+      <tr><td>7</td><td>शेष राशि का Pay Order/DD / Pay Order or DD of credit balance</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 12. PLEDGING -->
+<div class="section" id="pledge">
+  <div class="sec-title">🔒 नियम 16: खाता गिरवी रखना / Pledging of Account / ગીરવે મૂકવું</div>
+  <div class="sec-body">
+    <div class="alert yellow">🟡 Form-7 में आवेदन + गिरवीदार (pledgee) का स्वीकृति पत्र। योजना अनुमति दे तभी। <em>Form-7 + pledgee's acceptance letter; only where scheme permits.</em></div>
+    <h3 class="sub">🔴 किसे अंतरित हो सकता है? / Transfer as Security to — (परीक्षा सूची!)</h3>
+    <table class="tbl">
+      <tr><th></th><th>प्राधिकारी / Authority / સત્તાધિકારી</th></tr>
+      <tr class="r"><td>(a)</td><td>राष्ट्रपति / राज्यपाल (पदेन) — President of India / Governor of State in official capacity</td></tr>
+      <tr class="r"><td>(b)</td><td>RBI / अनुसूचित बैंक / सहकारी समिति-बैंक — RBI / Scheduled Bank / Co-operative Society or Bank</td></tr>
+      <tr class="r"><td>(c)</td><td>सार्वजनिक/निजी निगम / सरकारी कंपनी — Public or Private Corporation / Govt Company</td></tr>
+      <tr class="r"><td>(d)</td><td>स्थानीय प्राधिकरण — Local Authority</td></tr>
+      <tr class="r"><td>(e)</td><td>NHB अनुमोदित + केंद्र सरकार अधिसूचित हाउसिंग फाइनेंस कंपनी — Housing finance company approved by NHB & notified by Central Govt</td></tr>
+    </table>
+    <div class="alert red">🔴 नाबालिग/विकृत चित्त का खाता गिरवी — केवल तभी जब संरक्षक लिखित प्रमाणित करे कि वह <b>जीवित है और अंतरण उसके हित में</b> है। गिरवी होने पर <b>नामांकन रद्द</b> हो जाता है। अंतरिती (transferee) ही जमाकर्ता <b>माना जाएगा</b> जब तक पुनः अंतरण न हो। <em>Minor's account pledge: guardian certifies alive + for benefit. Pledge cancels nomination. Transferee deemed depositor.</em></div>
+    <div class="cgrid">
+      <div class="card blue"><h4>🟡 गिरवी पर एंडोर्समेंट</h4><span class="en">"Transferred as security to….."</span></div>
+      <div class="card blue"><h4>🟡 वापसी पर एंडोर्समेंट</h4><span class="en">"Re-transferred to……" (with prior written sanction of authorised officer)</span></div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ निम्न में से किसे खाता प्रतिभूति के रूप में अंतरित नहीं किया जा सकता?</div>
+      <div class="opts">
+        <div class="opt">A. RBI</div><div class="opt">B. स्थानीय प्राधिकरण</div>
+        <div class="opt">C. सरकारी कंपनी</div><div class="opt ans">D. निजी व्यक्ति ✅</div>
+      </div>
+      <div class="hint">💡 Rule 16(2) — व्यक्तियों को नहीं, केवल सूचीबद्ध संस्थाओं को</div>
+    </div>
+  </div>
+</div>
+<!-- 13. PASSBOOK & CLOSURE -->
+<div class="section" id="close">
+  <div class="sec-title">🔐 नियम 18-21: पासबुक, बंदी, ऋण व वसूली / Passbook, Closure, Loans & Recovery</div>
+  <div class="sec-body">
+    <h3 class="sub">नियम 18: पासबुक / Passbook</h3>
+    <div class="alert yellow">🟡 पासबुक/जमा रसीद/खाता विवरण — अधिकृत अधिकारी द्वारा <b>मुहर व हस्ताक्षर सहित</b>। खोई/चोरी हुई → निर्धारित शुल्क (₹50) पर डुप्लीकेट। पुराना खोया प्रमाणपत्र → पासबुक रूप में डुप्लीकेट + Indemnity Bond। अप्रमाणित प्रविष्टियों के लिए कार्यालय <b>उत्तरदायी नहीं</b>। <em>Duplicate passbook on fee; office NOT liable for unauthenticated entries.</em></div>
+    <h3 class="sub">नियम 19: खाता बंदी व भुगतान के 3 माध्यम / Closure & 3 Payment Modes</h3>
+    <div class="cgrid">
+      <div class="card green"><h4>🟢 (a) SB खाते में अंतरण</h4><span class="en">Transfer to payee's Savings Bank account</span></div>
+      <div class="card green"><h4>🟢 (b) क्रॉस्ड चेक</h4><span class="en">By crossed cheque</span></div>
+    </div>
+    <div class="card green"><h4>🟢 (c) नकद — केवल IT Act 1961 की निर्धारित सीमा से कम राशि पर</h4><span class="en">Cash only if below limit prescribed under Income Tax Act, 1961</span><span class="gu">રોકડ — માત્ર IT Act ની મર્યાદાથી ઓછી રકમ</span></div>
+    <div class="alert orange">🟠 समय-पूर्व बंदी (Pre-mature closure) — केवल यदि योजना में प्रावधान हो, उसकी शर्तों के अधीन। <em>Premature closure only if provided in the Savings Scheme.</em></div>
+    <h3 class="sub">नियम 20: ऋण व आंशिक निकासी / Loans & Partial Withdrawal</h3>
+    <div class="alert yellow">🟡 योजना के प्रावधानों के अधीन अनुमत। नाबालिग/विकृत चित्त हेतु संरक्षक को प्रमाणपत्र देना होगा: "राशि उसके <b>उपयोग व कल्याण</b> हेतु चाहिए और वह <b>आज जीवित है</b>"। <em>Guardian certifies: amount for use & welfare + alive today.</em></div>
+    <h3 class="sub">🔴 नियम 21: अधिक भुगतान की वसूली / Recovery of Excess</h3>
+    <div class="alert red">🔴 गलती से अधिक भुगतान की गई राशि — <b>भू-राजस्व के बकाया (arrears of land revenue)</b> की तरह वसूली जाएगी। <em>Erroneously paid amount recoverable as ARREARS OF LAND REVENUE.</em> <span class="gu">ભૂલથી ચૂકવેલી રકમ જમીન મહેસૂલની બાકી તરીકે વસૂલ થશે.</span></div>
+    <h3 class="sub">नियम 24: लेखा कार्यालय का दायित्व / Responsibility of Accounts Office</h3>
+    <div class="cmp">
+      <div class="cmp-h" style="background:var(--green);">✅ उत्तरदायी / Responsible</div>
+      <div class="cmp-h" style="background:var(--red);">❌ उत्तरदायी नहीं / NOT Responsible</div>
+      <div class="cmp-c">खाते खोलना, जमा, भुगतान, बंदी, अंतरण व अभिलेख</div>
+      <div class="cmp-c">जमाकर्ता की अभिरक्षा से पासबुक/चेकबुक लेकर कपटपूर्ण निकासी (यदि कार्यालय ने due diligence बरती हो)</div>
+      <div class="cmp-c">डिजिटल लेनदेन हेतु तकनीकी अवसंरचना बनाना</div>
+      <div class="cmp-c">जमाकर्ता के अधिकृत एजेंट के कृत्य</div>
+      <div class="cmp-c">उल्लंघन में खुला खाता → तुरंत बंद + <b>बिना ब्याज</b> रिफंड</div>
+      <div class="cmp-c">अधिकृत अधिकारी द्वारा सद्भावना (good faith) में किए कार्य</div>
+    </div>
+    <div class="alert orange">🟠 नियमों के गलत क्रियान्वयन से सरकार को हानि → संबंधित <b>Government Savings Bank पूर्ण दायित्व</b> वहन करेगा। <em>Loss due to wrong implementation → concerned Govt Savings Bank bears ENTIRE liability.</em></div>
+    <h3 class="sub">नियम 27-28: व्याख्या व शिथिलन / Interpretation & Relaxation</h3>
+    <div class="cgrid">
+      <div class="card red"><h4>🔴 नियम 27: व्याख्या प्राधिकारी</h4><span class="hi">DEA, वित्त मंत्रालय — व्याख्या <b>अंतिम व बाध्यकारी</b></span><span class="en">Dept. of Economic Affairs, MoF — interpretation FINAL & BINDING</span><span class="gu">DEA, નાણાં મંત્રાલય — અંતિમ અને બંધનકર્તા</span></div>
+      <div class="card orange"><h4>🟠 नियम 28: शिथिलन शक्ति</h4><span class="hi">केंद्र सरकार — undue hardship पर, लिखित कारणों से, अधिनियम से असंगत न हो</span><span class="en">Central Govt may relax provisions causing undue hardship — reasons in writing, consistent with Act</span><span class="gu">કેન્દ્ર સરકાર — લેખિત કારણોસર છૂટછાટ આપી શકે</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 14. FEES -->
+<div class="section" id="fees">
+  <div class="sec-title">💲 अनुसूची II: सेवा शुल्क / Schedule II: Fees for Services / સેવા ફી</div>
+  <div class="sec-body">
+    <div class="alert red">🔴 <strong>शुल्क तालिका परीक्षा में अवश्य आती है — रटें!</strong> <em>Fee table is a must-learn!</em> <span class="gu">ફી કોષ્ટક પરીક્ષામાં અવશ્ય આવે — ગોખી લો!</span></div>
+    <table class="tbl">
+      <tr><th>सेवा / Service / સેવા</th><th>शुल्क / Fee</th></tr>
+      <tr class="r"><td>🔴 डुप्लीकेट पासबुक जारी करना / Duplicate Passbook</td><td><b>₹50</b></td></tr>
+      <tr class="o"><td>🟠 खाता विवरण या जमा रसीद / Statement of Account or Deposit Receipt</td><td><b>₹20</b> प्रत्येक</td></tr>
+      <tr class="o"><td>🟠 खोए/विकृत प्रमाणपत्र के बदले पासबुक / Passbook in lieu of lost or mutilated certificate</td><td><b>₹10</b> प्रति पंजीकरण</td></tr>
+      <tr class="r"><td>🔴 नामांकन रद्द/परिवर्तन / Cancellation or change of nomination</td><td><b>₹50</b></td></tr>
+      <tr class="r"><td>🔴 खाते का अंतरण / Transfer of account</td><td><b>₹100</b></td></tr>
+      <tr class="r"><td>🔴 खाता गिरवी / Pledging of account</td><td><b>₹100</b></td></tr>
+      <tr class="g"><td>🟢 SB खाते में चेक बुक — कैलेंडर वर्ष में 10 पन्नों तक / Cheque book upto 10 leafs in calendar year</td><td><b>निःशुल्क / FREE</b>; उसके बाद <b>₹2 प्रति पन्ना</b></td></tr>
+      <tr class="r"><td>🔴 चेक अनादरण (dishonour) शुल्क / Charges on dishonour of cheque</td><td><b>₹100</b></td></tr>
+    </table>
+    <div class="alert yellow">🟡 उपरोक्त सेवा शुल्कों पर लागू <b>कर (tax) अतिरिक्त</b> देय होगा। <em>Applicable tax payable in addition.</em></div>
+    <div class="mcq">
+      <div class="q">❓ खाता स्थानांतरण का शुल्क कितना है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹50</div><div class="opt ans">B. ₹100 ✅</div>
+        <div class="opt">C. ₹20</div><div class="opt">D. निःशुल्क</div>
+      </div>
+      <div class="hint">💡 Schedule II(c) — Transfer of account: ₹100 | Pledging भी ₹100</div>
+    </div>
+  </div>
+</div>
+
+<!-- 15. FORMS -->
+<div class="section" id="forms">
+  <div class="sec-title">📋 अनुसूची I: 15 प्रपत्र / Schedule I: 15 Forms / ૧૫ ફોર્મ</div>
+  <div class="sec-body">
+    <div class="alert orange">🟠 <b>फॉर्म नंबर परीक्षा में सीधे पूछे जाते हैं!</b> <em>Form numbers asked directly!</em> <span class="gu">ફોર્મ નંબર સીધા પુછાય છે!</span></div>
+    <table class="tbl">
+      <tr><th>Form</th><th>उपयोग / Purpose / ઉપયોગ</th><th>Form</th><th>उपयोग / Purpose / ઉપયોગ</th></tr>
+      <tr><td class="r"><b>GSPR-1</b></td><td>खाता खोलना / Opening of Account</td><td class="r"><b>GSPR-9</b></td><td>अंतिम निकासी व बंदी / Final Withdrawal & Closure</td></tr>
+      <tr><td><b>GSPR-2</b></td><td>Pay-in-Slip</td><td class="r"><b>GSPR-10</b></td><td>🔴 नामांकन/परिवर्तन/रद्द / Nomination</td></tr>
+      <tr><td><b>GSPR-3</b></td><td>ऋण/निकासी / Loan-Withdrawal</td><td class="r"><b>GSPR-11</b></td><td>🔴 मृतक दावा / Claim (Deceased)</td></tr>
+      <tr><td><b>GSPR-4</b></td><td>पासबुक / Pass Book</td><td><b>GSPR-12</b></td><td>संचालन प्राधिकार / Authorisation of operation</td></tr>
+      <tr><td class="r"><b>GSPR-5</b></td><td>🔴 अंतरण / Transfer</td><td><b>GSPR-13</b></td><td>शपथपत्र / Affidavit</td></tr>
+      <tr><td><b>GSPR-6</b></td><td>विस्तार / Extension</td><td><b>GSPR-14</b></td><td>Disclaimer पत्र / Letter of Disclaimer</td></tr>
+      <tr><td class="r"><b>GSPR-7</b></td><td>🔴 गिरवी / Pledging</td><td><b>GSPR-15</b></td><td>क्षतिपूर्ति बंधपत्र / Bond of Indemnity</td></tr>
+      <tr><td><b>GSPR-8</b></td><td>समयपूर्व बंदी / Premature closure</td><td></td><td></td></tr>
+    </table>
+    <div class="mnem">
+      <h4>📌 फॉर्म याद करने की ट्रिक: क्रम में सोचें — "खाता जीवन-चक्र"</h4>
+      <div class="lts">
+        <div class="lb"><span>1</span>खोलो (Open)</div>
+        <div class="lb"><span>2</span>जमा (Pay-in)</div>
+        <div class="lb"><span>3</span>ऋण/निकासी</div>
+        <div class="lb"><span>4</span>पासबुक</div>
+        <div class="lb"><span>5</span>अंतरण</div>
+        <div class="lb"><span>6</span>विस्तार</div>
+        <div class="lb"><span>7</span>गिरवी</div>
+        <div class="lb"><span>8</span>समयपूर्व बंद</div>
+        <div class="lb"><span>9</span>अंतिम बंद</div>
+        <div class="lb"><span>10</span>नामांकन</div>
+        <div class="lb"><span>11</span>मृतक दावा</div>
+        <div class="lb"><span>12</span>प्राधिकार</div>
+        <div class="lb"><span>13</span>शपथपत्र</div>
+        <div class="lb"><span>14</span>Disclaimer</div>
+        <div class="lb"><span>15</span>Indemnity</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">💡 13-14-15 = मृत्यु दावे (≤₹5 लाख) की तिकड़ी: Affidavit → Disclaimer → Indemnity</p>
+    </div>
+  </div>
+</div>
+
+<!-- 16. MNEMONICS -->
+<div class="section" id="mnem">
+  <div class="sec-title">🧠 मेमोरी ट्रिक्स / Mnemonics / યાદ રાખવાની યુક્તિઓ</div>
+  <div class="sec-body">
+    <div class="mnem">
+      <h4>📌 "10-4-4-6-3" का जादुई फॉर्मूला</h4>
+      <div class="lts">
+        <div class="lb"><span>10</span>नाबालिग आयु (वर्ष)</div>
+        <div class="lb"><span>4</span>अधिकतम संयुक्त धारक</div>
+        <div class="lb"><span>4</span>अधिकतम नामित</div>
+        <div class="lb"><span>6</span>PAN जमा (माह)</div>
+        <div class="lb"><span>3</span>पता अद्यतन (माह)</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 शुल्क ट्रिक: "50-20-10 | 50-100-100 | 100"</h4>
+      <div class="lts">
+        <div class="lb"><span>50</span>डुप्ली. पासबुक</div>
+        <div class="lb"><span>20</span>खाता विवरण</div>
+        <div class="lb"><span>10</span>प्रमाणपत्र→पासबुक</div>
+        <div class="lb"><span>50</span>नामांकन बदलें</div>
+        <div class="lb"><span>100</span>अंतरण</div>
+        <div class="lb"><span>100</span>गिरवी</div>
+        <div class="lb"><span>100</span>चेक बाउंस</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">💡 Transfer, Pledge, Bounce = तीनों ₹100 | पासबुक और नामांकन = दोनों ₹50</p>
+    </div>
+    <div class="mnem">
+      <h4>📌 गिरवी संस्थाएँ: "P-R-C-L-H" → "President RBI Corporation Local Housing"</h4>
+      <div class="lts">
+        <div class="lb"><span>P</span>President/Governor</div>
+        <div class="lb"><span>R</span>RBI/Sch.Bank/Co-op</div>
+        <div class="lb"><span>C</span>Corporation/Govt Co.</div>
+        <div class="lb"><span>L</span>Local Authority</div>
+        <div class="lb"><span>H</span>Housing Finance Co. (NHB)</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 Joint A vs B: "A = All | B = anyBody"</h4>
+      <div class="lts">
+        <div class="lb"><span>A</span>ALL together (मिलकर)</div>
+        <div class="lb"><span>B</span>anyBody severally (कोई भी)</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 OVD याद करें: "P-D-V-J-N" → "पड़ोसी दरवाजे वाले जी नमस्ते"</h4>
+      <div class="lts">
+        <div class="lb"><span>P</span>Passport</div>
+        <div class="lb"><span>D</span>Driving Licence</div>
+        <div class="lb"><span>V</span>Voter ID</div>
+        <div class="lb"><span>J</span>Job Card (NREGA)</div>
+        <div class="lb"><span>N</span>NPR Letter</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 मृत्यु दावा (बिना नामांकन): "5-6-11-13-14-15"</h4>
+      <div class="lts">
+        <div class="lb"><span>5L</span>₹5 लाख सीमा</div>
+        <div class="lb"><span>6</span>6 माह (succession cert. नहीं)</div>
+        <div class="lb"><span>11</span>Form-11 दावा</div>
+        <div class="lb"><span>13</span>Affidavit</div>
+        <div class="lb"><span>14</span>Disclaimer</div>
+        <div class="lb"><span>15</span>Indemnity</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 17. MCQ BANK -->
+<div class="section" id="mcqb">
+  <div class="sec-title">📝 संभावित परीक्षा प्रश्न / Probable MCQs / સંભવિત પ્રશ્નો</div>
+  <div class="sec-body">
+    <div class="mcq">
+      <div class="q">Q1. GSPR 2018 कब अधिसूचित हुए? / When notified?</div>
+      <div class="opts">
+        <div class="opt">A. 1 अप्रैल 2018</div><div class="opt ans">B. 5 अक्टूबर 2018 ✅</div>
+        <div class="opt">C. 1 जनवरी 2018</div><div class="opt">D. 15 अगस्त 2018</div>
+      </div>
+      <div class="hint">💡 New Delhi, the 5th October 2018 — G.S.R. 1003(E)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q2. जमा हेतु चेक की जमा तिथि क्या मानी जाती है?</div>
+      <div class="opts">
+        <div class="opt">A. चेक जारी करने की तिथि</div><div class="opt">B. चेक प्रस्तुति की तिथि</div>
+        <div class="opt ans">C. चेक की वसूली (realisation) तिथि ✅</div><div class="opt">D. अगला कार्य दिवस</div>
+      </div>
+      <div class="hint">💡 Rule 7(2) — date of realisation = date of deposit</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q3. एकल खाते को संयुक्त खाते में परिवर्तित किया जा सकता है?</div>
+      <div class="opts">
+        <div class="opt">A. हाँ, आवेदन पर</div><div class="opt">B. हाँ, शुल्क देकर</div>
+        <div class="opt ans">C. नहीं, कभी नहीं ✅</div><div class="opt">D. केवल परिपक्वता पर</div>
+      </div>
+      <div class="hint">💡 Rule 8(3) — conversion NOT allowed either way</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q4. नागरिकता समाप्त होने पर खाता कब से बंद माना जाता है?</div>
+      <div class="opts">
+        <div class="opt">A. उसी दिन से</div><div class="opt ans">B. पूर्ववर्ती माह के अंतिम दिन से ✅</div>
+        <div class="opt">C. अगले माह के प्रथम दिन से</div><div class="opt">D. वित्त वर्ष के अंत से</div>
+      </div>
+      <div class="hint">💡 Rule 4(4)/9(5) — last day of the month PRECEDING the month of cessation</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q5. डुप्लीकेट पासबुक का शुल्क?</div>
+      <div class="opts">
+        <div class="opt">A. ₹20</div><div class="opt ans">B. ₹50 ✅</div>
+        <div class="opt">C. ₹100</div><div class="opt">D. ₹10</div>
+      </div>
+      <div class="hint">💡 Schedule II(a)(i)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q6. मृतक खाते के दावे हेतु कौन-सा फॉर्म?</div>
+      <div class="opts">
+        <div class="opt">A. Form-9</div><div class="opt">B. Form-10</div>
+        <div class="opt ans">C. Form-11 ✅</div><div class="opt">D. Form-13</div>
+      </div>
+      <div class="hint">💡 GSPR-11 = Claim Form (Deceased)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q7. SB खाते में कैलेंडर वर्ष में कितने चेक पन्ने निःशुल्क?</div>
+      <div class="opts">
+        <div class="opt">A. 5</div><div class="opt ans">B. 10 ✅</div>
+        <div class="opt">C. 20</div><div class="opt">D. 25</div>
+      </div>
+      <div class="hint">💡 Schedule II(e) — 10 leafs free; thereafter ₹2/leaf</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q8. नियमों की व्याख्या का अंतिम प्राधिकारी कौन?</div>
+      <div class="opts">
+        <div class="opt">A. डाक विभाग</div><div class="opt">B. RBI</div>
+        <div class="opt ans">C. DEA, वित्त मंत्रालय ✅</div><div class="opt">D. सर्वोच्च न्यायालय</div>
+      </div>
+      <div class="hint">💡 Rule 27 — Dept of Economic Affairs, MoF; interpretation final & binding</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q9. अधिक भुगतान की वसूली किस रूप में होती है?</div>
+      <div class="opts">
+        <div class="opt">A. सिविल वाद द्वारा</div><div class="opt ans">B. भू-राजस्व के बकाया की तरह ✅</div>
+        <div class="opt">C. वेतन कटौती से</div><div class="opt">D. वसूली नहीं होती</div>
+      </div>
+      <div class="hint">💡 Rule 21 — as arrears of land revenue</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q10. गिरवी रखे खाते में नामांकन का क्या होता है?</div>
+      <div class="opts">
+        <div class="opt">A. जारी रहता है</div><div class="opt ans">B. रद्द हो जाता है ✅</div>
+        <div class="opt">C. निलंबित रहता है</div><div class="opt">D. गिरवीदार को अंतरित</div>
+      </div>
+      <div class="hint">💡 Rule 14(6)(ii) — nomination stands cancelled on transfer as security</div>
+    </div>
+  </div>
+</div>
+<!-- 18. LAST DAY REVISION -->
+<div class="section" id="lastday">
+  <div class="sec-title">🔥 अंतिम दिन पुनरावृत्ति / Last Day Revision / છેલ્લા દિવસનું પુનરાવર્તન</div>
+  <div class="sec-body">
+    <div class="ld">
+      <h3>⚡ परीक्षा से पहले — ये 15 बिंदु अवश्य पढ़ें!</h3>
+      <div class="ld-i"><div class="ld-ic">📅</div><div class="ld-t"><span class="h">GSPR 2018 — 5 अक्टूबर 2018, G.S.R. 1003(E), GSPA 1873 की धारा 15</span><span class="e">MoF (DEA); in force from gazette publication</span><span class="g">નાણાં મંત્રાલય (DEA); રાજપત્ર પ્રકાશનથી અમલ</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📜</div><div class="ld-t"><span class="h">28 नियम | 2 अनुसूची | 15 फॉर्म (GSPR-1 से 15)</span><span class="e">28 Rules | 2 Schedules | 15 Forms</span></div></div>
+      <div class="ld-i"><div class="ld-ic">👦</div><div class="ld-t"><span class="h">नाबालिग 10 वर्ष+ → स्वयं खोले-चलाए | संयुक्त: अधिकतम 4 | नामित: अधिकतम 4</span><span class="e">Minor 10+ self-operates | Joint max 4 | Nominees max 4</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🪪</div><div class="ld-t"><span class="h">PAN: 6 माह में, नहीं तो खाता निष्क्रिय | पता बदला: 3 माह में अपडेट</span><span class="e">PAN in 6 months else inoperative | Address update in 3 months</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🌏</div><div class="ld-t"><span class="h">NRI: खाता परिपक्वता तक, विस्तार नहीं, non-repatriation | नागरिकता गई: पूर्ववर्ती माह के अंतिम दिन से बंद</span><span class="e">NRI: till maturity, no extension | Citizenship ceased: closed from last day of preceding month</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🔀</div><div class="ld-t"><span class="h">Joint-A = सभी मिलकर | Joint-B = कोई भी अकेले | Single↔Joint परिवर्तन असंभव</span><span class="e">A=jointly, B=severally | NO conversion</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💹</div><div class="ld-t"><span class="h">उल्लंघन में खाता = ब्याज शून्य | परिपक्व-अबंद खाता = POSA दर | गलत ब्याज = तुरंत reversal</span><span class="e">Contravention = NIL | Matured unclosed = POSA rate | Erroneous = reversed immediately</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📝</div><div class="ld-t"><span class="h">नामांकन: Form-10 | निरक्षर = 2 गवाह, साक्षर = 0 | रद्द: सभी नामित मृत या खाता गिरवी</span><span class="e">Form-10 | Illiterate 2 witnesses | Cancelled: all nominees die or pledged</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💀</div><div class="ld-t"><span class="h">मृत्यु दावा: नामांकन हो → Form-11 | नहीं + 6 माह में succession cert नहीं → ≤₹5 लाख: कार्यालय भुगतान (F-11+13+14+15) | >₹5 लाख: Succession Certificate अनिवार्य</span><span class="e">Death claim: ₹5 lakh threshold is THE key number</span><span class="g">₹૫ લાખ — સૌથી અગત્યનો આંકડો</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🪖</div><div class="ld-t"><span class="h">सैनिक मृत्यु: CO/Committee of Adjustment की requisition — नामांकन के बावजूद बाध्यकारी</span><span class="e">Armed forces: CO's requisition binding despite nomination</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🔄</div><div class="ld-t"><span class="h">अंतरण: Form-5 + ₹100 + मूल पासबुक | भारत में कहीं भी, PO↔Bank भी | 7 मूल दस्तावेज अग्रेषित</span><span class="e">Transfer: Form-5, ₹100, anywhere in India, 7 original documents forwarded</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🔒</div><div class="ld-t"><span class="h">गिरवी: Form-7 + ₹100 | 5 संस्थाएँ (P-R-C-L-H) | गिरवी = नामांकन रद्द | transferee = deemed depositor</span><span class="e">Pledge: Form-7, ₹100, 5 entities, cancels nomination</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💲</div><div class="ld-t"><span class="h">शुल्क: पासबुक ₹50 | विवरण ₹20 | प्रमाणपत्र→पासबुक ₹10 | नामांकन ₹50 | अंतरण ₹100 | गिरवी ₹100 | चेक बाउंस ₹100 | चेकबुक 10 पन्ने मुफ्त फिर ₹2</span><span class="e">50-20-10-50-100-100-100 + 10 free leafs</span></div></div>
+      <div class="ld-i"><div class="ld-ic">⚖</div><div class="ld-t"><span class="h">वसूली = भू-राजस्व बकाया की तरह | व्याख्या = DEA (अंतिम) | शिथिलन = केंद्र सरकार (लिखित कारण)</span><span class="e">Recovery as land revenue | Interpretation DEA final | Relaxation by Central Govt</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📌</div><div class="ld-t"><span class="h">निरसित: POSB General Rules 1981 | PO Savings Certificates Rules 1960 | PPF Scheme 1968</span><span class="e">3 repealed: 1981, 1960, 1968</span><span class="g">રદ: ૧૯૮૧, ૧૯૬૦, ૧૯૬૮</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 19. ONE PAGE SHEET -->
+<div class="section" id="opsheet">
+  <div class="sec-title">📋 One-Page Quick Reference Sheet</div>
+  <div class="sec-body">
+    <div class="ops">
+      <div class="ops-h">📋 GSPR 2018 — एक पृष्ठ त्वरित संदर्भ / One-Page Sheet / એક પાનાનો સાર</div>
+      <div class="ops-g">
+        <div class="ops-c"><span class="lbl">अधिनियम / Act</span>GSPA 1873, धारा 15</div>
+        <div class="ops-c"><span class="lbl">अधिसूचना / Notification</span>G.S.R. 1003(E), 5 Oct 2018</div>
+        <div class="ops-c"><span class="lbl">मंत्रालय / Ministry</span>वित्त (DEA)</div>
+        <div class="ops-c"><span class="lbl">संरचना / Structure</span>28 नियम + 2 अनुसूची + 15 फॉर्म</div>
+        <div class="ops-c"><span class="lbl">नाबालिग आयु / Minor age</span>10 वर्ष (स्वयं संचालन)</div>
+        <div class="ops-c"><span class="lbl">संयुक्त धारक / Joint max</span>4 व्यक्ति</div>
+        <div class="ops-c"><span class="lbl">नामित / Nominees max</span>4 (Form-10)</div>
+        <div class="ops-c"><span class="lbl">Single↔Joint</span>परिवर्तन नहीं (Rule 8(3))</div>
+        <div class="ops-c"><span class="lbl">PAN समय / PAN time</span>6 माह, अन्यथा निष्क्रिय</div>
+        <div class="ops-c"><span class="lbl">पता अद्यतन / Address</span>3 माह के भीतर</div>
+        <div class="ops-c"><span class="lbl">जमा तिथि (चेक)</span>वसूली (realisation) तिथि</div>
+        <div class="ops-c"><span class="lbl">Joint-A / Joint-B</span>मिलकर / कोई भी अकेले</div>
+        <div class="ops-c"><span class="lbl">NRI</span>परिपक्वता तक; विस्तार नहीं</div>
+        <div class="ops-c"><span class="lbl">नागरिकता समाप्त</span>पूर्व माह के अंतिम दिन से बंद</div>
+        <div class="ops-c"><span class="lbl">उल्लंघन में खाता</span>ब्याज शून्य; बिना ब्याज refund</div>
+        <div class="ops-c"><span class="lbl">परिपक्व-अबंद</span>POSA दर से ब्याज</div>
+        <div class="ops-c"><span class="lbl">मृत्यु सीमा / Death limit</span>₹5 लाख (बिना succession cert.)</div>
+        <div class="ops-c"><span class="lbl">मृत्यु दावा फॉर्म</span>Form-11 (+13, 14, 15)</div>
+        <div class="ops-c"><span class="lbl">निरक्षर नामांकन</span>2 गवाह</div>
+        <div class="ops-c"><span class="lbl">गिरवी = नामांकन</span>रद्द (auto-cancel)</div>
+        <div class="ops-c"><span class="lbl">डुप्ली. पासबुक</span>₹50</div>
+        <div class="ops-c"><span class="lbl">खाता विवरण</span>₹20</div>
+        <div class="ops-c"><span class="lbl">नामांकन बदलना</span>₹50</div>
+        <div class="ops-c"><span class="lbl">अंतरण / गिरवी</span>₹100 / ₹100</div>
+        <div class="ops-c"><span class="lbl">चेक बाउंस</span>₹100</div>
+        <div class="ops-c"><span class="lbl">चेकबुक</span>10 पन्ने मुफ्त, फिर ₹2/पन्ना</div>
+        <div class="ops-c"><span class="lbl">वसूली / Recovery</span>भू-राजस्व बकाया की तरह</div>
+        <div class="ops-c"><span class="lbl">व्याख्या / Interpretation</span>DEA — अंतिम व बाध्यकारी</div>
+        <div class="ops-c"><span class="lbl">शिथिलन / Relaxation</span>केंद्र सरकार, लिखित कारण</div>
+        <div class="ops-c"><span class="lbl">निरसित / Repealed</span>POSB 1981, POSC 1960, PPF 1968</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#1A5276;color:#AED6F1;text-align:center;padding:14px;font-size:11.5px;margin-top:10px;">
+  📮 India Post IP/IPO Exam Preparation | Government Savings Promotion General Rules, 2018<br>
+  <span style="font-size:10px;">Ref: Gazette of India Extraordinary, Part II—Sec 3(i), G.S.R. 1003(E), 5 October 2018 | F.No. 2/12/2006-NS</span>
+</div>
+
+
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+
+</body>
+</html>

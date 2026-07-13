@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Handbook Vol.II — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#D4AF37;
+  --r:#C8102E; --o:#F07C00; --y:#E8B800; --g:#1F8A44;
+  --bg:#faf8f2; --card:#ffffff; --ink:#1c1c1c;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+.header{background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;padding:22px 16px;text-align:center;position:sticky;top:0;z-index:50;box-shadow:0 3px 10px rgba(0,0,0,.25);}
+.header h1{margin:0;font-size:1.35em;}
+.header p{margin:6px 0 0;font-size:.85em;opacity:.9;}
+.legend{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px;background:#fff3d6;font-size:.78em;border-bottom:2px solid var(--gold);}
+.legend span{background:#fff;padding:3px 8px;border-radius:12px;border:1px solid #ddd;}
+.nav{display:flex;overflow-x:auto;gap:6px;padding:10px;background:#eef1f8;position:sticky;top:78px;z-index:40;-webkit-overflow-scrolling:touch;}
+.nav a{flex:0 0 auto;background:var(--blue);color:#fff;padding:6px 12px;border-radius:16px;font-size:.75em;text-decoration:none;white-space:nowrap;}
+.wrap{max-width:760px;margin:0 auto;padding:10px;}
+.chap{background:var(--card);border-radius:12px;margin:14px 0;box-shadow:0 2px 8px rgba(0,0,0,.1);overflow:hidden;border-left:6px solid var(--red);}
+.chap h2{background:var(--blue);color:#fff;margin:0;padding:12px 14px;font-size:1.05em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.chap h2 .tag{font-size:.7em;background:var(--gold);color:#000;padding:2px 8px;border-radius:10px;}
+.chap-body{padding:12px 14px;display:none;}
+.chap.open .chap-body{display:block;}
+.chap h2::after{content:'▾';transition:.2s;}
+.chap.open h2::after{content:'▴';}
+.block{margin:10px 0;padding:10px;border-radius:8px;background:#f7f7fb;border-left:4px solid var(--gold);}
+.block h3{margin:0 0 6px;font-size:.95em;color:var(--blue);}
+.rule{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:.88em;}
+.rule b{color:var(--red);}
+.imp-r{border-left:4px solid var(--r);} .imp-o{border-left:4px solid var(--o);}
+.imp-y{border-left:4px solid var(--y);} .imp-g{border-left:4px solid var(--g);}
+table{width:100%;border-collapse:collapse;font-size:.8em;margin:8px 0;background:#fff;}
+th,td{border:1px solid #ddd;padding:6px 5px;text-align:left;}
+th{background:var(--blue);color:#fff;}
+tr:nth-child(even){background:#f4f4fa;}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:10px 0;font-size:.8em;}
+.flow .box{background:var(--blue);color:#fff;padding:6px 10px;border-radius:8px;}
+.flow .arrow{color:var(--red);font-weight:bold;}
+.mnemonic{background:#fff3d6;border:1px dashed var(--gold);border-radius:8px;padding:8px 10px;font-size:.85em;margin:8px 0;}
+.q{background:#e9f4ff;border-radius:6px;padding:6px 8px;font-size:.78em;margin-top:4px;color:#00427a;}
+.q::before{content:'❓ संभावित प्रश्न: ';font-weight:bold;}
+.tier{font-size:.75em;margin-left:6px;}
+.revision{background:linear-gradient(135deg,#fff3d6,#ffe8e8);border:2px solid var(--gold);border-radius:12px;padding:14px;margin:16px 0;}
+.revision h2{color:var(--red);margin-top:0;}
+.lastday{background:#1c1c1c;color:#fff;border-radius:12px;padding:14px;margin:16px 0;}
+.lastday h2{color:var(--gold);margin-top:0;}
+.mind{display:grid;grid-template-columns:1fr;gap:6px;margin:8px 0;}
+.mind .node{background:#fff;border:2px solid var(--blue);border-radius:20px;padding:6px 12px;font-size:.8em;text-align:center;}
+.mind .sub{margin-left:16px;border-color:var(--red);}
+.chip{display:inline-block;background:var(--gold);color:#000;font-size:.7em;padding:2px 7px;border-radius:8px;margin:2px 3px 2px 0;}
+.footer{text-align:center;font-size:.75em;color:#666;padding:20px 10px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>📘 Financial Handbook Volume II</h1>
+<p>India Post — IP Exam विशेष विज़ुअल इन्फोग्राफिक | Chapters I–VIII + Appendices</p>
+</div>
+
+<div class="legend">
+<span>🔴 अति महत्वपूर्ण</span>
+<span>🟠 बार-बार पूछा गया</span>
+<span>🟡 कॉन्सेप्ट समझें</span>
+<span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="nav">
+<a href="#ch1">Ch I</a><a href="#ch2">Ch II</a><a href="#ch3">Ch III</a><a href="#ch4">Ch IV</a>
+<a href="#ch5">Ch V</a><a href="#ch6">Ch VI</a><a href="#ch7">Ch VII</a><a href="#ch8">Ch VIII</a>
+<a href="#appx">Appendices</a><a href="#rev">Revision</a><a href="#last">Last Day</a>
+</div>
+
+<div class="wrap">
+
+<!-- STRUCTURE MIND MAP -->
+<div class="block" style="border-left-color:var(--blue);">
+<h3>🗺️ पूरी किताब का माइंड मैप (Chapter → Sub-Chapter → Micro Topic)</h3>
+<div class="mind">
+<div class="node">FHB Vol.II (Rules 1–146 + Appx 1–6)</div>
+<div class="node sub">Ch I Introductory → परिभाषा (FHB Vol.I देखें)</div>
+<div class="node sub">Ch II Supply of Stamps → CSD, RMS, IRC</div>
+<div class="node sub">Ch III Revenue Receipts → Postage, MO Commission, Customs</div>
+<div class="node sub">Ch IV P.O. Accounts → Treasurer, Cash Book, Schedules</div>
+<div class="node sub">Ch V RMS Accounts → HRO जिम्मेदारी</div>
+<div class="node sub">Ch VI Misc. Charges → Refund, Compensation</div>
+<div class="node sub">Ch VII Pension Payments (सबसे बड़ा — Rules 84–140) 🔴</div>
+<div class="node sub">Ch VIII Misc. Subjects → PO status change, BPO/IPO</div>
+<div class="node sub">Appendices 1–6 → Concordance, Stamp rules, Vehicles</div>
+</div>
+</div>
+
+<!-- CHAPTER I -->
+<div class="chap" id="ch1"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter I — Introductory <span class="tag">Rules 1-2</span></h2>
+<div class="chap-body">
+<div class="block"><h3>📌 Topic / Definition</h3>
+<p>यह हैंडबुक Post Office व RMS शाखाओं के <b>initial व compiled accounts</b> से जुड़ी प्रक्रिया बताती है। यह Treasury Rules + विभागीय विशेष नियमों का सम्मिश्रण है।</p></div>
+<div class="rule imp-y"><b>Rule 2 — Definitions:</b> इस वॉल्यूम में परिभाषाएँ नहीं दी गईं — देखें FHB Vol.I Chapter 1 और P&T Manual Vol.V। <span class="tier">🟡</span></div>
+<div class="q">FHB Vol.II में सामान्य परिभाषाओं (definitions) के लिए किस दस्तावेज़ को देखा जाता है?</div>
+</div></div>
+
+<!-- CHAPTER II -->
+<div class="chap" id="ch2"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter II — Supply of Stamps <span class="tag">Rules 3-12</span></h2>
+<div class="chap-body">
+<div class="block"><h3>🔗 Flowchart — स्टाम्प आपूर्ति श्रृंखला</h3>
+<div class="flow">
+<div class="box">Circle Stamp Depot (CSD)</div><span class="arrow">→</span>
+<div class="box">Head Post Office</div><span class="arrow">→</span>
+<div class="box">Sub/Branch Office</div><span class="arrow">→</span>
+<div class="box">जनता को बिक्री</div>
+</div></div>
+
+<div class="rule imp-r"><b>Rule 4:</b> प्रत्येक PO में stock की अधिकतम सीमा तय करने का अधिकार — Non-Gaz. Postmaster के लिए <b>Divisional Head</b>, Group B के लिए <b>DPS</b>, Group A के लिए <b>CPMG/PMG</b>। <span class="tier">🔴</span></div>
+<div class="rule imp-o"><b>Rule 6(b):</b> CSD से प्राप्त स्टाम्प का invoice acknowledge करना है — receipt के <b>3 दिन के अंदर</b> ⏱️। <span class="tier">🟠</span></div>
+<div class="rule"><b>Rule 6(d):</b> Consolidated Schedule of Stamps — <b>त्रिप्रति (triplicate)</b> में तैयार होती है, 2 प्रतियाँ Circle PAO को मासिक Cash Account के साथ भेजी जाती हैं।</div>
+<div class="rule imp-y"><b>Rule 7 — Commemorative Stamps:</b> Nasik Security Press से Philatelic Bureau/Presidency Offices को सीधे भेजे जाते हैं; invoice त्रिप्रति में, credit head — <i>1201-Postal Receipts-101-Sale of Postage Stamps</i>। <span class="tier">🟡</span></div>
+<div class="rule"><b>Rule 8:</b> स्टाफ को स्टाम्प देते समय एक <b>Memo पर हस्ताक्षर</b> अवश्य लिया जाए (accountability)।</div>
+<div class="rule imp-g"><b>Rule 9:</b> माह के अंत में stamp balance — <b>Cash Balance Report</b> में दिखाया जाए। <span class="tier">🟢</span></div>
+<div class="rule imp-o"><b>Rule 11 — RMS को स्टाम्प एडवांस:</b> Sub/Head Record Officer की रसीद <b>Superintendent RMS</b> द्वारा counter-sign होनी चाहिए; रसीद हर वर्ष <b>1 अप्रैल</b> को नवीनीकृत होती है। <span class="tier">🟠</span></div>
+<div class="rule imp-r"><b>Rule 12 — International Reply Coupons (IRC):</b> आपूर्ति <b>General Manager (Postal Accounts & Finance), Kolkata</b> से होती है (Berne के अंतर्राष्ट्रीय ब्यूरो अनुबंध के तहत)। कमी की रिपोर्ट तुरंत न देने पर Postmaster उत्तरदायी होगा। <span class="tier">🔴</span></div>
+
+<div class="mnemonic">🧠 <b>Memory Trick:</b> "CSD से HO, HO से SO — 3 दिन में जाँचो" (स्टाम्प verification समय-सीमा याद रखने हेतु)।</div>
+<div class="q">IRC की आपूर्ति के लिए कौन-सा प्राधिकारी उत्तरदायी है? — General Manager (PAF), Kolkata</div>
+</div></div>
+
+<!-- CHAPTER III -->
+<div class="chap" id="ch3"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter III — Revenue Receipts <span class="tag">Rules 13-29</span></h2>
+<div class="chap-body">
+<table><tr><th>विषय</th><th>Rule</th><th>मुख्य बिंदु</th></tr>
+<tr><td>Postage Revenue</td><td>13</td><td>अधिकतर राजस्व स्टाम्प बिक्री से (FHB Vol.I Rule 82)</td></tr>
+<tr><td>Deposit for Bearing Letters</td><td>14</td><td>Planters/फर्म Deposit Account खोल सकते हैं; delivery clerk दैनिक sign करता है</td></tr>
+<tr><td>Cash Prepayment (Unregistered)</td><td>15</td><td>Form <b>ACG.46</b> (memo) + <b>ACG.47</b> (Treasurer's receipt, duplicate, serially numbered)</td></tr>
+<tr><td>Registered/Ordinary Letter Mail Prepayment</td><td>16</td><td>P&T Manual Vol.VIII Rule 75-A अनुसार</td></tr>
+<tr><td>Newspaper बिना Prepayment</td><td>18</td><td>License Head of Circle जारी करता है; fortnightly bill Form <b>MS-98</b>; भुगतान न होने पर license रद्द</td></tr>
+<tr><td>Unpaid Postage</td><td>19</td><td>Postmaster व्यक्तिगत रूप से उत्तरदायी</td></tr>
+<tr><td>MO Commission</td><td>20</td><td>निर्धारित दर पर वसूली, अलग से दर्ज</td></tr>
+</table>
+<div class="rule imp-r">🔴 <b>Rule 15 Note 1:</b> ACG.47 रसीद पुस्तकें <b>Head of Office की व्यक्तिगत अभिरक्षा (lock & key)</b> में; counterfoils <b>5 वर्ष</b> तक सुरक्षित रखे जाते हैं (FHB Vol.I Rule 8)।</div>
+<div class="rule imp-y">🟡 <b>Rule 18:</b> यदि बिल अगली fortnight के अंत तक अवैतनिक रहे → license <b>स्वतः रद्द (deemed cancelled)</b> मान लिया जाता है।</div>
+<div class="q">ACG.47 रसीद पुस्तकों के counterfoils कितने वर्ष सुरक्षित रखे जाते हैं? — 5 वर्ष</div>
+</div></div>
+
+<!-- CHAPTER IV -->
+<div class="chap" id="ch4"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter IV — Post Office Accounts <span class="tag">Rules 30-67 (सबसे लंबा — 41 पेज)</span></h2>
+<div class="chap-body">
+<div class="block"><h3>👤 Treasurer की भूमिका (Rule 30)</h3>
+<p>हर Head Office में एक Postal Assistant को <b>Treasurer</b> बनाया जाता है। सारी नकदी, स्टाम्प, Reply Coupons, BPO/IPO — <b>Postmaster व Treasurer की संयुक्त अभिरक्षा (joint custody)</b> में, दोनों के पास अलग-अलग चाबी।</p>
+<div class="flow">
+<div class="box">Postmen/VPs से संग्रह</div><span class="arrow">→</span>
+<div class="box">Treasurer</div><span class="arrow">→</span>
+<div class="box">Postage Stamps में परिवर्तित</div><span class="arrow">→</span>
+<div class="box">Date-stamp से defaced</div>
+</div>
+</div>
+<div class="rule imp-r">🔴 <b>महत्वपूर्ण अपवाद:</b> यह कार्य (deficient postage को stamps में बदलना) <b>Registration/Parcel PA द्वारा कभी नहीं</b> किया जा सकता — Segregation of Duties का सिद्धांत।</div>
+
+<h3 style="color:var(--blue);margin-top:14px;">📅 Schedule Submission Timeline (Rule 67 — Accounts Bundle to PAO)</h3>
+<table><tr><th>Return</th><th>तिथि</th></tr>
+<tr><td>Cash Account व Cash Balance Report</td><td>तुरंत / monthly</td></tr>
+<tr><td>Customs Duty Schedule</td><td>1st of following month</td></tr>
+<tr><td>Saving Bank/POSC Returns</td><td>1st</td></tr>
+<tr><td>Schedule of Unclassified Receipts</td><td>1st व 16th</td></tr>
+<tr><td>PLI/RPLI Payment Schedule</td><td>1st व 16th</td></tr>
+<tr><td>Money Order Returns</td><td>2nd व 16th</td></tr>
+<tr><td>Consolidated Treasury Receipt</td><td>अगले माह की 15 तारीख तक</td></tr>
+<tr><td>Telephone Receipts Schedule</td><td>4th</td></tr>
+<tr><td>New Pension Scheme Schedule</td><td>1st of following month</td></tr>
+</table>
+<div class="mnemonic">🧠 <b>Trick — "1-2-4-15-16":</b> ज़्यादातर schedules की तारीखें इन्हीं अंकों के इर्द-गिर्द घूमती हैं — याद रखने के लिए यही पैटर्न पकड़ें।</div>
+<div class="rule imp-o">🟠 <b>Exception (Rule 67):</b> कोलकाता/मुंबई/चेन्नई Presidency PO — BPO/IPO returns <b>5 तारीख तक</b> (सामान्यतः 1 की जगह); MO Abstract 18वीं व अगले माह की 4 तारीख को।</div>
+<div class="rule imp-y">🟡 <b>Rule 66 — Correction of Errors:</b> गलती मिलते ही <b>पत्र द्वारा तुरंत रिपोर्ट</b> करें; बिना माँगे revised accounts न भेजें।</div>
+<div class="q">Consolidated Treasury Receipt PAO को कब तक भेजी जानी चाहिए? — अगले माह की 15 तारीख तक</div>
+</div></div>
+
+<!-- CHAPTER V -->
+<div class="chap" id="ch5"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter V — Railway Mail Service Accounts <span class="tag">Rules 68-73</span></h2>
+<div class="chap-body">
+<div class="rule imp-r">🔴 <b>Rule 68(a):</b> <b>Head Record Officer (HRO)</b> डिवीजन के सभी monetary transactions व accounts की सटीकता के लिए <b>व्यक्तिगत रूप से उत्तरदायी</b>।</div>
+<div class="rule"><b>Rule 68(b):</b> Sorters में से चुना गया <b>Accountant</b> क्लर्कीय सहायता करता है, पर अंतिम जिम्मेदारी HRO की ही होती है।</div>
+<div class="rule imp-y">🟡 <b>Rule 69 — Cash Book (Form ACG 35):</b> दो भाग — Receipts व Payments; चूँकि दोनों तरफ के total हमेशा बराबर होते हैं, इसमें <b>कोई opening/closing balance नहीं</b> होता — यह Post Office Cash Book से मुख्य अंतर है।</div>
+<div class="q">RMS Cash Book (ACG-35) में opening/closing balance क्यों नहीं दिखाया जाता?</div>
+</div></div>
+
+<!-- CHAPTER VI -->
+<div class="chap" id="ch6"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter VI — Miscellaneous Charges <span class="tag">Rules 74-83</span></h2>
+<div class="chap-body">
+<table><tr><th>विषय</th><th>Rule</th><th>मुख्य बिंदु</th></tr>
+<tr><td>Refund of Postage</td><td>74</td><td>Schedule of Financial Powers अनुसार सक्षम अधिकारी; original cover/wrapper आवश्यक</td></tr>
+<tr><td>VP Enquiry Fee Refund</td><td>75</td><td>शिकायत सही पाए जाने पर fee वापस — बिना voucher PAO भेजे</td></tr>
+<tr><td>Register of Refunds</td><td>76</td><td>Form <b>ACG-27</b>; Inspecting Officers द्वारा जाँच योग्य</td></tr>
+<tr><td>Compensation — Insured/Uninsured Reg. Article</td><td>83</td><td>Schedule of Unclassified Payments में payee's receipt व मूल sanction सहित</td></tr>
+</table>
+<div class="rule imp-o">🟠 <b>Rule 76:</b> Register of Refunds का रखरखाव Dy. Presidency Postmaster/Dy.-Asst. Postmaster को <b>प्रतिनिधानित (delegate)</b> किया जा सकता है।</div>
+<div class="q">VP Enquiry Fee की जांच सही पाए जाने पर वापसी की मंजूरी किसके लिखित प्राधिकार से होती है? — Head Postmaster</div>
+</div></div>
+
+<!-- CHAPTER VII -->
+<div class="chap open" id="ch7"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter VII — Pension Payments 🔴 सबसे बड़ा <span class="tag">Rules 84-140 (57 पेज)</span></h2>
+<div class="chap-body">
+
+<div class="block"><h3>📌 Definition (Rule 85)</h3>
+<p>"Service Pension" = भारत में, भारतीय Posts & Telegraphs विभाग (Postal Telecom Accounts व Audit सहित) में पूर्व सेवा के एवज में देय पेंशन — <b>1 अप्रैल 1921 या बाद</b> स्वीकृत हो, और इसमें <b>gratuity भी शामिल है</b>। (IAS/ICS/IA&AS सदस्य के रूप में सेवा को छोड़कर)</p>
+<div class="rule imp-y">🟡 <b>Rule 86:</b> Family Pension Fund से देय राशियाँ व Workmen's Compensation Act की राशियाँ इस Chapter में शामिल <b>नहीं</b>।</div>
+<div class="rule imp-r">🔴 <b>Rule 84 / Section 11, Pensions Act 1871:</b> Political/compassionate आधार पर दी गई पेंशन <b>न्यायालय द्वारा जब्त/कुर्क नहीं</b> की जा सकती (attachment से मुक्त)।</div>
+</div>
+
+<div class="block"><h3>📍 Place & Authority for Payment (Rules 87-96)</h3>
+<div class="rule"><b>Rule 87:</b> पेंशन किसी भी अधिकृत Head/Sub/Branch PO में देय; <b>पहला भुगतान</b> केवल उस PO में जहाँ पेंशनर ने चुना है।</div>
+<div class="rule imp-r">🔴 <b>Rule 88:</b> भुगतान केवल <b>Pension Payment Order (PPO)</b> Form DG(PA)-99(j)/(k)/(L)/(M) पर — जो <b>Director of Accounts (Postal)</b> जारी करता है।</div>
+<div class="rule"><b>Rule 89:</b> Postmaster's half — अलग फाइलों में लाल स्याही से चिह्नित, पेंशनर की पहुँच से बाहर, व्यक्तिगत अभिरक्षा में।</div>
+<div class="rule imp-o">🟠 <b>Rule 92 — PPO Renewal:</b> Head Postmaster PAO के बिना संदर्भ के renew कर सकता है (torn/worn/filled up); पुराना PPO <b>3 वर्ष</b> तक रखा जाता है फिर नष्ट।</div>
+<div class="rule imp-y">🟡 <b>Rule 94 — दोनों हिस्से गुम (बाढ़ आदि):</b> Duplicate PPO जारी होता है, "Duplicate — No payment against original" अंकित; पहला भुगतान <b>वहीं</b> कार्यालय में जहाँ मूल PPO में उल्लेख है।</div>
+<div class="rule">🟡 <b>Rule 95(b):</b> Commutation की <b>restoration</b> Head Postmaster द्वारा CCS (Commutation of Pension) Rules, 1981 अनुसार अधिकृत।</div>
+</div>
+
+<div class="block"><h3>🪪 Identification / Life Certificate (Rules 101-107, 124-125)</h3>
+<div class="flow">
+<div class="box">व्यक्तिगत उपस्थिति (सामान्य नियम)</div><span class="arrow">या</span>
+<div class="box">Life Certificate (छूट-प्राप्त श्रेणी)</div>
+</div>
+<div class="rule imp-r">🔴 <b>Rule 103 — Life Certificate किन पर हस्ताक्षर कर सकते हैं:</b> Magistrate, Registrar/Sub-Registrar, Group A/B अधिकारी, SI या उच्च पुलिस अधिकारी, Postmaster/Dept. Sub-Postmaster/IPO, RBI/SBI Class-I अधिकारी, पूर्व-Magistrate पेंशनभोगी अधिकारी, Justice of Peace, BDO/Munsif/Tehsildar, Panchayat प्रमुख। <span class="tier">🔴 खूब पूछा जाता है</span></div>
+<div class="rule"><b>Rule 104:</b> विदेश निवासी पेंशनर — अधिकृत एजेंट के माध्यम से; हर बार life certificate, या indemnity bond हो तो <b>वर्ष में एक बार</b>।</div>
+<div class="rule imp-o">🟠 <b>Rule 106:</b> Bonded एजेंट के माध्यम से भुगतान — last life certificate की तारीख से <b>1 वर्ष से अधिक अवधि का भुगतान नहीं</b>।</div>
+<div class="rule imp-r">🔴 <b>Rule 124 — Periodical Identification:</b> हर वर्ष <b>1 अप्रैल के बाद पहली उपस्थिति</b> पर अंगूठा-उंगली निशान लिए जाते हैं (यदि specimen signature न हो)।</div>
+<div class="rule imp-o">🟠 <b>Rule 125:</b> साल में <b>कम-से-कम एक बार</b> स्वतंत्र प्रमाण अनिवार्य — जीवन-प्रमाणपत्र के अतिरिक्त। गलत भुगतान के लिए <b>Disbursing Officer व्यक्तिगत रूप से उत्तरदायी</b>।</div>
+</div>
+
+<div class="block"><h3>💰 Money Order से पेंशन (Rule 120) व सीमाएँ</h3>
+<div class="rule imp-y">🟡 <b>Note 3 (हिस्ट. संदर्भ):</b> ₹2250 + relief तक की पेंशन पेंशनर के अनुरोध पर Postal Service MO से भेजी जा सकती थी।</div>
+<div class="rule"><b>MO अग्रिम भेजना:</b> "Not to be paid before the 1st of following month" — मार्च की पेंशन अप्रैल में <b>इस प्रकार नहीं</b> भेजी जाती (financial year debit मुद्दा)।</div>
+</div>
+
+<div class="block"><h3>⏳ Undrawn Pensions & Arrears (Rules 126)</h3>
+<table><tr><th>अवधि</th><th>नियम</th></tr>
+<tr><td>1 वर्ष से अधिक अवैतनिक</td><td>Disbursing Officer भुगतान बंद कर देता है</td></tr>
+<tr><td>पहली बार का बकाया या राशि > ₹50,000</td><td>Sanctioning Authority की पूर्व स्वीकृति आवश्यक</td></tr>
+<tr><td>3 वर्ष तक अवैतनिक</td><td>Director/Dy. Director of Accounts (Postal) की स्वीकृति अनिवार्य</td></tr>
+<tr><td>Gratuity Payment Order</td><td>केवल <b>1 वर्ष</b> के लिए वैध</td></tr>
+</table>
+<div class="rule imp-r">🔴 सबसे ज़्यादा पूछा जाने वाला टेबल — संख्याएँ (₹50,000 व 1/3 वर्ष) याद रखें।</div>
+</div>
+
+<div class="block"><h3>⚰️ Death of Pensioner — Arrears भुगतान (Rules 127-128)</h3>
+<table><tr><th>बकाया राशि</th><th>प्राधिकार</th></tr>
+<tr><td>≤ ₹5,000</td><td>Accounting Authority अपने अधिकार से स्वीकृत कर सकता है</td></tr>
+<tr><td>₹5,000 – ₹25,000</td><td>Head of Department के आदेश पर, <b>Indemnity Bond (Form TR-14)</b> सहित</td></tr>
+<tr><td>&gt; ₹25,000</td><td>Legal Authority (उत्तराधिकार प्रमाणपत्र) आवश्यक</td></tr>
+<tr><td>&lt; ₹7,500 दावा</td><td>सामान्यतः 2 sureties; अधिकारी चाहें तो 1 surety स्वीकार सकते हैं</td></tr>
+</table>
+<div class="rule imp-o">🟠 <b>Rule 127(1)(b):</b> उत्तराधिकारी को मृत्यु के <b>1 वर्ष के भीतर</b> आवेदन करना होगा, अन्यथा सक्षम प्राधिकारी की स्वीकृति आवश्यक।</div>
+<div class="rule imp-y">🟡 <b>Rule 128 — Payment of Arrears of Pension (Nomination) Rules, 1983:</b> कर्मचारी को Form 'A' नामांकन <b>सेवानिवृत्ति से 3 महीने पहले या बाद</b> में जमा करना होगा; Head of Office <b>30 दिन के भीतर</b> verify करके duplicate copy लौटाता है।</div>
+<div class="mnemonic">🧠 <b>Trick — "5-25-30-3":</b> Death of Pensioner केस में ₹5,000 / ₹25,000 सीमा, नामांकन verify में <b>30 दिन</b>, नामांकन जमा <b>3 महीने</b> — इन 4 अंकों की चेन याद रखें।</div>
+<div class="q">Payment of Arrears of Pension (Nomination) Rules किस वर्ष के हैं और Form A कब जमा होता है?</div>
+</div>
+
+<div class="block"><h3>🎯 Gratuity (Rules 122-123)</h3>
+<div class="rule imp-y">🟡 <b>Rule 122:</b> Gratuity <b>एकमुश्त (single sum)</b> में दी जाती है, किश्तों में नहीं।</div>
+<div class="rule"><b>Rule 123:</b> सेवानिवृत्त सरकारी सेवक के लिए Provisional Gratuity सक्षम प्राधिकारी द्वारा स्वीकृत की जा सकती है।</div>
+</div>
+
+<div class="block"><h3>🔀 Decision Tree — पेंशन भुगतान प्रक्रिया</h3>
+<div class="flow">
+<div class="box">पेंशनर आया</div><span class="arrow">→</span>
+<div class="box">Personal Appearance संभव?</div>
+</div>
+<div class="flow" style="margin-left:16px;">
+<span class="arrow">हाँ↓</span><div class="box">Rule 101 — प्रत्यक्ष भुगतान + पहचान</div>
+</div>
+<div class="flow" style="margin-left:16px;">
+<span class="arrow">नहीं↓</span><div class="box">Rule 102/103 — Life Certificate द्वारा Representative को</div>
+</div>
+</div>
+
+</div></div>
+
+<!-- CHAPTER VIII -->
+<div class="chap" id="ch8"><h2 onclick="this.parentElement.classList.toggle('open')">Chapter VIII — Miscellaneous Subjects <span class="tag">Rules 141-146</span></h2>
+<div class="chap-body">
+<table><tr><th>विषय</th><th>Rule</th><th>संदर्भ</th></tr>
+<tr><td>Interest on Stock Certificates</td><td>141</td><td>Deleted (हटाया गया — trap question!)</td></tr>
+<tr><td>PO का Status बदलना/बंद होना</td><td>142</td><td>Appendix 4 देखें</td></tr>
+<tr><td>BPO व IPO नियम</td><td>143</td><td>P&T Manual Vol.VI Ch.7 Part II व V</td></tr>
+<tr><td>MO/SB/Govt. Securities/NSC लेनदेन</td><td>144</td><td>P&T Manual Vol.VI Ch. 7,8,9</td></tr>
+<tr><td>Railway/Steamer Haulage भुगतान</td><td>145-146</td><td>Appendix 5</td></tr>
+</table>
+<div class="rule imp-r">🔴 <b>Trap:</b> Rule 141 (Interest on Stock Certificates) <b>"Deleted"</b> है — परीक्षा में गलत विकल्प के रूप में आ सकता है।</div>
+</div></div>
+
+<!-- APPENDICES -->
+<div class="chap" id="appx"><h2 onclick="this.parentElement.classList.toggle('open')">Appendices 1-6 — सारांश</h2>
+<div class="chap-body">
+<table><tr><th>Appx</th><th>विषय</th><th>Rules/Pages</th></tr>
+<tr><td>1</td><td>Table of Concordance</td><td>90-94</td></tr>
+<tr><td>2</td><td>Rules for Supply of Stamps</td><td>95-114</td></tr>
+<tr><td>3</td><td>Interest on Stock Certificates भुगतान नियम</td><td>114-115</td></tr>
+<tr><td>4</td><td>PO का Status बदलना / बंद करना</td><td>116-131</td></tr>
+<tr><td>5</td><td>Mail ढुलाई व Postal Vehicles निर्माण/रखरखाव</td><td>131-140</td></tr>
+<tr><td>6</td><td>Forms की सूची (Rules व Appendices में संदर्भित)</td><td>141-143</td></tr>
+</table>
+<div class="rule imp-y">🟡 Index: पेज 144-148 | Note of Pasting of Corrections: पेज 149</div>
+</div></div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision" id="rev">
+<h2>📄 One-Page Revision Sheet</h2>
+<div class="mind">
+<div class="node">Ch II: CSD→HO→SO | 3 दिन verification | IRC = GM(PAF) Kolkata</div>
+<div class="node">Ch III: ACG.46/47 | Counterfoil 5 वर्ष | Newspaper license fortnight-cancel</div>
+<div class="node">Ch IV: Treasurer joint custody | Schedules: 1st/2nd/4th/15th/16th | HRO जिम्मेदार</div>
+<div class="node">Ch VI: Refund Register ACG-27 | Compensation — Sched. of Unclassified Payments</div>
+<div class="node">Ch VII: PPO = DG(PA)-99 series | Life Cert. 10 प्राधिकृत श्रेणियाँ | Undrawn: 1yr/3yr/₹50,000 | Death: ₹5,000/₹25,000 | Nomination: 3 माह जमा, 30 दिन verify</div>
+<div class="node">Ch VIII: Rule 141 Deleted (Trap) | BPO/IPO → P&T Manual Vol.VI Ch.7</div>
+</div>
+<h3>🔢 सभी महत्वपूर्ण संख्याएँ एक जगह</h3>
+<table><tr><th>संख्या</th><th>संदर्भ</th></tr>
+<tr><td>3 दिन</td><td>CSD से स्टाम्प invoice acknowledge करना</td></tr>
+<tr><td>5 वर्ष</td><td>ACG.47 receipt book counterfoil संरक्षण</td></tr>
+<tr><td>1 अप्रैल</td><td>RMS स्टाम्प रसीद नवीनीकरण; Periodical Identification प्रारंभ</td></tr>
+<tr><td>1 वर्ष</td><td>Undrawn pension बंद; Gratuity Order वैधता; Death-arrears दावा अवधि</td></tr>
+<tr><td>3 वर्ष</td><td>Undrawn service pension — Director/CCA स्वीकृति ज़रूरी; PPO पुराना रिकॉर्ड रखना</td></tr>
+<tr><td>₹50,000</td><td>पहली बार बकाया पेंशन सीमा (sanction आवश्यक)</td></tr>
+<tr><td>₹5,000 / ₹25,000</td><td>Death of pensioner — arrears authority सीमाएँ</td></tr>
+<tr><td>3 माह</td><td>Nomination Form A जमा (सेवानिवृत्ति से पहले/बाद)</td></tr>
+<tr><td>30 दिन</td><td>Head of Office द्वारा नामांकन verification</td></tr>
+</table>
+</div>
+
+<!-- LAST DAY NOTES -->
+<div class="lastday" id="last">
+<h2>🌙 Last-Day Revision Notes</h2>
+<p>✅ <b>Chapter VII (Pension)</b> पर सबसे ज़्यादा समय दें — यह सबसे बड़ा व सबसे ज़्यादा पूछा जाने वाला Chapter है।</p>
+<p>✅ Life Certificate वाले <b>10 प्राधिकृत हस्ताक्षरकर्ता</b> (Rule 103) रटें — MCQ में सीधे पूछे जाते हैं।</p>
+<p>✅ सभी <b>संख्याएँ/समय-सीमाएँ</b> (3 दिन, 5 वर्ष, 1/3 वर्ष, ₹5,000/₹25,000/₹50,000, 3 माह, 30 दिन) एक चार्ट में याद करें।</p>
+<p>✅ <b>Trap Rules</b> ध्यान रखें — Rule 141 "Deleted"; Segregation of duties (Registration/Parcel PA स्टाम्प conversion नहीं कर सकते)।</p>
+<p>✅ Form नंबर याद रखें: PPO=DG(PA)-99, ACG.46/47 (postage prepayment), ACG-27 (Refund Register), TR-14 (Indemnity Bond), TR-39/TR-40 (declarations), Pension-2 (Register of PPO)।</p>
+<p>✅ Authority Chain दोहराएँ: CSD → PMG/CPMG/DPS/Divisional Head → Director of Accounts (Postal) → CCA/Joint CCA।</p>
+</div>
+
+</div>
+
+<div class="footer">India Post IP Exam Prep Portal • Financial Handbook Volume II • Offline-safe self-contained file</div>
+
+<script>
+document.querySelectorAll('.chap h2').forEach(function(h){
+  h.parentElement.classList.remove('open');
+});
+document.getElementById('ch7').classList.add('open');
+</script>
+</body>
+</html>

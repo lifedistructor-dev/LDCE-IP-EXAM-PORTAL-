@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Vol. III — Schedule I-B: EDA Rules | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#fdf4f4,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#7f1d1d,#1e3a8a);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(127,29,29,.3);}
+  header.hero h1{margin:0 0 6px;font-size:1.2rem;}
+  header.hero .sub{font-size:.85rem;opacity:.92;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.7rem;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1rem;display:flex;align-items:center;gap:8px;}
+  .bi{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .bi .hi{font-weight:700;font-size:.92rem;color:#111827;}
+  .bi .en{font-style:italic;font-size:.8rem;color:#4b5563;margin-top:2px;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.75rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.72rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#7f1d1d;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(127,29,29,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  details{border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;overflow:hidden;background:#fff;}
+  summary{cursor:pointer;list-style:none;padding:9px 12px;font-weight:700;font-size:.83rem;display:flex;align-items:center;justify-content:space-between;background:#f1f5f9;}
+  summary::-webkit-details-marker{display:none;}
+  .d-body{padding:8px 12px 12px;font-size:.78rem;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} details{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>👷 Postal Manual Vol. III — Schedule I-B</h1>
+    <div class="sub">Extra Departmental Agents (EDA) — आचरण व सेवा नियम, 1964</div>
+    <div class="tag">P&amp;T EDA (Conduct and Service) Rules, 1964</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Manuals <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Postal Manual Volume III <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Schedule I-B — EDA Rules <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Recruitment, Penalties, Leave, Appeal, Review
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic — परिचय <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="bi">
+      <div class="hi">EDAs (जैसे BPM, GDS delivery agent) CCS (CCA) Rules के अंतर्गत नहीं आते — उनके लिए अलग <b>P&amp;T EDA (Conduct and Service) Rules, 1964</b> हैं।</div>
+      <div class="en">EDAs (e.g., BPM, GDS delivery agent) are NOT covered by CCS (CCA) Rules — they have separate P&amp;T EDA (Conduct and Service) Rules, 1964.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>👥 EDA की 15 श्रेणियाँ (Rule 2b) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <details open>
+      <summary>Tap to expand all 15 categories ▾</summary>
+      <div class="d-body">
+        <ul>
+          <li>ED Sub Postmaster</li>
+          <li>ED Branch Postmaster</li>
+          <li>ED Delivery Agent</li>
+          <li>ED Mail Attendant</li>
+          <li>ED Mail Carrier/Runner</li>
+          <li>ED Packer</li>
+          <li>ED Messenger</li>
+          <li>ED Chowkidar</li>
+          <li>ED Stamp Vendor</li>
+          <li>ED Sorting Assistant (RMS)</li>
+          <li>ED Sub-Record Clerk (RMS)</li>
+          <li>ED Sweeper</li>
+          <li>ED Water Carrier</li>
+          <li>ED Mailman (2 entries)</li>
+        </ul>
+      </div>
+    </details>
+    <div class="exam-q"><b>Probable Q:</b> EDA श्रेणियों की कुल संख्या कितनी है? <b>Ans: 15</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Recruitment — आयु व शर्तें <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <table>
+      <tr><th>शर्त</th><th>विवरण</th></tr>
+      <tr><td>न्यूनतम आयु</td><td>18 वर्ष</td></tr>
+      <tr><td>अधिकतम आयु (सेवा में रहने हेतु)</td><td>65 वर्ष (DG relax कर सकता है विशेष मामलों में)</td></tr>
+      <tr><td>Educational Qualification — ED SPM</td><td>VIII Standard (matriculation preferred)</td></tr>
+      <tr><td>Educational Qualification — ED Stamp Vendor</td><td>VI Standard</td></tr>
+      <tr><td>ED SPM/BPM की Security</td><td>₹1,000</td></tr>
+      <tr><td>Retirement notice (65 वर्ष पूर्ण होने से पहले)</td><td>3 महीने पहले सूचना</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "18-65-1000-3" — Min age, Max age, Security deposit, Retirement notice months।</div>
+    <div class="exam-q"><b>Probable Q:</b> ED Agent की सेवा-निवृत्ति की अधिकतम आयु? <b>Ans: 65 वर्ष</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — EDA vs Regular Employee Penalties <span class="tag-imp t-red">🔴 Very High-Yield Trap</span></h2>
+    <div class="bi rule">
+      <div class="hi">EDA के लिए Rule 7 के तहत केवल <b>3 दंड</b> हैं — Regular employee (CCS-CCA Rule 11) के <b>9 दंडों</b> से बिल्कुल अलग!</div>
+      <div class="en">EDAs have only 3 penalties under Rule 7 — completely different from the 9 penalties under CCS(CCA) Rule 11 for regular employees.</div>
+    </div>
+    <table>
+      <tr><th>#</th><th>EDA Penalty (Rule 7)</th></tr>
+      <tr><td>(i)</td><td>Recovery from allowance (हानि वसूली)</td></tr>
+      <tr><td>(ii)</td><td>Removal from Service (भविष्य में disqualify नहीं)</td></tr>
+      <tr><td>(iii)</td><td>Dismissal from Service (भविष्य में disqualify — सामान्यतः)</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "EDA=3, Regular=9" — यह सबसे बड़ा exam trap है, दोनों को न मिलाएँ।</div>
+    <div class="exam-q"><b>Probable Q:</b> EDA के लिए कुल कितने प्रकार के दंड हैं? <b>Ans: 3 (Recovery, Removal, Dismissal)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📅 Timeline — सेवा व Leave सम्बन्धी सीमाएँ <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>विषय</th><th>सीमा</th></tr>
+      <tr><td>Gratuity हेतु न्यूनतम सेवा</td><td>15 वर्ष</td></tr>
+      <tr><td>Unauthorized absence — break of service माना जाए</td><td>90 दिन से अधिक</td></tr>
+      <tr><td>Gratuity दर</td><td>प्रत्येक 3 वर्ष सेवा पर 1 महीने का allowance, अधिकतम ₹1,000</td></tr>
+      <tr><td>एक बार में अधिकतम leave</td><td>90 दिन</td></tr>
+      <tr><td>90-180 दिन की Leave</td><td>निर्दिष्ट authority (SSP/SP आदि)</td></tr>
+      <tr><td>180 दिन से अधिक Leave</td><td>केवल Head of Circle</td></tr>
+      <tr><td>Put-off-duty अधिकतम अवधि</td><td>120 दिन</td></tr>
+      <tr><td>प्रारंभिक सेवा अवधि (बिना notice termination)</td><td>3 वर्ष से कम continuous service</td></tr>
+    </table></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "90-180-120-15" — Single leave max 90d; higher-authority leave up to 180d; put-off-duty max 120d; gratuity needs 15yr सेवा।</div>
+    <div class="exam-q"><b>Probable Q:</b> EDA को एक बार में अधिकतम कितने दिन की leave मिल सकती है? <b>Ans: 90 दिन</b></div>
+    <div class="exam-q"><b>Probable Q:</b> 180 दिन से अधिक की leave कौन मंज़ूर कर सकता है? <b>Ans: केवल Head of Circle</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ Appeal व Review (EDA) <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <table>
+      <tr><th>विषय</th><th>सीमा</th></tr>
+      <tr><td>Appeal दाखिल करने की समय-सीमा</td><td><b>3 महीने</b> (order की copy मिलने से)</td></tr>
+      <tr><td>IPO/ASPO का आदेश — प्रभावहीन होने की अवधि</td><td>15 दिन (यदि confirm न हो)</td></tr>
+      <tr><td>Case reopen करने की सीमा (Review)</td><td>6 महीने के भीतर</td></tr>
+    </table>
+    <div class="bi rule">
+      <div class="hi">⚠️ <b>Exam Trap:</b> EDA की appeal समय-सीमा <b>3 महीने</b> है, जबकि regular employees (CCS-CCA Rule 25) के लिए <b>45 दिन</b> — दोनों को मिलाएँ नहीं!</div>
+      <div class="en">EDA appeal limitation = 3 months, vs 45 days for regular employees under CCS-CCA Rule 25 — do NOT confuse the two.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> EDA के लिए appeal की समय-सीमा क्या है? <b>Ans: 3 महीने (Regular employee के 45 दिन से अलग)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — Schedule I-B Overview</h2>
+    <div class="bi" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Categories</b>: 15 types of EDA (SPM, BPM, Delivery Agent, etc.)</div></div>
+    <div class="bi" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Age</b>: 18-65 years; Security ₹1,000 (SPM/BPM)</div></div>
+    <div class="bi" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Penalties</b>: Only 3 (vs 9 for regular employees)</div></div>
+    <div class="bi" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Appeal</b>: 3 months (vs 45 days for regular)</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. EDA की कुल कितनी श्रेणियाँ Rule 2(b) में सूचीबद्ध हैं?</div><div class="opts">A) 10 &nbsp; B) 12 &nbsp; C) 15 &nbsp; D) 20</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q2. EDA की न्यूनतम आयु सीमा क्या है?</div><div class="opts">A) 16 वर्ष &nbsp; B) 18 वर्ष &nbsp; C) 21 वर्ष &nbsp; D) 25 वर्ष</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q3. ED SPM/BPM की Security राशि कितनी है?</div><div class="opts">A) ₹500 &nbsp; B) ₹1,000 &nbsp; C) ₹2,000 &nbsp; D) ₹5,000</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q4. EDA के लिए Rule 7 के अंतर्गत कुल कितने दंड निर्धारित हैं?</div><div class="opts">A) 3 &nbsp; B) 5 &nbsp; C) 7 &nbsp; D) 9</div><div class="ans">Answer: A</div></div>
+    <div class="mcq"><div class="q">Q5. EDA की Appeal दाखिल करने की समय-सीमा?</div><div class="opts">A) 30 दिन &nbsp; B) 45 दिन &nbsp; C) 3 महीने &nbsp; D) 6 महीने</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q6. EDA को एक बार में अधिकतम कितने दिन की leave मिल सकती है?</div><div class="opts">A) 60 दिन &nbsp; B) 90 दिन &nbsp; C) 120 दिन &nbsp; D) 180 दिन</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. Unauthorized absence कितने दिन से अधिक होने पर break of service माना जाता है?</div><div class="opts">A) 30 दिन &nbsp; B) 60 दिन &nbsp; C) 90 दिन &nbsp; D) 120 दिन</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q8. Gratuity हेतु न्यूनतम सेवा अवधि क्या है?</div><div class="opts">A) 10 वर्ष &nbsp; B) 12 वर्ष &nbsp; C) 15 वर्ष &nbsp; D) 20 वर्ष</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q9. 180 दिन से अधिक की leave कौन मंज़ूर करता है?</div><div class="opts">A) SSP/SP &nbsp; B) IPO &nbsp; C) Head of Circle &nbsp; D) BPM स्वयं</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q10. EDA case reopen (review) करने की समय-सीमा?</div><div class="opts">A) 3 महीने &nbsp; B) 6 महीने &nbsp; C) 9 महीने &nbsp; D) 12 महीने</div><div class="ans">Answer: B</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 EDA — 15 categories; अलग नियम: P&amp;T EDA (Conduct &amp; Service) Rules, 1964</li>
+      <li>🔴 आयु: <b>18-65</b> वर्ष; Security (SPM/BPM): <b>₹1,000</b></li>
+      <li>🔴 Penalties: EDA के लिए केवल <b>3</b> (Recovery, Removal, Dismissal) — Regular employee के 9 से अलग</li>
+      <li>🔴 Appeal समय-सीमा: <b>3 महीने</b> (Regular employee = 45 दिन)</li>
+      <li>🟠 Leave: single max <b>90 दिन</b>; 90-180d = designated authority; &gt;180d = <b>Head of Circle</b></li>
+      <li>🟠 Unauthorized absence &gt;<b>90 दिन</b> = break of service</li>
+      <li>🟡 Gratuity: <b>15 वर्ष</b> सेवा आवश्यक, अधिकतम <b>₹1,000</b></li>
+      <li>🟡 Put-off-duty max: <b>120 दिन</b></li>
+      <li>🟢 Review/reopen समय-सीमा: <b>6 महीने</b></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Schedule</td><td>I-B — P&amp;T EDA (Conduct &amp; Service) Rules, 1964</td></tr>
+      <tr><td>EDA Categories</td><td>15</td></tr>
+      <tr><td>Age Range</td><td>18-65 years</td></tr>
+      <tr><td>Security (SPM/BPM)</td><td>₹1,000</td></tr>
+      <tr><td>Penalties</td><td>3 — Recovery, Removal, Dismissal</td></tr>
+      <tr><td>Appeal Limitation</td><td>3 months</td></tr>
+      <tr><td>Max Single Leave</td><td>90 days</td></tr>
+      <tr><td>Leave &gt;180 days Authority</td><td>Head of Circle only</td></tr>
+      <tr><td>Break of Service Threshold</td><td>&gt;90 days unauthorized absence</td></tr>
+      <tr><td>Gratuity Eligibility</td><td>15 years service</td></tr>
+      <tr><td>Put-off-duty Max</td><td>120 days</td></tr>
+      <tr><td>Review Reopen Limit</td><td>6 months</td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

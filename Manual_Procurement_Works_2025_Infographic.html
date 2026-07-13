@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कार्य क्रय नियमावली 2025 | Manual for Procurement of Works | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#003057; --ip-gold:#D4A017;
+  --very-imp:#ffe1e1; --very-imp-b:#C8102E;
+  --freq:#fff1dd; --freq-b:#e08600;
+  --concept:#fffbd6; --concept-b:#cbb400;
+  --quick:#e2f7e6; --quick-b:#1f9d4d;
+  --bg:#f5f2ea; --card:#ffffff; --text:#26282b;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:70px;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),#8f0c22 60%,var(--ip-blue));
+  color:#fff; padding:18px 14px 22px; text-align:center;
+  border-bottom:6px solid var(--ip-gold);
+}
+.header h1{font-size:1.25rem; margin-bottom:4px;}
+.header .sub{font-size:.82rem; opacity:.95;}
+.header .meta{font-size:.74rem; margin-top:8px; opacity:.9;}
+.profile-bar{
+  background:var(--ip-blue); color:#fff; text-align:center; font-size:.78rem;
+  padding:6px 10px;
+}
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  padding:12px 8px; background:#fff; border-bottom:2px solid #eee;
+}
+.legend span{
+  font-size:.68rem; padding:4px 8px; border-radius:14px; font-weight:600;
+  border:1px solid #ddd;
+}
+.container{max-width:760px; margin:0 auto; padding:12px;}
+.section-title{
+  background:var(--ip-blue); color:#fff; padding:9px 14px; border-radius:8px 8px 0 0;
+  font-size:.95rem; font-weight:700; margin-top:22px; display:flex; align-items:center; gap:8px;
+}
+.card{
+  background:var(--card); border:1px solid #e2ddd0; border-radius:0 0 8px 8px;
+  padding:12px 14px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.tag{
+  display:inline-block; font-size:.66rem; font-weight:700; padding:2px 7px;
+  border-radius:10px; margin-right:4px; margin-bottom:2px;
+}
+.tag.vi{background:var(--very-imp); color:var(--very-imp-b); border:1px solid var(--very-imp-b);}
+.tag.fa{background:var(--freq); color:var(--freq-b); border:1px solid var(--freq-b);}
+.tag.co{background:var(--concept); color:#8a7a00; border:1px solid var(--concept-b);}
+.tag.qr{background:var(--quick); color:var(--quick-b); border:1px solid var(--quick-b);}
+h3.micro{color:var(--ip-red); font-size:.92rem; margin:10px 0 4px; border-left:4px solid var(--ip-red); padding-left:8px;}
+h4.nano{color:var(--ip-blue); font-size:.82rem; margin:6px 0 3px;}
+p, li{font-size:.84rem;}
+ul{padding-left:20px; margin:4px 0 8px;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.74rem;}
+th{background:var(--ip-blue); color:#fff; padding:6px 5px; text-align:left;}
+td{padding:6px 5px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#faf8f3;}
+.exam-q{
+  background:#eef3ff; border-left:4px solid #2255cc; padding:6px 10px; margin:6px 0;
+  font-size:.76rem; border-radius:0 6px 6px 0;
+}
+.exam-q b{color:#2255cc;}
+.mnemonic{
+  background:#fff4e0; border:1.5px dashed var(--ip-gold); padding:8px 10px; margin:8px 0;
+  border-radius:8px; font-size:.8rem;
+}
+.mnemonic b{color:#8a5a00;}
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:10px 0;}
+.flow-box{
+  background:#fff; border:2px solid var(--ip-blue); border-radius:8px; padding:8px 12px;
+  font-size:.76rem; text-align:center; width:92%; font-weight:600;
+}
+.flow-arrow{font-size:1.2rem; color:var(--ip-red);}
+.timeline{border-left:3px solid var(--ip-gold); margin-left:8px; padding-left:14px;}
+.tl-item{margin-bottom:14px; position:relative;}
+.tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:11px; height:11px;
+  background:var(--ip-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--ip-red);
+}
+.tl-date{font-weight:700; color:var(--ip-red); font-size:.78rem;}
+.tl-text{font-size:.78rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0;}
+.compare .old{background:#fdeaea; border:1px solid #e08c8c; border-radius:6px; padding:8px; font-size:.72rem;}
+.compare .new{background:#e7f7ea; border:1px solid #8fcf9f; border-radius:6px; padding:8px; font-size:.72rem;}
+.compare .hd{font-weight:700; text-align:center; margin-bottom:4px; font-size:.76rem;}
+.revision-sheet{
+  background:linear-gradient(160deg,#fff7e6,#fff);
+  border:2px solid var(--ip-gold); border-radius:10px; padding:14px; margin:14px 0;
+}
+.revision-sheet h2{color:var(--ip-red); font-size:1rem; margin-bottom:8px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px;}
+.rev-item{background:#fff; border-left:4px solid var(--ip-red); padding:6px 10px; font-size:.76rem; border-radius:0 6px 6px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mm-node{
+  background:#fff; border:2px solid var(--ip-red); border-radius:20px; padding:6px 12px;
+  font-size:.7rem; font-weight:700; color:var(--ip-blue); text-align:center;
+}
+.mm-node.center{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue); font-size:.8rem;}
+.penalty-badge{
+  display:inline-block; background:var(--ip-red); color:#fff; font-size:.7rem;
+  padding:2px 8px; border-radius:6px; font-weight:700;
+}
+.dtree{margin:10px 0; font-size:.76rem;}
+.dtree .q{background:var(--ip-blue); color:#fff; padding:6px 10px; border-radius:6px; margin-bottom:4px; font-weight:600;}
+.dtree .branch{padding-left:16px; border-left:2px dashed var(--ip-gold); margin-left:8px; margin-bottom:6px;}
+.dtree .ans{background:#f5f2ea; padding:5px 8px; border-radius:5px; margin:3px 0;}
+.alert{background:#fff3cd; border:1px solid #ffdf7e; padding:8px 10px; border-radius:6px; font-size:.76rem; margin:8px 0;}
+.footer-note{text-align:center; font-size:.7rem; color:#888; padding:20px 10px;}
+.pdf-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--ip-red); color:#fff;
+  border:none; border-radius:50%; width:54px; height:54px; font-size:1.4rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; z-index:99;
+}
+@media print{ .pdf-btn{display:none;} }
+.toc{background:#fff; border:1px solid #e2ddd0; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:.78rem;}
+.toc a{color:var(--ip-blue); text-decoration:none; display:block; padding:3px 0; border-bottom:1px dotted #ddd;}
+.small-note{font-size:.7rem; color:#666; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏗️ कार्य क्रय नियमावली, 2025</h1>
+  <div class="sub">Manual for Procurement of Works, Second Edition 2025 — Dept. of Expenditure, Ministry of Finance</div>
+  <div class="meta">📌 IP Exam (Inspector Posts) — Paper I | विषय: Manuals on Procurement</div>
+</div>
+<div class="profile-bar">👤 Panthil Rajeshkumar Parmar | Office Assistant | Ahmedabad L-1</div>
+
+<div class="legend">
+  <span class="tag vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="tag fa">🟠 बार-बार पूछा गया</span>
+  <span class="tag co">🟡 अवधारणा समझें</span>
+  <span class="tag qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>📑 अनुक्रमणिका (Contents)</b>
+  <a href="#intro">परिचय व सिद्धांत (Ch 1)</a>
+  <a href="#ch2">आवश्यकता आकलन व योजना (Ch 2)</a>
+  <a href="#ch3">बोली डिज़ाइन — संविदा प्रकार (Ch 3)</a>
+  <a href="#ch4">बोली आमंत्रण प्रक्रिया (Ch 4)</a>
+  <a href="#ch5">प्रतिभूतियाँ, मूल्य व भुगतान (Ch 5)</a>
+  <a href="#ch6">बोली मूल्यांकन व कार्य प्रदान (Ch 6)</a>
+  <a href="#ch7">निष्पादन, निगरानी व विवाद समाधान (Ch 7)</a>
+  <a href="#ch8">ठेकेदार पंजीकरण व शासन (Ch 8)</a>
+  <a href="#compare">Goods vs Works — तुलना चार्ट</a>
+  <a href="#rev">One-Page Revision Sheet</a>
+  <a href="#mnem">Memory Tricks</a>
+</div>
+
+<!-- MIND MAP -->
+<div class="section-title" id="intro">🧠 संपूर्ण नियमावली — माइंड मैप</div>
+<div class="card">
+  <div class="mindmap">
+    <div class="mm-node center">Manual for Procurement<br>of Works 2025<br>(8 Chapters + Annexures)</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch1 परिचय</div>
+    <div class="mm-node">Ch2 योजना</div>
+    <div class="mm-node">Ch3 Bidding Design</div>
+    <div class="mm-node">Ch4 Bid Invite</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch5 Securities</div>
+    <div class="mm-node">Ch6 Evaluation-Award</div>
+    <div class="mm-node">Ch7 Execution-Dispute</div>
+    <div class="mm-node">Ch8 ठेकेदार-शासन</div>
+  </div>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>जारीकर्ता</td><td>व्यय विभाग (Department of Expenditure), वित्त मंत्रालय</td></tr>
+    <tr><td>प्रथम संस्करण</td><td>2019 (2022 में अद्यतन)</td></tr>
+    <tr><td>द्वितीय संस्करण (वर्तमान)</td><td>23 दिसंबर 2025, हस्ताक्षरकर्ता: वी. वुअलनम, Secretary (Expenditure)</td></tr>
+    <tr><td>प्रयोज्यता (Applicability)</td><td>मुख्यतः सीमित इंजीनियरिंग क्षमता वाले मंत्रालय/विभाग — ₹60 लाख तक के छोटे मरम्मत कार्य हेतु सीधे मार्गदर्शन; बड़े कार्य PWO/Public Works CPSE के माध्यम से</td></tr>
+    <tr><td>आधार</td><td>GFR 2017, Delegation of Financial Powers Rules (DFPR) 2024, Mediation Act 2023</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Works Manual मुख्यतः किस मूल्य तक के मरम्मत कार्यों हेतु सीधा मार्गदर्शन देता है? (उत्तर: ₹60 लाख तक)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> इस मैनुअल का द्वितीय संस्करण कब जारी हुआ? (उत्तर: 23 दिसंबर 2025)</div>
+
+  <h3 class="micro">Five R's of Procurement <span class="tag co">🟡</span></h3>
+  <p>Right Quality, Right Quantity, Right Source, Right Time, Right Price (Goods Manual के समान सिद्धांत)</p>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="section-title" id="ch2">📘 Chapter 2 — आवश्यकता आकलन व क्रय योजना</div>
+<div class="card">
+  <table>
+    <tr><th>चरण</th><th>दस्तावेज/प्रक्रिया</th></tr>
+    <tr><td>1</td><td>Perspective Planning for Works</td></tr>
+    <tr><td>2</td><td>Preliminary Project Report (PPR) या Rough Cost Estimate तैयार करना</td></tr>
+    <tr><td>3</td><td>आवश्यकता स्वीकृति व In-Principle Approval जारी</td></tr>
+    <tr><td>4</td><td>Detailed Project Report (DPR)/Preliminary Estimates (PE) तैयार करना</td></tr>
+    <tr><td>5</td><td>प्रशासनिक स्वीकृति व व्यय स्वीकृति (A/A and E/S)</td></tr>
+    <tr><td>6</td><td>विस्तृत डिज़ाइन, विस्तृत प्राक्कलन व तकनीकी स्वीकृति (Technical Sanction)</td></tr>
+    <tr><td>7</td><td>निधियों का विनियोजन (Appropriation of Funds)</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "PPR-DPR-AE-TS":</b> प्रारंभिक रिपोर्ट → विस्तृत रिपोर्ट → प्रशासनिक/व्यय स्वीकृति → तकनीकी स्वीकृति — यही क्रम याद रखें</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> PPR का पूर्ण रूप क्या है? (उत्तर: Preliminary Project Report)</div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="section-title" id="ch3">📕 Chapter 3 — बोली डिज़ाइन (Bidding Design) <span class="tag vi" style="color:#fff;background:transparent;border:none;">🔴 सबसे महत्वपूर्ण अध्याय</span></div>
+<div class="card">
+  <h3 class="micro">एजेंसी हेतु क्रय (Agency for Procurement) <span class="tag co">🟡</span></h3>
+  <ul>
+    <li>Public Works Organisations (PWO)</li>
+    <li>Public Works PSU/Organisations</li>
+  </ul>
+
+  <h3 class="micro">संविदा के प्रकार (Types of Contracts) <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>प्रकार</th><th>विवरण</th></tr>
+    <tr><td>Lump Sum (Fixed Price)</td><td>निश्चित कुल मूल्य — मात्रा में परिवर्तन का जोखिम ठेकेदार पर</td></tr>
+    <tr><td>Item Rate (Unit Rate)</td><td>प्रत्येक मद की दर तय, वास्तविक मात्रानुसार भुगतान</td></tr>
+    <tr><td>Percentage Rate</td><td>अनुमानित लागत पर % वृद्धि/कमी के आधार पर बोली</td></tr>
+    <tr><td>Piece Work Agreement</td><td>छोटे, तात्कालिक कार्यों हेतु सरल करार</td></tr>
+    <tr><td>EPC (Engineering, Procurement & Construction)</td><td>डिज़ाइन से निर्माण तक संपूर्ण जिम्मेदारी ठेकेदार की</td></tr>
+    <tr><td>PPP (Public Private Partnership)</td><td>दीर्घकालिक निजी निवेश सहित सार्वजनिक अवसंरचना विकास</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "LIPPEप":</b> Lump sum, Item rate, Percentage rate, Piece work, EPC, PPP — 6 प्रकार</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> कौन सा संविदा प्रकार डिज़ाइन से निर्माण तक की संपूर्ण जिम्मेदारी ठेकेदार को देता है? (उत्तर: EPC Contract)</div>
+
+  <h3 class="micro">ठेकेदार चयन प्रणाली (Systems of Selection) <span class="tag fa">🟠</span></h3>
+  <table>
+    <tr><th>प्रणाली</th><th>पूर्ण नाम</th><th>आधार</th></tr>
+    <tr><td>LCS</td><td>Least Cost Selection</td><td>केवल मूल्य आधारित (Price Based System)</td></tr>
+    <tr><td>QCBS</td><td>Quality and Cost Based Selection</td><td>गुणवत्ता + मूल्य दोनों आधारित</td></tr>
+    <tr><td>SSS</td><td>Single Source Selection</td><td>प्रत्यक्ष चयन — एकल स्रोत</td></tr>
+  </table>
+
+  <h3 class="micro">निविदा मूल्य सीमा तालिका — परीक्षा गोल्ड <span class="tag vi">🔴 Goods से भिन्न सीमा याद रखें</span></h3>
+  <table>
+    <tr><th>मोड</th><th>पूर्ण नाम</th><th>मूल्य सीमा (Works हेतु)</th></tr>
+    <tr><td>LTE</td><td>Limited Tender Enquiry</td><td><span class="penalty-badge">₹10 लाख तक</span> (Goods में यह ₹50 लाख है!)</td></tr>
+    <tr><td>SLTE</td><td>Special LTE</td><td>₹10 लाख से अधिक (विशेष परिस्थिति में)</td></tr>
+    <tr><td>OTE</td><td>Open Tender Enquiry</td><td>₹10 लाख से ऊपर सामान्य नियम (Rule 139(v) व 162 GFR 2017)</td></tr>
+    <tr><td>GTE</td><td>Global Tender Enquiry</td><td>₹200 करोड़ से अधिक (इससे कम में प्रतिबंधित — Goods के समान)</td></tr>
+    <tr><td>STE</td><td>Single Tender Enquiry / Selection by Nomination</td><td>विशेष/एकल स्रोत स्थिति</td></tr>
+    <tr><td>PQB</td><td>Pre-qualification Bidding</td><td>बड़े/जटिल कार्यों हेतु पूर्व-योग्यता जांच</td></tr>
+  </table>
+  <div class="alert">⚠️ अति महत्वपूर्ण अंतर: <b>Works में LTE सीमा ₹10 लाख</b> है जबकि <b>Goods में LTE सीमा ₹50 लाख</b> है — यह सबसे common exam trap है!</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Works Manual में LTE किस मूल्य तक प्रयोग होती है? (उत्तर: ₹10 लाख तक — Goods से भिन्न, वहाँ ₹50 लाख है)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> GTE की प्रतिबंध सीमा दोनों Manuals (Goods व Works) में समान है या भिन्न? (उत्तर: समान — दोनों में ₹200 करोड़)</div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="section-title" id="ch4">📗 Chapter 4 — बोली आमंत्रण प्रक्रिया</div>
+<div class="card">
+  <ul>
+    <li>निविदा दस्तावेज (Tender Documents) — NIT, ITB, GCC/SCC, Schedule of Requirements, Drawing/TS/QAP</li>
+    <li>अनिवार्य e-Publishing (इलेक्ट्रॉनिक प्रकाशन)</li>
+    <li>Pre-NIT व Pre-bid Conference — स्पष्टीकरण हेतु</li>
+    <li>बोली की सीलिंग/मार्किंग (ऑफलाइन निविदाओं में)</li>
+    <li>बोली खोलना (Opening of Bids) — पारदर्शिता सुनिश्चित</li>
+  </ul>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Pre-bid Conference का उद्देश्य क्या है? (उत्तर: निविदा दस्तावेजों पर बोलीदाताओं की शंकाओं का स्पष्टीकरण)</div>
+</div>
+
+<!-- CHAPTER 5 -->
+<div class="section-title" id="ch5">📙 Chapter 5 — प्रतिभूतियाँ, मूल्य, भुगतान शर्तें व मूल्य विचरण <span class="tag vi">🔴 अति महत्वपूर्ण (संख्यात्मक प्रश्न संभावित)</span></div>
+<div class="card">
+  <h3 class="micro">EMD / बिड सिक्योरिटी</h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>दर</td><td>अनुमानित मूल्य का <span class="penalty-badge">2% से 5%</span> (Goods के समान)</td></tr>
+    <tr><td>प्रयोज्यता</td><td>OTE, GTE व SLTE में — LTE में सामान्यतः नहीं</td></tr>
+  </table>
+
+  <h3 class="micro">Performance Guarantee <span class="tag vi">🔴 Goods से भिन्न दर याद रखें</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>दर (Works)</td><td><span class="penalty-badge">3% से 10%</span> संविदा मूल्य का (Goods में यह केवल 3-5% है!)</td></tr>
+    <tr><td>उच्च मूल्य निविदा (>₹50 करोड़)</td><td>प्रतिस्पर्धा बनाए रखने हेतु दर में समायोजन हो सकता है</td></tr>
+    <tr><td>JV (Joint Venture) स्थिति</td><td>सभी भागीदारों को मिलकर BG प्रस्तुत करनी होगी</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "3-5 Goods, 3-10 Works":</b> Performance Security — Goods में 3-5%, Works में 3-10% (Works में ऊपरी सीमा दोगुनी)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Works हेतु Performance Guarantee की दर सीमा क्या है? (उत्तर: 3% से 10% संविदा मूल्य का)</div>
+
+  <h3 class="micro">Security Deposit / Retention Money <span class="tag fa">🟠</span></h3>
+  <ul>
+    <li>अंतिम स्वीकृति तक रोकी गई राशि; EMD को Security Deposit का भाग बनाया जा सकता है</li>
+    <li>ठेकेदार चाहे तो Retention Money को Bank Guarantee से प्रतिस्थापित कर सकता है</li>
+    <li>रिलीज़: आधी राशि सीमा की आधी मात्रा पहुंचने पर + शेष अधिकतम सीमा पहुंचने पर</li>
+    <li>अंतिम आधा भाग — दायित्व पूर्ति के <span class="penalty-badge">60 दिन</span> बाद जारी</li>
+  </ul>
+
+  <h3 class="micro">अग्रिम भुगतान (Advance Payments) <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>प्रकार</th><th>विवरण</th></tr>
+    <tr><td>Mobilisation Advance</td><td>संविदा मूल्य का <span class="penalty-badge">10%</span> (ब्याज सहित) — दो किस्तों में, प्रत्येक <span class="penalty-badge">5%</span></td></tr>
+    <tr><td>प्रथम किस्त</td><td>कार्य प्रारंभ पर + Unconditional BG प्रस्तुति पर</td></tr>
+    <tr><td>द्वितीय किस्त</td><td>10% वित्तीय प्रगति प्रमाणन + BG प्रस्तुति पर</td></tr>
+    <tr><td>Plant/Machinery/Shuttering Advance</td><td>अलग से उपलब्ध, विशेष शर्तों सहित</td></tr>
+    <tr><td>Secured Advance</td><td>साइट पर लाई गई सामग्री के विरुद्ध</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Mobilisation Advance कुल कितने % दिया जाता है और कितनी किस्तों में? (उत्तर: कुल 10%, दो किस्तों में 5%-5%)</div>
+
+  <h3 class="micro">Price Variation, GST व सांविधिक कर <span class="tag co">🟡</span></h3>
+  <p>Price Variation Clause (PVC), GST, आयकर कटौती, सांविधिक विचरण — सभी संविदा शर्तों में स्पष्ट रूप से उल्लिखित होने चाहिए</p>
+</div>
+
+<!-- CHAPTER 6 -->
+<div class="section-title" id="ch6">📔 Chapter 6 — बोली मूल्यांकन व कार्य प्रदान</div>
+<div class="card">
+  <div class="flow">
+    <div class="flow-box">बोली मूल्यांकन प्रक्रिया प्रारंभ — Tender Committee (TC) गठन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">तुलनात्मक विवरण तैयार व सत्यापन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">प्रारंभिक परीक्षण — Unresponsive/Deviations जांच</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">उत्तरदायी बोलियों का Techno-commercial मूल्यांकन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">वित्तीय बोली मूल्यांकन — LCS/QCBS/SSS अनुसार रैंकिंग</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">असामान्य रूप से कम बोली (Abnormally Low Bids) व Cartel जांच</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box" style="border-color:var(--ip-red); color:var(--ip-red);">Letter of Acceptance (LoA) — कार्य प्रदान</div>
+  </div>
+  <h3 class="micro">Tender Committee (TC) संरचना व भूमिका <span class="tag fa">🟠</span></h3>
+  <p>बहु-सदस्यीय समिति — मूल्यांकन में स्वतंत्रता, निष्पक्षता, गोपनीयता व Conflict of Interest से मुक्त रहना अनिवार्य</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> सबसे कम मूल्य वाली बोली को क्या कहते हैं? (उत्तर: L1 बोली/बोलीदाता)</div>
+</div>
+
+<!-- CHAPTER 7 -->
+<div class="section-title" id="ch7">📕 Chapter 7 — निष्पादन, निगरानी व गुणवत्ता आश्वासन <span class="tag vi">🔴 अति महत्वपूर्ण अध्याय</span></div>
+<div class="card">
+  <h3 class="micro">समय निगरानी (Time Monitoring)</h3>
+  <table>
+    <tr><th>अवधारणा</th><th>विवरण</th></tr>
+    <tr><td>Force Majeure (FM)</td><td>अप्रत्याशित घटना (प्राकृतिक आपदा आदि) से कार्य बाधा — दायित्व मुक्ति खंड</td></tr>
+    <tr><td>Extension of Time (EOT)</td><td>वैध कारणों से समय विस्तार</td></tr>
+    <tr><td>Denial Clause</td><td>ठेकेदार की गलती न होने पर देरी हेतु LD न लगाना</td></tr>
+    <tr><td>Time at Large</td><td>जब कोई निश्चित समय सीमा प्रभावी न रह जाए</td></tr>
+  </table>
+
+  <h3 class="micro">Liquidated Damages (LD) — दंड गणना <span class="tag vi">🔴 गणना आधारित प्रश्न संभावित</span></h3>
+  <table>
+    <tr><th>कार्य प्रकार</th><th>दर</th><th>अधिकतम सीमा</th></tr>
+    <tr><td>मरम्मत कार्य (₹20 लाख तक)</td><td><span class="penalty-badge">1% प्रति सप्ताह</span></td><td>5% (सामान्य); 10% (अत्यधिक विलंब में)</td></tr>
+    <tr><td>अन्य सभी कार्य</td><td><span class="penalty-badge">0.5% प्रति सप्ताह</span></td><td>5% (सामान्य); 10% (अत्यधिक विलंब में)</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "1-0.5-5-10":</b> छोटे मरम्मत कार्य (≤₹20L) = 1%/सप्ताह; अन्य कार्य = 0.5%/सप्ताह; सामान्य अधिकतम 5%; अत्यधिक विलंब में अधिकतम 10%</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> ₹20 लाख तक के मरम्मत कार्य में LD की साप्ताहिक दर क्या है? (उत्तर: 1% प्रति सप्ताह, अधिकतम 5%)</div>
+  <div class="exam-q"><b>संभावित गणना प्रश्न:</b> ₹15 लाख के मरम्मत कार्य में 3 सप्ताह विलंब होने पर LD कितना होगा? (उत्तर: 1%×3=3% अर्थात ₹45,000 — 5% सीमा के भीतर)</div>
+
+  <h3 class="micro">Incentive/Bonus (शीघ्र पूर्णता प्रोत्साहन)</h3>
+  <p>प्रति माह <span class="penalty-badge">1%</span> संविदा मूल्य, अधिकतम <span class="penalty-badge">5%</span> तक — कार्यपूर्णता की सूचना 7 दिन में Contract Manager को देनी होगी</p>
+
+  <h3 class="micro">विवाद समाधान (Dispute Resolution) — मध्यस्थता स्लैब <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <table>
+    <tr><th>विवाद राशि</th><th>मध्यस्थ न्यायाधिकरण संरचना</th></tr>
+    <tr><td>₹50 लाख तक</td><td>Sole Arbitrator (एकल मध्यस्थ)</td></tr>
+    <tr><td>₹50 लाख से ₹1 करोड़ तक</td><td>Sole Arbitrator — कार्यरत अधिकारी हो सकता है</td></tr>
+    <tr><td>₹1 करोड़ से अधिक</td><td>3-सदस्यीय पैनल (Panel of three)</td></tr>
+  </table>
+  <table>
+    <tr><th>समय-सीमा</th><th>अवधि</th></tr>
+    <tr><td>सोल आर्बिट्रेटर नियुक्ति</td><td>लिखित सूचना से <span class="penalty-badge">60 दिन</span> के भीतर</td></tr>
+    <tr><td>Tribunal नियुक्ति (नामांकन प्राप्ति पर)</td><td><span class="penalty-badge">30 दिन</span> के भीतर</td></tr>
+    <tr><td>Arbitral Award देना</td><td>Reference प्रारंभ से <span class="penalty-badge">12 माह</span> के भीतर (सांविधिक बाध्यता)</td></tr>
+    <tr><td>Fast Track Arbitration हेतु समझौता</td><td><span class="penalty-badge">6 माह</span> में</td></tr>
+    <tr><td>Sole Arbitrator अतिरिक्त शुल्क</td><td>सामान्य शुल्क से <span class="penalty-badge">25% अधिक</span></td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> ₹1 करोड़ से अधिक के विवाद में Arbitral Tribunal की संरचना क्या होगी? (उत्तर: 3-सदस्यीय पैनल)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Arbitral Tribunal को अवार्ड कितने माह में देना अनिवार्य है? (उत्तर: 12 माह, संदर्भ प्रारंभ से)</div>
+  <div class="alert">⚠️ प्रक्रिया क्रम: Disputes → Adjudication → Mediation (Mediation Act 2023) → Arbitration (आवश्यकतानुसार) → Challenge in Court</div>
+
+  <h3 class="micro">संविदा भंग व समाप्ति (Breach & Termination)</h3>
+  <table>
+    <tr><th>प्रकार</th><th>कारण</th></tr>
+    <tr><td>Termination for Default</td><td>ठेकेदार की चूक/असफलता पर</td></tr>
+    <tr><td>Termination for Insolvency</td><td>ठेकेदार के दिवालिया होने पर</td></tr>
+    <tr><td>Determination for Convenience</td><td>Procuring Entity की सुविधा हेतु</td></tr>
+    <tr><td>Frustration of Contract</td><td>अप्रत्याशित परिस्थिति से संविदा असंभव होने पर</td></tr>
+  </table>
+</div>
+
+<!-- CHAPTER 8 -->
+<div class="section-title" id="ch8">📓 Chapter 8 — ठेकेदार पंजीकरण व शासन विषय <span class="tag fa">🟠</span></div>
+<div class="card">
+  <h3 class="micro">Code of Integrity for Public Procurement (CIPP)</h3>
+  <p>सत्यनिष्ठा संहिता — सक्रिय प्रकटीकरण दायित्व व दंडात्मक प्रावधान शामिल</p>
+
+  <h3 class="micro">Integrity Pact (IP)</h3>
+  <p>बड़े मूल्य के कार्यों में भ्रष्टाचार-निवारण करार</p>
+
+  <h3 class="micro">Debarment of Contractors <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <p>GFR प्रावधानों व Debarment Guidelines अनुसार — अधिकतम अवधि सामान्यतः <span class="penalty-badge">3 वर्ष</span> (Goods Manual के समान सिद्धांत)</p>
+
+  <h3 class="micro">नए स्रोतों का विकास व ठेकेदार पंजीकरण/Enlistment</h3>
+  <p>ठेकेदार Relationship Management, ग्रीवेंस निवारण व Indian Agents का Enlistment भी शामिल</p>
+</div>
+
+<!-- DECISION TREE -->
+<div class="section-title">🌳 निर्णय वृक्ष — कौन-सा निविदा मोड चुनें? (Works)</div>
+<div class="card dtree">
+  <div class="q">कार्य का अनुमानित मूल्य कितना है?</div>
+  <div class="branch">
+    <div class="ans">✅ ₹10 लाख तक → LTE (Limited Tender Enquiry)</div>
+    <div class="ans">✅ ₹10 लाख से अधिक → OTE (Open Tender Enquiry) सामान्य नियम</div>
+    <div class="ans">⚠️ ₹200 करोड़ से ऊपर (व आयात/विशेष तकनीक आवश्यक) → GTE संभव</div>
+    <div class="ans">🔧 ₹60 लाख तक की मरम्मत → सरलीकृत Manual प्रक्रिया सीधे लागू</div>
+  </div>
+  <div class="q">क्या कार्य की प्रकृति जटिल/बड़ी है, पूर्व-योग्यता आवश्यक?</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ → PQB (Pre-Qualification Bidding)</div>
+    <div class="ans">❌ नहीं → सामान्य Single-Stage Tendering</div>
+  </div>
+</div>
+
+<!-- COMPARISON: GOODS vs WORKS -->
+<div class="section-title" id="compare">⚖️ Goods Manual बनाम Works Manual — तुलना चार्ट <span class="tag vi">🔴 अति महत्वपूर्ण Exam Trap</span></div>
+<div class="card">
+  <div class="compare">
+    <div class="old"><div class="hd">📦 Goods Manual (2024)</div>LTE सीमा = ₹50 लाख तक</div>
+    <div class="new"><div class="hd">🏗️ Works Manual (2025)</div>LTE सीमा = ₹10 लाख तक</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">📦 Goods</div>Performance Security = 3% से 5%</div>
+    <div class="new"><div class="hd">🏗️ Works</div>Performance Security = 3% से 10%</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">📦 Goods</div>Retention Money की अवधारणा नहीं (सीधे PBG)</div>
+    <div class="new"><div class="hd">🏗️ Works</div>Security Deposit/Retention Money — बिलों से कटौती द्वारा भी संभव</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">📦 Goods</div>Mobilisation Advance की व्यवस्था सामान्यतः नहीं</div>
+    <div class="new"><div class="hd">🏗️ Works</div>Mobilisation Advance = 10% (दो किस्तों में 5%-5%)</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">📦 Goods</div>GTE सीमा = ₹200 करोड़ (समान)</div>
+    <div class="new"><div class="hd">🏗️ Works</div>GTE सीमा = ₹200 करोड़ (समान — कोई अंतर नहीं)</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">📦 Goods</div>EMD दर = 2% से 5% (समान)</div>
+    <div class="new"><div class="hd">🏗️ Works</div>EMD दर = 2% से 5% (समान — कोई अंतर नहीं)</div>
+  </div>
+</div>
+
+<!-- AUTHORITIES TABLE -->
+<div class="section-title">👮 महत्वपूर्ण प्राधिकारी / Authorities <span class="tag fa">🟠</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्राधिकारी</th><th>भूमिका</th></tr>
+    <tr><td>Competent Authority (CA)</td><td>व्यय स्वीकृति व निर्णय हेतु सक्षम प्राधिकारी</td></tr>
+    <tr><td>Public Works Organisation (PWO)</td><td>बड़े कार्यों का निष्पादन एजेंसी</td></tr>
+    <tr><td>Contract Manager</td><td>PWO/PSU प्रतिनिधि — कार्यपूर्णता रिपोर्टिंग हेतु उत्तरदायी</td></tr>
+    <tr><td>Tender Committee (TC)</td><td>बोली मूल्यांकन व कार्य प्रदान संस्तुति</td></tr>
+    <tr><td>Appointing Authority (Arbitration)</td><td>मध्यस्थ पैनल भेजने व नियुक्ति हेतु उत्तरदायी</td></tr>
+    <tr><td>Sole Arbitrator</td><td>₹1 करोड़ तक के विवादों हेतु — कार्यरत अधिकारी हो सकता है</td></tr>
+  </table>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet — Last Day Revision</h2>
+  <div class="rev-grid">
+    <div class="rev-item">🔴 द्वितीय संस्करण — 23 दिसंबर 2025, वी. वुअलनम (Secretary, Expenditure)</div>
+    <div class="rev-item">🔴 प्रयोज्यता: सीमित इंजीनियरिंग क्षमता विभाग, ₹60 लाख तक मरम्मत कार्य सीधे</div>
+    <div class="rev-item">🔴 LTE = ₹10 लाख तक (Goods में ₹50 लाख — भ्रमित न हों!)</div>
+    <div class="rev-item">🔴 GTE प्रतिबंध = ₹200 करोड़ तक (Goods व Works दोनों में समान)</div>
+    <div class="rev-item">🔴 EMD = 2-5% (Goods समान) | Performance Guarantee = 3-10% (Goods से भिन्न, वहाँ 3-5%)</div>
+    <div class="rev-item">🔴 Mobilisation Advance = कुल 10%, दो किस्तों में 5%-5%</div>
+    <div class="rev-item">🔴 LD: मरम्मत (≤₹20L) = 1%/सप्ताह; अन्य = 0.5%/सप्ताह; अधिकतम 5% (सामान्य)/10% (अत्यधिक विलंब)</div>
+    <div class="rev-item">🔴 Incentive/Bonus = 1%/माह, अधिकतम 5%; पूर्णता सूचना 7 दिन में देनी होगी</div>
+    <div class="rev-item">🟠 Arbitration: ₹1 करोड़ तक Sole Arbitrator; ₹1 करोड़ से अधिक 3-सदस्यीय पैनल</div>
+    <div class="rev-item">🟠 Arbitrator नियुक्ति = 60 दिन (सोल); Tribunal = 30 दिन में नियुक्ति प्रक्रिया पूर्ण</div>
+    <div class="rev-item">🟠 Award समय-सीमा = Reference से 12 माह के भीतर (सांविधिक बाध्यता)</div>
+    <div class="rev-item">🟡 संविदा प्रकार: Lump Sum, Item Rate, Percentage Rate, Piece Work, EPC, PPP</div>
+    <div class="rev-item">🟡 चयन प्रणाली: LCS (मूल्य), QCBS (गुणवत्ता+मूल्य), SSS (एकल स्रोत)</div>
+    <div class="rev-item">🟢 Retention Money — आधा-आधा भाग रिलीज़; अंतिम भाग दायित्व पूर्ति के 60 दिन बाद</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section-title" id="mnem">🧠 Memory Tricks / Mnemonics</div>
+<div class="card">
+  <div class="mnemonic">
+    <b>1️⃣ अध्याय क्रम "IPBBSEER":</b><br>
+    Intro → Planning → Bidding-design → Bid-invite → Securities → Evaluation-award → Execution-dispute → Registration(ठेकेदार)
+  </div>
+  <div class="mnemonic">
+    <b>2️⃣ Works vs Goods threshold "10 बनाम 50":</b><br>
+    Works में LTE = 10 लाख (छोटा अंक); Goods में LTE = 50 लाख (बड़ा अंक) — "Works छोटा, Goods बड़ा" याद रखें
+  </div>
+  <div class="mnemonic">
+    <b>3️⃣ Performance Security "3-5 Goods, 3-10 Works":</b> Works का ऊपरी सीमा अंक (10) ही उसका LTE निचला अंक जैसा उल्टा है — विशेष याद
+  </div>
+  <div class="mnemonic">
+    <b>4️⃣ LD दर "1-0.5, 5-10":</b> छोटे मरम्मत कार्य दर बड़ी (1%), बाकी दर आधी (0.5%); सामान्य सीमा 5%, विशेष सीमा दोगुनी (10%)
+  </div>
+  <div class="mnemonic">
+    <b>5️⃣ Arbitration "50L-1Cr-3":</b> ₹50 लाख से ₹1 करोड़ तक भी Sole Arbitrator; ₹1 करोड़ पार होते ही "3" सदस्यीय पैनल — "1 करोड़ पार, 3 का प्रहार"
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<div class="section-title">✅ Quick Revision Points <span class="tag qr">🟢</span></div>
+<div class="card">
+  <ul>
+    <li>Works Manual, Goods Manual का पूरक है — सामान्य विषयों हेतु Goods Manual (2024) को संदर्भ के रूप में देखने का सुझाव दिया गया है</li>
+    <li>Manual GFR 2017, DFPR 2024 व Mediation Act 2023 सहित नवीनतम कानूनी विकास पर आधारित है</li>
+    <li>Major engineering organisations (जिनकी स्वयं की स्थापित प्रक्रिया है) अपनी विभागीय प्रक्रिया जारी रख सकते हैं</li>
+    <li>Cartel Formation/Pool Rates की पहचान व Abnormally Low Bids पर विशेष ध्यान आवश्यक</li>
+    <li>Force Majeure व Time at Large जैसी अवधारणाएँ ठेकेदार को विलंब के दायित्व से बचाती हैं जब देरी उसके नियंत्रण से बाहर हो</li>
+    <li>Dispute Resolution प्रक्रिया क्रम: Disputes → Adjudication → Mediation → Arbitration → Court Challenge</li>
+    <li>CPSEs व सरकारी एजेंसियों के बीच वाणिज्यिक विवादों हेतु पृथक तंत्र (Permanent Machinery of Arbitration - PMA) उपलब्ध</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  📚 India Post IP Exam Preparation Portal | Manual for Procurement of Works, Second Edition 2025<br>
+  यह इन्फोग्राफिक केवल परीक्षा तैयारी हेतु सारांश है — मूल मैनुअल (299 पृष्ठ) का पूर्ण अध्ययन आवश्यक
+</div>
+
+</div>
+
+<button class="pdf-btn" onclick="window.print()" title="PDF Download">⬇</button>
+
+</body>
+</html>

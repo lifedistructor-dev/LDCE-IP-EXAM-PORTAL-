@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Financial Handbook Vol-I (2022) — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E; --red-dk:#8f0b20; --blue:#003087; --blue-lt:#e8edfb; --gold:#D4AF37;
+  --t1:#C8102E; --t1-bg:#fdeaec;
+  --t2:#e8720c; --t2-bg:#fef1e2;
+  --t3:#c9a400; --t3-bg:#fdf8e0;
+  --t4:#158a4b; --t4-bg:#e6f6ec;
+  --ink:#1c1f2b; --sub:#5b6172; --paper:#faf9f6; --card:#ffffff; --line:#e4e2da;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Sans Devanagari","Noto Sans",-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.55; font-size:16px; padding-bottom:60px;
+}
+h1,h2,h3,h4{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif; margin:0 0 8px; color:var(--blue);}
+a{color:var(--blue);}
+.wrap{max-width:900px; margin:0 auto; padding:0 14px;}
+
+.hero{
+  background:linear-gradient(135deg,var(--blue) 0%, #001c54 100%);
+  color:#fff; padding:34px 16px 26px; position:relative; overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+.hero::after{
+  content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px;
+  background:radial-gradient(circle, rgba(200,16,46,.55) 0%, rgba(200,16,46,0) 70%);
+}
+.hero .kicker{color:var(--gold); letter-spacing:.12em; font-size:12.5px; font-weight:700; text-transform:uppercase;}
+.hero h1{color:#fff; font-size:1.5rem; margin:6px 0 6px; line-height:1.3;}
+.hero p{color:#dfe6f7; font-size:14.5px; max-width:640px; margin:0;}
+.legend{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+.legend span{
+  font-size:12.5px; font-weight:600; padding:5px 10px; border-radius:20px; background:rgba(255,255,255,.12);
+  color:#fff; border:1px solid rgba(255,255,255,.25);
+}
+
+.jumpnav{
+  position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--line);
+  box-shadow:0 2px 8px rgba(0,0,0,.06); padding:8px 10px; overflow-x:auto; white-space:nowrap;
+}
+.jumpnav a{
+  display:inline-block; font-size:12px; font-weight:700; color:var(--blue); text-decoration:none;
+  background:var(--blue-lt); padding:6px 10px; border-radius:20px; margin-right:6px;
+}
+.jumpnav a:active{background:var(--gold); color:#3a2c00;}
+
+main{padding-top:16px;}
+
+.chapter{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  margin:14px 0; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.chapter > summary{
+  list-style:none; cursor:pointer; padding:13px 16px; display:flex; align-items:center; gap:10px;
+  background:linear-gradient(90deg,var(--blue) 0%,#0a3d99 100%); color:#fff; font-weight:700; font-size:.98rem;
+}
+.chapter > summary::-webkit-details-marker{display:none;}
+.chapter > summary .num{
+  background:var(--gold); color:#3a2c00; font-weight:800; font-size:12.5px; border-radius:8px;
+  padding:3px 8px; flex:none;
+}
+.chapter > summary::after{content:"▾"; margin-left:auto; transition:transform .2s;}
+.chapter[open] > summary::after{transform:rotate(180deg);}
+.chapter-body{padding:14px 16px 18px;}
+
+.subchap{margin:16px 0 6px; padding-left:10px; border-left:4px solid var(--blue);}
+.subchap h3{font-size:1rem; margin-bottom:2px;}
+.micro{margin:10px 0 10px 6px; padding-left:10px; border-left:3px dashed var(--gold);}
+.micro h4{font-size:.92rem; color:var(--red-dk); margin-bottom:4px;}
+.nano{font-size:.89rem; color:var(--sub); margin:4px 0 4px 8px;}
+
+.tier{
+  display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:800;
+  padding:2px 8px; border-radius:12px; margin:2px 6px 2px 0; white-space:nowrap;
+}
+.t1{background:var(--t1-bg); color:var(--t1);}
+.t2{background:var(--t2-bg); color:var(--t2);}
+.t3{background:var(--t3-bg); color:var(--t3);}
+.t4{background:var(--t4-bg); color:var(--t4);}
+
+ul.points{margin:6px 0 10px; padding-left:20px;}
+ul.points li{margin:5px 0;}
+
+.table-wrap{overflow-x:auto; margin:10px 0 14px; border:1px solid var(--line); border-radius:10px;}
+table{border-collapse:collapse; width:100%; min-width:460px; font-size:13px;}
+table caption{text-align:left; font-weight:700; color:var(--blue); padding:8px 10px; background:var(--blue-lt); caption-side:top;}
+th,td{padding:7px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top;}
+th{background:#f2f1eb; color:var(--blue); font-weight:700; font-size:12.3px;}
+tr:last-child td{border-bottom:none;}
+tr:nth-child(even) td{background:#fbfaf7;}
+
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:12px 0;}
+.flow .node{
+  background:var(--blue-lt); border:1px solid #c7d3f0; color:var(--blue); font-weight:700; font-size:12.3px;
+  padding:9px 12px; border-radius:10px; text-align:center; flex:1 1 120px; min-width:105px;
+}
+.flow .arrow{color:var(--gold); font-size:20px; font-weight:900; flex:none;}
+.flow.vertical{flex-direction:column; align-items:stretch;}
+.flow.vertical .arrow{align-self:center;}
+
+.dtree{margin:12px 0; font-size:13.3px;}
+.dtree .q{background:var(--t2-bg); border-left:4px solid var(--t2); padding:8px 10px; border-radius:8px; font-weight:700; margin-bottom:6px;}
+.dtree .branch{display:flex; gap:8px; margin:6px 0 6px 14px; flex-wrap:wrap;}
+.dtree .branch > div{
+  flex:1 1 160px; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 10px;
+}
+.dtree .branch .yes{border-top:3px solid var(--t4);}
+.dtree .branch .no{border-top:3px solid var(--t1);}
+
+.qbox{
+  background:#fff7e6; border:1px dashed var(--gold); border-radius:10px; padding:8px 12px; margin:8px 0;
+  font-size:12.6px; color:#5a4400;
+}
+.qbox b{color:var(--red-dk);}
+
+.callout{border-radius:10px; padding:10px 12px; margin:10px 0; font-size:13.4px;}
+.callout.warn{background:var(--t1-bg); border:1px solid var(--t1); color:var(--red-dk);}
+.callout.info{background:var(--blue-lt); border:1px solid #b7c6ef; color:var(--blue);}
+.callout.tip{background:var(--t4-bg); border:1px solid var(--t4); color:#0d5c33;}
+
+.revsheet{background:linear-gradient(135deg,#fff 0%, #fff9ea 100%); border:2px solid var(--gold);}
+.grid2{display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+.minicard{background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+.minicard h4{font-size:.9rem; color:var(--red-dk); margin-bottom:4px;}
+
+.mnemo{
+  background:#fdf1ea; border-left:5px solid var(--red); border-radius:8px; padding:10px 12px; margin:8px 0; font-size:13.4px;
+}
+.mnemo b{color:var(--red-dk);}
+
+footer{max-width:900px; margin:24px auto 0; padding:0 14px; text-align:center; color:var(--sub); font-size:12px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Department of Posts · IP Exam Preparation</div>
+    <h1>📘 Postal Financial Handbook Vol-I (2022) — विज़ुअल इन्फोग्राफिक</h1>
+    <p>17 Chapters + महत्वपूर्ण Appendices — Receipt/Payment of Money, Cash, Establishment, Contingent Charges, Sanctions, Deposits, GPF, Purchase of Stores का सम्पूर्ण परीक्षा-केंद्रित सारांश।</p>
+    <div class="legend">
+      <span>🔴 अति महत्वपूर्ण</span>
+      <span>🟠 बार-बार पूछा गया</span>
+      <span>🟡 कॉन्सेप्ट समझें</span>
+      <span>🟢 क्विक रिवीज़न</span>
+    </div>
+  </div>
+</div>
+
+<nav class="jumpnav">
+  <a href="#ch1">Ch1</a><a href="#ch2">Ch2</a><a href="#ch3">Ch3</a><a href="#ch4">Ch4</a>
+  <a href="#ch5">Ch5</a><a href="#ch6">Ch6</a><a href="#ch7">Ch7</a><a href="#ch8">Ch8</a>
+  <a href="#ch9">Ch9</a><a href="#ch10">Ch10</a><a href="#ch11">Ch11</a><a href="#ch12">Ch12</a>
+  <a href="#ch13">Ch13</a><a href="#ch14">Ch14</a><a href="#ch15">Ch15</a><a href="#ch16">Ch16</a>
+  <a href="#ch17">Ch17</a><a href="#appendix">Appendix</a>
+  <a href="#revision">📋 Sheet</a><a href="#mnemonics">🧠</a><a href="#lastday">⏰</a>
+</nav>
+
+<main class="wrap">
+
+<!-- CHAPTER I -->
+<details class="chapter" id="ch1" open>
+<summary><span class="num">CH 1</span> Introductory — परिभाषाएँ</summary>
+<div class="chapter-body">
+  <div class="subchap">
+    <h3>Rule 1–3: महत्वपूर्ण परिभाषाएँ <span class="tier t2">🟠 बार-बार पूछा गया</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>शब्द</th><th>अर्थ</th></tr></thead>
+      <tbody>
+        <tr><td>Accounts Officer</td><td>Head of an Office of Accounts</td></tr>
+        <tr><td>The Secretary</td><td>Secretary, Department of Posts</td></tr>
+        <tr><td>The Director General</td><td>DG, Department of Posts (राष्ट्रपति द्वारा घोषित Head of Department)</td></tr>
+        <tr><td>Head of a Circle (HoC)</td><td>Chief Postmaster General या Competent Authority द्वारा घोषित कोई अन्य अधिकारी</td></tr>
+        <tr><td>The Government</td><td>Central Government</td></tr>
+        <tr><td>Treasury</td><td>Sub-Treasury सहित; वह Bank भी जो Treasury का cash business करती है</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Head of Department (Postal) को राष्ट्रपति ने किसे घोषित किया है? — उत्तर: <b>Director-General, Department of Posts</b></div>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER II -->
+<details class="chapter" id="ch2">
+<summary><span class="num">CH 2</span> General Principles and Rules (सबसे बड़ा व स्कोरिंग चैप्टर)</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>A. Receipt of Money <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Rule 4 — सभी सरकारी धन बिना किसी देरी के Treasury/Bank में जमा होना अनिवार्य; विभागीय receipts को विभागीय expenditure में समायोजित करना <b>निषिद्ध</b> (सिवाय Postmaster की Rule 4(a) छूट)।</li>
+      <li>Rule 5 — Article 284, संविधान: राजस्व के अतिरिक्त सभी धन Public Account में जमा होगा।</li>
+      <li>Rule 8 — प्राप्ति पर हस्ताक्षरित receipt/e-receipt (eACG-67) देना अनिवार्य; अब digital ACG-67 ही प्रयोग में है।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>B. Payment of Money <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <ul class="points">
+      <li>Rule 15 — बिना sanction व grant में provision के कोई भी प्राधिकारी व्यय नहीं कर सकता (Golden Rule)।</li>
+      <li>Rule 24 — Arrear Claims: दावा 2 वर्ष के भीतर पेश न होने पर Circle Accounts Officer की authority चाहिए; ₹500 तक 3 वर्ष के भीतर बिना pre-check भुगतान हो सकता है।</li>
+      <li>Rule 27 — 2 वर्ष से अधिक पुराने वेतन/भत्ता दावे: 2-6 वर्ष के लिए HoD approval; 6 वर्ष से अधिक के लिए भी HoD approval (records उपलब्ध हों तो)।</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+      <caption>महत्वपूर्ण Claim Time Limits</caption>
+      <thead><tr><th>दावा प्रकार</th><th>समय-सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>TA/Daily Allowance (Rule 25A)</td><td>60 दिन के भीतर, अन्यथा forfeit (GFR Rule 290)</td></tr>
+        <tr><td>LTC — advance लिया हो</td><td>30 दिन के भीतर दावा (न देने पर 1 माह में advance वापसी अनिवार्य)</td></tr>
+        <tr><td>LTC — advance न लिया हो</td><td>60 दिन के भीतर दावा</td></tr>
+        <tr><td>LTC Relaxation (DoPT delegated)</td><td>बिना advance: 6 माह तक; advance सहित: 3 माह (advance 45 दिन में वापस)</td></tr>
+        <tr><td>Railway Over/Under-charge Claims</td><td>6 माह के भीतर</td></tr>
+        <tr><td>Arrear pay/allowances (general)</td><td>2 वर्ष; 2–6 वर्ष के लिए HoD approval आवश्यक</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="mnemo">🧠 <b>Trick:</b> "60-30-60-6" — TA claim 60 दिन, LTC advance claim 30 दिन, LTC no-advance claim 60 दिन, Railway claim 6 माह।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>Losses, Defalcations व Financial Propriety <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <ul class="points">
+      <li>Rule 51 — Stock losses का वार्षिक विवरण हर वर्ष <b>15 मई</b> तक Accounts Office भेजना अनिवार्य।</li>
+      <li>Rule 52 — Petty case exception: ₹10,000 तक के defalcation/loss cases Audit Officer को report करना अनिवार्य नहीं (half-yearly statement भेजें)।</li>
+      <li>Rule 57 — "Serious Loss" = ₹50,000 से अधिक मूल्य की immovable property की हानि (आग/बाढ़/भूकंप आदि से) — इसकी सूचना Government/Audit Office को देना अनिवार्य।</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+      <caption>Loss/Fraud Investigation के Monetary Limits (Revised)</caption>
+      <thead><tr><th>Investigating Officer</th><th>Revised सीमा (₹)</th></tr></thead>
+      <tbody>
+        <tr><td>Inspector Posts/ASP</td><td>₹1 lakh तक</td></tr>
+        <tr><td>Divisional Heads/Sr.PM/Chief PM</td><td>₹1 lakh से ₹2 lakh</td></tr>
+        <tr><td>Asst. Director/APMG (Circle/Region)</td><td>₹2 lakh से ₹5 lakh</td></tr>
+        <tr><td>Director/PMG/CPMG</td><td>₹5 lakh से ऊपर</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="callout warn">₹5 lakh से अधिक के सभी loss/fraud cases <b>ADG (Investigation)</b> को तुरंत report करने होंगे।</div>
+    <h4>Standards of Financial Propriety (Rule 60 / GFR Rule 21) <span class="tier t1">🔴</span></h4>
+    <ul class="points">
+      <li>अपने पैसे जैसी ही सावधानी सरकारी धन खर्च करने में बरतें।</li>
+      <li>व्यय अवसर से अधिक नहीं होना चाहिए।</li>
+      <li>कोई भी प्राधिकारी स्वयं के लाभ हेतु आदेश पारित न करे।</li>
+      <li>सार्वजनिक धन किसी विशेष व्यक्ति के लाभ हेतु प्रयोग न हो (सिवाय कानूनी दावे या मान्यता प्राप्त नीति के)।</li>
+      <li>भत्ते लाभ का स्रोत न बनें।</li>
+    </ul>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Standards of Financial Propriety किस GFR Rule में निहित हैं? — उत्तर: <b>Rule 21, GFR 2017</b></div>
+  </div>
+
+  <div class="subchap">
+    <h3>अन्य महत्वपूर्ण बिंदु <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>Rule 48 — ₹5,000 से अधिक की receipt पर Revenue Stamp अनिवार्य (Indian Stamp Act, Section 3)।</li>
+      <li>Rule 63 — Cash Book/Register में erasure/over-writing सख्त निषिद्ध; गलत entry को लाल स्याही से काटें।</li>
+      <li>Rule 69 — Audit objection लंबित रिकॉर्ड को destroy न करें; Register ACG-91 में destruction record रखें।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER III -->
+<details class="chapter" id="ch3">
+<summary><span class="num">CH 3</span> General Outlines of the System of Accounts</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t3">🟡</span> Department of Posts एक <b>Commercial Department</b> के रूप में मान्यता प्राप्त है।</li>
+    <li>Major Head <b>1201</b> — Postal Receipts</li>
+    <li>Major Head <b>3201</b> — Postal Services (Expenditure); उप-मद: 01-General Administration, 02-Operation, 03-Agency Services, 04-Audit & Accounts, 05-Engineering, 06-Amenities, 07-Pension, 08-Stationery & Printing</li>
+    <li>Major Head <b>5201</b> — Capital Outlay on Postal Services</li>
+    <li>Major Head <b>8553</b> — Postal Advances (defalcation losses पहले इसमें charge होते हैं)</li>
+  </ul>
+  <div class="mnemo">🧠 <b>Trick:</b> "1201-Receipt, 3201-Service, 5201-Capital" — पहले अंक बढ़ते क्रम में हैं और आखिरी दो अंक 01 सभी में समान।</div>
+</div>
+</details>
+
+<!-- CHAPTER IV -->
+<details class="chapter" id="ch4">
+<summary><span class="num">CH 4</span> Relations with Audit</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t2">🟠</span> देश में 23 Circle Postal Account Offices हैं, जिनका नेतृत्व GM(PA&F)/Director of Accounts/Dy. Director of Accounts (Postal) करते हैं। बाहरी Audit — Statutory Audit Authority — P&T Audit द्वारा CAG के अधीन।</li>
+    <li>Rule 82 — Objection Statement/Audit Memorandum मिलने पर Disbursing Officer को <b>fortnight (15 दिन)</b> में जवाब देना अनिवार्य।</li>
+    <li>Rule 83, Note 3 — Retrenchment के विरुद्ध representation, सूचना मिलने के <b>3 माह</b> बाद सामान्यतः विचारणीय नहीं।</li>
+    <li>Rule 84 — Recovery सामान्यतः वेतन के <b>1/3 से अधिक दर</b> पर नहीं की जाती।</li>
+    <li>Rule 85 — Register ACG-60 में retrenchment दर्ज; Head of Office हर माह कम से कम <b>10% entries</b> जाँचकर initial करेगा।</li>
+  </ul>
+  <div class="subchap">
+    <h3>Audit Inspection Reports — 3 भाग <span class="tier t3">🟡</span></h3>
+    <div class="flow">
+      <div class="node">Part I — Introductory + पुरानी objections</div>
+      <div class="arrow">→</div>
+      <div class="node">Part II — महत्वपूर्ण अनियमितताएँ (Section A व B)</div>
+      <div class="arrow">→</div>
+      <div class="node">Part III — Test Audit Note (छोटी अनियमितताएँ)</div>
+    </div>
+    <p class="nano">Head of Office को Part I व II का जवाब जारी होने के <b>1 माह</b> के भीतर देना अनिवार्य।</p>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER V -->
+<details class="chapter" id="ch5">
+<summary><span class="num">CH 5</span> Cash</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li>Rule 100 — "Cash" में legal tender coins, currency/Bank notes, Treasury certificates, cheque व demand draft शामिल; Government Securities/Bank Guarantee <b>cash नहीं</b> मानी जातीं। डाक टिकट/स्टेशनरी भी cash नहीं, वे Stock हैं।</li>
+    <li>Rule 102 — Treasure Chest में <b>दो अलग-अलग तालों</b> से सुरक्षा; दोनों चाबियाँ अलग-अलग व्यक्तियों के पास।</li>
+    <li>Rule 107 — Cheque स्वीकृति की शर्तें: राशि <b>₹20 से कम नहीं</b> होनी चाहिए; Bank guarantee हर <b>3 वर्ष</b> में नवीनीकृत हो।</li>
+  </ul>
+  <div class="subchap">
+    <h3>Cash Book — Upkeep, Verification, Balancing <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Rule 115 — Cash Book में erasure सख्त निषिद्ध; गलती लाल स्याही में सुधारें और dated initial करें।</li>
+      <li>Rule 116 — Cash Book माह के अंत में Disbursing Officer द्वारा हस्ताक्षरित हो; Head Office Cash Book प्रतिदिन Postmaster द्वारा हस्ताक्षरित।</li>
+      <li>Rule 119 — Cash Book को महीने के प्रत्येक निर्धारित दिन पर बंद/balance करना अनिवार्य; भारी लेन-देन में साप्ताहिक/दैनिक balancing recommended।</li>
+      <li>Rule 123 — Inspecting Officers Head Post Office की cash verification कर Form ACG-84 में मासिक रिपोर्ट भेजते हैं।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER VI -->
+<details class="chapter" id="ch6">
+<summary><span class="num">CH 6</span> Supply of Funds and Other Remittance Transactions</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li>Rule 124 — प्रत्येक Post Office का cash balance न्यूनतम/अधिकतम सीमा के भीतर रखा जाए; अधिकतम सीमा पार होते ही surplus Treasury/Bank में जमा हो।</li>
+    <li>Rule 126, Note 1 — Drawing Account खोलने की Authority जारी होने की तारीख से <b>3 माह</b> तक वैध; अनुपयोग पर नई authority जारी होगी।</li>
+  </ul>
+  <div class="subchap">
+    <h3>Imprest (Cash Advance) नियम <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <ul class="points">
+      <li>Rule 139(1) — एक समय पर अधिकतम Imprest Certificate राशि <b>₹250</b>; असाधारण स्थिति में एक से अधिक ₹250 के certificates एक साथ निकाले जा सकते हैं।</li>
+      <li>Rule 139(2) — Imprest आधा से थोड़ा अधिक कम होते ही, बिना देरी नया certificate प्रस्तुत करें।</li>
+      <li>Rule 142 — जब office का cash balance स्वीकृत Imprest से <b>₹10 से अधिक</b> हो, अतिरिक्त राशि तुरंत Post Office में remit करें।</li>
+    </ul>
+    <div class="mnemo">🧠 <b>Trick:</b> "250-10" — Imprest की अधिकतम एक-बार निकासी ₹250; उससे ₹10 अधिक होने पर तुरंत जमा।</div>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER VII -->
+<details class="chapter" id="ch7">
+<summary><span class="num">CH 7</span> Revenue and Miscellaneous Receipts</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t3">🟡</span> Rule 162 — उच्च अधिकारियों हेतु विशेष डाक सुविधा पर अतिरिक्त व्यय Circle में <b>₹50 से कम न हो</b> तो recover किया जाता है; ₹50 से अधिक होने पर विस्तृत बिल तैयार होता है।</li>
+    <li>Rule 163 — Franking Machine से postage भुगतान; अब "Remotely Managed Franking Machine" (Chapter XXII, Postal Accounts Manual) से जुड़ा है।</li>
+    <li>Rule 168 — Retail Post: 1,50,000+ Post Offices नेटवर्क से बिजली बिल, tax, अन्य bill collection सेवाएँ।</li>
+  </ul>
+  <div class="callout tip">🟢 Quick Revision Trivia: Aadhaar Updation चार्ज = ₹50 (18% GST सहित)। Retail Post के अंतर्गत Sabarimala Prasadam, Vaishno Devi Prasad जैसी "Holy Blessings" सेवाएँ भी शामिल हैं — trivia MCQ में पूछी जा सकती हैं।</div>
+</div>
+</details>
+
+<!-- CHAPTER VIII -->
+<details class="chapter" id="ch8">
+<summary><span class="num">CH 8</span> Pay and Allowances — General Rules</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t1">🔴</span> Rule 169 — वेतन माह के अंतिम कार्यदिवस को देय; परंतु <b>मार्च माह का वेतन अप्रैल के प्रथम कार्यदिवस को</b> देय होता है — यह क्लासिक ट्रैप है।</li>
+    <li>Rule 188 — मृत्यु के दिन का भी वेतन/भत्ता देय होता है, मृत्यु का समय अप्रासंगिक है।</li>
+  </ul>
+  <div class="subchap">
+    <h3>Death of Payee — मृत कर्मचारी को भुगतान <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <ul class="points">
+      <li>Rule 189 — दावे की राशि <b>₹10,000 से अधिक</b> हो तो Indemnity Bond (Form T.R.-14) निष्पादित करना अनिवार्य, आवश्यक sureties सहित।</li>
+      <li>Head of Office ₹10,000 तक की <b>anticipatory payment</b> कर सकता है।</li>
+      <li>₹10,000 से कम दावे में केवल एक surety स्वीकार्य हो सकती है।</li>
+    </ul>
+    <div class="qbox"><b>संभावित प्रश्न:</b> मृत सरकारी कर्मचारी के दावे में Indemnity Bond कब अनिवार्य है? — उत्तर: दावा <b>₹10,000</b> से अधिक होने पर</div>
+  </div>
+  <div class="subchap">
+    <h3>अन्य नियम <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>Rule 190 — वेतन बिल सामान्यतः उस Post Office/Head Record Office पर देय जहाँ कर्मचारी attached है।</li>
+      <li>Rule 192 — Leave Salary सामान्यतः उसी Drawing Officer से Bank/POSB खाते में remit होती है।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER IX -->
+<details class="chapter" id="ch9">
+<summary><span class="num">CH 9</span> Establishment</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t3">🟡</span> Rule 199 — Establishment को "Sections" में बाँटा जाता है — मुख्यतः pay-scale के आधार पर।</li>
+    <li>Rule 205 — Register ACG-19(a) में Sanctioned Establishment का रिकॉर्ड Head of Office द्वारा अद्यतन रखा जाता है।</li>
+    <li>Rule 207 — नई नियुक्ति पर जन्मतिथि Christian era में दस्तावेज़ी प्रमाण सहित घोषित करनी होती है; एक बार दर्ज होने पर परिवर्तन नहीं हो सकता (विशेष परिस्थिति छोड़कर)।</li>
+  </ul>
+</div>
+</details>
+
+<!-- CHAPTER X -->
+<details class="chapter" id="ch10">
+<summary><span class="num">CH 10</span> Contingent Charges</summary>
+<div class="chapter-body">
+  <div class="subchap">
+    <h3>Classification of Contingent Charges — 4 प्रकार <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="flow vertical">
+      <div class="node">(i) Contract Contingencies — वार्षिक lump sum, बिना अतिरिक्त sanction</div>
+      <div class="arrow">↓</div>
+      <div class="node">(ii) Special Contingencies — उच्च प्राधिकार की previous sanction आवश्यक</div>
+      <div class="arrow">↓</div>
+      <div class="node">(iii) Countersigned Contingencies — Controlling Authority की countersignature आवश्यक</div>
+      <div class="arrow">↓</div>
+      <div class="node">(iv) Fully Vouched Contingencies — Head of Office की अपनी authority, बिना countersignature</div>
+    </div>
+    <div class="callout info">DG व Heads of Circles के contingent bills को <b>किसी countersignature की आवश्यकता नहीं</b>।</div>
+  </div>
+  <div class="subchap">
+    <h3>Monetary Limits — बिना विशेष नियम के (Rule 244) <span class="tier t2">🟠</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>प्राधिकारी</th><th>Recurring</th><th>Non-Recurring</th></tr></thead>
+      <tbody>
+        <tr><td>Heads of Departments</td><td>₹200 प्रति वर्ष</td><td>₹1,000</td></tr>
+        <tr><td>अन्य सभी Gazetted Disbursing Officers</td><td>₹10 प्रति माह</td><td>₹100</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="subchap">
+    <h3>Permanent Advances (Rule 252) <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Permanent Advance/Imprest से ₹500 तक के दावे disburse किए जा सकते हैं।</li>
+      <li>ऐसा advance केवल बड़े administrative offices (जैसे HoC) व कुछ RMS अधिकारियों को दिया जाता है — Postmasters को नहीं।</li>
+    </ul>
+    <h4>Casual Labour भुगतान नियम (Rule 246)</h4>
+    <p class="nano">समान कार्य के लिए casual worker को नियमित कर्मचारी के न्यूनतम pay-scale के <b>1/30वें भाग</b> प्रति 8-घंटे दिवस के अनुसार भुगतान।</p>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER XI -->
+<details class="chapter" id="ch11">
+<summary><span class="num">CH 11</span> Miscellaneous Charges</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t4">🟢 क्विक रिवीज़न</span> इस अध्याय में Refunds of Revenue, Refunds to Departmental Offices, Refunds of Loans repaid in excess, Publications, Rents payable to Railway Administrations, Refund of Postal Charges जैसे विषय शामिल हैं।</li>
+    <li>सभी refund/adjustment प्रस्ताव उचित प्राधिकार व sanction सहित होने चाहिए, तथा Accounts Office को सूचित किया जाना अनिवार्य है।</li>
+  </ul>
+</div>
+</details>
+
+<!-- CHAPTER XII -->
+<details class="chapter" id="ch12">
+<summary><span class="num">CH 12</span> Loans and Advances to Government Servants</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t2">🟠</span> 7वें CPC की सिफारिशों के बाद LTC Advance, TA Advance (tour/transfer), मृत कर्मचारी के परिवार हेतु TA, Medical Advance व Computer Advance को छोड़कर <b>अन्य सभी advances समाप्त</b> कर दिए गए हैं।</li>
+  </ul>
+  <div class="table-wrap">
+    <table>
+    <caption>बचे हुए Advances — सीमाएँ</caption>
+    <thead><tr><th>Advance</th><th>सीमा</th></tr></thead>
+    <tbody>
+      <tr><td>Personal Computer Advance</td><td>₹50,000 या actual price, जो कम हो</td></tr>
+      <tr><td>Laptop Advance (device cost)</td><td>₹80,000 तक (Standard Software सहित)</td></tr>
+    </tbody>
+    </table>
+  </div>
+  <p class="nano">Emergent Advances, Advances for contingent expenditure व Repairs to Rented Postal Buildings से संबंधित प्रावधान भी इस अध्याय में हैं।</p>
+</div>
+</details>
+
+<!-- CHAPTER XIII -->
+<details class="chapter" id="ch13">
+<summary><span class="num">CH 13</span> Sanctions — अति महत्वपूर्ण चैप्टर</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>Lapse of Sanction (Rule 324) <span class="tier t1">🔴🔴 सबसे अधिक पूछा जाने वाला टॉपिक</span></h3>
+    <div class="dtree">
+      <div class="q">क्या Sanction lapse हो गई?</div>
+      <div class="branch">
+        <div class="no"><b>सामान्य नियम</b><br>किसी नई charge की sanction यदि <b>1 वर्ष</b> तक "acted upon" न हो, तो lapse मानी जाएगी (विशेष renewal के बिना)</div>
+        <div class="yes"><b>अपवाद — GPF Advance</b><br>केवल <b>3 माह</b> तक वैध; इसके बाद lapse</div>
+      </div>
+    </div>
+    <ul class="points">
+      <li>Note 4 — Stores purchase में sanction "acted upon" तब मानी जाती है जब tender स्वीकार हो चुका हो (local purchase) या indent दिया जा चुका हो (central purchase) — भले ही भुगतान बाकी हो।</li>
+      <li>Note 5 — Permanent establishment में वार्षिक वृद्धि की सामान्य योजना की sanction, या न निकाला गया allowance, कभी lapse नहीं होता।</li>
+    </ul>
+    <div class="qbox"><b>संभावित प्रश्न:</b> GPF Advance की sanction कितने समय में lapse हो जाती है? — उत्तर: <b>3 माह</b> (सामान्य sanction का नियम 1 वर्ष है)</div>
+  </div>
+
+  <div class="subchap">
+    <h3>Date of Effect व Retrospective Sanction <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Rule 323 — Sanction/order जारी होने की तारीख से प्रभावी, जब तक कि विशेष तिथि निर्दिष्ट न हो।</li>
+      <li>Retrospective sanction वेतन/concession revision में सामान्यतः नहीं दी जाती, विशेष परिस्थिति व वित्त मंत्रालय की सहमति के बिना।</li>
+      <li>Retrospective post creation — यदि अवधि <b>3 माह से अधिक</b> हो तो Ministry of Finance की पूर्व सहमति आवश्यक (Rule 27(2)/267 GFR 2017)।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>Reduction/Discontinuance व Write-off <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>Rule 325 — यदि sanction "not exceeding" (अधिकतम सीमा) के रूप में हो, तो व्यय घटने/बंद होने पर नई sanction नहीं चाहिए — केवल Accounts Office को सूचना पर्याप्त है।</li>
+      <li>Rule 332 — Stores/public money के irrecoverable loss की write-off sanction Accounts Officer को सूचित करना अनिवार्य।</li>
+      <li>Rule 333 — Remission (वसूली माफी) की sanction में कारण अवश्य दर्ज हो, व Accounts Officer को प्रतिलिपि भेजी जाए।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER XIV -->
+<details class="chapter" id="ch14">
+<summary><span class="num">CH 14</span> Deposits</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>Security Deposits of Contractors — स्वीकार्य रूप <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Cash (कोई ब्याज नहीं), Promissory Notes, POSB Deposit, Post Office Cash Certificates, 10% deduction from monthly payment, Personal Security (2 व्यक्ति), Fidelity Bond (Form GFR-34 — केवल सरकारी कर्मचारी हेतु, निजी पार्टी हेतु नहीं), Bank Cheques/Drafts, 10-Year Social Security Certificate।</li>
+      <li>Building Works में Security Deposit (EMD सहित) अनुमानित लागत का <b>1% से 10%</b> तक होती है।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>Lapsed व Confiscated Deposits (Rule 361) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>श्रेणी</th><th>नियम</th></tr></thead>
+      <tbody>
+        <tr><td>₹25 तक की unclaimed deposit</td><td>1 पूरे account year तक अदावी रहने पर Government को credit</td></tr>
+        <tr><td>₹25 से अधिक की balance</td><td>3 पूरे account years तक अदावी रहने पर Government को credit</td></tr>
+        <tr><td>Sanction/Payment Authority वैधता</td><td>जारी होने की तारीख से 3 माह</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="mnemo">🧠 <b>Trick:</b> "25-1-3" — ₹25 तक की राशि 1 वर्ष में lapse; उससे ऊपर की राशि 3 वर्ष में lapse।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>Earnest Money Deposit (EMD) <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>Rule 357–360 — EMD Post Office/disbursing office में जमा; असफल निविदादाताओं को refund; चयनित contractor द्वारा निर्धारित तिथि तक कार्य आरंभ न करने पर EMD <b>forfeit</b>।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- CHAPTER XV -->
+<details class="chapter" id="ch15">
+<summary><span class="num">CH 15</span> Buildings and Railway Mail Service Vans</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t3">🟡</span> Register of Land and Buildings, Rent Assessment, Licence Fee Recovery, Joint Buildings, Dismantlement of Buildings — इन सभी विषयों को कवर करता है।</li>
+    <li>Classification of Works, Allotment of Funds, Pre-Audit of Estimates, Payment to Contractors, Completion Report — Works execution की पूरी प्रक्रिया।</li>
+    <li>Rule 406 — ₹1,000 व अधिक लागत के कार्यों हेतु measurement record अनिवार्य; ₹3,000 व अधिक के bills के साथ measurement record संलग्न करना अनिवार्य।</li>
+  </ul>
+</div>
+</details>
+
+<!-- CHAPTER XVI -->
+<details class="chapter" id="ch16">
+<summary><span class="num">CH 16</span> General Provident Fund (GPF)</summary>
+<div class="chapter-body">
+  <ul class="points">
+    <li><span class="tier t1">🔴</span> GPF subscription उन्हीं Government servants से वसूला जाता है जो <b>31.12.2003 को या उससे पहले</b> Central Govt. सेवा में शामिल हुए हैं (उसके बाद वाले NPS के अंतर्गत)।</li>
+    <li>Retirement (superannuation) से पहले के अंतिम <b>3 माह</b> में GPF subscription अनिवार्य रूप से बंद कर दिया जाता है।</li>
+    <li>Rule 418 — Disbursing Officer, subscriber के सेवा में रहते हुए, बिना pre-audit के advance/temporary withdrawal का भुगतान कर सकता है (Form GAR-42/TR-58-A)।</li>
+    <li>मृत्यु, सेवानिवृत्ति, बर्खास्तगी या पुनः नियुक्ति की सूचना Head of Office द्वारा Accounts Office को तुरंत देना अनिवार्य।</li>
+  </ul>
+  <div class="qbox"><b>संभावित प्रश्न:</b> GPF subscription किस तारीख को या उससे पहले सेवा में शामिल कर्मचारियों से वसूला जाता है? — उत्तर: <b>31.12.2003</b></div>
+</div>
+</details>
+
+<!-- CHAPTER XVII -->
+<details class="chapter" id="ch17">
+<summary><span class="num">CH 17</span> Miscellaneous Rules — Purchase of Stores</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>GFR 2017 Extract — स्टोर्स की खरीद (Rule 425 के तहत) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <caption>इस Handbook (2022 संस्करण) में GFR-आधारित सीमाएँ</caption>
+      <thead><tr><th>GFR Rule</th><th>पद्धति</th><th>सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>Rule 149 (GeM)</td><td>Direct Purchase (कोई भी seller)</td><td>₹25,000 तक</td></tr>
+        <tr><td>Rule 149 (GeM)</td><td>Comparison (कम से कम 3 makers)</td><td>₹25,000–₹5,00,000</td></tr>
+        <tr><td>Rule 149 (GeM)</td><td>Bidding/Reverse Auction अनिवार्य</td><td>₹5 lakh से ऊपर</td></tr>
+        <tr><td>Rule 154</td><td>बिना Quotation खरीद (certificate सहित)</td><td>₹25,000 तक</td></tr>
+        <tr><td>Rule 155</td><td>Local Purchase Committee (3 सदस्य)</td><td>₹25,000–₹2,50,000</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="callout warn">⚠️ ध्यान दें: यह 2022 संस्करण की सीमाएँ हैं (मूल GFR 2017 अनुसार)। बाद के Financial Handbook for Postal Officers (2026 संस्करण) में ये सीमाएँ बढ़ाकर ₹50,000/₹5,00,000/₹10,00,000 कर दी गई हैं — <b>exam में दोनों versions का ध्यान रखें</b>, प्रश्न किस वर्ष के दस्तावेज़ पर आधारित है यह देखें।</div>
+    <ul class="points">
+      <li>Rule 157 — मांग को छोटे टुकड़ों में बाँटकर उच्च प्राधिकार से बचना <b>सख्त निषिद्ध</b> (piecemeal purchase)।</li>
+      <li>Rule 172(1) — Advance Payment सीमा: निजी फर्म को अनुबंध मूल्य का <b>30%</b>; सरकारी एजेंसी/PSU को <b>40%</b>; Maintenance contract में 6 माह के बराबर राशि से अधिक नहीं।</li>
+    </ul>
+    <div class="mnemo">🧠 <b>Trick:</b> "25k-2.5L-5L" (2022 FHB-I) बनाम "50k-5L-10L" (2026 FHB Procurement) — दोनों याद रखें और प्रश्न का वर्ष/दस्तावेज़ देखकर उत्तर दें।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>Government Drafts (Rule 430) <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>न्यूनतम draft राशि सामान्यतः <b>₹50</b> (विशेष परिस्थिति छोड़कर)।</li>
+      <li>Sub-Treasury पर अधिकतम दैनिक निकासी: <b>₹5,000</b>; अन्य Treasury पर: <b>₹25,000</b>; Reserve Bank शाखा पर कोई सीमा नहीं।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>Stationery Stores Purchase — प्राथमिकता क्रम (Appendix-8) <span class="tier t4">🟢</span></h3>
+    <div class="flow vertical">
+      <div class="node">1. भारत में निर्मित/भारतीय कच्चे माल से बने सामान</div>
+      <div class="arrow">↓</div>
+      <div class="node">2. आयातित सामग्री से भारत में निर्मित</div>
+      <div class="arrow">↓</div>
+      <div class="node">3. विदेशी निर्माण, भारत में stock में उपलब्ध</div>
+      <div class="arrow">↓</div>
+      <div class="node">4. विशेष रूप से आयातित सामान (अंतिम विकल्प)</div>
+    </div>
+  </div>
+</div>
+</details>
+
+<!-- APPENDICES -->
+<details class="chapter" id="appendix">
+<summary><span class="num">APP</span> महत्वपूर्ण Appendices</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>Appendix 3 — Preservation of Account Records (Rule 69) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <caption>Records Preservation Period — चुनिंदा महत्वपूर्ण Records</caption>
+      <thead><tr><th>Record</th><th>Preservation अवधि</th></tr></thead>
+      <tbody>
+        <tr><td>Annual Establishment Return</td><td>35 वर्ष</td></tr>
+        <tr><td>Pay Bill Register</td><td>35 वर्ष</td></tr>
+        <tr><td>Establishment Pay Bill Office Copies</td><td>35 वर्ष</td></tr>
+        <tr><td>Service Book (Leave Account सहित)</td><td>मृत्यु/सेवानिवृत्ति के 3 वर्ष बाद या पेंशन sanction तक, जो बाद में हो</td></tr>
+        <tr><td>Cash Books (DDO द्वारा)</td><td>10 वर्ष</td></tr>
+        <tr><td>Bill of Charges for Conveyance of Mails</td><td>6 वर्ष</td></tr>
+        <tr><td>Bill Register (TR-28-A) / Muster Rolls</td><td>5 वर्ष</td></tr>
+        <tr><td>Family/Invalid/Other Pension Cases</td><td>सबसे छोटे बच्चे के वयस्क होने तक या 5 वर्ष, जो बाद में हो</td></tr>
+        <tr><td>Arrear Claims / Contingent Expenditure Records</td><td>3 वर्ष या Audit पूर्ण होने के 1 वर्ष बाद, जो बाद में हो</td></tr>
+        <tr><td>Statement of Monthly Progressive Expenditure</td><td>2 वर्ष</td></tr>
+        <tr><td>GDS Acquittance Rolls (सेवा सत्यापन हेतु)</td><td>45 वर्ष</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="mnemo">🧠 <b>Trick:</b> "35-35-10-6-5-3-2" — घटते क्रम में याद रखें: Establishment Return/Pay Bill Register (35) → Cash Book (10) → Mail Charges Bill (6) → Bill Register (5) → Arrear Claims (3) → Monthly Progressive Statement (2)। GDS का 45 वर्ष सबसे लंबा — अपवाद के रूप में याद रखें।</div>
+    <div class="callout warn">महत्वपूर्ण अपवाद: Expenditure sanctions जो Law के limitation period में हों, अधूरी scheme/works से जुड़े records, service/personal matter के records, और permanent sanctions/orders — इन्हें <b>कभी destroy नहीं</b> किया जा सकता।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>Appendix 4 — Last Pay Certificate (LPC) नियम <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Non-Gazetted कर्मचारी के अंतर-Circle transfer में LPC Head of Office द्वारा दी जा सकती है (Circle Accounts Officer की countersignature अनिवार्य नहीं) — भारत से बाहर transfer में Accounts Officer के हस्ताक्षर अनिवार्य।</li>
+      <li>अब LPC application-based system से computerized रूप में generate होती है।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>Appendix 9 — Government Drafts की शर्तें <span class="tier t3">🟡</span></h3>
+    <p class="nano">दो प्रकार: Reserve Bank of India Government Drafts व State Bank of India Government Drafts — दोनों पर "On Government accounts only" अंकित होता है।</p>
+  </div>
+</div>
+</details>
+
+<!-- REVISION SHEET -->
+<details class="chapter revsheet" id="revision" open>
+<summary><span class="num">📋</span> One-Page Revision Sheet — सभी संख्याएँ एक जगह</summary>
+<div class="chapter-body">
+  <div class="grid2">
+    <div class="minicard"><h4>Sanction Lapse</h4>सामान्य: 1 वर्ष | GPF Advance: 3 माह</div>
+    <div class="minicard"><h4>Arrear Claims (Rule 24/27)</h4>2 वर्ष पर authority चाहिए; ₹500 तक 3 वर्ष में बिना pre-check</div>
+    <div class="minicard"><h4>TA/DA Claim Forfeiture</h4>60 दिन (GFR Rule 290)</div>
+    <div class="minicard"><h4>LTC Claim Time Limit</h4>Advance सहित: 30 दिन | बिना advance: 60 दिन</div>
+    <div class="minicard"><h4>Railway Over/Undercharge</h4>6 माह के भीतर</div>
+    <div class="minicard"><h4>Petty Loss Exception</h4>₹10,000 तक — Audit को report अनावश्यक</div>
+    <div class="minicard"><h4>"Serious Loss" सीमा</h4>₹50,000 से अधिक (immovable property)</div>
+    <div class="minicard"><h4>Loss/Fraud Investigation सीमा</h4>IP/ASP ₹1L | Div. Head ₹1-2L | AD/APMG ₹2-5L | Director+ ₹5L+</div>
+    <div class="minicard"><h4>Cheque स्वीकृति न्यूनतम</h4>₹20 (Bank guarantee हर 3 वर्ष renew)</div>
+    <div class="minicard"><h4>Imprest Certificate अधिकतम</h4>₹250 एक बार में; ₹10 अधिक होते ही जमा</h4></div>
+    <div class="minicard"><h4>Death of Payee — Indemnity Bond</h4>₹10,000 से अधिक दावे पर अनिवार्य</div>
+    <div class="minicard"><h4>March माह का वेतन</h4>अप्रैल के प्रथम कार्यदिवस को देय</div>
+    <div class="minicard"><h4>Contingent Charges — HoD सीमा</h4>Recurring ₹200/वर्ष | Non-recurring ₹1,000</div>
+    <div class="minicard"><h4>Contingent — अन्य Gazetted DDO</h4>Recurring ₹10/माह | Non-recurring ₹100</div>
+    <div class="minicard"><h4>Permanent Advance से भुगतान</h4>₹500 तक की claims</div>
+    <div class="minicard"><h4>Casual Labour भुगतान</h4>Minimum pay का 1/30वाँ भाग प्रति दिवस</div>
+    <div class="minicard"><h4>Lapsed Deposits (Rule 361)</h4>₹25 तक: 1 वर्ष | ₹25 से ऊपर: 3 वर्ष</div>
+    <div class="minicard"><h4>Building Works Security Deposit</h4>अनुमानित लागत का 1%–10%</div>
+    <div class="minicard"><h4>GPF Eligibility Cutoff</h4>31.12.2003 को या पहले सेवा में शामिल</div>
+    <div class="minicard"><h4>GPF — सेवानिवृत्ति पूर्व</h4>अंतिम 3 माह subscription बंद</div>
+    <div class="minicard"><h4>Personal Computer Advance</h4>₹50,000 या actual price, जो कम हो</div>
+    <div class="minicard"><h4>Laptop Advance</h4>₹80,000 तक (Standard Software सहित)</div>
+    <div class="minicard"><h4>GFR 149/154/155 (FHB-I 2022 सीमाएँ)</h4>Direct ≤25k | Comparison 25k-5L | Bidding&gt;5L | बिना quotation ≤25k | LPC 25k-2.5L</div>
+    <div class="minicard"><h4>Advance Payment to Suppliers</h4>निजी फर्म 30% | सरकारी/PSU 40%</div>
+    <div class="minicard"><h4>Govt. Draft अधिकतम दैनिक निकासी</h4>Sub-Treasury ₹5,000 | Treasury ₹25,000</div>
+    <div class="minicard"><h4>Records Preservation (सबसे लंबी)</h4>GDS Acquittance Roll: 45 वर्ष | Pay Bill Register: 35 वर्ष</div>
+    <div class="minicard"><h4>Cash Book Preservation</h4>10 वर्ष (DDO द्वारा maintained)</div>
+    <div class="minicard"><h4>Audit Objection जवाब समय</h4>15 दिन (fortnight)</div>
+    <div class="minicard"><h4>Recovery अधिकतम दर</h4>वेतन का 1/3 से अधिक नहीं (सामान्यतः)</div>
+  </div>
+</div>
+</details>
+
+<!-- MNEMONICS -->
+<details class="chapter" id="mnemonics">
+<summary><span class="num">🧠</span> Mnemonics व Memory Tricks</summary>
+<div class="chapter-body">
+  <div class="mnemo">📌 <b>"1 वर्ष = सब कुछ lapse"</b> — Sanction lapse का डिफ़ॉल्ट नियम 1 वर्ष है; याद रखने के लिए सोचें "1 साल में सरकार भूल जाती है, renew कराओ"। अपवाद सिर्फ GPF Advance — 3 माह (सबसे छोटा)।</div>
+  <div class="mnemo">📌 <b>"60-30-60"</b> — TA claim 60 दिन, LTC (advance सहित) 30 दिन, LTC (बिना advance) 60 दिन — याद रखें "बीच वाला सबसे छोटा" (advance लिया तो जल्दी claim करो)।</div>
+  <div class="mnemo">📌 <b>"10k का जादू अंक"</b> — Petty loss exception ₹10,000; Death of Payee indemnity bond limit भी ₹10,000 — दोनों जगह एक ही नंबर बार-बार आता है।</div>
+  <div class="mnemo">📌 <b>"25-3"</b> — Lapsed deposits: ₹25 से कम राशि 1 वर्ष में lapse; ₹25 से ऊपर की राशि 3 वर्ष में lapse — "छोटी राशि जल्दी भूल जाओ, बड़ी राशि तक इंतज़ार करो"।</div>
+  <div class="mnemo">📌 <b>"250-10 इम्प्रेस्ट जोड़ी"</b> — अधिकतम एक बार निकासी ₹250; ₹10 अधिक होते ही तुरंत जमा — दोनों संख्याएँ Chapter VI में साथ आती हैं।</div>
+  <div class="mnemo">📌 <b>"March को April में वेतन"</b> — साल का एकमात्र अपवाद, हमेशा याद रखें: मार्च का वेतन अप्रैल के पहले दिन।</div>
+  <div class="mnemo">📌 <b>"35-10-6-5-3-2 सीढ़ी"</b> — Records preservation घटते क्रम में: Establishment Return/Pay Bill Register(35) → Cash Book(10) → Mail Charges(6) → Bill Register(5) → Arrear/Contingent(3) → Monthly Statement(2)। GDS(45) सबसे ऊपर अपवाद स्वरूप।</div>
+  <div class="mnemo">📌 <b>"30-40 Advance जोड़ी"</b> — निजी फर्म को अधिकतम advance 30%; सरकारी/PSU एजेंसी को 40% — "सरकार को सरकार पर ज़्यादा भरोसा (40>30)"।</div>
+</div>
+</details>
+
+<!-- LAST DAY NOTES -->
+<details class="chapter" id="lastday">
+<summary><span class="num">⏰</span> Last-Day Revision Notes</summary>
+<div class="chapter-body">
+  <div class="callout warn">
+    🔴 परीक्षा से ठीक पहले सिर्फ इन्हें दोहराएँ: Sanction lapse (1 वर्ष/GPF 3 माह), Arrear claims (2/3/6 वर्ष), TA/LTC time limits (60/30/60 दिन), Petty loss ₹10,000, Serious loss ₹50,000, Lapsed deposits (₹25/1yr, 3yr), Records preservation (35/10/6/5/3/2 वर्ष), GPF cutoff 31.12.2003, March salary अपवाद।
+  </div>
+  <ul class="points">
+    <li>✅ Standards of Financial Propriety (Rule 60/GFR-21) के 5 सिद्धांत ज़रूर दोहराएँ — बार-बार पूछे जाते हैं।</li>
+    <li>✅ Contingent Charges की 4 classification (Contract/Special/Countersigned/Fully Vouched) क्रम से याद रखें।</li>
+    <li>✅ Security Deposit के स्वीकार्य रूपों की सूची (11 प्रकार) में से कम से कम 5 याद रखें — Cash, Promissory Notes, POSB, Fidelity Bond, Personal Security सबसे common हैं।</li>
+    <li>✅ 2022 FHB-I की GFR सीमाएँ (₹25k/2.5L/5L) पुराने Rules 149/154/155 पर आधारित हैं — नए Financial Handbook for Postal Officers (2026) में ये बढ़ाकर ₹50k/5L/10L कर दी गई हैं। प्रश्न में दस्तावेज़ का वर्ष देखकर उत्तर दें।</li>
+    <li>✅ Head of Circle = 23 Circle Postal Accounts Offices का ढांचा; बाहरी Audit = CAG के अधीन P&T Audit।</li>
+  </ul>
+  <div class="callout tip">🟢 अंतिम टिप: जब भी MCQ में "कितने दिन/महीने/साल" पूछा जाए — पहले पहचानें कि यह Claim time-limit है, Sanction lapse है, Records preservation है, या Deposit lapse है — फिर संबंधित table से मिलाएँ।</div>
+</div>
+</details>
+
+</main>
+
+<footer>
+  Source: Postal Financial Handbook, Volume-I (2022) — Department of Posts, Ministry of Communications<br>
+  यह इन्फोग्राफिक केवल IP Exam तैयारी हेतु त्वरित रिवीज़न के लिए बनाया गया है। विस्तृत प्रावधानों हेतु मूल Handbook/GFR 2017/DFPR देखें।
+</footer>
+
+</body>
+</html>

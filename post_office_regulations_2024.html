@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Office Regulations 2024 – Visual Infographic</title>
+<style>
+:root {
+  --red: #C0392B; --orange: #E67E22; --yellow: #F39C12; --green: #27AE60;
+  --blue: #1A5276; --light-blue: #2980B9; --dark: #1C2833; --white: #fff;
+  --bg: #F0F3F4; --card: #fff; --border: #D5D8DC;
+  --red-bg: #FADBD8; --orange-bg: #FDEBD0; --yellow-bg: #FEF9E7; --green-bg: #D5F5E3;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--dark);font-size:14px;}
+
+/* ── TOC ── */
+.toc{background:var(--blue);color:#fff;padding:16px 20px;}
+.toc h2{font-size:15px;margin-bottom:10px;text-align:center;border-bottom:2px solid var(--orange);padding-bottom:6px;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.toc-grid a{color:#AED6F1;font-size:11.5px;text-decoration:none;padding:2px 0;}
+.toc-grid a:hover{color:#fff;}
+
+/* ── HEADER ── */
+.main-header{background:linear-gradient(135deg,var(--blue),#154360);color:#fff;padding:20px;text-align:center;}
+.main-header h1{font-size:20px;margin-bottom:4px;}
+.main-header .sub{font-size:13px;color:#AED6F1;margin-bottom:10px;}
+.badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:10px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 12px;font-size:11.5px;}
+
+/* ── LEGEND ── */
+.legend{display:flex;flex-wrap:wrap;gap:8px;background:#fff;padding:10px 16px;border-bottom:2px solid var(--border);}
+.leg{display:flex;align-items:center;gap:5px;font-size:11.5px;}
+.dot{width:12px;height:12px;border-radius:50%;}
+
+/* ── SECTION ── */
+.section{padding:14px 14px 0 14px;}
+.section-title{background:var(--blue);color:#fff;padding:8px 14px;border-radius:8px 8px 0 0;font-size:15px;display:flex;align-items:center;gap:8px;}
+.section-body{background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:14px;margin-bottom:16px;}
+
+/* ── CARDS ── */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.card{border-radius:8px;padding:10px 12px;border-left:4px solid var(--blue);}
+.card.red{border-color:var(--red);background:var(--red-bg);}
+.card.orange{border-color:var(--orange);background:var(--orange-bg);}
+.card.yellow{border-color:var(--yellow);background:var(--yellow-bg);}
+.card.green{border-color:var(--green);background:var(--green-bg);}
+.card.blue{border-color:var(--blue);background:#EBF5FB;}
+.card h4{font-size:12px;margin-bottom:4px;color:var(--dark);}
+.card p{font-size:11.5px;color:#444;line-height:1.5;}
+.hi{font-weight:700;font-size:11.5px;display:block;}
+.en{font-style:italic;font-size:11px;color:#666;display:block;}
+
+/* ── TABLES ── */
+.tbl{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;}
+.tbl th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+.tbl td{border:1px solid var(--border);padding:6px 8px;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#F8F9FA;}
+.tbl .imp{background:#FADBD8 !important;}
+.tbl .warn{background:#FDEBD0 !important;}
+
+/* ── FLOWCHART ── */
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;}
+.flow-box{background:var(--blue);color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;text-align:center;width:100%;max-width:340px;}
+.flow-box.green{background:var(--green);}
+.flow-box.red{background:var(--red);}
+.flow-box.orange{background:var(--orange);}
+.flow-box.yellow{background:var(--yellow);color:#333;}
+.flow-box.gray{background:#7F8C8D;}
+.flow-arrow{font-size:20px;color:var(--blue);line-height:1.2;}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin:4px 0;}
+.flow-branch .flow-box{max-width:100%;}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding:0 0 0 30px;}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:3px;background:var(--blue);}
+.tl-item{position:relative;margin-bottom:12px;}
+.tl-dot{position:absolute;left:-24px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--orange);border:2px solid #fff;box-shadow:0 0 0 2px var(--orange);}
+.tl-content{background:#EBF5FB;border-radius:6px;padding:8px 10px;}
+.tl-content .reg{font-size:10px;background:var(--blue);color:#fff;padding:1px 6px;border-radius:10px;display:inline-block;margin-bottom:3px;}
+
+/* ── MINDMAP ── */
+.mindmap{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.mm-center{background:var(--blue);color:#fff;padding:10px 20px;border-radius:30px;font-weight:700;text-align:center;font-size:13px;}
+.mm-branches{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;}
+.mm-node{border-radius:8px;padding:8px 10px;font-size:11.5px;border:2px solid var(--blue);text-align:center;}
+.mm-node.r{border-color:var(--red);background:var(--red-bg);}
+.mm-node.o{border-color:var(--orange);background:var(--orange-bg);}
+.mm-node.g{border-color:var(--green);background:var(--green-bg);}
+.mm-node.y{border-color:var(--yellow);background:var(--yellow-bg);}
+.mm-node.b{border-color:var(--light-blue);background:#EBF5FB;}
+
+/* ── ALERT BOXES ── */
+.alert{border-radius:8px;padding:10px 12px;margin:8px 0;font-size:12px;}
+.alert.red{background:var(--red-bg);border-left:4px solid var(--red);}
+.alert.orange{background:var(--orange-bg);border-left:4px solid var(--orange);}
+.alert.green{background:var(--green-bg);border-left:4px solid var(--green);}
+.alert.yellow{background:var(--yellow-bg);border-left:4px solid var(--yellow);}
+.alert.blue{background:#EBF5FB;border-left:4px solid var(--blue);}
+.alert strong{display:block;margin-bottom:2px;}
+
+/* ── MCQ ── */
+.mcq{background:#F4F6F9;border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin:8px 0;}
+.mcq .q{font-weight:700;font-size:12px;margin-bottom:6px;color:var(--blue);}
+.mcq .opts{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.mcq .opt{font-size:11.5px;padding:3px 6px;border-radius:4px;background:#fff;border:1px solid var(--border);}
+.mcq .opt.ans{background:#D5F5E3;border-color:var(--green);font-weight:700;}
+.mcq .hint{font-size:10.5px;color:#666;margin-top:5px;font-style:italic;}
+
+/* ── MNEMONIC ── */
+.mnemonic{background:linear-gradient(135deg,#154360,#1A5276);color:#fff;border-radius:10px;padding:12px;margin:8px 0;}
+.mnemonic h4{font-size:13px;color:var(--orange);margin-bottom:8px;}
+.mnemonic .letters{display:flex;flex-wrap:wrap;gap:6px;}
+.mnemonic .letter-box{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);border-radius:6px;padding:4px 8px;font-size:12px;text-align:center;}
+.mnemonic .letter-box span{color:var(--orange);font-weight:900;font-size:15px;display:block;}
+
+/* ── LAST DAY REVISION ── */
+.last-day{background:#1C2833;color:#ECF0F1;padding:14px;border-radius:10px;margin:8px 0;}
+.last-day h3{color:var(--orange);border-bottom:1px solid #444;padding-bottom:6px;margin-bottom:10px;font-size:14px;}
+.ld-item{display:flex;gap:8px;margin-bottom:6px;font-size:12px;align-items:flex-start;}
+.ld-icon{flex-shrink:0;font-size:14px;}
+.ld-text .hi-ld{color:#AED6F1;font-weight:700;}
+.ld-text .en-ld{color:#AAB7B8;font-style:italic;font-size:11px;}
+
+/* ── ONE PAGE SHEET ── */
+.ops{border:3px solid var(--blue);border-radius:12px;overflow:hidden;margin:8px 0;}
+.ops-header{background:var(--blue);color:#fff;padding:10px;text-align:center;font-weight:700;font-size:14px;}
+.ops-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.ops-cell{padding:8px 10px;border:1px solid var(--border);font-size:11.5px;}
+.ops-cell .label{font-weight:700;color:var(--blue);font-size:10px;display:block;margin-bottom:2px;}
+
+/* ── DECISION TREE ── */
+.dt{background:#F8F9FA;border-radius:10px;padding:12px;}
+.dt-q{background:var(--blue);color:#fff;padding:8px 12px;border-radius:6px;font-size:12px;margin-bottom:8px;text-align:center;}
+.dt-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;}
+.dt-yes{background:#D5F5E3;border:2px solid var(--green);border-radius:6px;padding:6px 10px;font-size:11.5px;text-align:center;}
+.dt-no{background:var(--red-bg);border:2px solid var(--red);border-radius:6px;padding:6px 10px;font-size:11.5px;text-align:center;}
+.dt-label{text-align:center;font-size:10px;font-weight:700;margin-bottom:2px;}
+
+/* ── CHAPTER MAP ── */
+.ch-map{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0;}
+.ch-item{border-radius:6px;padding:8px;text-align:center;font-size:10.5px;font-weight:700;border:2px solid var(--blue);background:#EBF5FB;}
+.ch-num{font-size:16px;font-weight:900;color:var(--blue);display:block;}
+
+/* ── COMPARISON ── */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:8px;overflow:hidden;border:1px solid var(--border);}
+.compare-head{padding:8px;text-align:center;font-weight:700;font-size:12px;color:#fff;}
+.compare-cell{padding:6px 8px;font-size:11.5px;border-top:1px solid var(--border);}
+
+/* ── UTILS ── */
+.pill{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10.5px;font-weight:700;margin:1px;}
+.pill.red{background:var(--red);color:#fff;}
+.pill.orange{background:var(--orange);color:#fff;}
+.pill.green{background:var(--green);color:#fff;}
+.pill.yellow{background:var(--yellow);color:#333;}
+.pill.blue{background:var(--blue);color:#fff;}
+.tag{background:var(--blue);color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;margin-left:4px;}
+h3.sub{font-size:13px;color:var(--blue);border-left:3px solid var(--orange);padding-left:8px;margin:10px 0 6px;}
+.spacer{height:8px;}
+ul.check li{list-style:none;padding:2px 0;font-size:12px;}
+ul.check li::before{content:'✅ ';}
+ul.cross li::before{content:'❌ ';}
+ul.cross li{list-style:none;padding:2px 0;font-size:12px;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="main-header">
+  <h1>📮 पोस्ट ऑफिस विनियम, 2024</h1>
+  <div class="sub">Post Office Regulations, 2024 — Visual Infographic for IP/IPO Exam</div>
+  <div class="badge-row">
+    <span class="badge">📅 लागू: 16 दिसम्बर 2024</span>
+    <span class="badge">📜 कुल: 180 विनियम</span>
+    <span class="badge">📂 15 अध्याय + 5 अनुसूचियाँ</span>
+    <span class="badge">🏛 अधिनियम: PO Act 2023 की धारा 13</span>
+    <span class="badge">✍ DG-VIVEK KUMAR DAKSH (Dy.DG)</span>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="leg"><div class="dot" style="background:var(--red)"></div> 🔴 परीक्षा के लिए अत्यंत महत्वपूर्ण</div>
+  <div class="leg"><div class="dot" style="background:var(--orange)"></div> 🟠 अक्सर पूछा जाता है</div>
+  <div class="leg"><div class="dot" style="background:var(--yellow)"></div> 🟡 वैचारिक समझ</div>
+  <div class="leg"><div class="dot" style="background:var(--green)"></div> 🟢 त्वरित संशोधन</div>
+</div>
+
+<!-- ═══════════ TOC ═══════════ -->
+<div class="toc">
+  <h2>📋 विषय-सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch-overview">📂 अध्याय अवलोकन</a>
+    <a href="#definitions">📖 परिभाषाएँ</a>
+    <a href="#business-hours">🕐 कारोबार के घंटे</a>
+    <a href="#delivery">📦 डिलीवरी नियम</a>
+    <a href="#compensation">💰 प्रतिकर / Compensation</a>
+    <a href="#domestic-items">✉ घरेलू डाक-वस्तुएँ</a>
+    <a href="#fee-table">💲 शुल्क तालिका</a>
+    <a href="#international">🌍 अंतर्राष्ट्रीय डाक</a>
+    <a href="#ups">📮 यूनिवर्सल पोस्टल सर्विस</a>
+    <a href="#value-added">⭐ मूल्य-वर्धित सेवाएँ</a>
+    <a href="#money-order">💸 मनीऑर्डर सेवाएँ</a>
+    <a href="#business">🏢 बिज़नेस सॉल्यूशन</a>
+    <a href="#misc">🗂 विविध (PIN/Franking)</a>
+    <a href="#mnemonic">🧠 मेमोरी ट्रिक्स</a>
+    <a href="#mcq">📝 संभावित MCQ</a>
+    <a href="#lastday">🔥 Last Day Revision</a>
+  </div>
+</div>
+
+<!-- ═══════════ CHAPTER OVERVIEW ═══════════ -->
+<div class="section" id="ch-overview">
+  <div class="section-title">📂 अध्याय अवलोकन / Chapter Overview</div>
+  <div class="section-body">
+    <div class="alert red"><strong>🔴 परीक्षा टिप:</strong> 15 अध्याय + 5 अनुसूचियाँ याद रखें। <em>Exam Tip: Remember 15 Chapters + 5 Schedules.</em></div>
+    <div class="ch-map">
+      <div class="ch-item"><span class="ch-num">I</span>प्रारंभिक<br><em>Preliminary</em></div>
+      <div class="ch-item"><span class="ch-num">II</span>सामान्य<br><em>General</em></div>
+      <div class="ch-item"><span class="ch-num">III</span>डिलीवरी रीति<br><em>Delivery</em></div>
+      <div class="ch-item"><span class="ch-num">IV</span>प्रतिकर<br><em>Compensation</em></div>
+      <div class="ch-item"><span class="ch-num">V</span>घरेलू डाक<br><em>Domestic Items</em></div>
+      <div class="ch-item"><span class="ch-num">VI</span>अंतर्राष्ट्रीय<br><em>International</em></div>
+      <div class="ch-item"><span class="ch-num">VII</span>यूपीएस<br><em>UPS</em></div>
+      <div class="ch-item"><span class="ch-num">VIII</span>सरकारी पत्र<br><em>Official</em></div>
+      <div class="ch-item"><span class="ch-num">IX</span>मूल्य-वर्धित<br><em>Value Added</em></div>
+      <div class="ch-item"><span class="ch-num">X</span>मनी रेमिटेंस<br><em>Money Remit.</em></div>
+      <div class="ch-item"><span class="ch-num">XI</span>बिज़नेस<br><em>Business Sol.</em></div>
+      <div class="ch-item"><span class="ch-num">XII</span>सहयोग<br><em>Collaboration</em></div>
+      <div class="ch-item"><span class="ch-num">XIII</span>विविध<br><em>Miscellaneous</em></div>
+      <div class="ch-item"><span class="ch-num">XIV</span>PLI<br><em>Postal Life Ins.</em></div>
+      <div class="ch-item"><span class="ch-num">XV</span>वित्तीय सेवाएँ<br><em>Financial Serv.</em></div>
+    </div>
+    <div class="spacer"></div>
+    <h3 class="sub">📂 5 अनुसूचियाँ / Schedules</h3>
+    <table class="tbl">
+      <tr><th>अनुसूची</th><th>विषय / Subject</th><th>मुख्य तालिकाएँ</th></tr>
+      <tr class="imp"><td><b>I</b></td><td>घरेलू डाक शुल्क / Domestic Postage</td><td>Table I–IX</td></tr>
+      <tr><td><b>II</b></td><td>व्यावसायिक डाक / Business Mail</td><td>Table I–III</td></tr>
+      <tr class="imp"><td><b>III</b></td><td>अंतर्राष्ट्रीय / International</td><td>Table I–VIII</td></tr>
+      <tr class="imp"><td><b>IV</b></td><td>मूल्य-वर्धित सेवाएँ / VAS</td><td>Table I–VIII</td></tr>
+      <tr class="warn"><td><b>V</b></td><td>मनी रेमिटेंस / Money Remittance</td><td>Table I–II</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════ DEFINITIONS ═══════════ -->
+<div class="section" id="definitions">
+  <div class="section-title">📖 विनियम 2: परिभाषाएँ / Definitions</div>
+  <div class="section-body">
+    <div class="alert orange">🟠 <strong>अक्सर पूछा जाता है —</strong> परिभाषाएँ परीक्षा में सबसे अधिक पूछी जाती हैं। <em>Definitions are most frequently asked.</em></div>
+    <div class="card-grid">
+      <div class="card red">
+        <h4>🔴 लेखादेय डाक-वस्तु <span class="tag">Reg.2(a)</span></h4>
+        <span class="hi">Accountable Items</span>
+        <span class="en">Items that provide a receipt at booking for track & trace AND require signature on delivery. Includes: IP Parcel, Speed Post, EMS, Regd Letter, MO, COD items.</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 अधिनियम <span class="tag">Reg.2(b)</span></h4>
+        <span class="hi">"अधिनियम" = PO Act, 2023 (2023 का 43)</span>
+        <span class="en">"Act" = Post Office Act, 2023 (43 of 2023)</span>
+      </div>
+      <div class="card orange">
+        <h4>🟠 पारिदान / Delivery <span class="tag">Reg.2(f)</span></h4>
+        <span class="hi">प्रेषिती के पते पर या प्राधिकृत व्यक्ति को वस्तु पहुँचाना</span>
+        <span class="en">Delivery of item at addressee's address or to authorised person</span>
+      </div>
+      <div class="card orange">
+        <h4>🟠 डाक-प्रेषण अनुक्रम <span class="tag">Reg.2(h)</span></h4>
+        <span class="hi">वस्तु की प्राप्ति से प्रेषिती तक डिलीवरी / वापसी / निपटान तक</span>
+        <span class="en">From receipt of item by PO → delivery to addressee / return / disposal</span>
+      </div>
+      <div class="card yellow">
+        <h4>🟡 पुनर्निर्देश / Redirection <span class="tag">Reg.2(m)</span></h4>
+        <span class="hi">वस्तु को मूल पते के अलावा अन्य पते पर निर्देशित करना</span>
+        <span class="en">Assigning item to an address other than the original address</span>
+      </div>
+      <div class="card green">
+        <h4>🟢 भार / Weight <span class="tag">Reg.2(r)</span></h4>
+        <span class="hi">सकल भार या आयतन भार — जो भी अधिक हो</span>
+        <span class="en">Gross weight OR Volumetric weight — whichever is HIGHER</span>
+      </div>
+      <div class="card blue">
+        <h4>🟡 पोस्टमास्टर <span class="tag">Reg.2(l)</span></h4>
+        <span class="hi">GPO निदेशक / मुख्य PM / वरिष्ठ PM / हेड PM / PM</span>
+        <span class="en">Director/Chief PM of GPO, Sr. Postmaster, Head PM, or Postmaster exercising such powers</span>
+      </div>
+      <div class="card blue">
+        <h4>🟡 लेटर बॉक्स <span class="tag">Reg.2(i)</span></h4>
+        <span class="hi">PO/मेल ऑफिस/सार्वजनिक स्थान पर बॉक्स — पूर्व-भुगतान पत्रों के लिए</span>
+        <span class="en">Box installed at POs/mail offices for fully prepaid letters, postcards, letter cards, book post</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ BUSINESS HOURS ═══════════ -->
+<div class="section" id="business-hours">
+  <div class="section-title">🕐 विनियम 3-4: कारोबार के घंटे / Business Hours</div>
+  <div class="section-body">
+    <div class="alert red">🔴 <strong>अत्यंत महत्वपूर्ण!</strong> Branch PO = 5 घंटे; Counter Services = 6 घंटे <em>Branch PO = 5 hrs; Counter = 6 hrs</em></div>
+    <table class="tbl">
+      <tr><th>क्र.सं.</th><th>कार्य / Work</th><th>कारोबार के घंटे / Business Hours</th></tr>
+      <tr class="imp"><td>(i)</td><td>संदर्भ एवं पूछताछ / References & Enquiries</td><td><b>सम्पूर्ण कार्य समय / All working hours</b></td></tr>
+      <tr class="warn"><td>(ii)</td><td>काउंटर सेवाएँ (बुकिंग, पोस्टिंग, बीमा) / Counter Services</td><td><b>6 घंटे / Six Hours</b></td></tr>
+      <tr class="warn"><td>(iii)</td><td>धन प्रेषण (EMO, IPO आदि) / Money Remittance</td><td><b>6 घंटे / Six Hours</b></td></tr>
+      <tr class="warn"><td>(iv)</td><td>बचत बैंक / Savings Bank</td><td><b>6 घंटे / Six Hours</b></td></tr>
+    </table>
+    <div class="alert red">🔴 <b>शाखा डाकघर / Branch Post Office:</b> अधिकतम <b>5 घंटे</b> प्रतिदिन | <em>Max 5 hours per day</em></div>
+    <div class="spacer"></div>
+    <h3 class="sub">विनियम 4: अधिकार / Authority for Hours</h3>
+    <div class="flow">
+      <div class="flow-box">Circle Head / सर्किल प्रमुख</div>
+      <div class="flow-arrow">↕</div>
+      <div class="flow-box">Regional Head / क्षेत्रीय प्रमुख</div>
+      <div class="flow-arrow">↕</div>
+      <div class="flow-box">Divisional Head / मंडल प्रमुख</div>
+    </div>
+    <div class="alert green" style="margin-top:8px;">🟢 ये तीनों अपने क्षेत्र के डाकघरों के कारोबार के घंटे निर्धारित कर सकते हैं, रविवार और छुट्टियों पर भी। <em>All three can specify hours including Sundays & holidays.</em></div>
+  </div>
+</div>
+
+<!-- ═══════════ DELIVERY ═══════════ -->
+<div class="section" id="delivery">
+  <div class="section-title">📦 अध्याय III: डिलीवरी की रीति / Manner of Delivery (Reg. 41–72)</div>
+  <div class="section-body">
+
+    <h3 class="sub">विनियम 41: लेखादेय मदें — डिलीवरी किसे? <em>Reg.41: To Whom?</em></h3>
+    <div class="compare">
+      <div class="compare-head" style="background:var(--red);">रजि./बीमित/COD/MO</div>
+      <div class="compare-head" style="background:var(--blue);">Speed Post/IP Parcel</div>
+      <div class="compare-cell">🔴 <b>प्रेषिती या प्राधिकृत व्यक्ति को</b><br><em>To Addressee OR Authorised Person</em></div>
+      <div class="compare-cell">🔵 <b>प्राधिकृत व्यक्ति को या पते पर</b><br><em>To Authorised Person OR at Address</em></div>
+    </div>
+    <div class="spacer"></div>
+
+    <h3 class="sub">विनियम 42: डिलीवरी प्रयास — Decision Tree <em>Reg.42: Delivery Attempts</em></h3>
+    <div class="dt">
+      <div class="dt-q">📦 पहला डिलीवरी प्रयास / 1st Delivery Attempt</div>
+      <div class="dt-row">
+        <div class="dt-yes"><div class="dt-label">✅ सफल</div>डिलीवरी पूर्ण<br><em>Delivered</em></div>
+        <div class="dt-no"><div class="dt-label">❌ विफल</div>दूसरा प्रयास करें<br><em>2nd Attempt</em></div>
+      </div>
+      <div class="dt-q" style="background:var(--orange);">दूसरा डिलीवरी प्रयास / 2nd Delivery Attempt</div>
+      <div class="dt-row">
+        <div class="dt-yes"><div class="dt-label">✅ सफल</div>डिलीवरी पूर्ण<br><em>Delivered</em></div>
+        <div class="dt-no"><div class="dt-label">❌ विफल</div><b style="color:var(--red)">🔴 तीसरा प्रयास नहीं!</b><br>पोस्टऑफिस आगमन सूचना भेजो<br><em>NO 3rd attempt! Send notice.</em></div>
+      </div>
+    </div>
+    <div class="alert red">🔴 <b>अधिकतम 2 प्रयास</b> — उसके बाद पुनः जारी नहीं किया जाएगा। प्रेषिती को सूचना दी जाएगी। <em>Max 2 attempts. Notice given to addressee.</em></div>
+    <div class="spacer"></div>
+
+    <h3 class="sub">विनियम 43: रसीद पर हस्ताक्षर <em>Reg.43: Signature</em></h3>
+    <div class="flow">
+      <div class="flow-box">प्रेषिती/प्राधिकृत व्यक्ति रसीद पर हस्ताक्षर करेगा<br><em>Addressee/Authorised Person signs receipt</em></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box orange">यदि छेड़छाड़ का संदेह? / If tampering suspected?</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box green">पोस्टमास्टर की उपस्थिति में खोलें / Open in PM's presence</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box green">सूची तैयार करें (2 प्रतियाँ) / Prepare inventory (duplicate)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">एक प्रति प्रेषक को भेजें + अहस्ताक्षरित डिलीवरी प्रमाण<br><em>1 copy to sender + unsigned delivery proof</em></div>
+    </div>
+    <div class="spacer"></div>
+
+    <h3 class="sub">विनियम 44: पत्र डिलीवरी बॉक्स <em>Letter Delivery Box</em></h3>
+    <div class="alert yellow">🟡 भूतल पर स्थापित किया जाएगा। 2 मंजिल या अधिक = "बिल्डिंग"। एक सामान्य लेटर बॉक्स एक बिल्डिंग/मंजिल में सभी के लिए उपयोग किया जा सकता है। <em>Installed on ground floor. 2+ storeys = "building". Common box allowed for entire building/floor.</em></div>
+
+    <div class="mcq">
+      <div class="q">❓ प्रश्न: लेखादेय डाक-वस्तु को डिलीवरी के लिए अधिकतम कितनी बार जारी किया जा सकता है?</div>
+      <div class="opts">
+        <div class="opt">A. एक बार</div>
+        <div class="opt ans">B. दो बार ✅</div>
+        <div class="opt">C. तीन बार</div>
+        <div class="opt">D. असीमित</div>
+      </div>
+      <div class="hint">💡 Reg. 42 — अधिकतम 2 प्रयास, उसके बाद पुनः जारी नहीं</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ COMPENSATION ═══════════ -->
+<div class="section" id="compensation">
+  <div class="section-title">💰 अध्याय IV: प्रतिकर / Compensation (Reg. 73–86)</div>
+  <div class="section-body">
+    <div class="alert red">🔴 <strong>परीक्षा में अत्यधिक महत्वपूर्ण!</strong> समय-सीमाएँ अच्छे से याद करें। <em>Highly important! Time limits are critical.</em></div>
+
+    <h3 class="sub">विनियम 73: घरेलू डाक प्रतिकर <em>Compensation for Domestic Items</em></h3>
+    <table class="tbl">
+      <tr><th>शर्त / Condition</th><th>प्रतिकर / Compensation</th></tr>
+      <tr class="imp"><td>🔴 हानि / Loss</td><td>✅ देय / Payable</td></tr>
+      <tr class="imp"><td>🔴 आंशिक हानि / Part Loss</td><td>✅ देय / Payable</td></tr>
+      <tr class="imp"><td>🔴 क्षति / Damage</td><td>✅ देय / Payable</td></tr>
+      <tr class="imp"><td>🔴 विलंब / Delay</td><td>✅ देय / Payable</td></tr>
+    </table>
+
+    <h3 class="sub">⛔ प्रतिकर कब नहीं मिलेगा? <em>When Compensation NOT given?</em></h3>
+    <ul class="cross">
+      <li>पता असुरक्षित/अपठनीय/अधूरा / Address unsafe/illegible/incomplete</li>
+      <li>स्वास्थ्य/सुरक्षा जोखिम / Health & safety risk</li>
+      <li>अपर्याप्त डाकशुल्क / Insufficient postage</li>
+      <li>निषिद्ध/प्रतिबंधित वस्तु / Prohibited/restricted item</li>
+      <li>असाधारण मौसम/आतंकवाद/बर्बरता / Extreme weather/terrorism/vandalism</li>
+      <li>सुप्त दोष या स्वाभाविक खराबी / Latent defect or natural deterioration</li>
+      <li>प्रेषिती ने "सूचना दी गई" में अवसर का लाभ नहीं उठाया / Addressee didn't use "intimation served" opportunity</li>
+    </ul>
+    <div class="spacer"></div>
+
+    <h3 class="sub">🔴 महत्वपूर्ण समय-सीमाएँ / Critical Time Limits</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="reg">Reg. 75(1)(a)</span>
+          <span class="hi">🔴 शिकायत: बुकिंग के 15 दिन बाद से 60 दिन के भीतर (वस्तु न मिलने पर)</span>
+          <span class="en">Complaint: After 15 days & within 60 days of booking (for non-receipt)</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="reg">Reg. 75(1)(b)</span>
+          <span class="hi">🔴 क्षति/हानि शिकायत: प्राप्ति के 2 दिन के भीतर</span>
+          <span class="en">Damaged/part loss complaint: Within 2 days of receipt</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="reg">Reg. 75(2)</span>
+          <span class="hi">🔴 60 दिन के बाद कोई प्रतिकर दावा स्वीकार नहीं</span>
+          <span class="en">No claim admitted after 60 days from posting</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="reg">Reg. 77(1)</span>
+          <span class="hi">🔴 वस्तु खोई मानी जाएगी: बुकिंग से 60 दिन OR शिकायत से 30 दिन — जो भी बाद में हो</span>
+          <span class="en">Item declared LOST: 60 days from booking OR 30 days from complaint — whichever is LATER</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="reg">Reg. 77(2)</span>
+          <span class="hi">🔴 खोई वस्तु का प्रतिकर: 10 दिनों के भीतर</span>
+          <span class="en">Compensation for lost item: Within 10 days of declaration</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">❓ प्रश्न: वस्तु कब "खोई" मानी जाती है? / When is an item treated as "Lost"?</div>
+      <div class="opts">
+        <div class="opt">A. बुकिंग से 30 दिन</div>
+        <div class="opt">B. शिकायत से 60 दिन</div>
+        <div class="opt ans">C. 60 दिन (बुकिंग से) OR 30 दिन (शिकायत से) — जो बाद में हो ✅</div>
+        <div class="opt">D. 90 दिन</div>
+      </div>
+      <div class="hint">💡 Reg.77(1) — "Whichever is LATER" याद रखें</div>
+    </div>
+
+    <h3 class="sub">विनियम 74: बीमित वस्तु प्रतिकर <em>Reg.74: Insured Item Compensation</em></h3>
+    <div class="card red">
+      <h4>🔴 बीमित राशि तक प्रतिकर</h4>
+      <span class="en">Compensation ≤ Amount insured (not exceeding actual value). Sender must furnish full particulars of contents and value.</span>
+    </div>
+  </div>
+</div>
+<!-- ═══════════ DOMESTIC ITEMS ═══════════ -->
+<div class="section" id="domestic-items">
+  <div class="section-title">✉ अध्याय V: घरेलू डाक-वस्तुएँ / Domestic Items (Reg. 87+)</div>
+  <div class="section-body">
+
+    <h3 class="sub">🔴 विनियम 87: पत्र (Letter)</h3>
+    <div class="card-grid">
+      <div class="card red">
+        <h4>🔴 अधिकतम भार / Max Weight</h4>
+        <span class="hi" style="font-size:16px;">500 ग्राम</span>
+        <span class="en">Letter weight shall not exceed 500 grams</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 पत्र की प्रकृति</h4>
+        <span class="hi">वर्तमान और व्यक्तिगत पत्राचार — पूर्व-भुगतान सहित</span>
+        <span class="en">Current & personal correspondence — with prepaid postage — in sealed condition</span>
+      </div>
+    </div>
+
+    <h3 class="sub">📏 पत्र के आयाम / Letter Dimensions</h3>
+    <table class="tbl">
+      <tr><th>रूप / Form</th><th>अधिकतम / Max</th><th>न्यूनतम / Min</th></tr>
+      <tr class="imp"><td>रोल रूप (Roll Form) — एकल विमा</td><td>800 मिमी</td><td>100 मिमी</td></tr>
+      <tr class="imp"><td>रोल रूप — लंबाई + 2× व्यास</td><td>1000 मिमी</td><td>170 मिमी</td></tr>
+      <tr class="imp"><td>अन्य (Non-roll) — एकल विमा</td><td>600 मिमी</td><td rowspan="2">140×90 मिमी (±2 मिमी)</td></tr>
+      <tr class="imp"><td>अन्य — लं. + चौ. + मोटाई</td><td>900 मिमी</td></tr>
+    </table>
+
+    <h3 class="sub">विनियम 88: लिफाफा मानक <em>Envelope Standards</em></h3>
+    <table class="tbl">
+      <tr><th>मानदंड</th><th>विशेषता / Standard</th></tr>
+      <tr><td>आकार</td><td>न्यूनतम 140×90 मिमी | अधिकतम 458×324 मिमी</td></tr>
+      <tr><td>मोटाई</td><td>0.15 मिमी से 0.50 मिमी</td></tr>
+      <tr><td>कागज भार</td><td>न्यूनतम 70 GSM</td></tr>
+      <tr><td>लचीलापन</td><td>"U" आकार में मुड़ने योग्य</td></tr>
+      <tr><td>खिड़की का आकार</td><td>35-50 मिमी (चौ.) × 80-125 मिमी (लं.)</td></tr>
+      <tr><td>2D बारकोड न्यूनतम</td><td>18×18 मिमी</td></tr>
+      <tr><td>प्रेषक लोगो</td><td>अधिकतम 25×50 मिमी</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="q">❓ प्रश्न: घरेलू पत्र का अधिकतम भार क्या है? / Max weight of a domestic letter?</div>
+      <div class="opts">
+        <div class="opt">A. 200 ग्राम</div>
+        <div class="opt">B. 250 ग्राम</div>
+        <div class="opt ans">C. 500 ग्राम ✅</div>
+        <div class="opt">D. 1000 ग्राम</div>
+      </div>
+      <div class="hint">💡 Reg. 87(3)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FEE TABLE ═══════════ -->
+<div class="section" id="fee-table">
+  <div class="section-title">💲 अनुसूची I: घरेलू डाक शुल्क तालिका / Domestic Postage Rates</div>
+  <div class="section-body">
+    <div class="alert red">🔴 <strong>शुल्क तालिका परीक्षा में अत्यंत महत्वपूर्ण है!</strong></div>
+    <table class="tbl">
+      <tr><th>वस्तु / Item</th><th>भार / Weight</th><th>शुल्क / Rate</th></tr>
+      <tr class="imp"><td><b>पत्र / Letter</b></td><td>प्रथम 20 ग्राम तक</td><td><b>₹5/-</b></td></tr>
+      <tr class="imp"><td><b>पत्र / Letter</b></td><td>प्रत्येक 20 ग्राम अतिरिक्त</td><td><b>₹5/-</b></td></tr>
+      <tr class="warn"><td><b>पत्र-पत्रिका / Letter Card</b></td><td>—</td><td><b>₹2.50/-</b></td></tr>
+      <tr class="warn"><td><b>पोस्टकार्ड / Postcard</b></td><td>—</td><td><b>50 पैसे</b></td></tr>
+      <tr><td><b>बुक पोस्ट / Book Post</b></td><td>प्रथम 50 ग्राम</td><td><b>₹4/-</b></td></tr>
+      <tr><td><b>बुक पोस्ट / Book Post</b></td><td>अतिरिक्त 50 ग्राम</td><td><b>₹3/-</b></td></tr>
+      <tr class="imp"><td><b>नेत्रहीन साहित्य / Lit. for Blind</b></td><td>—</td><td><b style="color:var(--green)">शुल्क मुक्त / FREE</b></td></tr>
+      <tr><td><b>पंजीकृत समाचारपत्र (एकल)</b></td><td>50 ग्राम तक</td><td><b>25 पैसे</b></td></tr>
+      <tr><td><b>पंजीकृत समाचारपत्र (एकल)</b></td><td>50-100 ग्राम</td><td><b>50 पैसे</b></td></tr>
+      <tr><td><b>पंजीकृत समाचारपत्र (एकल)</b></td><td>प्रत्येक 100 ग्राम अतिरिक्त</td><td><b>20 पैसे</b></td></tr>
+      <tr class="warn"><td><b>IP पार्सल / IP Parcel (Retail)</b></td><td>500 ग्राम तक</td><td><b>₹36/-</b></td></tr>
+      <tr class="warn"><td><b>IP पार्सल / IP Parcel (Retail)</b></td><td>प्रत्येक 500 ग्राम</td><td><b>₹16/-</b></td></tr>
+      <tr><td><b>वायुडाक शुल्क (घरेलू) / Airmail</b></td><td>50 ग्राम तक</td><td><b>₹2/-</b></td></tr>
+      <tr><td><b>वायुडाक शुल्क (घरेलू) / Airmail</b></td><td>अतिरिक्त 50 ग्राम</td><td><b>₹1/-</b></td></tr>
+      <tr class="imp"><td><b>पत्रिका पोस्ट (Municipal बाहर)</b></td><td>200 ग्राम तक</td><td><b>₹12/-</b></td></tr>
+      <tr class="imp"><td><b>पत्रिका पोस्ट (Municipal भीतर)</b></td><td>200 ग्राम तक</td><td><b>₹8/-</b></td></tr>
+    </table>
+
+    <h3 class="sub">अनुसूची IV: मूल्य-वर्धित सेवा शुल्क <em>Schedule IV: VAS Fees</em></h3>
+    <table class="tbl">
+      <tr><th>सेवा / Service</th><th>शुल्क / Fee</th></tr>
+      <tr class="imp"><td>🔴 पंजीकरण शुल्क / Registration Fee</td><td><b>₹17/-</b> (डाकशुल्क के अतिरिक्त)</td></tr>
+      <tr class="imp"><td>🔴 प्रमाणित प्रतिलिपि शुल्क / Attested Copy</td><td><b>₹2/-</b></td></tr>
+      <tr class="warn"><td>🟠 बीमा (SP Parcel) ≤₹200</td><td><b>₹4/-</b></td></tr>
+      <tr class="warn"><td>🟠 बीमा (SP Parcel) >₹200</td><td><b>₹4 + 1.5% of excess</b></td></tr>
+      <tr class="warn"><td>🟠 बीमा (अन्य) ≤₹200</td><td><b>₹10/-</b></td></tr>
+      <tr class="warn"><td>🟠 बीमा (अन्य) >₹200 — प्रत्येक ₹100</td><td><b>₹6/-</b></td></tr>
+      <tr class="imp"><td>🔴 COD — ₹6500 तक</td><td><b>1.6%</b> of recovered amount</td></tr>
+      <tr class="imp"><td>🔴 COD — ₹6500 से अधिक</td><td><b>₹100 + 1%</b> of amount exceeding ₹6500</td></tr>
+      <tr><td>डिलीवरी प्रमाण / Proof of Delivery</td><td><b>₹10/-</b> per item</td></tr>
+    </table>
+  </div>
+</div>
+<!-- ═══════════ INTERNATIONAL ═══════════ -->
+<div class="section" id="international">
+  <div class="section-title">🌍 अध्याय VI: अंतर्राष्ट्रीय डाक / International Items (Reg. 107+)</div>
+  <div class="section-body">
+    <div class="mindmap">
+      <div class="mm-center">🌍 अंतर्राष्ट्रीय डाक / International Post</div>
+      <div class="mm-branches">
+        <div class="mm-node r">📩 पत्र पोस्ट<br><em>Letter Post</em><br><small>पत्र, पोस्टकार्ड, एरोग्राम, मुद्रित पत्र, M-Bag</small></div>
+        <div class="mm-node b">📦 पार्सल पोस्ट<br><em>Parcel Post</em><br><small>Air Parcel, SAL, Surface Parcel</small></div>
+        <div class="mm-node o">⚡ EMS<br><em>Express Mail Service</em><br><small>सबसे तेज़ — दुनिया भर में</small></div>
+        <div class="mm-node g">🦯 नेत्रहीन<br><em>Lit. for Blind</em><br><small>डाकशुल्क मुक्त / Free</small></div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+
+    <h3 class="sub">अंतर्राष्ट्रीय पत्र आयाम <em>International Letter Dimensions</em></h3>
+    <table class="tbl">
+      <tr><th>रूप</th><th>अधिकतम</th><th>न्यूनतम</th></tr>
+      <tr class="warn"><td>Non-roll (L+W+D)</td><td>900 मिमी (कोई एक विमा ≤600 मिमी)</td><td>90×140 मिमी</td></tr>
+      <tr class="warn"><td>Roll Form (L+2D)</td><td>1040 मिमी (कोई एक ≤900 मिमी)</td><td>170 मिमी</td></tr>
+      <tr class="imp"><td>अधिकतम भार</td><td colspan="2"><b>2 किग्रा (2000 ग्राम)</b></td></tr>
+    </table>
+
+    <h3 class="sub">अंतर्राष्ट्रीय पंजीकरण शुल्क / International Registration Fee</h3>
+    <table class="tbl">
+      <tr><th>वस्तु</th><th>शुल्क</th></tr>
+      <tr class="imp"><td>पत्र, पोस्टकार्ड, छोटे पैकेट, एरोग्राम</td><td><b>₹150/-</b></td></tr>
+      <tr class="warn"><td>M Bag (Bulk Bag)</td><td><b>₹750/-</b></td></tr>
+    </table>
+
+    <h3 class="sub">विनियम 109: एरोग्राम <em>Aerogramme</em></h3>
+    <div class="alert yellow">🟡 केवल हवाई मार्ग से / Only by air. अधिकतम: 110×220 मिमी (मुड़ा हुआ) | न्यूनतम: 90×140 मिमी। निजी एरोग्राम स्वीकार नहीं। <em>Privately manufactured aerogramme NOT accepted. Max: 110×220 mm. Min: 90×140 mm.</em></div>
+
+    <div class="mcq">
+      <div class="q">❓ EMS का पूर्ण रूप और विशेषता क्या है?</div>
+      <div class="opts">
+        <div class="opt">A. Emergency Mail Service</div>
+        <div class="opt ans">B. Express Mail Service — सबसे तेज़ सेवा ✅</div>
+        <div class="opt">C. Electronic Mail System</div>
+        <div class="opt">D. Extended Mail Service</div>
+      </div>
+      <div class="hint">💡 Reg.107(3) — EMS is the fastest for documents & merchandise worldwide</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ UNIVERSAL POSTAL SERVICE ═══════════ -->
+<div class="section" id="ups">
+  <div class="section-title">📮 अध्याय VII: यूनिवर्सल पोस्टल सर्विस / UPS (Reg. 128)</div>
+  <div class="section-body">
+    <div class="compare">
+      <div class="compare-head" style="background:var(--blue);">घरेलू / Domestic (8)</div>
+      <div class="compare-head" style="background:var(--red);">अंतर्राष्ट्रीय / International (8)</div>
+      <div class="compare-cell">📩 पत्र / Letters<br>📝 लेटर कार्ड<br>📚 बुक पोस्ट<br>📰 पत्रिका पोस्ट<br>📰 पंजीकृत समाचारपत्र<br>🦯 नेत्रहीन साहित्य<br>📦 IP पार्सल<br>🃏 पोस्टकार्ड</div>
+      <div class="compare-cell">📩 पत्र / Letters<br>✈ एरोग्राम<br>🃏 पोस्टकार्ड<br>✈ एयरमेल पोस्टकार्ड<br>📦 छोटे पैकेट<br>🖨 मुद्रित पत्र<br>🦯 नेत्रहीन साहित्य<br>📦 अंतर्राष्ट्रीय वायु पार्सल</div>
+    </div>
+    <div class="alert orange">🟠 घरेलू और अंतर्राष्ट्रीय दोनों में <b>8-8 सेवाएँ</b> हैं — याद करें! <em>8 domestic + 8 international services under UPS</em></div>
+  </div>
+</div>
+
+<!-- ═══════════ VALUE ADDED SERVICES ═══════════ -->
+<div class="section" id="value-added">
+  <div class="section-title">⭐ अध्याय IX: मूल्य-वर्धित सेवाएँ / Value Added Services (Reg. 132-144)</div>
+  <div class="section-body">
+
+    <h3 class="sub">विनियम 133: बीमा / Insurance — महत्वपूर्ण सीमाएँ</h3>
+    <div class="card-grid">
+      <div class="card red">
+        <h4>🔴 अधिकतम बीमा राशि</h4>
+        <span class="hi" style="font-size:16px;">₹1,00,000 (एक लाख)</span>
+        <span class="en">Max insurable value = ₹1 lakh (at identified booking centres)</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 मुद्रा/बैंक नोट्स</h4>
+        <span class="hi" style="font-size:16px;">₹20,000</span>
+        <span class="en">Currency/bank notes by insured post: Max ₹20,000</span>
+      </div>
+    </div>
+
+    <h3 class="sub">बीमा कवरेज — क्या कवर और क्या नहीं</h3>
+    <div class="compare">
+      <div class="compare-head" style="background:var(--green);">✅ बीमा कवर</div>
+      <div class="compare-head" style="background:var(--red);">❌ बीमा कवर नहीं</div>
+      <div class="compare-cell">सभी जोखिम / All risks in transmission</div>
+      <div class="compare-cell">ईश्वरीय प्रकोप / Acts of God</div>
+      <div class="compare-cell">तरल पदार्थ — केवल हानि के लिए</div>
+      <div class="compare-cell">युद्ध, दंगे / War, Riots, Civil commotion</div>
+      <div class="compare-cell">नाशवान वस्तु — केवल हानि के लिए</div>
+      <div class="compare-cell">सरकारी प्रतिबंध / Govt. restriction/prohibition</div>
+    </div>
+
+    <div class="alert orange">🟠 <b>Reg.133(8):</b> बीमित वस्तु के प्रेषक को <b>मुफ्त</b> डिलीवरी प्रमाण मिलता है। यदि नहीं मिला, तो PM द्वारा <b>डिलीवरी प्रमाणपत्र</b> इलेक्ट्रॉनिक रूप में दिया जाएगा। <em>Sender gets free proof of delivery. If not received, PM issues delivery certificate electronically.</em></div>
+
+    <h3 class="sub">विनियम 135: COD — कैश ऑन डिलीवरी</h3>
+    <div class="alert yellow">🟡 COD शुल्क: ₹6500 तक = 1.6% | ₹6500 से अधिक = ₹100 + 1% excess | राशि प्रेषक को विप्रेषित की जाएगी। <em>Fee: Upto ₹6500 = 1.6% | Above ₹6500 = ₹100 + 1% | Amount remitted to sender.</em></div>
+
+    <div class="mcq">
+      <div class="q">❓ बीमित पोस्ट द्वारा मुद्रा/बैंक नोट भेजने पर अधिकतम मूल्य कितना हो सकता है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹10,000</div>
+        <div class="opt ans">B. ₹20,000 ✅</div>
+        <div class="opt">C. ₹50,000</div>
+        <div class="opt">D. ₹1,00,000</div>
+      </div>
+      <div class="hint">💡 Reg.133(2) — Currency/bank notes max ₹20,000</div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════ MONEY ORDER ═══════════ -->
+<div class="section" id="money-order">
+  <div class="section-title">💸 अध्याय X: मनी रेमिटेंस / Money Remittance (Reg. 145–169)</div>
+  <div class="section-body">
+
+    <h3 class="sub">विनियम 145: मनीऑर्डर — महत्वपूर्ण सीमाएँ</h3>
+    <div class="card-grid">
+      <div class="card red">
+        <h4>🔴 एकल MO — अधिकतम राशि</h4>
+        <span class="hi" style="font-size:18px;">₹10,000</span>
+        <span class="en">Single Money Order max = ₹10,000 (no fraction)</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 एक माह में एक व्यक्ति को MO</h4>
+        <span class="hi" style="font-size:18px;">₹25,000</span>
+        <span class="en">Total retail MO to one person per month = ₹25,000</span>
+      </div>
+    </div>
+
+    <h3 class="sub">विनियम 146: मनीऑर्डर की वैधता / Currency Period</h3>
+    <div class="alert red">🔴 <b>वैधता:</b> जारी करने के महीने के बाद के दूसरे महीने के अंतिम दिन तक। <em>Expires at the end of the last day of the SECOND month following the month of issue.</em></div>
+    <div class="alert yellow">🟡 <b>उदाहरण:</b> जनवरी में जारी → मार्च के अंतिम दिन तक वैध <em>Example: Jan issue → Valid till last day of March</em></div>
+
+    <h3 class="sub">विनियम 147: मनीऑर्डर की श्रेणियाँ / Categories</h3>
+    <div class="flow">
+      <div class="flow-box">मनीऑर्डर / Money Order</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-branch">
+        <div class="flow-box green">(a) खुदरा MO<br><em>Retail MO</em><br>एक व्यक्ति से दूसरे को</div>
+        <div class="flow-box orange">(b) थोक MO<br><em>Bulk MO</em><br>1→many OR many→1</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box gray">(c) सेवा MO / Service MO<br><em>विभागीय/सरकारी कार्य</em></div>
+    </div>
+
+    <h3 class="sub">MO कमीशन / Commission (Schedule V)</h3>
+    <div class="alert red">🔴 <b>प्रत्येक ₹20 या उसके अंश पर: ₹1 कमीशन</b> <em>₹1 per every ₹20 or fraction thereof</em></div>
+
+    <h3 class="sub">विनियम 149: MO प्रेषक का अधिकार <em>Free entitlements</em></h3>
+    <ul class="check">
+      <li>भुगतान की SMS/डिजिटल सूचना — मुफ्त / Free SMS/digital intimation</li>
+      <li>भुगतान प्रमाणपत्र — बुकिंग से 3 माह के भीतर अनुरोध पर मुफ्त / Free payment certificate (within 3 months)</li>
+    </ul>
+
+    <h3 class="sub">विनियम 151: MO रीडायरेक्ट / Stoppage</h3>
+    <div class="card-grid">
+      <div class="card green">
+        <h4>🟢 पुनर्निर्देश (Redirection)</h4>
+        <span class="en">Payee can redirect to another address — FREE (with identity proof)</span>
+      </div>
+      <div class="card yellow">
+        <h4>🟡 रोकना (Stopping)</h4>
+        <span class="en">Remitter can stop & return — FREE — before postman issues for delivery. Refund: MO amount MINUS commission.</span>
+      </div>
+    </div>
+    <div class="alert orange">🟠 <b>नाम में परिवर्तन नहीं:</b> MO में प्राप्तकर्ता का नाम बदलना अनुमत नहीं। <em>No alteration in name of payee permitted.</em></div>
+
+    <div class="mcq">
+      <div class="q">❓ एकल खुदरा मनीऑर्डर की अधिकतम राशि क्या है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹5,000</div>
+        <div class="opt ans">B. ₹10,000 ✅</div>
+        <div class="opt">C. ₹25,000</div>
+        <div class="opt">D. ₹50,000</div>
+      </div>
+      <div class="hint">💡 Reg.145(2) — Single MO max ₹10,000; Monthly max ₹25,000 per person</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ BUSINESS SOLUTIONS ═══════════ -->
+<div class="section" id="business">
+  <div class="section-title">🏢 अध्याय XI: बिज़नेस सॉल्यूशन / Business Solutions (Reg. 170–173)</div>
+  <div class="section-body">
+    <div class="card-grid">
+      <div class="card blue">
+        <h4>🟡 (A) BNPL — Book Now Pay Later <span class="tag">Reg.170</span></h4>
+        <span class="hi">कॉर्पोरेट ग्राहकों को क्रेडिट सुविधा</span>
+        <span class="en">Credit facility for corporate customers who sign agreement. Approval: Divisional Head (single location); Circle/Regional Head (multi-location).</span>
+      </div>
+      <div class="card blue">
+        <h4>🟡 (B) NAF — National Account Facility <span class="tag">Reg.172</span></h4>
+        <span class="hi">एक से अधिक सर्किल से पोस्टिंग</span>
+        <span class="en">For customers posting from more than one circle. Eligibility/process as per administrative instructions.</span>
+      </div>
+    </div>
+    <div class="card blue">
+      <h4>🟡 (C) Advance Payment <span class="tag">Reg.173</span></h4>
+      <span class="en">Contractual customers who enter agreement. Booking data in specified electronic format mandatory.</span>
+    </div>
+    <div class="alert yellow">🟡 <b>BNPL मंजूरी — याद रखें:</b> GPO/Class-1 HO के लिए Director/Chief PM की शक्तियाँ। बहु-सर्किल = Circle Head या Regional Head। <em>GPO/Class-1 HO: Director or Chief PM. Multi-circle: Circle/Regional Head.</em></div>
+  </div>
+</div>
+
+<!-- ═══════════ MISCELLANEOUS ═══════════ -->
+<div class="section" id="misc">
+  <div class="section-title">🗂 अध्याय XIII: विविध / Miscellaneous (Reg. 175-180)</div>
+  <div class="section-body">
+
+    <h3 class="sub">विनियम 175: PIN कोड / Postal Index Number</h3>
+    <div class="card red">
+      <h4>🔴 PIN Code — 6 अंकीय</h4>
+      <span class="en">6-digit postcode for an area mapped to the post office. Specified by Director General. Writing PIN is MANDATORY on every item.</span>
+    </div>
+
+    <h3 class="sub">विनियम 176: फ्रैंकिंग मशीन / Franking Machine (RMFM)</h3>
+    <div class="card-grid">
+      <div class="card orange">
+        <h4>🟠 लाइसेंसिंग प्राधिकरण</h4>
+        <span class="en">Divisional Head OR Independent Gazetted Postmaster</span>
+      </div>
+      <div class="card orange">
+        <h4>🟠 फ्रैंक्ड मेल प्रस्तुति</h4>
+        <span class="en">Same day OR next working day at designated PO. Relaxation only by licensing authority in writing.</span>
+      </div>
+    </div>
+
+    <h3 class="sub">विनियम 177-178: विनियमों का अद्यतन / PO Orders</h3>
+    <table class="tbl">
+      <tr><th>विनियम</th><th>प्रावधान</th><th>अवधि</th></tr>
+      <tr class="imp"><td><b>177</b></td><td>🔴 विनियमों का अद्यतन संस्करण प्रकाशित</td><td><b>जनवरी माह में / January</b></td></tr>
+      <tr class="imp"><td><b>178(2)</b></td><td>🔴 PO Orders का अर्धवार्षिक संकलन</td><td><b>जुलाई और जनवरी (Jan-Jun & Jul-Dec)</b></td></tr>
+    </table>
+
+    <h3 class="sub">विनियम 179-180: PLI और वित्तीय सेवाएँ</h3>
+    <div class="card-grid">
+      <div class="card blue">
+        <h4>🟡 Reg.179 — PLI</h4>
+        <span class="en">Insurance services administered by DG with PRIOR APPROVAL of Central Govt.</span>
+      </div>
+      <div class="card blue">
+        <h4>🟡 Reg.180 — Financial</h4>
+        <span class="en">Savings scheme guidelines issued by DG in accordance with Central Govt. instructions.</span>
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">❓ विनियम 177 के अनुसार, वार्षिक अद्यतन संस्करण कब प्रकाशित होता है?</div>
+      <div class="opts">
+        <div class="opt">A. अप्रैल</div>
+        <div class="opt ans">B. जनवरी ✅</div>
+        <div class="opt">C. जुलाई</div>
+        <div class="opt">D. अक्टूबर</div>
+      </div>
+      <div class="hint">💡 Reg.177 — January of the following year</div>
+    </div>
+  </div>
+</div>
+<!-- ═══════════ MNEMONIC ═══════════ -->
+<div class="section" id="mnemonic">
+  <div class="section-title">🧠 मेमोरी ट्रिक्स / Mnemonics</div>
+  <div class="section-body">
+
+    <div class="mnemonic">
+      <h4>📌 15 अध्यायों को याद करने का तरीका: "P-G-D-C-D I-U-O-V-M B-C-M-P-F"</h4>
+      <div class="letters">
+        <div class="letter-box"><span>P</span>Preliminary</div>
+        <div class="letter-box"><span>G</span>General</div>
+        <div class="letter-box"><span>D</span>Delivery</div>
+        <div class="letter-box"><span>C</span>Compensation</div>
+        <div class="letter-box"><span>D</span>Domestic</div>
+        <div class="letter-box"><span>I</span>International</div>
+        <div class="letter-box"><span>U</span>UPS</div>
+        <div class="letter-box"><span>O</span>Official</div>
+        <div class="letter-box"><span>V</span>Value Added</div>
+        <div class="letter-box"><span>M</span>Money</div>
+        <div class="letter-box"><span>B</span>Business</div>
+        <div class="letter-box"><span>C</span>Collaboration</div>
+        <div class="letter-box"><span>M</span>Misc</div>
+        <div class="letter-box"><span>P</span>PLI</div>
+        <div class="letter-box"><span>F</span>Financial</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <h4>📌 MO समय-सीमा ट्रिक: "2 MONTH RULE"</h4>
+      <div class="letters">
+        <div class="letter-box"><span>M</span>Month of Issue</div>
+        <div class="letter-box"><span>+</span></div>
+        <div class="letter-box"><span>2</span>Months</div>
+        <div class="letter-box"><span>=</span></div>
+        <div class="letter-box"><span>E</span>End of 2nd month</div>
+      </div>
+      <p style="font-size:11px;color:#aaa;margin-top:6px;">जनवरी → फरवरी → <b style="color:#FF9933">मार्च का अंतिम दिन</b></p>
+    </div>
+
+    <div class="mnemonic">
+      <h4>📌 प्रतिकर समय-सीमा: "15-60-2-60-30-10"</h4>
+      <div class="letters">
+        <div class="letter-box"><span>15</span>शिकायत बाद</div>
+        <div class="letter-box"><span>60</span>शिकायत पहले</div>
+        <div class="letter-box"><span>2</span>क्षति (दिन)</div>
+        <div class="letter-box"><span>60</span>खोई (बुकिंग)</div>
+        <div class="letter-box"><span>30</span>खोई (शिकायत)</div>
+        <div class="letter-box"><span>10</span>प्रतिकर (दिन)</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <h4>📌 बीमा सीमाएँ: "1L - 20K - FREE"</h4>
+      <div class="letters">
+        <div class="letter-box"><span>1L</span>₹1 लाख — अधिकतम बीमा</div>
+        <div class="letter-box"><span>20K</span>₹20,000 — मुद्रा/नोट</div>
+        <div class="letter-box"><span>FREE</span>Delivery Proof — मुफ्त</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <h4>📌 UPS Domestic: "L-LC-B-P-RN-LB-IP-PC" (8 सेवाएँ)</h4>
+      <div class="letters">
+        <div class="letter-box"><span>L</span>Letter</div>
+        <div class="letter-box"><span>LC</span>Letter Card</div>
+        <div class="letter-box"><span>B</span>Book Post</div>
+        <div class="letter-box"><span>P</span>Periodical</div>
+        <div class="letter-box"><span>RN</span>Reg. Newspaper</div>
+        <div class="letter-box"><span>LB</span>Lit. for Blind</div>
+        <div class="letter-box"><span>IP</span>IP Parcel</div>
+        <div class="letter-box"><span>PC</span>Post Card</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ MCQ BANK ═══════════ -->
+<div class="section" id="mcq">
+  <div class="section-title">📝 संभावित परीक्षा प्रश्न / Probable Exam MCQs</div>
+  <div class="section-body">
+
+    <div class="mcq">
+      <div class="q">Q1. पोस्ट ऑफिस विनियम, 2024 कब लागू हुए? / When did PO Regulations 2024 come into force?</div>
+      <div class="opts">
+        <div class="opt">A. 1 जनवरी 2024</div>
+        <div class="opt ans">B. 16 दिसम्बर 2024 ✅</div>
+        <div class="opt">C. 1 अप्रैल 2024</div>
+        <div class="opt">D. 1 अक्टूबर 2024</div>
+      </div>
+      <div class="hint">💡 Reg.1(2) — 16th day of December, 2024</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q2. भार का अर्थ क्या है? / What does "weight" mean?</div>
+      <div class="opts">
+        <div class="opt">A. केवल सकल भार</div>
+        <div class="opt">B. केवल आयतन भार</div>
+        <div class="opt ans">C. सकल भार या आयतन भार — जो अधिक हो ✅</div>
+        <div class="opt">D. औसत भार</div>
+      </div>
+      <div class="hint">💡 Reg.2(r)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q3. शाखा डाकघर अधिकतम कितने घंटे खुला रहेगा? / Max hours for Branch PO?</div>
+      <div class="opts">
+        <div class="opt">A. 4 घंटे</div>
+        <div class="opt ans">B. 5 घंटे ✅</div>
+        <div class="opt">C. 6 घंटे</div>
+        <div class="opt">D. 8 घंटे</div>
+      </div>
+      <div class="hint">💡 Reg.3(2)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q4. नेत्रहीन साहित्य (Lit. for Blind) पर डाकशुल्क क्या है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹2/-</div>
+        <div class="opt">B. ₹1/-</div>
+        <div class="opt ans">C. शुल्क मुक्त / Free ✅</div>
+        <div class="opt">D. 50 पैसे</div>
+      </div>
+      <div class="hint">💡 Schedule I — Literature for Blind: Exempted from postage</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q5. पंजीकरण शुल्क (Registration Fee) क्या है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹10/-</div>
+        <div class="opt">B. ₹15/-</div>
+        <div class="opt ans">C. ₹17/- ✅</div>
+        <div class="opt">D. ₹20/-</div>
+      </div>
+      <div class="hint">💡 Schedule IV, Table I — ₹17 in addition to postage</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q6. "भार" = सकल भार या ________ — जो अधिक हो</div>
+      <div class="opts">
+        <div class="opt">A. वास्तविक भार</div>
+        <div class="opt ans">B. आयतन भार ✅</div>
+        <div class="opt">C. न्यूनतम भार</div>
+        <div class="opt">D. घोषित भार</div>
+      </div>
+      <div class="hint">💡 Reg.2(r) — Gross or Volumetric, whichever higher</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q7. MO कमीशन दर क्या है? / MO Commission Rate?</div>
+      <div class="opts">
+        <div class="opt ans">A. प्रत्येक ₹20 पर ₹1 ✅</div>
+        <div class="opt">B. प्रत्येक ₹50 पर ₹2</div>
+        <div class="opt">C. 2% flat</div>
+        <div class="opt">D. ₹5 flat</div>
+      </div>
+      <div class="hint">💡 Schedule V, Table I — ₹1 per ₹20 or fraction</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q8. पोस्टकार्ड का घरेलू डाकशुल्क क्या है? / Domestic Postcard rate?</div>
+      <div class="opts">
+        <div class="opt">A. ₹1/-</div>
+        <div class="opt ans">B. 50 पैसे ✅</div>
+        <div class="opt">C. ₹2/-</div>
+        <div class="opt">D. 25 पैसे</div>
+      </div>
+      <div class="hint">💡 Schedule I, Table I (c)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q9. "PO Order" का अर्धवार्षिक संकलन कब जारी होता है?</div>
+      <div class="opts">
+        <div class="opt ans">A. जुलाई और जनवरी ✅</div>
+        <div class="opt">B. अप्रैल और अक्टूबर</div>
+        <div class="opt">C. जून और दिसम्बर</div>
+        <div class="opt">D. मार्च और सितम्बर</div>
+      </div>
+      <div class="hint">💡 Reg.178(2) — July & January</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q10. IP पार्सल (खुदरा) — 500 ग्राम तक शुल्क?</div>
+      <div class="opts">
+        <div class="opt">A. ₹24/-</div>
+        <div class="opt">B. ₹30/-</div>
+        <div class="opt ans">C. ₹36/- ✅</div>
+        <div class="opt">D. ₹40/-</div>
+      </div>
+      <div class="hint">💡 Schedule I, Table III — ₹36 for first 500g</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ LAST DAY REVISION ═══════════ -->
+<div class="section" id="lastday">
+  <div class="section-title">🔥 परीक्षा अंतिम दिन पुनरावृत्ति / Last Day Revision Notes</div>
+  <div class="section-body">
+    <div class="last-day">
+      <h3>⚡ परीक्षा से पहले — यह जरूर पढ़ें!</h3>
+
+      <div class="ld-item">
+        <div class="ld-icon">📅</div>
+        <div class="ld-text">
+          <span class="hi-ld">PO Regulations 2024 — लागू: 16 दिसम्बर 2024</span>
+          <span class="en-ld">Came into force: 16 December 2024 | Authority: Section 13, PO Act 2023</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">🕐</div>
+        <div class="ld-text">
+          <span class="hi-ld">काउंटर सेवाएँ = 6 घंटे | शाखा PO = 5 घंटे</span>
+          <span class="en-ld">Counter services = 6 hrs | Branch PO = 5 hrs | Enquiries = Full working hours</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">📦</div>
+        <div class="ld-text">
+          <span class="hi-ld">डिलीवरी: अधिकतम 2 प्रयास — तीसरा नहीं!</span>
+          <span class="en-ld">Max 2 delivery attempts — NOT issued again after failure. Notice to addressee.</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">⏱</div>
+        <div class="ld-text">
+          <span class="hi-ld">शिकायत: 15 दिन बाद, 60 दिन के भीतर | क्षति: 2 दिन भीतर</span>
+          <span class="en-ld">Complaint: After 15 days, within 60 days | Damage: within 2 days</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">🔍</div>
+        <div class="ld-text">
+          <span class="hi-ld">खोई वस्तु: 60 दिन (बुकिंग) OR 30 दिन (शिकायत) — जो बाद में</span>
+          <span class="en-ld">Lost: 60 days from booking OR 30 days from complaint — whichever LATER</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">💰</div>
+        <div class="ld-text">
+          <span class="hi-ld">खोई वस्तु प्रतिकर: घोषणा के 10 दिन के भीतर</span>
+          <span class="en-ld">Compensation for lost item: Within 10 days of declaration</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">💸</div>
+        <div class="ld-text">
+          <span class="hi-ld">MO: ₹10,000 (एकल) | ₹25,000 (माह/व्यक्ति) | ₹1/प्रत्येक ₹20 (कमीशन)</span>
+          <span class="en-ld">MO: ₹10K single | ₹25K/month | Commission ₹1 per ₹20</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">📅</div>
+        <div class="ld-text">
+          <span class="hi-ld">MO वैधता: जारी माह + 2 माह के अंत तक</span>
+          <span class="en-ld">MO valid till end of 2nd month after issue</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">🛡</div>
+        <div class="ld-text">
+          <span class="hi-ld">बीमा: ₹1 लाख (अधिकतम) | मुद्रा = ₹20,000</span>
+          <span class="en-ld">Insurance max ₹1 lakh | Currency notes max ₹20,000</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">✉</div>
+        <div class="ld-text">
+          <span class="hi-ld">पत्र शुल्क: ₹5/20g | LCard: ₹2.50 | PCard: 50p | Book: ₹4/50g</span>
+          <span class="en-ld">Letter: ₹5/20g | Letter Card: ₹2.50 | Postcard: 50p | Book: ₹4/50g</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">📦</div>
+        <div class="ld-text">
+          <span class="hi-ld">IP Parcel: ₹36/500g (Retail) | Reg Fee: ₹17 | COD: 1.6% (≤6500) / ₹100+1%</span>
+          <span class="en-ld">IP Parcel: ₹36/500g | Reg ₹17 | COD ≤₹6500 = 1.6% | Above = ₹100+1%</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">📌</div>
+        <div class="ld-text">
+          <span class="hi-ld">PIN = 6 अंक — अनिवार्य | Franking: DH/Gazetted PM लाइसेंस</span>
+          <span class="en-ld">PIN = 6 digits — mandatory | Franking license: Divisional Head or Independent Gazetted PM</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">📰</div>
+        <div class="ld-text">
+          <span class="hi-ld">Reg.177: जनवरी — वार्षिक संस्करण | Reg.178: जुलाई+जनवरी — PO Orders</span>
+          <span class="en-ld">Reg.177: Annual update in January | Reg.178: PO Orders compiled July & January</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">🌍</div>
+        <div class="ld-text">
+          <span class="hi-ld">Intl. Reg: पत्र/PC/SP/Aero = ₹150 | M-Bag = ₹750</span>
+          <span class="en-ld">Intl. Registration: Letters/PC/Small Packet/Aero = ₹150 | M-Bag = ₹750</span>
+        </div>
+      </div>
+
+      <div class="ld-item">
+        <div class="ld-icon">🏢</div>
+        <div class="ld-text">
+          <span class="hi-ld">UPS: घरेलू 8 + अंतर्राष्ट्रीय 8 = कुल 16 सेवाएँ</span>
+          <span class="en-ld">UPS: 8 Domestic + 8 International = 16 total services</span>
+        </div>
+      </div>
+    </div>
+    <!-- ONE PAGE QUICK SHEET -->
+    <div class="ops">
+      <div class="ops-header">📋 ONE-PAGE QUICK REFERENCE SHEET — PO Regulations 2024</div>
+      <div class="ops-grid">
+        <div class="ops-cell"><span class="label">अधिनियम</span>PO Act 2023, धारा 13</div>
+        <div class="ops-cell"><span class="label">लागू तिथि</span>16 दिसम्बर 2024</div>
+        <div class="ops-cell"><span class="label">अध्याय</span>15 + 5 Schedule</div>
+        <div class="ops-cell"><span class="label">Branch PO घंटे</span>5 घंटे (Max)</div>
+        <div class="ops-cell"><span class="label">Counter सेवाएँ</span>6 घंटे</div>
+        <div class="ops-cell"><span class="label">Delivery प्रयास</span>Max 2 (Reg.42)</div>
+        <div class="ops-cell"><span class="label">शिकायत (non-receipt)</span>15 दिन बाद – 60 दिन</div>
+        <div class="ops-cell"><span class="label">शिकायत (damage)</span>2 दिन के भीतर</div>
+        <div class="ops-cell"><span class="label">खोई वस्तु</span>60d(booking)/30d(complaint) — Later</div>
+        <div class="ops-cell"><span class="label">प्रतिकर भुगतान</span>10 दिन के भीतर</div>
+        <div class="ops-cell"><span class="label">Letter Max</span>500 ग्राम / ₹5 per 20g</div>
+        <div class="ops-cell"><span class="label">Postcard</span>50 पैसे</div>
+        <div class="ops-cell"><span class="label">Reg. Fee</span>₹17/-</div>
+        <div class="ops-cell"><span class="label">Insurance Max</span>₹1,00,000</div>
+        <div class="ops-cell"><span class="label">Currency (Insured)</span>₹20,000</div>
+        <div class="ops-cell"><span class="label">MO Max (Single)</span>₹10,000</div>
+        <div class="ops-cell"><span class="label">MO Max (Monthly)</span>₹25,000</div>
+        <div class="ops-cell"><span class="label">MO Commission</span>₹1 per ₹20</div>
+        <div class="ops-cell"><span class="label">MO Currency</span>+2 months end</div>
+        <div class="ops-cell"><span class="label">PIN Code</span>6 अंक — अनिवार्य</div>
+        <div class="ops-cell"><span class="label">Annual Update</span>जनवरी (Reg.177)</div>
+        <div class="ops-cell"><span class="label">PO Orders</span>जुलाई + जनवरी</div>
+        <div class="ops-cell"><span class="label">UPS Domestic</span>8 Services</div>
+        <div class="ops-cell"><span class="label">UPS International</span>8 Services</div>
+        <div class="ops-cell"><span class="label">Intl. Reg Fee</span>₹150 / ₹750 (M-Bag)</div>
+        <div class="ops-cell"><span class="label">IP Parcel (Retail)</span>₹36/500g</div>
+        <div class="ops-cell"><span class="label">COD ≤₹6500</span>1.6%</div>
+        <div class="ops-cell"><span class="label">COD >₹6500</span>₹100 + 1%</div>
+        <div class="ops-cell"><span class="label">Lit. for Blind</span>FREE (Dom + Intl)</div>
+        <div class="ops-cell"><span class="label">Franking Authority</span>Div Head / Ind. Gaz PM</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:var(--blue);color:#AED6F1;text-align:center;padding:14px;font-size:11.5px;margin-top:10px;">
+  📮 India Post IP/IPO Exam Preparation | Post Office Regulations, 2024 | <b style="color:#FF9933">Ahmedabad Division</b><br>
+  <span style="font-size:10px;">Ref: Gazette Extraordinary No.5033, Dec 16, 2024 | Signed: VIVEK KUMAR DAKSH, Dy.DG | F.No. 01-02/2024-PO</span>
+</div>
+
+
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+
+</body>
+</html>

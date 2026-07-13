@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT 2.0 Introduction, Segments & Dak Sewa Chatbots | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+.header{background:linear-gradient(135deg,#00838F 0%,var(--blue) 55%,#6A1B9A 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .hi{font-size:1.15rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.95rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.85rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.72rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.9rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.8rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.68rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.74rem;}
+table th{background:var(--blue);color:#fff;padding:6px 6px;text-align:left;}
+table td{padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.75rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:100px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.82rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.72rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.75rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.78rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.75rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.76rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.02rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.75rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.02rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.78rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.7rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0;}
+.modgrid .mod{background:#E1F5FE;border-radius:8px;padding:8px;font-size:0.72rem;border-left:3px solid var(--blue-light);}
+
+.alertbox{background:#FFF3CD;border:2px solid var(--yellow);border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:0.76rem;}
+.alertbox b{color:var(--gold-dark);}
+
+footer{text-align:center;color:var(--muted);font-size:0.7rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.75rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+.mcq{background:#E8F5E9;border:2px solid var(--green);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:0.78rem;}
+.mcq .opt{padding:2px 0;}
+.mcq .correct{color:var(--green);font-weight:700;}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">IT 2.0 — परिचय, Segments व Dak Sewa Chatbots</span></h1>
+  <div class="en">IT 2.0 Introduction, Technical Architecture & Dak Sewa App Chatbots</div>
+  <div class="sub">Department of Posts | Technical Deep-Dive | CBS Manual Chapter-Q का विस्तार</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">💻 Technical Architecture</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="alertbox">⚠️ <b>महत्वपूर्ण नोट:</b> स्रोत दस्तावेज़ में Dak Sewa App के Chatbot को लेकर एक <b>विरोधाभास (Contradiction)</b> है — मूल सूची में "Sewabot" को Booking Assistance के लिए चिह्नित किया गया है, लेकिन दिए गए MCQ का उत्तर "Megha" बताया गया है। इस infographic में दोनों तथ्य ज्यों के त्यों दिखाए गए हैं — परीक्षा में उत्तर देने से पहले नवीनतम आधिकारिक DoP स्रोत से पुष्टि अवश्य करें।</div>
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. परिचय व लक्ष्य / Introduction & Vision</a>
+    <a href="#ch2">2. उद्देश्य / Objectives</a>
+    <a href="#ch3">3. Segments (Silos) — CSI/FSI/RSI/NI/CM/MOH</a>
+    <a href="#ch4">4. मुख्य तकनीकें व Tools</a>
+    <a href="#ch5">5. Hardware व Network</a>
+    <a href="#ch6">6. Operational Enhancements</a>
+    <a href="#ch7">7. Key Abbreviations</a>
+    <a href="#ch8">8. Dak Sewa App — परिचय व Chatbots</a>
+    <a href="#ch9">9. महत्वपूर्ण तथ्य (Other Facts)</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">🎯 अध्याय 1 → परिचय व लक्ष्य / Introduction & Vision</div>
+  <div class="chapter-body">
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-time">2012 (Phase 1):</span> IT Modernization Project शुरू</div>
+      <div class="tl-item"><span class="tl-time">2012-13:</span> IT Modernization का पहला Implementation शुरू हुआ</div>
+      <div class="tl-item"><span class="tl-time">2013:</span> Data Centre Facility (DCF) शुरू</div>
+      <div class="tl-item"><span class="tl-time">2016:</span> ATM Interoperability लागू</div>
+      <div class="tl-item"><span class="tl-time">जून 2022:</span> IT 2.0 Launch</div>
+      <div class="tl-item"><span class="tl-time">2022–2030:</span> IT 2.0 कार्यान्वयन अवधि</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">बजट व सलाहकार</h3>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>कुल बजट (Outlay)</td><td>₹5,785 करोड़</td></tr>
+        <tr><td>अवधि</td><td>2022-23 से 2029-30</td></tr>
+        <tr><td>Consultant</td><td>PwC, London</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3 class="hi">Vision (दृष्टिकोण)</h3>
+      <p class="hi">India Post को एक Technology-enabled Service Provider में परिवर्तित करना।</p>
+      <p class="en">Transform India Post into a technology-enabled service provider.</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2012 शुरू, 2022 जून में 2.0" — IT Modernization की समयरेखा</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IT Modernization Project (Phase 1) किस वर्ष शुरू हुआ? <b>(2012)</b> IT 2.0 कब लॉन्च हुआ? <b>(जून 2022)</b> कुल बजट व अवधि? <b>(₹5,785 करोड़, 2022-2030)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">🎯 अध्याय 2 → उद्देश्य / Objectives</div>
+  <div class="chapter-body">
+
+    <div class="mindmap">
+      <div class="root">🎯 IT 2.0 के 5 मुख्य उद्देश्य</div>
+      <div class="branches">
+        <div class="branch">Customer Satisfaction व Service Delivery सुधार</div>
+        <div class="branch">ग्रामीण जनसंख्या का Financial Inclusion</div>
+        <div class="branch">Anywhere-Anytime Banking व Insurance सेवाएं</div>
+        <div class="branch">Mail व Parcel Networks का Optimization</div>
+        <div class="branch">Postal, Banking व Insurance सेवाओं का एकीकरण (Single Platform)</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CFA-MI" → Customer satisfaction, Financial inclusion, Anywhere banking, Mail optimization, Integration</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IT 2.0 का उद्देश्य किन सेवाओं को एक Single Platform पर एकीकृत करना है? <b>(Postal, Banking व Insurance)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">🧩 अध्याय 3 → Segments (Silos) of IT Modernization — हर वर्ष पूछा जाता है</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — 6 Segments तालिका याद रखें</span>
+    </div>
+
+    <table>
+      <tr><th>Segment</th><th>पूर्ण नाम / Full Form</th><th>मुख्य कार्य</th></tr>
+      <tr><td><b>CSI</b></td><td>Core System Integrator</td><td>Mail, Finance, HR, Counter Services — सभी विभागीय संचालन का Digitalization (SAP आधारित)</td></tr>
+      <tr><td><b>FSI</b></td><td>Financial System Integrator</td><td>CBS व CIS के माध्यम से POSB व PLI का Computerization; ATM</td></tr>
+      <tr><td><b>RSI</b></td><td>Rural System Integrator</td><td>RICT के माध्यम से ग्रामीण BOs को Digital Devices व Support</td></tr>
+      <tr><td><b>NI</b></td><td>Network Integrator</td><td>सभी Post Offices हेतु WAN-आधारित Network Connectivity</td></tr>
+      <tr><td><b>CM</b></td><td>Change Management</td><td>कर्मचारियों (GDS सहित) को Digital वातावरण हेतु प्रशिक्षण</td></tr>
+      <tr><td><b>MOH</b></td><td>Mail Operations Hardware</td><td>Postmen व Mail Offices को Smartphones, Printers, Devices आपूर्ति</td></tr>
+    </table>
+
+    <div class="dtree">
+      <div class="q">Q: किस Segment का कार्य किससे संबंधित है — याद रखने की Trick</div>
+      <div class="yn">➡ <b>F</b>SI = <b>F</b>inancial (Banking/Insurance — CBS/CIS)</div>
+      <div class="yn">➡ <b>R</b>SI = <b>R</b>ural (RICT devices)</div>
+      <div class="yn">➡ <b>N</b>I = <b>N</b>etwork (WAN connectivity)</div>
+      <div class="yn">➡ <b>C</b>M = <b>C</b>hange (Training)</div>
+      <div class="yn">➡ <b>M</b>OH = <b>M</b>ail Hardware (Postman उपकरण)</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CSI-FSI-RSI-NI-CM-MOH" — "Cats Follow Rural Networks, Changing Mice" (क्रम याद रखने का तरीका)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> RSI का पूर्ण नाम व कार्य क्या है? <b>(Rural System Integrator — RICT devices ग्रामीण BOs को)</b> CSI किस Technology पर आधारित है? <b>(SAP)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--gold-dark);">💻 अध्याय 4 → मुख्य तकनीकें व Tools / Key Technologies</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">Core Platforms</h3>
+      <table>
+        <tr><th>Technology</th><th>पूर्ण नाम / उपयोग</th></tr>
+        <tr><td>CBS</td><td>Core Banking Solutions — POSB हेतु Online Banking</td></tr>
+        <tr><td>CIS</td><td>Core Insurance Solutions — PLI/RPLI हेतु एक Platform</td></tr>
+        <tr><td>SAP-ERP</td><td>CSI के अंतर्गत Accounts, HR, Operations हेतु</td></tr>
+        <tr><td>FINACLE</td><td>Infosys द्वारा विकसित — Banking Transactions हेतु</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3 class="hi">विशिष्ट Tools/Systems</h3>
+      <table>
+        <tr><th>Tool</th><th>पूर्ण नाम / कार्य</th></tr>
+        <tr><td>DPMS</td><td>Delivery Postman Management System — Mail Delivery Tracking</td></tr>
+        <tr><td>PMA</td><td>Postman Mobile App — Delivery Update, GPS Tracking</td></tr>
+        <tr><td>IPVS</td><td>India Post Visibility System — Article Tracking</td></tr>
+        <tr><td>Nanyatha</td><td>Letter Box Monitoring Software</td></tr>
+        <tr><td>DARPAN</td><td>Branch Post Offices का Digitization</td></tr>
+        <tr><td>ECMS</td><td>Enterprise Content Management System</td></tr>
+        <tr><td>HDMS</td><td>Help Desk Management System</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CBS-Bank, CIS-Insurance, PMA-Postman App, DARPAN-BO Digitize" — Tool-Function याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPVS का पूर्ण नाम व कार्य क्या है? <b>(India Post Visibility System — Article Tracking)</b> DARPAN किसके Digitization हेतु है? <b>(Branch Post Offices)</b> Letter Box Monitoring Software का नाम? <b>(Nanyatha)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:#00695C;">🖥️ अध्याय 5 → Hardware व Network</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>RICT Devices</td><td>Biometric, Solar-powered Micro-ATM — BPMs हेतु</td></tr>
+        <tr><td>MAC Binding</td><td>Device-Security Mechanism</td></tr>
+        <tr><td>WAN</td><td>Wide Area Network — Connectivity Backbone</td></tr>
+        <tr><td>NSP-1 व NSP-2</td><td>Network Service Providers</td></tr>
+        <tr><td>Disaster Recovery Centre (DRC)</td><td><b>Mysuru</b></td></tr>
+        <tr><td>Data Centre Facility (DCF)</td><td>शुरुआत <b>2013</b></td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "DRC = Mysuru" — Disaster Recovery Centre का स्थान याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Disaster Recovery Centre कहाँ स्थित है? <b>(Mysuru)</b> Data Centre Facility कब शुरू हुई? <b>(2013)</b> RICT Devices किस प्रकार की ऊर्जा से चलते हैं? <b>(Solar-powered)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#37474F;">⚙️ अध्याय 6 → Operational Enhancements</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3 class="hi">Digital Services</h3>
+      <div class="modgrid">
+        <div class="mod">ATM व Mobile Banking</div>
+        <div class="mod">Internet Banking</div>
+        <div class="mod">QR Code-based Authentication</div>
+        <div class="mod">Digital Addressing (Latitude-Longitude आधारित)</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Toll-Free नंबर याद रखें</span>
+      <table>
+        <tr><th>सेवा</th><th>Toll-Free नंबर</th></tr>
+        <tr><td>Banking (POSB)</td><td><b>1800-425-2440</b></td></tr>
+        <tr><td>General Helpdesk</td><td><b>1924</b></td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <table>
+        <tr><th>Platform</th><th>कार्य</th></tr>
+        <tr><td>Dak Karmayogi</td><td>सभी डाक कर्मचारियों हेतु eLearning Platform</td></tr>
+        <tr><td>ECMS</td><td>Enterprise Content Management System</td></tr>
+        <tr><td>LMS</td><td>Lead Management System</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2440 Banking, 1924 Helpdesk" — Toll-Free नंबर याद रखें (2016 से ATM Interoperability)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> POSB Banking Toll-Free नंबर क्या है? <b>(1800-425-2440)</b> General Helpdesk नंबर? <b>(1924)</b> ATM Interoperability कब से लागू है? <b>(2016)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#6A1B9A;">🔤 अध्याय 7 → Key Abbreviations (संक्षिप्ताक्षर)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — सभी Abbreviations याद रखें, हर वर्ष पूछे जाते हैं</span>
+    </div>
+    <table>
+      <tr><th>संक्षिप्त रूप</th><th>पूर्ण नाम</th></tr>
+      <tr><td>CBS</td><td>Core Banking Solution</td></tr>
+      <tr><td>CIS</td><td>Core Insurance Solution</td></tr>
+      <tr><td>CSI</td><td>Core System Integrator</td></tr>
+      <tr><td>FSI</td><td>Financial System Integrator</td></tr>
+      <tr><td>RSI</td><td>Rural System Integrator</td></tr>
+      <tr><td>NI</td><td>Network Integrator</td></tr>
+      <tr><td>CM</td><td>Change Management</td></tr>
+      <tr><td>MOH</td><td>Mail Operations Hardware</td></tr>
+      <tr><td>DPMS</td><td>Delivery Postman Management System</td></tr>
+      <tr><td>PMA</td><td>Postman Mobile App</td></tr>
+      <tr><td>IPVS</td><td>India Post Visibility System</td></tr>
+      <tr><td>HDMS</td><td>Help Desk Management System</td></tr>
+      <tr><td>SAP</td><td>Systems Applications and Products</td></tr>
+      <tr><td>GL</td><td>General Ledger</td></tr>
+      <tr><td>DRC</td><td>Disaster Recovery Centre</td></tr>
+      <tr><td>STR</td><td>Suspicious Transaction Report</td></tr>
+      <tr><td>RICT</td><td>Rural ICT</td></tr>
+      <tr><td>SMPS</td><td>Switched Mode Power Supply</td></tr>
+      <tr><td>RTGS</td><td>Real-Time Gross Settlement</td></tr>
+      <tr><td>ESS Portal</td><td>Employee Self Service (SAP)</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> हर संक्षिप्त रूप को उसके Segment/Technology Chapter से जोड़कर याद करें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> STR का पूर्ण नाम क्या है? <b>(Suspicious Transaction Report)</b> RICT का पूर्ण नाम? <b>(Rural ICT)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--red-dark);">📱 अध्याय 8 → Dak Sewa App — परिचय व Chatbots</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3 class="hi">परिचय</h3>
+      <p class="hi">Dak Sewa भारत में डाक सेवाओं को बेहतर बनाने हेतु एक Digital Platform है — Government of India के Digital Transformation पहल का हिस्सा।</p>
+      <p class="en">Dak Sewa is a digital platform aimed at enhancing postal services in India, part of Government of India's digital transformation initiative.</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">📲 Dak Sewa के मुख्य कार्य</div>
+      <div class="branches">
+        <div class="branch">Book Postal Services</div>
+        <div class="branch">Track Consignments</div>
+        <div class="branch">Access Services Online</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Key Features</span>
+      <table>
+        <tr><th>Feature</th><th>विवरण</th></tr>
+        <tr><td>User-Friendly Interface</td><td>आसान Navigation</td></tr>
+        <tr><td>Multi-Language Support</td><td>कई भाषाओं में उपलब्ध</td></tr>
+        <tr><td>Real-Time Updates</td><td>Booking Status पर Notifications</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Chatbot प्रकार (विरोधाभास सहित)</span>
+      <table>
+        <tr><th>Chatbot नाम</th><th>कार्य (स्रोत दस्तावेज़ अनुसार)</th></tr>
+        <tr><td><b>Megha</b></td><td>सामान्य पूछताछ (General Inquiries)</td></tr>
+        <tr><td><b>Vani</b></td><td>डाक संबंधी जानकारी (Postal Information)</td></tr>
+        <tr><td><b>Sewabot</b></td><td>Booking Assistance ✅ (मूल सूची में चिह्नित)</td></tr>
+        <tr><td><b>Postie</b></td><td>अन्य सेवाएं (Other Services)</td></tr>
+      </table>
+    </div>
+
+    <div class="penalty-box">⚠️ <b>विरोधाभास नोट:</b> मूल सूची में "Sewabot" को Booking Assistance हेतु ✅ चिह्नित किया गया है, परंतु नीचे दिए गए MCQ में उत्तर <b>"Megha"</b> बताया गया है। परीक्षा में सावधानी रखें — नवीनतम DoP स्रोत से पुष्टि करें।</div>
+
+    <div class="mcq">
+      <b>📘 MCQ (जैसा स्रोत दस्तावेज़ में दिया गया):</b><br>
+      Which chatbot assists users during booking in the Dak Sewa app?<br>
+      <div class="opt">A) Megha</div>
+      <div class="opt">B) Vani</div>
+      <div class="opt">C) Sewabot</div>
+      <div class="opt">D) Postie</div>
+      <div class="opt correct">✅ स्रोत दस्तावेज़ में दिया गया उत्तर: Megha (हालांकि सूची में Sewabot को Booking हेतु चिह्नित किया गया था)</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "M-V-S-P" → Megha-General, Vani-Info, Sewabot-Booking(सूची अनुसार), Postie-Other</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Dak Sewa App में कितने प्रकार के Chatbots हैं? <b>(4 — Megha, Vani, Sewabot, Postie)</b> इस विषय में स्रोत में क्या विरोधाभास है? <b>(सूची में Sewabot=Booking चिह्नित, पर MCQ उत्तर Megha है)</b></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:#263238;">📌 अध्याय 9 → अन्य महत्वपूर्ण तथ्य / Other Facts</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <table>
+        <tr><th>तथ्य</th></tr>
+        <tr><td>IT Modernization का पहला Implementation <b>2012-13</b> में शुरू हुआ</td></tr>
+        <tr><td><b>CEPT Mysuru</b> ने कई Tools विकसित किए — जैसे Post Info, PMA</td></tr>
+        <tr><td>CBS Teller ID = <b>SOL ID + 4-अंकीय संख्या</b></td></tr>
+        <tr><td>ATM व Mobile Banking, <b>FINACLE</b> के माध्यम से एकीकृत हैं</td></tr>
+        <tr><td>सभी Counter Operations, <b>CSI</b> के माध्यम से Monitor होते हैं</td></tr>
+        <tr><td>CSI ID Management, <b>IM Portal</b> से होता है</td></tr>
+        <tr><td>UAT का अर्थ है <b>User Acceptance Testing</b></td></tr>
+        <tr><td>IT Rollout समर्थन हेतु <b>Postal Acts में संशोधन</b> किए गए हैं</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CBS Teller ID = SOL+4" — फॉर्मूला याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> CBS Teller ID कैसे बनती है? <b>(SOL ID + 4-अंकीय संख्या)</b> UAT का पूर्ण रूप क्या है? <b>(User Acceptance Testing)</b> Post Info व PMA जैसे Tools किसने विकसित किए? <b>(CEPT Mysuru)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>Timeline:</b> 2012 Phase-1 शुरू; जून 2022 IT 2.0 launch; ₹5,785 Cr (2022-2030); Consultant PwC London</div>
+    <div class="rev-card"><b>Objectives:</b> Customer satisfaction, Financial inclusion, Anywhere banking, Network optimization, Single platform integration</div>
+    <div class="rev-card"><b>6 Segments:</b> CSI(digitize ops), FSI(CBS/CIS banking), RSI(RICT rural), NI(WAN), CM(training), MOH(hardware)</div>
+    <div class="rev-card"><b>Key Tech:</b> CBS, CIS, SAP-ERP, FINACLE(Infosys), DPMS, PMA, IPVS, Nanyatha, DARPAN</div>
+    <div class="rev-card"><b>Hardware:</b> RICT(solar biometric), MAC Binding, WAN, DRC=Mysuru, DCF शुरू 2013</div>
+    <div class="rev-card"><b>Toll-Free:</b> Banking 1800-425-2440; Helpdesk 1924; ATM Interoperability 2016 से</div>
+    <div class="rev-card"><b>Dak Sewa Chatbots:</b> Megha(General), Vani(Info), Sewabot(Booking-सूची), Postie(Other) — MCQ उत्तर विरोधाभासी: Megha</div>
+    <div class="rev-card"><b>Facts:</b> CBS Teller ID=SOL+4अंक; CEPT Mysuru=Tool developer; UAT=User Acceptance Testing</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर व नाम याद करें)</h2>
+  <ul>
+    <li>🔢 <b>2012 / जून 2022</b> = IT Phase-1 शुरू / IT 2.0 Launch</li>
+    <li>🔢 <b>₹5,785 करोड़ / 2022-2030</b> = IT 2.0 बजट व अवधि</li>
+    <li>🔢 <b>PwC, London</b> = IT 2.0 Consultant</li>
+    <li>🔢 <b>6 Segments</b> = CSI, FSI, RSI, NI, CM, MOH</li>
+    <li>🔢 <b>DRC = Mysuru</b>; <b>DCF शुरू = 2013</b></li>
+    <li>🔢 <b>1800-425-2440</b> = Banking Toll-Free; <b>1924</b> = General Helpdesk</li>
+    <li>🔢 <b>2016</b> = ATM Interoperability शुरू</li>
+    <li>🔢 <b>Dak Sewa Chatbots</b> = Megha, Vani, Sewabot, Postie (4 प्रकार)</li>
+    <li>🔢 <b>CEPT Mysuru</b> = Post Info, PMA जैसे Tools का विकासकर्ता</li>
+    <li>🔢 <b>CBS Teller ID फॉर्मूला</b> = SOL ID + 4-अंकीय संख्या</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: Department of Posts — "IT 2.0 Introduction" Document &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें (विशेषकर Chatbot MCQ हेतु)
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

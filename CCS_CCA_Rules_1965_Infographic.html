@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS (CCA) Rules 1965 | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D9251C; --red-dark:#A81C15; --blue:#00338D; --blue-light:#E8F0FC;
+  --gold:#F0A500; --gold-light:#FFF6E0;
+  --imp1:#D9251C; --imp2:#F0A500; --imp3:#0E7C7B; --imp4:#3D8B37;
+  --bg:#FAFAF7; --card:#FFFFFF; --ink:#1D2733; --muted:#5B6672; --line:#E4E1D8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.hi{font-weight:600}
+.en{color:var(--muted);font-style:italic;font-size:0.92em}
+
+/* HEADER */
+header.hero{
+  background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 55%,var(--blue) 100%);
+  color:#fff;padding:34px 18px 26px;text-align:center;position:relative;overflow:hidden;
+}
+header.hero::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 10px,transparent 10px 20px);}
+header.hero h1{margin:0 0 4px;font-size:1.5rem;position:relative}
+header.hero .sub{font-size:1rem;opacity:.95;position:relative}
+header.hero .tag{display:inline-block;margin-top:12px;background:var(--gold);color:#3a2600;
+  padding:5px 14px;border-radius:20px;font-weight:700;font-size:.8rem;position:relative}
+
+/* NAV */
+nav.toc{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--gold);
+  padding:8px 6px;display:flex;overflow-x:auto;gap:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+nav.toc a{color:var(--blue);text-decoration:none;font-size:.75rem;font-weight:600;
+  padding:6px 10px;border:1px solid var(--line);border-radius:14px;background:var(--blue-light)}
+nav.toc a:hover{background:var(--blue);color:#fff}
+
+main{max-width:980px;margin:0 auto;padding:14px 12px 60px}
+
+/* SECTION */
+section{margin:26px 0}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-num{background:var(--blue);color:#fff;font-weight:800;font-size:.85rem;
+  width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-head h2{margin:0;font-size:1.15rem;color:var(--blue)}
+.sec-head h2 .en-t{display:block;font-size:.78rem;color:var(--muted);font-weight:500;font-style:italic}
+
+.card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);
+  border-radius:10px;padding:14px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+
+/* IMPORTANCE BADGES */
+.badge{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:10px;color:#fff;margin-right:4px}
+.b1{background:var(--imp1)} .b2{background:var(--imp2);color:#3a2600} .b3{background:var(--imp3)} .b4{background:var(--imp4)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.75rem;margin:10px 0}
+.legend span{padding:3px 9px;border-radius:10px;color:#fff;font-weight:700}
+
+/* EXAM Q */
+.examq{background:var(--gold-light);border:1px dashed var(--gold);border-radius:8px;
+  padding:8px 10px;margin-top:8px;font-size:.82rem}
+.examq::before{content:"❓ संभावित प्रश्न / Likely Q: ";font-weight:700;color:var(--red-dark)}
+
+/* BREADCRUMB CHAPTER PATH */
+.crumb{font-size:.72rem;color:var(--muted);margin-bottom:6px}
+.crumb b{color:var(--blue)}
+
+/* MIND MAP */
+.mindmap{display:flex;flex-direction:column;align-items:center;gap:6px}
+.mm-root{background:var(--red);color:#fff;padding:10px 18px;border-radius:10px;font-weight:800;text-align:center}
+.mm-branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;width:100%;margin-top:10px}
+.mm-node{background:var(--blue-light);border:1px solid var(--blue);border-radius:8px;padding:8px;font-size:.75rem;text-align:center}
+.mm-node b{color:var(--blue);display:block;font-size:.8rem}
+
+/* FLOWCHART */
+.flow{display:flex;flex-direction:column;align-items:center;gap:0}
+.flow-step{background:#fff;border:2px solid var(--blue);border-radius:8px;padding:9px 14px;
+  text-align:center;font-size:.8rem;max-width:560px;width:100%;margin:2px 0}
+.flow-arrow{color:var(--red);font-size:1.3rem;line-height:1}
+.flow-step.hi-imp{border-color:var(--red);background:#FFF3F2}
+.flow-step .days{display:inline-block;background:var(--gold);color:#3a2600;font-weight:700;
+  border-radius:10px;padding:1px 8px;font-size:.7rem;margin-left:6px}
+
+/* DECISION TREE */
+.dtree{display:flex;flex-direction:column;gap:8px}
+.dtree .q{background:var(--blue);color:#fff;border-radius:8px;padding:8px 12px;font-size:.82rem;font-weight:700}
+.dtree .branch{display:flex;gap:8px;margin-left:14px;flex-wrap:wrap}
+.dtree .opt{flex:1;min-width:150px;border:1px solid var(--line);border-left:4px solid var(--gold);
+  border-radius:6px;padding:7px 10px;font-size:.78rem;background:#fff}
+
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:.78rem;background:#fff}
+th{background:var(--blue);color:#fff;padding:7px 8px;text-align:left}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#F7F8FC}
+.tblwrap{overflow-x:auto;border-radius:8px;border:1px solid var(--line)}
+
+/* TIMELINE */
+.timeline{border-left:3px solid var(--gold);margin-left:10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-22px;top:3px;width:12px;height:12px;
+  border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 0 2px var(--red)}
+.tl-item .days{font-weight:800;color:var(--red-dark);font-size:.85rem}
+.tl-item .desc{font-size:.8rem}
+
+/* COMPARISON GRID */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.compare .col{border-radius:8px;padding:10px 12px;font-size:.78rem}
+.compare .col.a{background:#FFF3F2;border:1px solid var(--red)}
+.compare .col.b{background:var(--blue-light);border:1px solid var(--blue)}
+.compare h4{margin:0 0 6px;font-size:.85rem}
+@media(max-width:520px){.compare{grid-template-columns:1fr}}
+
+/* MNEMONIC */
+.mnemonic{background:#F0FFF4;border:2px dashed var(--imp4);border-radius:10px;padding:12px 14px;font-size:.85rem}
+.mnemonic .word{display:inline-block;font-weight:800;color:var(--imp4);background:#fff;
+  border:1px solid var(--imp4);border-radius:6px;padding:2px 8px;margin:2px}
+
+/* REVISION SHEET */
+.revsheet{background:linear-gradient(180deg,#FFF6E0,#fff);border:2px solid var(--gold);border-radius:12px;padding:16px}
+.revsheet h3{color:var(--red-dark);margin-top:0}
+.revsheet ul{margin:6px 0;padding-left:20px;font-size:.8rem}
+.revsheet li{margin-bottom:4px}
+
+/* LAST DAY NOTES */
+.lastday{background:var(--red);color:#fff;border-radius:12px;padding:16px}
+.lastday h3{margin-top:0}
+.lastday .pt{background:rgba(255,255,255,.12);border-radius:8px;padding:8px 10px;margin-bottom:8px;font-size:.82rem}
+
+footer{text-align:center;padding:20px;color:var(--muted);font-size:.75rem}
+
+@media print{
+  nav.toc{display:none}
+  header.hero{background:var(--red)!important;-webkit-print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>🏛️ केंद्रीय सिविल सेवा (वर्गीकरण, नियंत्रण एवं अपील) नियम, 1965</h1>
+  <div class="sub">Central Civil Services (Classification, Control &amp; Appeal) Rules, 1965 — CCS (CCA) Rules</div>
+  <div class="tag">📮 IP Exam Paper II | Updated upto 15.10.2018</div>
+</header>
+
+<nav class="toc">
+  <a href="#map">🗺️ Chapter Map</a>
+  <a href="#defs">📖 Definitions</a>
+  <a href="#classify">🏷️ Classification</a>
+  <a href="#suspension">⏸️ Suspension</a>
+  <a href="#penalties">⚖️ Penalties</a>
+  <a href="#authority">👤 Authorities</a>
+  <a href="#rule14">📋 Major Penalty Procedure</a>
+  <a href="#rule15">📝 Inquiry Report</a>
+  <a href="#rule16">🪶 Minor Penalty</a>
+  <a href="#appeal">📤 Appeal</a>
+  <a href="#revision">🔄 Revision/Review</a>
+  <a href="#mnemonic">🧠 Mnemonics</a>
+  <a href="#onepage">📄 Revision Sheet</a>
+  <a href="#lastday">🔥 Last Day Notes</a>
+</nav>
+
+<main>
+
+<div class="legend">
+  <span class="b1">🔴 अति महत्वपूर्ण / Very Important</span>
+  <span class="b2">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="b3">🟡 समझने योग्य / Conceptual</span>
+  <span class="b4">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+
+<!-- ===================== CHAPTER MAP ===================== -->
+<section id="map">
+  <div class="sec-head"><div class="sec-num">01</div><h2>पूरे नियम का मानचित्र<span class="en-t">Complete Rule Structure — Mind Map</span></h2></div>
+  <div class="card">
+    <div class="crumb"><b>Chapter</b> → CCA Rules 1965 → <b>9 Parts + Schedule</b></div>
+    <div class="mindmap">
+      <div class="mm-root">CCS (CCA) RULES 1965<br><span class="en">37 Rules + Schedule (5 Parts)</span></div>
+      <div class="mm-branches">
+        <div class="mm-node"><b>Part I</b>General <span class="en">(Rule 1-3)</span></div>
+        <div class="mm-node"><b>Part II</b>Classification <span class="en">(Rule 4-7)</span></div>
+        <div class="mm-node"><b>Part III</b>Appointing Authority <span class="en">(Rule 8-9)</span></div>
+        <div class="mm-node"><b>Part IV</b>Suspension <span class="en">(Rule 10)</span></div>
+        <div class="mm-node"><b>Part V</b>Penalties &amp; Disc. Authority <span class="en">(Rule 11-13)</span></div>
+        <div class="mm-node"><b>Part VI</b>Procedure for Penalty <span class="en">(Rule 14-19)</span></div>
+        <div class="mm-node"><b>Part VII</b>Appeals <span class="en">(Rule 20-28)</span></div>
+        <div class="mm-node"><b>Part VIII</b>Revision &amp; Review <span class="en">(Rule 29, 29-A)</span></div>
+        <div class="mm-node"><b>Part IX</b>Miscellaneous <span class="en">(Rule 30-35)</span></div>
+      </div>
+    </div>
+    <div class="examq">CCA Rules कितने Parts में विभाजित हैं? / How many Parts does CCA Rules have? — <b>Answer: 9 Parts</b></div>
+    <span class="badge b1">🔴</span> यह structure हर साल objective में पूछा जाता है।
+  </div>
+</section>
+
+<!-- ===================== DEFINITIONS ===================== -->
+<section id="defs">
+  <div class="sec-head"><div class="sec-num">02</div><h2>महत्वपूर्ण परिभाषाएँ (नियम 2)<span class="en-t">Key Definitions — Rule 2</span></h2></div>
+  <div class="crumb"><b>Chapter</b> Part I → <b>Sub-Chapter</b> Rule 2 → <b>Micro Topic</b> Terms → <b>Nano Topic</b> Each definition</div>
+  <div class="tblwrap">
+  <table>
+    <tr><th>Term / शब्द</th><th>Meaning / अर्थ</th><th></th></tr>
+    <tr><td class="hi">नियुक्ति प्राधिकारी<br><span class="en">Appointing Authority</span></td>
+        <td>वह प्राधिकारी जिसने कर्मचारी को सेवा/पद पर नियुक्त किया — सबसे उच्च प्राधिकारी लागू होता है।<br>
+        <span class="en">Highest of the 4 authorities empowered to appoint — Rule 2(a)</span></td><td><span class="badge b1">🔴</span></td></tr>
+    <tr><td class="hi">अनुशासनिक प्राधिकारी<br><span class="en">Disciplinary Authority</span></td>
+        <td>Rule 11 में दिए गए दंड लगाने हेतु सक्षम प्राधिकारी।<br><span class="en">Authority competent to impose penalties under Rule 11</span></td><td><span class="badge b1">🔴</span></td></tr>
+    <tr><td class="hi">सरकारी कर्मचारी<br><span class="en">Government Servant</span></td>
+        <td>Union की सेवा/पद धारण करने वाला, या राज्य सरकार से केंद्र में प्रतिनियुक्ति पर व्यक्ति।</td><td><span class="badge b2">🟠</span></td></tr>
+    <tr><td class="hi">विभाग प्रमुख<br><span class="en">Head of Department</span></td>
+        <td>FR/CSR के अंतर्गत घोषित प्राधिकारी।</td><td><span class="badge b3">🟡</span></td></tr>
+    <tr><td class="hi">कार्यालय प्रमुख<br><span class="en">Head of Office</span></td>
+        <td>General Financial Rules के अंतर्गत घोषित प्राधिकारी।</td><td><span class="badge b3">🟡</span></td></tr>
+    <tr><td class="hi">आयोग<br><span class="en">Commission</span></td>
+        <td>Union Public Service Commission (UPSC)</td><td><span class="badge b4">🟢</span></td></tr>
+    <tr><td class="hi">सचिव<br><span class="en">Secretary</span></td>
+        <td>मंत्रालय का सचिव — इसमें Special/Additional/Joint Secretary (independent charge) भी शामिल।</td><td><span class="badge b3">🟡</span></td></tr>
+  </table>
+  </div>
+  <div class="examq">Rule 3 के अंतर्गत CCA Rules किन पर लागू नहीं होते? / Rule 3 exceptions? — Railway servants, All India Services members, casual employees, &lt;1 month notice वाले, special provision वाले।</div>
+</section>
+
+<!-- ===================== CLASSIFICATION ===================== -->
+<section id="classify">
+  <div class="sec-head"><div class="sec-num">03</div><h2>वर्गीकरण एवं नियुक्ति प्राधिकारी<span class="en-t">Classification &amp; Appointing Authority — Rule 4-9</span></h2></div>
+  <div class="card">
+    <div class="mindmap">
+      <div class="mm-root">CENTRAL CIVIL SERVICES</div>
+      <div class="mm-branches">
+        <div class="mm-node"><b>Group A</b>Appointed by President <span class="en">(Rule 8)</span></div>
+        <div class="mm-node"><b>Group B</b>As per Schedule <span class="en">(Rule 9)</span></div>
+        <div class="mm-node"><b>Group C</b>As per Schedule <span class="en">(Rule 9)</span></div>
+        <div class="mm-node"><b>Group D</b>As per Schedule <span class="en">(Rule 9)</span></div>
+      </div>
+    </div>
+    <p class="en" style="font-size:.8rem;margin-top:10px">Rule 6-A: पुराने Class I-IV संदर्भ अब Group A-D माने जाते हैं। Old Class I/II/III/IV = New Group A/B/C/D (deemed reference).</p>
+    <div class="examq">Group A नियुक्तियाँ किसके द्वारा की जाती हैं? — <b>राष्ट्रपति (President)</b>, Rule 8</div>
+  </div>
+</section>
+
+<!-- ===================== SUSPENSION ===================== -->
+<section id="suspension">
+  <div class="sec-head"><div class="sec-num">04</div><h2>निलंबन — नियम 10<span class="en-t">Suspension — Rule 10 (Part IV)</span></h2></div>
+
+  <div class="card">
+    <span class="badge b1">🔴 अति महत्वपूर्ण</span>
+    <div class="dtree">
+      <div class="q">कर्मचारी को कब निलंबित किया जा सकता है? / When can a Govt servant be suspended?</div>
+      <div class="branch">
+        <div class="opt">(a) अनुशासनिक कार्यवाही विचाराधीन/लंबित हो<br><span class="en">Disciplinary proceeding contemplated/pending</span></div>
+        <div class="opt">(aa) राज्य की सुरक्षा के विरुद्ध गतिविधियाँ<br><span class="en">Activities prejudicial to security of State</span></div>
+        <div class="opt">(b) आपराधिक मामला जाँच/विचाराधीन<br><span class="en">Criminal case under investigation/trial</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b class="hi">🕑 Deemed Suspension (उप-नियम 2)</b>
+    <div class="tblwrap" style="margin-top:6px">
+      <table>
+        <tr><th>स्थिति / Situation</th><th>प्रभावी तिथि / Effective From</th></tr>
+        <tr><td>48 घंटे से अधिक हिरासत में <span class="en">(Detained &gt;48 hrs)</span></td><td>हिरासत की तिथि से / Date of detention</td></tr>
+        <tr><td>सजा में 48 घंटे से अधिक कारावास <span class="en">(Conviction, imprisonment &gt;48 hrs)</span></td><td>सजा की तिथि से / Date of conviction</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <b class="hi">⏳ समीक्षा की समय-सीमा (उप-नियम 6-7) — Review Timelines</b>
+    <div class="timeline">
+      <div class="tl-item"><span class="days">90 दिन / 90 days</span><div class="desc">प्रारंभिक समीक्षा अनिवार्य — Review Committee की सिफारिश पर <span class="en">First review mandatory before expiry of 90 days</span></div></div>
+      <div class="tl-item"><span class="days">अधिकतम 180 दिन / Max 180 days</span><div class="desc">एक बार में विस्तार की अधिकतम अवधि <span class="en">Extension shall not exceed 180 days at a time</span></div></div>
+      <div class="tl-item"><span class="days">बाद की समीक्षाएँ / Subsequent reviews</span><div class="desc">विस्तारित अवधि की समाप्ति से पहले <span class="en">Before expiry of extended period</span></div></div>
+    </div>
+    <div class="examq">निलंबन आदेश की पहली समीक्षा कितने दिनों में होनी चाहिए? — <b>90 दिन</b> के भीतर।</div>
+  </div>
+</section>
+
+<!-- ===================== PENALTIES ===================== -->
+<section id="penalties">
+  <div class="sec-head"><div class="sec-num">05</div><h2>दंड — नियम 11<span class="en-t">Penalties — Rule 11 (Part V)</span></h2></div>
+  <span class="badge b1">🔴 सबसे अधिक पूछा जाने वाला टॉपिक / Most Asked Topic</span>
+
+  <div class="compare" style="margin-top:10px">
+    <div class="col a">
+      <h4>🟢 लघु दंड / Minor Penalties (i-iv)</h4>
+      <ol style="font-size:.78rem;padding-left:18px">
+        <li>Censure / निंदा</li>
+        <li>Withholding of promotion / पदोन्नति रोकना</li>
+        <li>Recovery of pecuniary loss / वित्तीय हानि की वसूली</li>
+        <li>(iii-a) Reduction to lower stage ≤3 yrs (no cumulative effect, pension safe)</li>
+        <li>Withholding of increments / वेतन वृद्धि रोकना</li>
+      </ol>
+    </div>
+    <div class="col b">
+      <h4>🔴 गुरु दंड / Major Penalties (v-ix)</h4>
+      <ol style="font-size:.78rem;padding-left:18px" start="5">
+        <li>Reduction to lower stage (specified period)</li>
+        <li>Reduction to lower time-scale/grade/post/Service</li>
+        <li>Compulsory retirement / अनिवार्य सेवानिवृत्ति</li>
+        <li>Removal from service (future employment allowed)</li>
+        <li>Dismissal from service (future employment disqualified)</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <b class="hi">⚠️ अनिवार्य दंड प्रावधान (Proviso to Rule 11)</b>
+    <p style="font-size:.8rem">आय से अधिक संपत्ति (disproportionate assets) या रिश्वत (gratification) सिद्ध होने पर — <b>अनिवार्य रूप से clause (viii) removal या (ix) dismissal</b> लगाया जाएगा, अपवाद केवल विशेष कारणों से लिखित रूप में दर्ज करने पर।</p>
+    <span class="badge b1">🔴</span>
+  </div>
+
+  <div class="card">
+    <b class="hi">❌ ये "दंड" नहीं माने जाते / NOT considered penalty (Explanation to Rule 11)</b>
+    <p style="font-size:.78rem">विभागीय परीक्षा में असफल होने पर increment रोकना • efficiency bar पर रोक • non-promotion • unsuitability पर reversion • probation पर reversion • borrowed services की वापसी • superannuation पर compulsory retirement • probationer/temporary/agreement कर्मचारी की सेवा समाप्ति • Sexual harassment Complaints Committee की compensation सिफारिश</p>
+    <div class="examq">क्या "efficiency bar पर रोकना" एक दंड है? — <b>नहीं / No</b>, यह Rule 11 Explanation में सूचीबद्ध अपवाद है।</div>
+  </div>
+</section>
+
+<!-- ===================== AUTHORITIES ===================== -->
+<section id="authority">
+  <div class="sec-head"><div class="sec-num">06</div><h2>अनुशासनिक प्राधिकारी — नियम 12-13<span class="en-t">Disciplinary Authorities — Rule 12-13</span></h2></div>
+  <div class="card">
+    <ul style="font-size:.8rem">
+      <li><span class="hi">राष्ट्रपति</span> — किसी भी कर्मचारी पर कोई भी दंड लगा सकते हैं <span class="en">(Rule 12(1) — unlimited power)</span> <span class="badge b1">🔴</span></li>
+      <li>Group C (Central Secretariat Clerical Service छोड़कर) व Group D पर — <b>Secretary</b> (मंत्रालय में सेवारत हो तो) या <b>Head of Office</b> लगा सकते हैं <span class="badge b2">🟠</span></li>
+      <li>Rule 12(4)(a): clause (v) से (ix) का दंड appointing authority से निम्न कोई authority नहीं लगा सकता (अपवाद: CAG — Indian Audit &amp; Accounts Service में)</li>
+    </ul>
+    <div class="examq">Rule 13 के तहत कार्यवाही शुरू करने का अधिकार किसे है? — राष्ट्रपति या अधिकृत अन्य प्राधिकारी।</div>
+  </div>
+</section>
+
+<!-- ===================== RULE 14 MAJOR PENALTY ===================== -->
+<section id="rule14">
+  <div class="sec-head"><div class="sec-num">07</div><h2>गुरु दंड प्रक्रिया — नियम 14<span class="en-t">Procedure for Major Penalty — Rule 14 (Most Important!)</span></h2></div>
+  <span class="badge b1">🔴🔴 सबसे महत्वपूर्ण नियम — हर साल Descriptive में आता है</span>
+
+  <div class="card" style="margin-top:10px">
+    <b class="hi">📋 पूरी प्रक्रिया (Flowchart)</b>
+    <div class="flow" style="margin-top:8px">
+      <div class="flow-step hi-imp">1️⃣ Articles of Charge तैयार करना + Statement of Imputations + Documents/Witness list</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">2️⃣ Charge-sheet कर्मचारी को सौंपना <span class="days">15 दिन</span> में लिखित बयान (Written Statement of Defence) माँगना</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">विस्तार अधिकतम <span class="days">+15 दिन</span> (कुल अधिकतम <b>45 दिन</b> से अधिक नहीं)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step hi-imp">3️⃣ यदि सभी आरोप स्वीकार → Disciplinary Authority स्वयं findings दर्ज करे। यदि अस्वीकार / कोई उत्तर नहीं → Inquiring Authority नियुक्त</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">4️⃣ Presenting Officer की नियुक्ति (सरकार पक्ष रखने हेतु)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">5️⃣ कर्मचारी को Inquiring Authority के समक्ष उपस्थित होना <span class="days">10 कार्यदिवस</span> (+10 दिन विस्तार संभव)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">6️⃣ दस्तावेज निरीक्षण <span class="days">5 दिन</span> • गवाह सूची • नए दस्तावेजों हेतु नोटिस <span class="days">10 दिन</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">7️⃣ मौखिक/दस्तावेजी साक्ष्य, Cross-examination, नई साक्ष्य पर <span class="days">3 स्पष्ट दिन</span> का adjournment</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">8️⃣ कर्मचारी का बचाव पक्ष (Defence evidence) प्रस्तुत करना</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step hi-imp">9️⃣ Inquiry Report तैयार — Charge + Defence + Evidence Assessment + Findings</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step hi-imp">🔟 रिपोर्ट पूर्ण करने की समय-सीमा: <span class="days">6 महीने</span> (Disciplinary Authority +6 माह तक विस्तार दे सकता है, हर बार 6 माह से अधिक नहीं)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b class="hi">🧑‍⚖️ सहायता का अधिकार (Rule 14(8))</b>
+    <p style="font-size:.8rem">कर्मचारी किसी अन्य सरकारी कर्मचारी की सहायता ले सकता है (वकील नहीं, जब तक Presenting Officer वकील न हो या Disciplinary Authority अनुमति न दे)। <b>Note:</b> जिस सहायक के पास पहले से 3 लंबित अनुशासनिक मामले हैं, उसकी सहायता नहीं ली जा सकती।</p>
+    <span class="badge b2">🟠 बार-बार पूछा गया</span>
+  </div>
+
+  <div class="tblwrap">
+  <table>
+    <tr><th>चरण / Step</th><th>समय-सीमा / Time Limit</th></tr>
+    <tr><td>Written statement of defence</td><td>15 दिन (+15 दिन विस्तार, अधिकतम कुल 45 दिन)</td></tr>
+    <tr><td>Inquiring Authority के सामने उपस्थिति</td><td>10 कार्यदिवस (+10 दिन)</td></tr>
+    <tr><td>दस्तावेज निरीक्षण</td><td>5 दिन (+5 दिन)</td></tr>
+    <tr><td>नए दस्तावेज हेतु नोटिस</td><td>10 दिन (+10 दिन)</td></tr>
+    <tr><td>नई साक्ष्य से पहले adjournment</td><td>3 स्पष्ट दिन</td></tr>
+    <tr><td>दस्तावेज उपलब्ध कराना (custody authority)</td><td>1 माह</td></tr>
+    <tr><td class="hi">Inquiry पूर्ण करना</td><td><b>6 माह</b> (+6 माह प्रत्येक विस्तार)</td></tr>
+    <tr><td>Inquiry report पर representation</td><td>15 दिन</td></tr>
+  </table>
+  </div>
+  <div class="examq">Inquiring Authority को अपनी रिपोर्ट कितने समय में देनी होती है? — <b>6 महीने</b> (Rule 14(24))</div>
+</section>
+
+<!-- ===================== RULE 15 ===================== -->
+<section id="rule15">
+  <div class="sec-head"><div class="sec-num">08</div><h2>जाँच रिपोर्ट पर कार्रवाई — नियम 15<span class="en-t">Action on Inquiry Report — Rule 15</span></h2></div>
+  <div class="card">
+    <div class="flow">
+      <div class="flow-step">Inquiry Report + असहमति के tentative कारण (यदि हों) कर्मचारी को भेजना</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step hi-imp">कर्मचारी से <span class="days">15 दिन</span> में representation माँगना (चाहे रिपोर्ट पक्ष में हो या विपक्ष में)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">यदि UPSC परामर्श आवश्यक → UPSC को भेजना → सलाह पर पुनः <span class="days">15 दिन</span> representation</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step hi-imp">लघु दंड (i-iv) → सीधे आदेश | गुरु दंड (v-ix) → आदेश, दंड प्रस्ताव पर अलग से representation की आवश्यकता नहीं</div>
+    </div>
+    <div class="examq">क्या गुरु दंड के प्रस्ताव पर अलग से अवसर देना आवश्यक है? — <b>नहीं</b>, Rule 15(6) के अनुसार आवश्यक नहीं।</div>
+  </div>
+</section>
+
+<!-- ===================== RULE 16 ===================== -->
+<section id="rule16">
+  <div class="sec-head"><div class="sec-num">09</div><h2>लघु दंड प्रक्रिया — नियम 16<span class="en-t">Procedure for Minor Penalty — Rule 16</span></h2></div>
+  <div class="compare">
+    <div class="col a">
+      <h4>🔴 गुरु दंड (Rule 14)</h4>
+      <ul style="font-size:.77rem;padding-left:16px">
+        <li>अनिवार्य formal inquiry</li>
+        <li>Articles of charge जरूरी</li>
+        <li>Inquiring Authority नियुक्ति</li>
+        <li>Cross-examination का अधिकार</li>
+        <li>6 माह में रिपोर्ट</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>🟢 लघु दंड (Rule 16)</h4>
+      <ul style="font-size:.77rem;padding-left:16px">
+        <li>लिखित सूचना + representation का अवसर पर्याप्त</li>
+        <li>Inquiry केवल यदि Disciplinary Authority आवश्यक समझे</li>
+        <li><b>अपवाद:</b> यदि increment रोकना pension को प्रभावित करे, या 3 वर्ष से अधिक हो, या cumulative effect से हो → Rule 14 वाली पूरी inquiry अनिवार्य (Rule 16(1-A))</li>
+      </ul>
+    </div>
+  </div>
+  <div class="examq">Increment रोकने पर कब पूर्ण जाँच (Rule 14 style) आवश्यक होगी भले ही यह लघु दंड हो? — जब pension प्रभावित हो, या 3 वर्ष से अधिक अवधि हो, या cumulative effect से हो। <span class="badge b1">🔴</span></div>
+</section>
+
+<!-- ===================== APPEALS ===================== -->
+<section id="appeal">
+  <div class="sec-head"><div class="sec-num">10</div><h2>अपील — नियम 22-28<span class="en-t">Appeals — Rule 22-28 (Part VII)</span></h2></div>
+
+  <div class="compare">
+    <div class="col a">
+      <h4>❌ अपील नहीं (Rule 22)</h4>
+      <ul style="font-size:.78rem;padding-left:16px">
+        <li>राष्ट्रपति द्वारा दिया गया आदेश</li>
+        <li>Interlocutory/step-in-aid आदेश (निलंबन आदेश छोड़कर)</li>
+        <li>Inquiring Authority का inquiry के दौरान आदेश</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>✅ अपील योग्य (Rule 23)</h4>
+      <ul style="font-size:.78rem;padding-left:16px">
+        <li>निलंबन आदेश</li>
+        <li>Rule 11 का कोई भी दंड आदेश</li>
+        <li>दंड बढ़ाने वाला आदेश</li>
+        <li>वेतन/भत्ते/पेंशन को नुकसान पहुँचाने वाला आदेश</li>
+        <li>Efficiency bar, reversion, subsistence allowance संबंधी आदेश</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <b class="hi">📅 अपील की समय-सीमा — Rule 25</b>
+    <div class="timeline">
+      <div class="tl-item"><span class="days">45 दिन</span><div class="desc">आदेश की प्रति मिलने की तिथि से अपील दायर करनी होगी <span class="en">(condone delay possible if sufficient cause)</span></div></div>
+    </div>
+    <span class="badge b1">🔴</span>
+  </div>
+
+  <div class="card">
+    <b class="hi">👥 अपीलीय प्राधिकारी — Rule 24</b>
+    <table style="margin-top:6px">
+      <tr><th>वर्ग / Group</th><th>अपीलीय प्राधिकारी / Appellate Authority</th></tr>
+      <tr><td>Group A / B</td><td>Appointing Authority (यदि आदेश निम्न प्राधिकारी का हो) अन्यथा राष्ट्रपति</td></tr>
+      <tr><td>Group C / D</td><td>आदेश देने वाले प्राधिकारी का निकटतम वरिष्ठ प्राधिकारी</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== REVISION & REVIEW ===================== -->
+<section id="revision">
+  <div class="sec-head"><div class="sec-num">11</div><h2>पुनरीक्षण एवं पुनरावलोकन — नियम 29, 29-A<span class="en-t">Revision &amp; Review — Rule 29, 29-A</span></h2></div>
+
+  <div class="compare">
+    <div class="col a">
+      <h4>🔄 Revision (Rule 29)</h4>
+      <ul style="font-size:.78rem;padding-left:16px">
+        <li>राष्ट्रपति, CAG, Member(P) Postal Board, Head of Dept, Appellate Authority कर सकते हैं</li>
+        <li><b>समय-सीमा: 6 माह</b> आदेश की तिथि से (Appellate Authority हेतु)</li>
+        <li>बिना नई evidence के भी हो सकती है</li>
+        <li>दंड बढ़ाने/घटाने/रद्द करने का अधिकार</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>♻️ Review (Rule 29-A)</h4>
+      <ul style="font-size:.78rem;padding-left:16px">
+        <li>केवल <b>राष्ट्रपति</b> कर सकते हैं</li>
+        <li>कोई समय-सीमा निश्चित नहीं ("at any time")</li>
+        <li>केवल <b>नई सामग्री/साक्ष्य</b> मिलने पर जो पहले उपलब्ध नहीं थी और मामले की प्रकृति बदल दे</li>
+      </ul>
+    </div>
+  </div>
+  <div class="examq">Review किसके द्वारा किया जा सकता है? — <b>केवल राष्ट्रपति</b>, और वह भी नई सामग्री मिलने पर। Revision कई प्राधिकारी कर सकते हैं। <span class="badge b1">🔴</span></div>
+
+  <div class="card">
+    <b class="hi">कॉमन प्रोसीडिंग — Rule 18</b>
+    <p style="font-size:.8rem">जब 2 या अधिक कर्मचारी एक ही मामले में शामिल हों, dismissal लगाने में सक्षम प्राधिकारी (या उच्चतम, अन्यों की सहमति से) एक <b>common proceeding</b> का आदेश दे सकता है।</p>
+    <span class="badge b3">🟡</span>
+  </div>
+</section>
+
+<!-- ===================== MNEMONICS ===================== -->
+<section id="mnemonic">
+  <div class="sec-head"><div class="sec-num">12</div><h2>याद रखने की तरकीबें<span class="en-t">Memory Tricks &amp; Mnemonics</span></h2></div>
+
+  <div class="mnemonic" style="margin-bottom:10px">
+    <b class="hi">🎯 लघु दंड (Minor) याद रखने हेतु — "CWR-W"</b><br>
+    <span class="word">C</span>ensure → <span class="word">W</span>ithhold Promotion → <span class="word">R</span>ecovery of loss → reduction-<span class="word">i</span>iia → <span class="word">W</span>ithhold Increment
+    <p class="en" style="margin:6px 0 0">"चार वाली सज़ा, बिना नौकरी छीने" — Minor = job रहती है, सिर्फ पैसा/तरक्की रुकती है।</p>
+  </div>
+
+  <div class="mnemonic" style="margin-bottom:10px">
+    <b class="hi">🎯 गुरु दंड (Major) याद रखने हेतु — "RR-CRD"</b><br>
+    <span class="word">R</span>eduction(specified period) → <span class="word">R</span>eduction(lower grade) → <span class="word">C</span>ompulsory Retirement → <span class="word">R</span>emoval → <span class="word">D</span>ismissal
+    <p class="en" style="margin:6px 0 0">"CRD = Career Really Done" — Major penalty में नौकरी पर सीधा असर पड़ता है।</p>
+  </div>
+
+  <div class="mnemonic" style="margin-bottom:10px">
+    <b class="hi">🎯 समय-सीमाएँ याद रखने हेतु</b>
+    <p style="font-size:.8rem;margin:4px 0">
+    15-15-15: बयान(15) + विस्तार(15) + representation(15)<br>
+    "6 माह में जाँच पूरी, 45 दिन में अपील अधूरी नहीं, 90 दिन में suspension की समीक्षा जरूरी"
+    </p>
+  </div>
+
+  <div class="mnemonic">
+    <b class="hi">🎯 Appeal vs Revision vs Review</b>
+    <p style="font-size:.8rem;margin:4px 0">"<b>A</b>ppeal = <b>A</b>adhikari (कर्मचारी करता है) | <b>R</b>evision = <b>R</b>aksha upar se (कई authority कर सकते हैं, 6 माह) | Re<b>view</b> = <b>V</b>ery rare, only President, नई सामग्री चाहिए"</p>
+  </div>
+</section>
+
+<!-- ===================== ONE PAGE REVISION SHEET ===================== -->
+<section id="onepage">
+  <div class="sec-head"><div class="sec-num">13</div><h2>वन-पेज रिवीजन शीट<span class="en-t">One Page Revision Sheet</span></h2></div>
+  <div class="revsheet">
+    <h3>📌 CCA Rules 1965 — सब कुछ एक नज़र में</h3>
+    <ul>
+      <li><b>लागू:</b> 1 दिसंबर 1965 से (Rule 1)</li>
+      <li><b>9 Parts, 37 Rules + 5-Part Schedule</b></li>
+      <li><b>4 Groups:</b> A (President नियुक्त करता है), B/C/D (Schedule अनुसार)</li>
+      <li><b>Suspension:</b> पहली समीक्षा 90 दिन में, विस्तार अधिकतम 180 दिन/बार</li>
+      <li><b>Minor Penalties (4):</b> Censure, Withhold promotion, Recovery, Withhold increment</li>
+      <li><b>Major Penalties (5):</b> Reduction(2 प्रकार), Compulsory retirement, Removal, Dismissal</li>
+      <li><b>Rule 14 समय-सीमाएँ:</b> बयान 15+15 दिन, उपस्थिति 10+10 दिन, inquiry पूर्ण 6+6 माह</li>
+      <li><b>Appeal limitation:</b> 45 दिन</li>
+      <li><b>Revision:</b> कई authority, 6 माह की सीमा | <b>Review:</b> केवल President, कोई सीमा नहीं</li>
+      <li><b>Common Proceeding:</b> Rule 18 — 2+ कर्मचारी एक साथ</li>
+      <li><b>Disproportionate assets/bribery सिद्ध होने पर:</b> अनिवार्य रूप से Removal या Dismissal</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== LAST DAY NOTES ===================== -->
+<section id="lastday">
+  <div class="sec-head"><div class="sec-num">14</div><h2>परीक्षा से एक दिन पहले<span class="en-t">Last Day Revision Notes</span></h2></div>
+  <div class="lastday">
+    <h3>🔥 आखिरी 24 घंटे में यही पढ़ें</h3>
+    <div class="pt">✅ Rule 11 की penalty list (minor 4 + major 5) मुँहज़बानी याद हो</div>
+    <div class="pt">✅ Rule 14 की सभी समय-सीमाएँ (15, 10, 5, 3, 6 माह) एक साथ लिखकर देखें</div>
+    <div class="pt">✅ Suspension review = 90 दिन, extension max 180 दिन — कभी न भूलें</div>
+    <div class="pt">✅ Appeal = 45 दिन, Revision = 6 माह — दोनों को कन्फ्यूज़ न करें</div>
+    <div class="pt">✅ Review सिर्फ राष्ट्रपति कर सकते हैं — यह favourite trick question है</div>
+    <div class="pt">✅ Rule 22 (कोई अपील नहीं) बनाम Rule 23 (अपील है) की list अलग-अलग रटें</div>
+    <div class="pt">✅ "Not a penalty" वाली Explanation to Rule 11 की list पर विशेष ध्यान — objective में common trap है</div>
+  </div>
+</section>
+
+</main>
+
+<footer>📮 India Post — Inspector Posts Exam Preparation | CCS (CCA) Rules 1965 Infographic | Paper II Study Material</footer>
+
+</body>
+</html>

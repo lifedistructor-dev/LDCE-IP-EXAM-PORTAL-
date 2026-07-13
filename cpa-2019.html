@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ગ્રાહક સુરક્ષા અધિનિયમ 2019 | उपभोक्ता संरक्षण अधिनियम | Consumer Protection Act 2019 — IP/IPO Exam Sheet</title>
+<style>
+  :root{
+    --bg:#FAF6EE; --ink:#22293A; --sub:#5B6478; --line:#E4DCC9;
+    --navy:#1B2A4A; --gold:#B8862E;
+    --def:#2563EB; --defBg:#E9EFFC;
+    --rule:#15803D; --ruleBg:#E7F4EA;
+    --exc:#C2410C; --excBg:#FDEBDF;
+    --auth:#6D28D9; --authBg:#EFE6FB;
+    --time:#0F766E; --timeBg:#E1F5F2;
+    --pen:#B91C1C; --penBg:#FBE6E6;
+    --faq:#B45309; --faqBg:#FDF1DC;
+    --pyq:#BE185D; --pyqBg:#FCE4EF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;
+    line-height:1.45; font-size:15.5px;
+  }
+  h1,h2,h3{margin:0 0 6px 0;}
+  .serif{font-family:Georgia,"Times New Roman",serif;}
+  a{color:var(--navy);}
+  .wrap{max-width:760px; margin:0 auto; padding:0 14px 60px;}
+
+  /* ===== MASTHEAD ===== */
+  .masthead{
+    background:linear-gradient(135deg,var(--navy) 0%,#2A3F6B 100%);
+    color:#F4EFE1; padding:22px 14px 18px; text-align:center;
+    border-bottom:5px solid var(--gold);
+  }
+  .masthead .stamp{
+    display:inline-block; border:2px solid var(--gold); border-radius:50%;
+    width:56px;height:56px;line-height:1.1; padding-top:10px;
+    font-size:10px; font-weight:700; letter-spacing:0.5px; color:var(--gold);
+    margin-bottom:8px; transform:rotate(-8deg);
+  }
+  .masthead .gu{font-size:1.3rem; font-weight:700;}
+  .masthead .hi{font-size:1.05rem; font-weight:600; opacity:0.92; margin-top:2px;}
+  .masthead .en{font-size:1rem; font-style:italic; opacity:0.85; margin-top:2px;}
+  .factstrip{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+    margin-top:14px; font-size:11.5px;
+  }
+  .factstrip span{
+    background:rgba(255,255,255,0.1); border:1px solid rgba(212,175,98,0.5);
+    border-radius:20px; padding:4px 10px; color:#F4EFE1;
+  }
+
+  /* ===== LEGEND ===== */
+  .legend{
+    display:flex; gap:6px; overflow-x:auto; padding:10px 14px;
+    background:#fff; border-bottom:1px solid var(--line); position:relative;
+    -webkit-overflow-scrolling:touch;
+  }
+  .legend a{
+    flex:0 0 auto; font-size:11px; font-weight:700; text-decoration:none;
+    padding:5px 10px; border-radius:14px; white-space:nowrap; color:#fff;
+  }
+  .leg-def{background:var(--def);} .leg-rule{background:var(--rule);}
+  .leg-exc{background:var(--exc);} .leg-auth{background:var(--auth);}
+  .leg-time{background:var(--time);} .leg-pen{background:var(--pen);}
+  .leg-faq{background:var(--faq);} .leg-pyq{background:var(--pyq);}
+
+  /* ===== SECTION CARD ===== */
+  .section{margin-top:22px;}
+  .sec-head{
+    border-radius:10px 10px 0 0; padding:10px 14px; color:#fff;
+    display:flex; align-items:center; gap:8px;
+  }
+  .sec-head .num{
+    font-family:Georgia,serif; font-weight:700; font-size:1rem;
+    background:rgba(255,255,255,0.25); border-radius:50%;
+    width:26px;height:26px; display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto;
+  }
+  .sec-head .titles .gu{font-size:1.02rem; font-weight:700;}
+  .sec-head .titles .hi{font-size:0.88rem; opacity:0.92;}
+  .sec-head .titles .en{font-size:0.82rem; font-style:italic; opacity:0.85;}
+  .sec-body{
+    background:#fff; border:1px solid var(--line); border-top:none;
+    border-radius:0 0 10px 10px; padding:14px;
+  }
+  .h-def{background:var(--def);} .h-rule{background:var(--rule);}
+  .h-exc{background:var(--exc);} .h-auth{background:var(--auth);}
+  .h-time{background:var(--time);} .h-pen{background:var(--pen);}
+  .h-faq{background:var(--faq);} .h-pyq{background:var(--pyq);}
+
+  /* ===== TRILINGUAL BLOCK ===== */
+  .tri{margin:2px 0 10px;}
+  .tri .gu{font-weight:700; color:var(--ink);}
+  .tri .hi{font-weight:600; color:var(--sub); font-size:0.96em;}
+  .tri .en{font-style:italic; color:var(--sub); font-size:0.93em;}
+
+  /* ===== CARD (definitions etc.) ===== */
+  .card{
+    border:1px solid var(--line); border-left:5px solid var(--def);
+    background:var(--defBg); border-radius:8px; padding:10px 12px; margin-bottom:10px;
+  }
+  .card .tag{
+    display:inline-block; font-size:10px; font-weight:800; letter-spacing:0.4px;
+    text-transform:uppercase; color:#fff; background:var(--def);
+    padding:2px 8px; border-radius:10px; margin-bottom:6px;
+  }
+  .card.exc{border-left-color:var(--exc); background:var(--excBg);}
+  .card.exc .tag{background:var(--exc);}
+  .card.rule{border-left-color:var(--rule); background:var(--ruleBg);}
+  .card.rule .tag{background:var(--rule);}
+  .card.auth{border-left-color:var(--auth); background:var(--authBg);}
+  .card.auth .tag{background:var(--auth);}
+  .card.pen{border-left-color:var(--pen); background:var(--penBg);}
+  .card.pen .tag{background:var(--pen);}
+  .card.time{border-left-color:var(--time); background:var(--timeBg);}
+  .card.time .tag{background:var(--time);}
+
+  .sectionref{font-size:11px; color:var(--sub); font-weight:600;}
+
+  /* ===== FLOWCHART ===== */
+  .flow{display:flex; flex-direction:column; align-items:center; margin:10px 0;}
+  .flow-step{
+    width:100%; max-width:520px; border:1.5px solid var(--line);
+    border-radius:8px; padding:9px 12px; text-align:center; background:#fff;
+  }
+  .flow-arrow{font-size:20px; color:var(--sub); margin:2px 0; line-height:1;}
+  .flow-step.alt1{background:var(--authBg); border-color:var(--auth);}
+  .flow-step.alt2{background:var(--ruleBg); border-color:var(--rule);}
+  .flow-step.alt3{background:var(--timeBg); border-color:var(--time);}
+  .flow-step.alt4{background:var(--excBg); border-color:var(--exc);}
+  .flow-step b{display:block; font-size:0.95rem;}
+  .flow-step small{color:var(--sub); display:block; font-size:0.78rem; margin-top:2px;}
+
+  .row3{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+  .row3 .flow-step{flex:1 1 150px; max-width:none;}
+
+  /* ===== TABLES ===== */
+  .table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:10px 0;}
+  table{width:100%; border-collapse:collapse; font-size:13px; min-width:480px;}
+  th,td{border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top;}
+  th{background:var(--navy); color:#fff; font-size:12px;}
+  tr:nth-child(even) td{background:#FBF8F2;}
+  td .gu{font-weight:700; display:block;}
+  td .hi{color:var(--sub); display:block; font-size:0.93em;}
+  td .en{font-style:italic; color:var(--sub); display:block; font-size:0.9em;}
+
+  /* ===== ONE PAGE SHEET ===== */
+  .onepage-table th{background:var(--time);}
+  .onepage-table td:first-child{font-weight:700; width:55%;}
+  .onepage-table td:last-child{font-weight:700; color:var(--pen);}
+
+  /* ===== MNEMONIC CHIPS ===== */
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0;}
+  .chip{
+    background:var(--faqBg); border:1.5px dashed var(--faq); border-radius:8px;
+    padding:8px 10px; font-size:13px; flex:1 1 220px;
+  }
+  .chip b{color:var(--faq);}
+
+  /* ===== TOC ===== */
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .toc-grid a{
+    display:block; text-decoration:none; font-size:12.5px; font-weight:700;
+    color:#fff; padding:9px 10px; border-radius:8px; text-align:center;
+  }
+
+  /* ===== FAQ / PYQ list ===== */
+  .qa{margin-bottom:12px; padding-bottom:10px; border-bottom:1px dashed var(--line);}
+  .qa:last-child{border-bottom:none;}
+  .qa .q{font-weight:700; color:var(--faq);}
+  .qlist{margin:0; padding-left:18px;}
+  .qlist li{margin-bottom:8px;}
+
+  .seal{
+    display:inline-block; font-size:10px; font-weight:800; color:#fff;
+    background:var(--pyq); border-radius:4px; padding:1px 6px; margin-left:4px;
+    vertical-align:middle;
+  }
+
+  footer{
+    text-align:center; padding:24px 14px 50px; color:var(--sub); font-size:12px;
+  }
+  .top-link{
+    display:block; text-align:center; margin-top:18px; font-size:12px;
+    color:var(--navy); font-weight:700; text-decoration:none;
+  }
+
+  @media print{
+    .legend, .toc, .top-link{display:none;}
+    body{background:#fff; font-size:12px;}
+    .section{break-inside:avoid;}
+    .masthead{background:var(--navy) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="stamp">IP / IPO<br>EXAM</div>
+  <h1 class="gu">ગ્રાહક સુરક્ષા અધિનિયમ, 2019</h1>
+  <div class="hi">उपभोक्ता संरक्षण अधिनियम, 2019</div>
+  <div class="en serif">THE CONSUMER PROTECTION ACT, 2019</div>
+  <div class="factstrip">
+    <span>📜 No. 35 of 2019</span>
+    <span>📅 Assent: 9 Aug 2019</span>
+    <span>🏛 8 Chapters | 107 Sections</span>
+    <span>⚖ Repeals 1986 Act</span>
+    <span>🌐 Extends to whole of India except J&amp;K (Sec 1(2), as enacted)</span>
+  </div>
+</header>
+
+<nav class="legend no-print">
+  <a class="leg-def" href="#definitions">Definitions</a>
+  <a class="leg-rule" href="#mediation">Rules</a>
+  <a class="leg-exc" href="#productliability">Exceptions</a>
+  <a class="leg-auth" href="#authorities">Authorities</a>
+  <a class="leg-time" href="#timelimits">Time Limits</a>
+  <a class="leg-pen" href="#penalties">Penalties</a>
+  <a class="leg-faq" href="#faq">FAQs</a>
+  <a class="leg-pyq" href="#pyq">PYQ / Expected</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<section class="section" id="onepage">
+  <div class="sec-head h-time">
+    <div class="num">★</div>
+    <div class="titles">
+      <div class="gu">⚡ ઝડપી પુનરાવર્તન શીટ (છેલ્લી ઘડી)</div>
+      <div class="hi">त्वरित पुनरीक्षण पत्रक (अंतिम समय)</div>
+      <div class="en">One-Page Last-Minute Revision Sheet</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="table-wrap">
+      <table class="onepage-table">
+        <tr><th>Point</th><th>Value</th></tr>
+        <tr><td>District Commission jurisdiction</td><td>≤ ₹1 crore</td></tr>
+        <tr><td>State Commission jurisdiction</td><td>₹1 cr – ₹10 cr</td></tr>
+        <tr><td>National Commission jurisdiction</td><td>&gt; ₹10 crore</td></tr>
+        <tr><td>Admissibility decision (Sec 36)</td><td>21 days</td></tr>
+        <tr><td>Opposite party response (Sec 38)</td><td>30 + 15 days</td></tr>
+        <tr><td>Lab/appropriate-lab test report (Sec 38)</td><td>45 days</td></tr>
+        <tr><td>Complaint disposal target (Sec 38(7))</td><td>3 months / 5 months (if test)</td></tr>
+        <tr><td>Seized documents returned (Sec 22)</td><td>20 days</td></tr>
+        <tr><td>Appeal: District → State (Sec 41)</td><td>45 days + 50% deposit</td></tr>
+        <tr><td>Appeal: State → National (Sec 51)</td><td>30 days + 50% deposit</td></tr>
+        <tr><td>Appeal: National → Supreme Court (Sec 67)</td><td>30 days + 50% deposit</td></tr>
+        <tr><td>Appeal disposal target (Sec 52)</td><td>90 days</td></tr>
+        <tr><td>Limitation period to file complaint (Sec 69)</td><td>2 years</td></tr>
+        <tr><td>Review application (Sec 40/50/60)</td><td>30 days</td></tr>
+        <tr><td>Mediation: consent + referral (Sec 37)</td><td>5 + 5 days</td></tr>
+        <tr><td>Mediation settlement order (Sec 81)</td><td>7 days</td></tr>
+        <tr><td>Mediator panel validity (Sec 75)</td><td>5 years</td></tr>
+        <tr><td>CCPA penalty — false ad (Sec 21)</td><td>₹10L (1st) → ₹50L (subsequent)</td></tr>
+        <tr><td>Endorser ban (Sec 21)</td><td>1 yr (1st) → 3 yrs (subsequent)</td></tr>
+        <tr><td>Non-compliance of CCPA order (Sec 88)</td><td>≤6 months + ≤₹20 lakh</td></tr>
+        <tr><td>False/misleading ad — court offence (Sec 89)</td><td>≤2yr/₹10L → ≤5yr/₹50L</td></tr>
+        <tr><td>Non-compliance of Commission order (Sec 72)</td><td>1mo–3yr or ₹25k–₹1L</td></tr>
+        <tr><td>CCPA Head Office</td><td>NCR Delhi</td></tr>
+        <tr><td>Repealed Act</td><td>Consumer Protection Act, 1986</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOC ============ -->
+<nav class="section toc no-print" id="toc">
+  <div class="toc-grid">
+    <a style="background:var(--def)" href="#definitions">📘 Definitions</a>
+    <a style="background:var(--auth)" href="#authorities">🏛 Authorities</a>
+    <a style="background:var(--time)" href="#jurisdiction">⚖ Jurisdiction</a>
+    <a style="background:var(--time)" href="#timelimits">⏱ Time Limits</a>
+    <a style="background:var(--rule)" href="#appeals">📈 Appeal Ladder</a>
+    <a style="background:var(--exc)" href="#productliability">📦 Product Liability</a>
+    <a style="background:var(--pen)" href="#penalties">🚨 Penalties</a>
+    <a style="background:var(--rule)" href="#mediation">🤝 Mediation</a>
+    <a style="background:var(--faq)" href="#mnemonics">🧠 Mnemonics</a>
+    <a style="background:var(--faq)" href="#faq">❓ FAQs</a>
+    <a style="background:var(--pyq)" href="#pyq">🎯 PYQ &amp; Expected Qs</a>
+  </div>
+</nav>
+
+<!-- ============ STRUCTURE MIND MAP ============ -->
+<section class="section" id="structure">
+  <div class="sec-head h-auth">
+    <div class="num">I</div>
+    <div class="titles">
+      <div class="gu">અધિનિયમનું બંધારણ (માઈન્ડ મેપ)</div>
+      <div class="hi">अधिनियम की संरचना (माइंड मैप)</div>
+      <div class="en">Act Structure — 8 Chapters</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="flow-step alt1"><b>I — Preliminary</b><small>Sec 1–2 | Title, Extent, Definitions</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt1"><b>II — Consumer Protection Councils</b><small>Sec 3–9 | Central/State/District (Advisory)</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>III — Central Consumer Protection Authority</b><small>Sec 10–27 | CCPA — Enforcement Arm</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>IV — Consumer Disputes Redressal Commission</b><small>Sec 28–73 | District / State / National</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt3"><b>V — Mediation</b><small>Sec 74–81</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt4"><b>VI — Product Liability</b><small>Sec 82–87</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt4"><b>VII — Offences &amp; Penalties</b><small>Sec 88–93</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step"><b>VIII — Miscellaneous</b><small>Sec 94–107 | Rules, Regulations, Repeal</small></div>
+    </div>
+    <div class="chip" style="margin-top:10px;"><b>Mnemonic:</b> "PC-CC-MP-O-M" → <i>P</i>reliminary, <i>C</i>ouncils, <i>C</i>entral Authority, <i>C</i>ommission, <i>M</i>ediation, <i>P</i>roduct liability, <i>O</i>ffences, <i>M</i>isc.</div>
+  </div>
+</section>
+
+<!-- ============ DEFINITIONS ============ -->
+<section class="section" id="definitions">
+  <div class="sec-head h-def">
+    <div class="num">II</div>
+    <div class="titles">
+      <div class="gu">મુખ્ય વ્યાખ્યાઓ (કલમ 2)</div>
+      <div class="hi">मुख्य परिभाषाएं (धारा 2)</div>
+      <div class="en">High-Yield Definitions (Section 2)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(7)</div>
+      <h3>CONSUMER</h3>
+      <div class="tri">
+        <div class="gu">જે વ્યક્તિ વળતર ચૂકવીને માલ ખરીદે અથવા સેવા મેળવે; પુનઃવેચાણ/વ્યાપારી હેતુ માટે ખરીદનાર બાકાત</div>
+        <div class="hi">जो प्रतिफल देकर माल खरीदे या सेवा ले; पुनर्विक्रय/व्यावसायिक उद्देश्य से खरीदने वाला शामिल नहीं</div>
+        <div class="en">Buys goods/hires service for consideration; excludes one who buys for resale or commercial purpose</div>
+      </div>
+      <span class="seal">EXCEPTION</span> Self-employment / livelihood use of goods is still counted as "consumer" (Explanation (a)).
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(5)</div>
+      <h3>COMPLAINANT</h3>
+      <div class="tri">
+        <div class="gu">ઉપભોક્તા, માન્ય સ્વૈચ્છિક સંગઠન, કેન્દ્ર/રાજ્ય સરકાર, કેન્દ્રીય સત્તામંડળ, અનેક ઉપભોક્તા (સમાન હિત), મૃત્યુ બાબતે વારસદાર, સગીર બાબતે વાલી</div>
+        <div class="hi">उपभोक्ता, मान्यता प्राप्त संघ, केंद्र/राज्य सरकार, केंद्रीय प्राधिकरण, कई उपभोक्ता (समान हित), मृत्यु पर वारिस, नाबालिग पर अभिभावक</div>
+        <div class="en">Consumer / recognised association / Govt / Central Authority / class of consumers / legal heir (death) / guardian (minor)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(10) &amp; 2(11)</div>
+      <h3>DEFECT vs DEFICIENCY</h3>
+      <div class="tri">
+        <div class="gu">ખામી = માલમાં ગુણવત્તા/માપ/શુદ્ધતાની ક્ષતિ | ઊણપ = સેવામાં ક્ષતિ (બેદરકારી + માહિતી છુપાવવી પણ સામેલ)</div>
+        <div class="hi">दोष = माल में गुणवत्ता/मात्रा/शुद्धता की कमी | न्यूनता = सेवा में कमी (लापरवाही + जानकारी छिपाना भी शामिल)</div>
+        <div class="en">Defect = fault in GOODS | Deficiency = fault in SERVICE (incl. negligence &amp; withholding info)</div>
+      </div>
+      <span class="seal">PYQ</span> Most asked "match the following" pair.
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(42)</div>
+      <h3>SERVICE</h3>
+      <div class="tri">
+        <div class="gu">બેંકિંગ, વીમો, વાહનવ્યવહાર, આવાસ, મનોરંજન વગેરેની વ્યાપક યાદી</div>
+        <div class="hi">बैंकिंग, बीमा, परिवहन, आवास, मनोरंजन आदि की विस्तृत सूची</div>
+        <div class="en">Wide list incl. banking, insurance, transport, housing, entertainment</div>
+      </div>
+      <span class="seal">EXCEPTION</span> Free service &amp; contract of personal service are excluded.
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(47)</div>
+      <h3>UNFAIR TRADE PRACTICE</h3>
+      <div class="tri">
+        <div class="gu">ખોટું વર્ણન, ભ્રામક વોરંટી, સંગ્રહખોરી, નકલી માલ, બિલ ન આપવો, 30 દિવસમાં રિફંડ ન આપવો, ખાનગી માહિતી જાહેર કરવી</div>
+        <div class="hi">झूठा विवरण, भ्रामक वारंटी, जमाखोरी, नकली माल, बिल न देना, 30 दिनों में रिफंड न देना, गुप्त जानकारी प्रकट करना</div>
+        <div class="en">False description, misleading warranty, hoarding, spurious goods, no bill, no refund in 30 days, disclosing private info</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(46)</div>
+      <h3>UNFAIR CONTRACT (6 types)</h3>
+      <div class="tri">
+        <div class="gu">અતિશય સિક્યુરિટી ડિપોઝિટ, અપ્રમાણસર દંડ, વહેલી ચુકવણી નકારવી, એકપક્ષીય રદ, સંમતિ વિના ટ્રાન્સફર, અયોગ્ય શુલ્ક</div>
+        <div class="hi">अत्यधिक सुरक्षा जमा, असंगत दंड, शीघ्र भुगतान से इनकार, एकपक्षीय निरसन, सहमति बिना हस्तांतरण, अनुचित प्रभार</div>
+        <div class="en">Excessive deposit / disproportionate penalty / refusing early repayment / unilateral termination / assignment w/o consent / unreasonable charge</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(41)</div>
+      <h3>RESTRICTIVE TRADE PRACTICE</h3>
+      <div class="tri">
+        <div class="gu">ભાવ/પુરવઠાની હેરફેર કરી ઉપભોક્તા પર અયોગ્ય ખર્ચ લાદવો</div>
+        <div class="hi">मूल्य/आपूर्ति में फेरबदल कर उपभोक्ता पर अनुचित लागत डालना</div>
+        <div class="en">Manipulates price/supply to impose unjustified cost on consumers (e.g. delay in supply, tie-in purchase)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(34)/(35), Chapter VI</div>
+      <h3>PRODUCT LIABILITY</h3>
+      <div class="tri">
+        <div class="gu">ખામીયુક્ત ઉત્પાદનથી થયેલ નુકસાન માટે ઉત્પાદક/વિક્રેતા/સેવા-પ્રદાતાની વળતર આપવાની જવાબદારી</div>
+        <div class="hi">दोषपूर्ण उत्पाद से हुई हानि हेतु निर्माता/विक्रेता/सेवा-प्रदाता का मुआवजा देने का दायित्व</div>
+        <div class="en">Responsibility to compensate harm caused by a defective product / deficient related service</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(22)</div>
+      <h3>HARM</h3>
+      <div class="tri">
+        <div class="gu">સંપત્તિને નુકસાન (ઉત્પાદન સિવાય), શારીરિક ઈજા/મૃત્યુ, માનસિક પીડા</div>
+        <div class="hi">संपत्ति को क्षति (उत्पाद को छोड़कर), शारीरिक चोट/मृत्यु, मानसिक पीड़ा</div>
+        <div class="en">Property damage (other than the product itself), injury/death, mental agony</div>
+      </div>
+      <span class="seal">EXCEPTION</span> Excludes damage to the product itself &amp; commercial/economic loss.
+    </div>
+
+    <div class="card">
+      <span class="tag">Definition</span>
+      <div class="sectionref">Sec 2(21)</div>
+      <h3>GOODS</h3>
+      <div class="tri">
+        <div class="gu">દરેક પ્રકારની જંગમ મિલકત; "ખોરાક" (FSSA 2006, કલમ 3(1)(j)) પણ સામેલ</div>
+        <div class="hi">हर प्रकार की चल संपत्ति; "खाद्य" (FSSA 2006, धारा 3(1)(j)) भी शामिल</div>
+        <div class="en">Every kind of movable property; includes "food" per FSSA 2006, Sec 3(1)(j)</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px; color:var(--def);">📑 Quick Glossary (one-liner)</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Term</th><th>ગુજરાતી / हिंदी</th><th>Meaning</th></tr>
+        <tr><td>Trader</td><td><span class="gu">વ્યાપારી</span><span class="hi">व्यापारी</span></td><td>Sells/distributes goods incl. manufacturer &amp; packer</td></tr>
+        <tr><td>Manufacturer</td><td><span class="gu">ઉત્પાદક</span><span class="hi">निर्माता</span></td><td>Makes / assembles goods, or puts own mark on goods</td></tr>
+        <tr><td>Product Seller</td><td><span class="gu">ઉત્પાદન વિક્રેતા</span><span class="hi">उत्पाद विक्रेता</span></td><td>Imports/sells/leases/markets a product commercially</td></tr>
+        <tr><td>Product Service Provider</td><td><span class="gu">ઉત્પાદન સેવા પ્રદાતા</span><span class="hi">उत्पाद सेवा प्रदाता</span></td><td>Provides service in respect of a product</td></tr>
+        <tr><td>Endorsement</td><td><span class="gu">સમર્થન</span><span class="hi">पृष्ठांकन</span></td><td>Message/depiction implying opinion of endorser</td></tr>
+        <tr><td>e-commerce</td><td><span class="gu">ઈ-કોમર્સ</span><span class="hi">ई-कॉमर्स</span></td><td>Buying/selling goods/services over digital network</td></tr>
+        <tr><td>Direct Selling</td><td><span class="gu">સીધું વેચાણ</span><span class="hi">सीधी बिक्री</span></td><td>Sale via network of sellers, not permanent retail location</td></tr>
+        <tr><td>Electronic Service Provider</td><td><span class="gu">ઈલેક્ટ્રોનિક સેવા પ્રદાતા</span><span class="hi">इलेक्ट्रॉनिक सेवा प्रदाता</span></td><td>Enables sellers to advertise/sell online (incl. marketplaces)</td></tr>
+        <tr><td>Misleading Advertisement</td><td><span class="gu">ભ્રામક જાહેરાત</span><span class="hi">भ्रामक विज्ञापन</span></td><td>Falsely describes / false guarantee / conceals info</td></tr>
+        <tr><td>Spurious Goods</td><td><span class="gu">નકલી માલ</span><span class="hi">नकली माल</span></td><td>Falsely claimed to be genuine</td></tr>
+        <tr><td>Adulterant</td><td><span class="gu">ભેળસેળયુક્ત પદાર્થ</span><span class="hi">मिलावटी पदार्थ</span></td><td>Material used to make a product unsafe</td></tr>
+        <tr><td>Mediation</td><td><span class="gu">મધ્યસ્થી</span><span class="hi">मध्यस्थता</span></td><td>Process by which a mediator resolves consumer disputes</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- ============ AUTHORITIES ============ -->
+<section class="section" id="authorities">
+  <div class="sec-head h-auth">
+    <div class="num">III</div>
+    <div class="titles">
+      <div class="gu">સત્તામંડળો અને વ્યવસ્થા</div>
+      <div class="hi">प्राधिकरण एवं पदानुक्रम</div>
+      <div class="en">Authorities &amp; Hierarchy</div>
+    </div>
+  </div>
+  <div class="sec-body">
+
+    <h3 style="color:var(--auth);">(A) Advisory Councils — No judicial power</h3>
+    <div class="row3">
+      <div class="flow-step alt1"><b>Central Council</b><small>Sec 3-5 | Chair: Union Minister | ≥1 meeting/yr</small></div>
+      <div class="flow-step alt1"><b>State Council</b><small>Sec 6-7 | Chair: State Minister | ≥2 meetings/yr</small></div>
+      <div class="flow-step alt1"><b>District Council</b><small>Sec 8-9 | Chair: Collector | ≥2 meetings/yr</small></div>
+    </div>
+    <div class="chip"><b>Mnemonic:</b> Meetings/year = "1-2-2" (Central-State-District)</div>
+
+    <h3 style="color:var(--auth); margin-top:16px;">(B) Central Consumer Protection Authority (CCPA)</h3>
+    <div class="tri">
+      <div class="gu">ઉપભોક્તા અધિકાર ઉલ્લંઘન, અયોગ્ય વ્યાપાર પ્રથા અને ભ્રામક જાહેરાત નિયંત્રિત કરવા સ્થાપિત નિયમનકારી સંસ્થા</div>
+      <div class="hi">उपभोक्ता अधिकार उल्लंघन, अनुचित व्यापार व्यवहार व भ्रामक विज्ञापन नियंत्रित करने हेतु स्थापित नियामक संस्था</div>
+      <div class="en">Regulatory body to curb violation of consumer rights, UTP and misleading ads (Sec 10)</div>
+    </div>
+    <div class="flow">
+      <div class="flow-step alt2"><b>CCPA — HQ: NCR Delhi</b><small>Chief Commissioner + Commissioners (Sec 10-14)</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>Investigation Wing</b><small>Headed by Director-General (Sec 15)</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>District Collector</b><small>Can inquire/investigate on CCPA reference (Sec 16)</small></div>
+    </div>
+    <span class="seal">PYQ</span> CCPA powers: recall goods, refund price, discontinue UTP, order/penalty against misleading ads, search &amp; seizure (Sec 22, CrPC applies). Appeal against CCPA order (Sec 20/21) → National Commission within 30 days (Sec 24).
+
+    <h3 style="color:var(--auth); margin-top:16px;">(C) Consumer Disputes Redressal Commission (Quasi-Judicial Ladder)</h3>
+    <div class="flow">
+      <div class="flow-step alt3"><b>District Commission</b><small>Sec 28-41 | President + 2 to (prescribed) members</small></div>
+      <div class="flow-arrow">↓ Appeal</div>
+      <div class="flow-step alt3"><b>State Commission</b><small>Sec 42-52 | President + ≥4 members</small></div>
+      <div class="flow-arrow">↓ Appeal</div>
+      <div class="flow-step alt3"><b>National Commission</b><small>Sec 53-73 | President + ≥4 members</small></div>
+      <div class="flow-arrow">↓ Appeal (limited grounds)</div>
+      <div class="flow-step alt3"><b>Supreme Court</b><small>Sec 67</small></div>
+    </div>
+  </div>
+</section>
+<!-- ============ JURISDICTION ============ -->
+<section class="section" id="jurisdiction">
+  <div class="sec-head h-time">
+    <div class="num">IV</div>
+    <div class="titles">
+      <div class="gu">અધિકારક્ષેત્ર (કિંમત મુજબ)</div>
+      <div class="hi">अधिकारिता (मूल्य अनुसार)</div>
+      <div class="en">Pecuniary Jurisdiction</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="table-wrap">
+      <table>
+        <tr><th>Commission</th><th>Value of goods/services (consideration)</th><th>Sec</th></tr>
+        <tr><td><span class="gu">જિલ્લા પંચ</span><span class="hi">जिला आयोग</span>District</td><td>≤ ₹1 crore</td><td>34</td></tr>
+        <tr><td><span class="gu">રાજ્ય પંચ</span><span class="hi">राज्य आयोग</span>State</td><td>&gt; ₹1 cr – ≤ ₹10 cr (+ unfair contract complaints up to ₹10 cr)</td><td>47</td></tr>
+        <tr><td><span class="gu">રાષ્ટ્રીય પંચ</span><span class="hi">राष्ट्रीय आयोग</span>National</td><td>&gt; ₹10 crore (+ unfair contract complaints above ₹10 cr)</td><td>58</td></tr>
+      </table>
+    </div>
+    <div class="chip"><b>Mnemonic:</b> "1-10-Above" / <span class="gu">"૧ કરોડ – ૧૦ કરોડ – ઉપર"</span></div>
+    <h3 style="color:var(--time); margin-top:10px;">Territorial Jurisdiction (where to file)</h3>
+    <div class="tri">
+      <div class="gu">જ્યાં વિરોધી પક્ષ રહે છે/વ્યાપાર કરે છે, અથવા કાર્યનું કારણ ઊભું થયું, અથવા ફરિયાદી રહે છે/કામ કરે છે</div>
+      <div class="hi">जहाँ विपक्षी पार्टी रहती/व्यवसाय करती है, या कारण उत्पन्न हुआ, या शिकायतकर्ता रहता/कार्य करता है</div>
+      <div class="en">Where opposite party resides/does business, OR cause of action arose, OR complainant resides/works (Sec 34(2), 47(4))</div>
+    </div>
+    <span class="seal">PYQ</span> 2019 Act ADDED "complainant's residence" as a new ground — not present in 1986 Act.
+  </div>
+</section>
+
+<!-- ============ TIME LIMITS ============ -->
+<section class="section" id="timelimits">
+  <div class="sec-head h-time">
+    <div class="num">V</div>
+    <div class="titles">
+      <div class="gu">સમય મર્યાદા (સૌથી વધુ પુછાતો વિષય)</div>
+      <div class="hi">समय सीमा (सबसे अधिक पूछा जाने वाला विषय)</div>
+      <div class="en">Time Limits (HIGHEST-YIELD TOPIC)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="table-wrap">
+      <table>
+        <tr><th>Stage</th><th>Time</th><th>Sec</th></tr>
+        <tr><td>Admissibility decision by District Commission</td><td>21 days (deemed admitted if not decided)</td><td>36(2)</td></tr>
+        <tr><td>Opposite party files reply/version</td><td>30 days (+15 days extension)</td><td>38(2)/(3)</td></tr>
+        <tr><td>Appropriate laboratory test report</td><td>45 days (+ extension)</td><td>38(2)(c)</td></tr>
+        <tr><td>Return of seized documents</td><td>20 days</td><td>22(3)</td></tr>
+        <tr><td>Complaint disposal target</td><td>3 months (no test) / 5 months (with test)</td><td>38(7)</td></tr>
+        <tr><td>Mediation: written consent by parties</td><td>5 days</td><td>37(1)</td></tr>
+        <tr><td>Referral to mediation cell after consent</td><td>5 days</td><td>37(2)</td></tr>
+        <tr><td>Order on mediation settlement report</td><td>7 days</td><td>81(1)</td></tr>
+        <tr><td>Review application (any Commission)</td><td>30 days from order</td><td>40/50/60</td></tr>
+        <tr><td>Appeal: District → State Commission</td><td>45 days + 50% deposit</td><td>41</td></tr>
+        <tr><td>Appeal: State → National Commission</td><td>30 days + 50% deposit</td><td>51</td></tr>
+        <tr><td>Appeal: National Commission → Supreme Court</td><td>30 days + 50% deposit</td><td>67</td></tr>
+        <tr><td>Appeal disposal target</td><td>90 days from admission</td><td>52</td></tr>
+        <tr><td>Limitation period to file complaint</td><td>2 years from cause of action</td><td>69</td></tr>
+        <tr><td>Mediator panel validity</td><td>5 years</td><td>75(3)</td></tr>
+        <tr><td>Difference of opinion reference reply (District/State)</td><td>1 month</td><td>39(3)</td></tr>
+        <tr><td>Difference of opinion reference reply (National)</td><td>2 months</td><td>58(3)</td></tr>
+        <tr><td>Appeal against CCPA order → National Commission</td><td>30 days</td><td>24</td></tr>
+      </table>
+    </div>
+    <div class="chip" style="margin-top:10px;"><b>Mnemonic (Appeal Ladder):</b> "45 → 30 → 30" (District-State bigger gap, then equal steps up)</div>
+    <div class="chip"><b>Mnemonic (Complaint stages):</b> "21-30-45-90-180" → Admit(21)→Reply(30)→Lab(45)→Disposal(90 d ≈3mo)→Disposal-with-test(150 d≈5mo)</div>
+  </div>
+</section>
+<!-- ============ APPEAL LADDER ============ -->
+<section class="section" id="appeals">
+  <div class="sec-head h-rule">
+    <div class="num">VI</div>
+    <div class="titles">
+      <div class="gu">અપીલની શ્રેણી</div>
+      <div class="hi">अपील की सीढ़ी</div>
+      <div class="en">Appeal Ladder Flow</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="flow-step alt2"><b>District Commission Order</b></div>
+      <div class="flow-arrow">↓ 45 days, 50% deposit (Sec 41)</div>
+      <div class="flow-step alt2"><b>State Commission</b></div>
+      <div class="flow-arrow">↓ 30 days, 50% deposit (Sec 51)</div>
+      <div class="flow-step alt2"><b>National Commission</b><small>(or directly, if "substantial question of law" — Sec 51(2))</small></div>
+      <div class="flow-arrow">↓ 30 days, 50% deposit (Sec 67)</div>
+      <div class="flow-step alt2"><b>Supreme Court</b><small>only against orders under Sec 58(1)(a)(i)/(ii)</small></div>
+    </div>
+    <div class="flow" style="margin-top:14px;">
+      <div class="flow-step alt4"><b>CCPA Order (Sec 20/21)</b></div>
+      <div class="flow-arrow">↓ 30 days (Sec 24) — direct, bypasses District/State</div>
+      <div class="flow-step alt4"><b>National Commission</b></div>
+    </div>
+    <span class="seal">EXCEPTION</span> No appeal lies against an order passed under Sec 81(1) pursuant to a mediation settlement (3rd proviso, Sec 41).
+  </div>
+</section>
+
+<!-- ============ PRODUCT LIABILITY ============ -->
+<section class="section" id="productliability">
+  <div class="sec-head h-exc">
+    <div class="num">VII</div>
+    <div class="titles">
+      <div class="gu">ઉત્પાદન જવાબદારી (પ્રકરણ VI)</div>
+      <div class="hi">उत्पाद दायित्व (अध्याय VI)</div>
+      <div class="en">Product Liability — Chapter VI (Sec 82-87)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="row3">
+      <div class="flow-step alt4"><b>Manufacturer liable if (Sec 84):</b><small>Manufacturing defect / design defect / deviation from specs / fails express warranty / inadequate instructions-warnings. Liable even if NOT negligent on express warranty.</small></div>
+      <div class="flow-step alt4"><b>Service Provider liable if (Sec 85):</b><small>Faulty/deficient service / negligence-omission / withheld info / no warnings / breach of express warranty</small></div>
+      <div class="flow-step alt4"><b>Seller (non-manufacturer) liable if (Sec 86):</b><small>Substantial control over design/mfg / altered product / own express warranty / manufacturer unknown/unreachable / failed reasonable care</small></div>
+    </div>
+
+    <div class="card exc" style="margin-top:12px;">
+      <span class="tag">Exceptions</span>
+      <div class="sectionref">Sec 87</div>
+      <h3>When NOT liable</h3>
+      <div class="tri">
+        <div class="gu">નુકસાન સમયે ઉત્પાદનનો દુરુપયોગ/ફેરફાર થયો હોય; એમ્પ્લોયરને ચેતવણી અપાઈ હોય; ઘટક-ભાગ માટે ખરીદનારને ચેતવણી અપાઈ હોય; નિષ્ણાત દેખરેખ હેઠળના ઉત્પાદનમાં નિષ્ણાતને ચેતવણી અપાઈ હોય; ઉપભોક્તા પ્રિસ્ક્રિપ્શન વિના દારૂ/દવાના પ્રભાવ હેઠળ હોય</div>
+        <div class="hi">हानि के समय उत्पाद का दुरुपयोग/परिवर्तन हुआ हो; नियोक्ता को चेतावनी दी गई हो; घटक हेतु खरीदार को चेतावनी दी गई हो; विशेषज्ञ-पर्यवेक्षित उत्पाद में विशेषज्ञ को चेतावनी दी गई हो; उपभोक्ता बिना प्रिस्क्रिप्शन शराब/दवा के प्रभाव में हो</div>
+        <div class="en">Product misused/altered/modified at time of harm; employer warned (workplace use); component-purchaser warned; expert warned (expert-supervised product); consumer under unprescribed alcohol/drug influence; danger was obvious/commonly known</div>
+      </div>
+    </div>
+    <span class="seal">PYQ</span> Sec 87 exceptions are a favourite "which of the following is NOT a ground" question.
+  </div>
+</section>
+<!-- ============ PENALTIES ============ -->
+<section class="section" id="penalties">
+  <div class="sec-head h-pen">
+    <div class="num">VIII</div>
+    <div class="titles">
+      <div class="gu">દંડ અને અપરાધો (પ્રકરણ VII)</div>
+      <div class="hi">दंड एवं अपराध (अध्याय VII)</div>
+      <div class="en">Penalties &amp; Offences — Chapter VII (Sec 88-93)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="table-wrap">
+      <table>
+        <tr><th>Sec</th><th>Offence</th><th>Punishment</th></tr>
+        <tr><td>88</td><td>Non-compliance with CCPA direction (Sec 20/21)</td><td>≤6 months + ≤₹20 lakh</td></tr>
+        <tr><td>89</td><td>False/misleading ad prejudicial to consumers</td><td>1st: ≤2yr + ≤₹10L | Subsequent: ≤5yr + ≤₹50L</td></tr>
+        <tr><td>90(1)(a)</td><td>Adulterant — no injury</td><td>≤6 months + ≤₹1 lakh</td></tr>
+        <tr><td>90(1)(b)</td><td>Adulterant — simple hurt</td><td>≤1 year + ≤₹3 lakh</td></tr>
+        <tr><td>90(1)(c)</td><td>Adulterant — grievous hurt</td><td>≤7 years + ≤₹5 lakh (cognizable, non-bailable)</td></tr>
+        <tr><td>90(1)(d)</td><td>Adulterant — death</td><td>≥7yr–life + ≥₹10 lakh (cognizable, non-bailable)</td></tr>
+        <tr><td>91(1)(a)</td><td>Spurious goods — simple hurt</td><td>≤1 year + ≤₹3 lakh</td></tr>
+        <tr><td>91(1)(b)</td><td>Spurious goods — grievous hurt</td><td>≤7 years + ≤₹5 lakh (cognizable)</td></tr>
+        <tr><td>91(1)(c)</td><td>Spurious goods — death</td><td>≥7yr–life + ≥₹10 lakh (cognizable)</td></tr>
+        <tr><td>72</td><td>Non-compliance of Commission order</td><td>1 month–3 years OR ₹25,000–₹1 lakh OR both</td></tr>
+        <tr><td>93</td><td>Vexatious search/seizure by officer</td><td>≤1 year or ≤₹10,000 or both</td></tr>
+      </table>
+    </div>
+    <div class="chip" style="margin-top:10px;"><b>Mnemonic (injury ladder, Sec 90 &amp; 91):</b> No injury → Simple hurt → Grievous hurt (cognizable) → Death (cognizable) = punishment &amp; fine escalate at each step</div>
+    <span class="seal">PYQ</span> Sec 88 &amp; 89 cognizance only on complaint by CCPA / authorised officer (Sec 92). Compounding allowed under Sec 96 (not if repeated within 3 years).
+    <div class="card pen" style="margin-top:10px;">
+      <span class="tag">Rule</span>
+      <h3>CCPA Administrative Penalty (not via court) — Sec 21</h3>
+      <div class="tri">
+        <div class="gu">ઉત્પાદક/સમર્થનકર્તા પર ₹10 લાખ (પ્રથમ વાર), ₹50 લાખ (પુનરાવર્તન); સમર્થનકર્તા પર 1 વર્ષ/3 વર્ષનો પ્રતિબંધ; પ્રકાશક પર ₹10 લાખ</div>
+        <div class="hi">निर्माता/समर्थनकर्ता पर ₹10 लाख (पहली बार), ₹50 लाख (पुनरावृत्ति); समर्थनकर्ता पर 1 वर्ष/3 वर्ष प्रतिबंध; प्रकाशक पर ₹10 लाख</div>
+        <div class="en">₹10L (1st) / ₹50L (subsequent) on manufacturer/endorser; endorser banned 1yr/3yr; publisher penalty ₹10L</div>
+      </div>
+      <span class="seal">EXCEPTION</span> Endorser not liable if due diligence exercised (Sec 21(5)); publisher not liable if published in ordinary course of business and had no prior knowledge of CCPA's order (Sec 21(6)).
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEDIATION ============ -->
+<section class="section" id="mediation">
+  <div class="sec-head h-rule">
+    <div class="num">IX</div>
+    <div class="titles">
+      <div class="gu">મધ્યસ્થી પ્રક્રિયા (પ્રકરણ V)</div>
+      <div class="hi">मध्यस्थता प्रक्रिया (अध्याय V)</div>
+      <div class="en">Mediation Process — Chapter V (Sec 74-81)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="flow-step alt2"><b>1. Commission sees scope for settlement</b></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>2. Parties give written consent</b><small>within 5 days (Sec 37(1))</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>3. Referred to Consumer Mediation Cell</b><small>within 5 days (Sec 37(2))</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>4. Mediator conducts mediation</b><small>guided by natural justice (Sec 79)</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>5a. Agreement reached</b><small>written, signed → settlement report to Commission</small></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step alt2"><b>6. Commission passes order</b><small>within 7 days (Sec 81(1))</small></div>
+    </div>
+    <div class="tri" style="margin-top:8px;">
+      <div class="gu">મધ્યસ્થી કોષ દરેક જિલ્લા/રાજ્ય પંચ સાથે જોડાયેલ (રાજ્ય સરકાર સ્થાપે) અને રાષ્ટ્રીય પંચ સાથે જોડાયેલ (કેન્દ્ર સરકાર સ્થાપે)</div>
+      <div class="hi">मध्यस्थता कक्ष प्रत्येक जिला/राज्य आयोग से जुड़ा (राज्य सरकार स्थापित करती है) व राष्ट्रीय आयोग से जुड़ा (केंद्र सरकार स्थापित करती है)</div>
+      <div class="en">Mediation cell attached to each District/State Commission (State Govt establishes) and National Commission (Central Govt establishes)</div>
+    </div>
+    <span class="seal">EXCEPTION</span> If no agreement reached, Commission continues hearing ALL issues itself (Sec 81(3)). No appeal against mediated settlement order (Sec 41 proviso).
+  </div>
+</section>
+
+<!-- ============ MNEMONICS ============ -->
+<section class="section" id="mnemonics">
+  <div class="sec-head h-faq">
+    <div class="num">X</div>
+    <div class="titles">
+      <div class="gu">યાદ રાખવાની તરકીબો</div>
+      <div class="hi">स्मरण तकनीकें</div>
+      <div class="en">Mnemonics &amp; Memory Tricks</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="chips">
+      <div class="chip"><b>Consumer Rights (6) — "SICHRA":</b> Safety, Information, Choice, Heard, Redressal, Awareness (Sec 2(9))</div>
+      <div class="chip"><b>Person (7 types) — "IF-HUF-CACA":</b> Individual, Firm, HUF, Co-op society, Association, Company, Artificial juridical person (Sec 2(31))</div>
+      <div class="chip"><b>Jurisdiction — "1-10-Above":</b> District ≤1cr, State 1-10cr, National &gt;10cr</div>
+      <div class="chip"><b>Appeal days — "45-30-30":</b> District→State→National→SC ladder</div>
+      <div class="chip"><b>Council meetings — "1-2-2":</b> Central(1)/State(2)/District(2) per year minimum</div>
+      <div class="chip"><b>Penalty ladder — "6M-1L → 1Y-3L → 7Y-5L → 7Y(life)-10L":</b> Sec 90 &amp; 91 injury tiers</div>
+      <div class="chip"><b>CCPA ad penalty — "10-50, 1-3":</b> ₹10L→₹50L fine, 1yr→3yr endorser ban</div>
+      <div class="chip"><b>Product Liability parties — "MSS":</b> Manufacturer, Service-provider, Seller — each has own liability test (Sec 84/85/86)</div>
+      <div class="chip"><b>Chapter order — "PC-CC-MP-OM":</b> Preliminary, Councils, Central Authority, Commission, Mediation, Product liability, Offences, Misc.</div>
+      <div class="chip"><b>Deposit before appeal — "50% always":</b> District→State, State→National, National→SC — all require 50% of awarded amount</div>
+    </div>
+  </div>
+</section>
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="sec-head h-faq">
+    <div class="num">XI</div>
+    <div class="titles">
+      <div class="gu">સામાન્ય પ્રશ્નો</div>
+      <div class="hi">सामान्य प्रश्न</div>
+      <div class="en">Frequently Asked Questions</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="qa"><div class="q">Q. 1986 Act vs 2019 Act — key changes?</div>
+      New CCPA, e-commerce/UTP coverage, Product Liability chapter (new), Mediation chapter (new), revised pecuniary jurisdiction (1986: ₹20L/₹1cr/above₹1cr → 2019: ₹1cr/₹10cr/above₹10cr), penalties for misleading ads, e-filing of complaints.</div>
+    <div class="qa"><div class="q">Q. Does the Act (as enacted) apply to Jammu &amp; Kashmir?</div>
+      Sec 1(2) of the bare Act, as gazetted on 9 Aug 2019, excludes the State of J&amp;K. Note the J&amp;K Reorganisation occurred shortly after — candidates should be aware the bare Act text says "except J&amp;K" and watch for updates on current applicability.</div>
+    <div class="qa"><div class="q">Q. Can a complaint be filed electronically?</div>
+      Yes — Sec 35 proviso allows e-filing; Sec 38(4) lets the Commission require info from an electronic service provider.</div>
+    <div class="qa"><div class="q">Q. Who is NOT a "consumer"?</div>
+      A person who buys goods/avails service for resale or any commercial purpose — EXCEPT when used for self-employment/livelihood.</div>
+    <div class="qa"><div class="q">Q. What's the limitation period to file a complaint?</div>
+      2 years from the date the cause of action arose (Sec 69); condonable for sufficient cause.</div>
+    <div class="qa"><div class="q">Q. Difference between Defect and Deficiency?</div>
+      Defect relates to GOODS; Deficiency relates to SERVICES.</div>
+    <div class="qa"><div class="q">Q. Where can a complaint be filed (territorial)?</div>
+      Where opposite party resides/business, OR cause of action arose, OR complainant resides/works — the last ground is new in 2019.</div>
+  </div>
+</section>
+
+<!-- ============ PYQ / EXPECTED ============ -->
+<section class="section" id="pyq">
+  <div class="sec-head h-pyq">
+    <div class="num">XII</div>
+    <div class="titles">
+      <div class="gu">PYQ વિસ્તારો અને સંભવિત પ્રશ્નો</div>
+      <div class="hi">पीवायक्यू क्षेत्र व संभावित प्रश्न</div>
+      <div class="en">PYQ Areas &amp; Expected Exam Questions</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <h3 style="color:var(--pyq);">🎯 High-Probability PYQ Areas</h3>
+    <ul class="qlist">
+      <li>Pecuniary jurisdiction limits of all 3 Commissions <span class="seal">★★★</span></li>
+      <li>"Consumer" definition — exclusions &amp; self-employment exception <span class="seal">★★★</span></li>
+      <li>CCPA — powers, penalty amounts, HQ location <span class="seal">★★</span></li>
+      <li>Time limits — appeal periods, limitation period, admissibility <span class="seal">★★★</span></li>
+      <li>Product Liability — who is liable, Sec 87 exceptions <span class="seal">★★</span></li>
+      <li>Penalty tiers under Sec 90 (adulterant) &amp; 91 (spurious goods) <span class="seal">★★</span></li>
+      <li>Mediation — cell establishment, settlement timelines <span class="seal">★</span></li>
+      <li>Composition &amp; meeting frequency of the 3 Councils <span class="seal">★</span></li>
+      <li>Section numbers of landmark provisions (CCPA-10, Limitation-69, Product Liability Ch.-VI) <span class="seal">★★</span></li>
+    </ul>
+
+    <h3 style="color:var(--pyq); margin-top:14px;">📝 Expected Exam Questions</h3>
+    <ol class="qlist">
+      <li>What is the pecuniary jurisdiction of the National Commission under the Consumer Protection Act, 2019?</li>
+      <li>Within how many days must a District Commission decide the admissibility of a complaint?</li>
+      <li>Who is excluded from the definition of "consumer" under Section 2(7)?</li>
+      <li>What is the punishment under Section 89 for a subsequent offence of misleading advertisement?</li>
+      <li>Within what time must an appeal be filed from the District Commission to the State Commission, and what deposit is required?</li>
+      <li>Which Chapter of the Act deals with Product Liability, and which sections does it cover?</li>
+      <li>What is the limitation period for filing a consumer complaint?</li>
+      <li>List any three exceptions under Section 87 where a product manufacturer is not liable.</li>
+      <li>Which authority can impose a penalty up to ₹50 lakh on a manufacturer for a misleading advertisement?</li>
+      <li>What is the difference between "defect" and "deficiency" as defined in the Act?</li>
+      <li>Where is the headquarters of the Central Consumer Protection Authority located?</li>
+      <li>Which Act stands repealed by Section 107 of the Consumer Protection Act, 2019?</li>
+    </ol>
+  </div>
+</section>
+
+<a class="top-link" href="#onepage">↑ Back to One-Page Revision Sheet</a>
+</div>
+
+<footer>
+  Prepared as an IP/IPO exam study aid — trilingual (ગુજરાતી / हिंदी / English) infographic based on the Consumer Protection Act, 2019 (No. 35 of 2019).<br>
+  Cross-check section numbers with the latest bare Act / amendments before the exam.
+</footer>
+  
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+
+</body>
+</html>

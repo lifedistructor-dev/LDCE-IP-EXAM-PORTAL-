@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLI/RPLI Part IV — SOPs (Claims &amp; Loans) | IPO Exam</title>
+<style>
+  :root{--blue:#1e40af;--blue-light:#dbeafe;--red:#b91c1c;--red-light:#fee2e2;--orange:#c2410c;--orange-light:#ffedd5;--yellow:#a16207;--yellow-light:#fef9c3;--green:#15803d;--green-light:#dcfce7;--purple:#6d28d9;--purple-light:#ede9fe;--ink:#1f2937;--paper:#fffdf7;}
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Gujarati','Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#f4f4f5,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#111827,#4c1d95);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(17,24,39,.35);}
+  header.hero h1{margin:0 0 6px;font-size:1.3rem;}
+  header.hero .sub{font-size:.85rem;opacity:.9;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.02rem;display:flex;align-items:center;gap:8px;}
+  .tri{margin:6px 0 12px;padding:8px 10px;border-left:4px solid #111827;background:#f3f4f6;border-radius:8px;}
+  .tri .gu{font-weight:700;font-size:.92rem;color:#111827;}
+  .tri .hi{font-weight:500;font-size:.85rem;color:#374151;}
+  .tri .en{font-style:italic;font-size:.78rem;color:#4b5563;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-yellow{background:var(--yellow-light);color:#7c5a06;border:1px solid var(--yellow);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.76rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#f3f4f6;border:2px solid #374151;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#374151;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.74rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#111827;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(17,24,39,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>📋 PLI/RPLI Rules — Part IV</h1>
+    <div class="sub">SOPs — Maturity/Survival, Loan &amp; Death Claims | Claim Procedures | दावा प्रक्रियाएं</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> PLI / RPLI <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> SANKALAN Part IV <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Claim/Loan SOPs — Timelines &amp; Documents
+  </div>
+
+  <div class="card">
+    <h2>🎯 Why This Part Matters <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="tri">
+      <div class="gu">આ SOP Post Office/CPC ના રોજિંદા operations ને સીધું સંચાલિત કરે છે — document lists, time-limits, process flows (BO→SO→CPC→Approving Authority) exam માટે ખૂબ મહત્વના.</div>
+      <div class="hi">यह SOP Post Office/CPC के दैनिक operations को सीधे नियंत्रित करते हैं — document lists, time-limits, process flows परीक्षा के लिए बहुत महत्वपूर्ण।</div>
+      <div class="en">These SOPs directly govern day-to-day counter operations. Highly exam-relevant: document lists, time-limits (working days), process flows.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>1️⃣ Handling Maturity/Survival Claim Cases <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">Citizen Charter target: maturity ni tarikh e j payment. Software: McCamish.</div>
+      <div class="hi">Citizen Charter target: maturity की तारीख पर ही payment। Software: McCamish।</div>
+      <div class="en">Citizen Charter objective: pay on the date of maturity. Software used: McCamish.</div>
+    </div>
+    <div class="flow">
+      <div class="step">CPC generates Pending Maturity report — <b>1st working day, 2 months in advance</b></div>
+      <div class="step">Intimation Letter + blank Claim Form by <b>5th working day</b></div>
+      <div class="step">Insurant submits Claim Form (Annex-II) at Post Office/CPC</div>
+      <div class="step">Missing documents: submit within <b>15 days</b></div>
+      <div class="step">Approving Authority reviews checklist (Annex-VI)</div>
+      <div class="step">Sanction Letter on/after maturity date → payment</div>
+    </div>
+    <div class="tbl-scroll"><table>
+      <tr><th>Activity</th><th>Time Limit</th></tr>
+      <tr><td>BO/SO forwarding</td><td>1+1 days</td></tr>
+      <tr><td>Indexing &amp; Scanning (CPC)</td><td>2 days</td></tr>
+      <tr><td>Data Entry</td><td>1 day</td></tr>
+      <tr><td>Quality Checking</td><td>1 day</td></tr>
+      <tr><td>Approval/Rejection</td><td>3 days</td></tr>
+      <tr><td>Sanction transfer (bank)</td><td>2 days</td></tr>
+      <tr><td>Dispatch</td><td>1 day</td></tr>
+    </table></div>
+    <div class="exam-q"><b>Probable Q:</b> Maturity report generated how many months in advance? <b>Ans: 2 months</b></div>
+  </div>
+
+  <div class="card">
+    <h2>2️⃣ Handling Loan Cases <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">Loan facility badhi PLI/RPLI policy par — AEA, 10-Year RPLI, Children Policy sivay.</div>
+      <div class="hi">Loan facility सभी PLI/RPLI पॉलिसी पर — AEA, 10-Year RPLI, Children Policy को छोड़कर।</div>
+      <div class="en">Loan facility on all PLI/RPLI policies EXCEPT AEA, 10-Year RPLI, Children's Policy.</div>
+    </div>
+    <div class="decision">
+      <div class="node">Loan from India Post ➜ Loan Application (Annex-II)</div><br>
+      <div class="node">Loan from other organisation ➜ Assignment Letter (Annex-III)</div>
+    </div>
+    <div class="tri">
+      <div class="gu">Missing document window Loan mate <b>7 days</b> j chhe (Maturity/Death claim ma 15 days).</div>
+      <div class="hi">Missing document window Loan के लिए केवल <b>7 दिन</b> है (Maturity/Death claim में 15 दिन)।</div>
+      <div class="en">Missing document window for Loan is only 7 days (vs 15 days for Maturity/Death claims).</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Which 3 policy types are NOT eligible for loan? <b>Ans: AEA, 10-Year RPLI, Children's Policy</b></div>
+  </div>
+
+  <div class="card">
+    <h2>3️⃣ Handling Death Claim Cases <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">Citizen Charter: <b>30 days</b> normal, <b>90 days</b> Inquiry required.</div>
+      <div class="hi">Citizen Charter: <b>30 दिन</b> सामान्य, <b>90 दिन</b> Inquiry required।</div>
+      <div class="en">Citizen Charter: 30 days normal claims, 90 days claims requiring Inquiry.</div>
+    </div>
+    <div class="decision">
+      <div class="node">Death <b>after 3 years</b> from acceptance/revival ➜ NO Inquiry</div><br>
+      <div class="node">Death <b>within 3 years</b> ➜ Inquiry required</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-Year Rule" — insurer can question policy for misrepresentation only within 3 years. After that, no inquiry needed.</div>
+    <table>
+      <tr><th>Document</th><th>Unnatural</th><th>Natural</th></tr>
+      <tr><td>FIR copy</td><td>✅</td><td>❌</td></tr>
+      <tr><td>Post-mortem report</td><td>✅</td><td>❌</td></tr>
+      <tr><td>Death Certificate</td><td>✅</td><td>✅</td></tr>
+    </table>
+    <div class="tbl-scroll"><table>
+      <tr><th>SOP Type</th><th>Total Time Limit</th></tr>
+      <tr><td>No Inquiry</td><td><b>14 days</b></td></tr>
+      <tr><td>With Inquiry (incl. 21-day inquiry)</td><td><b>47 days</b></td></tr>
+    </table></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "14 vs 47" — well within Citizen Charter's 30/90-day norms.</div>
+    <div class="exam-q"><b>Probable Q:</b> Citizen Charter norm WITHOUT inquiry? <b>Ans: 30 days</b> | WITH inquiry? <b>Ans: 90 days</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. Maturity report ketla months pahela generate thay?</div><div class="opts">A) 1mo &nbsp; B) 2mo &nbsp; C) 3mo &nbsp; D) 6mo</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q2. Maturity claim ma missing docs window?</div><div class="opts">A) 7d &nbsp; B) 10d &nbsp; C) 15d &nbsp; D) 30d</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q3. Loan application ma missing docs window?</div><div class="opts">A) 7d &nbsp; B) 15d &nbsp; C) 21d &nbsp; D) 30d</div><div class="ans">Answer: A</div></div>
+    <div class="mcq"><div class="q">Q4. Kaya policies loan mate eligible nathi?</div><div class="opts">A) WLA,EA,CWLA &nbsp; B) AEA,10yr RPLI,Children &nbsp; C) Joint Life,WLA &nbsp; D) Badhi eligible chhe</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q5. Death claim ne inquiry kyare joie?</div><div class="opts">A) 3 varsh pachi &nbsp; B) 3 varsh andar &nbsp; C) 5 varsh pachi &nbsp; D) Kadi nahi</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q6. No-inquiry death claim SOP total?</div><div class="opts">A) 7d &nbsp; B) 14d &nbsp; C) 30d &nbsp; D) 47d</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. With-inquiry death claim SOP total?</div><div class="opts">A) 14d &nbsp; B) 30d &nbsp; C) 47d &nbsp; D) 90d</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q8. Citizen Charter - death claim without inquiry?</div><div class="opts">A) 14d &nbsp; B) 30d &nbsp; C) 47d &nbsp; D) 90d</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q9. Citizen Charter - death claim with inquiry?</div><div class="opts">A) 30d &nbsp; B) 47d &nbsp; C) 60d &nbsp; D) 90d</div><div class="ans">Answer: D</div></div>
+    <div class="mcq"><div class="q">Q10. Inquiry Officer no report kayare joie?</div><div class="opts">A) 15d &nbsp; B) 21d &nbsp; C) 30d &nbsp; D) 45d</div><div class="ans">Answer: B</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Maturity report: 2 months ahead; Intimation by 5th working day</li>
+      <li>🔴 Missing docs: Maturity/Death=<b>15d</b>; Loan=<b>7d</b></li>
+      <li>🔴 Loan excluded: <b>AEA, 10yr RPLI, Children Policy</b></li>
+      <li>🔴 Inquiry trigger: death <b>within 3 years</b></li>
+      <li>🔴 SOP totals: No Inquiry=<b>14d</b>; With Inquiry=<b>47d</b></li>
+      <li>🟠 Citizen Charter: <b>30d</b>/<b>90d</b></li>
+      <li>🟡 Inquiry report: <b>21 days</b> total</li>
+      <li>🟢 Software: <b>McCamish</b>; Scanning: <b>ECMS</b></li>
+    </ul>
+  </div>
+
+</div>
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1e3a8a">
+<title>भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023 | IP परीक्षा</title>
+<style>
+:root{
+  --ip-red:#dc2626;--ip-red-dark:#b91c1c;--ip-red-light:#fee2e2;
+  --ip-blue:#1e3a8a;--ip-blue-dark:#172554;--ip-blue-light:#dbeafe;
+  --ip-gold:#d97706;--ip-gold-light:#fef3c7;
+  --success:#059669;--success-light:#d1fae5;
+  --bg:#f8fafc;--surface:#ffffff;--text:#0f172a;--text-sec:#475569;--text-mut:#94a3b8;
+  --border:#e2e8f0;--radius:12px;--radius-lg:16px;--radius-pill:9999px;
+  --shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1);
+  --shadow-md:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-bottom:40px;}
+
+.hero{background:linear-gradient(135deg,var(--ip-red) 0%,var(--ip-blue) 55%,var(--ip-blue-dark) 100%);color:#fff;padding:28px 18px 40px;position:relative;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 16px;border-radius:var(--radius-pill);text-decoration:none;font-size:13px;font-weight:600;backdrop-filter:blur(6px);}
+.hero h1{font-size:20px;font-weight:800;margin-top:16px;letter-spacing:0;}
+.hero .sub-en{font-size:13px;opacity:.9;margin-top:6px;}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.hero .badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.wave{height:36px;margin-top:-1px;}
+.wave svg{width:100%;height:36px;display:block;}
+
+.container{max-width:760px;margin:0 auto;padding:0 14px;}
+
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-18px 0 20px;position:relative;z-index:5;}
+.legend .item{background:var(--surface);border-radius:var(--radius);padding:10px 12px;box-shadow:var(--shadow);font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:6px;border:1px solid var(--border);}
+
+.section{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sec-num{width:34px;height:34px;border-radius:10px;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;}
+.sec-title{font-size:16.5px;font-weight:800;color:var(--ip-blue-dark);}
+
+.card{background:var(--surface);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:12px;}
+.card-title{font-weight:800;font-size:14px;color:var(--ip-red-dark);margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tag{display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:var(--radius-pill);margin-left:auto;white-space:nowrap;}
+.tag-red{background:var(--ip-red-light);color:var(--ip-red-dark);}
+.tag-orange{background:#ffedd5;color:#c2410c;}
+.card p{font-size:13px;color:var(--text-sec);margin-bottom:4px;}
+
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.def-grid{grid-template-columns:1fr;}}
+.def-card{background:var(--surface);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;box-shadow:var(--shadow);}
+.def-term{font-weight:800;font-size:12.5px;color:var(--ip-blue-dark);}
+.def-desc{font-size:11.5px;color:var(--text-sec);margin-top:2px;}
+
+.flow{display:flex;flex-direction:column;align-items:center;gap:4px;margin:14px 0;}
+.flow-box{background:var(--ip-blue-light);border:1.5px solid var(--ip-blue);color:var(--ip-blue-dark);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:var(--radius);text-align:center;width:100%;max-width:340px;}
+.flow-arrow{color:var(--ip-blue);font-size:18px;line-height:1;}
+
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin:10px 0;}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:480px;}
+th{background:var(--ip-blue);color:#fff;padding:8px 10px;text-align:left;font-weight:700;white-space:nowrap;}
+td{padding:8px 10px;border-top:1px solid var(--border);color:var(--text-sec);vertical-align:top;}
+tr:nth-child(even) td{background:var(--bg);}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;}
+@media(max-width:420px){.compare{grid-template-columns:1fr;}}
+.comp-box{border-radius:var(--radius);padding:10px 12px;font-size:12px;}
+.comp-old{background:var(--ip-red-light);border:1px solid #fca5a5;}
+.comp-new{background:var(--success-light);border:1px solid #6ee7b7;}
+.comp-box b{display:block;font-size:11.5px;margin-bottom:4px;}
+
+.alert{background:var(--ip-gold-light);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;font-size:12.5px;color:#78350f;margin:10px 0;}
+.alert-red{background:var(--ip-red-light);border-left:4px solid var(--ip-red);color:#7f1d1d;}
+
+.mnemonic{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:1.5px dashed #b45309;border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;}
+.mnemonic .word{font-size:15px;font-weight:900;color:#92400e;}
+.mnemonic .exp{font-size:12.5px;color:#78350f;margin-top:4px;}
+
+.qbox{background:var(--ip-blue-light);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;font-size:12.5px;border-left:4px solid var(--ip-blue);}
+.qbox b{color:var(--ip-blue-dark);}
+
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-row{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;font-size:12px;}
+.rev-row .k{font-weight:700;color:var(--ip-blue-dark);flex:1.5;}
+.rev-row .v{color:var(--text-sec);flex:1;text-align:right;}
+
+.timeline{display:flex;flex-direction:column;gap:0;margin:10px 0;}
+.tl-item{display:flex;gap:12px;padding-bottom:16px;position:relative;}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:10px;top:22px;bottom:-4px;width:2px;background:var(--border);}
+.tl-dot{width:22px;height:22px;border-radius:50%;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;z-index:1;}
+.tl-content{font-size:12.5px;color:var(--text-sec);padding-top:2px;}
+.tl-content b{color:var(--ip-blue-dark);display:block;font-size:12.5px;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(220,38,38,.4);text-decoration:none;font-size:22px;z-index:50;}
+.footer-note{text-align:center;font-size:11px;color:var(--text-mut);margin:30px 0 10px;padding:0 20px;}
+ul.simple{margin:6px 0 6px 18px;font-size:12.5px;color:var(--text-sec);}
+ul.simple li{margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="Index.html" class="back-btn">&larr; होम</a>
+  <h1>भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023</h1>
+  <div class="sub-en">धारा 1 (लघु नाम, विस्तार व प्रारंभ) · धारा 2 (परिभाषाएं) · धारा 84 (फरार व्यक्ति हेतु उद्घोषणा)</div>
+  <div class="badges">
+    <span class="badge">📜 अधिनियमित: 2023</span>
+    <span class="badge">🗓️ लागू: 1 जुलाई 2024</span>
+    <span class="badge">🔄 CrPC 1973 का स्थान लिया</span>
+  </div>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,24 C360,48 720,0 1080,24 C1260,36 1380,30 1440,24 L1440,48 L0,48 Z"/></svg></div>
+
+<div class="container">
+
+<div class="legend">
+  <div class="item">🔴 अति महत्वपूर्ण</div>
+  <div class="item">🟠 बार-बार पूछे जाने वाले</div>
+  <div class="item">🟡 वैचारिक समझ</div>
+  <div class="item">🟢 त्वरित पुनरावृत्ति</div>
+</div>
+
+<!-- परिचय -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div class="sec-title">BNSS क्या है? — परिचय 🟡</div></div>
+  <div class="card">
+    <p><b>भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023</b> ने पुराने <b>दंड प्रक्रिया संहिता (CrPC), 1973</b> का स्थान लिया है। यह आपराधिक मामलों की <b>जांच, पूछताछ व विचारण (ट्रायल)</b> की प्रक्रिया तय करती है।</p>
+    <div class="alert">🔴 IP परीक्षा हेतु केवल <b>धारा 1, धारा 2 और धारा 84</b> निर्धारित हैं — इसी पर ध्यान केंद्रित करें।</div>
+  </div>
+</div>
+
+<!-- धारा 1 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div class="sec-title">धारा 1 — लघु नाम, विस्तार व प्रारंभ 🔴</div></div>
+  <div class="card">
+    <div class="card-title">उपधारा (1): लघु नाम</div>
+    <p>इस अधिनियम को <b>"भारतीय नागरिक सुरक्षा संहिता, 2023"</b> कहा जाएगा।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">उपधारा (2): विस्तार — अपवाद 🔴</div>
+    <p>यह संहिता (अध्याय IX, XI व XII को छोड़कर) निम्न पर <b>लागू नहीं</b> होती:</p>
+    <ul class="simple">
+      <li><b>(a)</b> नागालैंड राज्य</li>
+      <li><b>(b)</b> जनजातीय क्षेत्र (21 जनवरी 1972 से पूर्व असम के जनजातीय क्षेत्र, शिलांग नगरपालिका को छोड़कर)</li>
+    </ul>
+    <p style="margin-top:6px;">संबंधित <b>राज्य सरकार अधिसूचना द्वारा</b> इन प्रावधानों को पूर्ण/आंशिक रूप से लागू कर सकती है।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">उपधारा (3): प्रारंभ 🔴</div>
+    <p>यह <b>केंद्र सरकार</b> द्वारा राजपत्र में अधिसूचना से नियत तारीख को लागू होगी।</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">✓</div><div class="tl-content"><b>2023</b>संसद द्वारा अधिनियमित</div></div>
+      <div class="tl-item"><div class="tl-dot">✓</div><div class="tl-content"><b>23 फरवरी 2024</b>अधिसूचना S.O. 848(E) जारी</div></div>
+      <div class="tl-item"><div class="tl-dot">🔴</div><div class="tl-content"><b>1 जुलाई 2024</b>संपूर्ण संहिता लागू (धारा 106(2) की प्रथम अनुसूची प्रविष्टि को छोड़कर)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- धारा 2 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div class="sec-title">धारा 2 — महत्वपूर्ण परिभाषाएं 🔴</div></div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">जमानत (Bail)</div><div class="def-desc">अभियुक्त/संदिग्ध व्यक्ति को शर्तों पर विधिक अभिरक्षा से मुक्त करना</div></div>
+    <div class="def-card"><div class="def-term">जमानतीय अपराध</div><div class="def-desc">प्रथम अनुसूची में जमानतीय दर्शाया गया अपराध; शेष सभी <b>गैर-जमानतीय</b></div></div>
+    <div class="def-card"><div class="def-term">जमानतनामा (Bail Bond)</div><div class="def-desc">जमानतदार (surety) सहित मुक्ति हेतु वचनपत्र</div></div>
+    <div class="def-card"><div class="def-term">बंधपत्र (Bond)</div><div class="def-desc">बिना जमानतदार मुक्ति हेतु वचनपत्र</div></div>
+    <div class="def-card"><div class="def-term">संज्ञेय अपराध</div><div class="def-desc">जिसमें पुलिस अधिकारी <b>बिना वारंट गिरफ्तार</b> कर सकता है</div></div>
+    <div class="def-card"><div class="def-term">असंज्ञेय अपराध</div><div class="def-desc">जिसमें पुलिस अधिकारी को <b>बिना वारंट गिरफ्तारी का अधिकार नहीं</b></div></div>
+    <div class="def-card"><div class="def-term">परिवाद (Complaint)</div><div class="def-desc">मजिस्ट्रेट से मौखिक/लिखित आरोप — पुलिस रिपोर्ट शामिल नहीं (अपवाद: असंज्ञेय अपराध की जांच रिपोर्ट परिवाद मानी जाती है)</div></div>
+    <div class="def-card"><div class="def-term">जांच (Inquiry)</div><div class="def-desc">विचारण (trial) के अतिरिक्त मजिस्ट्रेट/न्यायालय द्वारा की गई हर जांच</div></div>
+    <div class="def-card"><div class="def-term">अन्वेषण (Investigation)</div><div class="def-desc">पुलिस अधिकारी या मजिस्ट्रेट-प्राधिकृत व्यक्ति द्वारा साक्ष्य संकलन की सभी कार्यवाही</div></div>
+    <div class="def-card"><div class="def-term">न्यायिक कार्यवाही</div><div class="def-desc">जिसमें शपथ पर साक्ष्य लिया जाता है या लिया जा सकता है</div></div>
+    <div class="def-card"><div class="def-term">पुलिस रिपोर्ट</div><div class="def-desc">धारा 193(3) के तहत पुलिस अधिकारी द्वारा मजिस्ट्रेट को भेजी रिपोर्ट</div></div>
+    <div class="def-card"><div class="def-term">लोक अभियोजक</div><div class="def-desc">धारा 18 के तहत नियुक्त व्यक्ति</div></div>
+    <div class="def-card"><div class="def-term">समन-मामला</div><div class="def-desc">वारंट-मामला न होने वाला अपराध से संबंधित मामला</div></div>
+    <div class="def-card"><div class="def-term">वारंट-मामला 🔴</div><div class="def-desc">मृत्यु, आजीवन कारावास या <b>2 वर्ष से अधिक</b> कारावास से दंडनीय अपराध</div></div>
+    <div class="def-card"><div class="def-term">पीड़ित (Victim)</div><div class="def-desc">अभियुक्त के कृत्य/लोप से हानि/क्षति भुगतने वाला व्यक्ति — अभिभावक/विधिक वारिस भी शामिल</div></div>
+    <div class="def-card"><div class="def-term">इलेक्ट्रॉनिक संचार</div><div class="def-desc">फोन, कंप्यूटर आदि इलेक्ट्रॉनिक उपकरण द्वारा सूचना/वीडियो का प्रसारण</div></div>
+  </div>
+  <div class="card" style="margin-top:12px;">
+    <div class="card-title">जमानतीय बनाम गैर-जमानतीय बनाम संज्ञेय बनाम असंज्ञेय 🔴</div>
+    <div class="compare">
+      <div class="comp-box comp-old"><b>संज्ञेय अपराध</b>पुलिस बिना वारंट गिरफ्तार कर सकती है (गंभीर अपराध)</div>
+      <div class="comp-box comp-new"><b>असंज्ञेय अपराध</b>पुलिस को वारंट चाहिए (कम गंभीर अपराध)</div>
+    </div>
+  </div>
+</div>
+
+<!-- धारा 84 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">4</div><div class="sec-title">धारा 84 — फरार व्यक्ति हेतु उद्घोषणा 🔴</div></div>
+  <div class="alert-red alert">🔴 वारंट का पालन न हो पाए (व्यक्ति फरार/छिपा हुआ हो) तो न्यायालय <b>सार्वजनिक उद्घोषणा (Proclamation)</b> जारी कर सकता है।</div>
+  <div class="card">
+    <div class="card-title">उपधारा (1): उद्घोषणा कब जारी हो? 🔴</div>
+    <p>यदि न्यायालय को विश्वास हो (साक्ष्य लेकर या बिना) कि वारंट-प्राप्त व्यक्ति <b>फरार है या छिप रहा है</b>, तो न्यायालय लिखित उद्घोषणा प्रकाशित कर सकता है — उसे किसी नियत स्थान व समय पर उपस्थित होने का आदेश, जो उद्घोषणा प्रकाशन तारीख से <b>न्यूनतम 30 दिन</b> बाद हो।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">उपधारा (2): प्रकाशन के 3 अनिवार्य तरीके 🔴 <span class="tag tag-red">परीक्षा में प्रिय</span></div>
+    <div class="flow">
+      <div class="flow-box">1️⃣ व्यक्ति के निवास स्थान (गांव/शहर) के प्रमुख स्थान पर सार्वजनिक रूप से पढ़ी जाए</div>
+      <div class="flow-box">2️⃣ उसके घर के किसी दृश्य भाग पर या गांव/शहर के प्रमुख स्थान पर चिपकाई जाए</div>
+      <div class="flow-box">3️⃣ न्यायालय भवन के किसी दृश्य भाग पर प्रति चिपकाई जाए</div>
+    </div>
+    <p style="margin-top:8px;"><b>वैकल्पिक (4था तरीका):</b> न्यायालय चाहे तो स्थानीय दैनिक समाचार पत्र में भी प्रकाशित करा सकता है।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">उपधारा (3): निर्णायक साक्ष्य 🟠</div>
+    <p>न्यायालय का लिखित कथन कि उद्घोषणा नियत दिन व निर्धारित तरीके से प्रकाशित हुई — यह <b>निर्णायक (conclusive) साक्ष्य</b> मानी जाएगी कि आवश्यकताएं पूरी हुईं।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">उपधारा (4): "उद्घोषित अपराधी" घोषित करना 🔴</div>
+    <p>यदि अपराध <b>10 वर्ष या अधिक कारावास, आजीवन कारावास या मृत्युदंड</b> से दंडनीय है, और व्यक्ति नियत समय पर उपस्थित नहीं होता — न्यायालय जांच के बाद उसे <b>"उद्घोषित अपराधी" (Proclaimed Offender)</b> घोषित कर सकता है।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">संबंधित — धारा 85: संपत्ति की कुर्की 🟡</div>
+    <p>धारा 84 के तहत उद्घोषणा जारी करने वाला न्यायालय, लिखित कारण दर्ज कर, फरार व्यक्ति की <b>चल/अचल संपत्ति की कुर्की (Attachment)</b> का आदेश दे सकता है — यदि संपत्ति बेची/हटाई जाने की आशंका हो तो उद्घोषणा के साथ ही कुर्की आदेश भी दिया जा सकता है।</p>
+  </div>
+</div>
+
+<!-- पुनरावृत्ति पत्रक -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">5</div><div class="sec-title">📋 एक-पृष्ठ पुनरावृत्ति पत्रक 🔴</div></div>
+  <div class="card">
+    <div class="rev-grid">
+      <div class="rev-row"><span class="k">संहिता का नाम</span><span class="v">भारतीय नागरिक सुरक्षा संहिता, 2023</span></div>
+      <div class="rev-row"><span class="k">किसका स्थान लिया</span><span class="v">दंड प्रक्रिया संहिता (CrPC), 1973</span></div>
+      <div class="rev-row"><span class="k">लागू होने की तारीख</span><span class="v">1 जुलाई 2024</span></div>
+      <div class="rev-row"><span class="k">लागू न होने वाला राज्य</span><span class="v">नागालैंड (कुछ अध्यायों को छोड़कर)</span></div>
+      <div class="rev-row"><span class="k">प्रारंभ की अधिसूचना जारीकर्ता</span><span class="v">केंद्र सरकार</span></div>
+      <div class="rev-row"><span class="k">वारंट-मामला (सजा सीमा)</span><span class="v">2 वर्ष से अधिक कारावास / आजीवन / मृत्यु</span></div>
+      <div class="rev-row"><span class="k">उद्घोषणा हेतु न्यूनतम समय</span><span class="v">30 दिन</span></div>
+      <div class="rev-row"><span class="k">उद्घोषणा प्रकाशन के अनिवार्य तरीके</span><span class="v">3 (निवास, घर, न्यायालय)</span></div>
+      <div class="rev-row"><span class="k">"उद्घोषित अपराधी" हेतु सजा सीमा</span><span class="v">10 वर्ष+ / आजीवन / मृत्यु</span></div>
+      <div class="rev-row"><span class="k">संपत्ति कुर्की — संबंधित धारा</span><span class="v">धारा 85</span></div>
+      <div class="rev-row"><span class="k">पुलिस रिपोर्ट — संबंधित धारा</span><span class="v">धारा 193(3)</span></div>
+      <div class="rev-row"><span class="k">लोक अभियोजक नियुक्ति — धारा</span><span class="v">धारा 18</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- स्मरण तकनीक -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">6</div><div class="sec-title">🧠 याद रखने की तरकीबें</div></div>
+  <div class="mnemonic">
+    <div class="word">"1-7-24" — प्रारंभ तिथि</div>
+    <div class="exp">BNSS <b>1 जुलाई 2024</b> से लागू — "1-7-24" के रूप में याद रखें।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"नि-घ-न्या" — उद्घोषणा प्रकाशन के 3 स्थान</div>
+    <div class="exp"><b>नि</b>वास स्थान (गांव/शहर), <b>घ</b>र का दृश्य भाग, <b>न्या</b>यालय भवन — तीनों जगह अनिवार्य रूप से प्रकाशित करनी होती है।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"30 दिन = 1 महीना सोचो"</div>
+    <div class="exp">उद्घोषणा में उपस्थिति हेतु न्यूनतम 30 दिन का समय देना अनिवार्य — इससे कम नहीं दिया जा सकता।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"10-आजीवन-मृत्यु = उद्घोषित अपराधी"</div>
+    <div class="exp">केवल गंभीर अपराध (10 वर्ष+/आजीवन/मृत्युदंड) में ही व्यक्ति को "उद्घोषित अपराधी" घोषित किया जा सकता है, हर अपराध में नहीं।</div>
+  </div>
+</div>
+
+<!-- संभावित प्रश्न -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">7</div><div class="sec-title">❓ संभावित परीक्षा प्रश्न</div></div>
+  <div class="qbox"><b>प्र1.</b> BNSS, 2023 ने किस पुराने कानून का स्थान लिया? <br><i>उत्तर: दंड प्रक्रिया संहिता (CrPC), 1973</i></div>
+  <div class="qbox"><b>प्र2.</b> BNSS संपूर्ण रूप से कब लागू हुई? <br><i>उत्तर: 1 जुलाई 2024</i></div>
+  <div class="qbox"><b>प्र3.</b> धारा 1(2) के अनुसार यह संहिता किन क्षेत्रों पर लागू नहीं होती (कुछ अध्यायों को छोड़कर)? <br><i>उत्तर: नागालैंड राज्य व निर्दिष्ट जनजातीय क्षेत्र</i></div>
+  <div class="qbox"><b>प्र4.</b> "वारंट-मामला" की परिभाषा क्या है? <br><i>उत्तर: मृत्यु, आजीवन कारावास या 2 वर्ष से अधिक कारावास से दंडनीय अपराध का मामला</i></div>
+  <div class="qbox"><b>प्र5.</b> संज्ञेय व असंज्ञेय अपराध में मुख्य अंतर क्या है? <br><i>उत्तर: संज्ञेय में पुलिस बिना वारंट गिरफ्तार कर सकती है; असंज्ञेय में नहीं</i></div>
+  <div class="qbox"><b>प्र6.</b> धारा 84 के तहत उद्घोषणा में व्यक्ति को उपस्थित होने हेतु न्यूनतम कितने दिन का समय देना अनिवार्य है? <br><i>उत्तर: 30 दिन</i></div>
+  <div class="qbox"><b>प्र7.</b> धारा 84(2) के अनुसार उद्घोषणा प्रकाशित करने के 3 अनिवार्य तरीके क्या हैं? <br><i>उत्तर: (i) निवास स्थान पर सार्वजनिक पठन (ii) घर पर चिपकाना (iii) न्यायालय भवन पर चिपकाना</i></div>
+  <div class="qbox"><b>प्र8.</b> किस सजा सीमा के अपराध में व्यक्ति को "उद्घोषित अपराधी" घोषित किया जा सकता है? <br><i>उत्तर: 10 वर्ष या अधिक कारावास, आजीवन कारावास या मृत्युदंड</i></div>
+  <div class="qbox"><b>प्र9.</b> फरार व्यक्ति की संपत्ति की कुर्की का प्रावधान किस धारा में है? <br><i>उत्तर: धारा 85</i></div>
+  <div class="qbox"><b>प्र10.</b> "पीड़ित" (Victim) की परिभाषा में कौन शामिल है? <br><i>उत्तर: हानि/क्षति भुगतने वाला व्यक्ति तथा उसका अभिभावक या विधिक वारिस</i></div>
+</div>
+
+<div class="footer-note">भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023 से परीक्षा पुनरावृत्ति हेतु सामग्री संक्षेपित · India Post IP परीक्षा स्व-अध्ययन हेतु तैयार · पूर्ण कानूनी सटीकता के लिए आधिकारिक अधिनियम का संदर्भ अवश्य लें।</div>
+
+</div>
+
+<a href="#" onclick="window.print();return false;" class="pdf-btn" title="प्रिंट / PDF सेव करें">⬇️</a>
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Provident Fund Scheme 2019 — Infographic | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --yellow:#a16207; --yellow-light:#fef9c3;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans Gujarati','Noto Sans Devanagari','Segoe UI',sans-serif;
+    background:linear-gradient(180deg,#fef9f0,#eef2ff);
+    margin:0; padding:0; color:var(--ink); line-height:1.5;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{
+    background:linear-gradient(135deg,#1e3a8a,#7c3aed);
+    color:#fff; border-radius:16px; padding:22px 18px; margin:12px 0;
+    text-align:center; box-shadow:0 8px 24px rgba(30,58,138,.25);
+  }
+  header.hero h1{margin:0 0 6px;font-size:1.4rem;}
+  header.hero .sub{font-size:.9rem;opacity:.9;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.75rem;}
+
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;
+    background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .breadcrumb span.arrow{opacity:.6;}
+
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.05rem;display:flex;align-items:center;gap:8px;}
+
+  .tri{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .tri .gu{font-weight:700;font-size:.95rem;color:#111827;}
+  .tri .hi{font-weight:500;font-size:.87rem;color:#374151;}
+  .tri .en{font-style:italic;font-size:.8rem;color:#4b5563;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+
+  .tag-imp{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-yellow{background:var(--yellow-light);color:#7c5a06;border:1px solid var(--yellow);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.8rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.83rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.8rem;}
+  .exam-q b{color:var(--orange);}
+
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.86rem;}
+
+  .grid2{display:grid;grid-template-columns:1fr;gap:10px;}
+  @media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .pill{background:#111827;color:#fff;font-size:.7rem;padding:3px 10px;border-radius:14px;}
+
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.86rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.81rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.78rem;color:var(--green);font-weight:600;}
+
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.76rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+
+  .amend-note{background:#fef2f2;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:.78rem;margin:8px 0;color:#7f1d1d;}
+  .current-note{background:#ecfdf5;border:1px solid var(--green);border-radius:8px;padding:8px 10px;font-size:.78rem;margin:8px 0;color:#14532d;}
+
+  .fab{position:fixed;bottom:18px;right:18px;background:var(--blue);color:#fff;
+    border:none;border-radius:50px;padding:12px 18px;font-size:.83rem;font-weight:700;
+    box-shadow:0 6px 18px rgba(30,64,175,.4);cursor:pointer;z-index:999;}
+
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.82rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+
+  ul{margin:6px 0;padding-left:20px;font-size:.84rem;}
+  li{margin:3px 0;}
+
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🏦 Public Provident Fund Scheme, 2019 (PPF)</h1>
+    <div class="sub">જાહેર ભવિષ્ય નિધિ યોજના, 2019 | सार्वजनिक भविष्य निधि योजना, 2019</div>
+    <div class="tag">GSR 915(E) dt. 12/12/2019 · amended GSR 290(E) dt. 05/05/2020 · Sec 3A, Govt. Savings Promotion Act 1873</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Savings Schemes <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Small Savings Schemes (NSI) <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> PPF Scheme 2019 <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Subscription / Loan / Withdrawal / Extension / Premature Closure
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic &amp; Definition <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="tri">
+      <div class="gu">PPF એક 15-વર્ષીય, long-term, tax-saving (EEE status) બચત યોજના છે — Sec 3A, GSP Act 1873 હેઠળ notify.</div>
+      <div class="hi">PPF एक 15-वर्षीय, दीर्घकालिक, कर-बचत (EEE स्थिति) बचत योजना है — GSP अधिनियम 1873 की धारा 3A के तहत अधिसूचित।</div>
+      <div class="en">PPF is a 15-year, long-term, tax-saving (EEE status) savings scheme, notified under Sec 3A of the Govt. Savings Promotion Act, 1873.</div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Short title: PPF Scheme 2019</span>
+      <span class="pill">Tenure: 15 years (extendable in 5-yr blocks)</span>
+      <span class="pill">No Joint Account</span>
+      <span class="pill">Governing Act: Govt. Savings Promotion Act 1873</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📜 Important Sections / Paragraphs <span class="tag-imp t-red">🔴</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Para</th><th>Subject</th><th>Key Point</th></tr>
+      <tr><td>1</td><td>Short title &amp; commencement</td><td>PPF Scheme 2019; effective from Gazette publication</td></tr>
+      <tr><td>2</td><td>Definitions</td><td>account, account holder, Act, Form, General Rules, year = financial year</td></tr>
+      <tr><td>3</td><td>Limits of No. of Accounts</td><td>One for self + one per minor/unsound-mind; NO joint account</td></tr>
+      <tr><td>4</td><td>Limits of Subscription</td><td>Min ₹500, Max ₹1,50,000/year, multiples of ₹50</td></tr>
+      <tr><td>5</td><td>Manner of Deposit</td><td>Lump sum or instalments; min ₹500 initial</td></tr>
+      <tr><td>6</td><td>Discontinuation of Account</td><td>Failure to deposit min amount; revival with ₹50 fee/year</td></tr>
+      <tr><td>7</td><td>Interest</td><td>Rate; credited annually; based on lowest balance (5th-end of month)</td></tr>
+      <tr><td>8</td><td>Loans</td><td>Year 2-5; up to 25% of 2nd-preceding-year balance; Form-2</td></tr>
+      <tr><td>9</td><td>Repayment of Loan &amp; Interest</td><td>36 months; 1% interest (6% if delayed)</td></tr>
+      <tr><td>10</td><td>Withdrawal</td><td>After 5 years; up to 50% of 4th-preceding-year balance; once/year</td></tr>
+      <tr><td>11</td><td>Closure/Continuation w/o Deposits</td><td>After 15 years; Form-3; one withdrawal/year if continued</td></tr>
+      <tr><td>12</td><td>Extension with Deposits</td><td>+5 year blocks; Form-4; apply within 1yr of maturity</td></tr>
+      <tr><td>13</td><td>Premature Closure</td><td>Form-5; only 3 grounds; after 5 years; 1% interest penalty</td></tr>
+      <tr><td>14</td><td>Closure on Death</td><td>Account closed; NO continuation by nominee/heir</td></tr>
+      <tr><td>15</td><td>Protection from Attachment</td><td>Credit balance protected from court decree/order</td></tr>
+      <tr><td>16</td><td>Application of General Rules</td><td>GSPR 2018 fills gaps</td></tr>
+      <tr><td>17</td><td>Power to Relax</td><td>Central Govt. can relax hardship provisions</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2>🔀 Flowchart — Account Opening Limits <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="flow">
+      <div class="step">👤 Individual may open <b>ONE</b> account for self (Form-1)</div>
+      <div class="step">🧒 One additional account per minor / unsound-mind person (as guardian)</div>
+      <div class="step">⚠️ Only ONE guardian can open account for a given minor — not both parents separately</div>
+      <div class="step">❌ <b>NO Joint Account</b> permitted under PPF</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> શું PPF માં joint account ખોલી શકાય? <b>Ans: ના, PPF માં joint account permitted નથી (Para 3(3))</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Subscription Limits <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Provision</th><th>Detail</th></tr>
+      <tr><td>Min Deposit/year</td><td>₹500</td></tr>
+      <tr><td>Max Deposit/year</td><td>₹1,50,000 (multiples of ₹50)</td></tr>
+      <tr><td>Deposit mode</td><td>Lump sum OR instalments</td></tr>
+      <tr><td>Combined ceiling</td><td>Own account + minor's account deposits together ≤ ₹1,50,000</td></tr>
+    </table>
+    <div class="amend-note">⚠️ <b>Exam Trap:</b> Self account + minor's account પરની deposit સાથે ગણાય — બંને મળીને ₹1.5 લાખ ceiling થી વધુ ના થાય.</div>
+    <div class="exam-q"><b>Probable Q:</b> વાર્ષિક મહત્તમ PPF જમા મર્યાદા? <b>Ans: ₹1,50,000 (પોતાનું + minor નું ખાતું મળીને)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Discontinuation &amp; Revival <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="flow">
+      <div class="step">Minimum deposit ના ભરાય ➜ ખાતું "discontinued" ગણાય</div>
+      <div class="step">Revival: ₹50 fee/year + arrears (₹500 × default years)</div>
+      <div class="step">Un-revived discontinued account પર પણ scheme rate interest મળે છે</div>
+      <div class="step">Discontinued account closed ના થાય ત્યાં સુધી નવું ખાતું ના ખોલી શકાય</div>
+      <div class="step">Discontinued account માં loan/partial withdrawal facility <b>ઉપલબ્ધ નથી</b></div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Discontinued account revive કરવા શું ફી છે? <b>Ans: ₹50/year + arrears of ₹500 minimum deposit per default year</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📈 Interest <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Period</th><th>Rate</th></tr>
+      <tr><td>12 Dec 2019 – 31 Mar 2020</td><td>7.9% p.a.</td></tr>
+      <tr><td>On/after 1 Apr 2020</td><td>7.1% p.a. (amended GSR 290(E))</td></tr>
+      <tr><td><b>Current Rate — Apr–Jun 2026</b></td><td><b>7.1% p.a.</b> (unchanged since Apr 2020)</td></tr>
+    </table>
+    <div class="current-note">✅ PPF rate has remained steady at 7.1% p.a. since April 2020 — one of the longest-unchanged small savings rates.</div>
+    <ul>
+      <li>🔴 Interest credited <b>annually</b> (at year-end).</li>
+      <li>🟠 Interest based on <b>lowest balance between 5th day and end of month</b> — key exam trap!</li>
+      <li>🟡 Interest credits regardless of account-office transfer during the year.</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> PPF interest ક્યા balance પર ગણાય? <b>Ans: 5th day અને month-end વચ્ચેની lowest balance</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Loans (Para 8-9) <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="decision">
+      <div class="node">Eligible window: <b>after 1 year, before 5 years</b> from initial subscription year-end</div><br>
+      <div class="node">Max loan: <b>25%</b> of balance at end of 2nd year preceding loan year</div><br>
+      <div class="node">Repay principal: within <b>36 months</b></div><br>
+      <div class="node">After repayment: <b>1%</b> interest (in ≤2 monthly instalments)</div><br>
+      <div class="node">If not repaid in 36 months: <b>6%</b> interest instead of 1% (from outstanding date)</div><br>
+      <div class="node">Only <b>ONE loan per year</b>; no fresh loan till previous repaid fully</div>
+    </div>
+    <div class="mnemonic">
+      🧠 <b>Mnemonic:</b> "1-5-25-36-1-6" — Year <b>1</b> to <b>5</b> window, <b>25%</b> max loan, <b>36</b> months repay, <b>1%</b> normal interest, <b>6%</b> penalty interest.
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Loan સમયસર ના ભરાય તો interest rate શું થાય? <b>Ans: 1% ને બદલે 6% p.a.</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💸 Withdrawal (Para 10) <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="tri">
+      <div class="gu">5 વર્ષ પૂરા થયા પછી, વર્ષમાં એક વાર withdrawal — 4th preceding year ના balance ના 50% સુધી (Form-2).</div>
+      <div class="hi">5 वर्ष पूरे होने के बाद, वर्ष में एक बार withdrawal — 4th preceding year की balance के 50% तक (Form-2)।</div>
+      <div class="en">After 5 years, one withdrawal/year up to 50% of balance at end of 4th preceding year (Form-2).</div>
+    </div>
+    <ul>
+      <li>🔴 Withdrawal amount = lower of (50% of 4th-preceding-year balance) OR (50% of preceding-year balance)</li>
+      <li>🟠 Outstanding loan + interest must be cleared before withdrawal</li>
+      <li>🟡 Only from accounts NOT discontinued; only once per year</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> Withdrawal ક્યારે eligible બને છે? <b>Ans: ખાતું ખોલ્યાના 5 વર્ષ પછી (year-end થી ગણતરી)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🔁 Maturity — Closure vs Extension <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Option</th><th>Form</th><th>Rule</th></tr>
+      <tr><td>Full Closure</td><td>Form-3</td><td>After 15 years; full balance + interest</td></tr>
+      <tr><td>Continue WITHOUT deposits</td><td>—</td><td>Indefinite; earns interest; 1 withdrawal/year allowed; irreversible once &gt;1yr elapses</td></tr>
+      <tr><td>Extend WITH deposits</td><td>Form-4</td><td>+5 year blocks; apply within 1 year of maturity; repeatable</td></tr>
+    </table>
+    <div class="amend-note">⚠️ <b>Exam Trap:</b> એકવાર "without deposits" option 1 વર્ષથી વધુ ચાલે તો ફરી "with deposits" option પર પાછા ના જઈ શકાય (Para 11(3))।</div>
+    <div class="flow">
+      <div class="step">Extension માટે option 1 વર્ષની અંદર આપવો ફરજિયાત</div>
+      <div class="step">1 વર્ષ પછી option ના આપે તો deposits irregular ગણાય, વગર interest refund</div>
+      <div class="step">Extended block માં partial withdrawal — 5-year block ના start balance ના મહત્તમ <b>60%</b> સુધી</div>
+      <div class="step">Extension option એકવાર આપ્યા પછી withdraw ના કરી શકાય (Para 12(7))</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Extended block period માં મહત્તમ કેટલું withdraw કરી શકાય? <b>Ans: Block ના start balance ના 60%</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Premature Closure (Para 13) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">Form-5 દ્વારા, ફક્ત 3 કારણોસર, 5 વર્ષ પછી જ premature closure શક્ય</div>
+      <div class="hi">Form-5 के माध्यम से, केवल 3 कारणों से, 5 वर्ष बाद ही premature closure संभव</div>
+      <div class="en">Premature closure via Form-5, only 3 grounds, only after 5 years</div>
+    </div>
+    <div class="decision">
+      <div class="node">(a) જીવલેણ બીમારીની સારવાર — self/spouse/dependent children/parents</div><br>
+      <div class="node">(b) ઉચ્ચ શિક્ષણ — self/dependent children (admission proof જરૂરી)</div><br>
+      <div class="node">(c) Residency status માં ફેરફાર (Passport/visa/IT return proof)</div>
+    </div>
+    <div class="amend-note">⚠️ Premature closure પર interest <b>1% ઓછું</b> મળે છે (scheme rate કરતાં) — ખાતું ખોલવાની/extension ની તારીખથી.</div>
+    <div class="mnemonic">
+      🧠 <b>Mnemonic:</b> "HER" — <b>H</b>ealth (life-threatening disease), <b>E</b>ducation (higher studies), <b>R</b>esidency change — 3 premature closure grounds.
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Premature closure પર કેટલો interest penalty છે? <b>Ans: 1% ઓછો (lower by 1%) — Para 13(1)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚰️ Closure on Death <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <div class="tri rule">
+      <div class="gu">મૃત્યુ પર ખાતું <b>ફરજિયાત બંધ</b> થાય — nominee/legal heir ચાલુ ના રાખી શકે (SCSS/NSC થી અલગ rule).</div>
+      <div class="hi">मृत्यु पर खाता <b>अनिवार्य रूप से बंद</b> होता है — nominee/legal heir जारी नहीं रख सकते (SCSS/NSC से अलग नियम)।</div>
+      <div class="en">On death, account MUST be closed — nominee/legal heir CANNOT continue it (unlike SCSS/NSC).</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> મૃત્યુ પર PPF ખાતું nominee ચાલુ રાખી શકે? <b>Ans: ના, ફરજિયાત બંધ થાય (Para 14) — SCSS/NSC થી વિપરીત</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🛡️ Protection from Attachment <span class="tag-imp t-green">🟢 Quick Revision</span></h2>
+    <div class="tri">
+      <div class="gu">PPF ખાતાની રકમ court decree/order દ્વારા debt/liability માટે attach ના કરી શકાય (Para 15).</div>
+      <div class="hi">PPF खाते की राशि कोर्ट के decree/order द्वारा debt/liability के लिए attach नहीं की जा सकती (Para 15)।</div>
+      <div class="en">PPF account balance is protected from attachment under any court decree/order for any debt/liability (Para 15) — a unique legal shield.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ Comparison — PPF vs Other Schemes <span class="tag-imp t-green">🟢 Quick Revision</span></h2>
+    <table>
+      <tr><th>Feature</th><th>PPF</th><th>NSC</th><th>KVP</th><th>SCSS</th></tr>
+      <tr><td>Tenure</td><td>15 yrs (+5 blocks)</td><td>5 yrs</td><td>~10 yrs 4mo</td><td>5 yrs (+3)</td></tr>
+      <tr><td>Current Rate</td><td>7.1%</td><td>~7.7%</td><td>7.5%</td><td>8.2%</td></tr>
+      <tr><td>Joint Account</td><td>❌ Not allowed</td><td>✅ Yes</td><td>✅ Yes</td><td>✅ Yes (spouse)</td></tr>
+      <tr><td>Max Deposit/year</td><td>₹1.5 Lakh</td><td>No limit</td><td>No limit</td><td>₹15L (one-time)</td></tr>
+      <tr><td>Loan Facility</td><td>✅ Yes (Para 8)</td><td>❌ No</td><td>❌ No</td><td>❌ No</td></tr>
+      <tr><td>Attachment Protection</td><td>✅ Yes</td><td>❌ No</td><td>❌ No</td><td>❌ No</td></tr>
+      <tr><td>80C Benefit</td><td>✅ Yes (EEE)</td><td>✅ Yes</td><td>❌ No</td><td>✅ Yes</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🕐 Timeline <span class="tag-imp t-yellow">🟡</span></h2>
+    <div class="flow">
+      <div class="step">1873 — Govt. Savings Promotion Act enacted</div>
+      <div class="step">2018 — GSPR notified</div>
+      <div class="step">12 Dec 2019 — PPF Scheme 2019 notified (GSR 915(E)), rate 7.9%</div>
+      <div class="step">05 May 2020 — Amendment GSR 290(E) — rate revised to 7.1%</div>
+      <div class="step">Apr–Jun 2026 — Current rate 7.1% p.a. (unchanged since Apr 2020)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ Important Authorities <span class="tag-imp t-yellow">🟡</span></h2>
+    <ul>
+      <li><b>Central Government</b> — notifies scheme under Sec 3A of 1873 Act; power to relax hardship (Para 17); interest recoverable on defaulted loans accrues to Central Govt. (Para 9(4))।</li>
+      <li><b>Accounts Office (Post Office)</b> — opens/closes accounts, credits interest, processes loans/withdrawals/extension।</li>
+      <li><b>Treating medical authority</b> — confirms life-threatening disease for premature closure (ground a)।</li>
+      <li><b>Recognised institute of higher education</b> — confirms admission for premature closure (ground b)।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>⏱️ Important Time Limits <span class="tag-imp t-red">🔴</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Event</th><th>Time Limit</th></tr>
+      <tr><td>Loan eligibility window</td><td>After 1 yr, before 5 yrs (from initial subscription year-end)</td></tr>
+      <tr><td>Loan repayment (principal)</td><td>36 months</td></tr>
+      <tr><td>Withdrawal eligibility</td><td>After 5 years</td></tr>
+      <tr><td>Maturity</td><td>15 years</td></tr>
+      <tr><td>Extension option deadline</td><td>Within 1 year of maturity</td></tr>
+      <tr><td>Extension block period</td><td>5 years (repeatable)</td></tr>
+      <tr><td>Premature closure — minimum holding</td><td>5 years</td></tr>
+      <tr><td>Loans per year</td><td>Only ONE</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Important Penalties / Deductions <span class="tag-imp t-orange">🟠</span></h2>
+    <table>
+      <tr><th>Situation</th><th>Penalty</th></tr>
+      <tr><td>Discontinued account revival</td><td>₹50/year + ₹500 arrears per default year</td></tr>
+      <tr><td>Loan not repaid within 36 months</td><td>6% interest instead of 1%</td></tr>
+      <tr><td>Premature closure (Para 13)</td><td>Interest rate reduced by 1%</td></tr>
+      <tr><td>Deposit after non-extension (1yr+ lapse)</td><td>Refunded without interest (irregular deposit)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🚩 Important Exceptions <span class="tag-imp t-orange">🟠</span></h2>
+    <ul>
+      <li>PPF does <b>NOT</b> allow joint accounts — unique exception vs most other schemes.</li>
+      <li>On death, account <b>MUST</b> close — no continuation option (unlike SCSS/NSC where spouse/nominee can continue).</li>
+      <li>Once "continue without deposits" exceeds 1 year, cannot switch back to "with deposits" mode.</li>
+      <li>Discontinued account holder cannot open a new PPF account till the discontinued one closes.</li>
+      <li>Credit balance is protected from court attachment — unusual legal protection among small savings schemes.</li>
+      <li>Central Govt. may relax any hardship-causing provision (Para 17).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — PPF Scheme 2019</h2>
+    <div class="grid2">
+      <div class="tri" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Accounts</b>: Self + 1/minor · NO joint · Form-1</div></div>
+      <div class="tri" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Subscription</b>: ₹500-₹1.5L/yr · Multiples of ₹50</div></div>
+      <div class="tri" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Interest</b>: 7.1% p.a. · Annual credit · 5th-day rule</div></div>
+      <div class="tri" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Facilities</b>: Loan (yr1-5) · Withdrawal (after yr5) · Extension (+5yr blocks)</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+
+    <div class="mcq">
+      <div class="q">Q1. PPF Scheme 2019 किस section के अंतर्गत notify हुई?</div>
+      <div class="opts">A) Sec 4, IPO Act &nbsp; B) Sec 3A, Govt. Savings Promotion Act 1873 &nbsp; C) Sec 15, GSPR 2018 &nbsp; D) Sec 12, POSA 2019</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q2. PPF में joint account खोला जा सकता है?</div>
+      <div class="opts">A) हाँ &nbsp; B) नहीं &nbsp; C) केवल पति-पत्नी के बीच &nbsp; D) केवल भाई-बहन के बीच</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q3. PPF की वार्षिक अधिकतम जमा सीमा क्या है?</div>
+      <div class="opts">A) ₹1,00,000 &nbsp; B) ₹1,50,000 &nbsp; C) ₹2,00,000 &nbsp; D) ₹9,00,000</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q4. Loan किस अवधि के दौरान लिया जा सकता है?</div>
+      <div class="opts">A) वर्ष 1-5 &nbsp; B) वर्ष 5-10 &nbsp; C) वर्ष 10-15 &nbsp; D) कभी भी</div>
+      <div class="ans">Answer: A</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q5. Loan समय पर न चुकाने पर interest दर क्या होती है?</div>
+      <div class="opts">A) 1% &nbsp; B) 3% &nbsp; C) 6% &nbsp; D) 9%</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q6. मृत्यु होने पर PPF खाता nominee द्वारा जारी रखा जा सकता है?</div>
+      <div class="opts">A) हाँ &nbsp; B) नहीं, बंद करना अनिवार्य &nbsp; C) केवल spouse जारी रख सकता है &nbsp; D) 1 वर्ष तक जारी रह सकता है</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q7. Premature closure केवल कितने वर्ष बाद संभव है?</div>
+      <div class="opts">A) 3 वर्ष &nbsp; B) 5 वर्ष &nbsp; C) 10 वर्ष &nbsp; D) 15 वर्ष</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q8. PPF की maturity अवधि क्या है?</div>
+      <div class="opts">A) 5 वर्ष &nbsp; B) 10 वर्ष &nbsp; C) 15 वर्ष &nbsp; D) 20 वर्ष</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q9. Extension हेतु आवेदन maturity के कितने समय में करना ज़रूरी है?</div>
+      <div class="opts">A) 6 महीने &nbsp; B) 1 वर्ष &nbsp; C) 2 वर्ष &nbsp; D) कभी भी</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q10. PPF खाते की राशि किससे संरक्षित है?</div>
+      <div class="opts">A) आयकर से &nbsp; B) कोर्ट के attachment आदेश से &nbsp; C) मुद्रास्फीति से &nbsp; D) बैंक दिवालियापन से</div>
+      <div class="ans">Answer: B</div>
+    </div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Enabling law: <b>Sec 3A, Govt. Savings Promotion Act 1873</b></li>
+      <li>🔴 Notified: <b>12 Dec 2019 (GSR 915E)</b>; amended <b>5 May 2020 (GSR 290E)</b></li>
+      <li>🔴 NO joint account; one account + one per minor — Form-1</li>
+      <li>🔴 Subscription: ₹500 - ₹1,50,000/year, multiples of ₹50</li>
+      <li>🔴 Current interest: <b>7.1% p.a.</b>, credited annually, based on 5th-day-to-month-end lowest balance</li>
+      <li>🟠 Loan: year 1-5, max 25%, repay in 36 months, 1%/6% interest — Form-2</li>
+      <li>🟠 Withdrawal: after 5 years, max 50%, once/year — Form-2</li>
+      <li>🟠 Maturity: 15 years — Form-3; Extension: +5yr blocks, within 1yr — Form-4</li>
+      <li>🔴 Premature closure: only after 5 yrs, only HER grounds (Health/Education/Residency), 1% interest cut — Form-5</li>
+      <li>🟡 Death = mandatory closure, NO continuation (unlike SCSS/NSC)</li>
+      <li>🟢 Attachment-protected; GSPR 2018 fills gaps; Central Govt. can relax hardship</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Scheme</td><td>Public Provident Fund Scheme, 2019</td></tr>
+      <tr><td>Enabling Section</td><td>Sec 3A, Govt. Savings Promotion Act 1873</td></tr>
+      <tr><td>Notification</td><td>GSR 915(E) — 12/12/2019; amended GSR 290(E) — 05/05/2020</td></tr>
+      <tr><td>Accounts</td><td>Self (Form-1) + 1 per minor/unsound-mind; NO joint</td></tr>
+      <tr><td>Subscription</td><td>₹500 min – ₹1,50,000 max/year (₹50 multiples)</td></tr>
+      <tr><td>Interest (current)</td><td>7.1% p.a., annual credit</td></tr>
+      <tr><td>Loan</td><td>Year 1-5, ≤25%, 36-month repayment — Form-2</td></tr>
+      <tr><td>Withdrawal</td><td>After year 5, ≤50%, once/year — Form-2</td></tr>
+      <tr><td>Maturity</td><td>15 years — Form-3</td></tr>
+      <tr><td>Extension</td><td>+5yr blocks, within 1yr of maturity — Form-4</td></tr>
+      <tr><td>Premature Closure</td><td>After 5yr, HER grounds, -1% interest — Form-5</td></tr>
+      <tr><td>Death</td><td>Mandatory closure, no continuation</td></tr>
+      <tr><td>Attachment Protection</td><td>Yes (Para 15)</td></tr>
+      <tr><td>Gap-filling Rules</td><td>GSPR 2018</td></tr>
+      <tr><td>Relaxation Power</td><td>Central Government (Para 17)</td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

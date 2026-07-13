@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS (Conduct) Rules, 1964 | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--blue) 0%,var(--red-dark) 55%,var(--gold-dark) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.4rem;}
+.header .hi{font-size:1.1rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.9rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.82rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.72rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:0.98rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.68rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:0.92rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.88rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.78rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.66rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.72rem;}
+table th{background:var(--blue);color:#fff;padding:5px 6px;text-align:left;}
+table td{padding:4px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.74rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:100px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.8rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.7rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.74rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.76rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.74rem;}
+.exam-q b{color:#6A1B9A;}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.74rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.76rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.68rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.68rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.74rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">केंद्रीय सिविल सेवा (आचरण) नियम, 1964</span></h1>
+  <div class="en">Central Civil Services (Conduct) Rules, 1964 — As amended upto 31.12.2014</div>
+  <div class="sub">Syllabus: Service Rules — CCS (Conduct) Rules, 1964 | 25 Rules Complete Coverage</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">⚖️ Service Rules</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">Rule 1-2: लागू होना व परिभाषाएं</a>
+    <a href="#ch2">Rule 3, 3A-3C: सामान्य आचरण व उत्पीड़न रोकथाम</a>
+    <a href="#ch3">Rule 4-7: रिश्तेदार, राजनीति, हड़ताल</a>
+    <a href="#ch4">Rule 8-11: मीडिया, आलोचना, सूचना</a>
+    <a href="#ch5">Rule 12-13A: चंदा, उपहार, दहेज</a>
+    <a href="#ch6">Rule 14-15A: सम्मान, निजी व्यापार</a>
+    <a href="#ch7">Rule 16-17: निवेश व दिवालियापन</a>
+    <a href="#ch8">Rule 18-18A: चल-अचल संपत्ति</a>
+    <a href="#ch9">Rule 19-22A: प्रतिष्ठा, विवाह, नशा, बाल श्रम</a>
+    <a href="#ch10">Rule 23-25: व्याख्या व निरसन</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">📜 Rule 1-2 → लागू होना व परिभाषाएं / Application & Definitions</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">Rule 1: संक्षिप्त नाम, प्रारंभ व लागू होना</h3>
+      <p class="hi">यह नियम भारत सरकार के अधीन नियुक्त हर सिविल सेवा/पद (Defence Service के civilian सहित) पर लागू होता है।</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: किन पर CCS Conduct Rules लागू नहीं होते? (अपवाद)</div>
+      <div class="yn">➡ Railway Servants (Indian Railways Act 1890)</div>
+      <div class="yn">➡ All India Service के सदस्य</div>
+      <div class="yn">➡ जिन पर राष्ट्रपति ने विशेष आदेश से छूट दी हो</div>
+      <div class="yn">➡ ₹500/माह से कम वेतन वाले Non-Gazetted कर्मचारी (Ports/Defence/Mines/Factories आदि में) — Rules 4,6,7,12,14,15(3),16,18(1-3),19,20,21 से छूट</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 2: परिभाषाएं</span>
+      <table>
+        <tr><th>शब्द</th><th>परिभाषा</th></tr>
+        <tr><td>Government Servant</td><td>Union के मामलों में नियुक्त कोई भी व्यक्ति, Defence Service का civilian सहित</td></tr>
+        <tr><td>Members of Family</td><td>पति/पत्नी (अलग हुए न हों); बेटा/बेटी (आश्रित); अन्य रक्त/विवाह संबंधी (पूर्ण आश्रित)</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Railway-AllIndia-Special = बाहर" — CCS Conduct Rules से मुक्त 3 श्रेणियां</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> CCS Conduct Rules 1964 किन पर लागू नहीं होते? <b>(Railway Servants, All India Service सदस्य, राष्ट्रपति द्वारा छूट प्राप्त)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">⭐ Rule 3, 3A-3C → सामान्य आचरण, शिष्टाचार व यौन उत्पीड़न रोकथाम</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 3: General</span>
+      <p class="hi">हर Government Servant को हमेशा: (i) पूर्ण सत्यनिष्ठा (ii) कर्तव्यनिष्ठा बनाए रखनी है (iii) कोई भी अशोभनीय कार्य नहीं करना।</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">📋 Rule 3(1) के 21 उप-बिंदु (मुख्य)</div>
+      <div class="branches">
+        <div class="branch">संविधान की सर्वोच्चता व लोकतांत्रिक मूल्यों को बनाए रखना</div>
+        <div class="branch">राजनीतिक तटस्थता बनाए रखना</div>
+        <div class="branch">योग्यता, निष्पक्षता व जवाबदेही बनाए रखना</div>
+        <div class="branch">सार्वजनिक हित में निर्णय, संसाधनों का कुशल उपयोग</div>
+        <div class="branch">व्यक्तिगत हितों की घोषणा व टकराव समाधान</div>
+        <div class="branch">पद का दुरुपयोग न करना</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 3(2): Written Direction नियम</span>
+      <p class="hi">वरिष्ठ अधिकारी के निर्देश सामान्यतः <b>लिखित</b> में होने चाहिए। मौखिक निर्देश से बचें — अपरिहार्य होने पर तुरंत बाद <b>लिखित पुष्टि</b> करें।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 3-C: यौन उत्पीड़न प्रतिबंध</span>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>प्रतिबंध</td><td>कार्यस्थल पर किसी भी महिला के यौन उत्पीड़न पर प्रतिबंध</td></tr>
+        <tr><td>Workplace शामिल</td><td>Government वित्त-पोषित कार्यालय, अस्पताल, खेल संस्थान, यात्रा के दौरान, निवास स्थान</td></tr>
+        <tr><td>Supervisor का कर्तव्य</td><td>कार्यस्थल-प्रभारी को रोकथाम हेतु उचित कदम उठाने होंगे</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3=सामान्य, 3A=शिष्टाचार, 3B=नीति पालन, 3C=उत्पीड़न रोकथाम" — क्रम याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Rule 3-C किस विषय से संबंधित है? <b>(कार्यस्थल पर यौन उत्पीड़न प्रतिबंध)</b> मौखिक निर्देश मिलने पर कर्मचारी को क्या करना चाहिए? <b>(यथाशीघ्र लिखित पुष्टि मांगनी चाहिए)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">🚫 Rule 4-7 → रिश्तेदारों की नियुक्ति, राजनीति, संघ, हड़ताल</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 4</span>
+      <p class="hi">कोई Government Servant अपने प्रभाव का उपयोग परिवार के सदस्य को Company/Firm में नौकरी दिलाने हेतु नहीं कर सकता। <b>Class I Officer</b> को अपने आश्रित बच्चे की ऐसी कंपनी में नौकरी स्वीकृति हेतु सरकार की <b>पूर्व स्वीकृति</b> चाहिए जहां उसका आधिकारिक व्यवहार हो।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 5: राजनीति व चुनाव</span>
+      <table>
+        <tr><th>प्रावधान</th></tr>
+        <tr><td>किसी राजनीतिक दल का सदस्य नहीं बन सकता</td></tr>
+        <tr><td>चुनाव में मत देने का अधिकार है — लेकिन किसे वोट दिया इसका संकेत नहीं दे सकता</td></tr>
+        <tr><td>वाहन/निवास पर चुनाव चिन्ह लगाना = "influence का प्रयोग" माना जाता है</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Rule 6-7 में क्या प्रतिबंधित है?</div>
+      <div class="yn">➡ Rule 6: संप्रभुता/सार्वजनिक व्यवस्था के विरुद्ध किसी संगठन से जुड़ाव निषेध</div>
+      <div class="yn">➡ Rule 7: प्रदर्शन/हड़ताल/जबरदस्ती (Coercion) निषेध</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "वोट डालो, बताओ मत" — Rule 5 का सार, गुप्त मतदान अधिकार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> वाहन पर चुनाव चिन्ह प्रदर्शित करना किस Rule का उल्लंघन माना जाता है? <b>(Rule 5 — Influence का प्रयोग)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">📰 Rule 8-11 → मीडिया, सरकार की आलोचना, साक्ष्य, सूचना संचार</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 8: प्रेस/मीडिया से संबंध</span>
+      <p class="hi">बिना पूर्व स्वीकृति समाचार पत्र/पत्रिका/इलेक्ट्रॉनिक मीडिया का स्वामित्व या संपादन नहीं कर सकता। <b>अपवाद:</b> आधिकारिक कर्तव्य में पुस्तक प्रकाशन या सार्वजनिक मीडिया भागीदारी।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 9: सरकार की आलोचना</span>
+      <p class="hi">किसी भी रेडियो प्रसारण, टेलीकास्ट, प्रकाशन या सार्वजनिक बयान में Central/State Government की current/recent नीति की <b>प्रतिकूल आलोचना</b> निषेध — जो Centre-State संबंध या विदेशी संबंध को नुकसान पहुंचाए।</p>
+      <p class="hi"><b>अपवाद:</b> Trade Union/Association के पदाधिकारी के रूप में सेवा शर्तों हेतु दिए गए सद्भावी विचार।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 11: सूचना संचार</span>
+      <p class="hi">हर Government Servant <b>RTI Act, 2005</b> के अनुसार सद्भावपूर्वक सूचना संप्रेषित करेगा। बिना अधिकृत व्यक्ति को गोपनीय दस्तावेज़/सूचना नहीं दे सकता।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "RTI 2005 = Rule 11 का आधार" — सूचना अधिकार अधिनियम से जुड़ाव याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Rule 11 किस Act पर आधारित है? <b>(RTI Act, 2005)</b> Rule 9 किस विषय पर प्रतिबंध लगाता है? <b>(सरकार की आलोचना)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--red-dark);">🎁 Rule 12-13A → चंदा, उपहार, दहेज — सबसे महत्वपूर्ण संख्याएं</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 13: उपहार सीमाएं (हर वर्ष पूछी जाती हैं)</span>
+      <h3 class="hi">निकट संबंधी/मित्र से उपहार (शादी/त्यौहार पर) — रिपोर्टिंग सीमा</h3>
+      <table>
+        <tr><th>Group</th><th>रिपोर्ट करने की सीमा (इससे ऊपर)</th></tr>
+        <tr><td>Group A</td><td><b>₹25,000</b></td></tr>
+        <tr><td>Group B</td><td><b>₹15,000</b></td></tr>
+        <tr><td>Group C</td><td><b>₹7,500</b></td></tr>
+      </table>
+
+      <h3 class="hi">अन्य मामलों में (गैर-संबंधी) — स्वीकृति आवश्यक सीमा</h3>
+      <table>
+        <tr><th>Group</th><th>बिना स्वीकृति अधिकतम सीमा</th></tr>
+        <tr><td>Group A / B</td><td><b>₹1,500</b></td></tr>
+        <tr><td>Group C / D</td><td><b>₹500</b></td></tr>
+      </table>
+
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>विदेशी गणमान्य व्यक्ति से उपहार</td><td>एक अवसर पर <b>₹1,000</b> तक स्वीकार्य (बिना स्वीकृति)</td></tr>
+        <tr><td>साधारण भोजन/लिफ्ट/सामाजिक आतिथ्य</td><td>"उपहार" नहीं माना जाता</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: उपहार की परिभाषा में क्या शामिल है?</div>
+      <div class="yn">➡ मुफ्त यात्रा, बोर्डिंग, लॉजिंग या कोई भी आर्थिक लाभ — जब निकट संबंधी/मित्र (जिनका कोई आधिकारिक व्यवहार न हो) के अलावा कोई अन्य व्यक्ति दे</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 13-A: दहेज</span>
+      <p class="hi">कोई भी Government Servant दहेज देने/लेने/उकसाने या मांगने का दोषी नहीं होगा। परिभाषा Dowry Prohibition Act, 1961 के अनुसार।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "25-15-7.5 (संबंधी), 1.5-0.5 (अन्य)" — उपहार सीमा हज़ार रुपये में क्रम से याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Group A अधिकारी को निकट संबंधी से मिले उपहार की रिपोर्टिंग सीमा क्या है? <b>(₹25,000)</b> Group C कर्मचारी को गैर-संबंधी से बिना स्वीकृति अधिकतम उपहार सीमा? <b>(₹500)</b> विदेशी गणमान्य व्यक्ति से उपहार सीमा? <b>(₹1,000/अवसर)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#00695C;">🏅 Rule 14-15A → सार्वजनिक सम्मान, निजी व्यापार, सरकारी आवास</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — Rule 14</span>
+      <p class="hi">बिना पूर्व स्वीकृति सम्मान समारोह/प्रशस्ति-पत्र स्वीकार नहीं कर सकता। <b>अपवाद:</b> सेवानिवृत्ति/स्थानांतरण पर निजी विदाई समारोह, या सार्वजनिक निकायों द्वारा सरल/किफायती आतिथ्य।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 15: निजी व्यापार या रोजगार</span>
+      <div class="dtree">
+        <div class="q">Q: बिना स्वीकृति क्या कर सकते हैं (Rule 15(2))?</div>
+        <div class="yn">➡ सामाजिक/धर्मार्थ मानद कार्य</div>
+        <div class="yn">➡ साहित्यिक/कलात्मक/वैज्ञानिक कार्य (कभी-कभार)</div>
+        <div class="yn">➡ शौकिया खेल गतिविधियां</div>
+        <div class="yn">➡ साहित्यिक/वैज्ञानिक समिति में भागीदारी (निर्वाचित पद नहीं) — <b>1 महीने में रिपोर्ट</b> देनी होगी</div>
+      </div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>अपवाद शर्त:</b> Rule 15(2)(d)/(e) के तहत गतिविधि में भाग लेने के <b>1 महीने के भीतर</b> Government को विवरण सहित रिपोर्ट देनी अनिवार्य है।</div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — Rule 15-A</span>
+      <p class="hi">आवंटित Government Accommodation किसी और को Sub-let/Lease नहीं कर सकता। Allotment रद्द होने पर, निर्धारित समय-सीमा में खाली करना अनिवार्य।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1 महीने में बताओ" — साहित्यिक/वैज्ञानिक society भागीदारी की रिपोर्टिंग समय-सीमा</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Rule 15(2)(d)/(e) के तहत गतिविधि की रिपोर्ट कितने समय में देनी होती है? <b>(1 महीने के भीतर)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#6A1B9A;">💹 Rule 16-17 → निवेश, ऋण-उधार, दिवालियापन</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 16: निवेश, ऋण देना/लेना</span>
+      <table>
+        <tr><th>प्रावधान</th></tr>
+        <tr><td>Stock/Share में Speculation (सट्टा) निषेध — बार-बार खरीद/बिक्री = Speculation माना जाता है</td></tr>
+        <tr><td>ऐसा निवेश निषेध जो आधिकारिक कर्तव्यों में बाधा/प्रभाव डाले</td></tr>
+        <tr><td>IPO/FPO मूल्य निर्धारण में शामिल अधिकारी स्वयं/परिवार द्वारा उस CPSE के शेयर हेतु आवेदन नहीं कर सकता</td></tr>
+        <tr><td>अपने अधिकार क्षेत्र में किसी व्यक्ति/फर्म से ऋण लेना-देना सामान्यतः निषेध</td></tr>
+      </table>
+      <p style="font-size:0.7rem;"><b>अपवाद:</b> रिश्तेदार/मित्र से छोटी अस्थायी ब्याज-मुक्त उधारी, या बैंक/सार्वजनिक कंपनी से सामान्य व्यवसाय।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 17: दिवालियापन</span>
+      <p class="hi">Government Servant को अपने निजी मामले इस तरह प्रबंधित करने चाहिए कि आदतन ऋणग्रस्तता या दिवालियापन से बचें। कानूनी कार्यवाही होने पर <b>तुरंत रिपोर्ट</b> करनी होगी। दिवालियापन/ऋणग्रस्तता निर्दोष होने का भार (Burden of Proof) कर्मचारी पर है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "बार-बार खरीद-बेच = सट्टा" — Speculation की परिभाषा याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> दिवालियापन का प्रमाण भार (Burden of Proof) किस पर है? <b>(Government Servant पर स्वयं)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:#37474F;">🏠 Rule 18-18A → चल-अचल संपत्ति की घोषणा</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 18: सबसे ज्यादा पूछा जाने वाला Rule</span>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>पहली नियुक्ति पर</td><td>Assets व Liabilities का पूर्ण Return देना अनिवार्य</td></tr>
+        <tr><td>Group A/B — वार्षिक</td><td>Immovable Property का वार्षिक Return (IPR) अनिवार्य</td></tr>
+        <tr><td>Group D को सामान्यतः छूट</td><td>Note I — जब तक विशेष निर्देश न हों</td></tr>
+        <tr><td>₹10,000 से कम movable items</td><td>Lump sum में दिखाई जा सकती हैं</td></tr>
+        <tr><td><b>Movable Property Transaction रिपोर्टिंग सीमा</b></td><td><b>2 महीने के मूल वेतन (Basic Pay)</b> से अधिक होने पर, 1 महीने के भीतर रिपोर्ट</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: "Prescribed Authority" कौन है (property मामलों में)?</div>
+      <div class="yn">➡ Group A → सरकार (Government)</div>
+      <div class="yn">➡ Group B → Head of Department</div>
+      <div class="yn">➡ Group C/D → Head of Office</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Rule 18-A</span>
+      <p class="hi">भारत के बाहर स्थित अचल संपत्ति के अधिग्रहण/निपटान, या किसी विदेशी व्यक्ति/सरकार के साथ लेन-देन हेतु <b>Prescribed Authority</b> की पूर्व स्वीकृति अनिवार्य।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2 महीने वेतन = रिपोर्टिंग ट्रिगर" — Movable property सीमा याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Movable Property Transaction की रिपोर्टिंग किस सीमा से अनिवार्य है? <b>(2 महीने के Basic Pay से अधिक होने पर)</b> Group B अधिकारी हेतु "Prescribed Authority" कौन है? <b>(Head of Department)</b></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:var(--gold-dark);">⚖️ Rule 19-22A → प्रतिष्ठा वापसी, प्रभाव, विवाह, नशा, बाल श्रम</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Rule 19: सरकारी सेवक की प्रतिष्ठा वापसी</span>
+      <p class="hi">आधिकारिक कार्य पर प्रतिकूल आलोचना/मानहानि के विरुद्ध Court/Press का सहारा लेने हेतु सरकार की पूर्व स्वीकृति चाहिए।</p>
+      <div class="penalty-box">🔴 <b>3-महीने का Deemed Approval नियम:</b> यदि आवेदन के <b>3 महीने</b> के भीतर सरकार से कोई जवाब नहीं मिलता, तो अनुमति <b>स्वतः मिली मानी जाती है</b>।</div>
+    </div>
+
+    <table>
+      <tr><th>Rule</th><th>विषय</th><th>मुख्य बिंदु</th></tr>
+      <tr><td>20</td><td>बाहरी प्रभाव का प्रयोग</td><td>सेवा संबंधी मामलों में राजनीतिक/बाहरी प्रभाव लाना निषेध</td></tr>
+      <tr><td>21</td><td>विवाह प्रतिबंध</td><td>जीवित पति/पत्नी रहते दूसरी शादी निषेध (Bigamy); गैर-भारतीय से विवाह पर तुरंत सूचना अनिवार्य</td></tr>
+      <tr><td>22</td><td>नशीले पदार्थ</td><td>कर्तव्य के दौरान नशे में न रहें; सार्वजनिक स्थान पर नशे में न दिखें</td></tr>
+      <tr><td>22-A</td><td>बाल श्रम निषेध</td><td><b>14 वर्ष</b> से कम आयु के बच्चे को काम पर न रखें</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3 महीने चुप = हां मान लो" — Rule 19 का Deemed Approval नियम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Rule 19 के तहत Court/Press जाने की अनुमति हेतु आवेदन पर कितने समय में जवाब न मिलने पर स्वतः स्वीकृति मानी जाती है? <b>(3 महीने)</b> बाल श्रम निषेध किस आयु तक है? <b>(14 वर्ष से कम)</b></div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#263238;">📖 Rule 23-25 → व्याख्या, शक्तियों का प्रत्यायोजन, निरसन</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>Rule</th><th>विषय</th></tr>
+      <tr><td>23</td><td>Interpretation — व्याख्या का प्रश्न सरकार को भेजा जाएगा, सरकार का निर्णय अंतिम</td></tr>
+      <tr><td>24</td><td>Delegation of Powers — सरकार शक्तियां प्रत्यायोजित कर सकती है (Rule 23 व 24 को छोड़कर)</td></tr>
+      <tr><td>25</td><td>Repeal and Saving — पूर्व समान नियम निरस्त, लेकिन पूर्व कार्रवाई मान्य रहेगी</td></tr>
+    </table>
+    <div class="exam-q">❓ <b>Exam Q:</b> Rules की व्याख्या का अंतिम अधिकार किसे है? <b>(सरकार — Government)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>Rule 1:</b> Railway/AllIndiaService/President-exempted को लागू नहीं</div>
+    <div class="rev-card"><b>Rule 3:</b> Integrity+Devotion to duty; Written direction प्राथमिकता</div>
+    <div class="rev-card"><b>Rule 3-C:</b> Workplace यौन उत्पीड़न प्रतिबंध — विस्तृत परिभाषा</div>
+    <div class="rev-card"><b>Rule 5:</b> राजनीतिक दल सदस्यता निषेध; गुप्त मतदान अधिकार सुरक्षित</div>
+    <div class="rev-card"><b>Rule 11:</b> RTI Act 2005 आधारित सूचना संचार</div>
+    <div class="rev-card"><b>Rule 13 (उपहार):</b> संबंधी: A=25K,B=15K,C=7.5K | अन्य: A/B=1.5K,C/D=0.5K | विदेशी: 1K</div>
+    <div class="rev-card"><b>Rule 15:</b> निजी व्यापार निषेध; 2(d)/(e) गतिविधि 1 माह में रिपोर्ट</div>
+    <div class="rev-card"><b>Rule 16:</b> Speculation निषेध; IPO/FPO निर्णयकर्ता स्वयं आवेदन नहीं कर सकता</div>
+    <div class="rev-card"><b>Rule 18:</b> IPR वार्षिक (Group A/B); Movable transaction >2 माह वेतन = 1 माह में रिपोर्ट</div>
+    <div class="rev-card"><b>Rule 19:</b> प्रतिष्ठा वापसी हेतु स्वीकृति; 3 माह चुप्पी = Deemed Approval</div>
+    <div class="rev-card"><b>Rule 21:</b> Bigamy निषेध; गैर-भारतीय विवाह पर सूचना अनिवार्य</div>
+    <div class="rev-card"><b>Rule 22-A:</b> 14 वर्ष से कम आयु बाल श्रम निषेध</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>1964</b> = CCS (Conduct) Rules अधिनियमित वर्ष</li>
+    <li>🔢 <b>25 Rules</b> = कुल मुख्य Rules (1 से 25, कुछ Sub-rules सहित)</li>
+    <li>🔢 <b>₹25,000 / ₹15,000 / ₹7,500</b> = उपहार रिपोर्टिंग सीमा (संबंधी से) — Group A/B/C</li>
+    <li>🔢 <b>₹1,500 / ₹500</b> = उपहार स्वीकृति सीमा (गैर-संबंधी) — Group A-B / C-D</li>
+    <li>🔢 <b>₹1,000</b> = विदेशी गणमान्य व्यक्ति से उपहार सीमा प्रति अवसर</li>
+    <li>🔢 <b>1 महीना</b> = साहित्यिक/वैज्ञानिक society भागीदारी रिपोर्टिंग समय</li>
+    <li>🔢 <b>2 महीने वेतन</b> = Movable Property रिपोर्टिंग Trigger सीमा</li>
+    <li>🔢 <b>1 महीना</b> = Movable Property Transaction रिपोर्ट करने की समय सीमा</li>
+    <li>🔢 <b>3 महीने</b> = Rule 19 Deemed Approval अवधि</li>
+    <li>🔢 <b>₹10,000</b> = Movable items जिन्हें Lump Sum में दिखाया जा सकता है</li>
+    <li>🔢 <b>14 वर्ष</b> = बाल श्रम निषेध आयु सीमा (Rule 22-A)</li>
+    <li>🔢 <b>₹500/माह</b> = Rule exemption सीमा (कुछ Non-Gazetted कर्मचारी)</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: Central Civil Services (Conduct) Rules, 1964 — As amended upto 31.12.2014 &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoPT परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

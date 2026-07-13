@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSH Act, 2013 — IP Exam Infographic</title>
+<style>
+:root{
+  --ip-red:#c8102e;--ip-blue:#003087;--ip-gold:#d4af37;
+  --bg:#fdfaf3;--card:#ffffff;
+  --very-imp:#ffe1e1;--very-imp-b:#c8102e;
+  --freq:#fff1dd;--freq-b:#e07b00;
+  --concept:#fffbd6;--concept-b:#c9a400;
+  --quick:#e3f7e6;--quick-b:#1f9d55;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#fdfaf3,#f3eee0);color:#222;line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--ip-red),var(--ip-blue));color:#fff;padding:20px 16px 26px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,.25);}
+.header h1{margin:0 0 6px;font-size:1.35rem;}
+.header p{margin:0;font-size:.85rem;opacity:.92;}
+.header .badge{display:inline-block;background:var(--ip-gold);color:#3a2a00;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;margin-top:8px;}
+.container{max-width:900px;margin:0 auto;padding:14px;}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 18px;}
+.legend span{font-size:.72rem;padding:5px 9px;border-radius:8px;font-weight:600;white-space:nowrap;}
+.leg-vi{background:var(--very-imp);color:var(--very-imp-b);border:1px solid var(--very-imp-b);}
+.leg-fr{background:var(--freq);color:var(--freq-b);border:1px solid var(--freq-b);}
+.leg-co{background:var(--concept);color:var(--concept-b);border:1px solid var(--concept-b);}
+.leg-qr{background:var(--quick);color:var(--quick-b);border:1px solid var(--quick-b);}
+.section{background:var(--card);border-radius:14px;margin:14px 0;padding:14px 14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.08);border-left:6px solid var(--ip-blue);}
+.section.red-b{border-left-color:var(--ip-red);}
+.section.gold-b{border-left-color:var(--ip-gold);}
+.sec-title{font-size:1.05rem;font-weight:800;color:var(--ip-blue);display:flex;align-items:center;gap:8px;margin-bottom:8px;border-bottom:2px dashed #ddd;padding-bottom:6px;}
+.sec-title .num{background:var(--ip-red);color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.chapter-flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.chapter-flow .node{background:#eef2ff;border:1.5px solid var(--ip-blue);border-radius:10px;padding:8px 12px;font-size:.85rem;font-weight:600;color:var(--ip-blue);}
+.chapter-flow .node.sub{margin-left:16px;background:#fff7e6;border-color:var(--ip-gold);color:#7a5c00;}
+.chapter-flow .node.micro{margin-left:32px;background:#fdeaea;border-color:var(--ip-red);color:var(--ip-red);}
+.chapter-flow .node.nano{margin-left:48px;background:#eafaf0;border-color:#1f9d55;color:#166f3c;font-weight:500;}
+.arrow-down{text-align:center;color:var(--ip-blue);font-size:1.1rem;margin:-2px 0;}
+.tag{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;}
+.tag.vi{background:var(--very-imp);color:var(--very-imp-b);}
+.tag.fr{background:var(--freq);color:var(--freq-b);}
+.tag.co{background:var(--concept);color:var(--concept-b);}
+.tag.qr{background:var(--quick);color:var(--quick-b);}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.82rem;}
+th{background:var(--ip-blue);color:#fff;padding:7px 6px;text-align:left;}
+td{padding:6px;border-bottom:1px solid #eee;vertical-align:top;}
+tr:nth-child(even){background:#f7f7fb;}
+.def-box{background:#f0f4ff;border:1px dashed var(--ip-blue);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:.85rem;}
+.def-box b{color:var(--ip-blue);}
+.qbox{background:#fff8e1;border-left:4px solid var(--ip-gold);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:.8rem;color:#5a4600;}
+.qbox b{color:#8a6d00;}
+.timeline{position:relative;margin:14px 0;padding-left:20px;border-left:3px solid var(--ip-red);}
+.tl-item{margin-bottom:14px;position:relative;}
+.tl-item::before{content:'';position:absolute;left:-27px;top:2px;width:12px;height:12px;background:var(--ip-red);border-radius:50%;border:2px solid #fff;}
+.tl-date{font-weight:800;color:var(--ip-red);font-size:.82rem;}
+.tl-text{font-size:.82rem;}
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:6px;margin:12px 0;}
+.fc-box{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px 14px;font-size:.8rem;text-align:center;font-weight:600;color:var(--ip-blue);max-width:92%;}
+.fc-box.decision{background:var(--concept);border-color:var(--concept-b);color:#5a4600;border-radius:50px;}
+.fc-box.result-yes{background:var(--quick);border-color:var(--quick-b);color:var(--quick-b);}
+.fc-box.result-no{background:var(--very-imp);border-color:var(--very-imp-b);color:var(--very-imp-b);}
+.fc-arrow{color:var(--ip-red);font-size:1.2rem;}
+.fc-branch{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.fc-branch>div{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.mindmap{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0;}
+.mm-center{background:var(--ip-red);color:#fff;text-align:center;padding:10px;border-radius:12px;font-weight:800;font-size:.9rem;}
+.mm-branch{background:#fff;border:2px solid var(--ip-gold);border-radius:10px;padding:8px 10px;font-size:.8rem;}
+.mm-branch b{color:var(--ip-red);}
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;}
+.comparison .old{background:#fdeaea;border:1px solid var(--ip-red);border-radius:8px;padding:8px;font-size:.78rem;}
+.comparison .new{background:#eafaf0;border:1px solid #1f9d55;border-radius:8px;padding:8px;font-size:.78rem;}
+.comparison .old b,.comparison .new b{display:block;margin-bottom:4px;}
+.mnemonic{background:linear-gradient(135deg,#fff3d6,#ffe8b8);border:2px dashed var(--ip-gold);border-radius:12px;padding:12px;margin:10px 0;font-size:.85rem;}
+.mnemonic .letter{color:var(--ip-red);font-weight:900;font-size:1rem;}
+.revision-sheet{background:linear-gradient(135deg,#fff,#f2f6ff);border:3px solid var(--ip-blue);border-radius:14px;padding:16px;margin:16px 0;}
+.revision-sheet h2{color:var(--ip-red);margin-top:0;text-align:center;font-size:1.1rem;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-grid .item{background:#fff;border-radius:8px;padding:8px 10px;font-size:.78rem;border-left:4px solid var(--ip-blue);}
+.floating-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;border:none;border-radius:50%;width:54px;height:54px;font-size:1.4rem;box-shadow:0 4px 10px rgba(0,0,0,.3);cursor:pointer;z-index:999;}
+@media print{.floating-btn{display:none;}}
+.toc{background:#fff;border-radius:12px;padding:12px 14px;margin:14px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.toc h3{margin:0 0 8px;color:var(--ip-blue);font-size:.95rem;}
+.toc a{display:block;font-size:.8rem;color:var(--ip-red);text-decoration:none;padding:3px 0;font-weight:600;}
+.toc a:hover{text-decoration:underline;}
+.footer-note{text-align:center;font-size:.72rem;color:#888;padding:20px 10px 40px;}
+h4{color:var(--ip-red);font-size:.88rem;margin:10px 0 4px;}
+ul{margin:4px 0;padding-left:20px;font-size:.82rem;}
+li{margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🛡️ POSH Act, 2013</h1>
+  <p>Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 — IP Exam Visual Infographic</p>
+  <div class="badge">Panthil Rajeshkumar Parmar | Office Assistant, Ahmedabad L-1</div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span class="leg-vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="leg-fr">🟠 बार-बार पूछा गया</span>
+  <span class="leg-co">🟡 वैचारिक समझ</span>
+  <span class="leg-qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="toc">
+  <h3>📑 अनुक्रमणिका</h3>
+  <a href="#ch1">Chapter I — Preliminary</a>
+  <a href="#ch2">Chapter II — Internal Complaints Committee</a>
+  <a href="#ch3">Chapter III — Local Complaints Committee</a>
+  <a href="#ch4">Chapter IV — Complaint</a>
+  <a href="#ch5">Chapter V — Inquiry into Complaint</a>
+  <a href="#ch6">Chapter VI — Duties of Employer</a>
+  <a href="#ch7">Chapter VII — Duties of District Officer</a>
+  <a href="#ch8">Chapter VIII — Miscellaneous</a>
+  <a href="#revision">🌟 One-Page Revision Sheet</a>
+  <a href="#mnemonics">🧠 Memory Tricks</a>
+</div>
+
+<!-- STRUCTURE MINDMAP -->
+<div class="section gold-b">
+  <div class="sec-title"><span class="num">🗺️</span> Act की संरचना — Chapter → Sub → Micro → Nano</div>
+  <div class="chapter-flow">
+    <div class="node">📖 POSH Act, 2013 (No. 14 of 2013) <span class="tag vi">VI</span></div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. I — Preliminary (Sec 1–3)</div>
+    <div class="node micro">Short title, Definitions, Prevention of Harassment</div>
+    <div class="node nano">"Aggrieved Woman", "Workplace", "Sexual Harassment" की परिभाषा</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. II — Internal Complaints Committee (ICC) (Sec 4)</div>
+    <div class="node nano">हर Workplace जहाँ 10+ कर्मचारी हों</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. III — Local Complaints Committee (LCC) (Sec 5–8)</div>
+    <div class="node nano">District Officer, LCC की Jurisdiction</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. IV — Complaint (Sec 9–10)</div>
+    <div class="node nano">3 माह की समय-सीमा, Conciliation</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. V — Inquiry into Complaint (Sec 11–18)</div>
+    <div class="node nano">90 दिन Inquiry, 10 दिन Report, 60 दिन Action, 90 दिन Appeal</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. VI — Duties of Employer (Sec 19)</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. VII — Duties of District Officer (Sec 20)</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Ch. VIII — Miscellaneous (Sec 21–30)</div>
+    <div class="node nano">Penalty ₹50,000, Non-cognizable Offence</div>
+  </div>
+</div>
+
+<!-- CHAPTER I -->
+<div class="section" id="ch1">
+  <div class="sec-title"><span class="num">1</span> Chapter I — Preliminary <span class="tag vi">VI</span></div>
+
+  <div class="def-box"><b>Sec 1 — Short Title:</b> "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013" — पूरे भारत पर लागू।</div>
+  <div class="qbox">❓ "POSH Act किस तारीख को Assent मिली?" — Ans: राष्ट्रपति की Assent <b>22 अप्रैल 2013</b>; Gazette Publication <b>23 अप्रैल 2013</b> 🔴</div>
+
+  <h4>Sec 2 — प्रमुख परिभाषाएँ (Definitions) <span class="tag fr">FR</span></h4>
+  <table>
+    <tr><th>शब्द</th><th>अर्थ</th></tr>
+    <tr><td>Aggrieved Woman</td><td>कार्यस्थल पर काम करने वाली या न करने वाली किसी भी आयु की महिला जो Harassment का आरोप लगाए (घर पर काम करने वाली Domestic Worker सहित)</td></tr>
+    <tr><td>Employer</td><td>Department/Organisation का प्रमुख, या Private इकाई में Management/Supervision करने वाला व्यक्ति</td></tr>
+    <tr><td>Domestic Worker</td><td>घर में पारिश्रमिक हेतु काम करने वाली महिला (Family Member नहीं)</td></tr>
+    <tr><td>Respondent</td><td>वह व्यक्ति जिसके विरुद्ध शिकायत की गई हो</td></tr>
+    <tr><td>Workplace</td><td>Govt/Private Office, Hospital, Sports Complex, Dwelling Place, यात्रा हेतु Transportation आदि सभी शामिल</td></tr>
+  </table>
+
+  <h4>Sec 2(n) — Sexual Harassment में शामिल कृत्य <span class="tag vi">VI</span></h4>
+  <ul>
+    <li>Physical Contact and Advances</li>
+    <li>Sexual Favours की माँग</li>
+    <li>Sexually Coloured Remarks</li>
+    <li>Pornography दिखाना</li>
+    <li>अन्य अवांछित Physical/Verbal/Non-verbal आचरण</li>
+  </ul>
+  <div class="qbox">❓ "Sexual Harassment की परिभाषा में कौन-कौन से कृत्य शामिल हैं?" — Ans: उपरोक्त 5 प्रकार 🔴</div>
+
+  <h4>Sec 3 — Prevention of Sexual Harassment <span class="tag co">CO</span></h4>
+  <div class="def-box">कोई महिला Workplace पर Harassment का शिकार नहीं होगी। Preferential/Detrimental Treatment का वादा या धमकी, Hostile Work Environment भी Harassment माना जाएगा।</div>
+</div>
+
+<!-- CHAPTER II -->
+<div class="section red-b" id="ch2">
+  <div class="sec-title"><span class="num">2</span> Chapter II — Internal Complaints Committee (ICC) <span class="tag vi">VI</span></div>
+
+  <h4>Sec 4 — ICC का गठन 🔴🔴 अत्यंत महत्वपूर्ण</h4>
+  <div class="mindmap">
+    <div class="mm-center">ICC Composition</div>
+    <div class="mm-branch"><b>Presiding Officer:</b> वरिष्ठ स्तर की महिला कर्मचारी</div>
+    <div class="mm-branch"><b>Members:</b> कम-से-कम <b>2</b> कर्मचारी (Social Work/Legal Knowledge वाले)</div>
+    <div class="mm-branch"><b>बाहरी सदस्य:</b> <b>1</b> NGO/Association से (Women के मुद्दों से जुड़ा)</div>
+    <div class="mm-branch"><b>महिला अनुपात:</b> कुल सदस्यों में कम-से-कम <b>आधे (1/2)</b> महिला होनी चाहिए</div>
+  </div>
+  <div class="qbox">❓ "ICC में कम-से-कम कितने % सदस्य महिला होने चाहिए?" — Ans: <b>50% (आधे)</b> 🔴</div>
+
+  <h4>कार्यकाल एवं अन्य प्रावधान</h4>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>कार्यकाल (Tenure)</td><td>अधिकतम <b>3 वर्ष</b></td></tr>
+    <tr><td>बाहरी सदस्य को भुगतान</td><td>Fees/Allowances Employer द्वारा (Prescribed अनुसार)</td></tr>
+    <tr><td>अलग-अलग Locations</td><td>यदि अलग-अलग Administrative Units हों तो हर जगह ICC बनेगी</td></tr>
+    <tr><td>हटाया जाना (Sec 4(5))</td><td>Sec 16 का उल्लंघन, Offence में दोषी, Disciplinary कार्यवाही में दोषी, पद का दुरुपयोग</td></tr>
+  </table>
+</div>
+
+<!-- CHAPTER III -->
+<div class="section" id="ch3">
+  <div class="sec-title"><span class="num">3</span> Chapter III — Local Complaints Committee (LCC) <span class="tag fr">FR</span></div>
+
+  <h4>Sec 5 — District Officer</h4>
+  <div class="def-box">District Magistrate/Addl. DM/Collector/Dy. Collector को हर जिले हेतु District Officer अधिसूचित किया जा सकता है।</div>
+
+  <h4>Sec 6 — LCC कब बनती है 🔴</h4>
+  <div class="flowchart">
+    <div class="fc-box decision">Workplace में 10 से कम कर्मचारी हैं या शिकायत Employer के विरुद्ध है?</div>
+    <div class="fc-branch">
+      <div><div class="fc-arrow">हाँ ↓</div><div class="fc-box result-yes">LCC शिकायत सुनेगी</div></div>
+      <div><div class="fc-arrow">नहीं ↓</div><div class="fc-box result-no">ICC शिकायत सुनेगी</div></div>
+    </div>
+  </div>
+  <div class="qbox">❓ "10 से कम कर्मचारियों वाले Workplace में शिकायत कौन सुनेगा?" — Ans: <b>Local Complaints Committee</b> 🔴</div>
+  <div class="def-box">District Officer हर Block/Taluka/Tehsil/Ward में एक <b>Nodal Officer</b> नामित करेगा, जो शिकायत को <b>7 दिनों</b> के भीतर LCC को भेजेगा।</div>
+
+  <h4>Sec 7 — LCC की संरचना</h4>
+  <ul>
+    <li>Chairperson — Social Work में प्रतिष्ठित महिला</li>
+    <li>1 Member — Block/Taluka/Tehsil/Ward से कार्यरत महिला</li>
+    <li>2 Members — NGO से (कम-से-कम 1 महिला, 1 को Law Knowledge हो)</li>
+    <li>1 सदस्य SC/ST/OBC/Minority महिला अवश्य होनी चाहिए</li>
+    <li>Ex-officio सदस्य — Social Welfare/Women & Child Development अधिकारी</li>
+  </ul>
+  <div class="def-box">कार्यकाल: अधिकतम <b>3 वर्ष</b>।</div>
+</div>
+
+<!-- CHAPTER IV -->
+<div class="section red-b" id="ch4">
+  <div class="sec-title"><span class="num">4</span> Chapter IV — Complaint <span class="tag vi">VI</span></div>
+
+  <h4>Sec 9 — शिकायत दर्ज करने की समय-सीमा 🔴🔴</h4>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-date">घटना से 3 महीने के भीतर</div><div class="tl-text">ICC/LCC को लिखित शिकायत देनी होगी</div></div>
+    <div class="tl-item"><div class="tl-date">कई घटनाओं की श्रृंखला हो तो</div><div class="tl-text">अंतिम घटना से 3 महीने के भीतर</div></div>
+    <div class="tl-item"><div class="tl-date">Committee द्वारा विस्तार</div><div class="tl-text">लिखित कारण दर्ज कर अतिरिक्त 3 महीने तक बढ़ाया जा सकता है</div></div>
+  </div>
+  <div class="qbox">❓ "शिकायत कितने समय के भीतर दर्ज करानी होगी?" — Ans: घटना के <b>3 माह के भीतर</b> (अधिकतम 3+3=6 माह तक बढ़ सकता है) 🔴</div>
+
+  <h4>Sec 10 — Conciliation <span class="tag co">CO</span></h4>
+  <div class="def-box">Inquiry शुरू करने से पहले, महिला के अनुरोध पर समझौता (Conciliation) कराया जा सकता है — <b>पर मौद्रिक (Monetary) समझौता आधार नहीं बन सकता</b>।</div>
+</div>
+
+<!-- CHAPTER V -->
+<div class="section" id="ch5">
+  <div class="sec-title"><span class="num">5</span> Chapter V — Inquiry into Complaint <span class="tag vi">VI</span></div>
+
+  <h4>समय-सीमाओं की Timeline 🔴🔴 सबसे अधिक पूछा गया विषय</h4>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-date">Sec 11(4)</div><div class="tl-text">Inquiry <b>90 दिनों</b> के भीतर पूरी होगी</div></div>
+    <div class="tl-item"><div class="tl-date">Sec 13(1)</div><div class="tl-text">Inquiry पूरी होने के <b>10 दिनों</b> के भीतर Report Employer/District Officer को दी जाएगी</div></div>
+    <div class="tl-item"><div class="tl-date">Sec 13(4)</div><div class="tl-text">Employer/District Officer Recommendation पर <b>60 दिनों</b> के भीतर कार्रवाई करेगा</div></div>
+    <div class="tl-item"><div class="tl-date">Sec 18(2)</div><div class="tl-text">Recommendation के विरुद्ध Appeal <b>90 दिनों</b> के भीतर करनी होगी</div></div>
+    <div class="tl-item"><div class="tl-date">Sec 6(2)</div><div class="tl-text">Nodal Officer शिकायत को <b>7 दिनों</b> में LCC को भेजेगा</div></div>
+  </div>
+
+  <h4>Sec 11 — Inquiry Flow 🔴</h4>
+  <div class="flowchart">
+    <div class="fc-box">Complaint प्राप्त (Sec 9)</div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box decision">Conciliation सफल? (Sec 10)</div>
+    <div class="fc-branch">
+      <div><div class="fc-arrow">हाँ ↓</div><div class="fc-box result-yes">आगे Inquiry नहीं होगी</div></div>
+      <div><div class="fc-arrow">नहीं ↓</div><div class="fc-box result-no">Inquiry शुरू (Service Rules अनुसार)</div></div>
+    </div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box decision">Respondent Domestic Worker का मामला?</div>
+    <div class="fc-branch">
+      <div><div class="fc-arrow">हाँ ↓</div><div class="fc-box">LCC 7 दिन में Police को Refer करेगी (IPC Sec 509)</div></div>
+      <div><div class="fc-arrow">नहीं ↓</div><div class="fc-box">Committee स्वयं Civil Court जैसी शक्तियों (CPC 1908) से जाँच करेगी</div></div>
+    </div>
+  </div>
+
+  <h4>Sec 13 — Inquiry Report के परिणाम</h4>
+  <table>
+    <tr><th>निष्कर्ष</th><th>कार्रवाई</th></tr>
+    <tr><td>आरोप सिद्ध नहीं</td><td>कोई कार्रवाई नहीं (Sec 13(2))</td></tr>
+    <tr><td>आरोप सिद्ध</td><td>Misconduct मानकर कार्रवाई; वेतन से राशि काटी जा सकती है (Sec 13(3))</td></tr>
+  </table>
+
+  <h4>Sec 14 — झूठी शिकायत पर सजा <span class="tag fr">FR</span></h4>
+  <div class="def-box">यदि आरोप <b>Malicious</b> या जानबूझकर False पाया जाए, तो शिकायतकर्ता के विरुद्ध Service Rules अनुसार कार्रवाई हो सकती है — पर मात्र सबूत साबित न कर पाना (Inability to substantiate) सजा का आधार नहीं है।</div>
+
+  <h4>Sec 15 — Compensation निर्धारण के आधार</h4>
+  <ul>
+    <li>मानसिक आघात, दर्द, भावनात्मक पीड़ा</li>
+    <li>करियर में हुआ नुकसान</li>
+    <li>Medical खर्च</li>
+    <li>Respondent की आय/वित्तीय स्थिति</li>
+    <li>Lump Sum या किश्तों में भुगतान की संभावना</li>
+  </ul>
+
+  <h4>Sec 16 — गोपनीयता (Confidentiality) 🔴</h4>
+  <div class="def-box">RTI Act, 2005 के बावजूद शिकायत/जाँच से जुड़ी जानकारी, पहचान — Public/Press/Media में प्रकाशित नहीं होगी। उल्लंघन पर Sec 17 अनुसार दंड।</div>
+</div>
+
+<!-- CHAPTER VI -->
+<div class="section gold-b" id="ch6">
+  <div class="sec-title"><span class="num">6</span> Chapter VI — Duties of Employer (Sec 19) <span class="tag qr">QR</span></div>
+  <ul>
+    <li>Safe Working Environment प्रदान करना</li>
+    <li>Penal Consequences एवं ICC आदेश Conspicuous Place पर Display करना</li>
+    <li>Workshops/Awareness Programmes आयोजित करना</li>
+    <li>ICC/LCC को आवश्यक सुविधाएँ देना</li>
+    <li>Respondent/Witness की उपस्थिति सुनिश्चित करना</li>
+    <li>महिला को FIR दर्ज कराने में सहायता (IPC या अन्य कानून के तहत)</li>
+    <li>Sexual Harassment को Misconduct मानकर Service Rules में कार्रवाई करना</li>
+  </ul>
+</div>
+
+<!-- CHAPTER VII -->
+<div class="section" id="ch7">
+  <div class="sec-title"><span class="num">7</span> Chapter VII — Duties of District Officer (Sec 20) <span class="tag qr">QR</span></div>
+  <ul>
+    <li>LCC के Annual Reports की समय पर Submission Monitor करना</li>
+    <li>Awareness हेतु NGOs को शामिल करने के उपाय करना</li>
+  </ul>
+</div>
+
+<!-- CHAPTER VIII -->
+<div class="section red-b" id="ch8">
+  <div class="sec-title"><span class="num">8</span> Chapter VIII — Miscellaneous <span class="tag vi">VI</span></div>
+
+  <h4>Sec 26 — Penalty for Non-compliance 🔴🔴 सबसे महत्वपूर्ण</h4>
+  <div class="flowchart">
+    <div class="fc-box">Employer द्वारा ICC न बनाना / Sec 13,14,22 पर कार्रवाई न करना</div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box result-no">पहली बार: जुर्माना अधिकतम <b>₹50,000</b></div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box decision">दोबारा दोषी सिद्ध?</div>
+    <div class="fc-branch">
+      <div><div class="fc-box result-no">2 गुना सज़ा (पहली सज़ा तक सीमित)</div></div>
+      <div><div class="fc-box result-no">Licence रद्द / Registration रद्द</div></div>
+    </div>
+  </div>
+  <div class="qbox">❓ "ICC न बनाने पर पहली बार कितना जुर्माना लग सकता है?" — Ans: अधिकतम <b>₹50,000</b> 🔴</div>
+
+  <h4>Sec 27 — Cognizance of Offence</h4>
+  <ul>
+    <li>केवल Aggrieved Woman या Authorised व्यक्ति की शिकायत पर ही Court Cognizance लेगा</li>
+    <li>Metropolitan Magistrate/Judicial Magistrate First Class से नीचे की Court Trial नहीं करेगी</li>
+    <li>यह Offence <b>Non-cognizable</b> है 🔴</li>
+  </ul>
+  <div class="qbox">❓ "POSH Act के तहत Offence Cognizable है या Non-cognizable?" — Ans: <b>Non-cognizable</b> (Sec 27(3)) 🔴</div>
+
+  <h4>Sec 29 — Rule बनाने की शक्ति</h4>
+  <div class="def-box">Central Government Rules बना सकती है; हर Rule को <b>30 दिनों</b> की कुल अवधि हेतु Parliament के समक्ष रखा जाएगा (एक या अधिक Sessions में)।</div>
+
+  <h4>Sec 30 — Power to Remove Difficulties</h4>
+  <div class="def-box">Central Govt आदेश द्वारा कठिनाई दूर कर सकती है — पर यह अधिकार Act लागू होने के <b>2 वर्ष</b> बाद समाप्त हो जाएगा।</div>
+</div>
+
+<!-- COMPARISON -->
+<div class="section">
+  <div class="sec-title"><span class="num">⚖️</span> ICC बनाम LCC — तुलना Chart <span class="tag fr">FR</span></div>
+  <div class="comparison">
+    <div class="old"><b>ICC (Internal Complaints Committee)</b>
+      • हर Workplace जहाँ 10+ कर्मचारी<br>
+      • Employer द्वारा गठित<br>
+      • Presiding Officer वरिष्ठ महिला कर्मचारी<br>
+      • Sec 4</div>
+    <div class="new"><b>LCC (Local Complaints Committee)</b>
+      • 10 से कम कर्मचारी वाले Workplace / Employer के विरुद्ध शिकायत<br>
+      • District Officer द्वारा गठित<br>
+      • Chairperson — Social Work में प्रतिष्ठित महिला<br>
+      • Sec 6-7</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section gold-b" id="mnemonics">
+  <div class="sec-title"><span class="num">🧠</span> Memory Tricks / Mnemonics</div>
+
+  <div class="mnemonic">
+    <span class="letter">"3-90-10-60-90"</span> Timeline Trick:<br>
+    <b>3</b> माह = शिकायत दर्ज करने की सीमा<br>
+    <b>90</b> दिन = Inquiry पूरी होने की सीमा<br>
+    <b>10</b> दिन = Report देने की सीमा<br>
+    <b>60</b> दिन = Employer/DO की कार्रवाई सीमा<br>
+    <b>90</b> दिन = Appeal की सीमा
+  </div>
+
+  <div class="mnemonic">
+    <span class="letter">"10 का नियम"</span> — 10 कर्मचारी से कम = LCC, 10 या ज्यादा = ICC (Employer विरुद्ध शिकायत होने पर सदैव LCC)
+  </div>
+
+  <div class="mnemonic">
+    <span class="letter">"PILCH"</span> — Chapter क्रम याद रखने हेतु:<br>
+    <b>P</b>reliminary → <b>I</b>CC → <b>L</b>CC → <b>C</b>omplaint & Inquiry → <b>H</b>ead(Employer)/District Officer duties
+  </div>
+
+  <div class="mnemonic">
+    <span class="letter">"50-2"</span> Penalty Trick — पहली बार ₹<b>50,000</b> जुर्माना, दूसरी बार <b>2</b> गुना + Licence रद्द
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="revision">
+  <h2>🌟 One-Page Revision Sheet — Last Day Notes</h2>
+  <div class="rev-grid">
+    <div class="item">🔴 Act No.: <b>14 of 2013</b> | President Assent: <b>22 अप्रैल 2013</b> | Gazette: <b>23 अप्रैल 2013</b></div>
+    <div class="item">🔴 शिकायत दर्ज करने की सीमा: <b>3 महीने</b> (अतिरिक्त 3 माह बढ़ाई जा सकती है)</div>
+    <div class="item">🔴 Inquiry पूरी होने की सीमा: <b>90 दिन</b></div>
+    <div class="item">🔴 ICC में महिला अनुपात: कम-से-कम <b>50%</b></div>
+    <div class="item">🔴 Penalty (पहली बार): अधिकतम <b>₹50,000</b> जुर्माना</div>
+    <div class="item">🔴 Offence प्रकृति: <b>Non-cognizable</b></div>
+    <div class="item">🟠 10 से कम कर्मचारी → <b>LCC</b>; 10 या अधिक → <b>ICC</b></div>
+    <div class="item">🟠 Report देने की सीमा: Inquiry पूरी होने के <b>10 दिन</b> के भीतर</div>
+    <div class="item">🟠 Employer/DO कार्रवाई सीमा: <b>60 दिन</b></div>
+    <div class="item">🟠 Appeal की सीमा: <b>90 दिन</b></div>
+    <div class="item">🟡 Committee कार्यकाल (ICC व LCC दोनों): अधिकतम <b>3 वर्ष</b></div>
+    <div class="item">🟡 Conciliation में Monetary Settlement <b>अनुमति नहीं</b></div>
+    <div class="item">🟢 Rule बनाने की शक्ति सीमा: Parliament के समक्ष <b>30 दिन</b></div>
+    <div class="item">🟢 Difficulties हटाने की शक्ति: Act लागू होने से <b>2 वर्ष</b> तक</div>
+    <div class="item">🟢 Nodal Officer शिकायत LCC को भेजे: <b>7 दिन</b> के भीतर</div>
+  </div>
+</div>
+
+<div class="footer-note">
+  📚 Reference: The Gazette of India, Extraordinary, Part II Section 1, No. 18, 23 April 2013 — POSH Act, 2013 (No. 14 of 2013)<br>
+  IP Exam Preparation Portal — Panthil Rajeshkumar Parmar
+</div>
+
+</div>
+
+<button class="floating-btn" onclick="window.print()" title="Save as PDF">⬇️</button>
+
+</body>
+</html>

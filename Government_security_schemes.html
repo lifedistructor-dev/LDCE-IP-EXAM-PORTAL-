@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan Suraksha एवं असंगठित क्षेत्र योजनाएँ | Schemes for Unorganized Sector Workers | IP Exam Infographic</title>
+<style>
+:root{
+  --ip-red:#B71C1C; --ip-red-dark:#7F1010; --ip-blue:#1A237E; --ip-blue-dark:#101560;
+  --ip-gold:#FFB300; --ip-gold-soft:#FFF3D6;
+  --cream:#FFF9F2; --ink:#22252E; --muted:#5A5F6E;
+  --tier-red:#C62828; --tier-orange:#EF6C00; --tier-yellow:#F9A825; --tier-green:#2E7D32;
+  --card:#FFFFFF; --line:#E5DED2;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans Devanagari','Noto Sans','Hind','Mangal',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  background:var(--cream); color:var(--ink); line-height:1.55; font-size:16px;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(183,28,28,0.035) 39px,rgba(183,28,28,0.035) 40px);
+}
+.hi{font-weight:700; display:block;}
+.en{font-style:italic; font-weight:400; color:var(--muted); display:block; font-size:0.93em;}
+.wrap{max-width:840px; margin:0 auto; padding:0 12px 60px;}
+
+/* ---------- HEADER ---------- */
+header.hero{
+  background:linear-gradient(135deg,var(--ip-red) 0%,var(--ip-red-dark) 55%,var(--ip-blue) 130%);
+  color:#fff; padding:26px 14px 20px; text-align:center; position:relative; overflow:hidden;
+  border-bottom:6px solid var(--ip-gold);
+}
+header.hero::before{
+  content:"JS"; position:absolute; font-size:180px; font-weight:900; opacity:0.06;
+  top:-40px; right:-20px; transform:rotate(-12deg); pointer-events:none;
+}
+.stamp-badge{
+  display:inline-block; background:#fff; color:var(--ip-red); font-weight:800; font-size:13px;
+  padding:6px 14px; border-radius:4px; letter-spacing:1px; margin-bottom:10px;
+  outline:3px dashed rgba(255,255,255,.85); outline-offset:4px;
+}
+header.hero h1{font-size:clamp(20px,4.4vw,31px); line-height:1.32; margin:8px 0 4px;}
+header.hero .sub{font-size:clamp(13px,3vw,16px); opacity:.92; font-style:italic;}
+.hero-meta{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px;}
+.hero-meta span{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); padding:4px 12px; border-radius:20px; font-size:12.5px;}
+
+/* ---------- LEGEND ---------- */
+.legend{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:8px;
+  background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:12px; margin:16px 0;
+}
+.legend div{font-size:13px; padding:6px 8px; border-radius:8px; font-weight:600;}
+.lg-red{background:#FDECEA; color:var(--tier-red);}
+.lg-orange{background:#FFF1E3; color:var(--tier-orange);}
+.lg-yellow{background:#FFF9DC; color:#8a6d00;}
+.lg-green{background:#E8F5E9; color:var(--tier-green);}
+
+/* ---------- NAV ---------- */
+nav.toc{position:sticky; top:0; z-index:50; background:rgba(255,249,242,.97); backdrop-filter:blur(4px);
+  border-bottom:2px solid var(--ip-gold); padding:8px 4px; display:flex; gap:6px; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+nav.toc a{flex:0 0 auto; text-decoration:none; font-size:12.5px; font-weight:700; color:var(--ip-blue);
+  background:#fff; border:1.5px solid var(--ip-blue); border-radius:20px; padding:5px 12px; white-space:nowrap;}
+nav.toc a:active{background:var(--ip-blue); color:#fff;}
+/* ---------- SECTIONS ---------- */
+section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;
+  box-shadow:0 2px 6px rgba(34,37,46,.05);}
+.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+.bh-red{background:linear-gradient(90deg,var(--ip-red),var(--ip-red-dark));}
+.bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
+.bh-gold{background:linear-gradient(90deg,#E09600,var(--ip-gold)); color:#3a2a00;}
+.bh-green{background:linear-gradient(90deg,#2E7D32,#1B5E20);}
+.block-head .icon{font-size:26px;}
+.block-head h2{font-size:clamp(16px,3.6vw,20px); line-height:1.35;}
+.block-head h2 .en{color:rgba(255,255,255,.85);}
+.bh-gold h2 .en{color:#5c4400;}
+.rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7);
+  font-size:11px; font-weight:800; padding:3px 9px; border-radius:6px; white-space:nowrap;}
+.bh-gold .rule-chip{border-color:#7a5a00; background:rgba(255,255,255,.4); color:#3a2a00;}
+.block-body{padding:14px;}
+
+/* ---------- POINT CARDS ---------- */
+.pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0; font-size:14.5px;}
+.pt .hi{font-size:15px;}
+.pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
+.pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
+.pt-yellow{border-left-color:var(--tier-yellow); background:#FFFBE8;}
+.pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
+.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px; letter-spacing:.3px;}
+.tg-red{background:var(--tier-red); color:#fff;}
+.tg-orange{background:var(--tier-orange); color:#fff;}
+.tg-yellow{background:var(--tier-yellow); color:#463800;}
+.tg-green{background:var(--tier-green); color:#fff;}
+
+/* ---------- TABLES ---------- */
+.tbl-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:12px 0;}
+table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px; background:#fff;}
+th{background:var(--ip-blue); color:#fff; padding:9px 10px; text-align:left; font-size:13px;}
+td{padding:8px 10px; border-bottom:1px solid #EDE7DB; vertical-align:top;}
+tr:nth-child(even) td{background:#FBF8F2;}
+table.t-red th{background:var(--ip-red);}
+table.t-gold th{background:#C77F00;}
+td b{color:var(--ip-red-dark);}
+.mini{font-size:12px; color:var(--muted); font-style:italic;}
+table.tight{min-width:0;}
+
+/* ---------- FLOWCHART ---------- */
+.flow{display:flex; flex-direction:column; align-items:stretch; gap:0; margin:14px 0;}
+.fbox{border:2px solid var(--ip-blue); background:#F2F4FF; border-radius:12px; padding:10px 12px; text-align:center; font-size:14px;}
+.fbox.start{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue);}
+.fbox.start .en{color:#C9CEF5;}
+.fbox.warn{border-color:var(--tier-red); background:#FDF1F0;}
+.fbox.ok{border-color:var(--tier-green); background:#F0F8F1;}
+.farrow{text-align:center; font-size:22px; color:var(--ip-red); line-height:1.1; padding:2px 0;}
+.fsplit{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+@media(max-width:560px){.fsplit{grid-template-columns:1fr;}}
+.fsplit .fcol{display:flex; flex-direction:column;}
+.flabel{text-align:center; font-size:12px; font-weight:800; color:#fff; background:var(--ip-gold); color:#3a2a00; border-radius:12px; padding:2px 10px; width:max-content; margin:0 auto 4px;}
+
+/* ---------- MINDMAP ---------- */
+.mindmap{margin:14px 0;}
+.mm-root{background:linear-gradient(135deg,var(--ip-red),var(--ip-blue)); color:#fff; border-radius:14px; padding:12px; text-align:center; font-size:15px;}
+.mm-branches{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin-top:12px;}
+.mm-node{border:2px solid; border-radius:12px; overflow:hidden; background:#fff;}
+.mm-node h4{padding:8px 10px; font-size:13.5px; color:#fff;}
+.mm-node ul{list-style:none; padding:8px 10px;}
+.mm-node li{font-size:13px; padding:4px 0 4px 16px; position:relative; border-bottom:1px dashed #EEE5D6;}
+.mm-node li:last-child{border-bottom:none;}
+.mm-node li::before{content:"◆"; position:absolute; left:0; font-size:9px; top:9px;}
+.mm-b{border-color:var(--ip-blue);} .mm-b h4{background:var(--ip-blue);} .mm-b li::before{color:var(--ip-blue);}
+.mm-r{border-color:var(--ip-red);} .mm-r h4{background:var(--ip-red);} .mm-r li::before{color:var(--ip-red);}
+.mm-g{border-color:#C77F00;} .mm-g h4{background:#C77F00;} .mm-g li::before{color:#C77F00;}
+.mm-gr{border-color:var(--tier-green);} .mm-gr h4{background:var(--tier-green);} .mm-gr li::before{color:var(--tier-green);}
+
+/* ---------- HIERARCHY TREE ---------- */
+.tree{margin:10px 0;}
+.tree .lvl{border-radius:10px; padding:8px 12px; margin:6px 0; font-size:14px; border:1.6px solid;}
+.lvl1{background:var(--ip-red); color:#fff; border-color:var(--ip-red); font-weight:800;}
+.lvl2{background:#F2F4FF; border-color:var(--ip-blue); margin-left:18px;}
+.lvl3{background:var(--ip-gold-soft); border-color:#D9A400; margin-left:36px;}
+.lvl4{background:#F0F8F1; border-color:var(--tier-green); margin-left:54px; font-size:13px;}
+.tree .arrow{margin-left:26px; color:var(--ip-red); font-weight:900;}
+
+/* ---------- TIMELINE ---------- */
+.timeline{position:relative; margin:14px 0 6px; padding-left:26px;}
+.timeline::before{content:""; position:absolute; left:9px; top:4px; bottom:4px; width:4px; background:linear-gradient(var(--ip-red),var(--ip-gold),var(--ip-blue)); border-radius:2px;}
+.tl-item{position:relative; margin:0 0 14px;}
+.tl-item::before{content:""; position:absolute; left:-24px; top:5px; width:14px; height:14px; border-radius:50%; background:#fff; border:4px solid var(--ip-red);}
+.tl-item.blue::before{border-color:var(--ip-blue);}
+.tl-item.gold::before{border-color:#D9A400;}
+.tl-item.green::before{border-color:var(--tier-green);}
+.tl-time{font-weight:800; color:var(--ip-red-dark); font-size:14px;}
+.tl-item .en{font-size:12.5px;}
+
+/* ---------- Q BOX ---------- */
+.qbox{border:2px dashed var(--ip-blue); background:#F5F7FF; border-radius:12px; padding:10px 12px; margin:12px 0; font-size:13.5px;}
+.qbox .qt{font-weight:800; color:var(--ip-blue); font-size:13px; margin-bottom:4px;}
+.qbox ol{padding-left:20px;}
+.qbox li{margin:5px 0;}
+.ans{color:var(--tier-green); font-weight:700; font-size:12.5px;}
+
+/* ---------- MNEMONIC ---------- */
+.mnq{background:linear-gradient(135deg,#FFF3D6,#FFE7AE); border:2px solid #D9A400; border-radius:12px; padding:11px 13px; margin:12px 0;}
+.mnq .mtitle{font-weight:900; color:#7a5a00; font-size:14px;}
+.mnq .mword{font-size:19px; font-weight:900; color:var(--ip-red-dark); letter-spacing:1px; margin:4px 0;}
+.mnq ul{list-style:none; margin-top:4px;}
+.mnq li{font-size:13.5px; padding:2px 0;}
+.mnq li b{color:var(--ip-red);}
+
+/* ---------- COMPARISON ---------- */
+.vs{display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:14px 0;}
+@media(max-width:560px){.vs{grid-template-columns:1fr;} .vs .vs-mid{transform:rotate(90deg); margin:-4px auto;}}
+.vs-card{border:2px solid; border-radius:12px; overflow:hidden; background:#fff;}
+.vs-card h4{color:#fff; padding:8px 10px; font-size:14px; text-align:center;}
+.vs-card ul{list-style:none; padding:8px 12px;}
+.vs-card li{font-size:13px; padding:4px 0; border-bottom:1px dashed #EEE5D6;}
+.vs-card li:last-child{border-bottom:none;}
+.vs-blue{border-color:var(--ip-blue);} .vs-blue h4{background:var(--ip-blue);}
+.vs-red{border-color:var(--ip-red);} .vs-red h4{background:var(--ip-red);}
+.vs-mid{align-self:center; font-weight:900; color:var(--ip-gold); font-size:20px; background:var(--ip-blue); border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center;}
+
+/* ---------- REVISION SHEETS ---------- */
+.rev-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; margin:10px 0;}
+.rev-card{border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; background:#FBFAF7; font-size:13px;}
+.rev-card h5{color:var(--ip-red-dark); font-size:13.5px; border-bottom:2px solid var(--ip-gold); padding-bottom:4px; margin-bottom:6px;}
+.rev-card li{margin:4px 0 4px 16px;}
+.chip-row{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+.chip{background:#fff; border:1.5px solid var(--ip-blue); color:var(--ip-blue); border-radius:16px; padding:3px 11px; font-size:12.5px; font-weight:700;}
+.chip.r{border-color:var(--ip-red); color:var(--ip-red);}
+.chip.g{border-color:var(--tier-green); color:var(--tier-green);}
+
+/* ---------- NUMBER STAT STRIP ---------- */
+.stat-strip{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:8px; margin:12px 0;}
+.stat{background:linear-gradient(135deg,#F2F4FF,#fff); border:1.5px solid var(--ip-blue); border-radius:12px; padding:10px; text-align:center;}
+.stat .num{font-size:20px; font-weight:900; color:var(--ip-red-dark); display:block;}
+.stat .lbl{font-size:11px; color:var(--muted); font-weight:700;}
+
+footer{margin-top:30px; text-align:center; font-size:12.5px; color:var(--muted); border-top:3px double var(--ip-gold); padding-top:14px;}
+@media print{nav.toc{display:none;} section.block{break-inside:avoid; box-shadow:none;} body{background:#fff;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stamp-badge">📮 IP EXAM PORTAL · सामान्य ज्ञान/करेंट अफेयर्स</div>
+  <h1><span class="hi">जन सुरक्षा एवं असंगठित क्षेत्र श्रमिकों हेतु योजनाएँ</span>
+  <span class="sub">Schemes &amp; Programmes for Unorganized Sector Workers — 14 Central Govt. Schemes</span></h1>
+  <div class="hero-meta">
+    <span>🎯 Inspector Posts (IP) Exam</span>
+    <span>🏛️ Ministry of Labour &amp; Employment / Finance</span>
+    <span>📚 Dattopant Thengadi National Board (DTNBWED)</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="legend">
+  <div class="lg-red">🔴 परीक्षा हेतु अति-महत्वपूर्ण · Very Important</div>
+  <div class="lg-orange">🟠 बार-बार पूछा गया · Frequently Asked</div>
+  <div class="lg-yellow">🟡 अवधारणा समझ · Conceptual</div>
+  <div class="lg-green">🟢 त्वरित पुनरावृत्ति · Quick Revision</div>
+</div>
+
+<nav class="toc">
+  <a href="#s0">🌳 संरचना</a>
+  <a href="#s1">🛡️ Jan Suraksha (3)</a>
+  <a href="#s2">🏦 PMJDY</a>
+  <a href="#s3">👴 पेंशन योजनाएँ</a>
+  <a href="#s4">💳 ऋण योजनाएँ</a>
+  <a href="#s5">🏥 AB-PMJAY</a>
+  <a href="#s6">🎓 DDU-GKY</a>
+  <a href="#s7">💾 E-Shram</a>
+  <a href="#s8">📞 Helpline तालिका</a>
+  <a href="#s9">📊 आयु-तुलना</a>
+  <a href="#s10">🧠 स्मृति सूत्र</a>
+  <a href="#s11">📄 वन-पेज रिवीजन</a>
+  <a href="#s12">⚡ लास्ट-डे नोट्स</a>
+</nav>
+<!-- ================= S0 STRUCTURE ================= -->
+<section class="block" id="s0">
+  <div class="block-head bh-blue"><span class="icon">🌳</span>
+    <h2><span class="hi">योजनाओं की संरचना — Category → Scheme → Micro → Nano</span>
+    <span class="en">14 schemes grouped by category for systematic study</span></h2>
+    <span class="rule-chip">MAP</span>
+  </div>
+  <div class="block-body">
+    <div class="tree">
+      <div class="lvl lvl1">📕 असंगठित क्षेत्र योजनाएँ — 14 Central Schemes (DTNBWED दस्तावेज़)</div>
+      <div class="arrow">↓</div>
+      <div class="lvl lvl2">🛡️ <b>Category A:</b> बीमा व पेंशन — Jan Suraksha <span class="en">Insurance &amp; Pension (Jan Suraksha)</span></div>
+      <div class="lvl lvl3">🔹 माइक्रो: PMJJBY, PMSBY, APY — तीनों jansuraksha.gov.in पर</div>
+      <div class="lvl lvl4">▫️ नैनो: प्रीमियम ₹330/₹12; पेंशन ₹1000-5000; helpline 1800180 1111</div>
+      <div class="lvl lvl2">🏦 <b>Category B:</b> बैंकिंग समावेशन <span class="en">Financial Inclusion</span></div>
+      <div class="lvl lvl3">🔹 माइक्रो: PMJDY — जीरो बैलेंस खाता, RuPay कार्ड, OD सुविधा</div>
+      <div class="lvl lvl2">👴 <b>Category C:</b> असंगठित/किसान/व्यापारी पेंशन <span class="en">Unorganized/Farmer/Trader Pension</span></div>
+      <div class="lvl lvl3">🔹 माइक्रो: PM-SYM, NPS-Traders, PM Kisan Maandhan, PMVVY</div>
+      <div class="lvl lvl4">▫️ नैनो: सभी में आयु 18-40 (PMVVY में 60+); पेंशन ₹3000/माह पैटर्न</div>
+      <div class="lvl lvl2">💳 <b>Category D:</b> ऋण/उद्यमिता <span class="en">Credit &amp; Entrepreneurship</span></div>
+      <div class="lvl lvl3">🔹 माइक्रो: PMMY (Mudra), Stand Up India, PM SVANidhi</div>
+      <div class="lvl lvl2">🏥 <b>Category E:</b> स्वास्थ्य, कौशल व डेटाबेस <span class="en">Health, Skill &amp; Database</span></div>
+      <div class="lvl lvl3">🔹 माइक्रो: AB-PMJAY, DDU-GKY, E-Shram</div>
+    </div>
+    <div class="pt pt-green"><span class="tag tg-green">🟢 Quick Point</span>
+      <span class="hi">यह दस्तावेज़ <b>Dattopant Thengadi National Board for Workers Education &amp; Development</b> (Ministry of Labour &amp; Employment) द्वारा प्रकाशित है — असंगठित क्षेत्र श्रमिकों को योजनाओं की जानकारी देने हेतु।</span>
+      <span class="en">Published by the Dattopant Thengadi National Board for Workers Education &amp; Development, Ministry of Labour &amp; Employment.</span>
+    </div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>यह दस्तावेज़ किस बोर्ड द्वारा प्रकाशित है? <span class="ans">→ Dattopant Thengadi National Board for Workers Education &amp; Development</span></li>
+        <li>कुल कितनी योजनाएँ सूचीबद्ध हैं? <span class="ans">→ 14</span></li>
+        <li>"Jan Suraksha" के अंतर्गत कौन-सी 3 योजनाएँ आती हैं? <span class="ans">→ PMJJBY, PMSBY, APY</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S1 JAN SURAKSHA CORE 3 ================= -->
+<section class="block" id="s1">
+  <div class="block-head bh-red"><span class="icon">🛡️</span>
+    <h2><span class="hi">Jan Suraksha की 3 मुख्य योजनाएँ — PMJJBY, PMSBY, APY</span>
+    <span class="en">The Core 3 Jan Suraksha Schemes — Comparison</span></h2>
+    <span class="rule-chip">🔴 MOST IMPORTANT</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण</span>
+      <span class="hi">तीनों योजनाएँ बैंकों के माध्यम से Ministry of Finance द्वारा संचालित, तीनों की आवेदन वेबसाइट <b>www.jansuraksha.gov.in</b> — एवं सभी बैंक खाते से <b>auto-debit</b> द्वारा प्रीमियम कटता है।</span>
+      <span class="en">All 3 run via banks under Ministry of Finance; applied via jansuraksha.gov.in; premium auto-debited from bank account.</span>
+    </div>
+    <div class="tbl-scroll"><table class="t-red">
+      <tr><th>बिंदु / Point</th><th>PMJJBY</th><th>PMSBY</th><th>APY</th></tr>
+      <tr><td><b>प्रकार / Type</b></td><td>Life Insurance (मृत्यु)</td><td>Accident Insurance (दुर्घटना)</td><td>Pension (सेवानिवृत्ति)</td></tr>
+      <tr><td><b>आयु / Age</b></td><td>18-50 वर्ष</td><td>18-70 वर्ष (SB) / entitled 18-50</td><td>18-40 वर्ष</td></tr>
+      <tr><td><b>वार्षिक प्रीमियम</b></td><td>🔴 <b>₹330</b></td><td>🔴 <b>₹12</b></td><td>पेंशन राशि अनुसार भिन्न</td></tr>
+      <tr><td><b>कवर/लाभ राशि</b></td><td>₹2,00,000 (मृत्यु किसी भी कारण से)</td><td>₹2,00,000 (दुर्घटना मृत्यु/पूर्ण विकलांगता); ₹1,00,000 (आंशिक विकलांगता)</td><td>₹1000/2000/3000/4000/5000 प्रति माह (60 वर्ष पर)</td></tr>
+      <tr><td><b>Lien Clause</b></td><td>🟠 प्रथम 30 दिन (दुर्घटना मृत्यु छूट)</td><td>🟠 प्रथम 30 दिन (दुर्घटना मृत्यु छूट)</td><td>लागू नहीं</td></tr>
+      <tr><td><b>कवरेज अवधि</b></td><td>1 जून – 31 मई (renewable)</td><td>1 जून – 31 मई (renewable)</td><td>जीवनभर (60 वर्ष तक contribution)</td></tr>
+      <tr><td><b>प्रीमियम कटौती तिथि</b></td><td>प्रत्येक वर्ष <b>31 मई से पूर्व</b></td><td>Auto-debit वार्षिक</td><td>मासिक/त्रैमासिक/अर्धवार्षिक</td></tr>
+      <tr><td><b>संचालक संस्था</b></td><td>Banks (बैंक)</td><td>Public Sector General Insurance Cos.</td><td>Banks/Post Office</td></tr>
+      <tr><td><b>Helpline</b></td><td>1800180 1111</td><td>1800180 1111</td><td>1800 110 069</td></tr>
+    </table></div>
+    <div class="pt pt-orange"><span class="tag tg-orange">🟠 Frequently Asked — APY की विशेष बात</span>
+      <span class="hi">APY में subscriber की <b>असामयिक मृत्यु (pre-mature death)</b> पर पति/पत्नी को शेष अवधि तक contribution जारी रखने का विकल्प — subscriber की मृत्यु तक वही पेंशन राशि मिलती रहेगी। न्यूनतम पेंशन की <b>सरकार द्वारा गारंटी</b>।</span>
+      <span class="en">On pre-mature death, spouse may continue contributing for remaining tenure and receive same pension until their own death; minimum pension guaranteed by Government.</span>
+    </div>
+    <div class="mnq"><div class="mtitle">🧠 Mnemonic — प्रीमियम याद रखें:</div>
+      <div class="mword">"जीवन ज्योति महँगी (330), सुरक्षा सस्ती (12)"</div>
+      <ul><li><b>PMJJBY</b> (Jeevan Jyoti/जीवन) = <b>₹330</b> · <b>PMSBY</b> (Suraksha/सुरक्षा) = <b>₹12</b> — दोनों में कवर <b>₹2 लाख</b> समान!</li></ul>
+    </div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>PMJJBY का वार्षिक प्रीमियम कितना है? <span class="ans">→ ₹330</span></li>
+        <li>PMSBY का वार्षिक प्रीमियम कितना है? <span class="ans">→ ₹12</span></li>
+        <li>PMSBY में आंशिक विकलांगता पर कितनी राशि मिलती है? <span class="ans">→ ₹1,00,000 (पूर्ण विकलांगता/मृत्यु पर ₹2,00,000)</span></li>
+        <li>Lien clause क्या है और किन योजनाओं में लागू है? <span class="ans">→ प्रथम 30 दिन क्लेम भुगतान नहीं (दुर्घटना मृत्यु छोड़कर) — PMJJBY व PMSBY दोनों में</span></li>
+        <li>APY में न्यूनतम व अधिकतम मासिक पेंशन विकल्प क्या हैं? <span class="ans">→ ₹1000 से ₹5000 तक (5 स्लैब)</span></li>
+        <li>APY हेतु पात्रता आयु सीमा क्या है? <span class="ans">→ 18 से 40 वर्ष</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S2 PMJDY ================= -->
+<section class="block" id="s2">
+  <div class="block-head bh-blue"><span class="icon">🏦</span>
+    <h2><span class="hi">प्रधानमंत्री जन-धन योजना (PMJDY) — नींव योजना</span>
+    <span class="en">Pradhan Mantri Jan-Dhan Yojana — The Foundation Scheme</span></h2>
+    <span class="rule-chip">Gateway Scheme</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण</span>
+      <span class="hi">PMJDY खाता ही अन्य सभी योजनाओं (PMJJBY, PMSBY, APY, MUDRA, DBT) का <b>प्रवेश द्वार (gateway)</b> है — शून्य न्यूनतम शेष (zero balance), RuPay Debit Card व दुर्घटना बीमा कवर के साथ।</span>
+      <span class="en">PMJDY account is the gateway to all other schemes; zero minimum balance, RuPay card, and accident cover included.</span>
+    </div>
+    <div class="mindmap">
+      <div class="mm-root"><span class="hi">🏦 PMJDY — एक खाता, अनेक लाभ</span></div>
+      <div class="mm-branches">
+        <div class="mm-node mm-b"><h4>💳 खाता सुविधाएँ</h4>
+          <ul><li>शून्य न्यूनतम शेष आवश्यक नहीं</li><li>जमा पर ब्याज</li><li>RuPay Debit Card</li></ul></div>
+        <div class="mm-node mm-r"><h4>🛡️ बीमा कवर</h4>
+          <ul><li>दुर्घटना बीमा ₹1 लाख</li><li>28.8.2018 बाद नए खातों हेतु ₹2 लाख</li></ul></div>
+        <div class="mm-node mm-g"><h4>💰 ऋण सुविधा</h4>
+          <ul><li>Overdraft (OD) ₹10,000 तक पात्र खाताधारकों हेतु</li></ul></div>
+        <div class="mm-node mm-gr"><h4>🔗 लिंक योजनाएँ</h4>
+          <ul><li>DBT, PMJJBY, PMSBY, APY, MUDRA</li></ul></div>
+      </div>
+    </div>
+    <div class="tbl-scroll"><table>
+      <tr><th>बिंदु / Point</th><th>विवरण / Details</th></tr>
+      <tr><td>पात्रता</td><td>भारतीय नागरिक, न्यूनतम आयु <b>10 वर्ष</b>, बैंक खाता न हो</td></tr>
+      <tr><td>दस्तावेज़</td><td>PAN, AADHAR, MGNREGA Job Card/Driving Licence/Voter ID</td></tr>
+      <tr><td>आवेदन</td><td>pmjdy.gov.in/scheme या निकटतम बैंक</td></tr>
+      <tr><td>Helpline</td><td>1800 11 0001</td></tr>
+    </table></div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>28 अगस्त 2018 के बाद खुले नए PMJDY खातों पर दुर्घटना बीमा कवर कितना છે? <span class="ans">→ ₹2 लाख (पहले ₹1 लाख था)</span></li>
+        <li>PMJDY खाताधारक को अधिकतम कितना Overdraft मिल सकता है? <span class="ans">→ ₹10,000</span></li>
+        <li>PMJDY हेतु न्यूनतम आयु क्या है? <span class="ans">→ 10 वर्ष</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S3 PENSION SCHEMES ================= -->
+<section class="block" id="s3">
+  <div class="block-head bh-gold"><span class="icon">👴</span>
+    <h2><span class="hi">पेंशन योजनाएँ — असंगठित श्रमिक, व्यापारी, किसान व वरिष्ठ नागरिक</span>
+    <span class="en">Pension Schemes — Workers, Traders, Farmers &amp; Senior Citizens</span></h2>
+    <span class="rule-chip">4 Schemes</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण पैटर्न</span>
+      <span class="hi">PM-SYM, NPS-Traders व PM Kisan Maandhan — तीनों में <b>आयु 18-40 वर्ष</b>, <b>पेंशन ₹3000/माह</b> (60 वर्ष पर), <b>पति/पत्नी को 50% family pension</b> — यह सबसे common exam पैटर्न है!</span>
+      <span class="en">PM-SYM, NPS-Traders &amp; PM Kisan Maandhan share identical structure: age 18-40, ₹3000/month pension at 60, 50% family pension to spouse.</span>
+    </div>
+    <div class="tbl-scroll"><table class="t-gold">
+      <tr><th>योजना</th><th>लक्षित वर्ग</th><th>आयु</th><th>पेंशन</th><th>विशेष शर्त</th></tr>
+      <tr><td><b>PM-SYM</b></td><td>असंगठित श्रमिक (street vendor, निर्माण श्रमिक आदि)</td><td>18-40</td><td>₹3000/माह (पति-पत्नी दोनों जुड़ें तो ₹6000)</td><td>मासिक आय &lt;₹15,000; EPFO/ESIC/NPS सदस्य नहीं</td></tr>
+      <tr><td><b>NPS-Traders</b></td><td>दुकानदार/खुदरा व्यापारी/स्वरोजगार</td><td>18-40</td><td>₹3000/माह</td><td>Turnover ≤₹1.5 करोड़ (GSTIN ज़रूरी &gt;₹40 लाख पर)</td></tr>
+      <tr><td><b>PM Kisan Maandhan</b></td><td>लघु व सीमांत किसान (SMF)</td><td>18-40</td><td>₹3000/माह</td><td>कृषि भूमि ≤2 हेक्टेयर (01.08.2019 अनुसार रिकॉर्ड)</td></tr>
+      <tr><td><b>PMVVY</b></td><td>वरिष्ठ नागरिक (LIC योजना)</td><td>60+ (अधिकतम सीमा नहीं)</td><td>₹1000-₹9,250/माह (खरीद राशि अनुसार)</td><td>पॉलिसी अवधि 10 वर्ष; सब्सक्रिप्शन 31.03.2023 तक खुली थी</td></tr>
+    </table></div>
+    <div class="pt pt-orange"><span class="tag tg-orange">🟠 Frequently Asked — Matching Contribution</span>
+      <span class="hi">PM-SYM व NPS-Traders दोनों में <b>Government द्वारा उतना ही योगदान</b> जितना subscriber करता है (प्रवेश आयु अनुसार तय)। NPS-Traders में trader एक साथ <b>दो योजनाओं में नामांकित नहीं</b> हो सकता (PM-SYM या PM Kisan Maandhan में से कोई एक)।</span>
+      <span class="en">Government matches subscriber's contribution equally; a trader cannot be simultaneously enrolled in PM-SYM or PM Kisan Maandhan.</span>
+    </div>
+    <div class="pt pt-yellow"><span class="tag tg-yellow">🟡 PMVVY — विशेष विवरण</span>
+      <span class="hi">LIC द्वारा संचालित; FY 2020-21 हेतु सुनिश्चित प्रतिफल दर <b>7.40%</b> प्रतिवर्ष (Senior Citizens Saving Scheme दर अनुसार अधिकतम <b>7.75%</b> तक समायोजित)। न्यूनतम खरीद राशि <b>₹1,62,162</b> (₹1000/माह पेंशन हेतु); अधिकतम <b>₹15 लाख</b> (₹9,250/माह पेंशन हेतु)।</span>
+      <span class="en">Assured return 7.40% p.a. (FY2020-21), capped at 7.75%; min purchase ₹1,62,162 for ₹1000/month; max ₹15 lakh for ₹9,250/month.</span>
+    </div>
+    <div class="mnq"><div class="mtitle">🧠 Mnemonic — 3 योजनाओं का "₹3000 क्लब":</div>
+      <div class="mword">"श्रमिक-व्यापारी-किसान = SYM-Trader-Kisan सब ₹3000, आयु 18-40"</div>
+      <ul><li>श्रमिक(PM-SYM) · व्यापारी(NPS-Traders) · किसान(PM Kisan Maandhan) — तीनों "18-40-3000" पैटर्न में!</li></ul>
+    </div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>PM-SYM, NPS-Traders व PM Kisan Maandhan में उम्र-सीमा व पेंशन राशि क्या समान है? <span class="ans">→ आयु 18-40 वर्ष; पेंशन ₹3000/माह (60 वर्ष पर)</span></li>
+        <li>PM-SYM में पति-पत्नी दोनों जुड़ें तो संयुक्त पेंशन कितनी? <span class="ans">→ ₹6000/माह</span></li>
+        <li>NPS-Traders में GSTIN कब अनिवार्य है? <span class="ans">→ टर्नओवर ₹40 लाख से अधिक होने पर</span></li>
+        <li>PM Kisan Maandhan हेतु भूमि-रिकॉर्ड किस तिथि के अनुसार होना चाहिए? <span class="ans">→ 01.08.2019</span></li>
+        <li>PMVVY योजना किस संस्था द्वारा संचालित है? <span class="ans">→ Life Insurance Corporation (LIC)</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S4 CREDIT SCHEMES ================= -->
+<section class="block" id="s4">
+  <div class="block-head bh-red"><span class="icon">💳</span>
+    <h2><span class="hi">ऋण व उद्यमिता योजनाएँ — Mudra, Stand Up India, PM SVANidhi</span>
+    <span class="en">Credit &amp; Entrepreneurship Schemes</span></h2>
+    <span class="rule-chip">3 Schemes</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण — Mudra के 3 उप-योजना स्लैब</span>
+      <span class="hi">PMMY के तहत ऋण बिना collateral के तीन स्लैब में दिया जाता है — इनके नाम व सीमाएँ सबसे अधिक पूछी जाती हैं।</span>
+      <span class="en">PMMY offers collateral-free loans under 3 sub-schemes — the most commonly tested numbers here.</span>
+    </div>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">💰 Pradhan Mantri Mudra Yojana (PMMY) — 3 उप-योजनाएँ</span></div>
+      <div class="farrow">↓</div>
+      <div class="fsplit">
+        <div class="fcol"><div class="flabel">🐣 Shishu</div>
+          <div class="fbox ok"><span class="hi">₹50,000 तक</span></div></div>
+        <div class="fcol"><div class="flabel">🌱 Kishore</div>
+          <div class="fbox"><span class="hi">₹50,000 से ₹5 लाख</span></div></div>
+        <div class="fcol"><div class="flabel">🌳 Tarun</div>
+          <div class="fbox warn"><span class="hi">₹5 लाख से ₹10 लाख</span></div></div>
+      </div>
+    </div>
+    <div class="tbl-scroll"><table class="t-red">
+      <tr><th>योजना</th><th>लाभार्थी वर्ग</th><th>ऋण सीमा</th><th>विशेष बिंदु</th></tr>
+      <tr><td><b>PMMY (Mudra)</b></td><td>गैर-कृषि आय गतिविधि (manufacturing/trading/service)</td><td>₹10 लाख तक (Shishu/Kishore/Tarun)</td><td>बिना collateral; Bank/MFI/NBFC से</td></tr>
+      <tr><td><b>Stand Up India</b></td><td>प्रत्येक बैंक शाखा में ≥1 SC/ST व ≥1 महिला उधारकर्ता</td><td>₹10 लाख से ₹1 करोड़</td><td>Greenfield enterprise; CGFSI द्वारा collateral-free कवरेज; 2.5 लाख उधारकर्ताओं को लाभ का लक्ष्य</td></tr>
+      <tr><td><b>PM SVANidhi</b></td><td>स्ट्रीट वेंडर (रेहड़ी-पटरी विक्रेता)</td><td>₹10,000 (प्रथम); बाद में ₹20,000/₹50,000 तक</td><td>7% ब्याज सब्सिडी (त्रैमासिक जमा); डिजिटल लेनदेन पर प्रोत्साहन</td></tr>
+    </table></div>
+    <div class="pt pt-orange"><span class="tag tg-orange">🟠 Frequently Asked — Stand Up India</span>
+      <span class="hi">कंपनी की आयु/अस्तित्व निगमन तिथि से <b>10 वर्ष से अधिक नहीं</b> होनी चाहिए। आवेदन <b>www.standupmitra.in</b> पोर्टल पर ऑनलाइन भी संभव। Helpline: <b>1800115565</b>।</span>
+      <span class="en">Company must not be incorporated more than 10 years ago; online application via standupmitra.in; helpline 1800115565.</span>
+    </div>
+    <div class="pt pt-yellow"><span class="tag tg-yellow">🟡 PM SVANidhi — दिशानिर्देश तिथि</span>
+      <span class="hi">Scheme Guidelines <b>01.06.2020</b> को जारी हुईं। वेंडर के पास Urban Local Body (ULB) द्वारा जारी <b>Certificate of Vending/ID Card</b> होना चाहिए; न हो तो सर्वे-सूची या Letter of Recommendation (LoR) से पात्रता। Helpline: <b>1800 11 1979</b>।</span>
+      <span class="en">Guidelines issued 01.06.2020; vendor needs ULB-issued Certificate of Vending/ID Card, or LoR if not surveyed.</span>
+    </div>
+    <div class="mnq"><div class="mtitle">🧠 Mnemonic — Mudra के 3 चरण:</div>
+      <div class="mword">"शिशु (बच्चा) → किशोर (युवा) → तरुण (वयस्क)"</div>
+      <ul><li>जीवन-चक्र जैसा क्रम: <b>शिशु 50 हज़ार तक</b> → <b>किशोर 50 हज़ार-5 लाख</b> → <b>तरुण 5-10 लाख</b> — बढ़ते क्रम में!</li></ul>
+    </div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>Mudra योजना के तीन उप-योजनाओं के नाम क्या हैं? <span class="ans">→ Shishu, Kishore, Tarun</span></li>
+        <li>Kishore स्लैब के तहत ऋण सीमा क्या है? <span class="ans">→ ₹50,000 से ₹5 लाख</span></li>
+        <li>Stand Up India में प्रत्येक बैंक शाखा से कम-से-कम किन्हें ऋण देना अनिवार्य है? <span class="ans">→ 1 SC/ST उधारकर्ता व 1 महिला उधारकर्ता</span></li>
+        <li>Stand Up India हेतु collateral-free coverage देने वाला फंड कौन-सा है? <span class="ans">→ Credit Guarantee Fund for Stand Up India (CGFSI)</span></li>
+        <li>PM SVANidhi में ब्याज सब्सिडी दर कितनी है? <span class="ans">→ 7% (त्रैमासिक जमा)</span></li>
+        <li>PM SVANidhi की Scheme Guidelines कब जारी हुईं? <span class="ans">→ 01.06.2020</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S5 AB-PMJAY ================= -->
+<section class="block" id="s5">
+  <div class="block-head bh-blue"><span class="icon">🏥</span>
+    <h2><span class="hi">आयुष्मान भारत - प्रधानमंत्री जन आरोग्य योजना (AB-PMJAY)</span>
+    <span class="en">Ayushman Bharat — Pradhan Mantri Jan Arogya Yojana</span></h2>
+    <span class="rule-chip">Health Scheme</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण</span>
+      <span class="hi">प्रति परिवार प्रति वर्ष <b>₹5 लाख</b> का स्वास्थ्य कवरेज — Secondary व Tertiary care hospitalization पूर्णतः निःशुल्क। यह <b>Family Floater</b> आधार पर है — यानी परिवार का कोई भी/सभी सदस्य इस राशि का उपयोग कर सकते हैं।</span>
+      <span class="en">₹5 lakh/family/year for secondary &amp; tertiary hospitalization, free of cost, on a family floater basis (usable by any/all family members).</span>
+    </div>
+    <div class="mindmap">
+      <div class="mm-root"><span class="hi">🏥 AB-PMJAY कवरेज में शामिल</span></div>
+      <div class="mm-branches">
+        <div class="mm-node mm-b"><h4>🩺 उपचार से पहले</h4>
+          <ul><li>चिकित्सा जाँच व परामर्श</li><li>Pre-hospitalization</li></ul></div>
+        <div class="mm-node mm-r"><h4>💊 उपचार के दौरान</h4>
+          <ul><li>दवा व medical consumables</li><li>Intensive/Non-intensive care</li><li>Diagnostic व lab जाँच</li><li>Medical implantation (आवश्यकतानुसार)</li></ul></div>
+        <div class="mm-node mm-g"><h4>🏨 आवास/भोजन</h4>
+          <ul><li>Accommodation लाभ</li><li>Food services</li></ul></div>
+        <div class="mm-node mm-gr"><h4>📅 बाद की देखभाल</h4>
+          <ul><li>उपचार के दौरान जटिलताएँ (complications)</li><li>Post-hospitalization follow-up <b>15 दिन तक</b></li></ul></div>
+      </div>
+    </div>
+    <div class="tbl-scroll"><table>
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>पात्रता</td><td>BPL कार्डधारक; भिखारी/भिक्षा पर जीवनयापन करने वाले; पक्का मकान न रखने वाले</td></tr>
+      <tr><td>दस्तावेज़</td><td>AADHAR/अन्य पहचान पत्र; BPL राशन कार्ड</td></tr>
+      <tr><td>आवेदन</td><td>CSC या निकटतम सरकारी अस्पताल/डिस्पेंसरी</td></tr>
+      <tr><td>Helpline</td><td>14555</td></tr>
+    </table></div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>AB-PMJAY के तहत प्रति परिवार प्रति वर्ष कितना स्वास्थ्य कवर मिलता है? <span class="ans">→ ₹5 लाख</span></li>
+        <li>यह कवरेज किस आधार पर है? <span class="ans">→ Family Floater basis</span></li>
+        <li>Post-hospitalization follow-up care कितने दिनों तक कवर होती है? <span class="ans">→ 15 दिन तक</span></li>
+        <li>AB-PMJAY का helpline नंबर क्या है? <span class="ans">→ 14555</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S6 DDU-GKY ================= -->
+<section class="block" id="s6">
+  <div class="block-head bh-gold"><span class="icon">🎓</span>
+    <h2><span class="hi">दीनदयाल उपाध्याय ग्रामीण कौशल्य योजना (DDU-GKY)</span>
+    <span class="en">DeenDayal Upadhyaya Grameen Kaushalya Yojana</span></h2>
+    <span class="rule-chip">Skill Training</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण संख्याएँ</span>
+      <span class="hi">Ministry of Rural Development की <b>demand-driven placement-linked</b> कौशल प्रशिक्षण पहल। वर्तमान में <b>82 sectors</b> में <b>450 trades</b> हेतु प्रशिक्षण उपलब्ध।</span>
+      <span class="en">Demand-driven, placement-linked skill training under Ministry of Rural Development; currently covers 82 sectors and 450 trades.</span>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><span class="num">15-35</span><span class="lbl">आयु वर्ष / Age Group</span></div>
+      <div class="stat"><span class="num">82</span><span class="lbl">Sectors</span></div>
+      <div class="stat"><span class="num">450</span><span class="lbl">Trades</span></div>
+    </div>
+    <div class="tbl-scroll"><table class="t-gold">
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>लाभ</td><td>निःशुल्क uniform, किताबें व learning material; प्रति व्यक्ति 1 computer + internet; tablet PC पहुँच; NCVT/SSC से Skill Training Certificate</td></tr>
+      <tr><td>पात्रता</td><td>ग्रामीण गरीब युवा, आयु <b>15-35 वर्ष</b>; BPL Card/MGNREGA Worker Card (न्यूनतम 15 दिन कार्य)/Antyodaya Anna Yojana</td></tr>
+      <tr><td>आवेदन</td><td>Gram Panchayat या Gram Rozgar Sewak के माध्यम से — निकटतम Training Centre को अनुशंसा</td></tr>
+      <tr><td>Helpline</td><td>011-23782373, 23782327</td></tr>
+    </table></div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>DDU-GKY किस मंत्रालय की योजना है? <span class="ans">→ Ministry of Rural Development</span></li>
+        <li>DDU-GKY हेतु आयु सीमा क्या है? <span class="ans">→ 15 से 35 वर्ष</span></li>
+        <li>वर्तमान में कितने sectors व trades कवर होते हैं? <span class="ans">→ 82 sectors, 450 trades</span></li>
+        <li>Skill Certificate कौन जारी करता है? <span class="ans">→ NCVT या SSC</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S7 E-SHRAM ================= -->
+<section class="block" id="s7">
+  <div class="block-head bh-blue"><span class="icon">💾</span>
+    <h2><span class="hi">असंगठित श्रमिकों हेतु राष्ट्रीय डेटाबेस — E-Shram</span>
+    <span class="en">National Database for Unorganised Workers — E-Shram</span></h2>
+    <span class="rule-chip">Digital Registry</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-red"><span class="tag tg-red">🔴 अति-महत्वपूर्ण</span>
+      <span class="hi">पंजीकरण के बाद लाभार्थी को <b>PMSBY के तहत ₹2 लाख का दुर्घटना बीमा कवर</b> स्वतः मिलता है — यह E-Shram व Jan Suraksha योजनाओं को जोड़ता है!</span>
+      <span class="en">After registration, beneficiary automatically gets ₹2 lakh accidental insurance cover under PMSBY — linking E-Shram with Jan Suraksha schemes.</span>
+    </div>
+    <div class="mindmap">
+      <div class="mm-root"><span class="hi">💾 E-Shram पोर्टल के 5 उद्देश्य</span></div>
+      <div class="mm-branches">
+        <div class="mm-node mm-b"><h4>1️⃣ केंद्रीकृत डेटाबेस</h4>
+          <ul><li>सभी unorganized workers (UWs) का Aadhaar-seeded डेटाबेस</li></ul></div>
+        <div class="mm-node mm-r"><h4>2️⃣ बेहतर कार्यान्वयन</h4>
+          <ul><li>सामाजिक सुरक्षा सेवाओं में efficiency वृद्धि</li></ul></div>
+        <div class="mm-node mm-g"><h4>3️⃣ योजना एकीकरण</h4>
+          <ul><li>MoLE व अन्य मंत्रालयों की योजनाओं का integration</li></ul></div>
+        <div class="mm-node mm-gr"><h4>4️⃣ Portability</h4>
+          <ul><li>Migrant व construction श्रमिकों हेतु लाभ की portability</li></ul></div>
+      </div>
+    </div>
+    <div class="tbl-scroll"><table>
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>पात्रता</td><td>Home-based/self-employed/wage worker (असंगठित क्षेत्र); आयु <b>16-59 वर्ष</b>; ESIC/EPFO सदस्य या सरकारी कर्मचारी नहीं</td></tr>
+      <tr><td>दस्तावेज़</td><td>Aadhaar Number; Aadhaar-लिंक्ड मोबाइल; Savings Bank Account with IFSC</td></tr>
+      <tr><td>आवेदन</td><td>Self-registration: register.eshram.gov.in; या CSC/VLE के माध्यम से</td></tr>
+      <tr><td>Helpline</td><td>14434; Email: eshramcare-mole@gov.in</td></tr>
+    </table></div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>E-Shram पंजीकरण पर स्वतः कौन-सा बीमा लाभ मिलता है? <span class="ans">→ ₹2 लाख का दुर्घटना बीमा (PMSBY के तहत)</span></li>
+        <li>E-Shram हेतु पात्रता आयु सीमा क्या है? <span class="ans">→ 16 से 59 वर्ष</span></li>
+        <li>E-Shram पोर्टल किस मंत्रालय के अंतर्गत है? <span class="ans">→ Ministry of Labour &amp; Employment</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S8 HELPLINE MASTER TABLE ================= -->
+<section class="block" id="s8">
+  <div class="block-head bh-red"><span class="icon">📞</span>
+    <h2><span class="hi">सभी योजनाओं की Helpline — मास्टर तालिका</span>
+    <span class="en">All Scheme Helplines — Master Table</span></h2>
+    <span class="rule-chip">🔴 GOLDEN TABLE</span>
+  </div>
+  <div class="block-body">
+    <div class="pt pt-green"><span class="tag tg-green">🟢 Quick Revision</span>
+      <span class="hi">Helpline नंबर MCQ में सीधे पूछे जाते हैं — इस तालिका को बार-बार दोहराएँ।</span>
+      <span class="en">Helpline numbers are direct MCQ material — revise this repeatedly.</span>
+    </div>
+    <div class="tbl-scroll"><table class="t-red">
+      <tr><th>योजना / Scheme</th><th>Helpline Number</th></tr>
+      <tr><td>PMJDY</td><td><b>1800 11 0001</b></td></tr>
+      <tr><td>PMJJBY / PMSBY (jansuraksha.gov.in)</td><td><b>1800180 1111</b></td></tr>
+      <tr><td>APY</td><td><b>1800 110 069</b></td></tr>
+      <tr><td>PMMY (Mudra)</td><td><b>1800180 1111</b></td></tr>
+      <tr><td>Stand Up India</td><td><b>1800115565</b></td></tr>
+      <tr><td>PMVVY</td><td><b>02267819281 / 1800227717</b></td></tr>
+      <tr><td>PM-SYM</td><td><b>1800 267 6888</b></td></tr>
+      <tr><td>AB-PMJAY</td><td><b>14555</b></td></tr>
+      <tr><td>NPS-Traders</td><td><b>18002676888 / 14434</b></td></tr>
+      <tr><td>DDU-GKY</td><td><b>011-23782373, 23782327</b></td></tr>
+      <tr><td>E-Shram</td><td><b>14434</b></td></tr>
+      <tr><td>PM Kisan Maandhan</td><td><b>1800 267 6888, 14434</b></td></tr>
+      <tr><td>PM SVANidhi</td><td><b>1800 11 1979</b></td></tr>
+    </table></div>
+    <div class="mnq"><div class="mtitle">🧠 Mnemonic — Helpline पैटर्न:</div>
+      <div class="mword">"14434 = E-Shram परिवार (NPS-Trader, Kisan Maandhan भी)"</div>
+      <ul><li><b>14434</b> कॉमन नंबर है: E-Shram, NPS-Traders, PM Kisan Maandhan तीनों में — क्योंकि तीनों जुड़ी योजनाएँ हैं!</li>
+      <li><b>14555</b> = केवल AB-PMJAY (स्वास्थ्य); एक अंक का अंतर याद रखें (14434 बनाम 14555)</li></ul>
+    </div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>PMJJBY व PMSBY दोनों का सामान्य हेल्पलाइन नंबर क्या है? <span class="ans">→ 1800180 1111</span></li>
+        <li>AB-PMJAY की हेल्पलाइन क्या है? <span class="ans">→ 14555</span></li>
+        <li>E-Shram, NPS-Traders व PM Kisan Maandhan में कौन-सा हेल्पलाइन नंबर सामान्य है? <span class="ans">→ 14434</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S9 AGE COMPARISON ================= -->
+<section class="block" id="s9">
+  <div class="block-head bh-blue"><span class="icon">📊</span>
+    <h2><span class="hi">पात्रता आयु-सीमा तुलना — सभी योजनाएँ एक नज़र में</span>
+    <span class="en">Eligibility Age-Range Comparison — All Schemes at a Glance</span></h2>
+    <span class="rule-chip">🔴 MUST</span>
+  </div>
+  <div class="block-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-time">👶 10 वर्ष+</div><span class="hi"><b>PMJDY</b> — न्यूनतम आयु सीमा</span><span class="en">Minimum age for PMJDY account</span></div>
+      <div class="tl-item blue"><div class="tl-time">🧑 15-35 वर्ष</div><span class="hi"><b>DDU-GKY</b> — ग्रामीण युवा कौशल प्रशिक्षण</span><span class="en">DDU-GKY rural youth skill training</span></div>
+      <div class="tl-item gold"><div class="tl-time">🧑‍💼 16-59 वर्ष</div><span class="hi"><b>E-Shram</b> — असंगठित श्रमिक पंजीकरण</span><span class="en">E-Shram registration for unorganized workers</span></div>
+      <div class="tl-item green"><div class="tl-time">👨 18-40 वर्ष</div><span class="hi"><b>APY, PM-SYM, NPS-Traders, PM Kisan Maandhan</b> — पेंशन योजनाओं का "common" आयु वर्ग</span><span class="en">Common age band for 4 major pension schemes</span></div>
+      <div class="tl-item"><div class="tl-time">🧔 18-50 वर्ष</div><span class="hi"><b>PMJJBY</b> — जीवन बीमा पात्रता</span><span class="en">PMJJBY life insurance eligibility</span></div>
+      <div class="tl-item blue"><div class="tl-time">🧓 18-70 वर्ष</div><span class="hi"><b>PMSBY</b> — दुर्घटना बीमा पात्रता (SB खाता आयु सीमा)</span><span class="en">PMSBY accident insurance — SB account age limit</span></div>
+      <div class="tl-item gold"><div class="tl-time">👴 60 वर्ष+</div><span class="hi"><b>PMVVY</b> — वरिष्ठ नागरिक पेंशन (अधिकतम आयु सीमा नहीं)</span><span class="en">PMVVY senior citizen pension; no upper age limit</span></div>
+    </div>
+    <div class="pt pt-green"><span class="tag tg-green">🟢 Quick Point</span>
+      <span class="hi">"18-40" आयु वर्ग सबसे अधिक दोहराया गया पैटर्न है — 4 योजनाओं में समान! जबकि PMSBY अकेली योजना है जो <b>70 वर्ष तक</b> कवरेज देती है।</span>
+      <span class="en">"18-40" is the most repeated age band across 4 schemes; PMSBY uniquely covers up to age 70.</span>
+    </div>
+    <div class="qbox"><div class="qt">❓ संभावित परीक्षा प्रश्न</div>
+      <ol>
+        <li>किन 4 योजनाओं में आयु सीमा 18-40 वर्ष समान है? <span class="ans">→ APY, PM-SYM, NPS-Traders, PM Kisan Maandhan</span></li>
+        <li>कौन-सी योजना 70 वर्ष तक की आयु को कवर करती है? <span class="ans">→ PMSBY</span></li>
+        <li>PMVVY में अधिकतम प्रवेश-आयु सीमा क्या है? <span class="ans">→ कोई सीमा नहीं (न्यूनतम 60 वर्ष)</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- ================= S10 MNEMONICS ================= -->
+<section class="block" id="s10">
+  <div class="block-head bh-gold"><span class="icon">🧠</span>
+    <h2><span class="hi">स्मृति सूत्र व ट्रिक्स — एक जगह</span>
+    <span class="en">All Mnemonics &amp; Memory Tricks in One Place</span></h2>
+    <span class="rule-chip">TRICKS</span>
+  </div>
+  <div class="block-body">
+    <div class="mnq"><div class="mtitle">1️⃣ Jan Suraksha प्रीमियम:</div>
+      <div class="mword">"जीवन ज्योति 330, सुरक्षा 12 — दोनों में 2 लाख कवर"</div>
+      <ul><li>महंगा प्रीमियम = जीवन बीमा (मृत्यु किसी कारण से); सस्ता = दुर्घटना बीमा</li></ul>
+    </div>
+    <div class="mnq"><div class="mtitle">2️⃣ APY के 5 पेंशन स्लैब:</div>
+      <div class="mword">"1-2-3-4-5 हज़ार"</div>
+      <ul><li>₹1000, ₹2000, ₹3000, ₹4000, ₹5000 — सीधा गिनती क्रम!</li></ul>
+    </div>
+    <div class="mnq"><div class="mtitle">3️⃣ Mudra के 3 स्लैब:</div>
+      <div class="mword">"शिशु(50 हज़ार) < किशोर(50 हज़ार-5 लाख) < तरुण(5-10 लाख)"</div>
+      <ul><li>उम्र के नाम = बढ़ते ऋण अनुक्रम में याद रखें</li></ul>
+    </div>
+    <div class="mnq"><div class="mtitle">4️⃣ "₹3000 क्लब" — तीन योजनाएँ:</div>
+      <div class="mword">"SYM + Trader + Kisan = सब 18-40-3000"</div>
+      <ul><li>PM-SYM, NPS-Traders, PM Kisan Maandhan — एक जैसी संरचना</li></ul>
+    </div>
+    <div class="mnq"><div class="mtitle">5️⃣ स्वास्थ्य व दुर्घटना कवर राशि:</div>
+      <div class="mword">"PMJDY-1/2 लाख, PMSBY-1/2 लाख, E-Shram-2 लाख, PMJAY-5 लाख"</div>
+      <ul><li>सबसे बड़ी राशि स्वास्थ्य बीमा (PMJAY) में — ₹5 लाख प्रति परिवार</li></ul>
+    </div>
+    <div class="mnq"><div class="mtitle">6️⃣ Helpline याद रखने की Trick:</div>
+      <div class="mword">"14434 = तीन बहनें (E-Shram, NPS-Trader, Kisan); 14555 अकेला (PMJAY)"</div>
+    </div>
+  </div>
+</section>
+  <!-- ================= S11 ONE PAGE REVISION ================= -->
+<section class="block" id="s11">
+  <div class="block-head bh-green"><span class="icon">📄</span>
+    <h2><span class="hi">वन-पेज रिवीजन शीट</span>
+    <span class="en">One-Page Revision Sheet — 14 Schemes at a Glance</span></h2>
+    <span class="rule-chip">🟢 SHEET</span>
+  </div>
+  <div class="block-body">
+    <div class="rev-grid">
+      <div class="rev-card"><h5>🛡️ Jan Suraksha 3</h5>
+        <ul><li>PMJJBY: ₹330/वर्ष, कवर ₹2 लाख, आयु 18-50</li><li>PMSBY: ₹12/वर्ष, कवर ₹2 लाख/₹1 लाख, आयु 18-70</li><li>APY: ₹1000-5000 पेंशन, आयु 18-40</li></ul></div>
+      <div class="rev-card"><h5>🏦 PMJDY</h5>
+        <ul><li>आयु 10+; कवर ₹1/2 लाख (28.8.18 से)</li><li>OD ₹10,000; RuPay कार्ड</li></ul></div>
+      <div class="rev-card"><h5>👴 ₹3000 पेंशन क्लब</h5>
+        <ul><li>PM-SYM (श्रमिक), NPS-Traders (व्यापारी), PM Kisan Maandhan (किसान)</li><li>सभी: आयु 18-40, ₹3000/माह, 50% family pension</li></ul></div>
+      <div class="rev-card"><h5>👵 PMVVY</h5>
+        <ul><li>आयु 60+; LIC; तेनुरे 10 वर्ष</li><li>न्यूनतम ₹1,62,162 → ₹1000/माह; अधिकतम ₹15 लाख → ₹9,250/माह</li></ul></div>
+      <div class="rev-card"><h5>💳 Mudra</h5>
+        <ul><li>Shishu ≤50k, Kishore 50k-5L, Tarun 5L-10L</li><li>collateral-free</li></ul></div>
+      <div class="rev-card"><h5>🚀 Stand Up India</h5>
+        <ul><li>₹10L-1Cr; प्रति शाखा 1 SC/ST+1 महिला</li><li>CGFSI; कंपनी आयु ≤10 वर्ष</li></ul></div>
+      <div class="rev-card"><h5>🛒 PM SVANidhi</h5>
+        <ul><li>स्ट्रीट वेंडर; ₹10k शुरुआत; ब्याज सब्सिडी 7%</li><li>गाइडलाइन: 01.06.2020</li></ul></div>
+      <div class="rev-card"><h5>🏥 AB-PMJAY</h5>
+        <ul><li>₹5 लाख/परिवार/वर्ष; family floater</li><li>Follow-up कवर 15 दिन</li></ul></div>
+      <div class="rev-card"><h5>🎓 DDU-GKY</h5>
+        <ul><li>आयु 15-35; 82 sectors, 450 trades</li><li>Ministry of Rural Development</li></ul></div>
+      <div class="rev-card"><h5>💾 E-Shram</h5>
+        <ul><li>आयु 16-59; ₹2 लाख बीमा (PMSBY से लिंक)</li><li>Aadhaar-seeded डेटाबेस</li></ul></div>
+    </div>
+    <div class="chip-row">
+      <span class="chip r">jansuraksha.gov.in = PMJJBY+PMSBY+APY</span>
+      <span class="chip">18-40 पैटर्न = 4 पेंशन योजनाएँ</span>
+      <span class="chip g">14434 = E-Shram/Trader/Kisan</span>
+      <span class="chip">14555 = AB-PMJAY</span>
+      <span class="chip r">₹330 vs ₹12 प्रीमियम</span>
+    </div>
+  </div>
+</section>
+<!-- ================= S12 LAST DAY ================= -->
+<section class="block" id="s12">
+  <div class="block-head bh-red"><span class="icon">⚡</span>
+    <h2><span class="hi">लास्ट-डे रिवीजन नोट्स — परीक्षा से एक दिन पहले</span>
+    <span class="en">Last-Day Revision Notes — 20 Rapid-Fire Facts</span></h2>
+    <span class="rule-chip">FINAL</span>
+  </div>
+  <div class="block-body">
+    <div class="tbl-scroll"><table class="t-red">
+      <tr><th>#</th><th>तथ्य / Fact</th><th>उत्तर / Answer</th></tr>
+      <tr><td>1</td><td>PMJJBY प्रीमियम व कवर</td><td><b>₹330/वर्ष; ₹2 लाख</b></td></tr>
+      <tr><td>2</td><td>PMSBY प्रीमियम व कवर</td><td><b>₹12/वर्ष; ₹2 लाख (पूर्ण)/₹1 लाख (आंशिक)</b></td></tr>
+      <tr><td>3</td><td>Jan Suraksha lien clause अवधि</td><td><b>30 दिन</b> (दुर्घटना मृत्यु छूट)</td></tr>
+      <tr><td>4</td><td>APY के 5 पेंशन स्लैब</td><td><b>₹1000/2000/3000/4000/5000</b></td></tr>
+      <tr><td>5</td><td>PMJDY दुर्घटना कवर (28.8.2018 बाद)</td><td><b>₹2 लाख</b> (पहले ₹1 लाख)</td></tr>
+      <tr><td>6</td><td>PMJDY OD सुविधा सीमा</td><td><b>₹10,000</b></td></tr>
+      <tr><td>7</td><td>Mudra के 3 स्लैब</td><td><b>Shishu(≤50k) / Kishore(50k-5L) / Tarun(5L-10L)</b></td></tr>
+      <tr><td>8</td><td>Stand Up India ऋण सीमा</td><td><b>₹10 लाख - ₹1 करोड़</b></td></tr>
+      <tr><td>9</td><td>PMVVY न्यूनतम/अधिकतम खरीद राशि</td><td><b>₹1,62,162 / ₹15 लाख</b></td></tr>
+      <tr><td>10</td><td>PMVVY सुनिश्चित प्रतिफल दर (FY 2020-21)</td><td><b>7.40%</b> (ceiling 7.75%)</td></tr>
+      <tr><td>11</td><td>PM-SYM/NPS-Trader/Kisan Maandhan पेंशन</td><td><b>₹3000/माह; आयु 18-40</b></td></tr>
+      <tr><td>12</td><td>NPS-Traders में GSTIN अनिवार्यता सीमा</td><td><b>टर्नओवर &gt;₹40 लाख</b></td></tr>
+      <tr><td>13</td><td>PM Kisan Maandhan भूमि-सीमा व तिथि</td><td><b>≤2 हेक्टेयर; 01.08.2019</b></td></tr>
+      <tr><td>14</td><td>AB-PMJAY कवरेज राशि</td><td><b>₹5 लाख/परिवार/वर्ष (family floater)</b></td></tr>
+      <tr><td>15</td><td>DDU-GKY आयु व sectors/trades</td><td><b>15-35 वर्ष; 82 sectors; 450 trades</b></td></tr>
+      <tr><td>16</td><td>E-Shram आयु व स्वतः बीमा लाभ</td><td><b>16-59 वर्ष; ₹2 लाख (PMSBY से)</b></td></tr>
+      <tr><td>17</td><td>PM SVANidhi ब्याज सब्सिडी व गाइडलाइन तिथि</td><td><b>7%; 01.06.2020</b></td></tr>
+      <tr><td>18</td><td>तीनों Jan Suraksha योजनाओं की सामान्य वेबसाइट</td><td><b>jansuraksha.gov.in</b></td></tr>
+      <tr><td>19</td><td>दस्तावेज़ प्रकाशक बोर्ड</td><td><b>Dattopant Thengadi National Board</b></td></tr>
+      <tr><td>20</td><td>Stand Up India हेल्पलाइन व पोर्टल</td><td><b>1800115565; standupmitra.in</b></td></tr>
+    </table></div>
+    <div class="pt pt-green"><span class="tag tg-green">🟢 अंतिम मंत्र</span>
+      <span class="hi">इस दस्तावेज़ से 4 प्रकार के प्रश्न सबसे अधिक आते हैं: "प्रीमियम/राशि कितनी", "आयु सीमा क्या है", "हेल्पलाइन नंबर", "कौन-सा मंत्रालय/संस्था"। ऊपर की Last-Day तालिका इन सभी को कवर करती है।</span>
+      <span class="en">Four question types dominate: premium/amount, age limit, helpline number, and nodal ministry/agency — all covered above.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>📮 IP Exam Portal</b> · Schemes &amp; Programmes for Unorganized Sector Workers — Dattopant Thengadi National Board for Workers Education &amp; Development</p>
+  <p class="mini">स्रोत: DTNBWED दस्तावेज़ (Ministry of Labour &amp; Employment, GoI)। योजनाओं की राशि/दरें समय-समय पर संशोधित होती हैं — परीक्षा से पहले संबंधित योजना पोर्टल से नवीनतम जानकारी अवश्य जाँचें। Source: uploaded DTNBWED document; verify latest scheme parameters before the exam.</p>
+</footer>
+
+</div>
+</body>
+</html>
+

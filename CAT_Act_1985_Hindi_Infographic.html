@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1e3a8a">
+<title>प्रशासनिक अधिकरण अधिनियम, 1985 | IP परीक्षा</title>
+<style>
+:root{
+  --ip-red:#dc2626;--ip-red-dark:#b91c1c;--ip-red-light:#fee2e2;
+  --ip-blue:#1e3a8a;--ip-blue-dark:#172554;--ip-blue-light:#dbeafe;
+  --ip-gold:#d97706;--ip-gold-light:#fef3c7;
+  --success:#059669;--success-light:#d1fae5;
+  --bg:#f8fafc;--surface:#ffffff;--text:#0f172a;--text-sec:#475569;--text-mut:#94a3b8;
+  --border:#e2e8f0;--radius:12px;--radius-lg:16px;--radius-pill:9999px;
+  --shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1);
+  --shadow-md:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-bottom:40px;}
+
+.hero{background:linear-gradient(135deg,var(--ip-red) 0%,var(--ip-blue) 55%,var(--ip-blue-dark) 100%);color:#fff;padding:28px 18px 40px;position:relative;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 16px;border-radius:var(--radius-pill);text-decoration:none;font-size:13px;font-weight:600;backdrop-filter:blur(6px);}
+.hero h1{font-size:20px;font-weight:800;margin-top:16px;letter-spacing:0;}
+.hero .sub-en{font-size:13px;opacity:.9;margin-top:6px;}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.hero .badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.wave{height:36px;margin-top:-1px;}
+.wave svg{width:100%;height:36px;display:block;}
+
+.container{max-width:760px;margin:0 auto;padding:0 14px;}
+
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-18px 0 20px;position:relative;z-index:5;}
+.legend .item{background:var(--surface);border-radius:var(--radius);padding:10px 12px;box-shadow:var(--shadow);font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:6px;border:1px solid var(--border);}
+
+.section{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sec-num{width:34px;height:34px;border-radius:10px;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;}
+.sec-title{font-size:16.5px;font-weight:800;color:var(--ip-blue-dark);}
+
+.card{background:var(--surface);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:12px;}
+.card-title{font-weight:800;font-size:14px;color:var(--ip-red-dark);margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tag{display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:var(--radius-pill);margin-left:auto;white-space:nowrap;}
+.tag-red{background:var(--ip-red-light);color:var(--ip-red-dark);}
+.card p{font-size:13px;color:var(--text-sec);margin-bottom:4px;}
+
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.def-grid{grid-template-columns:1fr;}}
+.def-card{background:var(--surface);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;box-shadow:var(--shadow);}
+.def-term{font-weight:800;font-size:12.5px;color:var(--ip-blue-dark);}
+.def-desc{font-size:11.5px;color:var(--text-sec);margin-top:2px;}
+
+.flow{display:flex;flex-direction:column;align-items:center;gap:4px;margin:14px 0;}
+.flow-box{background:var(--ip-blue-light);border:1.5px solid var(--ip-blue);color:var(--ip-blue-dark);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:var(--radius);text-align:center;width:100%;max-width:340px;}
+.flow-arrow{color:var(--ip-blue);font-size:18px;line-height:1;}
+
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin:10px 0;}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:480px;}
+th{background:var(--ip-blue);color:#fff;padding:8px 10px;text-align:left;font-weight:700;white-space:nowrap;}
+td{padding:8px 10px;border-top:1px solid var(--border);color:var(--text-sec);vertical-align:top;}
+tr:nth-child(even) td{background:var(--bg);}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;}
+@media(max-width:420px){.compare{grid-template-columns:1fr;}}
+.comp-box{border-radius:var(--radius);padding:10px 12px;font-size:12px;}
+.comp-old{background:var(--ip-red-light);border:1px solid #fca5a5;}
+.comp-new{background:var(--success-light);border:1px solid #6ee7b7;}
+.comp-box b{display:block;font-size:11.5px;margin-bottom:4px;}
+
+.alert{background:var(--ip-gold-light);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;font-size:12.5px;color:#78350f;margin:10px 0;}
+.alert-red{background:var(--ip-red-light);border-left:4px solid var(--ip-red);color:#7f1d1d;}
+
+.mnemonic{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:1.5px dashed #b45309;border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;}
+.mnemonic .word{font-size:15px;font-weight:900;color:#92400e;}
+.mnemonic .exp{font-size:12.5px;color:#78350f;margin-top:4px;}
+
+.qbox{background:var(--ip-blue-light);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;font-size:12.5px;border-left:4px solid var(--ip-blue);}
+.qbox b{color:var(--ip-blue-dark);}
+
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-row{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;font-size:12px;}
+.rev-row .k{font-weight:700;color:var(--ip-blue-dark);flex:1.5;}
+.rev-row .v{color:var(--text-sec);flex:1;text-align:right;}
+
+.timeline{display:flex;flex-direction:column;gap:0;margin:10px 0;}
+.tl-item{display:flex;gap:12px;padding-bottom:16px;position:relative;}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:10px;top:22px;bottom:-4px;width:2px;background:var(--border);}
+.tl-dot{width:22px;height:22px;border-radius:50%;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;z-index:1;}
+.tl-content{font-size:12.5px;color:var(--text-sec);padding-top:2px;}
+.tl-content b{color:var(--ip-blue-dark);display:block;font-size:12.5px;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(220,38,38,.4);text-decoration:none;font-size:22px;z-index:50;}
+.footer-note{text-align:center;font-size:11px;color:var(--text-mut);margin:30px 0 10px;padding:0 20px;}
+ul.simple{margin:6px 0 6px 18px;font-size:12.5px;color:var(--text-sec);}
+ul.simple li{margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="Index.html" class="back-btn">&larr; होम</a>
+  <h1>प्रशासनिक अधिकरण अधिनियम (CAT Act), 1985</h1>
+  <div class="sub-en">Administrative Tribunals Act, 1985 — अधिनियम संख्या 13, वर्ष 1985</div>
+  <div class="badges">
+    <span class="badge">📜 अधिनियमित: 27 फरवरी 1985</span>
+    <span class="badge">🗓️ CAT लागू: 1 जुलाई 1985</span>
+    <span class="badge">📘 5 अध्याय, 37 धाराएं</span>
+  </div>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,24 C360,48 720,0 1080,24 C1260,36 1380,30 1440,24 L1440,48 L0,48 Z"/></svg></div>
+
+<div class="container">
+
+<div class="legend">
+  <div class="item">🔴 अति महत्वपूर्ण</div>
+  <div class="item">🟠 बार-बार पूछे जाने वाले</div>
+  <div class="item">🟡 वैचारिक समझ</div>
+  <div class="item">🟢 त्वरित पुनरावृत्ति</div>
+</div>
+
+<!-- परिचय -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div class="sec-title">परिचय व अध्याय-सूची 🟡</div></div>
+  <div class="card">
+    <p>यह अधिनियम <b>अनुच्छेद 323A</b> के अंतर्गत केंद्र व राज्य सरकार के कर्मचारियों की <b>भर्ती व सेवा शर्तों</b> संबंधी विवादों के निपटारे हेतु <b>प्रशासनिक अधिकरण (Tribunal)</b> स्थापित करता है — जैसे CAT (केंद्रीय प्रशासनिक अधिकरण)।</p>
+  </div>
+  <div class="tbl-wrap"><table>
+    <tr><th>अध्याय</th><th>विषय</th><th>धाराएं</th><th>महत्व</th></tr>
+    <tr><td>I</td><td>प्रारंभिक (लघु नाम, अपवाद, परिभाषाएं)</td><td>1-3</td><td>🔴</td></tr>
+    <tr><td>II</td><td>अधिकरणों व पीठों की स्थापना</td><td>4-13</td><td>🔴</td></tr>
+    <tr><td>III</td><td>अधिकरणों की अधिकारिता व शक्तियां</td><td>14-18</td><td>🟠</td></tr>
+    <tr><td>IV</td><td>प्रक्रिया</td><td>19-27</td><td>🔴</td></tr>
+    <tr><td>V</td><td>प्रकीर्ण (विविध)</td><td>28-37</td><td>🟡</td></tr>
+  </table></div>
+</div>
+
+<!-- अध्याय I -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div class="sec-title">अध्याय I — प्रारंभिक (धारा 1-3) 🔴</div></div>
+  <div class="card">
+    <div class="card-title">धारा 1: लघु नाम, विस्तार व प्रारंभ</div>
+    <ul class="simple">
+      <li>नाम: <b>प्रशासनिक अधिकरण अधिनियम, 1985</b></li>
+      <li>CAT के संबंध में यह <b>संपूर्ण भारत</b> पर लागू</li>
+      <li>केंद्र सरकार अधिसूचना द्वारा प्रारंभ तिथि तय करती है</li>
+    </ul>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">✓</div><div class="tl-content"><b>27 फरवरी 1985</b>अधिनियम पारित</div></div>
+      <div class="tl-item"><div class="tl-dot">🔴</div><div class="tl-content"><b>1 जुलाई 1985</b>CAT (केंद्रीय प्रशासनिक अधिकरण) लागू — अधिसूचना G.S.R. 527(E)</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 2: किन व्यक्तियों पर लागू नहीं होता 🔴 <span class="tag tag-red">परीक्षा में प्रिय</span></div>
+    <ul class="simple">
+      <li>नौसेना, थलसेना, वायुसेना या संघ के किसी अन्य सशस्त्र बल का सदस्य</li>
+      <li>उच्चतम न्यायालय या किसी उच्च न्यायालय (व अधीनस्थ न्यायालयों) का अधिकारी/कर्मचारी</li>
+      <li>संसद के किसी सदन या राज्य विधानमंडल के सचिवालय स्टाफ में नियुक्त व्यक्ति</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 3: महत्वपूर्ण परिभाषाएं 🟠</div>
+    <div class="def-grid">
+      <div class="def-card"><div class="def-term">प्रशासनिक सदस्य</div><div class="def-desc">वह सदस्य जो न्यायिक सदस्य नहीं है</div></div>
+      <div class="def-card"><div class="def-term">न्यायिक सदस्य</div><div class="def-desc">धारा 6(3) की योग्यता रखने वाला सदस्य (अध्यक्ष सहित)</div></div>
+      <div class="def-card"><div class="def-term">पीठ (Bench)</div><div class="def-desc">अधिकरण की एक पीठ</div></div>
+      <div class="def-card"><div class="def-term">संयुक्त अधिकरण</div><div class="def-desc">2 या अधिक राज्यों के लिए स्थापित अधिकरण (धारा 4(3))</div></div>
+      <div class="def-card"><div class="def-term">सेवा विषय (Service Matters)</div><div class="def-desc">पारिश्रमिक, पेंशन, कार्यकाल, वरिष्ठता, पदोन्नति, छुट्टी, अनुशासनिक मामले आदि</div></div>
+      <div class="def-card"><div class="def-term">उपाध्यक्ष (2007 संशोधन के बाद)</div><div class="def-desc">प्रशासनिक कार्य हेतु प्राधिकृत सदस्य (अब नया नियुक्ति पद नहीं)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- अध्याय II -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div class="sec-title">अध्याय II — अधिकरणों की स्थापना (धारा 4-13) 🔴</div></div>
+  <div class="card">
+    <div class="card-title">धारा 4: अधिकरणों के प्रकार</div>
+    <div class="flow">
+      <div class="flow-box">🏛️ केंद्रीय प्रशासनिक अधिकरण (CAT) — केंद्र सरकार द्वारा स्थापित</div>
+      <div class="flow-box">🏛️ राज्य प्रशासनिक अधिकरण — राज्य के अनुरोध पर स्थापित</div>
+      <div class="flow-box">🏛️ संयुक्त प्रशासनिक अधिकरण — 2+ राज्यों हेतु समझौते से स्थापित</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 5: संरचना</div>
+    <ul class="simple">
+      <li>प्रत्येक अधिकरण: <b>अध्यक्ष + न्यायिक व प्रशासनिक सदस्य</b></li>
+      <li>प्रत्येक पीठ: सामान्यतः <b>1 न्यायिक सदस्य + 1 प्रशासनिक सदस्य</b></li>
+      <li>CAT की प्रमुख पीठ: <b>नई दिल्ली</b> (अन्य: इलाहाबाद, कलकत्ता, मद्रास, मुंबई आदि)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 6: नियुक्ति योग्यता 🔴</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>पद</th><th>योग्यता</th></tr>
+      <tr><td>अध्यक्ष</td><td>उच्च न्यायालय का न्यायाधीश है या रह चुका हो</td></tr>
+      <tr><td>प्रशासनिक सदस्य</td><td>केंद्र सरकार में सचिव पद पर 2 वर्ष या अपर सचिव पद पर 5 वर्ष</td></tr>
+      <tr><td>न्यायिक सदस्य</td><td>HC न्यायाधीश योग्यता या विधि विभाग में सचिव पद पर 2 वर्ष / अपर सचिव पद पर 5 वर्ष</td></tr>
+    </table></div>
+    <p style="margin-top:6px;"><b>नियुक्ति:</b> राष्ट्रपति द्वारा — CAT हेतु भारत के मुख्य न्यायमूर्ति से परामर्श; राज्य अधिकरण हेतु संबंधित राज्यपाल से परामर्श।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 8: पदावधि (कार्यकाल) 🔴 <span class="tag tag-red">परीक्षा में प्रिय</span></div>
+    <div class="compare">
+      <div class="comp-box comp-old"><b>अध्यक्ष</b>कार्यकाल: 5 वर्ष<br>अधिकतम आयु: <b>68 वर्ष</b></div>
+      <div class="comp-box comp-new"><b>सदस्य</b>कार्यकाल: 5 वर्ष (1 बार और 5 वर्ष बढ़ाया जा सकता है)<br>अधिकतम आयु: <b>65 वर्ष</b></div>
+    </div>
+    <p style="margin-top:6px;">सेवा शर्तें उच्च न्यायालय के न्यायाधीशों जैसी होंगी।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 9: त्यागपत्र व हटाया जाना 🔴</div>
+    <ul class="simple">
+      <li><b>त्यागपत्र:</b> राष्ट्रपति को लिखित सूचना; <b>3 महीने</b> तक पद पर बने रहना होगा (जब तक राष्ट्रपति जल्दी अनुमति न दे)</li>
+      <li><b>हटाया जाना:</b> केवल राष्ट्रपति के आदेश से, सिद्ध कदाचार/अक्षमता के आधार पर, <b>उच्चतम न्यायालय के न्यायाधीश</b> द्वारा जांच के बाद, आरोपों की सूचना व सुनवाई का अवसर देकर</li>
+    </ul>
+  </div>
+</div>
+
+<!-- अध्याय III -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">4</div><div class="sec-title">अध्याय III — अधिकारिता व शक्तियां (धारा 14-18) 🟠</div></div>
+  <div class="card">
+    <div class="card-title">धारा 14: CAT की अधिकारिता</div>
+    <ul class="simple">
+      <li>अखिल भारतीय सेवा या संघ की सिविल सेवा/पद की भर्ती संबंधी विवाद</li>
+      <li>अखिल भारतीय सेवा सदस्य, संघ के सिविल पद पर नियुक्त व्यक्ति, या रक्षा सेवा से जुड़े सिविल कर्मी के सेवा विषय</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 17: अवमानना दंड शक्ति 🔴</div>
+    <p>अधिकरण को अपनी अवमानना के लिए <b>वही अधिकारिता व शक्ति</b> प्राप्त है जो एक <b>उच्च न्यायालय</b> को प्राप्त है (न्यायालय अवमानना अधिनियम, 1971 के अनुसार)।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 18: पीठों में कार्य वितरण 🟢</div>
+    <p>उपयुक्त सरकार अधिसूचना द्वारा पीठों में कार्य वितरण तय करती है; किसी मामले के पीठ-क्षेत्राधिकार संबंधी विवाद में <b>अध्यक्ष का निर्णय अंतिम</b> होता है।</p>
+  </div>
+</div>
+
+<!-- अध्याय IV -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">5</div><div class="sec-title">अध्याय IV — प्रक्रिया (धारा 19-27) 🔴</div></div>
+  <div class="card">
+    <div class="card-title">धारा 19: आवेदन (Application) 🔴</div>
+    <ul class="simple">
+      <li>पीड़ित व्यक्ति अधिकरण में शिकायत निवारण हेतु आवेदन कर सकता है</li>
+      <li>अधिकतम शुल्क: <b>₹100</b> (केंद्र सरकार द्वारा निर्धारित)</li>
+      <li>आवेदन स्वीकार होते ही, उसी विषय पर लंबित सेवा-नियम अपील/प्रतिनिधित्व <b>समाप्त</b> हो जाते हैं</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 20: अन्य उपचार समाप्त होने चाहिए 🔴</div>
+    <p>अधिकरण सामान्यतः आवेदन स्वीकार नहीं करेगा जब तक आवेदक ने सेवा-नियमों के तहत उपलब्ध <b>सभी उपचार समाप्त</b> न किए हों।</p>
+    <div class="alert">🟠 यदि अपील/प्रतिनिधित्व पर <b>6 महीने</b> में अंतिम आदेश नहीं आया, तो उपचार "समाप्त" मान लिया जाता है।</div>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 21: परिसीमा (Limitation) 🔴</div>
+    <ul class="simple">
+      <li>अंतिम आदेश की तारीख से <b>1 वर्ष</b> के भीतर आवेदन करना होगा</li>
+      <li>6 महीने की अवधि समाप्ति से <b>1 वर्ष</b> के भीतर (यदि अंतिम आदेश नहीं आया हो)</li>
+      <li>पर्याप्त कारण दिखाने पर अधिकरण देरी माफ कर सकता है</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 22: प्रक्रिया व शक्तियां 🟡</div>
+    <p>अधिकरण <b>सिविल प्रक्रिया संहिता, 1908</b> से बाध्य नहीं, परंतु <b>नैसर्गिक न्याय (Natural Justice)</b> के सिद्धांतों का पालन करेगा। सिविल न्यायालय जैसी शक्तियां: गवाह बुलाना, दस्तावेज मांगना, शपथपत्र साक्ष्य, सार्वजनिक अभिलेख मंगवाना।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 23: विधि व्यवसायी की सहायता 🟢</div>
+    <p>आवेदक स्वयं उपस्थित हो सकता है या <b>अपनी पसंद के विधि व्यवसायी</b> की सहायता ले सकता है। सरकार भी अपने अधिकारियों को "प्रस्तुतकर्ता अधिकारी" (Presenting Officer) नियुक्त कर सकती है।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 24: अंतरिम आदेश की शर्तें 🔴 <span class="tag tag-red">परीक्षा में प्रिय</span></div>
+    <ul class="simple">
+      <li>सामान्यतः अंतरिम आदेश (स्थगन/निषेधाज्ञा) से पहले <b>विपक्षी को सूचना व सुनवाई का अवसर</b> देना अनिवार्य</li>
+      <li><b>अपवाद:</b> असाधारण स्थिति में, लिखित कारण दर्ज कर, बिना सूचना दिए अंतरिम आदेश दिया जा सकता है — परंतु यह <b>14 दिन</b> में समाप्त हो जाएगा जब तक तब तक शर्तें पूरी न हों</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 26: बहुमत से निर्णय 🟢</div>
+    <p>पीठ के सदस्यों में मतभेद हो तो बहुमत की राय से निर्णय; समान विभाजन होने पर मामला अध्यक्ष को भेजा जाता है।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 27: आदेश का निष्पादन</div>
+    <p>अधिकरण का अंतिम आदेश <b>बाध्यकारी</b> होता है और किसी न्यायालय (उच्च न्यायालय सहित) में प्रश्नगत नहीं किया जा सकता।</p>
+  </div>
+</div>
+
+<!-- अध्याय V -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">6</div><div class="sec-title">अध्याय V — प्रकीर्ण (धारा 28-37) 🟡</div></div>
+  <div class="card">
+    <div class="card-title">धारा 28: न्यायालयों की अधिकारिता का बहिष्करण 🔴</div>
+    <p>अधिकरण की अधिकारिता लागू होते ही, संबंधित विषयों में <b>उच्चतम न्यायालय (अनुच्छेद 136)</b> और औद्योगिक अधिकरण/श्रम न्यायालय को छोड़कर <b>किसी अन्य न्यायालय</b> को अधिकारिता नहीं रहती।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 29A: कुछ अपीलों की फाइलिंग 🟢</div>
+    <p>अधिकरण-स्थापना से पूर्व पारित डिक्री/आदेश के विरुद्ध अपील — <b>90 दिन</b> के भीतर संबंधित अधिकरण में दाखिल की जा सकती है।</p>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 30-31: न्यायिक कार्यवाही व लोक सेवक 🟢</div>
+    <ul class="simple">
+      <li>अधिकरण की कार्यवाही — <b>IPC धारा 193, 219, 228</b> के अर्थ में <b>न्यायिक कार्यवाही</b> मानी जाएगी</li>
+      <li>अध्यक्ष, सदस्य व स्टाफ — <b>IPC धारा 21</b> के अर्थ में <b>लोक सेवक</b> माने जाएंगे</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 32-34: सुरक्षा व अधिभावी प्रभाव 🟡</div>
+    <ul class="simple">
+      <li><b>धारा 32:</b> सद्भावपूर्वक किए गए कार्य के लिए कोई वाद/अभियोजन नहीं चलेगा</li>
+      <li><b>धारा 33:</b> यह अधिनियम अन्य किसी विधि पर <b>अधिभावी प्रभाव (Overriding Effect)</b> रखता है</li>
+      <li><b>धारा 34:</b> कठिनाई दूर करने हेतु केंद्र सरकार आदेश जारी कर सकती है (संसद में रखना अनिवार्य)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">धारा 37: नियमों का रखा जाना 🟢</div>
+    <p>केंद्र सरकार द्वारा बनाए नियम संसद के दोनों सदनों में <b>कुल 30 दिन</b> हेतु रखे जाएंगे — सदन संशोधन/निरस्तीकरण कर सकते हैं।</p>
+  </div>
+</div>
+
+<!-- पुनरावृत्ति पत्रक -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">7</div><div class="sec-title">📋 एक-पृष्ठ पुनरावृत्ति पत्रक 🔴</div></div>
+  <div class="card">
+    <div class="rev-grid">
+      <div class="rev-row"><span class="k">अधिनियम संख्या</span><span class="v">13 of 1985</span></div>
+      <div class="rev-row"><span class="k">अधिनियमित तारीख</span><span class="v">27 फरवरी 1985</span></div>
+      <div class="rev-row"><span class="k">CAT लागू तारीख</span><span class="v">1 जुलाई 1985</span></div>
+      <div class="rev-row"><span class="k">संवैधानिक आधार</span><span class="v">अनुच्छेद 323A</span></div>
+      <div class="rev-row"><span class="k">अध्यक्ष कार्यकाल / अधिकतम आयु</span><span class="v">5 वर्ष / 68 वर्ष</span></div>
+      <div class="rev-row"><span class="k">सदस्य कार्यकाल / अधिकतम आयु</span><span class="v">5+5 वर्ष / 65 वर्ष</span></div>
+      <div class="rev-row"><span class="k">त्यागपत्र सूचना अवधि</span><span class="v">3 महीने</span></div>
+      <div class="rev-row"><span class="k">हटाने हेतु जांच किसके द्वारा</span><span class="v">उच्चतम न्यायालय के न्यायाधीश</span></div>
+      <div class="rev-row"><span class="k">आवेदन शुल्क अधिकतम</span><span class="v">₹100</span></div>
+      <div class="rev-row"><span class="k">उपचार समाप्ति नियम</span><span class="v">6 महीने</span></div>
+      <div class="rev-row"><span class="k">परिसीमा अवधि</span><span class="v">1 वर्ष</span></div>
+      <div class="rev-row"><span class="k">अंतरिम आदेश वैधता (बिना सूचना)</span><span class="v">14 दिन</span></div>
+      <div class="rev-row"><span class="k">अपील फाइल करने की अवधि (धारा 29A)</span><span class="v">90 दिन</span></div>
+      <div class="rev-row"><span class="k">अवमानना शक्ति किसके समान</span><span class="v">उच्च न्यायालय</span></div>
+      <div class="rev-row"><span class="k">न्यायालय अपवाद (धारा 28)</span><span class="v">उच्चतम न्यायालय (अनु. 136)</span></div>
+      <div class="rev-row"><span class="k">नियम संसद में रखने की अवधि</span><span class="v">30 दिन</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- स्मरण तकनीक -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">8</div><div class="sec-title">🧠 याद रखने की तरकीबें</div></div>
+  <div class="mnemonic">
+    <div class="word">"68 अध्यक्ष, 65 सदस्य" (बड़ा पद = बड़ी आयु सीमा)</div>
+    <div class="exp">अध्यक्ष की अधिकतम आयु 68 वर्ष; सदस्य की 65 वर्ष — अध्यक्ष "बड़ा" पद है इसलिए बड़ी संख्या।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"100-6-1-14-90" — पांच अंक याद रखें</div>
+    <div class="exp">आवेदन शुल्क ₹<b>100</b>; उपचार समाप्ति <b>6</b> महीने; परिसीमा <b>1</b> वर्ष; अंतरिम आदेश <b>14</b> दिन; अपील <b>90</b> दिन।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"3 महीना त्यागपत्र में रुकना"</div>
+    <div class="exp">त्यागपत्र देने के बाद भी 3 महीने पद पर बने रहना होगा, जब तक राष्ट्रपति जल्दी अनुमति न दें।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"SC जज जांच करे, राष्ट्रपति हटाए"</div>
+    <div class="exp">अध्यक्ष/सदस्य को हटाने से पहले उच्चतम न्यायालय के न्यायाधीश से जांच जरूरी, अंतिम आदेश राष्ट्रपति का।</div>
+  </div>
+</div>
+
+<!-- संभावित प्रश्न -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">9</div><div class="sec-title">❓ संभावित परीक्षा प्रश्न</div></div>
+  <div class="qbox"><b>प्र1.</b> प्रशासनिक अधिकरण अधिनियम किस संवैधानिक अनुच्छेद के तहत बनाया गया? <br><i>उत्तर: अनुच्छेद 323A</i></div>
+  <div class="qbox"><b>प्र2.</b> CAT (केंद्रीय प्रशासनिक अधिकरण) किस तारीख को लागू हुआ? <br><i>उत्तर: 1 जुलाई 1985</i></div>
+  <div class="qbox"><b>प्र3.</b> यह अधिनियम किन व्यक्तियों पर लागू नहीं होता? <br><i>उत्तर: सशस्त्र बल सदस्य, SC/HC स्टाफ, संसद/राज्य विधानमंडल सचिवालय स्टाफ</i></div>
+  <div class="qbox"><b>प्र4.</b> अध्यक्ष व सदस्य का कार्यकाल तथा अधिकतम आयु सीमा क्या है? <br><i>उत्तर: अध्यक्ष — 5 वर्ष / 68 वर्ष; सदस्य — 5+5 वर्ष / 65 वर्ष</i></div>
+  <div class="qbox"><b>प्र5.</b> अधिकरण में आवेदन की अधिकतम फीस कितनी हो सकती है? <br><i>उत्तर: ₹100</i></div>
+  <div class="qbox"><b>प्र6.</b> धारा 20 के अनुसार, अपील पर कितने महीने में अंतिम आदेश न आए तो उपचार "समाप्त" माना जाता है? <br><i>उत्तर: 6 महीने</i></div>
+  <div class="qbox"><b>प्र7.</b> अधिकरण में आवेदन की परिसीमा अवधि क्या है? <br><i>उत्तर: 1 वर्ष</i></div>
+  <div class="qbox"><b>प्र8.</b> बिना सूचना दिए दिया गया अंतरिम आदेश अधिकतम कितने दिन वैध रहता है? <br><i>उत्तर: 14 दिन</i></div>
+  <div class="qbox"><b>प्र9.</b> अधिकरण को अवमानना दंडित करने की शक्ति किस न्यायालय के समान है? <br><i>उत्तर: उच्च न्यायालय के समान</i></div>
+  <div class="qbox"><b>प्र10.</b> अधिकरण के अध्यक्ष/सदस्य को हटाने की प्रक्रिया क्या है? <br><i>उत्तर: उच्चतम न्यायालय के न्यायाधीश द्वारा जांच के बाद राष्ट्रपति के आदेश से</i></div>
+  <div class="qbox"><b>प्र11.</b> अधिकरण की कार्यवाही किन IPC धाराओं के अर्थ में न्यायिक कार्यवाही मानी जाती है? <br><i>उत्तर: IPC धारा 193, 219, 228</i></div>
+  <div class="qbox"><b>प्र12.</b> अधिकरण के आदेश के विरुद्ध किस न्यायालय में अपील की जा सकती है? <br><i>उत्तर: केवल उच्चतम न्यायालय, अनुच्छेद 136 के तहत</i></div>
+</div>
+
+<div class="footer-note">प्रशासनिक अधिकरण अधिनियम, 1985 से परीक्षा पुनरावृत्ति हेतु सामग्री संक्षेपित · India Post IP परीक्षा स्व-अध्ययन हेतु तैयार · पूर्ण कानूनी सटीकता के लिए आधिकारिक अधिनियम का संदर्भ अवश्य लें।</div>
+
+</div>
+
+<a href="#" onclick="window.print();return false;" class="pdf-btn" title="प्रिंट / PDF सेव करें">⬇️</a>
+
+</body>
+</html>

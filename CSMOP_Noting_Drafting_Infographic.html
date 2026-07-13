@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1e3a8a">
+<title>CSMOP - Noting & Drafting Master Guide | IP Exam</title>
+<style>
+:root{
+  --ip-red:#dc2626;--ip-red-dark:#b91c1c;--ip-red-light:#fee2e2;
+  --ip-blue:#1e3a8a;--ip-blue-dark:#172554;--ip-blue-light:#dbeafe;
+  --ip-gold:#d97706;--ip-gold-light:#fef3c7;
+  --success:#059669;--success-light:#d1fae5;
+  --bg:#f8fafc;--surface:#ffffff;--text:#0f172a;--text-sec:#475569;--text-mut:#94a3b8;
+  --border:#e2e8f0;--radius:12px;--radius-lg:16px;--radius-pill:9999px;
+  --shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1);
+  --shadow-md:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:40px;}
+.hi{font-family:'Noto Sans','Segoe UI',Arial,sans-serif;}
+
+/* HEADER */
+.hero{background:linear-gradient(135deg,var(--ip-red) 0%,var(--ip-blue) 55%,var(--ip-blue-dark) 100%);color:#fff;padding:28px 18px 40px;position:relative;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 16px;border-radius:var(--radius-pill);text-decoration:none;font-size:13px;font-weight:600;backdrop-filter:blur(6px);}
+.hero h1{font-size:22px;font-weight:800;margin-top:16px;letter-spacing:-.02em;}
+.hero .sub-en{font-size:13px;opacity:.9;margin-top:4px;}
+.hero .sub-hi{font-size:13px;opacity:.85;margin-top:2px;}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.hero .badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.wave{height:36px;margin-top:-1px;}
+.wave svg{width:100%;height:36px;display:block;}
+
+.container{max-width:760px;margin:0 auto;padding:0 14px;}
+
+/* LEGEND */
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-18px 0 20px;position:relative;z-index:5;}
+.legend .item{background:var(--surface);border-radius:var(--radius);padding:10px 12px;box-shadow:var(--shadow);font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:6px;border:1px solid var(--border);}
+
+/* SECTION */
+.section{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sec-num{width:34px;height:34px;border-radius:10px;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;}
+.sec-title{font-size:17px;font-weight:800;color:var(--ip-blue-dark);}
+.sec-title .hi{display:block;font-size:12.5px;font-weight:600;color:var(--text-sec);margin-top:1px;}
+
+/* CARD */
+.card{background:var(--surface);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:12px;}
+.card-title{font-weight:800;font-size:14px;color:var(--ip-red-dark);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.tag{display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:var(--radius-pill);margin-left:auto;white-space:nowrap;}
+.tag-red{background:var(--ip-red-light);color:var(--ip-red-dark);}
+.tag-orange{background:#ffedd5;color:#c2410c;}
+.tag-yellow{background:var(--ip-gold-light);color:#92400e;}
+.tag-green{background:var(--success-light);color:var(--success);}
+.card p{font-size:13px;color:var(--text-sec);margin-bottom:4px;}
+.card p.hi{color:var(--text-mut);font-size:12px;font-style:normal;}
+
+/* DEFINITION GRID */
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.def-grid{grid-template-columns:1fr;}}
+.def-card{background:var(--surface);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;box-shadow:var(--shadow);}
+.def-term{font-weight:800;font-size:12.5px;color:var(--ip-blue-dark);}
+.def-desc{font-size:11.5px;color:var(--text-sec);margin-top:2px;}
+
+/* FLOWCHART */
+.flow{display:flex;flex-direction:column;align-items:center;gap:4px;margin:14px 0;}
+.flow-box{background:var(--ip-blue-light);border:1.5px solid var(--ip-blue);color:var(--ip-blue-dark);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:var(--radius);text-align:center;width:100%;max-width:320px;}
+.flow-arrow{color:var(--ip-blue);font-size:18px;line-height:1;}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin:10px 0;}
+table{width:100%;border-collapse:collapse;font-size:11.5px;min-width:480px;}
+th{background:var(--ip-blue);color:#fff;padding:8px 10px;text-align:left;font-weight:700;white-space:nowrap;}
+td{padding:8px 10px;border-top:1px solid var(--border);color:var(--text-sec);vertical-align:top;}
+tr:nth-child(even) td{background:var(--bg);}
+
+/* COMM FORMAT CARD (Letter/DO/OM etc) */
+.comm-card{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;}
+.comm-head{background:linear-gradient(135deg,var(--ip-blue) 0%,var(--ip-blue-dark) 100%);color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;}
+.comm-head .name{font-weight:800;font-size:14px;}
+.comm-body{padding:14px;}
+.comm-used{font-size:12.5px;color:var(--text-sec);margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--border);}
+.comm-used b{color:var(--ip-red-dark);}
+.format-box{background:#f8fafc;border:1px dashed var(--border);border-radius:var(--radius);padding:12px;font-family:'Courier New',monospace;font-size:11px;white-space:pre-wrap;color:var(--text);line-height:1.7;}
+
+/* COMPARISON */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;}
+@media(max-width:420px){.compare{grid-template-columns:1fr;}}
+.comp-box{border-radius:var(--radius);padding:10px 12px;font-size:12px;}
+.comp-old{background:var(--ip-red-light);border:1px solid #fca5a5;}
+.comp-new{background:var(--success-light);border:1px solid #6ee7b7;}
+.comp-box b{display:block;font-size:11px;margin-bottom:4px;}
+
+/* ALERT */
+.alert{background:var(--ip-gold-light);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;font-size:12px;color:#78350f;margin:10px 0;}
+
+/* MNEMONIC */
+.mnemonic{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:1.5px dashed #b45309;border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;}
+.mnemonic .word{font-size:16px;font-weight:900;color:#92400e;letter-spacing:1px;}
+.mnemonic .exp{font-size:12px;color:#78350f;margin-top:4px;}
+
+/* Q&A */
+.qbox{background:var(--ip-blue-light);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;font-size:12.5px;border-left:4px solid var(--ip-blue);}
+.qbox b{color:var(--ip-blue-dark);}
+
+/* REVISION SHEET */
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-row{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;font-size:12px;}
+.rev-row .k{font-weight:700;color:var(--ip-blue-dark);flex:1.3;}
+.rev-row .v{color:var(--text-sec);flex:1;text-align:right;}
+
+/* FOOTER PDF BTN */
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(220,38,38,.4);text-decoration:none;font-size:22px;z-index:50;}
+.footer-note{text-align:center;font-size:11px;color:var(--text-mut);margin:30px 0 10px;padding:0 20px;}
+ul.simple{margin:6px 0 6px 18px;font-size:12.5px;color:var(--text-sec);}
+ul.simple li{margin-bottom:3px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="index.html" class="back-btn">&larr; Home</a>
+  <h1>CSMOP — Noting &amp; Drafting Master Guide<br><span class="hi" style="font-size:14px;">केंद्रीय सचिवालय कार्यालय प्रक्रिया नियमावली</span></h1>
+  <div class="sub-en">Central Secretariat Manual of Office Procedure — 14th Edition (May 2015)</div>
+  <div class="sub-hi hi">DARPG · Ministry of Personnel, Public Grievances &amp; Pensions</div>
+  <div class="badges">
+    <span class="badge">📘 12 Chapters</span>
+    <span class="badge">📄 64 Paragraphs</span>
+    <span class="badge">🗓️ 1st Edn. 1955 → 14th Edn. 2015</span>
+  </div>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,24 C360,48 720,0 1080,24 C1260,36 1380,30 1440,24 L1440,48 L0,48 Z"/></svg></div>
+
+<div class="container">
+
+<div class="legend">
+  <div class="item">🔴 Very Important</div>
+  <div class="item">🟠 Frequently Asked</div>
+  <div class="item">🟡 Conceptual</div>
+  <div class="item">🟢 Quick Revision</div>
+</div>
+
+<!-- ================= SECTION 1: MASTER INDEX ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div class="sec-title">Chapter-wise Master Index<span class="hi">अध्याय अनुक्रमणिका</span></div></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Ch.</th><th>Topic</th><th>Para</th><th>Importance</th></tr>
+    <tr><td>I</td><td>Introduction</td><td>—</td><td>🟢</td></tr>
+    <tr><td>II</td><td>Definitions</td><td>—</td><td>🔴</td></tr>
+    <tr><td>III</td><td>Structure of Government</td><td>1-8</td><td>🟠</td></tr>
+    <tr><td>IV</td><td>Management of Dak</td><td>9-12</td><td>🟠</td></tr>
+    <tr><td>V</td><td>File Management &amp; Noting</td><td>13-27</td><td>🔴</td></tr>
+    <tr><td>VI</td><td>Forms &amp; Procedure of Communication</td><td>28-40</td><td>🔴</td></tr>
+    <tr><td>VII</td><td>Drafting of Communication</td><td>41-44</td><td>🔴</td></tr>
+    <tr><td>VIII</td><td>File Numbering System</td><td>45-47</td><td>🟠</td></tr>
+    <tr><td>IX</td><td>Records Management</td><td>48-54</td><td>🟡</td></tr>
+    <tr><td>X</td><td>Security of Official Information</td><td>55-59</td><td>🟡</td></tr>
+    <tr><td>XI</td><td>Checks on Delays</td><td>60</td><td>🟠</td></tr>
+    <tr><td>XII</td><td>Miscellaneous</td><td>61-64</td><td>🟢</td></tr>
+  </table></div>
+</div>
+
+<!-- ================= SECTION 2: DEFINITIONS ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div class="sec-title">Key Definitions (Ch. II) 🔴<span class="hi">महत्वपूर्ण परिभाषाएँ</span></div></div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">Dak / डाक</div><div class="def-desc">All communication received/issued by an office.</div></div>
+    <div class="def-card"><div class="def-term">Case / केस</div><div class="def-desc">A current file or receipt with related papers.</div></div>
+    <div class="def-card"><div class="def-term">Current File</div><div class="def-desc">File on which action is not yet complete.</div></div>
+    <div class="def-card"><div class="def-term">Note / नोट</div><div class="def-desc">Remarks recorded to facilitate examination &amp; decision.</div></div>
+    <div class="def-card"><div class="def-term">PUC</div><div class="def-desc">Paper Under Consideration — the receipt being examined.</div></div>
+    <div class="def-card"><div class="def-term">FR</div><div class="def-desc">Fresh Receipt — subsequent receipt bringing new info. Multiple = FRI, FRII...</div></div>
+    <div class="def-card"><div class="def-term">Diary Number</div><div class="def-desc">Serial no. in Section diary + code (H=Hindi, O=Other) + year + section symbol.</div></div>
+    <div class="def-card"><div class="def-term">Docketing</div><div class="def-desc">Entries in notes portion about serial no. assigned to each correspondence item.</div></div>
+    <div class="def-card"><div class="def-term">Single File System (SFS)</div><div class="def-desc">Non-Secretariat Office refers file directly to Department for sanction/order.</div></div>
+    <div class="def-card"><div class="def-term">DRO</div><div class="def-desc">Departmental Record Officer — nominated under Public Records Act 1993.</div></div>
+    <div class="def-card"><div class="def-term">Desk Officer</div><div class="def-desc">A Section Officer designated to exercise delegated powers (e.g. financial sanctions).</div></div>
+    <div class="def-card"><div class="def-term">Night Duty Clerk</div><div class="def-desc">Functionary handling dak outside office hours.</div></div>
+  </div>
+</div>
+
+<!-- ================= SECTION 3: STRUCTURE ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div class="sec-title">Structure of Government (Ch. III) 🟠<span class="hi">शासन संरचना</span></div></div>
+  <div class="card">
+    <div class="card-title">Political Hierarchy <span class="tag tag-orange">Diagram</span></div>
+    <div class="flow">
+      <div class="flow-box">President (Executive Head)</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">Prime Minister (Head, Council of Ministers)</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">Council of Ministers (Cabinet / State / Deputy)</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">Executive (Secretary &amp; Subordinate Functionaries)</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Official Hierarchy — Level of Disposal <span class="tag tag-red">🔴</span></div>
+    <div class="flow">
+      <div class="flow-box">Secretary</div><div class="flow-arrow">↑</div>
+      <div class="flow-box">Spl. Secy / Addl. Secy / Joint Secretary</div><div class="flow-arrow">↑</div>
+      <div class="flow-box">Director / Deputy Secretary</div><div class="flow-arrow">↑</div>
+      <div class="flow-box">Under Secretary</div><div class="flow-arrow">↑</div>
+      <div class="flow-box">Section Officer</div><div class="flow-arrow">↑</div>
+      <div class="flow-box">Dealing Hand</div>
+    </div>
+    <div class="alert">⚠️ Max levels a file can pass through for a decision = <b>4 levels only</b> (Rule 14). Exam favourite!</div>
+  </div>
+  <div class="card">
+    <div class="card-title">AOB vs TOB Rules 1961 <span class="tag tag-orange">🟠</span></div>
+    <div class="compare">
+      <div class="comp-box comp-old"><b>AOB Rules</b>Allocation of Business Rules — allocates business among Ministries/Departments.</div>
+      <div class="comp-box comp-new"><b>TOB Rules</b>Transaction of Business Rules — defines authority &amp; responsibility of each Ministry/Cabinet/PM.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Attached vs Subordinate Offices <span class="tag tag-yellow">🟡</span></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Attached Office</th><th>Subordinate Office</th></tr>
+      <tr><td>Provides detailed executive direction; repository of info; advises Ministry</td><td>Field establishments; detailed execution under direction of Attached Office/Ministry</td></tr>
+      <tr><td>e.g. CPWD, Central Water Commission</td><td>e.g. CPWD Service Centre, CGHS Dispensary</td></tr>
+    </table></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Body Types — Quick Compare 🟢</div>
+    <ul class="simple">
+      <li><b>Constitutional</b> — under the Constitution (UPSC, Election Commission, CAG)</li>
+      <li><b>Statutory</b> — under an Act of Parliament (CVC, CIC, CBFC)</li>
+      <li><b>Autonomous</b> — govt-established per MoA (IIT, NIFT)</li>
+      <li><b>PSU</b> — Govt majority shareholding (BHEL, NTPC, ONGC)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= SECTION 4: DAK ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">4</div><div class="sec-title">Management of Dak (Ch. IV) 🟠<span class="hi">डाक प्रबंधन</span></div></div>
+  <div class="card">
+    <div class="flow">
+      <div class="flow-box">Initial Receipt (CR / IFC)</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">Diarist — Diarization</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">Dealing Hand</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">Concerned Officer in Hierarchy</div>
+    </div>
+    <p style="margin-top:8px;"><b>Rule 9-12:</b> Immediate/important dak by name → direct to officer. Outside office hours → Night Duty Clerk. All covers (except by-name/classified) opened by CR/IFC and date-stamped.</p>
+  </div>
+</div>
+
+<!-- ================= SECTION 5: FILE MGMT & NOTING (FULL) ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">5</div><div class="sec-title">File Management &amp; NOTING — Full Guide 🔴<span class="hi">फाइल प्रबंधन एवं टिप्पणी — पूर्ण मार्गदर्शिका</span></div></div>
+
+  <div class="card">
+    <div class="card-title">Rule 13-14: Process Sheets &amp; Disposal Level</div>
+    <p>Standard Process Sheets for repetitive cases (leave, GPF advance, HBA) — <b>no notes required</b>.</p>
+    <p>Max <b>4 levels</b> for decision. If levels jumped, on return the file passes through ALL jumped levels for reconsideration.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rule 15: Guidelines for NOTING 🔴 <span class="tag tag-red">Most Asked</span></div>
+    <ul class="simple">
+      <li>Notes must be <b>concise &amp; to the point</b>; extra material → Appendix</li>
+      <li><b>Black or Blue ink only</b> for handwritten notes (all staff/officers)</li>
+      <li><b>Dealing Hand:</b> full signature + name + date on <b>LEFT</b>, below note</li>
+      <li><b>Officer:</b> full signature on <b>RIGHT</b> + name + designation + date</li>
+      <li>Electronic environment → <b>Digital signature</b> at each level</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rule 16: Modification of Notes/Orders</div>
+    <ul class="simple">
+      <li>Senior officer must <b>NOT alter/replace</b> a junior's note — must record own fresh note</li>
+      <li><b>Pasting over a note to conceal is PROHIBITED</b></li>
+      <li>Withdrawal of a mistaken decision needs approval of an officer <b>senior</b> to the one who took the original decision</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rule 19-22: Oral Instructions</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Situation</th><th>Rule</th></tr>
+      <tr><td>Oral discussions</td><td>Record conclusions on file at earliest; get confirmed by participants</td></tr>
+      <tr><td>Oral instruction (no time to write)</td><td>Act, then follow up with written confirmation</td></tr>
+      <tr><td>Minister's PS conveys oral order</td><td>Must confirm in writing immediately</td></tr>
+      <tr><td>Urgent case, Minister on tour</td><td>Private Secretary conveys decision; confirmation obtained later</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rule 23-24: Filing &amp; Arrangement of Papers</div>
+    <ul class="simple">
+      <li>Papers punched on <b>left top corner</b>, tagged right-to-left chronologically</li>
+      <li>Notes portion tag → <b>left</b> side of cover; Correspondence portion tag → <b>right</b> side</li>
+      <li>File exceeds <b>150-200 pages</b> → mark "Volume I", continue as "Volume II"...</li>
+    </ul>
+    <div class="alert">📌 <b>Arrangement order (top→down):</b> Reference books → Notes (ending with note for consideration) → Running summary → Draft for approval → Correspondence → Appendices → Standing guard file → Other papers → Recorded files → Routine notes</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rule 25: Referencing 🔴</div>
+    <ul class="simple">
+      <li>Each part (Notes / Correspondence / Appendices) numbered <b>separately</b>, top-right corner</li>
+      <li>Document under consideration flagged as <b>"PUC"</b></li>
+      <li>Latest fresh receipt flagged as <b>"FR"</b> (multiple → FRI, FRII...)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rule 26-27: Linking &amp; Urgency Grading 🔴</div>
+    <p>Inter-connected files → <b>linked</b>; de-linked after action, taking extracts.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Grading</th><th>Use</th></tr>
+      <tr><td>Immediate</td><td>Prompt attention required</td></tr>
+      <tr><td>Priority</td><td>Precedence over ordinary cases</td></tr>
+      <tr><td>Top Priority</td><td>Extremely urgent cases</td></tr>
+    </table></div>
+    <div class="alert">🎨 <b>Colour code:</b> Lok Sabha file cover = <b>RED</b> &nbsp;|&nbsp; Rajya Sabha file cover = <b>GREEN</b></div>
+  </div>
+</div>
+
+<!-- ================= SECTION 6: FORMS OF COMMUNICATION - FULL FORMAT ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">6</div><div class="sec-title">Forms of Communication — FULL FORMAT 🔴<span class="hi">पत्राचार के प्रारूप — संपूर्ण</span></div></div>
+  <div class="alert">🔴 Exam Favourite: Identifying WHICH form to use for WHICH purpose, and matching salutation/complimentary close.</div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">1. Letter</span><span class="tag tag-red">🔴</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: <b>State Govts, constitutional bodies, attached/subordinate office heads, PSUs, public, statutory authorities.</b> Salutation: "Sir/Madam"</div>
+      <div class="format-box">No....
+Government of India
+Department of...
+New Delhi, the...(Date)
+To
+Subject:
+Sir/Madam,
+ With reference to your letter No...dated...
+ I am directed...
+Yours faithfully,
+(A.B.C.) Under Secretary to the Govt. of India</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">2. D.O. (Demi-Official) Letter</span><span class="tag tag-red">🔴</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: correspondence between officers to invite <b>personal attention</b>; personal &amp; friendly tone; written in <b>first person</b>. Officer writing should ordinarily not be more than 1-2 levels below addressee.</div>
+      <div class="format-box">D.O.No...
+GOVERNMENT OF INDIA
+Department of...
+New Delhi, the...
+My dear/Dear Shri...
+ We propose to draw up...
+ With regards,
+Yours sincerely,
+(XYZ) Deputy Secretary</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">3. Office Memorandum (O.M.)</span><span class="tag tag-red">🔴</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: corresponding with <b>other Departments</b> / calling info from or conveying info to employees; also attached/subordinate offices. Written in <b>third person</b>, <b>no salutation</b>, no complimentary close.</div>
+      <div class="format-box">No....
+OFFICE MEMORANDUM
+Subject:
+ The undersigned is directed to refer to...
+2. Doubts have been expressed whether...
+(A.B.C.) Under Secretary to the Govt. of India</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">4. Inter-Departmental Note (I.D. Note)</span><span class="tag tag-orange">🟠</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Earlier called <b>U.O. Note</b> (before 7th Edition CSMOP). Used for obtaining advice/views/concurrence of other Depts. Can be recorded on file OR as independent self-contained note.</div>
+      <div class="format-box">Department of...
+Subject:
+1. The present rules regulating...
+2. A question has now arisen whether...
+5. This department will be grateful for advice...
+(X.Y.Z.) Deputy Secretary
+Department of Legal Affairs — I.D. No...Dated...</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">5. Office Order</span><span class="tag tag-orange">🟠</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: <b>internal administration</b> — leave sanction, distribution of work, appointments, transfers.</div>
+      <div class="format-box">No....
+OFFICE ORDER (No. /2014)
+ Shri X.Y.Z., Section Officer, is granted
+earned leave for...days from...to...
+(A.B.C.) Under Secretary to the Govt. of India
+Copy to: Office order file / Cashier / Section</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">6. Order</span><span class="tag tag-orange">🟠</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: certain <b>financial sanctions</b> and communicating <b>disciplinary orders</b>.</div>
+      <div class="format-box">No....
+ORDER
+ Sanction of the President is accorded under
+rule 10 of the Delegation of Financial Powers
+Rules, to write off irrecoverable loss of Rs...
+(A.B.C.) Under Secretary to the Govt. of India</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">7. Notification</span><span class="tag tag-orange">🟠</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: notifying <b>statutory rules/orders</b>, appointments &amp; promotions of gazetted officers via <b>Gazette of India</b>.</div>
+      <div class="format-box">[To be published in the Gazette of India, Part I, Section 2]
+NOTIFICATION
+No... Shri XYZ, Under Secretary, is appointed
+to officiate as Deputy Secretary vice Shri...
+(A.B.C.) Joint Secretary
+To: The Manager, Govt. of India Press, Faridabad</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">8. Resolution</span><span class="tag tag-yellow">🟡</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used for: public announcement of <b>important policy decisions</b> — e.g. industrial licensing policy, appointment of committees/commissions of inquiry. Also published in Gazette (Part I, Section 1).</div>
+      <div class="format-box">RESOLUTION
+The Government of India have had under
+consideration the question of...
+(A.B.C.) Secretary to the Government of India
+ORDER
+ORDERED that a copy be communicated to...
+ORDERED that the resolution be published...</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">9. Press Communiqué / Note</span><span class="tag tag-yellow">🟡</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used when giving <b>wide publicity</b> to a decision. Communiqué = more formal, reproduced intact. Press Note = hand-out, press may edit/compress.</div>
+      <div class="format-box">Not to be published before...
+PRESS COMMUNIQUE/NOTE
+ In response to public demand, the Government
+has appointed a Commission to go into...
+Forwarded to Principal Information Officer, PIB
+(A.B.C.) Joint Secretary</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">10. Endorsement</span><span class="tag tag-green">🟢</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Used when a receipt returned in original / copy sent to another Dept for info/action. <b>Not used</b> for communicating copies to State Govts (use Letter form there).</div>
+      <div class="format-box">No....
+ A copy each of the papers mentioned below
+is forwarded for information and necessary
+action.
+(A.B.C.) Under Secretary to the Govt. of India
+List of papers forwarded: 1. 2.</div>
+    </div>
+  </div>
+
+  <div class="comm-card">
+    <div class="comm-head"><span class="name">11. Minutes</span><span class="tag tag-green">🟢</span></div>
+    <div class="comm-body">
+      <div class="comm-used">Record of a meeting, prepared immediately after &amp; circulated. Includes date/time/venue, chairperson, participants, conclusions, and responsible Ministry/Dept for follow-up action.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎯 One-Look Comparison — Which Form to Use?</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Need</th><th>Use This Form</th></tr>
+      <tr><td>Write to State Govt / Public</td><td>Letter</td></tr>
+      <tr><td>Personal attention from an officer</td><td>D.O. Letter</td></tr>
+      <tr><td>Info to/from another Dept or employees</td><td>Office Memorandum</td></tr>
+      <tr><td>Seek advice/concurrence from another Dept</td><td>Inter-Departmental Note</td></tr>
+      <tr><td>Internal admin (leave, transfer)</td><td>Office Order</td></tr>
+      <tr><td>Financial sanction / disciplinary order</td><td>Order</td></tr>
+      <tr><td>Gazette publication (rules, appointment)</td><td>Notification</td></tr>
+      <tr><td>Major policy announcement</td><td>Resolution</td></tr>
+      <tr><td>Publicity to media</td><td>Press Communiqué/Note</td></tr>
+      <tr><td>Forward a copy to a third party</td><td>Endorsement</td></tr>
+      <tr><td>Record of meeting</td><td>Minutes</td></tr>
+    </table></div>
+  </div>
+</div>
+
+<!-- ================= SECTION 7: DRAFTING RULES ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">7</div><div class="sec-title">Drafting of Communication (Ch. VII) 🔴<span class="hi">प्रारूपण नियम</span></div></div>
+  <div class="card">
+    <div class="card-title">Rule 41-42: Drafting Rules</div>
+    <ul class="simple">
+      <li>No draft needed for <b>straightforward cases</b> / standard-form communications</li>
+      <li>Draft must be <b>clear &amp; concise</b>; always refer to number/date of last communication</li>
+      <li>Two+ communications from same file, same date → separate serial no. before year, e.g. <b>A-11011/5(I)/2001-Est., A-11011/5(II)/2001-Est.</b></li>
+      <li>Signing officer's <b>name, designation, phone, fax, email</b> must be indicated</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">Rule 43: Authentication of Orders (MHA)</div>
+    <p>Orders in President's name → signed by officer of <b>Under Secretary rank or above</b> (regular/ex-officio secretariat status), per Authentication (Orders &amp; Other Instruments) Rules, 2002.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Rule 44: Addressing by Name</div>
+    <p>Normally <b>NOT</b> addressed by name (except classified/D.O.) unless matter needs personal attention due to special nature, urgency, or prior discussion.</p>
+  </div>
+</div>
+
+<!-- ================= SECTION 8: FILE NUMBERING ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">8</div><div class="sec-title">File Numbering System (Ch. VIII) 🟠<span class="hi">फाइल क्रमांक प्रणाली</span></div></div>
+  <div class="compare">
+    <div class="comp-box comp-old"><b>I. Functional File Numbering</b>4 hierarchical heads: Functional (basic) → Activity (primary) → Aspect/Operation (secondary) → Factor (tertiary)</div>
+    <div class="comp-box comp-new"><b>II. Subject Classification</b>Standard heads (serial numbers) + Standard sub-heads (no serial no.). Format: 3/1/2009-SR</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Part File &amp; Unique e-File 🟡</div>
+    <ul class="simple">
+      <li><b>Part File:</b> opened when main file unavailable; merged back later, removing duplicates</li>
+      <li><b>Unique e-File Number:</b> auto-generated; traceable by file no., date, catchwords</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= SECTION 9: RECORDS MANAGEMENT ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">9</div><div class="sec-title">Records Management (Ch. IX) 🟡<span class="hi">अभिलेख प्रबंधन</span></div></div>
+  <div class="card">
+    <ul class="simple">
+      <li>Files recorded <b>after action completed</b>, per Record Retention Schedule (RRS) &amp; NAI norms</li>
+      <li><b>Precedent Book</b> — updated by every section for important rulings</li>
+      <li>Accounts records → follow <b>Appendix 13, GFR</b></li>
+      <li>Establishment/personnel/housekeeping → common <b>RRS</b> (DARPG website)</li>
+      <li>Recorded file requisition → <b>prescribed form under Public Records Act, 1993</b></li>
+      <li>Security-classified records → <b>NOT transferred</b> to NAI (Sec. 10, Public Records Act 1993)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= SECTION 10: SECURITY ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">10</div><div class="sec-title">Security of Official Information (Ch. X) 🟡<span class="hi">सुरक्षा एवं गोपनीयता</span></div></div>
+  <div class="card">
+    <ul class="simple">
+      <li>RTI Act 2005 — officials must communicate accurate info that <b>can be disclosed</b></li>
+      <li>Classified files → reviewed <b>once in 5 years</b> for declassification</li>
+      <li>Carrying confidential papers outside office: <b>Section/Desk Officer</b> level allowed; Secret papers: <b>Under Secretary</b> level, with written JS-level authorization</li>
+      <li>Press info → normally through <b>Press Information Bureau (PIB)</b> only</li>
+      <li>"For Official Use Only" — used only if disclosure not in public interest</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= SECTION 11: CHECKS ON DELAYS ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">11</div><div class="sec-title">Checks on Delays (Ch. XI) 🔴<span class="hi">विलंब पर नियंत्रण</span></div></div>
+  <div class="card">
+    <div class="alert">⏱️ <b>Golden Rule:</b> No official shall keep a case pending for more than <b>7 working days</b> unless a higher limit is prescribed by departmental instructions. If exceeded → explanation must be recorded on the note portion.</div>
+    <p>Applies to: Parliamentary Assurances, Parliament Questions, RTI Applications, MP/VIP References, CAT/Court Cases — each maintained as separate records; E-Governance tools used for tracking.</p>
+  </div>
+</div>
+
+<!-- ================= SECTION 12: MISC ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">12</div><div class="sec-title">Miscellaneous (Ch. XII) 🟢<span class="hi">विविध</span></div></div>
+  <div class="card">
+    <ul class="simple">
+      <li><b>Citizen's/Client's Charter</b> — mandatory for all Ministries/Depts, displayed on website + Notice Board of IFC</li>
+      <li>7 components: Vision/Mission, Business details, Citizens/Clients, Service standards, Grievance mechanism, Expectations, Compensation commitment</li>
+      <li>Websites must follow <b>GIGW guidelines</b>; nodal officer to be appointed</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= SECTION 13: ONE PAGE REVISION ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">13</div><div class="sec-title">📋 One-Page Revision Sheet 🔴<span class="hi">अंतिम दिन पुनरावृत्ति</span></div></div>
+  <div class="card">
+    <div class="rev-grid">
+      <div class="rev-row"><span class="k">First Edition of CSMOP</span><span class="v">March 1955</span></div>
+      <div class="rev-row"><span class="k">13th Edition</span><span class="v">September 2010</span></div>
+      <div class="rev-row"><span class="k">14th Edition (Current)</span><span class="v">May 2015</span></div>
+      <div class="rev-row"><span class="k">Max levels for a decision</span><span class="v">4 levels</span></div>
+      <div class="rev-row"><span class="k">Noting ink colour</span><span class="v">Black / Blue only</span></div>
+      <div class="rev-row"><span class="k">Dealing Hand signs on</span><span class="v">Left, below note</span></div>
+      <div class="rev-row"><span class="k">Officer signs on</span><span class="v">Right side</span></div>
+      <div class="rev-row"><span class="k">File "Volume" threshold</span><span class="v">150-200 pages</span></div>
+      <div class="rev-row"><span class="k">Papers punched at</span><span class="v">Left top corner</span></div>
+      <div class="rev-row"><span class="k">Lok Sabha file cover colour</span><span class="v">Red</span></div>
+      <div class="rev-row"><span class="k">Rajya Sabha file cover colour</span><span class="v">Green</span></div>
+      <div class="rev-row"><span class="k">Classified file review cycle</span><span class="v">Once in 5 years</span></div>
+      <div class="rev-row"><span class="k">Max pending days (general rule)</span><span class="v">7 working days</span></div>
+      <div class="rev-row"><span class="k">Authentication order — min. rank</span><span class="v">Under Secretary</span></div>
+      <div class="rev-row"><span class="k">MP/VIP letter — ack. within</span><span class="v">15 days</span></div>
+      <div class="rev-row"><span class="k">MP/VIP letter — reply within</span><span class="v">Next 15 days</span></div>
+      <div class="rev-row"><span class="k">Min. level to reply to MP/VIP</span><span class="v">Under Secretary</span></div>
+      <div class="rev-row"><span class="k">U.O. Note earlier/renamed to</span><span class="v">Inter-Departmental Note</span></div>
+      <div class="rev-row"><span class="k">Authentication Rules year</span><span class="v">2002</span></div>
+      <div class="rev-row"><span class="k">Public Records Act year</span><span class="v">1993</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SECTION 14: MNEMONICS ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">14</div><div class="sec-title">🧠 Memory Tricks / Mnemonics<span class="hi">याद रखने की तरकीबें</span></div></div>
+  <div class="mnemonic">
+    <div class="word">"LDOOR ONPEM"</div>
+    <div class="exp">11 Forms of Communication → <b>L</b>etter, <b>D</b>.O. Letter, <b>O</b>ffice Memorandum, <b>O</b>ffice Order, <b>R</b>esolution, <b>O</b>rder, <b>N</b>otification, <b>P</b>ress Note, <b>E</b>ndorsement, <b>M</b>inutes, (I.D. Note)</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"L-P-T" for Urgency</div>
+    <div class="exp"><b>L</b>ow urgency levels rise: Priority → Top Priority → Immediate (most urgent). Remember: "Immediate" beats all!</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"RED = Lok Sabha" (Red carpet of Lok Sabha)</div>
+    <div class="exp">Lok Sabha file = RED cover; Rajya Sabha file = GREEN cover (like traffic: Lok Sabha "stops" everything = red; Rajya Sabha = go/green, the "elder" calm house)</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"Left Hand Assists, Right Hand Rules"</div>
+    <div class="exp">Dealing Hand (assistant/junior) signs on LEFT; Officer (senior/rules) signs on RIGHT of the note.</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"7 Days = 1 Week Rule"</div>
+    <div class="exp">No case pending beyond 7 working days without explanation — think of it as "1 working week" limit.</div>
+  </div>
+</div>
+
+<!-- ================= SECTION 15: PROBABLE QUESTIONS ================= -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">15</div><div class="sec-title">❓ Probable Exam Questions<span class="hi">संभावित प्रश्न</span></div></div>
+  <div class="qbox"><b>Q1.</b> What is the maximum number of levels through which a file can pass for a decision? <br><i>Ans: 4 levels (Rule 14)</i></div>
+  <div class="qbox"><b>Q2.</b> Which form of communication is written in the first person and used for personal attention? <br><i>Ans: D.O. (Demi-Official) Letter</i></div>
+  <div class="qbox"><b>Q3.</b> What was the earlier name of the Inter-Departmental Note? <br><i>Ans: U.O. Note (before 7th Edition CSMOP)</i></div>
+  <div class="qbox"><b>Q4.</b> What colour is used for Lok Sabha and Rajya Sabha file covers respectively? <br><i>Ans: Red and Green</i></div>
+  <div class="qbox"><b>Q5.</b> Within how many days should a case not be kept pending, as a general rule? <br><i>Ans: 7 working days (Ch. XI, Rule 60)</i></div>
+  <div class="qbox"><b>Q6.</b> On which side does the Dealing Hand sign a note, and on which side does the Officer sign? <br><i>Ans: Dealing Hand — Left; Officer — Right</i></div>
+  <div class="qbox"><b>Q7.</b> When is a file marked "Volume I", "Volume II"? <br><i>Ans: When notes + correspondence exceed 150-200 pages</i></div>
+  <div class="qbox"><b>Q8.</b> Which form is used for Gazette publication of statutory rules and appointments of gazetted officers? <br><i>Ans: Notification</i></div>
+  <div class="qbox"><b>Q9.</b> What is the minimum rank for authenticating orders issued in the name of the President? <br><i>Ans: Under Secretary or above</i></div>
+  <div class="qbox"><b>Q10.</b> How often must a classified file be reviewed for declassification? <br><i>Ans: Once in 5 years</i></div>
+  <div class="qbox"><b>Q11.</b> What is "PUC" and what is "FR" in file referencing? <br><i>Ans: PUC = Paper Under Consideration; FR = Fresh Receipt</i></div>
+  <div class="qbox"><b>Q12.</b> Which Act governs requisitioning of records, and in which year? <br><i>Ans: Public Records Act, 1993</i></div>
+</div>
+
+<div class="footer-note">CSMOP 14th Edition (May 2015), DAR&amp;PG · Prepared for India Post IP Exam self-study · Content summarized for exam revision — always refer to the original Manual for full legal text.</div>
+
+</div>
+
+<a href="#" onclick="window.print();return false;" class="pdf-btn" title="Print / Save as PDF">⬇️</a>
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Mail Network Optimization Project | मेल नेटवर्क अनुकूलन परियोजना | IP Exam Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ip-red:#dc2626; --ip-red-dark:#b91c1c;
+  --ip-blue:#1e3a8a; --ip-blue-dark:#172554;
+  --ip-gold:#d97706;
+  --tier-red:#dc2626; --tier-orange:#ea580c; --tier-yellow:#ca8a04; --tier-green:#16a34a;
+  --cream:#fbf8f3; --ink:#1c1a16; --card:#ffffff; --line:#e7e0d3;
+  --muted:#6b6255;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans Devanagari','Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:15px;padding-bottom:40px;}
+.hi{font-weight:500;}
+.en{font-style:italic;color:var(--muted);font-size:0.92em;}
+a{color:inherit;}
+
+header.top{background:linear-gradient(135deg,var(--ip-blue) 0%,var(--ip-blue-dark) 100%);color:#fff;padding:22px 16px 30px;position:relative;overflow:hidden;}
+header.top::after{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(217,119,6,.35),transparent 70%);}
+header.top h1{font-size:20px;font-weight:800;letter-spacing:-.02em;position:relative;z-index:1;}
+header.top .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative;z-index:1;}
+header.top .sub .hi{color:#fef3c7;}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative;z-index:1;}
+.meta-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:600;backdrop-filter:blur(6px);}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 14px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.legend span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);}
+
+h2.sec{font-size:18px;font-weight:800;color:var(--ip-blue-dark);margin:30px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--ip-gold);display:flex;align-items:center;gap:8px;}
+h2.sec .num{background:var(--ip-blue-dark);color:#fff;width:30px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+h3.sub{font-size:14.5px;font-weight:700;color:var(--ip-red-dark);margin:18px 0 8px;padding-left:8px;border-left:4px solid var(--ip-red);}
+</style>
+<style>
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);position:relative;}
+.card .tier{position:absolute;top:10px;right:10px;font-size:15px;}
+.card h4{font-size:13.5px;font-weight:700;margin-bottom:4px;padding-right:22px;}
+.card h4 .en{display:block;font-size:11.5px;font-weight:500;}
+.card p{font-size:12.5px;color:#3a3527;margin-top:3px;}
+.card p.hi-line{font-weight:500;}
+.card p.en-line{font-style:italic;color:var(--muted);font-size:12px;}
+.card .fact{background:#fef9ee;border:1px dashed var(--ip-gold);border-radius:8px;padding:6px 9px;margin-top:6px;font-size:12px;font-weight:600;color:#7c4a03;}
+.card .q{margin-top:7px;font-size:11.5px;background:#f0f6ff;border-left:3px solid var(--ip-blue);padding:5px 8px;border-radius:0 6px 6px 0;color:var(--ip-blue-dark);}
+.card .q b{color:var(--ip-red-dark);}
+
+.tier-red{border-left:4px solid var(--tier-red);}
+.tier-orange{border-left:4px solid var(--tier-orange);}
+.tier-yellow{border-left:4px solid var(--tier-yellow);}
+.tier-green{border-left:4px solid var(--tier-green);}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0 16px;border-radius:10px;border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;min-width:440px;}
+table th{background:var(--ip-blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;font-size:11.5px;}
+table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table tr:nth-child(even) td{background:#faf8f4;}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:14px 0;}
+.mm-root{background:var(--ip-blue-dark);color:#fff;border-radius:10px;padding:10px 14px;font-weight:800;font-size:14px;text-align:center;}
+.mm-level1{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px;}
+.mm-chip{background:#fff;border:2px solid var(--ip-blue);border-radius:8px;padding:7px 9px;font-size:11px;font-weight:700;color:var(--ip-blue-dark);text-align:center;}
+.mm-arrow{text-align:center;color:var(--ip-gold);font-size:18px;margin:2px 0;}
+.mm-sub{font-size:10px;font-weight:500;color:var(--muted);margin-top:2px;display:block;}
+
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:14px 0;}
+.flow-box{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;text-align:center;color:var(--ip-blue-dark);}
+.flow-box.decision{border-color:var(--ip-gold);background:#fffaf0;}
+.flow-box.end{border-color:var(--tier-green);background:#f0fdf4;color:#166534;}
+.flow-arrow{text-align:center;color:var(--muted);font-size:16px;padding:2px 0;}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0;}
+.flow-branch .flow-box{font-size:11px;}
+.branch-label{font-size:10.5px;font-weight:700;text-align:center;color:var(--ip-red-dark);margin-bottom:2px;}
+
+.timeline{position:relative;margin:16px 0 16px 6px;padding-left:20px;border-left:3px solid var(--ip-gold);}
+.tl-item{position:relative;padding-bottom:16px;}
+.tl-item::before{content:'';position:absolute;left:-26px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-red);}
+.tl-year{font-weight:800;color:var(--ip-red-dark);font-size:13px;}
+.tl-text{font-size:12px;margin-top:2px;}
+
+.mnemonic{background:linear-gradient(135deg,#fff7ed,#fef3c7);border:2px dashed var(--ip-gold);border-radius:12px;padding:12px 14px;margin:10px 0;}
+.mnemonic .label{font-weight:800;font-size:12px;color:var(--ip-red-dark);margin-bottom:4px;display:flex;align-items:center;gap:5px;}
+.mnemonic .body{font-size:12.5px;font-weight:600;color:#5c3a02;}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.compare-box{border-radius:10px;padding:10px 12px;font-size:12px;}
+.compare-box.before{background:#fef2f2;border:1px solid var(--ip-red);}
+.compare-box.after{background:#f0fdf4;border:1px solid var(--tier-green);}
+.compare-box h5{font-size:12.5px;font-weight:800;margin-bottom:6px;}
+.compare-box.before h5{color:var(--ip-red-dark);}
+.compare-box.after h5{color:#166534;}
+.compare-box ul{padding-left:16px;}
+.compare-box li{margin-bottom:4px;}
+
+.revision-box{background:var(--ip-blue-dark);color:#fff;border-radius:14px;padding:16px;margin:20px 0;}
+.revision-box h3{color:#fef3c7;font-size:15px;margin-bottom:10px;border:none;padding:0;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rev-item{background:rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:11.5px;}
+.rev-item b{color:var(--ip-gold);display:block;font-size:11px;margin-bottom:2px;}
+
+.lastday{background:#fef2f2;border:2px solid var(--ip-red);border-radius:14px;padding:14px 16px;margin:20px 0;}
+.lastday h3{color:var(--ip-red-dark);border:none;padding:0;font-size:15px;margin-bottom:8px;}
+.lastday ul{padding-left:18px;font-size:12px;}
+.lastday li{margin-bottom:5px;}
+
+.tocbar{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;scrollbar-width:none;}
+.tocbar::-webkit-scrollbar{display:none;}
+.tocbar a{flex-shrink:0;font-size:11px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:5px 11px;color:var(--ip-blue-dark);text-decoration:none;white-space:nowrap;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(220,38,38,.4);cursor:pointer;z-index:100;display:flex;align-items:center;gap:6px;}
+@media print{ .pdf-btn,.tocbar{display:none;} }
+
+footer{text-align:center;font-size:11px;color:var(--muted);padding:24px 14px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>📦 MAIL NETWORK OPTIMIZATION PROJECT (MNOP)</h1>
+  <div class="sub"><span class="hi">मेल नेटवर्क अनुकूलन परियोजना | </span><span class="en">Department of Posts, Govt. of India — IP Exam Notes</span></div>
+  <div class="meta-row">
+    <span class="meta-chip">📅 Initiated: March 2010 (11th Five-Year Plan)</span>
+    <span class="meta-chip">🏛️ Department of Posts, GoI</span>
+    <span class="meta-chip">🏆 National e-Governance Award 2012-13 / Silver Award 2013</span>
+  </div>
+</header>
+
+<div class="tocbar">
+  <a href="#s1">Background</a>
+  <a href="#s2">Objectives</a>
+  <a href="#s3">Methodology</a>
+  <a href="#s4">Before/After</a>
+  <a href="#s5">Resources/Cost</a>
+  <a href="#s6">Performance</a>
+  <a href="#revision">🎯 Revision</a>
+  <a href="#lastday">🔥 Last-Day</a>
+</div>
+
+<div class="wrap">
+
+<div class="legend">
+  <span style="color:var(--tier-red)">🔴 Very Important</span>
+  <span style="color:var(--tier-orange)">🟠 Frequently Asked</span>
+  <span style="color:var(--tier-yellow)">🟡 Conceptual</span>
+  <span style="color:var(--tier-green)">🟢 Quick Revision</span>
+</div>
+
+<!-- MIND MAP -->
+<h2 class="sec"><span class="num">🗺️</span>Topic Breakdown / विषय संरचना</h2>
+<div class="mindmap">
+  <div class="mm-root">MAIL NETWORK OPTIMIZATION PROJECT (MNOP)<br><span style="font-weight:500;font-size:11px">(Topic → Sub-topic → Micro → Nano Detail)</span></div>
+  <div class="mm-arrow">↓</div>
+  <div class="mm-level1">
+    <div class="mm-chip">Background & Scope<span class="mm-sub">22 Circles, 89+105 hubs</span></div>
+    <div class="mm-chip">Objectives<span class="mm-sub">6 key goals</span></div>
+    <div class="mm-chip">Methodology<span class="mm-sub">2-level sorting, 18 KPIs</span></div>
+    <div class="mm-chip">Before vs After<span class="mm-sub">Comparison chart</span></div>
+    <div class="mm-chip">Resources & Cost<span class="mm-sub">₹703.58 Cr breakdown</span></div>
+    <div class="mm-chip">Performance & Awards<span class="mm-sub">Revenue growth, e-Gov awards</span></div>
+  </div>
+</div>
+
+<!-- ================= SECTION 1 ================= -->
+<h2 class="sec" id="s1"><span class="num">1</span>BACKGROUND & SCOPE <span class="en" style="margin-left:6px;font-size:12px">पृष्ठभूमि एवं दायरा</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Definition & Scope<span class="en">Core definition — high MCQ value</span></h4>
+  <p class="hi-line">MNOP भारत सरकार की एक पहल है जिसका उद्देश्य Department of Posts के मेल नेटवर्क का समेकन (consolidation) व अनुकूलन (optimization) करना है, ताकि मेल परिचालन (mail operations) की गुणवत्ता में सुधार हो। यह परियोजना संपूर्ण देश को कवर करती है — 22 Postal Circles में फैली हुई।</p>
+  <p class="en-line">MNOP is a Government of India initiative for consolidation and optimization of the Mail Network of Dept. of Posts to improve mail operation quality. Scope covers entire country — 22 Postal Circles.</p>
+  <div class="fact">🔑 Total Postal Circles covered = 22</div>
+  <div class="q"><b>Q.</b> MNOP परियोजना कुल कितने Postal Circles को कवर करती है? — <b>Ans: 22</b></div>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Network Numbers — Master Table<span class="en">Extremely high MCQ probability — pure numeric facts</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Component</th><th>Number</th></tr>
+  <tr><td>Postal Circles covered</td><td>22</td></tr>
+  <tr><td>Speed Post sorting hubs (pan-India)</td><td>89</td></tr>
+  <tr><td>Intra-circle hubs</td><td>105</td></tr>
+  <tr><td>Delivery Post Offices</td><td>19,438</td></tr>
+  <tr><td>Total post offices mapped to sorting hubs</td><td>More than 5.5 Lakh</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"22-89-105-19438-5.5L" → <span class="hi">22 सर्कल में 89 स्पीड पोस्ट हब + 105 इंट्रा-सर्कल हब + 19,438 डिलीवरी PO + 5.5 लाख PO जुड़े</span></div></div>
+  <div class="q"><b>Q.</b> पहन-इंडिया नेटवर्क में Speed Post sorting hubs की संख्या कितनी है? — <b>Ans: 89</b></div>
+  <div class="q"><b>Q.</b> MNOP में कुल Delivery Post Offices की संख्या कितनी है? — <b>Ans: 19,438</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Timeline & Partner Agency</h4>
+  <p class="hi-line">परियोजना 11वीं पंचवर्षीय योजना (11th Plan) के तहत मार्च 2010 में शुरू हुई। कार्यान्वयन एजेंसी: Department of Posts, Government of India। प्रमुख कार्यक्षेत्र शहर: Hyderabad, Mumbai, Delhi, Bangalore, Kolkata, Chennai।</p>
+  <div class="fact">🔑 Initiated: March 2010 | Plan period: 11th Five-Year Plan | Since: 2010 (ongoing/Active)</div>
+  <div class="q"><b>Q.</b> MNOP किस पंचवर्षीय योजना के तहत शुरू हुई? — <b>Ans: 11th Plan (मार्च 2010)</b></div>
+</div>
+
+<!-- ================= SECTION 2 ================= -->
+<h2 class="sec" id="s2"><span class="num">2</span>OBJECTIVES <span class="en" style="margin-left:6px;font-size:12px">उद्देश्य</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>6 Key Objectives<span class="en">Likely list-based MCQ</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>#</th><th>Objective</th></tr>
+  <tr><td>1</td><td>मेल सेवाओं की गुणवत्ता में सुधार / Improve quality of mail services</td></tr>
+  <tr><td>2</td><td>केवल एक बार हैंडलिंग से अधिकतम सॉर्टिंग सुनिश्चित करना / Maximum sorting with only one handling</td></tr>
+  <tr><td>3</td><td>विभिन्न स्थानों के बीच मिस-सॉर्ट कम करना / Reduce missorts between locations</td></tr>
+  <tr><td>4</td><td>बेहतर प्रोसेस डिज़ाइन से अधिक प्रोसेसिंग / Higher processing with improved process design</td></tr>
+  <tr><td>5</td><td>India Post की विश्वसनीयता बढ़ाना / Improve trustworthiness & reliability for customers</td></tr>
+  <tr><td>6</td><td>प्रक्रियाओं का मानकीकरण व नेटवर्क जटिलता घटाना / Standardise processes, reduce network complexity</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> MNOP का एक प्रमुख उद्देश्य क्या है जो "handling" से संबंधित है? — <b>Ans: केवल एक बार हैंडलिंग से अधिकतम सॉर्टिंग सुनिश्चित करना</b></div>
+</div>
+<!-- ================= SECTION 3 ================= -->
+<h2 class="sec" id="s3"><span class="num">3</span>METHODOLOGY <span class="en" style="margin-left:6px;font-size:12px">कार्यप्रणाली</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Two-Level Automated Sorting System<span class="en">Core process flow — high MCQ value</span></h4>
+  <p class="hi-line">मेल/आर्टिकल प्राप्त होने के बाद, स्वचालित दो-स्तरीय सॉर्टिंग प्रणाली (automated two-level sorting system) मेल को डिलीवरी तिथि, स्थान, समय व प्रेषण के तरीके (सड़क/रेल/वायु मार्ग) के आधार पर अलग करती है। इसके बाद Mail Business Centre स्थानीय परिवहन के जरिए प्राप्तकर्ता तक डिलीवरी करता है।</p>
+  <div class="fact">🔑 Sorting system: Automated, TWO-LEVEL | Segregation basis: delivery date, location, time of day, mode of dispatch</div>
+  <div class="q"><b>Q.</b> MNOP में सॉर्टिंग सिस्टम कितने स्तर का है? — <b>Ans: दो-स्तरीय (Two-Level) स्वचालित सॉर्टिंग</b></div>
+</div>
+
+<!-- Flowchart -->
+<div class="flow">
+  <div class="flow-box">Mail/Article प्राप्त होना / Mail received</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box decision">Automated Two-Level Sorting (date, location, time, mode of dispatch)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Mail Business Centre को प्रेषण</div>
+  <div class="flow-arrow">↓ स्थानीय परिवहन (Local Transport)</div>
+  <div class="flow-box end">प्राप्तकर्ता को डिलीवरी + Online Tracking उपलब्ध</div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>KPIs & Staff Motivation</h4>
+  <p class="hi-line">पारदर्शिता सुनिश्चित करने हेतु कुल <b>18 Key Performance Indicators (KPIs)</b> बनाए गए हैं। कर्मचारियों के लिए बेहतर प्रदर्शन हेतु प्रोत्साहन (incentives) व प्रशिक्षण सत्र (training sessions) प्रस्तावित किए गए।</p>
+  <div class="fact">🔑 Total KPIs created = 18</div>
+  <div class="q"><b>Q.</b> MNOP में पारदर्शिता हेतु कुल कितने KPIs बनाए गए हैं? — <b>Ans: 18</b></div>
+</div>
+
+<!-- ================= SECTION 4 BEFORE/AFTER ================= -->
+<h2 class="sec" id="s4"><span class="num">4</span>STATUS BEFORE vs AFTER <span class="en" style="margin-left:6px;font-size:12px">कार्यान्वयन से पहले व बाद</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Comparison Chart<span class="en">Very common comparison-style MCQ</span></h4>
+  <div class="compare-grid">
+    <div class="compare-box before">
+      <h5>❌ पहले (Before) / Before</h5>
+      <ul>
+        <li>सॉर्टिंग में बहुत समय लगता था</li>
+        <li>Missorts बहुत आम थे</li>
+        <li>Tracking नहीं थी — कोई acknowledgement नहीं</li>
+        <li>कर्मचारियों के लिए कोई औपचारिक प्रशिक्षण नहीं</li>
+        <li>प्रेषण से पहले articles की scanning नहीं होती थी</li>
+        <li>Multilevel sorting भ्रमित करने वाली व समय लेने वाली थी</li>
+      </ul>
+    </div>
+    <div class="compare-box after">
+      <h5>✅ बाद (After) / After</h5>
+      <ul>
+        <li>Speed Post डिलीवरी प्रदर्शन में 1 दिन से अधिक सुधार</li>
+        <li>End-to-end tracking जानकारी (booking + delivery) उपलब्ध</li>
+        <li>Online tracking सक्षम हुई</li>
+        <li>तेज़ शिकायत निवारण (faster complaint redressal)</li>
+        <li>Articles को operational chain में आसानी से locate किया जा सकता है</li>
+        <li>Online monitoring से remedial action संभव</li>
+      </ul>
+    </div>
+  </div>
+  <div class="q"><b>Q.</b> MNOP लागू होने के बाद Speed Post डिलीवरी प्रदर्शन में कितना सुधार हुआ? — <b>Ans: 1 दिन से अधिक (more than a day)</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>Difficulties / Lessons Learnt</h4>
+  <p class="hi-line">150 वर्ष पुराने सरकारी विभाग को निजी क्षेत्र की प्रतिस्पर्धा में गुणवत्तापूर्ण सेवा देने हेतु ढालने में legacy issues; शहरी व ग्रामीण क्षेत्रों में असमान अवसंरचना (infrastructure); सीमित IT उपयोग से track-and-trace का पूरा लाभ ग्राहकों को नहीं मिल पाता; भर्ती पर प्रतिबंध के कारण कार्यबल की आयु बढ़ रही है (ageing workforce)।</p>
+  <div class="fact">🔑 Department age reference: 150 years old govt. department (legacy institution)</div>
+</div>
+
+<!-- ================= SECTION 5 RESOURCES/COST ================= -->
+<h2 class="sec" id="s5"><span class="num">5</span>RESOURCES & COST <span class="en" style="margin-left:6px;font-size:12px">संसाधन एवं लागत</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Approximate Cost of Implementation<span class="en">Very high MCQ probability — exact figures</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Component</th><th>Amount</th></tr>
+  <tr><td>Total Cost</td><td>₹703.58 Crores</td></tr>
+  <tr><td>Capital Expenditure</td><td>₹421.06 Crores</td></tr>
+  <tr><td>Operational Expenditure</td><td>₹282.53 Crores</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"703 = 421 + 282" → <span class="hi">कुल लागत 703.58 करोड़ = पूंजीगत व्यय 421.06 + परिचालन व्यय 282.53 करोड़ (लगभग)</span></div></div>
+  <div class="q"><b>Q.</b> MNOP की कुल अनुमानित कार्यान्वयन लागत कितनी है? — <b>Ans: ₹703.58 करोड़</b></div>
+  <div class="q"><b>Q.</b> पूंजीगत व्यय (Capital Expenditure) कितना है? — <b>Ans: ₹421.06 करोड़</b></div>
+</div>
+
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Resource Requirements — Overview</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Resource Type</th><th>Detail</th></tr>
+  <tr><td>Physical Infrastructure</td><td>नया hardware व sorting systems; सभी विभाग computerised; network connectivity</td></tr>
+  <tr><td>Human Resource</td><td>कंप्यूटर ज्ञान वाले युवाओं की भर्ती व प्रशिक्षण</td></tr>
+  <tr><td>Technology/IT</td><td>सभी विभागों के लिए software विकास व core system integration</td></tr>
+  </table></div>
+</div>
+<!-- ================= SECTION 6 PERFORMANCE ================= -->
+<h2 class="sec" id="s6"><span class="num">6</span>PERFORMANCE INDICATORS & AWARDS <span class="en" style="margin-left:6px;font-size:12px">प्रदर्शन संकेतक एवं पुरस्कार</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Revenue Growth (via Project Arrow)</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Year</th><th>Revenue</th></tr>
+  <tr><td>2010-11</td><td>₹1,346 Crore</td></tr>
+  <tr><td>2011-12</td><td>₹1,596 Crore</td></tr>
+  <tr><td>Growth Rate</td><td>18.55%</td></tr>
+  <tr><td>Public Footfall Increase</td><td>20.39%</td></tr>
+  </table></div>
+  <div class="fact">🔑 Revenue growth linked to "Project Arrow" | 18,612 post offices monitored + 783 being added</div>
+  <div class="q"><b>Q.</b> 2010-11 से 2011-12 के बीच राजस्व वृद्धि दर कितनी थी? — <b>Ans: 18.55%</b></div>
+  <div class="q"><b>Q.</b> Project Arrow के जरिए public footfall में कितनी वृद्धि हुई? — <b>Ans: 20.39%</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Awards & Recognition<span class="en">Common one-liner MCQ</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Award</th><th>Year</th><th>Category</th></tr>
+  <tr><td>National e-Governance Award</td><td>2012-13</td><td>General</td></tr>
+  <tr><td>Silver Award, National e-Governance Awards</td><td>2013</td><td>"Outstanding Performance in Citizen-Centric Service Delivery"</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> MNOP को 2013 में किस श्रेणी में Silver Award मिला? — <b>Ans: Outstanding Performance in Citizen-Centric Service Delivery</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>Project Champion & Contact Authority</h4>
+  <p class="hi-line">Project Champion: Department of Posts। संपर्क व्यक्ति: Mr. P. Gopinath — Secretary (Posts) & Chairman, Postal Board and Director General।</p>
+  <div class="fact">🔑 Project Champion = Department of Posts | Key contact designation = Secretary (Posts) & DG</div>
+</div>
+
+<!-- ============ TIMELINE ============ -->
+<h2 class="sec"><span class="num">📅</span>KEY TIMELINE <span class="en" style="margin-left:6px;font-size:12px">समय-रेखा</span></h2>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">March 2010</div><div class="tl-text">MNOP initiated as part of 11th Five-Year Plan scheme</div></div>
+  <div class="tl-item"><div class="tl-year">2010-11</div><div class="tl-text">Revenue: ₹1,346 Crore (baseline year)</div></div>
+  <div class="tl-item"><div class="tl-year">2011-12</div><div class="tl-text">Revenue: ₹1,596 Crore (18.55% growth); footfall +20.39%</div></div>
+  <div class="tl-item"><div class="tl-year">2012-13</div><div class="tl-text">National e-Governance Award conferred</div></div>
+  <div class="tl-item"><div class="tl-year">2013</div><div class="tl-text">Silver Award — "Outstanding Performance in Citizen-Centric Service Delivery"</div></div>
+  <div class="tl-item"><div class="tl-year">Current</div><div class="tl-text">Status: Active</div></div>
+</div>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-box" id="revision">
+  <h3>🎯 ONE-PAGE REVISION SHEET / एक-पृष्ठ रिवीज़न शीट</h3>
+  <div class="rev-grid">
+    <div class="rev-item"><b>Full Name</b>Mail Network Optimization Project (MNOP)</div>
+    <div class="rev-item"><b>Implementing Agency</b>Department of Posts, GoI</div>
+    <div class="rev-item"><b>Initiated</b>March 2010 (11th Plan)</div>
+    <div class="rev-item"><b>Postal Circles covered</b>22</div>
+    <div class="rev-item"><b>Speed Post sorting hubs</b>89</div>
+    <div class="rev-item"><b>Intra-circle hubs</b>105</div>
+    <div class="rev-item"><b>Delivery Post Offices</b>19,438</div>
+    <div class="rev-item"><b>Total POs mapped</b>&gt;5.5 Lakh</div>
+    <div class="rev-item"><b>Sorting system type</b>Automated, Two-Level</div>
+    <div class="rev-item"><b>Total KPIs</b>18</div>
+    <div class="rev-item"><b>Total Cost</b>₹703.58 Crore</div>
+    <div class="rev-item"><b>Capital Expenditure</b>₹421.06 Crore</div>
+    <div class="rev-item"><b>Operational Expenditure</b>₹282.53 Crore</div>
+    <div class="rev-item"><b>Revenue 2010-11 → 2011-12</b>₹1,346 Cr → ₹1,596 Cr (18.55%)</div>
+    <div class="rev-item"><b>Footfall increase</b>20.39%</div>
+    <div class="rev-item"><b>Delivery improvement (Speed Post)</b>&gt;1 day faster</div>
+    <div class="rev-item"><b>National e-Governance Award</b>2012-13</div>
+    <div class="rev-item"><b>Silver Award category</b>Citizen-Centric Service Delivery, 2013</div>
+    <div class="rev-item"><b>Project Champion</b>Department of Posts</div>
+    <div class="rev-item"><b>Current status</b>Active</div>
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION ============ -->
+<div class="lastday" id="lastday">
+  <h3>🔥 LAST-DAY REVISION NOTES / परीक्षा से एक दिन पहले</h3>
+  <ul>
+    <li><b>संख्याएं याद रखें क्रम में:</b> 22 (Circles) → 89 (Speed Post hubs) → 105 (Intra-circle hubs) → 19,438 (Delivery POs) → 5.5 Lakh+ (Total mapped POs)।</li>
+    <li><b>लागत विभाजन:</b> ₹703.58 Cr कुल = ₹421.06 Cr (Capital) + ₹282.53 Cr (Operational) — जोड़ करके verify करें, exam में स्वैप हो सकते हैं।</li>
+    <li><b>18 KPIs और 18.55% Growth Rate को कन्फ्यूज़ न करें</b> — दोनों 18 से जुड़े हैं पर अलग-अलग तथ्य हैं!</li>
+    <li><b>दो पुरस्कार अलग-अलग वर्ष के हैं:</b> National e-Governance Award = 2012-13 (सामान्य); Silver Award (Citizen-Centric Service Delivery) = 2013 — तारीखों को स्वैप न करें।</li>
+    <li><b>Two-Level Sorting</b> ही MNOP की core methodology है — automated प्रणाली जो date/location/time/mode of dispatch पर आधारित है।</li>
+    <li>Revenue वृद्धि "Project Arrow" के जरिए दर्शाई गई है (MNOP से जुड़ी योजना का संदर्भ) — यह cross-reference प्रश्न बन सकता है।</li>
+  </ul>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  📮 India Post IP Exam Portal · Mail Network Optimization Project (MNOP) — Department of Posts · Prepared for departmental exam revision
+</footer>
+
+<button class="pdf-btn" onclick="window.print()">⬇️ Save as PDF</button>
+
+</body>
+</html>

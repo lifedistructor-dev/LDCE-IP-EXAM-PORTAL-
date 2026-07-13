@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Modernization 2.0 — Overview & Modules | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+.header{background:linear-gradient(135deg,var(--blue) 0%,#00838F 55%,var(--green) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .hi{font-size:1.15rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.95rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.85rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.72rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.9rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.8rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.68rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.74rem;}
+table th{background:var(--blue);color:#fff;padding:6px 6px;text-align:left;}
+table td{padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.75rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:100px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.82rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.72rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.75rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.78rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.75rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.76rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.02rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.75rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.02rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.78rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.7rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0;}
+.modgrid .mod{background:#E1F5FE;border-radius:8px;padding:8px;font-size:0.72rem;border-left:3px solid var(--blue-light);}
+
+footer{text-align:center;color:var(--muted);font-size:0.7rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.75rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">IT आधुनिकीकरण 2.0</span></h1>
+  <div class="en">Overview and Salient Features of IT Modernization 2.0</div>
+  <div class="sub">Department of Posts | 20+ Modules Overview | CBS Manual Chapter-Q का पूरक</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">💻 IT 2.0 Modules</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. IT 2.0 Overview & Objective</a>
+    <a href="#ch2">2. IDAM (Identity & Access Mgmt)</a>
+    <a href="#ch3">3. Booking Solution</a>
+    <a href="#ch4">4. Bagging & Delivery</a>
+    <a href="#ch5">5. Door Step Services</a>
+    <a href="#ch6">6. CRM & Complaint Management</a>
+    <a href="#ch7">7. Treasury & Accounts Module</a>
+    <a href="#ch8">8. HR Module & Payroll</a>
+    <a href="#ch9">9. Carrier Mgmt, IMA, Dak Sewa App</a>
+    <a href="#ch10">10. Sorting, MIS, Philately</a>
+    <a href="#ch11">11. Inspection, Vigilance, Audit</a>
+    <a href="#ch12">12. Budget, PAO, Bank Reconciliation</a>
+    <a href="#ch13">13. BCP, Transfers, Exit Mgmt</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">🎯 अध्याय 1 → IT 2.0 का परिचय व उद्देश्य / Overview & Objective</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3><span class="hi">उद्देश्य / Objective</span></h3>
+      <p class="hi">उन्नत तकनीक, बेहतर कार्यक्षमता व उत्कृष्ट ग्राहक अनुभव के माध्यम से Department of Posts का आधुनिकीकरण करना।</p>
+      <p class="en">To modernize the Department of Posts through advanced technology, improved functionality, and enhanced customer experience.</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">💻 IT 2.0 के मुख्य तत्व / Key Elements</div>
+      <div class="branches">
+        <div class="branch">Technology Architecture — Cloud Computing, ML, AI-driven insights</div>
+        <div class="branch">Unified Data Centre (DC) & Disaster Recovery (DR) Transition</div>
+        <div class="branch">Comprehensive Digital Approach — व्यापार सफलता व ग्राहक-केंद्रित सेवाएं</div>
+        <div class="branch">IT 1.0 से IT 2.0 में Seamless Migration</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3 class="hi">अंतिम लक्ष्य</h3>
+      <p class="hi">पूरे भारत में एकीकृत, बुद्धिमान डाक सेवाएं — बढ़ी हुई automation, scalability व service reliability के साथ। IT-2 India Post को एक tech-enabled, future-ready संगठन बनाने की दिशा में रणनीतिक कदम है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Cloud-ML-AI = तकनीकी आधार" — Technology Architecture के 3 स्तंभ</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IT 2.0 का मुख्य उद्देश्य क्या है? <b>(Cloud, ML, AI के माध्यम से Department का आधुनिकीकरण)</b> IT 1.0 से IT 2.0 में संक्रमण किस प्रकार होता है? <b>(Unified DC-DR के माध्यम से Seamless Migration)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">🔐 अध्याय 2 → IDAM — Identity and Access Management</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — 7 बिंदु याद रखें</span>
+      <h3 class="hi">IDAM की मुख्य विशेषताएं</h3>
+    </div>
+    <table>
+      <tr><th>क्र.</th><th>विशेषता / Feature</th></tr>
+      <tr><td>1</td><td>Single Login (Web Application)</td></tr>
+      <tr><td>2</td><td>Role-based Cards — अनावश्यक card/menu उपयोगकर्ता को नहीं दिखते</td></tr>
+      <tr><td>3</td><td>Post-based Role Mapping</td></tr>
+      <tr><td>4</td><td>User-based Role Mapping</td></tr>
+      <tr><td>5</td><td>TOTP (Time-based One Time Password)</td></tr>
+      <tr><td>6</td><td>Device Registration</td></tr>
+      <tr><td>7</td><td>Simplified Post-to-Post Mapping (Maker/Checker सहित)</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SLR-PUT-DS" → Single login, Role cards, Post mapping, User mapping, TOTP, Device, Simplified mapping</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IDAM में TOTP का पूरा नाम क्या है? <b>(Time-based One Time Password)</b> Maker/Checker concept किस feature में शामिल है? <b>(Post-to-Post Mapping)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">📮 अध्याय 3 → Booking Solution</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3 class="hi">International Mail Booking Features</h3>
+      <div class="modgrid">
+        <div class="mod">Quick Book</div>
+        <div class="mod">Multiple Payment Channel / Dynamic QR</div>
+        <div class="mod">Booking through API/SFTP</div>
+        <div class="mod">Detailed info for International Mails</div>
+        <div class="mod">OTP Authentication for international booking</div>
+        <div class="mod">Auto popup of suggested country-services</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3 class="hi">अन्य Booking Features</h3>
+      <div class="modgrid">
+        <div class="mod">Service availability confirmation</div>
+        <div class="mod">Prohibited item list (country-specific)</div>
+        <div class="mod">Pickup & induction (bulk + retail)</div>
+        <div class="mod">Drop-off services</div>
+        <div class="mod">Retail Services एक जगह</div>
+        <div class="mod">Sovereign Gold Bond acceptance</div>
+        <div class="mod">e-IPO issue across counter</div>
+        <div class="mod">Auto-generation of Dynamic Barcode</div>
+        <div class="mod">EMO booking to destination BO</div>
+        <div class="mod">Unregistered Track Service</div>
+        <div class="mod">Saved address book (Pan-India)</div>
+        <div class="mod">COD Money order booking + authorization</div>
+        <div class="mod">Pincode-based local office view</div>
+        <div class="mod">Bulk booking Temporal</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "QMA-DOA" → Quick book, Multiple payment, API/SFTP, Detailed info, OTP, Auto popup</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> International mail booking में suggested services का auto popup किसके अनुसार दिखता है? <b>(विशेष देश के अनुसार)</b> Sovereign Gold Bond की सुविधा किस module में शामिल है? <b>(Booking Solution)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">📦 अध्याय 4 → Bagging व Delivery</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3 class="hi">Bagging Features</h3>
+      <table>
+        <tr><th>Feature</th></tr>
+        <tr><td>Bag scan missing report</td></tr>
+        <tr><td>Forward mail list concept शामिल</td></tr>
+        <tr><td>Admin bags (Stock/Camp/Special) closing option</td></tr>
+        <tr><td>PNOP concept bag closing — Sector-wise</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Delivery Features</span>
+      <div class="modgrid">
+        <div class="mod">Dashboard for current day mail statistics</div>
+        <div class="mod">OTP-based recall of article</div>
+        <div class="mod">Invoice article auto-reflect in Internal Mobile App</div>
+        <div class="mod">Option to check pending invoice article</div>
+        <div class="mod">Shift end व Force end in Delivery</div>
+        <div class="mod">Batch & Beat creation — simplified mapping</div>
+        <div class="mod">Auto sorting व sequencing of article</div>
+        <div class="mod">Monitoring of article data entry (Operators)</div>
+        <div class="mod">Tracking facility — Unregistered tracked items</div>
+        <div class="mod">Delivery of EMO बिना printout</div>
+        <div class="mod">Digital QR payment for COD</div>
+        <div class="mod">Real-time updation of delivery remarks</div>
+        <div class="mod">Digital signature capture</div>
+        <div class="mod">Postman return process simplified</div>
+        <div class="mod">No Beat EOD</div>
+        <div class="mod">Postman sorting before invoice</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "OTP recall, No Beat EOD" — Delivery के सबसे नए features</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Delivery module में article recall किस आधार पर होता है? <b>(OTP आधारित)</b> COD भुगतान किस माध्यम से डिजिटल रूप में होता है? <b>(QR Payment)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--red-dark);">🚪 अध्याय 5 → Door Step Services</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <div class="modgrid">
+        <div class="mod">Signature व Photo Capturing</div>
+        <div class="mod">Location-based Delivery</div>
+        <div class="mod">OTP/Aadhaar-based Delivery</div>
+        <div class="mod">Unregistered Track Service (Ordinary articles)</div>
+        <div class="mod">Pickup Management through Door Step</div>
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SLOUP" → Signature, Location, OTP/Aadhaar, Unregistered, Pickup</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Door Step Services में delivery का प्रमाणीकरण किन 2 तरीकों से होता है? <b>(OTP आधारित / Aadhaar आधारित)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#6A1B9A;">📞 अध्याय 6 → CRM व Complaint Management</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — 8 CRM Features</span>
+    </div>
+    <table>
+      <tr><th>क्र.</th><th>Feature</th></tr>
+      <tr><td>1</td><td>पूर्ण ऑनलाइन Contract Creation (mobile/portal)</td></tr>
+      <tr><td>2</td><td>Advance Bulk Customer के लिए Recharge Option</td></tr>
+      <tr><td>3</td><td>Contract ID वार Bill/Balance Viewing</td></tr>
+      <tr><td>4</td><td>Portal/DAK Sewa App से Contract Management</td></tr>
+      <tr><td>5</td><td>नए Partner Registration (individual/bulk/agent/vendor/franchise/DNK/RMFS)</td></tr>
+      <tr><td>6</td><td>सभी Customers के लिए Unique Customer ID</td></tr>
+      <tr><td>7</td><td>Personal व Business Dashboards</td></tr>
+    </table>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Complaint Management</span>
+      <p class="hi">शिकायत दर्ज करने के 3 माध्यम: Dak Sewa App, Portal, किसी भी Post Office में।</p>
+      <table>
+        <tr><th>Feature</th></tr>
+        <tr><td>Complaint Management Dashboard</td></tr>
+        <tr><td>Mobile Number आधारित Customer Complaint History</td></tr>
+        <tr><td>ग्राहक द्वारा Closure Confirmation</td></tr>
+        <tr><td>Feedback on resolution</td></tr>
+        <tr><td>Resolution Timeline — auto-escalation (Escalation Matrix के अनुसार)</td></tr>
+        <tr><td>Complaint Registration हेतु Mobile Number अनिवार्य</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Mobile नंबर = Complaint की चाबी" — दर्ज व history दोनों mobile number आधारित</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Complaint Registration हेतु कौन सी जानकारी अनिवार्य है? <b>(Mobile Number)</b> CRM में कितने प्रकार के Dashboard हैं? <b>(2 — Personal व Business)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#00695C;">💰 अध्याय 7 → Treasury व Accounts Module</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — 20 Treasury Features (संक्षेप में)</span>
+      <table>
+        <tr><th>क्र.</th><th>Feature</th></tr>
+        <tr><td>1-2</td><td>Bulk Stamp Sales; T-code हटाया, आसान menus</td></tr>
+        <tr><td>3</td><td>Cash balance की Real-time reflection</td></tr>
+        <tr><td>4-5</td><td>Manual voucher reports (Divisional heads); Transit period configuration</td></tr>
+        <tr><td>6</td><td>Consolidated ECB report (Divisional monitoring)</td></tr>
+        <tr><td>7</td><td>Sunday/Holiday कार्य हेतु Divisional Head अनुमति</td></tr>
+        <tr><td>9-10</td><td>Pending transaction notification; IPO/Stamp indent SO→HO</td></tr>
+        <tr><td>11-12</td><td>Stamp balance = closing balance का भाग; Stamp Advance concept</td></tr>
+        <tr><td>13</td><td>Treasury में Day Begin/Day End</td></tr>
+        <tr><td>16</td><td>Daily account verification (BO/SO at HO/AO)</td></tr>
+        <tr><td>17-18</td><td>Treasury हेतु अलग Wallet; TCB (individual Treasurers)</td></tr>
+        <tr><td>19</td><td>Part-wise Daily Account (Part-1,2,3)</td></tr>
+        <tr><td>20</td><td>Profit/Cost/Fund Centre concept हटाया</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Accounts (Sub Accounts)</span>
+      <div class="flow">
+        <div class="box">A. BO & SO Summary + Error Management</div><span class="arrow">➡</span>
+        <div class="box">B. ECB Review + Account Bag Closing</div><span class="arrow">➡</span>
+        <div class="box">C. BO Bag Receipt + Cash Book/Account</div><span class="arrow">➡</span>
+        <div class="box">D. SO Slip Generation + SO/BO Summary</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "T-code गया, Wallet आया" — Treasury में सबसे बड़ा बदलाव</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Daily Account कितने Parts में Generate होता है? <b>(3 — Part-1, Part-2, Part-3)</b> Treasury Module में कौन सा पुराना concept हटाया गया? <b>(Profit centre/Cost centre/Fund centre)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--gold-dark);">👥 अध्याय 8 → HR Module व Payroll</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — 10 HR Module Features</span>
+      <table>
+        <tr><th>क्र.</th><th>Feature</th></tr>
+        <tr><td>1</td><td>TRACK — दावा/भुगतान अनुरोध ट्रैकिंग</td></tr>
+        <tr><td>2</td><td>IPR — वार्षिक अचल संपत्ति विवरण भरना</td></tr>
+        <tr><td>3</td><td>LEAVE CONVERSION — लागू/स्वीकृत अवकाश परिवर्तन</td></tr>
+        <tr><td>4</td><td>NOC/FC — NOC, Fitness Certificate</td></tr>
+        <tr><td>5</td><td>LEAVE REPORT — Credit Report, Absentee Statement</td></tr>
+        <tr><td>6</td><td>Leave Management में Training/Tour period अपडेट</td></tr>
+        <tr><td>7</td><td>Post Mapping — Post ID से Authority mapping; Leave में login नहीं</td></tr>
+        <tr><td>8</td><td>Payroll Area/Sub Area हटाया गया</td></tr>
+        <tr><td>9</td><td>Maker/Checker HR Modules में शामिल</td></tr>
+        <tr><td>10</td><td>Digital Gradation List</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Pay Roll Features</span>
+      <div class="modgrid">
+        <div class="mod">Know Your Employee</div>
+        <div class="mod">Easy Pay Fixation (Departmental+GDS)</div>
+        <div class="mod">Hassle-free Payment interface</div>
+        <div class="mod">Easy Supplementary Bills processing</div>
+        <div class="mod">Account summary (HOA identification)</div>
+        <div class="mod">Easy Form-16 generation (individual+bulk)</div>
+        <div class="mod">Easy Transaction ID tracking</div>
+        <div class="mod">Maker-Checker in Payroll</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "TILNL" → Track, IPR, Leave conversion, NOC, Leave report — HR Module के 5 core features</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> HR Module में कर्मचारी अवकाश पर होने पर क्या प्रतिबंध है? <b>(Login की अनुमति नहीं)</b> कौन सा पुराना concept HR में हटाया गया? <b>(Payroll Area/Sub Area)</b></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:#00838F;">🚚 अध्याय 9 → Carrier Management, IMA व Dak Sewa App</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — Carrier Management</span>
+      <div class="modgrid">
+        <div class="mod">Carrier/Driver/Schedule Mapping</div>
+        <div class="mod">Carriers का Digitalization (Rail/Flight/Vehicle)</div>
+        <div class="mod">Simplified Schedule Creation</div>
+        <div class="mod">Sorting Plan का Automation</div>
+        <div class="mod">MMS concept (Trip/Driver Creation-Mapping)</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — IMA (Internal Mobile Application)</span>
+      <table>
+        <tr><th>Feature</th></tr>
+        <tr><td>E-Post की Booking (Mobile App से)</td></tr>
+        <tr><td>Letter Box (LB) Clearance Confirmation</td></tr>
+        <tr><td>Chat Bot सुविधा</td></tr>
+        <tr><td>Branch Office के माध्यम से Pickup Service</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Dak Sewa App (नागरिक App)</span>
+      <div class="modgrid">
+        <div class="mod">Customer Registration + Contract Creation</div>
+        <div class="mod">Mobile Number से Guest Login</div>
+        <div class="mod">Consignment Tracking</div>
+        <div class="mod">Chatbot — "Megha"</div>
+        <div class="mod">Pincode/GPS/Map से Post Office locate</div>
+        <div class="mod">Complaints Management Dashboard</div>
+        <div class="mod">Postage Calculation</div>
+        <div class="mod">Domestic/International Mail Booking</div>
+        <div class="mod">Article Recall Provision</div>
+        <div class="mod">eMO/ePost Booking</div>
+        <div class="mod">Pickup Request Raise & Track</div>
+        <div class="mod">POSB Interest / PLI-RPLI Premium Calculator</div>
+        <div class="mod">Biometric/PIN/Pattern Lock सुरक्षा</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Megha है Dak Sewa की Chatbot" — Dak Sewa App की खास पहचान</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Dak Sewa App में Chatbot का नाम क्या है? <b>(Megha)</b> IMA का पूरा नाम क्या है? <b>(Internal Mobile Application)</b></div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#37474F;">🗂️ अध्याय 10 → Sorting, MIS व Philately</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier green">🟢 त्वरित रिवीजन — Sorting</span>
+      <p class="hi">Rotation Duty List Option शामिल; Weekly Off Provision उपलब्ध।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — MIS Dashboard (Drill Down Reports)</span>
+      <table>
+        <tr><th>Establishment प्रकार</th><th>Office Count</th></tr>
+        <tr><td>Post Offices</td><td>1,55,453</td></tr>
+        <tr><td>Admin Offices</td><td>2,016</td></tr>
+        <tr><td>Hubs</td><td>763</td></tr>
+        <tr><td>RMS</td><td>487</td></tr>
+      </table>
+      <p style="font-size:0.72rem;">Hub उप-श्रेणियां: NSHs (239), CRCs (334), NPHs (190)</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Philately Features (8 बिंदु)</span>
+      <div class="modgrid">
+        <div class="mod">Philately में Maker/Checker concept</div>
+        <div class="mod">Dedicated Philately Online Store</div>
+        <div class="mod">My-Stamp Request व Online Design</div>
+        <div class="mod">PDA Open/Recharge/Closure/Transfer ऑनलाइन</div>
+        <div class="mod">Customer Portal में Stamps Calendar</div>
+        <div class="mod">PDA holder — Email/Mobile अपडेट सुविधा</div>
+        <div class="mod">Standing Request आधारित PDA Dispatch Data</div>
+        <div class="mod">Products Merging — नए Product हेतु सरलीकरण</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "PDA = Philately Deposit Account" — याद रखें ऑनलाइन प्रबंधन</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> MIS Dashboard के अनुसार कुल Post Office की संख्या क्या दर्शाई गई है? <b>(1,55,453)</b> PDA का पूर्ण नाम? <b>(Philately Deposit Account)</b></div>
+  </div>
+</div>
+
+<!-- CH11 -->
+<div class="chapter" id="ch11">
+  <div class="chapter-head" style="background:var(--red);">🔍 अध्याय 11 → Inspection, Investigation व Vigilance</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Inspection</span>
+      <div class="modgrid">
+        <div class="mod">Inspection Compliance की Online Tracking</div>
+        <div class="mod">निरीक्षित Office की Online Review</div>
+        <div class="mod">Inspection Questionnaire Online Marking</div>
+        <div class="mod">Inspection Schedule Online Creation</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Investigation & Vigilance</span>
+      <div class="modgrid">
+        <div class="mod">Investigation व Vigilance को Online लाया गया</div>
+        <div class="mod">संबंधित Officials को तुरंत Notification</div>
+        <div class="mod">Online Documentation</div>
+        <div class="mod">सभी स्तरों पर Monitoring</div>
+        <div class="mod">Recoveries/Subsistence Allowance — PAO Module से Link (Pay व Allowances हेतु)</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Vigilance अब PAO से जुड़ा" — Recovery/Subsistence linkage याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Vigilance में Recoveries/Subsistence Allowance किस Module से Link हैं? <b>(PAO Module)</b></div>
+  </div>
+</div>
+
+<!-- CH12 -->
+<div class="chapter" id="ch12">
+  <div class="chapter-head" style="background:var(--blue-light);">📊 अध्याय 12 → Budget, PAO Module व Bank Reconciliation</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Budget (4 बिंदु)</span>
+      <table>
+        <tr><th>क्र.</th><th>Feature</th></tr>
+        <tr><td>1</td><td>MEP व QEP (Quarterly Expenditure Plan) — DO wise व Head of Account wise Upload</td></tr>
+        <tr><td>2</td><td>RE, BE, Final Grant की System में Projection</td></tr>
+        <tr><td>3</td><td>Funds Surrender व Additional Funds Request</td></tr>
+        <tr><td>4</td><td>एक Unit से दूसरे Unit में Re-allocation (समान Head of Account)</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — PAO Module (5-चरण Cycle)</span>
+      <div class="flow">
+        <div class="box">1. DDO स्तर पर Objection + Compliance</div><span class="arrow">➡</span>
+        <div class="box">2. Pr. AO Objections का PAO द्वारा अनुपालन</div><span class="arrow">➡</span>
+        <div class="box">3. Cash Book/Account View & Verification</div><span class="arrow">➡</span>
+        <div class="box">4. Transfer Entries Creation & Verification</div><span class="arrow">➡</span>
+        <div class="box">5. PFMS को Cash Account Data अपडेट</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p class="hi"><b>Bank Reconciliation:</b> Bank Scroll Upload सुविधा; Reconciliation Process अब आसान।</p>
+      <p class="hi"><b>Error Book Management System:</b> Online Error Book; E-Search Bills सुविधा।</p>
+      <p class="hi"><b>Inventory:</b> DDO Cheque Books की Receipt व Supply हेतु PAO Provision।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "DDO→PAO→Cash→Transfer→PFMS" — PAO Module 5-Step Cycle</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PFMS को Data अपडेट करना PAO Cycle के किस चरण में होता है? <b>(अंतिम/5वें चरण में)</b> QEP का पूर्ण नाम? <b>(Quarterly Expenditure Plan)</b></div>
+  </div>
+</div>
+
+<!-- CH13 -->
+<div class="chapter" id="ch13">
+  <div class="chapter-head" style="background:#263238;">🔄 अध्याय 13 → BCP, Transfers व Exit Management</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — BCP (Business Continuity Plan)</span>
+      <p class="hi">BCP Plan को Divisional Heads द्वारा System में अनुमोदन; सभी Modules के लिए BCP उपलब्ध।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Transfers (Rule 38 व Rule 3)</span>
+      <table>
+        <tr><th>क्र.</th><th>बिंदु</th></tr>
+        <tr><td>1</td><td>कर्मचारी अपनी सुविधा अनुसार किसी भी समय Transfer हेतु आवेदन कर सकता है</td></tr>
+        <tr><td>2</td><td>Portal उपयोग हेतु Division Office की अनुमति की प्रतीक्षा आवश्यक नहीं</td></tr>
+        <tr><td>3</td><td>Employee Transfer Card, ESS में उपलब्ध</td></tr>
+        <tr><td>4</td><td>Transfer Schedule सूचना मिलते ही Employee Login में उपलब्ध</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Exit Management</span>
+      <div class="modgrid">
+        <div class="mod">ESS से आसानी से Exit Type Apply</div>
+        <div class="mod">आवश्यक दस्तावेज़ ESS से Upload</div>
+        <div class="mod">सभी प्रकार के Exit Plans शामिल</div>
+        <div class="mod">Pension ID व PPO Copy की आसान Generation</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier green">🟢 त्वरित रिवीजन</span>
+      <p class="hi"><b>Email/Message/Payment Gateway:</b> Email व SMS Notification सुविधा।<br><b>General Features:</b> सभी Modules Online; कोई भी Software Install करने की आवश्यकता नहीं।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Rule 38 & 3 = Transfer का आधार" — Transfer rules याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Transfer आवेदन किन Rules के अंतर्गत होता है? <b>(Rule 38 व Rule 3)</b> IT 2.0 के General Features में सबसे बड़ी सुविधा क्या है? <b>(कोई Software Install करने की आवश्यकता नहीं — पूर्ण Online)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>IDAM:</b> Single Login, Role/Post/User mapping, TOTP, Device Registration, Maker/Checker</div>
+    <div class="rev-card"><b>Booking:</b> Quick Book, Dynamic QR, API/SFTP, OTP auth (international), Sovereign Gold Bond</div>
+    <div class="rev-card"><b>Bagging/Delivery:</b> PNOP sector-wise closing; OTP recall; No Beat EOD; Digital QR for COD</div>
+    <div class="rev-card"><b>Door Step:</b> Signature/Photo, Location/OTP/Aadhaar delivery, Pickup management</div>
+    <div class="rev-card"><b>CRM:</b> Unique Customer ID, Personal+Business Dashboard; Complaint via Dak Sewa/Portal/PO</div>
+    <div class="rev-card"><b>Treasury/Accounts:</b> T-code हटाया; Wallet नया; Part-1,2,3 Daily Account; Profit/Cost centre हटाया</div>
+    <div class="rev-card"><b>HR/Payroll:</b> TRACK-IPR-Leave-NOC-Report; Payroll Area हटाया; Maker/Checker शामिल</div>
+    <div class="rev-card"><b>Carrier/IMA/Dak Sewa:</b> MMS concept; Chatbot "Megha"; Biometric security</div>
+    <div class="rev-card"><b>Philately:</b> PDA online management; Stamps Calendar; My-Stamp online design</div>
+    <div class="rev-card"><b>Vigilance:</b> Online — PAO Module से Recovery/Subsistence Link</div>
+    <div class="rev-card"><b>Budget/PAO:</b> MEP/QEP upload; 5-step PAO cycle → PFMS तक</div>
+    <div class="rev-card"><b>Transfer/Exit:</b> Rule 38 & 3; ESS से Exit Apply; PPO/Pension ID आसान</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ मुख्य बिंदु याद करें)</h2>
+  <ul>
+    <li>🔢 <b>IDAM = 7 features</b> — Single login, Role card, Post/User mapping, TOTP, Device Reg., Simplified mapping</li>
+    <li>🔢 <b>Treasury = 20 features</b> — T-code हटाया, Stamp Advance नया, Wallet अलग, Profit centre हटाया</li>
+    <li>🔢 <b>HR Module = 10 features</b> — TRACK/IPR/Leave Conv./NOC-FC/Leave Report + Post Mapping etc.</li>
+    <li>🔢 <b>MIS Dashboard:</b> Post Offices 1,55,453; Admin Offices 2,016; Hubs 763; RMS 487</li>
+    <li>🔢 <b>Philately = 8 features</b> — PDA online management सबसे महत्वपूर्ण</li>
+    <li>🔢 <b>Dak Sewa App Chatbot नाम = "Megha"</b></li>
+    <li>🔢 <b>Transfer Rules = Rule 38 & Rule 3</b></li>
+    <li>🔢 <b>PAO Module = 5-Step Cycle</b> (DDO→PAO→Cash→Transfer→PFMS)</li>
+    <li>🔢 <b>Budget = 4 Features</b> (MEP/QEP, RE/BE Projection, Surrender, Re-allocation)</li>
+    <li>🔢 <b>IT 2.0 General:</b> सभी Modules Online; कोई Software Installation नहीं</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: Department of Posts — "Overview of IT 2.0" Presentation &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

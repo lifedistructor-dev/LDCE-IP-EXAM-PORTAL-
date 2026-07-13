@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume IV Part I — Casual Leave & Pension | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#1B3A6B; --ip-gold:#E8A317;
+  --vimp:#C8102E; --freq:#E8720C; --conc:#D9A404; --quick:#1E8449;
+  --bg:#F6F4EF; --card:#FFFFFF; --ink:#22252A; --muted:#5B6068;
+  --line:#E2DFD7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Mangal','Nirmala UI',Georgia,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15.5px}
+.wrap{max-width:860px;margin:0 auto;padding:0 12px 60px}
+
+header.hero{background:linear-gradient(135deg,var(--ip-blue) 0%,#12294e 60%,#0c1d38 100%);color:#fff;padding:28px 16px 22px;text-align:center;border-bottom:5px solid var(--ip-gold)}
+header.hero .badge{display:inline-block;background:var(--ip-red);color:#fff;font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+header.hero h1{font-size:clamp(20px,4.5vw,30px);line-height:1.3}
+header.hero h1 .en{display:block;font-style:italic;font-weight:400;font-size:.72em;opacity:.9;margin-top:4px}
+header.hero .sub{margin-top:10px;font-size:13px;opacity:.85}
+header.hero .sub b{color:var(--ip-gold)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0}
+.legend span{font-size:12.5px;padding:4px 10px;border-radius:16px;font-weight:600}
+.lg-r{background:#FDECEE;color:var(--vimp)} .lg-o{background:#FEF0E2;color:var(--freq)}
+.lg-y{background:#FCF6DE;color:#9a7500} .lg-g{background:#E7F5EC;color:var(--quick)}
+
+nav.chips{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.97);padding:8px 4px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+nav.chips a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ip-blue);background:#fff;border:1.5px solid var(--ip-blue);border-radius:18px;padding:5px 12px;text-decoration:none;white-space:nowrap}
+nav.chips a:active{background:var(--ip-blue);color:#fff}
+
+section.ch{margin:26px 0;scroll-margin-top:60px}
+.ch-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-num{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--ip-red);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(200,16,46,.3)}
+.ch-num.blue{background:var(--ip-blue);box-shadow:0 3px 8px rgba(27,58,107,.3)}
+.ch-title h2{font-size:18px;color:var(--ip-blue);line-height:1.3}
+.ch-title .en{font-style:italic;font-weight:500;font-size:13px;color:var(--muted)}
+.ch-title .rules{font-size:11.5px;background:var(--ip-gold);color:#3a2b00;font-weight:700;border-radius:10px;padding:1px 8px;display:inline-block;margin-top:3px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.t-r{border-left:5px solid var(--vimp)} .card.t-o{border-left:5px solid var(--freq)}
+.card.t-y{border-left:5px solid var(--conc)} .card.t-g{border-left:5px solid var(--quick)}
+.card h3{font-size:15.5px;color:var(--ip-blue);margin-bottom:6px}
+.card h3 .en{display:block;font-style:italic;font-weight:500;font-size:12.5px;color:var(--muted)}
+.hi{font-weight:700;display:block}
+.en{font-style:italic;color:#4a4f57;display:block;font-size:.93em}
+.rule-tag{display:inline-block;background:var(--ip-blue);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:middle}
+ul.points{list-style:none;margin-top:6px}
+ul.points li{padding:7px 0 7px 2px;border-bottom:1px dashed var(--line)}
+ul.points li:last-child{border-bottom:none}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:480px}
+th{background:var(--ip-blue);color:#fff;padding:8px;text-align:left;font-size:12.5px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAF9F5}
+td .en{font-size:.9em}
+
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.fbox{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 14px;text-align:center;max-width:440px;width:100%;font-size:14px}
+.fbox.start{background:var(--ip-blue);color:#fff;border-color:var(--ip-blue)}
+.fbox.start .en{color:#cfd9ea}
+.fbox.warn{border-color:var(--vimp);background:#FDECEE}
+.fbox.ok{border-color:var(--quick);background:#E7F5EC}
+.farrow{color:var(--ip-red);font-size:22px;line-height:1;padding:3px 0;font-weight:800}
+.farrow small{display:block;font-size:11px;color:var(--muted);font-weight:600;font-style:italic}
+
+.dtree .branch{display:flex;gap:8px;margin:6px 0}
+.dtree .branch>div{flex:1;border-radius:10px;padding:8px;font-size:13px;text-align:center}
+.dtree .yes{background:#E7F5EC;border:2px solid var(--quick)}
+.dtree .no{background:#FDECEE;border:2px solid var(--vimp)}
+
+.mindmap{position:relative;padding:8px 0}
+.mm-center{background:var(--ip-red);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:800;margin-bottom:12px;box-shadow:0 3px 10px rgba(200,16,46,.35)}
+.mm-center .en{color:#ffd9de;font-weight:500}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mm-node{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px;font-size:12.5px;text-align:center}
+.mm-node b{color:var(--ip-red);display:block;font-size:14px}
+
+.timeline{border-left:3px solid var(--ip-gold);margin:10px 0 10px 10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-gold)}
+.tl-item .when{font-weight:800;color:var(--ip-red);font-size:13.5px}
+
+.examq{background:#FFF8E8;border:1.5px dashed var(--ip-gold);border-radius:10px;padding:9px 12px;margin:8px 0;font-size:13.5px}
+.examq::before{content:"📝 संभावित प्रश्न / Probable Question";display:block;font-weight:800;color:#8a6400;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px}
+
+.mnemo{background:linear-gradient(135deg,#EEF3FB,#E4EBF7);border:1.5px solid var(--ip-blue);border-radius:12px;padding:11px 13px;margin:8px 0}
+.mnemo .key{font-size:17px;font-weight:800;color:var(--ip-red);letter-spacing:1px}
+
+.rev-sheet{background:#fff;border:3px solid var(--ip-red);border-radius:16px;padding:14px;margin:12px 0}
+.rev-sheet h3{background:var(--ip-red);color:#fff;border-radius:8px;padding:6px 10px;font-size:15px;margin:-2px -2px 10px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+.rev-cell{background:#FAF9F5;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.8px}
+.rev-cell b{color:var(--ip-blue)}
+.rev-cell .num{color:var(--ip-red);font-weight:800}
+
+.footer-note{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media print{nav.chips{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="badge">IP EXAM PORTAL • PAPER I</span>
+  <h1>डाक मैनुअल भाग IV (भाग I) — दृश्य इन्फोग्राफिक
+    <span class="en">Postal Manual Volume IV Part I — Visual Infographic</span>
+  </h1>
+  <div class="sub">आकस्मिक अवकाश • पेंशन व उपदान • स्थापना पुनरीक्षण — <b>अध्याय III, IV, XVI, XVII</b> • नियम 99–546</div>
+</header>
+
+<div class="wrap">
+
+<div class="legend">
+  <span class="lg-r">🔴 परीक्षा हेतु अति महत्वपूर्ण / Very Important</span>
+  <span class="lg-o">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="lg-y">🟡 अवधारणा / Conceptual</span>
+  <span class="lg-g">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+
+<nav class="chips">
+  <a href="#overview">परिचय</a>
+  <a href="#ch3">Ch 3 CL</a>
+  <a href="#pension-basic">Pension Basics</a>
+  <a href="#pension-process">Pension Process</a>
+  <a href="#gratuity">Gratuity</a>
+  <a href="#family-pension">Family Pension</a>
+  <a href="#commutation">Commutation</a>
+  <a href="#nps">NPS</a>
+  <a href="#wca">WC Act</a>
+  <a href="#ch1617">Ch 16-17 Establishment</a>
+  <a href="#master">🔴 Master Numbers</a>
+  <a href="#mnemo">Mnemonics</a>
+  <a href="#rev">One-Page Revision</a>
+  <a href="#lastday">Last Day Notes</a>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="ch" id="overview">
+  <div class="ch-head">
+    <div class="ch-num blue">📘</div>
+    <div class="ch-title">
+      <h2>विषय एवं परिभाषा <span class="en">Topic & Definition</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 यह भाग किस बारे में है? <span class="en">What Does This Part Cover?</span></h3>
+    <span class="hi">भाग IV (भाग I) में <u>कर्मचारियों की सेवा-शर्तों</u> से जुड़े चार प्रमुख विषय हैं — आकस्मिक अवकाश, पेंशन व उपदान (CCS Pension Rules 1972 आधारित), श्रमिक क्षतिपूर्ति अधिनियम, तथा स्थापना पुनरीक्षण के सामान्य नियम।</span>
+    <span class="en">Volume IV Part I covers four key service-condition topics: Casual Leave, Pension & Gratuities (based on CCS(Pension) Rules 1972), Workmen's Compensation Act, and General Rules for Revision of Establishment.</span>
+    <div class="examq">
+      <span class="hi">प्रश्न: पेंशन, पारिवारिक पेंशन व मृत्यु-सह-सेवानिवृत्ति उपदान किन नियमों द्वारा शासित हैं? → CCS (Pension) Rules, 1972 (नियम 103)</span>
+      <span class="en">Q: Pension, family pension & DCRG are governed by? → CCS (Pension) Rules, 1972</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 मानसिक मानचित्र <span class="en">Mind Map — Structure</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">डाक मैनुअल भाग IV (I)<span class="en">Service Conditions • Rules 99–546</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>Ch III</b>आकस्मिक अवकाश<br><i>Casual Leave</i><br>R. 99–102</div>
+        <div class="mm-node"><b>Ch IV</b>पेंशन व उपदान<br><i>Pension & Gratuities</i><br>R. 103–152</div>
+        <div class="mm-node"><b>Ch XVI</b>स्थापना पुनरीक्षण — सामान्य<br><i>Revision — General</i><br>R. 523–524</div>
+        <div class="mm-node"><b>Ch XVII</b>स्थापना पुनरीक्षण — PO/RMS<br><i>Revision — PO & RMS</i><br>R. 525–546</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER III: CASUAL LEAVE ================= -->
+<section class="ch" id="ch3">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>आकस्मिक अवकाश <span class="en">Casual Leave</span></h2>
+      <span class="rules">नियम / Rules 99–102</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 99 — मूल स्वरूप <span class="en">Rule 99 — Basic Nature</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">आकस्मिक अवकाश <b>मान्यता-प्राप्त अवकाश नहीं</b> — भारत सरकार के किसी नियम के अधीन नहीं; कर्मचारी को <b>ड्यूटी से अनुपस्थित नहीं</b> माना जाता, वेतन बाधित नहीं होता</span>
+          <span class="en">CL is NOT a recognized form of leave, not subject to Govt. of India rules; official on CL is NOT treated as absent from duty, pay is not intermitted</span></li>
+      <li>🔴 <span class="rule-tag">(a)</span><span class="hi">अधिकतम <b>8 दिन</b> प्रति कैलेंडर वर्ष (सामान्य स्टाफ); <b>डाक औषधालय स्टाफ (Postal Dispensary)</b> हेतु <b>10 दिन</b></span>
+          <span class="en">Maximum 8 days per calendar year (general staff); 10 days for Postal Dispensary Staff</span></li>
+      <li>🟠 <span class="rule-tag">(b)</span><span class="hi">यह केवल <b>अधिकतम सीमा</b> है — किसी का इस पर अधिकार के रूप में दावा नहीं</span>
+          <span class="en">This is a maximum only; no one can claim it as a matter of right</span></li>
+      <li>🔴 <span class="rule-tag">(c)</span><span class="hi">सामान्यतः 1, 2 या 3 दिन के लिए; <b>एक बार में 5 दिन से अधिक नहीं</b>; गजटेड अवकाश/रविवार के साथ जोड़ने (prefix/suffix) को हतोत्वाहित किया जाता है</span>
+          <span class="en">Ordinarily for 1-3 days; NOT exceeding 5 days at any one time; prefixing/suffixing to holidays discouraged</span></li>
+      <li>🟢 <span class="rule-tag">(d)</span><span class="hi">शर्त: CL के कारण <b>कोई अतिरिक्त व्यय नहीं</b> होना चाहिए</span>
+          <span class="en">Condition: no extra expenditure should be incurred due to CL</span></li>
+      <li>🟠 <span class="rule-tag">(e)</span><span class="hi">CL स्वीकृत करने वाला सक्षम प्राधिकारी = <b>कार्यालय प्रमुख</b>; यदि आवेदक स्वयं कार्यालय प्रमुख है तो उससे तुरंत वरिष्ठ अधिकारी; निर्णय <b>अंतिम</b></span>
+          <span class="en">Competent authority = Head of Office; if applicant IS the Head of Office, then the immediately superior authority; decision is FINAL</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: सामान्य स्टाफ व डाक औषधालय स्टाफ के लिए CL की अधिकतम सीमा? → सामान्य: 8 दिन; औषधालय: 10 दिन (नियम 99a)</span>
+      <span class="en">Q: Max CL limit for general staff vs Postal Dispensary Staff? → 8 days vs 10 days</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 महत्वपूर्ण Notes — R.99 <span class="en">Important Notes under R.99</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">NOTE 1: <b>शाखा पोस्टमास्टर</b> या <b>GDS उप-पोस्टमास्टर</b> — कार्यालय प्रमुख नहीं माना जाता</span>
+          <span class="en">NOTE 1: A Branch Postmaster or GDS Sub-Postmaster is NOT Head of Office for this purpose</span></li>
+      <li>🟠 <span class="hi">NOTE 2: पोस्टमैन/ग्रामीण डाक सेवक/मेल-गार्ड/चतुर्थ श्रेणी — विकल्प (substitute) की व्यवस्था करने वाला अधिकारी ही CL मंजूर करने का सक्षम अधिकारी</span>
+          <span class="en">NOTE 2: For postmen/village postmen/mail-guards/Class IV — authority arranging substitute = authority competent to sanction CL</span></li>
+      <li>🟡 <span class="hi">NOTE 3: वर्ष के मध्य में सेवा में शामिल होने पर — सक्षम अधिकारी पूर्ण 8/10 दिन या आनुपातिक भाग देने का विवेकाधिकार रखता है</span>
+          <span class="en">NOTE 3: Joining mid-year — competent authority has discretion to grant full or proportionate CL</span></li>
+      <li>🟢 <span class="hi">NOTE 4: 8-दिन सीमा वाले कार्यालय से 10-दिन सीमा वाले (या विपरीत) में स्थानांतरण — कार्यालय प्रमुख राशि तय करेगा</span>
+          <span class="en">NOTE 4: Transfer between 8-day-limit and 10-day-limit offices — Head of Office determines admissible CL</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 100 — अतिरिक्त व्यय कब स्वीकार्य? <span class="en">Rule 100 — When Extra Expenditure is Allowed</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>स्थिति / Case</th><th>व्यय / Expenditure</th></tr>
+      <tr><td><span class="hi">RMS में सॉर्टिंग असिस्टेंट/मेल-गार्ड/मेलमैन/चतुर्थ श्रेणी — CL पर, कोई leave reserve उपलब्ध नहीं</span><span class="en">RMS Sorting Asst./Mail-guard/Mailman/Class IV on CL, no leave reserve available</span></td><td class="hi">ओवरटाइम भत्ता / Overtime allowance (a)</td></tr>
+      <tr><td><span class="hi">डाकघरों में पोस्टमैन व चतुर्थ श्रेणी सेवकों की जगह</span><span class="en">In post offices, substitutes for postman & Class IV</span></td><td class="hi">विकल्प नियुक्ति / Employ substitutes (b)</td></tr>
+      <tr><td><span class="hi">एकल/द्वि-हस्तचालित डाकघर, टेलीग्राफ शाखाएँ, रिकॉर्ड कार्यालय जहाँ स्थानीय व्यवस्था संभव नहीं</span><span class="en">Single/two-handed POs, telegraph branches, record offices where local arrangement not possible</span></td><td class="hi">यात्रा भत्ता / Travelling allowance (c)</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 नियम 102 — अभिलेखन <span class="en">Rule 102 — Recording</span></h3>
+    <ul class="points">
+      <li><span class="hi">CL को अनुपस्थिति-विवरणी या सेवा-पुस्तिका में <b>दर्ज नहीं</b> किया जाता — केवल <b>फॉर्म Est-50</b> की loose sheets में</span>
+          <span class="en">CL need NOT be reported/recorded in service books; noted only in loose sheets Form Est-50</span></li>
+      <li><span class="hi">निरीक्षण अधिकारी इन CL शीटों के एक अनुपात की जाँच करेंगे</span>
+          <span class="en">Inspecting Officers should scrutinise a proportion of these CL sheets</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: आकस्मिक अवकाश किस फॉर्म में दर्ज होता है? → Est-50 (नियम 102)</span>
+      <span class="en">Q: Casual leave is recorded in which form? → Est-50</span>
+    </div>
+  </div>
+</section>
+<!-- ================= PENSION BASICS ================= -->
+<section class="ch" id="pension-basic">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>पेंशन नियम व वर्ग <span class="en">Pension Rules & Classes</span></h2>
+      <span class="rules">नियम / Rules 103–109</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 103–104 — मूल नियम व पात्रता <span class="en">Rules 103–104 — Governing Rules & Eligibility</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">पेंशन, पारिवारिक पेंशन व DCRG — <b>CCS (Pension) Rules, 1972</b> द्वारा शासित</span>
+          <span class="en">Pension, family pension & DCRG governed by CCS (Pension) Rules, 1972</span></li>
+      <li>🔴 <span class="hi">स्थायी कर्मचारी: <b>न्यूनतम 10 वर्ष</b> अर्हकारी सेवा पर पेंशन पात्र; अस्थायी कर्मचारी: अधिवर्षिता/अशक्तता पर <b>10 वर्ष+</b>, स्वैच्छिक सेवानिवृत्ति पर <b>20 वर्ष+</b></span>
+          <span class="en">Permanent employees: pension eligible after min 10 years; Temporary: 10+ years (superannuation/invalidation), 20+ years (voluntary retirement)</span></li>
+    </ul>
+    <div class="tbl-wrap"><table>
+      <tr><th>#</th><th>पेंशन वर्ग / Class of Pension</th></tr>
+      <tr><td>1</td><td><span class="hi">अधिवर्षिता पेंशन (Superannuation)</span><span class="en">On retirement after superannuation</span></td></tr>
+      <tr><td>2</td><td><span class="hi">सेवानिवृत्ति पेंशन (Retiring)</span><span class="en">Voluntary/premature retirement before superannuation</span></td></tr>
+      <tr><td>3</td><td><span class="hi">निगम/कंपनी में समाहरण पर पेंशन</span><span class="en">On absorption in Corporation/Company/Body</span></td></tr>
+      <tr><td>4</td><td><span class="hi">विभाग के केंद्रीय स्वायत्त निकाय में रूपांतरण पर</span><span class="en">On conversion of dept. into Central Autonomous Body</span></td></tr>
+      <tr><td>5</td><td><span class="hi">अशक्तता पेंशन (Invalid)</span><span class="en">On being declared permanently incapacitated</span></td></tr>
+      <tr><td>6</td><td><span class="hi">क्षतिपूर्ति पेंशन (Compensation)</span><span class="en">On abolition of permanent post, no alternate post</span></td></tr>
+      <tr><td>7</td><td><span class="hi">अनिवार्य सेवानिवृत्ति पेंशन — दंड स्वरूप; <b>2/3 से कम या पूर्ण से अधिक नहीं</b></span><span class="en">Compulsory retirement (penalty) — not less than 2/3 nor more than full compensation pension</span></td></tr>
+      <tr><td>8</td><td><span class="hi">अनुकंपा भत्ता — बर्खास्तगी पर; राशि <b>2/3 से अधिक नहीं</b></span><span class="en">Compassionate allowance — on dismissal; not exceeding 2/3 of pension</span></td></tr>
+      <tr><td>9</td><td><span class="hi">न्यूनतम पेंशन <b>₹1,913/माह</b>; अधिकतम <b>वेतन+DP का 50%</b></span><span class="en">Minimum pension Rs. 1,913 p.m.; maximum 50% of highest pay+DP</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: पेंशन की न्यूनतम मासिक राशि क्या है? → ₹1,913 (नियम 104.9)</span>
+      <span class="en">Q: Minimum monthly pension amount? → Rs. 1,913</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 105 — समय-पूर्व सेवानिवृत्ति <span class="en">Rule 105 — Premature Retirement</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>30 वर्ष</b> अर्हकारी सेवा पूर्ण होने पर — कर्मचारी स्वयं सेवानिवृत्त हो सकता है, या जनहित में नियुक्ति प्राधिकारी द्वारा आवश्यक किया जा सकता है</span>
+          <span class="en">After 30 years qualifying service — may retire himself, or be required by Appointing Authority in public interest</span></li>
+      <li>🔴 <span class="hi">दोनों पक्षों को <b>3 माह की पूर्व लिखित सूचना</b> देनी होगी; प्राधिकारी 3 माह के वेतन के बदले तुरंत सेवानिवृत्ति भी दे सकता है</span>
+          <span class="en">Both parties must give 3 months' prior written notice; authority may give 3 months' pay in lieu of notice</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: समय-पूर्व सेवानिवृत्ति हेतु सूचना अवधि कितनी है? → 3 माह (नियम 105)</span>
+      <span class="en">Q: Notice period for premature retirement? → 3 months</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 106–109 — शीघ्र निपटान के अनुदेश <span class="en">Rules 106–109 — Prompt Disposal Instructions</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.107</span><span class="hi">अधीक्षक/प्रथम श्रेणी पोस्टमास्टर — <b>प्रत्येक माह की 1 तारीख</b> को परिमंडल प्रमुख को लंबित पेंशन आवेदनों की विवरणी <b>फॉर्म Est-52</b> में प्रस्तुत करे; परिमंडल कार्यालय समेकित विवरणी <b>फॉर्म Est-53</b> में बनाए</span>
+          <span class="en">Supdt./1st class PM submits pending pension applications return in Form Est-52 to HoC on 1st of each month; consolidated in Form Est-53</span></li>
+      <li>🟡 <span class="rule-tag">R.108</span><span class="hi"><b>अनंतिम पेंशन (Provisional Pension)</b> — जब मामला 1 माह में मंजूर न हो सके; CCS(Pension) नियम 64 के अंतर्गत; भुगतान <b>सेवानिवृत्ति के 1 माह के भीतर</b>, प्रभावी तिथि से</span>
+          <span class="en">Provisional Pension when case can't be sanctioned within a month; under Rule 64; disbursed within 1 month of ceasing to hold post</span></li>
+      <li>🟢 <span class="rule-tag">R.106</span><span class="hi">विलंब पर परिमंडल प्रमुख को पूर्ण स्पष्टीकरण व उत्तरदायी अधिकारियों के नाम देने होंगे</span>
+          <span class="en">HoC to submit full explanation & names of officers at fault for delays</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: अधीक्षक द्वारा लंबित पेंशन आवेदनों की मासिक विवरणी किस फॉर्म में व कब? → Est-52, प्रत्येक माह की 1 तारीख को (नियम 107)</span>
+      <span class="en">Q: Supdt.'s monthly return of pending pension applications — form & when? → Est-52, on 1st of each month</span>
+    </div>
+  </div>
+</section>
+<!-- ================= PENSION PROCESS TIMELINE ================= -->
+<section class="ch" id="pension-process">
+  <div class="ch-head">
+    <div class="ch-num">🕒</div>
+    <div class="ch-title">
+      <h2>पेंशन प्रक्रिया — 2 वर्ष पूर्व से <span class="en">Pension Process — Starting 2 Years Before Retirement</span></h2>
+      <span class="rules">नियम / Rules 110–124 ⭐ सर्वाधिक पूछा गया विषय</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 समय-रेखा — सेवानिवृत्ति-पूर्व कार्रवाई <span class="en">Timeline — Pre-Retirement Action</span></h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="when">2 वर्ष पूर्व / 2 years before</div>
+        <span class="hi">R.110: कार्यालय प्रमुख <b>फॉर्म 7</b> में पेंशन-पत्रों की तैयारी शुरू करे</span>
+        <span class="en">Head of Office begins preparation of pension papers in Form 7</span></div>
+      <div class="tl-item"><div class="when">10 माह पूर्व / 10 months before</div>
+        <span class="hi">R.114(1)(c): तीसरा चरण पूर्ण — अर्हकारी सेवा का प्रमाणपत्र कर्मचारी को; <b>फॉर्म 4 व 5</b> भेजे जाएँ</span>
+        <span class="en">3rd stage complete — certificate of qualifying service issued; Forms 4 & 5 sent</span></div>
+      <div class="tl-item"><div class="when">8 माह पूर्व / 8 months before</div>
+        <span class="hi">R.114(2): चरण (a)(b)(c) पूर्ण होने चाहिए; कर्मचारी फॉर्म 4-5 पूर्ण कर कार्यालय प्रमुख को लौटाए</span>
+        <span class="en">Stages (a)(b)(c) must be completed; employee returns completed Forms 4 & 5</span></div>
+      <div class="tl-item"><div class="when">6 माह पूर्व / 6 months before</div>
+        <span class="hi">R.115–116: <b>फॉर्म 7 का भाग-I पूर्ण</b>; लेखा अधिकारी को फॉर्म 5, 7 + सेवा-पुस्तिका प्रेषित (फॉर्म 8 के साथ)</span>
+        <span class="en">Part-I of Form 7 completed; Forms 5, 7 & Service Book sent to Accounts Officer (with Form 8)</span></div>
+      <div class="tl-item"><div class="when">2 माह पूर्व / 2 months before</div>
+        <span class="hi">R.120: सरकारी बकाया राशि की सूचना लेखा अधिकारी को दी जाए</span>
+        <span class="en">Particulars of Government dues intimated to Accounts Officer</span></div>
+      <div class="tl-item"><div class="when">1 माह पूर्व / 1 month before (advance)</div>
+        <span class="hi">R.122: लेखा अधिकारी PPO जारी करे (यदि अपने ही परिमंडल में देय)</span>
+        <span class="en">Accounts Officer issues PPO not later than 1 month in advance</span></div>
+      <div class="tl-item"><div class="when">मार्च-सितंबर / March & September</div>
+        <span class="hi">R.113: हर 6 माह में उन कर्मचारियों की सूची बने जो अगली छमाही में सेवानिवृत्त होंगे — विशेष रजिस्टर में</span>
+        <span class="en">Every 6 months, list of officials likely to retire is prepared in a special register</span></div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: पेंशन-पत्रों की तैयारी सेवानिवृत्ति से कितने समय पूर्व शुरू होती है? → 2 वर्ष पूर्व (नियम 110)</span>
+      <span class="en">Q: How long before retirement does pension paperwork begin? → 2 years before (Rule 110)</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 3 चरण — पेंशन तैयारी (R.114) <span class="en">3 Stages of Pension Preparation</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">प्रथम चरण — सेवा का सत्यापन</span><span class="en">Stage 1 — Verification of Service</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">द्वितीय चरण — सेवा-पुस्तिका में त्रुटियों को दूर करना; औसत परिलब्धियों की गणना (अंतिम 10 माह के वेतन से, 24 माह तक जाँच सीमित)</span><span class="en">Stage 2 — Making good omissions; calculating average emoluments (last 10 months, verification limited to 24 months)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox warn"><span class="hi">तृतीय चरण — अर्हकारी सेवा का प्रमाणपत्र जारी; फॉर्म 4 व 5 भेजे जाएँ — <b>10 माह पूर्व</b> तक पूर्ण होना चाहिए</span><span class="en">Stage 3 — Certificate of qualifying service issued; Forms 4 & 5 sent — must reach by 10 months before retirement</span></div>
+    </div>
+  </div>
+</section>
+<!-- ================= GRATUITY ================= -->
+<section class="ch" id="gratuity">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>उपदान (ग्रेच्युटी) <span class="en">Gratuity</span></h2>
+      <span class="rules">नियम / Rule 127</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 तुलना चार्ट — उपदान के प्रकार <span class="en">Comparison Chart — Types of Gratuity</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>प्रकार / Type</th><th>पात्रता / Eligibility</th><th>दर / Rate</th></tr>
+      <tr><td><span class="hi"><b>सेवा उपदान</b></span><span class="en">Service Gratuity</span></td>
+          <td><span class="hi"><b>10 वर्ष से कम</b> अर्हकारी सेवा पर सेवानिवृत्त स्थायी कर्मचारी</span><span class="en">Permanent employee retiring before 10 yrs qualifying service</span></td>
+          <td><span class="hi">प्रत्येक पूर्ण 6-मासिक अवधि हेतु <b>आधा माह की परिलब्धियाँ</b></span><span class="en">Half month's emoluments per completed 6-month period</span></td></tr>
+      <tr><td><span class="hi"><b>सेवानिवृत्ति उपदान</b></span><span class="en">Retirement Gratuity</span></td>
+          <td><span class="hi"><b>5 वर्ष+</b> अर्हकारी सेवा पूर्ण करने वाले सभी कर्मचारी</span><span class="en">All employees completing 5+ years qualifying service</span></td>
+          <td><span class="hi">प्रत्येक 6-मासिक अवधि हेतु <b>1/4 परिलब्धियाँ</b>; अधिकतम <b>16½ गुना</b> या <b>₹3.50 लाख</b>, जो भी कम हो</span><span class="en">1/4 emoluments per 6-month period; max 16½ times or Rs. 3.50 lakh, whichever less</span></td></tr>
+      <tr><td><span class="hi"><b>मृत्यु उपदान</b></span><span class="en">Death Gratuity</span></td>
+          <td><span class="hi">सेवाकाल में मृत्यु पर परिवार को</span><span class="en">On death in service, payable to family</span></td>
+          <td class="hi">नीचे तालिका देखें / See below</td></tr>
+      <tr><td><span class="hi"><b>अवशिष्ट उपदान</b></span><span class="en">Residuary Gratuity</span></td>
+          <td><span class="hi">सेवानिवृत्ति के <b>5 वर्ष के भीतर</b> मृत्यु + प्राप्त कुल राशि 12× परिलब्धियों से कम</span><span class="en">Death within 5 yrs of retirement + total received less than 12× emoluments</span></td>
+          <td><span class="hi">कमी की राशि नामिती को दी जाती है</span><span class="en">Deficiency paid to nominee</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 मृत्यु उपदान — सेवा-अवधि अनुसार दरें <span class="en">Death Gratuity Rates by Length of Service</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th> सेवा-अवधि / Length of Service</th><th>मृत्यु उपदान / Death Gratuity</th></tr>
+      <tr><td class="hi">1 वर्ष से कम</td><td class="hi"><b>2 गुना</b> परिलब्धियाँ</td></tr>
+      <tr><td class="hi">1 वर्ष या अधिक, 5 वर्ष से कम</td><td class="hi"><b>6 गुना</b> परिलब्धियाँ</td></tr>
+      <tr><td class="hi">5 वर्ष या अधिक, 20 वर्ष से कम</td><td class="hi"><b>12 गुना</b> परिलब्धियाँ</td></tr>
+      <tr><td class="hi">20 वर्ष या अधिक</td><td><span class="hi">प्रत्येक 6-मासिक हेतु आधी परिलब्धियाँ, अधिकतम <b>33 गुना</b> या <b>₹3.50 लाख</b>, जो कम हो</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: 15 वर्ष सेवा के बाद मृत्यु पर उपदान कितना? → 12 गुना परिलब्धियाँ (नियम 127.4)</span>
+      <span class="en">Q: Death gratuity after 15 years of service? → 12 times emoluments</span>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 नाबालिग का हिस्सा <span class="en">Minor's Share (R.127.7–8)</span></h3>
+    <ul class="points">
+      <li><span class="hi">नाबालिग का पूरा हिस्सा — प्राकृतिक अभिभावक को; अभाव में संरक्षकता-प्रमाणपत्र धारक को</span>
+          <span class="en">Minor's whole share — to natural guardian; else to person with guardianship certificate</span></li>
+      <li>🟠 <span class="hi"><b>₹10,000 तक</b> (या प्रथम ₹10,000, यदि अधिक हो) गैर-प्राकृतिक अभिभावक को <b>बिना संरक्षकता-प्रमाणपत्र</b> दिया जा सकता है — साथ में <b>क्षतिपूर्ति बॉण्ड</b></span>
+          <span class="en">Up to Rs. 10,000 may be paid to non-natural guardian WITHOUT guardianship certificate — with Indemnity Bond</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FAMILY PENSION ================= -->
+<section class="ch" id="family-pension">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>पारिवारिक पेंशन <span class="en">Family Pension</span></h2>
+      <span class="rules">नियम / Rules 128–133</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 दर व पात्रता <span class="en">Rate & Eligibility (R.128)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">CCS (Pension) नियम <b>54</b> द्वारा शासित; <b>1 जनवरी 1964</b> या बाद में सेवा में आए कर्मचारियों पर लागू</span>
+          <span class="en">Governed by Rule 54 of CCS(Pension) Rules; applies to those entering service on/after 1 Jan 1964</span></li>
+      <li>🔴 <span class="hi">सामान्य दर: अंतिम वेतन का <b>30%</b>, न्यूनतम <b>₹1,913/माह</b></span>
+          <span class="en">Normal rate: 30% of last pay drawn, minimum Rs. 1,913 p.m.</span></li>
+      <li>🟠 <span class="hi">उच्च दर (7+ वर्ष सेवा पर) — सेवाकाल मृत्यु: <b>वेतन+DP का 50%</b> (WC Act क्षतिपूर्ति सहित मामलों में डेढ़ गुना सामान्य दर); सेवानिवृत्ति बाद मृत्यु: <b>50%</b> या स्वीकृत पेंशन, जो कम हो — <b>7 वर्ष या 67 वर्ष आयु तक</b> जो पहले हो</span>
+          <span class="en">Higher rate (7+ yrs service): death in service 50% of pay+DP; death after retirement 50% or authorized pension, whichever less — for 7 years or till age 67, whichever earlier</span></li>
+      <li>🟢 <span class="hi">आश्रित माता-पिता को उच्च दर <b>नहीं</b> — केवल सामान्य दर</span>
+          <span class="en">Higher rate NOT admissible to dependent parents — only normal rate</span></li>
+    </ul>
+  </div>
+</section>
+  <div class="card t-o">
+    <h3>🟠 भुगतान अवधि — सदस्य अनुसार <span class="en">Payment Period by Family Member (R.128.15)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>सदस्य / Member</th><th>अवधि / Period</th></tr>
+      <tr><td><span class="hi">विधवा/विधुर</span><span class="en">Widow/widower</span></td><td><span class="hi">पुनर्विवाह या मृत्यु तक, जो पहले हो</span><span class="en">Till remarriage or death, whichever earlier</span></td></tr>
+      <tr><td><span class="hi">अविवाहित पुत्र/पुत्री</span><span class="en">Unmarried son/daughter</span></td><td><span class="hi">विवाह तक या <b>25 वर्ष</b> आयु तक या ₹2,550/माह से अधिक कमाई तक</span><span class="en">Till marriage or age 25 or earning > Rs. 2,550/month</span></td></tr>
+      <tr><td><span class="hi">दिव्यांग पुत्र</span><span class="en">Disabled son</span></td><td><span class="hi"><b>आजीवन</b> या ₹2,550+ कमाई तक</span><span class="en">For LIFE or till earning > Rs. 2,550</span></td></tr>
+      <tr><td><span class="hi">आश्रित माता-पिता</span><span class="en">Dependent parents</span></td><td><span class="hi">मृत्यु तक या ₹2,550+ कमाई तक</span><span class="en">Till death or earning > Rs. 2,550</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: आश्रित होने की आय-सीमा क्या है? → ₹2,550/माह (नियम 128.5 व 128.15)</span>
+      <span class="en">Q: Income criteria for "dependent"? → Rs. 2,550/month</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 विशेष स्थितियाँ <span class="en">Special Situations (R.129–133)</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.129</span><span class="hi">निलंबन के दौरान मृत्यु — निलंबन अवधि सभी प्रयोजनों हेतु ड्यूटी मानी जाएगी</span>
+          <span class="en">Death while under suspension — period treated as duty for all purposes</span></li>
+      <li>🔴 <span class="rule-tag">R.131</span><span class="hi">लापता कर्मचारी: पुलिस में FIR दर्ज कराने के <b>1 वर्ष बाद</b> परिवार को पारिवारिक पेंशन; पेंशन <b>FIR दर्ज होने की तिथि</b> से स्वीकृत</span>
+          <span class="en">Missing employee: family pension after 1 YEAR from filing police complaint; granted from date FIR is lodged</span></li>
+      <li>🟢 <span class="rule-tag">R.132</span><span class="hi">धोखाधड़ी के बाद लापता — पारिवारिक पेंशन केवल <b>न्यायालय से दोषमुक्ति</b> या अनुशासनिक कार्यवाही समाप्ति पर</span>
+          <span class="en">Missing after fraud — family pension only after acquittal or conclusion of disciplinary proceedings</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: लापता कर्मचारी के परिवार को पारिवारिक पेंशन कब से मिलती है? → पुलिस FIR के 1 वर्ष बाद, FIR तिथि से प्रभावी (नियम 131)</span>
+      <span class="en">Q: When is family pension paid for a missing employee? → After 1 year from filing FIR, effective from FIR date</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMUTATION ================= -->
+<section class="ch" id="commutation">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>पेंशन का समांतीकरण (Commutation) <span class="en">Commutation of Pension</span></h2>
+      <span class="rules">नियम / Rules 134–147</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 निर्णय वृक्ष — मेडिकल जाँच आवश्यक है या नहीं? <span class="en">Decision Tree — Medical Examination Needed?</span></h3>
+    <div class="dtree">
+      <div class="fbox start" style="margin:0 auto"><span class="hi">आवेदन <b>सेवानिवृत्ति के 1 वर्ष के भीतर</b> किया गया?</span><span class="en">Applied within 1 year of retirement/relevant date?</span></div>
+      <div class="branch">
+        <div class="yes"><span class="hi"><b>हाँ ✓</b> — बिना मेडिकल जाँच के <b>अधिकतम 40%</b> तक समांतीकरण (R.136)</span><span class="en">YES — commute up to 40% WITHOUT medical exam</span></div>
+        <div class="no"><span class="hi"><b>नहीं ✗</b> — सक्षम चिकित्सा प्राधिकारी द्वारा <b>चिकित्सकीय रूप से स्वस्थ घोषित</b> होने पर ही (R.137)</span><span class="en">NO — only after being declared medically fit by competent authority</span></div>
+      </div>
+    </div>
+    <ul class="points">
+      <li>🟢 <span class="hi">जिल्हें मेडिकल जाँच अनिवार्य: अशक्तता पर सेवानिवृत्त, दंडस्वरूप अनिवार्य सेवानिवृत्त, अनुकंपा भत्ता प्राप्तकर्ता, तथा 1 वर्ष बाद आवेदन करने वाले सभी (R.137)</span>
+          <span class="en">Categories requiring medical exam: invalidated, compulsorily retired as penalty, compassionate allowance recipients, all applying after 1 year</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: बिना मेडिकल जाँच अधिकतम कितने % पेंशन का समांतीकरण हो सकता है? → 40% (नियम 135–136)</span>
+      <span class="en">Q: Max % of pension that can be commuted without medical exam? → 40%</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 प्रमुख संख्याएँ <span class="en">Key Numbers</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.135</span><span class="hi">समांतीकरण की अधिकतम सीमा — मासिक पेंशन का <b>40%</b></span>
+          <span class="en">Maximum commutable amount — 40% of monthly pension</span></li>
+      <li>🟠 <span class="rule-tag">R.138</span><span class="hi">सक्षम चिकित्सा प्राधिकारी: सिविल सर्जन/जिला चिकित्सा अधिकारी से निम्न पद का नहीं, या मेडिकल बोर्ड</span>
+          <span class="en">Competent Medical Authority: not lower than Civil Surgeon/District Medical Officer, or Medical Board</span></li>
+      <li>🟢 <span class="rule-tag">R.140</span><span class="hi">प्रथम मेडिकल जाँच के <b>1 वर्ष बाद</b> दूसरी जाँच; अपील प्रमाणपत्र प्राप्ति के <b>1 माह के भीतर</b></span>
+          <span class="en">2nd medical exam after 1 year from 1st; appeal within 1 month of receiving certificate</span></li>
+      <li>🔴 <span class="rule-tag">R.147</span><span class="hi">समांतीकृत भाग की <b>15 वर्ष बाद बहाली (restoration)</b> — सेवानिवृत्ति के प्रथम माह में राशि मिलने पर सेवानिवृत्ति-तिथि से; अन्यथा प्राप्ति-तिथि से</span>
+          <span class="en">Commuted portion RESTORED after 15 years — from date of retirement if paid in 1st month; else from date of receipt</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: समांतीकृत पेंशन कितने वर्ष बाद बहाल होती है? → 15 वर्ष (नियम 147)</span>
+      <span class="en">Q: Commuted pension is restored after how many years? → 15 years</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEW PENSION SCHEME ================= -->
+<section class="ch" id="nps">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>नई पेंशन योजना (NPS) <span class="en">New Pension Scheme</span></h2>
+      <span class="rules">नियम / Rule 149</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 मुख्य विशेषताएँ <span class="en">Key Features</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>1-1-2004</b> या बाद में नियुक्त सभी केंद्रीय सरकारी कर्मचारियों पर लागू; सशस्त्र बलों पर <b>लागू नहीं</b></span>
+          <span class="en">Applicable to all Central Govt. employees appointed on/after 1-1-2004; NOT applicable to Armed Forces</span></li>
+      <li>🔴 <span class="hi">कर्मचारी अंशदान: वेतन (मूल+DP+DA) का <b>10%</b>; सरकार <b>बराबर योगदान</b> करती है</span>
+          <span class="en">Employee contributes 10% of Pay (Basic+DP+DA); Government makes equal matching contribution</span></li>
+      <li>🟠 <span class="hi">प्रत्येक कर्मचारी को <b>16-अंकीय PPAN</b> (Permanent Pension Account Number) जारी होता है</span>
+          <span class="en">Unique 16-digit PPAN allotted by PAOs</span></li>
+      <li>🟢 <span class="hi">कोई निकासी स्वीकार्य नहीं; निकास <b>60 वर्ष आयु</b> पर; <b>40%</b> राशि IRDA-नियमित बीमा कंपनी में वार्षिकी में निवेश अनिवार्य (60 वर्ष से पहले छोड़ने पर <b>80%</b>)</span>
+          <span class="en">No withdrawal admissible; exit at age 60; 40% mandatory annuity investment (80% if leaving before 60)</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: NPS में कर्मचारी व सरकार का अंशदान क्रमशः कितना है? → दोनों का 10% वेतन (बराबर, नियम 149b)</span>
+      <span class="en">Q: NPS contribution rate for employee & government? → 10% each (matching)</span>
+    </div>
+  </div>
+</section>
+<!-- ================= WORKMEN'S COMPENSATION ACT ================= -->
+<section class="ch" id="wca">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>श्रमिक क्षतिपूर्ति अधिनियम <span class="en">Workmen's Compensation Act, 1923</span></h2>
+      <span class="rules">नियम / Rules 150–152</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 क्षतिपूर्ति की दरें <span class="en">Compensation Rates (R.150c)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>स्थिति / Case</th><th>राशि / Amount</th></tr>
+      <tr><td><span class="hi">मृत्यु</span><span class="en">Death</span></td><td><span class="hi">मासिक वेतन का 50% × अनुसूची-IV कारक, या <b>₹80,000</b>, जो अधिक हो</span><span class="en">50% of monthly wages × Schedule IV factor, or Rs. 80,000, whichever more</span></td></tr>
+      <tr><td><span class="hi">स्थायी पूर्ण अशक्तता</span><span class="en">Permanent total disablement</span></td><td><span class="hi">60% × कारक, या <b>₹90,000</b>, जो अधिक हो</span><span class="en">60% × factor, or Rs. 90,000, whichever more</span></td></tr>
+      <tr><td><span class="hi">अस्थायी अशक्तता</span><span class="en">Temporary disablement</span></td><td><span class="hi">मासिक वेतन का <b>25%</b> — पाक्षिक भुगतान, <b>16वें दिन</b> से शुरू (28+ दिन अशक्तता पर तुरंत; कम पर 3-दिन प्रतीक्षा बाद)</span><span class="en">25% of monthly wages, half-monthly from 16th day (immediately if 28+ days disability; after 3-day wait if less)</span></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟢 <span class="hi">मासिक वेतन ₹4,000 से अधिक होने पर, गणना हेतु <b>₹4,000 ही माना जाएगा</b></span>
+          <span class="en">If monthly wages exceed Rs. 4,000, deemed as Rs. 4,000 for calculation</span></li>
+      <li>🟡 <span class="hi">अधिकतम क्षतिपूर्ति: स्थायी अशक्तता ~<b>₹5,48,496</b>; मृत्यु ~<b>₹4,57,080</b></span>
+          <span class="en">Max compensation: permanent disablement ~Rs. 5,48,496; death ~Rs. 4,57,080</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: मृत्यु पर न्यूनतम क्षतिपूर्ति राशि क्या है? → ₹80,000 (नियम 150c)</span>
+      <span class="en">Q: Minimum compensation on death? → Rs. 80,000</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 दावा प्रस्तुति की समय-सीमा व स्वीकृति शक्तियाँ <span class="en">Claim Time Limit & Sanction Powers</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">विवादित दावा फॉर्म 'F' में प्रस्तुत — दुर्घटना या मृत्यु की तिथि से <b>2 वर्ष के भीतर</b> Commissioner के समक्ष</span>
+          <span class="en">Disputed claim in Form 'F' — within 2 YEARS of accident or death</span></li>
+      <li>🟢 <span class="hi">महानिदेशक: पूर्ण शक्तियाँ; CPMG/निदेशक: अस्थायी अशक्तता 2 वर्ष तक + एकमुश्त भुगतान अधिकतम <b>₹1,000</b> प्रति मामला (R.151)</span>
+          <span class="en">Director General: full powers; CPMG/Directors: temp. disablement up to 2 yrs + lumpsum max Rs. 1,000/case</span></li>
+      <li>🟢 <span class="hi">CPMG स्तर का समेकित विवरण DG को हर वर्ष <b>1 जून</b> तक (R.152)</span>
+          <span class="en">Consolidated return to DG by 1st June each year</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CHAPTER XVI-XVII ================= -->
+<section class="ch" id="ch1617">
+  <div class="ch-head">
+    <div class="ch-num">16-17</div>
+    <div class="ch-title">
+      <h2>स्थापना पुनरीक्षण <span class="en">Revision of Establishment</span></h2>
+      <span class="rules">नियम / Rules 523–546</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 प्रस्ताव प्रस्तुति — समय-सीमाएँ (तुलना चार्ट) <span class="en">Comparison Chart — Proposal Submission Time Limits</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>प्रस्ताव का प्रकार / Type</th><th>किसे / To Whom</th><th>न्यूनतम पूर्व-सूचना / Min. Advance Notice</th></tr>
+      <tr><td><span class="hi">स्थायी स्थापना (महानिदेशक को)</span><span class="en">Fixed establishment (to DG)</span></td><td class="hi">महानिदेशक / DG</td><td class="hi"><b>3 माह</b></td></tr>
+      <tr><td><span class="hi">अस्थायी स्थापना (महानिदेशक को)</span><span class="en">Temporary establishment (to DG)</span></td><td class="hi">महानिदेशक / DG</td><td class="hi"><b>2 माह</b></td></tr>
+      <tr><td><span class="hi">स्थायी स्थापना (परिमंडल प्रमुख को)</span><span class="en">Fixed establishment (to HoC)</span></td><td class="hi">परिमंडल प्रमुख / HoC</td><td class="hi"><b>3 माह</b> (R.530)</td></tr>
+      <tr><td><span class="hi">अस्थायी स्थापना (परिमंडल प्रमुख को)</span><span class="en">Temporary establishment (to HoC)</span></td><td class="hi">परिमंडल प्रमुख / HoC</td><td class="hi"><b>2 माह</b> (R.533)</td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: स्थायी स्थापना प्रस्ताव कितने माह पूर्व प्रस्तुत करना चाहिए? → 3 माह (नियम 524 व 530)</span>
+      <span class="en">Q: How far in advance must a fixed-establishment proposal be submitted? → 3 months</span>
+    </div>
+  </div>
+</section>
+  <div class="card t-o">
+    <h3>🟠 नियम 526 — प्रस्ताव में चार भाग <span class="en">Rule 526 — Four Portions of Establishment Charges</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>प्रधान डाकघर / Head Office</th><th>RMS प्रभाग / RMS Division</th></tr>
+      <tr><td class="hi">(1) लिपिकीय स्थापना</td><td class="hi">(1) सॉर्टिंग असिस्टेंट स्थापना</td></tr>
+      <tr><td class="hi">(2) वितरण स्थापना</td><td class="hi">(2) मेल-गार्ड स्थापना</td></tr>
+      <tr><td class="hi">(3) चतुर्थ श्रेणी स्थापना</td><td class="hi">(3) चतुर्थ श्रेणी स्थापना</td></tr>
+      <tr><td class="hi">(4) अन्य मदें (आकस्मिक भत्ता, गृह-किराया आदि)</td><td class="hi">(4) अन्य मदें (आकस्मिक भत्ता, विश्राम-गृह भत्ता आदि)</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 आवधिक समीक्षा — अंतराल तालिका (R.539) <span class="en">Periodical Review Intervals</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>कार्यालय / Office</th><th>समीक्षा-अंतराल / Review Interval</th></tr>
+      <tr><td><span class="hi">कोलकाता, मुंबई व सभी GPO/HO/MDG</span><span class="en">Kolkata, Mumbai & all GPOs/HOs/MDGs</span></td><td class="hi"><b>प्रतिवर्ष / Every year</b></td></tr>
+      <tr><td><span class="hi">LSG/HSG उप-डाकघर, प्रथम श्रेणी SO, अन्य T/SO</span><span class="en">LSG/HSG SOs, Class I SOs, other T/SOs</span></td><td class="hi"><b>प्रत्येक 3 वर्ष</b></td></tr>
+      <tr><td><span class="hi">शाखा डाकघर व GDS भत्ता पुनरीक्षण</span><span class="en">Branch Offices & GDS allowance revision</span></td><td class="hi"><b>प्रत्येक 3 वर्ष</b></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: कोलकाता व मुंबई GPO की स्थापना-समीक्षा कितनी बार होती है? → प्रतिवर्ष (नियम 539a); अन्य SO/BO → 3 वर्ष में एक बार</span>
+      <span class="en">Q: How often is Kolkata/Mumbai GPO establishment reviewed? → Every year; other SOs/BOs → every 3 years</span>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 अन्य महत्वपूर्ण बिंदु <span class="en">Other Key Points</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.536-A</span><span class="hi">स्वीकृति जारी होने के <b>1 वर्ष के भीतर</b> प्रभावी न हो तो वित्तीय वर्ष समाप्ति से पहले नवीनीकरण आवश्यक</span>
+          <span class="en">Sanction not acted upon within 1 year must be renewed before close of financial year</span></li>
+      <li>🟢 <span class="rule-tag">R.537</span><span class="hi">अधीक्षक फॉर्म <b>ACG-19(a)</b> में स्वीकृत स्थापनाओं का रजिस्टर बनाए रखे</span>
+          <span class="en">Superintendent maintains register of sanctioned establishments in Form ACG-19(a)</span></li>
+      <li>🟡 <span class="rule-tag">R.544–546</span><span class="hi">प्रत्येक मेल लाइन का सड़क-स्थापना — GDS मेल कैरियर की संख्या लाइन की लंबाई व डाक-भार पर निर्भर</span>
+          <span class="en">Road establishment of mail line — depends on length & weight of mails; sole-benefit BO carriers sanctioned as part of that office</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= MASTER NUMBERS ================= -->
+<section class="ch" id="master">
+  <div class="ch-head">
+    <div class="ch-num">🔴</div>
+    <div class="ch-title">
+      <h2>मास्टर संख्या-चार्ट <span class="en">Master Numbers Chart</span></h2>
+      <span class="rules">सभी समय-सीमाएँ व सीमाएँ एक जगह / All Time Limits & Amounts in One Place</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 अवकाश व सेवा-शर्तें <span class="en">Leave & Service Conditions</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>8 दिन</b></td><td><span class="hi">CL अधिकतम — सामान्य स्टाफ (R.99a)</span></td></tr>
+      <tr><td class="hi"><b>10 दिन</b></td><td><span class="hi">CL अधिकतम — डाक औषधालय स्टाफ (R.99a)</span></td></tr>
+      <tr><td class="hi"><b>5 दिन</b></td><td><span class="hi">एक बार में अधिकतम CL सीमा (R.99c)</span></td></tr>
+      <tr><td class="hi"><b>30 वर्ष</b></td><td><span class="hi">समय-पूर्व सेवानिवृत्ति हेतु अर्हकारी सेवा (R.105)</span></td></tr>
+      <tr><td class="hi"><b>3 माह</b></td><td><span class="hi">समय-पूर्व सेवानिवृत्ति सूचना अवधि (R.105); लंबित पेंशन-केस सीमा (R.111)</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 पेंशन प्रक्रिया — गिनती नीचे <span class="en">Pension Process — Countdown</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>समय / Time Before Retirement</th><th>कार्रवाई / Action</th></tr>
+      <tr><td class="hi"><b>2 वर्ष</b></td><td><span class="hi">फॉर्म 7 तैयारी शुरू (R.110)</span></td></tr>
+      <tr><td class="hi"><b>10 माह</b></td><td><span class="hi">फॉर्म 4-5 भेजना, अर्हकारी-सेवा प्रमाणपत्र (R.114.1.c)</span></td></tr>
+      <tr><td class="hi"><b>8 माह</b></td><td><span class="hi">3 चरण पूर्ण (R.114.2)</span></td></tr>
+      <tr><td class="hi"><b>6 माह</b></td><td><span class="hi">फॉर्म 7 भाग-I पूर्ण + लेखा अधिकारी को प्रेषण (R.115–119)</span></td></tr>
+      <tr><td class="hi"><b>2 माह</b></td><td><span class="hi">सरकारी बकाया की सूचना (R.120)</span></td></tr>
+      <tr><td class="hi"><b>1 माह (अग्रिम)</b></td><td><span class="hi">PPO जारी (R.122)</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 राशि-सीमाएँ <span class="en">Monetary Limits</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>राशि / Amount</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>₹1,913</b></td><td><span class="hi">न्यूनतम पेंशन / पारिवारिक पेंशन (R.104.9, 128.6)</span></td></tr>
+      <tr><td class="hi"><b>₹2,550</b></td><td><span class="hi">आश्रित की आय-सीमा (R.128.5, 128.15)</span></td></tr>
+      <tr><td class="hi"><b>₹3.50 लाख</b></td><td><span class="hi">सेवानिवृत्ति/मृत्यु उपदान की अधिकतम सीमा (R.127.3, 127.4)</span></td></tr>
+      <tr><td class="hi"><b>₹10,000</b></td><td><span class="hi">नाबालिग को बिना संरक्षकता-प्रमाणपत्र भुगतान सीमा (R.127.8)</span></td></tr>
+      <tr><td class="hi"><b>₹80,000 / ₹90,000</b></td><td><span class="hi">WC Act न्यूनतम क्षतिपूर्ति — मृत्यु / स्थायी अशक्तता (R.150)</span></td></tr>
+      <tr><td class="hi"><b>₹4,000</b></td><td><span class="hi">WC Act गणना हेतु वेतन की उच्चतम सीमा (R.150 Note)</span></td></tr>
+      <tr><td class="hi"><b>₹1,000</b></td><td><span class="hi">CPMG स्तर पर एकमुश्त भुगतान की सीमा (R.151)</span></td></tr>
+      <tr><td class="hi"><b>40%</b></td><td><span class="hi">पेंशन समांतीकरण की अधिकतम सीमा (R.135)</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: सेवानिवृत्ति उपदान की अधिकतम राशि? → ₹3.50 लाख या 16½ गुना परिलब्धियाँ, जो कम हो (नियम 127.3)</span>
+      <span class="en">Q: Maximum retirement gratuity? → Rs. 3.50 lakh or 16½ times emoluments, whichever less</span>
+    </div>
+  </div>
+</section>
+<!-- ================= MNEMONICS ================= -->
+<section class="ch" id="mnemo">
+  <div class="ch-head">
+    <div class="ch-num blue">🧠</div>
+    <div class="ch-title">
+      <h2>स्मृति सूत्र व ट्रिक्स <span class="en">Memory Tricks & Mnemonics</span></h2>
+    </div>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"8-सामान्य, 10-औषधालय"</div>
+    <span class="hi">CL सीमा: सामान्य स्टाफ <b>8</b> दिन, डाक औषधालय स्टाफ (DoPT निर्धारित) <b>10</b> दिन</span>
+    <span class="en">CL limit: General staff 8 days, Postal Dispensary Staff 10 days</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"2-10-8-6-2-1" — पेंशन उलटी गिनती</div>
+    <span class="hi">सेवानिवृत्ति पूर्व: <b>2 वर्ष</b> (शुरुआत) → <b>10 माह</b> (प्रमाणपत्र) → <b>8 माह</b> (3 चरण पूर्ण) → <b>6 माह</b> (फॉर्म-7 भाग-I) → <b>2 माह</b> (बकाया सूचना) → <b>1 माह</b> (PPO)</span>
+    <span class="en">Countdown to retirement: 2yr → 10mo → 8mo → 6mo → 2mo → 1mo</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"2-6-12-½" — मृत्यु उपदान सीढ़ी</div>
+    <span class="hi">मृत्यु उपदान गुणक: 1 वर्ष से कम = <b>2</b>×; 1-5 वर्ष = <b>6</b>×; 5-20 वर्ष = <b>12</b>×; 20+ वर्ष = आधी परिलब्धियाँ प्रति 6-माह (अधि. <b>33</b>×)</span>
+    <span class="en">Death gratuity multiplier ladder: <1yr=2×, 1-5yr=6×, 5-20yr=12×, 20+yr=half-emoluments/6mo (max 33×)</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"30-3-3" — समय-पूर्व सेवानिवृत्ति</div>
+    <span class="hi"><b>30</b> वर्ष सेवा पूर्ण होने पर + <b>3</b> माह सूचना (कर्मचारी) + <b>3</b> माह सूचना (प्राधिकारी) या 3 माह वेतन (नियम 105)</span>
+    <span class="en">30 years service + 3 months notice by employee + 3 months notice/pay by authority</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"1913 की दोहरी भूमिका"</div>
+    <span class="hi">₹1,913 — <b>न्यूनतम पेंशन</b> (R.104.9) व <b>न्यूनतम पारिवारिक पेंशन</b> (R.128.6) — दोनों जगह समान अंक!</span>
+    <span class="en">Rs. 1,913 appears as BOTH minimum pension AND minimum family pension</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"40 बिना जाँच, बाद में जाँच अनिवार्य"</div>
+    <span class="hi">1 वर्ष के भीतर आवेदन → <b>40%</b> तक बिना मेडिकल जाँच; बाद में → मेडिकल जाँच अनिवार्य (नियम 136-137)</span>
+    <span class="en">Within 1 year → 40% without medical exam; after → medical exam compulsory</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"80-90-4" — WC एक्ट संख्याएँ</div>
+    <span class="hi">मृत्यु न्यूनतम <b>₹80,000</b>; स्थायी अशक्तता न्यूनतम <b>₹90,000</b>; गणना हेतु वेतन-उच्च-सीमा <b>₹4,000</b></span>
+    <span class="en">Death min Rs. 80,000; Permanent disablement min Rs. 90,000; wage cap for calculation Rs. 4,000</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"मार्च-सितंबर सेवानिवृत्ति-सूची"</div>
+    <span class="hi">हर 6 माह (मार्च व सितंबर) में अगली छमाही में सेवानिवृत्त होने वालों की सूची विशेष रजिस्टर में (नियम 113) — Ch.1 Vol.VIII के स्टॉक-डिपो निरीक्षण पैटर्न जैसा ही!</span>
+    <span class="en">Every March & September — list of upcoming retirees in special register (same September/March rhythm as Vol. VIII stock depot inspections)</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"3-2 स्थापना प्रस्ताव"</div>
+    <span class="hi">स्थायी स्थापना प्रस्ताव = <b>3</b> माह पूर्व; अस्थायी स्थापना प्रस्ताव = <b>2</b> माह पूर्व (चाहे DG को हो या HoC को)</span>
+    <span class="en">Fixed establishment = 3 months notice; Temporary establishment = 2 months notice (whether to DG or HoC)</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"KM साल-भर, बाकी 3-साल"</div>
+    <span class="hi"><b>K</b>olkata व <b>M</b>umbai (सभी GPO/HO/MDG) — हर वर्ष समीक्षा; बाकी सभी SO/BO — हर <b>3 वर्ष</b> (नियम 539)</span>
+    <span class="en">Kolkata & Mumbai GPOs/HOs/MDGs reviewed every year; all others every 3 years</span>
+  </div>
+</section>
+
+<!-- ================= ONE PAGE REVISION ================= -->
+<section class="ch" id="rev">
+  <div class="ch-head">
+    <div class="ch-num">📄</div>
+    <div class="ch-title">
+      <h2>एक-पृष्ठ पुनरावृत्ति शीट <span class="en">One-Page Revision Sheet</span></h2>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ भाग IV (I) — 28 तथ्य, 3 मिनट में / Vol. IV (I) — 28 Facts in 3 Minutes</h3>
+    <div class="rev-grid">
+      <div class="rev-cell"><b>विषय:</b> आकस्मिक अवकाश, पेंशन-उपदान, WC Act, स्थापना पुनरीक्षण — नियम 99–546</div>
+      <div class="rev-cell"><b>R.99a:</b> CL अधिकतम — सामान्य <span class="num">8 दिन</span>, औषधालय स्टाफ <span class="num">10 दिन</span></div>
+      <div class="rev-cell"><b>R.99c:</b> एक बार में CL अधिकतम <span class="num">5 दिन</span></div>
+      <div class="rev-cell"><b>R.99 Note1:</b> शाखा PM/GDS SPM = कार्यालय प्रमुख <span class="num">नहीं</span></div>
+      <div class="rev-cell"><b>R.102:</b> CL रिकॉर्ड फॉर्म <span class="num">Est-50</span>; सेवा-पुस्तिका में दर्ज नहीं</div>
+      <div class="rev-cell"><b>R.103:</b> पेंशन नियम = <span class="num">CCS(Pension) Rules 1972</span></div>
+      <div class="rev-cell"><b>R.104:</b> स्थायी: <span class="num">10 वर्ष+</span>; अस्थायी स्वैच्छिक: <span class="num">20 वर्ष+</span>; न्यूनतम पेंशन <span class="num">₹1,913</span></div>
+      <div class="rev-cell"><b>R.105:</b> समय-पूर्व सेवानिवृत्ति <span class="num">30 वर्ष</span> सेवा + <span class="num">3 माह</span> नोटिस</div>
+      <div class="rev-cell"><b>R.107:</b> Est-52 (माह की <span class="num">1 तारीख</span>) → Est-53 (समेकित)</div>
+      <div class="rev-cell"><b>R.110:</b> पेंशन-तैयारी शुरू — सेवानिवृत्ति से <span class="num">2 वर्ष</span> पूर्व</div>
+      <div class="rev-cell"><b>R.111:</b> लंबित पेंशन केस <span class="num">3 माह+</span> पर तुरंत कार्रवाई</div>
+      <div class="rev-cell"><b>R.113:</b> सेवानिवृत्ति-सूची <span class="num">मार्च व सितंबर</span> में तैयार</div>
+      <div class="rev-cell"><b>R.114:</b> 3 चरण — सत्यापन, त्रुटि-सुधार, प्रमाणपत्र (<span class="num">10 माह</span> तक फॉर्म 4-5)</div>
+      <div class="rev-cell"><b>R.115-116:</b> फॉर्म-7 भाग-I + लेखा अधिकारी को प्रेषण — <span class="num">6 माह</span> पूर्व</div>
+      <div class="rev-cell"><b>R.120:</b> बकाया-सूचना — <span class="num">2 माह</span> पूर्व</div>
+      <div class="rev-cell"><b>R.122:</b> PPO जारी — <span class="num">1 माह</span> अग्रिम</div>
+      <div class="rev-cell"><b>R.127:</b> सेवा-उपदान <10yr; सेवानिवृत्ति-उपदान 5yr+ — अधि. <span class="num">16½×</span> या <span class="num">₹3.50L</span></div>
+      <div class="rev-cell"><b>R.127.4:</b> मृत्यु उपदान: <1yr=<span class="num">2×</span>, 1-5=<span class="num">6×</span>, 5-20=<span class="num">12×</span>, 20+=अधि.<span class="num">33×</span></div>
+      <div class="rev-cell"><b>R.127.8:</b> नाबालिग बिना गार्जियन-सर्टि. — <span class="num">₹10,000</span> तक + Indemnity Bond</div>
+      <div class="rev-cell"><b>R.128:</b> पारि. पेंशन सामान्य दर <span class="num">30%</span>; उच्च दर <span class="num">50%</span> (7 वर्ष+ सेवा, 7yr/67yr तक)</div>
+      <div class="rev-cell"><b>R.128.5:</b> आश्रित आय-सीमा <span class="num">₹2,550/माह</span></div>
+      <div class="rev-cell"><b>R.128.6:</b> आश्रित होने की आय-सीमा क्या है? <span class="num">₹2,550/माह</span></div>
+      <div class="rev-cell"><b>R.131:</b> लापता कर्मी — <span class="num">1 वर्ष</span> बाद FP; FIR-तिथि से प्रभावी</div>
+      <div class="rev-cell"><b>R.135-136:</b> समांतीकरण अधि. <span class="num">40%</span>; 1yr के भीतर बिना मेडिकल जाँच</div>
+      <div class="rev-cell"><b>R.147:</b> समांतीकृत भाग <span class="num">15 वर्ष</span> बाद बहाल</div>
+      <div class="rev-cell"><b>R.149 NPS:</b> 1-1-2004+ नियुक्ति; <span class="num">10%+10%</span> अंशदान; निकास <span class="num">60 वर्ष</span></div>
+      <div class="rev-cell"><b>R.150 WCA:</b> मृत्यु न्यून. <span class="num">₹80,000</span>; स्थायी अशक्तता <span class="num">₹90,000</span>; वेतन-कैप <span class="num">₹4,000</span></div>
+      <div class="rev-cell"><b>R.150(d):</b> विवादित दावा — <span class="num">2 वर्ष</span> के भीतर Commissioner को</div>
+      <div class="rev-cell"><b>R.524/530/533:</b> स्थायी स्थापना <span class="num">3 माह</span>; अस्थायी <span class="num">2 माह</span> पूर्व-सूचना</div>
+      <div class="rev-cell"><b>R.539:</b> Kolkata/Mumbai/GPO/HO — <span class="num">वार्षिक</span>; अन्य SO/BO — <span class="num">3 वर्ष</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAST DAY NOTES ================= -->
+<section class="ch" id="lastday">
+  <div class="ch-head">
+    <div class="ch-num">⏰</div>
+    <div class="ch-title">
+      <h2>अंतिम दिन की पुनरावृत्ति <span class="en">Last Day Revision Notes</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 केवल संख्याएँ — रट लें! <span class="en">Numbers Only — Memorise!</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>8 / 10 दिन</b></td><td><span class="hi">CL सीमा — सामान्य / औषधालय स्टाफ</span></td></tr>
+      <tr><td class="hi"><b>5 दिन</b></td><td><span class="hi">एक बार में अधिकतम CL</span></td></tr>
+      <tr><td class="hi"><b>30 वर्ष / 3 माह</b></td><td><span class="hi">समय-पूर्व सेवानिवृत्ति — सेवा / नोटिस</span></td></tr>
+      <tr><td class="hi"><b>2 वर्ष</b></td><td><span class="hi">पेंशन-तैयारी शुरुआत (सेवानिवृत्ति-पूर्व)</span></td></tr>
+      <tr><td class="hi"><b>10/8/6/2/1 माह</b></td><td><span class="hi">पेंशन प्रक्रिया के milestone</span></td></tr>
+      <tr><td class="hi"><b>3 माह</b></td><td><span class="hi">लंबित पेंशन-केस सीमा (R.111)</span></td></tr>
+      <tr><td class="hi"><b>₹1,913</b></td><td><span class="hi">न्यूनतम पेंशन / पारिवारिक पेंशन</span></td></tr>
+      <tr><td class="hi"><b>₹2,550</b></td><td><span class="hi">आश्रित आय-सीमा</span></td></tr>
+      <tr><td class="hi"><b>16½× / ₹3.5L</b></td><td><span class="hi">सेवानिवृत्ति-उपदान अधिकतम</span></td></tr>
+      <tr><td class="hi"><b>2×/6×/12×/33×</b></td><td><span class="hi">मृत्यु-उपदान गुणक (सेवा-अवधि अनुसार)</span></td></tr>
+      <tr><td class="hi"><b>40%</b></td><td><span class="hi">समांतीकरण अधिकतम</span></td></tr>
+      <tr><td class="hi"><b>15 वर्ष</b></td><td><span class="hi">समांतीकरण बहाली अवधि</span></td></tr>
+      <tr><td class="hi"><b>₹80k / ₹90k</b></td><td><span class="hi">WC Act न्यूनतम — मृत्यु / स्थायी अशक्तता</span></td></tr>
+      <tr><td class="hi"><b>2 वर्ष</b></td><td><span class="hi">WC Act विवादित दावा सीमा</span></td></tr>
+      <tr><td class="hi"><b>3 / 2 माह</b></td><td><span class="hi">स्थायी / अस्थायी स्थापना प्रस्ताव पूर्व-सूचना</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 5 सबसे अधिक पूछे जाने वाले जाल <span class="en">Top 5 Exam Traps</span></h3>
+    <ul class="points">
+      <li>⚠️ <span class="hi">CL सीमा <b>8 दिन (सामान्य)</b> बनाम <b>10 दिन (औषधालय स्टाफ)</b> — मिलाएँ नहीं!</span>
+          <span class="en">8 days (general) vs 10 days (dispensary staff) — don't mix up!</span></li>
+      <li>⚠️ <span class="hi">सेवा-उपदान (Service Gratuity) <b>10 वर्ष से कम</b> सेवा पर; सेवानिवृत्ति-उपदान (Retirement Gratuity) <b>5 वर्ष+</b> पर — अलग-अलग शर्तें, अलग-अलग दरें</span>
+          <span class="en">Service Gratuity applies <10yrs; Retirement Gratuity applies 5yrs+ — different conditions & rates</span></li>
+      <li>⚠️ <span class="hi">समांतीकरण की समय-सीमा (<b>1 वर्ष के भीतर बिना जाँच</b>) पेंशन-बहाली की समय-सीमा (<b>15 वर्ष बाद</b>) से अलग है — दोनों को न मिलाएँ</span>
+          <span class="en">Commutation-without-exam window (1 year) ≠ restoration period (15 years) — different rules</span></li>
+      <li>⚠️ <span class="hi">पारिवारिक पेंशन की सामान्य दर <b>30%</b>, उच्च दर <b>50%</b> — उच्च दर केवल <b>7 वर्ष+</b> सेवा पर, आश्रित माता-पिता को <b>कभी नहीं</b></span>
+          <span class="en">Normal FP rate 30% vs higher rate 50% — higher rate only for 7+ yrs service, NEVER for dependent parents</span></li>
+      <li>⚠️ <span class="hi">WC Act में <b>न्यूनतम राशि</b> (₹80k मृत्यु/₹90k अशक्तता) है, जबकि गणना हेतु <b>वेतन-सीमा ₹4,000</b> बिल्कुल अलग संख्या है</span>
+          <span class="en">WC Act minimum amounts (Rs. 80k/90k) are separate from the Rs. 4,000 wage cap used for calculation</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 पेंशन-प्रक्रिया फ्लो — एक नज़र में <span class="en">Pension Process Flow at a Glance</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">2 वर्ष पूर्व: फॉर्म 7 तैयारी शुरू (R.110)</span><span class="en">2 yrs before: Form 7 preparation begins</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">3 चरण: सत्यापन → त्रुटि-सुधार → प्रमाणपत्र (10 माह तक)</span><span class="en">3 Stages: verification → correction → certificate (by 10 months)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">6 माह: फॉर्म-7 भाग-I + लेखा अधिकारी को प्रेषण</span><span class="en">6 months: Form-7 Part-I + sent to Accounts Officer</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">1 माह अग्रिम: PPO जारी → भुगतान शुरू</span><span class="en">1 month advance: PPO issued → payment starts</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-note">
+  📚 IP Exam Portal • डाक मैनुअल भाग IV (भाग I) — Casual Leave, Pension & Gratuities, WC Act, Revision of Establishment (Ch. III, IV, XVI, XVII)<br>
+  🔴 अति महत्वपूर्ण | 🟠 बार-बार पूछा गया | 🟡 अवधारणा | 🟢 त्वरित पुनरावृत्ति • Offline-ready • No external dependencies
+</div>
+
+</div>
+</body>
+</html>

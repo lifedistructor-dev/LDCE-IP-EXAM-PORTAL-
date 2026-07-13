@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Handbook for Postal Officers — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E; --red-dk:#8f0b20; --blue:#003087; --blue-lt:#e8edfb; --gold:#D4AF37;
+  --t1:#C8102E; --t1-bg:#fdeaec;
+  --t2:#e8720c; --t2-bg:#fef1e2;
+  --t3:#c9a400; --t3-bg:#fdf8e0;
+  --t4:#158a4b; --t4-bg:#e6f6ec;
+  --ink:#1c1f2b; --sub:#5b6172; --paper:#faf9f6; --card:#ffffff; --line:#e4e2da;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Noto Sans Devanagari","Noto Sans",-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.55; font-size:16px; padding-bottom:60px;
+}
+h1,h2,h3,h4{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif; margin:0 0 8px; color:var(--blue);}
+a{color:var(--blue);}
+.wrap{max-width:900px; margin:0 auto; padding:0 14px;}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--blue) 0%, #001c54 100%);
+  color:#fff; padding:34px 16px 26px; position:relative; overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+.hero::after{
+  content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px;
+  background:radial-gradient(circle, rgba(200,16,46,.55) 0%, rgba(200,16,46,0) 70%);
+}
+.hero .kicker{color:var(--gold); letter-spacing:.12em; font-size:12.5px; font-weight:700; text-transform:uppercase;}
+.hero h1{color:#fff; font-size:1.55rem; margin:6px 0 6px; line-height:1.3;}
+.hero p{color:#dfe6f7; font-size:14.5px; max-width:640px; margin:0;}
+.legend{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+.legend span{
+  font-size:12.5px; font-weight:600; padding:5px 10px; border-radius:20px; background:rgba(255,255,255,.12);
+  color:#fff; border:1px solid rgba(255,255,255,.25);
+}
+
+/* NAV */
+.jumpnav{
+  position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--line);
+  box-shadow:0 2px 8px rgba(0,0,0,.06); padding:8px 10px; overflow-x:auto; white-space:nowrap;
+}
+.jumpnav a{
+  display:inline-block; font-size:12.5px; font-weight:700; color:var(--blue); text-decoration:none;
+  background:var(--blue-lt); padding:6px 11px; border-radius:20px; margin-right:6px;
+}
+.jumpnav a:active{background:var(--gold); color:#3a2c00;}
+
+main{padding-top:16px;}
+
+/* Chapter blocks */
+.chapter{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  margin:14px 0; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.chapter > summary{
+  list-style:none; cursor:pointer; padding:14px 16px; display:flex; align-items:center; gap:10px;
+  background:linear-gradient(90deg,var(--blue) 0%,#0a3d99 100%); color:#fff; font-weight:700; font-size:1.02rem;
+}
+.chapter > summary::-webkit-details-marker{display:none;}
+.chapter > summary .num{
+  background:var(--gold); color:#3a2c00; font-weight:800; font-size:13px; border-radius:8px;
+  padding:3px 9px; flex:none;
+}
+.chapter > summary::after{content:"▾"; margin-left:auto; transition:transform .2s;}
+.chapter[open] > summary::after{transform:rotate(180deg);}
+.chapter-body{padding:14px 16px 18px;}
+
+/* Sub-topic / micro / nano hierarchy */
+.subchap{margin:16px 0 6px; padding-left:10px; border-left:4px solid var(--blue);}
+.subchap h3{font-size:1.02rem; margin-bottom:2px;}
+.micro{margin:10px 0 10px 6px; padding-left:10px; border-left:3px dashed var(--gold);}
+.micro h4{font-size:.94rem; color:var(--red-dk); margin-bottom:4px;}
+.nano{font-size:.9rem; color:var(--sub); margin:4px 0 4px 8px;}
+
+/* tier badges */
+.tier{
+  display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:800;
+  padding:2px 8px; border-radius:12px; margin:2px 6px 2px 0; white-space:nowrap;
+}
+.t1{background:var(--t1-bg); color:var(--t1);}
+.t2{background:var(--t2-bg); color:var(--t2);}
+.t3{background:var(--t3-bg); color:var(--t3);}
+.t4{background:var(--t4-bg); color:var(--t4);}
+
+ul.points{margin:6px 0 10px; padding-left:20px;}
+ul.points li{margin:5px 0;}
+
+/* tables */
+.table-wrap{overflow-x:auto; margin:10px 0 14px; border:1px solid var(--line); border-radius:10px;}
+table{border-collapse:collapse; width:100%; min-width:480px; font-size:13.3px;}
+table caption{text-align:left; font-weight:700; color:var(--blue); padding:8px 10px; background:var(--blue-lt); caption-side:top;}
+th,td{padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top;}
+th{background:#f2f1eb; color:var(--blue); font-weight:700; font-size:12.6px;}
+tr:last-child td{border-bottom:none;}
+tr:nth-child(even) td{background:#fbfaf7;}
+
+/* flowchart */
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:12px 0;}
+.flow .node{
+  background:var(--blue-lt); border:1px solid #c7d3f0; color:var(--blue); font-weight:700; font-size:12.5px;
+  padding:9px 12px; border-radius:10px; text-align:center; flex:1 1 120px; min-width:110px;
+}
+.flow .arrow{color:var(--gold); font-size:20px; font-weight:900; flex:none;}
+.flow.vertical{flex-direction:column; align-items:stretch;}
+.flow.vertical .arrow{align-self:center;}
+
+/* decision tree */
+.dtree{margin:12px 0; font-size:13.3px;}
+.dtree .q{background:var(--t2-bg); border-left:4px solid var(--t2); padding:8px 10px; border-radius:8px; font-weight:700; margin-bottom:6px;}
+.dtree .branch{display:flex; gap:8px; margin:6px 0 6px 14px; flex-wrap:wrap;}
+.dtree .branch > div{
+  flex:1 1 160px; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 10px;
+}
+.dtree .branch .yes{border-top:3px solid var(--t4);}
+.dtree .branch .no{border-top:3px solid var(--t1);}
+
+/* question box */
+.qbox{
+  background:#fff7e6; border:1px dashed var(--gold); border-radius:10px; padding:8px 12px; margin:8px 0;
+  font-size:12.8px; color:#5a4400;
+}
+.qbox b{color:var(--red-dk);}
+
+/* callout */
+.callout{border-radius:10px; padding:10px 12px; margin:10px 0; font-size:13.6px;}
+.callout.warn{background:var(--t1-bg); border:1px solid var(--t1); color:var(--red-dk);}
+.callout.info{background:var(--blue-lt); border:1px solid #b7c6ef; color:var(--blue);}
+.callout.tip{background:var(--t4-bg); border:1px solid var(--t4); color:#0d5c33;}
+
+/* revision sheet */
+.revsheet{background:linear-gradient(135deg,#fff 0%, #fff9ea 100%); border:2px solid var(--gold);}
+.revsheet .chapter-body{padding-top:8px;}
+.grid2{display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+.minicard{background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 12px;}
+.minicard h4{font-size:.92rem; color:var(--red-dk); margin-bottom:4px;}
+
+/* mnemonic */
+.mnemo{
+  background:#fdf1ea; border-left:5px solid var(--red); border-radius:8px; padding:10px 12px; margin:8px 0; font-size:13.6px;
+}
+.mnemo b{color:var(--red-dk);}
+
+footer{max-width:900px; margin:24px auto 0; padding:0 14px; text-align:center; color:var(--sub); font-size:12px;}
+
+.toc-small{font-size:12px; color:var(--sub); margin-top:6px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">PAO Gujarat Postal Circle · IP Exam Preparation</div>
+    <h1>💰 Financial Handbook for Postal Officers — विज़ुअल इन्फोग्राफिक</h1>
+    <p>Procurement (GFR 2017 / DFPR 2024 / Manual of Procurement of Goods 2024), Tendering, Disposal of Scrap, TDS — सम्पूर्ण परीक्षा-केंद्रित सारांश।</p>
+    <div class="legend">
+      <span>🔴 अति महत्वपूर्ण</span>
+      <span>🟠 बार-बार पूछा गया</span>
+      <span>🟡 कॉन्सेप्ट समझें</span>
+      <span>🟢 क्विक रिवीज़न</span>
+    </div>
+  </div>
+</div>
+
+<nav class="jumpnav">
+  <a href="#ch1">Ch-1 सिद्धांत</a>
+  <a href="#ch2">Ch-2 प्रस्ताव</a>
+  <a href="#ch3">Ch-3 विशिष्ट खरीद</a>
+  <a href="#ch4">Ch-4 टेंडरिंग</a>
+  <a href="#ch5">Ch-5 स्क्रैप निपटान</a>
+  <a href="#ch6">Ch-6 TDS</a>
+  <a href="#revision">📋 One-Page Sheet</a>
+  <a href="#mnemonics">🧠 Mnemonics</a>
+  <a href="#lastday">⏰ Last Day</a>
+</nav>
+
+<main class="wrap">
+
+<!-- ================= CHAPTER 1 ================= -->
+<details class="chapter" id="ch1" open>
+<summary><span class="num">CH 1</span> General Principles of Procurement</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>1.1 Procurement Planning <span class="tier t2">🟠 बार-बार पूछा गया</span></h3>
+    <div class="flow">
+      <div class="node">Need Assessment</div><div class="arrow">→</div>
+      <div class="node">Specification / ToR</div><div class="arrow">→</div>
+      <div class="node">Realistic Costing</div><div class="arrow">→</div>
+      <div class="node">Approvals (AA+ES)</div><div class="arrow">→</div>
+      <div class="node">Procurement Plan</div>
+    </div>
+    <p class="nano">"Procurement शुरू Tender से नहीं, Need से होता है" — याद रखें यह exam का पसंदीदा वन-लाइनर है।</p>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Procurement planning किस चरण से शुरू होती है? — उत्तर: Need Assessment</div>
+  </div>
+
+  <div class="subchap">
+    <h3>1.2 Need Assessment <span class="tier t3">🟡 कॉन्सेप्ट</span></h3>
+    <ul class="points">
+      <li><b>Goods:</b> पिछले 3 वर्षों की average consumption, opening/closing stock, सभी subordinate units की demand — study करें।</li>
+      <li><b>Consultancy:</b> तभी justified जब in-house expertise अपर्याप्त हो।</li>
+      <li><b>Non-Consultancy:</b> efficiency व cost-benefit के आधार पर justify करें।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>1.3–1.4 Cost Estimation, Budget व Approvals <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="dtree">
+      <div class="q">प्रश्न: दो Approvals कौन-सी हैं जो हर प्रस्ताव में अनिवार्य हैं?</div>
+      <div class="branch">
+        <div class="yes"><b>A. Administrative Approval (AA)</b><br>नीति/विभागीय स्तर पर need की स्वीकृति</div>
+        <div class="no"><b>B. Expenditure Sanction (ES)</b><br>वास्तविक खर्च की वित्तीय अनुमति</div>
+      </div>
+    </div>
+    <div class="callout warn">दोनों approvals <b>Competent Authority (as per DFPR 2024)</b> से ही लेनी होती हैं — यह favourite MCQ trap है।</div>
+  </div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 2 ================= -->
+<details class="chapter" id="ch2">
+<summary><span class="num">CH 2</span> Formulating a Procurement Proposal</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>2.1 Justification व Method of Procurement (Rule 149 GFR) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <caption>GeM के तहत Procurement की सीमाएँ — Rule 149 GFR 2017</caption>
+      <thead><tr><th>पद्धति</th><th>Value सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>GeM Direct Purchase</td><td>₹ 50,000/- तक</td></tr>
+        <tr><td>GeM Comparison</td><td>₹ 50,000/- से ₹ 10,00,000/- तक</td></tr>
+        <tr><td>GeM Bidding / Reverse Auction</td><td>₹ 10 lac से ऊपर अनिवार्य (कम राशि में भी हो सकता है)</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+      <caption>अन्य Local Purchase Rules</caption>
+      <thead><tr><th>Rule</th><th>विधि</th><th>सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>Rule 154 GFR</td><td>Single Quotation</td><td>₹ 50,000/- तक</td></tr>
+        <tr><td>Rule 155 GFR</td><td>Local Purchase Committee (LPC)</td><td>₹ 50,000/- से ₹ 5,00,000/- तक</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <ul class="points">
+      <li><span class="tier t2">🟠</span> यदि GeM से खरीद नहीं की जा रही, तो <b>GeM Non-Availability Report</b> proposal के साथ अनिवार्य रूप से लगे — इसमें valid search string व GeM AR&amp;PTS ID होनी चाहिए।</li>
+      <li><span class="tier t3">🟡</span> Search string सही होनी चाहिए — जैसे "conveyance Ahmedabad to Bhavnagar" के बजाय "Hiring of 1 Ton vehicle for transportation" लिखें।</li>
+      <li>LPC/Direct Purchase quotations में <b>valid GST No.</b> अनिवार्य (Rule 6.8.1, Manual of Procurement of Goods 2024)।</li>
+    </ul>
+    <div class="qbox"><b>संभावित प्रश्न:</b> ₹8,00,000 की खरीद के लिए कौन-सी GeM पद्धति लागू होगी? — उत्तर: GeM Comparison</div>
+  </div>
+
+  <div class="subchap">
+    <h3>2.2 Estimated Quantity <span class="tier t2">🟠 बार-बार पूछा गया</span></h3>
+    <ul class="points">
+      <li>Rule 144(v) GFR — आवश्यकता से अधिक मात्रा न खरीदें (inventory carrying cost से बचें)।</li>
+      <li>Rule 149(viii) व 157 GFR — मांग को छोटे-छोटे टुकड़ों में बाँटकर उच्च प्राधिकार की मंजूरी या L1-buying/bidding से बचना <b>निषिद्ध</b> है (piecemeal purchase)।</li>
+      <li>Buffer Stock प्रस्तावित हो तो वह indent quantity के <b>5%</b> से अधिक नहीं होनी चाहिए।</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+      <caption>Estimated Quantity Formula (नमूना प्रारूप)</caption>
+      <thead><tr><th>A</th><th>B</th><th>C</th><th>D=(A+B-C)</th><th>E</th><th>F (≤5% of E)</th><th>G=D-(E+F)</th></tr></thead>
+      <tbody><tr><td>Stock in hand</td><td>पिछले FY procurement</td><td>पिछले FY consumption</td><td>Balance</td><td>Indent received</td><td>Buffer</td><td>Final proposed quantity</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>2.3 Estimated Cost <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="flow vertical">
+      <div class="node">i) Historical Cost Data</div><div class="arrow">↓</div>
+      <div class="node">ii) Costing Analysis (यदि historical data न हो)</div><div class="arrow">↓</div>
+      <div class="node">iii) Rough Assessment (catalogue/MRP/opportunity cost)</div><div class="arrow">↓</div>
+      <div class="node">iv) Market Survey (GeM portal / physical)</div><div class="arrow">↓</div>
+      <div class="node">v) Budgetary Quotes (3 quotes, 10–21 दिन)</div>
+    </div>
+    <ul class="points">
+      <li><span class="tier t2">🟠</span> 3 से कम quotes आने पर <b>5–10 दिन</b> का extension दिया जा सकता है।</li>
+      <li>Historical data को <b>inflation, exchange rate, price indices</b> के अनुसार update करना अनिवार्य।</li>
+    </ul>
+    <div class="mnemo">🧠 <b>Memory Trick:</b> "H-C-R-M-B" — <b>H</b>istorical → <b>C</b>osting Analysis → <b>R</b>ough Assessment → <b>M</b>arket Survey → <b>B</b>udgetary Quotes (क्रम याद रखने के लिए)</div>
+  </div>
+
+  <div class="subchap">
+    <h3>2.4 Fund Position <span class="tier t3">🟡 कॉन्सेप्ट</span></h3>
+    <ul class="points">
+      <li>HOA व Object Head के साथ fund position स्पष्ट करें — Scheme fund या Non-scheme fund बताना ज़रूरी।</li>
+      <li><b>Committed liabilities</b> उपलब्ध fund से घटाई जानी चाहिए (पहले से sanctioned पर भुगतान न हुई राशि)।</li>
+      <li>Register of Liabilities — <b>GFR 2017 का Form 3</b> अनुसार बनाए रखें।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>2.5 Rate Reasonability <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <ul class="points">
+      <li>Rule 149 GFR — GeM की हर procurement में <b>Rate Reasonability Certificate</b> अनिवार्य।</li>
+      <li>Local market purchase (₹50,000 से नीचे व ₹50,000–5,00,000 के बीच) के लिए Rule 154 व 155 के certificates लगाने होंगे।</li>
+      <li>हर TC minutes में award recommendation के साथ rate reasonability की declaration जरूरी (Para 7.6.6, Manual 2024)।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>2.6 Schedule of Financial Powers (SoFP) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <caption>Schedule Type व सक्षम प्राधिकारी</caption>
+      <thead><tr><th>Schedule</th><th>प्राधिकारी</th></tr></thead>
+      <tbody>
+        <tr><td>Schedule – II A</td><td>Head of Circle (HOC) / Head of Department (HoD)</td></tr>
+        <tr><td>Schedule – II C</td><td>Sr. DDG / GM(F) / DAP</td></tr>
+        <tr><td>Schedule – III</td><td>Head of Postal Division / RMS Division / Chief PM (GPO) / Supdt. PSD / Sr. PM</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="callout info">CPMG approval के लिए proposal में Regional PMG/Unit Head की सिफारिश के साथ <b>RIFA की concurrence</b> भी होनी चाहिए।</div>
+  </div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 3 ================= -->
+<details class="chapter" id="ch3">
+<summary><span class="num">CH 3</span> Commonly Used Goods / Services के प्रस्ताव</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>3.1 Computer Hardware Procurement <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>IT Modernization 2.0 के तहत justification आवश्यक।</li>
+      <li>HOA: "19 – Office Equipment" या "71 – Information Technology"।</li>
+      <li>Desktop/Laptop Onsite Warranty <b>5 वर्ष</b> (Directorate Letter dt. 25.03.2015)।</li>
+      <li>Laptop condemnation केवल <b>HoC</b> द्वारा स्वीकृत हो सकता है।</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+      <caption>Financial Powers (Object Head 71/19) — Schedule II A</caption>
+      <thead><tr><th>Clause</th><th>विषय</th><th>सीमा</th><th>प्राधिकारी</th></tr></thead>
+      <tbody>
+        <tr><td>27(i)</td><td>Desktop (Non-Scheme)</td><td>₹5 lakh तक + IFA</td><td>HoC/HoD</td></tr>
+        <tr><td>27(ii)</td><td>Desktop replacement (Non-Scheme)</td><td>₹20 lakh तक + IFA</td><td>HoC/HoD</td></tr>
+        <tr><td>27(iii)</td><td>Computerization (Scheme)</td><td>Full powers + IFA</td><td>केवल HoC</td></tr>
+        <tr><td>27(iv)</td><td>Laptop (functional requirement)</td><td>₹1,00,000 (₹1,30,000 यदि MII&gt;40%) + IFA</td><td>केवल HoC</td></tr>
+        <tr><td>27(v)</td><td>Office-use Laptop (individual issue नहीं)</td><td>₹5 lakh/वर्ष + IFA</td><td>केवल HoC</td></tr>
+        <tr><td>14 (Obj.Hd-19)</td><td>Digital Equipment</td><td>Full powers, ₹2 lakh से ऊपर IFA</td><td>HoC/HoD</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="qbox"><b>Trap प्रश्न:</b> Laptop की condemnation कौन कर सकता है? — केवल <b>HoC</b> (HoD नहीं)।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>3.2 Outsourcing / Manpower Hiring <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Housekeeping में दो विकल्प: (a) Floor Area basis, (b) Manpower basis — floor area अधिक cost-effective (Para 8.8, Manual of Non-Consultancy 2025)।</li>
+      <li>Outsourcing केवल vacancies (Sanctioned − Working Strength) के विरुद्ध ही अनुमन्य।</li>
+      <li>Minimum wages = <b>higher of</b> Chief Labour Commissioner (Central) या State Government के rates।</li>
+      <li>Statutory compliance: Rule 197–206 GFR 2017।</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+      <caption>Financial Powers — Object Head 13 (Outsourcing) — Clause 10(xi)(a)</caption>
+      <thead><tr><th>प्राधिकारी</th><th>सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>HOC (7 बड़े Circles: Delhi, Karnataka, Maharashtra, Tamil Nadu, Telangana, UP, West Bengal)</td><td>₹20 crore/वर्ष</td></tr>
+        <tr><td>HOC (शेष Circles)</td><td>₹10 crore/वर्ष</td></tr>
+        <tr><td>HOD</td><td>₹5 crore/वर्ष (IFA consultation ₹2 lakh से ऊपर)</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>3.3 RTN Route Proposal <span class="tier t3">🟡</span></h3>
+    <div class="table-wrap">
+      <table>
+      <caption>RTN Financial Powers (Directorate OM dt. 28.03.2025, Clause 35(iii))</caption>
+      <thead><tr><th>Mode</th><th>Powers</th><th>IFA आवश्यकता</th></tr></thead>
+      <tbody>
+        <tr><td>By Rail / By Air</td><td>Full powers</td><td>₹2 lakh से ऊपर</td></tr>
+        <tr><td>By Road (incl. RTN)</td><td>₹10 crore/contract (केवल HoC); emergency में ₹2.5 lakh/माह बिना tender</td><td>₹2 lakh से ऊपर</td></tr>
+        <tr><td>Foreign Conveyance</td><td>₹2.5 lakh/माह (अधिकतम 3 माह)</td><td>₹2 lakh से ऊपर</td></tr>
+        <tr><td>All other charges</td><td>₹5 lakh</td><td>₹2 lakh से ऊपर</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>3.4 Redeployment Proposal <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Post 5 वर्ष से अधिक vacant नहीं होनी चाहिए (certificate अनिवार्य)।</li>
+      <li><b>HOD</b> — केवल GDS post redeployment हेतु सक्षम।</li>
+      <li><b>HOC</b> — सभी Group-B, C व GDS posts हेतु सक्षम (IFA consultation सहित)।</li>
+      <li>Latest Periodical Review व Establishment Review संलग्न होना अनिवार्य।</li>
+    </ul>
+    <div class="qbox"><b>संभावित प्रश्न:</b> GDS post की redeployment किसके द्वारा स्वीकृत हो सकती है? — HOD या HOC दोनों (HOD सिर्फ GDS हेतु)।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>3.5 Project Estimate (PE) व Detailed Estimate (DE) — Building Works <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>दरें latest <b>DSR 2022/2024/2025</b> अनुसार होनी अनिवार्य।</li>
+      <li>LPC method Works execution में <b>प्रयोग नहीं</b> हो सकती।</li>
+      <li>Manual of Procurement of Works 2019 के चरण: in-principle approval → PE → AA &amp; ES → Detailed Design/TS (Works Committee) → Fund appropriation।</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+      <caption>Financial Powers — Object Head 27 (Minor Works) व 72 (Buildings)</caption>
+      <thead><tr><th>Clause</th><th>विषय</th><th>सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>18(i)</td><td>Minor Civil/Electrical Works — Govt. Buildings</td><td>₹1.75 crore</td></tr>
+        <tr><td>18(ii)/(iii)</td><td>Rented Buildings works/fittings</td><td>₹5 lakh (landlord refuसal पर ही)</td></tr>
+        <tr><td>18(iv)</td><td>Dismantling of Building</td><td>₹50 lakh</td></tr>
+        <tr><td>18(v)</td><td>ROM of Gensets</td><td>₹50 lakh</td></tr>
+        <tr><td>28(i)</td><td>New Building/Quarters Construction (PE)</td><td>₹10 crore</td></tr>
+        <tr><td>28(ii)/29(iii)</td><td>Addition/Alteration — non-residential/residential</td><td>₹2 crore (excl. overhead)</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>3.6 वाहन की खरीद (Condemnation के विरुद्ध) <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>MVDC (Motor Vehicle Disposal Committee) report आवश्यक।</li>
+      <li>HoC को <b>15 वर्ष</b> पूर्ण होने पर वाहन scrapping की delegated power है।</li>
+      <li>Operational व Inspection Vehicle दोनों में replacement हेतु Full Powers (IFA consultation सहित)।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>3.7 Single Source Procurement <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Rules 194 &amp; 204 GFR — continuation of work, emergency, proprietary technique, special circumstances में लागू।</li>
+      <li>Rule 166 GFR — <b>Proprietary Article Certificate (PAC)</b> संलग्न करना अनिवार्य।</li>
+    </ul>
+    <div class="callout info">PAC में शामिल: Manufacturer का नाम, Justification, Finance Wing की Concurrence, Competent Authority की Approval।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>3.8 महत्वपूर्ण Annexures (Manual of Procurement of Goods 2024) <span class="tier t4">🟢 क्विक रिवीज़न</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>Annexure</th><th>Format</th></tr></thead>
+      <tbody>
+        <tr><td>10</td><td>Purchase without Quotation</td></tr>
+        <tr><td>11</td><td>Purchase Committee Certificate</td></tr>
+        <tr><td>13</td><td>Bid Opening Attendance Sheet cum Report</td></tr>
+        <tr><td>14</td><td>Tender Committee Report</td></tr>
+        <tr><td>15</td><td>Invitation व Declaration of Negotiations</td></tr>
+        <tr><td>16</td><td>Revised Offer in Negotiations</td></tr>
+        <tr><td>17</td><td>Letter of Award of Contract</td></tr>
+        <tr><td>21/22</td><td>Extension of Delivery Period</td></tr>
+        <tr><td>25</td><td>Goods Receipt व Inspection Report</td></tr>
+        <tr><td>26</td><td>Survey Committee Report</td></tr>
+        <tr><td>27</td><td>Sale Account for Goods Disposed</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 4 ================= -->
+<details class="chapter" id="ch4">
+<summary><span class="num">CH 4</span> Tendering Procedure — सबसे बड़ा व सर्वाधिक स्कोरिंग चैप्टर</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>4.1 Systems of Selection <span class="tier t1">🔴</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>पद्धति</th><th>प्रयोग</th></tr></thead>
+      <tbody>
+        <tr><td>L1 (Lowest Cost)</td><td>Goods हेतु सामान्य</td></tr>
+        <tr><td>QCBS</td><td>Consultancy व complex services</td></tr>
+        <tr><td>LCS (Least Cost System)</td><td>Routine consultancy जैसे audit</td></tr>
+        <tr><td>SSS (Single Source Selection)</td><td>अपवाद स्थितियाँ (continuity, proprietary, emergency)</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>4.2 Modes of Procurement <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>OTE — व्यापक प्रतिस्पर्धा के लिए default mode।</li>
+      <li>GTE — जब घरेलू क्षमता अपर्याप्त हो, high value/specialized।</li>
+      <li>LTE — कम supplier होने पर, registered/empanelled vendors तक सीमित।</li>
+      <li>STE — proprietary, emergency या एक ही स्रोत उपलब्ध होने पर।</li>
+      <li>GeM Procurement — common-use goods/services हेतु <b>अनिवार्य</b>।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>4.3 Tendering Systems <span class="tier t3">🟡</span></h3>
+    <div class="dtree">
+      <div class="q">कौन-सा bid packet system चुनें?</div>
+      <div class="branch">
+        <div class="yes"><b>Single-stage, Single-packet</b><br>Standard goods/services, minimum wages bids हेतु उपयुक्त</div>
+        <div class="no"><b>Single-stage, Two-packet</b><br>Works/consultancy/services — पहले technical फिर financial</div>
+      </div>
+    </div>
+    <p class="nano">Two-stage bidding: Complex/innovative procurement (जैसे IT systems, mega infra) — Stage 1 में technical solutions, Stage 2 में shortlisted bidders से financial bids।</p>
+  </div>
+
+  <div class="subchap">
+    <h3>4.4 Channels of Procurement <span class="tier t4">🟢</span></h3>
+    <ul class="points">
+      <li><b>GeM</b> — common-use goods/services हेतु अनिवार्य।</li>
+      <li><b>CPPP</b> — tender publication, e-tendering हेतु।</li>
+      <li><b>Manual Tendering</b> — केवल GeM non-availability report के बाद अनुमन्य, अत्यंत हतोत्साहित।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>4.5 Bidding Document (RFP) <span class="tier t1">🔴</span></h3>
+    <p class="nano">Rule 168 GFR — Bidding Document के अनिवार्य content: Instructions to Bidders, Conditions of Contract, Schedule of Requirement, Specifications, Price Schedule, Contract Form, अन्य Standard Forms।</p>
+
+    <h4>4.5.3 Bid Security / EMD (Rule 170) <span class="tier t2">🟠</span></h4>
+    <ul class="points">
+      <li>राशि: सामान्यतः contract value का <b>2–5%</b>।</li>
+      <li>Forms: Bank Guarantee, FDR, DD या Bid Securing Declaration।</li>
+      <li>Exemption: Start-ups व MSEs।</li>
+    </ul>
+
+    <h4>4.5.4 Performance Security (Rule 171) <span class="tier t1">🔴</span></h4>
+    <ul class="points">
+      <li>राशि: contract value का <b>3–10%</b>।</li>
+      <li>Timeline: award notification के <b>14 से 28 दिन</b> के भीतर देय (Para 4, 6.1.2 Manual 2024)।</li>
+      <li>Validity: contract पूर्णता + warranty period + <b>60 दिन</b> अतिरिक्त।</li>
+    </ul>
+
+    <h4>4.5.2 अन्य नियम <span class="tier t3">🟡</span></h4>
+    <ul class="points">
+      <li>Rule 161(vi) — bid publish व opening के बीच सामान्यतः <b>21 दिन (3 सप्ताह)</b>।</li>
+      <li>Pre-Integrity Pact अनिवार्य यदि threshold value <b>&gt;₹3 crore</b>।</li>
+      <li>GeM Quantity Flexibility: <b>±25%</b> variation अनुमन्य।</li>
+    </ul>
+    <div class="mnemo">🧠 <b>Number Ladder Trick:</b> EMD 2-5% → Performance Security 3-10% → Performance timeline 14-28 दिन → Warranty+60 दिन extra → Bid days 21 → Option Clause ±25% — इन्हें "2-5-3-10-14-28-21-25" की एक श्रृंखला की तरह याद रखें।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>4.6 Bid Evaluation Process <span class="tier t1">🔴 अति महत्वपूर्ण (सबसे ज़्यादा MCQ यहीं से आते हैं)</span></h3>
+
+    <h4>Tender Committee (TC) — संरचना</h4>
+    <ul class="points">
+      <li>न्यूनतम <b>3 सदस्य</b>: Finance member + User department representative + Convenor।</li>
+      <li>Rule: ₹50 lakh से अधिक की procurement में कोई सदस्य दूसरे सदस्य को report नहीं करता (नीचे की राशि में भी recommended)।</li>
+      <li>Recommending authority व Accepting authority अलग-अलग होने चाहिए।</li>
+    </ul>
+
+    <h4>Unresponsive Bid घोषित करने के आधार <span class="tier t2">🟠</span></h4>
+    <ul class="points">
+      <li>Format issue (unsigned/prescribed format न होना)</li>
+      <li>EMD missing / बिना proof exemption claim</li>
+      <li>Eligibility criteria पूरी न होना (conflict of interest सहित)</li>
+      <li>बिना authorization letter दूसरे manufacturer का सामान quote करना</li>
+      <li>Performance security जैसी essential requirement की कमी</li>
+      <li>Conditional/Multiple/Alternative bids (जब तक स्पष्ट अनुमति न हो)</li>
+      <li>Bid validity अवधि कम होना</li>
+    </ul>
+
+    <h4>Deviation vs Reservation vs Omission <span class="tier t2">🟠</span></h4>
+    <div class="dtree">
+      <div class="q">Deviation Substantive है या Minor?</div>
+      <div class="branch">
+        <div class="no"><b>Substantive</b><br>Scope/quality/performance प्रभावित करता है, या बिना अनुचित लाभ के सुधार संभव नहीं → <b>Bid Reject</b></div>
+        <div class="yes"><b>Minor</b><br>कोई fiscal impact नहीं, ranking प्रभावित नहीं → clarification के साथ <b>Allow</b></div>
+      </div>
+    </div>
+
+    <h4>Clarification व Shortfall Documents <span class="tier t3">🟡</span></h4>
+    <ul class="points">
+      <li>Clarification लिखित रूप में ही मांगी जा सकती है; price/substantive terms में परिवर्तन <b>निषिद्ध</b>।</li>
+      <li>Shortfall — केवल historical documents (bid submission के समय पहले से मौजूद) मांगे जा सकते हैं; नए documents नहीं।</li>
+    </ul>
+
+    <h4>Reasonableness of Prices — Last Purchase Price (LPP) <span class="tier t2">🟠</span></h4>
+    <ul class="points">
+      <li>Basic price की तुलना करें (tax, transport, packing अलग करें)।</li>
+      <li>यदि LPP supplier default हुआ हो → उससे पहले के complete contract का price प्रयोग करें।</li>
+      <li>1 वर्ष से पुरानी LPP को Price Variation Clause (PVC) से update करें।</li>
+      <li>Emergency/distress purchase price भविष्य comparison हेतु मान्य नहीं।</li>
+    </ul>
+
+    <h4>Abnormally Low Bid (ALB) <span class="tier t3">🟡</span></h4>
+    <p class="nano">बोली इतनी कम हो कि bidder की क्षमता पर संदेह हो — लिखित clarification मांगी जाती है; असंतोषजनक होने पर reject कर अगले उच्च bidder को evaluate किया जाता है। Normative % से automatic ALB marking नहीं होनी चाहिए।</p>
+
+    <h4>Price Negotiation <span class="tier t1">🔴</span></h4>
+    <ul class="points">
+      <li>सामान्यतः <b>निषिद्ध</b> — केवल L1 bidder से, वह भी असाधारण परिस्थितियों में (nomination/single source, urgent आवश्यकता, cartel संदेह)।</li>
+      <li>जिन bidders के bid unresponsive/reject हुए, उनसे negotiation नहीं की जा सकती।</li>
+    </ul>
+
+    <h4>Cancellation / Re-tender <span class="tier t2">🟠</span></h4>
+    <ul class="points">
+      <li>Single Bid मात्र की वजह से re-tender अनिवार्य नहीं — यदि पर्याप्त प्रचार, गैर-प्रतिबंधात्मक criteria व reasonable price हो तो valid माना जाएगा (Rule 173(xx))।</li>
+      <li>Re-tender के बाद पुराने bids <b>revive नहीं</b> हो सकते, भले ही नई bids ऊँची हों।</li>
+      <li>EMD तुरंत refund व unopened bids वापस करना अनिवार्य।</li>
+    </ul>
+
+    <h4>Time Schedule (Rule 174(i)) <span class="tier t1">🔴</span></h4>
+    <div class="table-wrap">
+      <table>
+      <caption>Indicative Time Schedule (Table 2)</caption>
+      <thead><tr><th>Mode</th><th>Indigenous</th><th>Imported</th></tr></thead>
+      <tbody>
+        <tr><td>Open Tender / e-Tendering</td><td>45 दिन</td><td>60 दिन</td></tr>
+        <tr><td>Registered Vendors / Special LTE</td><td>30 दिन</td><td>45 दिन</td></tr>
+        <tr><td>Proprietary/Nomination Basis</td><td>21 दिन</td><td>30 दिन</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="mnemo">🧠 <b>Trick:</b> "45-60, 30-45, 21-30" — हर बार Imported, Indigenous से 15 दिन ज़्यादा (सिवाय आख़िरी row जहाँ +9)। "बड़ा tender = ज़्यादा समय"।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>4.7–4.8 Award, Execution व Code of Integrity <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Goods → L1 को Award; Consultancy → highest combined (Quality+Cost) score वाले को; Non-Consultancy → best VfM।</li>
+      <li>Contract Award CPPP/GeM व departmental website पर publish होना अनिवार्य (Transparency)।</li>
+      <li>Code of Integrity (CIPP) corruption, fraud, collusion, coercion, conflict of interest निषिद्ध करता है — उल्लंघन पर debarment/legal action।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>4.9 Logistics, Inspection व Contract Management <span class="tier t4">🟢 क्विक रिवीज़न</span></h3>
+    <ul class="points">
+      <li>Delays → Extension of Time (EoT) या Liquidated Damages (LD)।</li>
+      <li>Poor quality → Warranty/Defects liability invoke।</li>
+      <li>Non-performance → Cancellation / Blacklisting-Debarment।</li>
+      <li>Performance Security release — warranty/defect liability समाप्ति के बाद।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 5 ================= -->
+<details class="chapter" id="ch5">
+<summary><span class="num">CH 5</span> Disposal of Unserviceable / Scrap Goods</summary>
+<div class="chapter-body">
+
+  <ul class="points">
+    <li><span class="tier t1">🔴</span> Rule 217 व 218, GFR 2017 + Chapter 10, Manual of Procurement of Goods 2024 पर आधारित।</li>
+    <li><span class="tier t2">🟠</span> जो प्राधिकारी procure करने में सक्षम है, वही condemn करने में सक्षम है — इसलिए <b>Laptop की condemnation केवल HoC</b> कर सकते हैं।</li>
+  </ul>
+
+  <div class="subchap">
+    <h3>5.3 Survey of Materials <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>Survey Committee (SC) → scrap घोषित करती है; Competent Authority disposal स्वीकृत करता है (SoPP अनुसार)।</li>
+      <li>अपवाद: ₹15,000 तक के items (जैसे newspapers, cartons) Head of Office सीधे scrap घोषित कर सकते हैं।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>5.4 Modes of Disposal — Value आधारित सीमाएँ <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <caption>Scrap Disposal Value Thresholds</caption>
+      <thead><tr><th>पद्धति</th><th>Value सीमा</th></tr></thead>
+      <tbody>
+        <tr><td>Petty Sales</td><td>₹15,000 तक</td></tr>
+        <tr><td>Limited Tender Enquiry (LTE)</td><td>₹15,000 – ₹4,00,000</td></tr>
+        <tr><td>e-Auction (Preferred)</td><td>₹4,00,000 से अधिक</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <p class="nano">अन्य विधियाँ: Direct Sale to Govt. bodies (book value + overheads), Public Tender (surplus stores), Secure Destruction (sensitive items — CPCB/SPCB guidelines), Hazardous Waste Disposal (CPCB/MoEFCC Rules 2016)।</p>
+  </div>
+
+  <div class="subchap">
+    <h3>5.5–5.6 तैयारी व शर्तें <span class="tier t3">🟡</span></h3>
+    <ul class="points">
+      <li>Reserve Price — Finance concurrence व CA approval सहित निर्धारित (depreciation/past sale/market survey आधारित); sealed register में गोपनीय रखा जाता है।</li>
+      <li>As-Is-Where-Is Basis — बिक्री के बाद कोई claim नहीं।</li>
+    </ul>
+  </div>
+
+  <div class="subchap">
+    <h3>5.7 Disposal by Tender (₹4,00,000 से अधिक) <span class="tier t2">🟠</span></h3>
+    <div class="flow">
+      <div class="node">EMD 5% of reserve price</div><div class="arrow">→</div>
+      <div class="node">SD (winner) 25 दिन में</div><div class="arrow">→</div>
+      <div class="node">BSV 15 दिन में (extendable)</div><div class="arrow">→</div>
+      <div class="node">Delivery Order जारी</div>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>5.10 Delivery of Scrap <span class="tier t2">🟠</span></h3>
+    <ul class="points">
+      <li>Free Period — <b>30 दिन</b> (buyer को delivery लेने हेतु)।</li>
+      <li>Ground Rent — grace period के बाद <b>0.5% प्रतिदिन</b>।</li>
+      <li>Delivery supervised होनी चाहिए (stockholder, accounts, security की उपस्थिति में)।</li>
+    </ul>
+    <div class="mnemo">🧠 <b>Trick:</b> "15-4-30-0.5" — SC direct disposal सीमा 15,000; e-Auction सीमा 4 lakh; Free delivery period 30 दिन; Ground rent 0.5%/दिन।</div>
+  </div>
+
+  <div class="subchap">
+    <h3>5.11 Adjustment of Sale Proceeds <span class="tier t4">🟢</span></h3>
+    <ul class="points">
+      <li>Realized value &gt; Book value → अतिरिक्त राशि "Profit on Sale of Capital Asset" में जमा।</li>
+      <li>Realized value &lt; Book value → shortfall हेतु CA sanction से write-off।</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 6 ================= -->
+<details class="chapter" id="ch6">
+<summary><span class="num">CH 6</span> Basic Details on TDS</summary>
+<div class="chapter-body">
+
+  <div class="subchap">
+    <h3>6.1 TDS under GST (Section 51, CGST Act 2017) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>बिंदु</th><th>विवरण</th></tr></thead>
+      <tbody>
+        <tr><td>Applicability</td><td>Contract की कुल value <b>₹2,50,000</b> से अधिक होने पर</td></tr>
+        <tr><td>दर</td><td><b>2%</b> (1% CGST+1% SGST या 2% IGST)</td></tr>
+        <tr><td>Deposit</td><td>Deduction माह की समाप्ति के <b>10 दिन</b> के भीतर</td></tr>
+        <tr><td>Return</td><td>FORM GSTR-7</td></tr>
+        <tr><td>Legal आधार</td><td>Circular 65/39/2018-DOR dt 14.09.2018; Notification 50/2018-Central Tax dt 13.09.2018</td></tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subchap">
+    <h3>6.2 TDS under Section 194C — Income Tax (Form 26Q) <span class="tier t1">🔴 अति महत्वपूर्ण</span></h3>
+    <div class="table-wrap">
+      <table>
+      <thead><tr><th>बिंदु</th><th>विवरण</th></tr></thead>
+      <tbody>
+        <tr><td>Threshold — Single Payment</td><td>₹30,000 से अधिक</td></tr>
+        <tr><td>Threshold — Aggregate (वित्त वर्ष)</td><td>₹1,00,000 से अधिक</td></tr>
+        <tr><td>दर — Individual/HUF</td><td>1%</td></tr>
+        <tr><td>दर — अन्य entity (Company/Firm)</td><td>2%</td></tr>
+        <tr><td>दर — बिना PAN</td><td>20% (Sec 206AA)</td></tr>
+        <tr><td>Deposit की अंतिम तिथि</td><td>अगले माह की 7 तारीख (मार्च — 30 अप्रैल)</td></tr>
+        <tr><td>Return</td><td>Quarterly Form 26Q</td></tr>
+        <tr><td>Certificate</td><td>Form 16A, Return filing due date से <b>15 दिन</b> के भीतर</td></tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> बिना PAN वाले contractor पर 194C TDS दर क्या होगी? — उत्तर: <b>20%</b></div>
+    <div class="mnemo">🧠 <b>Trick:</b> "GST TDS = 2.5 lakh, 2%, 10 दिन" vs "194C TDS = 30k/1lakh, 1%-2%-20%, 7 तारीख" — दोनों को अलग colour code कर याद करें ताकि exam में confuse न हों।</div>
+  </div>
+</div>
+</details>
+
+<!-- ================= REVISION SHEET ================= -->
+<details class="chapter revsheet" id="revision" open>
+<summary><span class="num">📋</span> One-Page Revision Sheet — सभी संख्याएँ एक जगह</summary>
+<div class="chapter-body">
+  <div class="grid2">
+    <div class="minicard">
+      <h4>GeM Procurement सीमाएँ (Rule 149)</h4>
+      Direct Purchase ≤50,000 | Comparison 50,000–10 lakh | Bidding &gt;10 lakh
+    </div>
+    <div class="minicard">
+      <h4>Local Purchase (Rule 154/155)</h4>
+      Single Quotation ≤50,000 | LPC 50,000–5 lakh
+    </div>
+    <div class="minicard">
+      <h4>Buffer Stock सीमा</h4>
+      Indent quantity का अधिकतम 5%
+    </div>
+    <div class="minicard">
+      <h4>Budgetary Quotes Timeline</h4>
+      3 quotes / 10–21 दिन (extension 5–10 दिन)
+    </div>
+    <div class="minicard">
+      <h4>Bid Security (EMD)</h4>
+      Contract value का 2–5%
+    </div>
+    <div class="minicard">
+      <h4>Performance Security</h4>
+      3–10%; भुगतान 14–28 दिन में; validity +60 दिन बाद तक
+    </div>
+    <div class="minicard">
+      <h4>Bid Publish → Opening</h4>
+      न्यूनतम 21 दिन (Rule 161(vi))
+    </div>
+    <div class="minicard">
+      <h4>Pre-Integrity Pact</h4>
+      Threshold &gt;₹3 crore पर अनिवार्य
+    </div>
+    <div class="minicard">
+      <h4>Quantity Variation / Option Clause</h4>
+      ±25% (डिफ़ॉल्ट)
+    </div>
+    <div class="minicard">
+      <h4>Time Schedule (Table-2)</h4>
+      Open Tender 45/60 | Registered/LTE 30/45 | Proprietary 21/30 (दिन)
+    </div>
+    <div class="minicard">
+      <h4>Scrap Disposal सीमाएँ</h4>
+      Petty ≤15,000 | LTE 15,000–4 lakh | e-Auction &gt;4 lakh
+    </div>
+    <div class="minicard">
+      <h4>Scrap — Tender Payment</h4>
+      EMD 5% | SD 25 दिन | BSV 15 दिन
+    </div>
+    <div class="minicard">
+      <h4>Scrap Delivery</h4>
+      Free period 30 दिन | Ground rent 0.5%/दिन
+    </div>
+    <div class="minicard">
+      <h4>Laptop Cost Ceiling (27(iv))</h4>
+      ₹1,00,000 (+टैक्स); MII&gt;40% पर ₹1,30,000
+    </div>
+    <div class="minicard">
+      <h4>Desktop/Laptop Warranty</h4>
+      Onsite 5 वर्ष (अनिवार्य)
+    </div>
+    <div class="minicard">
+      <h4>Vehicle Scrapping Power</h4>
+      HoC — वाहन registration से 15 वर्ष बाद
+    </div>
+    <div class="minicard">
+      <h4>TDS — GST (Sec 51)</h4>
+      Threshold ₹2.5 lakh | दर 2% | Deposit 10 दिन | Return GSTR-7
+    </div>
+    <div class="minicard">
+      <h4>TDS — 194C IT</h4>
+      Single ₹30,000/Aggregate ₹1 lakh | 1%/2%/20% (No PAN) | Deposit 7वीं तारीख | Form 26Q, Certificate 16A (15 दिन)
+    </div>
+    <div class="minicard">
+      <h4>Single Tender Approval</h4>
+      HOC को ₹50 lakh तक delegated power
+    </div>
+    <div class="minicard">
+      <h4>TC सदस्य संख्या</h4>
+      न्यूनतम 3 (Finance + User Dept + Convenor)
+    </div>
+  </div>
+</div>
+</details>
+
+<!-- ================= MNEMONICS ================= -->
+<details class="chapter" id="mnemonics">
+<summary><span class="num">🧠</span> Mnemonics व Memory Tricks</summary>
+<div class="chapter-body">
+  <div class="mnemo">📌 <b>"AA-ES जोड़ी"</b> — Administrative Approval पहले (Policy), फिर Expenditure Sanction (पैसा) — जैसे पहले "हाँ करना है" फिर "पैसे दो"।</div>
+  <div class="mnemo">📌 <b>"50k-10L-नो लिमिट"</b> — GeM की तीन सीढ़ी: Direct (50k) → Comparison (10L) → Bidding (ऊपर सब)।</div>
+  <div class="mnemo">📌 <b>"2-5-3-10"</b> — EMD 2-5%, Performance Security 3-10% — छोटी संख्या पहले याद रखें (EMD छोटी deposit होती है, Performance बड़ी गारंटी)।</div>
+  <div class="mnemo">📌 <b>"45-30-21"</b> — जैसे-जैसे tender की size घटती है (Open→Registered→Proprietary), समय भी घटता है: 45→30→21 दिन।</div>
+  <div class="mnemo">📌 <b>"15-4"</b> — Scrap disposal में दो पड़ाव: 15 हज़ार (Petty से LTE) और 4 लाख (LTE से e-Auction)।</div>
+  <div class="mnemo">📌 <b>"30-7"</b> — GST TDS की तरह IT TDS भी अलग: GST deposit 10वें दिन तक; 194C deposit अगले माह की 7 तारीख तक — "7 पहले आता है, 10 बाद में" (महीने का क्रम याद रखने में सहायक)।</div>
+  <div class="mnemo">📌 <b>"HoC=Highest Power"</b> — Laptop condemnation, Vehicle 15-वर्ष scrapping, Computerization Scheme (27(iii)), Single Tender ₹50 lakh — ये सभी विशेष रूप से केवल <b>HoC</b> को delegated हैं, HoD को नहीं।</div>
+  <div class="mnemo">📌 <b>"Substantive=Reject, Minor=Allow"</b> — Deviation classification का सबसे आसान rule।</div>
+</div>
+</details>
+
+<!-- ================= LAST DAY NOTES ================= -->
+<details class="chapter" id="lastday">
+<summary><span class="num">⏰</span> Last-Day Revision Notes</summary>
+<div class="chapter-body">
+  <div class="callout warn">
+    🔴 परीक्षा से ठीक पहले सिर्फ इन्हें दोहराएँ: GeM सीमाएँ (50k/10L), EMD-Performance Security %, Bid days (45/30/21), Scrap सीमाएँ (15k/4L), TDS दरें (2%/1%-2%-20%), Laptop warranty (5 वर्ष), Performance Security timeline (14-28 दिन)।
+  </div>
+  <ul class="points">
+    <li>✅ हमेशा याद रखें: "Piecemeal purchase" (छोटे टुकड़ों में खरीद कर उच्च प्राधिकार से बचना) — <b>सख्त निषेध</b> (Rule 149(viii) व 157)।</li>
+    <li>✅ Single Bid = automatic re-tender <b>नहीं</b> — condition पूरी हो तो valid।</li>
+    <li>✅ Negotiation केवल <b>L1</b> से, वह भी असाधारण स्थितियों में।</li>
+    <li>✅ TC सदस्य किसी और को अपनी जगह नहीं भेज सकता — व्यक्तिगत रूप से भाग लेना अनिवार्य।</li>
+    <li>✅ Re-tender के बाद पुरानी bids पुनः जीवित नहीं होतीं।</li>
+    <li>✅ Authority जो खरीदने में सक्षम, वही condemn करने में सक्षम (mirror rule)।</li>
+  </ul>
+  <div class="callout tip">🟢 अंतिम टिप: MCQ में जब भी "प्रतिशत / दिन / राशि" पूछा जाए, तो पहले यह पहचानें — यह GFR Rule का है, Manual of Procurement का है, या TDS का है — फिर संबंधित table से मिलाएँ।</div>
+</div>
+</details>
+
+</main>
+
+<footer>
+  Source: Financial Handbook for Postal Officers (Second Edition) — PAO, Gujarat Postal Circle · IFD Compendium<br>
+  यह इन्फोग्राफिक केवल IP Exam तैयारी हेतु त्वरित रिवीज़न के लिए बनाया गया है। विस्तृत प्रावधानों हेतु मूल Manual/GFR/DFPR देखें।
+</footer>
+
+</body>
+</html>

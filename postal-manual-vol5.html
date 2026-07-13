@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume V — Visual Infographic | IP Exam</title>
+<style>
+:root{
+  --red:#B71C1C; --darkred:#7f1010; --blue:#0D47A1; --darkblue:#062c66;
+  --gold:#F9A825; --green:#2E7D32; --orange:#E65100; --yellow:#F9A825;
+  --ink:#212121; --paper:#FFF8F0; --card:#ffffff; --grey:#616161;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','Noto Sans Devanagari',Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:15px;}
+.hi{font-weight:700;color:var(--ink);display:block;}
+.en{font-style:italic;color:#455A64;display:block;font-weight:400;font-size:0.92em;}
+.wrap{max-width:980px;margin:0 auto;padding:10px;}
+
+/* HEADER */
+header{background:linear-gradient(135deg,var(--darkred) 0%,var(--red) 45%,var(--blue) 100%);color:#fff;padding:26px 16px 34px;text-align:center;border-radius:0 0 26px 26px;box-shadow:0 6px 18px rgba(0,0,0,.25);}
+header h1{font-size:1.7em;letter-spacing:.5px;}
+header .sub{color:#FFE082;font-weight:600;margin-top:6px;}
+header .badge{display:inline-block;background:var(--gold);color:#4a2c00;font-weight:700;border-radius:20px;padding:4px 14px;margin-top:12px;font-size:.85em;}
+.struct{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px;}
+.struct span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);border-radius:12px;padding:4px 10px;font-size:.8em;}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0;}
+.legend div{background:#fff;border-radius:10px;padding:6px 12px;font-size:.85em;box-shadow:0 2px 6px rgba(0,0,0,.1);font-weight:600;}
+
+/* SECTION HEADINGS */
+.chapter{margin:26px 0 10px;border-radius:14px;padding:14px 16px;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.18);}
+.ch1{background:linear-gradient(90deg,#0D47A1,#1976D2);}
+.ch2{background:linear-gradient(90deg,#B71C1C,#E53935);}
+.ch3{background:linear-gradient(90deg,#4A148C,#7B1FA2);}
+.ch4{background:linear-gradient(90deg,#1B5E20,#43A047);}
+.ch5{background:linear-gradient(90deg,#E65100,#FB8C00);}
+.chapter h2{font-size:1.25em;}
+.chapter p{font-size:.85em;opacity:.95;}
+
+.sub-h{background:#fff;border-left:6px solid var(--blue);border-radius:8px;padding:8px 12px;margin:18px 0 8px;font-size:1.05em;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.08);}
+.sub-h.r{border-left-color:var(--red);}
+.sub-h.p{border-left-color:#7B1FA2;}
+.sub-h.g{border-left-color:var(--green);}
+.sub-h.o{border-left-color:var(--orange);}
+
+/* CARDS */
+.card{background:var(--card);border-radius:12px;padding:12px 14px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.09);border-top:3px solid var(--blue);}
+.card.red{border-top-color:var(--red);}
+.card.gold{border-top-color:var(--gold);}
+.card.green{border-top-color:var(--green);}
+.card.purple{border-top-color:#7B1FA2;}
+.card h3{font-size:1em;margin-bottom:6px;color:var(--darkblue);}
+.card.red h3{color:var(--darkred);}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:10px;}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;}
+
+/* TABLES */
+table{width:100%;border-collapse:collapse;margin:10px 0;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.09);font-size:.88em;}
+th{background:var(--blue);color:#fff;padding:8px 6px;text-align:left;}
+.tred th{background:var(--red);}
+.tgreen th{background:var(--green);}
+.tpurple th{background:#7B1FA2;}
+.tgold th{background:#c07f00;}
+td{padding:7px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+tr:nth-child(even){background:#FAFAFA;}
+
+/* FLOWCHART */
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0;}
+.fbox{background:#fff;border:2px solid var(--blue);border-radius:10px;padding:8px 14px;text-align:center;max-width:520px;width:100%;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.9em;}
+.fbox.start{background:var(--blue);color:#fff;border-color:var(--blue);}
+.fbox.start .en{color:#BBDEFB;}
+.fbox.end{background:var(--green);color:#fff;border-color:var(--green);}
+.fbox.end .en{color:#C8E6C9;}
+.fbox.warn{border-color:var(--red);background:#FFF3F3;}
+.arrow{color:var(--red);font-size:1.4em;font-weight:900;margin:2px 0;}
+.branch{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;}
+.branch .col{flex:1;min-width:230px;display:flex;flex-direction:column;align-items:center;}
+
+/* MINDMAP */
+.mind{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0;}
+.mnode{border-radius:12px;padding:10px;flex:1;min-width:200px;color:#fff;font-size:.88em;box-shadow:0 3px 8px rgba(0,0,0,.15);}
+.mnode h4{border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:4px;margin-bottom:6px;}
+.mnode ul{list-style:none;}
+.mnode li{padding:2px 0;}
+.mb{background:linear-gradient(135deg,#0D47A1,#1976D2);}
+.mr{background:linear-gradient(135deg,#B71C1C,#E53935);}
+.mg{background:linear-gradient(135deg,#1B5E20,#43A047);}
+.mo{background:linear-gradient(135deg,#E65100,#FB8C00);}
+.mp{background:linear-gradient(135deg,#4A148C,#8E24AA);}
+
+/* CALLOUTS */
+.pyq{background:#FFF8E1;border:2px dashed var(--gold);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:.9em;}
+.pyq b{color:#8a5a00;}
+.trick{background:#E8F5E9;border-left:6px solid var(--green);border-radius:8px;padding:10px 12px;margin:10px 0;font-size:.92em;}
+.alert{background:#FFEBEE;border-left:6px solid var(--red);border-radius:8px;padding:10px 12px;margin:10px 0;font-size:.92em;}
+.num{background:#E3F2FD;border-left:6px solid var(--blue);border-radius:8px;padding:10px 12px;margin:10px 0;font-size:.92em;}
+.tag{display:inline-block;background:var(--blue);color:#fff;border-radius:12px;padding:1px 9px;font-size:.75em;margin-left:5px;font-weight:700;font-style:normal;}
+.tag.r{background:var(--red);}
+.tag.o{background:var(--orange);}
+.tag.y{background:#c07f00;}
+.tag.g{background:var(--green);}
+
+/* HIERARCHY (chapter→sub→micro→nano) */
+.hier{background:#fff;border-radius:10px;padding:10px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.09);font-size:.85em;overflow-x:auto;white-space:pre;font-family:Consolas,monospace;color:#37474F;}
+
+/* MCQ */
+.mcq{background:#fff;border-radius:10px;padding:10px 12px;margin:8px 0;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.9em;}
+.mcq .q{font-weight:700;color:var(--darkblue);}
+.mcq .opts{margin:4px 0 4px 8px;color:#37474F;}
+.ans{color:var(--green);font-weight:700;}
+
+/* REVISION SHEETS */
+.onepage{background:linear-gradient(180deg,#fff,#FFFDE7);border:3px solid var(--gold);border-radius:14px;padding:14px;margin:14px 0;}
+.lastday{background:linear-gradient(180deg,#fff,#FFEBEE);border:3px solid var(--red);border-radius:14px;padding:14px;margin:14px 0;}
+.onepage h3,.lastday h3{text-align:center;margin-bottom:8px;}
+.chip{display:inline-block;background:#fff;border:1px solid #ccc;border-radius:14px;padding:3px 10px;margin:3px;font-size:.83em;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+
+/* TIMELINE */
+.timeline{border-left:4px solid var(--blue);margin:12px 0 12px 12px;padding-left:16px;}
+.tl{position:relative;margin-bottom:12px;background:#fff;border-radius:8px;padding:8px 10px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.9em;}
+.tl::before{content:'';position:absolute;left:-26px;top:12px;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid #fff;box-shadow:0 0 0 2px var(--red);}
+.tl b{color:var(--darkred);}
+
+footer{text-align:center;padding:22px 10px;color:var(--grey);font-size:.8em;}
+
+/* PDF BUTTON */
+#pdfBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-size:.95em;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:99;}
+#pdfBtn:hover{background:var(--darkred);}
+@media print{
+  #pdfBtn{display:none;}
+  body{background:#fff;font-size:12px;}
+  .chapter,.card,table,.mnode{box-shadow:none;}
+  .chapter{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+@media(max-width:560px){
+  header h1{font-size:1.3em;}
+  body{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📮 POSTAL MANUAL VOLUME V</h1>
+<div class="sub">
+<span class="hi">डाक घर एवं रेलवे मेल सेवा — सामान्य विनियम (पाँचवाँ संस्करण)</span>
+<span class="en">Post Office & Railway Mail Service — General Regulations (Fifth Edition)</span>
+</div>
+<div class="badge">India Post IP/IPO Exam — Paper I | Visual Infographic (Appendix-I excluded)</div>
+<div class="struct">
+<span>Ch-1: Definitions (R.1–57A)</span>
+<span>Ch-2: Miscellaneous Rules (R.58–161)</span>
+<span>Ch-3: Investigations (R.167–225)</span>
+<span>Ch-4: Weighment System (R.226–243)</span>
+<span>Annexure-A: Preservation of Records</span>
+</div>
+</header>
+
+<div class="wrap">
+
+<div class="legend">
+<div>🔴 <span style="color:var(--red)">Very Important for Exam</span></div>
+<div>🟠 <span style="color:var(--orange)">Frequently Asked</span></div>
+<div>🟡 <span style="color:#c07f00">Conceptual Understanding</span></div>
+<div>🟢 <span style="color:var(--green)">Quick Revision Point</span></div>
+</div>
+
+<!-- BOOK STRUCTURE MINDMAP -->
+<div class="sub-h">🗺️ पुस्तक की संरचना — Mind Map <span class="en">Structure of PM Vol. V</span></div>
+<div class="mind">
+<div class="mnode mb"><h4>Ch-1 परिभाषाएँ / Definitions</h4><ul><li>अधिकारी / Officers</li><li>डाकघर के प्रकार / Types of Offices</li><li>RMS इकाइयाँ / RMS Units</li><li>बैग व बंडल / Bags & Bundles</li></ul></div>
+<div class="mnode mr"><h4>Ch-2 विविध नियम / Misc. Rules</h4><ul><li>Mail & Sorting (58–82)</li><li>Regn. & Parcel (83–99)</li><li>General (102–161)</li></ul></div>
+<div class="mnode mp"><h4>Ch-3 जाँच / Investigations</h4><ul><li>Highway Robbery</li><li>Theft / Loss</li><li>Fraud & Misappropriation</li><li>Minor Irregularities</li></ul></div>
+<div class="mnode mg"><h4>Ch-4 वेटमेंट प्रणाली / Weighment</h4><ul><li>Regular Service</li><li>Occasional Despatches</li></ul></div>
+<div class="mnode mo"><h4>Annexure-A</h4><ul><li>रिकॉर्ड सुरक्षित रखने की अवधि<br>Preservation Periods</li></ul></div>
+</div>
+<!-- ================= CHAPTER 1 ================= -->
+<div class="chapter ch1">
+<h2>📘 CHAPTER 1 — परिभाषाएँ / Definitions (Rules 1–57A)</h2>
+<p>सबसे अधिक MCQ इसी अध्याय से आते हैं — हर परिभाषा exam-oriented है। / Highest MCQ weightage — every definition is exam-oriented.</p>
+</div>
+
+<div class="hier">CHAPTER 1 (Definitions)
+ ├── Sub: अधिकारी / Officers ── Micro: PMG, Superintendent ── Nano: "includes Sr. Supdt."
+ ├── Sub: डाकघर / Post Offices ── Micro: HO, SO, BO, GPO ── Nano: V-SAT, ESMO, Hybrid Mail
+ ├── Sub: RMS Units ── Micro: TMO, Sorting Office, AMPC, CRC ── Nano: Set, Trip, Beat
+ ├── Sub: Bag Office System ── Micro: UBO, DBO, CBO, Central ── Nano: 1st July balance
+ └── Sub: Bags & Bundles ── Micro: Due vs Not-Due ── Nano: Check-slip colours</div>
+
+<div class="sub-h">👮 अधिकारी व मुख्य पद / Officers & Key Posts 🔴</div>
+<div class="grid2">
+<div class="card"><h3>Rule 1 — Postmaster-General 🔴</h3>
+<span class="hi">PMG = Principal CPMG, CPMG, Regional PMG या Director of Postal Services — तथा इनकी शक्तियाँ प्रयोग करने वाला कोई भी अधिकारी।</span>
+<span class="en">PMG means Pr. CPMG / CPMG / Regional PMG / Director of Postal Services, or any officer exercising their powers.</span></div>
+<div class="card"><h3>Rule 2 — Railway Mail Service (RMS) 🟠</h3>
+<span class="hi">रेल, सड़क, नदी और वायु द्वारा डाक ढोने तथा डाकघरों से प्राप्त डाक के संग्रहण-वितरण के लिए उत्तरदायी सेवा।</span>
+<span class="en">Service responsible for carriage of mails by rail, road, river & air and collection/distribution of mails.</span></div>
+<div class="card"><h3>Rule 4 — Superintendent 🟠</h3>
+<span class="hi">डाक मंडल का मुख्य अधिकारी; मंडल के सभी अधिकारी उसके अधीन; वह Head of Circle/Region के तुरंत अधीन होता है। "Superintendent" में Sr. Supdt. भी शामिल।</span>
+<span class="en">Chief officer of a Postal/RMS Division; immediately subordinate to Head of Circle/Region; term includes Sr. Superintendents & first-class Postmaster.</span></div>
+<div class="card"><h3>Rules 19–20 — Sorting Assistant 🟡</h3>
+<span class="hi">RMS के सभी कर्मचारी (Supervising Officers, Mail Guards व Class-IV को छोड़कर)। Subsidiary SA = भारी काम में सहायता हेतु आंशिक समय कार्य करने वाला SA।</span>
+<span class="en">All RMS officials except supervising officers, mail guards & Class-IV. Subsidiary SA works only part of working hours to assist heavy sets.</span></div>
+</div>
+
+<div class="sub-h">🏤 डाकघरों के प्रकार / Types of Post Offices 🔴</div>
+<table>
+<tr><th>Rule</th><th>कार्यालय / Office</th><th>मुख्य बिंदु / Key Point</th></tr>
+<tr><td>5</td><td><b>Head Office (HO)</b> 🔴</td><td><span class="hi">समूह का मुख्य लेखा कार्यालय; SO/BO के लेन-देन इसके खातों में शामिल; प्रभारी = Head Postmaster</span><span class="en">Main office of accounts for its group of SOs & BOs; in-charge = Head Postmaster</span></td></tr>
+<tr><td>6</td><td><b>GPO</b> 🟠</td><td><span class="hi">सर्किल मुख्यालय पर स्थित First Class HO = GPO। First Class HO का प्रभारी = Chief Postmaster (STS); Second Class HO = Group 'B' अधिकारी।</span><span class="en">First-class HO at Circle HQ = GPO. 1st class HO headed by Chief Postmaster (STS officer); 2nd class HO by Group 'B' officer.</span></td></tr>
+<tr><td>7</td><td><b>Sub-Office (SO)</b></td><td><span class="hi">HO के अधीन व उसके खाते में; प्रभारी = Sub-Postmaster; नगर में स्थित = Town SO</span><span class="en">Subordinate to & in account with HO; town SO if in same town as HO</span></td></tr>
+<tr><td>8</td><td><b>Branch Office (BO)</b></td><td><span class="hi">SO से भी निम्न दर्जा; HO या SO (Account Office) के सीधे खाते में; प्रभारी = Branch Postmaster</span><span class="en">Lower status than SO; in direct account with HO/SO (its account office)</span></td></tr>
+<tr><td>5-A/B/C</td><td><b>V-SAT / ESMO / Hybrid Mail</b> 🟢</td><td><span class="hi">V-SAT: महत्वपूर्ण HO से MO का V-SAT द्वारा प्रेषण; ESMO: V-SAT के extension counters; Hybrid Mail: कंप्यूटर से लिखित सामग्री का इलेक्ट्रॉनिक प्रेषण</span><span class="en">V-SAT stations transmit MOs; ESMO = extension counters; Hybrid Mail = electronic transmission via V-SAT terminals</span></td></tr>
+<tr><td>12</td><td><b>RLO</b> 🔴</td><td><span class="hi">Returned Letter Office — सर्किल मुख्यालय पर; बिना/अपठनीय पते वाली, unclaimed व refused वस्तुओं का निपटान</span><span class="en">At Circle HQ; deals with unclaimed, refused & undecipherable-address articles</span></td></tr>
+<tr><td>12-A</td><td><b>Transcription Centre</b> 🟡</td><td><span class="hi">Sorting Office में स्थापित cell — क्षेत्रीय भाषा के पतों का अंग्रेज़ी में लिप्यंतरण</span><span class="en">Cell in a Sorting Office; transcribes regional-language addresses into English</span></td></tr>
+<tr><td>13</td><td><b>Office of Exchange / Foreign PO / Sub-Foreign PO</b> 🟠</td><td><span class="hi">Office of Exchange: विदेशों से डाक का आदान-प्रदान; Foreign PO: जहाँ customs duty का निर्धारण भी होता है; Sub-Foreign PO: exchange office नहीं, पर customs जाँच/लेखा होता है</span><span class="en">Exchange office exchanges foreign mails; Foreign PO also assesses customs duty; Sub-Foreign PO does customs work without being an exchange office</span></td></tr>
+</table>
+
+<div class="pyq"><b>📌 Probable Question:</b> <span class="hi">General Post Office किसे कहते हैं? — सर्किल प्रमुख के मुख्यालय पर स्थित First Class Head Office।</span><span class="en">Which office is termed GPO? — The first-class HO at the headquarters of the Head of a Circle.</span></div>
+
+<div class="sub-h">🚉 RMS इकाइयाँ / RMS Units 🔴</div>
+<div class="grid2">
+<div class="card"><h3>R.9A–9C Transit Office / TMO / CTMO 🟠</h3>
+<span class="hi">Transit Office: बिना खोले forward bags आगे भेजता है। TMO: RMS की शाखा जहाँ केवल बंद बैग प्राप्त/प्रेषित होते हैं — छँटाई नहीं; प्रभारी Mail Agent/Mail Guard। CTMO: कम्प्यूटरीकृत TMO।</span>
+<span class="en">Transit office forwards bags unopened. TMO handles only closed bags (no sorting), headed by Mail Agent/Guard. CTMO = computerised TMO.</span></div>
+<div class="card"><h3>R.10 Sorting Office के 3 लाभ 🟡</h3>
+<span class="hi">(a) अन्य कार्यालयों की छँटाई सरल, (b) डाकघरों के बीच बैगों की संख्या कम, (c) मेल लाइनों पर वजन कम।</span>
+<span class="en">(a) simplify sorting elsewhere, (b) reduce bags exchanged, (c) reduce weight carried on mail lines.</span></div>
+<div class="card red"><h3>R.10-A AMPC 🔴</h3>
+<span class="hi">Automatic Mail Processing Centre — तेज़ गति की छँटाई मशीनें; वर्तमान में <b>Mumbai व Chennai</b> में कार्यरत।</span>
+<span class="en">High-speed sorting machines; functioning at <b>Mumbai & Chennai</b>.</span></div>
+<div class="card"><h3>R.10-B CRC 🟢</h3>
+<span class="hi">Computerized Registration Sorting Centre — Mail Office की Registration शाखा जहाँ पंजीकरण कार्य कंप्यूटर पर।</span>
+<span class="en">Registration branch of Mail Office where registration work is computerised.</span></div>
+<div class="card"><h3>R.11-A / 11-B Nodal PO व KBU 🟠</h3>
+<span class="hi">Nodal PO: पड़ोसी डाकघरों से पत्र लेकर RMS Supdt. के sorting diagram अनुसार छँटाई — peak-hour दबाव कम करने हेतु। KBU/CBU: RMS की शाखा — L/R बैग खोलकर बंडलों को गंतव्य-वार समूहित करती है।</span>
+<span class="en">Nodal PO sorts neighbours' mail per RMS sorting diagram to cut peak pressure. KBU/CBU groups bundles destination-wise from L/R bags.</span></div>
+<div class="card"><h3>R.15A–15C CMO/BMC, MMC, PSO 🔴</h3>
+<span class="hi"><b>Bulk Mailer</b> = एक बार में <b>5000 अपंजीकृत / 250 पंजीकृत</b> वस्तुएँ डाक में देने में सक्षम फर्म। MMC: थोक ग्राहकों की सहायता (पता लिखना, लिफाफे में भरना) — छात्र/गृहिणी/पेंशनर घंटे के आधार पर। PSO: समाचार-पत्र परिसर में — पूरा व्यय प्रकाशक वहन करता है।</span>
+<span class="en">Bulk mailer = firm posting 5000 unregd./250 regd. articles at a time. MMC assists bulk customers (hourly-paid helpers). PSO on newspaper premises — publisher bears all expenses.</span></div>
+<div class="card"><h3>R.16–18 Record / HRO / SRO 🟡</h3>
+<span class="hi">Record Office: sections के work-papers तैयार/जाँच/रिकॉर्ड; HRO: RMS मंडल मुख्यालय पर — पूरे मंडल के वेतन व आकस्मिक बिल भी; SRO: Mail Office के साथ स्थित।</span>
+<span class="en">Record office prepares/checks work-papers & supplies forms/bags; HRO at Divisional HQ also prepares pay & contingent bills; SRO at same station as Mail Office.</span></div>
+<div class="card"><h3>R.21–22 Set व Trip 🟠</h3>
+<span class="hi">Set of Section: पूरे beat पर दोनों दिशाओं में साथ काम करने वाला staff — समान कार्य-घंटे। Set of Mail Office: एक साथ ड्यूटी पर staff — भिन्न कार्य-घंटे; alternate रातों पर Batch 'A'/'B'। Trip: beat के एक छोर से दूसरे तक यात्रा (Out-trip / In-trip)।</span>
+<span class="en">Section sets have identical hours; Mail Office sets differ; night sets alternate as Batch A/B. Trip = journey over the beat (Out-trip towards out-station, In-trip towards HQ).</span></div>
+</div>
+<div class="sub-h">🎒 Bag Office प्रणाली / Bag Office System (R.18-A) 🔴</div>
+<div class="flow">
+<div class="fbox start"><span class="hi">बैग लेखा प्रणाली — 4 स्तर</span><span class="en">Bag Accounting — 4 Levels</span></div>
+<div class="arrow">↓</div>
+<div class="branch">
+<div class="col"><div class="fbox"><b>UBO</b><span class="hi">हर PO (BO/EDSO छोड़कर); वर्ष में एक बार <b>1 जुलाई</b> को min/max balance; daily bag balance report → DBO</span><span class="en">Every PO except BOs/EDSOs; min-max balance fixed yearly on 1st July</span></div></div>
+<div class="col"><div class="fbox"><b>DBO</b><span class="hi">हर HRO/SRO; अपवाद में HO भी DBO हो सकता है</span><span class="en">Every HRO/SRO; exceptionally an HO can be DBO</span></div></div>
+<div class="col"><div class="fbox"><b>CBO</b><span class="hi">सर्किल मुख्यालय का Postal Stores Depot — निरीक्षण, खरीद, वितरण, मरम्मत, नीलामी</span><span class="en">PSD at Circle HQ — inspection, procurement, distribution, repair, auction of bags</span></div></div>
+<div class="col"><div class="fbox"><b>Central Bag Office</b><span class="hi">डाक निदेशालय का 'D' Section — केवल पत्राचार, बैग नहीं</span><span class="en">'D' Section of Directorate — only correspondence, handles no bags</span></div></div>
+</div>
+</div>
+<div class="trick">🧠 <b>Mnemonic:</b> "<b>U</b>nit → <b>D</b>istrict → <b>C</b>ircle → <b>C</b>entral" = <b>UDCC</b> — <span class="hi">"उधार दो, सर्किल चलेगा!" — PO→RMS→PSD→Directorate क्रम याद रखें।</span></div>
+
+<div class="sub-h">👜 बैग परिवार — Due या Not Due? / The Bag Family 🔴</div>
+<div class="alert">🔴 <span class="hi"><b>सबसे ज़्यादा पूछा जाने वाला topic!</b> Due bag = जो प्रतिदिन/नियमित अंतराल पर भेजना अनिवार्य है (खाली होने पर भी)। Unusual mail = due में शामिल नहीं।</span><span class="en">Most-asked topic! Due bags MUST be despatched daily/at regular intervals (even empty). Unusual mails are all others.</span></div>
+<table class="tred">
+<tr><th>Rule</th><th>Bag</th><th>Due?</th><th>याद रखने योग्य / Key Facts</th></tr>
+<tr><td>26</td><td><b>Mail Bag</b></td><td>✅ Due</td><td><span class="hi">3 प्रकार — Station, Sorting, Combined; cash bag वाले mail bag पर प्रतीक <b>'F'</b></span><span class="en">3 kinds; symbol 'F' when it contains cash bag inside regd. bag</span></td></tr>
+<tr><td>26-A</td><td><b>Airmail Bag</b> 🔴</td><td>—</td><td><span class="hi">नीला dosuti बैग; वस्तुएँ &lt;50 व कोई insured/air parcel नहीं → बैग के बजाय <b>airmail cover</b>; Regd. articles &gt;25 या bulky होने पर ही bag; अधिकतम वजन <b>30 kg</b>; air parcel होने पर label पर <b>"C.A.P."</b></span><span class="en">Blue dosuti bag; use cover if &lt;50 articles & no insured/air parcel; regd. bag only if &gt;25 articles; max weight 30 kg; superscribe "C.A.P." if air parcel inside</span></td></tr>
+<tr><td>28</td><td><b>Registered Bag</b> 🔴</td><td>✅ Due</td><td><span class="hi">Regd. list के साथ <b>हमेशा</b> बंद होगा — चाहे कुछ भेजना हो या नहीं; cash bag वाले regd. bag की list पर treasury date-stamp अनिवार्य</span><span class="en">Always prepared with regd. list even if empty; treasury date-stamp on list when cash bag enclosed</span></td></tr>
+<tr><td>27/29</td><td><b>Regd. / Insured Bundle</b></td><td>❌ Not due</td><td><span class="hi">RB: &gt;2 uninsured regd. articles पर; IB: 1 से अधिक insured letters पर; sorting में single article की तरह; &gt;10 IB/insured letters → अलग insured letter bag</span><span class="en">RB made when articles exceed two; IB when more than one insured letter; treated as single article in sorting</span></td></tr>
+<tr><td>30/31</td><td><b>Parcel / Insured Bag</b> 🟠</td><td>❌ Not due</td><td><span class="hi">Parcel bag = unusual mail; Insured bag कभी loose नहीं भेजा जाता — हमेशा parcel/mail bag के अंदर; बड़े parcel sorting offices में <b>double canvas</b> bag</span><span class="en">Parcel bag treated as unusual; insured bag never sent loose — always inside parcel/mail bag; double canvas in large offices</span></td></tr>
+<tr><td>32</td><td><b>Regd. Packet Bag</b></td><td>✅ Due (जब prescribed)</td><td><span class="hi">भारी regd. packets हेतु; mail list में 'RP' remark; empty bags वाले = Packet bags (not due, unusual)</span><span class="en">For heavy regd. packets; remark 'RP'; bags returned empty = packet bags (unusual)</span></td></tr>
+<tr><td>33</td><td><b>Transit Bag</b></td><td>✅ Due</td><td><span class="hi">कई बैग एक साथ; अंदर mail list <b>अनिवार्य</b></span><span class="en">Encloses several bags; must contain a mail list</span></td></tr>
+<tr><td>34/35</td><td><b>Account / BO Bag</b> 🟠</td><td>✅ Due</td><td><span class="hi">Account bag: SO↔HO — HO से SO slip, SO से SO daily account; BO bag: BO↔Account office</span><span class="en">Account bag between SO & HO (SO slip / SO daily account); BO bag between BO & its account office</span></td></tr>
+<tr><td>36</td><td><b>Cash Bag</b> 🔴</td><td>❌ Not due</td><td><span class="hi">नकदी प्रेषण हेतु; प्रायः account/regd./BO bag में; loose भी भेजा जा सकता है</span><span class="en">Encloses cash remittances; ordinarily inside account/regd./BO bags; may go loose with postman/overseer</span></td></tr>
+<tr><td>37/37-A</td><td><b>Special / Camp Bag</b></td><td>❌ Not due (unusual)</td><td><span class="hi">Special: उच्च अधिकारियों का पत्राचार; Camp: दौरे पर उच्च अधिकारी की फाइलें</span><span class="en">Special = high officers' correspondence; camp = office files of high officer on tour</span></td></tr>
+<tr><td>24</td><td><b>Labelled Bundle</b> 🔴</td><td>❌ Not due</td><td><span class="hi">Station bundle: paid/unpaid वस्तुएँ <b>14 से अधिक</b> होने पर; Territorial bundle: <b>25 या अधिक</b>; Express vs Deferred; Pre-sorted station bundles नहीं खोलें</span><span class="en">Station bundle when articles exceed 14; territorial bundle at 25+; express vs deferred; pre-sorted station bundles not to be opened</span></td></tr>
+</table>
+
+<div class="trick">🧠 <b>Due Bags Mnemonic — "MR. TAB":</b> <span class="hi"><b>M</b>ail, <b>R</b>egistered, <b>T</b>ransit, <b>A</b>ccount, <b>B</b>O bag = ये पाँच <b>Due</b>! बाकी सब (Parcel, Cash, Special, Camp, Packet) = Not due/Unusual.</span><span class="en">Mail, Registered, Transit, Account, BO = the five DUE bags; the rest are not due.</span></div>
+
+<div class="sub-h">🏷️ Check-Slip रंग चार्ट / Check-Slip Colour Chart (R.25) 🔴</div>
+<table class="tgold">
+<tr><th>रंग-चिह्न / Colour-Mark</th><th>प्रयोग / Use</th></tr>
+<tr><td>🌸 <b>Pink</b></td><td><span class="hi">साधारण paid व unpaid (station) बंडल</span><span class="en">Ordinary paid & unpaid bundles</span></td></tr>
+<tr><td>⬜ <b>White</b></td><td><span class="hi">साधारण sorting bundle (express व deferred दोनों)</span><span class="en">Ordinary sorting bundles (both express & deferred)</span></td></tr>
+<tr><td>🔵 <b>Blue + "Air Mail"</b></td><td><span class="hi">विदेशी हवाई डाक बंडल</span><span class="en">Foreign air-mail bundles</span></td></tr>
+<tr><td>✏️ <b>2 नीली तिरछी रेखाएँ / 2 blue diagonal lines</b></td><td><span class="hi">Express bundle</span><span class="en">Express bundle</span></td></tr>
+<tr><td>💚 <b>2 हरी तिरछी रेखाएँ / 2 green diagonal lines</b></td><td><span class="hi">स्थानीय (local) वस्तुएँ</span><span class="en">Local articles</span></td></tr>
+<tr><td>💛 <b>Yellow strip (कोने पर)</b></td><td><span class="hi">Rajdhani bundle</span><span class="en">Rajdhani bundles</span></td></tr>
+<tr><td>🔷 <b>Blue strip (कोने पर)</b></td><td><span class="hi">Metro bundle</span><span class="en">Metro bundles</span></td></tr>
+<tr><td>🔴 <b>M.O.-70 — लाल स्याही / red ink</b></td><td><span class="hi">Money Order बंडल का check-slip (सफेद/बादामी कागज़)</span><span class="en">MO bundle check-slip printed in red on white/badami paper</span></td></tr>
+</table>
+<div class="trick">🧠 <span class="hi"><b>Trick:</b> "PWB-GYB" — <b>P</b>ink=Paid station, <b>W</b>hite=sorting, <b>B</b>lue=Air; रेखाएँ: <b>नीली</b>=Express (जल्दी!), <b>हरी</b>=Local (हरा=घर); पट्टी: <b>पीली</b>=Rajdhani, <b>नीली</b>=Metro।</span></div>
+
+<div class="sub-h">📖 अन्य मुख्य परिभाषाएँ / Other Key Definitions 🟠</div>
+<div class="grid2">
+<div class="card gold"><h3>R.46–47 'A' Orders vs 'B' Orders 🔴</h3>
+<span class="hi"><b>A Orders</b> = Supdt. RMS द्वारा <b>sorting lists में परिवर्तन</b> के आदेश।<br><b>B Orders</b> = sorting lists के अलावा अन्य सभी विषयों पर मार्गदर्शन।<br>Camp articles संबंधी B orders पर <b>'T'</b> उपसर्ग = <b>TB orders</b>।</span>
+<span class="en">A orders prescribe changes in sorting lists; B orders guide on all other subjects; 'T' prefixed to B for camp-articles orders.</span></div>
+<div class="card gold"><h3>R.56-A Late vs Too-Late Letters 🔴</h3>
+<span class="hi"><b>Late letter</b>: mail बंद होने के बाद, अनुमत अंतराल में, <b>late fee + postage सहित</b> प्रस्तुत पत्र — उसी डाक से जाएगा।<br><b>Too-late letter</b>: अंतराल में परन्तु late fee/postage पूर्ण नहीं — "<b>Detained: late fee not paid</b>" ठप्पा लगाकर अगली dispatch तक रोका जाएगा।</span>
+<span class="en">Late letters (posted within interval with late fee) go by outgoing mail; too-late letters (fee unpaid) are stamped "Detained: late fee not paid" & detained till next despatch.</span></div>
+<div class="card gold"><h3>R.57 Mis-sent vs Mis-directed 🔴</h3>
+<span class="hi"><b>Mis-sent</b>: गलती से गलत कार्यालय/गलत मार्ग से भेजी गई वस्तु।<br><b>Mis-directed</b>: vernacular वस्तु जिस पर posting office ने अंग्रेज़ी में <b>गलत गंतव्य</b> लिख दिया।</span>
+<span class="en">Mis-sent = erroneously forwarded to wrong office/route; mis-directed = vernacular article with incorrect destination written in English by office of posting.</span></div>
+<div class="card gold"><h3>R.57-A Trial Cards 🟠</h3>
+<span class="hi">सेवा पोस्टकार्ड <b>M-26(a)</b> — वैकल्पिक मार्गों की तुलना या विलंब का कारण जानने हेतु; रंग <b>लाल</b>; पीछे 5 कॉलम (receipt source, remarks, disposal, date-stamp, signature); station bundle में शामिल नहीं करना।</span>
+<span class="en">Service postcards M-26(a), distinct red colour, to test alternative routes/causes of detention; 5 columns on back; never included in station bundles.</span></div>
+<div class="card"><h3>R.52-A / 53 Due Mail & Sorting List 🟠</h3>
+<span class="hi">Due Mail List = किन बैगों की प्राप्ति/प्रेषण होना है; Sorting List = किन कार्यालयों के लिए mail/regd. bags बनने हैं व parcel कहाँ सीधे भेज सकते हैं। <b>Due mails</b> = प्रतिदिन/नियमित भेजे जाने वाले; <b>Unusual</b> = parcel, packet, special, camp, telegraph bags।</span>
+<span class="en">DM list shows bags to receive/despatch; sorting list shows offices for which bags are made up. Due mails = daily/regular; unusual = parcel, packet, special, camp & telegraph bags.</span></div>
+<div class="card"><h3>R.54–56 Face, Beat, Camp 🟢</h3>
+<span class="hi"><b>Face</b> = पता लिखा हुआ भाग; facing = पते ऊपर व एक दिशा में। <b>Beat</b> = section का रेल/स्टीमर मार्ग-भाग या postman का कार्य-क्षेत्र। <b>Camp correspondence</b> = बिना post-town के "Camp" पते वाले पत्र (उच्च अधिकारी दौरे पर)।</span>
+<span class="en">Face = address side; beat = portion of line worked by a section or a postman's area; camp correspondence = articles addressed 'Camp' without post-town for high officers on tour.</span></div>
+<div class="card"><h3>R.40–44A Changing Station, Cage TB 🟡</h3>
+<span class="hi"><b>Changing station</b>: जहाँ दो transit sections के beats मिलते हैं। <b>Connecting section</b>: तुरंत जुड़ी ट्रेन में काम करने वाला section। <b>Cage TB</b>: mail van का बंद-सील partition — बीच के sections को बैग नहीं संभालने पड़ते।</span>
+<span class="en">Changing station = beats of two transit sections join; Cage TB = locked, sealed van partition avoiding handling by intermediate sections.</span></div>
+</div>
+
+<div class="pyq"><b>📌 Probable Questions (Ch-1):</b>
+<span class="hi">1) Station bundle कब बनाया जाता है? — जब paid या unpaid वस्तुएँ 14 से अधिक हों। 2) Territorial bundle? — 25 या अधिक वस्तुएँ। 3) AMPC कहाँ हैं? — Mumbai व Chennai। 4) 'A' orders किससे संबंधित? — Sorting list में परिवर्तन। 5) Airmail bag का अधिकतम वजन? — 30 kg।</span></div>
+
+<!-- ================= CHAPTER 2 ================= -->
+<div class="chapter ch2">
+<h2>📕 CHAPTER 2 — विविध नियम / Miscellaneous Rules (Rules 58–161)</h2>
+<p>तीन भाग: Mail & Sorting (58–82) • Registration & Parcel (83–99) • General (102–161)</p>
+</div>
+<div class="hier">CHAPTER 2 (Miscellaneous Rules)
+ ├── Sub: Mail & Sorting (58–82) ── Micro: posting hours, LB clearance, bundles, bags, mail lists
+ ├── Sub: Registration & Parcel (83–99) ── Micro: RB/IB preparation, closing/opening bags, deficiency
+ └── Sub: General (102–161) ── Micro: stamping, prohibited articles, weight limits,
+                                        R.144 telegraph reports, enumeration, records</div>
+
+<div class="sub-h r">⏰ समय-सीमाएँ / Time Rules (R.58) 🔴</div>
+<div class="grid3">
+<div class="card red"><h3>Night Mails</h3><span class="hi">पोस्टिंग का अंतिम समय सामान्यतः <b>शाम 6 बजे</b></span><span class="en">Latest posting hour ordinarily <b>6 p.m.</b></span></div>
+<div class="card red"><h3>Day Mails</h3><span class="hi">डाक बंद होने से <b>30 मिनट पहले</b></span><span class="en"><b>30 minutes</b> before hour fixed for closing the mail</span></div>
+<div class="card red"><h3>Railway Station</h3><span class="hi">डाक ट्रेन आने से <b>10 मिनट पहले</b> स्टेशन पहुँचे</span><span class="en">Mails should reach the station <b>10 minutes</b> before train arrival</span></div>
+</div>
+
+<div class="sub-h r">📰 पंजीकृत समाचार-पत्र / Registered Newspapers (R.58-A) 🟠</div>
+<div class="timeline">
+<div class="tl"><b>Licence:</b> <span class="hi">Head of Division/Sr. Postmaster द्वारा IPO Rules 1933 के अंतर्गत — बिना postage चुकाए posting की अनुमति; भारत के भीतर व बाहर हेतु अलग-अलग licence।</span><span class="en">Issued by Head of Division/Sr. PM under IPO Rules 1933; separate licences for inland & foreign.</span></div>
+<div class="tl"><b>न्यूनतम / Minimum:</b> <span class="hi">एक बार में कम से कम <b>100 प्रतियाँ</b> (inland व foreign के लिए अलग-अलग गिनती)।</span><span class="en">At least 100 copies at a time (limit applied separately for inland & foreign).</span></div>
+<div class="tl"><b>Billing:</b> <span class="hi">महीने में दो बार — <b>16 तारीख</b> (1–15 की posting) व <b>अगली 1 तारीख</b> (16–माह अंत); बिल Form <b>M.S.-98</b>; भुगतान प्रस्तुति से <b>7 दिनों</b> में।</span><span class="en">Adjusted twice a month (16th & 1st); bill in M.S.-98; payment within 7 days of presentation.</span></div>
+<div class="tl"><b>दंड / Penalty:</b> <span class="hi">पखवाड़े में भुगतान न होने पर posting तुरंत बंद व licence <b>रद्द माना जाएगा</b>।</span><span class="en">Non-payment within a fortnight → posting stopped & licence deemed cancelled.</span></div>
+</div>
+
+<div class="sub-h r">🖨️ फ्रैंकिंग मशीन / Franking Machines (R.58-B/C) 🟠</div>
+<div class="grid2">
+<div class="card red"><h3>मुख्य नियम / Core Rules</h3>
+<span class="hi">• छाप <b>चमकीले लाल रंग</b> की — पते की ओर <b>दाएँ ऊपरी कोने</b> पर<br>• licence Head of Circle द्वारा<br>• posting अधिकतम <b>2 कार्यालयों</b> पर<br>• प्रतिदिन <b>Daily Docket</b> प्रस्तुत करना अनिवार्य<br>• Letter-box में डाली गई franked वस्तु = <b>unpaid</b> मानी जाएगी<br>• पिछली तारीख की छाप वाली वस्तु स्वीकार नहीं</span>
+<span class="en">Bright red impressions at right-top corner; licence by Head of Circle; posting at max 2 specified offices; daily docket compulsory; franked articles found in letter-boxes treated as unpaid; previous-date impressions not accepted.</span></div>
+<div class="card red"><h3>Cut-out Labels & Meter</h3>
+<span class="hi">• एक वस्तु पर अधिकतम <b>1 cut-out label</b><br>• एक से अधिक छाप हों तो — overlap नहीं, <b>1 cm</b> से अधिक दूरी नहीं<br>• मूल्य लाल स्याही में अंकों में लिखें<br>• Insured वस्तुओं पर cut-out labels <b>नहीं</b><br>• meter की re-setting केवल <b>Post Office</b> में; सील Postmaster की व्यक्तिगत अभिरक्षा में (Mumbai/Kolkata GPO में Dy. Director)</span>
+<span class="en">Max one cut-out label; impressions must not overlap nor be &gt;1 cm apart; not allowed on insured mail; meter reset only at PO; seal in Postmaster's personal custody (Dy. Director at Mumbai/Kolkata GPO).</span></div>
+</div>
+
+<div class="sub-h r">✈️ हवाई डाक कमी-नियम / Air Mail Deficiency Rule (R.60-A) 🔴 — Decision Tree</div>
+<div class="flow">
+<div class="fbox start"><span class="hi">प्रेषक का पता नहीं + air mail वस्तु unpaid/underpaid?</span><span class="en">Air article unpaid/underpaid & sender unknown?</span></div>
+<div class="arrow">↓</div>
+<div class="branch">
+<div class="col"><div class="fbox"><b>Letters/अन्य वस्तुएँ</b><span class="hi">भुगतान ≥ <b>75%</b> air surcharge → कमी tax कर <b>हवाई मार्ग</b> से भेजें</span><span class="en">If ≥75% of surcharge paid → tax deficiency & forward by AIR</span></div></div>
+<div class="col"><div class="fbox"><b>Postcards / Aerogrammes</b><span class="hi">भुगतान ≥ <b>50%</b> combined charge → हवाई मार्ग से</span><span class="en">If ≥50% of combined charge → forward by AIR</span></div></div>
+<div class="col"><div class="fbox warn"><b>इससे कम / Below limits</b><span class="hi">Surface mail से भेजें; airmail चिह्न <b>2 मोटी क्षैतिज रेखाओं</b> से काटें व कारण लिखें</span><span class="en">Send by surface; cancel airmail markings with 2 thick horizontal lines & note reason</span></div></div>
+</div>
+</div>
+<div class="trick">🧠 <b>Trick:</b> <span class="hi">"<b>L-75, P-50</b>" — <b>L</b>etters को 75%, <b>P</b>ostcards/aerogrammes को 50%. प्रेषक ज्ञात हो तो slip चिह्न चिपकाकर वस्तु वापस भेजी जाती है — "affix stamps, detach slip & repost"।</span></div>
+<div class="sub-h r">📦 बैगों की सामग्री व Mail Lists / Bag Contents & Mail Lists 🟠</div>
+<div class="grid2">
+<div class="card"><h3>R.67 Labelled Bundle सीमा 🔴</h3>
+<span class="hi">एक बंडल में सामान्यतः <b>50–60</b> पत्रों से अधिक नहीं; First Class व Second Class के लिए <b>अलग-अलग</b> बंडल; Foreign Air Mail बंडल — वस्तुएँ <b>5 से कम नहीं</b> होने पर (check-slip पर बोल्ड '<b>A.O.</b>')।</span>
+<span class="en">Not more than 50–60 letters per bundle; separate bundles for 1st & 2nd class; foreign air-mail bundles when articles not less than 5 (blue slip marked 'A.O.').</span></div>
+<div class="card"><h3>R.69–72 Mail Bag Contents 🟡</h3>
+<span class="hi">Station mail bag (HO/SO): station bundles + regd./parcel वस्तुएँ + <b>हमेशा registered bag</b>; HO↔SO में account bag भी। BO (बिना खाते वाले) के station bag में केवल <b>paid</b> बंडल व regd. articles (VP/customs को छोड़कर)। Combined bag = station + sorting दोनों।</span>
+<span class="en">Station bag must always contain a regd. bag; account bag between HO & its SO; station bag for non-account BO carries only paid bundles & regd. articles (no VP/customs); combined bag = both.</span></div>
+<div class="card"><h3>R.72-A Bulk Bag 🟠</h3>
+<span class="hi">विदेश में एक ही पते हेतु printed papers — <b>श्रीलंका, नेपाल, भूटान, पाकिस्तान को छोड़कर</b>; वजन <b>5–30 kg</b>; label ≥ <b>125×60 mm</b>; Regd. bulk bag <b>Argentina, Cuba, Peru, Philippines</b> को नहीं; बिल हर माह की <b>10 तारीख</b> को — <b>7 दिनों</b> में भुगतान; licence <b>7 दिन</b> की सूचना से रद्द; विवाद में <b>DG का निर्णय अंतिम</b>; खाली बैग <b>3 दिनों</b> में लौटाएँ; &gt;500 g पर customs clearance fee।</span>
+<span class="en">Printed papers to one foreign addressee (not Sri Lanka/Nepal/Bhutan/Pakistan); 5–30 kg; label ≥125×60 mm; regd. bulk bags barred to Argentina, Cuba, Peru, Philippines; bill on 10th, pay in 7 days; licence revocable with 7-days notice; DG's decision final; return empty bags within 3 days; CC fee if bag &gt;500 g.</span></div>
+<div class="card"><h3>R.74–75 Plural vs Extra Bags 🔴</h3>
+<span class="hi"><b>Plural</b>: नियमित रूप से एक से अधिक बैग — due mail list में आदेशित; <b>registered bag हमेशा Bag No. 1 में</b>। <b>Extra</b>: असामान्य मात्रा पर अतिरिक्त — label पर "Extra bag"; इनमें केवल <b>unregistered</b> वस्तुएँ।</span>
+<span class="en">Plural bags ordered in DM list — regd. bag always in bag No. 1; extra bags for unusual bulk contain only unregistered articles.</span></div>
+<div class="card"><h3>R.76 Mail Lists 🔴</h3>
+<span class="hi">Totals में <b>कोई सुधार नहीं</b> — गलत total हो तो list <b>नष्ट कर नई बनाएँ</b>; सामान्यतः duplicate; गैर-डाक एजेंसी होने पर triplicate/quadruplicate; sectional mail list पर relieving set के प्रभारी के हस्ताक्षर।</span>
+<span class="en">NO correction in totals — destroy & prepare fresh; normally in duplicate (triplicate/quadruplicate with non-postal agency); relieving set signs sectional list.</span></div>
+<div class="card"><h3>R.76/2 Air Mail Delivery Bill 🟡</h3>
+<span class="hi">प्रत्येक port of call हेतु delivery bill (M-57) की <b>6 प्रतियाँ</b> — 4 air carrier को, 1 Air Mail Accounts Section (Directorate) को, 1 office copy; totals में सुधार वर्जित।</span>
+<span class="en">Six copies of inland air-mail delivery bill (M-57) per port of call; 4 to carrier, 1 to Directorate AMA section, 1 office record; no correction in totals.</span></div>
+<div class="card red"><h3>R.81 सबसे महत्वपूर्ण कर्तव्य 🔴</h3>
+<span class="hi">प्राप्त डाक की <b>तुरंत जाँच</b> Mail Agent/Guard का <b>सबसे महत्वपूर्ण कर्तव्य</b> — seal, cord, label व स्थिति की जाँच; बिना लिखित आपत्ति के carrier को छोड़ने पर पूरी जिम्मेदारी प्राप्तकर्ता पर।</span>
+<span class="en">Immediate examination of mails is the MOST IMPORTANT duty; if carrier leaves without written explanation of discrepancies, entire responsibility shifts to the receiver.</span></div>
+</div>
+
+<div class="sub-h p">📮 Registration & Parcel (R.83–99) 🟠</div>
+<div class="grid2">
+<div class="card purple"><h3>R.85 विशिष्ट अक्षर / Distinguishing Letters 🔴</h3>
+<span class="hi">Insured = "<b>Ins</b>"; V.P. = "<b>V.P.</b>"; Postal service regd. = cipher "<b>O</b>"; Regd. bundle = "<b>R.B.</b>"; Insured bundle = "<b>I.B.</b>"</span>
+<span class="en">Ins / V.P. / cipher "O" for service articles; R.B. & I.B. as part of bundle numbers.</span></div>
+<div class="card purple"><h3>R.86 Number Slips 🟢</h3>
+<span class="hi">किसी class की वस्तुएँ औसतन <b>50 प्रतिदिन</b> या अधिक → number slips पर कार्यालय का नाम छपेगा (Head of Circle के आदेश से)।</span>
+<span class="en">Office name printed on number slips when average posting is 50/day or more.</span></div>
+<div class="card purple"><h3>R.87 Acknowledgement (A.D.) 🟠</h3>
+<span class="hi">"A.D." <b>लाल स्याही</b> में बोल्ड — वस्तु के face व number slip पर; विदेशी हेतु "NOTICE OF RECEIPT"/'AR'; हवाई वापसी हेतु "RENVOI PAR AVION"; अंतिम उत्तर <b>booking office की administrative unit</b> से (office of exchange से नहीं)।</span>
+<span class="en">"A.D." in bold red ink on face & number slip; foreign marked 'AR'; return-by-air marked "RENVOI PAR AVION"; final reply issues from booking office's administrative unit.</span></div>
+<div class="card purple"><h3>R.88 Parcel में पत्र / Inadmissible Communication 🟡</h3>
+<span class="hi">Parcel में एक से अधिक पत्र-रूपी संदेश → counter पर <b>अस्वीकार</b>; transit में पता चले तो "<b>For Open Delivery</b>" अंकित कर गंतव्य को।</span>
+<span class="en">Refused at counter; if noticed in transit, endorsed "For Open Delivery" & forwarded.</span></div>
+<div class="card purple"><h3>R.89/89-A RB व IB बनाना 🔴</h3>
+<span class="hi">RB: <b>2 से अधिक</b> uninsured regd. articles (जब direct mail bag नहीं) — लिफाफे पर <b>3 स्थानों पर सील</b>; IB: <b>2 या अधिक</b> insured letters; वजन ग्राम में शब्दों में लिखें।</span>
+<span class="en">RB when &gt;2 uninsured regd. articles — sealed at 3 marked places; IB when 2+ insured letters; weight in grams entered in words.</span></div>
+<div class="card purple"><h3>R.90 Registered/Parcel Lists 🔴</h3>
+<span class="hi">Parcel list <b>प्रतिदिन</b> — भले 'NIL' हो; duplicate (carbon) — pencil copy record पर, carbon copy dispatch; <b>TOTALS में सुधार पूर्ण वर्जित</b> — नष्ट कर नई बनाएँ; entries में सुधार पर initials।</span>
+<span class="en">Parcel list prepared daily even if NIL; carbon duplicate — pencil copy on record; NO correction in totals — destroy & prepare fresh.</span></div>
+<div class="card purple"><h3>R.91 बैग बंद करना / Closing Bags 🔴</h3>
+<span class="hi">Regd. bag — Registration Assistant की उपस्थिति/देखरेख में; cash bag वाला regd. bag — Supervisor/SPM के समक्ष <b>insurance seal</b> से; insured/diplomatic वाला — <b>Postmaster/HSA</b> के समक्ष, दोनों प्रतियों पर अलग-अलग हस्ताक्षर (carbon से नहीं); <b>5+ regd./insured parcels</b> एक delivery PO हेतु → direct parcel bag; सभी parcels एक ही addressee के → parcel list की <b>3 प्रतियाँ</b>।</span>
+<span class="en">Closed under direct supervision of Regn. Assistant; cash-bag regd. bags sealed with insurance seal before supervisor/SPM; insured/diplomatic closed before Postmaster/HSA signing both copies separately; 5+ parcels to one PO → direct parcel bag; same addressee → 3 copies of parcel list.</span></div>
+<div class="card purple"><h3>R.93 Plural Regd./Parcel Bags 🟡</h3>
+<span class="hi">बैग numbered 1, 2…; <b>सबसे अंत में बना बैग = No. 1</b> ताकि कुल संख्या (1/3, 1/4) लिखी जा सके; No.1 न मिले तो telegram से पूछताछ।</span>
+<span class="en">Bag made up LAST is numbered 1 so the total (1/3 etc.) can be noted; telegram if bag 1 missing.</span></div>
+<div class="card purple"><h3>R.99 Postage में कमी / Deficiency 🔴</h3>
+<span class="hi">Regd. article/parcel पर postage/fee कम मिलने पर — office of posting का <b>दोषी कर्मचारी कमी के बराबर राशि</b> देगा; वसूली postage stamps में बदलकर Supdt. के आदेश-पत्र पर चिपकाई जाएगी; inward foreign parcels पर लागू नहीं।</span>
+<span class="en">Official at fault at office of posting pays a sum equal to the deficiency; amount converted into stamps affixed to Supdt.'s letter; not applicable to inward foreign parcels.</span></div>
+</div>
+<div class="sub-h g">🖋️ Stamping व सामान्य नियम / Stamping & General Rules 🟠</div>
+<div class="grid2">
+<div class="card green"><h3>R.103 / 103-A Book of Postmarks 🔴</h3>
+<span class="hi">हर PO/Mail Office set/Transit Section/Record office में — तिथि वाले सभी stamps-seals की छाप <b>प्रतिदिन</b> उपयोग से पहले; MO stamps व unpaid stamp की छाप <b>अलग पुस्तक</b> में — Postmaster की व्यक्तिगत अभिरक्षा। सफाई: <b>माह में कम से कम एक बार</b> — पानी में उबालकर, फिर kerosene व brush से।</span>
+<span class="en">Impressions of all date-stamps taken daily before use; MO & unpaid stamps in a separate book in Postmaster's personal custody. Cleansing at least once a month — boil in water, then wash with kerosene & brush.</span></div>
+<div class="card green"><h3>R.106–108 Stamping नियम 🟠</h3>
+<span class="hi">डाक कर्मचारी वस्तुओं पर <b>टिकट नहीं चिपकाएँगे</b> — यह प्रेषक का काम; टिकटों का विरूपण न्यूनतम छापों से (2 साथ = 1 छाप; 4 का ब्लॉक = केंद्र में 1 छाप); विदेशी टिकट विरूपित <b>नहीं</b> करें; काली स्याही ही प्रयोग करें (जहाँ अन्य निर्दिष्ट न हो)।</span>
+<span class="en">Officials must never affix stamps (sender's job); deface with minimum impressions (block of 4 = one central impression); foreign stamps not defaced; black ink always used.</span></div>
+<div class="card green"><h3>R.109 पते का लिप्यंतरण / Transcription 🟠</h3>
+<span class="hi">क्षेत्रीय भाषा के पते अंग्रेज़ी में — Post/Mail Office <b>लाल स्याही</b> से, Sections <b>नीली पेंसिल</b> से; भाषा अज्ञात हो तो निकटतम Transcription Centre को; कोई कार्यालय सीधे RLO को नहीं भेजेगा।</span>
+<span class="en">POs & mail offices use red ink, sections blue pencil; unknown language → nearest transcription centre; never direct to RLO.</span></div>
+<div class="card green"><h3>R.110 विदेशी टिकट / Foreign Stamps 🟡</h3>
+<span class="hi">भारत में posting पर विदेशी टिकट मान्य नहीं — वस्तु <b>पूर्णतः unpaid</b>; टिकट विरूपित न करें, remark लिखें। Reply postcard सेवा केवल <b>बांग्लादेश, भूटान, पाकिस्तान, नेपाल</b> से।</span>
+<span class="en">Foreign stamps not recognised — article wholly unpaid; do not deface. Reply-postcard service in foreign post only with Bangladesh, Bhutan, Pakistan & Nepal.</span></div>
+<div class="card green"><h3>R.111-A 'T' Stamp 🟠</h3>
+<span class="hi">Office of exchange वस्तु के आगे ऊपरी-मध्य में '<b>T</b>' stamp — रेखा के ऊपर <b>कमी का दुगुना</b> (paise में), रेखा के नीचे प्रथम weight-step के पत्र की postage।</span>
+<span class="en">'T' stamp at top-centre; above the line = double the deficiency in paise; below = first weight-step letter postage.</span></div>
+<div class="card green"><h3>R.113–114 Unpaid वस्तुएँ / Damaged Articles 🟡</h3>
+<span class="hi">विभागीय अधिकारियों को unpaid पत्र → taxed, refused मानकर <b>RLO</b> (प्रेषक से वसूली)। खुली/फटी वस्तु पर remark: "Received open" / "Received torn" / "Without contents" — Postmaster/HSA के initials सहित।</span>
+<span class="en">Unpaid articles to officials → taxed, treated as refused, sent to RLO. Damaged articles marked "Received open/torn/without contents" with PM/HSA initials.</span></div>
+<div class="card green"><h3>R.115 अनिवार्य Registration/Insurance 🔴</h3>
+<span class="hi">Compulsory-registration वस्तु बिना regd. मिले → register कर <b>दोगुनी registration fee</b> की कमी; compulsory-insurance वस्तु (सिक्का, स्वर्ण, आभूषण) delivery office में मिले → <b>₹2 fee</b> + बकाया postage — क्षतिपूर्ति नहीं मिलेगी की सूचना के साथ delivery।</span>
+<span class="en">Unregistered compulsory-registration article → registered with fee equal to double the deficiency; compulsory-insurance article at delivery office → fee of ₹2 + postage due, delivered with no-compensation intimation.</span></div>
+<div class="card green"><h3>R.121 Facing 🟢</h3>
+<span class="hi">Stamping, sorting, delivery या बंडल बनाने से <b>पहले</b> facing; बंडल खोलते समय facing न बिगाड़ें।</span>
+<span class="en">Articles faced before stamping/sorting/delivery/bundling; don't disturb facing when untying bundles.</span></div>
+</div>
+
+<div class="sub-h g">🚫 प्रतिबंधित वस्तुएँ / Prohibited Articles (R.122–124) 🔴 — Decision Tree</div>
+<div class="flow">
+<div class="fbox start"><span class="hi">वस्तु में प्रतिबंधित सामग्री का संदेह?</span><span class="en">Article suspected to contain prohibited goods?</span></div>
+<div class="arrow">↓</div>
+<div class="branch">
+<div class="col"><div class="fbox warn"><b>विस्फोटक/खतरनाक 💣</b><span class="hi">Section में मिले → protecting cover में पहले Mail Office को 'outside'; PO में → रोककर <b>Head of Circle/Region</b> को तुरंत रिपोर्ट; leaky article → Supdt./1st class PM को (प्रेषक को 15 दिन का नोटिस)</span><span class="en">Explosive/dangerous: hand to first Mail Office; PO detains & reports to Head of Circle; leaky → report to Supdt., fortnight's notice to sender</span></div></div>
+<div class="col"><div class="fbox"><b>अन्य संदिग्ध / Other suspected</b><span class="hi">"<b>Doubtful</b>" अंकित protecting cover में गंतव्य के Postmaster को; addressee को <b>48 घंटे</b> का लिखित नोटिस — POA की <b>धारा 24</b> के अधीन उसके/एजेंट के समक्ष खोलना (अनुपस्थित हो तो भी)</span><span class="en">Marked "Doubtful" to destination PM; addressee given 48-hour notice; opened under Sec. 24 of PO Act in his presence or absence</span></div></div>
+</div>
+</div>
+<table class="tred">
+<tr><th>वास्तव में मिली वस्तु / Actually found</th><th>निपटान / Disposal 🔴</th></tr>
+<tr><td><span class="hi">स्वर्ण सिक्का/बुलियन &gt; <b>₹1,00,000</b></span><span class="en">Gold coin/bullion exceeding ₹1,00,000</span></td><td><span class="hi">"contains gold exceeding prescribed limit" अंकित कर — uninsured → RLO; insured → office of posting; झूठी घोषणा पर POA की <b>धारा 64</b> में दंड; मूल्य = posting की तिथि व स्थान का बाज़ार-मूल्य</span><span class="en">Endorsed & sent to RLO (uninsured) / office of posting (insured); false declaration punishable u/s 64 POA; value = market value at date & place of posting</span></td></tr>
+<tr><td><span class="hi">अनधिकृत लॉटरी सामग्री</span><span class="en">Unauthorised lottery matter</span></td><td><span class="hi">RLO को; <b>धारा 19-A</b> IPO Act में प्रतिबंधित; <b>धारा 23(3)(a)</b> में Head of Circle के अधिकार से नष्ट; IPC <b>294-A</b>: 6 माह कारावास/जुर्माना; प्रकाशन पर ₹1000 तक जुर्माना</span><span class="en">To RLO; prohibited u/s 19-A IPO Act; destroyed under Sec. 23(3)(a); IPC 294-A: 6 months/fine; ₹1000 fine for publishing proposal</span></td></tr>
+<tr><td><span class="hi">अश्लील सामग्री</span><span class="en">Indecent/obscene matter</span></td><td><span class="hi">RLO को remark सहित (धारा 19-20 POA, Rules 44-45 IPO Rules); विज्ञापनों पर Head of Circle के स्पष्ट आदेश के बिना कार्रवाई नहीं</span><span class="en">To RLO (Secs. 19 & 20 POA); advertisements only with Head of Circle's express orders</span></td></tr>
+<tr><td><span class="hi">अफ़ीम, मॉर्फिया, कोकीन आदि</span><span class="en">Opium, morphia, cocaine etc.</span></td><td><span class="hi">समस्त सामग्री सहित निकटतम <b>Excise Officer</b> को</span><span class="en">Made over with all contents to nearest Excise Officer</span></td></tr>
+<tr><td><span class="hi">आयात-प्रतिबंधित / dutiable (R.123)</span><span class="en">Import-prohibited / dutiable</span></td><td><span class="hi">Collector of Customs को; exchange offices: <b>Mumbai, Kolkata, Chennai, Delhi</b>; sub-exchange: <b>Ahmedabad, Bangalore, Cochin, Jaipur</b></span><span class="en">To Collector of Customs; exchange offices at Mumbai/Kolkata/Chennai/Delhi; sub-exchange at Ahmedabad/Bangalore/Cochin/Jaipur</span></td></tr>
+</table>
+<div class="trick">🧠 <b>Sub-exchange Mnemonic — "ABCJ":</b> <span class="hi"><b>A</b>hmedabad, <b>B</b>angalore, <b>C</b>ochin, <b>J</b>aipur — "अब सीजे (ABCJ) customs देखेंगे!"</span></div>
+
+<div class="sub-h g">⚖️ वजन सीमाएँ / Weight Limits (R.135) 🔴 — MUST MEMORIZE TABLE</div>
+<table class="tgreen">
+<tr><th>वाहक / Carrier</th><th>सीमा / Limit</th></tr>
+<tr><td><span class="hi">Letter mail runner (मुख्य लाइन)</span><span class="en">Letter-mail runner on main line</span></td><td><b>14 kg</b></td></tr>
+<tr><td><span class="hi">Parcel runner — प्रति parcel bag</span><span class="en">Parcel bag by special parcel runner</span></td><td><b>14 kg</b></td></tr>
+<tr><td><span class="hi">Parcel runner — प्रति व्यक्ति कुल</span><span class="en">Total weight per man</span></td><td><b>28 kg</b></td></tr>
+<tr><td><span class="hi">Trolley से parcel bag</span><span class="en">Parcel bag by trolley</span></td><td><b>37 kg</b></td></tr>
+<tr><td><span class="hi">RMS द्वारा parcel bag (अधिकतम)</span><span class="en">Parcel bag by RMS (maximum)</span></td><td><b>37 kg</b></td></tr>
+<tr><td><span class="hi">Postman / Village Postman (parcels व cash सहित)</span><span class="en">Postman / Village Postman (incl. parcels & cash)</span></td><td><b>10 kg</b></td></tr>
+<tr><td><span class="hi">Air mail bag / Air TB (R.26-A)</span><span class="en">Air-mail bag / air TB</span></td><td><b>30 kg</b></td></tr>
+</table>
+<div class="trick">🧠 <b>Trick — "10-14-28-30-37":</b> <span class="hi">Postman सबसे कम (10) → runner (14) → runner-कुल (28) → हवाई (30) → trolley/RMS (37)। "दस-चौदह-अट्ठाईस-तीस-सैंतीस" सीढ़ी याद रखें!</span></div>
+<div class="sub-h g">⚡ R.144 — Telegraph/Fax से तुरंत रिपोर्ट होने वाली अनियमितताएँ 🔴</div>
+<div class="card red">
+<span class="hi">➤ Due bag प्राप्त नहीं / पीछे छूटा ➤ बैग खोया, चोरी, आग से नष्ट ➤ mail list में दर्ज बैग नहीं मिला / अधिक मिला ➤ due mail/regd./parcel list नहीं मिली ➤ list में <b>बिना attestation सुधार</b> या <b>totals में सुधार (attested होने पर भी)</b> / गलत totals / totals नहीं ➤ regd./insured/Speed Post वस्तु दर्ज पर प्राप्त नहीं / भिन्न / अधिक ➤ insured वस्तु damaged / बिना वजन / वजन में अंतर ➤ MO में प्रेषक व issue office की राशि में <b>₹10 या अधिक</b> का अंतर / बिना हस्ताक्षर / बिना postmarks ➤ MO प्राप्ति के बाद भुगतान से पहले खोया ➤ TMO advice संबंधित PO को नहीं ➤ daily account / SO slip account bag में नहीं ➤ नकदी/टिकट advised पर नहीं मिले या कम/अधिक ➤ carrier अनुपस्थित।</span>
+<span class="en">Due bag not received/left behind; bag lost/stolen/burnt; bag in mail list not received or excess; due list not received; corrections without attestation OR corrections in totals even if attested; regd./insured/SP article not received/different/excess; insured article damaged/without weight/weight differs; MO discrepancy ₹10 or more, unsigned or without postmarks; MO lost before payment; TMO advice misdelivered; daily account/SO slip missing; cash/stamps short or excess; absence of carrier.</span>
+<div class="num" style="margin-top:8px">🟢 <span class="hi"><b>अपवाद:</b> unregistered parcels कम/अधिक मिलने पर telegraph नहीं — <b>immediate letter</b> से रिपोर्ट (R.144(5))। BO की अनियमितता की सूचना BO को <b>plain language</b> telegram से।</span><span class="en">Exception: short/excess unregistered parcels reported by immediate LETTER, not telegraph; telegrams to BOs in plain language.</span></div>
+</div>
+
+<div class="sub-h g">📋 अन्य General नियम / Other General Rules 🟠</div>
+<div class="grid2">
+<div class="card"><h3>R.145 Error Book / Rough Note Book 🟠</h3>
+<span class="hi">हर PO (बड़े PO में हर department) में <b>Error Book</b>; RMS में हर Sorting Assistant के पास <b>rough notebook</b>; SO में Postmaster's Order Book वाली प्रविष्टियाँ भी Error Book में; जनता की शिकायतों का रिकॉर्ड भी।</span>
+<span class="en">Error Book in every PO/department; rough notebook per Sorting Assistant in RMS; in SOs, order-book items also recorded in Error Book.</span></div>
+<div class="card"><h3>R.146 Facsimile हस्ताक्षर 🟡</h3>
+<span class="hi">Stamp द्वारा facsimile हस्ताक्षर मान्य — <b>अपवाद:</b> (1) डाक कर्मचारियों के आधिकारिक हस्ताक्षर, (2) MO vouchers, (3) insured वस्तुओं की receipts/acknowledgements।</span>
+<span class="en">Facsimile signature accepted EXCEPT for officials' own signing, MO vouchers & insured-article receipts/acknowledgements.</span></div>
+<div class="card"><h3>R.147 पत्रों का Interception 🔴</h3>
+<span class="hi">जनता के आवेदन पर sorting में पत्र रोकना — <b>Head of Circle के आदेश के बिना नहीं</b>; office of posting का नाम व प्रबल कारण आवश्यक।</span>
+<span class="en">Interception refused without Head of Circle's orders; application must name offices of posting & give very strong reasons.</span></div>
+<div class="card"><h3>R.148 वस्तु वापस मँगाना / Recall 🟠</h3>
+<span class="hi">Recall/पता-सुधार — निर्धारित fee, टिकटों में बदलकर आवेदन पर; आवेदन <b>1 वर्ष</b> (विदेशी वस्तु हेतु <b>18 माह</b>) रिकॉर्ड में रखकर नष्ट; telegraph/phone/fax का खर्च प्रेषक देगा; P.O. Form वाली विदेशी वस्तु के पते में परिवर्तन हेतु <b>RBI की पूर्व अनुमति</b>।</span>
+<span class="en">Fee converted into stamps; applications preserved 1 year (18 months foreign) then destroyed; sender bears telegraph/phone cost; RBI's prior permission for P.O.-form foreign articles.</span></div>
+<div class="card"><h3>R.149 DG Circulars 🟢</h3>
+<span class="hi">सामान्यतः <b>माह में एक बार</b>; वार्षिक क्रमांक; Guard Books में फाइल; "General File" शीर्ष प्रति।</span>
+<span class="en">Issued ordinarily once a month with annual serial numbers; filed in guard books.</span></div>
+<div class="card"><h3>R.152 Police को Records 🔴</h3>
+<span class="hi">Cognizable case में जाँच कर रहे Police अधिकारी के <b>लिखित आदेश</b> पर — केवल संबंधित प्रविष्टियाँ; records सौंपने हेतु CrPC <b>धारा 92/95</b> का आदेश आवश्यक (विभाग शिकायतकर्ता हो तो Head of Circle की अनुमति से बिना आदेश); <b>IG, CBI व staff</b> को सभी records देखने का वैधानिक अधिकार; रोकने का निर्णय Evidence Act की <b>धारा 124</b> में Head of Circle करेगा।</span>
+<span class="en">Produced on written order of investigating Police/Excise officer (relevant entries only); handing over needs order u/s 92/95 CrPC (waived when Dept. is complainant, with HoC authority); IG CBI & staff authorised by law; withholding decided u/s 124 Evidence Act by Head of Circle.</span></div>
+<div class="card"><h3>R.154 Letter-box में मिली मूल्यवान वस्तुएँ 🟡</h3>
+<span class="hi">Loose टिकट → पहचान का प्रयास, विफल होने पर Error Book में चिपकाकर विरूपण; postcard/embossed envelope/note/coin → मूल्य "<b>unclassified receipts</b>" में जमा; अन्य मूल्यवान वस्तुएँ → Postmaster की व्यक्तिगत अभिरक्षा, Head of Circle से आदेश।</span>
+<span class="en">Loose stamps defaced & pasted in Error Book; postcards/notes/coins credited to "unclassified receipts"; other valuables kept in PM's custody pending Head of Circle's orders.</span></div>
+<div class="card"><h3>R.155 अर्धवार्षिक गणना / Enumeration 🔴</h3>
+<span class="hi"><b>फरवरी व अगस्त</b> के <b>दूसरे सप्ताह — 8 से 21 तारीख</b> (दोनों दिन शामिल) — delivery हेतु दी गई unregistered वस्तुओं की दैनिक गणना; प्रतिदिन <b>200+ delivery</b> वाले कार्यालय पिछले वर्ष से तुलना करेंगे; HO 15 तारीख की डाक से Head of Circle को भेजेगा।</span>
+<span class="en">Daily enumeration from 8th to 21st of February & August; offices with 200+ daily delivery compare with previous year; HO forwards by mail of the 15th.</span></div>
+<div class="card"><h3>R.157 Order Book 🟡</h3>
+<span class="hi">निरीक्षण अधिकारियों की टिप्पणियाँ; Postmaster/Record Officer की व्यक्तिगत अभिरक्षा; <b>50/100/200</b> क्रमांकित पृष्ठ; पृष्ठ फाड़ना <b>गंभीर अपराध</b> — removal तक दंड।</span>
+<span class="en">Kept in personal custody; 50/100/200 serially-numbered pages; wilful removal of a page = serious offence liable to removal.</span></div>
+<div class="card"><h3>R.159 Camp Bags — उच्चतम अधिकारी 🟠</h3>
+<span class="hi"><b>राष्ट्रपति व मंत्रिपरिषद्, उपराष्ट्रपति, राज्यपाल</b> — दौरे पर फाइलें camp bag से regd. parcel/air parcel/letter mail के रूप में; parcel booking पर <b>10 kg</b> वजन की postage (अधिकतम 10 kg) + regn fee + incidental charges — <b>service stamps</b> में; delivery रविवार/अवकाश पर भी special messenger से।</span>
+<span class="en">President & Council of Ministers, Vice-President, Governors; camp bag as parcel charged at 10-kg parcel postage + regn. + incidentals in service stamps; delivered at once even on Sundays/holidays.</span></div>
+</div>
+
+<div class="sub-h g">✈️💥 वायुयान दुर्घटना में डाक / Loss of Mails in Air Crash (R.142-A) 🟠</div>
+<div class="flow">
+<div class="fbox start"><span class="hi">दुर्घटना की सूचना → निकटतम PO/RMS प्रभारी तुरंत घटनास्थल पर; Divl. Supdt. व निकटतम IPO को phone/telegraph से सूचना</span><span class="en">Officer-in-charge of nearest PO/RMS proceeds immediately; informs Divl. Supdt. & nearest Inspector</span></div>
+<div class="arrow">↓</div>
+<div class="fbox"><span class="hi">Salvage party (Group C व D) — खाली बैग व paper covers सहित; Civil Aviation + Airlines + Police से अनुमति; SDM/ADM/Magistrate से mail release की अनुमति</span><span class="en">Salvage party with empty bags & covers; joint operation with Civil Aviation, carriers & Police; Magistrate's permission for release</span></div>
+<div class="arrow">↓</div>
+<div class="fbox end"><span class="hi">बचाई गई डाक की <b>5 श्रेणियाँ</b>: (1) सही-सलामत → पहली dispatch से (2) आंशिक जली, पता उपलब्ध → repair कर stamp "Damaged in air accident to flight No.…" (3) damaged/बिना सामग्री → जोड़कर प्रेषक/पानेवाले को, अन्यथा RLO (4) पूर्ण जली → सूक्ष्म जाँच कर RLO (5) खुली सामग्री → inventory duplicate में बनाकर RLO</span><span class="en">Five categories: intact → despatch at once; partially burnt with address → repaired & stamped; damaged/contentless → restore or RLO; fully burnt → RLO after minute examination; loose contents → inventory in duplicate to RLO</span></div>
+</div>
+
+<div class="pyq"><b>📌 Probable Questions (Ch-2):</b>
+<span class="hi">1) Mail list के total में सुधार? — कभी नहीं, नई list बनाएँ। 2) MO में कितने अंतर पर telegram? — ₹10 या अधिक। 3) Enumeration कब? — फरवरी व अगस्त, 8–21 तारीख। 4) स्वर्ण की डाक-सीमा? — ₹1,00,000। 5) Postman कितना वजन ले जा सकता है? — 10 kg। 6) Seals की सफाई? — माह में एक बार (उबालकर + kerosene)।</span></div>
+
+<!-- ================= CHAPTER 3 ================= -->
+<div class="chapter ch3">
+<h2>📗 CHAPTER 3 — जाँच / Investigations (Rules 167–225)</h2>
+<p>Highway Robbery • Theft/Loss • Fraud & Misappropriation • Minor Irregularities</p>
+</div>
+<div class="hier">CHAPTER 3 (Investigations)
+ ├── Sub: General Rules (167–176A) ── Micro: reporting, monetary limits ── Nano: FIR ₹5000
+ ├── Sub: Highway Robbery (177–190) ── Micro: Supdt. to the spot, inventory in duplicate
+ ├── Sub: Theft / Loss (191–213B) ── Micro: R.192 tampering signs, RP-63, search bills
+ ├── Sub: Fraud (214–223) ── Micro: preservation of MOs/IPOs, defrauded persons' claims
+ └── Sub: Minor Irregularities (224–225) ── Micro: cover of article essential</div>
+
+<div class="sub-h p">🧭 जाँच का दायरा / Nature of Investigations (R.167) 🟡</div>
+<div class="card purple">
+<span class="hi">छह प्रकार के मामले: (a) डाक की highway robbery (b) चोरी/हानि/छेड़छाड़ (c) सरकारी धन का गबन — MO, SB, certificates आदि (d) छोटी अनियमितताएँ — mis-sending, विलंब (e) सरकारी संपत्ति की हानि (f) PO/Mail Office की सुरक्षा। निर्देश <b>suggest</b> करते हैं, prescribe नहीं — अधिकारी को व्यापक विवेकाधिकार। <b>समय पर जाँच अत्यंत आवश्यक</b>।</span>
+<span class="en">Six categories: highway robbery; theft/loss/tampering; fraud in money/financial services; minor irregularities; loss of Govt. property; security of offices. Instructions suggest rather than prescribe — wide discretion; timely investigation absolutely essential.</span></div>
+
+<div class="sub-h p">💰 जाँच के मौद्रिक अधिकार / Monetary Limits for Investigation (R.176(7)) 🔴</div>
+<table class="tpurple">
+<tr><th>अधिकारी / Officer</th><th>सीमा / Limit</th></tr>
+<tr><td><span class="hi">IPO / ASPOs / IRM / ASRM</span></td><td><b>₹10,000 तक / Up to ₹10,000</b></td></tr>
+<tr><td><span class="hi">Divl. Supdt. / Sr. Supdt. / Chief PM / Dy. Presidency PM (Kolkata व Mumbai GPO)</span></td><td><b>₹10,000 से अधिक — ₹25,000 से कम</b><br>Above ₹10,000 & below ₹25,000</td></tr>
+<tr><td><span class="hi">Asst. Director / APMG (Inv.) — Circle में</span></td><td><b>₹25,000 से अधिक — ₹50,000 से कम</b><br>Above ₹25,000 & below ₹50,000</td></tr>
+<tr><td><span class="hi">DPS / Directors Kolkata-Mumbai GPO / PMsG</span></td><td><b>₹50,000 से अधिक / Above ₹50,000</b></td></tr>
+</table>
+<div class="trick">🧠 <b>Trick — "10-25-50 की सीढ़ी":</b> <span class="hi">Inspector→10K, Supdt.→25K, AD(Inv)→50K, उससे ऊपर DPS/PMG। "I-S-A-D" क्रम याद रखें!</span></div>
+<div class="alert">🔴 <b>R.176-A:</b> <span class="hi">सरकारी संपत्ति की <b>₹5,000 या अधिक</b> की हानि वाले सभी loss & fraud मामलों में Divisional Supdt. द्वारा <b>तुरंत FIR</b>; FIR न कराने के कारण लिखित में।</span><span class="en">All loss/fraud cases of ₹5,000 or above → Police report & FIR immediately by Divisional Superintendent; written reasons where FIR not lodged.</span></div>
+
+<div class="sub-h p">📤 रिपोर्टिंग सीमाएँ / Reporting Thresholds 🔴 — Comparison Chart</div>
+<table class="tpurple">
+<tr><th>स्थिति / Situation</th><th>सीमा / Threshold</th><th>किसे रिपोर्ट / Report to</th></tr>
+<tr><td><span class="hi">Loss/fraud — Audit Office को प्रति</span><span class="en">Copy of report to Audit Office</span></td><td><b>&gt; ₹300</b></td><td>Audit Office (Note 2, R.170)</td></tr>
+<tr><td><span class="hi">FIR अनिवार्य</span><span class="en">FIR compulsory</span></td><td><b>≥ ₹5,000</b></td><td>Police (R.176-A)</td></tr>
+<tr><td><span class="hi">अख़बारों में छपे चौंकाने वाले fraud/theft — तुरंत phone/fax</span><span class="en">Shocking frauds reported in newspapers — immediate phone/fax</span></td><td><b>≥ ₹10,000</b></td><td>Head of Circle (R.170 N.1)</td></tr>
+<tr><td><span class="hi">Supdt. स्वयं मौके पर जाएगा (loss cases)</span><span class="en">Supdt. proceeds personally in loss cases</span></td><td><b>≥ ₹10,000</b></td><td>— (R.207)</td></tr>
+<tr><td><span class="hi">Insured वस्तु — देय क्षतिपूर्ति</span><span class="en">Insured article — compensation payable</span></td><td><b>&gt; ₹10,000</b></td><td>DG को व्यक्तिगत रिपोर्ट / Individual report to DG (R.176)</td></tr>
+<tr><td><span class="hi">Highway robbery / dacoit attack / house-breaking / fraud / आग-बाढ़ से हानि</span><span class="en">Robbery, dacoity, house-breaking, fraud, fire/flood loss</span></td><td><b>&gt; ₹50,000</b></td><td>DG को व्यक्तिगत रिपोर्ट / Individual report to DG (R.176)</td></tr>
+<tr><td><span class="hi">मासिक विवरणी (सभी बड़े मामले)</span><span class="en">Monthly statement</span></td><td><span class="hi">अगले माह की <b>20 तारीख</b> तक</span><span class="en">By 20th of following month</span></td><td>Directorate</td></tr>
+<tr><td><span class="hi">प्रगति रिपोर्ट</span><span class="en">Progress reports</span></td><td><span class="hi">अधिकतम <b>2 माह</b> में</span><span class="en">In no case later than 2 months</span></td><td>Directorate</td></tr>
+</table>
+
+<div class="sub-h p">⚖️ Cognizable vs Non-Cognizable (R.172) 🔴 — Comparison</div>
+<div class="grid2">
+<div class="card purple"><h3>✅ Cognizable</h3>
+<span class="hi">Highway robbery, चोरी, criminal breach of trust, <b>cheating by personation</b>, तथा POA की <b>धारा 52</b> के अपराध। जाँच <b>Police के नियंत्रण</b> में — विभागीय अधिकारी निकट संपर्क रखेगा। धारा 52 का मुकदमा केवल <b>Court of Sessions</b> में।</span>
+<span class="en">Robbery, theft, criminal breach of trust, cheating by personation & offences u/s 52 POA. Once informed u/s 154 CrPC, Police controls the action; Sec.-52 offences triable only by a Court of Sessions.</span></div>
+<div class="card purple"><h3>❌ Non-Cognizable</h3>
+<span class="hi">Cheating (personation के अलावा), <b>forgery</b>, POA के अन्य सभी अपराध (धारा 52 छोड़कर)। विभागीय अधिकारी शीघ्र जाँच करे; Police सहायता हेतु Magistrate को <b>धारा 155 CrPC</b> में लिखित तथ्य। अभियोजन Head of Circle की <b>पूर्व स्वीकृति</b> से (आरोपी के फ़रार होने के खतरे में anticipate कर telegram से सूचना)।</span>
+<span class="en">Cheating (other than personation), forgery & all other POA offences. Departmental officer investigates; Police aid via Magistrate u/s 155 CrPC; prosecution needs Head of Circle's prior sanction (anticipated only if accused may abscond).</span></div>
+</div>
+<div class="num">🟢 <span class="hi"><b>DG-नियुक्त अधिकारी</b> के विरुद्ध Police/Magistrate को सूचना <b>DG की पूर्व स्वीकृति के बिना कभी नहीं</b> (R.172-A.IV & VI)। Magistrate सामान्यतः सुनवाई हेतु अधिकतम <b>14 दिन</b> की तिथि देगा; एक trial में एक ही प्रकार के अधिकतम <b>3 आरोप</b> — और तीनों अपराध <b>12 माह</b> के भीतर के हों (172-B.4)।</span><span class="en">No information against DG-appointed officers without DG's sanction; Magistrate ordinarily fixes hearing within 14 days; max 3 charges of same kind at one trial, all committed within 12 months.</span></div>
+
+<div class="sub-h p">🏇 Highway Robbery — कार्रवाई प्रवाह / Action Flow (R.177–190) 🟠</div>
+<div class="flow">
+<div class="fbox start"><span class="hi">पहली सूचना पाने वाला डाक कर्मचारी → तुरंत local Police व अपने वरिष्ठ को</span><span class="en">First official informed → at once to local Police & immediate superior</span></div>
+<div class="arrow">↓</div>
+<div class="fbox"><span class="hi">Supdt./Inspector/PM → phone/fax से District Magistrate, Police व वरिष्ठ को विवरण (R.177)</span><span class="en">Supdt. communicates particulars to District Magistrate, Police & superior</span></div>
+<div class="arrow">↓</div>
+<div class="fbox"><span class="hi">डाक की सामग्री ज्ञात करें — last despatch office से बैग सूची, regd./parcel lists (R.178); किसी office में <b>अनुचित रोक</b> हो तो उस पर मिलीभगत का संदेह (R.179)</span><span class="en">Ascertain contents from office of last despatch; undue detention in any office → suspicion of complicity</span></div>
+<div class="arrow">↓</div>
+<div class="fbox warn"><span class="hi"><b>Supdt. पूरी गति से घटनास्थल पर</b> (R.180); दूर होने पर Inspector प्रारंभिक जाँच (R.181); गवाहों के बयान <b>लिखित</b> (R.183)</span><span class="en">Supdt. proceeds with all possible speed; Inspector begins if Supdt. distant; depositions recorded in writing</span></div>
+<div class="arrow">↓</div>
+<div class="fbox end"><span class="hi">बरामद वस्तुओं की inventory <b>duplicate</b> में — 1 प्रति Supdt., 1 Police को रसीद रूप में (R.184); बरामद वस्तुएँ बिना विलंब निपटाएँ (R.186); अंतिम रिपोर्ट Head of Region/Circle को documentary evidence सहित (R.189–190)</span><span class="en">Inventory in duplicate (one to Police as receipt); recovered articles disposed without delay; final report with documentary evidence to Head of Region/Circle</span></div>
+</div>
+
+<div class="sub-h p">🔍 चोरी/हानि की जाँच / Theft & Loss Procedure (R.191–213) 🔴</div>
+<div class="grid2">
+<div class="card purple"><h3>R.192 छेड़छाड़ के संकेत / Signs of Tampering 🔴</h3>
+<span class="hi">(i) seals आपस में चढ़ी/अपठनीय (ii) seal या date-stamp despatch office के नहीं / भिन्न मोम (iii) वजन नहीं लिखा या भिन्न (iv) flap/seal हटाकर पुनः चिपकाने के निशान (v) किनारों/fastening के नीचे फटा (vi) due document में <b>total में सुधार</b> या document प्राप्त नहीं → सब Error Book/Daily Report में दर्ज कर PM/HSA को।</span>
+<span class="en">Superimposed/illegible seals; wrong seals/date-stamps or different wax; weight not noted or differing; marks of resticking; tears at edges/beneath fastenings; corrections in totals of due documents or documents missing — entered in Error Book & handed to PM/HSA.</span></div>
+<div class="card purple"><h3>R.193 खोलने की सावधानियाँ 🟠</h3>
+<span class="hi">दूसरे कार्यालय के cash bags <b>नहीं खोलें</b> — protecting bag में पुनः बंद करें; BO bags, insured envelopes/bundles/bags व अपने cash bags — <b>गवाहों की उपस्थिति</b> में खोलें; damaged वस्तु का वजन स्वयं करें; labels cord-seal सहित initials व date-stamp लगाकर सुरक्षित रखें।</span>
+<span class="en">Cash bags not for the office are reclosed unopened; BO bags, insured envelopes/bundles/bags & own cash bags opened in presence of witnesses; damaged articles weighed personally; labels preserved with initials & date-stamp.</span></div>
+<div class="card purple"><h3>R.196 Damaged वस्तु की Delivery — RP-63 🔴</h3>
+<span class="hi">पानेवाले को Form <b>R.P.-63</b> में सूचना; वस्तु receipt पर हस्ताक्षर के बाद ही खोली जाएगी (इच्छा पर उसके सामने); कमी/क्षति का आरोप हो तो <b>inventory duplicate में</b> — दोनों के हस्ताक्षर; <b>7 दिनों</b> में उपस्थित न होने पर वस्तु <b>unclaimed</b> मानकर प्रेषक को वापस।</span>
+<span class="en">Intimation in RP-63; opened only after addressee signs receipt; alleged shortage → inventory in duplicate signed by both; if addressee doesn't attend within 7 days → treated unclaimed & returned to sender protected.</span></div>
+<div class="card purple"><h3>R.206 Regd./SP वस्तु कम मिलने पर 🔴</h3>
+<span class="hi">बैग-label-seal-cord व list पर तुरंत कब्ज़ा; insured parcel missing हो तो कुल वजन का मिलान; कार्यालय में गहन खोज; उपस्थित सभी के नाम व बयान लिखित; <b>insured वस्तु कम मिलने पर Police बुलाना अनिवार्य</b> (पहले despatch office से telegraphic पुष्टि कर prima facie case)।</span>
+<span class="en">Take possession of bag, label, seals & list; compare aggregate weight for missing insured parcel; record statements of all present; Police invariably called when an insured article is received short (after telegraphic confirmation establishing prima facie case).</span></div>
+<div class="card purple"><h3>R.210 Search Bills 🟠</h3>
+<span class="hi">बैग या VP/insured वस्तु का मार्ग खोजने हेतु — posting/delivery/intermediate office या supervising officer जारी कर सकता है; <b>registered on service</b> भेजा जाएगा; रोकना/खोना/दबाना <b>गंभीर अपराध</b>।</span>
+<span class="en">Traces a bag/VP/insured article along its course; forwarded registered on service; detention, loss or suppression treated as a grave offence.</span></div>
+<div class="card purple"><h3>R.213-A/B Cash-Stamps/Certificates की चोरी 🟠</h3>
+<span class="hi">PO से नकदी-टिकट चोरी → Divl. Supdt. को तुरंत रिपोर्ट + <b>तुरंत FIR</b>; balance सत्यापन IPO/ASP द्वारा; खोए stamps/seals/certificates/IPOs का विवरण Circle Heads द्वारा <b>सभी circles</b> में परिचालित।</span>
+<span class="en">Theft of cash/stamps → immediate report to Divl. Supdt. + FIR; balances verified; details of lost stamps/seals/certificates circulated to ALL circles by Circle Heads.</span></div>
+</div>
+
+<div class="sub-h p">🕵️ धोखाधड़ी / Fraud & Misappropriation (R.214–223) 🟠</div>
+<div class="grid2">
+<div class="card purple"><h3>R.214–217 Fraud के कारण 🟡</h3>
+<span class="hi">ढीली supervision fraud को बढ़ावा देती है — प्रायः कई कर्मचारी मिलीभगत में; <b>अस्थायी गबन</b> (बाद में जमा) भी criminal breach of trust — गंभीर दंडनीय; cash/stamp balance में कमी पर inventory <b>दो स्वतंत्र गवाहों</b> के हस्ताक्षर से; ED agents को नकदी लाने का समय दें।</span>
+<span class="en">Lax supervision facilitates fraud; temporary misappropriation punishable as criminal breach of trust even without actual loss; deficiency inventory signed by two independent witnesses; ED agents given time to produce cash.</span></div>
+<div class="card purple"><h3>R.220–222 रिकॉर्ड सुरक्षा अवधि 🔴</h3>
+<span class="hi">Paid inland MO व IPO — Postal Accounts Office में <b>1 वर्ष</b> (currency-अवधि के अंत से); inward <b>foreign MO — 3 वर्ष</b>; discharged postal certificates — <b>maturity + 6 वर्ष</b> (भुगतान तिथि से); TMO के telegraphic advices — <b>3 माह</b>।</span>
+<span class="en">Paid inland MOs/IPOs preserved 1 year; inward foreign MOs 3 years; discharged certificates = maturity period + 6 years; telegraphic advices of TMOs 3 months.</span></div>
+<div class="card purple"><h3>R.218 शिकायत = Fraud संकेत 🟠</h3>
+<span class="hi">Fraud की ओर इशारा करती हर शिकायत की जाँच <b>बिना एक क्षण की देरी</b> के — cognizable offence की Police जाँच जैसी तत्परता; देरी करने वाला Supdt./Inspector परिणामों के लिए जिम्मेदार।</span>
+<span class="en">Every complaint pointing to fraud enquired into without a moment's unnecessary delay — same promptitude as Police in cognizable cases; delaying officer held responsible.</span></div>
+<div class="card purple"><h3>R.223 ठगे गए व्यक्ति का दावा 🟡</h3>
+<span class="hi">Head of Region/Circle दावा स्वीकारते ही <b>refund के आदेश</b> — विलंब नहीं; MO राशि के गबन में remitter से पूछेंगे — स्वयं वापसी (commission सहित) या payee को प्रेषण (commission PO रखेगा)।</span>
+<span class="en">Refund ordered as soon as claim admitted — no delay; MO remitter chooses refund (with commission) or remittance to payee (commission retained by PO).</span></div>
+</div>
+<div class="num">🟢 <b>R.224–225 Minor Irregularities:</b> <span class="hi">बार-बार mis-sending गंभीर; <b>जानबूझकर</b> विलंब/mis-delivery पर Head of Region/Circle के आदेश; unregistered वस्तु की शिकायत में <b>cover (लिफाफा)</b> आवश्यक — बिना cover जाँच संभव नहीं।</span><span class="en">Frequent irregularities viewed seriously; wilful delay needs Head of Region's orders; complainant must produce the cover — no enquiry possible without it.</span></div>
+
+<div class="pyq"><b>📌 Probable Questions (Ch-3):</b>
+<span class="hi">1) IPO/ASP कितनी राशि तक जाँच करेंगे? — ₹10,000 तक। 2) FIR कब अनिवार्य? — ₹5,000 या अधिक की हानि। 3) DG को व्यक्तिगत रिपोर्ट (fraud)? — ₹50,000 से अधिक। 4) RP-63 क्या है? — Damaged वस्तु की पानेवाले को सूचना। 5) Paid inland MO कितने समय सुरक्षित? — 1 वर्ष। 6) एक trial में समान अपराध के कितने आरोप? — 3 (12 माह के भीतर)।</span></div>
+
+<!-- ================= CHAPTER 4 ================= -->
+<div class="chapter ch4">
+<h2>📙 CHAPTER 4 — वेटमेंट प्रणाली / Weighment System (Rules 226–243)</h2>
+<p>Regular Daily Service • Occasional Despatches</p>
+</div>
+
+<div class="grid2">
+<div class="card green"><h3>R.226 परिभाषा / Definition 🔴</h3>
+<span class="hi">भारतीय रेलों की प्रणाली — बंद बैग (mail/packet/transit) <b>बिना वजन-सीमा</b> luggage van में <b>Railway Guard की अभिरक्षा</b> में; भुगतान वजन के अनुसार — नियमित सेवा हेतु <b>अर्धवार्षिक</b>, occasional despatches हेतु <b>त्रैमासिक</b> (bills + vouchers पर)।</span>
+<span class="en">Closed bags without limit of weight conveyed in luggage vans in Railway Guards' custody; charged by weight — half-yearly payment for regular daily service, quarterly for occasional despatches.</span></div>
+<div class="card green"><h3>R.227 कब अपनाएँ / When Adopted 🟡</h3>
+<span class="hi">अनिम्न रेल-लाइनों पर, हल्की डाक, mail train न रुकने वाले स्टेशनों, या अतिरिक्त dispatch हेतु; प्रस्ताव Head of Circle विचार करेगा; <b>double service</b> होने पर cash व insured वस्तुएँ केवल Mail Agent/Guard सेवा से।</span>
+<span class="en">For unimportant lines, light mails, non-stopping stations or additional despatch; sanctioned by Head of Circle; with double service, cash & insured articles go exclusively via Mail Agent/Guard service.</span></div>
+<div class="card green"><h3>R.234 अर्धवार्षिक तौल / Half-yearly Weighment 🔴</h3>
+<span class="hi"><b>21 जनवरी</b> व <b>21 जुलाई</b> को stationmaster के समक्ष तौल; विवरण Form <b>M-105</b> में <b>चार प्रतियों</b> (carbon) में — original+duplicate stationmaster को, triplicate तुरंत Supdt. RMS को, एक प्रति record पर।</span>
+<span class="en">Weighed on 21st January & 21st July before the stationmaster; statement M-105 in quadruplicate — original & duplicate to SM, triplicate to Supdt. RMS, one on record.</span></div>
+<div class="card green"><h3>R.235 मूल्यवान डाक / Valuables 🔴</h3>
+<span class="hi">Insured वस्तुएँ/नकदी का कुल मूल्य <b>₹2,000 से अधिक</b> → <b>special messenger</b>→ <b>special messenger</b> (postman/overseer आदि) की अभिरक्षा में; वह अगली ट्रेन से मुख्यालय लौटेगा। याद रखें: <b>insured bags weighment system से नहीं भेजे जाते</b>।</span>
+<span class="en">If insured articles/cash exceed ₹2,000 aggregate → sent in custody of a special messenger who returns by next train. Insured bags may NOT be sent by weighment system.</span></div>
+<div class="card green"><h3>R.237–242 Occasional Despatches 🟠</h3>
+<span class="hi">Trains की misconnection/असामान्य मात्रा में किसी भी ट्रेन से; stationmaster पर <b>requisition</b> (माह-वार क्रमांक); हर माह की <b>1 तारीख</b> को monthly list + duplicates Supdt. RMS को (कुछ न हो तो 'NIL'); प्राप्तकर्ता कार्यालय को <b>telegraph/fax</b> से सूचना — telegram class '<b>P</b>' या '<b>XP</b>'।</span>
+<span class="en">By any train on misconnection/unusual bulk; requisition on SM with fresh monthly serials; monthly list to Supdt. RMS on the 1st ('NIL' if none); receiving office intimated by telegraph classed 'P' or 'XP'.</span></div>
+<div class="card green"><h3>R.236/243 प्राप्ति / Receipt 🟢</h3>
+<span class="hi">Receiving officer ट्रेन आने पर platform पर उपस्थित; seals-cords-labels की जाँच कर <b>railway way-bill</b> पर रसीद; damaged seal/फटा बैग → stationmaster के समक्ष तुरंत खोलकर सूची — दोनों के हस्ताक्षर।</span>
+<span class="en">Receiving officer present on platform; receipt granted on railway way-bill after examination; damaged bag opened immediately in SM's presence, contents listed & signed by both.</span></div>
+</div>
+
+<div class="trick">🧠 <b>Ch-4 Trick:</b> <span class="hi">"<b>21-21 का नियम</b>" — 21 जनवरी व 21 जुलाई तौल; "<b>2000 पार, messenger तैयार</b>" — ₹2000 से अधिक valuables पर special messenger; "<b>M-105 × 4</b>" — quadruplicate statement।</span></div>
+
+<div class="pyq"><b>📌 Probable Questions (Ch-4):</b>
+<span class="hi">1) Weighment system में बैग किसकी अभिरक्षा में? — Railway Guard। 2) अर्धवार्षिक तौल कब? — 21 जनवरी व 21 जुलाई। 3) Regular सेवा का भुगतान? — अर्धवार्षिक; occasional का? — त्रैमासिक। 4) Special messenger कब? — insured/cash कुल ₹2000 से अधिक होने पर।</span></div>
+<!-- ================= ANNEXURE A ================= -->
+<div class="chapter ch5">
+<h2>📒 ANNEXURE-A — रिकॉर्ड सुरक्षित रखने की अवधि / Preservation of Records 🔴</h2>
+<p>सीधे पूछे जाने वाला — पूरी तालिका रटें! / Direct questions — memorise the whole table!</p>
+</div>
+
+<table class="tgold">
+<tr><th>रिकॉर्ड / Record</th><th>अवधि / Period</th></tr>
+<tr><td><span class="hi">Mail department के सभी records (DM&SL छोड़कर)</span><span class="en">All mail-department records (except DM & Sorting List)</span></td><td><b>1 वर्ष / 1 year</b></td></tr>
+<tr><td><span class="hi">Due Mail & Sorting List</span></td><td><b>अप्रचलित होने के 1 वर्ष बाद / 1 year after ceasing to be extant</b></td></tr>
+<tr><td><span class="hi">Book of Postmarks (MS-18)</span></td><td><b>1½ वर्ष / 1½ years</b></td></tr>
+<tr><td><span class="hi">Enumeration Returns (MS-6)</span></td><td><b>2 वर्ष / 2 years</b></td></tr>
+<tr><td><span class="hi">मासिक सांख्यिकी रजिस्टर / Monthly statistical registers</span></td><td><b>3 वर्ष / 3 years</b></td></tr>
+<tr><td><span class="hi">Nominal Roll-cum-Attendance Register</span></td><td><b>स्थायी / Permanent</b> 🔴</td></tr>
+<tr><td><span class="hi">Postman Book (MS-27)</span></td><td><b>1½ वर्ष / 1½ years</b></td></tr>
+<tr><td><span class="hi">Cash Receipt (ACG-67)</span></td><td><b>अंतिम receipt जारी होने से 5 वर्ष / 5 years from issue of last receipt</b></td></tr>
+<tr><td><span class="hi">Loss/damage के केस</span><span class="en">Loss of / damage to postal articles</span></td><td><b>बंद होने के 3 वर्ष बाद; कर्मचारी dismissed हो तो 5 वर्ष</b><br>3 years after closing; 5 years if official dismissed 🔴</td></tr>
+<tr><td><span class="hi">Register of Destruction of Records</span></td><td><b>स्थायी / Permanent</b> 🔴</td></tr>
+<tr><td><span class="hi">Registration & Parcel records (inland)</span></td><td><b>1 वर्ष / 1 year</b></td></tr>
+<tr><td><span class="hi">Regn. & Parcel records (foreign) तथा VP registers/delivery slips</span></td><td><b>1½ वर्ष / 1½ years</b></td></tr>
+<tr><td><span class="hi">Money Order के सभी records</span></td><td><b>1½ वर्ष / 1½ years</b></td></tr>
+<tr><td><span class="hi">Indian Postal Orders के records</span></td><td><b>42 माह / 42 months</b> 🔴</td></tr>
+<tr><td><span class="hi">Book of MO Receipts (MO-1)</span></td><td><b>2 वर्ष / 2 years</b></td></tr>
+</table>
+<div class="trick">🧠 <b>Trick:</b> <span class="hi"><b>"स्थायी जोड़ी"</b> = Attendance Register + Destruction Register। <b>IPO = 42</b> ("IPO बयालीस")। MO व VP = <b>डेढ़ वर्ष</b>। Loss case = 3, dismissed = 5 — "3 से 5, dismissed पर बढ़े!"</span></div>
+
+<div class="num">🟢 <b>Appendix-II Quick Facts (bonus):</b> <span class="hi">Due Mail & Sorting List के <b>12 भाग</b> होते हैं (Conventions, DM list, Sorting list, Express bundle list… Index to corrections); सामान्यतः <b>3 वर्ष में एक बार</b> छपती है, परन्तु Due Mail List भाग <b>प्रतिवर्ष</b> सभी को दिया जाता है; standard form <b>M-9</b>।</span><span class="en">DM&SL has 12 parts; ordinarily printed once in 3 years, but the Due-Mail-List portion supplied yearly; standard form M-9.</span></div>
+
+<!-- ================= MEMORY TRICKS SUMMARY ================= -->
+<div class="sub-h o">🧠 Master Mnemonics — एक नज़र में / At a Glance</div>
+<div class="grid2">
+<div class="card gold"><h3>Due Bags</h3><span class="hi"><b>"MR. TAB"</b> = Mail, Registered, Transit, Account, BO</span></div>
+<div class="card gold"><h3>Bag Offices</h3><span class="hi"><b>"UDCC"</b> = Unit → District → Circle → Central</span></div>
+<div class="card gold"><h3>Air Deficiency</h3><span class="hi"><b>"L-75, P-50"</b> = Letters 75%, Postcards/aerogrammes 50%</span></div>
+<div class="card gold"><h3>Weight Ladder</h3><span class="hi"><b>10-14-28-30-37</b> = Postman → Runner → Man-total → Airbag → Trolley/RMS</span></div>
+<div class="card gold"><h3>Investigation Limits</h3><span class="hi"><b>"I-S-A-D: 10-25-50"</b> = IPO 10K → Supdt. 25K → AD(Inv) 50K → DPS/PMG above</span></div>
+<div class="card gold"><h3>Sub-Exchange Offices</h3><span class="hi"><b>"ABCJ"</b> = Ahmedabad, Bangalore, Cochin, Jaipur</span></div>
+<div class="card gold"><h3>Reply Postcard Countries</h3><span class="hi"><b>"BBPN"</b> = Bangladesh, Bhutan, Pakistan, Nepal</span></div>
+<div class="card gold"><h3>Regd. Bulk Bag बंद देश</h3><span class="hi"><b>"ACPP"</b> = Argentina, Cuba, Peru, Philippines</span></div>
+</div>
+
+<!-- ================= MCQ BANK ================= -->
+<div class="sub-h o">📝 Practice MCQs (उत्तर सहित / with Answers)</div>
+
+<div class="mcq"><div class="q">1. GPO किसे कहते हैं? / Which HO is termed the GPO?</div><div class="opts">(a) कोई भी First Class HO (b) Circle प्रमुख के मुख्यालय पर स्थित First Class HO (c) Division मुख्यालय का HO (d) Region का सबसे बड़ा SO</div><div class="ans">✔ (b) First-class HO at Circle Head's headquarters (Rule 6)</div></div>
+<div class="mcq"><div class="q">2. AMPC वर्तमान में कहाँ कार्यरत हैं? / AMPCs are functioning at —</div><div class="opts">(a) Delhi & Kolkata (b) Mumbai & Chennai (c) Mumbai & Delhi (d) Chennai & Bangalore</div><div class="ans">✔ (b) Mumbai & Chennai (Rule 10-A)</div></div>
+<div class="mcq"><div class="q">3. Bulk Mailer वह फर्म है जो एक बार में कितनी वस्तुएँ post कर सके? / A bulk mailer can post at a time —</div><div class="opts">(a) 1000 unregd./100 regd. (b) 5000 unregd./250 regd. (c) 2500 unregd./500 regd. (d) 5000 unregd./500 regd.</div><div class="ans">✔ (b) 5000 unregistered / 250 registered (Rule 15-A)</div></div>
+<div class="mcq"><div class="q">4. Station bundle सामान्यतः कब बनाया जाता है? / Station bundles are ordinarily prepared when articles exceed —</div><div class="opts">(a) 10 (b) 14 (c) 20 (d) 25</div><div class="ans">✔ (b) 14 (Rule 24); Territorial bundle at 25 & more</div></div>
+<div class="mcq"><div class="q">5. Rajdhani bundle के check-slip पर कोने में कौन-सी पट्टी? / Corner strip for Rajdhani bundles —</div><div class="opts">(a) नीली/Blue (b) हरी/Green (c) पीली/Yellow (d) लाल/Red</div><div class="ans">✔ (c) Yellow strip (Rule 25); blue strip = Metro</div></div>
+<div class="mcq"><div class="q">6. Air mail bag का अधिकतम वजन? / Maximum weight of an air-mail bag —</div><div class="opts">(a) 20 kg (b) 25 kg (c) 30 kg (d) 37 kg</div><div class="ans">✔ (c) 30 kg (Note 4, Rule 26-A)</div></div>
+<div class="mcq"><div class="q">7. Registered bundle कब बनता है? / A registered bundle is made up when uninsured regd. articles exceed —</div><div class="opts">(a) 1 (b) 2 (c) 3 (d) 5</div><div class="ans">✔ (b) Two (Rule 27/89)</div></div>
+<div class="mcq"><div class="q">8. 'A' Orders किससे संबंधित हैं? / 'A' orders relate to —</div><div class="opts">(a) Camp bags (b) Sorting lists में परिवर्तन (c) कर्मचारी अनुशासन (d) बैग लेखा</div><div class="ans">✔ (b) Changes in sorting lists (Rule 46)</div></div>
+<div class="mcq"><div class="q">9. Night mails की latest posting hour सामान्यतः? / Ordinary latest posting hour for night mails —</div><div class="opts">(a) 5 p.m. (b) 6 p.m. (c) 7 p.m. (d) 8 p.m.</div><div class="ans">✔ (b) 6 p.m. (Rule 58)</div></div>
+<div class="mcq"><div class="q">10. Regd. newspaper licence में एक बार में न्यूनतम कितनी प्रतियाँ? / Minimum copies posted at a time under licence —</div><div class="opts">(a) 50 (b) 100 (c) 200 (d) 500</div><div class="ans">✔ (b) 100 copies (Rule 58-A)</div></div>
+<div class="mcq"><div class="q">11. Franking machine से वस्तुएँ अधिकतम कितने कार्यालयों में post हो सकती हैं? / Franked articles may be posted at not more than —</div><div class="opts">(a) 1 office (b) 2 offices (c) 3 offices (d) कोई सीमा नहीं</div><div class="ans">✔ (b) Two offices specified in the licence (Rule 58-B)</div></div>
+<div class="mcq"><div class="q">12. Letter-box में मिली machine-franked वस्तु मानी जाएगी — / Franked article found in a letter-box is treated as —</div><div class="opts">(a) Paid (b) Unpaid (c) Service article (d) Refused</div><div class="ans">✔ (b) Unpaid (Rule 58-B(vi))</div></div>
+<div class="mcq"><div class="q">13. Aerogramme पर air forwarding हेतु न्यूनतम भुगतान? / Aerogrammes are forwarded by air if paid at least —</div><div class="opts">(a) combined charge का 50% (b) 75% (c) 100% (d) 25%</div><div class="ans">✔ (a) 50% of combined charge (Rule 60-A); letters need 75% of surcharge</div></div>
+<div class="mcq"><div class="q">14. Plural mail bags में registered bag कहाँ रखा जाता है? / In plural mail bags, the regd. bag is placed in —</div><div class="opts">(a) अंतिम बैग (b) Bag No. 1 (c) किसी भी बैग (d) Extra bag</div><div class="ans">✔ (b) Always in mail bag No. 1 (Rule 74)</div></div>
+<div class="mcq"><div class="q">15. Mail list के total में गलती हो तो? / If an incorrect total is entered in a mail list —</div><div class="opts">(a) लाल स्याही से सुधारें (b) Attest कर सुधारें (c) List नष्ट कर नई बनाएँ (d) Supdt. को भेजें</div><div class="ans">✔ (c) Destroy the list & prepare a fresh one (Rule 76(4))</div></div>
+<div class="mcq"><div class="q">16. एक delivery PO के लिए direct parcel bag कब बंद होगा? / A direct parcel bag is closed when regd./insured parcels are —</div><div class="opts">(a) 3 या अधिक (b) 5 या अधिक (c) 10 या अधिक (d) 15 या अधिक</div><div class="ans">✔ (b) 5 or more (Rule 91(6)); Mumbai GPO/Kolkata RMS/Chennai Sorting — 10 or more</div></div>
+<div class="mcq"><div class="q">17. Stamps व seals की सफाई कम से कम कितनी बार? / Seals & stamps must be cleansed at least —</div><div class="opts">(a) साप्ताहिक (b) पाक्षिक (c) मासिक (d) त्रैमासिक</div><div class="ans">✔ (c) Once a month — boiling in water, then kerosene & brush (Rule 103-A)</div></div>
+<div class="mcq"><div class="q">18. Reply postcard सेवा किन विदेशी देशों से उपलब्ध है? / Reply-postcard service in foreign post exists only for —</div><div class="opts">(a) SAARC सभी (b) Bangladesh, Bhutan, Pakistan, Nepal (c) Nepal-Bhutan (d) किसी से नहीं</div><div class="ans">✔ (b) Bangladesh, Bhutan, Pakistan & Nepal (Rule 110)</div></div>
+<div class="mcq"><div class="q">19. डाक से स्वर्ण भेजने की सीमा? / Transmission of gold coin/bullion by post is prohibited beyond —</div><div class="opts">(a) ₹50,000 (b) ₹1,00,000 (c) ₹2,00,000 (d) ₹10,000</div><div class="ans">✔ (b) ₹1,00,000 — market value at date & place of posting (Rule 122); false declaration punishable u/s 64 POA</div></div>
+<div class="mcq"><div class="q">20. "Doubtful" वस्तु खोलने से पहले addressee को कितना notice? / Notice to addressee before opening a "Doubtful" article —</div><div class="opts">(a) 24 घंटे (b) 48 घंटे (c) 7 दिन (d) 15 दिन</div><div class="ans">✔ (b) 48 hours, under Sec. 24 of the PO Act (Rules 122–123)</div></div>
+<div class="mcq"><div class="q">21. Postman अधिकतम कितना वजन ले जा सकता है? / Max weight carried by a Postman/Village Postman —</div><div class="opts">(a) 10 kg (b) 14 kg (c) 28 kg (d) 37 kg</div><div class="ans">✔ (a) 10 kg (Rule 135(4))</div></div>
+<div class="mcq"><div class="q">22. MO में कितने अंतर पर telegraph से रिपोर्ट? / MO discrepancy reported by telegraph when it is —</div><div class="opts">(a) ₹5 या अधिक (b) ₹10 या अधिक (c) ₹50 या अधिक (d) ₹100 या अधिक</div><div class="ans">✔ (b) ₹10 or more between remitter's & issuing office's amounts (Rule 144(h))</div></div>
+<div class="mcq"><div class="q">23. Enumeration returns कब बनाई जाती हैं? / Half-yearly enumeration is made during —</div><div class="opts">(a) जनवरी-जुलाई 1–14 (b) फरवरी-अगस्त 8–21 (c) मार्च-सितंबर 8–21 (d) अप्रैल-अक्टूबर 1–15</div><div class="ans">✔ (b) 8th to 21st of February & August (Rule 155)</div></div>
+<div class="mcq"><div class="q">24. Recall आवेदन कितने समय record पर रहेंगे (inland)? / Recall applications preserved (inland) for —</div><div class="opts">(a) 6 माह (b) 1 वर्ष (c) 18 माह (d) 3 वर्ष</div><div class="ans">✔ (b) 1 year (18 months for foreign articles) — Rule 148(5)</div></div>
+<div class="mcq"><div class="q">25. FIR कब अनिवार्य है? / FIR must be lodged when Govt. loss is —</div><div class="opts">(a) ₹1,00,000+ (b) ₹5,000+ (c) ₹10,000+ (d) ₹50,000+</div><div class="ans">✔ (b) ₹5,000 or above (Rule 176-A)</div></div>
+<div class="mcq"><div class="q">26. Insured article की क्षतिपूर्ति कितनी होने पर DG को व्यक्तिगत रिपोर्ट? / Individual report to DG when insured compensation exceeds —</div><div class="opts">(a) ₹5,000 (b) ₹10,000 (c) ₹25,000 (d) ₹50,000</div><div class="ans">✔ (b) ₹10,000 (Rule 176(1)(d)); robbery/fraud etc. threshold is ₹50,000</div></div>
+<div class="mcq"><div class="q">27. POA की धारा 52 का मामला किस न्यायालय में चलेगा? / Offence u/s 52 PO Act is triable only by —</div><div class="opts">(a) कोई Magistrate (b) District Court (c) Court of Sessions (d) High Court</div><div class="ans">✔ (c) Court of Sessions (Rule 172-A.II)</div></div>
+<div class="mcq"><div class="q">28. एक trial में एक ही प्रकार के अधिकतम कितने आरोप? / Max charges of the same kind at one trial —</div><div class="opts">(a) 2 (b) 3 (c) 5 (d) कोई सीमा नहीं</div><div class="ans">✔ (b) Three — all committed within 12 months (Rule 172-B.4)</div></div>
+<div class="mcq"><div class="q">29. Weighment system में अर्धवार्षिक तौल की तिथियाँ? / Half-yearly weighment dates —</div><div class="opts">(a) 1 जनवरी-1 जुलाई (b) 21 जनवरी-21 जुलाई (c) 15 जनवरी-15 जुलाई (d) 31 जनवरी-31 जुलाई</div><div class="ans">✔ (b) 21st January & 21st July, in Form M-105 quadruplicate (Rule 234)</div></div>
+<div class="mcq"><div class="q">30. Special messenger कब भेजा जाता है (weighment lines)? / Special messenger required when insured/cash aggregate exceeds —</div><div class="opts">(a) ₹500 (b) ₹1,000 (c) ₹2,000 (d) ₹5,000</div><div class="ans">✔ (c) ₹2,000 (Rule 235)</div></div>
+<div class="mcq"><div class="q">31. Indian Postal Orders के records कितने समय सुरक्षित रहते हैं? / IPO records are preserved for —</div><div class="opts">(a) 1 वर्ष (b) 18 माह (c) 2 वर्ष (d) 42 माह</div><div class="ans">✔ (d) 42 months (Annexure-A)</div></div>
+<div class="mcq"><div class="q">32. Discharged postal certificates Accounts Office में कितने समय रहते हैं? / Discharged certificates preserved for —</div><div class="opts">(a) 3 वर्ष (b) 5 वर्ष (c) maturity + 6 वर्ष (d) स्थायी</div><div class="ans">✔ (c) Period of maturity + 6 years from date of payment (Rule 221(a))</div></div>
+
+<!-- ================= ONE PAGE REVISION ================= -->
+<div class="onepage">
+<h3>⭐ ONE PAGE REVISION SHEET — एक पृष्ठ पुनरावृत्ति</h3>
+<div>
+<span class="chip">📮 PM Vol V = PO & RMS General Regulations (5th Edn.)</span>
+<span class="chip">Due bags = MR.TAB (Mail, Regd, Transit, Account, BO)</span>
+<span class="chip">Station bundle &gt;14 | Territorial ≥25 | Bundle max 50–60 letters</span>
+<span class="chip">RB &gt;2 articles | IB 2+ letters | 3 सील स्थान</span>
+<span class="chip">Airmail bag: नीला dosuti, max 30 kg, &lt;50 → cover, "C.A.P."</span>
+<span class="chip">Check-slip: Pink=paid, White=sorting, Blue=air | पीली पट्टी=Rajdhani, नीली=Metro</span>
+<span class="chip">AMPC = Mumbai + Chennai | Bulk mailer = 5000/250</span>
+<span class="chip">Bag Offices: UBO→DBO→CBO→Central | balance 1 July</span>
+<span class="chip">Night mail 6 pm | Day mail −30 min | Station −10 min</span>
+<span class="chip">Newspapers: 100 प्रतियाँ min, bill 16th & 1st, भुगतान 7 दिन</span>
+<span class="chip">Air rule: Letters 75% | Postcards/Aerogramme 50%</span>
+<span class="chip">Plural bag → Regd bag में No.1 | Extra bag → केवल unregd</span>
+<span class="chip">Totals में सुधार कभी नहीं — नई list</span>
+<span class="chip">5+ parcels → direct parcel bag (GPO में 10+)</span>
+<span class="chip">कमी = दोषी कर्मचारी बराबर राशि देगा (R.99)</span>
+<span class="chip">Compulsory regn छूटी → दोगुनी fee | Compulsory insurance → ₹2</span>
+<span class="chip">Gold limit ₹1,00,000 | धारा 64 दंड | notice 48 hrs (धारा 24)</span>
+<span class="chip">Sub-exchange: ABCJ | Reply-PC: BBPN</span>
+<span class="chip">वजन: Postman 10 | Runner 14 | Man 28 | Air 30 | Trolley/RMS 37</span>
+<span class="chip">MO अंतर ₹10+ → telegraph (R.144)</span>
+<span class="chip">Seals सफाई मासिक | Book of Postmarks दैनिक</span>
+<span class="chip">Enumeration: Feb & Aug, 8–21</span>
+<span class="chip">Recall आवेदन: 1 वर्ष (foreign 18 माह)</span>
+<span class="chip">Interception केवल Head of Circle के आदेश से</span>
+<span class="chip">जाँच सीमा: IPO 10K | Supdt 25K | AD(Inv) 50K | DPS/PMG ऊपर</span>
+<span class="chip">FIR ≥ ₹5,000 | Audit copy &gt; ₹300 | DG report &gt; ₹50,000 (insured &gt;10K)</span>
+<span class="chip">धारा 52 POA → Sessions Court | 3 charges/12 months</span>
+<span class="chip">RP-63 = damaged article intimation | 7 दिन → unclaimed</span>
+<span class="chip">Insured short → Police अनिवार्य | Loss ≥10K → Supdt स्वयं</span>
+<span class="chip">MO records 1½ वर्ष | IPO 42 माह | Certificates maturity+6</span>
+<span class="chip">Weighment: Railway Guard | तौल 21 Jan & 21 Jul | M-105 ×4</span>
+<span class="chip">Valuables &gt; ₹2000 → special messenger | Insured bag नहीं</span>
+<span class="chip">स्थायी records: Attendance Register + Destruction Register</span>
+</div>
+</div>
+
+<!-- ================= LAST DAY NOTES ================= -->
+<div class="lastday">
+<h3>🚨 LAST DAY REVISION NOTES — परीक्षा से एक दिन पहले</h3>
+<table class="tred">
+<tr><th>#</th><th>Fact (सिर्फ यह रट लो!)</th></tr>
+<tr><td>1</td><td><span class="hi">PMG = Pr.CPMG/CPMG/Regional PMG/DPS; RMS = रेल+सड़क+नदी+वायु से डाक</span></td></tr>
+<tr><td>2</td><td><span class="hi">GPO = Circle HQ का First Class HO; Chief Postmaster = STS अधिकारी</span></td></tr>
+<tr><td>3</td><td><span class="hi">Due bags 5: Mail, Regd, Transit, Account, BO — regd. bag खाली होने पर भी बंद होगा</span></td></tr>
+<tr><td>4</td><td><span class="hi">14/25/50-60: station bundle &gt;14, territorial ≥25, बंडल में max 50–60 पत्र</span></td></tr>
+<tr><td>5</td><td><span class="hi">Airmail bag 30 kg | Bulk bag 5–30 kg (SL-नेपाल-भूटान-पाक नहीं; Regd: ACPP नहीं)</span></td></tr>
+<tr><td>6</td><td><span class="hi">6 pm / −30 min / −10 min (night mail/day mail/station)</span></td></tr>
+<tr><td>7</td><td><span class="hi">75% / 50% air rule; 'T' stamp = कमी का दुगुना ऊपर</span></td></tr>
+<tr><td>8</td><td><span class="hi">वजन सीढ़ी: 10-14-28-30-37 kg</span></td></tr>
+<tr><td>9</td><td><span class="hi">Gold ₹1 लाख; notice 48 घंटे (धारा 24); नशीले पदार्थ → Excise Officer</span></td></tr>
+<tr><td>10</td><td><span class="hi">R.144 telegraph list: MO अंतर ₹10+, totals में सुधार, bag lost; unregd parcels कम → LETTER से</span></td></tr>
+<tr><td>11</td><td><span class="hi">Enumeration: Feb-Aug 8–21; तुलना 200+ delivery वाले office</span></td></tr>
+<tr><td>12</td><td><span class="hi">जाँच limits 10K-25K-50K (IPO-Supdt-AD); FIR ≥5K; DG &gt;50K (insured &gt;10K); Audit &gt;₹300</span></td></tr>
+<tr><td>13</td><td><span class="hi">धारा 52 POA = Sessions; 3 charges/12 माह; Magistrate ~14 दिन; DG-नियुक्त अधिकारी → DG की स्वीकृति</span></td></tr>
+<tr><td>14</td><td><span class="hi">RP-63 → 7 दिन → unclaimed; insured short → Police अनिवार्य; Search bill regd-on-service</span></td></tr>
+<tr><td>15</td><td><span class="hi">MO 1 वर्ष (foreign 3 वर्ष), IPO 42 माह, certificates maturity+6, telegraph advices 3 माह</span></td></tr>
+<tr><td>16</td><td><span class="hi">Weighment: Railway Guard की अभिरक्षा; तौल 21 Jan/21 Jul; M-105 ×4; ₹2000+ → special messenger; regular=अर्धवार्षिक, occasional=त्रैमासिक भुगतान</span></td></tr>
+<tr><td>17</td><td><span class="hi">Annexure-A: Postmarks/Postman book/MO/VP = 1½ वर्ष; Enumeration/MO-1 = 2 वर्ष; statistical = 3 वर्ष; ACG-67 = 5 वर्ष; Attendance + Destruction register = स्थायी</span></td></tr>
+<tr><td>18</td><td><span class="hi">Late letter = fee सहित → उसी डाक से; Too-late = "Detained: late fee not paid"</span></td></tr>
+<tr><td>19</td><td><span class="hi">Mis-sent = गलत office/route; Mis-directed = vernacular पर गलत English गंतव्य</span></td></tr>
+<tr><td>20</td><td><span class="hi">A orders = sorting list परिवर्तन; B orders = अन्य; TB = camp संबंधी</span></td></tr>
+</table>
+</div>
+
+<footer>
+<span class="hi">📮 भारतीय डाक — IP/IPO परीक्षा तैयारी | स्रोत: Postal Manual Volume V (5th Edition) — Chapters 1–4 + Annexure-A (Appendix-I excluded)</span>
+<span class="en">For self-study. Always cross-verify with the latest amended rules & official corrections.</span>
+</footer>
+
+</div>
+
+<button id="pdfBtn" onclick="window.print()">📄 Download PDF</button>
+
+</body>
+</html>

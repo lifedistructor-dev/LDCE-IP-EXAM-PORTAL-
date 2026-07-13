@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMLA 2002 - Last Day Revision Infographic</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Noto Sans', 'Noto Sans Gujarati', 'Noto Sans Devanagari', Arial, sans-serif;
+    background: #f1f3f6;
+    color: #1a1a2e;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 10px; }
+  header.hero {
+    background: linear-gradient(135deg,#1e3a8a,#7c3aed);
+    color: #fff; padding: 22px 16px; border-radius: 14px; text-align:center; margin-bottom:14px;
+  }
+  header.hero h1 { margin:0 0 4px; font-size:22px; }
+  header.hero .sub { font-size:14px; opacity:.92; }
+  .badge-row { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-top:10px;}
+  .badge { background:rgba(255,255,255,.18); padding:4px 10px; border-radius:20px; font-size:11px; }
+
+  .sec { background:#fff; border-radius:12px; padding:14px; margin-bottom:12px; box-shadow:0 1px 4px rgba(0,0,0,.08); border-left:6px solid #999;}
+  .sec h2 { margin:0 0 8px; font-size:16px; display:flex; align-items:center; gap:6px;}
+  .sec h3 { font-size:14px; margin:10px 0 4px; color:#374151;}
+
+  .tri { margin:6px 0 10px; padding:8px 10px; border-radius:8px; background:#f8fafc; border:1px solid #e5e7eb;}
+  .gu { font-weight:700; color:#0f172a; font-size:14.5px; line-height:1.45;}
+  .hi { font-weight:500; color:#334155; font-size:13.5px; line-height:1.4; margin-top:2px;}
+  .en { font-style:italic; color:#64748b; font-size:12.5px; line-height:1.4; margin-top:2px;}
+
+  /* color coding per Panthil's standard */
+  .def { border-left-color:#2563eb; } .def h2{color:#2563eb;}
+  .auth { border-left-color:#7c3aed; } .auth h2{color:#7c3aed;}
+  .time { border-left-color:#0d9488; } .time h2{color:#0d9488;}
+  .pen { border-left-color:#dc2626; } .pen h2{color:#dc2626;}
+  .exc { border-left-color:#ea580c; } .exc h2{color:#ea580c;}
+  .pyq { border-left-color:#db2777; } .pyq h2{color:#db2777;}
+  .flow { border-left-color:#059669; } .flow h2{color:#059669;}
+  .gen { border-left-color:#475569; } .gen h2{color:#475569;}
+
+  .pri { display:inline-block; font-size:11px; padding:1px 7px; border-radius:10px; margin-left:6px; vertical-align:middle;}
+  .p-high{background:#fee2e2;color:#b91c1c;} .p-med{background:#ffedd5;color:#c2410c;}
+  .p-low{background:#fef9c3;color:#a16207;} .p-info{background:#dcfce7;color:#166534;}
+
+  table { width:100%; border-collapse:collapse; font-size:12.5px; margin:6px 0;}
+  th,td { border:1px solid #e2e8f0; padding:6px 5px; text-align:left; vertical-align:top;}
+  th { background:#1e293b; color:#fff; font-size:11.5px;}
+  tr:nth-child(even){background:#f8fafc;}
+
+  .flowbox { display:flex; flex-direction:column; align-items:center; gap:4px; margin:8px 0;}
+  .fbox { background:#ecfdf5; border:2px solid #10b981; border-radius:8px; padding:7px 10px; font-size:12.5px; text-align:center; width:92%; font-weight:600;}
+  .arrow { color:#10b981; font-size:18px; }
+  .fbox.alt { background:#fff7ed; border-color:#f97316; }
+  .fbox.red { background:#fef2f2; border-color:#ef4444; }
+
+  .mnemonic { background:#fdf4ff; border:2px dashed #c026d3; border-radius:10px; padding:10px; margin:8px 0; font-size:13px;}
+  .mnemonic b { color:#a21caf; }
+
+  .pyqtag { display:inline-block; background:#fce7f3; color:#9d174d; font-size:11px; padding:2px 8px; border-radius:6px; margin:2px 4px 2px 0; font-weight:600;}
+
+  .faq-q { font-weight:700; color:#1e3a8a; font-size:13px; margin-top:8px;}
+  .faq-a { font-size:12.5px; color:#374151; margin-top:2px;}
+
+  .ld { background:#fffbeb; border:2px solid #f59e0b; border-radius:10px; padding:12px; }
+  .ld h2 { color:#b45309; }
+  .ld ul { margin:4px 0; padding-left:18px; font-size:12.5px;}
+
+  .toc { background:#fff; border-radius:12px; padding:12px; margin-bottom:12px; font-size:12.5px;}
+  .toc a { color:#1e3a8a; text-decoration:none; display:block; padding:3px 0; border-bottom:1px dashed #e2e8f0;}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0;}
+  .chip{background:#eef2ff;color:#3730a3;font-size:11.5px;padding:3px 8px;border-radius:8px;font-weight:600;}
+
+  footer { text-align:center; font-size:11px; color:#94a3b8; padding:18px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>📜 PMLA 2002 — Last Day Revision</h1>
+  <div class="sub">Prevention of Money-Laundering Act, 2002 (15 of 2003) | IP/IPO Exam</div>
+  <div class="sub" style="margin-top:4px;">ગુજરાતી (Bold) • हिंदी (Medium) • English (Italic)</div>
+  <div class="badge-row">
+    <span class="badge">🔴 High Priority</span>
+    <span class="badge">🟠 Medium</span>
+    <span class="badge">🟡 Low</span>
+    <span class="badge">🟢 Info/Reference</span>
+  </div>
+</header>
+
+<div class="toc">
+  <b>📑 Quick Jump</b>
+  <a href="#defs">1. Key Definitions 🔵</a>
+  <a href="#offence">2. Offence & Punishment</a>
+  <a href="#attach">3. Attachment-Adjudication-Confiscation Flow</a>
+  <a href="#authorities">4. Authorities 🟣</a>
+  <a href="#chapter4">5. Obligations of Reporting Entities</a>
+  <a href="#search">6. Survey, Search, Seizure, Arrest</a>
+  <a href="#tribunal">7. Appellate Tribunal / Special Court</a>
+  <a href="#time">8. Time Limits Table 🔷</a>
+  <a href="#penalty">9. Penalties Table 🔴</a>
+  <a href="#schedule">10. Schedule (Part A & B)</a>
+  <a href="#mnemonics">11. Mnemonics</a>
+  <a href="#faq">12. FAQ</a>
+  <a href="#pyq">13. PYQ / Expected Questions</a>
+  <a href="#lastday">14. One-Page Last Day Notes</a>
+</div>
+
+<!-- 1. DEFINITIONS -->
+<div class="sec def" id="defs">
+  <h2>🔵 1. Key Definitions <span class="pri p-high">🔴 HIGH</span></h2>
+
+  <div class="tri">
+    <div class="gu">મની લોન્ડરિંગ (કલમ 3): કોઈ વ્યક્તિ સીધી કે આડકતરી રીતે ગુનાની આવક (proceeds of crime) ને "untainted" (સ્વચ્છ) મિલકત તરીકે રજૂ કરવાની પ્રક્રિયામાં મદદ કરે, સંડોવાયેલ હોય કે ભાગ લે — તે મની લોન્ડરિંગનો ગુનો.</div>
+    <div class="hi">मनी लॉन्डरिंग (धारा 3): कोई व्यक्ति प्रत्यक्ष या अप्रत्यक्ष रूप से अपराध से प्राप्त आय (proceeds of crime) को बेदाग संपत्ति के रूप में प्रस्तुत करने की प्रक्रिया में सहायता, संलिप्तता या भागीदारी करे — वह मनी लॉन्डरिंग अपराध है।</div>
+    <div class="en">Section 3: Whoever directly/indirectly attempts, assists, or is involved in any process connected with proceeds of crime and projects it as untainted property — guilty of money-laundering.</div>
+  </div>
+
+  <div class="tri">
+    <div class="gu">પ્રોસીડ્સ ઓફ ક્રાઇમ [2(u)]: શિડ્યુલ્ડ ગુના સંબંધિત ગુનાહિત પ્રવૃત્તિના પરિણામે સીધી/આડકતરી રીતે મેળવેલ કોઈપણ મિલકત અથવા તેની કિંમત.</div>
+    <div class="hi">प्रोसीड्स ऑफ क्राइम [2(u)]: अनुसूचित अपराध से संबंधित आपराधिक गतिविधि के परिणामस्वरूप प्रत्यक्ष/अप्रत्यक्ष रूप से प्राप्त कोई भी संपत्ति या उसका मूल्य।</div>
+    <div class="en">"Proceeds of crime" = any property derived/obtained, directly/indirectly, as a result of a scheduled offence, or its value.</div>
+  </div>
+
+  <div class="tri">
+    <div class="gu">મિલકત [2(v)]: દરેક પ્રકારની મિલકત/સંપત્તિ — મૂર્ત/અમૂર્ત, જંગમ/સ્થાવર — જ્યાં પણ સ્થિત હોય.</div>
+    <div class="hi">संपत्ति [2(v)]: हर प्रकार की संपत्ति — मूर्त/अमूर्त, चल/अचल — जहां भी स्थित हो।</div>
+    <div class="en">"Property" = every description of property/assets, corporeal/incorporeal, movable/immovable, wherever located.</div>
+  </div>
+
+  <div class="tri">
+    <div class="gu">શિડ્યુલ્ડ ઓફેન્સ [2(y)]: (i) શિડ્યુલના Part A માં ઉલ્લેખિત ગુનાઓ; અથવા (ii) Part B ના ગુનાઓ — જો કુલ રકમ ₹30 લાખ કે તેથી વધુ હોય.</div>
+    <div class="hi">शिड्यूल्ड ऑफेंस [2(y)]: (i) शिड्यूल के Part A में दिए गए अपराध; या (ii) Part B के अपराध — यदि कुल राशि ₹30 लाख या उससे अधिक हो।</div>
+    <div class="en">Scheduled offence = Part A offences (any value); OR Part B offences only if value ≥ ₹30 lakh.</div>
+    <span class="pyqtag">⭐ PYQ Favorite</span>
+  </div>
+
+  <div class="tri">
+    <div class="gu">એટેચમેન્ટ [2(d)]: ચેપ્ટર III હેઠળના ઓર્ડર દ્વારા મિલકતના ટ્રાન્સફર, રૂપાંતર, નિકાલ કે હિલચાલ પર પ્રતિબંધ.</div>
+    <div class="hi">अटैचमेंट [2(d)]: चैप्टर III के तहत आदेश द्वारा संपत्ति के हस्तांतरण, रूपांतरण, निपटान या संचलन पर प्रतिबंध।</div>
+    <div class="en">"Attachment" = prohibition of transfer/conversion/disposition/movement of property by order under Chapter III.</div>
+  </div>
+
+  <div class="tri">
+    <div class="gu">પર્સન [2(s)]: વ્યક્તિગત, HUF, કંપની, ફર્મ, AOP/BOI, કૃત્રિમ ન્યાયિક વ્યક્તિ, અને ઉપરના કોઈપણની એજન્સી/ઓફિસ/શાખા — 7 પ્રકાર.</div>
+    <div class="hi">पर्सन [2(s)]: व्यक्ति, HUF, कंपनी, फर्म, AOP/BOI, कृत्रिम न्यायिक व्यक्ति, और उपरोक्त की एजेंसी/शाखा — 7 प्रकार।</div>
+    <div class="en">"Person" includes 7 categories: individual, HUF, company, firm, AOP/BOI, artificial juridical person, and any agency/branch of the above.</div>
+  </div>
+
+  <div class="chip-row">
+    <span class="chip">Banking Co.</span><span class="chip">Financial Institution</span><span class="chip">Intermediary</span>
+    <span class="chip">Chit Fund Co.</span><span class="chip">Co-op Bank</span><span class="chip">Housing Finance Inst.</span>
+  </div>
+</div>
+
+<!-- 2. OFFENCE -->
+<div class="sec pen" id="offence">
+  <h2>⚖️ 2. Offence & Punishment (S.3, S.4) <span class="pri p-high">🔴 HIGH</span></h2>
+  <div class="tri">
+    <div class="gu">સજા (કલમ 4): કઠોર કેદ — ઓછામાં ઓછી 3 વર્ષ, વધુમાં વધુ 7 વર્ષ + દંડ ₹5 લાખ સુધી.</div>
+    <div class="hi">सजा (धारा 4): कठोर कारावास — न्यूनतम 3 वर्ष, अधिकतम 7 वर्ष + जुर्माना ₹5 लाख तक।</div>
+    <div class="en">Punishment: rigorous imprisonment 3–7 years + fine up to ₹5 lakh.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">અપવાદ: જો ગુનો Schedule Part A ના Paragraph 2 (NDPS Act) સંબંધિત હોય → સજા 10 વર્ષ સુધી લંબાવી શકાય.</div>
+    <div class="hi">अपवाद: यदि अपराध Schedule Part A के Paragraph 2 (NDPS Act) से संबंधित हो → सजा 10 वर्ष तक बढ़ाई जा सकती है।</div>
+    <div class="en">Exception: where proceeds relate to Para 2 of Part A (NDPS offences) → max imprisonment extends to 10 years.</div>
+    <span class="pyqtag">⭐ PYQ</span>
+  </div>
+  <div class="mnemonic"><b>યાદ રાખવાની ટ્રીક:</b> "3-7-5" → 3 to 7 years jail + ₹5 lakh fine; NDPS = "10 ka tadka" (10 years)</div>
+</div>
+
+<!-- 3. FLOWCHART -->
+<div class="sec flow" id="attach">
+  <h2>🔁 3. Attachment → Adjudication → Confiscation (Ch. III)</h2>
+  <div class="tri">
+    <div class="gu">આ ચેપ્ટર III ની મુખ્ય પ્રક્રિયા છે — Director "reason to believe" નોંધે છે કે વ્યક્તિ પાસે proceeds of crime છે અને scheduled offence નો આરોપ છે.</div>
+    <div class="hi">यह चैप्टर III की मुख्य प्रक्रिया है — Director "reason to believe" दर्ज करता है कि व्यक्ति के पास proceeds of crime हैं और scheduled offence का आरोप है।</div>
+    <div class="en">Core process flow of Chapter III, from provisional attachment to final confiscation.</div>
+  </div>
+
+  <div class="flowbox">
+    <div class="fbox">S.5: Director/Dy. Director (reason to believe in writing) → Provisional Attachment <br><small>(Max 90 days)</small></div>
+    <div class="arrow">⬇</div>
+    <div class="fbox alt">Copy + material sent to Adjudicating Authority (sealed envelope)</div>
+    <div class="arrow">⬇</div>
+    <div class="fbox">S.5(5): File Complaint before AA within <u>30 days</u> of attachment</div>
+    <div class="arrow">⬇</div>
+    <div class="fbox">S.8(1): AA issues Show-Cause Notice — min. <u>30 days</u></div>
+    <div class="arrow">⬇</div>
+    <div class="fbox">S.8(2)-(3): AA hears parties → records finding → <b>Confirms Attachment</b></div>
+    <div class="arrow">⬇</div>
+    <div class="fbox red">Attachment continues during trial → becomes FINAL only after guilt proved & trial court order final</div>
+    <div class="arrow">⬇</div>
+    <div class="fbox">S.8(6): AA orders <b>Confiscation</b> (after hearing)</div>
+    <div class="arrow">⬇</div>
+    <div class="fbox alt">S.9: Property VESTS absolutely in Central Government (free of encumbrance)</div>
+  </div>
+  <span class="pyqtag">⭐ Flowchart frequently drawn in Paper II drafting</span>
+</div>
+
+<!-- 4. AUTHORITIES -->
+<div class="sec auth" id="authorities">
+  <h2>🟣 4. Authorities & Hierarchy <span class="pri p-med">🟠 MED</span></h2>
+  <div class="tri">
+    <div class="gu">કલમ 48 મુજબ 4 પ્રકારના ઓથોરિટી: (a) Director/Addl. Director/Joint Director (b) Deputy Director (c) Assistant Director (d) અન્ય નિયત અધિકારીઓ.</div>
+    <div class="hi">धारा 48 के अनुसार 4 प्रकार के अथॉरिटी: (a) Director/Addl./Joint Director (b) Deputy Director (c) Assistant Director (d) अन्य निर्धारित अधिकारी।</div>
+    <div class="en">S.48 — 4 classes: Director/Addl/Joint Director, Deputy Director, Assistant Director, other prescribed officers.</div>
+  </div>
+  <div class="flowbox">
+    <div class="fbox">Director / Additional Director / Joint Director</div>
+    <div class="arrow">⬇</div>
+    <div class="fbox alt">Deputy Director</div>
+    <div class="arrow">⬇</div>
+    <div class="fbox alt">Assistant Director</div>
+  </div>
+  <div class="tri">
+    <div class="gu">Adjudicating Authority (કલમ 6): Chairperson + 2 Members (1 law ક્ષેત્રનો, 1 ફાઇનાન્સ/એકાઉન્ટન્સી/એડમિન). કાર્યકાળ 5 વર્ષ, મહત્તમ ઉંમર 62 વર્ષ.</div>
+    <div class="hi">Adjudicating Authority (धारा 6): Chairperson + 2 Members (1 कानून, 1 वित्त/लेखा/प्रशासन)। कार्यकाल 5 वर्ष, अधिकतम आयु 62 वर्ष।</div>
+    <div class="en">AA (S.6): Chairperson + 2 Members; 5-year term; max age 62.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">Appellate Tribunal (કલમ 25-28): Chairperson (SC/HC Judge લાયકાત) + 2 Members. Appeal of AA order → AT માં 45 દિવસમાં.</div>
+    <div class="hi">Appellate Tribunal (धारा 25-28): Chairperson (SC/HC जज योग्यता) + 2 Members। AA के आदेश की अपील → AT में 45 दिन में।</div>
+    <div class="en">Appellate Tribunal: Chairperson qualified as SC/HC Judge + 2 Members; appeal from AA within 45 days.</div>
+  </div>
+  <div class="mnemonic"><b>Memory Trick:</b> "D-A-A" Director → Adjudicating Authority → Appellate Tribunal → High Court (S.42, within 60 days)</div>
+</div>
+
+<!-- 5. CHAPTER IV -->
+<div class="sec def" id="chapter4">
+  <h2>📒 5. Obligations of Reporting Entities (Ch. IV, S.12-15)</h2>
+  <div class="tri">
+    <div class="gu">દરેક બેંકિંગ કંપની, ફાઇનાન્શિયલ ઇન્સ્ટિટ્યુશન, ઇન્ટરમીડિયરી એ: (a) ટ્રાન્ઝેક્શન રેકોર્ડ રાખવા (b) Director ને માહિતી આપવી (c) ક્લાયન્ટ ID ચકાસવી/રાખવી.</div>
+    <div class="hi">हर बैंकिंग कंपनी, वित्तीय संस्था, इंटरमीडियरी को: (a) ट्रांजेक्शन रिकॉर्ड रखना (b) Director को सूचना देना (c) क्लाइंट ID सत्यापित/रखना।</div>
+    <div class="en">S.12: Reporting entities must (a) maintain transaction records (b) furnish info to Director (c) verify & maintain client KYC records.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">રેકોર્ડ રાખવાનો સમયગાળો: ક્લાયન્ટ સંબંધ સમાપ્ત થયા પછી <b>10 વર્ષ</b>.</div>
+    <div class="hi">रिकॉर्ड रखने की अवधि: क्लाइंट संबंध समाप्त होने के बाद <b>10 वर्ष</b>।</div>
+    <div class="en">Records retention: 10 years from cessation of transaction/relationship.</div>
+    <span class="pyqtag">⭐ PYQ</span>
+  </div>
+  <div class="tri">
+    <div class="gu">દંડ (કલમ 13): Director compliance ન કરનાર સંસ્થા પર ₹10,000 થી ₹1 લાખ સુધી દંડ ફટકારી શકે (દરેક ઉલ્લંઘન માટે).</div>
+    <div class="hi">जुर्माना (धारा 13): Director अनुपालन न करने वाली संस्था पर ₹10,000 से ₹1 लाख तक जुर्माना लगा सकता है (हर उल्लंघन के लिए)।</div>
+    <div class="en">S.13: Director may levy fine ₹10,000–₹1,00,000 per failure for non-compliance.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">મુક્તિ (કલમ 14): માહિતી આપવા બદલ બેંકિંગ કંપની/સંસ્થા સામે કોઈ સિવિલ કાર્યવાહી થઈ શકતી નથી.</div>
+    <div class="hi">छूट (धारा 14): जानकारी देने के लिए बैंकिंग कंपनी/संस्था के विरुद्ध कोई सिविल कार्यवाही नहीं हो सकती।</div>
+    <div class="en">S.14: No civil proceedings against entities for furnishing information in good faith.</div>
+  </div>
+</div>
+
+<!-- 6. SEARCH/SEIZURE/ARREST -->
+<div class="sec flow" id="search">
+  <h2>🔍 6. Survey, Search, Seizure & Arrest (Chapter V)</h2>
+
+  <div class="tri">
+    <div class="gu">S.16 સર્વે: ઓથોરિટી પાસે "reason to believe" → કોઈપણ સ્થળે પ્રવેશ, રેકોર્ડ તપાસ — ધરપકડ/જપ્તીની સત્તા નહીં, માત્ર નિરીક્ષણ.</div>
+    <div class="hi">S.16 सर्वे: अथॉरिटी के पास "reason to believe" → किसी भी स्थान पर प्रवेश, रिकॉर्ड जांच — गिरफ्तारी/जब्ती की शक्ति नहीं, केवल निरीक्षण।</div>
+    <div class="en">S.16 Survey: entry & inspection power only — no seizure/arrest power.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">S.17 સર્ચ & સીઝર: Director ની મંજૂરી, બિલ્ડિંગ/વાહન/વેસલ/એરક્રાફ્ટ સર્ચ, મિલકત/રેકોર્ડ જપ્ત કરી શકાય.</div>
+    <div class="hi">S.17 सर्च & सीज़र: Director की अनुमति, बिल्डिंग/वाहन/वेसल/एयरक्राफ्ट सर्च, संपत्ति/रिकॉर्ड जब्त किया जा सकता है।</div>
+    <div class="en">S.17 Search & Seizure: Director-authorised search of building/vessel/vehicle/aircraft, seizure of records/property.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">S.18 વ્યક્તિગત તપાસ: મહિલાની તપાસ ફક્ત મહિલા જ કરી શકે. વ્યક્તિને 24 કલાકમાં Gazetted Officer/Magistrate સમક્ષ લઈ જઈ શકાય.</div>
+    <div class="hi">S.18 व्यक्तिगत तलाशी: महिला की तलाशी केवल महिला ही कर सकती है। व्यक्ति को 24 घंटे में Gazetted Officer/Magistrate के समक्ष ले जाया जा सकता है।</div>
+    <div class="en">S.18 Personal search: female searched only by female; person taken before Gazetted Officer/Magistrate within 24 hrs if demanded.</div>
+    <span class="pyqtag">⭐ PYQ</span>
+  </div>
+  <div class="tri">
+    <div class="gu">S.19 ધરપકડ: Director/Dy.Director/Asst.Director "reason to believe" નોંધી ધરપકડ કરી શકે; 24 કલાકમાં Magistrate સમક્ષ રજૂ કરવી.</div>
+    <div class="hi">S.19 गिरफ्तारी: Director/Dy.Director/Asst.Director "reason to believe" दर्ज कर गिरफ्तार कर सकते हैं; 24 घंटे में Magistrate के समक्ष पेश करना।</div>
+    <div class="en">S.19 Arrest: Director/Dy/Asst Director may arrest on recorded reason to believe; produce before Magistrate within 24 hrs.</div>
+  </div>
+
+  <div class="mnemonic"><b>Trick — "SSSA":</b> Survey (S.16) → Search & Seizure of property (S.17) → Search of person (S.18) → Arrest (S.19) — increasing intensity order!</div>
+
+  <h3>📌 Burden of Proof & Presumptions</h3>
+  <div class="tri">
+    <div class="gu">કલમ 24: જો વ્યક્તિ પર કલમ 3 નો આરોપ હોય, તો proceeds untainted છે તે સાબિત કરવાનો બોજો આરોપી પર છે (Reverse burden of proof).</div>
+    <div class="hi">धारा 24: यदि व्यक्ति पर धारा 3 का आरोप है, तो proceeds untainted हैं यह सिद्ध करने का भार आरोपी पर है (Reverse burden of proof)।</div>
+    <div class="en">S.24: Reverse burden of proof — accused must prove proceeds are untainted.</div>
+    <span class="pyqtag">⭐⭐ Very Important PYQ</span>
+  </div>
+  <div class="tri">
+    <div class="gu">કલમ 22-23: રેકોર્ડ/મિલકતની માલિકી અને inter-connected transactions અંગે presumption (ધારણા) લાગુ પડે છે.</div>
+    <div class="hi">धारा 22-23: रिकॉर्ड/संपत्ति की स्वामित्व और inter-connected transactions के बारे में presumption (अनुमान) लागू होता है।</div>
+    <div class="en">S.22-23: Presumptions as to ownership of records/property and inter-connected transactions.</div>
+  </div>
+</div>
+
+<!-- 7. TRIBUNAL/SPECIAL COURT -->
+<div class="sec auth" id="tribunal">
+  <h2>🏛️ 7. Appellate Tribunal & Special Courts (Ch. VI-VII)</h2>
+  <div class="tri">
+    <div class="gu">Special Court (કલમ 43-47): Sessions Court ને Special Court તરીકે notify કરાય. ગુનો Cognizable & Non-bailable (કલમ 45).</div>
+    <div class="hi">Special Court (धारा 43-47): Sessions Court को Special Court के रूप में notify किया जाता है। अपराध Cognizable & Non-bailable (धारा 45)।</div>
+    <div class="en">Special Court (S.43-47): Sessions Court designated; offence is cognizable & non-bailable (S.45).</div>
+    <span class="pyqtag">⭐ Twin conditions for bail – PYQ</span>
+  </div>
+  <div class="tri">
+    <div class="gu">જામીન માટેની 2 શરતો (S.45): (i) Public Prosecutor ને સાંભળવાની તક (ii) કોર્ટને ખાતરી હોવી જોઈએ કે વ્યક્તિ નિર્દોષ છે અને જામીન પર ગુનો નહીં કરે. અપવાદ: 16 વર્ષથી નીચે/મહિલા/બીમાર વ્યક્તિ.</div>
+    <div class="hi">जमानत की 2 शर्तें (S.45): (i) Public Prosecutor को सुनने का अवसर (ii) कोर्ट को विश्वास हो कि व्यक्ति निर्दोष है और जमानत पर अपराध नहीं करेगा। अपवाद: 16 वर्ष से कम/महिला/बीमार व्यक्ति।</div>
+    <div class="en">Twin bail conditions: (i) PP given opportunity to oppose (ii) court satisfied of innocence & no likelihood of repeat offence. Exception: persons under 16, women, sick/infirm.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">Appeal to High Court (કલમ 42): Appellate Tribunal ના ઓર્ડર સામે <b>60 દિવસ</b> માં HC માં અપીલ (વધુ 60 દિવસ માફી શકય).</div>
+    <div class="hi">High Court में अपील (धारा 42): Appellate Tribunal के आदेश के विरुद्ध <b>60 दिन</b> में HC में अपील (अतिरिक्त 60 दिन माफ हो सकते हैं)।</div>
+    <div class="en">S.42: Appeal to High Court against AT order within 60 days (extendable by another 60 days for sufficient cause).</div>
+  </div>
+</div>
+
+<!-- 8. TIME LIMITS -->
+<div class="sec time" id="time">
+  <h2>🔷 8. Time Limits — Master Table <span class="pri p-high">🔴 HIGH (MCQ Goldmine)</span></h2>
+  <table>
+    <tr><th>Section</th><th>Action</th><th>Time Limit</th></tr>
+    <tr><td>S.5(1)</td><td>Provisional attachment validity</td><td>90 days</td></tr>
+    <tr><td>S.5(5)</td><td>File complaint before AA after attachment</td><td>30 days</td></tr>
+    <tr><td>S.8(1)</td><td>Show cause notice by AA</td><td>min. 30 days</td></tr>
+    <tr><td>S.17(4)/18(10)</td><td>Application for retention of seized property before AA</td><td>30 days</td></tr>
+    <tr><td>S.18(3)/(4)</td><td>Person taken to Gazetted Officer/Magistrate</td><td>24 hours</td></tr>
+    <tr><td>S.19(3)</td><td>Arrested person produced before Magistrate</td><td>24 hours</td></tr>
+    <tr><td>S.20(1)</td><td>Retention of seized property (before AA extension)</td><td>3 months (from end of month seized)</td></tr>
+    <tr><td>S.20(6)/21(6)</td><td>Director may withhold release pending appeal</td><td>45 days from S.8(5) order</td></tr>
+    <tr><td>S.21(1)</td><td>Retention of seized records</td><td>3 months</td></tr>
+    <tr><td>S.12(2)</td><td>Record retention by reporting entities</td><td>10 years</td></tr>
+    <tr><td>S.26(3)</td><td>Appeal to Appellate Tribunal</td><td>45 days</td></tr>
+    <tr><td>S.26(6)</td><td>AT to dispose appeal (endeavour)</td><td>6 months</td></tr>
+    <tr><td>S.42</td><td>Appeal to High Court</td><td>60 days (+60 days condonable)</td></tr>
+    <tr><td>S.64(2)</td><td>Central Govt sanction/refusal for prosecution</td><td>90 days</td></tr>
+    <tr><td>S.69</td><td>Recovery of unpaid fine</td><td>if unpaid within 6 months → recovery</td></tr>
+  </table>
+  <div class="mnemonic"><b>Trick — "30-90-24":</b> 30 days = complaint/notice/retention application; 90 days = attachment validity & sanction; 24 hours = personal liberty actions (arrest/search of person).</div>
+</div>
+
+<!-- 9. PENALTIES -->
+<div class="sec pen" id="penalty">
+  <h2>🔴 9. Penalties Table <span class="pri p-high">🔴 HIGH</span></h2>
+  <table>
+    <tr><th>Section</th><th>Offence</th><th>Punishment</th></tr>
+    <tr><td>S.4</td><td>Money-laundering</td><td>3–7 yrs RI + fine up to ₹5L (10 yrs if NDPS-linked)</td></tr>
+    <tr><td>S.13(2)</td><td>Non-compliance by reporting entity</td><td>₹10,000 – ₹1,00,000 per failure</td></tr>
+    <tr><td>S.62</td><td>Vexatious search (without recorded reasons)</td><td>up to 2 yrs or ₹50,000 fine or both</td></tr>
+    <tr><td>S.63(1)</td><td>False info causing wrongful arrest/search</td><td>up to 2 yrs or ₹50,000 fine or both</td></tr>
+    <tr><td>S.63(2)</td><td>Refusal to answer/sign/attend summons</td><td>₹500 – ₹10,000 per default</td></tr>
+  </table>
+  <div class="tri">
+    <div class="gu">કલમ 64: કલમ 62 અને 63(1) ના ગુનાની સંજ્ઞાન માટે કેન્દ્ર સરકારની પૂર્વ મંજૂરી જરૂરી.</div>
+    <div class="hi">धारा 64: धारा 62 और 63(1) के अपराध के संज्ञान के लिए केंद्र सरकार की पूर्व अनुमति आवश्यक।</div>
+    <div class="en">S.64: Previous sanction of Central Government required to take cognizance of S.62/63(1) offences.</div>
+  </div>
+</div>
+<!-- 10. SCHEDULE -->
+<div class="sec exc" id="schedule">
+  <h2>🟠 10. The Schedule — Part A & Part B <span class="pri p-high">🔴 HIGH</span></h2>
+  <div class="tri">
+    <div class="gu">Part A: IPC (waging war 121/121A) + NDPS Act ગુનાઓ — <b>કોઈપણ રકમ</b> હોય તો પણ schedule ગુનો ગણાય (કોઈ થ્રેશોલ્ડ નહીં).</div>
+    <div class="hi">Part A: IPC (युद्ध छेड़ना 121/121A) + NDPS Act अपराध — <b>किसी भी राशि</b> पर schedule offence माना जाता है (कोई थ्रेशोल्ड नहीं)।</div>
+    <div class="en">Part A: IPC S.121/121A (waging war) + NDPS Act offences — NO monetary threshold.</div>
+  </div>
+  <div class="tri">
+    <div class="gu">Part B: Murder, Extortion, Robbery/Dacoity, Forgery, Counterfeiting (IPC) + Arms Act + Wildlife Act + Immoral Traffic Act + Prevention of Corruption Act — <b>₹30 લાખ કે વધુ</b> હોય તો જ schedule ગુનો.</div>
+    <div class="hi">Part B: हत्या, जबरन वसूली, डकैती, जालसाजी, जाली नोट (IPC) + Arms Act + Wildlife Act + Immoral Traffic Act + Prevention of Corruption Act — <b>₹30 लाख या अधिक</b> होने पर ही schedule offence।</div>
+    <div class="en">Part B: Murder, extortion, robbery/dacoity, forgery, counterfeiting (IPC) + Arms Act + Wildlife Act + Immoral Traffic Act + Prevention of Corruption Act — threshold ₹30 lakh+.</div>
+    <span class="pyqtag">⭐⭐ Most-asked numeric (₹30 lakh)</span>
+  </div>
+  <div class="mnemonic"><b>Trick — "A for All, B for Big (₹30L)":</b> Part A = any amount; Part B = Big amount only (≥₹30 lakh).</div>
+</div>
+
+<!-- 11. MNEMONICS -->
+<div class="sec gen" id="mnemonics">
+  <h2>🧠 11. Master Mnemonics Bank</h2>
+  <div class="mnemonic"><b>"DAAA"</b> — hierarchy of officers: <b>D</b>irector → <b>A</b>dditional/Joint Director → <b>A</b>ssistant Director → (Deputy in between) — remember as D→Dy→A.</div>
+  <div class="mnemonic"><b>"5-AB-9"</b> — Chapter III sequence: S.5 Attach → S.6-8 Adjudicate → S.9 Vest in Govt.</div>
+  <div class="mnemonic"><b>"3-7-5-10"</b> — Punishment: 3 to 7 years, ₹5 lakh fine, 10 years if NDPS-linked.</div>
+  <div class="mnemonic"><b>"10 Years KYC"</b> — Reporting entities keep records 10 years (same as remembering "Aadhar+KYC=10yr retention").</div>
+  <div class="mnemonic"><b>"24-30-45-60-90"</b> — escalating time ladder: 24hrs (arrest/personal search) → 30 days (complaint/notice) → 45 days (appeal to AT) → 60 days (appeal to HC) → 90 days (attachment/sanction).</div>
+</div>
+
+<!-- 12. FAQ -->
+<div class="sec gen" id="faq">
+  <h2>❓ 12. Frequently Asked Questions</h2>
+  <div class="faq-q">Q1. PMLA ક્યારે અમલમાં આવ્યો?</div>
+  <div class="faq-a">A: Enacted 17 Jan 2003, but actual commencement notified separately by Central Govt (different dates for different provisions possible) — S.1(3).</div>
+
+  <div class="faq-q">Q2. શું Part A ગુનામાં થ્રેશોલ્ડ રકમ લાગુ પડે?</div>
+  <div class="faq-a">A: ના. Part A ગુનાઓમાં કોઈ ન્યૂનતમ રકમ થ્રેશોલ્ડ નથી; Part B માટે ₹30 લાખ થ્રેશોલ્ડ લાગુ.</div>
+
+  <div class="faq-q">Q3. કોણ "Adjudicating Authority" ની રચના કરે છે?</div>
+  <div class="faq-a">A: Central Government, by notification (S.6(1)) — Chairperson + 2 Members.</div>
+
+  <div class="faq-q">Q4. Attachment મહત્તમ કેટલા દિવસ માટે માન્ય?</div>
+  <div class="faq-a">A: 90 days from date of provisional attachment order (S.5(1)), or until AA order under S.8(2), whichever earlier.</div>
+
+  <div class="faq-q">Q5. Burden of proof કોના પર છે?</div>
+  <div class="faq-a">A: આરોપી (Accused) પર — Reverse Burden of Proof, S.24.</div>
+
+  <div class="faq-q">Q6. Special Court ના ગુના bailable છે કે non-bailable?</div>
+  <div class="faq-a">A: Non-bailable & Cognizable (S.45) — twin conditions apply for bail.</div>
+</div>
+<!-- 13. PYQ -->
+<div class="sec pyq" id="pyq">
+  <h2>⭐ 13. PYQ Areas & Expected Exam Questions</h2>
+  <h3>PYQ-Prone Topics (Past Pattern)</h3>
+  <div class="chip-row">
+    <span class="chip">S.3 & 4 Offence/Punishment</span>
+    <span class="chip">₹30 Lakh Threshold (Part B)</span>
+    <span class="chip">Burden of Proof S.24</span>
+    <span class="chip">Twin Bail Conditions S.45</span>
+    <span class="chip">Time limits (30/45/60/90 days)</span>
+    <span class="chip">Record retention 10 yrs</span>
+    <span class="chip">Authorities hierarchy</span>
+    <span class="chip">Attachment 90 days</span>
+  </div>
+  <h3>Expected Questions (Paper III – MCQ Style)</h3>
+  <div class="faq-q">1. Under PMLA 2002, the maximum punishment for money-laundering involving NDPS offences extends to:</div>
+  <div class="faq-a">(a) 7 years (b) 10 years ✅ (c) 14 years (d) Life</div>
+  <div class="faq-q">2. Records of transactions must be maintained by reporting entities for:</div>
+  <div class="faq-a">(a) 5 years (b) 7 years (c) 10 years ✅ (d) 12 years</div>
+  <div class="faq-q">3. Part B offences become "scheduled offence" only if value involved is:</div>
+  <div class="faq-a">(a) ₹10 lakh (b) ₹20 lakh (c) ₹30 lakh ✅ (d) ₹50 lakh</div>
+  <div class="faq-q">4. Provisional attachment under S.5 is valid for a maximum of:</div>
+  <div class="faq-a">(a) 30 days (b) 60 days (c) 90 days ✅ (d) 180 days</div>
+  <div class="faq-q">5. Burden of proving proceeds are untainted lies on:</div>
+  <div class="faq-a">(a) Prosecution (b) Accused ✅ (c) Adjudicating Authority (d) ED</div>
+
+  <h3>Expected Paper II — Drafting/Noting Angle</h3>
+  <div class="faq-a">Draft a provisional attachment order under S.5 stating reasons to believe; OR draft a show-cause notice under S.8(1); OR note on procedure for appeal to Appellate Tribunal under S.26.</div>
+</div>
+
+<!-- 14. LAST DAY NOTES -->
+<div class="sec ld" id="lastday">
+  <h2>📋 14. One-Page Last Day Revision Notes</h2>
+  <ul>
+    <li><b>Act:</b> PMLA 2002 (Act 15 of 2003), in force 17 Jan 2003 (notified commencement).</li>
+    <li><b>Offence:</b> S.3 — projecting proceeds of crime as untainted property.</li>
+    <li><b>Punishment:</b> S.4 — 3–7 yrs RI + ₹5L fine; 10 yrs if NDPS-linked (Para 2, Part A).</li>
+    <li><b>Schedule:</b> Part A = no threshold; Part B = ₹30 lakh+ threshold.</li>
+    <li><b>Attachment:</b> S.5 — 90 days max; complaint to AA in 30 days.</li>
+    <li><b>Adjudication:</b> S.8 — show cause min 30 days; AA confirms attachment; final after trial court conviction final.</li>
+    <li><b>Vesting:</b> S.9 — confiscated property vests absolutely in Central Govt.</li>
+    <li><b>Records:</b> S.12 — reporting entities retain 10 years; fine ₹10,000–₹1L per failure (S.13).</li>
+    <li><b>Search/Seizure/Arrest:</b> S.16(survey) → S.17(search&seize property) → S.18(search person) → S.19(arrest). 24-hr production rule for personal liberty actions.</li>
+    <li><b>Burden of Proof:</b> S.24 — on accused (reverse burden).</li>
+    <li><b>Appellate Tribunal:</b> S.25-26 — appeal within 45 days; dispose within 6 months (endeavour).</li>
+    <li><b>Special Court:</b> S.43-45 — cognizable & non-bailable; twin bail conditions.</li>
+    <li><b>Appeal to HC:</b> S.42 — within 60 days (+60 condonable).</li>
+    <li><b>Civil court barred:</b> S.41, S.67 — no civil suit on matters under this Act.</li>
+    <li><b>Overriding effect:</b> S.71 — Act prevails over inconsistent laws.</li>
+    <li><b>Authorities:</b> Director/Addl/Joint Director → Deputy Director → Assistant Director (S.48).</li>
+  </ul>
+</div>
+
+<footer>
+  Prepared for India Post IP/IPO Exam Prep | PMLA 2002 Trilingual Infographic<br>
+  ગુજરાતી • हिंदी • English | Last Day Revision Ready
+</footer>
+
+</div>
+  
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+</body>
+</html>

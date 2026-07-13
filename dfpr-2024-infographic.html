@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DFPR 2024 — वित्तीय शक्तियों का प्रत्यायोजन — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E;
+  --blue:#003087;
+  --gold:#D4AF37;
+  --very-imp:#C8102E;
+  --freq:#E67E22;
+  --concept:#D4AF37;
+  --quick:#2E8B57;
+  --bg:#FAF7F0;
+  --card:#FFFFFF;
+  --ink:#1A1A2E;
+  --muted:#6b6b78;
+  --border:#e7e1d3;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  padding-bottom:60px;
+}
+.eng{font-style:italic; color:var(--muted); font-size:0.85em;}
+
+header.top{
+  background:linear-gradient(135deg,var(--blue) 0%,#001a4d 100%);
+  color:#fff;
+  padding:28px 16px 22px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+header.top::before{
+  content:"";
+  position:absolute; top:-60px; right:-60px;
+  width:220px; height:220px; border-radius:50%;
+  background:rgba(200,16,46,0.25);
+}
+header.top h1{
+  font-size:1.35rem;
+  color:var(--gold);
+  letter-spacing:0.5px;
+  position:relative;
+}
+header.top .sub{font-size:0.95rem; margin-top:6px; color:#dbe3ff; position:relative;}
+header.top .dept{font-size:0.78rem; margin-top:10px; color:#b9c4ef; position:relative;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px; position:relative;}
+.badge{
+  font-size:0.72rem; padding:4px 10px; border-radius:20px;
+  background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3);
+}
+
+nav.toc{
+  background:#fff; margin:14px 10px; border-radius:14px;
+  padding:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  border:1px solid var(--border);
+}
+nav.toc h2{font-size:0.95rem; color:var(--blue); margin-bottom:8px;}
+nav.toc ol{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+nav.toc a{
+  font-size:0.78rem; color:var(--ink); text-decoration:none;
+  display:block; padding:6px 8px; border-radius:8px; background:var(--bg);
+  border-left:3px solid var(--red);
+}
+nav.toc a:active{background:#f0e9d8;}
+
+section{margin:18px 10px;}
+.section-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.section-head .icon{
+  width:38px; height:38px; border-radius:10px; background:var(--red);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.section-head h2{font-size:1.08rem; color:var(--blue);}
+.section-head .eng{display:block; font-size:0.75rem;}
+
+.card{
+  background:var(--card); border-radius:14px; padding:14px 14px 16px;
+  margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  border:1px solid var(--border); border-top:4px solid var(--blue);
+}
+.card h3{font-size:1rem; color:var(--red); margin-bottom:6px;}
+.card h3 .eng{display:block; font-size:0.72rem; font-weight:400;}
+.card p{font-size:0.9rem; margin-bottom:6px;}
+.card ul{margin-left:18px; font-size:0.88rem;}
+.card li{margin-bottom:4px;}
+
+.tag{
+  display:inline-block; font-size:0.68rem; padding:2px 8px; border-radius:12px;
+  color:#fff; font-weight:600; margin-right:4px; white-space:nowrap;
+}
+.tag.vi{background:var(--very-imp);}
+.tag.fa{background:var(--freq);}
+.tag.cu{background:var(--concept); color:#3a3000;}
+.tag.qr{background:var(--quick);}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:8px; background:#fff; padding:10px 12px;
+  border-radius:12px; margin:10px 10px; font-size:0.75rem; border:1px solid var(--border);
+}
+.legend span{display:flex; align-items:center; gap:5px;}
+
+.qbox{
+  background:#FFF7E6; border:1px dashed var(--gold); border-radius:10px;
+  padding:8px 10px; font-size:0.82rem; margin-top:8px;
+}
+.qbox b{color:var(--red);}
+
+.om{
+  font-size:0.72rem; color:var(--blue); background:#eef2ff; display:inline-block;
+  padding:2px 6px; border-radius:6px; margin-top:4px;
+}
+
+.tree{padding-left:0;}
+.tree-node{
+  border-left:3px solid var(--gold); margin-left:8px; padding-left:14px; margin-bottom:10px; position:relative;
+}
+.tree-node::before{
+  content:""; position:absolute; left:-8px; top:8px; width:8px; height:8px;
+  border-radius:50%; background:var(--red);
+}
+.tree-node.l1{border-left-color:var(--red);}
+.tree-node.l2{border-left-color:var(--blue); margin-left:22px;}
+.tree-node.l3{border-left-color:var(--gold); margin-left:36px;}
+.tree-node.l4{border-left-color:var(--quick); margin-left:50px;}
+.tree-node .lab{font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.5px;}
+.tree-node .txt{font-size:0.88rem; font-weight:600;}
+
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:10px 0;}
+.flow-box{
+  background:var(--blue); color:#fff; border-radius:10px; padding:9px 14px;
+  font-size:0.82rem; text-align:center; max-width:340px; width:100%;
+}
+.flow-box.alt{background:var(--red);}
+.flow-box.end{background:var(--quick);}
+.flow-box.gold{background:var(--gold); color:#3a3000;}
+.flow-arrow{font-size:1.3rem; color:var(--gold); line-height:1;}
+
+.decision{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:12px;
+}
+.d-q{background:var(--gold); color:#3a3000; padding:8px 10px; border-radius:8px; font-size:0.85rem; font-weight:700; text-align:center; margin-bottom:6px;}
+.d-ans{display:flex; gap:8px; margin-bottom:6px;}
+.d-yes,.d-no{flex:1; padding:8px; border-radius:8px; font-size:0.78rem; text-align:center;}
+.d-yes{background:#e8f5e9; border:1px solid var(--quick);}
+.d-no{background:#fdecea; border:1px solid var(--red);}
+
+.tblwrap{overflow-x:auto; margin:10px 0;}
+table{width:100%; border-collapse:collapse; font-size:0.78rem; min-width:520px;}
+th{background:var(--blue); color:#fff; padding:8px; text-align:right;}
+td{padding:7px 8px; border-bottom:1px solid var(--border); text-align:right;}
+tr:nth-child(even){background:#faf9f4;}
+th:first-child,td:first-child{text-align:right;}
+
+.timeline{position:relative; margin:14px 4px; padding-left:22px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:16px;}
+.t-item::before{
+  content:""; position:absolute; left:-28px; top:2px; width:12px; height:12px;
+  border-radius:50%; background:var(--red); border:2px solid #fff; box-shadow:0 0 0 2px var(--red);
+}
+.t-date{font-weight:700; color:var(--red); font-size:0.82rem;}
+.t-desc{font-size:0.8rem;}
+
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.compare .col{border-radius:10px; padding:10px; font-size:0.78rem;}
+.compare .old{background:#fdecea; border:1px solid var(--red);}
+.compare .new{background:#e8f5e9; border:1px solid var(--quick);}
+.compare h4{font-size:0.82rem; margin-bottom:6px;}
+
+.mnemonic{
+  background:linear-gradient(135deg,#fff8e1,#fff);
+  border:2px dashed var(--gold); border-radius:12px; padding:12px; margin:10px 0; font-size:0.85rem;
+}
+.mnemonic .word{font-size:1.1rem; font-weight:800; color:var(--red); letter-spacing:1px;}
+
+.rev-sheet{
+  background:#0f1b3d; color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.rev-sheet h2{color:var(--gold); font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-box{background:rgba(255,255,255,0.06); border-radius:10px; padding:10px; border-left:4px solid var(--gold);}
+.rev-box h4{font-size:0.85rem; color:#ffd97a; margin-bottom:4px;}
+.rev-box p, .rev-box li{font-size:0.78rem; color:#e8e8f5;}
+.rev-box ul{margin-left:16px;}
+
+.lastday{
+  background:var(--red); color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.lastday h2{color:#fff; font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.lastday .item{background:rgba(255,255,255,0.12); border-radius:10px; padding:9px 12px; margin-bottom:8px; font-size:0.82rem;}
+.lastday .item b{color:var(--gold);}
+
+.mindmap{display:flex; flex-direction:column; align-items:center; gap:10px;}
+.mm-center{
+  background:var(--red); color:#fff; padding:12px 20px; border-radius:50px;
+  font-weight:700; font-size:0.9rem; text-align:center; box-shadow:0 4px 10px rgba(200,16,46,0.3);
+}
+.mm-branches{display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;}
+.mm-branch{
+  background:var(--blue); color:#fff; border-radius:12px; padding:10px; font-size:0.78rem; text-align:center;
+}
+.mm-branch .sub{display:block; font-size:0.66rem; color:#cfe0ff; margin-top:4px;}
+
+.note-box{
+  background:#eef2ff; border-left:4px solid var(--blue); border-radius:8px;
+  padding:10px 12px; margin-bottom:8px; font-size:0.82rem;
+}
+.note-box b{color:var(--blue);}
+
+footer{text-align:center; padding:24px 16px; font-size:0.75rem; color:var(--muted);}
+
+@media(min-width:700px){
+  nav.toc ol{grid-template-columns:1fr 1fr 1fr;}
+  .rev-grid{grid-template-columns:1fr 1fr;}
+  .mm-branches{grid-template-columns:1fr 1fr 1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>💰 DFPR 2024 — वित्तीय शक्तियों का प्रत्यायोजन</h1>
+  <div class="sub">Delegation of Financial Powers to HOC, HOD, Independent Directors & Divisional Heads <span class="eng">| Department of Posts</span></div>
+  <div class="dept">Ministry of Communications | Department of Posts (Integrated Finance Wing)</div>
+  <div class="badge-row">
+    <span class="badge">📘 IP Exam — Paper II Finance उपयोगी</span>
+    <span class="badge">📄 F.No. 6-2/2025-FA(P)</span>
+    <span class="badge">🗓️ लागू 01.04.2025</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <h2>📑 विषय सूची (Contents)</h2>
+  <ol>
+    <li><a href="#mindmap">🧠 माइंड मैप</a></li>
+    <li><a href="#background">पृष्ठभूमि व इतिहास</a></li>
+    <li><a href="#structure">4 Schedules की संरचना</a></li>
+    <li><a href="#conditions">सामान्य शर्तें</a></li>
+    <li><a href="#notes">महत्वपूर्ण Notes</a></li>
+    <li><a href="#ifa">IFA Consultation नियम</a></li>
+    <li><a href="#items">मुख्य वित्तीय सीमाएं</a></li>
+    <li><a href="#building">भवन/प्रोजेक्ट सीमाएं</a></li>
+    <li><a href="#schedulec">Schedule II-C तुलना</a></li>
+    <li><a href="#schedule3">Schedule III पूरक</a></li>
+    <li><a href="#timeline">🗓️ टाइमलाइन</a></li>
+    <li><a href="#compare">⚖️ तुलना चार्ट</a></li>
+    <li><a href="#mnemonics">🧩 मेमोरी ट्रिक्स</a></li>
+    <li><a href="#revision">📝 रिवीजन शीट</a></li>
+    <li><a href="#lastday">🔥 लास्ट डे नोट्स</a></li>
+  </ol>
+</nav>
+
+<div class="legend">
+  <span>🔴 <b>बहुत महत्वपूर्ण</b> (Very Imp for Exam)</span>
+  <span>🟠 <b>बार-बार पूछा गया</b> (Frequently Asked)</span>
+  <span>🟡 <b>कॉन्सेप्ट समझें</b> (Conceptual)</span>
+  <span>🟢 <b>क्विक रिवीजन</b> (Quick Revision)</span>
+</div>
+
+<!-- CHAPTER BREAKDOWN TREE -->
+<section>
+  <div class="section-head">
+    <div class="icon">🌳</div>
+    <h2>Chapter → Sub-Chapter → Micro → Nano Topic <span class="eng">Structural Breakdown</span></h2>
+  </div>
+  <div class="card">
+    <div class="tree">
+      <div class="tree-node l1"><span class="lab">Chapter</span><div class="txt">DFPR 2024 — वित्तीय शक्तियों का प्रत्यायोजन (डाक विभाग)</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">पृष्ठभूमि — DFPR 1978 से DFPR 2024 तक</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">1985 बिफर्केशन; 1988 DFPR लागू; 2021 पिछला रिवीजन</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">Rule 12(2) — प्रत्यायोजन का आधार</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">4 Schedules की संरचना (II-A, II-B, II-C, III)</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">HOC/HOD, Independent Directors, Sr.DDG(PAF)/GM(Fin), Divisional Heads</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">Schedule III सबसे छोटी (10 पेज); II-A सबसे बड़ी (65 पेज)</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">सामान्य शर्तें व IFA Consultation सिद्धांत</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">Splitting निषेध; Contract की पूरी अवधि की गणना</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">हर Item की Threshold से ऊपर IFA अनिवार्य</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">Object Head-वार वित्तीय सीमाएं</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">Salaries, Contingent Exp., Vehicles, Buildings</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">Ad-hoc Arrears: HOC ₹1L, HOD ₹50K, Director ₹10K</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MIND MAP -->
+<section id="mindmap">
+  <div class="section-head">
+    <div class="icon">🧠</div>
+    <h2>माइंड मैप — पूरा विषय एक नज़र में <span class="eng">Mind Map Overview</span></h2>
+  </div>
+  <div class="card">
+    <div class="mindmap">
+      <div class="mm-center">DFPR 2024<br><span style="font-size:0.68rem;">Delegation of Financial Powers</span></div>
+      <div class="mm-branches">
+        <div class="mm-branch">Schedule II-A<span class="sub">HOC + HOD (65 पेज)</span></div>
+        <div class="mm-branch">Schedule II-B<span class="sub">Independent Directors (34 पेज)</span></div>
+        <div class="mm-branch">Schedule II-C<span class="sub">Sr.DDG(PAF)/GM(Fin)/DAP</span></div>
+        <div class="mm-branch">Schedule III<span class="sub">Divisional Heads (10 पेज)</span></div>
+        <div class="mm-branch">सामान्य शर्तें<span class="sub">Splitting निषेध, Contract अवधि</span></div>
+        <div class="mm-branch">IFA Consultation<span class="sub">Threshold-आधारित</span></div>
+        <div class="mm-branch">Object Heads<span class="sub">Salary, Wages, Contingent आदि</span></div>
+        <div class="mm-branch">भवन/प्रोजेक्ट<span class="sub">HOC केवल — ₹10 करोड़ तक</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background">
+  <div class="section-head">
+    <div class="icon">📜</div>
+    <h2>पृष्ठभूमि व इतिहास <span class="eng">Background & History</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> विकास क्रम <span class="eng">Evolution</span></h3>
+    <ul>
+      <li>मूल रूप से Posts & Telegraphs Department की Schedule of Financial Powers लागू थी।</li>
+      <li><b>जनवरी 1985</b> — P&T का बिफर्केशन — Department of Posts व Department of Telecommunications अलग हुए।</li>
+      <li><b>1 अप्रैल 1988</b> — Department of Posts, Delegation of Financial Powers Rules (DFPR), 1978 के दायरे में लाया गया।</li>
+      <li>अंतिम पूर्व-संशोधन — OM No. 6-1/2021-Fin.Coord dated <b>9 जुलाई 2021</b>।</li>
+      <li>Ministry of Finance — DFPR 1978 को <b>DFPR 2024</b> से प्रतिस्थापित — <b>1 अप्रैल 2024</b> से प्रभावी।</li>
+      <li>वर्तमान OM (नई Schedules) — <b>1 अप्रैल 2025</b> से प्रभावी; Rule 12(2), DFPR 2024 के तहत जारी।</li>
+    </ul>
+    <div class="om">F.No. 6-2/2025-FA(P) dt. 28.03.2025 | हस्ताक्षरकर्ता: Partha Sarathi Das, AS&FA</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> DFPR 2024 कब से प्रभावी हुआ? — <b>1 अप्रैल 2024</b> (नई Schedule 1 अप्रैल 2025 से)</div>
+  </div>
+</section>
+
+<!-- STRUCTURE OF 4 SCHEDULES -->
+<section id="structure">
+  <div class="section-head">
+    <div class="icon">📂</div>
+    <h2>4 Schedules की संरचना <span class="eng">Structure of Schedules</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> कौन-सी Schedule किसे लागू? <span class="eng">Who Gets Which Schedule</span></h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>Schedule</th><th>किसे लागू</th><th>आकार</th></tr>
+        <tr><td>II-A</td><td>Heads of Circles (HOC) व Heads of Department (HOD)</td><td>65 पेज</td></tr>
+        <tr><td>II-B</td><td>Independent Directors (Postal Services के Directors, Independent Charge में)</td><td>34 पेज</td></tr>
+        <tr><td>II-C</td><td>Sr. DDG (PAF), General Managers (Finance) व DAP (Directors heading PAOs)</td><td>—</td></tr>
+        <tr><td>III</td><td>Divisional Heads (Postal Divisions के प्रमुख)</td><td>10 पेज</td></tr>
+      </table>
+    </div>
+    <div class="om">Preamble Para 2 | Schedule Notes 1-3</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> "Head of Department" की परिभाषा (Note 1)</h3>
+    <p>Note-1 अनुसार, इसमें शामिल हैं: Secretary Postal Services Board, Chief Post Masters General, Chief General Managers, Director RAKNPA, Post Masters General, Sr. DDG (PAF), General Managers (PAF), General Manager (CEPT), Chief Engineers, और Director (Foreign Post)।</p>
+    <div class="om">Schedule Note-1</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> क्या Director RAKNPA को "Head of Department" माना जाता है? — <b>हाँ</b> (Note-1 में स्पष्ट सूचीबद्ध)</div>
+  </div>
+
+  <div class="card" id="notes">
+    <h3><span class="tag cu">🟡 CU</span> विशेष प्रावधान (Note 2, 3)</h3>
+    <ul>
+      <li><b>Note-2:</b> Sr. DDG (PAF) व GM (Finance) — केवल वे शक्तियां जो Schedule II-C में उनके Operational कार्य से संबंधित हों। PAO प्रमुख Director-स्तर अधिकारी — बड़े प्रतिष्ठान होने के कारण Head of Office माने जाएंगे।</li>
+      <li><b>Note-3:</b> Foreign Post का In-charge — मामले अनुसार HoD (II-A) / Independent Director (II-B) / Divisional Head (III) के समकक्ष शक्तियां प्रयोग करेगा।</li>
+    </ul>
+    <div class="om">Schedule Notes 2-3</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> HOC-केवल आरक्षित शक्तियां (Note 4, 5) — बड़ा ट्रैप!</h3>
+    <ul>
+      <li><b>Note-4:</b> Item 11(xi)(a), 15(i), 15(iii), 18(iv), 23(i), 31, 34(i), 34(ii), 34(iii), 34(iv), 35(iii), 37 — केवल <b>Head of Circle (HOC)</b> ही प्रयोग कर सकता है, HOD नहीं।</li>
+      <li><b>Note-5:</b> Item 11(xi)(a), 15(i), 15(iii), 15(iv), 18(iv), 21(vii), 27(iii), 27(iv), 27(v), 28(i) — HOC के अलावा <b>Director (RAKNPA)</b> व <b>CGM (PD/BD/PLI)</b> भी प्रयोग कर सकते हैं।</li>
+    </ul>
+    <div class="om">Schedule Notes 4-5</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> क्या HOD, Item 37 (Single Tender Sanction) की शक्ति प्रयोग कर सकता है? — <b>नहीं</b>, यह केवल HOC को आरक्षित है (Note-4)</div>
+  </div>
+</section>
+
+<!-- GENERAL CONDITIONS -->
+<section id="conditions">
+  <div class="section-head">
+    <div class="icon">⚖️</div>
+    <h2>सामान्य शर्तें (Para 4) <span class="eng">General Conditions</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> 5 प्रमुख शर्तें <span class="eng">Key Conditions</span></h3>
+    <ul>
+      <li><b>(i) Splitting निषेध:</b> उच्च प्राधिकारी की सैंक्शन आवश्यकता वाले कार्य को दो या अधिक भागों में विभाजित कर स्वीकृत नहीं किया जा सकता।</li>
+      <li><b>(ii) Contract अवधि:</b> यदि Contract किसी अवधि तक फैला है — पूरी अवधि का कुल मूल्य ही सीमा हेतु आधार माना जाएगा।</li>
+      <li><b>(iii) Project की समग्र लागत:</b> Estimate सीमा — व्यक्तिगत Estimate पर ही नहीं, बल्कि सभी घटक Estimates के कुल योग पर लागू होगी।</li>
+      <li><b>(iv) उत्तरदायित्व:</b> Rule 12(3), DFPR 2024 अनुसार अधिकार सौंपे जाने पर भी — HoD, Gazetted Officers के निर्णयों की शुद्धता व औचित्य हेतु उत्तरदायी रहेगा।</li>
+      <li><b>(v) शर्तों का पालन:</b> प्रत्येक Item के सामने उल्लिखित सभी Conditions/Remarks का पालन अनिवार्य।</li>
+    </ul>
+    <div class="om">Para 4(i)-(v)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Project Estimate की सीमा किस आधार पर तय होती है? — <b>सभी घटक Estimates के कुल योग पर, व्यक्तिगत Estimate पर नहीं</b></div>
+  </div>
+
+  <!-- Decision tree for splitting -->
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> निर्णय वृक्ष — Splitting नियम <span class="eng">Decision Tree</span></h3>
+    <div class="decision">
+      <div class="d-q">क्या कार्य को कई भागों में बांटकर स्वीकृत किया जा रहा है ताकि सीमा में रहे?</div>
+      <div class="d-ans">
+        <div class="d-yes">❌ ऐसा करना — नियम का उल्लंघन (अस्वीकार्य)</div>
+        <div class="d-no">✅ पूरे कार्य को एक साथ, वास्तविक कुल मूल्य पर मूल्यांकित करें</div>
+      </div>
+    </div>
+    <div class="om">Para 4(i)</div>
+  </div>
+</section>
+
+<!-- IFA -->
+<section id="ifa">
+  <div class="section-head">
+    <div class="icon">🧾</div>
+    <h2>IFA Consultation नियम <span class="eng">Internal Financial Adviser Rule</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> सामान्य सिद्धांत <span class="eng">Core Principle</span></h3>
+    <ul>
+      <li>अधिकांश Items — निश्चित सीमा तक IFA Consultation <b>आवश्यक नहीं</b>; सीमा से ऊपर <b>अनिवार्य</b>।</li>
+      <li>Divisional Heads (Schedule III) हेतु — यदि कोई Rule/Manual/Policy स्पष्ट रूप से IFA Consultation अनिवार्य करे — तो मामला संबंधित HOD/HOC को Refer किया जाएगा (सीधे IFA को नहीं)।</li>
+      <li>कुछ Items में IFA Consultation "आवश्यक नहीं जब तक Government Rules/Manuals स्पष्ट रूप से अनिवार्य न करें" — यह Default स्थिति है (जैसे Salaries, Wages, Pensionary Charges)।</li>
+    </ul>
+    <div class="om">Para 6 | विभिन्न Item Remarks</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Divisional Head के मामले में IFA Consultation कैसे होती है? — <b>सीधे नहीं, संबंधित HOD/HOC के माध्यम से</b></div>
+  </div>
+
+  <!-- Decision tree for IFA -->
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> निर्णय वृक्ष — IFA Consultation कब आवश्यक? <span class="eng">Decision Tree</span></h3>
+    <div class="decision">
+      <div class="d-q">क्या व्यय राशि Item की निर्धारित Threshold सीमा से अधिक है?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → IFA Consultation अनिवार्य</div>
+        <div class="d-no">❌ नहीं → IFA Consultation आवश्यक नहीं (सामान्यतः)</div>
+      </div>
+      <div class="d-q">क्या यह Divisional Head का मामला है जहां Rule IFA अनिवार्य करता है?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → मामला HOD/HOC को Refer करें</div>
+        <div class="d-no">❌ नहीं → Divisional Head स्वयं निर्णय ले सकता है</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> उदाहरण — IFA Threshold Limits</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद (Item)</th><th>IFA Consultation सीमा</th></tr>
+        <tr><td>Recurring Contingent Expenditure</td><td>₹75,000 से ऊपर</td></tr>
+        <tr><td>Non-Recurring Contingent Expenditure</td><td>₹1,00,000 से ऊपर</td></tr>
+        <tr><td>Electric/Gas/Water/Telephone Charges</td><td>₹2,00,000 से ऊपर</td></tr>
+        <tr><td>Petty Local Purchase (Stationery)</td><td>₹2,00,000 (प्रति केस) से ऊपर</td></tr>
+        <tr><td>Newspaper/Magazine व्यय</td><td>₹2,00,000 से ऊपर</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- KEY LIMITS -->
+<section id="items">
+  <div class="section-head">
+    <div class="icon">💵</div>
+    <h2>मुख्य वित्तीय सीमाएं — Schedule II-A <span class="eng">Key Financial Limits</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Ad-hoc Arrears व Honorarium — तीनों Schedules की तुलना</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>HOC</th><th>HOD</th><th>Independent Director</th></tr>
+        <tr><td>Ad-hoc Arrears Payment</td><td>₹1,00,000</td><td>₹50,000</td><td>₹10,000</td></tr>
+        <tr><td>Honorarium & Rewards</td><td colspan="2">₹2,500 (सामान्य सीमा)</td><td>₹2,500</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 2(ii) Schedule II-A, II-B</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> HOC व Independent Director की Ad-hoc Arrears सीमा में कितना अंतर है? — <b>₹90,000</b> (₹1,00,000 - ₹10,000)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> Contingent Expenditure (Recurring/Non-Recurring)</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>प्रकार</th><th>HOC</th><th>HOD</th><th>IFA सीमा</th></tr>
+        <tr><td>Recurring Contingent</td><td>₹2 लाख प्रति केस</td><td>₹1 लाख प्रति केस</td><td>₹75,000 से ऊपर</td></tr>
+        <tr><td>Non-Recurring Contingent</td><td>₹3 लाख प्रति केस</td><td>₹1 लाख प्रति केस</td><td>₹1,00,000 से ऊपर</td></tr>
+        <tr><td>Petty Purchase (Stationery)</td><td>₹5 लाख/वर्ष</td><td>₹2 लाख/वर्ष</td><td>₹2,00,000 से ऊपर</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 10(i)(ii)(iv) Schedule II-A</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> वाहन/Consultant Hiring (Item 19)</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>प्राधिकारी</th><th>सीमा</th></tr>
+        <tr><td>HOC</td><td>₹1 करोड़ प्रति वर्ष</td></tr>
+        <tr><td>HOD</td><td>₹20 लाख प्रति वर्ष</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 19(i) Schedule II-A</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Consultant की Engagement/Hiring हेतु HOC की वार्षिक सीमा क्या है? — <b>₹1 करोड़</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> Training Expenses</h3>
+    <ul>
+      <li>Domestic Training — <b>₹2 लाख प्रति केस</b> (HOC/HOD)।</li>
+      <li>Foreign Training — <b>Full Powers</b>, पर सक्षम प्राधिकारी की पूर्व स्वीकृति अनिवार्य।</li>
+      <li>RAKNPA द्वारा प्रशिक्षण संस्थानों से Outsourced Training — <b>₹2 करोड़ प्रति वर्ष</b> तक (केवल Director RAKNPA)।</li>
+    </ul>
+    <div class="om">Item 7(i)(ii) Schedule II-A</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> अन्य चयनित सीमाएं (Schedule III — Divisional Heads)</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>सीमा</th></tr>
+        <tr><td>Hiring of Accommodation (Exam/Customer Meet)</td><td>₹5,000 प्रति केस</td></tr>
+        <tr><td>Printing & Binding (Publicity सामग्री)</td><td>₹20,000/वर्ष (सभी गतिविधियां मिलाकर)</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 9(ii), Item 10 Schedule III</div>
+  </div>
+</section>
+
+<!-- BUILDING/PROJECT -->
+<section id="building">
+  <div class="section-head">
+    <div class="icon">🏗️</div>
+    <h2>भवन/प्रोजेक्ट सीमाएं — सबसे बड़ी संख्याएं <span class="eng">Building & Project Limits</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Item 28 — Building Project Estimates</h3>
+    <ul>
+      <li>Postal Buildings/Staff Quarters — Construction/Extension हेतु सीमा — <b>₹10 करोड़</b> तक।</li>
+      <li>⚠️ यह शक्ति <b>केवल HOC</b> को प्रत्यायोजित (HOD को नहीं!)</li>
+      <li>भूमि अधिग्रहण/खरीद जो किसी बिना-स्वीकृत Project का भाग हो — इन शक्तियों में शामिल <b>नहीं</b>।</li>
+      <li>Residential Buildings — निर्धारित Accommodation Scale से अधिक नहीं होनी चाहिए।</li>
+    </ul>
+    <div class="om">Item 28(i) Schedule II-A</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> ₹10 करोड़ तक Building Project Estimate सैंक्शन करने की शक्ति किसे है? — <b>केवल HOC, HOD को नहीं</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> Addition/Alteration/Replacement — इंस्टॉलेशन</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>भवन प्रकार</th><th>सीमा</th></tr>
+        <tr><td>Non-Residential Buildings</td><td>₹2 करोड़ प्रति केस (Overhead Charges छोड़कर)</td></tr>
+        <tr><td>Residential Buildings</td><td>सीमा — अलग निर्धारित</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 28(ii)(iii) Schedule II-A</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> Plinth Area नियम</h3>
+    <p>Residential Building हेतु — विभिन्न Quarters Types के लिए प्रस्तावित Plinth Area, IFA परामर्श से निर्धारित; संरचनात्मक कारणों से <b>5% तक विचलन</b> स्वीकार्य।</p>
+    <div class="om">Item 28(iv)(b)</div>
+  </div>
+</section>
+
+<!-- SCHEDULE II-C -->
+<section id="schedulec">
+  <div class="section-head">
+    <div class="icon">🧮</div>
+    <h2>Schedule II-C — Sr.DDG(PAF)/GM(Finance)/DAP तुलना <span class="eng">3-Way Comparison — High Yield</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Honorarium व Training Expenses — 3-तरफा तुलना</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>Sr. DDG (PAF)</th><th>GM (Finance)</th><th>DAP</th></tr>
+        <tr><td>Honorarium & Rewards</td><td>Gol/DoP सीमा अनुसार</td><td>Gol/DoP सीमा अनुसार</td><td>₹4,000</td></tr>
+        <tr><td>Training Expenses (प्रति अवसर)</td><td>₹1,00,000</td><td>₹75,000</td><td>₹50,000</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 1(iii), Item 7 Schedule II-C</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> तीनों में Training Expenses की सबसे कम सीमा किसकी है? — <b>DAP — ₹50,000</b> (Sr.DDG सबसे ज़्यादा ₹1 लाख)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> Vehicle Hiring व Computer Hire — तुलना</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>Sr. DDG (PAF)</th><th>GM (Finance)</th><th>DAP</th></tr>
+        <tr><td>वाहन Hiring (Staff Car बदले)</td><td>₹2 लाख/माह प्रति वाहन</td><td>₹2 लाख/माह</td><td>₹1 लाख/माह</td></tr>
+        <tr><td>वाहन Hiring (आपातकाल, 3 माह तक)</td><td>₹2 लाख/माह</td><td>₹2 लाख/माह</td><td>— (सीमा नहीं दी)</td></tr>
+        <tr><td>Computer & Peripherals Hire</td><td>Full Powers</td><td>Full Powers</td><td>Full Powers</td></tr>
+        <tr><td>IFA सीमा (Computer Hire)</td><td colspan="2">₹2 लाख से ऊपर</td><td>₹1 लाख से ऊपर</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 13(i)(ii), Item 13(iv) Schedule II-C</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> Digital Equipment व Fixtures — DAP विशेष सीमा</h3>
+    <ul>
+      <li>Sr.DDG(PAF) व GM(Finance) — Digital Equipment व Fixtures/Furniture Hiring में <b>Full Powers</b>।</li>
+      <li>DAP — इन्हीं मदों में <b>₹2 लाख प्रति केस</b> तक सीमित।</li>
+      <li>Petrol/Oil/Fuel व्यय — तीनों को Full Powers, पर IFA सीमा भिन्न (Sr.DDG/GM: ₹2 लाख से ऊपर; DAP: ₹1 लाख से ऊपर)।</li>
+    </ul>
+    <div class="om">Item 14, Item 15 Schedule II-C</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> DAP को Digital Equipment Procurement में कितनी सीमा है? — <b>₹2 लाख प्रति केस</b> (Sr.DDG/GM को Full Powers)</div>
+  </div>
+</section>
+
+<!-- SCHEDULE III SUPPLEMENT -->
+<section id="schedule3">
+  <div class="section-head">
+    <div class="icon">🏤</div>
+    <h2>Schedule III — Divisional Heads के अतिरिक्त महत्वपूर्ण Items <span class="eng">Supplementary High-Yield Items</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Contingent व कार्यालय व्यय सीमाएं</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>सीमा</th></tr>
+        <tr><td>Contingent Charges (Non-Recurring)</td><td>₹10,000 प्रति केस</td></tr>
+        <tr><td>Hot & Cold Weather Charges</td><td>₹10,000 प्रति केस</td></tr>
+        <tr><td>Purchase of Fixtures & Furniture</td><td>₹2 लाख/वर्ष प्रति Division</td></tr>
+        <tr><td>Office Equipment खरीद</td><td>₹5,000 प्रति केस</td></tr>
+        <tr><td>Emergent Stock/Stationery Purchase</td><td>₹50,000/वर्ष (Non-Availability Certificate PSD से आवश्यक)</td></tr>
+        <tr><td>Carriage of Mails (रेल/हवाई के अलावा)</td><td>₹3,000/माह प्रति केस</td></tr>
+        <tr><td>Cash Chest Embedding/तकनीकी किताबें/साइनबोर्ड</td><td>₹10,000 प्रति केस</td></tr>
+      </table>
+    </div>
+    <div class="om">Item 6, 9, 10 Schedule III</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> Emergent Stock Purchase हेतु किस दस्तावेज़ की आवश्यकता है? — <b>PSD से Non-Availability Certificate</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Building Renting — X/Y/Z श्रेणी शहर (बड़ा ट्रैप!)</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>शहर श्रेणी</th><th>सीमा (प्रति माह)</th></tr>
+        <tr><td>X श्रेणी शहर</td><td>₹15,000</td></tr>
+        <tr><td>Y श्रेणी शहर</td><td>₹12,000</td></tr>
+        <tr><td>Z श्रेणी शहर</td><td>₹8,000</td></tr>
+      </table>
+    </div>
+    <ul>
+      <li>ऐसे सभी Hiring Cases की <b>त्रैमासिक (Quarterly) रिपोर्ट</b> — PMG को, DAP को प्रतिलिपि सहित, भेजनी अनिवार्य।</li>
+      <li>Rate — SOA (Scale of Accommodation) व बाज़ार दर के अनुसार होनी चाहिए।</li>
+    </ul>
+    <div class="om">Item 8(i) Schedule III</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> X श्रेणी शहर में Divisional Head की Office Renting सीमा क्या है? — <b>₹15,000/माह</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> Customer Meets — विस्तृत Break-up</h3>
+    <ul>
+      <li>Customer Meet आयोजन — कुल सीमा <b>₹10,000 प्रति Meet</b>।</li>
+      <li>Equipment Hiring — अधिकतम <b>₹2,000</b>।</li>
+      <li>चाय/नाश्ता — <b>₹200 प्रति व्यक्ति</b>।</li>
+      <li>स्टेशनरी/सहायक सामग्री — <b>₹100 प्रति व्यक्ति</b>।</li>
+    </ul>
+    <div class="om">Item 9(i) Schedule III</div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-head">
+    <div class="icon">🗓️</div>
+    <h2>महत्वपूर्ण तिथियां व टाइमलाइन <span class="eng">Timeline</span></h2>
+  </div>
+  <div class="card">
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">जनवरी 1985</div><div class="t-desc">P&T Department का बिफर्केशन — Posts व Telecom अलग हुए 🟡</div></div>
+      <div class="t-item"><div class="t-date">1 अप्रैल 1988</div><div class="t-desc">Department of Posts — DFPR 1978 के दायरे में लाया गया 🟠</div></div>
+      <div class="t-item"><div class="t-date">9 जुलाई 2021</div><div class="t-desc">पिछला (अंतिम पूर्व) Revision — OM No. 6-1/2021-Fin.Coord 🟢</div></div>
+      <div class="t-item"><div class="t-date">1 अप्रैल 2024</div><div class="t-desc"><b>DFPR 2024 लागू</b> — DFPR 1978 प्रतिस्थापित 🔴</div></div>
+      <div class="t-item"><div class="t-date">28 मार्च 2025</div><div class="t-desc">वर्तमान OM जारी — F.No. 6-2/2025-FA(P) 🔴</div></div>
+      <div class="t-item"><div class="t-date">1 अप्रैल 2025</div><div class="t-desc"><b>नई Schedules (II-A, II-B, II-C, III) प्रभावी</b> 🔴</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare">
+  <div class="section-head">
+    <div class="icon">⚖️</div>
+    <h2>तुलना चार्ट <span class="eng">Comparison Charts</span></h2>
+  </div>
+
+  <div class="card">
+    <h3>Schedule-वार अधिकार क्षेत्र तुलना</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>पहलू</th><th>Schedule II-A (HOC/HOD)</th><th>Schedule III (Divisional Head)</th></tr>
+        <tr><td>शक्ति स्तर</td><td>व्यापक — 37 Items तक</td><td>सीमित — मूलभूत आवश्यकताएं</td></tr>
+        <tr><td>Building Sanction</td><td>₹10 करोड़ तक (HOC)</td><td>शामिल नहीं</td></tr>
+        <tr><td>IFA Consultation</td><td>सीधे प्रयोज्य</td><td>HOD/HOC के माध्यम से</td></tr>
+        <tr><td>दस्तावेज़ आकार</td><td>65 पेज</td><td>10 पेज</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>DFPR 1978 बनाम DFPR 2024</h3>
+    <div class="compare">
+      <div class="col old">
+        <h4>❌ DFPR 1978 (पुराना)</h4>
+        <ul>
+          <li>1 अप्रैल 1988 से Posts में लागू</li>
+          <li>कई Items अप्रासंगिक हो गए</li>
+          <li>अंतिम Revision — 2021</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h4>✅ DFPR 2024 (नया)</h4>
+        <ul>
+          <li>1 अप्रैल 2024 से प्रभावी</li>
+          <li>Rule 12(2) के तहत नई Schedules जारी</li>
+          <li>1 अप्रैल 2025 से डाक विभाग में लागू</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MNEMONICS -->
+<section id="mnemonics">
+  <div class="section-head">
+    <div class="icon">🧩</div>
+    <h2>मेमोरी ट्रिक्स व मनेमोनिक्स <span class="eng">Memory Tricks</span></h2>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"A-B-C-D क्रम = बड़े से छोटे स्तर तक"</div>
+    <p>Schedule II-A (HOC/HOD — सबसे व्यापक) → II-B (Independent Directors) → II-C (Sr.DDG/GM Finance) → III (Divisional Heads — सबसे सीमित)।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"1 लाख HOC, 50 हज़ार HOD, 10 हज़ार Director"</div>
+    <p>Ad-hoc Arrears सीमा — घटते क्रम में याद रखें: ₹1,00,000 → ₹50,000 → ₹10,000। जितना ऊँचा पद, उतनी बड़ी सीमा।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"75-1L-2L: IFA की सीढ़ी"</div>
+    <p>Recurring Contingent — IFA सीमा ₹75,000; Non-Recurring — ₹1,00,000; बड़े खर्चे (बिजली/पानी आदि) — ₹2,00,000। जैसे-जैसे मद बदलता है, सीमा बढ़ती है।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"10 करोड़ = सिर्फ HOC का हक"</div>
+    <p>Building Project Sanction ₹10 करोड़ तक — याद रखें यह शक्ति <b>केवल HOC</b> को है, HOD को नहीं — यह सबसे बड़ा एग्जाम ट्रैप है!</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"नो-स्प्लिटिंग नियम — एक काम, एक सैंक्शन"</div>
+    <p>किसी बड़े काम को छोटे टुकड़ों में बांटकर सीमा में लाना — सख्त वर्जित। पूरे Contract/Project की कुल कीमत ही आधार है।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"1985 बिफर्केशन, 1988 DFPR, 2024 नया DFPR, 2025 नई डाक Schedule"</div>
+    <p>चार तारीखों की चेन याद रखें — यही सबसे ज़्यादा पूछा जाने वाला टाइमलाइन प्रश्न है।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"1L-75K-50K: Training में Sr.DDG सबसे आगे"</div>
+    <p>Training Expenses प्रति अवसर — Sr.DDG(PAF) ₹1,00,000 → GM(Finance) ₹75,000 → DAP ₹50,000। घटते क्रम में, पद जितना ऊँचा उतनी बड़ी सीमा।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"X-15, Y-12, Z-8: शहर घटे तो किराया घटे"</div>
+    <p>Divisional Head की Building Renting सीमा — X श्रेणी ₹15,000, Y श्रेणी ₹12,000, Z श्रेणी ₹8,000 प्रति माह। शहर की श्रेणी जितनी नीचे, सीमा उतनी कम।</p>
+  </div>
+</section>
+
+<!-- REVISION SHEET -->
+<section id="revision">
+  <div class="rev-sheet">
+    <h2>📝 वन-पेज रिवीजन शीट <span class="eng" style="color:#cfcfff;">One Page Revision Sheet</span></h2>
+    <div class="rev-grid">
+      <div class="rev-box">
+        <h4>🔑 मूल तिथियां</h4>
+        <ul>
+          <li>जनवरी 1985 — P&T बिफर्केशन</li>
+          <li>1 अप्रैल 1988 — DFPR 1978 लागू (Posts)</li>
+          <li>9 जुलाई 2021 — पिछला Revision</li>
+          <li>1 अप्रैल 2024 — DFPR 2024 प्रभावी</li>
+          <li>1 अप्रैल 2025 — नई Schedules प्रभावी</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>📂 4 Schedules</h4>
+        <ul>
+          <li>II-A: HOC + HOD (65 पेज)</li>
+          <li>II-B: Independent Directors (34 पेज)</li>
+          <li>II-C: Sr.DDG(PAF)/GM(Fin)/DAP</li>
+          <li>III: Divisional Heads (10 पेज)</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>💰 प्रमुख सीमाएं</h4>
+        <ul>
+          <li>Ad-hoc Arrears: HOC ₹1L / HOD ₹50K / Director ₹10K</li>
+          <li>Honorarium: ₹2,500</li>
+          <li>Contingent Recurring: HOC ₹2L / HOD ₹1L</li>
+          <li>Vehicle/Consultant Hiring: HOC ₹1Cr / HOD ₹20L प्रति वर्ष</li>
+          <li>Building Project: ₹10Cr (केवल HOC)</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>⚠️ एग्जाम ट्रैप</h4>
+        <ul>
+          <li>Building Sanction — HOC-केवल, HOD को नहीं</li>
+          <li>Note-4 आइटम — केवल HOC प्रयोग कर सकता है</li>
+          <li>Divisional Head — IFA सीधे नहीं, HOD/HOC के जरिए</li>
+          <li>Splitting निषेध — पूरे Contract मूल्य पर आधार</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>🧮 Schedule II-C (3-तरफा तुलना)</h4>
+        <ul>
+          <li>Honorarium: DAP ₹4,000; Sr.DDG/GM — GoI सीमा अनुसार</li>
+          <li>Training: Sr.DDG ₹1L / GM ₹75K / DAP ₹50K प्रति अवसर</li>
+          <li>Vehicle Hiring: Sr.DDG/GM ₹2L/माह; DAP ₹1L/माह</li>
+          <li>Digital Equipment: Sr.DDG/GM Full Powers; DAP ₹2L सीमित</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>🏤 Schedule III (Divisional Head पूरक)</h4>
+        <ul>
+          <li>Non-Recurring Contingent: ₹10,000/केस</li>
+          <li>Furniture: ₹2L/वर्ष प्रति Division</li>
+          <li>Office Renting: X-₹15K / Y-₹12K / Z-₹8K प्रति माह</li>
+          <li>Customer Meet: कुल ₹10,000 (Break-up सहित)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAST DAY -->
+<section id="lastday">
+  <div class="lastday">
+    <h2>🔥 लास्ट डे रिवीजन नोट्स <span class="eng" style="color:#ffe3e3;">Last Day Revision Notes</span></h2>
+    <div class="item"><b>1.</b> DFPR 2024 — <b>1 अप्रैल 2024</b> से प्रभावी; डाक विभाग की नई Schedule <b>1 अप्रैल 2025</b> से लागू।</div>
+    <div class="item"><b>2.</b> 4 Schedules: II-A (HOC/HOD), II-B (Independent Directors), II-C (Sr.DDG/GM Fin/DAP), III (Divisional Heads)।</div>
+    <div class="item"><b>3.</b> Ad-hoc Arrears — HOC <b>₹1 लाख</b>, HOD <b>₹50,000</b>, Independent Director <b>₹10,000</b>।</div>
+    <div class="item"><b>4.</b> Building Project Sanction — <b>₹10 करोड़ तक, केवल HOC</b> को अधिकार, HOD को नहीं।</div>
+    <div class="item"><b>5.</b> Splitting निषेध — कार्य को टुकड़ों में बांटकर स्वीकृति लेना वर्जित।</div>
+    <div class="item"><b>6.</b> Note-4 items (जैसे Item 37 — Single Tender Sanction) — केवल HOC प्रयोग कर सकता है।</div>
+    <div class="item"><b>7.</b> Note-5 — Director RAKNPA व CGM(PD/BD/PLI) को भी कुछ HOC-समकक्ष शक्तियां मिली हैं।</div>
+    <div class="item"><b>8.</b> Contingent Expenditure — Recurring: HOC ₹2L/HOD ₹1L; Non-Recurring: HOC ₹3L/HOD ₹1L।</div>
+    <div class="item"><b>9.</b> Vehicle/Consultant Hiring — HOC <b>₹1 करोड़/वर्ष</b>, HOD <b>₹20 लाख/वर्ष</b>।</div>
+    <div class="item"><b>10.</b> Divisional Head के मामलों में IFA Consultation — सीधे नहीं, संबंधित HOD/HOC के माध्यम से।</div>
+    <div class="item"><b>11.</b> Schedule II-C Training Expenses — Sr.DDG(PAF) <b>₹1 लाख</b>, GM(Finance) <b>₹75,000</b>, DAP <b>₹50,000</b> प्रति अवसर।</div>
+    <div class="item"><b>12.</b> Divisional Head Office Renting — X श्रेणी <b>₹15,000</b>, Y श्रेणी <b>₹12,000</b>, Z श्रेणी <b>₹8,000</b> प्रति माह; Quarterly रिपोर्ट PMG को अनिवार्य।</div>
+  </div>
+</section>
+
+<footer>
+  📚 IP Exam Preparation Portal | Source: Department of Posts OM F.No. 6-2/2025-FA(P) dt. 28.03.2025<br>
+  Prepared for Ahmedabad L-1, India Post | ऑफलाइन उपयोग हेतु सुरक्षित
+</footer>
+
+</body>
+</html>

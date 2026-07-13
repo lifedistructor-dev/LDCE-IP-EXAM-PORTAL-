@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rules for Branch Offices — Chapter 4: Delivery | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#fefbf0,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#7c2d12,#1e3a8a);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(124,45,18,.3);}
+  header.hero h1{margin:0 0 6px;font-size:1.3rem;}
+  header.hero .sub{font-size:.85rem;opacity:.92;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.7rem;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.02rem;display:flex;align-items:center;gap:8px;}
+  .bi{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .bi .hi{font-weight:700;font-size:.92rem;color:#111827;}
+  .bi .en{font-style:italic;font-size:.8rem;color:#4b5563;margin-top:2px;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.76rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.74rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#7c2d12;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(124,45,18,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>📬 Rules for Branch Offices — Chapter 4</h1>
+    <div class="sub">शाखा डाकघर नियम — अध्याय 4: वितरण (Delivery)</div>
+    <div class="tag">11 Rules (66-76) · भाग 4/8</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Manuals <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Book of BO Rules <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Chapter IV — Delivery (Rules 66-76) <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Window delivery, Redirection, Unclaimed articles
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic — परिचय <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="bi">
+      <div class="hi">यह अध्याय unregistered/registered articles की delivery, indefinite addresses, window delivery, redirection, व unclaimed articles के 11 नियमों को कवर करता है।</div>
+      <div class="en">This chapter covers delivery of articles, indefinite addresses, window delivery, redirection, and unclaimed articles across 11 rules.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📨 Unregistered Articles की Delivery (Rule 66) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <ul>
+      <li>🔴 Articles प्राप्ति के दिन पीछे date-stamp किए जाएँ — postcards हमेशा address-side पर stamped।</li>
+      <li>🟠 Post office में प्रतीक्षारत व्यक्तियों को BPM स्वयं बिना देरी article दे।</li>
+      <li>🟡 Postage due राशि B.O. Journal (Pa-5) में दर्ज हो; Unpaid articles postage चुकाए बिना delivered नहीं होते।</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> Postcard पर date-stamp कहाँ लगाया जाता है? <b>Ans: Address-side पर हमेशा</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Definite vs Indefinite पता (Rule 68) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="bi rule">
+      <div class="hi">बिना definite पते वाले articles delivered नहीं होते — निश्चित व्यक्ति/स्थान का उल्लेख आवश्यक।</div>
+      <div class="en">Articles without a definite address are not delivered — a specific person or place must be identifiable.</div>
+    </div>
+    <table>
+      <tr><th>Definite (Deliverable)</th><th>Indefinite (Undeliverable)</th></tr>
+      <tr><td>"The Resident, May Lodge, SIMLA"</td><td>"The European Residents, SIMLA"</td></tr>
+      <tr><td>"The Occupant, No. 10 Park Street"</td><td>"The N.C.Os, DELHI Cantt."</td></tr>
+      <tr><td>"President, Officers' Mess, MATHURA" (केवल 1 मेस)</td><td>"President, Officers' Mess, AMBALA" (कई मेस)</td></tr>
+      <tr><td>"A.B. C/o State Bank of India, NEW DELHI"</td><td>"A.B., Post Office, DELHI" (केवल Post Box)</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "एक जगह = Definite, समूह/सामान्य वर्ग = Indefinite" — यदि पता किसी एक विशिष्ट व्यक्ति/स्थान की ओर इशारा करे तो definite, वरना indefinite।</div>
+    <div class="exam-q"><b>Probable Q:</b> क्या "Post Box No." मात्र से articles registered/insured भेजे जा सकते हैं? <b>Ans: नहीं, addressee का नाम भी अनिवार्य</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🪟 Window Delivery (Rule 69) <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="bi">
+      <div class="hi">Postmen की beat के भीतर रहने वाला व्यक्ति post office की window पर बिना किसी शुल्क के delivery ले सकता है — शर्त: articles loose हों व लिखित application दी हो।</div>
+      <div class="en">A person within the postman's beat may receive delivery at the window free of charge — conditions: articles taken loose, written application submitted.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>👤 Messenger द्वारा Delivery (Rule 70) <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <table>
+      <tr><th>Article प्रकार</th><th>Messenger प्रक्रिया</th></tr>
+      <tr><td>Unregistered (unpaid)</td><td>Messenger postage due चुकाए</td></tr>
+      <tr><td>Registered/Insured/MO</td><td>Addressee की लिखित authorisation आवश्यक</td></tr>
+      <tr><td>Registered (बिना authorisation)</td><td>Receipt messenger को दें, addressee द्वारा signed होने पर article दें</td></tr>
+      <tr><td>Insured (बिना authorisation)</td><td>Form R.P.-52 intimation तैयार करें</td></tr>
+      <tr><td>V.P. articles</td><td>Intimation पर messenger sign करे, पूरी राशि पर article दें</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🔀 Redirected व Missent Articles (Rule 72) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="bi rule">
+      <div class="hi">Redirection fee = <b>मूल postage का आधा</b> (inland parcels के लिए, registration fee को छोड़कर)।</div>
+      <div class="en">Redirection fee = half of the original postage (for inland parcels, excluding registration fee).</div>
+    </div>
+    <div class="flow">
+      <div class="step">Paid unregistered articles ➜ Stamp करें, first mail से नए पते पर भेजें</div>
+      <div class="step">Unpaid/Registered articles ➜ Stamp करें, first mail से Account Office वापस भेजें</div>
+      <div class="step">Parcel redirection ➜ केवल addressee/agent के लिखित निर्देश पर, redirection fee सहित</div>
+      <div class="step">दूसरी redirection ➜ पुराना label रद्द करें, नया label (दोनों charges सहित) लगाएँ</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "आधी कीमत, दोबारा नोट" — redirection fee = आधा postage; हर अतिरिक्त redirection पर नया label पुराने charges सहित।</div>
+    <div class="exam-q"><b>Probable Q:</b> Inland parcel के redirection की fee कितनी होती है? <b>Ans: मूल postage की आधी राशि</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📅 Timeline — Unclaimed Articles की Deposit अवधि <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Article प्रकार</th><th>Deposit अवधि</th><th>Rule</th></tr>
+      <tr><td>सामान्य Unclaimed/Refused/Undecipherable Articles</td><td><b>7 दिन</b></td><td>Rule 73</td></tr>
+      <tr><td>Telegrams (undeliverable)</td><td><b>3 दिन</b></td><td>Rule 73 Note</td></tr>
+      <tr><td>Poste Restante Articles ("To be kept till called for")</td><td><b>1 महीना</b></td><td>Rule 74</td></tr>
+      <tr><td>Poste Restante Telegrams</td><td>Telegraph Office को वापस (deposit नहीं)</td><td>Rule 74 Exception</td></tr>
+    </table></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-7-30" — Telegram 3 दिन, सामान्य unclaimed article 7 दिन, Poste Restante 1 महीना (30 दिन) — अवधि बढ़ते क्रम में।</div>
+    <div class="exam-q"><b>Probable Q:</b> Poste Restante articles कितने समय तक deposit में रखे जाते हैं? <b>Ans: 1 महीना</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚰️ मृत व्यक्तियों को संबोधित Articles (Rule 76) <span class="tag-imp t-orange">🟠</span></h2>
+    <ul>
+      <li>🔴 सामान्यतः unclaimed जैसा treat करें (Rule 73 अनुसार)।</li>
+      <li>🟠 Uninsured, non-valuable articles — निकट संबंधी को BPM के विवेकानुसार दिए जा सकते हैं।</li>
+      <li>🟡 Insured/valuable/doubtful articles — Head of the Circle से आवेदन करने को कहें।</li>
+      <li>🟢 मृत payee का Money Order — unclaimed money order की तरह disposed।</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> मृत व्यक्ति के insured article के लिए आवेदक को किससे संपर्क करने को कहा जाता है? <b>Ans: Head of the Circle</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — Chapter 4 Overview</h2>
+    <div class="bi" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Delivery</b>: Stamp → Verify → Deliver (postman/window/messenger)</div></div>
+    <div class="bi" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Address</b>: Definite (deliverable) vs Indefinite (undeliverable)</div></div>
+    <div class="bi" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Redirection</b>: Half-postage fee, escalating label per redirection</div></div>
+    <div class="bi" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Unclaimed</b>: 3d(telegram) / 7d(article) / 30d(poste restante)</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. Postcard पर date-stamp कहाँ लगाया जाता है?</div><div class="opts">A) पीछे &nbsp; B) Address-side पर &nbsp; C) दोनों तरफ &nbsp; D) कहीं नहीं</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q2. सामान्य Unclaimed Article कितने दिन deposit में रखा जाता है?</div><div class="opts">A) 3 &nbsp; B) 5 &nbsp; C) 7 &nbsp; D) 15</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q3. Poste Restante articles की deposit अवधि?</div><div class="opts">A) 7 दिन &nbsp; B) 15 दिन &nbsp; C) 1 महीना &nbsp; D) 2 महीने</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q4. Undeliverable Telegrams कितने दिन तक deposit में रहते हैं?</div><div class="opts">A) 1 दिन &nbsp; B) 3 दिन &nbsp; C) 7 दिन &nbsp; D) 30 दिन</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q5. Inland Parcel Redirection Fee कितनी है?</div><div class="opts">A) पूरी postage &nbsp; B) आधी postage &nbsp; C) एक-चौथाई postage &nbsp; D) कोई शुल्क नहीं</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q6. "A.B., Post Office, DELHI" पता किस श्रेणी में आता है?</div><div class="opts">A) Definite &nbsp; B) Indefinite &nbsp; C) Semi-definite &nbsp; D) None</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. मृत payee का Money Order कैसे disposed किया जाता है?</div><div class="opts">A) Refund भेजकर &nbsp; B) Unclaimed money order की तरह &nbsp; C) Court को भेजकर &nbsp; D) Destroy करके</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q8. Insured article के लिए मृतक के परिजन को किससे संपर्क करने को कहा जाता है?</div><div class="opts">A) Superintendent &nbsp; B) Account Office &nbsp; C) Head of the Circle &nbsp; D) BPM स्वयं निर्णय ले</div><div class="ans">Answer: C</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Postcard date-stamp हमेशा <b>address-side</b> पर</li>
+      <li>🔴 Deposit अवधि: Telegram <b>3 दिन</b>; सामान्य Article <b>7 दिन</b>; Poste Restante <b>1 महीना</b></li>
+      <li>🔴 Redirection fee = <b>आधी original postage</b> (inland parcel)</li>
+      <li>🟠 Definite address = विशिष्ट व्यक्ति/स्थान; Indefinite = सामान्य वर्ग/समूह</li>
+      <li>🟠 Registered/insured/MO articles Post Box No. मात्र से स्वीकार नहीं — addressee नाम अनिवार्य</li>
+      <li>🟡 मृतक का insured/valuable article — Head of Circle से आवेदन</li>
+      <li>🟢 मृतक का Money Order — unclaimed MO की तरह disposed</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Chapter</td><td>IV — Delivery (Rules 66-76)</td></tr>
+      <tr><td>Total Rules</td><td>11</td></tr>
+      <tr><td>Postcard Stamp Location</td><td>Address-side</td></tr>
+      <tr><td>Deposit — Telegram</td><td>3 days</td></tr>
+      <tr><td>Deposit — Unclaimed Article</td><td>7 days</td></tr>
+      <tr><td>Deposit — Poste Restante</td><td>1 month</td></tr>
+      <tr><td>Redirection Fee (Inland Parcel)</td><td>Half of original postage</td></tr>
+      <tr><td>Redirection Label Form</td><td>R.P.-67</td></tr>
+      <tr><td>Deceased Insured Article Query</td><td>Refer to Head of the Circle</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

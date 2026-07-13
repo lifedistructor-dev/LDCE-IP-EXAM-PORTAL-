@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB Manual Vol-I | Savings Account Rules | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 60%,var(--blue) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .hi{font-size:1.15rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.95rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.85rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.78rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+.toc a:active{background:#eee;}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue-dark,#0D47A1);}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.85rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.78rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.75rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;display:flex;align-items:center;gap:6px;}
+#dlBtn:active{background:var(--red-dark);}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{
+ #dlBtn{display:none;}
+ .header{padding-top:10px;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">POSB मैनुअल भाग-I</span></h1>
+  <div class="en">Post Office Savings Bank Manual — Volume I</div>
+  <div class="sub">Savings Account | Postmaster Duties | Pass Book | Nomination | RD/TD/PPF/SCSS/SSA | Closure & Claims</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">🎯 346 Pages Summarized</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. Postmaster Duties & Tenure</a>
+    <a href="#ch2">2. Pass Book & Registers</a>
+    <a href="#ch3">3. Nomination Rules</a>
+    <a href="#ch4">4. Types of Accounts (SB/RD/TD/MIS/PPF/SCSS/SSA)</a>
+    <a href="#ch5">5. Withdrawals (Minor/Lunatic/Normal)</a>
+    <a href="#ch6">6. Account Closure & Interest</a>
+    <a href="#ch7">7. Silent Accounts & Revival</a>
+    <a href="#ch8">8. RD Defaults, Penalty & Rebate</a>
+    <a href="#ch9">9. Deceased Claims Settlement</a>
+    <a href="#ch10">10. SCSS & MIS-PDC Special Rules</a>
+    <a href="#ch11">11. Preservation Periods (Records)</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CHAPTER 1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">📌 Chapter 1 → Postmaster की जिम्मेदारियां / Postmaster Duties & Tenure</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3><span class="hi">परिभाषा / Definition</span></h3>
+      <p class="hi">"पोस्टमास्टर" शब्द में सब-पोस्टमास्टर भी शामिल है। SB शाखा के सभी कर्तव्य डिप्टी/असिस्टेंट पोस्टमास्टर को सौंपे जा सकते हैं, लेकिन कुछ जिम्मेदारियां केवल हेड पोस्टमास्टर की व्यक्तिगत होती हैं।</p>
+      <p class="en">The term "Postmaster" includes Sub-Postmaster. Duties of SB Branch may be delegated, but certain responsibilities remain personal to the Head Postmaster.</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">🏢 Head Postmaster की व्यक्तिगत जिम्मेदारियां<br><span style="font-weight:400;font-size:0.7rem;">(Non-Delegable Duties)</span></div>
+      <div class="branches">
+        <div class="branch">✅ मृतक जमाकर्ताओं के दावों की मंजूरी (Sanctioning deceased claims within power)</div>
+        <div class="branch">✅ SB Returns को SBCO में हस्ताक्षर व जमा करना</div>
+        <div class="branch">✅ SB शाखा के सामान्य कामकाज की जिम्मेदारी</div>
+        <div class="branch">✅ संदिग्ध लेन-देन की रिपोर्ट Divisional Head को गोपनीय रूप से</div>
+      </div>
+    </div>
+
+    <table>
+      <tr><th>S.No.</th><th>Office Type / कार्यालय प्रकार</th><th>Tenure / कार्यकाल</th></tr>
+      <tr><td>(a)</td><td>Single/Double-handed offices</td><td><b>4 वर्ष / 4 Years</b></td></tr>
+      <tr><td>(b)</td><td>'A' Class & bigger offices</td><td><b>4 वर्ष</b> (3 वर्ष Counter/Ledger Asst. निरंतर)</td></tr>
+      <tr><td>(c)</td><td>HO / bigger SOs with full-time SB/SC Asst.</td><td><b>5 वर्ष</b> (3 वर्ष निरंतर)</td></tr>
+      <tr><td>(d)</td><td>Instant Counter facility offices</td><td>Counter Asst. rotation हर <b>2 वर्ष</b></td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>याद रखें (Mnemonic):</b> "4-4-5-2" → Single=4, A-Class=4, HO=5, Instant=2 years rotation</div>
+    <div class="exam-q">❓ <b>संभावित प्रश्न:</b> Instant Counter facility वाले कार्यालयों में Counter Assistant का rotation कितने वर्षों में होता है? <b>(उत्तर: 2 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">📓 Chapter 2 → पास बुक व रजिस्टर / Pass Book & Registers</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3 class="hi">पास बुक (SB-5)</h3>
+      <p class="hi">सभी POSB योजनाओं के लिए एक समान पास बुक (SB-5)। यह जनता की जानकारी के लिए है — बैलेंस/ट्रांजेक्शन को लेकर विभाग की कोई कानूनी जिम्मेदारी नहीं।</p>
+      <p class="en">Uniform common Pass Book (SB-5) for all POSB schemes — no legal liability of the department for balance/transactions shown.</p>
+    </div>
+
+    <div class="flow">
+      <div class="box">पास बुक अप्राप्त (Undelivered)</div><span class="arrow">➡</span>
+      <div class="box">30 दिन में claim न हो → HO भेजी जाए</div><span class="arrow">➡</span>
+      <div class="box">3 महीने तक अनक्लेम्ड</div><span class="arrow">➡</span>
+      <div class="box">SBCO को सुरक्षित रखने भेजी जाए</div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Time Limits:</b> Undelivered pass book HO भेजनी है <b>30 दिनों</b> में; SBCO को भेजनी है यदि <b>3 महीने</b> तक claim ना हो।</div>
+
+    <table>
+      <tr><th>Register/Form</th><th>प्रयोग / Use</th></tr>
+      <tr><td>SB-4(a)</td><td>Stock Register of Pass Books (Sub Office)</td></tr>
+      <tr><td>SB-103 / SB-103(a)</td><td>Pay-in-Slip — सफेद (Savings/TD/MIS/NSS), पीला (RD)</td></tr>
+      <tr><td>SB-58</td><td>Long Book — सभी लेन-देन दर्ज</td></tr>
+      <tr><td>SB-26</td><td>Preliminary Receipt (EDSO/BO, 50 receipts/book)</td></tr>
+      <tr><td>SB-12(c)</td><td>Register of Undelivered Pass Books (HO)</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "White = Simple (SB/TD/MIS/NSS), Yellow = Yaad rakho RD" — पे-इन-स्लिप के रंग</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> एक अनक्लेम्ड पास बुक को SBCO भेजा जाना कब अनिवार्य है? <b>(3 महीने बाद)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">✍️ Chapter 3 → नामांकन नियम / Nomination Rules</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">नामांकन कौन कर सकता है?</h3>
+      <p class="hi">एकल या संयुक्त खाता खोलने वाला व्यक्ति नामांकन कर सकता है। नाबालिग या मानसिक रूप से अस्वस्थ व्यक्ति के खाते के लिए नामांकन नहीं हो सकता।</p>
+      <p class="en">Any individual(s) opening single/joint account may nominate. <b>No nomination for accounts of minors or persons of unsound mind.</b> Nomination can also favour Institutions/Associations/Clubs.</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: क्या नामांकन शुल्क लगता है?</div>
+      <div class="yn">➡ प्रथम नामांकन → <b>निःशुल्क / FREE</b></div>
+      <div class="yn">➡ बदलाव/रद्दीकरण → <b>₹1 शुल्क / Rs. 1 fee</b></div>
+    </div>
+
+    <table>
+      <tr><th>घटना / Event</th><th>प्रभावी तिथि / Effective Date</th></tr>
+      <tr><td>नामांकन पंजीकरण</td><td>Post Office में प्रस्तुत करने की तारीख (Date of presentation)</td></tr>
+      <tr><td>SB-3 पर आवेदन</td><td>खाता खोलते समय ही</td></tr>
+      <tr><td>SB-55 पर आवेदन</td><td>खाता खुलने के बाद कभी भी, HO में सीधे</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "MU-NO" → <b>M</b>inor + <b>U</b>nsound mind = <b>NO</b> Nomination</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> पहली बार नामांकन पंजीकरण के लिए कितना शुल्क लगता है? <b>(निःशुल्क)</b> दूसरी/परिवर्तन हेतु? <b>(₹1)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">🏦 Chapter 4 → खातों के प्रकार / Types of Accounts</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <p class="hi">ये नियम Post Office Savings Accounts पर लागू होते हैं और mutatis mutandis (आवश्यक बदलाव सहित) RD, TD, PPF, NSS, MIS और SCSS खातों पर भी लागू होते हैं — जब तक कि किसी विशेष खाता प्रकार के लिए अलग नियम न बनाए गए हों।</p>
+      <p class="en">These rules apply to Savings Accounts and mutatis mutandis to RD, TD, PPF, NSS, MIS, SCSS accounts unless separate rules exist for that type.</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">🏦 POSB खाता परिवार / POSB Account Family</div>
+      <div class="branches">
+        <div class="branch">💰 Savings Account (SB)</div>
+        <div class="branch">🔁 Recurring Deposit (RD)</div>
+        <div class="branch">📆 Time Deposit (TD)</div>
+        <div class="branch">🏛 Public Provident Fund (PPF)</div>
+        <div class="branch">📈 National Savings Scheme (NSS)</div>
+        <div class="branch">💵 Monthly Income Scheme (MIS)</div>
+        <div class="branch">👴 Senior Citizens Savings Scheme (SCSS)</div>
+        <div class="branch">👧 Sukanya Samriddhi Account (SSA)</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">Instant Counter Service — नकद जमा/निकासी सीमा</h3>
+      <table>
+        <tr><th>राशि / Amount</th><th>प्रक्रिया / Procedure</th></tr>
+        <tr><td>₹5,000 तक / up to Rs. 5,000</td><td>Counter Assistant द्वारा तुरंत, Supervisor approval की जरूरत नहीं</td></tr>
+        <tr><td>₹5,000 से अधिक / above Rs. 5,000</td><td>Supervisor की मंजूरी आवश्यक</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "5-Star Instant" → ₹5,000 तक = Instant बिना Supervisor</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Instant Counter Service के तहत बिना Supervisor स्वीकृति कितनी राशि तक निकासी/जमा हो सकती है? <b>(₹5,000)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--red-dark);">🙋 Chapter 5 → निकासी नियम / Withdrawals</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">नाबालिग के खाते से निकासी / Minor's Account Withdrawal</h3>
+      <p class="hi">अभिभावक (guardian) को प्रमाण पत्र देना होगा कि राशि नाबालिग के उपयोग हेतु आवश्यक है। <b>अपवाद:</b> यदि निकासी नाबालिग के नाम Savings Certificate खरीदने हेतु है, तो प्रमाण पत्र आवश्यक नहीं।</p>
+      <p class="en">Guardian must certify amount is for minor's use. <b>Exception:</b> Certificate not required if withdrawal is for purchasing a Savings Certificate in minor's name.</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: अभिभावक की मृत्यु हो गई और कोई कानूनी अभिभावक नहीं है?</div>
+      <div class="yn">➡ यदि नाबालिग <b>10 वर्ष</b> या अधिक का है → स्वयं खाता संचालित कर सकता है</div>
+      <div class="yn">➡ नया आवेदन फॉर्म + मृत्यु प्रमाण पत्र आवश्यक</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <h3 class="hi">विक्षिप्त (Lunatic) के खाते से निकासी</h3>
+      <p class="hi">न्यायालय द्वारा नियुक्त प्रबंधक/अभिभावक ही निकासी कर सकता है — न्यायालय आदेश की प्रति Control Organisation को भेजी जाती है।</p>
+    </div>
+
+    <table>
+      <tr><th>निकासी राशि / Withdrawal Amount</th><th>प्रक्रिया</th></tr>
+      <tr><td>₹5,000 तक (HO/SO)</td><td>Counter Assistant तुरंत पास कर सकता है</td></tr>
+      <tr><td>₹5,000 से अधिक</td><td>Supervisor स्वीकृति आवश्यक</td></tr>
+      <tr><td>Branch Office</td><td>₹5,000 तक बिना Account Office संपर्क के</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "10 वर्ष का बालक = खुद बोले" — Minor 10 yrs+ can operate account after guardian's death</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> अभिभावक की मृत्यु के बाद नाबालिग किस उम्र से स्वयं खाता चला सकता है? <b>(10 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:var(--blue-light);">🔒 Chapter 6 → खाता बंद करना व ब्याज समायोजन / Closure & Interest</div>
+  <div class="chapter-body">
+
+    <div class="flow">
+      <div class="box">पास बुक + SB-7A प्रस्तुत</div><span class="arrow">➡</span>
+      <div class="box">हस्ताक्षर सत्यापन</div><span class="arrow">➡</span>
+      <div class="box">System में Closure Entry</div><span class="arrow">➡</span>
+      <div class="box">Warrant of Payment जारी</div><span class="arrow">➡</span>
+      <div class="box">"Account Closed" स्टाम्प</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">ब्याज त्रुटि समायोजन / Interest Error Adjustment</h3>
+      <table>
+        <tr><th>स्थिति / Situation</th><th>नियम / Rule</th></tr>
+        <tr><td>अतिरिक्त भुगतान ≤ ₹10</td><td>सक्षम प्राधिकारी द्वारा माफ (write off)</td></tr>
+        <tr><td>अतिरिक्त भुगतान &gt; ₹10</td><td>भू-राजस्व बकाया की तरह वसूली (Rule 18, PO SB General Rules 1981)</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Das se kam, माफ करो सम" — ≤₹10 excess interest is written off</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> अतिरिक्त ब्याज भुगतान की वसूली कब भू-राजस्व बकाया के रूप में की जाती है? <b>(यदि राशि ₹10 से अधिक हो)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#6A1B9A;">🤫 Chapter 7 → साइलेंट खाते व पुनर्जीवन / Silent Accounts & Revival</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">साइलेंट खाता कब माना जाता है?</h3>
+      <p class="hi">जब किसी खाते में लगातार <b>3 पूर्ण वित्तीय वर्षों</b> तक न कोई जमा हो न निकासी। (ब्याज प्रविष्टि जमा नहीं मानी जाती)</p>
+      <p class="en">Account is treated as silent when there is <b>no deposit/withdrawal for 3 complete financial years</b>. Interest entry ≠ deposit.</p>
+      <p class="en" style="font-size:0.72rem;">Example: No transaction since 5.6.1999 → treated silent on 1.4.2003.</p>
+    </div>
+
+    <div class="flow">
+      <div class="box">3 वित्तीय वर्ष निष्क्रिय</div><span class="arrow">➡</span>
+      <div class="box">Silent घोषित</div><span class="arrow">➡</span>
+      <div class="box">Balance &lt; ₹50 → ₹20 Service Charge/वर्ष</div><span class="arrow">➡</span>
+      <div class="box">Balance शून्य होने पर स्वतः बंद</div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Penalty/Charge:</b> न्यूनतम शेष (₹50) से कम शेष वाले Silent खातों पर हर वित्तीय वर्ष के अंत में <b>₹20 Service Charge</b> काटा जाता है।</div>
+
+    <div class="topic">
+      <span class="tier green">🟢 Quick Revision</span>
+      <h3 class="hi">पुनर्जीवन / Revival</h3>
+      <p class="hi">सभी विभागीय डाकघर SBCO की पूर्व अनुमति के बिना silent खाते पुनर्जीवित कर सकते हैं। Revival Application 3 वर्षों तक Guard File में सुरक्षित रखी जाती है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-50-20" → 3 साल निष्क्रिय, ₹50 से कम बैलेंस, ₹20 चार्ज</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> कितने वित्तीय वर्षों तक निष्क्रियता पर खाता Silent माना जाता है? <b>(3 वर्ष)</b> Service charge कितना है? <b>(₹20)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--gold-dark);">🔁 Chapter 8 → RD डिफॉल्ट, पेनल्टी व रिबेट / RD Defaults, Penalty & Rebate</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">RD परिपक्वता / Maturity</h3>
+      <p class="hi">RD खाते में जमा राशि <b>पहली जमा तिथि से 5 वर्ष बाद</b> देय होती है। परिपक्वता के बाद जमाकर्ता (a) जमा जारी रख सकता है या (b) परिपक्वता राशि को अधिकतम <b>5 और वर्षों</b> तक रख सकता है।</p>
+      <p class="en">RD matures 5 years from first deposit. After maturity, depositor may (a) continue deposits, or (b) retain maturity value for a further period up to 5 years — no written application needed.</p>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Penalty:</b> Defaulted installments पर निर्धारित दर से Penalty लगती है। यदि defaults सीमा के भीतर हैं, तो maturity date उतने महीनों के लिए बढ़ाई जा सकती है — उस दौरान बिना पेनल्टी भुगतान संभव।</div>
+
+    <table>
+      <tr><th>Denomination</th><th>Rebate Note</th></tr>
+      <tr><td>₹10 denomination</td><td>Advance deposits पर rebate उपलब्ध</td></tr>
+      <tr><td>₹50 denomination</td><td>Advance benefit एक ही खाते तक सीमित यदि एक से अधिक खाते हों</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "5+5 फॉर्मूला" → 5 वर्ष मूल अवधि + अधिकतम 5 वर्ष Extension</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> RD खाता परिपक्वता के बाद अधिकतम कितने वर्षों तक maturity value बिना नई जमा के रखी जा सकती है? <b>(5 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:var(--red);">⚱️ Chapter 9 → मृतक दावा निपटान / Deceased Claims Settlement</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">नामांकन के अभाव में दावा सीमा</h3>
+      <p class="hi">यदि कोई वैध नामांकन नहीं है, तो कानूनी उत्तराधिकारी को <b>₹1 लाख तक</b> के दावों के लिए Letter of Indemnity/Affidavit प्रस्तुत करना होता है (उत्तराधिकार प्रमाण पत्र के बिना)।</p>
+      <p class="en">In absence of nomination, legal heirs may claim up to <b>Rs. 1 lakh</b> via Letter of Indemnity/Affidavit without succession certificate.</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: दावा प्रक्रिया कैसे तय होती है?</div>
+      <div class="yn">➡ नामांकन मौजूद है → सीधे नामिती को भुगतान</div>
+      <div class="yn">➡ नामांकन नहीं है, दावा ≤ ₹1 लाख → Indemnity Bond/Affidavit से भुगतान</div>
+      <div class="yn">➡ नामांकन नहीं है, दावा &gt; ₹1 लाख → उत्तराधिकार प्रमाण पत्र (Succession Certificate) आवश्यक</div>
+    </div>
+
+    <table>
+      <tr><th>दस्तावेज़ / Document</th><th>उद्देश्य</th></tr>
+      <tr><td>Letter of Indemnity (Annexure-I)</td><td>Post Office को क्षतिपूर्ति का आश्वासन</td></tr>
+      <tr><td>Affidavit (Annexure-II)</td><td>कानूनी उत्तराधिकारी की घोषणा</td></tr>
+      <tr><td>Letter of Disclaimer</td><td>अन्य दावेदारों द्वारा दावा त्याग</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1 लाख तक बिना झंझट" — Rs. 1 lakh claim limit without succession certificate</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> नामांकन न होने पर बिना उत्तराधिकार प्रमाण पत्र के अधिकतम कितनी राशि का दावा निपटाया जा सकता है? <b>(₹1 लाख)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 10 -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#00695C;">👴 Chapter 10 → SCSS व MIS-PDC विशेष नियम</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">SCSS — विशेष प्रावधान</h3>
+      <ul class="hi" style="font-size:0.8rem;">
+        <li>प्रथम धारक की मृत्यु पर, पति/पत्नी (द्वितीय धारक/नामिती) आयु 60 वर्ष की शर्त पूरी किए बिना भी खाता जारी रख सकते हैं।</li>
+        <li>खाता पूर्ण होने से पहले <b>1 वर्ष</b> तक premature/partial withdrawal की अनुमति नहीं है।</li>
+        <li>Premature closure पर ब्याज closure माह से पिछले माह के अंत तक ही देय है।</li>
+        <li>SCSS खाता गिरवी (pledge) नहीं रखा जा सकता।</li>
+      </ul>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <h3 class="hi">MIS — Post Dated Cheque (PDC) सुविधा</h3>
+      <table>
+        <tr><th>बिंदु / Point</th><th>नियम</th></tr>
+        <tr><td>न्यूनतम मासिक ब्याज पात्रता</td><td>₹100/माह</td></tr>
+        <tr><td>PDC वैधता अवधि</td><td>जारी माह के बाद 3 महीने</td></tr>
+        <tr><td>Premature closure — unused cheques वापसी</td><td>₹4/चेक शुल्क</td></tr>
+        <tr><td>जमाकर्ता की मृत्यु पर unused cheque वापसी</td><td>कोई शुल्क नहीं (No penalty)</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SCSS का 1 साल, कोई जल्दी नहीं" — No premature withdrawal before 1 year in SCSS</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> MIS PDC सुविधा हेतु न्यूनतम मासिक ब्याज पात्रता कितनी है? <b>(₹100)</b> PDC की वैधता? <b>(3 महीने)</b></div>
+  </div>
+</div>
+
+<!-- CHAPTER 11 -->
+<div class="chapter" id="ch11">
+  <div class="chapter-head" style="background:#37474F;">🗄️ Chapter 11 → रिकॉर्ड संरक्षण अवधि / Preservation Periods (Appendix III)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+    </div>
+    <table>
+      <tr><th>Record</th><th>Preservation Period</th></tr>
+      <tr><td>SB Ledgers (HO)</td><td>5 वर्ष (closing/transfer के बाद)</td></tr>
+      <tr><td>SO SB Ledger</td><td>5 वर्ष</td></tr>
+      <tr><td>SO RD Journal</td><td>6 वर्ष</td></tr>
+      <tr><td>SO TD Journal</td><td>6 वर्ष</td></tr>
+      <tr><td>SO CTD Journal (5-yr)</td><td>6 वर्ष</td></tr>
+      <tr><td>SO CTD Journal (10-yr)</td><td>12 वर्ष</td></tr>
+      <tr><td>SO CTD Journal (15-yr)</td><td>18 वर्ष</td></tr>
+      <tr><td>List of Silent A/c (SBCO→SO)</td><td><b>Permanent</b></td></tr>
+      <tr><td>Ledger cards of silent accounts</td><td><b>Permanent</b></td></tr>
+      <tr><td>Withdrawal ≥ ₹10,000 (BO/single-handed SO)</td><td>1 वर्ष</td></tr>
+      <tr><td>Stock Register of Pass Books</td><td>18 महीने</td></tr>
+      <tr><td>Register of Nomination</td><td>5 वर्ष (सभी खाते बंद होने बाद)</td></tr>
+      <tr><td>Deceased Claim Register</td><td>3 वर्ष (सभी दावे निपटने के बाद)</td></tr>
+      <tr><td>Special Error Book</td><td>3 वर्ष</td></tr>
+      <tr><td>SB-26 Preliminary Receipts</td><td>3 वर्ष</td></tr>
+      <tr><td>Monthly Statistical Registers</td><td>3 वर्ष</td></tr>
+      <tr><td>Objection Register (SB-61)</td><td>2 वर्ष (निपटान बाद)</td></tr>
+      <tr><td>SB Slip (SB-27)</td><td>18 महीने</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Silent hamesha, baaki 5-6 saal" — Silent account records = Permanent; most ledgers/journals = 5-6 years</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Silent Accounts की Ledger Cards कितने समय तक संरक्षित रखी जाती हैं? <b>(Permanent)</b> SO RD/TD Journal? <b>(6 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>Tenure:</b> Single/Double=4yr | A-Class=4yr | HO=5yr | Instant rotation=2yr</div>
+    <div class="rev-card"><b>Pass Book:</b> Undelivered→HO in 30 days; unclaimed 3 months→SBCO</div>
+    <div class="rev-card"><b>Nomination:</b> 1st = Free; change/cancel = ₹1; NOT for minor/unsound mind</div>
+    <div class="rev-card"><b>Instant Counter:</b> ₹5,000 limit without Supervisor approval</div>
+    <div class="rev-card"><b>Minor A/c:</b> 10 yrs+ can self-operate after guardian's death</div>
+    <div class="rev-card"><b>Silent A/c:</b> 3 FY no transaction; &lt;₹50 bal → ₹20/yr charge</div>
+    <div class="rev-card"><b>RD Maturity:</b> 5 years; extendable up to +5 years</div>
+    <div class="rev-card"><b>Deceased Claim (no nomination):</b> up to ₹1 lakh via Indemnity/Affidavit</div>
+    <div class="rev-card"><b>SCSS:</b> No premature withdrawal before 1 year; spouse can continue without age criteria</div>
+    <div class="rev-card"><b>MIS-PDC:</b> Min ₹100/month eligibility; PDC valid 3 months; ₹4/cheque penalty (except death)</div>
+    <div class="rev-card"><b>Preservation:</b> Silent A/c records = Permanent; most journals/ledgers = 5-6 years</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>4-4-5-2</b> = Postmaster/Counter Assistant tenure years</li>
+    <li>🔢 <b>30 दिन</b> = Undelivered pass book HO भेजने की समय सीमा</li>
+    <li>🔢 <b>3 महीने</b> = Unclaimed pass book SBCO भेजने की सीमा</li>
+    <li>🔢 <b>₹1</b> = Nomination change/cancel fee (1st = free)</li>
+    <li>🔢 <b>₹5,000</b> = Instant Counter Service सीमा</li>
+    <li>🔢 <b>10 वर्ष</b> = Minor स्वयं खाता चला सकता है (guardian death के बाद)</li>
+    <li>🔢 <b>3 वित्तीय वर्ष</b> = Silent Account declaration period</li>
+    <li>🔢 <b>₹50 / ₹20</b> = Silent A/c minimum balance / service charge</li>
+    <li>🔢 <b>5+5 वर्ष</b> = RD maturity + extension</li>
+    <li>🔢 <b>₹1 लाख</b> = Deceased claim limit without succession certificate</li>
+    <li>🔢 <b>1 वर्ष</b> = SCSS premature withdrawal restriction</li>
+    <li>🔢 <b>₹100 / 3 महीने / ₹4</b> = MIS PDC eligibility / validity / penalty per cheque</li>
+    <li>🔢 <b>Permanent</b> = Silent account ledger cards & lists preservation</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB Manual Volume-I &nbsp;|&nbsp; Compiled for exam revision — always cross-check with latest DoP circulars
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

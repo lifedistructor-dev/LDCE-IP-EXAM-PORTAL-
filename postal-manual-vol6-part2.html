@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume VI Part II — Money Orders & Indian Postal Orders | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#1B3A6B; --ip-gold:#E8A317;
+  --vimp:#C8102E; --freq:#E8720C; --conc:#D9A404; --quick:#1E8449;
+  --bg:#F6F4EF; --card:#FFFFFF; --ink:#22252A; --muted:#5B6068;
+  --line:#E2DFD7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Mangal','Nirmala UI',Georgia,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15.5px}
+.wrap{max-width:860px;margin:0 auto;padding:0 12px 60px}
+
+header.hero{background:linear-gradient(135deg,var(--ip-blue) 0%,#12294e 60%,#0c1d38 100%);color:#fff;padding:28px 16px 22px;text-align:center;border-bottom:5px solid var(--ip-gold)}
+header.hero .badge{display:inline-block;background:var(--ip-red);color:#fff;font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+header.hero h1{font-size:clamp(20px,4.5vw,30px);line-height:1.3}
+header.hero h1 .en{display:block;font-style:italic;font-weight:400;font-size:.72em;opacity:.9;margin-top:4px}
+header.hero .sub{margin-top:10px;font-size:13px;opacity:.85}
+header.hero .sub b{color:var(--ip-gold)}
+header.hero .exclude{margin-top:8px;font-size:12px;background:rgba(0,0,0,.25);border-radius:8px;padding:6px 10px;display:inline-block}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0}
+.legend span{font-size:12.5px;padding:4px 10px;border-radius:16px;font-weight:600}
+.lg-r{background:#FDECEE;color:var(--vimp)} .lg-o{background:#FEF0E2;color:var(--freq)}
+.lg-y{background:#FCF6DE;color:#9a7500} .lg-g{background:#E7F5EC;color:var(--quick)}
+
+nav.chips{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.97);padding:8px 4px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+nav.chips a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ip-blue);background:#fff;border:1.5px solid var(--ip-blue);border-radius:18px;padding:5px 12px;text-decoration:none;white-space:nowrap}
+nav.chips a:active{background:var(--ip-blue);color:#fff}
+
+section.ch{margin:26px 0;scroll-margin-top:60px}
+.ch-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-num{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--ip-red);color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(200,16,46,.3)}
+.ch-num.blue{background:var(--ip-blue);box-shadow:0 3px 8px rgba(27,58,107,.3)}
+.ch-title h2{font-size:18px;color:var(--ip-blue);line-height:1.3}
+.ch-title .en{font-style:italic;font-weight:500;font-size:13px;color:var(--muted)}
+.ch-title .rules{font-size:11.5px;background:var(--ip-gold);color:#3a2b00;font-weight:700;border-radius:10px;padding:1px 8px;display:inline-block;margin-top:3px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.t-r{border-left:5px solid var(--vimp)} .card.t-o{border-left:5px solid var(--freq)}
+.card.t-y{border-left:5px solid var(--conc)} .card.t-g{border-left:5px solid var(--quick)}
+.card h3{font-size:15.5px;color:var(--ip-blue);margin-bottom:6px}
+.card h3 .en{display:block;font-style:italic;font-weight:500;font-size:12.5px;color:var(--muted)}
+.hi{font-weight:700;display:block}
+.en{font-style:italic;color:#4a4f57;display:block;font-size:.93em}
+.rule-tag{display:inline-block;background:var(--ip-blue);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:middle}
+ul.points{list-style:none;margin-top:6px}
+ul.points li{padding:7px 0 7px 2px;border-bottom:1px dashed var(--line)}
+ul.points li:last-child{border-bottom:none}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:480px}
+th{background:var(--ip-blue);color:#fff;padding:8px;text-align:left;font-size:12.5px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAF9F5}
+td .en{font-size:.9em}
+
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.fbox{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 14px;text-align:center;max-width:440px;width:100%;font-size:14px}
+.fbox.start{background:var(--ip-blue);color:#fff;border-color:var(--ip-blue)}
+.fbox.start .en{color:#cfd9ea}
+.fbox.warn{border-color:var(--vimp);background:#FDECEE}
+.fbox.ok{border-color:var(--quick);background:#E7F5EC}
+.farrow{color:var(--ip-red);font-size:22px;line-height:1;padding:3px 0;font-weight:800}
+.farrow small{display:block;font-size:11px;color:var(--muted);font-weight:600;font-style:italic}
+
+.dtree .branch{display:flex;gap:8px;margin:6px 0}
+.dtree .branch>div{flex:1;border-radius:10px;padding:8px;font-size:13px;text-align:center}
+.dtree .yes{background:#E7F5EC;border:2px solid var(--quick)}
+.dtree .no{background:#FDECEE;border:2px solid var(--vimp)}
+
+.mindmap{position:relative;padding:8px 0}
+.mm-center{background:var(--ip-red);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:800;margin-bottom:12px;box-shadow:0 3px 10px rgba(200,16,46,.35)}
+.mm-center .en{color:#ffd9de;font-weight:500}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mm-node{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px;font-size:12.5px;text-align:center}
+.mm-node b{color:var(--ip-red);display:block;font-size:14px}
+.mm-node.excluded{border-color:#aaa;background:#f1f1f1;color:#888}
+.mm-node.excluded b{color:#999}
+.timeline{border-left:3px solid var(--ip-gold);margin:10px 0 10px 10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-gold)}
+.tl-item .when{font-weight:800;color:var(--ip-red);font-size:13.5px}
+
+.examq{background:#FFF8E8;border:1.5px dashed var(--ip-gold);border-radius:10px;padding:9px 12px;margin:8px 0;font-size:13.5px}
+.examq::before{content:"📝 संभावित प्रश्न / Probable Question";display:block;font-weight:800;color:#8a6400;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px}
+
+.mnemo{background:linear-gradient(135deg,#EEF3FB,#E4EBF7);border:1.5px solid var(--ip-blue);border-radius:12px;padding:11px 13px;margin:8px 0}
+.mnemo .key{font-size:17px;font-weight:800;color:var(--ip-red);letter-spacing:1px}
+
+.rev-sheet{background:#fff;border:3px solid var(--ip-red);border-radius:16px;padding:14px;margin:12px 0}
+.rev-sheet h3{background:var(--ip-red);color:#fff;border-radius:8px;padding:6px 10px;font-size:15px;margin:-2px -2px 10px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+.rev-cell{background:#FAF9F5;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.8px}
+.rev-cell b{color:var(--ip-blue)}
+.rev-cell .num{color:var(--ip-red);font-weight:800}
+
+.footer-note{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media print{nav.chips{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">IP EXAM PORTAL • PAPER I</span>
+  <h1>डाक मैनुअल भाग VI (भाग II) — दृश्य इन्फोग्राफिक
+    <span class="en">Postal Manual Volume VI Part II — Visual Infographic</span>
+  </h1>
+  <div class="sub">आकस्मिक अवकाश • पेंशन व उपदान • स्थापना पुनरीक्षण — <b>अध्याय III, IV, XVI, XVII</b> • नियम 99–546</div>
+  <div class="exclude">⛔ बहिष्कृत / Excluded: Ch. III टेलीग्राफिक मनीऑर्डर (Telegraphic MOs) व Ch. IV ब्रिटिश/आयरिश डाक आदेश (British/Irish Postal Orders)</div>
+</header>
+<div class="wrap">
+
+<div class="legend">
+  <span class="lg-r">🔴 परीक्षा हेतु अति महत्वपूर्ण / Very Important</span>
+  <span class="lg-o">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="lg-y">🟡 अवधारणा / Conceptual</span>
+  <span class="lg-g">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+
+<nav class="chips">
+  <a href="#overview">परिचय</a>
+  <a href="#ch1">Ch 1 MO Dept</a>
+  <a href="#issue">Issue of MO</a>
+  <a href="#payment">Payment of MO</a>
+  <a href="#vpfamo">VP & Family Allot.</a>
+  <a href="#redirect">Redirection/Void</a>
+  <a href="#foreign">Foreign MO</a>
+  <a href="#ipo">Ch 5 IPO</a>
+  <a href="#master">🔴 Master Numbers</a>
+  <a href="#mnemo">Mnemonics</a>
+  <a href="#rev">One-Page Revision</a>
+  <a href="#lastday">Last Day Notes</a>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="ch" id="overview">
+  <div class="ch-head">
+    <div class="ch-num blue">📘</div>
+    <div class="ch-title">
+      <h2>विषय एवं परिभाषा <span class="en">Topic & Definition</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 यह भाग किस बारे में है? <span class="en">What Does This Part Cover?</span></h3>
+    <span class="hi">भाग VI (भाग II) में <u>मनीऑर्डर</u> तथा <u>भारतीय डाक आदेश (IPO)</u> के जारी करने, भुगतान, पुनर्निर्देशन व शून्यकरण से संबंधित नियम हैं। छठा संस्करण, 30-9-1986 तक संशोधित।</span>
+    <span class="en">Volume VI Part II covers issue, payment, redirection & voiding of Money Orders and Indian Postal Orders. Sixth Edition, corrected up to 30-9-1986.</span>
+    <ul class="points">
+      <li>🟡 <span class="hi">भाग VI अब <b>तीन भागों</b> में: भाग I (विविध नियम, डाक, छँटाई, वितरण, जमा, पंजीकरण, पार्सल); भाग II (मनीऑर्डर, IPO, ब्रिटिश/आयरिश डाक आदेश); भाग III (उप-लेखा, उप-डाकघर लेखे, पोस्टमैन कर्तव्य)</span>
+          <span class="en">Vol. VI now in 3 parts: I—Misc/Mails/Sorting/Delivery/Deposits/Registration/Parcels; II—MOs, IPO, British/Irish POs; III—Sub-accounts, Postmen duties</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: डाक मैनुअल भाग VI कितने भागों में विभाजित है? → 3 भाग (परिचय, बिंदु 2)</span>
+      <span class="en">Q: How many parts is Postal Manual Volume VI divided into? → 3 parts</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 मानसिक मानचित्र <span class="en">Mind Map — Structure</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">डाक मैनुअल भाग VI (II)<span class="en">Money Orders & IPO • Rules 1–203</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>Ch I</b>मनीऑर्डर विभाग<br><i>MO Department</i><br>R. 1–6</div>
+        <div class="mm-node"><b>Ch II</b>मनीऑर्डर (देशी+विदेशी)<br><i>Money Orders (Inland+Foreign)</i><br>R. 7–102</div>
+        <div class="mm-node excluded"><b>Ch III ⛔</b>टेलीग्राफिक MO<br><i>Telegraphic MOs — बहिष्कृत</i><br>R. 103–155</div>
+        <div class="mm-node excluded"><b>Ch IV ⛔</b>ब्रिटिश/आयरिश आदेश<br><i>British/Irish POs — बहिष्कृत</i><br>R. 156–173</div>
+        <div class="mm-node"><b>Ch V</b>भारतीय डाक आदेश<br><i>Indian Postal Orders</i><br>R. 174–203</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHAPTER I ================= -->
+<section class="ch" id="ch1">
+  <div class="ch-head">
+    <div class="ch-num">1</div>
+    <div class="ch-title">
+      <h2>मनीऑर्डर विभाग — सामान्य नियम <span class="en">Money Order Department — General Rules</span></h2>
+      <span class="rules">नियम / Rules 1–6</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 संक्षिप्ताक्षर (Note 1) <span class="en">Abbreviations Used in this Volume</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संक्षेप / Abbrev.</th><th>पूर्ण रूप / Full Form</th></tr>
+      <tr><td class="hi">M.O.</td><td class="hi">मनीऑर्डर / Money Order</td></tr>
+      <tr><td class="hi">T.M.O.</td><td class="hi">टेलीग्राफ मनीऑर्डर / Telegraph Money Order</td></tr>
+      <tr><td class="hi">B.O. / S.O. / H.O.</td><td class="hi">शाखा/उप/प्रधान डाकघर / Branch/Sub/Head Office</td></tr>
+      <tr><td class="hi">B.P.M. / S.P.M.</td><td class="hi">शाखा/उप-पोस्टमास्टर / Branch/Sub Postmaster</td></tr>
+      <tr><td class="hi">E.D.D.A.</td><td class="hi">अतिरिक्त विभागीय वितरण अभिकर्ता / Extra Departmental Delivery Agent</td></tr>
+      <tr><td class="hi">P.A.</td><td class="hi">डाक सहायक / Postal Assistant</td></tr>
+      <tr><td class="hi">F.A.M.Os.</td><td class="hi">पारिवारिक बंटन मनीऑर्डर / Family Allotment Money Orders</td></tr>
+      <tr><td class="hi">I.P.Os.</td><td class="hi">भारतीय डाक आदेश / Indian Postal Orders</td></tr>
+    </table></div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 4 — पहचान अक्षर (Distinguishing Letters) <span class="en">Rule 4 — Distinguishing Letters Before MO Numbers</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>MO प्रकार / MO Type</th><th>अक्षर / Letter</th></tr>
+      <tr><td><span class="hi">वैल्यू-पेएबल MO</span><span class="en">Value-Payable MOs</span></td><td class="hi"><b>V.P.</b></td></tr>
+      <tr><td><span class="hi">टेलीग्राफिक MO</span><span class="en">Telegraphic MOs</span></td><td class="hi"><b>T</b></td></tr>
+      <tr><td><span class="hi">बाह्य विदेशी स्टर्लिंग MO</span><span class="en">Outward foreign sterling MOs</span></td><td class="hi"><b>S</b></td></tr>
+      <tr><td><span class="hi">अन्य विदेशी MO</span><span class="en">Other foreign MOs</span></td><td class="hi"><b>F</b></td></tr>
+      <tr><td><span class="hi">राजस्व MO</span><span class="en">Revenue MOs</span></td><td class="hi"><b>R</b></td></tr>
+      <tr><td><span class="hi">किराया MO</span><span class="en">Rent MOs</span></td><td class="hi"><b>Rt</b></td></tr>
+      <tr><td><span class="hi">बचत बैंक MO (FPO द्वारा)</span><span class="en">Savings Bank MOs (by FPO)</span></td><td class="hi"><b>SB</b></td></tr>
+      <tr><td><span class="hi">पारिवारिक बंटन MO</span><span class="en">Family Allotment MO</span></td><td class="hi"><b>FA</b></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: वैल्यू-पेएबल मनीऑर्डर को किस अक्षर से पहचाना जाता है? → V.P. (नियम 4)</span>
+      <span class="en">Q: Value-Payable MOs are distinguished by which letter? → V.P.</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 5 — डाक लेखा कार्यालय <span class="en">Rule 5 — Postal Accounts Offices</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">भारत में कुल <b>13 डाक लेखा कार्यालय</b> (विभिन्न परिमंडलों हेतु)</span>
+          <span class="en">There are 13 Postal Accounts Offices for different circles</span></li>
+      <li>🟢 <span class="hi">स्थानीय परिमंडल का PAO = "गृह डाक लेखा कार्यालय" (Home PAO); शेष = "विदेशी डाक लेखा कार्यालय" (Foreign PAO)</span>
+          <span class="en">Local circle's PAO = "Home Postal Accounts Office"; others = "Foreign Postal Accounts Offices"</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: भारत में कुल कितने डाक लेखा कार्यालय हैं? → 13 (नियम 5)</span>
+      <span class="en">Q: How many Postal Accounts Offices are there in India? → 13</span>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 अन्य सामान्य नियम <span class="en">Other General Rules</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="rule-tag">R.2</span><span class="hi">MO फॉर्म — <b>10 पैसे</b> प्रत्येक; 50 फॉर्म प्रति पुस्तक; प्रत्येक BO को <b>केवल 2 पुस्तकें</b> रखनी हैं</span>
+          <span class="en">MO forms cost 10 paise each; 50 forms per book; each BO keeps ONLY 2 books</span></li>
+      <li>🟠 <span class="rule-tag">R.3</span><span class="hi">HO पोस्टमास्टर — अतिरिक्त धनराशि आवश्यक होने पर <b>तार द्वारा</b> डाक लेखा कार्यालय से माँगे</span>
+          <span class="en">Head Postmaster to request additional funds from PAO BY TELEGRAPH if needed</span></li>
+      <li>🟢 <span class="rule-tag">R.6</span><span class="hi">मासिक सांख्यिकी — हर माह की <b>1 तारीख</b> को रजिस्टर (Ms-13) से मासिक सांख्यिकीय सार (Ms-14) तैयार</span>
+          <span class="en">Monthly statistics — abstract prepared on 1st of each month from register (Ms-13) to (Ms-14)</span></li>
+      <li>🟡 <span class="rule-tag">R.7</span><span class="hi">MO मुहरें — गोल व लंबी मुहरें <b>पोस्टमास्टर की व्यक्तिगत अभिरक्षा</b> में ताले में बंद रहें</span>
+          <span class="en">MO stamps (round & oblong) always under lock in postmaster's personal custody</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= ISSUE OF INLAND MOs ================= -->
+<section class="ch" id="issue">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>देशी मनीऑर्डर जारी करना <span class="en">Issue of Inland Money Orders</span></h2>
+      <span class="rules">नियम / Rules 8–22</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 8 — प्रस्तुतीकरण व अधिकतम सीमा <span class="en">Rule 8 — Presentation & Maximum Limit</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">एकल MO की <b>अधिकतम सीमा ₹1,000</b>; MO फॉर्म भरने हेतु <b>कोई शुल्क नहीं</b> लिया जाएगा — अन्यथा दंडनीय</span>
+          <span class="en">Maximum single MO limit is Rs. 1,000; NO fee to be charged for filling MO form — otherwise punishable</span></li>
+      <li>🟠 <span class="hi">महिला भुगतानकर्ता (payee) का नाम अनिवार्य नहीं — "पति/पुत्र/पिता की पत्नी" जैसे विवरण से भी स्वीकार्य</span>
+          <span class="en">Female payee's own name not insisted — description like "wife of ___" is acceptable</span></li>
+      <li>🔴 <span class="hi"><b>अपवाद</b>: ₹1,000 सीमा लागू नहीं — (i) हेड रिकॉर्ड ऑफिस से RMS स्टाफ वेतन हेतु (ii) GM Telecom द्वारा अपने क्षेत्रीय स्टाफ के वेतन-भत्ते हेतु</span>
+          <span class="en">EXCEPTION: Rs. 1,000 limit does NOT apply to (i) MOs by head record offices for RMS staff salaries (ii) GM Telecom for regional staff pay</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: एक देशी मनीऑर्डर की सामान्य अधिकतम सीमा क्या है? → ₹1,000 (नियम 8, अपवाद सहित)</span>
+      <span class="en">Q: What is the normal maximum limit of a single inland MO? → Rs. 1,000 (with exceptions)</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 12 — रसीद-पुस्तिका प्रणाली <span class="en">Rule 12 — Receipt Book System</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>विवरण / Detail</th><th>प्रधान डाकघर (H.O.)</th><th>उप-डाकघर (S.O.)</th></tr>
+      <tr><td><span class="hi">रसीद प्रति / Receipt copies</span></td><td class="hi">द्वि-प्रति (Duplicate)</td><td class="hi">त्रि-प्रति (Triplicate)</td></tr>
+      <tr><td><span class="hi">प्रति पुस्तक रसीदें</span><span class="en">Receipts per book</span></td><td class="hi"><b>250</b></td><td class="hi"><b>250</b></td></tr>
+      <tr><td><span class="hi">क्रम संख्या शृंखला</span><span class="en">Serial number series</span></td><td class="hi"><b>1 से 10,000</b></td><td class="hi"><b>1 से 5,000</b></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🔴 <span class="hi">अनधिकृत फॉर्म पर रसीद जारी करने पर — दंड: <b>बर्खास्तगी (Dismissal)</b></span>
+          <span class="en">Issuing a receipt on any unauthorised form is punishable by DISMISSAL</span></li>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: HO व SO में MO रसीद-पुस्तिका की क्रम-संख्या शृंखला कितनी है? → HO: 1–10,000; SO: 1–5,000 (नियम 12)</span>
+      <span class="en">Q: MO receipt book serial range for HO vs SO? → HO: 1–10,000; SO: 1–5,000</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 13 — बड़ी संख्या में MO प्रस्तुत होने पर <span class="en">Rule 13 — MOs Presented in Large Numbers</span></h3>
+    <ul class="points">
+      <li><span class="hi">सामान्यतः <b>दोपहर 12 बजे तक</b> स्वीकार करके उसी दिन जारी करने की प्रक्रिया; परिमंडल प्रमुख स्थानीय परिस्थिति अनुसार समय बदल सकते हैं व एक दिन में प्रस्तुत MO की संख्या भी सीमित कर सकते हैं</span>
+          <span class="en">Generally accepted till 12 noon for same-day issue; Heads of Circles may fix different hour & limit number of MOs per remitter/day</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PAYMENT OF INLAND MOs ================= -->
+<section class="ch" id="payment">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>देशी मनीऑर्डर का भुगतान <span class="en">Payment of Inland Money Orders</span></h2>
+      <span class="rules">नियम / Rules 23–50</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 26 — पोस्टमैन नकद-सीमा (सर्वाधिक पूछा गया!) <span class="en">Rule 26 — Postman Cash Limit (Most Asked!)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>कैटगरी / Category</th><th>सामान्य सीमा / Normal Limit</th><th>बढ़ाई जा सकती है / Can be Raised To</th></tr>
+      <tr><td><span class="hi">एकल पोस्टमैन (MO+VP+सीमा शुल्क)</span><span class="en">Single postman (MO+VP+customs)</span></td><td class="hi"><b>₹2,000</b></td><td><span class="hi">अधीक्षक/प्रथम श्रेणी PM द्वारा <b>₹3,000</b> तक</span><span class="en">Rs. 3,000 by Supdt./1st Class PM</span></td></tr>
+      <tr><td><span class="hi">ग्रामीण पोस्टमैन / EDDA</span><span class="en">Village postman / EDDA</span></td><td class="hi"><b>₹2,000</b></td><td><span class="hi">अधीक्षक द्वारा <b>₹3,500</b> तक</span><span class="en">Rs. 3,500 by Supdt.</span></td></tr>
+      <tr><td><span class="hi">एस्कॉर्ट (साथी) के साथ पोस्टमैन</span><span class="en">Postman with escort</span></td><td colspan="2"><span class="hi">बिना-एस्कॉर्ट सीमा की <b>दोगुनी</b> राशि तक</span><span class="en">Up to DOUBLE the unescorted limit</span></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟠 <span class="hi">परिमंडल प्रमुख स्थानीय पुलिस अधिकारियों से परामर्श कर इस सीमा को <b>किसी भी राशि तक</b> बढ़ा सकते हैं</span>
+          <span class="en">Head of Circle may raise this limit to ANY amount after consulting local police</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: एकल पोस्टमैन की सामान्य नकद-सीमा कितनी है और अधीक्षक इसे कितना बढ़ा सकते हैं? → ₹2,000 सामान्य, अधीक्षक द्वारा ₹3,000 तक (नियम 26)</span>
+      <span class="en">Q: Normal cash limit for single postman & how much can Supdt. raise it? → Rs. 2,000 normal, up to Rs. 3,000 by Supdt.</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 विशेष भुगतान श्रेणियाँ — तुलना चार्ट <span class="en">Special Payment Categories — Comparison Chart</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>प्राप्तकर्ता / Payee Category</th><th>भुगतान प्रक्रिया / Payment Procedure</th></tr>
+      <tr><td><span class="hi">नाबालिग (विवेक-आयु से कम, माता-पिता के साथ)</span><span class="en">Minor (below age of discretion, living with parent)</span></td>
+          <td><span class="hi">माता-पिता/अभिभावक को — उनके हस्ताक्षर से (नियम 34.1)</span><span class="en">To parent/guardian on their signature</span></td></tr>
+      <tr><td><span class="hi">नाबालिग (अभिभावक अज्ञात)</span><span class="en">Minor (guardian untraceable)</span></td>
+          <td><span class="hi">देखभालकर्ता को — <b>क्षतिपूर्ति करार (Form M.O.-20b)</b> पर हस्ताक्षर सहित; स्टाम्प शुल्क <b>50 पैसे</b></span><span class="en">To caretaker, with Indemnity Agreement (Form M.O.-20b); stamp duty 50 paise (R.34)</span></td></tr>
+      <tr><td><span class="hi">हाथ/उँगली-रहित व्यक्ति</span><span class="en">Person without hands/fingers</span></td>
+          <td><span class="hi">संस्था-प्रमुख या साथ रहने वाले जिम्मेदार व्यक्ति को — स्वतंत्र गवाह की उपस्थिति में (नियम 35)</span><span class="en">To institution head or responsible co-resident, in presence of independent witness</span></td></tr>
+      <tr><td><span class="hi">विभागीय पेंशनभोगी</span><span class="en">Departmental pensioners</span></td>
+          <td><span class="hi">नियम 121(7) भाग III का अनुपालन आवश्यक (नियम 36)</span><span class="en">Rule 121(7) Part III compliance required</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: नाबालिग को भुगतान हेतु क्षतिपूर्ति करार पर कितने का स्टाम्प शुल्क लगता है? → 50 पैसे (नियम 34)</span>
+      <span class="en">Q: Stamp duty on indemnity agreement for payment to a minor? → 50 paise</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 निर्णय वृक्ष — MO की समाप्ति-अवधि (नियम 65–67) <span class="en">Decision Tree — MO Currency Period</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">MO की समाप्ति-अवधि जारी माह के <b>अगले माह की अंतिम तिथि</b> को समाप्त होती है</span><span class="en">Currency expires at close of last day of month FOLLOWING month of issue</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">भुगतान न हुआ → <b>Void</b> घोषित; पोस्टमास्टर चाहें तो लाल स्याही में "Currency expired-held over" लिखकर <b>2 माह</b> और रोक सकते हैं</span><span class="en">Unpaid → treated VOID; postmaster may detain further 1 more month (total 2 months) with red-ink endorsement</span></div>
+      <div class="farrow">↓<small>बंदरगाह शहर अपवाद / Seaport exception</small></div>
+      <div class="fbox warn"><span class="hi">बंदरगाह शहर में अदावाकृत — नौसेना अधिकारी हेतु <b>6 माह</b>, अन्य हेतु <b>4 माह</b> तक जमा रखा जा सकता है (नियम 65.2)</span><span class="en">Unclaimed at seaport — held 6 months (Navy official) or 4 months (others)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">शिकायतें: जारी होने की तिथि से <b>12 माह</b> के भीतर स्वीकार्य; भुगतान/समायोजन दावा <b>1 वर्ष बाद</b> डाक लेखा कार्यालय की सहमति के बिना नहीं (नियम 67)</span><span class="en">Complaints acceptable within 12 months; payment/adjustment claim after 1 year needs PAO consultation</span></div>
+    </div>
+    <ul class="points">
+      <li>🟠 <span class="hi">अपवाद: फील्ड पोस्ट ऑफिस (FPO) व भारतीय व्यापारिक जहाजों के नाविकों हेतु पारिवारिक बंटन MO — यह <b>1 वर्ष सीमा 2 वर्ष</b> हो जाती है (नियम 67.2)</span>
+          <span class="en">Exception: FPO & seamen's family allotment MOs — 1-year limit becomes 2 YEARS</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: बंदरगाह शहर में नौसेना अधिकारी को संबोधित अदावाकृत MO कितने समय जमा रखा जा सकता है? → 6 माह (नियम 65.2)</span>
+      <span class="en">Q: How long can an unclaimed MO addressed to a Navy official be kept at a seaport office? → 6 months</span>
+    </div>
+  </div>
+
+<!-- ================= VP & FAMILY ALLOTMENT MOs ================= -->
+<section class="ch" id="vpfamo">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>वैल्यू-पेएबल व पारिवारिक बंटन MO <span class="en">VP & Family Allotment MOs</span></h2>
+      <span class="rules">नियम / Rules 51–57</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 51 — VP मनीऑर्डर विशेष स्थितियाँ <span class="en">Rule 51 — VP MO Special Situations</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="hi">प्राप्तकर्ता द्वारा प्रेषक पर धोखाधड़ी की शिकायत → पोस्टमास्टर <b>प्रभागीय अधीक्षक</b> को रिपोर्ट करे व MO जारी करना रोके/रोककर रखे</span>
+          <span class="en">Fraud complaint by addressee against sender → postmaster reports to Divisional Supdt., stops/detains the MO</span></li>
+      <li>🟢 <span class="hi">न्यायालय के आदेश से भुगतान रोका जा सकता है — <b>प्रभागीय अधीक्षक के विवेक</b> से प्राप्तकर्ता को धनवापसी या प्रेषक को भुगतान तय होता है</span>
+          <span class="en">Court order can withhold payment — Divisional Supdt. decides refund to addressee or payment to sender</span></li>
+    </ul>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 55–57 — पारिवारिक बंटन MO व मृत्यु उपदान <span class="en">Family Allotment MOs & Death Gratuities</span></h3>
+    <ul class="points">
+      <li>🟡 <span class="rule-tag">R.55</span><span class="hi">पहचान अक्षर <b>"FA"</b>; सैन्यकर्मियों के परिवार हेतु नियमित प्रेषण</span>
+          <span class="en">Distinguishing letters "FA"; regular remittance for families of military personnel</span></li>
+      <li>🟢 <span class="rule-tag">R.56</span><span class="hi">सिविल पायनियर फोर्स इकाइयाँ — विशेष चिह्न <b>"C.F.A."</b> संख्या से पहले; जर्नल पर <b>"C.P.F.F.A. M.Os"</b> अंकित</span>
+          <span class="en">Civil Pioneer Force Units — special mark "C.F.A." before number; journal marked "C.P.F.F.A. M.Os"</span></li>
+      <li>🟠 <span class="rule-tag">R.57</span><span class="hi">सैनिकों की मृत्यु-उपदान हेतु विशेष <b>गुलाबी MO फॉर्म (M.O.-8 Pink)</b> — केवल स्टॉक डिपो में भंडारित, सैन्य रिकॉर्ड कार्यालयों को सीधे आपूर्ति</span>
+          <span class="en">Special PINK MO form (M.O.-8 Pink) for death gratuities of soldiers killed in action — stocked only at Stock Depot</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: सैनिकों की मृत्यु-उपदान हेतु किस रंग का विशेष MO फॉर्म प्रयोग होता है? → गुलाबी (Pink) — फॉर्म M.O.-8 (नियम 57)</span>
+      <span class="en">Q: What color special MO form is used for death gratuities of soldiers? → Pink (Form M.O.-8)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REDIRECTION, VOID & RETURNS ================= -->
+<section class="ch" id="redirect">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>पुनर्निर्देशन, शून्य MO व विवरणियाँ <span class="en">Redirection, Void MOs & Returns</span></h2>
+      <span class="rules">नियम / Rules 58–87</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 76 — शून्य MO व सूची-तिथियाँ <span class="en">Rule 76 — Void MOs & List Dates (High-Yield!)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">जारी होने के <b>अगले माह के अंत तक</b> अदत्त MO — <b>"शून्य" (Void)</b> घोषित</span>
+          <span class="en">MO unpaid till end of month following month of issue — declared VOID</span></li>
+      <li>🔴 <span class="hi">H.O. — शून्य MO की सूची डाक लेखा कार्यालय को हर माह की <b>16 तारीख</b> तक भेजे</span>
+          <span class="en">H.O. sends void MO list to PAO by the 16th of each month</span></li>
+      <li>🟠 <span class="hi">S.O. — शून्य MO की सूची अपने H.O. को हर माह की <b>8 तारीख</b> तक भेजे</span>
+          <span class="en">S.O. sends void MO list to its H.O. by the 8th of each month</span></li>
+      <li>🟢 <span class="hi">कोई शून्य MO न होने पर भी — रिक्त सूची "Nil" लिखकर प्रधान पोस्टमास्टर के हस्ताक्षर से भेजी जाए</span>
+          <span class="en">If no void MOs — blank list marked "Nil" signed by Head Postmaster still submitted</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: शून्य MO की सूची H.O. डाक लेखा कार्यालय को किस तिथि तक भेजता है? → 16 तारीख (नियम 76.5)</span>
+      <span class="en">Q: By which date does H.O. send void MO list to PAO? → 16th of the month</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 77 — शून्य MO के भुगतान हेतु आवेदन <span class="en">Rule 77 — Application for Payment of Void MOs</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="hi">सामान्यतः जारी होने की तिथि से <b>1 वर्ष के भीतर</b> आवेदन किया जाना चाहिए; परंतु ऐसे आदेश, चाहे कितने भी पुराने हों, पुनः जारी किए जा सकते हैं</span>
+          <span class="en">Applications ordinarily made within 1 year from date of issue; but such orders, however old, may still be re-issued</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 87 — उच्च मूल्य मनीऑर्डर (H.V.M.O.) <span class="en">Rule 87 — High Value Money Orders</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>₹400 या अधिक</b> मूल्य के सभी MO (VP MO सहित) — "उच्च मूल्य मनीऑर्डर (H.V.M.O.)" कहलाते हैं; पृथक सूची सहित पंजीकृत बैग में प्रेषित</span>
+          <span class="en">All MOs (incl. VP MOs) of Rs. 400 or above value are High Value MOs (H.V.M.O.); transmitted in registered bag with separate list</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: उच्च मूल्य मनीऑर्डर (H.V.M.O.) की न्यूनतम राशि क्या है? → ₹400 (नियम 87)</span>
+      <span class="en">Q: Minimum amount for a High Value Money Order? → Rs. 400</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOREIGN MOs (BRIEF) ================= -->
+<section class="ch" id="foreign">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>विदेशी मनीऑर्डर (संक्षेप में) <span class="en">Foreign Money Orders (Brief)</span></h2>
+      <span class="rules">नियम / Rules 88–102</span>
+    </div>
+  </div>
+  <div class="card t-g">
+    <h3>🟢 मुख्य बिंदु <span class="en">Key Points</span></h3>
+    <ul class="points">
+      <li><span class="hi">बाह्य विदेशी स्टर्लिंग/रुपया MO — विनिमय-कार्यालय (Office of Exchange) के माध्यम से प्रेषित व प्राप्त होते हैं</span>
+          <span class="en">Outward foreign sterling/rupee MOs routed through Office of Exchange</span></li>
+      <li>🟢 <span class="hi">अदावाकृत/अस्वीकृत विदेशी MO — <b>शून्य (void)</b> माने जाते हैं (नियम 100)</span>
+          <span class="en">Unclaimed & refused foreign MOs treated as VOID (Rule 100)</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CHAPTER V: INDIAN POSTAL ORDERS ================= -->
+<section class="ch" id="ipo">
+  <div class="ch-head">
+    <div class="ch-num">5</div>
+    <div class="ch-title">
+      <h2>भारतीय डाक आदेश (IPO) <span class="en">Indian Postal Orders</span></h2>
+      <span class="rules">नियम / Rules 174–203</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 175 — स्टॉक सीमाएँ <span class="en">Rule 175 — Stock Limits</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>कार्यालय / Office</th><th>निर्धारक / Fixed By</th><th>अवधि / Duration</th></tr>
+      <tr><td><span class="hi">प्रधान डाकघर (H.O.)</span><span class="en">Head Office</span></td><td><span class="hi">अधीक्षक</span><span class="en">Superintendent</span></td><td class="hi"><b>6 माह</b> की आवश्यकता के आधार पर</td></tr>
+      <tr><td><span class="hi">उप-डाकघर (S.O.)</span><span class="en">Sub Office</span></td><td><span class="hi">प्रधान पोस्टमास्टर</span><span class="en">Head Postmaster</span></td><td><span class="hi"><b>1 माह</b> (Presidency/वरिष्ठ अधीक्षक द्वारा <b>3 माह</b> तक बढ़ाई जा सकती है)</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: H.O. में IPO स्टॉक की सीमा किस आधार पर तय होती है? → 6 माह की आवश्यकता (नियम 175.2)</span>
+      <span class="en">Q: H.O. IPO stock limit is based on requirement of? → 6 months</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 177 — त्रैमासिक इंडेंट तिथियाँ (परिमंडल-समूह अनुसार) <span class="en">Rule 177 — Quarterly Indent Dates by Circle Group</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>परिमंडल समूह / Circle Group</th><th>इंडेंट तिथियाँ / Indent Dates</th></tr>
+      <tr><td><span class="hi">प. बंगाल, NE, उ.प्र., गुजरात, महाराष्ट्र</span><span class="en">West Bengal, NE, UP, Gujarat, Maharashtra</span></td><td class="hi"><b>8 अप्रैल, 8 जुलाई, 8 अक्तूबर, 8 जनवरी</b></td></tr>
+      <tr><td><span class="hi">बिहार, उड़ीसा, NW, दिल्ली, तमिलनाडु, आंध्र, कर्नाटक, केरल</span><span class="en">Bihar, Orissa, NW, Delhi, TN, Andhra, Karnataka, Kerala</span></td><td class="hi"><b>8 मई, 8 अगस्त, 8 नवंबर, 8 फरवरी</b></td></tr>
+      <tr><td><span class="hi">म.प्र., राजस्थान</span><span class="en">MP, Rajasthan</span></td><td class="hi"><b>8 जून, 8 सितंबर, 8 दिसंबर, 8 मार्च</b></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 195 — समाप्ति-अवधि (सबसे अधिक पूछा गया!) <span class="en">Rule 195 — Period of Currency (Most Asked!)</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">IPO जारी होने के महीने से 0–6 माह</span><span class="en">0–6 months from month of issue</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">पूर्ण मूल्य का भुगतान — <b>कोई अतिरिक्त कमीशन नहीं</b></span><span class="en">Full value paid — NO extra commission</span></div>
+      <div class="farrow">↓<small>6–12 माह / 6–12 months</small></div>
+      <div class="fbox warn"><span class="hi">भुगतान होगा, परंतु <b>दूसरा कमीशन</b> देना होगा — डाक टिकट आदेश की पीठ पर चिपकाकर</span><span class="en">Payable ONLY on payment of SECOND commission — via postage stamps affixed to back</span></div>
+      <div class="farrow">↓<small>12+ माह / 12+ months</small></div>
+      <div class="fbox warn" style="border-color:var(--vimp);background:#FDECEE"><span class="hi"><b>जब्त (Forfeited)</b> — भुगतान नहीं किया जाएगा</span><span class="en">FORFEITED — will NOT be paid</span></div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: IPO जारी होने के 8 माह बाद प्रस्तुत होने पर क्या होगा? → दूसरा कमीशन देकर भुगतान होगा (नियम 195.1, चूँकि 6-12 माह के बीच है)</span>
+      <span class="en">Q: What happens if an IPO is presented 8 months after issue? → Payable on payment of second commission (falls in 6-12 month window)</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 188 — डाक टिकट से मूल्य-वृद्धि की सीमाएँ <span class="en">Rule 188 — Limits on Value Enhancement by Stamps</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">अधिकतम <b>3 डाक टिकट</b> ही चिपकाए जा सकते हैं; कुल मूल्य <b>99 पैसे से अधिक नहीं</b>; IPO+टिकट का कुल मूल्य <b>₹100 से अधिक नहीं</b></span>
+          <span class="en">Maximum 3 postage stamps allowed; total value NOT more than 99 paise; total IPO+stamps value NOT exceeding Rs. 100</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: IPO पर मूल्य-वृद्धि हेतु अधिकतम कितने डाक टिकट चिपकाए जा सकते हैं? → 3 (नियम 188)</span>
+      <span class="en">Q: Maximum postage stamps that can be affixed to enhance IPO value? → 3</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 180 व 186 — क्षतिग्रस्त व चोरी IPO <span class="en">Rules 180 & 186 — Spoiled & Stolen IPOs</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="rule-tag">R.180</span><span class="hi">क्षतिग्रस्त IPO पर "Spoiled" लिखकर काउंटरफॉयल सहित डाक लेखा कार्यालय भेजा जाए; <b>जनता को कभी न बेचा जाए</b></span>
+          <span class="en">Spoiled IPO marked "Spoiled", sent with counterfoil to PAO; NEVER sold to public</span></li>
+      <li>🟠 <span class="rule-tag">R.186</span><span class="hi">स्टॉक से चोरी/गुम IPO — <b>पंजीकृत पत्र द्वारा तत्काल</b> परिमंडल प्रमुख, DA(P) दिल्ली व गृह डाक लेखा कार्यालय को रिपोर्ट; विशेष कारणों पर तार से भी</span>
+          <span class="en">Lost/stolen IPOs from stock — immediate report by REGISTERED LETTER to HoC, DA(P) Delhi & Home PAO; telegram if justified</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= MASTER NUMBERS ================= -->
+<section class="ch" id="master">
+  <div class="ch-head">
+    <div class="ch-num">🔴</div>
+    <div class="ch-title">
+      <h2>मास्टर संख्या-चार्ट <span class="en">Master Numbers Chart</span></h2>
+      <span class="rules">सभी सीमाएँ व समय-सीमाएँ एक जगह / All Limits & Time Limits in One Place</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 राशि-सीमाएँ — मनीऑर्डर <span class="en">Money Order Amount Limits</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>राशि / Amount</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>₹1,000</b></td><td><span class="hi">एकल देशी MO की सामान्य अधिकतम सीमा (R.8)</span></td></tr>
+      <tr><td class="hi"><b>₹2,000 / ₹3,000</b></td><td><span class="hi">एकल पोस्टमैन — सामान्य / अधीक्षक द्वारा बढ़ी सीमा (R.26)</span></td></tr>
+      <tr><td class="hi"><b>₹2,000 / ₹3,500</b></td><td><span class="hi">ग्रामीण पोस्टमैन/EDDA — सामान्य / अधीक्षक द्वारा बढ़ी सीमा (R.26)</span></td></tr>
+      <tr><td class="hi"><b>₹400+</b></td><td><span class="hi">उच्च मूल्य मनीऑर्डर (H.V.M.O.) सीमा (R.87)</span></td></tr>
+      <tr><td class="hi">10 पैसे</td><td><span class="hi">MO फॉर्म का मूल्य (R.2)</span></td></tr>
+      <tr><td class="hi">50 पैसे</td><td><span class="hi">नाबालिग-भुगतान क्षतिपूर्ति करार पर स्टाम्प शुल्क (R.34)</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 समय-सीमाएँ — मनीऑर्डर व IPO <span class="en">Time Limits — MO & IPO</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>समय / Time</th><th>क्या / What</th></tr>
+      <tr><td class="hi">माह की <b>16 तारीख</b></td><td><span class="hi">H.O. → PAO शून्य MO सूची (R.76.5)</span></td></tr>
+      <tr><td class="hi">माह की <b>8 तारीख</b></td><td><span class="hi">S.O. → H.O. शून्य MO सूची (R.76.7)</span></td></tr>
+      <tr><td class="hi"><b>1 माह + 1 माह</b> (कुल 2)</td><td><span class="hi">MO समाप्ति-अवधि के बाद पोस्टमास्टर द्वारा अतिरिक्त धारण (R.65)</span></td></tr>
+      <tr><td class="hi"><b>4 / 6 माह</b></td><td><span class="hi">बंदरगाह में adaavaakrt MO — सामान्य / नौसेना अधिकारी (R.65.2)</span></td></tr>
+      <tr><td class="hi"><b>12 माह</b></td><td><span class="hi">MO संबंधी शिकायत की सीमा (R.67)</span></td></tr>
+      <tr><td class="hi"><b>1 वर्ष / 2 वर्ष</b></td><td><span class="hi">भुगतान/समायोजन दावा — सामान्य / FPO व सीमेन पारिवारिक MO अपवाद (R.67)</span></td></tr>
+      <tr><td class="hi"><b>0–6 माह</b></td><td><span class="hi">IPO — पूर्ण मूल्य, बिना अतिरिक्त कमीशन (R.195)</span></td></tr>
+      <tr><td class="hi"><b>6–12 माह</b></td><td><span class="hi">IPO — दूसरा कमीशन देकर भुगतान (R.195)</span></td></tr>
+      <tr><td class="hi"><b>12+ माह</b></td><td><span class="hi">IPO — जब्त (Forfeited) (R.195)</span></td></tr>
+      <tr><td class="hi"><b>6 माह / 1 माह</b></td><td><span class="hi">IPO स्टॉक सीमा — H.O. / S.O. (S.O. को 3 माह तक बढ़ाई जा सकती) (R.175)</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: MO शून्य-सूची HO व SO द्वारा क्रमशः किस तारीख तक भेजी जाती है? → HO: 16 तारीख (PAO को); SO: 8 तारीख (HO को)</span>
+      <span class="en">Q: Void MO list dates for HO vs SO submission? → HO: 16th (to PAO); SO: 8th (to HO)</span>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 महत्वपूर्ण फॉर्म <span class="en">Important Forms</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>फॉर्म / Form</th><th>प्रयोग / Use</th></tr>
+      <tr><td><b>M.O.-1</b></td><td><span class="hi">MO रसीद पुस्तिका</span><span class="en">MO receipt book</span></td></tr>
+      <tr><td><b>M.O.-8</b></td><td><span class="hi">MO फॉर्म; M.O.-8 (Pink) = मृत्यु-उपदान हेतु</span><span class="en">MO form; Pink variant for death gratuities</span></td></tr>
+      <tr><td><b>M.O.-12</b></td><td><span class="hi">पुनर्निर्देशन पर्ची (Redirected slip)</span><span class="en">Redirected slip</span></td></tr>
+      <tr><td><b>M.O.-19(a)/(b)</b></td><td><span class="hi">समाप्ति-अवधि पश्चात् धारित MO की सूचना/सूची</span><span class="en">Intimation/list of currency-expired detained MOs</span></td></tr>
+      <tr><td><b>M.O.-20(b)</b></td><td><span class="hi">नाबालिग-भुगतान क्षतिपूर्ति करार</span><span class="en">Indemnity agreement for minor payment</span></td></tr>
+      <tr><td><b>M.O.-49(b)</b></td><td><span class="hi">शून्य MO सूची (PAO हेतु)</span><span class="en">Void MO list (for PAO)</span></td></tr>
+      <tr><td><b>M.O.-59</b></td><td><span class="hi">IPO आपूर्ति हेतु इंडेंट</span><span class="en">Indent for IPO supply</span></td></tr>
+      <tr><td><b>M.O.-60/61</b></td><td><span class="hi">IPO स्टॉक बुक / SO प्राधिकृत स्टॉक रजिस्टर</span><span class="en">IPO stock book / SO authorised stock register</span></td></tr>
+      <tr><td><b>Ms-13/14</b></td><td><span class="hi">मासिक सांख्यिकीय रजिस्टर / सार</span><span class="en">Monthly statistical register / abstract</span></td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ================= MNEMONICS ================= -->
+<section class="ch" id="mnemo">
+  <div class="ch-head">
+    <div class="ch-num blue">🧠</div>
+    <div class="ch-title">
+      <h2>स्मृति सूत्र व ट्रिक्स <span class="en">Memory Tricks & Mnemonics</span></h2>
+    </div>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"VFSRT-SB-FA" — पहचान अक्षर</div>
+    <span class="hi">MO अक्षर: <b>V</b>.P. (वैल्यू-पेएबल) → <b>F</b> (विदेशी) → <b>S</b> (स्टर्लिंग) → <b>R</b> (राजस्व) → <b>T</b> (टेलीग्राफिक) → <b>SB</b> (बचत बैंक) → <b>FA</b> (पारिवारिक बंटन)</span>
+    <span class="en">MO letters: V.P., F, S, R, T, SB, FA — remember by first letters</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"10-5" — रसीद पुस्तिका शृंखला</div>
+    <span class="hi">HO की रसीद-शृंखला <b>10,000</b> तक; SO की <b>आधी = 5,000</b> तक (नियम 12)</span>
+    <span class="en">HO receipt series up to 10,000; SO is HALF = 5,000</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"2-3, 2-3.5" — पोस्टमैन सीमा याद रखें</div>
+    <span class="hi">एकल पोस्टमैन: <b>2</b> हज़ार → <b>3</b> हज़ार (अधीक्षक); ग्रामीण पोस्टमैन: <b>2</b> हज़ार → <b>3.5</b> हज़ार (अधीक्षक) — गाँव वाले को थोड़ी ज़्यादा छूट!</span>
+    <span class="en">Postman: 2k→3k; Village postman: 2k→3.5k (village gets slightly more room)</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"16 माह-अंत, 8 आधा" — शून्य-सूची तिथियाँ</div>
+    <span class="hi">HO से PAO: <b>16</b> तारीख (महीने के दूसरे भाग में); SO से HO: <b>8</b> तारीख (महीने के पहले भाग में) — दोनों का योग = 24, आधा-आधा जैसा याद रखें</span>
+    <span class="en">HO→PAO on 16th; SO→HO on 8th — SO reports first (earlier date), then HO consolidates & reports later</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"6-12-जब्त" — IPO की सीढ़ी</div>
+    <span class="hi">IPO: <b>0-6 माह</b> पूर्ण मूल्य → <b>6-12 माह</b> दूसरा कमीशन → <b>12+ माह</b> जब्त! (नियम 195)</span>
+    <span class="en">IPO ladder: 0-6mo full value → 6-12mo second commission → 12+mo forfeited!</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"3 टिकट, 99 पैसे, ₹100 कुल"</div>
+    <span class="hi">IPO मूल्य-वृद्धि: अधिकतम <b>3</b> डाक टिकट, कुल <b>99 पैसे</b> से अधिक नहीं, IPO+टिकट का योग <b>₹100</b> से अधिक नहीं (नियम 188)</span>
+    <span class="en">IPO stamp enhancement: max 3 stamps, max 99 paise, total not exceeding Rs. 100</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"400 से ऊपर = हाई-वैल्यू"</div>
+    <span class="hi">₹400 या अधिक का कोई भी MO (VP सहित भी) = H.V.M.O. — पृथक सूची व पंजीकृत बैग (नियम 87)</span>
+    <span class="en">Rs. 400 or more (even VP) = High Value MO — separate list, registered bag</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"गुलाबी = शहीद" — रंग-कोड याद</div>
+    <span class="hi">M.O.-8 <b>Pink (गुलाबी)</b> फॉर्म — शहीद सैनिकों की मृत्यु-उपदान हेतु विशेष रूप से (नियम 57)</span>
+    <span class="en">M.O.-8 PINK form — specially for death gratuities of soldiers killed in action</span></div>
+
+  <div class="mnemo">
+    <div class="key">"13 PAO, 1 गृह बाकी विदेशी"</div>
+    <span class="hi">भारत में <b>13</b> डाक लेखा कार्यालय; अपने परिमंडल का = "गृह" (Home), शेष सभी = "विदेशी" (Foreign) PAO (नियम 5)</span>
+    <span class="en">13 PAOs in India; own circle's = "Home", rest = "Foreign" PAOs</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"1-2 साल अपवाद" — FPO व सीमेन</div>
+    <span class="hi">सामान्य MO दावा-सीमा <b>1 वर्ष</b>; लेकिन फील्ड पोस्ट ऑफिस व सीमेन के पारिवारिक बंटन MO हेतु <b>2 वर्ष</b> (नियम 67.2)</span>
+    <span class="en">Normal MO claim limit 1 year; but FPO & seamen's family allotment MOs get 2 years</span>
+  </div>
+</section>
+
+<!-- ================= ONE PAGE REVISION ================= -->
+<section class="ch" id="rev">
+  <div class="ch-head">
+    <div class="ch-num">📄</div>
+    <div class="ch-title">
+      <h2>एक-पृष्ठ推敲 शीट <span class="en">One-Page Revision Sheet</span></h2>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ भाग VI (II) — 26 तथ्य, 3 मिनट में / Vol. VI (II) — 26 Facts in 3 Minutes</h3>
+    <div class="rev-grid">
+      <div class="rev-cell"><b>विषय:</b> मनीऑर्डर + IPO — नियम 1-6, 7-102, 174-203 (Ch. III/IV बहिष्कृत)</div>
+      <div class="rev-cell"><b>R.5:</b> कुल <span class="num">13</span> PAO; अपना = गृह, शेष = विदेशी</div>
+      <div class="rev-cell"><b>R.2:</b> MO फॉर्म <span class="num">10 पैसे</span>; BO को केवल <span class="num">2</span> पुस्तकें</div>
+      <div class="rev-cell"><b>R.4:</b> V.P./T/S/F/R/Rt/SB/FA — पहचान अक्षर</div>
+      <div class="rev-cell"><b>R.8:</b> एकल MO सीमा <span class="num">₹1,000</span> (RMS/GM Telecom अपवाद)</div>
+      <div class="rev-cell"><b>R.12:</b> रसीद-पुस्तक <span class="num">250</span>/पुस्तक; HO <span class="num">1-10,000</span>, SO <span class="num">1-5,000</span></div>
+      <div class="rev-cell"><b>R.12:</b> गलत फॉर्म पर रसीद = <span class="num">बर्खास्तगी</span> दंड</div>
+      <div class="rev-cell"><b>R.13:</b> बड़ी संख्या MO — सामान्यतः <span class="num">12 बजे दोपहर</span> तक स्वीकार</div>
+      <div class="rev-cell"><b>R.26:</b> पोस्टमैन <span class="num">₹2,000→3,000</span>; ग्रामीण <span class="num">₹2,000→3,500</span></div>
+      <div class="rev-cell"><b>R.26:</b> एस्कॉर्ट सहित — <span class="num">दोगुनी</span> सीमा तक</div>
+      <div class="rev-cell"><b>R.34:</b> नाबालिग क्षतिपूर्ति करार — <span class="num">50 पैसे</span> स्टाम्प शुल्क</div>
+      <div class="rev-cell"><b>R.57:</b> मृत्यु-उपदान हेतु <span class="num">गुलाबी</span> फॉर्म M.O.-8</div>
+      <div class="rev-cell"><b>R.65:</b> समाप्ति-अवधि = अगले माह का अंत; <span class="num">+1 माह</span> धारण संभव</div>
+      <div class="rev-cell"><b>R.65:</b> बंदरगाह adaavaakrt — नौसेना <span class="num">6 माह</span>, अन्य <span class="num">4 माह</span></div>
+      <div class="rev-cell"><b>R.67:</b> शिकायत सीमा <span class="num">12 माह</span>; दावा सामान्यतः <span class="num">1 वर्ष</span> (FPO/सीमेन: <span class="num">2 वर्ष</span>)</div>
+      <div class="rev-cell"><b>R.76:</b> शून्य MO सूची — HO→PAO <span class="num">16 तारीख</span>; SO→HO <span class="num">8 तारीख</span></div>
+      <div class="rev-cell"><b>R.77:</b> शून्य MO भुगतान-आवेदन सामान्यतः <span class="num">1 वर्ष</span> में, पर पुनः जारी हो सकते हैं</div>
+      <div class="rev-cell"><b>R.87:</b> उच्च मूल्य MO (H.V.M.O.) = <span class="num">₹400+</span></div>
+      <div class="rev-cell"><b>R.175:</b> IPO स्टॉक — HO <span class="num">6 माह</span>, SO <span class="num">1 माह</span> (विस्तार <span class="num">3 माह</span>)</div>
+      <div class="rev-cell"><b>R.177:</b> त्रैमासिक इंडेंट — परिमंडल-समूह अनुसार <span class="num">3 अलग तिथि-चक्र</span></div>
+      <div class="rev-cell"><b>R.188:</b> मूल्य-वृद्धि — अधि. <span class="num">3 टिकट</span>, <span class="num">99 पैसे</span>, कुल <span class="num">₹100</span></div>
+      <div class="rev-cell"><b>R.195:</b> IPO — <span class="num">0-6माह</span> पूर्ण, <span class="num">6-12माह</span> दूसरा कमीशन, <span class="num">12+माह</span> जब्त</div>
+      <div class="rev-cell"><b>R.180:</b> क्षतिग्रस्त IPO — कभी न बेचें; "Spoiled" लिखकर PAO भेजें</div>
+      <div class="rev-cell"><b>R.186:</b> चोरी/गुम IPO — तत्काल पंजीकृत पत्र से HoC+DA(P)+गृह PAO को रिपोर्ट</div>
+       <div class="rev-cell"><b>Ch.III/IV:</b> टेलीग्राफिक MO व ब्रिटिश/आयरिश आदेश — इस पोर्टल-भाग से <span class="num">बहिष्कृत</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAST DAY NOTES ================= -->
+<section class="ch" id="lastday">
+  <div class="ch-head">
+    <div class="ch-num">⏰</div>
+    <div class="ch-title">
+      <h2>अंतिम दिन की पुनरावृत्ति <span class="en">Last Day Revision Notes</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 केवल संख्याएँ — रट लें! <span class="en">Numbers Only — Memorise!</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>13</b></td><td><span class="hi">डाक लेखा कार्यालयों की संख्या</span></td></tr>
+      <tr><td class="hi"><b>₹1,000</b></td><td><span class="hi">एकल देशी MO की सामान्य सीमा</span></td></tr>
+      <tr><td class="hi"><b>₹2,000/3,000</b></td><td><span class="hi">पोस्टमैन नकद-सीमा — सामान्य/बढ़ी हुई</span></td></tr>
+      <tr><td class="hi"><b>₹2,000/3,500</b></td><td><span class="hi">ग्रामीण पोस्टमैन — सामान्य/बढ़ी हुई</span></td></tr>
+      <tr><td class="hi"><b>₹400+</b></td><td><span class="hi">उच्च मूल्य MO सीमा</span></td></tr>
+      <tr><td class="hi"><b>250 / पुस्तक</b></td><td><span class="hi">MO रसीद प्रति पुस्तक</span></td></tr>
+      <tr><td class="hi"><b>1-10,000 / 1-5,000</b></td><td><span class="hi">रसीद शृंखला — HO / SO</span></td></tr>
+      <tr><td class="hi"><b>16 / 8 तारीख</b></td><td><span class="hi">शून्य-सूची तिथि — HO→PAO / SO→HO</span></td></tr>
+      <tr><td class="hi"><b>4 / 6 माह</b></td><td><span class="hi">बंदरगाह adaavaakrt धारण — सामान्य/नौसेना</span></td></tr>
+      <tr><td class="hi"><b>12 माह</b></td><td><span class="hi">MO शिकायत सीमा</span></td></tr>
+      <tr><td class="hi"><b>1 वर्ष / 2 वर्ष</b></td><td><span class="hi">दावा-सीमा — सामान्य/FPO-सीमेन अपवाद</span></td></tr>
+      <tr><td class="hi"><b>0-6 / 6-12 / 12+ माह</b></td><td><span class="hi">IPO की तीन अवस्थाएँ</span></td></tr>
+      <tr><td class="hi"><b>3 टिकट / 99 पैसे / ₹100</b></td><td><span class="hi">IPO मूल्य-वृद्धि सीमाएँ</span></td></tr>
+      <tr><td class="hi"><b>6 माह / 1 माह</b></td><td><span class="hi">IPO स्टॉक — HO/SO</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 5 सबसे अधिक पूछे जाने वाले जाल <span class="en">Top 5 Exam Traps</span></h3>
+    <ul class="points">
+      <li>⚠️ <span class="hi">पोस्टमैन सीमा <b>₹2,000→3,000</b> (शहरी) बनाम ग्रामीण पोस्टमैन <b>₹2,000→3,500</b> — बढ़ी हुई सीमा अलग-अलग है, मिलाएँ नहीं!</span>
+          <span class="en">Postman Rs. 2k→3k vs Village postman Rs. 2k→3.5k — the RAISED limit differs, don't mix up!</span></li>
+      <li>⚠️ <span class="hi">शून्य-सूची तिथि: <b>HO से PAO को 16 तारीख</b>; <b>SO से HO को 8 तारीख</b> — क्रम उल्टा न करें (पहले SO रिपोर्ट करता है, फिर HO)</span>
+          <span class="en">Void list dates: HO→PAO on 16th; SO→HO on 8th — SO reports FIRST, then HO consolidates</span></li>
+      <li>⚠️ <span class="hi">IPO की <b>1 वर्ष जब्ती सीमा</b> मनीऑर्डर की <b>1 वर्ष दावा-सीमा</b> से बिल्कुल अलग नियम है — दोनों को न मिलाएँ (IPO में जब्ती स्वतः, MO में केवल PAO सहमति चाहिए)</span>
+          <span class="en">IPO's 1-year forfeiture ≠ MO's 1-year claim-consultation rule — different consequences</span></li>
+      <li>⚠️ <span class="hi">उच्च मूल्य MO (H.V.M.O.) सीमा <b>₹400</b> है — इसे देशी MO की सामान्य अधिकतम सीमा <b>₹1,000</b> से न जोड़ें, ये दो अलग संख्याएँ हैं</span>
+          <span class="en">H.V.M.O. threshold Rs. 400 is separate from the general Rs. 1,000 MO limit — don't confuse the two</span></li>
+      <li>⚠️ <span class="hi">यह भाग जानबूझकर <b>टेलीग्राफिक MO (Ch. III)</b> व <b>ब्रिटिश/आयरिश डाक आदेश (Ch. IV)</b> को शामिल नहीं करता — परीक्षा में इन पर प्रश्न आने पर अलग अध्याय याद करें</span>
+          <span class="en">This part deliberately excludes Telegraphic MOs (Ch. III) & British/Irish Postal Orders (Ch. IV) — recall those separately if asked</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 IPO जीवन-चक्र — एक नज़र में <span class="en">IPO Lifecycle at a Glance</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">जारी — गोल MO मुहर + पोस्टमास्टर हस्ताक्षर + तिथि (नियम 181)</span><span class="en">Issued — round MO stamp + postmaster signature + date</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">0-6 माह: पूर्ण मूल्य भुगतान</span><span class="en">0-6 months: full value payable</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox warn"><span class="hi">6-12 माह: दूसरा कमीशन देकर भुगतान</span><span class="en">6-12 months: payable with second commission</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox" style="border-color:var(--vimp);background:#FDECEE"><span class="hi">12+ माह: जब्त — भुगतान नहीं</span><span class="en">12+ months: FORFEITED — not payable</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-note">
+  📚 IP Exam Portal • डाक मैनुअल भाग VI (भाग II) — Money Orders & Indian Postal Orders (Ch. I, II, V)<br>
+  ⛔:बहिष्कृत टेलीग्राफिक मनीऑर्डर (Ch. III) व ब्रिटिश/आयरिश डाक आदेश (Ch. IV)<br>
+  🔴 अति महत्वपूर्ण | 🟠 बार-बार पूछा गया | 🟡 अवधारणा | 🟢 त्वरित पुनरावृत्ति • Offline-ready • No external dependencies
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आकस्मिक श्रमिक (Casual Labourer) — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E;
+  --blue:#003087;
+  --gold:#D4AF37;
+  --very-imp:#C8102E;
+  --freq:#E67E22;
+  --concept:#D4AF37;
+  --quick:#2E8B57;
+  --bg:#FAF7F0;
+  --card:#FFFFFF;
+  --ink:#1A1A2E;
+  --muted:#6b6b78;
+  --border:#e7e1d3;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  padding-bottom:60px;
+}
+.eng{font-style:italic; color:var(--muted); font-size:0.85em;}
+
+/* HEADER */
+header.top{
+  background:linear-gradient(135deg,var(--blue) 0%,#001a4d 100%);
+  color:#fff;
+  padding:28px 16px 22px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+header.top::before{
+  content:"";
+  position:absolute; top:-60px; right:-60px;
+  width:220px; height:220px; border-radius:50%;
+  background:rgba(200,16,46,0.25);
+}
+header.top h1{
+  font-size:1.5rem;
+  color:var(--gold);
+  letter-spacing:0.5px;
+  position:relative;
+}
+header.top .sub{font-size:0.95rem; margin-top:6px; color:#dbe3ff; position:relative;}
+header.top .dept{font-size:0.78rem; margin-top:10px; color:#b9c4ef; position:relative;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px; position:relative;}
+.badge{
+  font-size:0.72rem; padding:4px 10px; border-radius:20px;
+  background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3);
+}
+
+nav.toc{
+  background:#fff; margin:14px 10px; border-radius:14px;
+  padding:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  border:1px solid var(--border);
+}
+nav.toc h2{font-size:0.95rem; color:var(--blue); margin-bottom:8px;}
+nav.toc ol{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+nav.toc a{
+  font-size:0.78rem; color:var(--ink); text-decoration:none;
+  display:block; padding:6px 8px; border-radius:8px; background:var(--bg);
+  border-left:3px solid var(--red);
+}
+nav.toc a:active{background:#f0e9d8;}
+
+section{margin:18px 10px;}
+.section-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.section-head .icon{
+  width:38px; height:38px; border-radius:10px; background:var(--red);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.section-head h2{font-size:1.15rem; color:var(--blue);}
+.section-head .eng{display:block; font-size:0.75rem;}
+
+.card{
+  background:var(--card); border-radius:14px; padding:14px 14px 16px;
+  margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  border:1px solid var(--border); border-top:4px solid var(--blue);
+}
+.card h3{font-size:1rem; color:var(--red); margin-bottom:6px;}
+.card h3 .eng{display:block; font-size:0.72rem; font-weight:400;}
+.card p{font-size:0.9rem; margin-bottom:6px;}
+.card ul{margin-left:18px; font-size:0.88rem;}
+.card li{margin-bottom:4px;}
+
+/* tags */
+.tag{
+  display:inline-block; font-size:0.68rem; padding:2px 8px; border-radius:12px;
+  color:#fff; font-weight:600; margin-right:4px; white-space:nowrap;
+}
+.tag.vi{background:var(--very-imp);}
+.tag.fa{background:var(--freq);}
+.tag.cu{background:var(--concept); color:#3a3000;}
+.tag.qr{background:var(--quick);}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:8px; background:#fff; padding:10px 12px;
+  border-radius:12px; margin:10px 10px; font-size:0.75rem; border:1px solid var(--border);
+}
+.legend span{display:flex; align-items:center; gap:5px;}
+
+/* Q box */
+.qbox{
+  background:#FFF7E6; border:1px dashed var(--gold); border-radius:10px;
+  padding:8px 10px; font-size:0.82rem; margin-top:8px;
+}
+.qbox b{color:var(--red);}
+
+/* OM ref */
+.om{
+  font-size:0.72rem; color:var(--blue); background:#eef2ff; display:inline-block;
+  padding:2px 6px; border-radius:6px; margin-top:4px;
+}
+
+/* Tree / breakdown */
+.tree{padding-left:0;}
+.tree-node{
+  border-left:3px solid var(--gold); margin-left:8px; padding-left:14px; margin-bottom:10px; position:relative;
+}
+.tree-node::before{
+  content:""; position:absolute; left:-8px; top:8px; width:8px; height:8px;
+  border-radius:50%; background:var(--red);
+}
+.tree-node.l1{border-left-color:var(--red);}
+.tree-node.l2{border-left-color:var(--blue); margin-left:22px;}
+.tree-node.l3{border-left-color:var(--gold); margin-left:36px;}
+.tree-node.l4{border-left-color:var(--quick); margin-left:50px;}
+.tree-node .lab{font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.5px;}
+.tree-node .txt{font-size:0.88rem; font-weight:600;}
+
+/* Flowchart */
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:10px 0;}
+.flow-box{
+  background:var(--blue); color:#fff; border-radius:10px; padding:9px 14px;
+  font-size:0.82rem; text-align:center; max-width:320px; width:100%;
+}
+.flow-box.alt{background:var(--red);}
+.flow-box.end{background:var(--quick);}
+.flow-arrow{font-size:1.3rem; color:var(--gold); line-height:1;}
+.flow-branch{display:flex; gap:10px; width:100%; justify-content:center; flex-wrap:wrap;}
+.flow-branch .flow-box{flex:1; min-width:130px;}
+
+/* Decision tree */
+.decision{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:12px;
+}
+.d-q{background:var(--gold); color:#3a3000; padding:8px 10px; border-radius:8px; font-size:0.85rem; font-weight:700; text-align:center; margin-bottom:6px;}
+.d-ans{display:flex; gap:8px; margin-bottom:6px;}
+.d-yes,.d-no{flex:1; padding:8px; border-radius:8px; font-size:0.78rem; text-align:center;}
+.d-yes{background:#e8f5e9; border:1px solid var(--quick);}
+.d-no{background:#fdecea; border:1px solid var(--red);}
+
+/* table */
+.tblwrap{overflow-x:auto; margin:10px 0;}
+table{width:100%; border-collapse:collapse; font-size:0.8rem; min-width:480px;}
+th{background:var(--blue); color:#fff; padding:8px; text-align:right;}
+td{padding:7px 8px; border-bottom:1px solid var(--border); text-align:right;}
+tr:nth-child(even){background:#faf9f4;}
+th:first-child,td:first-child{text-align:right;}
+
+/* timeline */
+.timeline{position:relative; margin:14px 4px; padding-left:22px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:16px;}
+.t-item::before{
+  content:""; position:absolute; left:-28px; top:2px; width:12px; height:12px;
+  border-radius:50%; background:var(--red); border:2px solid #fff; box-shadow:0 0 0 2px var(--red);
+}
+.t-date{font-weight:700; color:var(--red); font-size:0.82rem;}
+.t-desc{font-size:0.8rem;}
+
+/* comparison */
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.compare .col{border-radius:10px; padding:10px; font-size:0.78rem;}
+.compare .old{background:#fdecea; border:1px solid var(--red);}
+.compare .new{background:#e8f5e9; border:1px solid var(--quick);}
+.compare h4{font-size:0.82rem; margin-bottom:6px;}
+
+/* mnemonic */
+.mnemonic{
+  background:linear-gradient(135deg,#fff8e1,#fff);
+  border:2px dashed var(--gold); border-radius:12px; padding:12px; margin:10px 0; font-size:0.85rem;
+}
+.mnemonic .word{font-size:1.1rem; font-weight:800; color:var(--red); letter-spacing:2px;}
+
+/* revision sheet */
+.rev-sheet{
+  background:#0f1b3d; color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.rev-sheet h2{color:var(--gold); font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-box{background:rgba(255,255,255,0.06); border-radius:10px; padding:10px; border-left:4px solid var(--gold);}
+.rev-box h4{font-size:0.85rem; color:#ffd97a; margin-bottom:4px;}
+.rev-box p, .rev-box li{font-size:0.78rem; color:#e8e8f5;}
+.rev-box ul{margin-left:16px;}
+
+/* last day */
+.lastday{
+  background:var(--red); color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.lastday h2{color:#fff; font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.lastday .item{background:rgba(255,255,255,0.12); border-radius:10px; padding:9px 12px; margin-bottom:8px; font-size:0.82rem;}
+.lastday .item b{color:var(--gold);}
+
+/* mindmap */
+.mindmap{display:flex; flex-direction:column; align-items:center; gap:10px;}
+.mm-center{
+  background:var(--red); color:#fff; padding:12px 20px; border-radius:50px;
+  font-weight:700; font-size:0.95rem; text-align:center; box-shadow:0 4px 10px rgba(200,16,46,0.3);
+}
+.mm-branches{display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;}
+.mm-branch{
+  background:var(--blue); color:#fff; border-radius:12px; padding:10px; font-size:0.8rem; text-align:center;
+}
+.mm-branch .sub{display:block; font-size:0.68rem; color:#cfe0ff; margin-top:4px;}
+
+footer{text-align:center; padding:24px 16px; font-size:0.75rem; color:var(--muted);}
+
+.accordion-btn{
+  width:100%; text-align:right; background:var(--gold); color:#3a3000; border:none;
+  padding:10px 14px; border-radius:10px; font-size:0.88rem; font-weight:700; margin-bottom:6px;
+}
+
+@media(min-width:700px){
+  nav.toc ol{grid-template-columns:1fr 1fr 1fr;}
+  .rev-grid{grid-template-columns:1fr 1fr;}
+  .mm-branches{grid-template-columns:1fr 1fr 1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>🏛️ आकस्मिक श्रमिक (CASUAL LABOURER)</h1>
+  <div class="sub">DoPT Estt(C) Section — Complete Exam Guide <span class="eng">| Casual Labourer — Full Provisions</span></div>
+  <div class="dept">Department of Personnel & Training | Establishment (C) Section</div>
+  <div class="badge-row">
+    <span class="badge">📘 IP Exam — Paper II/III उपयोगी</span>
+    <span class="badge">📄 20 OMs Covered</span>
+    <span class="badge">🗓️ 1988–2020</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <h2>📑 विषय सूची (Contents)</h2>
+  <ol>
+    <li><a href="#mindmap">🧠 माइंड मैप</a></li>
+    <li><a href="#partA">A. नियुक्ति/वेतन/छुट्टी</a></li>
+    <li><a href="#partB">B. स्कीम 1993</a></li>
+    <li><a href="#partC">C. अतिरिक्त लाभ (CL-TS)</a></li>
+    <li><a href="#partD">D. उमा देवी जजमेंट</a></li>
+    <li><a href="#timeline">🗓️ OM टाइमलाइन</a></li>
+    <li><a href="#compare">⚖️ तुलना चार्ट</a></li>
+    <li><a href="#mnemonics">🧩 मेमोरी ट्रिक्स</a></li>
+    <li><a href="#revision">📝 रिवीजन शीट</a></li>
+    <li><a href="#lastday">🔥 लास्ट डे नोट्स</a></li>
+  </ol>
+</nav>
+
+<div class="legend">
+  <span>🔴 <b>बहुत महत्वपूर्ण</b> (Very Imp for Exam)</span>
+  <span>🟠 <b>बार-बार पूछा गया</b> (Frequently Asked)</span>
+  <span>🟡 <b>कॉन्सेप्ट समझें</b> (Conceptual)</span>
+  <span>🟢 <b>क्विक रिवीजन</b> (Quick Revision)</span>
+</div>
+
+<!-- CHAPTER BREAKDOWN TREE -->
+<section>
+  <div class="section-head">
+    <div class="icon">🌳</div>
+    <h2>Chapter → Sub-Chapter → Micro → Nano Topic <span class="eng">Structural Breakdown</span></h2>
+  </div>
+  <div class="card">
+    <div class="tree">
+      <div class="tree-node l1"><span class="lab">Chapter</span><div class="txt">आकस्मिक श्रमिक (Casual Labourer)</div></div>
+      <div class="tree-node l2"><span class="lab">Sub-Chapter A</span><div class="txt">नियुक्ति, वेतन व छुट्टी</div></div>
+      <div class="tree-node l3"><span class="lab">Micro Topic</span><div class="txt">नियुक्ति नियम — कैज़ुअल कार्य की प्रकृति</div></div>
+      <div class="tree-node l4"><span class="lab">Nano Topic</span><div class="txt">1/30वां वेतन नियम, न्यूनतम मजदूरी अधिनियम 1948</div></div>
+      <div class="tree-node l2"><span class="lab">Sub-Chapter B</span><div class="txt">स्कीम ऑफ 1993 — Temporary Status</div></div>
+      <div class="tree-node l3"><span class="lab">Micro Topic</span><div class="txt">पात्रता, लाभ, नियमितीकरण की शर्तें</div></div>
+      <div class="tree-node l4"><span class="lab">Nano Topic</span><div class="txt">240/206 दिन नियम; 2 में से 1 वेकेंसी नियम</div></div>
+      <div class="tree-node l2"><span class="lab">Sub-Chapter C</span><div class="txt">CL-TS को अतिरिक्त लाभ</div></div>
+      <div class="tree-node l3"><span class="lab">Micro Topic</span><div class="txt">भत्ते, GPF, पेंशन, 7वां CPC</div></div>
+      <div class="tree-node l4"><span class="lab">Nano Topic</span><div class="txt">पैटरनिटी लीव 15 दिन; 300 दिन लीव सीमा</div></div>
+      <div class="tree-node l2"><span class="lab">Sub-Chapter D</span><div class="txt">उमा देवी जजमेंट — नियमितीकरण</div></div>
+      <div class="tree-node l3"><span class="lab">Micro Topic</span><div class="txt">10 वर्ष सेवा, वन-टाइम मेज़र</div></div>
+      <div class="tree-node l4"><span class="lab">Nano Topic</span><div class="txt">M.L. Kesari केस स्पष्टीकरण</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MIND MAP -->
+<section id="mindmap">
+  <div class="section-head">
+    <div class="icon">🧠</div>
+    <h2>माइंड मैप — पूरा विषय एक नज़र में <span class="eng">Mind Map Overview</span></h2>
+  </div>
+  <div class="card">
+    <div class="mindmap">
+      <div class="mm-center">आकस्मिक श्रमिक<br><span style="font-size:0.7rem;">Casual Labourer</span></div>
+      <div class="mm-branches">
+        <div class="mm-branch">A. नियुक्ति/वेतन/छुट्टी<span class="sub">1/30 वेतन, साप्ताहिक अवकाश</span></div>
+        <div class="mm-branch">B. स्कीम 1993<span class="sub">Temporary Status, नियमितीकरण</span></div>
+        <div class="mm-branch">C. CL-TS अतिरिक्त लाभ<span class="sub">भत्ता, GPF, पेंशन</span></div>
+        <div class="mm-branch">D. उमा देवी जजमेंट<span class="sub">10 वर्ष, One-Time Measure</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART A -->
+<section id="partA">
+  <div class="section-head">
+    <div class="icon">A</div>
+    <h2>नियुक्ति, वेतन/मजदूरी, छुट्टी <span class="eng">Appointment, Pay/Wages, Leave</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> नियुक्ति के नियम <span class="eng">Appointment Rules</span></h3>
+    <ul>
+      <li>नियमित प्रकृति के काम के लिए दैनिक वेतनभोगी (casual worker) की भर्ती <b>नहीं</b> होनी चाहिए।</li>
+      <li>दैनिक वेतनभोगी की भर्ती केवल <b>casual/seasonal/intermittent</b> या पार्ट-टाइम प्रकृति के काम के लिए हो सकती है, जहाँ नियमित पद नहीं बनाए जा सकते।</li>
+      <li>प्रशासनिक विभाग नियमित स्टाफ के काम का पुनर्मूल्यांकन कर casual worker का काम नियमित कर्मचारियों को सौंप सकते हैं।</li>
+    </ul>
+    <div class="om">O.M. No. 49014/2/86-Estt(C) dt. 07.06.1988 | O.M. No. 49014/1/2017-Estt(C) dt. 04.09.2019</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Casual Labourer की भर्ती किस प्रकार के कार्य के लिए की जा सकती है?</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> वेतन/मजदूरी नियम <span class="eng">Pay/Wages</span></h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>स्थिति</th><th>भुगतान का आधार</th></tr>
+        <tr><td>कार्य नियमित कर्मचारी के समान</td><td>न्यूनतम वेतनमान का <b>1/30वां</b> भाग + DA (8 घंटे कार्य हेतु)</td></tr>
+        <tr><td>कार्य नियमित कर्मचारी से भिन्न</td><td>Minimum Wages Act, 1948 अनुसार न्यूनतम मजदूरी (केंद्र/राज्य जो अधिक हो)</td></tr>
+      </table>
+    </div>
+    <div class="om">O.M. No. 49014/2/86-Estt(C) dt. 07.06.1988 | O.M. No. 49014/1/2017-Estt(C) dt. 04.09.19</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> समान कार्य के लिए Casual Worker को कितना वेतन मिलता है? — <b>1/30वां भाग</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> छुट्टी नियम <span class="eng">Leave Rules</span></h3>
+    <ul>
+      <li>6 दिन लगातार कार्य के बाद <b>1 दिन paid weekly off</b>।</li>
+      <li>भुगतान केवल वास्तविक कार्य-दिवसों के लिए + National Holiday (यदि कार्य-दिवस पर पड़े)।</li>
+      <li>5-दिवसीय सप्ताह वाले कार्यालयों में — सप्ताह में <b>न्यूनतम 40 घंटे</b> कार्य पर 1 paid weekly off।</li>
+    </ul>
+    <div class="om">O.M. No. 49014/2/86-Estt(C) dt. 07.06.1988 | O.M. No. 49019/1/95-Estt(C) dt. 19.07.2016</div>
+  </div>
+</section>
+
+<!-- PART B -->
+<section id="partB">
+  <div class="section-head">
+    <div class="icon">B</div>
+    <h2>स्कीम ऑफ 1993 <span class="eng">Temporary Status & Regularisation Scheme</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> पात्रता <span class="eng">Eligibility</span></h3>
+    <ul>
+      <li>लागू: DoPT के अधीन Ministries/Departments + संबद्ध/अधीनस्थ कार्यालय।</li>
+      <li><b>लागू नहीं:</b> Railways, Department of Telecommunication, <b>Department of Posts</b> (इनकी अपनी अलग स्कीम है!) ⚠️</li>
+      <li>Temporary Status हेतु शर्त: <b>कम से कम 1 वर्ष सतत सेवा = 240 दिन</b> (5-दिवसीय सप्ताह कार्यालय में <b>206 दिन</b>)।</li>
+      <li>यह Group 'D' (erstwhile) पदों की उपलब्धता से स्वतंत्र है।</li>
+    </ul>
+    <div class="om">O.M. No. 51016/2/90-Estt(C) dt. 10.09.1993</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> क्या यह स्कीम Department of Posts पर लागू होती है? — <b>नहीं</b>, डाक विभाग की अपनी अलग स्कीम है।</div>
+  </div>
+
+  <!-- Decision tree -->
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> निर्णय वृक्ष — Temporary Status मिलेगा या नहीं? <span class="eng">Decision Tree</span></h3>
+    <div class="decision">
+      <div class="d-q">क्या 10.09.1993 को कार्यरत था और 240/206 दिन पूरे किए?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → Temporary Status मिलेगा</div>
+        <div class="d-no">❌ नहीं → Temporary Status नहीं मिलेगा</div>
+      </div>
+      <div class="d-q">क्या Employment Exchange से नियुक्त हुआ?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → वैध, TS पात्र</div>
+        <div class="d-no">❌ नहीं → नियुक्ति अनियमित, TS अपात्र</div>
+      </div>
+      <div class="d-q">क्या Part-Time Casual Employee है?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → TS <b>नहीं</b> मिलेगा</div>
+        <div class="d-no">❌ नहीं (Full-Time) → TS पात्र (अन्य शर्तें पूरी होने पर)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> स्कीम 1993 के लाभ <span class="eng">Benefits</span></h3>
+    <ul>
+      <li>Group 'D' न्यूनतम वेतनमान + DA + HRA पर दैनिक वेतन।</li>
+      <li>वार्षिक Increment — 240/206 दिन कार्य पर।</li>
+      <li>छुट्टी: <b>हर 10 दिन कार्य पर 1 दिन</b> (pro-rata); Casual/अन्य छुट्टी नहीं, केवल Maternity Leave मान्य।</li>
+      <li>नियमितीकरण पर बकाया छुट्टी carry-forward होगी, पर <b>Leave Encashment नहीं</b> मिलेगा।</li>
+      <li>नियमितीकरण के बाद <b>50% TS सेवा</b> रिटायरमेंट बेनिफिट में गिनी जाएगी।</li>
+      <li>3 वर्ष सतत TS सेवा पश्चात GPF योगदान + Festival/Flood Advance (2 permanent surety चाहिए)।</li>
+    </ul>
+    <div class="om">O.M. No. 51016/2/90-Estt(C) dt. 10.09.1993</div>
+  </div>
+
+  <!-- Flowchart Regularisation -->
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> नियमितीकरण प्रक्रिया <span class="eng">Regularisation Flowchart</span></h3>
+    <div class="flow">
+      <div class="flow-box">Group 'D' (erstwhile/अब Group 'C') में रिक्ति उत्पन्न</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box alt"><b>2 में से 1</b> वेकेंसी CL-TS से भरी जाएगी (Extant Recruitment Rules अनुसार)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Surplus Regular Group 'D' स्टाफ को पहले Absorption का अधिकार</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box end">आयु में छूट = CL के रूप में कार्य किए वर्षों के बराबर</div>
+    </div>
+    <div class="qbox"><b>ट्रैप:</b> Group D→C अपग्रेड के बाद भर्ती अब केवल <b>SSC</b> से; Ministries अपने-आप Regularisation नहीं कर सकते — DoPT + Dept of Expenditure की सहमति चाहिए।</div>
+    <div class="om">O.M. No. 51016/2/90-Estt(C) dt. 10.09.1993 | O.M. No. 49014/3/2014-Estt(C) dt. 16.10.2014</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> महत्वपूर्ण स्पष्टीकरण (Q&A) — 1994 <span class="eng">Clarifications</span></h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>प्रश्न</th><th>उत्तर</th></tr>
+        <tr><td>Employment Exchange के बिना नियुक्ति पर TS?</td><td>नहीं — अनियमित नियुक्ति</td></tr>
+        <tr><td>Part-time को TS?</td><td>नहीं</td></tr>
+        <tr><td>आयु सीमा पार करने वाले को TS?</td><td>TS को कोई आयु सीमा नहीं (Regularisation के लिए लागू होगी)</td></tr>
+        <tr><td>वेतन किस Sub-Head से?</td><td>'Wages' सब-हेड से</td></tr>
+        <tr><td>Leave Frequency</td><td>वर्ष में 2 बार — 1 जनवरी व 1 जुलाई</td></tr>
+      </table>
+    </div>
+    <div class="om">O.M. No. 49014/2/93-Estt(C) dt. 12.07.1994</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Mohan Pal केस — सुप्रीम कोर्ट निर्णय <span class="eng">SC Judgement</span></h3>
+    <ul>
+      <li>स्कीम 1993 <b>Ongoing Scheme नहीं है</b> — यह One-Time था।</li>
+      <li>TS केवल उन्हीं को मिलेगा जो 10.09.1993 को कार्यरत थे और 240/206 दिन सेवा पूरी की।</li>
+      <li>जिन्हें पहले से TS मिल चुका, उन्हें वापस नहीं लिया जाएगा।</li>
+      <li>TS प्राप्त श्रमिक को मनमाने ढंग से नहीं हटाया जा सकता — केवल गंभीर कदाचार पर।</li>
+    </ul>
+    <div class="om">O.M. No. 40011/6/2002-Estt(C) dt. 06.06.2002</div>
+  </div>
+</section>
+
+<!-- PART C -->
+<section id="partC">
+  <div class="section-head">
+    <div class="icon">C</div>
+    <h2>CL-TS को अतिरिक्त लाभ <span class="eng">Additional Benefits to CL-TS</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> भत्ते व छुट्टी लाभ <span class="eng">Allowances & Leave</span></h3>
+    <ul>
+      <li>Transport Allowance — सामान्य दर; <b>दिव्यांग (Physically Handicapped)</b> को <b>दोगुनी दर</b>।</li>
+      <li>Leave Accumulation सीमा — नियमित कर्मचारियों समान अधिकतम <b>300 दिन</b>।</li>
+      <li>Paternity Leave — <b>15 दिन</b> (2 से कम जीवित संतान होने पर), पत्नी के प्रसव के दौरान, वेतन सहित।</li>
+      <li>Paternity Leave छुट्टी खाते में डेबिट नहीं होगी; pro-rata Earned Leave के साथ जोड़ी जा सकती है।</li>
+    </ul>
+    <div class="om">O.M. No.49014/2/2008-Estt(C) dt. 04.08.2008 | O.M. No.49014/3/2007-Estt(C) dt. 18.10.2007 | O.M. No.49014/1/98-Estt(C) dt. 01.04.1998</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> CL-TS की Paternity Leave कितने दिनों की है? — <b>15 दिन</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> GPF व पेंशन लाभ <span class="eng">GPF & Pensionary Benefits</span></h3>
+    <ul>
+      <li>TS मिलने के <b>3 वर्ष बाद</b> — GPF में योगदान की पात्रता।</li>
+      <li>Regularisation पर <b>50% TS सेवा</b> रिटायरमेंट बेनिफिट में गिनी जाएगी (चाहे 31.12.2003 से पहले या बाद रेगुलराइज़ हुआ हो)।</li>
+      <li>NPS खाते से GPF खाते में राशि स्थानांतरण की प्रक्रिया — CGA द्वारा स्पष्ट।</li>
+      <li>Old Pension Scheme चुनने पर — संपूर्ण NPS राशि (Employee + Govt Contribution + Appreciation) PAO के bank में वापस।</li>
+    </ul>
+    <div class="om">O.M. No.49014/2/2014-Estt(C)-Pt-I dt. 11.10.2018 | O.M.No.49014/2/2014-Estt(C) dt. 28.07.2016 | dt. 26.02.2016</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> 7वां CPC के अनुसार वेतन <span class="eng">Pay as per 7th CPC</span></h3>
+    <ul>
+      <li>w.e.f. <b>01.01.2016</b> — CL-TS को Group 'C', <b>Level 1 Pay Matrix</b> अनुसार वेतन (यदि Matriculate)।</li>
+      <li>Non-Matriculate CL-TS को यह लाभ केवल आवश्यक Training के बाद मिलेगा।</li>
+    </ul>
+    <div class="om">O.M. No.49011/2/2017-Estt(C) dt. 19.02.2018</div>
+  </div>
+</section>
+
+<!-- PART D -->
+<section id="partD">
+  <div class="section-head">
+    <div class="icon">D</div>
+    <h2>उमा देवी जजमेंट <span class="eng">Uma Devi Judgement — Regularisation of Irregular Workers</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> मूल निर्णय <span class="eng">Core Ruling</span></h3>
+    <ul>
+      <li>केस: <b>Secretary, State of Karnataka & Ors. Vs. Uma Devi & Others</b> (Civil Appeal No. 3595-3612/1999)।</li>
+      <li>निर्णय तिथि: <b>10.04.2006</b> (Constitution Bench)।</li>
+      <li>One-Time Measure — जो कर्मचारी योग्य हैं (statutory recruitment rules अनुसार) और <b>10 वर्ष या अधिक</b> sanctioned पद पर कार्यरत हैं (Court/Tribunal के आदेश की सुरक्षा के बिना), उन्हें नियमित किया जा सकता है।</li>
+      <li>यदि नियुक्ति स्वयं नियमों/संविधान के विरुद्ध है → उसे नियमित <b>नहीं</b> किया जा सकता (Illegal ≠ Irregular)।</li>
+    </ul>
+    <div class="om">O.M. No. 49019/1/2006-Estt(C) dt. 11.12.2006</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> उमा देवी जजमेंट किस वर्ष आया? — <b>2006</b> (10.04.2006)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> जजमेंट के प्रमुख बिंदु <span class="eng">Key Paragraphs</span></h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>Para</th><th>बिंदु</th></tr>
+        <tr><td>Para 1</td><td>Equality of Opportunity — संवैधानिक आधार</td></tr>
+        <tr><td>Para 2</td><td>Vacancy भरना मनमाने ढंग से नहीं हो सकता</td></tr>
+        <tr><td>Para 5</td><td>State = Model Employer, Article 309 अनुसार नियुक्ति</td></tr>
+        <tr><td>Para 27</td><td>Regularisation = भर्ती का तरीका नहीं; लंबी सेवा = अधिकार नहीं</td></tr>
+        <tr><td>Para 30</td><td>बिना विज्ञापन/चयन के नियुक्ति = Article 16 का उल्लंघन</td></tr>
+        <tr><td>Para 34</td><td>Contractual नियुक्ति — Contract समाप्ति पर नियुक्ति समाप्त</td></tr>
+        <tr><td>Para 44</td><td><b>One-Time नियमितीकरण उपाय</b> — 10 वर्ष सेवा शर्त</td></tr>
+        <tr><td>Para 46</td><td>Equal Pay for Equal Work — निर्णय की तारीख से लागू, engagement की तारीख से नहीं</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> M.L. Kesari केस स्पष्टीकरण (2010) <span class="eng">Clarifications</span></h3>
+    <ul>
+      <li>Sanctioned post पर <b>10 वर्ष+ बिना Interim Order</b> की सुरक्षा के कार्यरत होना चाहिए।</li>
+      <li><b>Illegal ≠ Irregular</b>: बिना sanctioned post/बिना न्यूनतम योग्यता = Illegal (नियमित नहीं होगा)। योग्य व्यक्ति जो sanctioned post पर पर बिना Open Competition के चुना गया = Irregular (नियमित हो सकता है)।</li>
+      <li>One-Time Exercise में छूटे पात्र कर्मचारियों का मामला भी शामिल किया जाएगा — 6 माह सीमा समाप्त होने पर भी अधिकार समाप्त नहीं होता।</li>
+    </ul>
+    <div class="om">State of Karnataka Vs. M.L. Kesari, dt. 03.08.2010</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> प्रशासनिक निर्देश <span class="eng">Administrative Directions</span></h3>
+    <p>सभी प्रशासनिक प्राधिकरण उमा देवी सिद्धांतों के आधार पर न्यायालय के मामलों का प्रभावी बचाव करें, समय-सीमा के भीतर उत्तर/अपील दाखिल करें। इसमें लापरवाही पर <b>अनुशासनात्मक कार्रवाई</b> हो सकती है।</p>
+    <div class="om">O.M. No. 49014/7/2020-Estt.(C) dt. 07.10.2020</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> महत्वपूर्ण नोट्स</h3>
+    <ul>
+      <li><b>Note 1:</b> स्कीम 1993 और उमा देवी नियमितीकरण दोनों <b>One-Time Measure</b> हैं — कोई नई स्कीम जारी नहीं हुई।</li>
+      <li><b>Note 2:</b> सभी OMs की सूची Annexure में — DoPT वेबसाइट के Archive Section से उपलब्ध।</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-head">
+    <div class="icon">🗓️</div>
+    <h2>OM टाइमलाइन (1988–2020) <span class="eng">Timeline of Key Office Memoranda</span></h2>
+  </div>
+  <div class="card">
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">07.06.1988</div><div class="t-desc">नियुक्ति नियम व 1/30वां वेतन नियम — मूल OM 🔴</div></div>
+      <div class="t-item"><div class="t-date">10.09.1993</div><div class="t-desc"><b>स्कीम ऑफ 1993</b> — Temporary Status व Regularisation शुरू 🔴</div></div>
+      <div class="t-item"><div class="t-date">12.07.1994</div><div class="t-desc">स्कीम 1993 पर स्पष्टीकरण (6 प्रश्न-उत्तर) 🟠</div></div>
+      <div class="t-item"><div class="t-date">01.04.1998</div><div class="t-desc">Transport Allowance + Paternity Leave (15 दिन) 🟠</div></div>
+      <div class="t-item"><div class="t-date">06.06.2002</div><div class="t-desc">Mohan Pal केस — स्कीम One-Time घोषित 🔴</div></div>
+      <div class="t-item"><div class="t-date">18.10.2007</div><div class="t-desc">Leave Accumulation सीमा — 300 दिन 🟢</div></div>
+      <div class="t-item"><div class="t-date">09.05.2008</div><div class="t-desc">Regularisation पर Pay Fixation — पूर्व Increment गिनना 🟡</div></div>
+      <div class="t-item"><div class="t-date">04.08.2008</div><div class="t-desc">दिव्यांग CL-TS को दोगुना Transport Allowance 🟢</div></div>
+      <div class="t-item"><div class="t-date">10.04.2006</div><div class="t-desc"><b>उमा देवी जजमेंट</b> — 10 वर्ष सेवा नियमितीकरण 🔴</div></div>
+      <div class="t-item"><div class="t-date">11.12.2006</div><div class="t-desc">उमा देवी जजमेंट पर DoPT OM जारी 🔴</div></div>
+      <div class="t-item"><div class="t-date">03.08.2010</div><div class="t-desc">M.L. Kesari केस — उमा देवी स्पष्टीकरण 🟠</div></div>
+      <div class="t-item"><div class="t-date">16.10.2014</div><div class="t-desc">Group D→C अपग्रेड, SSC भर्ती अनिवार्य 🟠</div></div>
+      <div class="t-item"><div class="t-date">26.02.2016 / 28.07.2016</div><div class="t-desc">NPS→GPF स्थानांतरण प्रक्रिया 🟡</div></div>
+      <div class="t-item"><div class="t-date">14.06.2016 / 19.07.2016</div><div class="t-desc">सख्त अनुपालन निर्देश + 5-दिवसीय सप्ताह छुट्टी नियम 🟢</div></div>
+      <div class="t-item"><div class="t-date">19.02.2018</div><div class="t-desc">7वां CPC — Level 1 Pay Matrix लागू (01.01.2016 से) 🟠</div></div>
+      <div class="t-item"><div class="t-date">11.10.2018</div><div class="t-desc">Old Pension Scheme चयन पर NPS राशि वापसी नियम 🟡</div></div>
+      <div class="t-item"><div class="t-date">04.09.2019</div><div class="t-desc">नियुक्ति नियमों की पुनः पुष्टि 🟢</div></div>
+      <div class="t-item"><div class="t-date">07.10.2020</div><div class="t-desc">कोर्ट केस बचाव हेतु प्रशासनिक निर्देश 🟡</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare">
+  <div class="section-head">
+    <div class="icon">⚖️</div>
+    <h2>तुलना चार्ट <span class="eng">Comparison Charts</span></h2>
+  </div>
+
+  <div class="card">
+    <h3>Casual Labourer (CL) बनाम CL with Temporary Status (CL-TS)</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>बिंदु</th><th>CL (सामान्य)</th><th>CL-TS</th></tr>
+        <tr><td>छुट्टी</td><td>केवल Weekly Off</td><td>10 दिन कार्य पर 1 दिन + Maternity/Paternity</td></tr>
+        <tr><td>GPF</td><td>नहीं</td><td>3 वर्ष TS सेवा बाद — हाँ</td></tr>
+        <tr><td>Bonus</td><td>नहीं</td><td>PLB/Adhoc Bonus (CL दर पर)</td></tr>
+        <tr><td>Increment</td><td>नहीं</td><td>हाँ (Group D दर पर)</td></tr>
+        <tr><td>Transport Allowance</td><td>नहीं</td><td>हाँ (दिव्यांग को दोगुना)</td></tr>
+        <tr><td>Retirement Benefit</td><td>नहीं</td><td>50% सेवा गिनी जाएगी (Regularisation पर)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Illegal Appointment बनाम Irregular Appointment (उमा देवी)</h3>
+    <div class="compare">
+      <div class="col old">
+        <h4>❌ Illegal (नियमित नहीं होगा)</h4>
+        <ul>
+          <li>Sanctioned Post नहीं</li>
+          <li>न्यूनतम योग्यता नहीं</li>
+          <li>संविधान/नियम का उल्लंघन</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h4>✅ Irregular (नियमित हो सकता है)</h4>
+        <ul>
+          <li>Sanctioned Post पर कार्यरत</li>
+          <li>निर्धारित योग्यता मौजूद</li>
+          <li>केवल Open Competition नहीं हुआ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>स्कीम 1993 बनाम उमा देवी नियमितीकरण</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>बिंदु</th><th>स्कीम 1993</th><th>उमा देवी (2006)</th></tr>
+        <tr><td>लागू पर</td><td>Casual Labourer</td><td>अनियमित रूप से नियुक्त कर्मचारी</td></tr>
+        <tr><td>सेवा शर्त</td><td>240/206 दिन = 1 वर्ष</td><td>10 वर्ष+ Sanctioned Post पर</td></tr>
+        <tr><td>प्रकार</td><td>One-Time (10.09.1993 तक कार्यरत)</td><td>One-Time (10.04.2006 तक 10 वर्ष पूर्ण)</td></tr>
+        <tr><td>Dept of Posts पर लागू?</td><td>नहीं (अलग स्कीम)</td><td>सामान्य सिद्धांत लागू</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- MNEMONICS -->
+<section id="mnemonics">
+  <div class="section-head">
+    <div class="icon">🧩</div>
+    <h2>मेमोरी ट्रिक्स व मनेमोनिक्स <span class="eng">Memory Tricks</span></h2>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"२४० = २ लोग, ४ काम, ० छुट्टी"</div>
+    <p>याद रखें: सामान्य कार्यालय में <b>240 दिन</b>, 5-दिवसीय सप्ताह कार्यालय में <b>206 दिन</b> = Temporary Status हेतु 1 वर्ष सेवा।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"2 में 1 CL-TS को, 1 Surplus को पहले"</div>
+    <p>Group D/C की <b>2 में से 1 वेकेंसी</b> CL-TS से भरी जाती है; बाकी सामान्य भर्ती से — पर Surplus Group D स्टाफ को पहला हक।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"3-3-10: तीन साल GPF, दस साल उमा देवी"</div>
+    <p>TS के <b>3 वर्ष बाद</b> GPF योगदान शुरू; उमा देवी में <b>10 वर्ष</b> सेवा नियमितीकरण की शर्त — दोनों को मिलाकर भ्रमित न हों!</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"P for Paternity = 15, L for Leave-Limit = 300"</div>
+    <p>Paternity Leave = <b>15 दिन</b>; अधिकतम Leave Accumulation = <b>300 दिन</b> (नियमित कर्मचारी के समान)।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"डाक विभाग बाहर — रेलवे, टेलीकॉम भी बाहर"</div>
+    <p>स्कीम 1993 — Department of Posts, Railways, Telecommunication पर लागू <b>नहीं</b> होती (इनकी खुद की स्कीम है)। यह सबसे बड़ा एग्जाम ट्रैप है!</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"Illegal = कमी नियम में, Irregular = कमी प्रक्रिया में"</div>
+    <p>Illegal = Sanctioned post/योग्यता की कमी (नियमित नहीं)। Irregular = सिर्फ Open Competition नहीं हुआ (नियमित हो सकता है)।</p>
+  </div>
+</section>
+
+<!-- REVISION SHEET -->
+<section id="revision">
+  <div class="rev-sheet">
+    <h2>📝 वन-पेज रिवीजन शीट <span class="eng" style="color:#cfcfff;">One Page Revision Sheet</span></h2>
+    <div class="rev-grid">
+      <div class="rev-box">
+        <h4>🔑 मूल संख्याएं</h4>
+        <ul>
+          <li>Temporary Status: 240 दिन (206 — 5-दिवसीय सप्ताह)</li>
+          <li>1/30वां वेतन नियम (समान कार्य)</li>
+          <li>Leave: 10 दिन कार्य = 1 दिन छुट्टी</li>
+          <li>Leave Accumulation सीमा: 300 दिन</li>
+          <li>Retirement Benefit: 50% TS सेवा गिनी जाए</li>
+          <li>GPF पात्रता: TS के 3 वर्ष बाद</li>
+          <li>Vacancy: 2 में से 1 CL-TS को</li>
+          <li>Paternity Leave: 15 दिन (2 से कम संतान)</li>
+          <li>उमा देवी: 10 वर्ष सेवा (Sanctioned Post)</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>📜 मुख्य केस/जजमेंट</h4>
+        <ul>
+          <li>Mohan Pal (2002) — स्कीम 1993 One-Time</li>
+          <li>Uma Devi (10.04.2006) — 10 वर्ष नियमितीकरण</li>
+          <li>M.L. Kesari (03.08.2010) — Illegal vs Irregular स्पष्ट</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>⚠️ एग्जाम ट्रैप</h4>
+        <ul>
+          <li>Dept of Posts स्कीम 1993 में शामिल नहीं</li>
+          <li>Part-Time को TS नहीं मिलता</li>
+          <li>Employment Exchange के बिना नियुक्ति = TS अपात्र</li>
+          <li>Regularisation पर Leave Encashment नहीं</li>
+          <li>Group D→C अपग्रेड — भर्ती अब SSC से ही</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>🏛️ प्राधिकरण</h4>
+        <ul>
+          <li>DoPT — Establishment (C) Section (नोडल)</li>
+          <li>CGA — NPS→GPF ट्रांसफर मोडैलिटी</li>
+          <li>Department of Expenditure — Regularisation में सहमति आवश्यक</li>
+          <li>SSC — Group C भर्ती (Level 1, PB-1)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAST DAY -->
+<section id="lastday">
+  <div class="lastday">
+    <h2>🔥 लास्ट डे रिवीजन नोट्स <span class="eng" style="color:#ffe3e3;">Last Day Revision Notes</span></h2>
+    <div class="item"><b>1.</b> स्कीम 1993 = <b>One-Time</b> (Ongoing नहीं) — केवल 10.09.1993 को कार्यरत + 240/206 दिन सेवा वालों को TS।</div>
+    <div class="item"><b>2.</b> Dept of Posts, Railways, Telecom — स्कीम 1993 से <b>बाहर</b>।</div>
+    <div class="item"><b>3.</b> समान कार्य पर 1/30वां वेतन; भिन्न कार्य पर Minimum Wages Act 1948।</div>
+    <div class="item"><b>4.</b> TS छुट्टी = 10 दिन कार्य पर 1 दिन; अधिकतम संचय 300 दिन।</div>
+    <div class="item"><b>5.</b> TS के 3 वर्ष बाद GPF; Regularisation पर 50% सेवा रिटायरमेंट में गिनी जाए।</div>
+    <div class="item"><b>6.</b> Group D/C में 2 में से 1 वेकेंसी CL-TS को; Surplus Group D को प्राथमिकता।</div>
+    <div class="item"><b>7.</b> Uma Devi (2006) — 10 वर्ष Sanctioned Post सेवा, बिना Court Order की सुरक्षा।</div>
+    <div class="item"><b>8.</b> Illegal appointment नियमित नहीं होगी; Irregular हो सकती है (M.L. Kesari, 2010)।</div>
+    <div class="item"><b>9.</b> 7वां CPC — 01.01.2016 से Level 1 Pay Matrix (Matriculate CL-TS)।</div>
+    <div class="item"><b>10.</b> Paternity Leave 15 दिन; Transport Allowance दिव्यांग को दोगुना।</div>
+  </div>
+</section>
+
+<footer>
+  📚 IP Exam Preparation Portal | Source: DoPT O.M. Compilation on Casual Labourer<br>
+  Prepared for Ahmedabad L-1, India Post | ऑफलाइन उपयोग हेतु सुरक्षित
+</footer>
+
+</body>
+</html>

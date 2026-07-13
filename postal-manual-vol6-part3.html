@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume VI Part III — Sub-Accounts & Postmen Duties | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#1B3A6B; --ip-gold:#E8A317;
+  --vimp:#C8102E; --freq:#E8720C; --conc:#D9A404; --quick:#1E8449;
+  --bg:#F6F4EF; --card:#FFFFFF; --ink:#22252A; --muted:#5B6068;
+  --line:#E2DFD7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Mangal','Nirmala UI',Georgia,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15.5px}
+.wrap{max-width:860px;margin:0 auto;padding:0 12px 60px}
+
+header.hero{background:linear-gradient(135deg,var(--ip-blue) 0%,#12294e 60%,#0c1d38 100%);color:#fff;padding:28px 16px 22px;text-align:center;border-bottom:5px solid var(--ip-gold)}
+header.hero .badge{display:inline-block;background:var(--ip-red);color:#fff;font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+header.hero h1{font-size:clamp(20px,4.5vw,30px);line-height:1.3}
+header.hero h1 .en{display:block;font-style:italic;font-weight:400;font-size:.72em;opacity:.9;margin-top:4px}
+header.hero .sub{margin-top:10px;font-size:13px;opacity:.85}
+header.hero .sub b{color:var(--ip-gold)}
+header.hero .exclude{margin-top:8px;font-size:12px;background:rgba(0,0,0,.25);border-radius:8px;padding:6px 10px;display:inline-block}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0}
+.legend span{font-size:12.5px;padding:4px 10px;border-radius:16px;font-weight:600}
+.lg-r{background:#FDECEE;color:var(--vimp)} .lg-o{background:#FEF0E2;color:var(--freq)}
+.lg-y{background:#FCF6DE;color:#9a7500} .lg-g{background:#E7F5EC;color:var(--quick)}
+
+nav.chips{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.97);padding:8px 4px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+nav.chips a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ip-blue);background:#fff;border:1.5px solid var(--ip-blue);border-radius:18px;padding:5px 12px;text-decoration:none;white-space:nowrap}
+nav.chips a:active{background:var(--ip-blue);color:#fff}
+
+section.ch{margin:26px 0;scroll-margin-top:60px}
+.ch-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-num{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--ip-red);color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(200,16,46,.3)}
+.ch-num.blue{background:var(--ip-blue);box-shadow:0 3px 8px rgba(27,58,107,.3)}
+.ch-title h2{font-size:18px;color:var(--ip-blue);line-height:1.3}
+.ch-title .en{font-style:italic;font-weight:500;font-size:13px;color:var(--muted)}
+.ch-title .rules{font-size:11.5px;background:var(--ip-gold);color:#3a2b00;font-weight:700;border-radius:10px;padding:1px 8px;display:inline-block;margin-top:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.t-r{border-left:5px solid var(--vimp)} .card.t-o{border-left:5px solid var(--freq)}
+.card.t-y{border-left:5px solid var(--conc)} .card.t-g{border-left:5px solid var(--quick)}
+.card h3{font-size:15.5px;color:var(--ip-blue);margin-bottom:6px}
+.card h3 .en{display:block;font-style:italic;font-weight:500;font-size:12.5px;color:var(--muted)}
+.hi{font-weight:700;display:block}
+.en{font-style:italic;color:#4a4f57;display:block;font-size:.93em}
+.rule-tag{display:inline-block;background:var(--ip-blue);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:middle}
+
+ul.points{list-style:none;margin-top:6px}
+ul.points li{padding:7px 0 7px 2px;border-bottom:1px dashed var(--line)}
+ul.points li:last-child{border-bottom:none}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:480px}
+th{background:var(--ip-blue);color:#fff;padding:8px;text-align:left;font-size:12.5px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAF9F5}
+td .en{font-size:.9em}
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.fbox{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 14px;text-align:center;max-width:440px;width:100%;font-size:14px}
+.fbox.start{background:var(--ip-blue);color:#fff;border-color:var(--ip-blue)}
+.fbox.start .en{color:#cfd9ea}
+.fbox.warn{border-color:var(--vimp);background:#FDECEE}
+.fbox.ok{border-color:var(--quick);background:#E7F5EC}
+.farrow{color:var(--ip-red);font-size:22px;line-height:1;padding:3px 0;font-weight:800}
+.farrow small{display:block;font-size:11px;color:var(--muted);font-weight:600;font-style:italic}
+
+.dtree .branch{display:flex;gap:8px;margin:6px 0}
+.dtree .branch>div{flex:1;border-radius:10px;padding:8px;font-size:13px;text-align:center}
+.dtree .yes{background:#E7F5EC;border:2px solid var(--quick)}
+.dtree .no{background:#FDECEE;border:2px solid var(--vimp)}
+
+.mindmap{position:relative;padding:8px 0}
+.mm-center{background:var(--ip-red);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:800;margin-bottom:12px;box-shadow:0 3px 10px rgba(200,16,46,.35)}
+.mm-center .en{color:#ffd9de;font-weight:500}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mm-node{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px;font-size:12.5px;text-align:center}
+.mm-node b{color:var(--ip-red);display:block;font-size:14px}
+.mm-node.excluded{border-color:#aaa;background:#f1f1f1;color:#888}
+.mm-node.excluded b{color:#999}
+.timeline{border-left:3px solid var(--ip-gold);margin:10px 0 10px 10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-gold)}
+.tl-item .when{font-weight:800;color:var(--ip-red);font-size:13.5px}
+
+.examq{background:#FFF8E8;border:1.5px dashed var(--ip-gold);border-radius:10px;padding:9px 12px;margin:8px 0;font-size:13.5px}
+.examq::before{content:"📝 संभावित प्रश्न / Probable Question";display:block;font-weight:800;color:#8a6400;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px}
+
+.mnemo{background:linear-gradient(135deg,#EEF3FB,#E4EBF7);border:1.5px solid var(--ip-blue);border-radius:12px;padding:11px 13px;margin:8px 0}
+.mnemo .key{font-size:17px;font-weight:800;color:var(--ip-red);letter-spacing:1px}
+
+.rev-sheet{background:#fff;border:3px solid var(--ip-red);border-radius:16px;padding:14px;margin:12px 0}
+.rev-sheet h3{background:var(--ip-red);color:#fff;border-radius:8px;padding:6px 10px;font-size:15px;margin:-2px -2px 10px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+.rev-cell{background:#FAF9F5;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.8px}
+.rev-cell b{color:var(--ip-blue)}
+.rev-cell .num{color:var(--ip-red);font-weight:800}
+
+.footer-note{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media print{nav.chips{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">IP EXAM PORTAL • PAPER I</span>
+  <h1>डाक मैनुअल भाग VI (भाग III) — दृश्य इन्फोग्राफिक
+    <span class="en">Postal Manual Volume VI Part III — Visual Infographic</span>
+  </h1>
+  <div class="sub">उप-लेखा, उप-डाकघर लेखे व पोस्टमैन कर्तव्य — <b>अध्याय I, II, III</b> • नियम 1–152</div>
+  <div class="exclude">⛔ बहिष्कृत / Excluded: परिशिष्ट A व B (Appendices — Combined P&T Offices, Non-combined Telegram Receiving Offices), Index, Table of Concordance</div>
+</header>
+<div class="wrap">
+
+<div class="legend">
+  <span class="lg-r">🔴 परीक्षा हेतु अति महत्वपूर्ण / Very Important</span>
+  <span class="lg-o">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="lg-y">🟡 अवधारणा / Conceptual</span>
+  <span class="lg-g">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+
+<nav class="chips">
+  <a href="#overview">परिचय</a>
+  <a href="#ch1">Ch 1 Sub-Accounts</a>
+  <a href="#ch2">Ch 2 SO Accounts</a>
+  <a href="#ch3gen">Ch 3 सामान्य</a>
+  <a href="#postmen">पोस्टमैन कर्तव्य</a>
+  <a href="#mo-delivery">MO भुगतान वितरण</a>
+  <a href="#penalty">🔴 दंड</a>
+  <a href="#village">ग्रामीण पोस्टमैन</a>
+  <a href="#others">मेल/लेटर-बॉक्स/पैकर</a>
+  <a href="#master">Master Numbers</a>
+  <a href="#mnemo">Mnemonics</a>
+  <a href="#rev">One-Page Revision</a>
+  <a href="#lastday">Last Day Notes</a>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="ch" id="overview">
+  <div class="ch-head">
+    <div class="ch-num blue">📘</div>
+    <div class="ch-title">
+      <h2>विषय एवं परिभाषा <span class="en">Topic & Definition</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 यह भाग किस बारे में है? <span class="en">What Does This Part Cover?</span></h3>
+    <span class="hi">भाग VI (भाग III) में <u>उप-लेखा प्रणाली</u> (H.O.–S.O. लेन-देन), <u>उप-डाकघर लेखे</u> (S.P.M. के कर्तव्य) तथा <u>पोस्टमैन, ग्रामीण पोस्टमैन, मेल परिचर, लेटर-बॉक्स परिचर व पैकर</u> के कर्तव्य व दायित्व शामिल हैं।</span>
+    <span class="en">Volume VI Part III covers the Sub-Accounts system (H.O.-S.O. transactions), Accounts in Sub-offices (S.P.M. duties), and the duties/responsibilities of postmen, village postmen, mail attendants, letter-box attendants & packers.</span>
+    <div class="examq">
+      <span class="hi">प्रश्न: भाग VI, भाग III में कुल कितने अध्याय हैं (परिशिष्ट छोड़कर)? → 3 अध्याय</span>
+      <span class="en">Q: How many main chapters in Vol VI Part III (excluding appendices)? → 3 chapters</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 मानसिक मानचित्र <span class="en">Mind Map — Structure</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">डाक मैनुअल भाग VI (III)<span class="en">Sub-Accounts & Postmen Duties • Rules 1–152</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>Ch I</b>उप-लेखा<br><i>Sub-Accounts</i><br>R. 1–83</div>
+        <div class="mm-node"><b>Ch II</b>उप-डाकघर लेखे<br><i>Accounts in Sub-offices</i><br>R. 84–105</div>
+        <div class="mm-node"><b>Ch III</b>पोस्टमैन आदि<br><i>Postmen, Village Postmen, etc.</i><br>R. 106–152</div>
+        <div class="mm-node excluded"><b>App. A ⛔</b>संयुक्त डाक-तार कार्यालय<br><i>Combined P&T Offices — बहिष्कृत</i></div>
+        <div class="mm-node excluded"><b>App. B ⛔</b>गैर-संयुक्त तार कार्यालय<br><i>Non-combined Telegram Offices — बहिष्कृत</i></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER I: SUB-ACCOUNTS ================= -->
+<section class="ch" id="ch1">
+  <div class="ch-head">
+    <div class="ch-num">1</div>
+    <div class="ch-title">
+      <h2>उप-लेखा <span class="en">Sub-Accounts</span></h2>
+      <span class="rules">नियम / Rules 1–83 (सामान्य नियम + धनराशि विनियमन + शाखा-कार्यालय लेन-देन)</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 भाग I — सामान्य नियम <span class="en">Part I — General Rules</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.1</span><span class="hi">पोस्टमास्टर द्वारा अधीनस्थ कार्यालयों का <b>पर्यवेक्षण</b> — मूल कर्तव्य</span>
+          <span class="en">Supervision of subordinate offices by Postmaster — foundational duty</span></li>
+      <li>🟠 <span class="rule-tag">R.4–5</span><span class="hi">लेखा कार्यालय द्वारा वाउचरों की <b>कम प्राप्ति</b> व <b>अस्वीकार्य वाउचर</b> की रिपोर्टिंग</span>
+          <span class="en">Short receipt of vouchers by account office & inadmissible vouchers</span></li>
+      <li>🟢 <span class="rule-tag">R.6</span><span class="hi">नकदी के <b>अनावश्यक प्रेषण</b> से बचें</span>
+          <span class="en">Unnecessary remittances of cash to be avoided</span></li>
+      <li>🟡 <span class="rule-tag">R.7</span><span class="hi"><b>नकद कार्यालय (Cash Office)</b> की अवधारणा — विशेष प्रकार के उप-डाकघर जो अन्य SO से भी नकदी प्राप्त करते हैं</span>
+          <span class="en">Cash Office concept — special SO type that also receives cash from other SOs</span></li>
+      <li>🟠 <span class="rule-tag">R.8–9</span><span class="hi">लेखा कार्यालय व अधीनस्थ कार्यालयों के बीच प्रेषण की <b>जाँच</b>; परिवहन-माध्यम अनुसार प्रेषण की <b>सीमाएँ</b></span>
+          <span class="en">Check of remittances between account office & subordinate offices; limits of remittances by mode of conveyance</span></li>
+    </ul>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 भाग II — नकद शेष विनियमन <span class="en">Part II — Regulation of Cash Balances</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.10–11</span><span class="hi">उप-डाकघरों हेतु <b>धनराशि का विनियमन व प्रावधान</b></span>
+          <span class="en">Regulation & provision of funds for sub-offices</span></li>
+      <li>🟢 <span class="rule-tag">R.12</span><span class="hi">उप-डाकघरों में <b>अधिशेष धनराशि</b> का निपटान</span>
+          <span class="en">Disposal of surplus funds at sub-offices</span></li>
+      <li>🟡 <span class="rule-tag">R.13</span><span class="hi">कोषागार/उप-कोषागार स्टेशनों पर उप-डाकघरों को धनराशि आपूर्ति</span>
+          <span class="en">Supply of funds to sub-offices at treasury/sub-treasury stations</span></li>
+      <li>🟢 <span class="rule-tag">R.14–16</span><span class="hi">समान/भिन्न प्रधान डाकघरों के अधीन उप-डाकघरों के बीच प्रेषण का <b>आदान-प्रदान</b></span>
+          <span class="en">Exchange of remittances between sub-offices under same/different head offices</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 भाग III — लेखा-थैला प्रणाली <span class="en">Part III — Account Bag System</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.17–18</span><span class="hi">HO से SO तक <b>लेखा-थैला (Account Bag)</b> — विषय-वस्तु व SO पर्चियाँ (S.O. Slips)</span>
+          <span class="en">Account bag from H.O. to S.O. — contents & S.O. Slips</span></li>
+      <li>🟢 <span class="rule-tag">R.24</span><span class="hi">भारतीय डाक आदेशों (IPO) की आपूर्ति</span>
+          <span class="en">Supply of Indian Postal Orders</span></li>
+      <li>🟢 <span class="rule-tag">R.27–28</span><span class="hi">HO में लेखा-थैलों का <b>बंद करना</b>; SO में लेखा व नकद थैलों का <b>खोलना</b></span>
+          <span class="en">Closing of account bags in HO; opening of account & cash bags in SO</span></li>
+      <li>🟠 <span class="rule-tag">R.58–59</span><span class="hi">HO द्वारा SO शेष-राशियों की <b>जाँच</b> व अनियमितता पर <b>कार्रवाई</b></span>
+          <span class="en">Examination of SO balances by HO & action on irregularities</span></li>
+      <li>🟢 <span class="rule-tag">R.60</span><span class="hi">HO में S.P.M. की <b>मासिक रिपोर्ट</b> की प्राप्ति</span>
+          <span class="en">Receipt of S.P.M's Monthly Report in head office</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: उप-डाकघरों में अधिशेष धनराशि का निपटान किस नियम में वर्णित है? → नियम 12</span>
+      <span class="en">Q: Disposal of surplus funds at sub-offices is covered under which rule? → Rule 12</span>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER II: ACCOUNTS IN SUB-OFFICES ================= -->
+<section class="ch" id="ch2">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>उप-डाकघर लेखे <span class="en">Accounts in Sub-offices</span></h2>
+      <span class="rules">नियम / Rules 84–105</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 84 — लेखा-नकदी की जिम्मेदारी (महत्वपूर्ण अपवाद सहित!) <span class="en">Rule 84 — Responsibility for Accounts, Cash</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">S.P.M. <b>व्यक्तिगत रूप से जिम्मेदार</b> — SO लेखा सही व समय पर लिखा जाए, नकद शेष सही हो</span>
+          <span class="en">S.P.M. personally responsible for correct, punctual SO account & correct cash balance</span></li>
+      <li>🟠 <span class="hi">यदि अतिरिक्त सहायक नियुक्त है — S.P.M. के साथ <b>संयुक्त रूप से उत्तरदायी</b>; तिजोरी के <b>दो अलग-अलग तालों</b> की एक-एक चाबी दोनों के पास</span>
+          <span class="en">If an Assistant is employed, jointly responsible with S.P.M.; both keep keys of TWO DIFFERENT locks of the iron safe</span></li>
+      <li>🟡 <span class="hi"><b>अपवाद</b>: एकल-सहायक SO में संयुक्त अभिरक्षा में कठिनाई होने पर, परिमंडल प्रमुख कार्यालय-समय बाद सहायक को छूट दे सकते हैं</span>
+          <span class="en">EXCEPTION: In single-Assistant SO with joint-custody difficulty, Head of Circle may exempt Assistant after office hours</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: SO में तिजोरी की चाबियाँ किस पैटर्न में रखी जाती हैं? → S.P.M. व सहायक के पास अलग-अलग पैटर्न के दो तालों की चाबियाँ (नियम 84A)</span>
+      <span class="en">Q: How are safe keys distributed in an SO? → S.P.M. & Assistant each hold a key to a DIFFERENT-pattern lock</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 85 — प्रतिदिन शाम की जाँच-सूची <span class="en">Rule 85 — Daily Evening Checklist by S.P.M.</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">प्रत्येक शाम, कार्यालय बंद होने से पहले — S.P.M. अनिवार्य रूप से</span><span class="en">Every evening, before office closes — S.P.M. MUST</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">(a) नकदी गिनना + टिकटों का मूल्य निकालना → SO लेखा से मिलान</span><span class="en">(a) Count cash + calculate stamp value → tally with SO account</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">(b) "टिप्पणी" स्तंभ देखना — जमा राशि नकद में सुरक्षित है, संतुष्ट होना</span><span class="en">(b) Check 'Remarks' column — satisfy amount shown as deposit is held in cash</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">(c) IPO स्टॉक सही होने की पुष्टि</span><span class="en">(c) Satisfy IPO stock is correct</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">(d) पत्र-डाक की जमा वस्तुओं पर देय डाक-शुल्क की गणना व लेखे में सही प्रविष्टि की पुष्टि</span><span class="en">(d) Calculate postage due on letter mail in deposit & confirm correct entry</span></div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: S.P.M. को प्रतिदिन शाम को कितने बिंदुओं की जाँच करनी होती है? → 4 बिंदु (a से d) — नियम 85</span>
+      <span class="en">Q: How many checklist points must S.P.M. verify every evening? → 4 points (a to d) — Rule 85</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 90–91 — वेतन संवितरण (सर्वाधिक पूछा गया!) <span class="en">Rules 90–91 — Disbursement of Pay (Most Asked!)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">S.P.M. को व्यक्तिगत रूप से भुगतान करना होगा; निरक्षर प्राप्तकर्ता का अँगूठा-निशान <b>1-2 गवाहों</b> की उपस्थिति में लिया जाए</span>
+          <span class="en">S.P.M. must personally make payment; illiterate payee's thumb-mark taken in presence of 1-2 witnesses</span></li>
+      <li>🔴 <span class="hi"><b>NOTE 1</b>: S.P.M. किसी भी परिस्थिति में पोस्टमैन/ग्रामीण पोस्टमैन/धावकों को दिए वेतन की प्राप्ति-सूची पर <b>हस्ताक्षर नहीं</b> कर सकता (गवाह के रूप में छोड़कर)</span>
+          <span class="en">NOTE 1: S.P.M. may NEVER sign acquittance rolls (except as witness) for pay disbursed to postmen/village postmen/runners</span></li>
+      <li>🔴 <span class="rule-tag">R.91(b)</span><span class="hi">यदि पूरे स्टाफ को एक दिन में भुगतान नहीं हो सके, तो प्राप्ति-सूची (Acquittance Roll) SO में <b>माह की 10 तारीख से आगे</b> रोकी नहीं जा सकती</span>
+          <span class="en">If full staff cannot be paid in one day, acquittance rolls must NOT be detained beyond the 10th of the month</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: प्राप्ति-सूची SO में अधिकतम कब तक रोकी जा सकती है? → माह की 10 तारीख तक (नियम 91b)</span>
+      <span class="en">Q: Acquittance rolls can be detained in an SO until which date at most? → 10th of the month</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 87, 99–102 — अन्य महत्वपूर्ण बिंदु <span class="en">Other Key Points</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="rule-tag">R.87</span><span class="hi">डाक-टिकट व अन्य टिकट — तिजोरी में <b>लकड़ी/टिन के बक्से</b> में रखे जाएँ, क्षति से बचाव हेतु</span>
+          <span class="en">Postage & other stamps kept in a small WOOD/TIN box inside the safe, to prevent damage</span></li>
+      <li>🟠 <span class="rule-tag">R.99</span><span class="hi">SO लेखे की शेष-राशि की <b>जाँच</b> — नकदी, टिकट व अन्य मदों की गणना सहित</span>
+          <span class="en">Checking balance of sub-office account — includes counting cash, stamps & other items</span></li>
+      <li>🟢 <span class="rule-tag">R.100</span><span class="hi">S.P.M. की <b>मासिक रिपोर्ट</b> तैयार करना</span>
+          <span class="en">Preparation of S.P.M's monthly report</span></li>
+      <li>🟡 <span class="rule-tag">R.101–102</span><span class="hi">धनराशि आपूर्ति व निपटान के <b>सिद्धांत</b>; <b>प्राधिकृत शेष-राशि</b> (Authorised Balances) की अवधारणा</span>
+          <span class="en">Principles of fund supply & disposal; Authorised Balances concept</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CHAPTER III GENERAL ================= -->
+<section class="ch" id="ch3gen">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>पोस्टमैन, ग्रामीण पोस्टमैन, मेल परिचर, लेटर-बॉक्स परिचर व पैकर <span class="en">Postmen, Village Postmen, Mail Attendants, Letter-Box Attendants & Packers</span></h2>
+      <span class="rules">नियम / Rules 106–152 ⭐ IP परीक्षा हेतु अति महत्वपूर्ण अध्याय</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 प्रारंभिक टिप्पणियाँ (N.B. 1-4) — नींव के नियम! <span class="en">Preliminary Notes — Foundation Rules!</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>N.B.1</b>: पोस्टमास्टर के व्यक्तिगत कर्तव्य (नियम <b>106, 114, 130, 145, 149</b>) — परिमंडल प्रमुख के आदेश से उप/सहायक पोस्टमास्टर को सौंपे जा सकते हैं</span>
+          <span class="en">N.B.1: Postmaster's personal duties (Rules 106, 114, 130, 145, 149) may be delegated to deputy/assistant postmaster by HoC's orders</span></li>
+      <li>🟠 <span class="hi"><b>बिंदु 2</b>: वितरण कार्य सामान्यतः पोस्टमैन/ग्रामीण पोस्टमैन करते हैं; आवश्यकता पर अधीक्षक/प्रधान पोस्टमास्टर की स्वीकृति से मेल परिचर/Group D को सौंपा जा सकता है — पर <b>नियमित रूप</b> से सौंपने हेतु <b>परिमंडल प्रमुख की स्वीकृति</b> चाहिए। बिना सुरक्षा-जमानत वाले Group D कर्मी को MO भुगतान/बीमित वस्तु वितरण <b>कभी नहीं</b> सौंपा जाए</span>
+          <span class="en">Point 2: Delivery work by postmen/village postmen; occasionally to mail attendant/Group D with Supdt./HO sanction; REGULAR delegation needs HoC sanction. MO payment/insured delivery NEVER to a Group D official without security</span></li>
+      <li>🔴 <span class="hi"><b>बिंदु 3</b>: व्यक्तिगत बॉण्ड से जमानत देने वाले कर्मी — जमानतदार की मृत्यु/दिवालियापन/निवास-परिवर्तन की <b>तुरंत सूचना देना अनिवार्य</b>; न देने पर <b>बર્खास्तगी</b></span>
+          <span class="en">Point 3: Staff giving personal-bond security must promptly report surety's death/insolvency/change of residence; failure → REMOVAL</span></li>
+      <li>🔴 <span class="hi"><b>बिंदु 4</b>: वर्दी/बैज पहनना ड्यूटी के दौरान <b>अनिवार्य</b> — साफ-सुथरी दशा में; बिना वर्दी/बैज या गंदी वर्दी में उपस्थिति = <b>दंडनीय अपराध</b></span>
+          <span class="en">Point 4: Uniform/badge MUST be worn while on duty, kept clean; appearing without/in dirty uniform = PUNISHABLE OFFENCE</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: पोस्टमास्टर के कौन-से 5 नियमों के व्यक्तिगत कर्तव्य उप-पोस्टमास्टर को सौंपे जा सकते हैं? → नियम 106, 114, 130, 145, 149 (N.B.1)</span>
+      <span class="en">Q: Which 5 rules' personal duties of postmaster can be delegated to deputy postmaster? → Rules 106, 114, 130, 145, 149</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 EDDA को छूट — तुलना <span class="en">Exemptions for EDDA — Comparison</span></h3>
+    <ul class="points">
+      <li>🟡 <span class="hi">पोस्टमैन से संबंधित नियम EDDA (अतिरिक्त विभागीय वितरण अभिकर्ता) पर भी लागू — <b>सिवाय नियम 106, 110(3)&(4), 114(3) व 120 के</b></span>
+          <span class="en">Rules relating to postmen apply to EDDA too — EXCEPT Rules 106, 110(3)&(4), 114(3) and 120</span></li>
+      <li>🟢 <span class="hi">EDDA को सौंपी जा सकने वाली अधिकतम राशि व वस्तु-प्रकार की सीमाएँ — <b>डाक मैनुअल भाग IV नियम 572/A</b> में</span>
+          <span class="en">Max amount & article-type limits for EDDA — in Postal Manual Volume IV Rule 572/A</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 106 — प्रधान डाकिये (Head Postmen) <span class="en">Rule 106 — Head Postmen</span></h3>
+    <ul class="points">
+      <li><span class="hi">बड़े कार्यालयों में एक या अधिक पोस्टमैन को "प्रधान डाकिया" नामित — TMO भुगतान, कोषागार/बैंक/नगर SO में नकद ले-जाना</span>
+          <span class="en">In larger offices, one/more postmen designated "Head Postmen" — pay TMOs, carry cash to/from treasury/bank/town SO</span></li>
+      <li>🟢 <span class="hi">अनुपस्थित पोस्टमैन का कार्य भी सम्भाल सकते हैं; बड़ी राशि के MO/बीमित वस्तु वितरण में <b>सुरक्षा हेतु साथ जा सकते हैं</b></span>
+          <span class="en">May take up absent postman's work; may accompany for greater security when large-value insured/MO delivery</span></li>
+    </ul>
+  </div>
+</section>
+<!-- ================= MO PAYMENT & DELIVERY ================= -->
+<section class="ch" id="mo-delivery">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>वितरण व मनीऑर्डर भुगतान — विशेष श्रेणियाँ <span class="en">Delivery & MO Payment — Special Categories</span></h2>
+      <span class="rules">नियम / Rules 111–127</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 तुलना चार्ट — विशेष प्राप्तकर्ता श्रेणियाँ <span class="en">Comparison Chart — Special Addressee/Payee Categories</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>श्रेणी / Category</th><th>नियम / Rule</th><th>प्रक्रिया / Procedure</th></tr>
+      <tr><td><span class="hi">निरक्षर प्राप्तकर्ता</span><span class="en">Illiterate addressee</span></td><td>118</td><td><span class="hi">अँगूठा-निशान/मुहर — गवाह की उपस्थिति में</span><span class="en">Thumb mark/seal in presence of witness</span></td></tr>
+      <tr><td><span class="hi">पर्दानशीन महिला</span><span class="en">Pardanashin woman</span></td><td>119</td><td><span class="hi">विशेष सुपुर्दगी प्रक्रिया</span><span class="en">Special delivery procedure</span></td></tr>
+      <tr><td><span class="hi">नाबालिग को बीमित वस्तु</span><span class="en">Insured article to minor</span></td><td>120</td><td><span class="hi">अभिभावक के माध्यम से</span><span class="en">Through guardian</span></td></tr>
+      <tr><td><span class="hi">नाबालिग को MO</span><span class="en">MO to minor</span></td><td>123</td><td><span class="hi">माता-पिता/अभिभावक हस्ताक्षर से</span><span class="en">Parent/guardian signature</span></td></tr>
+      <tr><td><span class="hi">कोढ़ी (Leper) को MO</span><span class="en">MO to leper</span></td><td>124</td><td><span class="hi">विशेष सावधानी सहित भुगतान</span><span class="en">Payment with special precaution</span></td></tr>
+      <tr><td><span class="hi">पागल व्यक्ति को MO/रजिस्टर्ड पत्र</span><span class="en">MO/registered letter to lunatic</span></td><td>125</td><td><span class="hi">विशेष सुपुर्दगी नियम</span><span class="en">Special delivery rules</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: पागल व्यक्ति को संबोधित MO व पंजीकृत पत्र की सुपुर्दगी किस नियम में है? → नियम 125</span>
+      <span class="en">Q: Delivery of MO & registered letters to lunatics is covered under? → Rule 125</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 127 — सही सुपुर्दगी की जिम्मेदारी (सर्वाधिक विस्तृत नियम!) <span class="en">Rule 127 — Responsibility for Correct Delivery (Most Detailed!)</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">पोस्टमैन को प्राप्तकर्ता/भुगतान-प्राप्तकर्ता की पहचान पर <b>संदेह</b> है?</span><span class="en">Postman has DOUBT about addressee's/payee's identity?</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">अपंजीकृत बीमारहित वस्तु — <b>स्थानीय प्रतिष्ठित गवाह</b> की उपस्थिति में सुपुर्दगी, नाम प्राप्ति-रसीद पर नोट हो</span><span class="en">Uninsured registered article — delivery in presence of respectable local witness, name noted on receipt</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">बीमित वस्तु — गवाह को प्राप्तकर्ता की <b>पहचान करने में भी सक्षम</b> होना चाहिए</span><span class="en">Insured article — witness must ALSO be able to identify the addressee</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox warn"><span class="hi">MO भुगतान गैर-निवासी/अपरिचित व्यक्ति को — <b>पहचानकर्ता का प्रमाणपत्र</b> + स्थायी पता अनिवार्य; बिना संतोषजनक पहचान के भुगतान नहीं</span><span class="en">MO to non-resident/unknown person — Identifier's Certificate + permanent address mandatory; NO payment without satisfactory identification</span></div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: बीमित वस्तु की सुपुर्दगी में गवाह से क्या अतिरिक्त अपेक्षा है? → गवाह प्राप्तकर्ता की पहचान भी कर सके (नियम 127.2)</span>
+      <span class="en">Q: What extra is expected of the witness for insured article delivery? → Witness must also be able to identify the addressee</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 116, 128–130 — अन्य वितरण नियम <span class="en">Other Delivery Rules</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="rule-tag">R.116</span><span class="hi">सुपुर्दगी से पहले <b>बकाया डाक-शुल्क वसूली</b></span>
+          <span class="en">Realisation of postage before delivery</span></li>
+      <li>🟠 <span class="rule-tag">R.128</span><span class="hi">वस्तुओं की <b>हानि की रिपोर्ट</b> करना अनिवार्य</span>
+          <span class="en">Loss of articles must be reported</span></li>
+      <li>🟢 <span class="rule-tag">R.129</span><span class="hi">अवितरित वस्तुओं की <b>वापसी</b> — पोस्टमास्टर या नामित अधिकारी को</span>
+          <span class="en">Return of undelivered articles — to postmaster or delegated official</span></li>
+      <li>🔴 <span class="rule-tag">R.130(2)</span><span class="hi">पोस्टमैन को डाक-शुल्क/सीमा-शुल्क की राशि सीधे वितरण/पार्सल सहायक को देने से <b>प्रतिबंधित</b> — दंड: <b>बर्खास्तगी</b></span>
+          <span class="en">Postmen PROHIBITED from paying postage/customs sums directly to delivery/parcel Assistant — penalty: REMOVAL</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PENALTIES ================= -->
+<section class="ch" id="penalty">
+  <div class="ch-head">
+    <div class="ch-num">⚖️</div>
+    <div class="ch-title">
+      <h2>दंड प्रावधान <span class="en">Penalty Provisions</span></h2>
+      <span class="rules">नियम / Rules 131–132 ⭐ प्रत्येक वर्ष पूछा जाता है</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 तुलना चार्ट — नियम 131 बनाम 132 <span class="en">Comparison — Rule 131 vs Rule 132</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>नियम / Rule</th><th>अपराध / Offence</th><th>परिणाम / Consequence</th></tr>
+      <tr><td class="hi"><b>131</b><br>वस्तु रोकना</td>
+          <td><span class="hi">जानबूझकर डाक-वस्तु को <b>रोकना/विलंबित</b> करना, या वस्तु को झूठा "अवितरणीय" बताकर लौटाना</span><span class="en">Wilfully detaining/delaying an article, or falsely returning it as undeliverable</span></td>
+          <td><span class="hi">डाकघर अधिनियम के अंतर्गत <b>दंड</b> हेतु उत्तरदायी</span><span class="en">Liable to penalties under the Post Office Act</span></td></tr>
+      <tr><td class="hi"><b>132</b><br>कर्तव्य में लापरवाही</td>
+          <td><span class="hi">बीट पर <b>आदतन आवारागर्दी</b>, अनधिकृत व्यक्ति से वितरण कराना, या अन्य <b>कर्तव्य-उपेक्षा</b></span><span class="en">Habitual loitering on beat, employing unauthorised persons for delivery, or otherwise neglecting duty</span></td>
+          <td><span class="hi"><b>बर्खास्तगी</b> या डाकघर अधिनियम के अंतर्गत <b>न्यायालय में अभियोजन</b></span><span class="en">Liable to REMOVAL or PROSECUTION in Court under the Post Office Act</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: बीट पर आदतन आवारागर्दी करने वाले पोस्टमैन पर क्या कार्रवाई हो सकती है? → बर्खास्तगी या न्यायालय में अभियोजन (नियम 132)</span>
+      <span class="en">Q: What action can be taken against a postman habitually loitering on his beat? → Removal or prosecution in Court (Rule 132)</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 अन्य दंड-संबंधी बिंदु <span class="en">Other Penalty-Related Points</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">जमानतदार की मृत्यु/दिवालियापन की सूचना न देने पर — <b>बर्खास्तगी</b> (Point 3, Chapter III Preliminary)</span>
+          <span class="en">Failure to report surety's death/insolvency — REMOVAL</span></li>
+      <li>🟠 <span class="hi">वर्दी/बैज के बिना ड्यूटी पर उपस्थिति — <b>दंडनीय अपराध</b> (Point 4)</span>
+          <span class="en">Appearing on duty without uniform/badge — PUNISHABLE OFFENCE</span></li>
+      <li>🟢 <span class="hi">डाक-शुल्क/सीमा-शुल्क सीधे सहायक को देना (बजाय कोषाध्यक्ष के) — <b>बर्खास्तगी</b> (R.130.2)</span>
+          <span class="en">Paying postage/customs directly to Assistant instead of Treasurer — REMOVAL (R.130.2)</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= VILLAGE POSTMEN ================= -->
+<section class="ch" id="village">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>ग्रामीण पोस्टमैन <span class="en">Village Postmen</span></h2>
+      <span class="rules">नियम / Rules 133–143</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 133 — कर्तव्य व परिभाषा <span class="en">Rule 133 — Duties & Definition</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">ग्रामीण पोस्टमैन — ऐसे वितरण अभिकर्ता जो सामान्यतः उसी दिन डाकघर <b>वापस लौटकर लेखा समायोजित नहीं</b> कर सकते</span>
+          <span class="en">Village postmen are delivery agents who usually CANNOT return same-day to have accounts adjusted</span></li>
+      <li>🟠 <span class="hi">पोस्टमैन-बीट की सीमा से बाहर के पतों वाली वस्तुओं का वितरण; प्रस्थान हेतु अपंजीकृत व देशी पंजीकृत वस्तुओं का <b>संग्रहण</b> भी करते हैं</span>
+          <span class="en">Deliver articles beyond postmen's beat limits; also collect unregistered & inland registered articles for despatch</span></li>
+      <li>🟢 <span class="hi">डाक टिकट व MO फॉर्म की <b>आपूर्ति</b> साथ में दी जाती है</span>
+          <span class="en">Supplied with postage stamps and M.O. forms</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 135–137 — अभिलेख व थैला <span class="en">Rules 135–137 — Records & Bag</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="rule-tag">R.135</span><span class="hi">ग्रामीण पोस्टमैन का <b>रजिस्टर</b> — बीट का अभिलेख</span>
+          <span class="en">Village postmen's register — record of beat</span></li>
+      <li>🟢 <span class="rule-tag">R.136</span><span class="hi">ग्रामीण पोस्टमैन <b>विजिट बुक</b></span>
+          <span class="en">Village postmen's visit book</span></li>
+      <li>🟢 <span class="rule-tag">R.137</span><span class="hi">ग्रामीण पोस्टमैन का <b>थैला (Bag)</b></span>
+          <span class="en">Village postmen's bag</span></li>
+      <li>🟠 <span class="rule-tag">R.139</span><span class="hi"><b>रसीद-पुस्तिका</b> — प्राप्ति की पावती हेतु</span>
+          <span class="en">Book of receipts — for acknowledgment of receipt</span></li>
+      <li>🟢 <span class="rule-tag">R.143</span><span class="hi">डाक-शुल्क लेखों का <b>समायोजन</b></span>
+          <span class="en">Adjustment of accounts of postage</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: ग्रामीण पोस्टमैन अपनी बीट का विवरण किस पुस्तक में रखता है? → रजिस्टर (नियम 135) व विजिट बुक (नियम 136)</span>
+      <span class="en">Q: In which records does a village postman maintain his beat details? → Register (R.135) & Visit Book (R.136)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAIL ATTENDANTS, LETTER-BOX ATTENDANTS, PACKERS ================= -->
+<section class="ch" id="others">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>मेल परिचर, लेटर-बॉक्स परिचर व पैकर <span class="en">Mail Attendants, Letter-Box Attendants & Packers</span></h2>
+      <span class="rules">नियम / Rules 144–152</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 तुलना चार्ट — तीन सहायक भूमिकाएँ <span class="en">Comparison Chart — Three Support Roles</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>भूमिका / Role</th><th>नियम / Rules</th><th>मुख्य कर्तव्य / Main Duty</th></tr>
+      <tr><td><span class="hi"><b>मेल परिचर</b></span><span class="en">Mail Attendant</span></td><td>144–147</td>
+          <td><span class="hi">रेलवे प्लेटफॉर्म पर उपस्थिति; पंजीकरण हेतु प्रस्तुत वस्तुएँ; पैकर के रूप में भी नियुक्त हो सकते हैं</span><span class="en">Attendance on railway platform; articles tendered for registration; may be employed as packers</span></td></tr>
+      <tr><td><span class="hi"><b>लेटर-बॉक्स परिचर</b></span><span class="en">Letter-Box Attendant</span></td><td>148–150</td>
+          <td><span class="hi">बाहरी लेटर-बॉक्स की <b>निकासी (Clearance)</b>; डाक ले जाने हेतु भी नियुक्त हो सकते हैं</span><span class="en">Clearance of outside letter-boxes; may be employed to carry mails too</span></td></tr>
+      <tr><td><span class="hi"><b>पैकर</b></span><span class="en">Packer</span></td><td>151–152</td>
+          <td><span class="hi">पૈકિંગ कर्तव्य; लेबल पर <b>तिथि व अन्य टाइप बदलना</b></span><span class="en">Packing duties; changing date & other type on labels</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: बाहरी लेटर-बॉक्स की निकासी किस नियम में वर्णित है? → नियम 149</span>
+      <span class="en">Q: Clearance of outside letter-boxes is covered under which rule? → Rule 149</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MASTER NUMBERS ================= -->
+<section class="ch" id="master">
+  <div class="ch-head">
+    <div class="ch-num">🔴</div>
+    <div class="ch-title">
+      <h2>मास्टर संख्या-चार्ट <span class="en">Master Numbers Chart</span></h2>
+      <span class="rules">सभी सीमाएँ, समय-सीमाएँ व दंड एक जगह / All Limits, Time Limits & Penalties in One Place</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 समय-सीमाएँ व प्रक्रिया-संख्याएँ <span class="en">Time Limits & Process Numbers</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>माह की 10 तारीख</b></td><td><span class="hi">SO में प्राप्ति-सूची रोकने की अधिकतम सीमा (नियम 91b)</span></td></tr>
+      <tr><td class="hi"><b>4 चेकलिस्ट बिंदु</b></td><td><span class="hi">S.P.M. की प्रतिदिन शाम की जाँच (a-d) — नियम 85</span></td></tr>
+      <tr><td class="hi"><b>1-2 गवाह</b></td><td><span class="hi">निरक्षर भुगतान-प्राप्तकर्ता हेतु अँगूठा-निशान गवाही (नियम 90A)</span></td></tr>
+      <tr><td class="hi"><b>5 नियम (106,114,130,145,149)</b></td><td><span class="hi">पोस्टमास्टर के प्रत्यायोज्य व्यक्तिगत कर्तव्य (N.B.1)</span></td></tr>
+      <tr><td class="hi"><b>4 अपवाद नियम EDDA (106,110(3)(4),114(3),120)</b></td><td><span class="hi">EDDA पर लागू न होने वाले नियम</span></td></tr>
+    </table></div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 दंड-चार्ट <span class="en">Penalty Chart</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>अपराध / Offence</th><th>दंड / Penalty</th><th>नियम / Rule</th></tr>
+      <tr><td><span class="hi">वस्तु जानबूझकर रोकना/झूठा अवितरणीय बताना</span><span class="en">Wilful detention/false undeliverable claim</span></td><td class="hi">डाकघर अधिनियम अंतर्गत दंड</td><td>131</td></tr>
+      <tr><td><span class="hi">बीट पर आवारागर्दी/अनधिकृत वितरण/कर्तव्य-उपेक्षा</span><span class="en">Loitering/unauthorised delivery/neglect</span></td><td class="hi">बर्खास्तगी या अभियोजन</td><td>132</td></tr>
+      <tr><td><span class="hi">डाक/सीमा शुल्क सीधे सहायक को देना</span><span class="en">Paying postage/customs directly to Assistant</span></td><td class="hi">बर्खास्तगी</td><td>130(2)</td></tr>
+      <tr><td><span class="hi">जमानतदार मृत्यु/दिवालियापन न बताना</span><span class="en">Not reporting surety's death/insolvency</span></td><td class="hi">बर्खास्तगी</td><td>Ch.III Pt.3</td></tr>
+      <tr><td><span class="hi">बिना वर्दी/बैज ड्यूटी पर उपस्थिति</span><span class="en">Duty without uniform/badge</span></td><td class="hi">दंडनीय अपराध</td><td>Ch.III Pt.4</td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: वस्तु को झूठा अवितरणीय घोषित करने पर कौन-सा नियम व दंड लागू होता है? → नियम 131, डाकघर अधिनियम अंतर्गत दंड</span>
+      <span class="en">Q: Which rule & penalty applies to falsely declaring an article undeliverable? → Rule 131, penalties under Post Office Act</span>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 महत्वपूर्ण फॉर्म <span class="en">Important Forms</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>फॉर्म / Form</th><th>प्रयोग / Use</th></tr>
+      <tr><td><b>A.C.G. 2</b></td><td><span class="hi">कोषाध्यक्ष नकद-बही (Treasurer's cash book)</span><span class="en">Treasurer's cash book</span></td></tr>
+      <tr><td><b>A.C.G. 22</b></td><td><span class="hi">SO दैनिक लेखा</span><span class="en">SO daily account</span></td></tr>
+      <tr><td><b>A.C.O. 24</b></td><td><span class="hi">प्राप्ति-सूची (Acquittance roll)</span><span class="en">Acquittance roll</span></td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ================= MNEMONICS ================= -->
+<section class="ch" id="mnemo">
+  <div class="ch-head">
+    <div class="ch-num blue">🧠</div>
+    <div class="ch-title">
+      <h2>स्मृति सूत्र व ट्रिक्स <span class="en">Memory Tricks & Mnemonics</span></h2>
+    </div>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"106-114-130-145-149" — प्रत्यायोज्य नियम</div>
+    <span class="hi">पोस्टमास्टर के जिन 5 नियमों के कर्तव्य सौंपे जा सकते हैं, याद रखें क्रम से बढ़ते हुए: <b>106→114→130→145→149</b> (Head Postmen → Book of receipts for notices → Payment of postage → Mail attendant → Letter-box attendant)</span>
+    <span class="en">Delegable rules climb in number: 106→114→130→145→149</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"दो अलग ताले, दो अलग हाथ"</div>
+    <span class="hi">S.P.M. व सहायक — तिजोरी के <b>अलग-अलग पैटर्न</b> के तालों की चाबी अपने पास रखते हैं (नियम 84A) — कोई एक अकेले तिजोरी न खोल सके!</span>
+    <span class="en">S.P.M. & Assistant hold keys to DIFFERENT-pattern locks — neither can open the safe alone!</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"कभी नहीं" — S.P.M. व पोस्टमैन वेतन-रसीद</div>
+    <span class="hi">S.P.M. पोस्टमैन/ग्रामीण पोस्टमैन/धावकों की वेतन-प्राप्ति-सूची पर <b>कभी हस्ताक्षर नहीं</b> करता (गवाह को छोड़कर) — नियम 90 NOTE 1</span>
+    <span class="en">S.P.M. NEVER signs acquittance rolls for postmen/village postmen/runners' pay (except as witness)</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"10 तारीख की दीवार"</div>
+    <span class="hi">प्राप्ति-सूची SO में <b>10 तारीख से आगे</b> कभी नहीं रुक सकती — चाहे स्टाफ को भुगतान में कितने भी दिन लगें (नियम 91b)</span>
+    <span class="en">Acquittance rolls can NEVER be held beyond the 10th, however long payment takes</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"a-b-c-d शाम की जाँच"</div>
+    <span class="hi">S.P.M. शाम को 4 काम: <b>a)</b>नकद+टिकट गिनें <b>b)</b>जमा-राशि जाँचें <b>c)</b>IPO स्टॉक देखें <b>d)</b>बकाया डाक-शुल्क गणना करें (नियम 85)</span>
+    <span class="en">S.P.M. evening ABCD: count cash+stamps, check deposits, verify IPO stock, calculate postage due</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"131 रोको, 132 लापरवाही"</div>
+    <span class="hi">नियम <b>131</b> = वस्तु <b>रो</b>कना (एक कार्य पर केंद्रित); नियम <b>132</b> = आदतन <b>ला</b>परवाही (व्यापक आचरण) — 131 से 132 छोटे से बड़े अपराध की ओर बढ़ता है</span>
+    <span class="en">131 = detention (single act); 132 = habitual neglect (broader conduct) — escalating severity</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"वर्दी न पहनो तो सज़ा" </div>
+    <span class="hi">वर्दी/बैज अनिवार्य ड्यूटी पर — बिना पहने या गंदी हालत में = <b>दंडनीय अपराध</b> (Point 4, Ch. III प्रारंभिक टिप्पणी)</span>
+    <span class="en">Uniform/badge mandatory on duty — absence or dirty condition = punishable offence</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"पहचान + पता = भुगतान"</div>
+    <span class="hi">अपरिचित व्यक्ति को MO भुगतान — <b>पहचानकर्ता प्रमाणपत्र + स्थायी पता</b> दोनों अनिवार्य, वरना भुगतान रुकेगा (नियम 127)</span>
+    <span class="en">MO to unknown person needs BOTH identifier's certificate AND permanent address — else payment withheld</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"ग्रामीण पोस्टमैन = वापस नहीं आता"</div>
+    <span class="hi">ग्रामीण पोस्टमैन की मूल पहचान — वह <b>उसी दिन डाकघर वापस लौटकर लेखा समायोजित नहीं</b> कर सकता (नियम 133) — इसीलिए विशेष रजिस्टर/बैग चाहिए</span>
+    <span class="en">Village postman's core trait — cannot return same-day to adjust accounts, hence needs special register/bag</span>
+  </div>
+</section>
+
+<!-- ================= ONE PAGE REVISION ================= -->
+<section class="ch" id="rev">
+  <div class="ch-head">
+    <div class="ch-num">📄</div>
+    <div class="ch-title">
+      <h2>एक-पृष्ठ पुनरावृत्ति शीट <span class="en">One-Page Revision Sheet</span></h2>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ भाग VI (III) — 24 तथ्य, 3 मिनट में / Vol. VI (III) — 24 Facts in 3 Minutes</h3>
+    <div class="rev-grid">
+      <div class="rev-cell"><b>विषय:</b> उप-लेखा + SO लेखे + पोस्टमैन कर्तव्य — नियम 1-152 (परिशिष्ट बहिष्कृत)</div>
+      <div class="rev-cell"><b>Ch.1:</b> उप-लेखा — R.1-83 (सामान्य + निधि विनियमन + खाता-थैला)</div>
+      <div class="rev-cell"><b>Ch.2:</b> SO लेखे — R.84-105 (S.P.M. जिम्मेदारी)</div>
+      <div class="rev-cell"><b>Ch.3:</b> पोस्टमैन आदि — R.106-152</div>
+      <div class="rev-cell"><b>R.84:</b> S.P.M.+सहायक — <span class="num">2 अलग-पैटर्न</span> ताले की चाबियाँ</div>
+      <div class="rev-cell"><b>R.85:</b> शाम की जाँच — <span class="num">4 बिंदु</span> (a-d)</div>
+      <div class="rev-cell"><b>R.90 NOTE1:</b> S.P.M. पोस्टमैन-वेतन-रसीद पर <span class="num">कभी हस्ताक्षर नहीं</span></div>
+      <div class="rev-cell"><b>R.91(b):</b> प्राप्ति-सूची अधि. <span class="num">10 तारीख</span> तक रोक सकते</div>
+      <div class="rev-cell"><b>N.B.1:</b> प्रत्यायोज्य नियम — <span class="num">106,114,130,145,149</span></div>
+      <div class="rev-cell"><b>EDDA छूट:</b> नियम <span class="num">106,110(3)(4),114(3),120</span> लागू नहीं</div>
+      <div class="rev-cell"><b>Pt.3:</b> जमानतदार मृत्यु/दिवालिया न बताना → <span class="num">बर्खास्तगी</span></div>
+      <div class="rev-cell"><b>Pt.4:</b> बिना वर्दी/बैज ड्यूटी → <span class="num">दंडनीय अपराध</span></div>
+      <div class="rev-cell"><b>R.106:</b> प्रधान डाकिया — TMO भुगतान, कोषागार नकद-वहन</div>
+      <div class="rev-cell"><b>R.118-120:</b> निरक्षर/पर्दानशीन/नाबालिग — विशेष सुपुर्दगी नियम</div>
+      <div class="rev-cell"><b>R.124-125:</b> कोढ़ी/पागल व्यक्ति को MO/पत्र — विशेष प्रक्रिया</div>
+      <div class="rev-cell"><b>R.127:</b> पहचान संदेह → गवाह/पहचानकर्ता प्रमाणपत्र + स्थायी पता</div>
+      <div class="rev-cell"><b>R.130(2):</b> डाक-शुल्क सीधे सहायक को देना → <span class="num">बर्खास्तगी</span></div>
+      <div class="rev-cell"><b>R.131:</b> वस्तु रोकना/झूठा अवितरणीय → <span class="num">डाकघर अधिनियम दंड</span></div>
+      <div class="rev-cell"><b>R.132:</b> आवारागर्दी/लापरवाही → <span class="num">बर्खास्तगी/अभियोजन</span></div>
+      <div class="rev-cell"><b>R.133:</b> ग्रामीण पोस्टमैन = उसी दिन वापस नहीं लौटता</div>
+      <div class="rev-cell"><b>R.135-137:</b> ग्रामीण पोस्टमैन — रजिस्टर, विजिट बुक, बैग</div>
+      <div class="rev-cell"><b>R.144-147:</b> मेल परिचर — प्लेटफॉर्म उपस्थिति, पैकर बन सकते</div>
+      <div class="rev-cell"><b>R.148-150:</b> लेटर-बॉक्स परिचर — बाहरी बॉक्स निकासी</div>
+      <div class="rev-cell"><b>R.151-152:</b> पैकर — पैकिंग, लेबल तिथि-परिवर्तन</div>
+      <div class="rev-cell"><b>बहिष्कृत:</b> परिशिष्ट A (संयुक्त कार्यालय), B (गैर-संयुक्त तार कार्यालय)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAST DAY NOTES ================= -->
+<section class="ch" id="lastday">
+  <div class="ch-head">
+    <div class="ch-num">⏰</div>
+    <div class="ch-title">
+      <h2>अंतिम दिन की पुनरावृत्ति <span class="en">Last Day Revision Notes</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 केवल संख्याएँ — रट लें! <span class="en">Numbers Only — Memorise!</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>10 तारीख</b></td><td><span class="hi">SO में प्राप्ति-सूची रोकने की अंतिम सीमा</span></td></tr>
+      <tr><td class="hi"><b>4 बिंदु</b></td><td><span class="hi">S.P.M. की शाम की जाँच (a-d)</span></td></tr>
+      <tr><td class="hi"><b>1-2</b></td><td><span class="hi">निरक्षर भुगतान गवाह संख्या</span></td></tr>
+      <tr><td class="hi"><b>5 नियम</b></td><td><span class="hi">महानिदेशक के प्रत्यायोज्य कर्तव्य (106,114,130,145,149)</span></td></tr>
+      <tr><td class="hi"><b>4 नियम</b></td><td><span class="hi">EDDA छूट नियम (106,110(3)(4),114(3),120)</span></td></tr>
+      <tr><td class="hi"><b>131</b></td><td><span class="hi">वस्तु-रोकना दंड नियम</span></td></tr>
+      <tr><td class="hi"><b>132</b></td><td><span class="hi">कर्तव्य-लापरवाही दंड नियम</span></td></tr>
+      <tr><td class="hi"><b>2</b></td><td><span class="hi">तिजोरी के अलग-पैटर्न तालों की संख्या (S.P.M.+सहायक)</span></td></tr>
+      <tr><td class="hi"><b>3</b></td><td><span class="hi">Ch. III की मुख्य श्रेणियाँ बाद (मेल परिचर, लेटर-बॉक्स परिचर, पैकर)</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 5 सबसे अधिक पूछे जाने वाले जाल <span class="en">Top 5 Exam Traps</span></h3>
+    <ul class="points">
+      <li>⚠️ <span class="hi">नियम <b>131</b> (वस्तु रोकना — एकल कार्य) बनाम नियम <b>132</b> (आदतन लापरवाही — निरंतर आचरण) — दंड की गंभीरता अलग, मिलाएँ नहीं!</span>
+          <span class="en">Rule 131 (single act of detention) vs Rule 132 (habitual neglect) — different severity, don't confuse!</span></li>
+      <li>⚠️ <span class="hi">S.P.M. <b>कभी हस्ताक्षर नहीं</b> करता पोस्टमैन-वेतन प्राप्ति-सूची पर, पर <b>गवाह के रूप में</b> कर सकता है — यह अपवाद ध्यान में रखें (नियम 90 NOTE 1)</span>
+          <span class="en">S.P.M. never signs postmen's pay acquittance EXCEPT as a witness — remember the exception</span></li>
+      <li>⚠️ <span class="hi">EDDA पर पोस्टमैन के नियम लागू होते हैं, पर <b>4 नियम अपवाद</b> (106, 110(3)(4), 114(3), 120) — यह सूची याद रखनी ज़रूरी</span>
+          <span class="en">Postmen's rules apply to EDDA except 4 specific rules (106, 110(3)(4), 114(3), 120) — memorise this exact list</span></li>
+      <li>⚠️ <span class="hi">बीमित वस्तु की सुपुर्दगी में गवाह को <b>पहचान भी करनी होती है</b>, जबकि साधारण पंजीकृत वस्तु में केवल उपस्थिति व नाम-नोट काफी है — स्तर अलग है (नियम 127)</span>
+          <span class="en">Insured article witness must ALSO identify the addressee; ordinary registered article only needs presence & name noted — different standards</span></li>
+      <li>⚠️ <span class="hi">भारत सरकार नियम अंतर्गत यह भाग जानबूझकर <b>परिशिष्ट A व B</b> (संयुक्त डाक-तार कार्यालय व गैर-संयुक्त तार प्राप्ति कार्यालय के नियम) को शामिल नहीं करता</span>
+          <span class="en">This part deliberately excludes Appendices A & B (rules for Combined P&T Offices & Non-combined Telegram Receiving Offices)</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 पोस्टमैन जवाबदेही श्रृंखला — एक नज़र में <span class="en">Postman Accountability Chain at a Glance</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">वर्दी/बैज पहनकर ड्यूटी पर उपस्थित (Point 4)</span><span class="en">Reports on duty in uniform/badge</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">वस्तु/MO ग्रहण — प्राप्ति हस्ताक्षर देकर (नियम 113)</span><span class="en">Receives articles/MOs against signed receipt</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">सही पहचान सुनिश्चित कर सुपुर्दगी (नियम 127)</span><span class="en">Delivers after ensuring correct identification</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">बकाया वापसी/डाक-शुल्क कोषाध्यक्ष को — कभी सहायक को सीधे नहीं (नियम 130)</span><span class="en">Returns dues/postage to Treasurer — never directly to Assistant</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox warn"><span class="hi">उल्लंघन पर — नियम 131/132 अंतर्गत दंड/बर्खास्तगी/अभियोजन</span><span class="en">Violation → penalty/removal/prosecution under Rules 131/132</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-note">
+  📚 IP Exam Portal • डाक मैनुअल भाग VI (भाग III) — Sub-Accounts, Accounts in Sub-Offices & Postmen Duties (Ch. I, II, III)<br>
+  ⛔ बहिष्कृत: परिशिष्ट A (संयुक्त डाक-तार कार्यालय) व परिशिष्ट B (गैर-संयुक्त तार प्राप्ति कार्यालय)<br>
+  🔴 अति महत्वपूर्ण | 🟠 बार-बार पूछा गया | 🟡 अवधारणा | 🟢 त्वरित पुनरावृत्ति • Offline-ready • No external dependencies
+</div>
+
+</div>
+</body>
+</html>

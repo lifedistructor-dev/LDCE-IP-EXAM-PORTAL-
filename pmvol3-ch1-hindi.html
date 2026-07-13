@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Vol. III — Chapter 1: Discipline | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --yellow:#a16207; --yellow-light:#fef9c3;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#fdf4f4,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#7f1d1d,#1e3a8a);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(127,29,29,.3);}
+  header.hero h1{margin:0 0 6px;font-size:1.25rem;}
+  header.hero .sub{font-size:.85rem;opacity:.92;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.7rem;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1rem;display:flex;align-items:center;gap:8px;}
+  .bi{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .bi .hi{font-weight:700;font-size:.92rem;color:#111827;}
+  .bi .en{font-style:italic;font-size:.8rem;color:#4b5563;margin-top:2px;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-yellow{background:var(--yellow-light);color:#7c5a06;border:1px solid var(--yellow);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.75rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.72rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#7f1d1d;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(127,29,29,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  details{border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;overflow:hidden;background:#fff;}
+  summary{cursor:pointer;list-style:none;padding:9px 12px;font-weight:700;font-size:.83rem;display:flex;align-items:center;justify-content:space-between;background:#f1f5f9;}
+  summary::-webkit-details-marker{display:none;}
+  .d-body{padding:8px 12px 12px;font-size:.78rem;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} details{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>⚖️ Postal Manual Volume III — Chapter 1</h1>
+    <div class="sub">पोस्टल मैनुअल भाग III — अध्याय 1: अनुशासन (Discipline)</div>
+    <div class="tag">CCS (CCA) Rules, 1965 आधारित · Post Office Guide सम्बद्ध</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Manuals <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Postal Manual Volume III <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Chapter 1 — Discipline <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Stages, Suspension, Penalties, Appeal
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic — परिचय <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="bi">
+      <div class="hi">Disciplinary cases की प्रक्रिया <b>CCS (Classification, Control and Appeal) Rules, 1965</b> व Constitution के <b>Article 311</b> में विस्तार से दी गई है — यह सम्पूर्ण chapter इन्हीं नियमों की व्याख्या करता है।</div>
+      <div class="en">Disciplinary procedure is detailed in CCS (CCA) Rules, 1965 and Article 311 of the Constitution — this chapter elaborates these rules.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Disciplinary Proceedings — 4 चरण (Rule 2-5) <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <div class="flow">
+      <div class="step"><b>First Stage:</b> Preliminary enquiry — prima-facie case है या नहीं तय करना</div>
+      <div class="step"><b>Second Stage:</b> Charges framing + Chargesheet जारी (major/minor हेतु)</div>
+      <div class="step"><b>Third Stage:</b> Defence, Enquiry Officer नियुक्ति, enquiry, findings</div>
+      <div class="step"><b>Forth Stage:</b> Enquiry Report की जाँच, final order पास करना</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "PCEF" — <b>P</b>reliminary enquiry, <b>C</b>hargesheet, <b>E</b>nquiry, <b>F</b>inal order — 4 चरण क्रमानुसार।</div>
+    <div class="exam-q"><b>Probable Q:</b> Disciplinary proceedings के कितने stages होते हैं? <b>Ans: 4 (Preliminary, Chargesheet, Enquiry, Final Order)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📜 Rule 11 — दंडों का वर्गीकरण (Minor vs Major) <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <div class="bi rule">
+      <div class="hi">CCS (CCA) Rule 11 के अनुसार, item (v) से (ix) तक <b>Major Penalties</b> हैं — इनसे कम items (i)-(iv) <b>Minor Penalties</b>।</div>
+      <div class="en">Under Rule 11, items (v)-(ix) are Major Penalties; items (i)-(iv) are Minor Penalties.</div>
+    </div>
+    <div class="bi rule">
+      <div class="hi">Major penalty <b>appointing authority से नीचे</b> की किसी authority द्वारा नहीं लगाई जा सकती।</div>
+      <div class="en">No major penalty can be imposed by any authority lower than the appointing authority.</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1-4 Minor, 5-9 Major" — Rule 11 में item क्रमांक से ही याद रखें।</div>
+    <div class="exam-q"><b>Probable Q:</b> Rule 11 के अनुसार कौन से items major penalties हैं? <b>Ans: Items (v) से (ix)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Increment रोकने की विशेष शर्त <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="bi">
+      <div class="hi">Increment withhold करना minor penalty है, पर निम्न 3 परिस्थितियों में भी Rule 14 (sub-rules 3-23) अनुसार पूर्ण enquiry अनिवार्य:</div>
+      <div class="en">Though a minor penalty, full enquiry (Rule 14, sub-rules 3-23) is mandatory in 3 situations:</div>
+    </div>
+    <ul>
+      <li>🔴 Increment <b>3 वर्ष से अधिक</b> की अवधि हेतु रोकना हो; या</li>
+      <li>🟠 Cumulative effect से रोकना हो; या</li>
+      <li>🟡 Pension राशि पर प्रतिकूल प्रभाव पड़ने की संभावना हो</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> Increment withhold करने पर कब पूर्ण enquiry अनिवार्य हो जाती है? <b>Ans: 3 वर्ष से अधिक अवधि / cumulative effect / pension पर असर पड़े तो</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🚫 CCS (CCA) Rules से बाहर की श्रेणियाँ <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <div class="bi">
+      <div class="hi">निम्न 6 श्रेणियाँ CCS (CCA) Rules के अंतर्गत नहीं आतीं (S.R.O.-609, 28-02-1957):</div>
+      <div class="en">These 6 categories are excluded from CCS (CCA) Rules (S.R.O.-609, dated 28-02-1957):</div>
+    </div>
+    <ul>
+      <li>Extra-Departmental Agents (EDA)</li>
+      <li>Monthly rated staff (contingency-paid, non-regular)</li>
+      <li>Monthly rated work-charged/other non-regular employees</li>
+      <li>Daily rated staff (contingency-paid)</li>
+      <li>Daily rated workmen (day/week/month basis)</li>
+      <li>Hot weather/Monsoon establishment (सभी)</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "EDA-Monthly-WorkCharged-Daily-Workmen-Seasonal" — 6 excluded categories।</div>
+    <div class="exam-q"><b>Probable Q:</b> CCS (CCA) Rules से बाहर कौन सी श्रेणी सबसे प्रचलित उदाहरण है? <b>Ans: Extra-Departmental Agents (EDA)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📅 Timeline — Suspension सम्बन्धी सीमाएँ <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>घटना</th><th>समय-सीमा</th></tr>
+      <tr><td>Chargesheet file/serve करना (suspension से)</td><td><b>3 महीने</b> के भीतर</td></tr>
+      <tr><td>कुल Suspension अवधि (सामान्यतः)</td><td><b>6 महीने</b> से अधिक नहीं</td></tr>
+      <tr><td>Subsistence Allowance में बदलाव कब शुरू हो</td><td>Suspension के <b>3 महीने</b> बाद</td></tr>
+      <tr><td>Subsistence Allowance में वृद्धि/कमी की सीमा</td><td>मूल राशि के <b>50%</b> से अधिक नहीं</td></tr>
+      <tr><td>Punishment Register submit करना</td><td>हर महीने की <b>10 तारीख</b> तक</td></tr>
+      <tr><td>Review (यदि आदेश पुराना हो) — P&amp;T Board तक ले जाना</td><td>आदेश के <b>6 महीने</b> बाद भी लंबित हो तो</td></tr>
+      <tr><td>Appeal दाखिल करने की समय-सीमा</td><td><b>45 दिन</b></td></tr>
+    </table></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-6-50-10-45" — Chargesheet 3mo, Total Suspension 6mo, Subsistence change ±50%, Register 10th, Appeal 45 days।</div>
+    <div class="exam-q"><b>Probable Q:</b> Appeal दाखिल करने की अधिकतम समय-सीमा? <b>Ans: 45 दिन</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Subsistence Allowance — नियम <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="bi rule">
+      <div class="hi">F.R. 53 अनुसार suspension की तारीख से देय; 3 महीने बाद संशोधन संभव, पर वृद्धि/कमी <b>मूल राशि के 50%</b> से अधिक नहीं हो सकती।</div>
+      <div class="en">Payable from date of suspension per F.R. 53; revisable after 3 months, but change cannot exceed 50% of the original amount.</div>
+    </div>
+    <div class="bi">
+      <div class="hi">Major penalty proceedings यदि "wholly unjustified" साबित हों (F.R. 54-B) — पूर्ण pay व allowances suspension period का देय होता है।</div>
+      <div class="en">If suspension is found "wholly unjustified" under F.R. 54-B, full pay/allowances for the suspension period become payable.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Subsistence Allowance में वृद्धि/कमी की अधिकतम सीमा? <b>Ans: मूल राशि की 50%</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ Disciplinary Authorities — मुख्य सिद्धांत <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <ul>
+      <li>🔴 President — Rule 11 के सभी penalties किसी भी Central Service सदस्य पर लगा सकता है।</li>
+      <li>🟠 Group B/C/D — Schedule (Schedule I-A) में निर्दिष्ट authorities द्वारा।</li>
+      <li>🟡 Non-gazetted appointing authorities (जैसे Inspector Posts, Head Record Officer) — major penalty लगाने का अधिकार <b>नहीं</b>।</li>
+      <li>🟢 Appellate authority — जिस authority ने penalty दी, उसी के आधार पर निर्धारित होती है, transfer से नहीं बदलती।</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> क्या Inspector Posts जैसे non-gazetted appointing authority major penalty लगा सकते हैं? <b>Ans: नहीं</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Ad-hoc Disciplinary Authority <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <div class="decision">
+      <div class="node">Prescribed authority स्वयं आरोपों से सम्बंधित है ➜ Ad-hoc authority की आवश्यकता</div><br>
+      <div class="node">Prescribed authority material witness है ➜ Postal Directorate को रिपोर्ट, President द्वारा ad-hoc authority नियुक्ति</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Ad-hoc Disciplinary Authority की नियुक्ति कौन करता है? <b>Ans: President (Postal Dte. की रिपोर्ट पर)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ अपील व समीक्षा (Rule 122-123) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="bi rule">
+      <div class="hi">Appeal <b>45 दिन</b> के भीतर दाखिल होनी चाहिए (order की copy मिलने की तारीख से)।</div>
+      <div class="en">Appeal must be filed within 45 days from the date the order copy is delivered.</div>
+    </div>
+    <ul>
+      <li>🟠 Appellate authority विलंब के लिए "sufficient cause" संतोषजनक होने पर देरी से appeal भी स्वीकार कर सकती है।</li>
+      <li>🟡 Original authority विलंबित appeal को केवल विलंब के आधार पर रोक सकती है — पर कारण दिया गया हो तो appellate authority को भेजना अनिवार्य।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📁 अन्य महत्वपूर्ण समय-सीमाएँ <span class="tag-imp t-green">🟢 Quick Revision</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>विषय</th><th>अवधि</th></tr>
+      <tr><td>Absence >5 वर्ष (removal/dismissal के कारण) — F.R. 68 अंतर्गत</td><td>"Absence" नहीं माना जाता</td></tr>
+      <tr><td>Confidential Report फ़ाइल — resignation/retirement के बाद</td><td>5 वर्ष तक रखी जाए</td></tr>
+      <tr><td>Confidential Report फ़ाइल — मृत्यु के बाद</td><td>2 वर्ष तक रखी जाए</td></tr>
+      <tr><td>वेतन Attachment (courts) — छूट सीमा</td><td>24 महीने की attachment के बाद +12 महीने की छूट</td></tr>
+    </table></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "5-2 CR, 24-12 Attachment" — Confidential Report 5yr(resign)/2yr(death); Attachment 24mo पूरे होने पर +12mo राहत।</div>
+    <div class="exam-q"><b>Probable Q:</b> Confidential Report file मृत्यु के बाद कितने वर्ष रखी जाती है? <b>Ans: 2 वर्ष</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — Chapter 1 Overview</h2>
+    <div class="bi" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>4 Stages</b>: Preliminary → Chargesheet → Enquiry → Final Order</div></div>
+    <div class="bi" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Rule 11</b>: Minor(i-iv) / Major(v-ix) penalties</div></div>
+    <div class="bi" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Suspension</b>: 3mo chargesheet, 6mo total, ±50% allowance</div></div>
+    <div class="bi" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Appeal</b>: 45 days from order delivery</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. Disciplinary proceedings के कितने stages हैं?</div><div class="opts">A) 2 &nbsp; B) 3 &nbsp; C) 4 &nbsp; D) 5</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q2. CCS (CCA) Rule 11 में कौन से items major penalties हैं?</div><div class="opts">A) (i)-(iv) &nbsp; B) (v)-(ix) &nbsp; C) सभी items &nbsp; D) कोई नहीं</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q3. Suspension के कितने महीने के भीतर chargesheet file होनी चाहिए?</div><div class="opts">A) 1 &nbsp; B) 2 &nbsp; C) 3 &nbsp; D) 6</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q4. कुल Suspension अवधि सामान्यतः कितने महीने से अधिक नहीं होनी चाहिए?</div><div class="opts">A) 3 &nbsp; B) 6 &nbsp; C) 9 &nbsp; D) 12</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q5. Subsistence Allowance में वृद्धि/कमी की अधिकतम सीमा?</div><div class="opts">A) 25% &nbsp; B) 50% &nbsp; C) 75% &nbsp; D) 100%</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q6. Appeal दाखिल करने की समय-सीमा?</div><div class="opts">A) 30 दिन &nbsp; B) 45 दिन &nbsp; C) 60 दिन &nbsp; D) 90 दिन</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. Punishment Register हर महीने किस तारीख तक भेजा जाता है?</div><div class="opts">A) 1st &nbsp; B) 5th &nbsp; C) 10th &nbsp; D) 15th</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q8. CCS (CCA) Rules से बाहर कौन सी श्रेणी है?</div><div class="opts">A) Group A officers &nbsp; B) Extra-Departmental Agents &nbsp; C) Gazetted officers &nbsp; D) Permanent staff</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q9. Confidential Report file resignation/retirement के बाद कितने वर्ष रखी जाती है?</div><div class="opts">A) 2 &nbsp; B) 3 &nbsp; C) 5 &nbsp; D) 10</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q10. Ad-hoc Disciplinary Authority की नियुक्ति कौन करता है?</div><div class="opts">A) Superintendent &nbsp; B) Circle Head &nbsp; C) President &nbsp; D) Divisional Officer</div><div class="ans">Answer: C</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Enabling law: CCS (CCA) Rules, 1965 + Article 311</li>
+      <li>🔴 4 Stages: <b>Preliminary → Chargesheet → Enquiry → Final Order</b></li>
+      <li>🔴 Rule 11: Minor = <b>(i)-(iv)</b>; Major = <b>(v)-(ix)</b></li>
+      <li>🔴 Chargesheet समय-सीमा (suspension से): <b>3 महीने</b>; कुल suspension: <b>6 महीने</b></li>
+      <li>🔴 Subsistence Allowance परिवर्तन सीमा: <b>±50%</b></li>
+      <li>🔴 Appeal समय-सीमा: <b>45 दिन</b></li>
+      <li>🟠 Punishment Register: हर महीने <b>10 तारीख</b> तक</li>
+      <li>🟠 Major penalty appointing authority से नीचे नहीं लगाई जा सकती</li>
+      <li>🟡 CCA excluded: EDA, Monthly/Daily rated staff, Work-charged, Seasonal establishment (6 श्रेणियाँ)</li>
+      <li>🟢 Confidential Report retention: <b>5yr</b>(resign) / <b>2yr</b>(death)</li>
+      <li>🟢 Pay attachment relief: <b>24mo</b> attachment के बाद +<b>12mo</b> छूट</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Governing Law</td><td>CCS (CCA) Rules, 1965 + Article 311</td></tr>
+      <tr><td>Disciplinary Stages</td><td>4: Preliminary, Chargesheet, Enquiry, Final Order</td></tr>
+      <tr><td>Minor Penalties</td><td>Rule 11 items (i)-(iv)</td></tr>
+      <tr><td>Major Penalties</td><td>Rule 11 items (v)-(ix)</td></tr>
+      <tr><td>Chargesheet Deadline</td><td>3 months from suspension</td></tr>
+      <tr><td>Max Suspension (ordinary)</td><td>6 months</td></tr>
+      <tr><td>Subsistence Allowance Change Cap</td><td>±50%</td></tr>
+      <tr><td>Appeal Deadline</td><td>45 days</td></tr>
+      <tr><td>Punishment Register Due</td><td>10th of every month</td></tr>
+      <tr><td>Review Escalation Trigger</td><td>&gt;6 months elapsed → P&amp;T Board</td></tr>
+      <tr><td>CR Retention (resignation)</td><td>5 years</td></tr>
+      <tr><td>CR Retention (death)</td><td>2 years</td></tr>
+      <tr><td>Pay Attachment Relief</td><td>24mo attachment → +12mo exemption</td></tr>
+      <tr><td>Excluded Categories</td><td>EDA, Monthly/Daily-rated, Work-charged, Seasonal (6 total)</td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

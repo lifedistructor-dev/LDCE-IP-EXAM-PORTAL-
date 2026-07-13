@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLI/RPLI Part VI — Core Insurance Solution | IPO Exam</title>
+<style>
+  :root{--blue:#1e40af;--blue-light:#dbeafe;--red:#b91c1c;--red-light:#fee2e2;--orange:#c2410c;--orange-light:#ffedd5;--green:#15803d;--green-light:#dcfce7;--purple:#6d28d9;--purple-light:#ede9fe;--ink:#1f2937;--paper:#fffdf7;}
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Gujarati','Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#f4f4f5,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#111827,#4c1d95);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(17,24,39,.35);}
+  header.hero h1{margin:0 0 6px;font-size:1.3rem;}
+  header.hero .sub{font-size:.85rem;opacity:.9;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.02rem;display:flex;align-items:center;gap:8px;}
+  .tri{margin:6px 0 12px;padding:8px 10px;border-left:4px solid #111827;background:#f3f4f6;border-radius:8px;}
+  .tri .gu{font-weight:700;font-size:.92rem;color:#111827;}
+  .tri .hi{font-weight:500;font-size:.85rem;color:#374151;}
+  .tri .en{font-style:italic;font-size:.78rem;color:#4b5563;}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.76rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#f3f4f6;border:2px solid #374151;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#374151;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.74rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#111827;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(17,24,39,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  details{border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;overflow:hidden;background:#fff;}
+  summary{cursor:pointer;list-style:none;padding:9px 12px;font-weight:700;font-size:.83rem;display:flex;align-items:center;justify-content:space-between;background:#f1f5f9;}
+  summary::-webkit-details-marker{display:none;}
+  .d-body{padding:8px 12px 12px;font-size:.78rem;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>💻 PLI/RPLI Rules — Part VI</h1>
+    <div class="sub">Core Insurance Solution (CIS) | મુખ્ય વીમા સોલ્યુશન | कोर इंश्योरेंस सॉल्यूशन</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> PLI / RPLI <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> SANKALAN Part VI <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> CIS Software, Product Codenames, Roles
+  </div>
+
+  <div class="card">
+    <h2>🎯 What is CIS? <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="tri">
+      <div class="gu">CIS PLI અને RPLI માટે integrated online solution — new business, premium, claims, loans, after-sale service. Backend: McCamish.</div>
+      <div class="hi">CIS PLI और RPLI के लिए integrated online solution है — new business, premium, claims, loans, after-sale service। Backend: McCamish।</div>
+      <div class="en">Core Insurance Solution (CIS) is an integrated online solution for PLI &amp; RPLI — new business, policy issuance, premium, disbursements, after-sale service. Backend: McCamish.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏷️ Product Brand Names (PLI vs RPLI) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Plan Type</th><th>PLI</th><th>RPLI</th></tr>
+      <tr><td>Whole Life Assurance</td><td>Suraksha</td><td>Gram Suraksha</td></tr>
+      <tr><td>Endowment Assurance</td><td>Santosh</td><td>Gram Santosh</td></tr>
+      <tr><td>Convertible WLA</td><td>Suvidha</td><td>Gram Suvidha</td></tr>
+      <tr><td>Anticipated EA</td><td>Sumangal</td><td>Gram Sumangal</td></tr>
+      <tr><td>Joint Life</td><td>Yugal Suraksha</td><td>—</td></tr>
+      <tr><td>Children Policy</td><td>Bal Jeevan Bima</td><td>Bal Jeevan Bima</td></tr>
+      <tr><td>10 Years RPLI</td><td>—</td><td>Gram Priya</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Gram + [PLI name]" — most RPLI names = "Gram" + PLI equivalent. Exceptions: Bal Jeevan Bima (same) and Gram Priya (RPLI-exclusive).</div>
+    <div class="exam-q"><b>Probable Q:</b> RPLI brand name for AEA? <b>Ans: Gram Sumangal</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚙️ Key CIS Functions <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <details open>
+      <summary>Tap to expand core functions ▾</summary>
+      <div class="d-body">
+        <ul>
+          <li><b>New Business Quote/Indexing</b> — premium quotes, data entry, receipt generation</li>
+          <li><b>Service Request Indexing</b> — financial (claims/loan) vs non-financial (address/nominee change)</li>
+          <li><b>Agent Management</b> — part of <b>PMACS</b>; manages agents/license renewal</li>
+          <li><b>Reports</b> — <b>86 types</b></li>
+          <li><b>CRM/IVR Helpline</b> — <b>1800-2666-868</b>; call centres at <b>Varanasi and Patna</b></li>
+        </ul>
+      </div>
+    </details>
+    <div class="exam-q"><b>Probable Q:</b> How many types of reports does CIS generate? <b>Ans: 86 types</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📱 Rural ICT — DARPAN PLI App <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="tri">
+      <div class="gu">GDS/BPM RICT device par vaparve — 2G ane 3G j compatible.</div>
+      <div class="hi">GDS/BPM RICT device पर उपयोग करते हैं — केवल 2G और 3G compatible।</div>
+      <div class="en">Used by GDS/BPM at Branch Post Offices via RICT hand-held devices — compatible with 2G &amp; 3G only.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> RICT devices compatible with which network generations? <b>Ans: 2G and 3G only</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ Organization Roles &amp; Responsibilities <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="flow">
+      <div class="step"><b>Circle &amp; Regional Office</b> — Approvers for claims only</div>
+      <div class="step"><b>Division &amp; Sub-Division</b> — Appoint agents; Approvers for BOTH new business AND claims</div>
+      <div class="step"><b>Head Post Office (Counter)</b> — Collect premium; initiate proposal</div>
+      <div class="step"><b>Head Post Office (CPC)</b> — Full workflow, issuance, claim processing</div>
+      <div class="step"><b>Sub/Branch Post Office</b> — Collection, indexing, RICT app usage</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Circle=Claims-only, Division=Business+Claims" — Division has broader scope.</div>
+    <div class="exam-q"><b>Probable Q:</b> Which office approves BOTH new business AND claims? <b>Ans: Division &amp; Sub-Division Office</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. WLA nu PLI brand name shu chhe?</div><div class="opts">A) Santosh &nbsp; B) Suraksha &nbsp; C) Suvidha &nbsp; D) Sumangal</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q2. 10 Years Rural PLI nu RPLI brand name?</div><div class="opts">A) Gram Suvidha &nbsp; B) Gram Priya &nbsp; C) Gram Santosh &nbsp; D) Bal Jeevan Bima</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q3. CIS ketla types na reports aape chhe?</div><div class="opts">A) 50 &nbsp; B) 66 &nbsp; C) 86 &nbsp; D) 100</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q4. Agent Management kaya system no part chhe?</div><div class="opts">A) ECMS &nbsp; B) PMACS &nbsp; C) DARPAN &nbsp; D) IRDAI</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q5. DARPAN PLI App kaya device par vaparay?</div><div class="opts">A) Desktop &nbsp; B) RICT device &nbsp; C) Tablet &nbsp; D) Laptop</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q6. PLI CRM/IVR helpline number?</div><div class="opts">A) 1800-11-4000 &nbsp; B) 1800-2666-868 &nbsp; C) 1800-425-1515 &nbsp; D) 1800-266-6688</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. Agent appoint ane license kon aape?</div><div class="opts">A) Circle Office &nbsp; B) Division/Sub-Division &nbsp; C) HO &nbsp; D) BO</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q8. CPC kya location par hoy chhe?</div><div class="opts">A) Circle Office &nbsp; B) BO &nbsp; C) Head Post Office &nbsp; D) SO</div><div class="ans">Answer: C</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 CIS backend = McCamish</li>
+      <li>🔴 Brand names: WLA=Suraksha/Gram Suraksha; EA=Santosh/Gram Santosh; CWLA=Suvidha/Gram Suvidha; AEA=Sumangal/Gram Sumangal</li>
+      <li>🟠 86 report types; Agent Management = PMACS</li>
+      <li>🟠 DARPAN App on RICT — 2G/3G only</li>
+      <li>🟡 CRM/IVR: <b>1800-2666-868</b>, Varanasi &amp; Patna</li>
+      <li>🟢 Circle=claims approver only; Division=business+claims approver</li>
+    </ul>
+  </div>
+
+</div>
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+</body>
+</html>

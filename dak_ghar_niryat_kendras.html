@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>डाकघर निर्यात केंद्र (DNK) | IP Exam Infographic</title>
+<style>
+  :root{
+    --red:#C8102E;
+    --red-dark:#8E0B21;
+    --blue:#0B3D91;
+    --blue-dark:#062a66;
+    --gold:#F2A900;
+    --tier1:#E53935;   /* very important */
+    --tier2:#FB8C00;   /* frequently asked */
+    --tier3:#FDD835;   /* conceptual */
+    --tier4:#43A047;   /* quick revision */
+    --bg:#FAF7F2;
+    --card:#FFFFFF;
+    --ink:#1D1D1D;
+    --muted:#5c5c5c;
+    --line:#e6ded1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Noto Sans','Noto Sans Devanagari',Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .hi{font-weight:700;}
+  .en{font-style:italic;color:var(--muted); font-weight:500;}
+  .stack{display:block;}
+  .stack .hi{font-size:1em;}
+  .stack .en{font-size:0.85em;display:block;margin-top:1px;}
+
+  header.hero{
+    background:linear-gradient(135deg,var(--red) 0%, var(--red-dark) 60%);
+    color:#fff;
+    padding:28px 18px 34px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute;
+    bottom:-30px;left:0;right:0;height:60px;
+    background:var(--gold);
+    clip-path:polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+    opacity:.9;
+  }
+  header.hero h1{
+    font-size:1.5rem;
+    margin:6px 0 2px;
+  }
+  header.hero .sub{font-size:1rem; font-style:italic; opacity:.95;}
+  header.hero .badge-row{
+    margin-top:14px; display:flex; justify-content:center; gap:8px; flex-wrap:wrap;
+  }
+  header.hero .badge-row span{
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.5);
+    padding:4px 10px; border-radius:20px; font-size:.72rem;
+  }
+
+  nav.tiers{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+    background:var(--blue); color:#fff; padding:10px; font-size:.75rem;
+  }
+  nav.tiers .t{display:flex; align-items:center; gap:5px;}
+
+  main{max-width:900px; margin:0 auto; padding:14px;}
+
+  section{margin:22px 0;}
+  .sec-title{
+    display:flex; align-items:center; gap:8px;
+    background:var(--blue);
+    color:#fff;
+    padding:10px 14px;
+    border-radius:10px 10px 0 0;
+    font-size:1.05rem;
+  }
+  .sec-title .en{color:#dbe6ff;}
+  .sec-body{
+    background:var(--card);
+    border:2px solid var(--blue);
+    border-top:none;
+    border-radius:0 0 10px 10px;
+    padding:14px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:6px solid var(--gold);
+    border-radius:8px;
+    padding:12px 14px;
+    margin-bottom:12px;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  .card.t1{border-left-color:var(--tier1);}
+  .card.t2{border-left-color:var(--tier2);}
+  .card.t3{border-left-color:var(--tier3);}
+  .card.t4{border-left-color:var(--tier4);}
+
+  .tier-tag{
+    display:inline-block; font-size:.68rem; padding:2px 7px;
+    border-radius:10px; color:#fff; margin-right:6px; vertical-align:middle;
+  }
+  .tag-t1{background:var(--tier1);}
+  .tag-t2{background:var(--tier2);}
+  .tag-t3{background:var(--tier3); color:#3a3200;}
+  .tag-t4{background:var(--tier4);}
+
+  .exam-q{
+    margin-top:8px; background:#FFF6E5; border:1px dashed var(--gold);
+    border-radius:6px; padding:6px 10px; font-size:.82rem;
+  }
+  .exam-q b{color:var(--red-dark);}
+
+  table{width:100%; border-collapse:collapse; font-size:.85rem; margin:8px 0;}
+  th,td{border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top;}
+  th{background:var(--blue); color:#fff; font-size:.8rem;}
+  tr:nth-child(even){background:#fbf9f4;}
+
+  .flow{display:flex; flex-direction:column; gap:0; align-items:stretch;}
+  .flow .step{
+    background:linear-gradient(135deg,#fff,#fdf6ec);
+    border:2px solid var(--gold);
+    border-radius:8px; padding:10px 12px; position:relative; font-size:.85rem;
+  }
+  .flow .arrow{text-align:center; color:var(--red); font-size:1.2rem; margin:2px 0;}
+
+  .grid2{display:grid; grid-template-columns:1fr; gap:12px;}
+  @media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+  .grid3{display:grid; grid-template-columns:1fr; gap:10px;}
+  @media(min-width:640px){.grid3{grid-template-columns:1fr 1fr 1fr;}}
+
+  .stat{
+    background:var(--blue); color:#fff; border-radius:10px;
+    padding:12px; text-align:center;
+  }
+  .stat .num{font-size:1.5rem; font-weight:800; color:var(--gold);}
+  .stat .lbl{font-size:.72rem; margin-top:2px;}
+
+  .mnemonic{
+    background:#EAF3EA; border:2px dashed var(--tier4);
+    border-radius:8px; padding:12px; font-size:.88rem;
+  }
+  .mnemonic b{color:#1b5e20;}
+
+  .revision-sheet{
+    background:#FFF9F0; border:3px solid var(--red);
+    border-radius:10px; padding:14px;
+  }
+  .revision-sheet h3{margin-top:0; color:var(--red-dark);}
+  .revision-sheet ul{margin:4px 0 10px 18px; font-size:.85rem;}
+
+  .lastday{
+    background:var(--red-dark); color:#fff; border-radius:10px; padding:14px;
+  }
+  .lastday h3{margin-top:0; color:var(--gold);}
+  .lastday ul{font-size:.85rem; margin:4px 0 0 18px;}
+
+  .comp-tree{font-size:.85rem;}
+  .comp-tree .node{
+    border:1px solid var(--blue); border-radius:6px; padding:8px 10px; margin:6px 0;
+    background:#F3F7FF;
+  }
+  .comp-tree .node.branch{margin-left:20px; border-left:4px solid var(--gold);}
+
+  footer{
+    text-align:center; padding:20px; font-size:.75rem; color:var(--muted);
+  }
+
+  #pdfBtn{
+    position:fixed; bottom:18px; right:18px; z-index:999;
+    background:var(--gold); color:var(--red-dark); border:none;
+    padding:12px 16px; border-radius:30px; font-weight:700;
+    box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; font-size:.85rem;
+  }
+  @media print{ #pdfBtn{display:none;} }
+
+  .legend-key{font-size:.72rem;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stack">
+    <span class="hi">डाकघर निर्यात केंद्र (DNK)</span>
+    <span class="en">Dak Ghar Niryat Kendra — Postal Export Facility</span>
+  </div>
+  <h1>📦 IP Exam विज़ुअल इन्फोग्राफिक</h1>
+  <div class="sub">Postal Manual आधारित परीक्षा-केंद्रित सारांश</div>
+  <div class="badge-row">
+    <span>🔴 अति महत्वपूर्ण</span>
+    <span>🟠 बार-बार पूछा गया</span>
+    <span>🟡 वैचारिक</span>
+    <span>🟢 त्वरित पुनरावृत्ति</span>
+  </div>
+</header>
+
+<nav class="tiers legend-key">
+  <div class="t">🔴 <span>Very Important</span></div>
+  <div class="t">🟠 <span>Frequently Asked</span></div>
+  <div class="t">🟡 <span>Conceptual</span></div>
+  <div class="t">🟢 <span>Quick Revision</span></div>
+</nav>
+
+<main>
+
+<!-- CHAPTER STRUCTURE -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">🗂️ अध्याय संरचना</span><span class="en">Chapter Breakdown</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="comp-tree">
+      <div class="node"><b>Chapter:</b> डाकघर निर्यात केंद्र (DNK) — Postal Export Facility</div>
+      <div class="node branch"><b>Sub-Chapter 1:</b> परिचय व अवलोकन / Introduction &amp; Overview</div>
+      <div class="node branch"><b>Sub-Chapter 2:</b> प्रक्रिया प्रवाह / Process Flow (PBE Filing)</div>
+      <div class="node branch"><b>Sub-Chapter 3:</b> निर्यात सेवाएँ / Export Services (EMS, Air Parcel, ITPS)</div>
+      <div class="node branch"><b>Sub-Chapter 4:</b> DNK ग्राहक पोर्टल / DNK Customer Portal</div>
+      <div class="node branch">↳ <i>Micro Topic:</i> पंजीकरण, लॉगिन, प्रोफाइल, बुकिंग, दस्तावेज़, फॉर्म, इतिहास</div>
+      <div class="node branch">↳ <i>Nano Topic:</i> IEC, PAN, GSTIN, AD Code, LUT, CN22/CN23, PBE, LEO</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEFINITION -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">📖 परिभाषा</span><span class="en">Definition</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="card t1">
+      <span class="tier-tag tag-t1">🔴 VERY IMP</span>
+      <div class="stack">
+        <span class="hi">भारत सरकार, लघु व्यापारियों, कारीगरों, शिल्पकारों व MSMEs को डाकघरों के माध्यम से निर्यात हेतु ऑनलाइन दस्तावेज़ीकरण व हैंड-होल्डिंग सुविधा प्रदान करती है — इसे डाकघर निर्यात केंद्र (DNK) कहते हैं।</span>
+        <span class="en">Govt. of India provides export facilities to small traders, artisans, craftsmen &amp; MSMEs through post offices — enabling online documentation of shipments and hand-holding. This is called Dak Ghar Niryat Kendra (DNK).</span>
+      </div>
+      <div class="exam-q"><b>Q.</b> DNK किसके लिए बनाया गया है? / DNK is meant for whom? — <i>उत्तर: Small traders, artisans, craftsmen, MSMEs</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK STATS -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">📊 मुख्य आंकड़े</span><span class="en">Key Numbers</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="grid3">
+      <div class="stat"><div class="num">1000+</div><div class="lbl">DNK operational across India</div></div>
+      <div class="stat"><div class="num">57</div><div class="lbl">Active DNK in 55 districts, MP Circle</div></div>
+      <div class="stat"><div class="num">200+</div><div class="lbl">Countries served (via Air Parcel/Speed Post/ITPS)</div></div>
+    </div>
+    <div class="exam-q"><b>Q.</b> MP Circle में कितने DNK सक्रिय हैं? — <i>57 DNK, 55 districts में</i> 🟠</div>
+  </div>
+</section>
+
+<!-- KEY FEATURES -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">✅ मुख्य विशेषताएँ</span><span class="en">Key Features</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card t2"><span class="tier-tag tag-t2">🟠</span> FPO पर उत्पाद नमूने ले जाने की आवश्यकता नहीं / No need to bring samples to FPO</div>
+      <div class="card t1"><span class="tier-tag tag-t1">🔴</span> Postal Bill of Export (PBE) की मैनुअल फाइलिंग नहीं — इलेक्ट्रॉनिक फाइलिंग / No manual PBE filing — filed electronically via portal</div>
+      <div class="card t3"><span class="tier-tag tag-t3">🟡</span> Customs House Agent/Officer की उपस्थिति आवश्यक नहीं / No customs agent/officer presence required</div>
+      <div class="card t4"><span class="tier-tag tag-t4">🟢</span> PBE, customs inspection के बाद पोर्टल से डाउनलोड होता है / PBE downloadable post customs inspection</div>
+      <div class="card t4"><span class="tier-tag tag-t4">🟢</span> पैकेजिंग व पिक-अप सुविधा उपलब्ध / Packaging &amp; pick-up facility available</div>
+      <div class="card t4"><span class="tier-tag tag-t4">🟢</span> ट्रैकिंग-ट्रेसिंग व सेल्फ-बुकिंग सुविधा / Tracking-tracing &amp; self-booking facility</div>
+    </div>
+    <div class="exam-q"><b>Q.</b> DNK के तहत PBE कैसे भरी जाती है? — <i>Electronically, portal के माध्यम से</i> 🔴</div>
+  </div>
+</section>
+
+<!-- PROCESS FLOW -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">🔄 प्रक्रिया प्रवाह (Flowchart)</span><span class="en">PBE Process Flow</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="step">1️⃣ <b class="hi">एक बार पंजीकरण</b> <span class="en">One-time registration</span> — DNK Portal पर Login ID बनाना</div>
+      <div class="arrow">⬇️</div>
+      <div class="step">2️⃣ <b class="hi">प्रोफाइल विवरण भरें</b> <span class="en">Fill profile</span> — IEC, PAN, GSTIN, AD Code</div>
+      <div class="arrow">⬇️</div>
+      <div class="step">3️⃣ <b class="hi">इलेक्ट्रॉनिक PBE फॉर्म भरें</b> <span class="en">Fill e-PBE format</span> — article details</div>
+      <div class="arrow">⬇️</div>
+      <div class="step">4️⃣ <b class="hi">फॉर्म जमा करें</b> <span class="en">Submit form</span> → Customs द्वारा <u>PBE No. आवंटित</u></div>
+      <div class="arrow">⬇️</div>
+      <div class="step">5️⃣ <b class="hi">लेबल सहित उपस्थित हों</b> <span class="en">Present with CN22/CN23 label</span> — DNK पर बुकिंग हेतु</div>
+      <div class="arrow">⬇️</div>
+      <div class="step">6️⃣ <b class="hi">FPO को प्रेषण</b> <span class="en">Dispatch to FPO</span> — अलग से labelled closing bag में</div>
+      <div class="arrow">⬇️</div>
+      <div class="step">7️⃣ <b class="hi">भौतिक परीक्षण</b> <span class="en">Physical examination at FPO</span></div>
+      <div class="arrow">⬇️</div>
+      <div class="step">8️⃣ ⚠️ <b class="hi">यदि समस्या हो</b> <span class="en">If issue arises</span> → Customs द्वारा Query, अतिरिक्त दस्तावेज़ पोर्टल पर अपलोड</div>
+      <div class="arrow">⬇️</div>
+      <div class="step">9️⃣ ✅ <b class="hi">LEO जारी</b> <span class="en">Let Export Order (LEO) granted</span> → PBE लॉगिन से डाउनलोड हेतु उपलब्ध</div>
+    </div>
+    <div class="exam-q"><b>Q.</b> LEO का पूर्ण रूप क्या है? — <i>Let Export Order</i> 🔴 &nbsp;|&nbsp; <b>Q.</b> PBE का पूर्ण रूप? — <i>Postal Bill of Export</i> 🔴</div>
+  </div>
+</section>
+
+<!-- COMPARISON: THREE SERVICES -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">📦 निर्यात सेवाओं की तुलना</span><span class="en">Comparison of Export Services</span></span>
+  </div>
+  <div class="sec-body">
+    <table>
+      <tr><th>विशेषता / Feature</th><th>Speed Post Parcel (EMS)</th><th>International Air Parcel</th><th>ITPS</th></tr>
+      <tr><td>अधिकतम वज़न / Max Weight</td><td><b>35 kg*</b></td><td><b>20 kg</b></td><td><b>2 kg</b></td></tr>
+      <tr><td>देश / Countries</td><td>106</td><td>Destination-dependent</td><td>39</td></tr>
+      <tr><td>आकार सीमा / Size Limit</td><td>Country-dependent</td><td>Length ≤1.05m; Length+Girth ≤2m</td><td>—</td></tr>
+      <tr><td>विशेष / Special</td><td>Track &amp; Trace</td><td>Weight/size varies by country</td><td>e-commerce के लिए बेहतर, volume discount</td></tr>
+    </table>
+    <div class="exam-q"><b>Q.</b> तीनों सेवाओं में सबसे कम वज़न सीमा किसकी है? — <i>ITPS (2 kg)</i> 🔴</div>
+    <div class="mnemonic">🧠 <b>Memory Trick:</b> "35-20-2 घटता क्रम" — <span class="hi">EMS(35) → Air Parcel(20) → ITPS(2)</span> — <span class="en">weight limits descend service-wise, easy to recall in exam.</span></div>
+  </div>
+</section>
+
+<!-- COMPENSATION COMPARISON -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">💰 क्षतिपूर्ति नीति तुलना</span><span class="en">Compensation Policy Comparison</span></span>
+  </div>
+  <div class="sec-body">
+    <table>
+      <tr><th>सेवा / Service</th><th>पूर्ण हानि/क्षति/चोरी / Total Loss</th><th>आंशिक / Partial</th><th>विलंब / Delay</th></tr>
+      <tr><td><b>EMS</b></td><td>Value of contents or <b>130 SDR</b>, whichever less + postal fee</td><td>Limited to value of lost/damaged contents; fee not refunded</td><td>5% of postal fee if delay &gt;5 days (excl. holidays)</td></tr>
+      <tr><td><b>Air Parcel</b></td><td>40 SDR/parcel + 4.50 SDR/kg or value, whichever less, <b>max 130 SDR</b> + postal fee</td><td>Limited to value of lost/damaged contents; fee not refunded</td><td>—</td></tr>
+      <tr><td><b>ITPS</b></td><td colspan="2"><b>Rs. 1000</b> or actual value, whichever less</td><td>—</td></tr>
+    </table>
+    <div class="card t1"><span class="tier-tag tag-t1">🔴</span> EMS documents की हानि/क्षति पर केवल paid postal fee की क्षतिपूर्ति मिलती है (contents की नहीं)। / For EMS documents loss/damage — only paid postal fee is compensated.</div>
+    <div class="exam-q"><b>Q.</b> EMS व Air Parcel दोनों में अधिकतम क्षतिपूर्ति SDR सीमा क्या है? — <i>130 SDR (दोनों में समान cap)</i> 🔴</div>
+    <div class="mnemonic">🧠 <b>SDR Trick:</b> "130 = Twin Cap" — <span class="hi">EMS व Air Parcel दोनों की अधिकतम क्षतिपूर्ति 130 SDR पर बराबर मिलती है</span>, भले ही गणना अलग हो।</div>
+  </div>
+</section>
+
+<!-- ITPS DISCOUNT SLABS -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">📈 ITPS छूट स्लैब</span><span class="en">ITPS Volume Discount Slabs</span></span>
+  </div>
+  <div class="sec-body">
+    <table>
+      <tr><th>मासिक राजस्व / Monthly Revenue</th><th>छूट / Discount</th></tr>
+      <tr><td>Up to ₹1,00,000</td><td>Nil 🟢</td></tr>
+      <tr><td>&gt;₹1,00,000 – ₹2,00,000</td><td>5% 🟠</td></tr>
+      <tr><td>&gt;₹2,00,000</td><td>10% 🔴</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Trick:</b> "1L-Nil, 2L-Five, ऊपर-Ten" — <span class="hi">1 लाख तक शून्य, 2 लाख तक 5%, उससे ऊपर 10%।</span></div>
+    <div class="exam-q"><b>Q.</b> ₹2,50,000 मासिक राजस्व पर कितनी छूट मिलेगी? — <i>10%</i> 🟠</div>
+  </div>
+</section>
+
+<!-- DNK PORTAL: REGISTRATION/DOCS -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">🖥️ DNK ग्राहक पोर्टल</span><span class="en">DNK Customer Portal Process</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="card t1"><span class="tier-tag tag-t1">🔴</span> Portal URL: <b>https://dnk.cept.gov.in/customers.web/</b></div>
+    <div class="grid2">
+      <div class="card t2"><span class="tier-tag tag-t2">🟠</span><span class="stack"><span class="hi">पंजीकरण</span><span class="en">Registration</span></span> — User ID, Email, Mobile, Password + OTP verification → confirmation email</div>
+      <div class="card t3"><span class="tier-tag tag-t3">🟡</span><span class="stack"><span class="hi">लॉगिन</span><span class="en">Login</span></span> — Username/Password OR Mobile + OTP</div>
+      <div class="card t1"><span class="tier-tag tag-t1">🔴</span><span class="stack"><span class="hi">प्रोफाइल प्रबंधन</span><span class="en">Profile Management</span></span> — IEC, AD Code, GSTIN, LUT (Letter of Undertaking)</div>
+      <div class="card t2"><span class="tier-tag tag-t2">🟠</span><span class="stack"><span class="hi">आर्टिकल बुकिंग</span><span class="en">Article Booking</span></span> — Individual (data entry) OR Bulk upload (Excel template)</div>
+      <div class="card t4"><span class="tier-tag tag-t4">🟢</span><span class="stack"><span class="hi">दस्तावेज़ अपलोड</span><span class="en">Documents Upload</span></span> — KYC docs (IEC, GSTIN); LUT हर वित्तीय वर्ष के शुरुआत में अपडेट</div>
+      <div class="card t4"><span class="tier-tag tag-t4">🟢</span><span class="stack"><span class="hi">फॉर्म डाउनलोड</span><span class="en">Forms Download</span></span> — CN23, Harmonized Label, PBE forms, Invoices, Address labels</div>
+    </div>
+    <div class="exam-q"><b>Q.</b> LUT को कब अपडेट करना होता है? — <i>प्रत्येक वित्तीय वर्ष के प्रारंभ में</i> 🟠</div>
+    <div class="mnemonic">🧠 <b>Documents Trick:</b> "I Pass GAL" → <b>I</b>EC, <b>PA</b>N, <b>G</b>STIN, <b>A</b>D Code, <b>L</b>UT — profile में भरे जाने वाले सभी documents।</div>
+  </div>
+</section>
+
+<!-- DECISION TREE: WHICH SERVICE -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">🌳 निर्णय वृक्ष</span><span class="en">Decision Tree — Choosing the Right Service</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="comp-tree">
+      <div class="node">पार्सल का वज़न क्या है? / What is the parcel weight?</div>
+      <div class="node branch">वज़न ≤ 2kg → <b>ITPS</b> (39 countries, e-commerce friendly)</div>
+      <div class="node branch">वज़न ≤ 20kg (आकार सीमा अनुसार) → <b>International Air Parcel</b></div>
+      <div class="node branch">वज़न ≤ 35kg* (देश अनुसार भिन्न) → <b>Speed Post Parcel (EMS)</b>, 106 countries</div>
+    </div>
+    <div class="exam-q"><b>Q.</b> एक 3kg पार्सल किस सेवा से भेजा जा सकता है? — <i>ITPS में नहीं (2kg सीमा), Air Parcel या EMS से भेजा जाएगा</i> 🟠</div>
+  </div>
+</section>
+
+<!-- ONE PAGE REVISION SHEET -->
+<section>
+  <div class="revision-sheet">
+    <h3>📝 One-Page Revision Sheet / एक-पृष्ठ पुनरावृत्ति शीट</h3>
+    <ul>
+      <li>DNK = Small traders/artisans/MSMEs के लिए postal export facility 🔴</li>
+      <li>1000+ DNK India में; 57 DNK MP Circle (55 districts) में 🟠</li>
+      <li>200+ countries covered 🟢</li>
+      <li>PBE = Postal Bill of Export; इलेक्ट्रॉनिक फाइलिंग 🔴</li>
+      <li>LEO = Let Export Order (customs द्वारा जारी) 🔴</li>
+      <li>CN22/CN23 = customs declaration labels 🟠</li>
+      <li>EMS: 35kg / 106 countries / compensation cap 130 SDR 🔴</li>
+      <li>Air Parcel: 20kg / length ≤1.05m / L+girth ≤2m / 40+4.50 SDR per kg, max 130 SDR 🔴</li>
+      <li>ITPS: 2kg / 39 countries / compensation ₹1000 or actual value 🔴</li>
+      <li>ITPS Discount: ≤1L Nil, 1-2L 5%, &gt;2L 10% 🟠</li>
+      <li>Delay compensation (EMS): 5% postal fee for &gt;5 days delay 🟠</li>
+      <li>Profile documents: IEC, PAN, GSTIN, AD Code, LUT 🔴</li>
+      <li>Portal: dnk.cept.gov.in/customers.web/ 🟡</li>
+    </ul>
+  </div>
+</section>
+
+<!-- LAST DAY REVISION -->
+<section>
+  <div class="lastday">
+    <h3>⏰ Last-Day Revision Notes / अंतिम दिन नोट्स</h3>
+    <ul>
+      <li>याद रखें क्रम: Register → Profile → PBE fill → Submit → PBE No. → CN22/23 label → Book → Dispatch → FPO exam → (Query if any) → LEO → Download</li>
+      <li>130 SDR cap दोनों EMS व Air Parcel में समान — पर calculation अलग</li>
+      <li>ITPS सबसे छोटा पार्सल (2kg) पर सबसे तेज़ व e-commerce friendly</li>
+      <li>LUT साल में एक बार (नए वित्तीय वर्ष के शुरू में) अपडेट होता है</li>
+      <li>No customs agent/officer आवश्यक नहीं — यह DNK की सबसे unique विशेषता है</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MNEMONICS SUMMARY -->
+<section>
+  <div class="sec-title">
+    <span class="stack"><span class="hi">🧠 स्मरण तकनीकें</span><span class="en">Memory Tricks &amp; Mnemonics</span></span>
+  </div>
+  <div class="sec-body">
+    <div class="mnemonic">1️⃣ <b>"35-20-2"</b> — EMS, Air Parcel, ITPS का घटता वज़न क्रम</div>
+    <div class="mnemonic" style="margin-top:8px;">2️⃣ <b>"I Pass GAL"</b> — IEC, PAN, GSTIN, AD Code, LUT (profile documents)</div>
+    <div class="mnemonic" style="margin-top:8px;">3️⃣ <b>"130 = Twin Cap"</b> — EMS व Air Parcel दोनों की max compensation 130 SDR</div>
+    <div class="mnemonic" style="margin-top:8px;">4️⃣ <b>"1L-Nil, 2L-Five, ऊपर-Ten"</b> — ITPS discount slabs</div>
+    <div class="mnemonic" style="margin-top:8px;">5️⃣ <b>"R-P-F-S-P-L-B-D-E-Q-L-D"</b> — Register, Profile, Fill PBE, Submit, PBE no, Label, Book, Dispatch, Exam(FPO), Query, LEO, Download</div>
+  </div>
+</section>
+
+<footer>
+  IP Exam Self-Study Portal | Source: India Post — Office of CPMG, MP Circle, Bhopal circular on DNK<br>
+  यह सामग्री केवल परीक्षा तैयारी हेतु सारांशित है / Content summarized for exam preparation purposes only.
+</footer>
+
+</main>
+
+<button id="pdfBtn" onclick="window.print()">⬇️ PDF Download</button>
+
+</body>
+</html>

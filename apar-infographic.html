@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAR - वार्षिक कार्य निष्पादन मूल्यांकन प्रतिवेदन | IP Exam Infographic</title>
+<style>
+  :root{
+    --red:#C8102E;
+    --blue:#003087;
+    --gold:#D4AF37;
+    --dark:#1a1a2e;
+    --lightbg:#fdf9f0;
+    --card:#ffffff;
+    --very-imp:#C8102E;
+    --freq:#E8730A;
+    --concept:#D4AF37;
+    --quick:#1E8A4C;
+    --gray:#666;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;
+    background:linear-gradient(180deg,#fdf9f0 0%,#f5efe0 100%);
+    color:var(--dark);
+    line-height:1.6;
+    padding-bottom:40px;
+  }
+  .container{max-width:900px; margin:0 auto; padding:0 12px;}
+
+  /* HEADER */
+  header{
+    background:linear-gradient(135deg,var(--blue) 0%,#001c52 100%);
+    color:#fff;
+    padding:22px 16px 26px;
+    text-align:center;
+    border-bottom:6px solid var(--gold);
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute; top:-50px; right:-50px;
+    width:180px; height:180px;
+    background:radial-gradient(circle, rgba(200,16,46,0.35), transparent 70%);
+  }
+  header h1{
+    font-size:1.5rem;
+    margin-bottom:4px;
+    position:relative;
+    letter-spacing:0.5px;
+  }
+  header .sub{
+    font-size:0.95rem;
+    color:var(--gold);
+    font-weight:600;
+    position:relative;
+  }
+  header .tag{
+    margin-top:10px;
+    font-size:0.78rem;
+    background:rgba(255,255,255,0.12);
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:20px;
+    position:relative;
+  }
+
+  /* NAV */
+  .navbar{
+    display:flex;
+    overflow-x:auto;
+    gap:6px;
+    padding:10px 8px;
+    background:var(--dark);
+    position:sticky;
+    top:0;
+    z-index:50;
+    scrollbar-width:thin;
+  }
+  .navbar a{
+    flex:0 0 auto;
+    color:#fff;
+    background:rgba(255,255,255,0.08);
+    text-decoration:none;
+    font-size:0.72rem;
+    padding:7px 11px;
+    border-radius:14px;
+    white-space:nowrap;
+    border:1px solid rgba(255,255,255,0.15);
+  }
+  .navbar a:active, .navbar a:hover{background:var(--red);}
+
+  /* SECTION */
+  section{
+    margin:22px 10px;
+    background:var(--card);
+    border-radius:14px;
+    padding:18px 16px;
+    box-shadow:0 3px 14px rgba(0,0,0,0.08);
+    border-top:5px solid var(--blue);
+  }
+  section.gold{border-top-color:var(--gold);}
+  section.red{border-top-color:var(--red);}
+  section.green{border-top-color:var(--quick);}
+
+  h2.sec-title{
+    font-size:1.15rem;
+    color:var(--blue);
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border-bottom:2px dashed #eee;
+    padding-bottom:8px;
+  }
+  h2.sec-title .num{
+    background:var(--red);
+    color:#fff;
+    width:28px; height:28px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.85rem;
+    flex-shrink:0;
+  }
+  h3.sub-title{
+    font-size:1rem;
+    color:var(--red);
+    margin:14px 0 8px;
+  }
+
+  /* TAGS */
+  .tag-badge{
+    display:inline-block;
+    font-size:0.68rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:10px;
+    margin-left:6px;
+    color:#fff;
+    vertical-align:middle;
+  }
+  .vi{background:var(--very-imp);}
+  .fa{background:var(--freq);}
+  .cu{background:var(--concept); color:#3a2e00;}
+  .qr{background:var(--quick);}
+
+  .legend{
+    display:flex; flex-wrap:wrap; gap:8px;
+    font-size:0.72rem;
+    background:#fdf6e3;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:16px;
+    border:1px dashed var(--gold);
+  }
+  .legend span{display:flex; align-items:center; gap:4px;}
+  .dot{width:10px; height:10px; border-radius:50%; display:inline-block;}
+
+  /* DEFINITION BOX */
+  .def-box{
+    background:linear-gradient(135deg,#fff8e8,#fef2d8);
+    border-left:5px solid var(--gold);
+    padding:14px;
+    border-radius:8px;
+    font-size:0.92rem;
+    margin-bottom:14px;
+  }
+  .def-box b{color:var(--blue);}
+
+  /* TIMELINE */
+  .timeline{
+    position:relative;
+    padding-left:26px;
+    margin:16px 0;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute; left:8px; top:4px; bottom:4px;
+    width:3px;
+    background:linear-gradient(180deg,var(--gold),var(--red));
+    border-radius:3px;
+  }
+  .t-item{
+    position:relative;
+    margin-bottom:16px;
+    padding-left:12px;
+  }
+  .t-item::before{
+    content:"";
+    position:absolute; left:-24px; top:2px;
+    width:14px; height:14px;
+    border-radius:50%;
+    background:var(--red);
+    border:3px solid #fff;
+    box-shadow:0 0 0 2px var(--red);
+  }
+  .t-item .t-date{font-weight:700; color:var(--red); font-size:0.85rem;}
+  .t-item .t-desc{font-size:0.85rem; color:#333;}
+
+  /* FLOWCHART */
+  .flow{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    margin:16px 0;
+  }
+  .flow-box{
+    background:linear-gradient(135deg,#eef3ff,#e3ecff);
+    border:2px solid var(--blue);
+    border-radius:10px;
+    padding:10px 14px;
+    font-size:0.85rem;
+    text-align:center;
+    position:relative;
+  }
+  .flow-box.hi{border-color:var(--red); background:linear-gradient(135deg,#ffecec,#ffe0e0);}
+  .flow-arrow{
+    text-align:center;
+    color:var(--red);
+    font-size:1.3rem;
+    line-height:1.1;
+    margin:2px 0;
+  }
+  .flow-box small{display:block; color:var(--gray); font-size:0.72rem; margin-top:3px;}
+
+  /* TABLES */
+  .table-wrap{overflow-x:auto; margin:14px 0; border-radius:8px;}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.8rem;
+    min-width:480px;
+  }
+  thead th{
+    background:var(--blue);
+    color:#fff;
+    padding:8px 6px;
+    text-align:left;
+    font-size:0.76rem;
+  }
+  tbody td{
+    padding:7px 6px;
+    border-bottom:1px solid #eee;
+  }
+  tbody tr:nth-child(even){background:#f8f9fc;}
+  tbody tr:hover{background:#fff3e0;}
+  .table-wrap.tight table{min-width:100%;}
+
+  /* MINDMAP style using nested boxes */
+  .mindmap{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin:14px 0;
+  }
+  .mind-center{
+    background:var(--red);
+    color:#fff;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:0.95rem;
+  }
+  .mind-branches{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .mind-branch{
+    background:#eef3ff;
+    border:1.5px solid var(--blue);
+    border-radius:8px;
+    padding:8px 10px;
+    font-size:0.78rem;
+  }
+  .mind-branch b{display:block; color:var(--blue); margin-bottom:3px; font-size:0.82rem;}
+
+  /* DECISION TREE */
+  .dtree{margin:14px 0; font-size:0.83rem;}
+  .dq{
+    background:var(--gold);
+    color:#3a2e00;
+    padding:8px 12px;
+    border-radius:8px;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .dopt{
+    display:flex;
+    gap:8px;
+    margin-bottom:10px;
+    padding-left:14px;
+    border-left:3px solid #ddd;
+  }
+  .dopt .yn{
+    flex-shrink:0;
+    background:var(--blue);
+    color:#fff;
+    font-size:0.7rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:6px;
+    height:fit-content;
+  }
+  .dopt .res{background:#f2f6ff; padding:6px 10px; border-radius:6px; flex:1;}
+
+  /* PROGRESS/WEIGHTAGE BAR */
+  .weight-bar-wrap{margin:10px 0;}
+  .weight-label{display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:3px;}
+  .weight-bar-bg{background:#eee; border-radius:8px; height:20px; overflow:hidden;}
+  .weight-bar-fill{
+    height:100%;
+    display:flex; align-items:center; justify-content:flex-end;
+    color:#fff; font-size:0.7rem; font-weight:700; padding-right:6px;
+    border-radius:8px;
+  }
+
+  /* WARNING/ALERT BOX */
+  .alert{
+    background:#fff0f0;
+    border:2px solid var(--red);
+    border-radius:10px;
+    padding:12px 14px;
+    margin:14px 0;
+    font-size:0.85rem;
+  }
+  .alert b{color:var(--red);}
+  .alert::before{content:"⚠️ "; }
+
+  /* EXAM Q BOX */
+  .examq{
+    background:#eaf7ee;
+    border-left:4px solid var(--quick);
+    padding:8px 12px;
+    border-radius:6px;
+    font-size:0.78rem;
+    margin-top:8px;
+  }
+  .examq b{color:var(--quick);}
+
+  /* MNEMONIC */
+  .mnemonic{
+    background:linear-gradient(135deg,#fef2d8,#fff8e8);
+    border:2px dashed var(--gold);
+    border-radius:10px;
+    padding:12px 14px;
+    margin:12px 0;
+    font-size:0.85rem;
+  }
+  .mnemonic b{color:var(--red); display:block; margin-bottom:4px;}
+
+  /* COMPARISON OLD vs NEW */
+  .compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin:12px 0;
+  }
+  .compare-box{
+    border-radius:8px;
+    padding:10px;
+    font-size:0.78rem;
+  }
+  .old-box{background:#ffecec; border:1.5px solid var(--red);}
+  .new-box{background:#e6f7ec; border:1.5px solid var(--quick);}
+  .compare-box .head{font-weight:700; text-align:center; margin-bottom:6px; font-size:0.82rem;}
+  .old-box .head{color:var(--red);}
+  .new-box .head{color:var(--quick);}
+  .compare-box ul{padding-left:16px;}
+  .compare-box li{margin-bottom:4px;}
+
+  /* REVISION SHEET */
+  .rev-sheet{
+    background:linear-gradient(135deg,#003087,#001c52);
+    color:#fff;
+    border-radius:14px;
+    padding:16px;
+  }
+  .rev-sheet h2{color:#fff; border-bottom-color:rgba(255,255,255,0.2);}
+  .rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+  .rev-item{
+    background:rgba(255,255,255,0.08);
+    border-radius:8px;
+    padding:10px 12px;
+    font-size:0.8rem;
+    border-left:3px solid var(--gold);
+  }
+  .rev-item b{color:var(--gold);}
+
+  /* LAST DAY NOTES */
+  .lastday{
+    background:#1a1a2e;
+    color:#fff;
+    border-radius:14px;
+    padding:16px;
+  }
+  .lastday h2{color:#fff; border-bottom-color:rgba(255,255,255,0.2);}
+  .lastday ul{padding-left:18px; font-size:0.85rem;}
+  .lastday li{margin-bottom:8px;}
+  .lastday li b{color:var(--gold);}
+
+  footer{
+    text-align:center;
+    font-size:0.72rem;
+    color:var(--gray);
+    padding:18px;
+  }
+
+  @media(min-width:600px){
+    .mind-branches{grid-template-columns:repeat(3,1fr);}
+  }
+  @media(max-width:420px){
+    .compare-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📋 APAR — वार्षिक कार्य निष्पादन मूल्यांकन प्रतिवेदन</h1>
+  <div class="sub">Annual Performance Assessment Report</div>
+  <div class="tag">Paper II | CCS Establishment Rules | India Post IP Exam</div>
+</header>
+
+<nav class="navbar">
+  <a href="#intro">📖 परिचय</a>
+  <a href="#history">🕐 इतिहास</a>
+  <a href="#oms">📜 OMs</a>
+  <a href="#process">🔄 प्रक्रिया</a>
+  <a href="#timelimits">⏱️ समय सीमा</a>
+  <a href="#grading">📊 ग्रेडिंग</a>
+  <a href="#authority">👤 प्राधिकारी</a>
+  <a href="#integrity">🛡️ Integrity</a>
+  <a href="#representation">✍️ प्रतिवेदन</a>
+  <a href="#forfeit">🚫 Forfeiture</a>
+  <a href="#special">🔖 विशेष प्रावधान</a>
+  <a href="#retention">🗄️ Retention</a>
+  <a href="#case">⚖️ केस लॉ</a>
+  <a href="#compare">🔀 ACR vs APAR</a>
+  <a href="#mnemonics">🧠 Mnemonics</a>
+  <a href="#revision">📝 Revision Sheet</a>
+  <a href="#lastday">🌙 Last Day</a>
+</nav>
+
+<div class="container">
+
+<!-- LEGEND -->
+<div class="legend" style="margin:16px 10px;">
+  <span><span class="dot" style="background:var(--very-imp);"></span> 🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span><span class="dot" style="background:var(--freq);"></span> 🟠 बार-बार पूछा गया</span>
+  <span><span class="dot" style="background:var(--concept);"></span> 🟡 अवधारणात्मक</span>
+  <span><span class="dot" style="background:var(--quick);"></span> 🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<!-- INTRO -->
+<section id="intro" class="red">
+  <h2 class="sec-title"><span class="num">1</span> विषय परिचय व परिभाषा <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="def-box">
+    <b>APAR (Annual Performance Assessment Report)</b> — केंद्र सरकार के कर्मचारियों के कार्य निष्पादन, आचरण एवं क्षमता का वार्षिक मूल्यांकन दस्तावेज़ है। यह पहले <b>ACR (Annual Confidential Report)</b> कहलाता था, जिसे DoPT OM No. 21011/1/2005-Estt(A)(Pt-II) दिनांक <b>14.05.2009</b> द्वारा APAR नाम दिया गया।
+  </div>
+  <div class="mindmap">
+    <div class="mind-center">APAR का उद्देश्य</div>
+    <div class="mind-branches">
+      <div class="mind-branch"><b>1️⃣ कार्य सुधार</b>वर्तमान पद पर प्रदर्शन में सुधार लाना</div>
+      <div class="mind-branch"><b>2️⃣ क्षमता मूल्यांकन</b>भविष्य के अवसरों हेतु संभावनाओं का आकलन</div>
+      <div class="mind-branch"><b>3️⃣ करियर निर्णय</b>पुष्टिकरण, पदोन्नति, प्रतिनियुक्ति हेतु आधार</div>
+    </div>
+  </div>
+  <div class="examq"><b>संभावित प्रश्न:</b> ACR का नाम बदलकर APAR कब किया गया? — उत्तर: 14 मई 2009</div>
+</section>
+
+<!-- HISTORY TIMELINE -->
+<section id="history" class="gold">
+  <h2 class="sec-title"><span class="num">2</span> विकास क्रम (Historical Timeline) <span class="tag-badge fa">🟠 FA</span></h2>
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-date">20 मई 1972</div>
+      <div class="t-desc">OM No. 51/5/72-Estt(A) — Confidential Reports की तैयारी व रखरखाव हेतु मूल दिशानिर्देश जारी (नींव दस्तावेज़)</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">17 दिसंबर 1986</div>
+      <div class="t-desc">O.M. No. 12/2/84-PP — Self-appraisal व Targets की अवधारणा शुरू (कर्मचारी स्वयं विवरण देगा)</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">12 मई 2008</div>
+      <div class="t-desc">🔴 Dev Dutt vs Union of India — सुप्रीम कोर्ट का ऐतिहासिक निर्णय (पारदर्शिता हेतु)</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">14 मई 2009</div>
+      <div class="t-desc">🔴 OM No. 21011/1/2005-Estt(A)(Pt-II) — ACR का नाम बदलकर APAR + पूर्ण प्रतिवेदन संचार अनिवार्य</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">23 जुलाई 2009</div>
+      <div class="t-desc">🔴 OM No. 21011/1/2005-Estt(A)(Pt-II) — Pen Picture Box + संख्यात्मक ग्रेडिंग (1-10 स्केल) शुरू</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">15 अप्रैल 2019</div>
+      <div class="t-desc">MoSPI OM (File No. A-28011/1/2019-APAR) — उपरोक्त सभी OMs का पुनः स्मरण व अनुपालन हेतु परिपत्र</div>
+    </div>
+  </div>
+  <div class="mnemonic"><b>🧠 Memory Trick:</b> "1972 में जन्म, 1986 में लक्ष्य, 2008 में न्याय, 2009 में नाम व नंबर" — (72-जन्म, 86-टारगेट, 2008-Dev Dutt केस, 2009-नाम बदला+ग्रेडिंग आई)</div>
+</section>
+
+<!-- GOVERNING OMs -->
+<section id="oms">
+  <h2 class="sec-title"><span class="num">3</span> महत्वपूर्ण OMs / परिपत्र <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>OM संख्या</th><th>दिनांक</th><th>विषय</th></tr></thead>
+      <tbody>
+        <tr><td>51/5/72-Estt(A)</td><td>20.05.1972</td><td>CR की तैयारी व रखरखाव (मूल)</td></tr>
+        <tr><td>21011/1/2005-Estt(A)(Pt-II)</td><td>14.05.2009</td><td>APAR नामकरण + पूर्ण संचार पारदर्शिता</td></tr>
+        <tr><td>21011/1/2005-Estt(A)(Pt-II)</td><td>23.07.2009</td><td>Pen Picture + संख्यात्मक ग्रेडिंग प्रणाली</td></tr>
+        <tr><td>File A-28011/1/2019-APAR (MoSPI)</td><td>15.04.2019</td><td>उपरोक्त OMs का अनुपालन हेतु पुनः स्मरण</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="examq"><b>संभावित प्रश्न:</b> संख्यात्मक ग्रेडिंग प्रणाली किस OM से लागू हुई? — 23 जुलाई 2009 वाली OM से</div>
+</section>
+
+<!-- PROCESS FLOWCHART -->
+<section id="process" class="red">
+  <h2 class="sec-title"><span class="num">4</span> APAR प्रक्रिया प्रवाह चार्ट <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="flow">
+    <div class="flow-box">1️⃣ रिक्त APAR फॉर्म वितरण<small>31 मार्च तक</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">2️⃣ Self-Appraisal (कर्मचारी द्वारा)<small>15 अप्रैल तक</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box hi">3️⃣ Reporting Officer द्वारा मूल्यांकन<small>Reviewing Officer को 30 जून तक</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box hi">4️⃣ Reviewing Officer द्वारा समीक्षा<small>31 जुलाई तक पूर्ण</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">5️⃣ Accepting Authority (जहाँ लागू)<small>31 अगस्त तक</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box hi">6️⃣ Officer को Disclosure (प्रकटीकरण)<small>1 सितंबर / 15 सितंबर</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">7️⃣ Representation (यदि कोई हो)<small>15 दिनों के भीतर</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">8️⃣ Competent Authority निर्णय<small>30 दिनों में</small></div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box hi">9️⃣ APAR अंतिम रूप से रिकॉर्ड पर<small>30 नवंबर तक</small></div>
+  </div>
+  <div class="examq"><b>संभावित प्रश्न:</b> APAR प्रक्रिया की पूरी शृंखला कब समाप्त मानी जाती है? — 30 नवंबर को</div>
+</section>
+
+<!-- TIME LIMITS -->
+<section id="timelimits" class="gold">
+  <h2 class="sec-title"><span class="num">5</span> पूर्ण समय-सारणी (Annexure-III) <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>गतिविधि</th><th>अंतिम तिथि</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>रिक्त फॉर्म वितरण</td><td><b>31 मार्च</b></td></tr>
+        <tr><td>2</td><td>Self-appraisal जमा</td><td><b>15 अप्रैल</b></td></tr>
+        <tr><td>3</td><td>Reporting Officer → Reviewing Officer</td><td><b>30 जून</b></td></tr>
+        <tr><td>4</td><td>Reviewing Officer पूर्ण करे</td><td><b>31 जुलाई</b></td></tr>
+        <tr><td>5</td><td>Accepting Authority मूल्यांकन</td><td><b>31 अगस्त</b></td></tr>
+        <tr><td>6(a)</td><td>Disclosure (बिना Accepting Auth.)</td><td><b>1 सितंबर</b></td></tr>
+        <tr><td>6(b)</td><td>Disclosure (Accepting Auth. सहित)</td><td><b>15 सितंबर</b></td></tr>
+        <tr><td>7</td><td>Representation प्राप्ति</td><td><b>15 दिन</b> (disclosure से)</td></tr>
+        <tr><td>8(a)</td><td>Representation भेजना (बिना Accept.Auth.)</td><td><b>21 सितंबर</b></td></tr>
+        <tr><td>8(b)</td><td>Representation भेजना (Accept.Auth. सहित)</td><td><b>6 अक्टूबर</b></td></tr>
+        <tr><td>9</td><td>Competent Authority द्वारा निपटान</td><td><b>1 माह</b> (receipt से)</td></tr>
+        <tr><td>10</td><td>निर्णय की सूचना (APAR Cell द्वारा)</td><td><b>15 नवंबर</b></td></tr>
+        <tr><td>11</td><td>APAR अंतिम रूप से रिकॉर्ड पर</td><td><b>30 नवंबर</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mnemonic"><b>🧠 Memory Trick (महीनों का क्रम):</b> "मार्च बाँटे, अप्रैल खुद बताए, जून भेजे, जुलाई जाँचे, अगस्त स्वीकारे, सितंबर दिखाए, नवंबर अंत करे" — हर महीना अगली माह की 15 तारीख/अंत तक अगला चरण
+  </div>
+  <div class="examq"><b>संभावित प्रश्न:</b> Reviewing Officer को अपनी टिप्पणी कब तक पूर्ण करनी होती है? — उत्तर: 31 जुलाई</div>
+</section>
+
+<!-- GRADING SYSTEM -->
+<section id="grading">
+  <h2 class="sec-title"><span class="num">6</span> संख्यात्मक ग्रेडिंग प्रणाली (1-10 स्केल) <span class="tag-badge vi">🔴 VI</span></h2>
+  <p style="font-size:0.85rem; margin-bottom:10px;">23 जुलाई 2009 की OM अनुसार, तीन क्षेत्रों में भारित औसत (weighted mean) निकाला जाता है:</p>
+
+  <div class="weight-bar-wrap">
+    <div class="weight-label"><span>1️⃣ कार्य निष्पादन (Work Output)</span><span>40%</span></div>
+    <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:40%; background:var(--red);">40%</div></div>
+  </div>
+  <div class="weight-bar-wrap">
+    <div class="weight-label"><span>2️⃣ व्यक्तिगत गुण (Personal Attributes)</span><span>30%</span></div>
+    <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:30%; background:var(--blue);">30%</div></div>
+  </div>
+  <div class="weight-bar-wrap">
+    <div class="weight-label"><span>3️⃣ कार्यात्मक क्षमता (Functional Competency)</span><span>30%</span></div>
+    <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:30%; background:var(--quick);">30%</div></div>
+  </div>
+
+  <div class="mnemonic"><b>🧠 Memory Trick:</b> "4-3-3 फॉर्मूला" — जैसे फुटबॉल में 4-3-3 formation, वैसे ही APAR में 40-30-30 वेटेज!</div>
+
+  <h3 class="sub-title">ग्रेडिंग बैंड्स (Annexure-I) <span class="tag-badge fa">🟠 FA</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>प्राप्त ग्रेड</th><th>वर्गीकरण</th><th>Empanelment हेतु स्कोर</th></tr></thead>
+      <tbody>
+        <tr><td>8 – 10</td><td>Outstanding (उत्कृष्ट)</td><td><b>9</b></td></tr>
+        <tr><td>6 – <8</td><td>Very Good (बहुत अच्छा)</td><td><b>7</b></td></tr>
+        <tr><td>4 – <6</td><td>Good (अच्छा)</td><td><b>5</b></td></tr>
+        <tr><td>&lt; 4</td><td>—</td><td><b>0</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert"><b>ध्यान दें:</b> ग्रेड 1-2 या 9-10 देने पर विशिष्ट कारण (specific failures/accomplishments) पेन-पिक्चर में अवश्य लिखना होगा — ये "rare occurrences" मानी जाती हैं।</div>
+  <div class="examq"><b>संभावित प्रश्न:</b> ग्रेड 7 किस श्रेणी को दर्शाता है? — Very Good (6 से 8 से कम)</div>
+</section>
+
+<!-- AUTHORITIES -->
+<section id="authority" class="gold">
+  <h2 class="sec-title"><span class="num">7</span> प्राधिकारी व अभिरक्षा (Custody) नियम <span class="tag-badge fa">🟠 FA</span></h2>
+  <div class="mindmap">
+    <div class="mind-center">APAR प्राधिकारी</div>
+    <div class="mind-branches">
+      <div class="mind-branch"><b>Reporting Officer</b>प्रथम मूल्यांकन (न्यूनतम 3 माह अनुभव आवश्यक)</div>
+      <div class="mind-branch"><b>Reviewing Officer</b>स्वतंत्र समीक्षा, असहमति के कारण सहित</div>
+      <div class="mind-branch"><b>Accepting Authority</b>जहाँ प्रावधान हो, अंतिम ग्रेड (1-10)</div>
+    </div>
+  </div>
+  <h3 class="sub-title">रखरखाव / अभिरक्षा नियम</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>श्रेणी</th><th>रखने वाला प्राधिकारी</th></tr></thead>
+      <tbody>
+        <tr><td>Organized Services</td><td>नियंत्रक Ministry/Department/Office</td></tr>
+        <tr><td>HOD व उनके Deputies (IAAS छोड़कर)</td><td>प्रशासनिक Ministry (IAAS का CAG रखता है)</td></tr>
+        <tr><td>Group A व B अधिकारी</td><td>HOD या उनके द्वारा नामित प्राधिकारी</td></tr>
+        <tr><td>Group C व D</td><td>HOD द्वारा निर्दिष्ट प्राधिकारी</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert"><b>महत्वपूर्ण नियम:</b> APAR कभी भी नियुक्ति प्राधिकारी (appointing authority) से उच्च प्राधिकारी के पास नहीं रखा जाएगा।</div>
+  <div class="examq"><b>संभावित प्रश्न:</b> IAAS अधिकारियों के HOD की APAR कौन रखता है? — Comptroller and Auditor General (CAG)</div>
+</section>
+
+<!-- INTEGRITY COLUMN -->
+<section id="integrity" class="red">
+  <h2 class="sec-title"><span class="num">8</span> Integrity Column — 3 विकल्प <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="dtree">
+    <div class="dq">Reporting Officer, Integrity Column कैसे भरे?</div>
+    <div class="dopt"><span class="yn">विकल्प 1</span><div class="res"><b>Beyond doubt</b> — यदि अधिकारी की सत्यनिष्ठा पर कोई संदेह नहीं</div></div>
+    <div class="dopt"><span class="yn">विकल्प 2</span><div class="res"><b>Integrity doubtful, secret note attached</b> — यदि संदेह है, गुप्त नोट संलग्न किया जाएगा</div></div>
+    <div class="dopt"><span class="yn">विकल्प 3</span><div class="res"><b>Not watched for sufficient time</b> — यदि पर्याप्त समय तक कार्य नहीं देखा, पर कुछ प्रतिकूल सूचना नहीं मिली</div></div>
+  </div>
+  <div class="mnemonic"><b>🧠 Memory Trick:</b> "<b>B-D-N</b>" — Beyond doubt, Doubtful (secret note), Not watched — तीन विकल्प!</div>
+  <div class="examq"><b>संभावित प्रश्न:</b> Integrity column में कितने विकल्प निर्धारित हैं? — उत्तर: 3 (तीन)</div>
+</section>
+
+<!-- REPRESENTATION -->
+<section id="representation">
+  <h2 class="sec-title"><span class="num">9</span> प्रतिवेदन (Representation) प्रक्रिया <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="dtree">
+    <div class="dq">क्या अधिकारी 15 दिनों में Representation करता है?</div>
+    <div class="dopt"><span class="yn">हाँ</span><div class="res">Competent Authority विचार करेगा (रिपोर्टिंग/रिव्यूइंग अधिकारी से परामर्श कर) — <b>30 दिनों</b> में निर्णय</div></div>
+    <div class="dopt"><span class="yn">नहीं</span><div class="res">माना जाएगा कि कोई प्रतिवेदन नहीं है → APAR <b>अंतिम (final)</b> मान ली जाएगी</div></div>
+  </div>
+  <div class="flow">
+    <div class="flow-box">Representation दर्ज</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box hi">Competent Authority समीक्षा</div>
+    <div class="flow-arrow">⬇</div>
+  </div>
+  <div class="mind-branches" style="margin-top:6px;">
+    <div class="mind-branch"><b>अस्वीकार</b>पर्याप्त आधार नहीं होने पर representation खारिज</div>
+    <div class="mind-branch"><b>स्वीकार/संशोधन</b>APAR में संशोधन कर नई ग्रेड दी जाती है</div>
+  </div>
+  <p style="font-size:0.82rem; margin-top:10px;">Representation केवल <b>विशिष्ट तथ्यात्मक टिप्पणियों</b> तक सीमित होगा, न कि सामान्य असंतोष तक।</p>
+  <div class="examq"><b>संभावित प्रश्न:</b> यदि 15 दिनों में कोई प्रतिवेदन प्राप्त नहीं होता तो क्या होगा? — APAR अंतिम मान ली जाएगी</div>
+</section>
+
+<!-- FORFEITURE RULE -->
+<section id="forfeit" class="red">
+  <h2 class="sec-title"><span class="num">10</span> Forfeiture Rule (अधिकार समाप्ति नियम) <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="alert">
+    <b>Reporting Officer</b> यदि APAR <b>30 जून</b> के बाद भी शुरू नहीं करता → वह टिप्पणी लिखने का अधिकार खो देता है (forfeit) → अगले कार्य दिवस Reviewing Officer को भेजना अनिवार्य।
+  </div>
+  <div class="alert">
+    <b>Reviewing Officer</b> यदि <b>31 अगस्त</b> के बाद भी टिप्पणी नहीं देता → वह भी अपना अधिकार खो देता है।
+  </div>
+  <p style="font-size:0.82rem; margin-top:8px;">यदि दोनों अधिकार खो देते हैं, तो केवल कर्मचारी के Self-appraisal सहित APAR फॉर्म ही ACR dossier में रखा जाएगा।</p>
+  <p style="font-size:0.82rem; margin-top:6px;">(OM No. 21011/02/2009-Estt.A dated 16.02.2009 — रिपोर्टिंग वर्ष 2008-09 से लागू)</p>
+  <div class="examq"><b>संभावित प्रश्न:</b> Reporting Officer कब अपना APAR लिखने का अधिकार खो देता है? — 30 जून के बाद तक शुरू न करने पर</div>
+</section>
+
+<!-- SPECIAL PROVISIONS -->
+<section id="special" class="gold">
+  <h2 class="sec-title"><span class="num">11</span> विशेष प्रावधान (Special Cases) <span class="tag-badge fa">🟠 FA</span></h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>स्थिति</th><th>नियम</th></tr></thead>
+      <tbody>
+        <tr><td>Honorary/Part-time अधिकारी</td><td>APAR आवश्यक नहीं</td></tr>
+        <tr><td>Contract कर्मचारी</td><td>APAR आवश्यक है (contract renewal हेतु आधार)</td></tr>
+        <tr><td>Group D कर्मचारी</td><td>आवश्यक नहीं, जब तक sensitive कार्य न हो</td></tr>
+        <tr><td>UN Agency प्रतिनियुक्ति</td><td>यदि periodical review प्रथा नहीं तो आवश्यक नहीं</td></tr>
+        <tr><td>World Bank/ADB/IMF प्रतिनियुक्ति</td><td>Executive Directors द्वारा, सामान्यतः tenure के अंत में</td></tr>
+        <tr><td>Suspension के दौरान अधिकारी</td><td>Suspension से 2 माह या due date से 1 माह, जो बाद में हो, में लिख सकता है</td></tr>
+        <tr><td>Close Relative posted under officer</td><td>Reviewing Officer, Reporting Officer की भूमिका निभाएगा</td></tr>
+        <tr><td>Earned Leave >15 दिन</td><td>3 माह अनुभव गणना से घटाया जाएगा</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="examq"><b>संभावित प्रश्न:</b> निलंबित अधिकारी कितने समय में APAR लिख/समीक्षा सकता है? — निलंबन से 2 माह या नियत तिथि से 1 माह (जो बाद में हो)</div>
+</section>
+
+<!-- RETENTION -->
+<section id="retention">
+  <h2 class="sec-title"><span class="num">12</span> धारण अवधि (Retention Period) <span class="tag-badge qr">🟢 QR</span></h2>
+  <div class="mind-branches">
+    <div class="mind-branch"><b>🕊️ मृत कर्मचारी</b>मृत्यु तिथि से <b>2 वर्ष</b> बाद नष्ट किया जा सकता है</div>
+    <div class="mind-branch"><b>👴 सेवानिवृत्त कर्मचारी</b>सेवानिवृत्ति से <b>5 वर्ष</b> बाद नष्ट किया जा सकता है</div>
+  </div>
+  <div class="mnemonic"><b>🧠 Memory Trick:</b> "मृत्यु में 2, रिटायरमेंट में 5" — 2 और 5 का अंतर याद रखें (Death=2, Retirement=5)</div>
+  <div class="examq"><b>संभावित प्रश्न:</b> सेवानिवृत्त कर्मचारी की APAR dossier कितने वर्ष बाद नष्ट की जा सकती है? — 5 वर्ष</div>
+</section>
+
+<!-- CASE LAW -->
+<section id="case" class="red">
+  <h2 class="sec-title"><span class="num">13</span> ऐतिहासिक न्यायिक निर्णय <span class="tag-badge vi">🔴 VI</span></h2>
+  <div class="def-box">
+    <b>Dev Dutt vs Union of India</b> (Civil Appeal No. 7631 of 2002)<br>
+    सुप्रीम कोर्ट निर्णय दिनांक: <b>12.05.2008</b><br><br>
+    <b>मुख्य सिद्धांत:</b> गोपनीय रिपोर्ट (Confidential Report) लिखने व प्रविष्टियाँ करने का उद्देश्य कर्मचारी को अपने प्रदर्शन में सुधार का अवसर देना है — इसीलिए पूर्ण APAR (न केवल प्रतिकूल टिप्पणी) संबंधित अधिकारी को बताई जानी चाहिए।
+  </div>
+  <p style="font-size:0.82rem;">इसी निर्णय के आधार पर 14.05.2009 की OM द्वारा पूर्ण APAR संचार (overall grade व integrity सहित) अनिवार्य किया गया।</p>
+  <div class="examq"><b>संभावित प्रश्न:</b> APAR का पूर्ण प्रकटीकरण किस न्यायिक निर्णय पर आधारित है? — Dev Dutt vs Union of India (2008)</div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare" class="gold">
+  <h2 class="sec-title"><span class="num">14</span> तुलना: पुरानी ACR प्रणाली बनाम नई APAR प्रणाली <span class="tag-badge fa">🟠 FA</span></h2>
+  <div class="compare-grid">
+    <div class="compare-box old-box">
+      <div class="head">❌ पुरानी व्यवस्था (ACR)</div>
+      <ul>
+        <li>नाम: Confidential Report</li>
+        <li>केवल प्रतिकूल टिप्पणी संचारित होती थी</li>
+        <li>कोई संख्यात्मक ग्रेडिंग नहीं</li>
+        <li>Overall assessment अलग कॉलम में</li>
+        <li>Representation हेतु 6 सप्ताह (adverse remarks पर)</li>
+      </ul>
+    </div>
+    <div class="compare-box new-box">
+      <div class="head">✅ नई व्यवस्था (APAR)</div>
+      <ul>
+        <li>नाम: Annual Performance Assessment Report</li>
+        <li>पूर्ण रिपोर्ट (overall grade + integrity) संचारित</li>
+        <li>1-10 स्केल संख्यात्मक ग्रेडिंग (40-30-30)</li>
+        <li>Pen Picture Box — कोई अलग overall column नहीं</li>
+        <li>Representation हेतु 15 दिन (entries पर, 2009 से)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert"><b>Exam Trap:</b> पुराने नियम (1972 OM) में adverse remarks की representation हेतु "6 सप्ताह" का प्रावधान था; नई व्यवस्था (2009 से) में APAR entries पर representation हेतु "15 दिन" निर्धारित है — इन्हें मिलाएं नहीं!</div>
+</section>
+
+<!-- MNEMONICS -->
+<section id="mnemonics" class="green">
+  <h2 class="sec-title"><span class="num">15</span> सभी Mnemonics एक स्थान पर <span class="tag-badge qr">🟢 QR</span></h2>
+  <div class="mnemonic"><b>🧠 इतिहास क्रम:</b> "72-जन्म, 86-टारगेट, 2008-Dev Dutt, 2009-नाम+नंबर, 2019-याद दिलाना"</div>
+  <div class="mnemonic"><b>🧠 वेटेज (4-3-3):</b> Work Output 40%, Attributes 30%, Competency 30% — फुटबॉल फॉर्मेशन जैसे याद रखें</div>
+  <div class="mnemonic"><b>🧠 Integrity 3 विकल्प (B-D-N):</b> Beyond doubt, Doubtful(secret note), Not watched</div>
+  <div class="mnemonic"><b>🧠 Retention (2-5):</b> मृत्यु में 2 वर्ष, रिटायरमेंट में 5 वर्ष</div>
+  <div class="mnemonic"><b>🧠 Forfeiture तिथियाँ:</b> "जून में Reporting चूका, अगस्त में Reviewing चूका" — 30 जून (RO), 31 अगस्त (Reviewing Officer)</div>
+  <div class="mnemonic"><b>🧠 ग्रेड बैंड (8-6-4):</b> 8+ Outstanding(9), 6+ Very Good(7), 4+ Good(5), नीचे शून्य</div>
+</section>
+
+<!-- REVISION SHEET -->
+<section id="revision" class="rev-sheet">
+  <h2 class="sec-title" style="border-color:rgba(255,255,255,0.2);"><span class="num">16</span> One-Page Revision Sheet</h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>APAR नाम परिवर्तन:</b> 14.05.2009 (OM 21011/1/2005-Estt(A)(Pt-II))</div>
+    <div class="rev-item"><b>ग्रेडिंग शुरूआत:</b> 23.07.2009, 1-10 स्केल, वेटेज 40-30-30</div>
+    <div class="rev-item"><b>ग्रेडिंग बैंड्स:</b> 8-10=9(Outstanding), 6-8=7(V.Good), 4-6=5(Good), <4=0</div>
+    <div class="rev-item"><b>प्रक्रिया तिथियाँ:</b> 31Mar→15Apr→30Jun→31Jul→31Aug→1/15Sep→15दिन Rep.→30Nov</div>
+    <div class="rev-item"><b>Forfeiture:</b> RO-30जून, Reviewing-31अगस्त</div>
+    <div class="rev-item"><b>Representation विंडो:</b> 15 दिन (disclosure से), Competent Authority 30 दिन में निर्णय</div>
+    <div class="rev-item"><b>न्यूनतम पर्यवेक्षण अनुभव:</b> 3 माह (RO व Reviewing दोनों हेतु)</div>
+    <div class="rev-item"><b>Integrity 3 विकल्प:</b> Beyond doubt / Doubtful(secret note) / Not watched</div>
+    <div class="rev-item"><b>Retention:</b> मृत्यु-2वर्ष, सेवानिवृत्ति-5वर्ष</div>
+    <div class="rev-item"><b>Custody नियम:</b> कभी भी appointing authority से ऊपर नहीं</div>
+    <div class="rev-item"><b>केस लॉ:</b> Dev Dutt vs UOI (12.05.2008) — पूर्ण प्रकटीकरण का आधार</div>
+    <div class="rev-item"><b>MoSPI परिपत्र:</b> 15.04.2019 — सभी OMs का पुनः स्मरण</div>
+  </div>
+</section>
+
+<!-- LAST DAY NOTES -->
+<section id="lastday" class="lastday">
+  <h2 class="sec-title" style="border-color:rgba(255,255,255,0.2);"><span class="num">17</span> Last Day Revision Notes 🌙</h2>
+  <ul>
+    <li><b>तीन तारीखें याद रखें:</b> 20.05.1972 (मूल OM), 14.05.2009 (नाम बदला), 23.07.2009 (ग्रेडिंग आई)</li>
+    <li><b>40-30-30</b> का वेटेज कभी मत भूलें — Work Output सबसे ज़्यादा (40%)</li>
+    <li>Representation की समय सीमा <b>15 दिन</b> — पुराने 6 सप्ताह से कन्फ्यूज़ मत हों</li>
+    <li>Forfeiture: <b>30 जून</b> (Reporting) और <b>31 अगस्त</b> (Reviewing) — दो अलग तिथियाँ</li>
+    <li>Integrity column के <b>3 विकल्प</b> रटें: Beyond doubt / Doubtful / Not watched</li>
+    <li>Dev Dutt केस की तारीख: <b>12 मई 2008</b> — APAR सुधार की न्यायिक बुनियाद</li>
+    <li>APAR प्रक्रिया की अंतिम तिथि: <b>30 नवंबर</b> — पूरा साल कवर करने वाली प्रक्रिया</li>
+    <li>Retention: मृत्यु में <b>2</b>, रिटायरमेंट में <b>5</b> वर्ष — मत बदलें!</li>
+    <li>Group D के लिए APAR अनिवार्य नहीं जब तक <b>sensitive work</b> न हो</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  📚 India Post IP Exam Preparation | Paper II — CCS Establishment Rules<br>
+  स्रोत: OM No. A-28011/1/2019-APAR दिनांक 15.04.2019 (MoSPI) एवं संलग्न DoPT OMs<br>
+  Offline-safe Self-contained File — Acode / Mobile friendly
+</footer>
+
+</body>
+</html>

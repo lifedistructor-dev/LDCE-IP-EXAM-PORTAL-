@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finacle CBS Commands — Working Knowledge Reference | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--blue) 0%,#00838F 55%,var(--green) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.4rem;}
+.header .hi{font-size:1.1rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.9rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.82rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.72rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:0.98rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.7rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:0.92rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.88rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.78rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.66rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.72rem;}
+table th{background:var(--blue);color:#fff;padding:5px 6px;text-align:left;}
+table td{padding:4px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+table .cmd{font-family:'Courier New',monospace;font-weight:700;color:var(--red-dark);background:#FFF3E0;padding:1px 5px;border-radius:4px;}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.8rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.7rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.74rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.76rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.74rem;}
+.exam-q b{color:#6A1B9A;}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.74rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.76rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.68rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.68rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.74rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">Finacle CBS Commands — कार्यशील ज्ञान</span></h1>
+  <div class="en">Working Knowledge on Core Banking Solutions, PLI-CIS, CIS & DARPAN</div>
+  <div class="sub">Finacle Short-Keys/Commands — 15 Modules Reference | Syllabus: Information Technology</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">⌨️ Finacle Commands</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents (15 Modules)</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. CIF Commands</a>
+    <a href="#ch2">2. SB (Savings Bank) Commands</a>
+    <a href="#ch3">3. Vault Operations</a>
+    <a href="#ch4">4. Inventory Commands</a>
+    <a href="#ch5">5. Time Deposit (TD) Commands</a>
+    <a href="#ch6">6. Monthly Income Scheme (MIS)</a>
+    <a href="#ch7">7. SCSS Commands</a>
+    <a href="#ch8">8. NSC/KVP Commands</a>
+    <a href="#ch9">9. RD Commands (सबसे लंबा — 20 commands)</a>
+    <a href="#ch10">10. EOB/BOD Commands</a>
+    <a href="#ch11">11. Outstation Cheque</a>
+    <a href="#ch12">12. PPF Commands</a>
+    <a href="#ch13">13. Clearing Commands</a>
+    <a href="#ch14">14. Report Commands</a>
+    <a href="#ch15">15. Other Reports</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 CIF -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">👤 अध्याय 1 → CIF (Customer Information File) Commands</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <p class="hi">CIF ग्राहक की मूल जानकारी संग्रहित करता है — हर नए ग्राहक हेतु सबसे पहला कदम।</p>
+    </div>
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Duplicate CIF की जांच</td><td class="cmd">CDEDUP</td></tr>
+      <tr><td>2</td><td>CIF Creation</td><td class="cmd">CCRC</td></tr>
+      <tr><td>3</td><td>CIF Verification</td><td class="cmd">CCRC</td></tr>
+      <tr><td>4</td><td>Verification से पहले Modification</td><td class="cmd">CCRC</td></tr>
+      <tr><td>5</td><td>Verification के बाद Modification</td><td class="cmd">CMRC</td></tr>
+      <tr><td>6</td><td>CIF का Suspension</td><td class="cmd">CMRC</td></tr>
+      <tr><td>7</td><td>CIF का Merger</td><td class="cmd">HCCA</td></tr>
+      <tr><td>8</td><td>CIF की Inquiry</td><td class="cmd">HCRV</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CDEDUP पहले जांचो, फिर CCRC बनाओ" — नया ग्राहक जोड़ने का क्रम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> नया CIF बनाने से पहले Duplicate जांचने का Command क्या है? <b>(CDEDUP)</b> CIF Merger का Command? <b>(HCCA)</b></div>
+  </div>
+</div>
+
+<!-- CH2 SB -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">💰 अध्याय 2 → SB (Savings Bank) Commands — 18 कमांड्स</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — पूरी सूची याद रखें</span>
+    </div>
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Open Account</td><td class="cmd">CASBAO</td></tr>
+      <tr><td>2</td><td>Verification of Open Account</td><td class="cmd">CASBAV</td></tr>
+      <tr><td>3</td><td>Modification Before Verification</td><td class="cmd">CASBAOM</td></tr>
+      <tr><td>4</td><td>Modification After Verification</td><td class="cmd">CASBAM</td></tr>
+      <tr><td>5</td><td>Change Account Scheme</td><td class="cmd">HACXFRSC</td></tr>
+      <tr><td>6</td><td>Cash Transaction</td><td class="cmd">CTM</td></tr>
+      <tr><td>7</td><td>Transfer Transaction</td><td class="cmd">CXFER</td></tr>
+      <tr><td>8</td><td>Passbook Printing</td><td class="cmd">HPBP</td></tr>
+      <tr><td>9</td><td>Calculate Interest Before Closure</td><td class="cmd">HACINT</td></tr>
+      <tr><td>10</td><td>Close/Verify Account</td><td class="cmd">HCAAC</td></tr>
+      <tr><td>11</td><td>पुराने से नया Number ढूंढना</td><td class="cmd">CNAC</td></tr>
+      <tr><td>12</td><td>Minor से Major Status बदलना</td><td class="cmd">HCBM</td></tr>
+      <tr><td>13</td><td>Standing Instructions Maintenance</td><td class="cmd">HSSIM</td></tr>
+      <tr><td>14</td><td>Marking/Removing Lien</td><td class="cmd">HALM</td></tr>
+      <tr><td>15</td><td>Freezing/Unfreezing Account</td><td class="cmd">HAFSM</td></tr>
+      <tr><td>16</td><td>Marking/Revoking Stop Payment of Cheque</td><td class="cmd">HSPP</td></tr>
+      <tr><td>17</td><td>Stop Payment Verification</td><td class="cmd">HSPPAU</td></tr>
+      <tr><td>18</td><td>ECS Mandate Maintenance</td><td class="cmd">HECSM</td></tr>
+    </table>
+
+    <div class="dtree">
+      <div class="q">Q: Modification Commands याद रखने की Trick</div>
+      <div class="yn">➡ Before Verification में "O" जुड़ता है: CASB<b>AO</b>M</div>
+      <div class="yn">➡ After Verification में "O" नहीं: CASB<b>A</b>M</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CASBAO खोलो, HCAAC बंद करो, HPBP छापो" — SB के 3 सबसे प्रयुक्त commands</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SB Account खोलने का Command? <b>(CASBAO)</b> Passbook Printing? <b>(HPBP)</b> Lien Marking/Removing? <b>(HALM)</b> ECS Mandate Maintenance? <b>(HECSM)</b></div>
+  </div>
+</div>
+
+<!-- CH3 Vault -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">🔐 अध्याय 3 → Vault Operations</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Teller Cash Balance देखना</td><td class="cmd">HTCPIAE</td></tr>
+      <tr><td>2</td><td>Vault से Teller को Cash Move करना</td><td class="cmd">HTM</td></tr>
+      <tr><td>3</td><td>Teller से Vault को Cash Move करना</td><td class="cmd">HTM</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "HTM = दोनों दिशा में Cash Move" — Vault↔Teller दोनों के लिए एक ही command</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Teller Cash Balance देखने का Command? <b>(HTCPIAE)</b></div>
+  </div>
+</div>
+
+<!-- CH4 Inventory -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">📦 अध्याय 4 → Inventory Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1-3</td><td>Add Inventory (CSD-HO / HO-SO / SO-HO Employee)</td><td>—</td></tr>
+      <tr><td>4</td><td>Split Inventory — Own Location</td><td class="cmd">HISAI</td></tr>
+      <tr><td>5</td><td>Split Inventory — Other Location</td><td class="cmd">HISIA</td></tr>
+      <tr><td>6</td><td>Merge Inventory — Own Location</td><td class="cmd">HIMAI</td></tr>
+      <tr><td>7</td><td>Merge Inventory — Other Location</td><td class="cmd">HIMIA</td></tr>
+      <tr><td>8</td><td>Customer को Cheque Book जारी करना</td><td class="cmd">HICHB</td></tr>
+      <tr><td>9</td><td>Cheque Book की Enquiry</td><td class="cmd">HCHBM</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "S-A-I vs S-I-A" — Split Own(SAI) vs Split Other(SIA); Merge भी इसी पैटर्न में</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Customer को Cheque Book Issue करने का Command? <b>(HICHB)</b></div>
+  </div>
+</div>
+
+<!-- CH5 TD -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--red-dark);">📆 अध्याय 5 → Time Deposit (TD) Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Open Account</td><td class="cmd">CMISAOP</td></tr>
+      <tr><td>2</td><td>Verification of Opened Account</td><td class="cmd">CMISAOPV</td></tr>
+      <tr><td>3</td><td>Modification Before Verification</td><td class="cmd">CMISAOPM</td></tr>
+      <tr><td>4</td><td>Modification After Verification</td><td class="cmd">CMISAM</td></tr>
+      <tr><td>5</td><td>Funding by Cash</td><td class="cmd">CTM</td></tr>
+      <tr><td>6</td><td>Funding by Transfer</td><td class="cmd">CXFER</td></tr>
+      <tr><td>7</td><td>Transaction Inquiry</td><td class="cmd">HTDTRAN</td></tr>
+      <tr><td>8</td><td>Renewal Account</td><td class="cmd">HTDREN</td></tr>
+      <tr><td>9</td><td>Close Account</td><td class="cmd">HCAACTD</td></tr>
+      <tr><td>10</td><td>Verification of Closure</td><td class="cmd">HCAACVTD</td></tr>
+      <tr><td>11</td><td>Closure के बाद Cash Payment</td><td class="cmd">HCASHPND</td></tr>
+    </table>
+    <div class="penalty-box">⚠️ <b>ध्यान दें:</b> TD Open Account का Command MIS जैसा ही (CMISAOP) दिखता है — स्रोत दस्तावेज़ में यह दोहराव है, ध्यान से पढ़ें।</div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Renewal = HTDREN, Closure = HCAACTD" — TD की दो मुख्य क्रियाएं</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> TD Account Renewal का Command? <b>(HTDREN)</b> Closure के बाद Cash Payment? <b>(HCASHPND)</b></div>
+  </div>
+</div>
+
+<!-- CH6 MIS -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#00695C;">💵 अध्याय 6 → Monthly Income Scheme (MIS) Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Holding Amount की Inquiry</td><td class="cmd">CLIMIT</td></tr>
+      <tr><td>2</td><td>Open Account</td><td class="cmd">CMISAOP</td></tr>
+      <tr><td>3</td><td>Verification of Opened Account</td><td class="cmd">CMISAOPV</td></tr>
+      <tr><td>4</td><td>Modification Before Verification</td><td class="cmd">CMISAOPM</td></tr>
+      <tr><td>5</td><td>Modification After Verification</td><td class="cmd">CMISAM</td></tr>
+      <tr><td>6</td><td>Close Account</td><td class="cmd">HCAACTD</td></tr>
+      <tr><td>7</td><td>Verification of Closure</td><td class="cmd">HCAACVTD</td></tr>
+      <tr><td>8</td><td>Account Ledger Inquiry</td><td class="cmd">HACLI</td></tr>
+      <tr><td>9</td><td>ब्याज भुगतान — Dr to Sundry</td><td class="cmd">HTM</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CLIMIT = Ceiling/Limit जांच" — MIS की holding सीमा जांचने का पहला कदम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> MIS में Holding Amount जांचने का Command? <b>(CLIMIT)</b> Account Ledger Inquiry? <b>(HACLI)</b></div>
+  </div>
+</div>
+
+<!-- CH7 SCSS -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#6A1B9A;">👴 अध्याय 7 → SCSS Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Open Account</td><td class="cmd">CSCAOP</td></tr>
+      <tr><td>2</td><td>Verification of Opened Account</td><td class="cmd">CSCAOPV</td></tr>
+      <tr><td>3</td><td>Modification Before Verification</td><td class="cmd">CSCAOPM</td></tr>
+      <tr><td>4</td><td>Modification After Verification</td><td class="cmd">CSCAM</td></tr>
+      <tr><td>5</td><td>Close Account</td><td class="cmd">HCAACTD</td></tr>
+      <tr><td>6</td><td>Verification of Closure</td><td class="cmd">HCAACVTD</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CSC" prefix = SCSS commands की पहचान</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SCSS Account खोलने का Command? <b>(CSCAOP)</b></div>
+  </div>
+</div>
+
+<!-- CH8 NSC/KVP -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--gold-dark);">📄 अध्याय 8 → NSC/KVP Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Open Account</td><td class="cmd">CSCOAAC</td></tr>
+      <tr><td>2</td><td>Verification of Opened Account</td><td class="cmd">CSCOAACV</td></tr>
+      <tr><td>3</td><td>Modification Before Verification</td><td class="cmd">CSCOAACM</td></tr>
+      <tr><td>4</td><td>Modification After Verification</td><td class="cmd">CSCAM</td></tr>
+      <tr><td>5</td><td>NSC Printing</td><td class="cmd">HDRP</td></tr>
+      <tr><td>6</td><td>Close Account</td><td class="cmd">CSCCAAC</td></tr>
+      <tr><td>7</td><td>KVP Account Modification</td><td class="cmd">CSCACM</td></tr>
+      <tr><td>8</td><td>KVP Closure</td><td class="cmd">CSCCAAC</td></tr>
+      <tr><td>9</td><td>KVP Transfer</td><td class="cmd">HCCA</td></tr>
+      <tr><td>10</td><td>KVP में Balance Inquiry</td><td class="cmd">HACLITD</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "HDRP = Document/Receipt Print" — NSC प्रिंटिंग याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> NSC Printing का Command? <b>(HDRP)</b> KVP Transfer? <b>(HCCA — CIF Merger जैसा ही command)</b></div>
+  </div>
+</div>
+
+<!-- CH9 RD -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:var(--red);">🔁 अध्याय 9 → RD Commands — 20 कमांड्स (सबसे लंबा Module)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Loan Sub-section भी शामिल</span>
+    </div>
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Open Account</td><td class="cmd">CRDOAAC</td></tr>
+      <tr><td>2</td><td>Verification of Opened Account</td><td class="cmd">CRDOAACV</td></tr>
+      <tr><td>3</td><td>Modification Before Verification</td><td class="cmd">CRDOAACM</td></tr>
+      <tr><td>4</td><td>Modification After Verification</td><td class="cmd">CRDACM</td></tr>
+      <tr><td>5</td><td>Account Transaction Maintenance</td><td class="cmd">CRDP</td></tr>
+      <tr><td>6</td><td>Account Ledger Inquiry</td><td class="cmd">HACLI</td></tr>
+      <tr><td>7</td><td>Agent की Creation</td><td class="cmd">HDSAMM</td></tr>
+      <tr><td>8</td><td>Bulk Acceptance</td><td class="cmd">HAGTXP</td></tr>
+      <tr><td>9</td><td>Close Account</td><td class="cmd">CRDCAAC</td></tr>
+      <tr><td>10</td><td>Verification of Closure</td><td class="cmd">CRDCAAC</td></tr>
+      <tr><td>11</td><td>Loan Account खोलना</td><td class="cmd">CAOLARD</td></tr>
+      <tr><td>12</td><td>Loan Account Verification</td><td class="cmd">CAOVLARD</td></tr>
+      <tr><td>13</td><td>Loan Modification Before Verification</td><td class="cmd">CAOMLARD</td></tr>
+      <tr><td>14</td><td>Loan Modification After Verification</td><td class="cmd">CACMLARD</td></tr>
+      <tr><td>15</td><td>Loan Amount Disbursement</td><td class="cmd">LARDD</td></tr>
+      <tr><td>16</td><td>Unscheduled Loan Repayment</td><td class="cmd">HLAUPAY</td></tr>
+      <tr><td>17</td><td>Scheduled Loan Repayment</td><td class="cmd">HLASPAY</td></tr>
+      <tr><td>18</td><td>RD Loan Account Pay Off</td><td class="cmd">HPAYOFF</td></tr>
+      <tr><td>19</td><td>Loan Account बंद करना</td><td class="cmd">CAACLA</td></tr>
+      <tr><td>20</td><td>Loan Closure Verification</td><td class="cmd">CAACLA</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "LARD में Loan Against RD" — सभी Loan commands में LARD शामिल है</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> RD Agent बनाने का Command? <b>(HDSAMM)</b> Loan Disbursement? <b>(LARDD)</b> Scheduled Loan Repayment? <b>(HLASPAY)</b> Unscheduled? <b>(HLAUPAY)</b></div>
+  </div>
+</div>
+
+<!-- CH10 EOB/BOD -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#37474F;">🕐 अध्याय 10 → EOB/BOD (End of Business / Begin of Day) Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>SOL Status जांचना</td><td class="cmd">HSSI</td></tr>
+      <tr><td>2</td><td>Financial Transaction Inquiry</td><td class="cmd">HFTI</td></tr>
+      <tr><td>3</td><td>Audit File Inquiry</td><td class="cmd">HAFI</td></tr>
+      <tr><td>4</td><td>All Pending Activities Report</td><td class="cmd">HSVALRPT</td></tr>
+      <tr><td>5</td><td>SOL Operating Date बदलना</td><td class="cmd">HSCOD</td></tr>
+      <tr><td>6</td><td>SOL Closure Operations</td><td class="cmd">HSOLCOP</td></tr>
+      <tr><td>7</td><td>Last Day हेतु SOL Closure</td><td class="cmd">HSCOLD</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "HSCOD = Change Operating Date, HSCOLD = Closure on Last Day" — मिलते-जुलते commands में अंतर याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SOL का Operating Date बदलने का Command? <b>(HSCOD)</b> Last Day हेतु SOL Closure? <b>(HSCOLD)</b></div>
+  </div>
+</div>
+
+<!-- CH11 Outstation Cheque -->
+<div class="chapter" id="ch11">
+  <div class="chapter-head" style="background:#00838F;">🏦 अध्याय 11 → Outstation Cheque Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Cheque Lodge करना</td><td class="cmd">HIRM</td></tr>
+      <tr><td>2</td><td>Cheque Realize करना</td><td class="cmd">HIRM</td></tr>
+      <tr><td>3</td><td>Cheque Dishonour करना</td><td class="cmd">HIRM</td></tr>
+      <tr><td>4</td><td>Remittance पर Enquiry</td><td class="cmd">HINWREMI</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "HIRM = एक ही Command, 3 काम" — Lodge/Realize/Dishonour सभी HIRM से होते हैं</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Outstation Cheque Lodge, Realize व Dishonour तीनों का Command क्या है? <b>(HIRM — एक ही)</b></div>
+  </div>
+</div>
+
+<!-- CH12 PPF -->
+<div class="chapter" id="ch12">
+  <div class="chapter-head" style="background:#263238;">🏛 अध्याय 12 → PPF Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Open Account</td><td class="cmd">CPPFAO</td></tr>
+      <tr><td>2</td><td>Verification of Opened Account</td><td class="cmd">CPPFAV</td></tr>
+      <tr><td>3</td><td>Modification Before Verification</td><td class="cmd">CPPFAOM</td></tr>
+      <tr><td>4</td><td>Modification After Verification</td><td class="cmd">CPPFAM</td></tr>
+      <tr><td>5</td><td>Funding</td><td class="cmd">CPDTM</td></tr>
+      <tr><td>6</td><td>Part Withdrawal</td><td class="cmd">CPWTM</td></tr>
+      <tr><td>7</td><td>Account Unfreeze करना</td><td class="cmd">HAFSM</td></tr>
+      <tr><td>8</td><td>Account Extension</td><td class="cmd">PPFAEXT</td></tr>
+      <tr><td>9</td><td>Closure से पहले Interest Calculate</td><td class="cmd">HACINT</td></tr>
+      <tr><td>10</td><td>Close Account</td><td class="cmd">HCAAC</td></tr>
+      <tr><td>11</td><td>Loan Account खोलना</td><td class="cmd">CLPPFAO</td></tr>
+      <tr><td>12</td><td>Loan Account Verification</td><td class="cmd">CLPPFAOV</td></tr>
+      <tr><td>13</td><td>Loan Modification Before Verification</td><td class="cmd">CLPPFAOM</td></tr>
+      <tr><td>14</td><td>Loan Modification After Verification</td><td class="cmd">CLPPFAM</td></tr>
+      <tr><td>15</td><td>Loan Amount Disbursement</td><td class="cmd">CPWTM</td></tr>
+      <tr><td>16</td><td>Loan Repayment</td><td class="cmd">CPDTM</td></tr>
+      <tr><td>17</td><td>Loan Closure Step-1</td><td class="cmd">CLPR</td></tr>
+      <tr><td>18</td><td>Loan Closure Step-2</td><td class="cmd">HACINT</td></tr>
+      <tr><td>19</td><td>Loan Closure Step-3</td><td class="cmd">HCAAC</td></tr>
+    </table>
+    <div class="dtree">
+      <div class="q">Q: PPF Loan Closure के 3 चरण क्या हैं?</div>
+      <div class="yn">➡ Step-1: CLPR (Loan Process Release)</div>
+      <div class="yn">➡ Step-2: HACINT (Interest Calculate)</div>
+      <div class="yn">➡ Step-3: HCAAC (Close/Verify Account)</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CPDTM=Deposit/Funding, CPWTM=Withdrawal" — PPF लेन-देन के 2 मुख्य commands</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PPF Part Withdrawal का Command? <b>(CPWTM)</b> PPF Loan Closure के 3 चरण के commands? <b>(CLPR → HACINT → HCAAC)</b></div>
+  </div>
+</div>
+
+<!-- CH13 Clearing -->
+<div class="chapter" id="ch13">
+  <div class="chapter-head" style="background:#AD1457;">🧾 अध्याय 13 → Clearing Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Instruments Lodging</td><td class="cmd">HOMSO</td></tr>
+      <tr><td>2</td><td>Lodged Instruments Report</td><td class="cmd">HOMSOEX</td></tr>
+      <tr><td>3</td><td>SO का File Download (HO द्वारा)</td><td class="cmd">HTRFTOPC</td></tr>
+      <tr><td>4</td><td>HO द्वारा File Upload</td><td class="cmd">HCLUPLD</td></tr>
+      <tr><td>5</td><td>Outward Zone Open/Suspend/Release/Regularise</td><td class="cmd">HMCLZOH</td></tr>
+      <tr><td>6</td><td>Outward Clearing Cheque Lodging</td><td class="cmd">HOCTM</td></tr>
+      <tr><td>7</td><td>Outward Clearing Bulk Verification</td><td class="cmd">HOCTMV</td></tr>
+      <tr><td>8</td><td>Cheques Pending Marking</td><td class="cmd">HMARKPEN</td></tr>
+      <tr><td>9</td><td>Pending Status Revoking</td><td class="cmd">HREVPEND</td></tr>
+      <tr><td>10</td><td>Inward Zone Open/Suspend/Validation/Close</td><td class="cmd">HMICZ</td></tr>
+      <tr><td>11</td><td>Inward Clearing File Upload</td><td class="cmd">HRMI</td></tr>
+      <tr><td>12</td><td>Inward Clearing Records Verify & Post</td><td class="cmd">HICTMO</td></tr>
+      <tr><td>13</td><td>Inward Clearing Rejects Report</td><td class="cmd">HREJREP</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Outward=O से शुरू, Inward=I से शुरू" — HOCTM(Outward) vs HICTMO(Inward)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Outward Clearing Cheque Lodging का Command? <b>(HOCTM)</b> Inward Clearing File Upload? <b>(HRMI)</b></div>
+  </div>
+</div>
+
+<!-- CH14 Report -->
+<div class="chapter" id="ch14">
+  <div class="chapter-head" style="background:#00695C;">📊 अध्याय 14 → Report Commands</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Account Interest Inquiry</td><td class="cmd">HAITINQ</td></tr>
+      <tr><td>2</td><td>Interest Details Inquiry</td><td class="cmd">HINTTI</td></tr>
+      <tr><td>3</td><td>Inward Clearing Statement Print</td><td class="cmd">HPICSL</td></tr>
+      <tr><td>4</td><td>Inward Clearing Validation Report</td><td class="cmd">HMICZ</td></tr>
+      <tr><td>5</td><td>Clearing Rejection Report</td><td class="cmd">HREJREP</td></tr>
+      <tr><td>6</td><td>Inward Remittance Details Report</td><td class="cmd">HINWREMI</td></tr>
+      <tr><td>7</td><td>Outward Remittance Details Report</td><td class="cmd">HOUTREMI</td></tr>
+      <tr><td>8</td><td>Outward Clearing Instrument Inquiry</td><td class="cmd">HOIQ</td></tr>
+      <tr><td>9</td><td>File को PC में Transfer करना</td><td class="cmd">HTRFTOPC</td></tr>
+      <tr><td>10</td><td>Account Ledger Inquiry</td><td class="cmd">HACLI</td></tr>
+      <tr><td>11</td><td>Customer Search</td><td class="cmd">HCRV</td></tr>
+      <tr><td>12</td><td>Finrpt Report Generation</td><td class="cmd">HFINRPT</td></tr>
+      <tr><td>13</td><td>Financial Transaction Inquiry</td><td class="cmd">HFTI</td></tr>
+      <tr><td>14</td><td>Teller Cash Position (Employee)</td><td class="cmd">HTCPIAE</td></tr>
+      <tr><td>15</td><td>Teller Cash Position (Currency)</td><td class="cmd">HTCPIAC</td></tr>
+      <tr><td>16</td><td>Outward Cheques Inquiry</td><td class="cmd">HOCI</td></tr>
+      <tr><td>17</td><td>पुराने Account की Details देखना</td><td class="cmd">CNAC</td></tr>
+      <tr><td>18</td><td>Account Freeze/Unfreeze</td><td class="cmd">HAFSM</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "HTCPIAE = Employee, HTCPIAC = Currency" — अंतिम अक्षर से पहचानें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Customer Search का Command क्या है? <b>(HCRV)</b></div>
+  </div>
+</div>
+
+<!-- CH15 Other Reports -->
+<div class="chapter" id="ch15">
+  <div class="chapter-head" style="background:var(--gold-dark);">📋 अध्याय 15 → Other Reports Commands — 21 कमांड्स</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>क्र.</th><th>कार्य / Function</th><th>Command</th></tr>
+      <tr><td>1</td><td>Print Report</td><td class="cmd">HPR</td></tr>
+      <tr><td>2</td><td>Exceptions Report</td><td class="cmd">HEXCPRPT</td></tr>
+      <tr><td>3</td><td>General Report</td><td class="cmd">HGRI</td></tr>
+      <tr><td>4</td><td>Stop Payment Register Report</td><td class="cmd">HSPRG</td></tr>
+      <tr><td>5</td><td>Shroff Cash Report</td><td class="cmd">HSCWRPT</td></tr>
+      <tr><td>6</td><td>Memo Pad Maintenance</td><td class="cmd">HMEMOPAD</td></tr>
+      <tr><td>7</td><td>Account Details</td><td class="cmd">HACDET</td></tr>
+      <tr><td>8</td><td>General Details</td><td class="cmd">HGDET</td></tr>
+      <tr><td>9</td><td>Pending Installment List (RD)</td><td class="cmd">HGDET</td></tr>
+      <tr><td>10</td><td>Customer Accounts Maturities</td><td class="cmd">HCUMAT</td></tr>
+      <tr><td>11</td><td>Term Deposit of Customer</td><td class="cmd">HCUTD</td></tr>
+      <tr><td>12</td><td>Deposit Transactions Report Summary</td><td class="cmd">HDTRS</td></tr>
+      <tr><td>13</td><td>Term Deposit Renewal History</td><td class="cmd">HRENHIST</td></tr>
+      <tr><td>14</td><td>Tax Report Options</td><td class="cmd">HTDSIP</td></tr>
+      <tr><td>15</td><td>Customer-wise TDS Report</td><td class="cmd">HTDSREP</td></tr>
+      <tr><td>16</td><td>Financial Transaction Report</td><td class="cmd">HFTR</td></tr>
+      <tr><td>17</td><td>A/c Shadow Balance Inquiry</td><td class="cmd">HACSBIO</td></tr>
+      <tr><td>18</td><td>A/c Balance Details</td><td class="cmd">HACDET</td></tr>
+      <tr><td>19</td><td>General Account Details Inquiry</td><td class="cmd">HACCDET</td></tr>
+      <tr><td>20</td><td>Standing Instructions Inquiry</td><td class="cmd">HSSII</td></tr>
+      <tr><td>21</td><td>Standing Instructions Reports</td><td class="cmd">HSIREPTS</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "HACDET≠HACCDET" — दोनों अलग commands, ध्यान से पढ़ें (एक अक्षर का अंतर)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Customer-wise TDS Report का Command? <b>(HTDSREP)</b> Shadow Balance Inquiry? <b>(HACSBIO)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>CIF:</b> CDEDUP(duplicate check), CCRC(create/verify), CMRC(modify/suspend after verif.), HCCA(merger)</div>
+    <div class="rev-card"><b>SB:</b> CASBAO(open), HCAAC(close), HPBP(passbook), HALM(lien), HAFSM(freeze), HECSM(ECS)</div>
+    <div class="rev-card"><b>Vault:</b> HTCPIAE(balance view), HTM(cash move both directions)</div>
+    <div class="rev-card"><b>Inventory:</b> HISAI/HISIA(split own/other), HIMAI/HIMIA(merge), HICHB(issue chequebook)</div>
+    <div class="rev-card"><b>TD/MIS:</b> CMISAOP(open both), HTDREN(TD renewal), CLIMIT(MIS holding check)</div>
+    <div class="rev-card"><b>SCSS/NSC:</b> CSCAOP(SCSS open), CSCOAAC(NSC open), HDRP(NSC print)</div>
+    <div class="rev-card"><b>RD (20 commands):</b> CRDOAAC(open), HDSAMM(agent), LARDD(loan disburse), HLASPAY/HLAUPAY(scheduled/unscheduled repay)</div>
+    <div class="rev-card"><b>EOB/BOD:</b> HSCOD(change date), HSOLCOP(closure), HSCOLD(last day closure)</div>
+    <div class="rev-card"><b>Outstation Cheque:</b> HIRM(lodge+realize+dishonour सभी एक command)</div>
+    <div class="rev-card"><b>PPF:</b> CPDTM(deposit), CPWTM(withdrawal), Loan closure=CLPR→HACINT→HCAAC</div>
+    <div class="rev-card"><b>Clearing:</b> Outward=HOCTM, Inward=HICTMO/HRMI</div>
+    <div class="rev-card"><b>Reports:</b> HCRV(customer search), HACLI(ledger), HTCPIAE/HTCPIAC(teller position emp/currency)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सबसे ज्यादा Confusing Commands)</h2>
+  <ul>
+    <li>🔢 <b>CCRC vs CMRC</b> = CIF Create/Verify(पहले) vs Modify After Verification/Suspend(बाद)</li>
+    <li>🔢 <b>CASBAOM vs CASBAM</b> = SB Modification Before(O सहित) vs After(O रहित) Verification</li>
+    <li>🔢 <b>HACDET vs HACCDET</b> = Account Details vs General Account Details (1 अक्षर अंतर)</li>
+    <li>🔢 <b>HISAI/HIMAI vs HISIA/HIMIA</b> = Own Location vs Other Location (Split/Merge)</li>
+    <li>🔢 <b>HTCPIAE vs HTCPIAC</b> = Teller Position Employee vs Currency</li>
+    <li>🔢 <b>HOCTM(Outward) vs HICTMO(Inward)</b> = Clearing की दिशा पहचानें</li>
+    <li>🔢 <b>HLASPAY vs HLAUPAY</b> = Scheduled vs Unscheduled Loan Repayment</li>
+    <li>🔢 <b>HCAACTD vs HCAAC</b> = TD/MIS/SCSS Close vs SB/PPF Close</li>
+    <li>🔢 <b>PPF Loan 3-Step Closure</b> = CLPR → HACINT → HCAAC (क्रम याद रखें)</li>
+    <li>🔢 <b>HIRM</b> = Outstation Cheque के 3 काम (Lodge+Realize+Dishonour) एक ही Command से</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: "Working Knowledge on CBS, PLI-CIS, CIS & DARPAN" — Finacle Commands Reference &nbsp;|&nbsp; परीक्षा हेतु व्यावहारिक अभ्यास (Practical Practice) भी आवश्यक है
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

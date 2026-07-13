@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GFR 2017 - Chapter 2 and 6</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#D4AF37;
+  --dark:#1a1a2e; --lightbg:#fdf9f0;
+  --tier1:#e53935; --tier2:#fb8c00; --tier3:#fdd835; --tier4:#43a047;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;
+  background:var(--lightbg); color:#222; line-height:1.5; padding-bottom:40px;
+}
+.header{
+  background:linear-gradient(135deg,var(--blue),#001a4d);
+  color:#fff; padding:22px 14px; text-align:center;
+  border-bottom:6px solid var(--gold);
+}
+.header h1{font-size:1.25rem; margin-bottom:4px;}
+.header .en{font-size:0.85rem; opacity:0.85;}
+.header .badge{
+  display:inline-block; background:var(--red); padding:3px 10px;
+  border-radius:12px; font-size:0.7rem; margin-top:8px;
+}
+.container{max-width:900px; margin:0 auto; padding:10px;}
+.section{
+  background:#fff; border-radius:10px; padding:14px; margin:14px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1); border-left:6px solid var(--blue);
+}
+.section h2{
+  color:var(--blue); font-size:1.05rem; margin-bottom:10px;
+  display:flex; align-items:center; gap:6px; border-bottom:2px dashed var(--gold); padding-bottom:6px;
+}
+.section h3{color:var(--red); font-size:0.95rem; margin:10px 0 6px;}
+.tag{
+  display:inline-block; font-size:0.72rem; font-weight:bold; padding:2px 8px;
+  border-radius:10px; color:#fff; margin-left:4px;
+}
+.tag1{background:var(--tier1);} .tag2{background:var(--tier2);}
+.tag3{background:var(--tier3); color:#333;} .tag4{background:var(--tier4);}
+.legend{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:10px 0; font-size:0.75rem;}
+.legend span{padding:4px 8px; border-radius:8px; color:#fff;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:0.8rem;}
+th,td{border:1px solid #ddd; padding:6px 5px; text-align:center;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even){background:#f5f5f5;}
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flowbox{
+  background:#eef4ff; border:2px solid var(--blue); border-radius:8px;
+  padding:8px 12px; margin:4px 0; text-align:center; font-size:0.85rem; width:92%;
+}
+.flowbox.red{border-color:var(--red); background:#ffeceb;}
+.flowbox.gold{border-color:var(--gold); background:#fff8e1;}
+.flowbox.green{border-color:var(--tier4); background:#eafaf0;}
+.arrow{font-size:1.3rem; color:var(--red); margin:2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{
+  background:var(--blue); color:#fff; border-radius:20px; padding:8px 14px;
+  font-size:0.8rem; text-align:center; flex:1 1 40%;
+}
+.mindmap .node.r{background:var(--red);}
+.mindmap .node.g{background:#8d6e00;}
+.mindmap .node.gr{background:var(--tier4);}
+ul{margin:6px 0 6px 18px;} li{margin:4px 0; font-size:0.87rem;}
+.qbox{
+  background:#fff3cd; border-left:4px solid var(--tier2); padding:6px 10px;
+  margin:6px 0; font-size:0.8rem; border-radius:4px;
+}
+.qbox b{color:var(--red);}
+.mnemonic{
+  background:#e8f5e9; border:2px dashed var(--tier4); border-radius:8px;
+  padding:10px; margin:8px 0; font-size:0.85rem;
+}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 10px; padding-left:14px;}
+.timeline .item{margin-bottom:12px; position:relative;}
+.timeline .item::before{
+  content:"\25CF"; color:var(--red); position:absolute; left:-19px; top:0;
+}
+.timeline .date{font-weight:bold; color:var(--blue); font-size:0.85rem;}
+.revision-sheet{
+  background:linear-gradient(135deg,#fff8e1,#fdf9f0); border:3px solid var(--gold);
+}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.76rem;}
+.decision{text-align:center; margin:10px 0;}
+.dbox{
+  display:inline-block; background:#fff; border:2px solid var(--dark); border-radius:6px;
+  padding:6px 10px; margin:4px; font-size:0.78rem;
+}
+.footer-note{
+  text-align:center; font-size:0.75rem; color:#777; margin-top:20px; padding:10px;
+}
+.toc{background:#fff; border-radius:10px; padding:10px 14px; margin:10px 0; border-left:6px solid var(--gold);}
+.toc a{display:block; color:var(--blue); text-decoration:none; font-size:0.83rem; padding:3px 0; border-bottom:1px dotted #ddd;}
+.imp-max{
+  background:#ffebee; border:2px solid var(--red); border-radius:8px; padding:10px; text-align:center;
+  font-weight:bold; color:var(--red); font-size:0.9rem; margin:10px 0;
+}
+.subhead{
+  background:var(--dark); color:#fff; font-size:0.85rem; font-weight:bold;
+  padding:6px 10px; border-radius:6px; margin:10px 0 6px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>सामान्य वित्तीय नियम (GFR), 2017 - अध्याय 2 और 6</h1>
+  <div class="en">General Financial Rules 2017 - Chapter 2 (Financial Management) and Chapter 6 (Procurement)</div>
+  <div class="badge">IP Exam Paper III | Item 13 (with amendments)</div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>इस पृष्ठ पर:</b>
+  <a href="#overview">1. परिचय - Chapter Structure</a>
+  <a href="#ch2-rules">2. Chapter 2: महत्वपूर्ण नियम</a>
+  <a href="#ch2-sanction">3. Sanction Lapse - Flowchart</a>
+  <a href="#ch2-loss">4. Losses/Defalcation - रिपोर्टिंग नियम</a>
+  <a href="#ch6-buying">5. Chapter 6: Fundamental Principles</a>
+  <a href="#ch6-table">6. Procurement Methods - Threshold तालिका (सबसे महत्वपूर्ण)</a>
+  <a href="#ch6-gem">7. GeM Portal - Flowchart</a>
+  <a href="#ch6-security">8. Bid Security vs Performance Security</a>
+  <a href="#ch6-consultancy">9. Consultancy Selection Methods</a>
+  <a href="#decision-tree">10. Decision Tree - कौन सी Method?</a>
+  <a href="#authorities">11. प्राधिकारी व समय-सीमाएं</a>
+  <a href="#mnemonics">12. Memory Tricks</a>
+  <a href="#revision">13. One-Page Revision Sheet</a>
+  <a href="#lastday">14. Last Day Revision Notes</a>
+</div>
+
+<div class="legend">
+  <span style="background:#e53935">Very Important for Exam</span>
+  <span style="background:#fb8c00">Frequently Asked</span>
+  <span style="background:#fdd835; color:#333">Conceptual</span>
+  <span style="background:#43a047">Quick Revision</span>
+</div>
+
+<div class="section" id="overview">
+  <h2>1. परिचय - Chapter Structure <span class="tag tag1">Very Important</span></h2>
+  <p><b>Topic:</b> GFR 2017 भारत सरकार के वित्तीय प्रबंधन का मुख्य नियम-पुस्तक है। IP Exam में सिर्फ <b>Chapter 2</b> (सामान्य वित्तीय प्रबंधन प्रणाली) और <b>Chapter 6</b> (वस्तुओं व सेवाओं की खरीद) सिलेबस में हैं।</p>
+  <div class="mindmap">
+    <div class="node r">Chapter 2 (Rule 7 to 41): राजस्व प्राप्ति, व्यय के सिद्धांत, Sanction, हानि (Loss) की रिपोर्टिंग</div>
+    <div class="node">Chapter 6 (Rule 142 to 206): वस्तुओं की खरीद, GeM, Tender के प्रकार, Consultancy Services</div>
+  </div>
+  <div class="qbox"><b>संभावित प्रश्न:</b> GFR 2017 में Chapter 6 किस विषय से संबंधित है? (उत्तर: Procurement of Goods and Services)</div>
+</div>
+
+<div class="section" id="ch2-rules">
+  <h2>2. Chapter 2: महत्वपूर्ण नियम <span class="tag tag1">Very Important</span></h2>
+  <div class="subhead">भाग I - राजस्व व व्यय के सामान्य सिद्धांत</div>
+  <table>
+    <tr><th>Rule</th><th>विषय</th><th>महत्व</th></tr>
+    <tr><td>Rule 7</td><td>सरकार को प्राप्त सभी धनराशि बिना देरी Government Account में जमा हो</td><td>Frequent</td></tr>
+    <tr><td>Rule 21</td><td>Standards of Financial Propriety - वित्तीय औचित्य के मानक</td><td>Very Imp</td></tr>
+    <tr><td>Rule 22</td><td>बिना सक्षम प्राधिकारी की स्वीकृति के कोई व्यय नहीं</td><td>Very Imp</td></tr>
+    <tr><td>Rule 23</td><td>Delegation of Financial Powers - वित्तीय शक्तियों का प्रत्यायोजन</td><td>Very Imp</td></tr>
+    <tr><td>Rule 24</td><td>Financial Adviser से परामर्श अनिवार्य</td><td>Conceptual</td></tr>
+    <tr><td>Rule 27</td><td>Sanction, जारी होने की तारीख से प्रभावी होता है</td><td>Frequent</td></tr>
+    <tr><td>Rule 30</td><td>Lapse of Sanction - 12 माह में भुगतान न हो तो सैंक्शन समाप्त</td><td>Very Imp</td></tr>
+  </table>
+  <div class="subhead">भाग II - Defalcation and Losses (हानि व गबन)</div>
+  <table>
+    <tr><th>Rule</th><th>विषय</th><th>महत्व</th></tr>
+    <tr><td>Rule 33</td><td>हानि की तुरंत रिपोर्ट - उच्च प्राधिकारी + Audit Officer + Accounts Officer को</td><td>Very Imp</td></tr>
+    <tr><td>Rule 34</td><td>आग/चोरी/धोखाधड़ी से Rs 50,000 से अधिक हानि पर पुलिस रिपोर्ट अनिवार्य</td><td>Very Imp</td></tr>
+    <tr><td>Rule 35</td><td>अचल संपत्ति की Rs 50,000 से अधिक हानि सरकार को रिपोर्ट हो</td><td>Frequent</td></tr>
+    <tr><td>Rule 37</td><td>धोखाधड़ी/लापरवाही से हानि पर अधिकारी व्यक्तिगत रूप से उत्तरदायी</td><td>Frequent</td></tr>
+  </table>
+  <div class="subhead">भाग III - रिकॉर्ड व सूचना प्रस्तुतीकरण</div>
+  <p>Rule 39-41: कोई भी अधीनस्थ प्राधिकारी, Audit Officer या Accounts Officer से जानकारी, बहीखाता या दस्तावेज़ रोक नहीं सकता।</p>
+  <div class="qbox"><b>संभावित प्रश्न:</b> यदि Sanction के जारी होने के 12 महीने के अंदर कोई भुगतान न हो, तो क्या होगा? (उत्तर: Sanction lapse - समाप्त हो जाएगा, Rule 30)</div>
+</div>
+
+<div class="section" id="ch2-sanction">
+  <h2>3. Sanction Lapse - Flowchart <span class="tag tag1">Very Important</span></h2>
+  <div class="flow">
+    <div class="flowbox">Sanction जारी हुआ (Rule 27 - जारी होने की तारीख से प्रभावी)</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox red">क्या 12 माह के अंदर आंशिक या पूर्ण भुगतान हुआ?</div>
+    <div class="arrow">हां तो Sanction चालू रहेगा | नहीं तो नीचे जाएं</div>
+    <div class="flowbox gold">Sanction स्वतः Lapse (समाप्त) हो जाएगा (Rule 30)</div>
+  </div>
+  <p><b>अपवाद:</b> यदि सैंक्शन में स्वयं कोई अवधि तय हो, या Stores खरीद में Tender स्वीकार हो चुका हो (1 वर्ष के भीतर), तो सैंक्शन lapse नहीं होगा।</p>
+</div>
+
+<div class="section" id="ch2-loss">
+  <h2>4. Losses/Defalcation - रिपोर्टिंग नियम <span class="tag tag2">Frequent</span></h2>
+  <table>
+    <tr><th>प्रकार</th><th>सीमा (Threshold)</th><th>क्या कार्रवाई</th></tr>
+    <tr><td>सामान्य हानि (Rule 33)</td><td>कोई भी राशि</td><td>तुरंत उच्च प्राधिकारी + Audit + Accounts Officer को रिपोर्ट</td></tr>
+    <tr><td>आग/चोरी/धोखाधड़ी (Rule 34)</td><td>Rs 50,000 से अधिक</td><td>पुलिस में अनिवार्य रिपोर्ट</td></tr>
+    <tr><td>अचल संपत्ति हानि (Rule 35)</td><td>Rs 50,000 से अधिक</td><td>सरकार को सीधे रिपोर्ट</td></tr>
+    <tr><td>छोटी हानि (Rule 33 अपवाद)</td><td>Rs 10,000 तक</td><td>रिपोर्ट करने की आवश्यकता नहीं</td></tr>
+  </table>
+  <div class="imp-max">याद रखें: Rs 50,000 = हानि रिपोर्टिंग की मुख्य सीमा (आग/चोरी/धोखाधड़ी व अचल संपत्ति दोनों के लिए)</div>
+</div>
+
+<div class="section" id="ch6-buying">
+  <h2>5. Chapter 6: Fundamental Principles of Public Buying <span class="tag tag1">Very Important</span></h2>
+  <p><b>Definition (Rule 143):</b> "Goods" में सभी सामग्री, फर्नीचर, मशीनरी, वाहन, सॉफ्टवेयर आदि शामिल हैं, परंतु पुस्तकालय की पुस्तकें/पत्रिकाएं शामिल नहीं।</p>
+  <div class="mindmap">
+    <div class="node r">Efficiency (दक्षता)</div>
+    <div class="node">Economy (मितव्ययिता)</div>
+    <div class="node gr">Transparency (पारदर्शिता)</div>
+    <div class="node g">Fair & Equitable Treatment (निष्पक्ष व्यवहार)</div>
+  </div>
+  <p>Rule 144: यह चारों सिद्धांत हर सरकारी खरीद प्रक्रिया के लिए अनिवार्य हैं (Public Buying)।</p>
+</div>
+
+<div class="section" id="ch6-table">
+  <h2>6. Procurement Methods - Threshold तालिका <span class="tag tag1">सबसे महत्वपूर्ण - रटें</span></h2>
+  <table>
+    <tr><th>Rule</th><th>Method</th><th>राशि सीमा</th></tr>
+    <tr><td>Rule 154</td><td>बिना Quotation खरीद</td><td>Rs 50,000 तक (Scientific Depts: Rs 1,00,000 तक)</td></tr>
+    <tr><td>Rule 155</td><td>Local Purchase Committee (3 सदस्य)</td><td>Rs 50,000 से Rs 5,00,000 (Scientific Depts: Rs 1,00,000-10,00,000)</td></tr>
+    <tr><td>Rule 162</td><td>Limited Tender Enquiry</td><td>Rs 50 लाख तक (3 से अधिक सप्लायर आवश्यक)</td></tr>
+    <tr><td>Rule 161</td><td>Advertised Tender Enquiry</td><td>Rs 50 लाख और उससे अधिक अनिवार्य</td></tr>
+    <tr><td>Rule 161(iv)</td><td>Global Tender Enquiry (GTE)</td><td>Rs 200 करोड़ से कम में सामान्यतः आवश्यक नहीं</td></tr>
+    <tr><td>Rule 166</td><td>Single Tender Enquiry</td><td>कोई सीमा नहीं (केवल विशेष परिस्थिति में - PAC आवश्यक)</td></tr>
+  </table>
+  <div class="imp-max">याद रखें: Rs 50,000 - बिना quotation | Rs 50,000-5 लाख - Purchase Committee | Rs 50 लाख तक - Limited Tender | Rs 50 लाख+ - Advertised Tender</div>
+  <div class="qbox"><b>संभावित प्रश्न:</b> Rs 3,00,000 की खरीद के लिए कौन सी प्रक्रिया अपनानी होगी? (उत्तर: Local Purchase Committee की सिफारिश पर - Rule 155)</div>
+</div>
+
+<div class="section" id="ch6-gem">
+  <h2>7. GeM Portal (Government e-Marketplace) - Flowchart <span class="tag tag1">Very Important</span></h2>
+  <p><b>Rule 149:</b> GeM पर उपलब्ध वस्तुओं/सेवाओं की खरीद अनिवार्य रूप से GeM के माध्यम से ही होगी।</p>
+  <div class="flow">
+    <div class="flowbox">Rs 50,000 तक - किसी भी उपलब्ध GeM Seller से सीधे खरीद (गुणवत्ता/डिलीवरी शर्तें पूरी हों)</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox red">Rs 50,000 से Rs 10,00,000 तक - कम से कम 3 अलग-अलग Manufacturers में सबसे कम मूल्य वाले Seller से खरीद</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox gold">Rs 10,00,000 से अधिक - अनिवार्य रूप से Online Bidding या Reverse Auction के माध्यम से खरीद</div>
+  </div>
+  <p><b>अपवाद:</b> ऑटोमोबाइल की खरीद पर Rs 50,000 की सीमा लागू नहीं होती (कोई सीमा नहीं)।</p>
+</div>
+
+<div class="section" id="ch6-security">
+  <h2>8. Bid Security vs Performance Security <span class="tag tag1">Very Important</span></h2>
+  <table>
+    <tr><th>बिंदु</th><th>Bid Security (Rule 170)</th><th>Performance Security (Rule 171)</th></tr>
+    <tr><td>दूसरा नाम</td><td>Earnest Money Deposit (EMD)</td><td>-</td></tr>
+    <tr><td>राशि</td><td>अनुमानित मूल्य का 2% से 5%</td><td>अनुबंध मूल्य का 3% से 5% (कार्यों के लिए 3%-10%)</td></tr>
+    <tr><td>वैधता</td><td>Bid validity के बाद 45 दिन तक</td><td>अनुबंध पूर्ण होने (वारंटी सहित) के बाद 60 दिन तक</td></tr>
+    <tr><td>वापसी</td><td>असफल बोलीदाता को 30 दिन के अंदर (Contract award के बाद)</td><td>Warranty अवधि पूर्ण होने पर</td></tr>
+    <tr><td>छूट</td><td>MSE, Startups (DPIIT पंजीकृत) को छूट</td><td>बाज़ार स्थिति/व्यावसायिक प्रथा पर निर्भर</td></tr>
+  </table>
+  <p><b>Rule 172 - Advance Payment सीमा:</b> निजी फर्मों को अधिकतम 30%, राज्य/केंद्र सरकार एजेंसी या PSU को अधिकतम 40% अग्रिम भुगतान हो सकता है।</p>
+</div>
+
+<div class="section" id="ch6-consultancy">
+  <h2>9. Consultancy Selection Methods <span class="tag tag2">Frequent</span></h2>
+  <div class="mindmap">
+    <div class="node r">QCBS (Quality and Cost Based Selection) - गुणवत्ता व लागत दोनों पर आधारित; Technical weightage अधिकतम 80%</div>
+    <div class="node">LCS (Least Cost System) - मानक/सामान्य कार्य (जैसे Audit) के लिए, केवल सबसे कम कीमत वाला चयनित</div>
+    <div class="node g">Single Source Selection - आपातकाल, पूर्व कार्य की निरंतरता, या विशेष विशेषज्ञता के मामलों में</div>
+  </div>
+  <p><b>Rule 183:</b> Consultancy का अनुमानित मूल्य Rs 50 लाख तक होने पर अनौपचारिक जांच से Consultants की सूची बनाई जा सकती है; Rs 50 लाख से अधिक होने पर 'Expression of Interest' प्रकाशित करना अनिवार्य है।</p>
+  <p><b>Rule 184:</b> Short-listed consultants की संख्या 3 से कम नहीं होनी चाहिए।</p>
+  <div class="qbox"><b>संभावित प्रश्न:</b> QCBS पद्धति में Technical (गुणवत्ता) weightage की अधिकतम सीमा क्या है? (उत्तर: 80 प्रतिशत)</div>
+</div>
+
+<div class="section" id="decision-tree">
+  <h2>10. Decision Tree - कौन सी Procurement Method चुनें? <span class="tag tag2">Frequent</span></h2>
+  <div class="decision">
+    <div class="dbox">राशि Rs 50,000 तक -&gt; बिना Quotation (Rule 154)</div><br>
+    <div class="dbox">राशि Rs 50,000 - 5 लाख -&gt; Purchase Committee (Rule 155)</div><br>
+    <div class="dbox">राशि Rs 50 लाख तक -&gt; Limited Tender Enquiry (Rule 162)</div><br>
+    <div class="dbox">राशि Rs 50 लाख या अधिक -&gt; Advertised Tender Enquiry (Rule 161)</div><br>
+    <div class="dbox">विशेष परिस्थिति (सोल मैन्युफैक्चरर/आपातकाल) -&gt; Single Tender Enquiry (Rule 166)</div>
+  </div>
+</div>
+
+<div class="section" id="authorities">
+  <h2>11. प्राधिकारी व समय-सीमाएं <span class="tag tag1">Very Important</span></h2>
+  <table>
+    <tr><th>कार्य</th><th>प्राधिकारी/समय-सीमा</th></tr>
+    <tr><td>Sanction Lapse अवधि</td><td>12 माह (Rule 30)</td></tr>
+    <tr><td>न्यूनतम Bid जमा करने का समय</td><td>3 सप्ताह (विदेशी बोली भी हो तो 4 सप्ताह) - Rule 161</td></tr>
+    <tr><td>Bid Security वैधता</td><td>Bid validity के बाद 45 दिन (Rule 170)</td></tr>
+    <tr><td>असफल Bid Security वापसी</td><td>Contract award के 30 दिन के भीतर</td></tr>
+    <tr><td>Performance Security वैधता</td><td>Warranty पूर्ण होने के बाद 60 दिन (Rule 171)</td></tr>
+    <tr><td>वित्तीय संदेह पर निर्णय प्राधिकारी</td><td>Ministry of Finance (Rule 5)</td></tr>
+    <tr><td>अपंजीकृत वित्तीय शक्तियां किसके पास</td><td>Finance Ministry में निहित (Rule 23)</td></tr>
+    <tr><td>आग/चोरी हानि रिपोर्ट प्राधिकारी</td><td>पुलिस + उच्च प्राधिकारी + Audit/Accounts Officer</td></tr>
+  </table>
+</div>
+
+<div class="section" id="mnemonics">
+  <h2>12. Memory Tricks / Mnemonics <span class="tag tag4">Quick Revision</span></h2>
+  <div class="mnemonic">
+    <b>Procurement Threshold Trick - "50K-5L-50L":</b><br>
+    Rs 50 हज़ार तक = बिना Quotation | Rs 50 हज़ार से 5 लाख = Purchase Committee | Rs 50 लाख तक = Limited Tender | Rs 50 लाख+ = Advertised Tender
+  </div>
+  <div class="mnemonic">
+    <b>GeM Trick - "50K-10L":</b><br>
+    Rs 50,000 तक सीधे खरीद, Rs 50,000 से 10 लाख तक 3 Manufacturers में सबसे कम भाव, Rs 10 लाख से ऊपर अनिवार्य Bidding/Auction।
+  </div>
+  <div class="mnemonic">
+    <b>Security Trick - "2-5 Bid, 3-5 Performance":</b><br>
+    Bid Security = 2% से 5% | Performance Security = 3% से 5% (Works के लिए 3%-10%)
+  </div>
+  <div class="mnemonic">
+    <b>Sanction Lapse Trick - "12 महीना कोई भुगतान नहीं तो खत्म":</b><br>
+    Rule 30 - Sanction जारी होने की तारीख से 12 महीने में भुगतान न हो तो स्वतः lapse।
+  </div>
+</div>
+
+<div class="section revision-sheet" id="revision">
+  <h2>13. One-Page Revision Sheet <span class="tag tag1">Very Important</span></h2>
+  <div class="grid2">
+    <div><b>बिना Quotation:</b> Rs 50,000 तक</div>
+    <div><b>Purchase Committee:</b> Rs 50,000 - 5 लाख (3 सदस्य)</div>
+    <div><b>Limited Tender:</b> Rs 50 लाख तक</div>
+    <div><b>Advertised Tender:</b> Rs 50 लाख या अधिक</div>
+    <div><b>GTE आवश्यक नहीं:</b> Rs 200 करोड़ से कम में</div>
+    <div><b>GeM सीधी खरीद:</b> Rs 50,000 तक</div>
+    <div><b>GeM 3-सप्लायर तुलना:</b> Rs 50,000 - 10 लाख</div>
+    <div><b>GeM अनिवार्य Bidding:</b> Rs 10 लाख से ऊपर</div>
+    <div><b>Bid Security:</b> 2% - 5%</div>
+    <div><b>Performance Security:</b> 3% - 5% (Works: 3%-10%)</div>
+    <div><b>Advance Payment (निजी फर्म):</b> अधिकतम 30%</div>
+    <div><b>Advance Payment (सरकारी एजेंसी/PSU):</b> अधिकतम 40%</div>
+    <div><b>Sanction Lapse अवधि:</b> 12 माह</div>
+    <div><b>हानि रिपोर्टिंग सीमा (आग/चोरी):</b> Rs 50,000 से अधिक</div>
+    <div><b>QCBS Technical Weightage अधिकतम:</b> 80%</div>
+    <div><b>Short-listed Consultants न्यूनतम:</b> 3</div>
+  </div>
+</div>
+
+<div class="section" id="lastday">
+  <h2>14. Last Day Revision Notes <span class="tag tag1">केवल यह पढ़ें</span></h2>
+  <ul>
+    <li>Threshold amounts रटें: 50K (बिना quotation), 50K-5L (Purchase Committee), 50L (Limited Tender), 50L+ (Advertised Tender)</li>
+    <li>GeM के तीन स्लैब मत भूलें: 50K तक सीधे, 50K-10L तीन विक्रेताओं में तुलना, 10L+ अनिवार्य bidding</li>
+    <li>Bid Security 2-5% vs Performance Security 3-5% में confuse मत हों</li>
+    <li>Sanction lapse होने की अवधि 12 महीने है - यह लगभग हर पेपर में पूछा जाता है</li>
+    <li>Scientific Departments (DST, ISRO, DRDO, ICAR आदि) के लिए थ्रेशोल्ड दोगुनी होती है - यह ट्रैप है</li>
+    <li>QCBS में Technical weightage अधिकतम 80% - यह specific आंकड़ा याद रखें</li>
+    <li>MSE और DPIIT-पंजीकृत Startups को Bid Security से छूट है</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer-note">
+  India Post IP Exam Portal | GFR 2017 Chapter 2 &amp; 6 - स्रोत: General Financial Rules 2017, Updated up to 31.07.2024 (Department of Expenditure, Ministry of Finance)
+</div>
+
+</body>
+</html>

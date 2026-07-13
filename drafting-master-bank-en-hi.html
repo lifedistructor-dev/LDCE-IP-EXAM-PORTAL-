@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Drafting Master Bank — Inspector Posts Exam</title>
+<style>
+  :root{
+    --navy:#1e3d59; --navy-dark:#122335; --orange:#ff6e40;
+    --en-blue:#0d6efd; --hi-green:#198754;
+    --ink:#1e293b; --muted:#64748b; --border:#e2e8f0;
+    --paper:#ffffff; --bg:#f4f9fc;
+    --radius:16px; --radius-sm:10px; --pill:9999px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans Devanagari','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:linear-gradient(180deg,#f4f9fc,#eef2ff);
+    margin:0; padding:0; color:var(--ink); line-height:1.6;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:16px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 55%,#2c5282 100%);
+    color:#fff; border-radius:20px; padding:28px 22px; margin:14px 0;
+    text-align:center; box-shadow:0 10px 30px rgba(18,35,53,.4); position:relative; overflow:hidden;
+  }
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 10%, rgba(255,110,64,.15), transparent 60%);}
+  .hero h1{margin:0 0 6px;font-size:1.32rem;font-weight:800;position:relative;}
+  .hero p{margin:0;font-size:.85rem;color:#ffceb8;font-weight:600;letter-spacing:.3px;text-transform:uppercase;position:relative;}
+  .hero .pill{
+    display:inline-flex; align-items:center; gap:6px; margin-top:12px;
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.35);
+    padding:5px 16px; border-radius:var(--pill); font-size:.72rem; font-weight:700; position:relative;
+  }
+
+  /* ===== TOC ===== */
+  .toc{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+  .toc h3{margin:0 0 10px;font-size:.85rem;color:var(--navy);font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .toc-grid a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);background:#fff4f0;border-radius:8px;padding:8px 10px;font-size:.76rem;font-weight:600;border:1px solid #ffd9c7;}
+  .toc-num{width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;}
+
+  /* ===== CORRESPONDENCE TYPES REFERENCE (added) ===== */
+  .ref-card{
+    background:linear-gradient(180deg,#eef6ff,#f7fbff); border:1px solid #bcd8f5; border-radius:var(--radius-sm);
+    padding:16px 18px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+  .ref-card h3{margin:0 0 10px;font-size:.88rem;color:var(--en-blue);font-weight:800;display:flex;align-items:center;gap:6px;}
+  .ref-table{width:100%;border-collapse:collapse;font-size:.76rem;}
+  .ref-table th,.ref-table td{border:1px solid #cfe3f7;padding:6px 9px;text-align:left;vertical-align:top;}
+  .ref-table th{background:var(--navy);color:#fff;}
+  .ref-table tr:nth-child(even){background:#f4f9ff;}
+
+  /* ===== CASE CARDS ===== */
+  .case-card{background:var(--paper);border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 4px 16px rgba(30,61,89,.08);margin-bottom:22px;overflow:hidden;scroll-margin-top:14px;}
+  .case-head{background:linear-gradient(135deg,#fff4f0,#ffe8de);padding:16px 18px;border-bottom:1px solid #ffd9c7;}
+  .case-num-badge{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:#fff;font-size:.68rem;font-weight:800;padding:3px 12px;border-radius:var(--pill);margin-bottom:8px;}
+  .case-head h5{margin:0 0 8px;font-size:1rem;font-weight:800;color:var(--navy);line-height:1.4;}
+  .scenario{font-size:.8rem;color:var(--muted);background:#fff;border-left:3px solid var(--orange);border-radius:6px;padding:8px 10px;}
+  .scenario b{color:var(--navy);}
+  .doc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .doc-tag{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:var(--pill);background:#fff;border:1px solid var(--orange);color:var(--orange);}
+
+  .lang-block{padding:14px 16px;margin:14px 16px;border-radius:10px;font-size:.87rem;}
+  .lang-block:last-child{margin-bottom:16px;}
+  .en-version{background:#f4f9ff;border-left:4px solid var(--en-blue);}
+  .hi-version{background:#f1fbf4;border-left:4px solid var(--hi-green);}
+  .note-header{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px;}
+  .en-version .note-header{color:var(--en-blue);}
+  .hi-version .note-header{color:var(--hi-green);}
+
+  .draft-border{border:1px solid #d7e1ec;padding:16px;background:#fff;margin-top:6px;border-radius:8px;font-size:.85rem;}
+  .draft-border hr{border-top:1px solid #e2e8f0;margin:10px 0;}
+  .center-bold{text-align:center;font-weight:700;color:var(--navy);}
+  .row-between{display:flex;justify-content:space-between;gap:10px;font-family:monospace;font-size:.78rem;flex-wrap:wrap;}
+  .text-end{text-align:right;}
+  .small-mono{font-size:.78rem;font-family:monospace;}
+  .underline-title{text-align:center;font-weight:700;text-decoration:underline;color:var(--navy);}
+
+  .fab{position:fixed;bottom:18px;right:18px;background:var(--navy);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(18,35,53,.4);cursor:pointer;z-index:999;}
+
+  @media print{ .fab,.toc{display:none;} body{background:#fff;} .case-card{break-inside:avoid;box-shadow:none;} }
+  @media (max-width:480px){ .toc-grid{grid-template-columns:1fr;} .row-between{flex-direction:column;} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>✍️ Official Drafting Master Bank</h1>
+    <p>Inspector Posts Exam — 5 Most Repeated Practical Drafting Formats</p>
+    <div class="pill">Bilingual: English &amp; हिन्दी</div>
+  </div>
+
+  <div class="toc">
+    <h3>📌 Jump to Case</h3>
+    <div class="toc-grid">
+      <a href="#case1"><span class="toc-num">1</span> D.O. Letter</a>
+      <a href="#case2"><span class="toc-num">2</span> Office Memorandum</a>
+      <a href="#case3"><span class="toc-num">3</span> Official Letter to PMG</a>
+      <a href="#case4"><span class="toc-num">4</span> Notification</a>
+      <a href="#case5"><span class="toc-num">5</span> Suspension Order</a>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <h3>📚 Types of Official Correspondence — Quick Reference (जोड़ा गया / Added Reference)</h3>
+    <table class="ref-table">
+      <tr><th>Document Type</th><th>Used When</th><th>Key Feature</th></tr>
+      <tr><td><b>D.O. Letter</b><br>(Demi-Official)</td><td>Personal request between officers of comparable rank, urging action informally</td><td>Salutation "Dear Shri...", signed personally, no seal</td></tr>
+      <tr><td><b>Office Memorandum (O.M.)</b></td><td>Internal directive/explanation call within same office or subordinate office</td><td>No salutation; direct "MEMORANDUM" heading</td></tr>
+      <tr><td><b>Official Letter</b></td><td>Formal request/proposal to a higher or external authority</td><td>"Respected Sir/Madam", "I have the honour to..."</td></tr>
+      <tr><td><b>Notification</b></td><td>Public announcement — recruitment, vacancy, policy display</td><td>"NOTIFICATION" heading, no addressee, for general public</td></tr>
+      <tr><td><b>Office Order</b></td><td>Formal directive citing specific rule — suspension, transfer, penalty</td><td>"Whereas... Now therefore..." legal structure, cites exact Rule</td></tr>
+    </table>
+  </div>
+
+  <!-- CASE 1 -->
+  <div class="case-card" id="case1">
+    <div class="case-head">
+      <span class="case-num-badge">CASE 1 OF 5</span>
+      <h5>Drafting a Demi-Official (D.O.) Letter to Expedite Pending Grievances</h5>
+      <div class="scenario"><b>Scenario:</b> Draft a D.O. letter from the Superintendent of Post Offices (SPOs) to an Executive Engineer, BSNL, requesting urgent settlement of pending telephone/internet breakdown complaints in Sub-Offices.</div>
+      <div class="doc-tags"><span class="doc-tag">D.O. Letter</span><span class="doc-tag">Inter-departmental</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">BHARAT SARKAR / DEPARTMENT OF POSTS</div>
+        <div class="row-between">
+          <div><strong>Shri K.P. Sharma</strong><br>Superintendent of Post Offices<br>Ahmedabad North Division</div>
+          <div class="text-end"><strong>D.O. No:</strong> AN/BSNL-Maint/2026<br>Dated at Ahmedabad: 04.07.2026</div>
+        </div>
+        <hr>
+        <div>Dear Shri Verma,</div>
+        <div style="margin-top:8px;">I am writing this letter to draw your personal attention towards the long-pending complaints regarding telephone and high-speed leased line connectivity breakdowns at our Kalol SO and Mansa SO under this division.</div>
+        <div style="margin-top:8px;">2. As you are aware, our post offices are completely dependent on online core banking and digital tracking platforms. Due to these frequent link failures, daily public counters are severely hit, leading to widespread public resentment. Our local staff has already logged formal complaints with your sub-divisional engineers, but no permanent solution has been deployed yet.</div>
+        <div style="margin-top:8px;">3. I shall be highly grateful if you could kindly intervene in this matter personally and direct your field maintenance teams to restore and stabilize the links on priority.</div>
+        <div style="margin-top:12px;">With warm regards,</div>
+        <div class="text-end small-mono" style="margin-top:8px;">Yours sincerely,<br><br><strong>(K.P. Sharma)</strong></div>
+        <hr>
+        <div class="small-mono"><strong>To,</strong><br>Shri R.K. Verma,<br>Executive Engineer (Telecom), BSNL,<br>Ahmedabad - 380001.</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">भारत सरकार / डाक विभाग</div>
+        <div class="row-between">
+          <div><strong>श्री के.पी. शर्मा</strong><br>अधीक्षक डाकघर<br>अहमदाबाद उत्तर मंडल</div>
+          <div class="text-end"><strong>अर्ध-शासकीय पत्र सं:</strong> AN/BSNL-Maint/2026<br>दिनांक अहमदाबाद: 04.07.2026</div>
+        </div>
+        <hr>
+        <div>प्रिय श्री वर्मा,</div>
+        <div style="margin-top:8px;">मैं इस प्रभाग के अंतर्गत हमारे कलोल उप-डाकघर (SO) और माणसा उप-डाकघर (SO) में टेलीफोन और हाई-स्पीड लीज्ड लाइन कनेक्टिविटी के लंबे समय से लंबित खराब होने के संबंध में आपका व्यक्तिगत ध्यान आकर्षित करने के लिए यह पत्र लिख रहा हूँ।</div>
+        <div style="margin-top:8px;">2. जैसा कि आप जानते हैं, हमारे डाकघर पूरी तरह से ऑनलाइन कोर बैंकिंग और डिजिटल ट्रैकिंग प्लेटफॉर्म पर निर्भर हैं। इन बार-बार होने वाले लिंक फेलियर के कारण दैनिक सार्वजनिक काउंटर गंभीर रूप से प्रभावित हो रहे हैं, जिससे जनता में असंतोष बढ़ रहा है। हमारे स्थानीय कर्मचारियों द्वारा आपके उप-विभागीय इंजीनियरों के पास औपचारिक शिकायतें दर्ज कराई गई हैं, लेकिन अभी तक कोई स्थायी समाधान नहीं किया गया है।</div>
+        <div style="margin-top:8px;">3. यदि आप व्यक्तिगत रूप से इस मामले में हस्तक्षेप करें और अपनी फील्ड रखरखाव टीमों को प्राथमिकता के आधार पर लिंक को बहाल और स्थिर करने का निर्देश दें, तो मैं आपका अत्यंत आभारी रहूँगा।</div>
+        <div style="margin-top:12px;">शुभकामनाओं सहित,</div>
+        <div class="text-end small-mono" style="margin-top:8px;">भवदीय,<br><br><strong>(के.पी. शर्मा)</strong></div>
+        <hr>
+        <div class="small-mono"><strong>सेवा में,</strong><br>श्री आर.के. वर्मा,<br>अधिशासी अभियंता (दूरसंचार), बीएसएनएल,<br>अहमदाबाद - 380001.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2 -->
+  <div class="case-card" id="case2">
+    <div class="case-head">
+      <span class="case-num-badge">CASE 2 OF 5</span>
+      <h5>Drafting an Office Memorandum (OM) calling for Explanations</h5>
+      <div class="scenario"><b>Scenario:</b> Draft an Office Memorandum from the Divisional Head to a Sub-Postmaster calling for an immediate explanation regarding a verified cash verification shortfall during a surprise visit.</div>
+      <div class="doc-tags"><span class="doc-tag">Office Memorandum</span><span class="doc-tag">Explanation Call</span><span class="doc-tag">5-day deadline</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">OFFICE OF THE SUPERINTENDENT OF POST OFFICES<br>AHMEDABAD NORTH DIVISION, AHMEDABAD</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">Memo No: AN/Inv/Cash-Short/2026 &nbsp;&nbsp;&nbsp;&nbsp; Dated at Ahmedabad, the 04.07.2026</div>
+        <hr>
+        <div class="underline-title">OFFICE MEMORANDUM</div>
+        <div style="margin-top:10px;">During a surprise inspection conducted by the Assistant Superintendent of Post Offices (ASPOs) at Sabarmati SO on 02.07.2026, a physical cash deficit of ₹4,500/- (Rupees Four Thousand Five Hundred only) was detected in the office safe, which did not tally with the daily SO Balance Sheet.</div>
+        <div style="margin-top:8px;">2. Shri M.L. Gupta, Sub-Postmaster (SPM), Sabarmati SO is hereby directed to explain in writing why disciplinary action under CCS (CCA) Rules, 1965 should not be initiated against him for gross negligence, poor supervision, and non-compliance with the rules laid down in Postal Manual Volume VI.</div>
+        <div style="margin-top:8px;">3. The written explanation of the said official must reach this office within 5 days from the receipt of this memorandum, failing which it will be presumed that he has no explanation to offer and the case will be decided ex-parte.</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(K.P. Sharma)</strong><br>Superintendent of Post Offices<br>Ahmedabad North Division</div>
+        <hr>
+        <div class="small-mono"><strong>To,</strong><br>Shri M.L. Gupta,<br>Sub-Postmaster, Sabarmati SO,<br>Ahmedabad - 380005.</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अधीक्षक डाकघर का कार्यालय<br>अहमदाबाद उत्तर मंडल, अहमदाबाद</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">ज्ञापन सं: AN/Inv/Cash-Short/2026 &nbsp;&nbsp;&nbsp;&nbsp; दिनांक अहमदाबाद: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">कार्यालय ज्ञापन (Office Memorandum)</div>
+        <div style="margin-top:10px;">दिनांक 02.07.2026 को सहायक अधीक्षक डाकघर (ASPOs) द्वारा साबरमती उप-डाकघर (SO) के औचक निरीक्षण के दौरान, कार्यालय की तिजोरी में ₹4,500/- की नकद कमी पाई गई, जो दैनिक एसओ बैलेंस शीट से मेल नहीं खाती थी।</div>
+        <div style="margin-top:8px;">2. श्री एम.एल. गुप्ता, उप-डाकपाल (SPM), साबरमती SO को एतद्द्वारा निर्देश दिया जाता है कि वे लिखित में स्पष्टीकरण दें कि घोर लापरवाही, कमजोर पर्यवेक्षण और पोष्टल मैनुअल वॉल्यूम VI के नियमों के अनुपालन न करने के लिए उनके खिलाफ सीसीएस (सीसीए) नियम, 1965 के तहत अनुशासनात्मक कार्रवाई क्यों न शुरू की जाए।</div>
+        <div style="margin-top:8px;">3. उक्त कर्मचारी का लिखित स्पष्टीकरण इस ज्ञापन की प्राप्ति के 5 दिनों के भीतर इस कार्यालय में पहुँच जाना चाहिए, विफल रहने पर यह मान लिया जाएगा कि उनके पास देने के लिए कोई स्पष्टीकरण नहीं है और मामले का एकपक्षीय निर्णय लिया जाएगा।</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(के.पी. शर्मा)</strong><br>अधीक्षक डाकघर<br>अहमदाबाद उत्तर मंडल</div>
+        <hr>
+        <div class="small-mono"><strong>सेवा में,</strong><br>श्री एम.एल. गुप्ता,<br>उप-डाकपाल, साबरमती SO,<br>अहमदाबाद - 380005.</div>
+      </div>
+    </div>
+  </div>
+
+<!-- CASE 3 -->
+  <div class="case-card" id="case3">
+    <div class="case-head">
+      <span class="case-num-badge">CASE 3 OF 5</span>
+      <h5>Drafting an Official Letter to a Higher Authority (Postmaster General)</h5>
+      <div class="scenario"><b>Scenario:</b> Draft an official letter from a Divisional Superintendent to the Postmaster General (PMG) seeking financial and administrative approval for renting new premises for a Branch Office.</div>
+      <div class="doc-tags"><span class="doc-tag">Official Letter</span><span class="doc-tag">Financial Sanction</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">DEPARTMENT OF POSTS / INDIA</div>
+        <div class="small-mono" style="margin-top:8px;">From:<br>The Superintendent of Post Offices,<br>Ahmedabad North Division, Ahmedabad - 380002.</div>
+        <div class="small-mono" style="margin-top:8px;">To:<br>The Postmaster General,<br>HQ Circle Region, Ahmedabad - 380009.</div>
+        <div class="small-mono text-end" style="margin-top:6px;"><strong>No:</strong> AN/Estt/BO-Rent/2026 &nbsp;&nbsp;&nbsp;&nbsp; Dated: 04.07.2026</div>
+        <hr>
+        <div><strong>Subject:</strong> Proposal for shifting of 'Chandkheda BO' to new rented premises and sanction of monthly rent – regarding.</div>
+        <br>
+        <div>Respected Sir/Madam,</div>
+        <div style="margin-top:8px;">I have the honor to submit a proposal for shifting the existing Chandkheda Branch Post Office (BO) to a new rented building due to the highly dilapidated and unsafe condition of the current premises.</div>
+        <div style="margin-top:8px;">2. The current building is leaking heavily during the monsoon, putting critical electronic DARPAN devices and small savings paper ledgers at high risk. A new central location measuring 250 sq. ft. has been identified, which is fully secure and structurally fit for hosting digital counter operations. The Fair Rent Certificate (FRC) has been obtained from the PWD authorities, assessing the monthly rent at ₹6,000/- per month.</div>
+        <div style="margin-top:8px;">3. In view of public safety and staff welfare, it is requested to kindly accord administrative approval and financial sanction for the proposed rent.</div>
+        <div style="margin-top:10px;">Encl: PWD Rent Certificate &amp; Site Layout Blueprint.</div>
+        <div class="text-end small-mono" style="margin-top:8px;">Yours faithfully,<br><br><strong>(K.P. Sharma)</strong><br>Superintendent of Post Offices</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">डाक विभाग / भारत</div>
+        <div class="small-mono" style="margin-top:8px;">प्रेषक:<br>अधीक्षक डाकघर,<br>अहमदाबाद उत्तर मंडल, अहमदाबाद - 380002.</div>
+        <div class="small-mono" style="margin-top:8px;">सेवा में,<br>पोस्टमास्टर जनरल कार्यालय,<br>मुख्यालय सर्किल क्षेत्र, अहमदाबाद - 380009.</div>
+        <div class="small-mono text-end" style="margin-top:6px;"><strong>पत्र सं:</strong> AN/Estt/BO-Rent/2026 &nbsp;&nbsp;&nbsp;&nbsp; दिनांक: 04.07.2026</div>
+        <hr>
+        <div><strong>विषय:</strong> 'चाँदखेड़ा बीओ' को नए किराए के भवन में स्थानांतरित करने और मासिक किराए की स्वीकृति के संबंध में प्रस्ताव।</div>
+        <br>
+        <div>आदरणीय महोदय / महोदया,</div>
+        <div style="margin-top:8px;">मुझे वर्तमान भवन की अत्यधिक जर्जर और असुरक्षित स्थिति के कारण मौजूदा चाँदखेड़ा शाखा डाकघर (BO) को नए किराए के भवन में स्थानांतरित करने का प्रस्ताव प्रस्तुत करने का सम्मान मिला है।</div>
+        <div style="margin-top:8px;">2. वर्तमान भवन में मानसून के दौरान भारी रिसाव हो रहा है, जिससे महत्वपूर्ण इलेक्ट्रॉनिक दर्पण (DARPAN) उपकरण और बचत खातों के रिकॉर्ड उच्च जोखिम में हैं। 250 वर्ग फुट का एक नया केंद्रीय स्थान चिन्हित किया गया है, जो डिजिटल काउंटर संचालन के लिए पूरी तरह से सुरक्षित और उपयुक्त है। पीडब्ल्यूडी (PWD) अधिकारियों से उचित किराया प्रमाणपत्र (FRC) प्राप्त कर लिया गया है, जिसके अनुसार मासिक किराया ₹6,000/- निर्धारित है।</div>
+        <div style="margin-top:8px;">3. जन सुरक्षा और कर्मचारी कल्याण को ध्यान में रखते हुए, आपसे अनुरोध है कि कृपया प्रस्तावित किराए के लिए प्रशासनिक और वित्तीय स्वीकृति प्रदान करने की कृपा करें।</div>
+        <div style="margin-top:10px;">संलग्नक: पीडब्ल्यूडी किराया प्रमाणपत्र और साइट का नक्शा।</div>
+        <div class="text-end small-mono" style="margin-top:8px;">भवदीय,<br><br><strong>(के.पी. शर्मा)</strong><br>अधीक्षक डाकघर</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 4 -->
+  <div class="case-card" id="case4">
+    <div class="case-head">
+      <span class="case-num-badge">CASE 4 OF 5</span>
+      <h5>Drafting an Official Notification for Departmental Display</h5>
+      <div class="scenario"><b>Scenario:</b> Draft an official notification template for the recruitment/engagement of a Gramin Dak Sevak (GDS) vacant post in a specific Branch Office.</div>
+      <div class="doc-tags"><span class="doc-tag">Notification</span><span class="doc-tag">GDS Recruitment</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">DEPARTMENT OF POSTS, INDIA<br>OFFICE OF THE INSPECTOR POSTS, AHMEDABAD NORTH SUB-DIVISION</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">Notification No: AN-SubDiv/GDS-Vac/2026 &nbsp;&nbsp;&nbsp;&nbsp; Dated: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">NOTIFICATION</div>
+        <div style="margin-top:10px;">Applications are hereby invited from eligible local candidates for engagement to the vacant post of Gramin Dak Sevak Branch Postmaster (GDS BPM) at Adraj BO under Ahmedabad North Sub-Division.</div>
+        <div style="margin-top:8px;">2. <strong>Job Specifications and Details:</strong><br>
+        (a) <strong>Post Name:</strong> GDS BPM, Adraj BO.<br>
+        (b) <strong>TRCA Allowance Slab:</strong> ₹12,000/- to ₹29,380/- per month.<br>
+        (c) <strong>Minimum Educational Qualification:</strong> 10th Standard pass from a recognized board with passing marks in Mathematics and English.<br>
+        (d) <strong>Age Limit:</strong> 18 to 40 Years as on the date of notification.</div>
+        <div style="margin-top:8px;">3. Eligible candidates must submit their application forms through the online recruitment portal before the closing deadline of 31st July 2026. Manual or physical applications will not be entertained under any circumstances.</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(Signature)</strong><br>Inspector Posts<br>Ahmedabad North Sub-Division</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">डाक विभाग, भारत<br>डाक निरीक्षक का कार्यालय, अहमदाबाद उत्तर उप-मंडल</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">अधिसूचना सं: AN-SubDiv/GDS-Vac/2026 &nbsp;&nbsp;&nbsp;&nbsp; दिनांक: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">अधिसूचना (Notification)</div>
+        <div style="margin-top:10px;">अहमदाबाद उत्तर उप-मंडल के अंतर्गत अदराज शाखा डाकघर (BO) में ग्रामीण डाक सेवक शाखा डाकपाल (GDS BPM) के रिक्त पद पर नियुक्ति के लिए योग्य स्थानीय उम्मीदवारों से आवेदन आमंत्रित किए जाते हैं।</div>
+        <div style="margin-top:8px;">2. <strong>पद का विवरण एवं योग्यताएं:</strong><br>
+        (क) <strong>पद का नाम:</strong> GDS BPM, अदराज BO.<br>
+        (ख) <strong>मासिक भत्ते (TRCA Slab):</strong> ₹12,000/- से ₹29,380/- प्रति माह।<br>
+        (ग) <strong>न्यूनतम शैक्षणिक योग्यता:</strong> मान्यता प्राप्त बोर्ड से गणित और अंग्रेजी विषयों के साथ 10वीं कक्षा उत्तीर्ण।<br>
+        (घ) <strong>आयु सीमा:</strong> अधिसूचना की तिथि को 18 से 40 वर्ष।</div>
+        <div style="margin-top:8px;">3. योग्य उम्मीदवारों को 31 जुलाई 2026 की अंतिम समय सीमा से पहले आधिकारिक ऑनलाइन भर्ती पोर्टल के माध्यम से अपना आवेदन जमा करना होगा। किसी भी स्थिति में हस्तलिखित या भौतिक आवेदन स्वीकार नहीं किए जाएंगे।</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(हस्ताक्षर)</strong><br>डाक निरीक्षक (IP)<br>अहमदाबाद उत्तर उप-मंडल</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 5 -->
+  <div class="case-card" id="case5">
+    <div class="case-head">
+      <span class="case-num-badge">CASE 5 OF 5</span>
+      <h5>Drafting a Formal Office Order (Suspension under Rule 10)</h5>
+      <div class="scenario"><b>Scenario:</b> A Postal Assistant is caught red-handed in cash tampering and needs to be placed under suspension immediately. Draft an Office Order under Rule 10(1) of CCS (CCA) Rules, 1965.</div>
+      <div class="doc-tags"><span class="doc-tag">Office Order</span><span class="doc-tag">CCS (CCA) Rule 10(1)</span><span class="doc-tag">Suspension</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">OFFICE OF THE SUPERINTENDENT OF POST OFFICES<br>AHMEDABAD NORTH DIVISION, AHMEDABAD</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">Order No: AN/Disciplinary/PA-Susp/2026 &nbsp;&nbsp;&nbsp;&nbsp; Dated at Ahmedabad: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">ORDER</div>
+        <div style="margin-top:10px;">Whereas a disciplinary proceeding against Shri R.S. Trivedi, Postal Assistant (PA), Ahmedabad HO is contemplated due to serious financial irregularities and manipulation of government cash accounts.</div>
+        <div style="margin-top:8px;">2. Now, therefore, the Superintendent of Post Offices, Ahmedabad North Division, in exercise of the powers conferred by <strong>Sub-rule (1) of Rule 10 of the CCS (CCA) Rules, 1965</strong>, hereby places the said Shri R.S. Trivedi under suspension with immediate effect.</div>
+        <div style="margin-top:8px;">3. It is further ordered that during the period this order remains in force, the headquarters of Shri R.S. Trivedi shall be fixed at Gandhinagar HO, and the official shall not leave the headquarters without obtaining the prior written permission of the competent authority. The official will be entitled to a subsistence allowance as per the rules.</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(K.P. Sharma)</strong><br>Superintendent of Post Offices<br>Ahmedabad North Division</div>
+        <hr>
+        <div class="small-mono"><strong>Copy to:</strong><br>1. Shri R.S. Trivedi, PA (Under Suspension).<br>2. The Postmaster, Ahmedabad HO / Gandhinagar HO for information.</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अधीक्षक डाकघर का कार्यालय<br>अहमदाबाद उत्तर मंडल, अहमदाबाद</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">आदेश सं: AN/Disciplinary/PA-Susp/2026 &nbsp;&nbsp;&nbsp;&nbsp; दिनांक अहमदाबाद: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">आदेश (Order)</div>
+        <div style="margin-top:10px;">चूंकि सरकारी नकद खातों में गंभीर वित्तीय अनियमितताओं और हेरफेर के कारण श्री आर.एस. त्रिवेदी, डाक सहायक (PA), अहमदाबाद एचओ के खिलाफ अनुशासनात्मक कार्रवाई करने का विचार किया गया है।</div>
+        <div style="margin-top:8px;">2. अतः, अब, अधीक्षक डाकघर, अहमदाबाद उत्तर मंडल, <strong>सीसीएस (सीसीए) नियम, 1965 के नियम 10 के उप-नियम (1)</strong> द्वारा प्रदत्त शक्तियों का प्रयोग करते हुए, उक्त श्री आर.एस. त्रिवेदी को तत्काल प्रभाव से निलंबित (Suspension) करते हैं।</div>
+        <div style="margin-top:8px;">3. यह भी आदेश दिया जाता है कि जब तक यह आदेश प्रभावी रहेगा, श्री आर.एस. त्रिवेदी का मुख्यालय गांधीनगर मुख्य डाकघर (HO) निर्धारित किया जाता है, और वह सक्षम प्राधिकारी की पूर्व लिखित अनुमति के बिना मुख्यालय नहीं छोड़ेंगे। कर्मचारी नियमानुसार निर्वाह भत्ते (Subsistence Allowance) के पात्र होंगे।</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(के.पी. शर्मा)</strong><br>अधीक्षक डाकघर<br>अहमदाबाद उत्तर मंडल</div>
+        <hr>
+        <div class="small-mono"><strong>प्रतिलिपि प्रेषित:</strong><br>1. श्री आर.एस. त्रिवेदी, डाक सहायक (निलंबित)।<br>2. पोस्टमास्टर, अहमदाबाद मुख्य डाकघर / गांधीनगर मुख्य डाकघर।</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>  

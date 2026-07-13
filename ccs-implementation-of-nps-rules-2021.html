@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS Implementation of NPS Rules 2021</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#D4AF37;
+  --dark:#1a1a2e; --lightbg:#fdf9f0;
+  --tier1:#e53935; --tier2:#fb8c00; --tier3:#fdd835; --tier4:#43a047;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;
+  background:var(--lightbg); color:#222; line-height:1.5; padding-bottom:40px;
+}
+.header{
+  background:linear-gradient(135deg,var(--blue),#001a4d);
+  color:#fff; padding:22px 14px; text-align:center;
+  border-bottom:6px solid var(--gold);
+}
+.header h1{font-size:1.3rem; margin-bottom:4px;}
+.header .en{font-size:0.85rem; opacity:0.85;}
+.header .badge{
+  display:inline-block; background:var(--red); padding:3px 10px;
+  border-radius:12px; font-size:0.7rem; margin-top:8px;
+}
+.container{max-width:900px; margin:0 auto; padding:10px;}
+.section{
+  background:#fff; border-radius:10px; padding:14px; margin:14px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1); border-left:6px solid var(--blue);
+}
+.section h2{
+  color:var(--blue); font-size:1.05rem; margin-bottom:10px;
+  display:flex; align-items:center; gap:6px; border-bottom:2px dashed var(--gold); padding-bottom:6px;
+}
+.tag{
+  display:inline-block; font-size:0.72rem; font-weight:bold; padding:2px 8px;
+  border-radius:10px; color:#fff; margin-left:4px;
+}
+.tag1{background:var(--tier1);} .tag2{background:var(--tier2);}
+.tag3{background:var(--tier3); color:#333;} .tag4{background:var(--tier4);}
+.legend{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:10px 0; font-size:0.75rem;}
+.legend span{padding:4px 8px; border-radius:8px; color:#fff;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:0.82rem;}
+th,td{border:1px solid #ddd; padding:6px 5px; text-align:center;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even){background:#f5f5f5;}
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flowbox{
+  background:#eef4ff; border:2px solid var(--blue); border-radius:8px;
+  padding:8px 12px; margin:4px 0; text-align:center; font-size:0.85rem; width:92%;
+}
+.flowbox.red{border-color:var(--red); background:#ffeceb;}
+.flowbox.gold{border-color:var(--gold); background:#fff8e1;}
+.arrow{font-size:1.3rem; color:var(--red); margin:2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{
+  background:var(--blue); color:#fff; border-radius:20px; padding:8px 14px;
+  font-size:0.8rem; text-align:center; flex:1 1 40%;
+}
+.mindmap .node.r{background:var(--red);}
+.mindmap .node.g{background:#8d6e00;}
+ul{margin:6px 0 6px 18px;} li{margin:4px 0; font-size:0.87rem;}
+.qbox{
+  background:#fff3cd; border-left:4px solid var(--tier2); padding:6px 10px;
+  margin:6px 0; font-size:0.8rem; border-radius:4px;
+}
+.qbox b{color:var(--red);}
+.mnemonic{
+  background:#e8f5e9; border:2px dashed var(--tier4); border-radius:8px;
+  padding:10px; margin:8px 0; font-size:0.85rem;
+}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 10px; padding-left:14px;}
+.timeline .item{margin-bottom:12px; position:relative;}
+.timeline .item::before{
+  content:"\25CF"; color:var(--red); position:absolute; left:-19px; top:0;
+}
+.timeline .date{font-weight:bold; color:var(--blue); font-size:0.85rem;}
+.revision-sheet{
+  background:linear-gradient(135deg,#fff8e1,#fdf9f0); border:3px solid var(--gold);
+}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.78rem;}
+.decision{text-align:center; margin:10px 0;}
+.dbox{
+  display:inline-block; background:#fff; border:2px solid var(--dark); border-radius:6px;
+  padding:6px 10px; margin:4px; font-size:0.8rem;
+}
+.footer-note{
+  text-align:center; font-size:0.75rem; color:#777; margin-top:20px; padding:10px;
+}
+.toc{background:#fff; border-radius:10px; padding:10px 14px; margin:10px 0; border-left:6px solid var(--gold);}
+.toc a{display:block; color:var(--blue); text-decoration:none; font-size:0.85rem; padding:3px 0; border-bottom:1px dotted #ddd;}
+.imp-max{
+  background:#ffebee; border:2px solid var(--red); border-radius:8px; padding:10px; text-align:center;
+  font-weight:bold; color:var(--red); font-size:0.95rem; margin:10px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>केंद्रीय सिविल सेवा (राष्ट्रीय पेंशन प्रणाली का कार्यान्वयन) नियम, 2021</h1>
+  <div class="en">CCS (Implementation of National Pension System) Rules, 2021</div>
+  <div class="badge">IP Exam | Item 12 (Part A)</div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>इस पृष्ठ पर:</b>
+  <a href="#overview">1. परिचय व परिभाषाएं</a>
+  <a href="#rules">2. महत्वपूर्ण नियम (Rules)</a>
+  <a href="#contribution">3. Contribution Structure - Chart</a>
+  <a href="#option">4. Death/Disability Option - Flowchart</a>
+  <a href="#exit">5. Exit के प्रकार - Mind Map</a>
+  <a href="#authorities">6. प्राधिकारी व समय-सीमाएं</a>
+  <a href="#exceptions">7. Applicability व अपवाद</a>
+  <a href="#dates">8. महत्वपूर्ण तिथियां - Timeline</a>
+  <a href="#mnemonics">9. Memory Tricks</a>
+  <a href="#revision">10. One-Page Revision Sheet</a>
+  <a href="#lastday">11. Last Day Notes</a>
+</div>
+
+<div class="legend">
+  <span style="background:#e53935">Very Important for Exam</span>
+  <span style="background:#fb8c00">Frequently Asked</span>
+  <span style="background:#fdd835; color:#333">Conceptual</span>
+  <span style="background:#43a047">Quick Revision</span>
+</div>
+
+<div class="section" id="overview">
+  <h2>1. परिचय व परिभाषाएं <span class="tag tag1">Very Important</span></h2>
+  <p><b>Topic:</b> यह नियम बताते हैं कि 1 जनवरी 2004 या उसके बाद नियुक्त केंद्रीय कर्मचारियों के लिए NPS (National Pension System) कैसे लागू होगी - registration, contribution, investment, और सेवा-निवृत्ति पर विकल्प (option) से जुड़े सभी प्रावधान।</p>
+  <p><b>Definition (कुछ मुख्य शब्द):</b></p>
+  <ul>
+    <li><b>Individual Pension Account</b> - subscriber का वह खाता जिसमें contribution जमा होता है</li>
+    <li><b>Accumulated Pension Corpus</b> - Individual Pension Account में जमा कुल पेंशन निवेश राशि</li>
+    <li><b>Authority</b> - PFRDA (Pension Fund Regulatory and Development Authority)</li>
+    <li><b>Annuity Service Provider</b> - IRDA द्वारा पंजीकृत बीमा कंपनी जो annuity देती है</li>
+    <li><b>Central Recordkeeping Agency (CRA)</b> - रिकॉर्ड रखने वाली एजेंसी</li>
+  </ul>
+  <div class="qbox"><b>संभावित प्रश्न:</b> "Authority" शब्द से इस नियम में किसका तात्पर्य है? (उत्तर: PFRDA)</div>
+</div>
+
+<div class="section" id="rules">
+  <h2>2. महत्वपूर्ण नियम (Rules) <span class="tag tag1">Very Important</span></h2>
+  <table>
+    <tr><th>Rule</th><th>विषय</th><th>महत्व</th></tr>
+    <tr><td>Rule 1</td><td>Short title, commencement: 30 मार्च 2021 (Gazette प्रकाशन तिथि से)</td><td>Very Imp</td></tr>
+    <tr><td>Rule 2</td><td>Application - किन पर लागू, किन पर नहीं</td><td>Very Imp</td></tr>
+    <tr><td>Rule 3</td><td>परिभाषाएं (Definitions)</td><td>Conceptual</td></tr>
+    <tr><td>Rule 4</td><td>Registration into National Pension System</td><td>Frequent</td></tr>
+    <tr><td>Rule 5</td><td>Registration/Contribution में देरी पर मुआवजा (Compensation)</td><td>Frequent</td></tr>
+    <tr><td>Rule 6</td><td>Subscriber का अंशदान (Contribution) - 10 प्रतिशत</td><td>Very Imp</td></tr>
+    <tr><td>Rule 7</td><td>सरकार का अंशदान - 14 प्रतिशत</td><td>Very Imp</td></tr>
+    <tr><td>Rule 8</td><td>अंशदान जमा होने में देरी पर ब्याज</td><td>Frequent</td></tr>
+    <tr><td>Rule 9</td><td>Accumulated Pension Corpus का निवेश</td><td>Conceptual</td></tr>
+    <tr><td>Rule 10</td><td>मृत्यु/अशक्तता/invalidation की स्थिति में विकल्प (Form 1)</td><td>Very Imp</td></tr>
+    <tr><td>Rule 11</td><td>Superannuation पर सेवा-निवृत्ति</td><td>Frequent</td></tr>
+    <tr><td>Rule 12</td><td>20 वर्ष नियमित सेवा पूर्ण होने पर सेवा-निवृत्ति (VRS जैसा)</td><td>Very Imp</td></tr>
+    <tr><td>Rule 15</td><td>PSU/Autonomous Body में Absorption की तारीख निर्धारण</td><td>Conceptual</td></tr>
+    <tr><td>Rule 16</td><td>Invalidation पर सेवा-निवृत्ति</td><td>Frequent</td></tr>
+  </table>
+  <div class="qbox"><b>संभावित प्रश्न:</b> Subscriber और सरकार का मासिक अंशदान प्रतिशत क्या है?</div>
+</div>
+
+<div class="section" id="contribution">
+  <h2>3. Contribution Structure <span class="tag tag1">Very Important</span></h2>
+  <div class="flow">
+    <div class="flowbox red">Subscriber का अंशदान (Rule 6) = 10 प्रतिशत Emoluments (या समय-समय पर अधिसूचित दर) - अगली उच्च रुपये में पूर्णांकित</div>
+    <div class="arrow">+</div>
+    <div class="flowbox gold">सरकार का अंशदान (Rule 7) = 14 प्रतिशत Emoluments (या समय-समय पर अधिसूचित दर)</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox">दोनों राशियां Individual Pension Account में जमा होती हैं</div>
+  </div>
+  <div class="imp-max">याद रखें: 10 (Subscriber) + 14 (Government) = कुल 24 प्रतिशत मासिक अंशदान</div>
+  <p><b>Rule 8:</b> यदि अंशदान जमा होने में देरी होती है, तो PPF दर पर ब्याज दिया जाता है।</p>
+</div>
+
+<div class="section" id="option">
+  <h2>4. मृत्यु/अशक्तता की स्थिति में विकल्प - Flowchart <span class="tag tag1">Very Important</span></h2>
+  <div class="flow">
+    <div class="flowbox">कर्मचारी सेवा में शामिल होते समय Form 1 में विकल्प देता है (Rule 10)</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox red">विकल्प 1: NPS के अंतर्गत Accumulated Pension Corpus आधारित लाभ</div>
+    <div class="flowbox gold">विकल्प 2: CCS (Pension) Rules 1972 / CCS (Extraordinary Pension) Rules 1939 के अंतर्गत लाभ</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox">यह विकल्प मृत्यु, अशक्तता (disability), या invalidation की स्थिति में लागू होता है</div>
+  </div>
+  <p><b>Default Option:</b> यदि कर्मचारी विकल्प न दे तो PFRDA (Exits and Withdrawals) Regulations 2015 के अनुसार default माना जाएगा।</p>
+</div>
+
+<div class="section" id="exit">
+  <h2>5. Exit / सेवा-निवृत्ति के प्रकार - Mind Map <span class="tag tag2">Frequent</span></h2>
+  <div class="mindmap">
+    <div class="node">Superannuation (Rule 11) - सामान्य आयु पूर्ण होने पर</div>
+    <div class="node r">20 वर्ष नियमित सेवा (Rule 12) - FR 56(k) जैसा स्वैच्छिक विकल्प</div>
+    <div class="node g">Invalidation (Rule 16) - शारीरिक/मानसिक अक्षमता पर</div>
+    <div class="node">Absorption in PSU/Autonomous Body (Rule 15) - absorption तिथि से सेवा-निवृत्त मानी जाएगी</div>
+    <div class="node r">Death during service - परिवार को विकल्पानुसार लाभ</div>
+    <div class="node g">Resignation - lump sum + annuity, PFRDA Regulations अनुसार</div>
+  </div>
+  <div class="qbox"><b>संभावित प्रश्न:</b> Rule 12 के अंतर्गत सेवा-निवृत्ति के लिए कितने वर्ष की नियमित सेवा आवश्यक है? (उत्तर: 20 वर्ष)</div>
+</div>
+
+<div class="section" id="authorities">
+  <h2>6. प्राधिकारी व समय-सीमाएं <span class="tag tag1">Very Important</span></h2>
+  <table>
+    <tr><th>कार्य</th><th>प्राधिकारी</th><th>समय-सीमा</th></tr>
+    <tr><td>Contribution Transaction ID जमा करना</td><td>Pay and Accounts Officer / Cheque Drawing and Disbursing Officer</td><td>हर माह की 25 तारीख तक</td></tr>
+    <tr><td>Trustee Bank को अंशदान भेजना</td><td>Accredited Bank</td><td>अप्रैल माह के पहले कार्य दिवस पर (वार्षिक प्रक्रिया)</td></tr>
+    <tr><td>Application को CRA को अग्रेषित करना</td><td>Pay and Accounts Officer / CDDO</td><td>DDO से प्राप्ति के 3 कार्य दिवस के भीतर</td></tr>
+    <tr><td>देरी के मामले की जांच व जिम्मेदारी तय करना</td><td>Head of Department / Chief Controller of Accounts</td><td>-</td></tr>
+    <tr><td>प्रशासनिक चूक से देरी पर हर्जाना</td><td>दोषी अधिकारी (जैसे TDS विलंब नियम अनुसार)</td><td>-</td></tr>
+  </table>
+  <div class="mnemonic"><b>Memory Trick:</b> "25 तारीख तक ID, 3 दिन में CRA को भेजो" - याद रखें "25-3" क्रम।</div>
+</div>
+
+<div class="section" id="exceptions">
+  <h2>7. Applicability व अपवाद <span class="tag tag1">Very Important</span></h2>
+  <p><b>लागू होता है:</b> 1 जनवरी 2004 या उसके बाद नियुक्त सिविल सेवा कर्मचारी, जिसमें Defence Services के civilian कर्मचारी भी शामिल हैं।</p>
+  <p><b>लागू नहीं होता (अपवाद) - याद रखें "RCPACLO":</b></p>
+  <ul>
+    <li><b>R</b>ailway servants</li>
+    <li><b>C</b>asual और daily rated कर्मचारी</li>
+    <li><b>P</b>aid from contingencies वाले कर्मचारी</li>
+    <li><b>A</b>ll India Services के सदस्य</li>
+    <li><b>C</b>ontract पर नियुक्त कर्मचारी</li>
+    <li><b>L</b>ocally recruited (विदेश में राजनयिक/consular प्रतिष्ठानों में)</li>
+    <li><b>O</b>ther Constitution/law द्वारा नियंत्रित व्यक्ति, तथा जिन पर CCS (Pension) Rules 1972 लागू है</li>
+  </ul>
+  <div class="qbox"><b>संभावित प्रश्न:</b> निम्न में से किस पर CCS (Implementation of NPS) Rules 2021 लागू नहीं होते? Railway servants / All India Services सदस्य / Casual कर्मचारी - (उत्तर: तीनों पर लागू नहीं)</div>
+</div>
+
+<div class="section" id="dates">
+  <h2>8. महत्वपूर्ण तिथियां - Timeline <span class="tag tag1">Very Important</span></h2>
+  <div class="timeline">
+    <div class="item"><div class="date">1 जनवरी 2004</div>NPS प्रणाली से आच्छादित होने की cut-off तिथि - इस तिथि पर या बाद में नियुक्त कर्मचारी इस नियम के अंतर्गत आते हैं</div>
+    <div class="item"><div class="date">30 मार्च 2021</div>CCS (Implementation of NPS) Rules, 2021 अधिसूचित व प्रभावी (G.S.R. 227(E))</div>
+    <div class="item"><div class="date">23 सितंबर 2021</div>संबंधित CCS (Payment of Gratuity under NPS) Rules, 2021 अधिसूचित</div>
+  </div>
+  <div class="qbox"><b>संभावित प्रश्न:</b> CCS (Implementation of NPS) Rules, 2021 का Gazette Notification नंबर व तिथि क्या है? (उत्तर: G.S.R. 227(E), 30 मार्च 2021)</div>
+</div>
+
+<div class="section" id="mnemonics">
+  <h2>9. Memory Tricks / Mnemonics <span class="tag tag4">Quick Revision</span></h2>
+  <div class="mnemonic">
+    <b>Contribution Trick - "10 + 14 = 24":</b><br>
+    Subscriber = 10 प्रतिशत, Government = 14 प्रतिशत, कुल मिलाकर = 24 प्रतिशत मासिक अंशदान।
+  </div>
+  <div class="mnemonic">
+    <b>Retirement Rules Trick - "11-Super, 12-Twenty":</b><br>
+    Rule 11 = Superannuation, Rule 12 = 20 वर्ष नियमित सेवा पर स्वैच्छिक सेवा-निवृत्ति।
+  </div>
+  <div class="mnemonic">
+    <b>Exclusion Trick - "RCPACLO":</b><br>
+    Railway, Casual, Paid from contingencies, All India Services, Contract, Locally recruited abroad, Other law-governed persons।
+  </div>
+</div>
+
+<div class="section revision-sheet" id="revision">
+  <h2>10. One-Page Revision Sheet <span class="tag tag1">Very Important</span></h2>
+  <div class="grid2">
+    <div><b>Rules प्रभावी:</b> 30 मार्च 2021</div>
+    <div><b>Gazette No.:</b> G.S.R. 227(E)</div>
+    <div><b>Cut-off तिथि:</b> 1 जनवरी 2004 (या बाद में नियुक्ति)</div>
+    <div><b>Subscriber Contribution:</b> 10 प्रतिशत Emoluments</div>
+    <div><b>Government Contribution:</b> 14 प्रतिशत Emoluments</div>
+    <div><b>Authority का अर्थ:</b> PFRDA</div>
+    <div><b>Option Form:</b> Form 1 (मृत्यु/अशक्तता/invalidation हेतु)</div>
+    <div><b>Superannuation Rule:</b> Rule 11</div>
+    <div><b>20 वर्ष सेवा-निवृत्ति Rule:</b> Rule 12</div>
+    <div><b>Invalidation Rule:</b> Rule 16</div>
+    <div><b>Absorption तिथि निर्धारण Rule:</b> Rule 15</div>
+    <div><b>देरी पर ब्याज दर:</b> PPF दर के अनुसार</div>
+  </div>
+</div>
+
+<div class="section" id="lastday">
+  <h2>11. Last Day Revision Notes <span class="tag tag1">केवल यह पढ़ें</span></h2>
+  <ul>
+    <li>Contribution प्रतिशत रटें: Subscriber 10 प्रतिशत, Government 14 प्रतिशत</li>
+    <li>Rule 11 vs Rule 12 में confuse मत हों - 11 है Superannuation, 12 है 20 वर्ष सेवा पर स्वैच्छिक</li>
+    <li>Rule 10 का विकल्प Form 1 में भरा जाता है - मृत्यु/disability/invalidation केस के लिए</li>
+    <li>Applicability cut-off: 1 जनवरी 2004 - यह लगभग हर पेपर में पूछा जाता है</li>
+    <li>Railway servants और All India Services सदस्य इस नियम से बाहर हैं - यह ट्रैप है</li>
+    <li>CCS (Payment of Gratuity under NPS) Rules 2021 इसी नियम से जुड़ा हुआ अलग नियम है - दोनों को साथ पढ़ें</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer-note">
+  India Post IP Exam Portal | CCS (Implementation of National Pension System) Rules, 2021 - स्रोत: DoP&amp;PW Notification G.S.R. 227(E) dated 30.03.2021
+</div>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS Gratuity under NPS Rules 2021</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#D4AF37;
+  --dark:#1a1a2e; --lightbg:#fdf9f0;
+  --tier1:#e53935; --tier2:#fb8c00; --tier3:#fdd835; --tier4:#43a047;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;
+  background:var(--lightbg); color:#222; line-height:1.5; padding-bottom:40px;
+}
+.header{
+  background:linear-gradient(135deg,var(--blue),#001a4d);
+  color:#fff; padding:22px 14px; text-align:center;
+  border-bottom:6px solid var(--gold);
+}
+.header h1{font-size:1.3rem; margin-bottom:4px;}
+.header .en{font-size:0.85rem; opacity:0.85;}
+.header .badge{
+  display:inline-block; background:var(--red); padding:3px 10px;
+  border-radius:12px; font-size:0.7rem; margin-top:8px;
+}
+.container{max-width:900px; margin:0 auto; padding:10px;}
+.section{
+  background:#fff; border-radius:10px; padding:14px; margin:14px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1); border-left:6px solid var(--blue);
+}
+.section h2{
+  color:var(--blue); font-size:1.05rem; margin-bottom:10px;
+  display:flex; align-items:center; gap:6px; border-bottom:2px dashed var(--gold); padding-bottom:6px;
+}
+.tag{
+  display:inline-block; font-size:0.72rem; font-weight:bold; padding:2px 8px;
+  border-radius:10px; color:#fff; margin-left:4px;
+}
+.tag1{background:var(--tier1);} .tag2{background:var(--tier2);}
+.tag3{background:var(--tier3); color:#333;} .tag4{background:var(--tier4);}
+.legend{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:10px 0; font-size:0.75rem;}
+.legend span{padding:4px 8px; border-radius:8px; color:#fff;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:0.82rem;}
+th,td{border:1px solid #ddd; padding:6px 5px; text-align:center;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even){background:#f5f5f5;}
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flowbox{
+  background:#eef4ff; border:2px solid var(--blue); border-radius:8px;
+  padding:8px 12px; margin:4px 0; text-align:center; font-size:0.85rem; width:92%;
+}
+.flowbox.red{border-color:var(--red); background:#ffeceb;}
+.flowbox.gold{border-color:var(--gold); background:#fff8e1;}
+.arrow{font-size:1.3rem; color:var(--red); margin:2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{
+  background:var(--blue); color:#fff; border-radius:20px; padding:8px 14px;
+  font-size:0.8rem; text-align:center; flex:1 1 40%;
+}
+.mindmap .node.r{background:var(--red);}
+.mindmap .node.g{background:#8d6e00;}
+ul{margin:6px 0 6px 18px;} li{margin:4px 0; font-size:0.87rem;}
+.qbox{
+  background:#fff3cd; border-left:4px solid var(--tier2); padding:6px 10px;
+  margin:6px 0; font-size:0.8rem; border-radius:4px;
+}
+.qbox b{color:var(--red);}
+.mnemonic{
+  background:#e8f5e9; border:2px dashed var(--tier4); border-radius:8px;
+  padding:10px; margin:8px 0; font-size:0.85rem;
+}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 10px; padding-left:14px;}
+.timeline .item{margin-bottom:12px; position:relative;}
+.timeline .item::before{
+  content:"\25CF"; color:var(--red); position:absolute; left:-19px; top:0;
+}
+.timeline .date{font-weight:bold; color:var(--blue); font-size:0.85rem;}
+.revision-sheet{
+  background:linear-gradient(135deg,#fff8e1,#fdf9f0); border:3px solid var(--gold);
+}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.78rem;}
+.decision{text-align:center; margin:10px 0;}
+.dbox{
+  display:inline-block; background:#fff; border:2px solid var(--dark); border-radius:6px;
+  padding:6px 10px; margin:4px; font-size:0.8rem;
+}
+.footer-note{
+  text-align:center; font-size:0.75rem; color:#777; margin-top:20px; padding:10px;
+}
+.toc{background:#fff; border-radius:10px; padding:10px 14px; margin:10px 0; border-left:6px solid var(--gold);}
+.toc a{display:block; color:var(--blue); text-decoration:none; font-size:0.85rem; padding:3px 0; border-bottom:1px dotted #ddd;}
+.imp-max{
+  background:#ffebee; border:2px solid var(--red); border-radius:8px; padding:10px; text-align:center;
+  font-weight:bold; color:var(--red); font-size:0.95rem; margin:10px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>केंद्रीय सिविल सेवा (राष्ट्रीय पेंशन प्रणाली के अंतर्गत उपदान का संदाय) नियम, 2021</h1>
+  <div class="en">CCS (Payment of Gratuity under National Pension System) Rules, 2021</div>
+  <div class="badge">IP Exam | Item 12 (Part B)</div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>इस पृष्ठ पर:</b>
+  <a href="#overview">1. परिचय व परिभाषाएं</a>
+  <a href="#rules">2. महत्वपूर्ण नियम (Rules)</a>
+  <a href="#gratuity-table">3. Death Gratuity तालिका</a>
+  <a href="#flowchart">4. पात्रता Flowchart</a>
+  <a href="#types">5. Gratuity के प्रकार - Mind Map</a>
+  <a href="#authorities">6. प्राधिकारी व समय-सीमाएं</a>
+  <a href="#exceptions">7. अपवाद व Forfeiture</a>
+  <a href="#dates">8. महत्वपूर्ण तिथियां - Timeline</a>
+  <a href="#mnemonics">9. Memory Tricks</a>
+  <a href="#revision">10. One-Page Revision Sheet</a>
+  <a href="#lastday">11. Last Day Notes</a>
+</div>
+
+<div class="legend">
+  <span style="background:#e53935">Very Important for Exam</span>
+  <span style="background:#fb8c00">Frequently Asked</span>
+  <span style="background:#fdd835; color:#333">Conceptual</span>
+  <span style="background:#43a047">Quick Revision</span>
+</div>
+
+<div class="section" id="overview">
+  <h2>1. परिचय व परिभाषाएं <span class="tag tag1">Very Important</span></h2>
+  <p><b>Topic:</b> यह नियम NPS (राष्ट्रीय पेंशन प्रणाली) के अंतर्गत आने वाले केंद्रीय कर्मचारियों को Retirement Gratuity और Death Gratuity का लाभ देते हैं, जो पहले सिर्फ Old Pension वालों को CCS (Pension) Rules 1972 में मिलता था।</p>
+  <p><b>Definition:</b> "Gratuity" में शामिल है - Retirement Gratuity, Death Gratuity और Residuary Gratuity (2025 amendment से जोड़ा गया)।</p>
+  <div class="mindmap">
+    <div class="node r">Applicability: 1 जनवरी 2004 या उसके बाद नियुक्त सिविल कर्मचारी जो CCS (NPS Implementation) Rules 2021 के अंतर्गत आते हैं</div>
+    <div class="node">Not Applicable: Railway servants, Casual/daily rated, All India Services, Contract कर्मचारी</div>
+    <div class="node g">Minor की परिभाषा: 18 वर्ष से कम आयु</div>
+  </div>
+  <div class="qbox"><b>संभावित प्रश्न:</b> यह नियम किस तारीख से लागू है और "gratuity" की परिभाषा में क्या-क्या शामिल है?</div>
+</div>
+
+<div class="section" id="rules">
+  <h2>2. महत्वपूर्ण नियम (Rules) <span class="tag tag1">Very Important</span></h2>
+  <table>
+    <tr><th>Rule</th><th>विषय</th><th>महत्व</th></tr>
+    <tr><td>Rule 1</td><td>Short title, commencement: 23.09.2021</td><td>Quick</td></tr>
+    <tr><td>Rule 3</td><td>परिभाषाएं (Definitions)</td><td>Conceptual</td></tr>
+    <tr><td>Rule 4A</td><td>Re-employment पर अलग gratuity नहीं</td><td>Frequent</td></tr>
+    <tr><td>Rule 5</td><td>President/Secretary/CAG - गंभीर दुराचार पर gratuity रोकने की शक्ति</td><td>Very Imp</td></tr>
+    <tr><td>Rule 6-7</td><td>Emoluments व Average Emoluments (अंतिम 10 माह)</td><td>Very Imp</td></tr>
+    <tr><td>Rule 8-21</td><td>Qualifying Service से जुड़े नियम</td><td>Frequent</td></tr>
+    <tr><td>Rule 22</td><td>Retirement/Death Gratuity - मुख्य गणना नियम</td><td>Very Imp</td></tr>
+    <tr><td>Rule 23-26</td><td>Nomination, भुगतान के हकदार, Lapse</td><td>Very Imp</td></tr>
+    <tr><td>Rule 27-30</td><td>Superannuation/Invalid/Retiring/Compulsory Retirement Gratuity</td><td>Frequent</td></tr>
+    <tr><td>Rule 31-32A</td><td>Dismissal/Removal व Absorption पर लाभ</td><td>Conceptual</td></tr>
+    <tr><td>Rule 33</td><td>लापता (Missing) कर्मचारी को gratuity</td><td>Frequent</td></tr>
+    <tr><td>Rule 44</td><td>विलंबित भुगतान पर ब्याज (PPF दर पर)</td><td>Very Imp</td></tr>
+    <tr><td>Rule 45-47</td><td>Government dues की वसूली व समायोजन</td><td>Conceptual</td></tr>
+    <tr><td>Rule 54</td><td>मृत्यु मामले में Government dues का समायोजन</td><td>Conceptual</td></tr>
+  </table>
+  <div class="qbox"><b>संभावित प्रश्न:</b> Rule 22 के अंतर्गत Retirement Gratuity की गणना का फॉर्मूला क्या है?</div>
+</div>
+
+<div class="section">
+  <h2>Retirement Gratuity - फॉर्मूला <span class="tag tag1">Very Important</span></h2>
+  <div class="flow">
+    <div class="flowbox red">Retirement Gratuity = 1/4 x Emoluments x हर पूर्ण 6-माही Qualifying Service अवधि</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox">अधिकतम सीमा: 16.5 गुना Emoluments</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox gold">कुल राशि की अधिकतम सीमा: 25 लाख रुपये (2025 amendment से बढ़ी, पहले 20 लाख थी)</div>
+  </div>
+  <div class="imp-max">याद रखें: 5 वर्ष 9 माह या अधिक (पर 5 वर्ष से कम नहीं) सेवा को भी 5 वर्ष माना जाता है (Rule 22 Explanation 1A)</div>
+</div>
+
+<div class="section" id="gratuity-table">
+  <h2>3. Death Gratuity तालिका <span class="tag tag1">सबसे ज्यादा पूछा जाने वाला</span></h2>
+  <table>
+    <tr><th>सेवा अवधि</th><th>Death Gratuity दर</th></tr>
+    <tr><td>1 वर्ष से कम</td><td>2 गुना Emoluments</td></tr>
+    <tr><td>1 वर्ष या अधिक, पर 5 वर्ष से कम</td><td>6 गुना Emoluments</td></tr>
+    <tr><td>5 वर्ष या अधिक, पर 11 वर्ष से कम</td><td>12 गुना Emoluments</td></tr>
+    <tr><td>11 वर्ष या अधिक, पर 20 वर्ष से कम</td><td>20 गुना Emoluments</td></tr>
+    <tr><td>20 वर्ष या अधिक</td><td>हर 6-माही अवधि पर आधा Emoluments, अधिकतम 33 गुना</td></tr>
+  </table>
+  <div class="imp-max">अधिकतम सीमा दोनों (Retirement व Death Gratuity) के लिए: 25 लाख रुपये</div>
+  <p><b>Quick Point:</b> आत्महत्या (suicide) करने वाले कर्मचारी को भी Death Gratuity मिलती है (Rule 22 Explanation 2)।</p>
+  <div class="qbox"><b>संभावित प्रश्न:</b> 7 वर्ष की qualifying service वाले कर्मचारी की मृत्यु होने पर उसे कितनी गुना emoluments death gratuity मिलेगी? (उत्तर: 12 गुना)</div>
+</div>
+
+<div class="section" id="flowchart">
+  <h2>4. Retirement Gratuity पात्रता - Flowchart <span class="tag tag2">Frequent</span></h2>
+  <div class="flow">
+    <div class="flowbox">क्या कर्मचारी ने 5 वर्ष की Qualifying Service पूरी की?</div>
+    <div class="arrow">हां नीचे जाएं, नहीं तो केवल Death Gratuity पात्र</div>
+    <div class="flowbox red">क्या निम्न में से कोई स्थिति लागू है? (i) Superannuation/Invalidation (ii) FR 56 / Rule 12 के तहत early retirement (iii) Special VRS (iv) Corporation/Company में Absorption</div>
+    <div class="arrow">&#8595;</div>
+    <div class="flowbox gold">Retirement Gratuity स्वीकृत - Rule 22 के फॉर्मूले अनुसार भुगतान</div>
+  </div>
+</div>
+
+<div class="section" id="types">
+  <h2>5. Gratuity के प्रकार - Mind Map <span class="tag tag2">Frequent</span></h2>
+  <div class="mindmap">
+    <div class="node">Superannuation Gratuity (Rule 27) - आयु पूरी होने पर</div>
+    <div class="node r">Invalid Gratuity (Rule 28) - शारीरिक/मानसिक अक्षमता पर</div>
+    <div class="node g">Retiring Gratuity (Rule 29) - समय-पूर्व retirement / VRS</div>
+    <div class="node">Compulsory Retirement Gratuity (Rule 30) - कम से कम दो-तिहाई राशि</div>
+    <div class="node r">Compassionate Gratuity (Rule 31) - Dismissal/Removal पर, अधिकतम दो-तिहाई Retirement Gratuity</div>
+    <div class="node g">Residuary Gratuity (Rule 22(4)) - retirement के 5 वर्ष अंदर मृत्यु होने पर कमी की भरपाई</div>
+  </div>
+</div>
+
+<div class="section" id="authorities">
+  <h2>6. प्राधिकारी व समय-सीमाएं <span class="tag tag1">Very Important</span></h2>
+  <table>
+    <tr><th>कार्य</th><th>प्राधिकारी</th><th>समय-सीमा</th></tr>
+    <tr><td>Papers तैयार करना (Form 6 शुरू)</td><td>Head of Office</td><td>Retirement से 1 वर्ष पहले</td></tr>
+    <tr><td>No Demand Certificate हेतु सूचना</td><td>Head of Office to Directorate of Estates</td><td>1 वर्ष पहले (retirement) / मृत्यु पर 7 दिन में</td></tr>
+    <tr><td>Form 6 & 7 भेजना (Accounts Officer को)</td><td>Head of Office</td><td>Superannuation से 4 माह पहले</td></tr>
+    <tr><td>Authority Letter जारी करना</td><td>Accounts Officer</td><td>Superannuation से 1 माह पहले; अन्य मामलों में 45 दिन में</td></tr>
+    <tr><td>Provisional Gratuity स्वीकृति (Non-superannuation)</td><td>Head of Office</td><td>Form जमा होने के 1 माह में</td></tr>
+    <tr><td>गंभीर दुराचार पर Gratuity रोकना/वसूली</td><td>President / Secretary / CAG (UPSC से परामर्श आवश्यक)</td><td>-</td></tr>
+    <tr><td>Death gratuity - Form 10 पूर्ण करना</td><td>Head of Office</td><td>मृत्यु सूचना मिलने के 1 माह में</td></tr>
+    <tr><td>Death gratuity - 100% धनराशि निकासी</td><td>Head of Office</td><td>तुरंत, Accounts Officer को भेजने के बाद</td></tr>
+    <tr><td>Missing कर्मचारी - Death gratuity भुगतान</td><td>Head of Office</td><td>7 वर्ष (report तिथि से) या मृत्यु सिद्ध होने पर, जो पहले हो</td></tr>
+    <tr><td>Interest भुगतान (देरी पर)</td><td>Secretary/Joint Secretary स्तर अधिकारी</td><td>3 माह बाद से ब्याज (PPF दर पर)</td></tr>
+  </table>
+  <div class="mnemonic"><b>Memory Trick - समय-सीमा क्रम "12-4-1-3":</b> 12 माह पहले तैयारी शुरू, 4 महीने पहले Accounts को भेजो, 1 महीना पहले Authority Letter, retirement के 3 महीने बाद ब्याज शुरू।</div>
+</div>
+
+<div class="section" id="exceptions">
+  <h2>7. अपवाद व Forfeiture (जब्ती) <span class="tag tag1">Very Important</span></h2>
+  <ul>
+    <li><b>Dismissal/Removal</b> - पूरी gratuity forfeit (जब्त), पर compassionate gratuity (अधिकतम दो-तिहाई) दी जा सकती है।</li>
+    <li><b>Resignation</b> - past service forfeit, सिवाय जब proper permission से दूसरी सरकारी नौकरी में जाना हो।</li>
+    <li><b>Murder/Abetment case</b> (Rule 25) - नामिती/परिवार सदस्य जो कर्मचारी की हत्या का आरोपी है, जांच पूरी होने तक gratuity रुकी रहेगी; दोषी पाए जाने पर हमेशा के लिए वंचित।</li>
+    <li><b>No family, no nomination</b> (Rule 26) - gratuity सरकार को lapse हो जाएगी (Succession Certificate के आधार पर अपवाद संभव)।</li>
+    <li><b>Fraud/Embezzlement में लापता कर्मचारी</b> (Rule 33(6)) - Missing कर्मचारी नियम लागू नहीं होंगे।</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Penalties / रोक व वसूली <span class="tag tag2">Frequent</span></h2>
+  <div class="decision">
+    <div class="dbox">गंभीर दुराचार सिद्ध - पूर्ण/आंशिक Gratuity रोकी/वसूली जा सकती है (Rule 5)</div><br>
+    <div class="dbox">Compulsory Retirement (सजा स्वरूप) - न्यूनतम दो-तिहाई Gratuity (Rule 30)</div><br>
+    <div class="dbox">Dismissal/Removal - पूर्ण Forfeiture, अधिकतम दो-तिहाई Compassionate Gratuity संभव (Rule 31)</div><br>
+    <div class="dbox">देरी से भुगतान (प्रशासनिक चूक) - PPF दर पर ब्याज देय (Rule 44)</div>
+  </div>
+</div>
+
+<div class="section" id="dates">
+  <h2>8. महत्वपूर्ण तिथियां - Timeline <span class="tag tag1">Very Important</span></h2>
+  <div class="timeline">
+    <div class="item"><div class="date">30 मार्च 2021</div>CCS (Implementation of NPS) Rules, 2021 अधिसूचित (G.S.R. 227(E))</div>
+    <div class="item"><div class="date">23 सितंबर 2021</div>CCS (Payment of Gratuity under NPS) Rules, 2021 अधिसूचित व प्रभावी (G.S.R. 658(E))</div>
+    <div class="item"><div class="date">24 अप्रैल 2025</div>Amendment Rules, 2025 (G.S.R. 258(E)): अधिकतम सीमा 20 लाख से बढ़ाकर 25 लाख रुपये; "residuary gratuity" definition में जोड़ी गई</div>
+  </div>
+  <div class="qbox"><b>संभावित प्रश्न:</b> CCS (Payment of Gratuity under NPS) Rules, 2021 किस तारीख से प्रभावी हुए? (उत्तर: 23 सितंबर 2021)</div>
+</div>
+
+<div class="section" id="mnemonics">
+  <h2>9. Memory Tricks / Mnemonics <span class="tag tag4">Quick Revision</span></h2>
+  <div class="mnemonic">
+    <b>Death Gratuity दरें याद करने की Trick - "2-6-12-20-आधा":</b><br>
+    1 वर्ष से कम = 2 गुना | 1-5 वर्ष = 6 गुना | 5-11 वर्ष = 12 गुना | 11-20 वर्ष = 20 गुना | 20+ वर्ष = हर 6 माह पर आधा (max 33 गुना)
+  </div>
+  <div class="mnemonic">
+    <b>Retirement Gratuity फॉर्मूला - "1/4 - 16.5 - 25":</b><br>
+    1/4 Emoluments प्रति 6-माही सेवा, अधिकतम 16.5 गुना, कुल सीमा 25 लाख रुपये।
+  </div>
+  <div class="mnemonic">
+    <b>Applicability Trick - "RCPACL" बाहर हैं:</b><br>
+    Railway, Casual/daily-rated, Paid from contingencies, All India Services, Contract कर्मचारी, Locally recruited (विदेश में)
+  </div>
+</div>
+
+<div class="section revision-sheet" id="revision">
+  <h2>10. One-Page Revision Sheet <span class="tag tag1">Very Important</span></h2>
+  <div class="grid2">
+    <div><b>Rules प्रभावी:</b> 23.09.2021</div>
+    <div><b>Amendment:</b> 24.04.2025</div>
+    <div><b>न्यूनतम सेवा (Retirement Gratuity):</b> 5 वर्ष</div>
+    <div><b>अधिकतम गुणांक:</b> 16.5 (Retirement) / 33 (Death)</div>
+    <div><b>अधिकतम राशि:</b> 25 लाख रुपये</div>
+    <div><b>Minor की आयु सीमा:</b> 18 वर्ष से कम</div>
+    <div><b>ब्याज दर:</b> PPF दर के अनुसार</div>
+    <div><b>ब्याज कब से:</b> retirement/मृत्यु के 3 माह बाद से</div>
+    <div><b>Compulsory Retirement Gratuity:</b> न्यूनतम दो-तिहाई</div>
+    <div><b>Compassionate Gratuity:</b> अधिकतम दो-तिहाई</div>
+    <div><b>Missing कर्मचारी - Death gratuity:</b> 7 वर्ष या मृत्यु सिद्ध होने पर</div>
+    <div><b>Nomination Form:</b> Form 2 (Gratuity + CGEGIS common)</div>
+  </div>
+</div>
+
+<div class="section" id="lastday">
+  <h2>11. Last Day Revision Notes <span class="tag tag1">केवल यह पढ़ें</span></h2>
+  <ul>
+    <li>Death Gratuity table के 5 slabs रटें: 2, 6, 12, 20, आधा (max 33)</li>
+    <li>अधिकतम सीमा 25 लाख रुपये (2025 से पहले 20 लाख थी, यह ट्रैप है)</li>
+    <li>5 वर्ष 9 माह की सेवा = 5 वर्ष मानी जाएगी (Explanation 1A)</li>
+    <li>Head of Office और Accounts Officer की अलग-अलग समय-सीमाएं मत भूलें</li>
+    <li>Rule 25 - हत्या का आरोपी नामिती अस्थायी रूप से वंचित, दोषी सिद्ध होने पर स्थायी रूप से</li>
+    <li>आत्महत्या करने वाले कर्मचारी को भी Death Gratuity मिलती है, यह ट्रैप question है</li>
+    <li>Currency: केवल भारतीय रुपये में, भारत में ही देय (Rule 56)</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer-note">
+  India Post IP Exam Portal | CCS (Payment of Gratuity under NPS) Rules, 2021 - स्रोत: DoP&amp;PW Notification G.S.R. 658(E) व Amendment G.S.R. 258(E), 2025
+</div>
+
+</body>
+</html>

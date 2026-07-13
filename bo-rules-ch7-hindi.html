@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rules for Branch Offices — Chapter 7: Accounts | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;background:linear-gradient(180deg,#fefbf0,#eef2ff);margin:0;padding:0;color:var(--ink);line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{background:linear-gradient(135deg,#7c2d12,#1e3a8a);color:#fff;border-radius:16px;padding:22px 18px;margin:12px 0;text-align:center;box-shadow:0 8px 24px rgba(124,45,18,.3);}
+  header.hero h1{margin:0 0 6px;font-size:1.28rem;}
+  header.hero .sub{font-size:.85rem;opacity:.92;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.7rem;}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1rem;display:flex;align-items:center;gap:8px;}
+  .bi{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .bi .hi{font-weight:700;font-size:.92rem;color:#111827;}
+  .bi .en{font-style:italic;font-size:.8rem;color:#4b5563;margin-top:2px;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.75rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.72rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+  .fab{position:fixed;bottom:18px;right:18px;background:#7c2d12;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(124,45,18,.4);cursor:pointer;z-index:999;}
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>📒 Rules for Branch Offices — Chapter 7</h1>
+    <div class="sub">शाखा डाकघर नियम — अध्याय 7: लेखा (Accounts)</div>
+    <div class="tag">19 Rules (123-141) · भाग 7/8</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Manuals <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Book of BO Rules <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Chapter VII — Accounts (Rules 123-141) <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Journal, Account, Cash Bags, Pay Disbursement
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic — परिचय <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="bi">
+      <div class="hi">यह अध्याय B.O. Journal, B.O. Account, cash bags, remittances, व pay disbursement प्रक्रिया के 19 नियमों को कवर करता है।</div>
+      <div class="en">This chapter covers B.O. Journal, B.O. Account, cash bags, remittances, and pay disbursement across 19 rules.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📓 B.O. Journal — Pa-5 (Rule 123) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="bi rule">
+      <div class="hi">Pa-5 में registered (insured/VP सहित), money orders, postal orders, SB warrants की Nos. व सभी particulars दर्ज होते हैं — प्रत्येक article कैसे disposed हुआ यह भी दिखाया जाता है।</div>
+      <div class="en">Pa-5 records numbers/particulars of registered (incl. insured/VP), money orders, postal orders, SB warrants — and shows disposal of each article.</div>
+    </div>
+    <div class="bi">
+      <div class="hi">B.O. daily account [A.C.G.-22(a)] में शामिल आखिरी entry के नीचे journal के पेज पर <b>लाल स्याही</b> की रेखा खींची जाती है।</div>
+      <div class="en">A red-ink line is drawn across the journal page below the last entry included in that day's A.C.G.-22(a).</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> B.O. Journal का Form नंबर क्या है? <b>Ans: Pa-5</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 B.O. Account — Pa-6 (Rule 124) <span class="tag-imp t-red">🔴 Very High-Yield</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Head</th><th>सम्मिलित मद (Items)</th></tr>
+      <tr><td><b>Receipts</b> (BO पर liability)</td><td>Postage due, Account Office से cash, MO/IPO से collected cash</td></tr>
+      <tr><td><b>Payments</b> (BO का claim)</td><td>Undeliverable postage due, Account Office को remitted cash, MO paid/bills paid</td></tr>
+      <tr><td><b>Balance</b></td><td>Account Office को शेष देय राशि</td></tr>
+    </table></div>
+    <div class="bi rule">
+      <div class="hi">V.P. articles से collected राशि "Money Orders issued" के head में credit की जाती है — postage collections को "cash collected" में शामिल नहीं किया जाता।</div>
+      <div class="en">VP amounts credited under "Money Orders issued"; postage collections never included in "cash collected".</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-Head Structure" — Receipts, Payments, Balance — Pa-6 की तीन मुख्य श्रेणियाँ।</div>
+    <div class="exam-q"><b>Probable Q:</b> V.P. articles से collected राशि किस head में credit होती है? <b>Ans: "Money Orders issued"</b></div>
+  </div>
+
+  <div class="card">
+    <h2>👜 Cash Bags — प्रकार (Rule 130) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Bag प्रकार</th><th>प्रयोग की शर्त</th></tr>
+      <tr><td>Cloth Cash Bag</td><td>राशि केवल currency notes की हो व ₹500 से अधिक न हो</td></tr>
+      <tr><td>Leather Cash Bag</td><td>राशि में coins शामिल हों, या राशि ₹500 से अधिक हो</td></tr>
+    </table>
+    <div class="bi">
+      <div class="hi">जो offices औसतन महीने में <b>कम से कम 10 बार</b> ₹500 से अधिक की remittances exchange करते हैं, उन्हें leather bags भी supply किए जाते हैं।</div>
+      <div class="en">Offices exchanging remittances &gt;₹500 at least 10 times/month on average are also supplied leather bags.</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Cloth-Notes-500, Leather-Coins/Above500" — कपड़े का बैग सिर्फ नोट व ≤500 के लिए; चमड़े का बैग coins या >500 के लिए।</div>
+    <div class="exam-q"><b>Probable Q:</b> Leather cash bag कब इस्तेमाल होता है? <b>Ans: जब remittance में coins शामिल हों, या राशि ₹500 से अधिक हो</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💵 वेतन वितरण (Rule 138) <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="bi rule">
+      <div class="hi">Acquittance roll में हर ऐसे item (₹500 से अधिक) पर <b>₹1 का Revenue Stamp</b> अनिवार्य है — payee के हस्ताक्षर/thumb impression उसी स्टाम्प के आर-पार लिए जाएँ।</div>
+      <div class="en">A Revenue Stamp of ₹1 is mandatory on every acquittance roll item exceeding ₹500 — payee's signature/thumb impression taken across the stamp.</div>
+    </div>
+    <ul>
+      <li>🔴 BPM को स्वयं व्यक्तिगत रूप से भुगतान करना होता है, अपनी उपस्थिति में हस्ताक्षर कराने होते हैं।</li>
+      <li>🟠 अशिक्षित payee — thumb impression/mark/seal, 1-2 witnesses की उपस्थिति में।</li>
+      <li>🟡 Fines/subscriptions/income-tax कटौतियाँ acquittance roll में दिखाई जाएँ तो BPM उनकी कटौती के लिए ज़िम्मेदार।</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "₹500 = ₹1 Stamp" — हर ₹500 से अधिक के item पर ₹1 revenue stamp।</div>
+    <div class="exam-q"><b>Probable Q:</b> ₹500 से अधिक के acquittance roll item पर कौन सा stamp अनिवार्य है? <b>Ans: ₹1 का Revenue Stamp</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — Chapter 7 Overview</h2>
+    <div class="bi" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Journal (Pa-5)</b>: All articles/MOs/POs tracking</div></div>
+    <div class="bi" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Account (Pa-6)</b>: Receipts / Payments / Balance</div></div>
+    <div class="bi" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Cash Bags</b>: Cloth(notes,≤500) vs Leather(coins/&gt;500)</div></div>
+    <div class="bi" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Pay Disbursement</b>: ₹1 stamp on items &gt;₹500</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. B.O. Journal का Form नंबर क्या है?</div><div class="opts">A) Pa-4 &nbsp; B) Pa-5 &nbsp; C) Pa-6 &nbsp; D) MS-27</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q2. B.O. Account का Form नंबर क्या है?</div><div class="opts">A) Pa-4 &nbsp; B) Pa-5 &nbsp; C) Pa-6 &nbsp; D) A.C.G.-22</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q3. V.P. articles से collected राशि किस head में credit होती है?</div><div class="opts">A) Postage collected &nbsp; B) Money Orders issued &nbsp; C) Unclassified receipts &nbsp; D) Cash remitted</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q4. Cloth cash bag कब प्रयोग होता है?</div><div class="opts">A) Coins के लिए &nbsp; B) केवल currency notes, ≤₹500 &nbsp; C) &gt;₹500 के लिए &nbsp; D) सभी अवसरों पर</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q5. Leather cash bag की supply किन offices को मिलती है?</div><div class="opts">A) सभी BO को &nbsp; B) महीने में 10+ बार ₹500+ remittance exchange करने वाले offices &nbsp; C) केवल HO को &nbsp; D) कभी नहीं</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q6. Acquittance roll में ₹500 से अधिक item पर कौन सा stamp चाहिए?</div><div class="opts">A) 50 पैसे &nbsp; B) ₹1 Revenue Stamp &nbsp; C) ₹2 Revenue Stamp &nbsp; D) कोई stamp नहीं</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. B.O. Account (Pa-6) में कितने मुख्य Heads होते हैं?</div><div class="opts">A) 2 &nbsp; B) 3 &nbsp; C) 4 &nbsp; D) 5</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q8. Postage collections को B.O. Account के किस head में शामिल किया जाता है?</div><div class="opts">A) Cash Collected में &nbsp; B) कभी शामिल नहीं किया जाता &nbsp; C) Money Orders issued में &nbsp; D) Balance में</div><div class="ans">Answer: B</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 B.O. Journal = <b>Pa-5</b>; B.O. Account = <b>Pa-6</b>; Daily Account = <b>A.C.G.-22(a)</b></li>
+      <li>🔴 Pa-6 के 3 Heads: <b>Receipts, Payments, Balance</b></li>
+      <li>🔴 VP collected राशि — "<b>Money Orders issued</b>" head में credit; postage collections कभी "cash collected" में नहीं</li>
+      <li>🟠 Cash Bags: <b>Cloth</b> (notes only, ≤₹500); <b>Leather</b> (coins या &gt;₹500)</li>
+      <li>🟠 Leather bag supply — महीने में <b>10+ बार ₹500+</b> exchange वाले offices को</li>
+      <li>🟡 Acquittance roll — हर <b>₹500+</b> item पर <b>₹1 Revenue Stamp</b> अनिवार्य</li>
+      <li>🟢 Journal page पर daily account included entries के नीचे <b>लाल स्याही</b> रेखा</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Chapter</td><td>VII — Accounts (Rules 123-141)</td></tr>
+      <tr><td>Total Rules</td><td>19</td></tr>
+      <tr><td>B.O. Journal Form</td><td>Pa-5</td></tr>
+      <tr><td>B.O. Account Form</td><td>Pa-6</td></tr>
+      <tr><td>Daily Account Form</td><td>A.C.G.-22(a)</td></tr>
+      <tr><td>Pa-6 Heads</td><td>Receipts / Payments / Balance</td></tr>
+      <tr><td>Cloth Bag Use</td><td>Currency notes only, ≤₹500</td></tr>
+      <tr><td>Leather Bag Use</td><td>Coins involved, or &gt;₹500</td></tr>
+      <tr><td>Leather Bag Supply Threshold</td><td>&gt;₹500 exchange, 10+ times/month avg</td></tr>
+      <tr><td>Acquittance Roll Stamp</td><td>₹1 Revenue Stamp per item &gt;₹500</td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

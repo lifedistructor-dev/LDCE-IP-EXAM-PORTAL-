@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB CBS Manual — भाग 4 | NSS | प्रमाणपत्र सामान्य नियम | KVP | NSC-VIII | NSC-IX | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.header{background:linear-gradient(135deg,var(--gold-dark) 0%,var(--orange) 55%,var(--red-dark) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .sub{margin-top:8px;font-size:0.88rem;opacity:0.92;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue);}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.76rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.74rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>POSB (CBS) मैनुअल — भाग 4</h1>
+  <div class="sub">अध्याय 12-16: NSS 1987/92 | प्रमाणपत्र सामान्य नियम | KVP | NSC-VIII | NSC-IX</div>
+  <div class="sub">(Corrected upto 31.12.2021 — Finacle CBS आधारित नवीनतम मैनुअल)</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">📜 5 प्रमाणपत्र योजनाएं</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण</span>
+  <span>🟠 बार-बार पूछा गया</span>
+  <span>🟡 संकल्पनात्मक</span>
+  <span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची</h2>
+  <div class="toc-grid">
+    <a href="#ch12">12. National Savings Scheme (NSS 1987 & 1992)</a>
+    <a href="#ch13">13. Savings Certificates सामान्य नियम</a>
+    <a href="#ch14">14. Kisan Vikas Patra (KVP) Scheme</a>
+    <a href="#ch15">15. NSC (VIII Issue) Scheme</a>
+    <a href="#ch16">16. 10-Year NSC (IX Issue)</a>
+    <a href="#compare">📊 सभी प्रमाणपत्र योजनाओं की तुलना</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH12 NSS -->
+<div class="chapter" id="ch12">
+  <div class="chapter-head" style="background:var(--red);">📉 अध्याय 12 → National Savings Scheme (NSS 1987 & 1992) — बंद योजना</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — बंद योजना, केवल पुराने खातों के लिए</span>
+      <h3>योजना काल</h3>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-time">1.4.1987:</span> NSS-1987 शुरू</div>
+      <div class="tl-item"><span class="tl-time">1.10.1992:</span> NSS-1987 बंद, NSS-1992 शुरू</div>
+      <div class="tl-item"><span class="tl-time">1.11.2002:</span> NSS-1992 बंद (कोई नई जमा नहीं)</div>
+      <div class="tl-item"><span class="tl-time">01.03.2003 से:</span> ब्याज दर 7.5%</div>
+    </div>
+
+    <table>
+      <tr><th>बिंदु</th><th>नियम</th></tr>
+      <tr><td>निकासी</td><td>वर्ष में केवल 1 बार; 4 वर्ष पूर्व के बैलेंस से अधिक नहीं</td></tr>
+      <tr><td>खाता बंद करना</td><td>अंतिम जमा के वित्तीय वर्ष की समाप्ति से <b>3 वर्ष</b> बाद; <b>केवल HO में</b></td></tr>
+      <tr><td>टैक्स नियम</td><td>निकासी का 100% टैक्स योग्य आय में जुड़ता है</td></tr>
+      <tr><td>TDS (Section 194EE)</td><td>10% — Form 15G/15H से छूट संभव</td></tr>
+      <tr><td>TDS छूट सीमा</td><td>वार्षिक ब्याज ₹2,500 से कम हो तो TDS नहीं</td></tr>
+      <tr><td>₹20,000+ भुगतान</td><td>केवल Crossed Cheque या Savings Account में जमा — नकद नहीं</td></tr>
+    </table>
+
+    <div class="penalty-box">🔴 <b>महत्वपूर्ण:</b> NSS खाता गिरवी (Pledge) नहीं रखा जा सकता। प्रति व्यक्ति केवल 1 खाता — अधिक पाए जाने पर Directorate को रिपोर्ट अनिवार्य।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "87 में शुरू, 92 में बदला, 2002 में पूरी तरह बंद" — NSS की समयरेखा</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> NSS खाता बंद करने की अनुमति कब और कहां मिलती है? <b>(अंतिम जमा के 3 वर्ष बाद, केवल HO में)</b> TDS छूट सीमा क्या है? <b>(वार्षिक ब्याज ₹2,500 से कम)</b></div>
+  </div>
+</div>
+
+<!-- CH13 -->
+<div class="chapter" id="ch13">
+  <div class="chapter-head" style="background:var(--blue);">📜 अध्याय 13 → Savings Certificates सामान्य नियम / General Rules</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Passbook प्रारूप बदल गया</span>
+      <h3>प्रमाणपत्र अब Passbook रूप में</h3>
+      <p><b>01.07.2016</b> से Savings Certificate <b>Savings Bank Passbook (SB-5A)</b> के रूप में जारी होते हैं — कोई physical denomination certificate नहीं। <b>18.12.2019</b> से NSC को "Account" के रूप में भी परिभाषित किया गया।</p>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: कौन NSC Account खोल सकता है?</div>
+      <div class="yn">➡ (a) वयस्क स्वयं के लिए</div>
+      <div class="yn">➡ (b) वयस्क, नाबालिग/अस्वस्थ मन व्यक्ति के अभिभावक के रूप में</div>
+      <div class="yn">➡ (c) 10 वर्ष+ नाबालिग स्वयं</div>
+      <div class="yn">➡ (d) अधिकतम 3 वयस्क संयुक्त रूप से</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>समय-पूर्व भुनाने के अपवाद (सभी प्रमाणपत्रों पर लागू)</h3>
+      <table>
+        <tr><th>परिस्थिति</th></tr>
+        <tr><td>धारक (या सभी संयुक्त धारकों) की मृत्यु पर</td></tr>
+        <tr><td>Gazetted सरकारी अधिकारी द्वारा Pledge जब्त करने पर (Forfeiture)</td></tr>
+        <tr><td>न्यायालय के आदेश पर</td></tr>
+        <tr><td>नियमों के विरुद्ध जारी प्रमाणपत्र पर</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>Duplicate Passbook जारी करना (Rule 147)</h3>
+      <p>Head Postmaster द्वारा जांच व Indemnity Bond के बाद ही डुप्लीकेट जारी होता है। SO में मामले HO को भेजे जाते हैं। मूल प्रमाणपत्र बाद में मिल जाए तो उसे रद्द कर "Passbook in lieu of duplicate issued" नोट किया जाता है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2016 में Passbook, 2019 में Account" — प्रमाणपत्र रूप में बड़ा बदलाव</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Savings Certificate किस तारीख से Passbook रूप में जारी होते हैं? <b>(01.07.2016)</b> NSC को Account के रूप में कब परिभाषित किया गया? <b>(18.12.2019)</b></div>
+  </div>
+</div>
+
+<!-- CH14 KVP -->
+<div class="chapter" id="ch14">
+  <div class="chapter-head" style="background:var(--green);">🌾 अध्याय 14 → Kisan Vikas Patra (KVP) Scheme</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — तारीखें याद रखें</span>
+      <h3>योजना इतिहास</h3>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-time">1.4.1988:</span> KVP शुरू</div>
+      <div class="tl-item"><span class="tl-time">13.5.2005:</span> Trust को बिक्री बंद</div>
+      <div class="tl-item"><span class="tl-time">1.12.2011:</span> KVP बंद</div>
+      <div class="tl-item"><span class="tl-time">23.9.2014:</span> KVP पुनः शुरू</div>
+      <div class="tl-item"><span class="tl-time">01.07.2016:</span> Denomination खत्म, Account रूप में जारी</div>
+      <div class="tl-item"><span class="tl-time">23.07.2020:</span> Branch Post Offices में भी KVP खोलने की अनुमति</div>
+    </div>
+
+    <table>
+      <tr><th>बिंदु</th><th>नियम</th></tr>
+      <tr><td>न्यूनतम जमा</td><td><b>₹1,000</b> (₹100 के गुणक में)</td></tr>
+      <tr><td>अधिकतम सीमा</td><td>कोई सीमा नहीं</td></tr>
+      <tr><td>परिपक्वता पर मूल्य</td><td>जमा राशि <b>दोगुनी (double)</b> हो जाती है</td></tr>
+      <tr><td>Premature Encashment</td><td>खरीद/खाता खोलने से <b>2 वर्ष 6 महीने (2½ वर्ष)</b> बाद</td></tr>
+      <tr><td>NRI पात्रता</td><td>पात्र नहीं</td></tr>
+      <tr><td>Partial Discharge</td><td>अनुमति नहीं (एक प्रमाणपत्र के अंदर विभाजन नहीं)</td></tr>
+    </table>
+
+    <div class="dtree">
+      <div class="q">Q: Bank में गिरवी KVP का Premature Encashment कौन कर सकता है?</div>
+      <div class="yn">➡ सामान्यतः 2½ वर्ष से पहले नहीं</div>
+      <div class="yn">➡ केवल <b>Gazetted सरकारी अधिकारी</b> pledge जब्त कर पहले भुना सकता है — Bank नहीं</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2011 बंद, 2014 चालू, ढाई साल में दोगुना" — KVP का सार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> KVP कब बंद हुआ और कब पुनः शुरू हुआ? <b>(बंद 1.12.2011, पुनः शुरू 23.9.2014)</b> Premature Encashment की न्यूनतम अवधि? <b>(2½ वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH15 NSC-VIII -->
+<div class="chapter" id="ch15">
+  <div class="chapter-head" style="background:var(--gold-dark);">📄 अध्याय 15 → National Savings Certificate (VIII Issue) Scheme</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — परिपक्वता अवधि बदल गई</span>
+      <h3>मुख्य विशेषताएं</h3>
+    </div>
+
+    <div class="compare-box">
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>शुरुआत</td><td>08.05.1989</td></tr>
+        <tr><td>न्यूनतम जमा</td><td><b>₹1,000</b> (₹100 के गुणक में)</td></tr>
+        <tr><td>परिपक्वता अवधि (पुरानी)</td><td>6 वर्ष</td></tr>
+        <tr><td>परिपक्वता अवधि (01.12.2011 से)</td><td><b>5 वर्ष</b></td></tr>
+        <tr><td>HUF/Trust को जारी करना</td><td>13.05.2005 से बंद (केवल व्यक्तिगत)</td></tr>
+        <tr><td>Section 80C टैक्स लाभ</td><td>निवेश + पहले 5 वर्षों का reinvested ब्याज दोनों पर</td></tr>
+      </table>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Premature Closure:</b> केवल मृत्यु, Pledge जब्ती (Gazetted Officer), या न्यायालय आदेश पर — अन्यथा अनुमति नहीं।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6 से 5 हुई अवधि 2011 में" — NSC-VIII maturity 6yr से 5yr हुई 01.12.2011 से</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> NSC (VIII Issue) की वर्तमान परिपक्वता अवधि क्या है? <b>(5 वर्ष, 01.12.2011 से)</b></div>
+  </div>
+</div>
+
+<!-- CH16 NSC-IX -->
+<div class="chapter" id="ch16">
+  <div class="chapter-head" style="background:#37474F;">📄 अध्याय 16 → 10-वर्षीय NSC (IX Issue) — बंद योजना</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक — पूर्णतः बंद योजना</span>
+      <h3>योजना काल</h3>
+      <p>शुरुआत <b>01.12.2011</b>, बंद <b>20.12.2015</b>। परिपक्वता अवधि <b>10 वर्ष</b> — यह डाकघर की सबसे लंबी अवधि वाली प्रमाणपत्र योजना है।</p>
+    </div>
+
+    <table>
+      <tr><th>बिंदु</th><th>नियम</th></tr>
+      <tr><td>Denominations</td><td>₹100/500/1,000/5,000/10,000</td></tr>
+      <tr><td>पात्रता</td><td>केवल व्यक्तिगत (1.12.2011 से 19.12.2015)</td></tr>
+      <tr><td>NRI पात्रता</td><td>पात्र नहीं</td></tr>
+      <tr><td>नामांकन सुविधा</td><td>उपलब्ध</td></tr>
+      <tr><td>Partial Discharge</td><td>अनुमति नहीं</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2011-2015, सबसे लंबी 10 साल" — NSC-IX की खासियत</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> NSC (IX Issue) की परिपक्वता अवधि कितनी है? <b>(10 वर्ष — सबसे लंबी)</b> यह योजना किस अवधि तक चली? <b>(1.12.2011 से 20.12.2015)</b></div>
+  </div>
+</div>
+
+<!-- COMPARISON CHART -->
+<div class="chapter" id="compare">
+  <div class="chapter-head" style="background:#263238;">📊 सभी प्रमाणपत्र योजनाओं की तुलना</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>योजना</th><th>न्यूनतम जमा</th><th>परिपक्वता</th><th>प्रीमैच्योर सीमा</th><th>स्थिति</th></tr>
+      <tr><td>NSS 1987/92</td><td>—</td><td>—</td><td>1 निकासी/वर्ष</td><td>बंद (केवल पुराने खाते)</td></tr>
+      <tr><td>KVP</td><td>₹1,000</td><td>दोगुना होने तक (Govt. notified)</td><td>2½ वर्ष</td><td>चालू</td></tr>
+      <tr><td>NSC (VIII)</td><td>₹1,000</td><td>5 वर्ष</td><td>केवल विशेष परिस्थिति</td><td>चालू</td></tr>
+      <tr><td>NSC (IX)</td><td>₹100</td><td>10 वर्ष</td><td>केवल विशेष परिस्थिति</td><td>बंद (2015 से)</td></tr>
+    </table>
+    <div class="exam-q">❓ <b>Exam Q:</b> कौन सी योजना वर्तमान में चालू है — KVP या NSC-IX? <b>(केवल KVP व NSC-VIII चालू; NSC-IX व NSS बंद)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>NSS 1987/92:</b> बंद योजना; closure केवल HO में, 3yr बाद; TDS 10% (₹2,500 से कम पर छूट)</div>
+    <div class="rev-card"><b>Certificates General:</b> 01.07.2016 से Passbook रूप; premature सिर्फ मृत्यु/pledge forfeiture/court order पर</div>
+    <div class="rev-card"><b>KVP:</b> ₹1,000 min | दोगुना होने पर maturity | 2½yr premature | बंद 2011, चालू 2014</div>
+    <div class="rev-card"><b>NSC-VIII:</b> ₹1,000 min | 5yr maturity (पुराना 6yr) | HUF/Trust बंद 2005 से</div>
+    <div class="rev-card"><b>NSC-IX:</b> बंद योजना (2011-2015) | 10yr maturity — सबसे लंबी अवधि</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>1987 / 1992 / 2002</b> = NSS शुरू / बदला / पूरी तरह बंद</li>
+    <li>🔢 <b>3 वर्ष</b> = NSS खाता बंद करने की अवधि (अंतिम जमा से)</li>
+    <li>🔢 <b>₹2,500</b> = NSS TDS छूट वार्षिक ब्याज सीमा</li>
+    <li>🔢 <b>01.07.2016</b> = सभी प्रमाणपत्र Passbook रूप में जारी होने की तारीख</li>
+    <li>🔢 <b>18.12.2019</b> = NSC को "Account" रूप में परिभाषित करने की तारीख</li>
+    <li>🔢 <b>1.4.1988 / 1.12.2011 / 23.9.2014</b> = KVP शुरू / बंद / पुनः शुरू</li>
+    <li>🔢 <b>2½ वर्ष</b> = KVP Premature Encashment अवधि</li>
+    <li>🔢 <b>08.05.1989</b> = NSC-VIII शुरुआत तिथि</li>
+    <li>🔢 <b>6 वर्ष → 5 वर्ष</b> = NSC-VIII maturity बदलाव (01.12.2011 से)</li>
+    <li>🔢 <b>1.12.2011 – 20.12.2015</b> = NSC-IX की पूरी अवधि (10 वर्ष maturity)</li>
+    <li>🔢 <b>23.07.2020</b> = KVP व NSC-VIII को Branch Office में खोलने की अनुमति</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB (CBS) Manual, Corrected upto 31.12.2021 — अध्याय 12-16 &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

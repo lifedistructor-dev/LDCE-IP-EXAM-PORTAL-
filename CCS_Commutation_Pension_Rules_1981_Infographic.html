@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS (Commutation of Pension) Rules, 1981 — IP Exam Infographic</title>
+<style>
+:root{
+  --ip-red:#c8102e;
+  --ip-blue:#003087;
+  --ip-gold:#d4af37;
+  --bg:#fdfaf3;
+  --card:#ffffff;
+  --very-imp:#ffe1e1;
+  --very-imp-b:#c8102e;
+  --freq:#fff1dd;
+  --freq-b:#e07b00;
+  --concept:#fffbd6;
+  --concept-b:#c9a400;
+  --quick:#e3f7e6;
+  --quick-b:#1f9d55;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:linear-gradient(180deg,#fdfaf3,#f3eee0);
+  color:#222;
+  line-height:1.5;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),var(--ip-blue));
+  color:#fff;
+  padding:20px 16px 26px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+.header h1{margin:0 0 6px;font-size:1.4rem;}
+.header p{margin:0;font-size:.85rem;opacity:.92;}
+.header .badge{
+  display:inline-block;background:var(--ip-gold);color:#3a2a00;
+  padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;margin-top:8px;
+}
+.container{max-width:900px;margin:0 auto;padding:14px;}
+
+.legend{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 18px;
+}
+.legend span{
+  font-size:.72rem;padding:5px 9px;border-radius:8px;font-weight:600;white-space:nowrap;
+}
+.leg-vi{background:var(--very-imp);color:var(--very-imp-b);border:1px solid var(--very-imp-b);}
+.leg-fr{background:var(--freq);color:var(--freq-b);border:1px solid var(--freq-b);}
+.leg-co{background:var(--concept);color:var(--concept-b);border:1px solid var(--concept-b);}
+.leg-qr{background:var(--quick);color:var(--quick-b);border:1px solid var(--quick-b);}
+
+.section{
+  background:var(--card);
+  border-radius:14px;
+  margin:14px 0;
+  padding:14px 14px 16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+  border-left:6px solid var(--ip-blue);
+}
+.section.red-b{border-left-color:var(--ip-red);}
+.section.gold-b{border-left-color:var(--ip-gold);}
+
+.sec-title{
+  font-size:1.05rem;font-weight:800;color:var(--ip-blue);
+  display:flex;align-items:center;gap:8px;margin-bottom:8px;
+  border-bottom:2px dashed #ddd;padding-bottom:6px;
+}
+.sec-title .num{
+  background:var(--ip-red);color:#fff;border-radius:50%;
+  width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;flex-shrink:0;
+}
+
+.chapter-flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.chapter-flow .node{
+  background:#eef2ff;border:1.5px solid var(--ip-blue);border-radius:10px;
+  padding:8px 12px;font-size:.85rem;font-weight:600;color:var(--ip-blue);
+  position:relative;
+}
+.chapter-flow .node.sub{margin-left:16px;background:#fff7e6;border-color:var(--ip-gold);color:#7a5c00;}
+.chapter-flow .node.micro{margin-left:32px;background:#fdeaea;border-color:var(--ip-red);color:var(--ip-red);}
+.chapter-flow .node.nano{margin-left:48px;background:#eafaf0;border-color:#1f9d55;color:#166f3c;font-weight:500;}
+.arrow-down{text-align:center;color:var(--ip-blue);font-size:1.1rem;margin:-2px 0;}
+
+.tag{
+  display:inline-block;font-size:.68rem;font-weight:800;padding:2px 7px;
+  border-radius:6px;margin-left:6px;vertical-align:middle;
+}
+.tag.vi{background:var(--very-imp);color:var(--very-imp-b);}
+.tag.fr{background:var(--freq);color:var(--freq-b);}
+.tag.co{background:var(--concept);color:var(--concept-b);}
+.tag.qr{background:var(--quick);color:var(--quick-b);}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.82rem;}
+th{background:var(--ip-blue);color:#fff;padding:7px 6px;text-align:left;}
+td{padding:6px;border-bottom:1px solid #eee;vertical-align:top;}
+tr:nth-child(even){background:#f7f7fb;}
+
+.def-box{
+  background:#f0f4ff;border:1px dashed var(--ip-blue);border-radius:10px;
+  padding:10px 12px;margin:8px 0;font-size:.85rem;
+}
+.def-box b{color:var(--ip-blue);}
+
+.qbox{
+  background:#fff8e1;border-left:4px solid var(--ip-gold);border-radius:8px;
+  padding:8px 10px;margin:8px 0;font-size:.8rem;color:#5a4600;
+}
+.qbox b{color:#8a6d00;}
+
+.timeline{position:relative;margin:14px 0;padding-left:20px;border-left:3px solid var(--ip-red);}
+.tl-item{margin-bottom:14px;position:relative;}
+.tl-item::before{
+  content:'';position:absolute;left:-27px;top:2px;width:12px;height:12px;
+  background:var(--ip-red);border-radius:50%;border:2px solid #fff;
+}
+.tl-date{font-weight:800;color:var(--ip-red);font-size:.82rem;}
+.tl-text{font-size:.82rem;}
+
+.flowchart{
+  display:flex;flex-direction:column;align-items:center;gap:6px;margin:12px 0;
+}
+.fc-box{
+  background:#fff;border:2px solid var(--ip-blue);border-radius:10px;
+  padding:8px 14px;font-size:.8rem;text-align:center;font-weight:600;
+  color:var(--ip-blue);max-width:90%;
+}
+.fc-box.decision{
+  background:var(--concept);border-color:var(--concept-b);color:#5a4600;
+  border-radius:50px;
+}
+.fc-box.result-yes{background:var(--quick);border-color:var(--quick-b);color:var(--quick-b);}
+.fc-box.result-no{background:var(--very-imp);border-color:var(--very-imp-b);color:var(--very-imp-b);}
+.fc-arrow{color:var(--ip-red);font-size:1.2rem;}
+.fc-branch{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.fc-branch>div{display:flex;flex-direction:column;align-items:center;gap:6px;}
+
+.mindmap{
+  display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0;
+}
+.mm-center{
+  background:var(--ip-red);color:#fff;text-align:center;padding:10px;border-radius:12px;
+  font-weight:800;font-size:.9rem;
+}
+.mm-branch{
+  background:#fff;border:2px solid var(--ip-gold);border-radius:10px;padding:8px 10px;font-size:.8rem;
+}
+.mm-branch b{color:var(--ip-red);}
+
+.comparison{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;
+}
+.comparison .old{background:#fdeaea;border:1px solid var(--ip-red);border-radius:8px;padding:8px;font-size:.78rem;}
+.comparison .new{background:#eafaf0;border:1px solid #1f9d55;border-radius:8px;padding:8px;font-size:.78rem;}
+.comparison .old b, .comparison .new b{display:block;margin-bottom:4px;}
+
+.mnemonic{
+  background:linear-gradient(135deg,#fff3d6,#ffe8b8);
+  border:2px dashed var(--ip-gold);border-radius:12px;padding:12px;margin:10px 0;
+  font-size:.85rem;
+}
+.mnemonic .letter{color:var(--ip-red);font-weight:900;font-size:1rem;}
+
+.revision-sheet{
+  background:linear-gradient(135deg,#fff,#f2f6ff);
+  border:3px solid var(--ip-blue);border-radius:14px;padding:16px;margin:16px 0;
+}
+.revision-sheet h2{color:var(--ip-red);margin-top:0;text-align:center;font-size:1.1rem;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-grid .item{
+  background:#fff;border-radius:8px;padding:8px 10px;font-size:.78rem;
+  border-left:4px solid var(--ip-blue);
+}
+
+.floating-btn{
+  position:fixed;bottom:18px;right:18px;
+  background:var(--ip-red);color:#fff;border:none;
+  border-radius:50%;width:54px;height:54px;font-size:1.4rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);cursor:pointer;z-index:999;
+}
+@media print{.floating-btn{display:none;}}
+
+.toc{background:#fff;border-radius:12px;padding:12px 14px;margin:14px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.toc h3{margin:0 0 8px;color:var(--ip-blue);font-size:.95rem;}
+.toc a{display:block;font-size:.8rem;color:var(--ip-red);text-decoration:none;padding:3px 0;font-weight:600;}
+.toc a:hover{text-decoration:underline;}
+
+.footer-note{text-align:center;font-size:.72rem;color:#888;padding:20px 10px 40px;}
+h4{color:var(--ip-red);font-size:.88rem;margin:10px 0 4px;}
+ul{margin:4px 0;padding-left:20px;font-size:.82rem;}
+li{margin-bottom:4px;}
+.small{font-size:.75rem;color:#555;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📘 CCS (Commutation of Pension) Rules, 1981</h1>
+  <p>India Post IP Exam — Paper I (Manuals & Rules) दृष्टिकोण से पूर्ण विज़ुअल इंफोग्राफिक</p>
+  <div class="badge">Panthil Rajeshkumar Parmar | Office Assistant, Ahmedabad L-1</div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span class="leg-vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="leg-fr">🟠 बार-बार पूछा गया</span>
+  <span class="leg-co">🟡 वैचारिक समझ</span>
+  <span class="leg-qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="toc">
+  <h3>📑 अनुक्रमणिका (Table of Contents)</h3>
+  <a href="#ch1">Chapter I — Preliminary</a>
+  <a href="#ch2">Chapter II — General Conditions</a>
+  <a href="#ch3">Chapter III — बिना Medical Examination</a>
+  <a href="#ch4">Chapter IV — Medical Examination के बाद</a>
+  <a href="#ch5">Chapter V — Miscellaneous</a>
+  <a href="#forms">Forms सूची</a>
+  <a href="#table">Commutation Value Table</a>
+  <a href="#revision">🌟 One-Page Revision Sheet</a>
+  <a href="#mnemonics">🧠 Memory Tricks</a>
+</div>
+
+<!-- STRUCTURE MINDMAP -->
+<div class="section gold-b">
+  <div class="sec-title"><span class="num">🗺️</span> Rules की संरचना — Chapter → Sub → Micro → Nano</div>
+  <div class="chapter-flow">
+    <div class="node">📖 CCS (Commutation of Pension) Rules, 1981 <span class="tag vi">VI</span></div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Chapter I — Preliminary (Rules 1–3)</div>
+    <div class="node micro">Short title, Application, Definitions</div>
+    <div class="node nano">"Applicant", "Pension", "Table" की परिभाषा</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Chapter II — General Conditions (Rules 4–10A)</div>
+    <div class="node micro">Restriction, Limit (40%), Absolute होना, Nomination, Value calculation, Provisional pension, Restoration</div>
+    <div class="node nano">15 वर्ष की Restoration अवधि; PSU Absorbee 1/3rd rules</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Chapter III — बिना Medical Examination (Rules 11–16)</div>
+    <div class="node micro">Scope, Eligibility, Form 1/1-A, Head of Office व Accounts Officer की कार्रवाई</div>
+    <div class="node nano">1 वर्ष के भीतर Application जरूरी</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Chapter IV — Medical Examination के बाद (Rules 17–31)</div>
+    <div class="node micro">Medical Authority, Fee, Second Exam, Appeal, Withdrawal</div>
+    <div class="node nano">₹6000/माह threshold; Medical Board बनाम Medical Officer</div>
+    <div class="arrow-down">↓</div>
+    <div class="node sub">Chapter V — Miscellaneous (Rules 32–34)</div>
+    <div class="node micro">Interpretation, Power to relax, Repeal & Savings</div>
+  </div>
+</div>
+
+<!-- CHAPTER I -->
+<div class="section" id="ch1">
+  <div class="sec-title"><span class="num">1</span> Chapter I — Preliminary <span class="tag vi">VI</span></div>
+
+  <div class="def-box">
+    <b>Rule 1 — Short Title:</b> इन नियमों का नाम "Central Civil Services (Commutation of Pension) Rules, 1981" है। लागू तिथि: <b>1 जुलाई 1981</b>।
+  </div>
+
+  <div class="def-box">
+    <b>Rule 2 — Application:</b> यह नियम उन Government Servants पर लागू होते हैं जो <b>31 दिसंबर 2003 या उससे पहले</b> नियुक्त हुए हों (NPS वाले कवर नहीं)।
+  </div>
+  <div class="qbox">❓ संभावित प्रश्न: "CCS (Commutation of Pension) Rules 1981 किस तारीख को नियुक्त कर्मचारियों पर लागू होते हैं?" — Ans: 31-12-2003 तक नियुक्त।</div>
+
+  <h4>Rule 3 — प्रमुख परिभाषाएँ (Definitions) <span class="tag fr">FR</span></h4>
+  <table>
+    <tr><th>शब्द</th><th>अर्थ</th></tr>
+    <tr><td>Accounts Officer</td><td>Ministry/Department/UT का Account रखने वाला अधिकारी</td></tr>
+    <tr><td>Applicant</td><td>Commutation हेतु आवेदन करने वाला (सेवारत या सेवानिवृत्त) कर्मचारी</td></tr>
+    <tr><td>Chief Administrative Medical Authority</td><td>राज्य/UT का Medical Authority (Annexure में सूचीबद्ध)</td></tr>
+    <tr><td>Head of Office</td><td>Gazetted अधिकारी (CCS Pension Rules के Rule 3(1)(l) अनुसार)</td></tr>
+    <tr><td>Pension</td><td>Chapter V, Pension Rules की कोई भी Pension — Extra Pension शामिल नहीं</td></tr>
+    <tr><td>Provisional Pension</td><td>Pension Rules के Rule 64/69 की Pension</td></tr>
+  </table>
+</div>
+
+<!-- CHAPTER II -->
+<div class="section red-b" id="ch2">
+  <div class="sec-title"><span class="num">2</span> Chapter II — General Conditions <span class="tag vi">VI</span></div>
+
+  <h4>Rule 4 — Restriction on Commutation <span class="tag co">CO</span></h4>
+  <div class="def-box">जिस कर्मचारी के विरुद्ध विभागीय/न्यायिक कार्यवाही (Rule 9) लंबित है, वह उस अवधि में Commutation के लिए Eligible नहीं होगा।</div>
+
+  <h4>Rule 5 — Limit on Commutation 🔴 सबसे महत्वपूर्ण</h4>
+  <div class="mindmap">
+    <div class="mm-center">Commutation Limit</div>
+    <div class="mm-branch"><b>अधिकतम सीमा:</b> पेंशन का <b>40%</b> (1-1-1996 से लागू — पहले 1/3rd था)</div>
+    <div class="mm-branch"><b>Fraction Rule:</b> यदि % निकालने पर पैसे का Fraction बने तो उसे Ignore किया जाएगा (Rule 5(3))</div>
+    <div class="mm-branch"><b>Form:</b> Form 5 (CCS Pension Rules) या Form 1/1-A/2 (इन नियमों के)</div>
+  </div>
+  <div class="qbox">❓ "अधिकतम कितने % पेंशन Commute की जा सकती है?" — Ans: <b>40%</b> (1-1-1996 से) 🔴</div>
+
+  <h4>Rule 6 — Commutation Absolute कब होती है <span class="tag fr">FR</span></h4>
+  <table>
+    <tr><th>स्थिति</th><th>Absolute होने की तारीख</th></tr>
+    <tr><td>बिना Medical Exam (Form 1)</td><td>Application Head of Office को मिलने की तारीख</td></tr>
+    <tr><td>Retirement से पहले Applied (sub-rule 3)</td><td>Retirement की अगली तारीख</td></tr>
+    <tr><td>Medical Exam के बाद</td><td>Medical Authority द्वारा Report Part-III Form 4 पर हस्ताक्षर की तारीख</td></tr>
+  </table>
+  <div class="qbox">❓ "Medical Examination के मामले में Commutation कब Absolute होती है?" — Ans: Medical Authority के Form 4, Part-III पर sign करने की तारीख 🔴</div>
+
+  <h4>Rule 7 — Nomination</h4>
+  <ul>
+    <li>Form A (Payment of Arrears of Pension Nomination Rules, 1983) में Nomination</li>
+    <li>Nomination न होने पर Rule 51(1)(b) Pension Rules अनुसार Family को भुगतान</li>
+  </ul>
+
+  <h4>Rule 8 — Commuted Value की गणना</h4>
+  <div class="def-box">Commutation Table (Age Next Birthday आधारित) से गणना — Absolute होने की तिथि पर लागू Table प्रयोग होगी। <span class="tag vi">VI</span></div>
+
+  <h4>Rule 9 — Provisional Pension का Commutation <span class="tag co">CO</span></h4>
+  <div class="def-box">₹6000/माह से अधिक होने की संभावना हो तो Rule 22 अनुसार बड़ी राशि माना जाएगा।</div>
+
+  <h4>Rule 10 — Retrospective Revision पर अतिरिक्त भुगतान</h4>
+  <div class="def-box">यदि Pension बाद में बढ़ा दी जाए (जैसे Pay Commission से), तो अतिरिक्त Commuted Value बिना नए Application के दी जाएगी।</div>
+
+  <h4>Rule 10-A — Restoration of Commuted Pension 🔴🔴 अत्यंत महत्वपूर्ण</h4>
+  <div class="flowchart">
+    <div class="fc-box">Commutation Absolute हुई (Rule 6 अनुसार Reduction प्रारंभ)</div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box decision">15 वर्ष पूरे हुए?</div>
+    <div class="fc-branch">
+      <div><div class="fc-arrow">हाँ ↓</div><div class="fc-box result-yes">Commuted Portion स्वतः Restore हो जाता है</div></div>
+      <div><div class="fc-arrow">नहीं ↓</div><div class="fc-box result-no">Restoration नहीं होगा, प्रतीक्षा जारी</div></div>
+    </div>
+  </div>
+  <div class="qbox">❓ "Commuted Pension कितने वर्षों बाद Restore होती है?" — Ans: <b>15 वर्ष</b> (Reduction प्रारंभ होने की तिथि से) 🔴</div>
+
+  <h4>PSU/CAB Absorbee — 1/3rd Restoration (GID Summary) <span class="tag co">CO</span></h4>
+  <div class="def-box">
+    जिन कर्मचारियों ने PSU/Autonomous Body में Absorption पर Lumpsum (1/3rd + 2/3rd) लिया था, वे 15 वर्ष बाद <b>1/3rd Commuted Portion</b> Restore करा सकते हैं (GID 5-9-2007 से आगे कई clarifications जारी)। Full Pension Notionally Revised होती है Dearness Relief के प्रयोजन हेतु।
+  </div>
+</div>
+
+<!-- CHAPTER III -->
+<div class="section" id="ch3">
+  <div class="sec-title"><span class="num">3</span> Chapter III — बिना Medical Examination (Rules 11–16) <span class="tag fr">FR</span></div>
+
+  <h4>Rule 12 — Eligibility (बिना Medical Exam)</h4>
+  <ul>
+    <li>Superannuation Pension (Rule 35)</li>
+    <li>Retiring Pension (Rule 36)</li>
+    <li>Absorption Pension + Retirement Gratuity (Rule 37)</li>
+    <li>Compensation Pension (Rule 39)</li>
+    <li>Pension after Departmental/Judicial Proceedings (Rule 9)</li>
+  </ul>
+
+  <h4>Rule 13 — Application हेतु समय-सीमा 🔴</h4>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-date">Retirement की अगली तारीख से</div><div class="tl-text">Application दिया जा सकता है (Form 1)</div></div>
+    <div class="tl-item"><div class="tl-date">1 वर्ष के भीतर</div><div class="tl-text">Head of Office को Form 1 मिलना जरूरी — नहीं तो बिना Medical Exam पात्र नहीं</div></div>
+    <div class="tl-item"><div class="tl-date">Retirement से 3 महीने पहले</div><div class="tl-text">Superannuation वाले Form 1-A/Form 5 दे सकते हैं</div></div>
+  </div>
+  <div class="qbox">❓ "बिना Medical Exam Commutation हेतु Application कितने समय के भीतर देना होगा?" — Ans: Retirement के <b>1 वर्ष</b> के भीतर 🔴</div>
+
+  <h4>Rules 14–16 — कार्यवाही का प्रवाह</h4>
+  <div class="flowchart">
+    <div class="fc-box">Applicant → Form 1/1-A जमा</div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box">Head of Office: Acknowledge + Verify + Accounts Officer को भेजे</div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box">Accounts Officer: सत्यापन कर Authority जारी करे</div>
+    <div class="fc-arrow">↓</div>
+    <div class="fc-box result-yes">Disbursing Authority से भुगतान</div>
+  </div>
+</div>
+
+<!-- CHAPTER IV -->
+<div class="section red-b" id="ch4">
+  <div class="sec-title"><span class="num">4</span> Chapter IV — Medical Examination के बाद (Rules 17–31) <span class="tag vi">VI</span></div>
+
+  <h4>Rule 18 — कब Medical Exam जरूरी</h4>
+  <ul>
+    <li>Invalid Pension (Rule 38)</li>
+    <li>Compulsory Retirement as Penalty (Rule 40)</li>
+    <li>Compassionate Allowance (Rule 41)</li>
+    <li>1 वर्ष के भीतर Application नहीं दिया गया हो</li>
+  </ul>
+
+  <h4>Rule 22 — Medical Authority कौन होगा 🔴🔴 अति महत्वपूर्ण Decision Tree</h4>
+  <div class="flowchart">
+    <div class="fc-box decision">आवेदन किस श्रेणी का है?</div>
+    <div class="fc-branch">
+      <div>
+        <div class="fc-box">Invalid Pension / राशि ₹6000+ प्रति माह / पहले Refuse हो चुका</div>
+        <div class="fc-arrow">↓</div>
+        <div class="fc-box result-no">Medical <b>Board</b> द्वारा जाँच</div>
+      </div>
+      <div>
+        <div class="fc-box">अन्य सभी मामले</div>
+        <div class="fc-arrow">↓</div>
+        <div class="fc-box result-yes">Civil Surgeon/District Medical Officer से कम स्तर नहीं — Medical <b>Officer</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="qbox">❓ "₹6000 प्रति माह की सीमा से अधिक Commutation में कौन जाँच करेगा?" — Ans: <b>Medical Board</b> 🔴</div>
+
+  <h4>Rule 23–24 — Fee एवं अनुपस्थिति</h4>
+  <ul>
+    <li>Medical Exam Fee <b>Applicant स्वयं वहन करेगा</b></li>
+    <li>बिना उचित कारण अनुपस्थित रहने पर Application Withdrawn मान लिया जाएगा</li>
+  </ul>
+
+  <h4>Rule 26 — Second Medical Examination</h4>
+  <div class="def-box">पहले Medical Exam की तारीख से <b>1 वर्ष से कम नहीं</b> की अवधि बाद Re-exam हो सकता है — यह Applicant के स्वयं के खर्च पर <b>Medical Board</b> द्वारा होगा।</div>
+
+  <h4>Rule 27 — Appeal Against Medical Findings</h4>
+  <div class="def-box">Certified Copy मिलने के <b>1 महीने के भीतर</b> Appeal — Medical Officer के विरुद्ध Medical Board से पुनरीक्षण; Medical Board के विरुद्ध दूसरा (भिन्न सदस्यों वाला) Medical Board।</div>
+
+  <h4>Rule 28 — Withdrawal of Application</h4>
+  <div class="def-box">Applicant, Age में वृद्धि की Recommendation मिलने पर Certified Copy मिलने के <b>14 दिनों के भीतर</b> Application वापस ले सकता है।</div>
+</div>
+
+<!-- CHAPTER V -->
+<div class="section" id="ch5">
+  <div class="sec-title"><span class="num">5</span> Chapter V — Miscellaneous (Rules 32–34) <span class="tag qr">QR</span></div>
+  <table>
+    <tr><th>Rule</th><th>विषय</th><th>बिंदु</th></tr>
+    <tr><td>32</td><td>Interpretation</td><td>Doubt होने पर Department of Pension &amp; Pensioners' Welfare को refer</td></tr>
+    <tr><td>33</td><td>Power to Relax</td><td>Undue Hardship में Ministry/Department relax कर सकता है — Department of P&amp;PW की सहमति आवश्यक</td></tr>
+    <tr><td>34</td><td>Repeal &amp; Savings</td><td>पुराने Rules निरस्त, पर पुराने के अंतर्गत हुई कार्रवाई मान्य रहेगी</td></tr>
+  </table>
+</div>
+
+<!-- FORMS -->
+<div class="section gold-b" id="forms">
+  <div class="sec-title"><span class="num">📄</span> Forms की सूची <span class="tag fr">FR</span></div>
+  <table>
+    <tr><th>Form</th><th>प्रयोजन</th></tr>
+    <tr><td>Form 1</td><td>बिना Medical Exam — Retirement के बाद Application</td></tr>
+    <tr><td>Form 1-A</td><td>Superannuation से पहले (3 माह पूर्व) Application</td></tr>
+    <tr><td>Form 2</td><td>Medical Exam के साथ Application</td></tr>
+    <tr><td>Form 3</td><td>Head of Office → Chief Administrative Medical Authority पत्र</td></tr>
+    <tr><td>Form 4</td><td>Medical Examination Form (Part I-III)</td></tr>
+    <tr><td>Form 5</td><td>Omitted (2014 में हटाया गया)</td></tr>
+    <tr><td>Form A</td><td>Common Nomination Form (Arrears + Commutation)</td></tr>
+    <tr><td>Pro Forma</td><td>Restoration of Commuted Pension हेतु आवेदन</td></tr>
+  </table>
+</div>
+
+<!-- TABLE -->
+<div class="section" id="table">
+  <div class="sec-title"><span class="num">📊</span> Commutation Value Table (झलक) <span class="tag co">CO</span></div>
+  <div class="def-box">₹1 प्रति वर्ष Pension हेतु Commutation Value — <b>Age Next Birthday</b> आधारित। प्रभावी: 1 जनवरी 2006 से। आधार: LIC (94-96) Ultimate Tables @ 8% ब्याज।</div>
+  <table>
+    <tr><th>Age Next Birthday</th><th>Value</th><th>Age</th><th>Value</th></tr>
+    <tr><td>20</td><td>9.188</td><td>60</td><td>8.287</td></tr>
+    <tr><td>30</td><td>9.173</td><td>65</td><td>7.731</td></tr>
+    <tr><td>40</td><td>9.090</td><td>70</td><td>6.897</td></tr>
+    <tr><td>50</td><td>8.846</td><td>80</td><td>4.812</td></tr>
+  </table>
+  <div class="qbox">❓ "Age कैसे लिया जाता है?" — Ans: Commutation Absolute होने की तारीख पर Applicant की Age <b>Next Birthday</b> के आधार पर 🔴</div>
+</div>
+
+<!-- COMPARISON: OLD vs NEW -->
+<div class="section red-b">
+  <div class="sec-title"><span class="num">⚖️</span> पुराने बनाम नए प्रावधान — तुलना <span class="tag fr">FR</span></div>
+  <div class="comparison">
+    <div class="old"><b>❌ पुराना (पहले)</b>Commutation Limit: 1/3rd पेंशन<br>Restoration जटिल गणना</div>
+    <div class="new"><b>✅ नया (1-1-1996 से)</b>Commutation Limit: <b>40%</b> पेंशन<br>15 वर्ष बाद स्वतः Restoration</div>
+  </div>
+  <div class="comparison">
+    <div class="old"><b>❌ पहले (Rule 2, 2003 से पूर्व)</b>सभी कर्मचारियों पर लागू</div>
+    <div class="new"><b>✅ अब</b>केवल 31-12-2003 तक नियुक्त (Pre-NPS) कर्मचारियों पर</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section gold-b" id="mnemonics">
+  <div class="sec-title"><span class="num">🧠</span> Memory Tricks / Mnemonics</div>
+
+  <div class="mnemonic">
+    <span class="letter">"4-15-6"</span> याद रखें —<br>
+    <b>4</b> = 40% अधिकतम Commutation<br>
+    <b>15</b> = 15 वर्ष में Restoration<br>
+    <b>6</b> = ₹6000/माह से ऊपर Medical Board जरूरी
+  </div>
+
+  <div class="mnemonic">
+    <span class="letter">"SALE"</span> Trick — Chapter क्रम याद रखने हेतु:<br>
+    <b>S</b> — Scope/Preliminary (Ch. I)<br>
+    <b>A</b> — Absolute conditions/General (Ch. II)<br>
+    <b>L</b> — Lack of Medical Exam (Ch. III)<br>
+    <b>E</b> — Exam required (Ch. IV)
+  </div>
+
+  <div class="mnemonic">
+    <span class="letter">"1-3-1"</span> समय सीमा Trick:<br>
+    Retirement के बाद Application — <b>1 वर्ष</b><br>
+    Superannuation से पहले Application — <b>3 माह</b> पूर्व<br>
+    Withdrawal (Age addition पर) — <b>1 माह (14 दिन असल में)</b>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="revision">
+  <h2>🌟 One-Page Revision Sheet — Last Day Notes</h2>
+  <div class="rev-grid">
+    <div class="item">🔴 Rules लागू: <b>1 जुलाई 1981</b> | Applicable: 31-12-2003 तक नियुक्त कर्मचारी</div>
+    <div class="item">🔴 अधिकतम Commutation: <b>40% पेंशन</b> (1-1-1996 से)</div>
+    <div class="item">🔴 Restoration: <b>15 वर्ष</b> बाद Reduction शुरू होने की तिथि से</div>
+    <div class="item">🔴 बिना Medical Exam Application समय-सीमा: Retirement के <b>1 वर्ष</b> के अंदर</div>
+    <div class="item">🟠 Superannuation Form 1-A: Retirement से <b>3 माह पहले</b></div>
+    <div class="item">🟠 ₹6000/माह सीमा — इससे ऊपर होने पर Medical <b>Board</b>, नीचे पर Medical <b>Officer</b> (Civil Surgeon स्तर)</div>
+    <div class="item">🟠 Second Medical Exam: पहले Exam की तारीख से <b>1 वर्ष</b> बाद, Applicant के खर्च पर</div>
+    <div class="item">🟡 Commutation Absolute होने की तिथि: बिना Exam — Application मिलने की तारीख; Exam सहित — Form 4 Part-III sign तारीख</div>
+    <div class="item">🟡 Age निर्धारण: Age <b>Next Birthday</b> commutation के आधार पर</div>
+    <div class="item">🟢 Appeal समय-सीमा: Certified Copy मिलने के <b>1 माह</b> के भीतर</div>
+    <div class="item">🟢 Withdrawal (Age addition पर): <b>14 दिन</b> के भीतर</div>
+    <div class="item">🟢 PSU/CAB Absorbee: 1/3rd Restoration 15 वर्ष बाद — Notional Full Pension पर DR</div>
+    <div class="item">🟢 Doubt निवारण Authority: Department of Pension &amp; Pensioners' Welfare (Rule 32)</div>
+  </div>
+</div>
+
+<div class="footer-note">
+  📚 Reference: Swamy's Compilation of CCS (Commutation of Pension) Rules, 1981 (May 2017 तक के Orders सहित)<br>
+  IP Exam Preparation Portal — Panthil Rajeshkumar Parmar
+</div>
+
+</div>
+
+<button class="floating-btn" onclick="window.print()" title="Save as PDF">⬇️</button>
+
+</body>
+</html>

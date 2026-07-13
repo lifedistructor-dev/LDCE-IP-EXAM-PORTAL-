@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB Manual Vol-II | Savings Certificates | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 60%,var(--red) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .hi{font-size:1.15rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.95rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.85rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.78rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.85rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.78rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.75rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;display:flex;align-items:center;gap:6px;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">POSB मैनुअल भाग-II</span></h1>
+  <div class="en">Post Office Savings Bank Manual — Volume II</div>
+  <div class="sub">Savings Certificates: NSC, KVP, Discontinued Series | Nomination | Duplicate | Transfer | Deceased Claims</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">🎯 162 Pages Summarized</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. Definitions & Discontinued Series</a>
+    <a href="#ch2">2. Postmaster Duties (Delegation)</a>
+    <a href="#ch3">3. Stock & Supply of Certificates</a>
+    <a href="#ch4">4. Purchase Limits & Cash Rules</a>
+    <a href="#ch5">5. Agents & Receipt Books (SAS)</a>
+    <a href="#ch6">6. Nomination Rules</a>
+    <a href="#ch7">7. Duplicate Certificates</a>
+    <a href="#ch8">8. Transfer of Certificates</a>
+    <a href="#ch9">9. Deceased Holder Claims</a>
+    <a href="#ch10">10. Preservation Periods</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--red);">📜 Chapter 1 → परिभाषाएं व बंद हो चुकी श्रृंखलाएं / Definitions & Discontinued Series</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <h3 class="hi">'Certificate' की परिभाषा</h3>
+      <p class="hi">'सर्टिफिकेट' का अर्थ है भारत सरकार द्वारा जारी और डाकघर के माध्यम से बेचा गया Savings Certificate। 'Act' = Government Savings Certificates Act, 1959.</p>
+      <p class="en">'Certificate' = a Savings Certificate issued by Govt. of India, sold via Post Office. Governed by Government Savings Certificates Act, 1959 (46 of 1959).</p>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">📄 बंद हो चुकी प्रमाणपत्र श्रृंखलाएं (19 प्रकार)</div>
+      <div class="branches">
+        <div class="branch">5-Yr Cash Certificate (बंद 1947)</div>
+        <div class="branch">10-Yr National Plan Cert. (बंद 1957)</div>
+        <div class="branch">12/7/5-Yr NSC (विभिन्न वर्षों में बंद)</div>
+        <div class="branch">Social Security Cert. (बंद 1990)</div>
+        <div class="branch">Indira Vikas Patra (बंद 1999)</div>
+        <div class="branch"><b>Kisan Vikas Patra</b> (बंद 2011, पुनः शुरू 23.9.2014) ✅ चालू</div>
+        <div class="branch"><b>NSC (VIII Issue)</b> ✅ चालू</div>
+        <div class="branch">10-Yr NSC (IX Issue) (बंद 2015)</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "KVP फिर से जिंदा" — Kisan Vikas Patra बंद हुआ 1.12.2011, फिर से शुरू 23.9.2014</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Kisan Vikas Patra कब बंद हुआ और कब पुनः शुरू हुआ? <b>(बंद: 1.12.2011, पुनः शुरू: 23.9.2014)</b></div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--blue);">👤 Chapter 2 → Postmaster की जिम्मेदारियां / Delegation of Duties</div>
+  <div class="chapter-body">
+    <div class="mindmap">
+      <div class="root">🔒 Head Postmaster की व्यक्तिगत (Non-Delegable) जिम्मेदारियां</div>
+      <div class="branches">
+        <div class="branch">✅ मृतक Holder के दावों का निर्णय व रिकॉर्ड सुरक्षा</div>
+        <div class="branch">✅ Savings Certificate Returns पर हस्ताक्षर व Postal AO में जमा</div>
+        <div class="branch">✅ Certificate transfer की मंजूरी (एक व्यक्ति से दूसरे को)</div>
+        <div class="branch">✅ मूल invoice पर "Checked"/"Duplicate on record" रिमार्क</div>
+      </div>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Savings Certificate के transfer को कौन मंजूर करता है? <b>(केवल Head Postmaster — non-delegable)</b></div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--green);">📦 Chapter 3 → स्टॉक व आपूर्ति / Stock & Supply of Certificates</div>
+  <div class="chapter-body">
+    <div class="flow">
+      <div class="box">Nasik Security Press</div><span class="arrow">➡</span>
+      <div class="box">Circle Stamp Depot (CSD)</div><span class="arrow">➡</span>
+      <div class="box">Head Office (HO)</div><span class="arrow">➡</span>
+      <div class="box">Sub Office (SO)</div>
+    </div>
+    <table>
+      <tr><th>Indent</th><th>तारीख / Date</th></tr>
+      <tr><td>SO → HO (त्रैमासिक Quarterly)</td><td>15th मई, अगस्त, नवंबर, फरवरी</td></tr>
+      <tr><td>HO → CSD</td><td>1st जून, सितंबर, दिसंबर, मार्च</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SO पहले महीने की 15, HO अगले महीने की 1" — SO indent 15th, HO indent 1st (अगले माह)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SO अपना त्रैमासिक indent HO को किस तारीख तक भेजता है? <b>(15th of May/Aug/Nov/Feb)</b></div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--orange);">💵 Chapter 4 → खरीद सीमा व नकद नियम / Purchase Limits & Cash Rules</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">SAS Agent Receipt Book सीमा</h3>
+      <table>
+        <tr><th>बिंदु / Point</th><th>सीमा / Limit</th></tr>
+        <tr><td>SAS Agent को एक बार में जारी Cash Receipt Book अधिकतम</td><td><b>₹50,000</b></td></tr>
+        <tr><td>एकल निवेशक से नकद स्वीकृति अधिकतम</td><td><b>₹20,000</b></td></tr>
+        <tr><td>Agent commission — रिपोर्टिंग सीमा</td><td>₹10 lakh/वित्तीय वर्ष से अधिक होने पर विशेष रिपोर्टिंग</td></tr>
+      </table>
+    </div>
+    <div class="penalty-box">🔴 <b>Rule:</b> Receipt book denomination types: Not above ₹1,000 / Not above ₹5,000 / Not above ₹10,000 — तीन प्रकार।</div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "50-20 Agent Rule" — Receipt book ₹50,000 तक जारी, एकल निवेशक से नकद ₹20,000 तक</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SAS Agent एक निवेशक से एक बार में अधिकतम कितना नकद स्वीकार कर सकता है? <b>(₹20,000)</b></div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:var(--blue-light);">🧾 Chapter 5 → Agent व Receipt Books / SAS Agents</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <p class="hi">क्रॉस्ड चेक रिसीट बुक (crossed cheque receipt book) की कोई denomination नहीं होती — राशि कॉलम खाली रहता है। यह केवल तभी उपयोग होती है जब निवेशक crossed cheque से भुगतान करे। नकद receipt book, crossed cheque के लिए भी इस्तेमाल हो सकती है (यदि crossed cheque की किताब खत्म हो जाए), लेकिन इसका उल्टा अनुमति नहीं है।</p>
+    </div>
+    <div class="dtree">
+      <div class="q">Q: Agent की receipt book खो जाए तो क्या करें?</div>
+      <div class="yn">➡ तुरंत रिपोर्ट करें: Post Office + Appointing Authority + Regional Director, National Savings</div>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Crossed cheque receipt book को cash transaction के लिए इस्तेमाल किया जा सकता है या नहीं? <b>(हां, यदि crossed cheque book खत्म हो जाए — लेकिन उल्टा नहीं)</b></div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#00695C;">✍️ Chapter 6 → नामांकन नियम / Nomination Rules</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3 class="hi">नामांकन प्रक्रिया</h3>
+      <p class="hi">केवल वयस्क (adult), नाबालिग नहीं, प्रमाणपत्र का धारक Form <b>NC-51</b> में नामांकन आवेदन कर सकता है — दो गवाहों के सामने हस्ताक्षर सहित। <b>पहली बार नामांकन निःशुल्क।</b></p>
+      <p class="en">Only adult (not minor) holder can apply for nomination on Form NC-51, signed before two witnesses. <b>First nomination = free.</b></p>
+    </div>
+
+    <table>
+      <tr><th>Form</th><th>प्रयोजन / Purpose</th></tr>
+      <tr><td>NC-51</td><td>नामांकन आवेदन (मूल)</td></tr>
+      <tr><td>NC-52</td><td>Register of Nomination</td></tr>
+      <tr><td>NC-53</td><td>नामांकन बदलाव / रद्दीकरण</td></tr>
+    </table>
+
+    <div class="dtree">
+      <div class="q">Q: नामांकन बदलने/रद्द करने की फीस?</div>
+      <div class="yn">➡ <b>₹1</b> (postage stamp के रूप में application पर चिपकाया जाए)</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "51-52-53 सीरीज़" → NC-51 आवेदन, NC-52 रजिस्टर, NC-53 बदलाव/रद्द</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> नामांकन के लिए मूल आवेदन फॉर्म कौन सा है? <b>(NC-51)</b> बदलाव/रद्दीकरण के लिए? <b>(NC-53, फीस ₹1)</b></div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#6A1B9A;">📄 Chapter 7 → डुप्लीकेट प्रमाणपत्र / Duplicate Certificates</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 Frequently Asked</span>
+      <h3 class="hi">डुप्लीकेट सर्टिफिकेट जारी करने की समय सीमा</h3>
+      <p class="hi">यदि आवेदन सही व पूर्ण हो, तो डुप्लीकेट सर्टिफिकेट <b>15 दिनों</b> के भीतर जारी किया जाना चाहिए।</p>
+      <p class="en">Duplicate certificates should be issued within <b>15 days</b> of a complete and correct application.</p>
+    </div>
+    <div class="penalty-box">🔴 <b>Fee:</b> हर सर्टिफिकेट के लिए डुप्लीकेट जारी करने पर निर्धारित fee ली जाती है — ₹500 या अधिक denomination वाले प्रमाणपत्रों पर विशेष अवधि (savings period) लागू।</div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "15 दिन में Duplicate" — Duplicate certificate issue deadline = 15 days</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> पूर्ण आवेदन प्राप्ति के बाद डुप्लीकेट प्रमाणपत्र कितने दिनों में जारी होना चाहिए? <b>(15 दिन)</b></div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--gold-dark);">🔄 Chapter 8 → प्रमाणपत्र का हस्तांतरण / Transfer of Certificates</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 Conceptual</span>
+      <p class="hi">एक व्यक्ति से दूसरे व्यक्ति को प्रमाणपत्र का हस्तांतरण (transfer) केवल Head Postmaster की मंजूरी से होता है। Girvi रखना (Pledging) और उसे छोड़ना (releasing pledge) भी transfer माना जाता है और fee लगती है।</p>
+      <p class="en">Transfer from one holder to another requires Head Postmaster's sanction. Pledging/releasing a pledge also constitutes a transfer for fee purposes.</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> क्या गिरवी रखना (Pledging) transfer माना जाता है? <b>(हां — fee applicable)</b></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:var(--red-dark);">⚱️ Chapter 9 → मृतक धारक के दावे / Deceased Holder Claims</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+      <h3 class="hi">दावा निपटान आधार / Basis of Claim</h3>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: मृतक धारक के दावे का निपटान कैसे होता है?</div>
+      <div class="yn">➡ (a) नामांकन (Nomination) के आधार पर</div>
+      <div class="yn">➡ (b) कानूनी साक्ष्य (Legal Evidence — Succession Certificate) के आधार पर</div>
+      <div class="yn">➡ (c) बिना कानूनी साक्ष्य के, मंजूरी अधिकारी के विवेक पर, सीमा तक → <b>₹1,00,000 (वर्तमान सीमा, वित्त मंत्रालय द्वारा तय)</b></div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Limit:</b> बिना Succession Certificate/Probate/Letters of Administration के अधिकतम <b>₹1 लाख</b> तक का दावा सक्षम अधिकारी के विवेक पर निपटाया जा सकता है। इससे अधिक होने पर न्यायालय से Succession Certificate आवश्यक।</div>
+
+    <table>
+      <tr><th>स्थिति / Scenario</th><th>नियम</th></tr>
+      <tr><td>नामांकन मौजूद, एक नामिती</td><td>तुरंत भुगतान या नए नाम पर सर्टिफिकेट जारी</td></tr>
+      <tr><td>नामांकन मौजूद, 2+ नामिती</td><td>विभाजित कर अलग-अलग सर्टिफिकेट या Joint A/B प्रकार</td></tr>
+      <tr><td>एक नामिती की मृत्यु</td><td>शेष जीवित नामिती(यों) को भुगतान</td></tr>
+      <tr><td>अंतिम नामिती की मृत्यु</td><td>नामिती के कानूनी उत्तराधिकारी को (मूल धारक के नहीं)</td></tr>
+      <tr><td>SB Account व Savings Certificate दोनों में दावा</td><td>दोनों को अलग-अलग माना जाता है; सीमा अलग-अलग लागू</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1 लाख का विवेक" — Discretionary claim limit without legal evidence = ₹1,00,000</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> बिना कानूनी साक्ष्य के सक्षम अधिकारी अधिकतम कितनी राशि का दावा मंजूर कर सकता है? <b>(₹1,00,000)</b> SB और Certificate claims की सीमा एक साथ गिनी जाती है या अलग? <b>(अलग-अलग)</b></div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#37474F;">🗄️ Chapter 10 → रिकॉर्ड संरक्षण अवधि / Preservation Periods</div>
+  <div class="chapter-body">
+    <div class="topic"><span class="tier green">🟢 Quick Revision</span></div>
+    <p class="hi">Savings Certificate रिकॉर्ड्स के लिए संरक्षण अवधि Manual के Appendix में निर्दिष्ट है — Nomination Register को <b>Permanent Record</b> के रूप में सुरक्षित रखा जाता है (गार्ड फाइल में क्रमांकित रूप से)।</p>
+    <table>
+      <tr><th>Record</th><th>Preservation Period</th></tr>
+      <tr><td>Register of Nomination (guard file)</td><td><b>Permanent</b></td></tr>
+      <tr><td>Matured/unencashed certificates</td><td>30 वर्ष तक due for encashment (maturity से)</td></tr>
+    </table>
+    <div class="exam-q">❓ <b>Exam Q:</b> परिपक्व लेकिन भुनाए न गए (unencashed) प्रमाणपत्र कितने वर्षों तक देय (due) रहते हैं? <b>(30 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>Discontinued but revived:</b> KVP — बंद 1.12.2011, पुनः शुरू 23.9.2014</div>
+    <div class="rev-card"><b>SO indent to HO:</b> 15th May/Aug/Nov/Feb | <b>HO to CSD:</b> 1st Jun/Sep/Dec/Mar</div>
+    <div class="rev-card"><b>SAS Agent limits:</b> Receipt book ₹50,000 | Cash from single investor ₹20,000</div>
+    <div class="rev-card"><b>Nomination:</b> NC-51 (apply) → NC-52 (register) → NC-53 (change/cancel, ₹1 fee); 1st = free</div>
+    <div class="rev-card"><b>Duplicate certificate:</b> Issue within 15 days</div>
+    <div class="rev-card"><b>Transfer:</b> Only Head Postmaster sanctions; pledging = transfer (fee applies)</div>
+    <div class="rev-card"><b>Deceased claim (no legal evidence):</b> up to ₹1,00,000 at officer's discretion</div>
+    <div class="rev-card"><b>Unencashed matured certificates:</b> due for 30 years from maturity</div>
+    <div class="rev-card"><b>Nomination Register:</b> Permanent record</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>19</b> = बंद हो चुकी certificate श्रृंखलाओं की संख्या (Vol-II Chapter-1 सूची)</li>
+    <li>🔢 <b>1.12.2011 / 23.9.2014</b> = KVP बंद / पुनः शुरू तारीखें</li>
+    <li>🔢 <b>15th</b> = SO का त्रैमासिक indent HO को भेजने की तारीख</li>
+    <li>🔢 <b>1st</b> = HO का indent CSD को भेजने की तारीख</li>
+    <li>🔢 <b>₹50,000 / ₹20,000</b> = SAS Agent receipt book सीमा / एकल निवेशक नकद सीमा</li>
+    <li>🔢 <b>₹10 lakh</b> = Agent commission वार्षिक रिपोर्टिंग सीमा</li>
+    <li>🔢 <b>NC-51 / NC-52 / NC-53</b> = नामांकन आवेदन / रजिस्टर / बदलाव-रद्दीकरण फॉर्म</li>
+    <li>🔢 <b>₹1</b> = नामांकन बदलाव/रद्दीकरण शुल्क (पहली बार निःशुल्क)</li>
+    <li>🔢 <b>15 दिन</b> = Duplicate certificate जारी करने की समय सीमा</li>
+    <li>🔢 <b>₹1,00,000</b> = बिना Succession Certificate दावा निपटान सीमा</li>
+    <li>🔢 <b>30 वर्ष</b> = Matured unencashed certificate की देयता अवधि</li>
+    <li>🔢 <b>Permanent</b> = Register of Nomination का संरक्षण</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB Manual Volume-II (Savings Certificates) &nbsp;|&nbsp; Compiled for exam revision — always cross-check with latest DoP circulars
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

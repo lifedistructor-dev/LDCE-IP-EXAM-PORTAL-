@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book of BO Rules — Master Index | IPO Exam</title>
+<style>
+  :root{
+    --primary:#c2410c; --primary-light:#f97316;
+    --accent:#1e3a8a; --green:#15803d; --green-light:#dcfce7;
+    --bg:#f8fafc; --surface:#fff; --text:#1e293b; --text-secondary:#64748b; --border:#e2e8f0;
+    --shadow:0 4px 12px rgba(0,0,0,.08); --radius:12px; --radius-lg:16px; --radius-pill:9999px;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.5;}
+  .header-gradient{background:linear-gradient(135deg,#7c2d12 0%,#1e3a8a 100%);padding:24px 20px 40px;text-align:center;position:relative;overflow:hidden;}
+  .header-title{font-size:20px;font-weight:700;color:#fff;margin:0;}
+  .header-sub{color:rgba(255,255,255,.85);font-size:12px;margin-top:6px;}
+  .wave-divider{position:relative;height:36px;margin-top:-1px;}
+  .wave-divider svg{position:absolute;bottom:0;width:100%;height:36px;display:block;}
+  .back-btn{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:var(--radius-pill);z-index:2;}
+  .container{max-width:640px;margin:-16px auto 0;padding:0 16px 40px;}
+  .progress-card{background:var(--surface);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:16px;}
+  .progress-label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;}
+  .progress-track{width:100%;height:8px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--primary-light),var(--accent));border-radius:var(--radius-pill);width:0%;transition:width .5s;}
+  .part-card{background:var(--surface);border-radius:var(--radius);margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);border:1px solid var(--border);display:flex;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s;}
+  .part-card:active{transform:scale(0.98);}
+  .part-accent{width:5px;flex-shrink:0;background:var(--primary);}
+  .part-body{padding:14px 16px;flex:1;display:flex;align-items:center;gap:12px;min-width:0;}
+  .part-num{width:34px;height:34px;border-radius:50%;background:#ffedd5;color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;}
+  .part-text{flex:1;min-width:0;}
+  .part-title{font-weight:700;font-size:13.5px;display:block;}
+  .part-sub{font-size:11.5px;color:var(--text-secondary);margin-top:2px;}
+  .part-arrow{color:var(--text-secondary);flex-shrink:0;}
+  .footer-note{text-align:center;font-size:11px;color:var(--text-secondary);margin-top:16px;}
+</style>
+</head>
+<body>
+
+<div class="header-gradient">
+  <a href="index.html" class="back-btn">← Home</a>
+  <h1 class="header-title">📮 Book of BO Rules</h1>
+  <div class="header-sub">Rules for Branch Offices — 8 Chapters (Hindi + English)</div>
+</div>
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,25 1440,20 L1440,40 L0,40 Z"/></svg>
+</div>
+
+<div class="container">
+
+  <div class="progress-card">
+    <div class="progress-label"><span>📊 Chapters Studied</span><span id="progress-count">0/8</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+
+  <a href="bo-rules-ch1-hindi.html" class="part-card" data-id="bo-p1">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">1</div>
+      <div class="part-text">
+        <span class="part-title">Miscellaneous Rules</span>
+        <span class="part-sub">Rules 1-51 — Functions, Records, Custody, Reporting</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch2-hindi.html" class="part-card" data-id="bo-p2">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">2</div>
+      <div class="part-text">
+        <span class="part-title">Mails</span>
+        <span class="part-sub">Rules 52-58 — Bag examination, tampering, mail lists</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch3-hindi.html" class="part-card" data-id="bo-p3">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">3</div>
+      <div class="part-text">
+        <span class="part-title">Sorting</span>
+        <span class="part-sub">Rules 59-65 — Letter-box, Check slips, Labelled bundles</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch4-hindi.html" class="part-card" data-id="bo-p4">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">4</div>
+      <div class="part-text">
+        <span class="part-title">Delivery</span>
+        <span class="part-sub">Rules 66-76 — Window delivery, Redirection, Unclaimed</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch5-hindi.html" class="part-card" data-id="bo-p5">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">5</div>
+      <div class="part-text">
+        <span class="part-title">Registration &amp; Parcel</span>
+        <span class="part-sub">Rules 77-103 — Journal, Insurance, V.P. Articles</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch6-hindi.html" class="part-card" data-id="bo-p6">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">6</div>
+      <div class="part-text">
+        <span class="part-title">Money Orders &amp; Postal Orders</span>
+        <span class="part-sub">Rules 104-122 — Payment limits, Pension MO, Minors</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch7-hindi.html" class="part-card" data-id="bo-p7">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">7</div>
+      <div class="part-text">
+        <span class="part-title">Accounts</span>
+        <span class="part-sub">Rules 123-141 — Journal, Account, Cash Bags, Pay</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <a href="bo-rules-ch8-hindi.html" class="part-card" data-id="bo-p8">
+    <div class="part-accent"></div>
+    <div class="part-body">
+      <div class="part-num">8</div>
+      <div class="part-text">
+        <span class="part-title">Telegrams</span>
+        <span class="part-sub">Rules 142-145 — Receiving, Delivery, Refunds, Secrecy</span>
+      </div>
+      <div class="part-arrow">›</div>
+    </div>
+  </a>
+
+  <div class="footer-note">Tap any chapter to open · Progress saved automatically on this device</div>
+
+</div>
+
+<script>
+  const ALL_PARTS = ['bo-p1','bo-p2','bo-p3','bo-p4','bo-p5','bo-p6','bo-p7','bo-p8'];
+  function getStudied(){ return JSON.parse(localStorage.getItem('bo_rules_studied') || '[]'); }
+  function updateProgress(){
+    const studied = getStudied().filter(id => ALL_PARTS.includes(id));
+    document.getElementById('progress-count').textContent = studied.length + '/' + ALL_PARTS.length;
+    document.getElementById('progress-fill').style.width = (studied.length / ALL_PARTS.length * 100) + '%';
+  }
+  document.querySelectorAll('.part-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.id;
+      let studied = getStudied();
+      if (!studied.includes(id)) {
+        studied.push(id);
+        localStorage.setItem('bo_rules_studied', JSON.stringify(studied));
+      }
+    });
+  });
+  updateProgress();
+</script>
+
+</body>
+</html>

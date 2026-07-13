@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisan Vikas Patra Scheme 2019 — Infographic | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --yellow:#a16207; --yellow-light:#fef9c3;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans Gujarati','Noto Sans Devanagari','Segoe UI',sans-serif;
+    background:linear-gradient(180deg,#fef9f0,#eef2ff);
+    margin:0; padding:0; color:var(--ink); line-height:1.5;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{
+    background:linear-gradient(135deg,#1e3a8a,#7c3aed);
+    color:#fff; border-radius:16px; padding:22px 18px; margin:12px 0;
+    text-align:center; box-shadow:0 8px 24px rgba(30,58,138,.25);
+  }
+  header.hero h1{margin:0 0 6px;font-size:1.4rem;}
+  header.hero .sub{font-size:.9rem;opacity:.9;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.75rem;}
+
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;
+    background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .breadcrumb span.arrow{opacity:.6;}
+
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.05rem;display:flex;align-items:center;gap:8px;}
+
+  .tri{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .tri .gu{font-weight:700;font-size:.95rem;color:#111827;}
+  .tri .hi{font-weight:500;font-size:.87rem;color:#374151;}
+  .tri .en{font-style:italic;font-size:.8rem;color:#4b5563;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+
+  .tag-imp{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-yellow{background:var(--yellow-light);color:#7c5a06;border:1px solid var(--yellow);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.78rem;}
+  th,td{border:1px solid #ddd;padding:5px 7px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#eef2ff;border:2px solid #6366f1;border-radius:10px;padding:8px 12px;font-size:.83rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#6366f1;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.8rem;}
+  .exam-q b{color:var(--orange);}
+
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.86rem;}
+
+  .grid2{display:grid;grid-template-columns:1fr;gap:10px;}
+  @media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .pill{background:#111827;color:#fff;font-size:.7rem;padding:3px 10px;border-radius:14px;}
+
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.86rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.81rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.78rem;color:var(--green);font-weight:600;}
+
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.76rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+
+  .amend-note{background:#fef2f2;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:.78rem;margin:8px 0;color:#7f1d1d;}
+  .current-note{background:#ecfdf5;border:1px solid var(--green);border-radius:8px;padding:8px 10px;font-size:.78rem;margin:8px 0;color:#14532d;}
+
+  .fab{position:fixed;bottom:18px;right:18px;background:var(--blue);color:#fff;
+    border:none;border-radius:50px;padding:12px 18px;font-size:.83rem;font-weight:700;
+    box-shadow:0 6px 18px rgba(30,64,175,.4);cursor:pointer;z-index:999;}
+
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.82rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+
+  ul{margin:6px 0;padding-left:20px;font-size:.84rem;}
+  li{margin:3px 0;}
+
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🌾 Kisan Vikas Patra Scheme, 2019 (KVP)</h1>
+    <div class="sub">કિસાન વિકાસ પત્ર યોજના, 2019 | किसान विकास पत्र योजना, 2019</div>
+    <div class="tag">GSR 920(E) dt. 12/12/2019 · amended GSR 283(E) dt. 05/05/2020 · Sec 3A, Govt. Savings Promotion Act 1873</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Savings Schemes <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Small Savings Schemes (NSI) <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> KVP Scheme 2019 <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Account Types / Maturity Doubling / Premature Closure</b>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic &amp; Definition <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="tri">
+      <div class="gu">KVP એક "money-doubling" પ્રમાણપત્ર યોજના છે — જમા રકમ નિશ્ચિત મુદત પછી બમણી થાય છે, Sec 3A GSP Act 1873 હેઠળ notify.</div>
+      <div class="hi">KVP एक "money-doubling" प्रमाणपत्र योजना है — जमा राशि निश्चित अवधि के बाद दोगुनी होती है, GSP अधिनियम 1873 की धारा 3A के तहत अधिसूचित।</div>
+      <div class="en">KVP is a "money-doubling" certificate scheme where the deposit doubles after a fixed maturity period, notified under Sec 3A of the Govt. Savings Promotion Act, 1873.</div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Short title: KVP Scheme 2019</span>
+      <span class="pill">Maturity (2020 onward accounts): 10 yrs 4 months</span>
+      <span class="pill">No maximum deposit limit</span>
+      <span class="pill">Governing Act: Govt. Savings Promotion Act 1873</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📜 Important Sections / Paragraphs <span class="tag-imp t-red">🔴</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Para</th><th>Subject</th><th>Key Point</th></tr>
+      <tr><td>1</td><td>Short title &amp; commencement</td><td>KVP Scheme 2019; effective from Gazette publication</td></tr>
+      <tr><td>2</td><td>Definitions</td><td>account, account holder, Act, Form, General Rules, year</td></tr>
+      <tr><td>3</td><td>Type of Accounts</td><td>Single / Joint-A / Joint-B, Form-1</td></tr>
+      <tr><td>4</td><td>Deposits</td><td>Min ₹1,000 (₹100 multiples), NO max limit, unlimited accounts</td></tr>
+      <tr><td>5</td><td>Payment on Maturity</td><td>9yr5mo (2019-20 accounts) / 10yr4mo (post 1 Apr 2020); deposit doubles; Form-2</td></tr>
+      <tr><td>6</td><td>Premature Closure</td><td>Form-3; only 3 grounds; tiered payout table after 2.5 years</td></tr>
+      <tr><td>7</td><td>Pledging of Account</td><td>Form-4; permitted transferees list</td></tr>
+      <tr><td>8</td><td>Transfer of Account</td><td>Death / court order / pledge / joint-holder death</td></tr>
+      <tr><td>9</td><td>Payment on Death</td><td>Nominee/legal heir; continue (≤3) or close account</td></tr>
+      <tr><td>10</td><td>Application of General Rules</td><td>GSPR 2018 fills gaps</td></tr>
+      <tr><td>11</td><td>Power to Relax</td><td>Central Govt. can relax hardship provisions</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2>🔀 Flowchart — Type of Accounts <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">ફોર્મ-1 દ્વારા 3 પ્રકારના ખાતા — NSC જેવા જ</div>
+      <div class="hi">फॉर्म-1 के माध्यम से 3 प्रकार के खाते — NSC के समान ही</div>
+      <div class="en">3 account types via Form-1 — same structure as NSC</div>
+    </div>
+    <div class="flow">
+      <div class="step">👤 <b>Single Holder</b> — adult self / guardian for minor / unsound-mind / minor 10+ yrs</div>
+      <div class="step">👥 <b>Joint A-Type</b> — up to 3 adults; payable to ALL jointly or survivor(s)</div>
+      <div class="step">👥 <b>Joint B-Type</b> — up to 3 adults; payable to ANY holder or survivor(s)</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> KVP અને NSC ના account types વચ્ચે શું સામ્યતા છે? <b>Ans: બંનેમાં Single/Joint-A/Joint-B — સમાન structure</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Deposit Rules <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Provision</th><th>Detail</th></tr>
+      <tr><td>Min Deposit</td><td>₹1,000 (multiples of ₹100)</td></tr>
+      <tr><td>Max Deposit</td><td><b>NO limit</b></td></tr>
+      <tr><td>No. of accounts per individual</td><td><b>Unlimited</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📈 Maturity Period — "Money Doubling" <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Account Opened</th><th>Maturity Period</th><th>Result</th></tr>
+      <tr><td>12 Dec 2019 – 31 Mar 2020</td><td>9 years 5 months</td><td>Deposit doubles</td></tr>
+      <tr><td>On/after 1 Apr 2020</td><td><b>10 years 4 months</b> (amended GSR 283(E))</td><td>Deposit doubles</td></tr>
+    </table>
+    <div class="current-note">✅ <b>Current law update:</b> KVP की maturity अवधि अब वर्तमान ब्याज दर 7.5% प्रति वर्ष पर <b>115 महीने (9 वर्ष 7 महीने)</b> है — Apr-Jun 2026 quarter के लिए (rate 1 अप्रैल 2023 से अपरिवर्तित)। KVPનો maturity period ब्याज दर के हिसाब से समय-समय पर बदलता रहता है।</div>
+    <div class="tri">
+      <div class="gu">Maturity period ખાતું ખોલવાના સમયે લાગુ interest rate પર આધારિત નક્કી થાય છે.</div>
+      <div class="hi">Maturity अवधि खाता खोलने के समय लागू ब्याज दर पर निर्भर करती है।</div>
+      <div class="en">The maturity period is determined by the interest rate applicable at the time of opening the account.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Post 1 April 2020 ખોલેલા ખાતાની maturity period? <b>Ans: 10 વર્ષ 4 મહિના</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Premature Closure <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="tri rule">
+      <div class="gu">ખાતું ફક્ત 3 કિસ્સામાં maturity પહેલા બંધ થઈ શકે</div>
+      <div class="hi">खाता केवल 3 मामलों में maturity से पहले बंद हो सकता है</div>
+      <div class="en">Premature closure allowed only in 3 cases (same as NSC)</div>
+    </div>
+    <div class="decision">
+      <div class="node">(a) ખાતાધારકના મૃત્યુ પર</div><br>
+      <div class="node">(b) Gazetted Officer pledgee દ્વારા forfeiture</div><br>
+      <div class="node">(c) Court order દ્વારા</div>
+    </div>
+    <div class="flow" style="margin-top:10px;">
+      <div class="step">2.5 વર્ષ પહેલા બંધ ➜ ✂️ Principal + POSA rate simple interest (complete months)</div>
+      <div class="step">2.5 વર્ષ પછી બંધ ➜ ✅ Table મુજબ ચોક્કસ amount (near-maturity value)</div>
+    </div>
+    <div class="mnemonic">
+      🧠 <b>Mnemonic:</b> "DCP" — <b>D</b>eath, <b>C</b>ourt order, <b>P</b>ledgee forfeiture — NSC જેવો જ rule; lock-in period 2.5 વર્ષ (30 months) યાદ રાખો.
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> KVP નો lock-in period કેટલો છે? <b>Ans: 2 વર્ષ 6 મહિના (30 months)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📊 Premature Closure Value Table (Sample) <span class="tag-imp t-yellow">🟡</span></h2>
+    <div class="tri">
+      <div class="gu">₹1,000 ના ડિપોઝિટ પર, post-1-April-2020 ખાતાઓ માટે — ટૂંકાવેલ table:</div>
+      <div class="hi">₹1,000 की जमा पर, post-1-April-2020 खातों के लिए — संक्षिप्त तालिका:</div>
+    </div>
+    <div class="tbl-scroll"><table>
+      <tr><th>Period from Opening</th><th>Amount Payable (₹1,000 deposit)</th></tr>
+      <tr><td>2.5 yrs – &lt;3 yrs</td><td>₹1,154</td></tr>
+      <tr><td>5 yrs – &lt;5.5 yrs</td><td>₹1,332</td></tr>
+      <tr><td>7.5 yrs – &lt;8 yrs</td><td>₹1,537</td></tr>
+      <tr><td>9.5 yrs – &lt;10 yrs</td><td>₹1,724</td></tr>
+      <tr><td>On Maturity (10yr4mo)</td><td><b>₹2,000 (doubled)</b></td></tr>
+    </table></div>
+    <div class="exam-q"><b>Probable Q:</b> ₹1,000 ના KVP ની maturity value શું છે? <b>Ans: ₹2,000 (double)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🔒 Pledging of Account <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="tri">
+      <div class="gu">ફોર્મ-4 દ્વારા pledge/transfer as security — pledgee ના acceptance letter સાથે (NSC ફોર્મ-3 થી અલગ, KVP માં ફોર્મ-4).</div>
+      <div class="hi">फॉर्म-4 के माध्यम से pledge/transfer as security — pledgee के acceptance letter के साथ (NSC में फॉर्म-3, KVP में फॉर्म-4)।</div>
+      <div class="en">Pledging via <b>Form-4</b> (note: different from NSC's Form-3), with pledgee's acceptance letter.</div>
+    </div>
+    <ul>
+      <li>🔴 President of India / Governor of a State (official capacity)</li>
+      <li>🔴 RBI / Scheduled Bank / Cooperative Society (incl. Cooperative Bank)</li>
+      <li>🟠 Public/private corporation or Government company</li>
+      <li>🟠 Local authority</li>
+      <li>🟡 Housing finance company approved by National Housing Bank</li>
+    </ul>
+    <div class="amend-note">⚠️ <b>Exam Trap:</b> NSC scheme માં pledging Form-3 છે, પણ KVP scheme માં pledging <b>Form-4</b> છે — MCQ માં ઘણી વાર આ મૂંઝવે છે!</div>
+  </div>
+
+  <div class="card">
+    <h2>⚰️ Payment on Death / Transfer <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <table>
+      <tr><th>Situation</th><th>Rule</th></tr>
+      <tr><td>Nomination exists</td><td>Payable to nominee</td></tr>
+      <tr><td>No nomination</td><td>Payable to legal heir(s)</td></tr>
+      <tr><td>Up to 3 nominees/legal heirs</td><td>May continue account till maturity, OR close</td></tr>
+      <tr><td>Not continued</td><td>Closed; deposit + interest per Para 6 paid</td></tr>
+      <tr><td>Joint account, 1-2 holders die</td><td>Surviving holder(s) become owner(s); continue or close</td></tr>
+    </table>
+    <div class="amend-note">⚠️ <b>Note:</b> KVP માં NSC જેવો ₹5 લાખ threshold/succession-certificate provision સ્પષ્ટપણે mention નથી — KVP માં direct nominee/legal-heir payment ની જોગવાઈ છે (Para 9)।</div>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ Comparison — KVP vs NSC <span class="tag-imp t-green">🟢 Quick Revision</span></h2>
+    <table>
+      <tr><th>Feature</th><th>KVP</th><th>NSC (VIII Issue)</th></tr>
+      <tr><td>Maturity</td><td>10 yrs 4 months (doubles)</td><td>5 years</td></tr>
+      <tr><td>Pledging Form</td><td>Form-4</td><td>Form-3</td></tr>
+      <tr><td>Premature Closure Form</td><td>Form-3</td><td>N/A (part of maturity para)</td></tr>
+      <tr><td>Lock-in before closure</td><td>2.5 years</td><td>1 year (interest cut only)</td></tr>
+      <tr><td>Max Deposit</td><td>No limit</td><td>No limit</td></tr>
+      <tr><td>No. of accounts</td><td>Unlimited</td><td>Unlimited</td></tr>
+      <tr><td>Current Rate</td><td>7.5%</td><td>~7.7%</td></tr>
+      <tr><td>80C Benefit</td><td>❌ No</td><td>✅ Yes</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🕐 Timeline <span class="tag-imp t-yellow">🟡</span></h2>
+    <div class="flow">
+      <div class="step">1988 — KVP originally launched (for farmers)</div>
+      <div class="step">1873 — Govt. Savings Promotion Act (enabling law)</div>
+      <div class="step">2018 — GSPR notified</div>
+      <div class="step">12 Dec 2019 — KVP Scheme 2019 notified (GSR 920(E)), maturity 9yr5mo</div>
+      <div class="step">05 May 2020 — Amendment GSR 283(E), maturity revised to 10yr4mo, Table-2 inserted</div>
+      <div class="step">Apr–Jun 2026 — Current rate 7.5%, maturity 115 months (9yr7mo), unchanged since 1 Apr 2023</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ Important Authorities <span class="tag-imp t-yellow">🟡</span></h2>
+    <ul>
+      <li><b>Central Government</b> — notifies scheme under Sec 3A of 1873 Act; power to relax hardship (Para 11)।</li>
+      <li><b>Accounts Office (Post Office)</b> — opens/closes accounts, processes pledging/transfer/maturity payment।</li>
+      <li><b>Gazetted Officer (as pledgee)</b> — may forfeit pledged account।</li>
+      <li><b>Court</b> — can order account closure/transfer।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>⏱️ Important Time Limits <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Event</th><th>Time Limit</th></tr>
+      <tr><td>Maturity (2019-20 accounts)</td><td>9 years 5 months</td></tr>
+      <tr><td>Maturity (post 1 Apr 2020 accounts)</td><td>10 years 4 months</td></tr>
+      <tr><td>Lock-in before premature closure allowed</td><td>2 years 6 months (2.5 yrs)</td></tr>
+      <tr><td>Current maturity (2026 rate)</td><td>115 months (9yr 7mo)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Important Penalties / Deductions <span class="tag-imp t-orange">🟠</span></h2>
+    <table>
+      <tr><th>Situation</th><th>Payout</th></tr>
+      <tr><td>Closure before 2.5 years (only in death/court/pledgee cases)</td><td>Principal + POSA rate simple interest</td></tr>
+      <tr><td>Closure after 2.5 years</td><td>Table-specified amount (progressively closer to double)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🚩 Important Exceptions <span class="tag-imp t-orange">🟠</span></h2>
+    <ul>
+      <li>Premature closure allowed <b>only</b> in death / court order / pledgee-forfeiture — same restriction as NSC.</li>
+      <li>Minor/unsound-mind person's account transfer needs guardian's written certificate.</li>
+      <li>No maximum deposit or account-count limit.</li>
+      <li>Blind/physically-infirm persons can pledge via authorised literate individual.</li>
+      <li>KVP does <b>NOT</b> qualify for Section 80C tax deduction (unlike NSC/SCSS/PPF) — key exam trap.</li>
+      <li>Central Govt. may relax any hardship-causing provision (Para 11).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — KVP Scheme 2019</h2>
+    <div class="grid2">
+      <div class="tri" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Account Types</b>: Single / Joint-A (all/survivor) / Joint-B (any/survivor)</div></div>
+      <div class="tri" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Deposit</b>: Min ₹1,000 · No max · Unlimited accounts</div></div>
+      <div class="tri" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Maturity</b>: 10yr4mo (2020+) · Doubles deposit · Form-2</div></div>
+      <div class="tri" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Closure</b>: Only death/court/pledgee · Pledging Form-4</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+
+    <div class="mcq">
+      <div class="q">Q1. KVP Scheme 2019 किस section के अंतर्गत notify हुई?</div>
+      <div class="opts">A) Sec 4, IPO Act &nbsp; B) Sec 3A, Govt. Savings Promotion Act 1873 &nbsp; C)Sec 15, GSPR 2018 &nbsp; D) Sec 12, POSA 2019</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q2. Post 1 April 2020 खोले गए KVP खाते की maturity अवधि क्या है?</div>
+      <div class="opts">A) 9 वर्ष 5 महीने &nbsp; B) 10 वर्ष 4 महीने &nbsp; C) 5 वर्ष &nbsp; D) 15 वर्ष</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q3. KVP में pledging किस Form से की जाती है?</div>
+      <div class="opts">A) Form-1 &nbsp; B) Form-2 &nbsp; C) Form-3 &nbsp; D) Form-4</div>
+      <div class="ans">Answer: D</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q4. KVP का lock-in period कितना है?</div>
+      <div class="opts">A) 1 वर्ष &nbsp; B) 2 वर्ष 6 महीने &nbsp; C) 3 वर्ष &nbsp; D) 5 वर्ष</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q5. क्या KVP में Section 80C का लाभ मिलता है?</div>
+      <div class="opts">A) हाँ &nbsp; B) नहीं &nbsp; C) केवल Joint account में &nbsp; D) केवल Single account में</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q6. KVP खाते में अधिकतम जमा सीमा क्या है?</div>
+      <div class="opts">A) ₹9 लाख &nbsp; B) ₹15 लाख &nbsp; C) कोई सीमा नहीं &nbsp; D) ₹5 लाख</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q7. Premature closure किन परिस्थितियों में संभव है?</div>
+      <div class="opts">A) कभी भी बिना कारण &nbsp; B) मृत्यु / कोर्ट आदेश / pledgee forfeiture &nbsp; C) केवल 1 वर्ष बाद &nbsp; D) केवल आर्थिक ज़रूरत पर</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q8. ₹1,000 का KVP maturity पर कितना बनता है?</div>
+      <div class="opts">A) ₹1,500 &nbsp; B) ₹1,800 &nbsp; C) ₹2,000 &nbsp; D) ₹2,500</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q9. Joint B-Type account में भुगतान किसे होता है?</div>
+      <div class="opts">A) केवल पहले holder को &nbsp; B) सभी को संयुक्त रूप से ही &nbsp; C) किसी भी holder या survivor को &nbsp; D) कोर्ट के आदेश पर</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q10. KVP खाता खोलने का फॉर्म कौन सा है?</div>
+      <div class="opts">A) Form-1 &nbsp; B) Form-2 &nbsp; C) Form-3 &nbsp; D) Form-4</div>
+      <div class="ans">Answer: A</div>
+    </div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Enabling law: <b>Sec 3A, Govt. Savings Promotion Act 1873</b></li>
+      <li>🔴 Notified: <b>12 Dec 2019 (GSR 920E)</b>; amended <b>5 May 2020 (GSR 283E)</b></li>
+      <li>🔴 Account types: Single / Joint-A / Joint-B — <b>Form-1</b> (same as NSC)</li>
+      <li>🔴 Deposit: Min ₹1,000, <b>NO max limit</b>, unlimited accounts</li>
+      <li>🔴 Maturity: 9yr5mo (2019-20) / <b>10yr4mo (post 1 Apr 2020)</b> — deposit doubles — Form-2</li>
+      <li>🟠 Premature closure ONLY: death / court order / pledgee forfeiture — Form-3</li>
+      <li>🟠 Lock-in: <b>2.5 years</b>; before that only POSA rate on the 3 exception grounds</li>
+      <li>🟡 Pledging = <b>Form-4</b> (differs from NSC's Form-3) — common exam trap!</li>
+      <li>🟡 No Section 80C benefit (unlike NSC/SCSS/PPF)</li>
+      <li>🟢 GSPR 2018 fills gaps; Central Govt. can relax hardship provisions</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Scheme</td><td>Kisan Vikas Patra Scheme, 2019</td></tr>
+      <tr><td>Enabling Section</td><td>Sec 3A, Govt. Savings Promotion Act 1873</td></tr>
+      <tr><td>Notification</td><td>GSR 920(E) — 12/12/2019; amended GSR 283(E) — 05/05/2020</td></tr>
+      <tr><td>Account Types</td><td>Single, Joint-A, Joint-B (Form-1)</td></tr>
+      <tr><td>Min/Max Deposit</td><td>₹1,000 min (₹100 multiples), NO max limit</td></tr>
+      <tr><td>Maturity</td><td>10yr4mo (post 2020) — Form-2; deposit doubles</td></tr>
+      <tr><td>Current Rate</td><td>7.5% p.a., 115 months to double (2026)</td></tr>
+      <tr><td>Premature Closure</td><td>Only death/court/pledgee; Form-3; lock-in 2.5yr</td></tr>
+      <tr><td>Pledging</td><td>Form-4 + pledgee acceptance letter</td></tr>
+      <tr><td>80C Benefit</td><td>❌ Not available</td></tr>
+      <tr><td>Gap-filling Rules</td><td>GSPR 2018</td></tr>
+      <tr><td>Relaxation Power</td><td>Central Government (Para 11)</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume VII — Railway Mail Service | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#1B3A6B; --ip-gold:#E8A317;
+  --vimp:#C8102E; --freq:#E8720C; --conc:#D9A404; --quick:#1E8449;
+  --bg:#F6F4EF; --card:#FFFFFF; --ink:#22252A; --muted:#5B6068;
+  --line:#E2DFD7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Mangal','Nirmala UI',Georgia,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15.5px}
+.wrap{max-width:860px;margin:0 auto;padding:0 12px 60px}
+
+header.hero{background:linear-gradient(135deg,var(--ip-blue) 0%,#12294e 60%,#0c1d38 100%);color:#fff;padding:28px 16px 22px;text-align:center;border-bottom:5px solid var(--ip-gold)}
+header.hero .badge{display:inline-block;background:var(--ip-red);color:#fff;font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+header.hero h1{font-size:clamp(20px,4.5vw,30px);line-height:1.3}
+header.hero h1 .en{display:block;font-style:italic;font-weight:400;font-size:.72em;opacity:.9;margin-top:4px}
+header.hero .sub{margin-top:10px;font-size:13px;opacity:.85}
+header.hero .sub b{color:var(--ip-gold)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0}
+.legend span{font-size:12.5px;padding:4px 10px;border-radius:16px;font-weight:600}
+.lg-r{background:#FDECEE;color:var(--vimp)} .lg-o{background:#FEF0E2;color:var(--freq)}
+.lg-y{background:#FCF6DE;color:#9a7500} .lg-g{background:#E7F5EC;color:var(--quick)}
+
+nav.chips{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.97);padding:8px 4px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+nav.chips a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ip-blue);background:#fff;border:1.5px solid var(--ip-blue);border-radius:18px;padding:5px 12px;text-decoration:none;white-space:nowrap}
+nav.chips a:active{background:var(--ip-blue);color:#fff}
+
+section.ch{margin:26px 0;scroll-margin-top:60px}
+.ch-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-num{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--ip-red);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(200,16,46,.3)}
+.ch-num.blue{background:var(--ip-blue);box-shadow:0 3px 8px rgba(27,58,107,.3)}
+.ch-title h2{font-size:18px;color:var(--ip-blue);line-height:1.3}
+.ch-title .en{font-style:italic;font-weight:500;font-size:13px;color:var(--muted)}
+.ch-title .rules{font-size:11.5px;background:var(--ip-gold);color:#3a2b00;font-weight:700;border-radius:10px;padding:1px 8px;display:inline-block;margin-top:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.t-r{border-left:5px solid var(--vimp)} .card.t-o{border-left:5px solid var(--freq)}
+.card.t-y{border-left:5px solid var(--conc)} .card.t-g{border-left:5px solid var(--quick)}
+.card h3{font-size:15.5px;color:var(--ip-blue);margin-bottom:6px}
+.card h3 .en{display:block;font-style:italic;font-weight:500;font-size:12.5px;color:var(--muted)}
+.hi{font-weight:700;display:block}
+.en{font-style:italic;color:#4a4f57;display:block;font-size:.93em}
+.rule-tag{display:inline-block;background:var(--ip-blue);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:middle}
+
+ul.points{list-style:none;margin-top:6px}
+ul.points li{padding:7px 0 7px 2px;border-bottom:1px dashed var(--line)}
+ul.points li:last-child{border-bottom:none}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:480px}
+th{background:var(--ip-blue);color:#fff;padding:8px;text-align:left;font-size:12.5px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAF9F5}
+td .en{font-size:.9em}
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.fbox{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 14px;text-align:center;max-width:440px;width:100%;font-size:14px}
+.fbox.start{background:var(--ip-blue);color:#fff;border-color:var(--ip-blue)}
+.fbox.start .en{color:#cfd9ea}
+.fbox.warn{border-color:var(--vimp);background:#FDECEE}
+.fbox.ok{border-color:var(--quick);background:#E7F5EC}
+.farrow{color:var(--ip-red);font-size:22px;line-height:1;padding:3px 0;font-weight:800}
+.farrow small{display:block;font-size:11px;color:var(--muted);font-weight:600;font-style:italic}
+
+.dtree .branch{display:flex;gap:8px;margin:6px 0}
+.dtree .branch>div{flex:1;border-radius:10px;padding:8px;font-size:13px;text-align:center}
+.dtree .yes{background:#E7F5EC;border:2px solid var(--quick)}
+.dtree .no{background:#FDECEE;border:2px solid var(--vimp)}
+
+.mindmap{position:relative;padding:8px 0}
+.mm-center{background:var(--ip-red);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:800;margin-bottom:12px;box-shadow:0 3px 10px rgba(200,16,46,.35)}
+.mm-center .en{color:#ffd9de;font-weight:500}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mm-node{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px;font-size:12.5px;text-align:center}
+.mm-node b{color:var(--ip-red);display:block;font-size:14px}
+
+.timeline{border-left:3px solid var(--ip-gold);margin:10px 0 10px 10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-gold)}
+.tl-item .when{font-weight:800;color:var(--ip-red);font-size:13.5px}
+
+.examq{background:#FFF8E8;border:1.5px dashed var(--ip-gold);border-radius:10px;padding:9px 12px;margin:8px 0;font-size:13.5px}
+.examq::before{content:"📝 संभावित प्रश्न / Probable Question";display:block;font-weight:800;color:#8a6400;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px}
+
+.mnemo{background:linear-gradient(135deg,#EEF3FB,#E4EBF7);border:1.5px solid var(--ip-blue);border-radius:12px;padding:11px 13px;margin:8px 0}
+.mnemo .key{font-size:17px;font-weight:800;color:var(--ip-red);letter-spacing:1px}
+
+.rev-sheet{background:#fff;border:3px solid var(--ip-red);border-radius:16px;padding:14px;margin:12px 0}
+.rev-sheet h3{background:var(--ip-red);color:#fff;border-radius:8px;padding:6px 10px;font-size:15px;margin:-2px -2px 10px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+.rev-cell{background:#FAF9F5;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.8px}
+.rev-cell b{color:var(--ip-blue)}
+.rev-cell .num{color:var(--ip-red);font-weight:800}
+
+.footer-note{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media print{nav.chips{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">IP EXAM PORTAL • PAPER I</span>
+  <h1>डाक मैनुअल भाग VII — दृश्य इन्फोग्राफिक
+    <span class="en">Postal Manual Volume VII — Visual Infographic</span>
+  </h1>
+  <div class="sub">रेल डाक सेवा (RMS) — <b>9वाँ संस्करण</b> • 8 अध्याय • नियम 1–161</div>
+</header>
+<div class="wrap">
+
+<div class="legend">
+  <span class="lg-r">🔴 परीक्षा हेतु अति महत्वपूर्ण / Very Important</span>
+  <span class="lg-o">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="lg-y">🟡 अवधारणा / Conceptual</span>
+  <span class="lg-g">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+
+<nav class="chips">
+  <a href="#overview">परिचय</a>
+  <a href="#ch1">Ch 1 Misc</a>
+  <a href="#ch2">Ch 2 Transit Gen</a>
+  <a href="#ch3">Ch 3 Sorting MO</a>
+  <a href="#ch4">Ch 4 Transit</a>
+  <a href="#ch5">Ch 5 Record Off.</a>
+  <a href="#ch6">Ch 6 Mailmen</a>
+  <a href="#ch7">🔴 Ch 7 Mail Ops</a>
+  <a href="#ch8">Ch 8 Bag A/c</a>
+  <a href="#master">Master Numbers</a>
+  <a href="#mnemo">Mnemonics</a>
+  <a href="#rev">One-Page Revision</a>
+  <a href="#lastday">Last Day Notes</a>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="ch" id="overview">
+  <div class="ch-head">
+    <div class="ch-num blue">📘</div>
+    <div class="ch-title">
+      <h2>विषय एवं परिभाषा <span class="en">Topic & Definition</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 डाक मैनुअल भाग VII क्या है? <span class="en">What is Postal Manual Volume VII?</span></h3>
+    <span class="hi">यह <u>रेल डाक सेवा (Railway Mail Service — RMS)</u> के परिचालन नियमों की पुस्तिका है — डाक की छँटाई, पारगमन, प्रेषण व थैला-लेखांकन से संबंधित। 9वाँ संस्करण।</span>
+    <span class="en">This is the rule-book for Railway Mail Service (RMS) operations — sorting, transit, dispatch of mail & bag accounting. Ninth Edition.</span>
+    <div class="examq">
+      <span class="hi">प्रश्न: डाक मैनुअल भाग VII किस सेवा से संबंधित है? → रेल डाक सेवा (RMS)</span>
+      <span class="en">Q: Postal Manual Volume VII relates to which service? → Railway Mail Service (RMS)</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 मानसिक मानचित्र — 8 अध्याय <span class="en">Mind Map — 8 Chapters</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">डाक मैनुअल भाग VII<span class="en">Railway Mail Service • Rules 1–161</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>Ch 1</b>विविध नियम<br><i>Miscellaneous Rules</i><br>R. 1–19</div>
+        <div class="mm-node"><b>Ch 2</b>सामान्य नियम — पारगमन<br><i>General Rules — Transit</i><br>R. 20–46</div>
+        <div class="mm-node"><b>Ch 3</b>छँटाई डाक कार्यालय<br><i>Sorting Mail Offices</i><br>R. 47–104</div>
+        <div class="mm-node"><b>Ch 4</b>पारगमन अनुभाग<br><i>Transit Sections/Offices</i><br>R. 105–115A</div>
+        <div class="mm-node"><b>Ch 5</b>रिकॉर्ड कार्यालय<br><i>Record Offices</i><br>R. 116–146A</div>
+        <div class="mm-node"><b>Ch 6</b>मेलमैन व वैन परिचर<br><i>Mailmen & Van Attendants</i><br>R. 147–152</div>
+        <div class="mm-node"><b>Ch 7</b>मेल परिचालन ⭐<br><i>Mail Operations</i><br>R. 153–160</div>
+        <div class="mm-node"><b>Ch 8</b>थैला-लेखांकन<br><i>Bag Accounting</i><br>R. 161</div>
+      </div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: भाग VII में कुल कितने अध्याय हैं (परिशिष्ट छोड़कर)? → 8 अध्याय</span>
+      <span class="en">Q: How many chapters in Vol. VII (excluding appendices)? → 8 chapters</span>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER 1 ================= -->
+<section class="ch" id="ch1">
+  <div class="ch-head">
+    <div class="ch-num">1</div>
+    <div class="ch-title">
+      <h2>विविध नियम <span class="en">Miscellaneous Rules</span></h2>
+      <span class="rules">नियम / Rules 1–19</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 1 — सेट के विभाग (सर्वाधिक पूछा गया!) <span class="en">Rule 1 — Departments of a Set (Most Asked!)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>विभाग / Department</th><th>प्रभारी अधिकारी / Official In-Charge</th></tr>
+      <tr><td><span class="hi">डाक विभाग</span><span class="en">Mail Department</span></td><td class="hi">प्रधान छँटाई सहायक (Head Sorting Assistant)</td></tr>
+      <tr><td><span class="hi">छँटाई विभाग</span><span class="en">Sorting Department</span></td><td class="hi">छँटाई सहायक (Sorting Assistant)</td></tr>
+      <tr><td><span class="hi">पंजीकरण विभाग</span><span class="en">Registration Department</span></td><td class="hi">पंजीकरण छँटाई सहायक</td></tr>
+      <tr><td><span class="hi">पार्सल विभाग</span><span class="en">Parcel Department</span></td><td class="hi">पार्सल छँटाई सहायक</td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟠 <span class="hi">यदि छँटाई सहायकों की संख्या विभागों से कम है — एक सहायक को <b>2+ विभाग</b> सौंपे जा सकते हैं</span>
+          <span class="en">If Sorting Assistants fewer than departments — duties of 2+ departments assigned to one Assistant</span></li>
+      <li>🟢 <span class="hi">केवल 2 छँटाई सहायकों वाले सेट में — प्रधान छँटाई सहायक स्वयं + छँटाई कार्य करे; दूसरा सहायक पंजीकरण+पार्सल दोनों संभाले</span>
+          <span class="en">In sets with only 2 Sorting Assistants — Head SA does sorting dept too; other SA handles both registration & parcel</span></li>
+      <li>🟡 <span class="hi">नोट: अब ट्रेनों में छँटाई कार्य नहीं होता (आधुनिकीकरण के बाद)</span>
+          <span class="en">NOTE: Sorting work is no longer performed in trains</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: छँटाई डाक कार्यालय के सेट में कितने विभाग होते हैं? → 4 (डाक, छँटाई, पंजीकरण, पार्सल) — नियम 1</span>
+      <span class="en">Q: How many departments in a Sorting Mail Office set? → 4 (Mail, Sorting, Registration, Parcel)</span>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 2 — देर से डाक-पेटी में डालना <span class="en">Rule 2 — Late Posting in Van Letter-Boxes</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="hi">ट्रेन लेटर-बॉक्स में डाली गई अपंजीकृत वस्तुएँ — सामान्य डाक-शुल्क के अतिरिक्त <b>विलंब शुल्क (Late Fee)</b> देना अनिवार्य</span>
+          <span class="en">Unregistered articles in train letter-boxes — prepayment of Late Fee in addition to postage</span></li>
+      <li>🟢 <span class="hi">बिना विलंब-शुल्क वाली वस्तुओं पर <b>'Detained Late Fee not paid'</b> मुहर — पोस्टकार्ड को छोड़कर सभी पर</span>
+          <span class="en">'Detained Late Fee not paid' stamp on all except postcards without prepaid late fee</span></li>
+      <li>🔴 <span class="hi">RMS सेक्शन द्वारा <b>हाथ से कोई वस्तु प्राप्त नहीं</b> की जाएगी — अपवाद: बिना लेटर-बॉक्स वाले वैन/बड़े पत्र-पैकेट</span>
+          <span class="en">NO article should be received by hand by RMS section — exception: vans without letter-boxes/large packets</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 14 — धातु टोकन <span class="en">Rule 14 — Metal Tokens</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">पर्यवेक्षण अधिकारियों को छोड़कर सभी RMS अधिकारी जो मेल वैन/आरक्षित डिब्बे में यात्रा करें या प्लेटफ़ॉर्म में प्रवेश करें — <b>धातु टोकन अनिवार्य</b>, माँगने पर रेलवे गार्ड/टिकट परीक्षक को दिखाना होगा</span>
+          <span class="en">All RMS officials (except Supervising Officers) travelling in mail van/reserved compartment or entering platform must carry a metal token — shown on demand to Railway Guards/ticket examiners</span></li>
+      <li>🟢 <span class="hi">टोकन सरकारी संपत्ति; स्टॉक डिपो से HRO को आपूर्ति; प्रभाग व क्रम-संख्या अंकित</span>
+          <span class="en">Tokens are Government property; supplied from stock depot to HRO; bear Division name & serial number</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: कौन-से अधिकारी धातु टोकन ले जाने से मुक्त हैं? → पर्यवेक्षण अधिकारी (Supervising Officers) — नियम 14</span>
+      <span class="en">Q: Who is exempt from carrying a metal token? → Supervising Officers</span>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER 2 ================= -->
+<section class="ch" id="ch2">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>सामान्य नियम — पारगमन अनुभाग व डाक कार्यालय <span class="en">General Rules — Transit Sections & Mail Offices</span></h2>
+      <span class="rules">नियम / Rules 20–46</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 20 — मुहरें व सील <span class="en">Rule 20 — Stamps & Seals</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="hi">प्रत्येक सेट को 4 मुहरें: <b>तिथि-मुहर, नाम-मुहर, तिथि-सील, "Detained Late Fee Not Paid" मुहर</b></span>
+          <span class="en">Each set supplied with: date stamp, name stamp, date-seal, 'Detained Late Fee Not Paid' stamp</span></li>
+      <li>🔴 <span class="hi"><b>बीमा सील</b> — ताला-चाबी वाले बक्से में; सदैव <b>प्रधान छँटाई सहायक की व्यक्तिगत अभिरक्षा</b> में, जो इसकी सुरक्षा हेतु उत्तरदायी</span>
+          <span class="en">Insurance seal in a locked box — always in personal custody of Head Sorting Assistant, who is responsible for its safe custody</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 21 — पुस्तकें (महत्वपूर्ण संख्याएँ!) <span class="en">Rule 21 — Important Books</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>आदेश-पुस्तिका (Order Book)</b> में <b>200 पृष्ठ</b> होते हैं; <b>मार्गदर्शन-पुस्तिका (Guidance Book)</b> में <b>100 पृष्ठ</b> होते हैं</span>
+          <span class="en">Order Book has 200 pages; Guidance Book has 100 pages</span></li>
+      <li>🔴 <span class="hi">किसी भी पुस्तक से कोई भी पृष्ठ फाड़ना या हटाना गंभीर अपराध है, जिसके लिए कर्मचारी को <b>બર્ખાસ્ત (Dismiss)</b> કરવામાં આવી શકે છે</span>
+          <span class="en">Tearing or removing any page from books is a serious offence, employee may be dismissed</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 અન્ય મહત્વપૂર્ણ નિયમો <span class="en">Other Important Rules</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="rule-tag">R.30</span> <span class="hi">કામકાજના કાગળોની (Work papers) તૈયારી અને તેની કાળજીપૂર્વક ચકાસણી</span> <span class="en">Preparation and careful examination of work papers</span></li>
+      <li>🟠 <span class="rule-tag">R.31</span> <span class="hi">રેલવે સત્તાધિકારીઓ સાથેનો પત્રવ્યવહાર અને રેકોર્ડ મેન્ટેનન્સ</span> <span class="en">Correspondence with railway authorities and records maintenance</span></li>
+      <li>🟢 <span class="rule-tag">R.32</span> <span class="hi">મેલ બેગ અને રજિસ્ટર્ડ બેગને યોગ્ય સીલિંગ સાથે સુરક્ષિત રાખવી</span> <span class="en">Securing mail bags and registered bags with proper sealing</span></li>
+    </ul>
+  </div>
+</section>
+<!-- ================= CHAPTER 3, 4 & 5 ================= -->
+<section class="ch" id="ch3">
+  <div class="ch-head">
+    <div class="ch-num blue">3-5</div>
+    <div class="ch-title">
+      <h2>छँटाई कार्यालय, पारगमन अनुभाग व रिकॉर्ड कार्यालय <span class="en">Sorting, Transit Sections & Record Offices</span></h2>
+      <span class="rules">नियम / Rules 47–146A</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 મુખ્ય કાર્ય પદ્ધતિ <span class="en">Main Working Procedures</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>છંઠાઈ સહાયક (Sorting Assistant)</b> દરેક મેલ બેગ ખોલીને તેની અંદરની વસ્તુઓનું યોગ્ય વર્ગીકરણ કરે છે</span>
+          <span class="en">Sorting Assistant opens mail bags and classifies items properly</span></li>
+      <li>🟠 <span class="hi"><b>મેલ ગાર્ડ (Mail Guard) / એજન્ટ</b> ટ્રાન્ઝિટ સેક્શનમાં બંધ ટપાલની સુરક્ષિત હેરફેર માટે જવાબદાર છે</span>
+          <span class="en">Mail Guard / Agent is responsible for safe transit of closed mails in transit sections</span></li>
+      <li>🟢 <span class="hi"><b>રેકોર્ડ ઓફિસર (Record Officer)</b> રેકોર્ડ ઓફિસ સાથે જોડાયેલા સ્ટાફની હાજરી અને કાગળોનું સંચાલન કરે છે</span>
+          <span class="en">Record Officer manages attendance and work papers of staff attached to Record Office</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: ટ્રાન્ઝિટ મેલ ઓફિસમાં બેગની સામગ્રી સાથે કોને કોઈ લેવાદેવા નથી? → મેલ ગાર્ડ (નિયમ 105)</span>
+      <span class="en">Q: Who has nothing to do with the contents of bags in a Transit Mail Office? → Mail Guard</span>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER 6 & 7 ================= -->
+<section class="ch" id="ch6">
+  <div class="ch-head">
+    <div class="ch-num">6-7</div>
+    <div class="ch-title">
+      <h2>मेलमैन व मेल परिचालन मानदंड <span class="en">Mailmen & Mail Operations Norms</span></h2>
+      <span class="rules">नियम / Rules 147–153</span>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 मेलमैन बनाम वैन परिचर <span class="en">Mailman vs Van Attendant</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>भूमिका / Role</th><th>नियम / Rules</th><th>मुख्य कार्य / Main Duty</th></tr>
+      <tr><td><span class="hi"><b>मेलमैन</b></span><span class="en">Mailman</span></td><td>147–149</td>
+          <td><span class="hi">રેકોર્ડ ઓફિસ અને વેન વચ્ચે કાગળો અને થેલા લઈ જવા, હેન્ડ-ટ્રકની સંભાળ રાખવી</span><span class="en">Carries articles between Record Office & van; attends to hand-trucks</span></td></tr>
+      <tr><td><span class="hi"><b>वैन परिचर</b></span><span class="en">Van Attendant</span></td><td>150–152</td>
+          <td><span class="hi">વસ્તુઓ પર સ્ટેમ્પ મારવો, થેલા બાંધવા અને સીલ કરવા, સામાન્ય સહાયતા કરવી</span><span class="en">Stamping articles, tying/sealing bags, general assistance</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 153 — दो स्तंभ: गति व मितव्ययिता <span class="en">Rule 153 — Twin Pillars: Speed & Economy</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">મેલ ઓપરેશન <b>ગતિ (Speed)</b> અને <b>કરકસર (Economy)</b> બંને સ્તંભો પર આધારિત છે</span>
+          <span class="en">Mail operations rest on twin pillars of Speed & Economy</span></li>
+    </ul>
+    <div class="tbl-wrap"><table>
+      <tr><th>मापदंड / Metric</th><th>मानक मूल्य / Standard Value</th></tr>
+      <tr><td><span class="hi">छँटाई की गति</span><span class="en">Sorting speed</span></td><td class="hi"><b>1,000 वस्तु/घंटा</b></td></tr>
+      <tr><td><span class="hi">स्वीकार्य अंतिम-उत्पाद (end product)</span><span class="en">Acceptable end product</span></td><td class="hi"><b>600</b></td></tr>
+      <tr><td><span class="hi">एक कार्यालय में हैंडलिंग दर</span><span class="en">Handling rate within one office</span></td><td class="hi"><b>1.6 प्रति वस्तु से अधिक नहीं</b></td></tr>
+      <tr><td><span class="hi">पूरे सिस्टम में अधिकतम हैंडलिंग दर</span><span class="en">Max handling rate in whole system</span></td><td class="hi"><b>1.8 प्रति वस्तु</b></td></tr>
+      <tr><td><span class="hi">वस्तु की अधिकतम पुनः-हैंडलिंग संख्या</span><span class="en">Max rehandlings of an article</span></td><td class="hi"><b>3 बार</b> (Station→TD→District→Circle)</td></tr>
+      <tr><td><span class="hi">प्रारंभिक टेबल से सीधे निपटान</span><span class="en">Direct disposal from preliminary table</span></td><td class="hi">कम-से-कम <b>40%</b></td></tr>
+    </table></div>
+  </div>
+</section>
+  <div class="card t-o">
+    <h3>🟠 नियम 154 — मैनुअल छँटाई मानदंड <span class="en">Rule 154 — Manual Sorting Norms</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>डाक-मात्रा / Mail Quantum</th><th>छँटाई व्यवस्था / Sorting Arrangement</th></tr>
+      <tr><td class="hi"><b>6,000 से अधिक</b></td><td><span class="hi">पूर्ण छँटाई-केस, विस्तृत छँटाई</span><span class="en">Full sorting case, detailed sorting</span></td></tr>
+      <tr><td class="hi"><b>3,000–6,000</b></td><td><span class="hi">आधी विस्तृत टेबल, 30-40 सलेक्शन</span><span class="en">Half detailed table, 30-40 selections</span></td></tr>
+      <tr><td class="hi"><b>500–3,000</b></td><td><span class="hi">अनुपातिक रूप से कम सलेक्शन</span><span class="en">Correspondingly fewer selections</span></td></tr>
+      <tr><td class="hi"><b>500 से कम</b></td><td><span class="hi">कोई विस्तृत छँटाई नहीं (जब तक क्षेत्र-विशेष सांद्रण न हो)</span><span class="en">No detailed sorting (unless area-concentrated)</span></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟢 <span class="hi">સલેક્શન છેલ્લા <b>2 વર્ષના</b> ટ્રાફિકના આંકડા પર આધારિત હોવા જોઈએ</span>
+          <span class="en">Selections based on actual traffic pattern of last 2 years</span></li>
+      <li>🟠 <span class="hi">પ્રાદેશિક રજિસ્ટર્ડ બંડલ (RB) — જ્યારે કોઈ રાજ્યના RLની સંખ્યા <b>10 કે તેથી વધુ</b> હોય ત્યારે જ બને</span>
+          <span class="en">Territorial RBs prepared when state's RLs are 10 or more</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 156 — थैले बंद करने की सांख्यिकीय सीमाएँ <span class="en">Rule 156 — Statistical Justification for Closing Bags</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>थैला प्रकार / Bag Type</th><th>न्यूनतम सीमा / Minimum Threshold</th></tr>
+      <tr><td><span class="hi">सतह L थैले</span><span class="en">Surface L bags</span></td><td class="hi"><b>50+ वस्तुएँ</b></td></tr>
+      <tr><td><span class="hi">सतह D थैले</span><span class="en">Surface D bags</span></td><td class="hi"><b>50+ वस्तुएँ, 6 पंजीकृत पत्र</b></td></tr>
+      <tr><td><span class="hi">एयर मेल PC</span><span class="en">Air Mail PC</span></td><td class="hi"><b>50–150 वस्तुएँ</b></td></tr>
+      <tr><td><span class="hi">एयर मेल थैले</span><span class="en">Air mail bags</span></td><td class="hi"><b>150+ वस्तुएँ</b></td></tr>
+    </table></div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 157 — गुणवत्ता जाँच: दौरा-आवृत्ति (तुलना चार्ट) <span class="en">Rule 157 — Quality Check: Visit Frequency (Comparison Chart)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>अधिकारी / Officer</th><th>दौरा-आवृत्ति / Visit Frequency</th></tr>
+      <tr><td><span class="hi">SSRM/SRM/ASRM — नगर प्रभाग</span><span class="en">City Division</span></td><td><span class="hi">सप्ताह में <b>3 बार</b>; हर नाइट सेट <b>पखवाड़े में 1 बार</b>; 1 डाकघर/सप्ताह</span></td></tr>
+      <tr><td><span class="hi">SSRM/SRM/ASRM — गैर-नगर प्रभाग</span><span class="en">Non-city Division</span></td><td><span class="hi">मुख्यालय — <b>सप्ताह में 1 बार</b>; बाहर <b>3 कार्यालय/माह</b></span></td></tr>
+      <tr><td><span class="hi">SRM (छँटाई)</span><span class="en">SRM (Sorting)</span></td><td><span class="hi"><b>प्रतिदिन</b> एक सेट; नाइट सेट <b>2 बार/सप्ताह</b></span></td></tr>
+      <tr><td><span class="hi">उप-प्रभागीय IRM</span><span class="en">Sub-Divisional IRM</span></td><td><span class="hi">मुख्यालय — <b>सप्ताह में 1 बार</b>; सभी कार्यालय — <b>माह में 1 बार</b></span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 157(3) — जमा-रजिस्टर व वृद्धि सूचना श्रृंखला (અતિ મહત્વપૂર્ણ!) <span class="en">Rule 157(3) — Deposits Register & Escalation Chain (Critical!)</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">सेट-टू-सेट स्थानांतरण में वस्तुएँ कितने समय से लंबित?</span><span class="en">How long has set-to-set transfer been pending?</span></div>
+      <div class="farrow">↓<small>24 घंटे से अधिक / Exceeds 24 hours</small></div>
+      <div class="fbox"><span class="hi">प्रभागीय अधीक्षक को सूचित करें</span><span class="en">Notify Divisional Superintendent</span></div>
+      <div class="farrow">↓<small>48 घंटे से अधिक / Exceeds 48 hours</small></div>
+      <div class="fbox warn"><span class="hi">परिमंडल प्रमुख व PMG (मेल प्रबंधन) को सूचित करें</span><span class="en">Notify Heads of Circle & PMG (Mail Management)</span></div>
+      <div class="farrow">↓<small>72 घंटे से अधिक / Exceeds 72 hours</small></div>
+      <div class="fbox" style="border-color:var(--vimp);background:#FDECEE"><span class="hi">महानिदेशक (डाक) को सूचित करें</span><span class="en">Notify Director-General (Posts)</span></div>
+    </div>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 नियम 157-A — नमूना सर्वेक्षण <span class="en">Rule 157-A — Sample Surveys</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>મેટ્રો મેલ સર્વેક્ષણ</b> — 6 મહાનગરોમાં <b>સપ્ટેમ્બર મહિનામાં</b> યોજાય છે અને કુલ ટપાલના <b>25%</b> નો અભ્યાસ કરવામાં આવે છે</span>
+          <span class="en">Metro Mail Survey — conducted in SEPTEMBER across 6 metros, studying 25% of total mail</span></li>
+      <li>🟢 <span class="hi"><b>અખિલ ભારતીય મેલ સર્વેક્ષણ</b> — દરેક ડિવિઝનમાં <b>1 પસંદ કરેલી પોસ્ટ ઓફિસ</b> દ્વારા કરવામાં આવે છે</span>
+          <span class="en">All India Mail Survey — conducted via 1 selected PO per Division</span></li>
+    </ul>
+  </div>
+</section>
+<!-- ================= CHAPTER 8: BAG ACCOUNTING ================= -->
+<section class="ch" id="ch8">
+  <div class="ch-head">
+    <div class="ch-num">8</div>
+    <div class="ch-title">
+      <h2>थैला-लेखांकन <span class="en">Bag Accounting</span></h2>
+      <span class="rules">नियम / Rule 161</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 161 — नई थैला-लेखांकन प्रणाली <span class="en">Rule 161 — New Bag Accounting System</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">નવી સિસ્ટમ <b>1-7-1971</b> થી લાગુ થઈ — શરૂઆતમાં માત્ર <b>વાદળી એરમેલ થેલા</b> માટે હતી, પછી <b>બધા થેલા</b> માટે વિસ્તૃત કરાઈ</span>
+          <span class="en">New system effective from 1-7-1971 — initially for BLUE AIRMAIL bags only, later extended to ALL bags</span></li>
+      <li>🟠 <span class="hi">ઉદ્દેશ્ય: ખાલી થેલાની હેરફેર ઘટાડવી, સ્ટોક જાળવવો અને દુરુપયોગ રોકવો</span>
+          <span class="en">Objects: minimize circulation of empty bags, maintain stock & prevent misuse</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 थैला कार्यालयों की पदानुक्रम — मानचित्र <span class="en">Bag Office Hierarchy — Mind Map</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">थैला कार्यालय पदानुक्रम<span class="en">Bag Office Hierarchy (All India Pool)</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>UBO</b>इकाई थैला कार्यालय<br><i>Unit Bag Office</i><br>सभी DO/RMS Record Off.</div>
+        <div class="mm-node"><b>DBO</b>जिला थैला कार्यालय<br><i>District Bag Office</i><br>सामान्यतः RMS Record Office</div>
+        <div class="mm-node"><b>CBO</b>परिमंडल थैला कार्यालय<br><i>Circle Bag Office</i><br>परिमंडल मुख्यालय का Postal Stores Depot</div>
+        <div class="mm-node"><b>केंद्रीय</b>केंद्रीय थैला कार्यालय<br><i>Central Bag Office</i><br>डाक निदेशालय 'D' अनुभाग — कोई स्टॉक नहीं रखता</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 रिपोर्टिंग-आवृत्ति — समय-रेखा <span class="en">Reporting Frequency — Timeline</span></h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="when">दैनिक / Daily</div>
+        <span class="hi">प्रत्येक UBO → अपने DBO को थैला-शेष विवरणी</span>
+        <span class="en">Each UBO submits daily bag balance report to its DBO</span></div>
+      <div class="tl-item"><div class="when">साप्ताहिक / Weekly</div>
+        <span class="hi">प्रत्येक DBO → CBO को थैला-शेष विवरणी</span>
+        <span class="en">Each DBO submits weekly bag balance report to CBO</span></div>
+      <div class="tl-item"><div class="when">मासिक / Monthly</div>
+        <span class="hi">प्रत्येक CBO → डाक निदेशालय ('D' अनुभाग) को विवरणी</span>
+        <span class="en">Each CBO submits report to Postal Directorate ('D' Section)</span></div>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 डे बैग बुक <span class="en">Day Bag Book</span></h3>
+    <ul class="points">
+      <li><span class="hi">દરેક થેલા ઓફિસે કેનવાસ અને વાદળી એરમેલ થેલા માટે <b>અલગ-અલગ</b> ડે બેગ બુક રાખવી પડે છે</span>
+          <span class="en">Each bag office maintains SEPARATE Day Bag Books for canvas & blue airmail bags</span></li>
+      <li>🟢 <span class="hi">DBO ને પોતાની બેવડી ભૂમિકા (UBO+DBO) માટે <b>માત્ર એક જ</b> ડે બેગ બુક રાખવાની જરૂર છે</span>
+          <span class="en">A DBO maintains ONLY ONE Day Bag Book for its dual role as UBO+DBO</span></li>
+    </ul>
+  </div>
+</section>
+<!-- ================= MASTER NUMBERS ================= -->
+<section class="ch" id="master">
+  <div class="ch-head">
+    <div class="ch-num">🔴</div>
+    <div class="ch-title">
+      <h2>मास्टर संख्या-चार्ट <span class="en">Master Numbers Chart</span></h2>
+      <span class="rules">सभी सीमाएँ, दरें व समय-सीमाएँ एक जगह / All Limits, Rates & Time Limits in One Place</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 मेल परिचालन के मानक (नियम 153–157) <span class="en">Mail Operations Standards (Rules 153–157)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>1,000/घंटा</b></td><td><span class="hi">अपेक्षित छँटाई गति</span></td></tr>
+      <tr><td class="hi"><b>600</b></td><td><span class="hi">स्वीकार्य अंतिम-उत्पाद</span></td></tr>
+      <tr><td class="hi"><b>1.6</b></td><td><span class="hi">एक कार्यालय में हैंडलिंग दर की सीमा</span></td></tr>
+      <tr><td class="hi"><b>1.8</b></td><td><span class="hi">पूरे系统 में अधिकतम हैंडलिंग दर</span></td></tr>
+      <tr><td class="hi"><b>3 बार</b></td><td><span class="hi">अधिकतम पुनः-हैंडलिंग संख्या</span></td></tr>
+      <tr><td class="hi"><b>40%</b></td><td><span class="hi">प्रारंभिक टेबल से सीधे निपटान (न्यूनतम)</span></td></tr>
+      <tr><td class="hi"><b>6,000+/3,000-6,000/500-3,000/&lt;500</b></td><td><span class="hi">छँटाई-मात्रा स्तर (नियम 154)</span></td></tr>
+      <tr><td class="hi"><b>10+</b></td><td><span class="hi">क्षेत्रीय RB/MO बंडल हेतु न्यूनतम सीमा</span></td></tr>
+      <tr><td class="hi"><b>50+ / 50-150 / 150+</b></td><td><span class="hi">थैला-बंद सीमा — Surface/Air PC/Air Bags (नियम 156)</span></td></tr>
+      <tr><td class="hi"><b>24 / 48 / 72 घंटे</b></td><td><span class="hi">वृद्धि सूचना श्रृंखला — Div. Supdt./HoC+PMG/DG (नियम 157.3)</span></td></tr>
+      <tr><td class="hi"><b>25% / सितंबर</b></td><td><span class="hi">मेट्रो मेल सर्वेक्षण मात्रा व माह (नियम 157-A)</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 अन्य महत्वपूर्ण संख्याएँ <span class="en">Other Key Numbers</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>4</b></td><td><span class="hi">सेट के विभाग (डाक, छँटाई, पंजीकरण, पार्सल) — नियम 1</span></td></tr>
+      <tr><td class="hi"><b>200 / 100 पृष्ठ</b></td><td><span class="hi">आदेश-पुस्तिका / मार्गदर्शन-पुस्तिका पृष्ठ (नियम 21)</span></td></tr>
+      <tr><td class="hi"><b>1-7-1971</b></td><td><span class="hi">नई थैला-लेखांकन प्रणाली प्रभावी तिथि (नियम 161)</span></td></tr>
+      <tr><td class="hi"><b>दैनिक/साप्ताहिक/मासिक</b></td><td><span class="hi">UBO→DBO / DBO→CBO / CBO→निदेशालय रिपोर्टिंग (नियम 161.3)</span></td></tr>
+      <tr><td class="hi"><b>3 बार/सप्ताह</b></td><td><span class="hi">नगर प्रभाग SSRM/SRM/ASRM दौरा (नियम 157.1a)</span></td></tr>
+    </table></div>
+  </div>
+</section>
+<!-- ================= MNEMONICS ================= -->
+<section class="ch" id="mnemo">
+  <div class="ch-head">
+    <div class="ch-num blue">🧠</div>
+    <div class="ch-title">
+      <h2>स्मृति सूत्र व ट्रिक्स <span class="en">Memory Tricks & Mnemonics</span></h2>
+    </div>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"MSRP" — सेट के 4 विभाग</div>
+    <span class="hi"><b>M</b>ail → <b>S</b>orting → <b>R</b>egistration → <b>P</b>arcel — इसी क्रम में प्रभारी बदलते हैं (नियम 1)</span>
+    <span class="en">Mail → Sorting → Registration → Parcel — remember MSRP</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"200 आदेश, 100 मार्गदर्शन"</div>
+    <span class="hi">आदेश-पुस्तिका (Order Book) = <b>200</b> पृष्ठ (दोगुना); मार्गदर्शन-पुस्तिका (Guidance Book) = <b>100</b> पृष्ठ — पृष्ठ हटाना = बर्खास्तगी!</span>
+    <span class="en">Order Book 200, Guidance Book 100 — removing a page = dismissal!</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"1000÷600=1.6, +0.2=1.8"</div>
+    <span class="hi">छँटाई गति <b>1000</b>/घंटा ÷ अंतिम-उत्पाद <b>600</b> = कार्यालय हैंडलिंग दर <b>1.6</b>; पूरे सिस्टम की सीमा <b>1.8</b></span>
+    <span class="en">1000÷600=1.6 (office rate); system-wide max = 1.8</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"24-48-72 = Div-Circle-DG"</div>
+    <span class="hi">जमा-रजिस्टर वृद्धि: <b>24hr</b>→प्रभागीय अधीक्षक; <b>48hr</b>→परिमंडल प्रमुख+PMG; <b>72hr</b>→महानिदेशक — समय और अधिकारी बढ़ते जाते हैं!</span>
+    <span class="en">24hr→Divisional Supdt.; 48hr→HoC+PMG; 72hr→DG — escalation chain</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"U-D-C-केंद्र, दैनिक-साप्ताहिक-मासिक"</div>
+    <span class="hi"><b>U</b>BO→<b>D</b>BO (दैनिक) → <b>C</b>BO (साप्ताहिक) → केंद्रीय (मासिक) — जितना ऊपर जाओ, उतनी कम बार रिपोर्ट!</span>
+    <span class="en">UBO→DBO(daily)→CBO(weekly)→Central(monthly) — bag office hierarchy reports</span>
+  </div>
+</section>
+<!-- ================= ONE PAGE REVISION ================= -->
+<section class="ch" id="rev">
+  <div class="ch-head">
+    <div class="ch-num">📄</div>
+    <div class="ch-title">
+      <h2>एक-पृष्ठ पुनरावृत्ति शीट <span class="en">One-Page Revision Sheet</span></h2>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ भाग VII — 28 तथ्य, 3 मिनट में / Vol. VII — 28 Facts in 3 Minutes</h3>
+    <div class="rev-grid">
+      <div class="rev-cell"><b>विषय:</b> रेल डाक सेवा (RMS) — 8 अध्याय, नियम 1-161, 9वाँ संस्करण</div>
+      <div class="rev-cell"><b>R.1:</b> सेट के <span class="num">4</span> विभाग — Mail/Sorting/Registration/Parcel</div>
+      <div class="rev-cell"><b>R.2:</b> RMS सेक्शन हाथ से वस्तु <span class="num">प्राप्त नहीं</span> करेगा (अपवाद सहित)</div>
+      <div class="rev-cell"><b>R.14:</b> धातु टोकन अनिवार्य — <span class="num">पर्यवेक्षण अधिकारी मुक्त</span></div>
+      <div class="rev-cell"><b>R.20:</b> बीमा-सील — <span class="num">Head Sorting Asst.</span> की व्यक्तिगत अभिरक्षा</div>
+      <div class="rev-cell"><b>R.21:</b> Order Book <span class="num">200</span> पृष्ठ; Guidance Book <span class="num">100</span> पृष्ठ; पृष्ठ हटाना = दंड</div>
+      <div class="rev-cell"><b>Ch.3:</b> 4 भाग — Mail(47-66)/Sorting(67-79A)/Regn.(80-93A)/Parcel(94-104)</div>
+      <div class="rev-cell"><b>R.106A:</b> वैन-क्षति — मेल गार्ड <span class="num">लागत वहन</span> कर सकता है</div>
+      <div class="rev-cell"><b>R.116:</b> Record Officer प्राधिकार — <span class="num">केवल संलग्न स्टाफ</span> तक सीमित</div>
+      <div class="rev-cell"><b>Ch.6:</b> Mailman (147-149) vs Van Attendant (150-152)</div>
+      <div class="rev-cell"><b>R.153:</b> गति <span class="num">1000/hr</span>; end-product <span class="num">600</span>; हैंडलिंग <span class="num">1.6</span>/<span class="num">1.8</span></div>
+      <div class="rev-cell"><b>R.153:</b> अधि. पुनः-हैंडलिंग <span class="num">3</span> बार; प्रारंभिक निपटान <span class="num">40%+</span></div>
+      <div class="rev-cell"><b>R.154:</b> छँटाई मात्रा स्तर — <span class="num">6000/3000/500</span></div>
+      <div class="rev-cell"><b>R.154:</b> क्षेत्रीय RB/MO बंडल — <span class="num">10+</span> पर</div>
+      <div class="rev-cell"><b>R.156:</b> थैला-सीमा — Surface <span class="num">50+</span>; Air PC <span class="num">50-150</span>; Air Bag <span class="num">150+</span></div>
+      <div class="rev-cell"><b>R.157:</b> City Div. दौरा <span class="num">3/सप्ताह</span>; SRM(Sorting) <span class="num">दैनिक</span></div>
+      <div class="rev-cell"><b>R.157(3):</b> वृद्धि — <span class="num">24/48/72 घंटे</span> → Div/Circle+PMG/DG</div>
+      <div class="rev-cell"><b>R.157-A:</b> मेट्रो सर्वेक्षण — <span class="num">6 शहर, 25%, सितंबर</span></div>
+      <div class="rev-cell"><b>R.161:</b> बैग A/c प्रभावी <span class="num">1-7-1971</span> (नीला एयरमेल पहले)</div>
+      <div class="rev-cell"><b>R.161:</b> पदानुक्रम — <span class="num">UBO→DBO→CBO→केंद्रीय</span></div>
+      <div class="rev-cell"><b>R.161:</b> रिपोर्टिंग — <span class="num">दैनिक/साप्ताहिक/मासिक</span></div>
+      <div class="rev-cell"><b>केंद्रीय थैला कार्यालय:</b> डाक निदेशालय 'D' अनुभाग — <span class="num">कोई स्टॉक नहीं</span></div>
+      <div class="rev-cell"><b>Day Bag Book:</b> कैनवस/नीला अलग-अलग; DBO को <span class="num">केवल 1</span> पुस्तक</div>
+    </div>
+  </div>
+</section>
+<!-- ================= LAST DAY NOTES ================= -->
+<section class="ch" id="lastday">
+  <div class="ch-head">
+    <div class="ch-num">⏰</div>
+    <div class="ch-title">
+      <h2>अंतिम दिन की पुनरावृत्ति <span class="en">Last Day Revision Notes</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 5 सबसे अधिक पूछे जाने वाले जाल <span class="en">Top 5 Exam Traps</span></h3>
+    <ul class="points">
+      <li>⚠️ <span class="hi">कार्यालय हैंडलिंग दर <b>1.6</b> बनाम पूरे सिस्टम की <b>1.8</b> — ध्यान रखें!</span>
+          <span class="en">Office handling rate 1.6 vs system-wide 1.8 — don't confuse!</span></li>
+      <li>⚠️ <span class="hi">Surface D थैले में <b>दो शर्तें</b> हैं (50+ वस्तुएँ AND 6 पंजीकृत पत्र) जबकि Surface L में <b>केवल एक</b> (50+ वस्तुएँ)</span>
+          <span class="en">Surface D needs TWO conditions (50+ articles AND 6 regd letters); Surface L needs only ONE (50+)</span></li>
+      <li>⚠️ <span class="hi">केंद्रीय थैला कार्यालय (Central Bag Office) <b>कोई स्टॉक नहीं रखता</b> — यह केवल एक प्रशासनिक नियंत्रण है</span>
+          <span class="en">Central Bag Office keeps NO stock — it is an administrative control only</span></li>
+    </table></div>
+  </div>
+</section>
+
+<div class="footer-note">
+  📚 IP Exam Portal • डाक मैनुअल भाग VII — Railway Mail Service (Ch. 1–8, Rules 1–161, 9th Edition)<br>
+  🔴 अति महत्वपूर्ण | 🟠 बार-बार पूछा गया | 🟡 अवधारणा | 🟢 त्वरित पुनरावृत्ति • Offline-ready • No external dependencies
+</div>
+
+</div>
+</body>
+</html>

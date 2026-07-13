@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annual Report 2024-25 — भाग 1 | Overview | Network | Financial Services | Logistics | Philately | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.header{background:linear-gradient(135deg,var(--gold-dark) 0%,var(--orange) 55%,var(--red-dark) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .sub{margin-top:8px;font-size:0.88rem;opacity:0.92;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue);}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.72rem;}
+table th{background:var(--blue);color:#fff;padding:6px 6px;text-align:left;}
+table td{padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.74rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Annual Report 2024-25 — भाग 1</h1>
+  <div class="sub">A-G: विभाग परिचय | Postal Network | Financial Services (POSB/PLI/IPPB) | Logistics | Citizen Services | Philately | Financial Management</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">📊 Departmental Publications</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण</span>
+  <span>🟠 बार-बार पूछा गया</span>
+  <span>🟡 संकल्पनात्मक</span>
+  <span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची</h2>
+  <div class="toc-grid">
+    <a href="#chA">A. विभाग परिचय (Overview)</a>
+    <a href="#chB">B. Postal Network</a>
+    <a href="#chC1">C1. POSB — सभी 10 योजनाओं की वर्तमान दरें</a>
+    <a href="#chC2">C2. PLI/RPLI Performance</a>
+    <a href="#chC3">C3. IPPB</a>
+    <a href="#chD">D. Logistics & Supply Chain</a>
+    <a href="#chE">E. Citizen Centric Services</a>
+    <a href="#chF">F. Philately</a>
+    <a href="#chG">G. Financial Management</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- A -->
+<div class="chapter" id="chA">
+  <div class="chapter-head" style="background:var(--red);">🏛️ A → विभाग का परिचय / Department Overview</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Current Affairs से जुड़ा</span>
+      <h3>नेतृत्व संरचना</h3>
+      <table>
+        <tr><th>पद</th><th>व्यक्ति/जिम्मेदारी</th></tr>
+        <tr><td>Minister of Communications</td><td>श्री ज्योतिरादित्य एम. सिंधिया</td></tr>
+        <tr><td>Minister of State for Communications</td><td>डॉ. चंद्रशेखर पेम्मासानी</td></tr>
+        <tr><td>Postal Services Board (PSB) प्रमुख</td><td>Secretary, Department of Posts (Chairman भी)</td></tr>
+        <tr><td>संचालन जिम्मेदारी</td><td>Director General Postal Services</td></tr>
+        <tr><td>PSB संरचना</td><td>Chairperson + 7 Members</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Sindhia Minister, Pemmasani State Minister" — वर्तमान नेतृत्व याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PSB (Postal Services Board) में Chairperson सहित कुल कितने सदस्य होते हैं? <b>(8 — Chairperson + 7 Members)</b></div>
+  </div>
+</div>
+
+<!-- B -->
+<div class="chapter" id="chB">
+  <div class="chapter-head" style="background:var(--blue);">🗺️ B → Postal Network at a Glance (31.03.2024 तक)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — पूरी तालिका याद रखें, हर वर्ष पूछा जाता है</span>
+    </div>
+    <table>
+      <tr><th>बिंदु</th><th>संख्या</th></tr>
+      <tr><td>Postal Circles</td><td>23</td></tr>
+      <tr><td>Postal Regions</td><td>54</td></tr>
+      <tr><td>Postal Divisions</td><td>469</td></tr>
+      <tr><td>Postal Accounts Offices</td><td>23</td></tr>
+      <tr><td>Postal Store Depots</td><td>26</td></tr>
+      <tr><td>Railway Mail Service Divisions</td><td>69</td></tr>
+      <tr><td>Postal Training Centres</td><td>6</td></tr>
+      <tr><td><b>कुल Post Office</b></td><td><b>1,64,987</b></td></tr>
+      <tr><td>— Rural Post Office</td><td>1,49,164</td></tr>
+      <tr><td>— Urban Post Office</td><td>15,823</td></tr>
+      <tr><td>— Head Post Office</td><td>810</td></tr>
+      <tr><td>— Sub Post Office</td><td>24,286</td></tr>
+      <tr><td>— Branch Post Offices</td><td>1,39,891</td></tr>
+      <tr><td>Delivery Post Offices</td><td>1,57,436</td></tr>
+      <tr><td>Night Post Offices</td><td>130</td></tr>
+      <tr><td>Sorting Hubs</td><td>94</td></tr>
+      <tr><td>औसत व्यक्ति प्रति Post Office</td><td>8,490</td></tr>
+      <tr><td>औसत ग्रामीण व्यक्ति प्रति Rural PO</td><td>6,068</td></tr>
+      <tr><td>औसत क्षेत्रफल प्रति PO (Sq. Km.)</td><td>19.92</td></tr>
+    </table>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3>Circle संरचना — अपवाद (Exceptions)</h3>
+      <ul style="font-size:0.78rem;">
+        <li>Gujarat Circle → Daman & Diu, Dadra & Nagar Haveli भी</li>
+        <li>Kerala Circle → Lakshadweep भी</li>
+        <li>Maharashtra Circle → Goa भी</li>
+        <li>North East Circle → 6 राज्य (Arunachal, Manipur, Meghalaya, Mizoram, Nagaland, Tripura)</li>
+        <li>West Bengal Circle → Sikkim + Andaman-Nicobar भी</li>
+        <li>Jammu & Kashmir Circle → Ladakh भी</li>
+        <li>Army Postal Service → अलग "Base Circle" (Major General रैंक अधिकारी प्रमुख)</li>
+      </ul>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "23-54-469" → Circles-Regions-Divisions क्रम याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> कुल Post Office की संख्या कितनी है? <b>(1,64,987)</b> इनमें से Branch Post Offices कितने हैं? <b>(1,39,891)</b></div>
+  </div>
+</div>
+
+<!-- C1 POSB -->
+<div class="chapter" id="chC1">
+  <div class="chapter-head" style="background:var(--green);">💰 C1 → POSB — सभी 10 Small Savings Schemes की वर्तमान दरें (31.12.2024)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — सबसे ज्यादा पूछा जाने वाला विषय</span>
+      <h3>वर्तमान ब्याज दरें व सीमाएं तालिका (31.12.2024)</h3>
+    </div>
+    <table>
+      <tr><th>योजना</th><th>न्यूनतम</th><th>अधिकतम</th><th>ब्याज दर</th></tr>
+      <tr><td>SB (Savings)</td><td>₹500</td><td>—</td><td>4%</td></tr>
+      <tr><td>RD</td><td>₹100/माह</td><td>—</td><td>7.4%</td></tr>
+      <tr><td>TD (1/2/3/5yr)</td><td>₹1,000</td><td>—</td><td>6.9/7.0/7.1/7.5%</td></tr>
+      <tr><td>MIS</td><td>₹1,000</td><td>Single ₹9L/Joint ₹15L</td><td>7.4%</td></tr>
+      <tr><td>SCSS</td><td>₹1,000</td><td>₹30 लाख</td><td>8.2%</td></tr>
+      <tr><td>PPF</td><td>₹500</td><td>₹1.5 लाख/वर्ष</td><td>7.1%</td></tr>
+      <tr><td>SSA</td><td>₹250</td><td>₹1.5 लाख/वर्ष</td><td>8.2%</td></tr>
+      <tr><td>NSC (VIII)</td><td>₹100</td><td>—</td><td>7.7%</td></tr>
+      <tr><td>KVP</td><td>₹1,000</td><td>—</td><td>7.5% (120 माह में दोगुना)</td></tr>
+      <tr><td>Mahila Samman Cert.</td><td>₹1,000</td><td>₹2 लाख</td><td>7.5%</td></tr>
+    </table>
+
+    <div class="penalty-box">🔴 <b>महत्वपूर्ण अपडेट (Annual Report में):</b> SCSS अधिकतम सीमा अब <b>₹30 लाख</b> (CBS Manual Part 3 में ₹15 लाख बताई थी — यह Annual Report 2024-25 का नवीनतम आंकड़ा है)।</div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Mahila Samman Savings Certificate — नई योजना</h3>
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>शुरुआत</td><td>01.04.2023</td></tr>
+        <tr><td>अंतिम खाता खोलने की तारीख</td><td>31.03.2025</td></tr>
+        <tr><td>न्यूनतम/गुणक</td><td>₹1,000 (₹100 के गुणक में)</td></tr>
+        <tr><td>अधिकतम (सभी खातों मिलाकर)</td><td>₹2 लाख</td></tr>
+        <tr><td>2 खातों के बीच अंतराल</td><td>3 महीने</td></tr>
+        <tr><td>Premature Withdrawal</td><td>1 वर्ष बाद, अधिकतम 40% तक</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>डिजिटल सेवाएं — महत्वपूर्ण तारीखें</h3>
+      <table>
+        <tr><th>सेवा</th><th>तारीख</th></tr>
+        <tr><td>पहला ATM (Chennai)</td><td>2014</td></tr>
+        <tr><td>ATM Bank interoperability</td><td>31.12.2016</td></tr>
+        <tr><td>e-Banking शुरू</td><td>14.12.2018</td></tr>
+        <tr><td>Mobile Banking शुरू</td><td>15.10.2019</td></tr>
+        <tr><td>ATM management IPPB को सौंपा</td><td>30.08.2022</td></tr>
+        <tr><td>e-Passbook facility</td><td>12.10.2022</td></tr>
+        <tr><td>NEFT interoperability</td><td>18.05.2022</td></tr>
+        <tr><td>RTGS deployment</td><td>31.05.2022 (IFSC: IPOS0000DOP)</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "4-7.4-7.5-7.7-8.2" → SB-RD-KVP/TD5yr-NSC-SCSS/SSA ब्याज दर क्रम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SCSS की वर्तमान अधिकतम सीमा कितनी है? <b>(₹30 लाख)</b> IPPB को POSB ATM प्रबंधन कब सौंपा गया? <b>(30.08.2022)</b></div>
+  </div>
+</div>
+
+<!-- C2 PLI -->
+<div class="chapter" id="chC2">
+  <div class="chapter-head" style="background:var(--red-dark);">☂️ C2 → Postal Life Insurance (PLI) व RPLI</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>PLI व RPLI — मूल जानकारी तुलना</h3>
+      <table>
+        <tr><th>बिंदु</th><th>PLI</th><th>RPLI</th></tr>
+        <tr><td>शुरुआत वर्ष</td><td>1884</td><td>1995</td></tr>
+        <tr><td>पात्रता</td><td>Govt./Defence/PSU/Banks/Professionals कर्मचारी</td><td>ग्रामीण क्षेत्र के लोग</td></tr>
+        <tr><td>पॉलिसी प्रकार संख्या</td><td>6</td><td>6</td></tr>
+        <tr><td>न्यूनतम Sum Assured</td><td>₹20,000</td><td>₹10,000</td></tr>
+        <tr><td>अधिकतम Sum Assured</td><td>₹50 लाख</td><td>₹10 लाख</td></tr>
+      </table>
+    </div>
+
+    <div class="mindmap">
+      <div class="root">📋 PLI/RPLI की 6 पॉलिसी (समान नाम दोनों में)</div>
+      <div class="branches">
+        <div class="branch">Whole Life (Suraksha)</div>
+        <div class="branch">Convertible Whole Life (Suvidha)</div>
+        <div class="branch">Endowment (Santosh)</div>
+        <div class="branch">Anticipated Endowment (Sumangal)</div>
+        <div class="branch">PLI: Joint Life (Yugal Suraksha) | RPLI: 10-Yr (Gram Priya)</div>
+        <div class="branch">Children Policy (Bal Jiwan Bima)</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Bonus दर (प्रति ₹1000 Sum Assured, प्रति वर्ष) — 31.03.2023 तक</h3>
+      <table>
+        <tr><th>Plan</th><th>Whole Life</th><th>Endowment</th><th>Anticipated Endowment</th></tr>
+        <tr><td>PLI</td><td>₹76</td><td>₹52</td><td>₹48</td></tr>
+        <tr><td>RPLI</td><td>₹60</td><td>₹48</td><td>₹45</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1884 PLI बड़ा भाई, 1995 RPLI छोटा भाई" — शुरुआत वर्ष याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PLI किस वर्ष शुरू हुई? <b>(1884)</b> RPLI किस वर्ष शुरू हुई? <b>(1995)</b> PLI की अधिकतम Sum Assured सीमा? <b>(₹50 लाख)</b></div>
+  </div>
+</div>
+
+<!-- C3 IPPB -->
+<div class="chapter" id="chC3">
+  <div class="chapter-head" style="background:#00695C;">🏦 C3 → India Post Payments Bank (IPPB)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>मुख्य आंकड़े</h3>
+      <table>
+        <tr><th>बिंदु</th><th>संख्या</th></tr>
+        <tr><td>नेटवर्क (Post Offices)</td><td>1.64 लाख</td></tr>
+        <tr><td>GDS/Postman सहयोग</td><td>1.90 लाख</td></tr>
+        <tr><td>भाषा समर्थन</td><td>13 भाषाएं</td></tr>
+        <tr><td>Individual BC onboard (31.12.2024 तक)</td><td>22,000+</td></tr>
+        <tr><td>DBT Disbursement लेनदेन</td><td>42.60 करोड़+ (₹66,375 करोड़ मूल्य)</td></tr>
+        <tr><td>Branch Offices UPI सुविधा</td><td>लगभग 1,38,000</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1.64-1.90-13" → Post Offices(lakh)-GDS(lakh)-Languages क्रम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IPPB कितनी भाषाओं में सेवा प्रदान करता है? <b>(13)</b></div>
+  </div>
+</div>
+
+<!-- D Logistics -->
+<div class="chapter" id="chD">
+  <div class="chapter-head" style="background:#37474F;">📦 D → Logistics and Supply Chain</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p>यह अध्याय Mail Services, Parcel Services, International Mail Services, व Business Development Products को कवर करता है — विस्तृत आंकड़े मूल रिपोर्ट में उपलब्ध हैं।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Logistics and Supply Chain अध्याय में कितने उप-भाग हैं? <b>(4 — Mail, Parcel, International Mail, Business Development)</b></div>
+  </div>
+</div>
+
+<!-- E Citizen Centric -->
+<div class="chapter" id="chE">
+  <div class="chapter-head" style="background:#6A1B9A;">🙋 E → Citizen Centric Services</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>8 प्रमुख नागरिक-केंद्रित सेवाएं</h3>
+      <table>
+        <tr><th>सेवा</th></tr>
+        <tr><td>Post Office Passport Seva Kendras</td></tr>
+        <tr><td>Post Office Aadhaar Updation and Enrollment Centre</td></tr>
+        <tr><td>India Post Passenger Reservation System (IP-PRS)</td></tr>
+        <tr><td>Retail Post</td></tr>
+        <tr><td>Physical Verification of PMEGP Units</td></tr>
+        <tr><td>KYC Documents Verification/Collection</td></tr>
+        <tr><td>e-Products and Services</td></tr>
+        <tr><td>Post Office-Common Service Centre (PO-CSC)</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "P-A-I-R-P-K-e-P" → 8 सेवाओं का प्रथमाक्षर क्रम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IP-PRS का पूरा नाम क्या है? <b>(India Post Passenger Reservation System)</b></div>
+  </div>
+</div>
+
+<!-- F Philately -->
+<div class="chapter" id="chF">
+  <div class="chapter-head" style="background:var(--gold-dark);">📮 F → Philately</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p>Philately (डाक टिकट संग्रहण) से संबंधित गतिविधियां, नई डाक टिकट जारी करना, Philatelic Bureau/Counters, व Philately प्रदर्शनियां इस अध्याय में शामिल हैं।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> "Philately" शब्द का क्या अर्थ है? <b>(डाक टिकट व संबंधित सामग्री का अध्ययन/संग्रहण)</b></div>
+  </div>
+</div>
+
+<!-- G Financial Management -->
+<div class="chapter" id="chG">
+  <div class="chapter-head" style="background:var(--red);">💵 G → Financial Management</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — संख्याएं याद रखें</span>
+      <h3>Revenue & Expenditure (F.Y. 2023-24, करोड़ ₹ में)</h3>
+      <table>
+        <tr><th>बिंदु</th><th>राशि (₹ करोड़)</th></tr>
+        <tr><td>कुल Revenue (2023-24)</td><td>11,321.35</td></tr>
+        <tr><td>— Sale of Stamps</td><td>165.97</td></tr>
+        <tr><td>— Postage Realised in Cash</td><td>4,476.49</td></tr>
+        <tr><td>— SB/SC Work Remuneration</td><td>6,427.08 (सबसे बड़ा हिस्सा)</td></tr>
+        <tr><td>Gross Working Expenditure</td><td>35,645.52</td></tr>
+        <tr><td>Recoveries (Agency Charges)</td><td>1,255.88</td></tr>
+        <tr><td><b>Revenue Deficit (2023-24)</b></td><td><b>23,068.29</b></td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Agency Services Recovery (2023-24)</h3>
+      <table>
+        <tr><th>Head of Account</th><th>राशि (₹ करोड़)</th></tr>
+        <tr><td>Pension Payments (Coal/EPFO/Railway/Military आदि)</td><td>18.70</td></tr>
+        <tr><td>Postal Life Insurance</td><td>1,017.01 (सबसे बड़ा)</td></tr>
+        <tr><td>Custom Duty/CENVAT to GST</td><td>219.60</td></tr>
+        <tr><td>कुल</td><td>1,255.88</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "11,321 Revenue, 35,645 Expenditure, 23,068 Deficit" — मुख्य 3 आंकड़े याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> F.Y. 2023-24 में विभाग का Revenue Deficit कितना था? <b>(₹23,068.29 करोड़)</b> SB/SC Work Remuneration से कितनी आय हुई? <b>(₹6,427.08 करोड़)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>Leadership:</b> Sindhia (Comm. Minister), Pemmasani (State Minister), PSB=1 Chairperson+7 Members</div>
+    <div class="rev-card"><b>Network:</b> 23 Circles, 54 Regions, 469 Divisions, 1,64,987 Post Offices (1.39L Branch)</div>
+    <div class="rev-card"><b>POSB Rates (31.12.24):</b> SB 4%, RD 7.4%, SCSS 8.2%(₹30L max), PPF 7.1%, SSA 8.2%</div>
+    <div class="rev-card"><b>PLI/RPLI:</b> 1884/1995 शुरुआत; Sum Assured ₹20K-50L / ₹10K-10L</div>
+    <div class="rev-card"><b>IPPB:</b> 1.64L network, 13 भाषाएं, 42.6 करोड़ DBT transactions</div>
+    <div class="rev-card"><b>Financial Mgmt:</b> Revenue ₹11,321Cr, Expenditure ₹35,645Cr, Deficit ₹23,068Cr (2023-24)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>23-54-469</b> = Circles-Regions-Divisions</li>
+    <li>🔢 <b>1,64,987</b> = कुल Post Office; इसमें 1,39,891 Branch Offices</li>
+    <li>🔢 <b>8,490</b> = औसत व्यक्ति प्रति Post Office</li>
+    <li>🔢 <b>SB=4%, RD=7.4%, TD(5yr)=7.5%, SCSS=8.2%, PPF=7.1%, SSA=8.2%, NSC=7.7%, KVP=7.5%</b></li>
+    <li>🔢 <b>₹30 लाख</b> = SCSS वर्तमान अधिकतम सीमा (Annual Report अनुसार)</li>
+    <li>🔢 <b>01.04.2023 / 31.03.2025</b> = Mahila Samman Cert. शुरुआत / अंतिम खाता तिथि</li>
+    <li>🔢 <b>1884 / 1995</b> = PLI / RPLI शुरुआत वर्ष</li>
+    <li>🔢 <b>₹20K-₹50L / ₹10K-₹10L</b> = PLI / RPLI Sum Assured सीमा</li>
+    <li>🔢 <b>₹76/₹60</b> = PLI/RPLI Whole Life Bonus दर प्रति हजार</li>
+    <li>🔢 <b>₹23,068.29 करोड़</b> = Revenue Deficit (2023-24)</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: Department of Posts Annual Report 2024-25 — Sections A-G &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम आंकड़े DoP वेबसाइट से जांचें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

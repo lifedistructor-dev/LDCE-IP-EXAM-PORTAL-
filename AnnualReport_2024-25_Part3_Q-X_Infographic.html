@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annual Report 2024-25 — भाग 3 (अंतिम) | IT Modernization | HR | Staff Welfare | Legal | Audit | Awareness | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.header{background:linear-gradient(135deg,#00695C 0%,var(--blue) 55%,#6A1B9A 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .sub{margin-top:8px;font-size:0.88rem;opacity:0.92;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue);}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.72rem;}
+table th{background:var(--blue);color:#fff;padding:6px 6px;text-align:left;}
+table td{padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.74rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Annual Report 2024-25 — भाग 3 (अंतिम)</h1>
+  <div class="sub">Q-X: IT Modernization 2.0 | HR Management | Staff Welfare | Sports | Legal Matters | Internal Audit | Awareness & Outreach</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">🏁 Annual Report पूर्ण — भाग 3/3</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण</span>
+  <span>🟠 बार-बार पूछा गया</span>
+  <span>🟡 संकल्पनात्मक</span>
+  <span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची</h2>
+  <div class="toc-grid">
+    <a href="#chQ">Q. IT Modernization 2.0</a>
+    <a href="#chR">R. Human Resource Management</a>
+    <a href="#chS">S. Staff Welfare</a>
+    <a href="#chT">T. Sports and Cultural Activities</a>
+    <a href="#chU">U. Legal Matters</a>
+    <a href="#chV">V. Internal Audit Mechanism</a>
+    <a href="#chW">W. Awareness and Outreach</a>
+    <a href="#chX">X. Miscellaneous Statistical Tables</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- Q -->
+<div class="chapter" id="chQ">
+  <div class="chapter-head" style="background:var(--red);">💻 Q → IT Modernization 2.0</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — बजट व मंजूरी तारीख याद रखें</span>
+      <h3>IT 2.0 — मूल जानकारी</h3>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>Cabinet मंजूरी तारीख</td><td>01.02.2022</td></tr>
+        <tr><td>कुल बजट (Outlay)</td><td>₹5,785 करोड़</td></tr>
+        <tr><td>अवधि</td><td>8 वर्ष (2022-23 से 2029-30)</td></tr>
+        <tr><td>IT 1.0 में क्या हुआ</td><td>सभी Post Offices का Computerization + CBS + CIS शुरू</td></tr>
+        <tr><td>ग्रामीण उपकरण</td><td>DARPAN devices (Branch Post Offices के लिए)</td></tr>
+        <tr><td>Field Infra Hardware (IT 2.0)</td><td>2,16,706 units (desktop, printer, biometric आदि)</td></tr>
+        <tr><td>Field Infra खर्च (2023-24)</td><td>₹140.79 करोड़</td></tr>
+        <tr><td>Enterprise Network Management</td><td>BSNL को सौंपा गया</td></tr>
+        <tr><td>In-house विकास</td><td>CEPT (Centre of Excellence in Postal Technology)</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1.2.2022 Cabinet, 5785 Cr, 8 साल" — IT 2.0 का सार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> IT Modernization Project 2.0 को Cabinet ने कब मंजूरी दी? <b>(01.02.2022)</b> कुल बजट कितना है? <b>(₹5,785 करोड़, 8 वर्ष के लिए)</b> DARPAN 2.0 किन कार्यालयों में लागू है? <b>(सभी Branch Post Offices)</b></div>
+  </div>
+</div>
+
+<!-- R -->
+<div class="chapter" id="chR">
+  <div class="chapter-head" style="background:var(--blue);">👥 R → Human Resource Management</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+      <h3>कुल कर्मचारी संख्या (31.03.2024 तक)</h3>
+      <table>
+        <tr><th>श्रेणी</th><th>संख्या</th></tr>
+        <tr><td><b>कुल कर्मचारी</b></td><td><b>4,57,997</b></td></tr>
+        <tr><td>— Departmental Employees</td><td>1,90,161</td></tr>
+        <tr><td>— Gramin Dak Sevaks (GDS)</td><td>2,67,836</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>सेवा वर्गीकरण</h3>
+      <table>
+        <tr><th>सेवा वर्ग</th><th>प्रमुख उदाहरण</th></tr>
+        <tr><td>Indian Postal Service (IPoS) Group 'A'</td><td>Secretary, DG Postal Services, Member(PSB)</td></tr>
+        <tr><td>Postal Service Group 'B'</td><td>Assistant Superintendent</td></tr>
+        <tr><td>P&T Accounts & Finance Service</td><td>Accounts Officer</td></tr>
+        <tr><td>Central Secretariat Service</td><td>—</td></tr>
+        <tr><td>Civil Wing</td><td>Chief Engineer</td></tr>
+      </table>
+      <p style="font-size:0.72rem;">Gazetted staff Group A/B वर्गीकरण 2018-19 से लागू; Non-Gazetted staff में Group B, Group C (MTS सहित/रहित) शामिल।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "4.58 लाख कुल, 1.90 लाख Departmental, 2.68 लाख GDS" — HR संख्या याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> 31.03.2024 तक DoP में कुल कर्मचारी संख्या कितनी है? <b>(4,57,997)</b> इसमें GDS की संख्या कितनी है? <b>(2,67,836)</b></div>
+  </div>
+</div>
+
+<!-- S -->
+<div class="chapter" id="chS">
+  <div class="chapter-head" style="background:var(--green);">🤝 S → Staff Welfare</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>संरचना</h3>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>Postal Services Staff Welfare Board Chairperson</td><td>Minister of Communications</td></tr>
+        <tr><td>Circle Welfare Boards</td><td>23 (सभी Circles में)</td></tr>
+        <tr><td>निधि स्रोत</td><td>Consolidated Fund of India (Grants-in-aid)</td></tr>
+        <tr><td>Circle Welfare Fund for GDS शुरुआत</td><td>01.10.2013</td></tr>
+        <tr><td>GDS Scheme संशोधन</td><td>01.07.2024 से</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Educational Incentive (10वीं/12वीं टॉपर्स) — Circle Rank अनुसार</h3>
+      <table>
+        <tr><th>Rank</th><th>राशि</th></tr>
+        <tr><td>1st Position</td><td>₹6,000</td></tr>
+        <tr><td>2nd Position</td><td>₹4,800</td></tr>
+        <tr><td>3rd Position</td><td>₹4,200</td></tr>
+        <tr><td>4th Position</td><td>₹3,600</td></tr>
+        <tr><td>5th Position</td><td>₹3,000</td></tr>
+      </table>
+      <p style="font-size:0.72rem;">Girl Child Non-Tech Degree सहायता: 12वीं में 60%+ अंक → ₹250/माह (लागू 2018-19 से)।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6000-4800-4200-3600-3000" → हर rank पर ₹600 कम — याद रखने का पैटर्न</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Circle Welfare Fund for GDS किस तारीख से शुरू हुआ? <b>(01.10.2013)</b> टॉपर 1st Position को कितनी राशि मिलती है? <b>(₹6,000)</b></div>
+  </div>
+</div>
+
+<!-- T -->
+<div class="chapter" id="chT">
+  <div class="chapter-head" style="background:var(--gold-dark);">🏆 T → Sports and Cultural Activities</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p>यह अध्याय डाक कर्मचारियों के लिए खेल व सांस्कृतिक गतिविधियों की जानकारी देता है — जो Staff Welfare Board द्वारा प्रचारित की जाती हैं।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Sports and Cultural Activities का प्रचार किस बोर्ड द्वारा किया जाता है? <b>(Postal Services Staff Welfare Board)</b></div>
+  </div>
+</div>
+
+<!-- U -->
+<div class="chapter" id="chU">
+  <div class="chapter-head" style="background:var(--red-dark);">⚖️ U → Legal Matters</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — तालिका याद रखें</span>
+      <h3>न्यायालयों में लंबित मामले (10.01.2025 तक)</h3>
+      <table>
+        <tr><th>न्यायालय</th><th>मामलों की संख्या</th></tr>
+        <tr><td>Supreme Court</td><td>79</td></tr>
+        <tr><td>High Courts</td><td>4,069</td></tr>
+        <tr><td>District & Session Courts</td><td>1,433</td></tr>
+        <tr><td>Tribunals</td><td>11,035 (सबसे अधिक)</td></tr>
+        <tr><td>Others</td><td>4,677</td></tr>
+        <tr><td><b>कुल</b></td><td><b>21,293</b></td></tr>
+      </table>
+    </div>
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <p>Case data अपलोड हेतु उपयोग किया जाने वाला पोर्टल: <b>LIMBS (Legal Information Management & Briefing System)</b>।</p>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Tribunals सबसे ज्यादा (11,035)" — सबसे अधिक pending मामले Tribunals में</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> कुल लंबित न्यायालय मामलों की संख्या कितनी है (10.01.2025 तक)? <b>(21,293)</b> किस न्यायालय में सबसे अधिक मामले लंबित हैं? <b>(Tribunals — 11,035)</b> Case data अपलोड हेतु पोर्टल का नाम? <b>(LIMBS)</b></div>
+  </div>
+</div>
+
+<!-- V -->
+<div class="chapter" id="chV">
+  <div class="chapter-head" style="background:#37474F;">🔍 V → Internal Audit Mechanism</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>Audit उपलब्धियां (जनवरी-दिसंबर 2024)</h3>
+      <table>
+        <tr><th>बिंदु</th><th>संख्या</th></tr>
+        <tr><td>Circle Offices/PAO निरीक्षण रिपोर्ट जारी</td><td>19</td></tr>
+        <tr><td>Regional Offices निरीक्षण</td><td>13</td></tr>
+        <tr><td>Head Post Offices निरीक्षण</td><td>6</td></tr>
+        <tr><td>उठाए गए Paras (DG Audit)</td><td>3,003</td></tr>
+        <tr><td>निपटाए गए Paras</td><td>833</td></tr>
+        <tr><td>Field unit Paras उठाए (Jan-Jun 2024)</td><td>25,076</td></tr>
+        <tr><td>Field unit Paras निपटाए</td><td>17,424</td></tr>
+        <tr><td>C&AG Audit Paras लंबित (31.12.2024)</td><td><b>0 (शून्य)</b></td></tr>
+      </table>
+    </div>
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p>Internal Audit Division, <b>Chief Accounting Authority</b> की ओर से कार्य करता है। अंतिम Internal Audit Questionnaire <b>2021</b> में जारी हुआ था।</p>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "C&AG Paras = 0" — कोई भी C&AG पैरा लंबित नहीं (31.12.2024)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> 31.12.2024 तक कितने C&AG Audit Paras लंबित थे? <b>(शून्य - 0)</b> Internal Audit Division किसकी ओर से कार्य करता है? <b>(Chief Accounting Authority)</b></div>
+  </div>
+</div>
+
+<!-- W -->
+<div class="chapter" id="chW">
+  <div class="chapter-head" style="background:#6A1B9A;">📢 W → Awareness and Outreach</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Social Media उपस्थिति (7 जनवरी 2025 तक)</h3>
+      <table>
+        <tr><th>Platform</th><th>Followers</th></tr>
+        <tr><td>Twitter (X)</td><td>6,02,129 (सबसे अधिक)</td></tr>
+        <tr><td>Facebook</td><td>4,57,327</td></tr>
+        <tr><td>Instagram</td><td>1,55,652</td></tr>
+        <tr><td>YouTube</td><td>~38,888 subscribers</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Dak Chaupal पहल</span>
+      <table>
+        <tr><th>बिंदु</th><th>संख्या</th></tr>
+        <tr><td>आयोजित Dak Chaupals</td><td>15,163</td></tr>
+        <tr><td>कुल पहुंचे नागरिक</td><td>8.83 लाख+</td></tr>
+        <tr><td>महिला प्रतिभागी</td><td>44%</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p>Philately promotion हेतु Woman Bike Rally — <b>14 महिला bikers</b> ने भाग लिया, <b>2,000+ km</b> यात्रा (Bengaluru-Puducherry-Rameshwaram-Kanniyakumari-Munnar-Mysuru), "Dhai Akhar" National Letter-Writing Contest को बढ़ावा दिया।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Twitter सबसे बड़ा, Dak Chaupal 15,163" — Social outreach मुख्य आंकड़े</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> कितने Dak Chaupal आयोजित हुए (देशभर में)? <b>(15,163)</b> Twitter पर कुल followers? <b>(6,02,129)</b></div>
+  </div>
+</div>
+
+<!-- X -->
+<div class="chapter" id="chX">
+  <div class="chapter-head" style="background:#263238;">📈 X → Miscellaneous Statistical Tables</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier green">🟢 त्वरित रिवीजन</span>
+      <p>यह अंतिम अध्याय संपूर्ण Annual Report के सांख्यिकीय आंकड़ों को सारणीबद्ध रूप में प्रस्तुत करता है — Postal Network, Financial Services, HR व अन्य सभी विषयों के सारांश आंकड़े।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Annual Report का अंतिम अध्याय (X) किस विषय पर केंद्रित है? <b>(Miscellaneous Statistical Tables — सभी अध्यायों का सारांश डेटा)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>IT 2.0:</b> Cabinet मंजूरी 01.02.2022; ₹5,785 करोड़; 8 वर्ष (2022-30); CEPT in-house</div>
+    <div class="rev-card"><b>HR:</b> कुल 4,57,997 कर्मचारी (1.90L Departmental + 2.68L GDS)</div>
+    <div class="rev-card"><b>Staff Welfare:</b> Chairperson=Minister; 23 Circle Boards; GDS Fund से 01.10.2013, संशोधित 01.07.2024</div>
+    <div class="rev-card"><b>Legal:</b> कुल 21,293 लंबित मामले; सबसे अधिक Tribunals में (11,035); Portal=LIMBS</div>
+    <div class="rev-card"><b>Internal Audit:</b> C&AG Paras लंबित = 0 (31.12.2024); 3,003 paras उठाए, 833 निपटाए</div>
+    <div class="rev-card"><b>Awareness:</b> Twitter 6.02L followers सबसे अधिक; Dak Chaupal 15,163 (8.83L नागरिक, 44% महिला)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>01.02.2022 / ₹5,785 Cr / 8 वर्ष</b> = IT 2.0 मंजूरी/बजट/अवधि</li>
+    <li>🔢 <b>4,57,997</b> = कुल DoP कर्मचारी (1,90,161 Departmental + 2,67,836 GDS)</li>
+    <li>🔢 <b>6000-4800-4200-3600-3000</b> = शिक्षा प्रोत्साहन राशि (1st-5th rank)</li>
+    <li>🔢 <b>01.10.2013 / 01.07.2024</b> = GDS Welfare Fund शुरुआत / संशोधन</li>
+    <li>🔢 <b>21,293</b> = कुल लंबित न्यायालय मामले (10.01.2025); Tribunals में सबसे अधिक (11,035)</li>
+    <li>🔢 <b>0 (शून्य)</b> = C&AG Audit Paras लंबित (31.12.2024)</li>
+    <li>🔢 <b>3,003 / 833</b> = DG Audit paras उठाए / निपटाए (2024)</li>
+    <li>🔢 <b>15,163 / 8.83 लाख / 44%</b> = Dak Chaupal संख्या / नागरिक पहुंच / महिला भागीदारी</li>
+    <li>🔢 <b>6.02 लाख (Twitter) / 4.57 लाख (Facebook)</b> = सोशल मीडिया followers</li>
+    <li>🔢 <b>14 women bikers / 2,000+ km</b> = Philately Bike Rally</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: Department of Posts Annual Report 2024-25 — Sections Q-X (अंतिम भाग) &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम आंकड़े DoP वेबसाइट से जांचें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

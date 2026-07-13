@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>माल क्रय नियमावली 2024 | Manual for Procurement of Goods | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#003057; --ip-gold:#D4A017;
+  --very-imp:#ffe1e1; --very-imp-b:#C8102E;
+  --freq:#fff1dd; --freq-b:#e08600;
+  --concept:#fffbd6; --concept-b:#cbb400;
+  --quick:#e2f7e6; --quick-b:#1f9d4d;
+  --bg:#f5f2ea; --card:#ffffff; --text:#26282b;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:70px;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),#8f0c22 60%,var(--ip-blue));
+  color:#fff; padding:18px 14px 22px; text-align:center;
+  border-bottom:6px solid var(--ip-gold);
+}
+.header h1{font-size:1.25rem; margin-bottom:4px;}
+.header .sub{font-size:.82rem; opacity:.95;}
+.header .meta{font-size:.74rem; margin-top:8px; opacity:.9;}
+.profile-bar{
+  background:var(--ip-blue); color:#fff; text-align:center; font-size:.78rem;
+  padding:6px 10px;
+}
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  padding:12px 8px; background:#fff; border-bottom:2px solid #eee;
+}
+.legend span{
+  font-size:.68rem; padding:4px 8px; border-radius:14px; font-weight:600;
+  border:1px solid #ddd;
+}
+.container{max-width:760px; margin:0 auto; padding:12px;}
+.section-title{
+  background:var(--ip-blue); color:#fff; padding:9px 14px; border-radius:8px 8px 0 0;
+  font-size:.95rem; font-weight:700; margin-top:22px; display:flex; align-items:center; gap:8px;
+}
+.card{
+  background:var(--card); border:1px solid #e2ddd0; border-radius:0 0 8px 8px;
+  padding:12px 14px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.tag{
+  display:inline-block; font-size:.66rem; font-weight:700; padding:2px 7px;
+  border-radius:10px; margin-right:4px; margin-bottom:2px;
+}
+.tag.vi{background:var(--very-imp); color:var(--very-imp-b); border:1px solid var(--very-imp-b);}
+.tag.fa{background:var(--freq); color:var(--freq-b); border:1px solid var(--freq-b);}
+.tag.co{background:var(--concept); color:#8a7a00; border:1px solid var(--concept-b);}
+.tag.qr{background:var(--quick); color:var(--quick-b); border:1px solid var(--quick-b);}
+h3.micro{color:var(--ip-red); font-size:.92rem; margin:10px 0 4px; border-left:4px solid var(--ip-red); padding-left:8px;}
+h4.nano{color:var(--ip-blue); font-size:.82rem; margin:6px 0 3px;}
+p, li{font-size:.84rem;}
+ul{padding-left:20px; margin:4px 0 8px;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.74rem;}
+th{background:var(--ip-blue); color:#fff; padding:6px 5px; text-align:left;}
+td{padding:6px 5px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#faf8f3;}
+.exam-q{
+  background:#eef3ff; border-left:4px solid #2255cc; padding:6px 10px; margin:6px 0;
+  font-size:.76rem; border-radius:0 6px 6px 0;
+}
+.exam-q b{color:#2255cc;}
+.mnemonic{
+  background:#fff4e0; border:1.5px dashed var(--ip-gold); padding:8px 10px; margin:8px 0;
+  border-radius:8px; font-size:.8rem;
+}
+.mnemonic b{color:#8a5a00;}
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:10px 0;}
+.flow-box{
+  background:#fff; border:2px solid var(--ip-blue); border-radius:8px; padding:8px 12px;
+  font-size:.76rem; text-align:center; width:92%; font-weight:600;
+}
+.flow-arrow{font-size:1.2rem; color:var(--ip-red);}
+.timeline{border-left:3px solid var(--ip-gold); margin-left:8px; padding-left:14px;}
+.tl-item{margin-bottom:14px; position:relative;}
+.tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:11px; height:11px;
+  background:var(--ip-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--ip-red);
+}
+.tl-date{font-weight:700; color:var(--ip-red); font-size:.78rem;}
+.tl-text{font-size:.78rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0;}
+.compare .old{background:#fdeaea; border:1px solid #e08c8c; border-radius:6px; padding:8px; font-size:.72rem;}
+.compare .new{background:#e7f7ea; border:1px solid #8fcf9f; border-radius:6px; padding:8px; font-size:.72rem;}
+.compare .hd{font-weight:700; text-align:center; margin-bottom:4px; font-size:.76rem;}
+.revision-sheet{
+  background:linear-gradient(160deg,#fff7e6,#fff);
+  border:2px solid var(--ip-gold); border-radius:10px; padding:14px; margin:14px 0;
+}
+.revision-sheet h2{color:var(--ip-red); font-size:1rem; margin-bottom:8px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px;}
+.rev-item{background:#fff; border-left:4px solid var(--ip-red); padding:6px 10px; font-size:.76rem; border-radius:0 6px 6px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mm-node{
+  background:#fff; border:2px solid var(--ip-red); border-radius:20px; padding:6px 12px;
+  font-size:.7rem; font-weight:700; color:var(--ip-blue); text-align:center;
+}
+.mm-node.center{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue); font-size:.8rem;}
+.penalty-badge{
+  display:inline-block; background:var(--ip-red); color:#fff; font-size:.7rem;
+  padding:2px 8px; border-radius:6px; font-weight:700;
+}
+.dtree{margin:10px 0; font-size:.76rem;}
+.dtree .q{background:var(--ip-blue); color:#fff; padding:6px 10px; border-radius:6px; margin-bottom:4px; font-weight:600;}
+.dtree .branch{padding-left:16px; border-left:2px dashed var(--ip-gold); margin-left:8px; margin-bottom:6px;}
+.dtree .ans{background:#f5f2ea; padding:5px 8px; border-radius:5px; margin:3px 0;}
+.alert{background:#fff3cd; border:1px solid #ffdf7e; padding:8px 10px; border-radius:6px; font-size:.76rem; margin:8px 0;}
+.footer-note{text-align:center; font-size:.7rem; color:#888; padding:20px 10px;}
+.pdf-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--ip-red); color:#fff;
+  border:none; border-radius:50%; width:54px; height:54px; font-size:1.4rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; z-index:99;
+}
+@media print{ .pdf-btn{display:none;} }
+.toc{background:#fff; border:1px solid #e2ddd0; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:.78rem;}
+.toc a{color:var(--ip-blue); text-decoration:none; display:block; padding:3px 0; border-bottom:1px dotted #ddd;}
+.small-note{font-size:.7rem; color:#666; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📦 माल क्रय नियमावली, 2024</h1>
+  <div class="sub">Manual for Procurement of Goods, Second Edition 2024 — Dept. of Expenditure, Ministry of Finance</div>
+  <div class="meta">📌 IP Exam (Inspector Posts) — Paper I | विषय: Manuals on Procurement</div>
+</div>
+<div class="profile-bar">👤 Panthil Rajeshkumar Parmar | Office Assistant | Ahmedabad L-1</div>
+
+<div class="legend">
+  <span class="tag vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="tag fa">🟠 बार-बार पूछा गया</span>
+  <span class="tag co">🟡 अवधारणा समझें</span>
+  <span class="tag qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>📑 अनुक्रमणिका (Contents)</b>
+  <a href="#intro">परिचय व सिद्धांत (Ch 1)</a>
+  <a href="#ch2">आवश्यकता आकलन व योजना (Ch 2)</a>
+  <a href="#ch3">आपूर्तिकर्ता संबंध प्रबंधन (Ch 3)</a>
+  <a href="#ch4">क्रय के तरीके व निविदा प्रणाली (Ch 4)</a>
+  <a href="#ch5">बोली आमंत्रण प्रक्रिया (Ch 5)</a>
+  <a href="#ch6">प्रतिभूतियाँ, मूल्य व भुगतान (Ch 6)</a>
+  <a href="#ch7">बोली मूल्यांकन व संविदा प्रदान (Ch 7)</a>
+  <a href="#ch8">विशेष क्रय (Ch 8)</a>
+  <a href="#ch9">संविदा प्रबंधन (Ch 9)</a>
+  <a href="#ch10">स्क्रैप का निपटान (Ch 10)</a>
+  <a href="#rev">One-Page Revision Sheet</a>
+  <a href="#mnem">Memory Tricks</a>
+</div>
+
+<!-- MIND MAP -->
+<div class="section-title" id="intro">🧠 संपूर्ण नियमावली — माइंड मैप</div>
+<div class="card">
+  <div class="mindmap">
+    <div class="mm-node center">Manual for Procurement<br>of Goods 2024<br>(10 Chapters, 38 Annexures, 5 Appendices)</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch1 परिचय</div>
+    <div class="mm-node">Ch2 योजना</div>
+    <div class="mm-node">Ch3 Supplier</div>
+    <div class="mm-node">Ch4 Tendering</div>
+    <div class="mm-node">Ch5 Bid Invite</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch6 Securities</div>
+    <div class="mm-node">Ch7 Evaluation</div>
+    <div class="mm-node">Ch8 विशेष</div>
+    <div class="mm-node">Ch9 Contract Mgmt</div>
+    <div class="mm-node">Ch10 Disposal</div>
+  </div>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>जारीकर्ता</td><td>व्यय विभाग (Department of Expenditure), वित्त मंत्रालय, भारत सरकार</td></tr>
+    <tr><td>प्रथम संस्करण</td><td>2017/2019 (Goods/Works/Services अलग-अलग), 2022 में अद्यतन</td></tr>
+    <tr><td>द्वितीय संस्करण (वर्तमान)</td><td>22 जुलाई 2024, हस्ताक्षरकर्ता: डॉ. टी.वी. सोमनाथन, Finance Secretary</td></tr>
+    <tr><td>आधार</td><td>General Financial Rules (GFR) 2017 पर आधारित — विसंगति होने पर GFR/कानून प्रभावी</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Manual for Procurement of Goods का द्वितीय संस्करण कब जारी हुआ? (उत्तर: 22 जुलाई 2024)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> यह मैनुअल किस नियम पर आधारित है और विसंगति होने पर क्या प्रभावी होगा? (उत्तर: GFR 2017 पर आधारित; विसंगति में GFR/कानून प्रभावी होगा)</div>
+
+  <h3 class="micro">Chapter 1 — परिचय: सिद्धांत व नीतियाँ <span class="tag vi">🔴</span></h3>
+  <h4 class="nano">Micro Topic: क्रय के पाँच 'R' सिद्धांत (Five R's of Procurement)</h4>
+  <table>
+    <tr><th>R</th><th>अर्थ</th></tr>
+    <tr><td>1</td><td>Right Quality (सही गुणवत्ता)</td></tr>
+    <tr><td>2</td><td>Right Quantity (सही मात्रा)</td></tr>
+    <tr><td>3</td><td>Right Source (सही स्रोत)</td></tr>
+    <tr><td>4</td><td>Right Time (सही समय)</td></tr>
+    <tr><td>5</td><td>Right Price (सही मूल्य)</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "QQSTP":</b> Quality-Quantity-Source-Time-Price — पाँचों "R" शब्द याद रखने हेतु</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> क्रय के पाँच R सिद्धांत क्या हैं? (उत्तर: Right Quality, Quantity, Source, Time, Price)</div>
+
+  <h4 class="nano">Micro Topic: लोक क्रय के मूलभूत सिद्धांत (Fundamental Principles)</h4>
+  <p>पारदर्शिता, निष्पक्षता, प्रतिस्पर्धा, धन-मूल्य (Value for Money), जवाबदेही — GFR 2017 पर आधारित <span class="tag co">🟡</span></p>
+
+  <h4 class="nano">Micro Topic: वित्तीय औचित्य के मानक (Canons of Financial Propriety)</h4>
+  <p>GFR 2017 के प्रावधानों के अनुरूप — जैसे कि व्यय उतना ही हो जितना एक बुद्धिमान व्यक्ति अपने पैसे पर करता</p>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="section-title" id="ch2">📘 Chapter 2 — आवश्यकता आकलन, विशिष्टियाँ व योजना</div>
+<div class="card">
+  <ul>
+    <li>Need Assessment (आवश्यकता आकलन)</li>
+    <li>Technical Specifications (TS) निर्माण — विक्रेता-निष्पक्ष (vendor-neutral) होना चाहिए</li>
+    <li>तकनीकी, प्रशासनिक व बजटीय स्वीकृति प्राप्त करना, Indent पर हस्ताक्षर</li>
+    <li>Procurement Planning — वार्षिक क्रय योजना</li>
+  </ul>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> ₹200 करोड़ प्रति वर्ष से अधिक क्रय वाले विभागों को क्या करना होता है? (उत्तर: प्रतिवर्ष अपनी procurement projections सूचित/अद्यतन करनी होगी)</div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="section-title" id="ch3">📗 Chapter 3 — आपूर्तिकर्ता संबंध प्रबंधन (Supplier Relationship Management)</div>
+<div class="card">
+  <h3 class="micro">Code of Integrity for Public Procurement (CIPP) <span class="tag fa">🟠</span></h3>
+  <p>लोक क्रय में सत्यनिष्ठा संहिता — भ्रष्टाचार, धोखाधड़ी, मिलीभगत रोकने हेतु</p>
+
+  <h3 class="micro">Integrity Pact <span class="tag co">🟡</span></h3>
+  <p>बड़े मूल्य की निविदाओं में क्रेता व आपूर्तिकर्ता के बीच भ्रष्टाचार-निवारण करार</p>
+
+  <h3 class="micro">Debarment of Suppliers (आपूर्तिकर्ता निष्कासन) <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>अधिकतम अवधि</td><td><span class="penalty-badge">3 वर्ष</span> तक (GFR Rule 151 अंतर्गत)</td></tr>
+    <tr><td>न्यूनतम अवधि</td><td>सामान्यतः <span class="penalty-badge">6 माह</span> से कम नहीं</td></tr>
+    <tr><td>प्रारंभ तिथि</td><td>Debarment आदेश जारी होने की तिथि से</td></tr>
+    <tr><td>Joint Venture/Consortium</td><td>एक भागीदार debarred हो तो सभी भागीदार debarred माने जाते हैं</td></tr>
+    <tr><td>Show-cause प्रक्रिया</td><td>Zero-day से कुल <span class="penalty-badge">12 सप्ताह</span> में debarment प्रक्रिया पूर्ण</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> किसी आपूर्तिकर्ता का debarment अधिकतम कितने वर्ष के लिए हो सकता है? (उत्तर: 3 वर्ष, GFR Rule 151)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Debarment की न्यूनतम अवधि सामान्यतः क्या रहती है? (उत्तर: 6 माह)</div>
+
+  <h3 class="micro">आपूर्तिकर्ता पंजीकरण — Grade वर्गीकरण <span class="tag fa">🟠</span></h3>
+  <table>
+    <tr><th>Grade</th><th>मूल्य सीमा</th></tr>
+    <tr><td>Grade A</td><td>₹25 लाख व अधिक</td></tr>
+    <tr><td>Grade B</td><td>₹5 लाख से ₹25 लाख</td></tr>
+    <tr><td>Grade C</td><td>₹1 लाख से ₹5 लाख</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> "A-B-C = 25-5-1" — घटते क्रम में Grade के साथ मूल्य सीमा घटती है</div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="section-title" id="ch4">📕 Chapter 4 — क्रय के तरीके व निविदा प्रणाली <span class="tag vi" style="color:#fff;background:transparent;border:none;">🔴 सबसे महत्वपूर्ण अध्याय</span></div>
+<div class="card">
+  <h3 class="micro">निविदा मोड — मूल्य सीमा तालिका (परीक्षा गोल्ड) <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>मोड</th><th>पूर्ण नाम</th><th>मूल्य सीमा</th></tr>
+    <tr><td>OTE</td><td>Open Tender Enquiry</td><td>₹50 लाख से अधिक (सामान्य नियम)</td></tr>
+    <tr><td>GTE</td><td>Global Tender Enquiry</td><td>₹200 करोड़ से अधिक (इससे कम में GTE नहीं) — आयात-गहन मामलों में अपवाद संभव</td></tr>
+    <tr><td>LTE</td><td>Limited Tender Enquiry</td><td>₹50 लाख तक</td></tr>
+    <tr><td>SLTE</td><td>Special LTE</td><td>₹50 लाख से अधिक (विशेष परिस्थितियों में)</td></tr>
+    <tr><td>STE</td><td>Single Tender Enquiry (बिना PAC)</td><td>सीमित/विशेष स्थिति</td></tr>
+    <tr><td>PAC</td><td>Proprietary Article Certificate</td><td>एकल स्रोत उपलब्ध होने पर</td></tr>
+    <tr><td>बिना उद्धरण सीधा क्रय</td><td>Direct Purchase w/o Quotation</td><td>प्रति अवसर ₹1 लाख तक (वार्षिक ₹5 लाख तक)</td></tr>
+    <tr><td>Purchase Committee</td><td>Direct by Committee</td><td>₹1 लाख से ₹10 लाख (सामान्य); वैज्ञानिक विभाग हेतु बढ़ाकर ₹10 लाख</td></tr>
+  </table>
+  <div class="alert">⚠️ 2017 GTE नीति के अंतर्गत ₹200 करोड़ तक GTE नहीं बुलाई जा सकती (Make in India संवर्धन हेतु) — यह "restriction" है, केवल threshold नहीं।</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> GTE किस मूल्य सीमा से नीचे प्रतिबंधित है? (उत्तर: ₹200 करोड़ तक GTE आमंत्रित नहीं की जा सकती)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> LTE किस मूल्य तक प्रयोग होती है? (उत्तर: ₹50 लाख तक)</div>
+  <div class="mnemonic">🧠 <b>Mnemonic "50L-200Cr":</b> LTE की ऊपरी सीमा ₹50 लाख; GTE की निचली सीमा (सामान्यतः प्रतिबंधित) ₹200 करोड़</div>
+
+  <h3 class="micro">Rate Contract (RC) / Framework Agreement (FA)</h3>
+  <p>बार-बार आवश्यक वस्तुओं हेतु पूर्व-निर्धारित दर पर दीर्घकालिक अनुबंध</p>
+
+  <h3 class="micro">Electronic Reverse Auction (eRA)</h3>
+  <p>गतिशील मूल्य खोज — बोलीदाता ऑनलाइन एक-दूसरे से कम बोली लगाते हैं</p>
+
+  <h3 class="micro">न्यूनतम निविदा अवधि (Tender Period) <span class="tag fa">🟠</span></h3>
+  <table>
+    <tr><th>स्थिति</th><th>न्यूनतम समय</th></tr>
+    <tr><td>सामान्य OTE (घरेलू)</td><td>विज्ञापन तिथि से <span class="penalty-badge">21 दिन</span></td></tr>
+    <tr><td>विदेशी बोलीदाता शामिल (GTE)</td><td><span class="penalty-badge">3-4 सप्ताह</span> (विदेशी होने पर 4 सप्ताह)</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> सामान्य OTE में विज्ञापन से निविदा खोलने तक न्यूनतम कितने दिन होने चाहिए? (उत्तर: 21 दिन)</div>
+</div>
+
+<!-- CHAPTER 5 -->
+<div class="section-title" id="ch5">📙 Chapter 5 — बोली आमंत्रण प्रक्रिया</div>
+<div class="card">
+  <ul>
+    <li>निविदा दस्तावेज तैयार करना व अपलोड/फ्लोट करना</li>
+    <li>निविदा दस्तावेज प्राप्त करना व बोली प्रस्तुत करना</li>
+    <li>बोली खोलना (Bid Opening)</li>
+    <li>पारदर्शिता व तीसरे पक्ष के अधिकार संरक्षण</li>
+  </ul>
+  <h3 class="micro">Bid Validity (बोली वैधता) <span class="tag co">🟡</span></h3>
+  <p>निर्धारित समय तक बोली वैध रहनी चाहिए; समाप्ति के पूर्व Letter of Award (LoA) जारी होना चाहिए, अन्यथा विस्तार आवश्यक</p>
+</div>
+
+<!-- CHAPTER 6 -->
+<div class="section-title" id="ch6">📒 Chapter 6 — प्रतिभूतियाँ, मूल्य, भुगतान शर्तें व मूल्य विचरण <span class="tag vi">🔴 अति महत्वपूर्ण (संख्यात्मक प्रश्न संभावित)</span></div>
+<div class="card">
+  <h3 class="micro">EMD / बिड सिक्योरिटी (Rule Ref: GFR 2017)</h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>EMD दर</td><td>अनुमानित मूल्य का <span class="penalty-badge">2% से 5%</span></td></tr>
+    <tr><td>बैंक गारंटी अनिवार्य सीमा</td><td>EMD राशि ₹5 लाख से अधिक होने पर</td></tr>
+    <tr><td>वैधता</td><td>अंतिम बोली वैधता से <span class="penalty-badge">45 दिन</span> अधिक</td></tr>
+    <tr><td>अयोग्य बोलीदाताओं की वापसी</td><td>संविदा प्रदान के <span class="penalty-badge">30 दिन</span> के भीतर</td></tr>
+    <tr><td>छूट प्राप्त</td><td>MSE (सूक्ष्म-लघु उद्यम) व DPIIT-मान्यता प्राप्त Startups — पूर्णतः EMD मुक्त</td></tr>
+  </table>
+
+  <h3 class="micro">Performance Security (Rule 171 of GFR 2017) <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>दर (Goods)</td><td><span class="penalty-badge">3% से 5%</span> संविदा मूल्य का</td></tr>
+    <tr><td>दर (Works तुलना हेतु)</td><td>3% से 10%</td></tr>
+    <tr><td>छूट सीमा</td><td>₹50 लाख तक के टेंडर हेतु आवश्यक नहीं</td></tr>
+    <tr><td>प्रस्तुति समय-सीमा</td><td>अवार्ड सूचना के <span class="penalty-badge">14 से 28 दिन</span> के भीतर</td></tr>
+    <tr><td>वैधता</td><td>संविदा दायित्व पूर्ति के बाद <span class="penalty-badge">60 दिन</span> अतिरिक्त</td></tr>
+    <tr><td>छूट प्राप्त संस्थाएँ</td><td>सरकारी मंत्रालय/विभाग/संलग्न कार्यालय/स्वायत्त निकाय; PAC धारक OEM</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic "2-5, 3-5":</b> EMD = 2-5%, Performance Security (Goods) = 3-5% — दोनों में "5" कॉमन ऊपरी सीमा</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Performance Security की दर सामान्यतः कितनी होती है (माल हेतु)? (उत्तर: संविदा मूल्य का 3% से 5%)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> कितने मूल्य तक की निविदा में Performance Security आवश्यक नहीं? (उत्तर: ₹50 लाख तक)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Performance Security कितने दिनों के भीतर प्रस्तुत करनी होती है? (उत्तर: अवार्ड सूचना के 14-28 दिन के भीतर)</div>
+
+  <h3 class="micro">भुगतान शर्तें व मूल्य विचरण (Payment & Price Variation) <span class="tag co">🟡</span></h3>
+  <ul>
+    <li>घरेलू व आयातित माल हेतु पृथक Terms of Payment</li>
+    <li>Advance Payment — सामान्यतः 30% से अधिक नहीं (विशेष स्वीकृति सहित अधिक संभव)</li>
+    <li>Exchange Rate Variation (ERV) व सांविधिक कर/शुल्क</li>
+    <li>Incoterms 2020 — डिलीवरी शर्तों का अंतरराष्ट्रीय मानक</li>
+  </ul>
+</div>
+
+<!-- CHAPTER 7 -->
+<div class="section-title" id="ch7">📔 Chapter 7 — बोली मूल्यांकन व संविदा प्रदान</div>
+<div class="card">
+  <div class="flow">
+    <div class="flow-box">बोली मूल्यांकन प्रक्रिया प्रारंभ</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">तुलनात्मक विवरण तैयार व सत्यापन (Comparative Statement)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">प्रारंभिक परीक्षण (Preliminary Examination)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">उत्तरदायी बोलियों का मूल्यांकन</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">वित्तीय बोलियों का मूल्यांकन व रैंकिंग (L1 निर्धारण)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">Tender Committee विचार-विमर्श</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box" style="border-color:var(--ip-red); color:var(--ip-red);">संविदा प्रदान (Letter of Award)</div>
+  </div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> बोली मूल्यांकन में सबसे कम दर वाले बोलीदाता को क्या कहा जाता है? (उत्तर: L1 बोलीदाता)</div>
+</div>
+
+<!-- CHAPTER 8 -->
+<div class="section-title" id="ch8">📓 Chapter 8 — विशिष्ट विशेषताओं वाले क्रय <span class="tag co">🟡</span></div>
+<div class="card">
+  <table>
+    <tr><th>विषय</th><th>संक्षिप्त विवरण</th></tr>
+    <tr><td>आपातकाल व आपदा प्रबंधन क्रय</td><td>तीव्र प्रक्रिया, सरलीकृत अनुमोदन</td></tr>
+    <tr><td>Buy Back Offer</td><td>पुराना उपकरण वापस लेकर नए की खरीद पर मूल्य समायोजन</td></tr>
+    <tr><td>Capital Goods/Equipment</td><td>मशीनरी, प्लांट, IT सिस्टम आदि</td></tr>
+    <tr><td>AMC</td><td>Annual Maintenance Contract — वार्षिक अनुरक्षण संविदा</td></tr>
+    <tr><td>NPV</td><td>Net Present Value — दीर्घकालिक लागत तुलना हेतु</td></tr>
+    <tr><td>Turnkey Contract</td><td>पूर्ण डिज़ाइन से स्थापना तक एकल जिम्मेदारी</td></tr>
+  </table>
+</div>
+
+<!-- CHAPTER 9 -->
+<div class="section-title" id="ch9">📕 Chapter 9 — संविदा प्रबंधन (Contract Management) <span class="tag vi">🔴</span></div>
+<div class="card">
+  <ul>
+    <li>आपूर्ति के दायरे व मात्रा नियंत्रण</li>
+    <li>समय नियंत्रण — विलंब की निगरानी</li>
+    <li>गुणवत्ता आश्वासन व निरीक्षण</li>
+    <li>लागत नियंत्रण — मूल्य, कर व भुगतान</li>
+    <li>Logistics — परिवहन, प्राप्ति, भंडारण व निर्गमन</li>
+    <li>संविदा प्रशासन, संविदा भंग व उपचार</li>
+  </ul>
+  <h3 class="micro">विवाद समाधान (Dispute Resolution) — मध्यस्थता स्लैब <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <table>
+    <tr><th>विवाद राशि</th><th>मध्यस्थ न्यायाधिकरण संरचना</th></tr>
+    <tr><td>₹50 लाख तक</td><td>एकल मध्यस्थ (Sole Arbitrator) पैनल से</td></tr>
+    <tr><td>₹50 लाख से ₹1 करोड़ तक</td><td>एकल मध्यस्थ पैनल से</td></tr>
+    <tr><td>₹1 करोड़ से अधिक</td><td>3-सदस्यीय Arbitral Tribunal</td></tr>
+    <tr><td>₹10 करोड़ से कम विवाद</td><td>Fast Track/सरलीकृत प्रक्रिया हेतु पात्र</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> ₹1 करोड़ से अधिक के विवाद हेतु Arbitral Tribunal की संरचना क्या होगी? (उत्तर: 3-सदस्यीय न्यायाधिकरण)</div>
+  <div class="alert">⚠️ Mediation Act, 2023 व Arbitration & Conciliation Act 1996 — दोनों का संदर्भ Appendix 2 में विस्तार से दिया गया है (Legal Aspects of Public Procurement)।</div>
+</div>
+
+<!-- CHAPTER 10 -->
+<div class="section-title" id="ch10">📗 Chapter 10 — स्क्रैप माल का निपटान (Disposal) <span class="tag fa">🟠</span></div>
+<div class="card">
+  <table>
+    <tr><th>स्क्रैप मूल्य</th><th>निपटान का तरीका</th></tr>
+    <tr><td>₹15,000 से ₹4 लाख तक</td><td>LTE मोड (सीमित निविदा)</td></tr>
+    <tr><td>₹4 लाख से अधिक</td><td>सार्वजनिक नीलामी (Public Auction) / E-Auction सुझाया गया</td></tr>
+    <tr><td>निविदा के माध्यम से</td><td>Tender के जरिए निपटान भी विकल्प</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> किस मूल्य से ऊपर के स्क्रैप का निपटान सार्वजनिक नीलामी से करना उचित है? (उत्तर: ₹4 लाख से अधिक)</div>
+  <ul>
+    <li>वर्गीकरण व श्रेणीकरण (Classification & Categorisation)</li>
+    <li>निपटान हेतु सामग्री का सर्वेक्षण (Survey)</li>
+    <li>विक्रय आगमों का लेखा-पुस्तकों में समायोजन (Sale Proceeds Adjustment)</li>
+  </ul>
+</div>
+
+<!-- DECISION TREE -->
+<div class="section-title">🌳 निर्णय वृक्ष — कौन-सा निविदा मोड चुनें?</div>
+<div class="card dtree">
+  <div class="q">क्रय मूल्य कितना है?</div>
+  <div class="branch">
+    <div class="ans">✅ ₹1 लाख तक (एक बार) → बिना उद्धरण सीधा क्रय संभव</div>
+    <div class="ans">✅ ₹1 लाख से ₹10 लाख → Purchase Committee द्वारा सीधा क्रय</div>
+    <div class="ans">✅ ₹50 लाख तक → LTE (Limited Tender Enquiry)</div>
+    <div class="ans">✅ ₹50 लाख से अधिक → OTE (Open Tender Enquiry) अनिवार्य</div>
+    <div class="ans">⚠️ ₹200 करोड़ से ऊपर (व आयात आवश्यक) → GTE (Global Tender Enquiry) संभव</div>
+  </div>
+  <div class="q">क्या एकल स्रोत (केवल एक निर्माता) उपलब्ध है?</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ → PAC (Proprietary Article Certificate) आधारित क्रय</div>
+    <div class="ans">❌ नहीं → सामान्य प्रतिस्पर्धी निविदा प्रक्रिया अपनाएँ</div>
+  </div>
+</div>
+
+<!-- COMPARISON CHART -->
+<div class="section-title">⚖️ 2024 संस्करण — प्रमुख नए प्रावधान <span class="tag vi">🔴</span></div>
+<div class="card">
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पहले (2019/2022)</div>Performance Security केवल परंपरागत बैंक गारंटी रूप में</div>
+    <div class="new"><div class="hd">✅ अब (2024)</div>Insurance Surety Bond भी मान्य वैकल्पिक रूप</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पहले</div>L1 बोलीदाता वापसी पर स्पष्ट प्रावधान सीमित</div>
+    <div class="new"><div class="hd">✅ अब</div>Withdrawal by L1 bidders पर स्पष्ट दिशानिर्देश जोड़े गए</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पहले</div>Price Variation व Liquidated Damages पर कोई सीमा (cap) उल्लेख नहीं</div>
+    <div class="new"><div class="hd">✅ अब</div>Price Variation व LD पर Capping का प्रावधान जोड़ा गया</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पहले</div>Cartel Formation (मिलीभगत) पर सीमित मार्गदर्शन</div>
+    <div class="new"><div class="hd">✅ अब</div>Cartel Formation Mitigation हेतु विस्तृत उपाय शामिल</div>
+  </div>
+</div>
+
+<!-- AUTHORITIES TABLE -->
+<div class="section-title">👮 महत्वपूर्ण प्राधिकारी / Authorities <span class="tag fa">🟠</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्राधिकारी</th><th>भूमिका</th></tr>
+    <tr><td>Competent Authority (CA)</td><td>क्रय हेतु सक्षम प्राधिकारी — Schedule of Procurement Powers (SoPP) अनुसार</td></tr>
+    <tr><td>Financial Adviser (FA)</td><td>वित्तीय सलाहकार से परामर्श आवश्यक</td></tr>
+    <tr><td>Tender Committee (TC)</td><td>बोली मूल्यांकन व संविदा प्रदान हेतु समिति</td></tr>
+    <tr><td>Purchase Committee</td><td>सीमित मूल्य के सीधे क्रय हेतु समिति</td></tr>
+    <tr><td>Survey Committee</td><td>स्क्रैप वर्गीकरण हेतु सर्वेक्षण समिति</td></tr>
+    <tr><td>Arbitral Tribunal</td><td>विवाद समाधान हेतु — मूल्य अनुसार 1 या 3 सदस्य</td></tr>
+  </table>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet — Last Day Revision</h2>
+  <div class="rev-grid">
+    <div class="rev-item">🔴 द्वितीय संस्करण — 22 जुलाई 2024, Dept. of Expenditure, वित्त मंत्रालय</div>
+    <div class="rev-item">🔴 GFR 2017 पर आधारित; विसंगति में GFR/कानून प्रभावी</div>
+    <div class="rev-item">🔴 5 R's: Right Quality, Quantity, Source, Time, Price</div>
+    <div class="rev-item">🔴 LTE ≤ ₹50 लाख | OTE > ₹50 लाख | GTE सामान्यतः > ₹200 करोड़ (प्रतिबंधित नीचे)</div>
+    <div class="rev-item">🔴 EMD = 2-5% अनुमानित मूल्य का | Performance Security = 3-5% संविदा मूल्य (Goods)</div>
+    <div class="rev-item">🔴 Performance Security छूट सीमा = ₹50 लाख तक टेंडर</div>
+    <div class="rev-item">🔴 Debarment: अधिकतम 3 वर्ष, न्यूनतम सामान्यतः 6 माह</div>
+    <div class="rev-item">🟠 न्यूनतम निविदा अवधि = 21 दिन (घरेलू OTE)</div>
+    <div class="rev-item">🟠 EMD वैधता = अंतिम बोली वैधता +45 दिन | वापसी = अवार्ड के 30 दिन में</div>
+    <div class="rev-item">🟠 Performance Security प्रस्तुति = अवार्ड सूचना के 14-28 दिन में; वैधता = दायित्व पूर्ति +60 दिन</div>
+    <div class="rev-item">🟠 स्क्रैप निपटान: ₹15,000-₹4 लाख = LTE मोड; ₹4 लाख से ऊपर = Public Auction</div>
+    <div class="rev-item">🟡 Arbitral Tribunal: ₹1 करोड़ तक एकल मध्यस्थ; ₹1 करोड़ से अधिक 3-सदस्यीय</div>
+    <div class="rev-item">🟡 आपूर्तिकर्ता Grade: A=₹25L+, B=₹5-25L, C=₹1-5L</div>
+    <div class="rev-item">🟢 MSE व DPIIT Startups — EMD से पूर्णतः छूट प्राप्त</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section-title" id="mnem">🧠 Memory Tricks / Mnemonics</div>
+<div class="card">
+  <div class="mnemonic">
+    <b>1️⃣ अध्याय क्रम याद रखें "NPSTB-SCDD":</b><br>
+    iNtro → Planning → Supplier → Tendering → Bid-invite → Securities → Contract-award → Disposal-of-scrap... (10 अध्याय क्रम)
+  </div>
+  <div class="mnemonic">
+    <b>2️⃣ निविदा मूल्य सीमा "1-10-50-200":</b><br>
+    ₹1 लाख (बिना उद्धरण) → ₹10 लाख (समिति) → ₹50 लाख (LTE सीमा) → ₹200 करोड़ (GTE सीमा)
+  </div>
+  <div class="mnemonic">
+    <b>3️⃣ EMD-PBG प्रतिशत "2-5 और 3-5":</b> EMD 2% से 5%; Performance Security 3% से 5% — दोनों की ऊपरी सीमा 5% कॉमन
+  </div>
+  <div class="mnemonic">
+    <b>4️⃣ समय-सीमाएँ "14-28-30-45-60":</b> PBG जमा 14-28 दिन → EMD वापसी 30 दिन → EMD वैधता +45 दिन → PBG वैधता +60 दिन
+  </div>
+  <div class="mnemonic">
+    <b>5️⃣ Grade क्रम "A-B-C घटता":</b> A(₹25L+) > B(₹5-25L) > C(₹1-5L) — वर्णानुक्रम में मूल्य भी घटता जाता है
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<div class="section-title">✅ Quick Revision Points <span class="tag qr">🟢</span></div>
+<div class="card">
+  <ul>
+    <li>यह मैनुअल Works व Services के पृथक मैनुअल्स के साथ मिलकर संपूर्ण procurement framework बनाता है</li>
+    <li>Model Tender Documents (MTD) — Goods व Non-consultancy हेतु 2019 में, Consultancy हेतु 2023 में जारी</li>
+    <li>Reserved Items — MSE Order 2012 व PPP-MII Order 2017 के तहत विशेष खरीद वरीयता नीतियाँ</li>
+    <li>Bid Securing Declaration (BSD) — EMD के विकल्प के रूप में सक्षम प्राधिकारी की स्वीकृति से प्रयोग</li>
+    <li>Corporate Guarantee या Indemnity Bond — EMD/Performance Security हेतु स्वीकार्य नहीं</li>
+    <li>Two-Packet/Two-Stage Tendering — तकनीकी व वित्तीय बोली अलग-अलग लिफाफों में</li>
+    <li>Incoterms 2020 — अंतरराष्ट्रीय डिलीवरी शर्तों का मानक ढांचा (Annexure 19 में विस्तृत)</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  📚 India Post IP Exam Preparation Portal | Manual for Procurement of Goods, Second Edition 2024<br>
+  यह इन्फोग्राफिक केवल परीक्षा तैयारी हेतु सारांश है — मूल मैनुअल (392 पृष्ठ) का पूर्ण अध्ययन आवश्यक
+</div>
+
+</div>
+
+<button class="pdf-btn" onclick="window.print()" title="PDF Download">⬇</button>
+
+</body>
+</html>

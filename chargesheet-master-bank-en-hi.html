@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Major Penalty Charge Sheet Master Bank — IP Exam</title>
+<style>
+  :root{
+    --brown:#4a2c11; --brown-dark:#2e1a0a; --tan:#a0522d; --tan-light:#d2b48c;
+    --en-blue:#0d6efd; --hi-green:#198754;
+    --ink:#1e293b; --muted:#64748b; --border:#e7ded4;
+    --paper:#ffffff; --bg:#f4f9fc;
+    --radius:16px; --radius-sm:10px; --pill:9999px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans Devanagari','Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:linear-gradient(180deg,#f4f9fc,#fbf6f0);
+    margin:0; padding:0; color:var(--ink); line-height:1.6;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:16px;}
+
+  .hero{
+    background:linear-gradient(135deg,var(--brown-dark) 0%,var(--brown) 55%,#6b4423 100%);
+    color:#fff; border-radius:20px; padding:28px 22px; margin:14px 0;
+    text-align:center; box-shadow:0 10px 30px rgba(74,44,17,.45); position:relative; overflow:hidden;
+  }
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 15%, rgba(210,180,140,.2), transparent 60%);}
+  .hero h1{margin:0 0 6px;font-size:1.28rem;font-weight:800;position:relative;}
+  .hero p{margin:0;font-size:.85rem;color:var(--tan-light);font-weight:600;letter-spacing:.3px;text-transform:uppercase;position:relative;}
+  .hero .pill{display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:5px 16px;border-radius:var(--pill);font-size:.72rem;font-weight:700;position:relative;}
+
+  .toc{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+  .toc h3{margin:0 0 10px;font-size:.85rem;color:var(--brown);font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .toc-grid a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);background:#fbf1e8;border-radius:8px;padding:8px 10px;font-size:.75rem;font-weight:600;border:1px solid #ecd9c3;}
+  .toc-num{width:22px;height:22px;border-radius:50%;background:var(--tan);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;}
+
+  /* ===== SCHEDULE STRUCTURE MAP (added) ===== */
+  .struct-card{
+    background:linear-gradient(180deg,#fff8ee,#fffdf9); border:1px solid #f0d9b5; border-radius:var(--radius-sm);
+    padding:16px 18px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+  .struct-card h3{margin:0 0 10px;font-size:.88rem;color:#8a5a1c;font-weight:800;display:flex;align-items:center;gap:6px;}
+  .struct-flow{display:flex;flex-direction:column;gap:6px;}
+  .struct-flow .step{background:#fff;border:1px dashed #d9ab5f;border-radius:8px;padding:8px 12px;font-size:.79rem;position:relative;}
+  .struct-flow .step b{color:#8a5a1c;}
+  .struct-flow .step::after{content:"↓";display:block;text-align:center;color:#d9ab5f;font-size:1rem;margin-top:2px;}
+  .struct-flow .step:last-child::after{content:"";}
+
+  .case-card{background:var(--paper);border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 4px 16px rgba(74,44,17,.08);margin-bottom:22px;overflow:hidden;scroll-margin-top:14px;}
+  .case-head{background:linear-gradient(135deg,#fbf1e8,#f5e4d0);padding:16px 18px;border-bottom:1px solid #ecd9c3;}
+  .case-num-badge{display:inline-flex;align-items:center;gap:6px;background:var(--tan);color:#fff;font-size:.68rem;font-weight:800;padding:3px 12px;border-radius:var(--pill);margin-bottom:8px;}
+  .case-head h5{margin:0 0 8px;font-size:.98rem;font-weight:800;color:var(--brown);line-height:1.4;}
+  .scenario{font-size:.8rem;color:var(--muted);background:#fff;border-left:3px solid var(--tan);border-radius:6px;padding:8px 10px;}
+  .scenario b{color:var(--brown);}
+  .doc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  .doc-tag{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:var(--pill);background:#fff;border:1px solid var(--tan);color:var(--tan);}
+
+  .lang-block{padding:14px 16px;margin:14px 16px;border-radius:10px;font-size:.87rem;}
+  .lang-block:last-child{margin-bottom:16px;}
+  .en-version{background:#fbf6f0;border-left:4px solid var(--en-blue);}
+  .hi-version{background:#f4faf6;border-left:4px solid var(--hi-green);}
+  .note-header{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px;}
+  .en-version .note-header{color:var(--en-blue);}
+  .hi-version .note-header{color:var(--hi-green);}
+
+  .draft-border{border:1px solid #e7ded4;padding:16px;background:#fff;margin-top:6px;border-radius:8px;font-size:.85rem;color:var(--ink);}
+  .draft-border hr{border-top:1px solid #e2e8f0;margin:10px 0;}
+  .center-bold{text-align:center;font-weight:700;color:var(--brown);}
+  .underline-title{text-align:center;font-weight:700;text-decoration:underline;color:var(--brown);}
+  .schedule-title{font-weight:700;background:#f5e9da;color:var(--brown);padding:4px 10px;margin-top:10px;display:inline-block;border-radius:6px;font-size:.82rem;}
+  .small-mono{font-size:.78rem;font-family:monospace;color:var(--muted);}
+  .text-end{text-align:right;}
+
+  .fab{position:fixed;bottom:18px;right:18px;background:var(--brown);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;box-shadow:0 6px 18px rgba(74,44,17,.4);cursor:pointer;z-index:999;}
+
+  @media print{ .fab,.toc{display:none;} body{background:#fff;} .case-card{break-inside:avoid;box-shadow:none;} }
+  @media (max-width:480px){ .toc-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>⚖️ Major Penalty Charge Sheet Master Bank</h1>
+    <p>IP Exam — 5 High-Yield Disciplinary Formats under Rule 14</p>
+    <div class="pill">Bilingual: English &amp; हिन्दी</div>
+  </div>
+
+  <div class="toc">
+    <h3>📌 Jump to Schedule</h3>
+    <div class="toc-grid">
+      <a href="#case1"><span class="toc-num">1</span> Core Memorandum</a>
+      <a href="#case2"><span class="toc-num">2</span> Schedule I — Articles</a>
+      <a href="#case3"><span class="toc-num">3</span> Schedule II — Imputations</a>
+      <a href="#case4"><span class="toc-num">4</span> Schedule III — Documents</a>
+      <a href="#case5"><span class="toc-num">5</span> Schedule IV — Witnesses</a>
+    </div>
+  </div>
+
+  <div class="struct-card">
+    <h3>🧭 Rule 14 Charge Sheet — Complete Structure Map (जोड़ा गया / Added Reference)</h3>
+    <div class="struct-flow">
+      <div class="step"><b>Memorandum:</b> Formal covering letter proposing the inquiry, directs official to submit written defense within 15 days</div>
+      <div class="step"><b>Schedule I — Articles of Charge:</b> Precise statement of what rule/conduct was violated (the "charge" itself)</div>
+      <div class="step"><b>Schedule II — Statement of Imputations:</b> Detailed factual narrative + evidence trail supporting each Article</div>
+      <div class="step"><b>Schedule III — List of Documents:</b> Every physical/digital document relied upon to prove the charge</div>
+      <div class="step"><b>Schedule IV — List of Witnesses:</b> Names + role of every person who will depose in the inquiry</div>
+    </div>
+  </div>
+
+  <!-- CASE 1: MEMORANDUM -->
+  <div class="case-card" id="case1">
+    <div class="case-head">
+      <span class="case-num-badge">1 OF 5 — MEMORANDUM</span>
+      <h5>Drafting the Core Memorandum for Major Penalty Proceedings (Rule 14)</h5>
+      <div class="scenario"><b>Scenario:</b> Draft the opening formal Memorandum under Rule 14 of CCS (CCA) Rules, 1965, initiating an inquiry against a sub-office official for gross misappropriation of public funds.</div>
+      <div class="doc-tags"><span class="doc-tag">CCS (CCA) Rule 14</span><span class="doc-tag">15-day defense deadline</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">OFFICE OF THE SUPERINTENDENT OF POST OFFICES<br>AHMEDABAD NORTH DIVISION, AHMEDABAD</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">Memo No: AN/Disciplinary/Rule-14/01/2026 &nbsp;&nbsp;&nbsp;&nbsp; Dated at Ahmedabad: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">MEMORANDUM</div>
+        <div style="margin-top:10px;">The undersigned proposes to hold an inquiry against Shri A.B. Kumar, Postal Assistant, Sabarmati SO under Rule 14 of the Central Civil Services (Classification, Control and Appeal) Rules, 1965. The substance of the imputations of misconduct or misbehavior in respect of which the inquiry is proposed to be held is set out in the enclosed Statement of Articles of Charge (Schedule I). A statement of the imputations of misconduct or misbehavior in support of each article of charge is enclosed in Schedule II.</div>
+        <div style="margin-top:8px;">2. Shri A.B. Kumar is hereby directed to submit within 15 days of the receipt of this Memorandum, a written statement of his defense and also to state whether he desires to be heard in person.</div>
+        <div style="margin-top:8px;">3. He is further informed that an inquiry will be held only in respect of those articles of charge as are not admitted. He should, therefore, specifically admit or deny each article of charge.</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(K.P. Sharma)</strong><br>Superintendent of Post Offices &amp;<br>Disciplinary Authority, Ahmedabad North</div>
+        <hr>
+        <div class="small-mono"><strong>To,</strong><br>Shri A.B. Kumar, Postal Assistant,<br>Sabarmati SO, Ahmedabad - 380005.</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अधीक्षक डाकघर का कार्यालय<br>अहमदाबाद उत्तर मंडल, अहमदाबाद</div>
+        <div class="small-mono" style="text-align:center;margin-top:4px;">ज्ञापन सं: AN/Disciplinary/Rule-14/01/2026 &nbsp;&nbsp;&nbsp;&nbsp; दिनांक अहमदाबाद: 04.07.2026</div>
+        <hr>
+        <div class="underline-title">ज्ञापन (Memorandum)</div>
+        <div style="margin-top:10px;">अधोहस्ताक्षरी केंद्रीय सिविल सेवा (वर्गीकरण, नियंत्रण और अपील) नियम, 1965 के नियम 14 के तहत श्री ए.बी. कुमार, डाक सहायक, साबरमती एसओ के खिलाफ जांच करने का प्रस्ताव करते हैं। कदाचार या दुर्व्यवहार के आरोपों का सार संलग्न अनुसूची I में दिया गया है। प्रत्येक आरोप के समर्थन में कदाचार के विवरण की अनुसूची II संलग्न है।</div>
+        <div style="margin-top:8px;">2. श्री ए.बी. कुमार को एतद्द्वारा निर्देश दिया जाता है कि वे इस ज्ञापन की प्राप्ति के 15 दिनों के भीतर अपने बचाव का एक लिखित विवरण प्रस्तुत करें और यह भी बताएं कि क्या वे व्यक्तिगत रूप से सुनवाई चाहते हैं।</div>
+        <div style="margin-top:8px;">3. उन्हें आगे सूचित किया जाता है कि जांच केवल उन्हीं आरोपों के संबंध में की जाएगी जिन्हें स्वीकार नहीं किया गया है। इसलिए, उन्हें प्रत्येक आरोप को स्पष्ट रूप से स्वीकार या अस्वीकार करना चाहिए।</div>
+        <div class="text-end small-mono" style="margin-top:16px;"><strong>(के.पी. शर्मा)</strong><br>अधीक्षक डाकघर एवं<br>अनुशासनिक प्राधिकारी, अहमदाबाद उत्तर</div>
+        <hr>
+        <div class="small-mono"><strong>सेवा में,</strong><br>श्री ए.बी. कुमार, डाक सहायक,<br>साबरमती SO, अहमदाबाद - 380005.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2: SCHEDULE I -->
+  <div class="case-card" id="case2">
+    <div class="case-head">
+      <span class="case-num-badge">2 OF 5 — SCHEDULE I</span>
+      <h5>Drafting Schedule I — Articles of Charge for Financial Embezzlement</h5>
+      <div class="scenario"><b>Scenario:</b> Draft a specific Schedule I (Articles of Charge) for an official accused of creating fraudulent withdrawal slips in dynamic ledger accounts.</div>
+      <div class="doc-tags"><span class="doc-tag">Rule 3(1)(i)(ii)(iii) CCS Conduct 1964</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">SCHEDULE - I</div>
+        <div class="small-mono" style="text-align:center;">Statement of Articles of Charge framed against Shri A.B. Kumar, PA, Sabarmati SO</div>
+        <hr>
+        <span class="schedule-title">Article of Charge - I</span>
+        <div style="margin-top:8px;">That the said Shri A.B. Kumar while functioning as Postal Assistant at Sabarmati SO during the period from 10.01.2026 to 25.02.2026, committed gross financial irregularity by fabricating fraudulent withdrawal entries in Post Office Savings Bank (POSB) Account Number 105432XX. He forged the signatures of the depositor and unauthorizedly withdrew an amount of ₹85,000/- for personal utilization.</div>
+        <div style="margin-top:8px;">By his above acts, Shri A.B. Kumar failed to maintain absolute integrity and devotion to duty, thereby violating <strong>Rule 3(1)(i) and Rule 3(1)(ii) of the CCS (Conduct) Rules, 1964</strong>.</div>
+        <span class="schedule-title">Article of Charge - II</span>
+        <div style="margin-top:8px;">That during the aforesaid period, the said Shri A.B. Kumar intentionally suppressed the daily closure balances and generated false Finacle transaction logs to prevent detection by the supervisory staff.</div>
+        <div style="margin-top:8px;">By his deliberate acts, the official acted in a manner highly unbecoming of a Government Servant, violating <strong>Rule 3(1)(iii) of the CCS (Conduct) Rules, 1964</strong>.</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(K.P. Sharma)</strong><br>Disciplinary Authority</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अनुसूची - I</div>
+        <div class="small-mono" style="text-align:center;">श्री ए.बी. कुमार, पीए, साबरमती एसओ के खिलाफ तैयार किए गए आरोपों का विवरण</div>
+        <hr>
+        <span class="schedule-title">आरोप का लेख (Article) - I</span>
+        <div style="margin-top:8px;">यह कि उक्त श्री ए.बी. कुमार ने दिनांक 10.01.2026 से 25.02.2026 तक साबरमती एसओ में डाक सहायक के रूप में कार्य करते हुए, डाकघर बचत बैंक (POSB) खाता संख्या 105432XX में धोखाधड़ी से निकासी प्रविष्टियां करके गंभीर वित्तीय अनियमितता की। उन्होंने जमाकर्ता के जाली हस्ताक्षर किए और व्यक्तिगत उपयोग के लिए ₹85,000/- की राशि अवैध रूप से निकाल ली।</div>
+        <div style="margin-top:8px;">अपने उपरोक्त कृत्यों से, श्री ए.बी. कुमार पूर्ण सत्यनिष्ठा और कर्तव्य के प्रति समर्पण बनाए रखने में विफल रहे, जिससे <strong>सीसीएस (आचरण) नियम, 1964 के नियम 3(1)(i) और नियम 3(1)(ii)</strong> का उल्लंघन हुआ।</div>
+        <span class="schedule-title">आरोप का लेख (Article) - II</span>
+        <div style="margin-top:8px;">यह कि उक्त अवधि के दौरान, उक्त श्री ए.बी. कुमार ने पर्यवेक्षी कर्मचारियों द्वारा पकड़े जाने से बचने के लिए जानबूझकर दैनिक क्लोजर बैलेंस को छुपाया और गलत फिनाकल (Finacle) लेनदेन लॉग जेनरेट किए।</div>
+        <div style="margin-top:8px;">अपने इस कृत्य से उक्त कर्मचारी ने एक सरकारी सेवक के लिए अत्यधिक अनुचित व्यवहार किया, जिससे <strong>सीसीएस (आचरण) नियम, 1964 के नियम 3(1)(iii)</strong> का उल्लंघन हुआ।</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(के.पी. शर्मा)</strong><br>अनुशासनिक प्राधिकारी</div>
+      </div>
+    </div>
+  </div>
+  <!-- CASE 3: SCHEDULE II -->
+  <div class="case-card" id="case3">
+    <div class="case-head">
+      <span class="case-num-badge">3 OF 5 — SCHEDULE II</span>
+      <h5>Drafting Schedule II — Statement of Imputations in Support of Charges</h5>
+      <div class="scenario"><b>Scenario:</b> Draft Schedule II providing chronological narrative evidence, transaction logs, and specific procedural defaults that back up Article I.</div>
+      <div class="doc-tags"><span class="doc-tag">Evidence Narrative</span><span class="doc-tag">Handwriting Analysis</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">SCHEDULE - II</div>
+        <div class="small-mono" style="text-align:center;">Statement of Imputations of misconduct in support of Articles of Charge framed against Shri A.B. Kumar</div>
+        <hr>
+        <div style="margin-top:8px;"><strong>In Support of Article I:</strong> On 15.02.2026, a structural mismatch was caught in the ledger. Verification of the physical voucher journal sheet revealed that a withdrawal form for ₹85,000/- was processed under user identity 'ABK95' which belongs exclusively to Shri A.B. Kumar.</div>
+        <div style="margin-top:8px;">2. The original account holder, during the preliminary investigation on 20.02.2026, provided a written statement confirming that he neither signed the voucher nor visited the post office counter on that specific date. The handwriting analysis report clearly demonstrates that the fake signatures match the writing specimen of the charged official. Thus, the imputation of fraudulent motive is fully established.</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(K.P. Sharma)</strong><br>Disciplinary Authority</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अनुसूची - II</div>
+        <div class="small-mono" style="text-align:center;">श्री ए.बी. कुमार के खिलाफ तैयार किए गए आरोपों के समर्थन में कदाचार के विवरण का विवरण</div>
+        <hr>
+        <div style="margin-top:8px;"><strong>आरोप I के समर्थन में:</strong> दिनांक 15.02.2026 को खाता बही (Ledger) में एक विसंगति पकड़ी गई थी। भौतिक वाउचर जर्नल शीट के सत्यापन से पता चला कि ₹85,000/- का निकासी फॉर्म यूजर आईडी 'ABK95' के तहत संसाधित किया गया था, जो विशेष रूप से श्री ए.बी. कुमार की है।</div>
+        <div style="margin-top:8px;">2. मूल खाताधारक ने दिनांक 20.02.2026 को प्रारंभिक जांच के दौरान एक लिखित बयान दिया कि उन्होंने न तो वाउचर पर हस्ताक्षर किए थे और न ही उस विशिष्ट तिथि को डाकघर काउंटर पर आए थे। हस्तलेखन विश्लेषण रिपोर्ट से स्पष्ट है कि जाली हस्ताक्षर आरोपित कर्मचारी के लेखन नमूने से मेल खाते हैं। अतः धोखाधड़ी के उद्देश्य का आरोप पूरी तरह से सिद्ध होता है।</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(के.पी. शर्मा)</strong><br>अनुशासनिक प्राधिकारी</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 4: SCHEDULE III -->
+  <div class="case-card" id="case4">
+    <div class="case-head">
+      <span class="case-num-badge">4 OF 5 — SCHEDULE III</span>
+      <h5>Drafting Schedule III — Listing Mandatory Documentary Evidences</h5>
+      <div class="scenario"><b>Scenario:</b> Formulate Schedule III with absolute systemic rigor, listing the digital entries, physical sheets, and reports relied upon for the case.</div>
+      <div class="doc-tags"><span class="doc-tag">5 Document List</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">SCHEDULE - III</div>
+        <div class="small-mono" style="text-align:center;">List of Documents by which the Articles of Charge framed against Shri A.B. Kumar are proposed to be sustained</div>
+        <hr>
+        <div style="margin-top:8px;">1. Original fake SB-7 withdrawal voucher dated 10.01.2026 for ₹85,000/- processed at Sabarmati SO.</div>
+        <div>2. Certified extract copy of Finacle electronic transaction logs generated on 10.01.2026 showing user terminal ID 'ABK95'.</div>
+        <div>3. Original POSB Ledger printout sheet for Account Number 105432XX.</div>
+        <div>4. Written statement dated 20.02.2026 recorded by the depositor during the preliminary probe.</div>
+        <div>5. Specimen handwriting report issued by the Government Handwriting Expert on 02.03.2026.</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(K.P. Sharma)</strong><br>Disciplinary Authority</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अनुसूची - III</div>
+        <div class="small-mono" style="text-align:center;">उन दस्तावेजों की सूची जिसके द्वारा श्री ए.बी. कुमार के खिलाफ तैयार किए गए आरोपों को साबित करने का प्रस्ताव है</div>
+        <hr>
+        <div style="margin-top:8px;">1. साबरमती एसओ में संसाधित ₹85,000/- का मूल फर्जी एसबी-7 निकासी वाउचर दिनांक 10.01.2026।</div>
+        <div>2. दिनांक 10.01.2026 को जेनरेट किए गए फिनाकल इलेक्ट्रॉनिक लेनदेन लॉग की प्रमाणित प्रति, जिसमें यूजर टर्मिनल आईडी 'ABK95' प्रदर्शित है।</div>
+        <div>3. खाता संख्या 105432XX के लिए मूल पीओएसबी लेजर प्रिंटआउट शीट।</div>
+        <div>4. प्रारंभिक जांच के दौरान जमाकर्ता द्वारा दर्ज कराया गया दिनांक 20.02.2026 का लिखित बयान।</div>
+        <div>5. दिनांक 02.03.2026 को सरकारी हस्तलेखन विशेषज्ञ द्वारा जारी की गई हस्तलेखन रिपोर्ट।</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(के.पी. शर्मा)</strong><br>अनुशासनिक प्राधिकारी</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 5: SCHEDULE IV -->
+  <div class="case-card" id="case5">
+    <div class="case-head">
+      <span class="case-num-badge">5 OF 5 — SCHEDULE IV</span>
+      <h5>Drafting Schedule IV — Presenting the List of Witnesses</h5>
+      <div class="scenario"><b>Scenario:</b> Complete the final mandatory element, Schedule IV, structuring the details of departmental and external witnesses to support the inquiry process.</div>
+      <div class="doc-tags"><span class="doc-tag">3 Witnesses</span></div>
+    </div>
+
+    <div class="lang-block en-version">
+      <span class="note-header">🇬🇧 English Version</span>
+      <div class="draft-border">
+        <div class="center-bold">SCHEDULE - IV</div>
+        <div class="small-mono" style="text-align:center;">List of Witnesses by whom the Articles of Charge framed against Shri A.B. Kumar are proposed to be sustained</div>
+        <hr>
+        <div style="margin-top:8px;">1. <strong>Shri P.K. Vardhan</strong>, Sub-Postmaster (SPM), Sabarmati SO (To depose regarding daily counter supervisor controls and user login identity structures).</div>
+        <div style="margin-top:6px;">2. <strong>Shri R.C. Mehta</strong>, Account Holder/Depositor of A/c No: 105432XX (To depose regarding non-authorization of the voucher).</div>
+        <div style="margin-top:6px;">3. <strong>Shri S.L. Dave</strong>, Assistant Superintendent of Post Offices (ASPOs), Investigation Wing (To depose regarding the facts uncovered in the preliminary investigation report).</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(K.P. Sharma)</strong><br>Superintendent of Post Offices &amp;<br>Disciplinary Authority, Ahmedabad North</div>
+      </div>
+    </div>
+
+    <div class="lang-block hi-version">
+      <span class="note-header">🇮🇳 हिन्दी संस्करण</span>
+      <div class="draft-border">
+        <div class="center-bold">अनुसूची - IV</div>
+        <div class="small-mono" style="text-align:center;">उन गवाहों की सूची जिनके द्वारा श्री ए.बी. कुमार के खिलाफ लगाए गए आरोपों को साबित करने का प्रस्ताव है</div>
+        <hr>
+        <div style="margin-top:8px;">1. <strong>श्री पी.के. वर्धन</strong>, उप-डाकपाल (SPM), साबरमती SO (दैनिक काउंटर सुपरवाइजर नियंत्रण और यूजर लॉगिन पहचान संरचना के संबंध में गवाही देने के लिए)।</div>
+        <div style="margin-top:6px;">2. <strong>श्री आर.सी. मेहता</strong>, खाताधारक/जमाकर्ता, खाता संख्या: 105432XX (वाउचर के गैर-प्राधिकरण के संबंध में गवाही देने के लिए)।</div>
+        <div style="margin-top:6px;">3. <strong>श्री एस.एल. दवे</strong>, सहायक अधीक्षक डाकघर (ASPOs), जांच विंग (प्रारंभिक जांच रिपोर्ट में सामने आए तथ्यों के संबंध में गवाही देने के लिए)।</div>
+        <div class="text-end small-mono" style="margin-top:14px;"><strong>(के.पी. शर्मा)</strong><br>अधीक्षक डाकघर एवं<br>अनुशासनिक प्राधिकारी, अहमदाबाद उत्तर</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

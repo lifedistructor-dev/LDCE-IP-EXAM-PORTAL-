@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume II — General Regulations | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#1B3A6B; --ip-gold:#E8A317;
+  --vimp:#C8102E; --freq:#E8720C; --conc:#D9A404; --quick:#1E8449;
+  --bg:#F6F4EF; --card:#FFFFFF; --ink:#22252A; --muted:#5B6068;
+  --line:#E2DFD7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Mangal','Nirmala UI',Georgia,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15.5px}
+.wrap{max-width:860px;margin:0 auto;padding:0 12px 60px}
+header.hero{background:linear-gradient(135deg,var(--ip-blue) 0%,#12294e 60%,#0c1d38 100%);color:#fff;padding:28px 16px 22px;text-align:center;border-bottom:5px solid var(--ip-gold)}
+header.hero .badge{display:inline-block;background:var(--ip-red);color:#fff;font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+header.hero h1{font-size:clamp(20px,4.5vw,30px);line-height:1.3}
+header.hero h1 .en{display:block;font-style:italic;font-weight:400;font-size:.72em;opacity:.9;margin-top:4px}
+header.hero .sub{margin-top:10px;font-size:13px;opacity:.85}
+header.hero .sub b{color:var(--ip-gold)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0}
+.legend span{font-size:12.5px;padding:4px 10px;border-radius:16px;font-weight:600}
+.lg-r{background:#FDECEE;color:var(--vimp)} .lg-o{background:#FEF0E2;color:var(--freq)}
+.lg-y{background:#FCF6DE;color:#9a7500} .lg-g{background:#E7F5EC;color:var(--quick)}
+nav.chips{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.97);padding:8px 4px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+nav.chips a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ip-blue);background:#fff;border:1.5px solid var(--ip-blue);border-radius:18px;padding:5px 12px;text-decoration:none;white-space:nowrap}
+nav.chips a:active{background:var(--ip-blue);color:#fff}
+section.ch{margin:26px 0;scroll-margin-top:60px}
+.ch-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-num{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--ip-red);color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(200,16,46,.3)}
+.ch-num.blue{background:var(--ip-blue);box-shadow:0 3px 8px rgba(27,58,107,.3)}
+.ch-title h2{font-size:18px;color:var(--ip-blue);line-height:1.3}
+.ch-title .en{font-style:italic;font-weight:500;font-size:13px;color:var(--muted)}
+.ch-title .rules{font-size:11.5px;background:var(--ip-gold);color:#3a2b00;font-weight:700;border-radius:10px;padding:1px 8px;display:inline-block;margin-top:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.t-r{border-left:5px solid var(--vimp)} .card.t-o{border-left:5px solid var(--freq)}
+.card.t-y{border-left:5px solid var(--conc)} .card.t-g{border-left:5px solid var(--quick)}
+.card h3{font-size:15.5px;color:var(--ip-blue);margin-bottom:6px}
+.card h3 .en{display:block;font-style:italic;font-weight:500;font-size:12.5px;color:var(--muted)}
+.hi{font-weight:700;display:block}
+.en{font-style:italic;color:#4a4f57;display:block;font-size:.93em}
+.rule-tag{display:inline-block;background:var(--ip-blue);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:middle}
+ul.points{list-style:none;margin-top:6px}
+ul.points li{padding:7px 0 7px 2px;border-bottom:1px dashed var(--line)}
+ul.points li:last-child{border-bottom:none}
+.tbl-wrap{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:480px}
+th{background:var(--ip-blue);color:#fff;padding:8px;text-align:left;font-size:12.5px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAF9F5}
+td .en{font-size:.9em}
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.fbox{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 14px;text-align:center;max-width:440px;width:100%;font-size:14px}
+.fbox.start{background:var(--ip-blue);color:#fff;border-color:var(--ip-blue)}
+.fbox.start .en{color:#cfd9ea}
+.fbox.warn{border-color:var(--vimp);background:#FDECEE}
+.fbox.ok{border-color:var(--quick);background:#E7F5EC}
+.farrow{color:var(--ip-red);font-size:22px;line-height:1;padding:3px 0;font-weight:800}
+.farrow small{display:block;font-size:11px;color:var(--muted);font-weight:600;font-style:italic}
+.dtree .branch{display:flex;gap:8px;margin:6px 0}
+.dtree .branch>div{flex:1;border-radius:10px;padding:8px;font-size:13px;text-align:center}
+.dtree .yes{background:#E7F5EC;border:2px solid var(--quick)}
+.dtree .no{background:#FDECEE;border:2px solid var(--vimp)}
+.mindmap{position:relative;padding:8px 0}
+.mm-center{background:var(--ip-red);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:800;margin-bottom:12px;box-shadow:0 3px 10px rgba(200,16,46,.35)}
+.mm-center .en{color:#ffd9de;font-weight:500}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mm-node{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px;font-size:12.5px;text-align:center}
+.mm-node b{color:var(--ip-red);display:block;font-size:14px}
+.mm-node.excluded{border-color:#aaa;background:#f1f1f1;color:#888}
+.mm-node.excluded b{color:#999}
+.timeline{border-left:3px solid var(--ip-gold);margin:10px 0 10px 10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-gold)}
+.tl-item .when{font-weight:800;color:var(--ip-red);font-size:13.5px}
+.examq{background:#FFF8E8;border:1.5px dashed var(--ip-gold);border-radius:10px;padding:9px 12px;margin:8px 0;font-size:13.5px}
+.examq::before{content:"📝 संभावित प्रश्न / Probable Question";display:block;font-weight:800;color:#8a6400;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px}
+.mnemo{background:linear-gradient(135deg,#EEF3FB,#E4EBF7);border:1.5px solid var(--ip-blue);border-radius:12px;padding:11px 13px;margin:8px 0}
+.mnemo .key{font-size:17px;font-weight:800;color:var(--ip-red);letter-spacing:1px}
+.rev-sheet{background:#fff;border:3px solid var(--ip-red);border-radius:16px;padding:14px;margin:12px 0}
+.rev-sheet h3{background:var(--ip-red);color:#fff;border-radius:8px;padding:6px 10px;font-size:15px;margin:-2px -2px 10px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+.rev-cell{background:#FAF9F5;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.8px}
+.rev-cell b{color:var(--ip-blue)}
+.rev-cell .num{color:var(--ip-red);font-weight:800}
+.footer-note{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media print{nav.chips{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="badge">IP EXAM PORTAL • PAPER I</span>
+  <h1>डाक मैनुअल भाग II — दृश्य इन्फोग्राफिक
+    <span class="en">Postal Manual Volume II — Visual Infographic</span>
+  </h1>
+  <div class="sub">सामान्य विनियम (General Regulations) — <b>चौथा संशोधित संस्करण</b> • 12 अध्याय + 19 परिशिष्ट • 1-6-2005 तक संशोधित</div>
+</header>
+<div class="wrap">
+<div class="legend">
+  <span class="lg-r">🔴 परीक्षा हेतु अति महत्वपूर्ण / Very Important</span>
+  <span class="lg-o">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="lg-y">🟡 अवधारणा / Conceptual</span>
+  <span class="lg-g">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+<nav class="chips">
+  <a href="#overview">परिचय</a>
+  <a href="#ch1">Ch 1 Organisation</a>
+  <a href="#ch3">Ch 3 Appeals</a>
+  <a href="#ch4">Ch 4 Personal</a>
+  <a href="#ch5">Ch 5 Security</a>
+  <a href="#ch6">Ch 6 Stock</a>
+  <a href="#ch7">Ch 7 Forged</a>
+  <a href="#ch8-9">Ch 8-9 Print/Contract</a>
+  <a href="#ch10">Ch 10 Buildings</a>
+  <a href="#ch11">Ch 11 Misc</a>
+  <a href="#ch12">Ch 12 Budget</a>
+  <a href="#master">Master Numbers</a>
+  <a href="#mnemo">Mnemonics</a>
+  <a href="#rev">One-Page Revision</a>
+  <a href="#lastday">Last Day Notes</a>
+</nav>
+<section class="ch" id="overview">
+  <div class="ch-head">
+    <div class="ch-num blue">📘</div>
+    <div class="ch-title">
+      <h2>विषय एवं परिभाषा <span class="en">Topic & Definition</span></h2>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 डाक मैनुअल भाग II क्या है? <span class="en">What is Postal Manual Volume II?</span></h3>
+    <span class="hi">यह <u>सामान्य विनियम</u> — संगठन, अपील-याचिकाएँ, व्यक्तिगत मामले, प्रतिभूति जमा, स्टॉक, जाली टिकट, मुद्रण, संविदाएँ, भवन, विविध नियम व बजट से संबंधित सर्वांगीण प्रशासनिक पुस्तिका है।</span>
+    <span class="en">This is the General Regulations manual — covering organisation, appeals/petitions, personal matters, security deposits, stock, forged stamps, printing, contracts, buildings, miscellaneous rules & budget.</span>
+    <div class="examq">
+      <span class="hi">प्रश्न: भाग II में कुल कितने अध्याय व परिशिष्ट हैं? → 12 अध्याय (अध्याय II विलोपित) + 19 परिशिष्ट</span>
+      <span class="en">Q: How many chapters & appendices in Vol. II? → 12 chapters (Ch. II deleted) + 19 appendices</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 मानसिक मानचित्र — 12 अध्याय <span class="en">Mind Map — 12 Chapters</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">डाक मैनुअल भाग II<span class="en">General Regulations</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>Ch I</b>संगठन<br><i>Organisation</i></div>
+        <div class="mm-node excluded"><b>Ch II ⛔</b>अनुशासन<br><i>Discipline — विलोपित/Deleted</i></div>
+        <div class="mm-node"><b>Ch III</b>अपील व याचिकाएँ<br><i>Appeals & Petitions</i></div>
+        <div class="mm-node"><b>Ch IV</b>व्यक्तिगत मामले<br><i>Personal Matters</i></div>
+        <div class="mm-node"><b>Ch V</b>प्रतिभूति जमा<br><i>Security Deposits</i></div>
+        <div class="mm-node"><b>Ch VI</b>स्टॉक<br><i>Stock</i></div>
+        <div class="mm-node"><b>Ch VII</b>जाली/नकली टिकट<br><i>Forged/Counterfeit Stamps</i></div>
+        <div class="mm-node"><b>Ch VIII</b>मुद्रण<br><i>Printing</i></div>
+        <div class="mm-node"><b>Ch IX</b>संविदाएँ<br><i>Contracts</i></div>
+        <div class="mm-node"><b>Ch X</b>भवन<br><i>Buildings</i></div>
+        <div class="mm-node"><b>Ch XI</b>विविध नियम<br><i>Miscellaneous Rules</i></div>
+        <div class="mm-node"><b>Ch XII</b>बजट अनुमान व नियंत्रण<br><i>Budget Estimates & Control</i></div>
+      </div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: भाग II का कौन-सा अध्याय विलोपित (Deleted) है? → अध्याय II (अनुशासन)</span>
+      <span class="en">Q: Which chapter of Vol. II is deleted? → Chapter II (Discipline)</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch1">
+  <div class="ch-head">
+    <div class="ch-num">1</div>
+    <div class="ch-title">
+      <h2>संगठन <span class="en">Organisation</span></h2>
+      <span class="rules">नियम / Rules 1–9</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 डाक सेवा बोर्ड — शीर्ष संरचना <span class="en">Postal Service Board — Apex Structure</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">डाक विभाग — <b>संचार व सूचना प्रौद्योगिकी मंत्रालय</b> के अधीन; डाक सेवा बोर्ड = अध्यक्ष + <b>3 सदस्य</b></span>
+          <span class="en">Dept. of Posts under Ministry of Communications & IT; Postal Service Board = Chairman + 3 Members</span></li>
+      <li>🟠 <span class="hi">महानिदेशक (डाक) व मंत्रालय के सचिव पद — <b>दोनों एक साथ अध्यक्ष द्वारा धारित</b></span>
+          <span class="en">Director-General (Posts) & Secretary posts BOTH concurrently held by the Chairman</span></li>
+      <li>🟢 <span class="hi">3 सदस्यों के पोर्टफोलियो: <b>Member(P)</b> — कार्मिक; <b>Member(O&M)</b> — परिचालन व प्रबंधन; <b>Member(D)</b> — विकास</span>
+          <span class="en">3 Members' portfolios: Member(P)—Personnel; Member(O&M)—Operations; Member(D)—Development</span></li>
+    </ul>
+    <div class="tbl-wrap"><table>
+      <tr><th>सदस्य / Member</th><th>पोर्टफोलियो / Portfolio</th></tr>
+      <tr><td class="hi">Member (P)</td><td class="hi">कार्मिक व प्रशिक्षण, स्थापना, गुणवत्ता प्रबंधन व लोक शिकायत, चिकित्सा</td></tr>
+      <tr><td class="hi">Member (O&M)</td><td class="hi">प्रौद्योगिकी, मेल प्रबंधन, फिलेटली, व्यवसाय विकास, मार्केटिंग</td></tr>
+      <tr><td class="hi">Member (D)</td><td class="hi">वित्तीय सेवाएँ, एस्टेट, नीति व डाक नेटवर्क, सामग्री प्रबंधन, PLI, सिविल व इलेक्ट्रिकल विंग</td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: डाक सेवा बोर्ड में अध्यक्ष के अलावा कितने सदस्य होते हैं? → 3 सदस्य (नियम 1)</span>
+      <span class="en">Q: How many Members (besides Chairman) are on the Postal Service Board? → 3 Members</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 2 — 22 परिमंडल + बेस परिमंडल <span class="en">Rule 2 — 22 Circles + Base Circle</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">देश <b>22 डाक परिमंडलों</b> में विभाजित; अतिरिक्त <b>"बेस सर्कल"</b> — सेना डाक सेवा हेतु, <b>मेजर जनरल</b> रैंक अधिकारी (ADG, APS) द्वारा प्रधानित</span>
+          <span class="en">Country divided into 22 Postal Circles; extra "Base Circle" for Armed Forces, headed by Major General-rank officer (ADG, APS)</span></li>
+      <li>🟠 <span class="hi"><b>18 परिमंडल</b> — Chief Postmaster General; <b>3 परिमंडल</b> — Principal CPMG द्वारा प्रधानित (कुल 21+1 बेस = 22)</span>
+          <span class="en">18 Circles headed by CPMG; 3 Circles by Principal CPMG</span></li>
+      <li>🟢 <span class="hi">सेना डाक सेवा (APS) में अन्य रैंकों का <b>75%</b> डाक विभाग से; शेष सेना द्वारा भर्ती</span>
+          <span class="en">75% of APS other ranks drawn from Department of Posts; remaining recruited by Army</span></li>
+      <li>🟡 <span class="hi">बहु-राज्य/UT परिमंडल: <b>गुजरात</b> (दमन-दीव, दादरा-नगर हवेली); <b>केरल</b> (लक्षद्वीप); <b>महाराष्ट्र</b> (गोवा); <b>NE परिमंडल</b> (6 राज्य); <b>पंजाब</b> (चंडीगढ़); <b>तमिलनाडु</b> (पुडुचेरी)</span>
+          <span class="en">Multi-state/UT circles: Gujarat, Kerala, Maharashtra, NE (6 states), Punjab, Tamil Nadu</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: उत्तर-पूर्वी परिमंडल में कितने राज्य शामिल हैं? → 6 (अरुणाचल, मणिपुर, मेघालय, मिज़ोरम, नागालैंड, त्रिपुरा) — नियम 2</span>
+      <span class="en">Q: How many states does the North Eastern Circle cover? → 6 (Arunachal, Manipur, Meghalaya, Mizoram, Nagaland, Tripura)</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 administrative पदानुक्रम — नियम 7(a)-(c) <span class="en">Administrative Hierarchy — Rule 7(a)-(c)</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">परिमंडल स्तर — CPMG/Principal CPMG</span><span class="en">Circle Level — CPMG/Principal CPMG</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">क्षेत्र स्तर — Postmaster General (PMG)</span><span class="en">Region Level — Postmaster General</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">प्रभाग स्तर — वरिष्ठ अधीक्षक/अधीक्षक (डाक/RMS), प्रधान डाकपाल</span><span class="en">Divisional Level — Sr. Supdt./Supdt. (Posts/RMS), Head Postmasters</span></div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: क्षेत्र (Region) का प्रमुख कौन होता है? → पोस्टमास्टर जनरल (PMG) — नियम 7(b)</span>
+      <span class="en">Q: Who heads a Region? → Postmaster General (PMG)</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch3">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>अपील व याचिकाएँ <span class="en">Appeals & Petitions</span></h2>
+      <span class="rules">नियम / Rules 115–121 (110–114 विलोपित)</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 116 — याचिका के मूल नियम <span class="en">Rule 116 — Basic Petition Rules</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>संयुक्त याचिका अस्वीकार्य</b> — प्रत्येक कर्मचारी को अलग-अलग याचिका देनी होगी; परंतु समान परिस्थिति में <b>समान (identical) याचिकाएँ</b> अलग-अलग जमा हो सकती हैं</span>
+          <span class="en">Joint petitions INADMISSIBLE — each employee must petition separately; identical petitions by multiple employees allowed if facts apply personally to each</span></li>
+      <li>🟢 <span class="hi"> याचिका स्पष्ट, संक्षिप्त, सम्मानजनक भाषा में व विशिष्ट प्रार्थना के साथ समाप्त हो; यथासंभव <b>अंग्रेज़ी में</b> लिखी जाए</span>
+          <span class="en">Petition should be clear, concise, respectful, end with specific prayer; written in English wherever practicable</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: क्या दो कर्मचारी संयुक्त याचिका दे सकते हैं? → नहीं, संयुक्त याचिका अस्वीकार्य; पर समान (identical) अलग-अलग याचिकाएँ स्वीकार्य (नियम 116)</span>
+      <span class="en">Q: Can two employees submit a joint petition? → No, joint petitions inadmissible; identical separate petitions allowed</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 117 — उचित माध्यम से प्रस्तुतीकरण (प्रवाह-चार्ट) <span class="en">Rule 117 — Submission Through Proper Channel (Flowchart)</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">निरीक्षक (Inspector) के आदेश के विरुद्ध याचिका</span><span class="en">Petition against Inspector's order</span></div>
+      <div class="farrow">↓<small>निरीक्षक के माध्यम से, आदेश की प्रति सहित / through Inspector, with copy of order</small></div>
+      <div class="fbox"><span class="hi">अधीक्षक (Superintendent) को संबोधित</span><span class="en">Addressed to Superintendent</span></div>
+      <div class="farrow">↓<small>असंतुष्ट होने पर / if dissatisfied</small></div>
+      <div class="fbox"><span class="hi">अधीक्षक के माध्यम से — निदेशक डाक सेवाएँ (DPS) को</span><span class="en">Through Superintendent — to Director Postal Services</span></div>
+      <div class="farrow">↓<small>बड़े परिमंडल / छोटे परिमंडल</small></div>
+      <div class="fbox ok"><span class="hi">बड़े परिमंडल में → परिमंडल प्रमुख को; छोटे परिमंडल में → सीधे DG को</span><span class="en">Major circle → Head of Circle; minor circle → directly to DG</span></div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: निरीक्षक के आदेश के विरुद्ध याचिका सबसे पहले किसके माध्यम से प्रस्तुत होगी? → स्वयं निरीक्षक के माध्यम से (नियम 117)</span>
+      <span class="en">Q: A petition against an Inspector's order must first be submitted through whom? → The Inspector himself</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 118-D व 120 — समय-सीमाएँ (अति महत्वपूर्ण!) <span class="en">Rules 118-D & 120 — Time Limits (Critical!)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">उच्च प्राधिकारी को याचिका — निचले प्राधिकारी के आदेश की सूचना मिलने के <b>6 माह के भीतर</b> प्रस्तुत होनी चाहिए, अन्यथा बिना जाँच खारिज़ हो सकती है</span>
+          <span class="en">Petition to higher authority must be submitted within 6 MONTHS of communication of the order; else liable to rejection without investigation</span></li>
+      <li>🟢 <span class="hi">6 माह की गणना <b>मूल आदेश</b> की सूचना-तिथि से — पुनर्विचार याचिका के बाद के आदेश से नहीं</span>
+          <span class="en">6-month period counted from date of ORIGINAL order's communication — not from any subsequent reconsideration order</span></li>
+      <li>🟠 <span class="hi">CCS (अस्थायी सेवा) नियम 5 अंतर्गत सेवा-समाप्ति याचिका — <b>3 माह के भीतर</b> (सूचना-तिथि या समाप्ति-तिथि से)</span>
+          <span class="en">Petition against termination under Rule 5, CCS (Temporary Service) Rules — within 3 MONTHS (from notice/termination date)</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: उच्च प्राधिकारी को याचिका कितने माह के भीतर देनी होती है? → 6 माह (नियम 118-D, 120g)</span>
+      <span class="en">Q: Within how many months must a petition to a higher authority be submitted? → 6 months</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 120 — DG को याचिका रोकने की शक्तियाँ <span class="en">Rule 120 — Powers to Withhold Petitions to DG</span></h3>
+    <ul class="points">
+      <li><span class="hi">परिमंडल प्रमुख (या DG के अधीनस्थ कोई प्राधिकारी) निम्न स्थितियों में याचिका रोक सकते हैं: सेवा-हित स्थानांतरण, प्रोबेशनर/अस्थायी की अनुपयुक्तता पर हटाना, स्वैच्छिक त्यागपत्र, अपठनीय/अनुचित भाषा, पुनरावृत्त याचिका बिना नए तथ्य</span>
+          <span class="en">HoC may withhold petitions in cases: service-interest transfer, unfitness removal of probationer/temporary, voluntary resignation, illegible/improper language, repeat petition with no new facts</span></li>
+      <li>🟢 <span class="hi">रोकी गई याचिका की <b>त्रैमासिक सूची</b> DG को भेजी जानी चाहिए (नियम 121)</span>
+          <span class="en">Quarterly list of withheld petitions must be sent to DG (Rule 121)</span></li>
+    </ul>
+  </div>
+</section>
+<section class="ch" id="ch4">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>व्यक्तिगत मामले <span class="en">Personal Matters</span></h2>
+      <span class="rules">नियम / Rules 127–136</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 127 — सिविल वाद संस्थापन के अपवाद <span class="en">Rule 127 — Exceptions to Civil Suit Reporting</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>अपवाद / Exception</th><th>राशि-सीमा / Amount Limit</th></tr>
+      <tr><td><span class="hi">MO, बचत बैंक व बीमित वस्तु संबंधी वाद — रिपोर्ट न करें</span><span class="en">MO/Savings Bank/insured article suits — no report needed</span></td><td class="hi">₹500 तक</td></tr>
+      <tr><td><span class="hi">भूमि/भवन संबंधी वाद — परिमंडल प्रमुख स्वयं संस्थित/बचाव कर सकते हैं</span><span class="en">Land/building suits — HoC may institute/defend</span></td><td class="hi">विधि-व्यय ₹250 तक</td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: MO/बचत बैंक वाद में किस राशि तक परिमंडल प्रमुख को रिपोर्ट नहीं करनी पड़ती? → ₹500 (नियम 127, अपवाद 1)</span>
+      <span class="en">Q: Up to what amount is HoC exempted from reporting MO/Savings Bank suits? → Rs. 500</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 अनुच्छेद 311 — संवैधानिक सुरक्षा <span class="en">Article 311 — Constitutional Safeguard</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">अनुच्छेद 311(1): कोई सिविल सेवक <b>नियुक्ति-प्राधिकारी से निम्न स्तर</b> के प्राधिकारी द्वारा बर्खास्त/हटाया नहीं जा सकता</span>
+          <span class="en">Article 311(1): No civil servant dismissed/removed by authority SUBORDINATE to appointing authority</span></li>
+      <li>🔴 <span class="hi">अनुच्छेद 311(2): बर्खास्तगी/हटाना/पदावनति से पहले <b>उचित अवसर (कारण बताओ नोटिस)</b> देना अनिवार्य — जाँच रिपोर्ट की प्रति सहित</span>
+          <span class="en">Article 311(2): Reasonable opportunity (show-cause) mandatory before dismissal/removal/reduction — with copy of inquiry report</span></li>
+      <li>🟢 <span class="hi">इन अनिवार्य शर्तों के उल्लंघन पर — आदेश <b>शून्य व अमान्य</b>, कर्मचारी सेवा में बना माना जाता है, पूर्ण वेतन-भत्ते का हकदार</span>
+          <span class="en">Failure to observe → orders NULL & VOID; official deemed continued in service, entitled to full pay & allowances</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: अनुच्छेद 311(2) क्या अनिवार्य करता है? → बर्खास्तगी/हटाने से पूर्व उचित अवसर (कारण बताओ नोटिस)</span>
+      <span class="en">Q: What does Article 311(2) mandate? → Reasonable opportunity (show-cause) before dismissal/removal</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 129–131 — संज्ञेय बनाम असंज्ञेय अपराध <span class="en">Rules 129–131 — Cognisable vs Non-Cognisable Offences</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>प्रकार / Type</th><th>उदाहरण / Examples</th></tr>
+      <tr><td class="hi"><b>संज्ञेय (Cognisable)</b></td><td><span class="hi">राजमार्ग डकैती, चोरी, आपराधिक विश्वासघात, प्रतिरूपण द्वारा धोखाधड़ी, डाकघर अधिनियम की <b>धारा 52</b> के सभी अपराध</span><span class="en">Highway robbery, theft, criminal breach of trust, cheating by personation, all offences under Post Office Act Section 52</span></td></tr>
+      <tr><td class="hi"><b>असंज्ञेय (Non-Cognisable)</b></td><td><span class="hi">धोखाधड़ी (प्रतिरूपण के अलावा), जालसाज़ी, धारा 52 के अलावा डाकघर अधिनियम के सभी अपराध</span><span class="en">Cheating (other than personation), forgery, all Post Office Act offences except Section 52</span></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🔴 <span class="hi">धारा 52 का अपराध केवल <b>सेशन कोर्ट (Court of Sessions)</b> में विचारणीय — कोई अन्य न्यायालय नहीं</span>
+          <span class="en">Section 52 offence triable ONLY by Court of Sessions</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: डाकघर अधिनियम की धारा 52 के अपराध संज्ञेय हैं या असंज्ञेय? → संज्ञेय; केवल सेशन कोर्ट में विचारणीय (नियम 129-130)</span>
+      <span class="en">Q: Are Section 52 Post Office Act offences cognisable? → Yes, cognisable; triable only by Court of Sessions</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch5">
+  <div class="ch-head">
+    <div class="ch-num">5</div>
+    <div class="ch-title">
+      <h2>प्रतिभूति जमा <span class="en">Security Deposits</span></h2>
+      <span class="rules">नियम / Rules 191–200A</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 191 — GDS प्रतिभूति राशियाँ (सर्वाधिक पूछा गया!) <span class="en">Rule 191 — GDS Security Amounts (Most Asked!)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>श्रेणी / Category</th><th>प्रतिभूति राशि / Security Amount</th></tr>
+      <tr><td class="hi">GDS (उप/शाखा पोस्टमास्टर)</td><td class="hi"><b>₹10,000</b></td></tr>
+      <tr><td class="hi">विभागीय स्टाम्प विक्रेता</td><td class="hi"><b>₹10,000</b></td></tr>
+      <tr><td class="hi">GDS स्टाम्प विक्रेता</td><td class="hi"><b>₹5,000</b></td></tr>
+      <tr><td class="hi">अन्य सभी GDS (SPM/BPM छोड़कर)</td><td class="hi"><b>₹5,000</b></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟠 <span class="hi">यदि प्रतिभूति नकद/GPN/डाक प्रमाणपत्र के रूप में दी जाए — राशि <b>ऊपर बताई राशि की 2/3</b> होगी (स्टाम्प विक्रेता व GDS वितरण अभिकर्ता को छोड़कर)</span>
+          <span class="en">If security given as cash/GPN/PO Certificates — amount is 2/3 of above (except Stamp Vendors & GDS Delivery Agents)</span></li>
+      <li>🔴 <span class="hi">स्टाम्प विक्रेता की प्रतिभूति = वेतन का <b>20 गुना</b> (अधिकतम सीमा के अधीन)</span>
+          <span class="en">Stamp vendor's security = 20 TIMES pay (subject to maximum limit)</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: GDS उप/शाखा पोस्टमास्टर की प्रतिभूति राशि क्या है? → ₹10,000 (नियम 191g)</span>
+      <span class="en">Q: Security amount for GDS Sub/Branch Postmaster? → Rs. 10,000</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 192 — प्रतिभूति से छूट <span class="en">Rule 192 — Exemption from Security</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="hi">निर्धारित वेतन-सीमा से ऊपर या <b>20 वर्ष सेवा</b> पूर्ण करने वाले — प्रभागीय प्रमुख के विवेक पर छूट संभव</span>
+          <span class="en">Officials drawing above prescribed pay OR with 20 YEARS service may be exempted at Divisional Head's discretion</span></li>
+      <li>🟢 <span class="hi">पेंशनभोगी सेवानिवृत्त सरकारी कर्मचारी — अस्थायी नियुक्ति पर प्रतिभूति से मुक्त हो सकते हैं</span>
+          <span class="en">Retired Government servants in receipt of pension may be exempted for temporary appointments</span></li>
+    </ul>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 194–197 — प्रतिभूति के प्रकार व किस्त प्रणाली <span class="en">Rules 194–197 — Nature of Security & Instalment System</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="hi">3 स्वीकार्य रूप: (a) डाकघर बचत बैंक नकद जमा (b) सरकारी वचन-पत्र/डाक प्रमाणपत्र (c) <b>2 जमानतदारों</b> सहित व्यक्तिगत बॉण्ड</span>
+          <span class="en">3 accepted forms: (a) PO Savings Bank cash deposit (b) GPN/PO Certificates (c) Personal bond with TWO sureties</span></li>
+      <li>🔴 <span class="hi">कार्यवाहक पोस्टमैन/ग्रामीण पोस्टमैन की प्रतिभूति सदैव <b>व्यक्तिगत बॉण्ड</b> रूप में ही होनी चाहिए</span>
+          <span class="en">Security from acting postmen/village postmen must ALWAYS be in form of personal bond</span></li>
+      <li>🟠 <span class="hi">किस्त प्रणाली: प्रारंभ में <b>न्यूनतम 1/3</b> राशि जमा; शेष <b>वेतन का न्यूनतम 1/6</b> प्रति माह कटौती से</span>
+          <span class="en">Instalment system: initial deposit MIN 1/3 of amount; balance via MIN 1/6 of pay deducted monthly</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: प्रतिभूति की किस्त प्रणाली में प्रारंभिक जमा व मासिक कटौती की न्यूनतम दर क्या है? → प्रारंभ में 1/3, मासिक 1/6 वेतन (नियम 197)</span>
+      <span class="en">Q: Minimum initial deposit & monthly deduction rate in the instalment system? → Initial 1/3, monthly 1/6 of pay</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch6">
+  <div class="ch-head">
+    <div class="ch-num">6</div>
+    <div class="ch-title">
+      <h2>स्टॉक <span class="en">Stock</span></h2>
+      <span class="rules">नियम / Rules 269–270+</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 269-B — वर्गीकरण: डेड स्टॉक बनाम स्टोर्स <span class="en">Rule 269-B — Classification: Dead Stock vs Stores</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>वर्ग / Class</th><th>उदाहरण / Examples</th></tr>
+      <tr><td class="hi"><b>डेड स्टॉक (Dead Stock)</b></td><td><span class="hi">संयंत्र व मशीनरी, फर्नीचर व फिक्स्चर — <b>वर्ष में एक बार</b> जाँच</span><span class="en">Plant & machinery, furniture & fixtures — checked ONCE A YEAR</span></td></tr>
+      <tr><td class="hi"><b>स्टोर्स (Stores)</b></td><td><span class="hi">उपभोज्य व नाशवान वस्तुएँ</span><span class="en">Consumable & perishable articles</span></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟢 <span class="hi">डेड स्टॉक व स्टोर्स — दोनों की इन्वेंटरी हेतु फॉर्म <b>SK-1</b> (स्टॉक बुक) प्रयुक्त</span>
+          <span class="en">Form SK-1 (Stock Book) used for inventories of both Dead Stock & Stores</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: डेड स्टॉक की इन्वेंटरी कितनी बार जाँची जाती है? → वर्ष में एक बार (नियम 269-B)</span>
+      <span class="en">Q: How often is Dead Stock inventory checked? → Once a year</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 270 — तालों की जाँच <span class="en">Rule 270 — Examination of Locks</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">मुख्य द्वार के ताले — <b>प्रतिदिन</b> जाँचे जाएँ; बक्सों/अलमारियों के ताले — <b>माह में कम-से-कम एक बार</b></span>
+          <span class="en">Main door locks checked DAILY; box/cupboard locks checked AT LEAST ONCE A MONTH</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: कार्यालय के मुख्य द्वार के ताले कितनी बार जाँचे जाते हैं? → प्रतिदिन (नियम 270)</span>
+      <span class="en">Q: How often are main door locks checked? → Daily</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch7">
+  <div class="ch-head">
+    <div class="ch-num">7</div>
+    <div class="ch-title">
+      <h2>जाली, नकली व मिटाए गए डाक टिकट, सिक्के व करेंसी नोट <span class="en">Forged, Counterfeit & Defaced Stamps, Coins & Currency Notes</span></h2>
+      <span class="rules">नियम / Rules 386–398+</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 389 — अपराध व IPC धाराएँ (सर्वाधिक पूछा गया!) <span class="en">Rule 389 — Offences & IPC Sections (Most Asked!)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>अपराध / Offence</th><th>IPC धारा / Section</th></tr>
+      <tr><td><span class="hi">टिकट जाली/नकली बनाना</span><span class="en">Forging/counterfeiting a stamp</span></td><td class="hi"><b>255</b> (सरकारी टिकट जालसाज़ी)</td></tr>
+      <tr><td><span class="hi">नकली टिकट को असली जानकर प्रयोग करना</span><span class="en">Using known counterfeit stamp as genuine</span></td><td class="hi"><b>260</b></td></tr>
+      <tr><td><span class="hi">काल्पनिक टिकट डाक हेतु जानबूझकर प्रयोग</span><span class="en">Knowingly using fictitious stamps</span></td><td class="hi"><b>263A</b></td></tr>
+      <tr><td><span class="hi">प्रयुक्त टिकट को असली जानकर पुनः प्रयोग</span><span class="en">Using known previously-used stamp</span></td><td class="hi"><b>262</b></td></tr>
+      <tr><td><span class="hi">प्रयोग-चिह्न मिटाना</span><span class="en">Erasure of used-mark</span></td><td class="hi"><b>263</b></td></tr>
+      <tr><td><span class="hi">चोरी</span><span class="en">Theft</span></td><td class="hi"><b>378</b></td></tr>
+      <tr><td><span class="hi">लोक सेवक द्वारा आपराधिक विश्वासघात</span><span class="en">Criminal breach of trust by public servant</span></td><td class="hi"><b>409</b></td></tr>
+      <tr><td><span class="hi">बेईमानी से चोरी की संपत्ति प्राप्त करना</span><span class="en">Dishonestly receiving stolen property</span></td><td class="hi"><b>411</b></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: सरकारी टिकट को जाली बनाना IPC की किस धारा में दंडनीय है? → धारा 255 (नियम 389)</span>
+      <span class="en">Q: Forging a Government stamp is punishable under which IPC section? → Section 255</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 390 — पता चलने पर कार्रवाई (CrPC धाराएँ) <span class="en">Rule 390 — Action on Detection (CrPC Sections)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">जिला मुख्यालय पर — प्रथम श्रेणी मजिस्ट्रेट को सूचना; वस्तु की अभिरक्षा हेतु <b>धारा 92 CrPC</b> लागू</span>
+          <span class="en">At district HQ — inform 1st Class Magistrate; custody of article under Section 92 CrPC</span></li>
+      <li>🟢 <span class="hi">पुलिस को सूचना — <b>धारा 154 CrPC</b> के अंतर्गत; मजिस्ट्रेट संज्ञान — <b>धारा 190(1) CrPC</b></span>
+          <span class="en">Police information under Section 154 CrPC; Magistrate cognizance under Section 190(1) CrPC</span></li>
+      <li>🟡 <span class="hi">वस्तु मजिस्ट्रेट/पुलिस को <b>सुपुर्द नहीं</b> की जाती — केवल सूचना दी जाती है, आदेश आने तक अनंतिम रूप से रोकी जाती है</span>
+          <span class="en">Article NOT handed over to Magistrate/Police — only information given; provisionally detained pending orders</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: संदिग्ध टिकट वाली वस्तु की अभिरक्षा हेतु आदेश किस धारा के अंतर्गत मिलता है? → धारा 92, CrPC (नियम 390)</span>
+      <span class="en">Q: Under which section is an order obtained for custody of a suspicious-stamp article? → Section 92, CrPC</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch8-9">
+  <div class="ch-head">
+    <div class="ch-num">8-9</div>
+    <div class="ch-title">
+      <h2>मुद्रण व संविदाएँ <span class="en">Printing & Contracts</span></h2>
+      <span class="rules">नियम / Rules 405–429, 445</span>
+    </div>
+  </div>
+  <div class="card t-g">
+    <h3>🟢 अध्याय VIII — मुद्रण मुख्य बिंदु <span class="en">Chapter VIII — Printing Key Points</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="hi">सभी प्रकाशन यथासंभव <b>A-4 आकार</b> में मुद्रित हों (नियम 410)</span>
+          <span class="en">All publications printed in A-4 SIZE as far as practicable</span></li>
+      <li>🟢 <span class="hi">नए फॉर्म का परिचय/परिवर्तन — केवल <b>महानिदेशक की पूर्व स्वीकृति</b> से; सरकारी फॉर्म प्रेस, <b>अलीगढ़</b> से संबंधित (नियम 407)</span>
+          <span class="en">New form introduction/alteration only with DG's prior sanction; relates to Government Forms Press, ALIGARH</span></li>
+    </ul>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 अध्याय IX — निविदा हेतु धरोहर राशि (सर्वाधिक पूछा गया!) <span class="en">Chapter IX — Earnest Money & Security for Tenders (Most Asked!)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">डाक-वहन संविदा हेतु धरोहर राशि (Earnest Money) — संविदा के अनुमानित कुल मूल्य का <b>2%</b>; निविदा स्वीकृत न होने पर <b>30 दिन के भीतर</b> वापसी</span>
+          <span class="en">Earnest money for mail conveyance contract — 2% of estimated total contract value; refunded WITHIN 30 DAYS if tender not accepted</span></li>
+      <li>🔴 <span class="hi">निविदा स्वीकृत होने पर — प्रतिभूति जमा (Security Deposit) = संविदा मूल्य का <b>5%</b></span>
+          <span class="en">On acceptance — Security Deposit = 5% of contract value</span></li>
+      <li>🟠 <span class="hi">धरोहर राशि से छूट: DGS&D-पंजीकृत फर्में, लघु उद्योग इकाइयाँ (NSIC-पंजीकृत), सार्वजनिक क्षेत्र उपक्रम (नियम 427)</span>
+          <span class="en">Exempt from earnest money: DGS&D-registered firms, SSI units (NSIC-registered), PSUs</span></li>
+      <li>🟢 <span class="hi">निविदा खुलने के बाद <b>कोई पुनरीक्षण/मोलभाव नहीं</b> — सबसे कम निविदा सामान्यतः स्वीकार, अस्वीकृति पर कारण दर्ज व उच्च प्राधिकारी की स्वीकृति आवश्यक</span>
+          <span class="en">NO revision/negotiation after tender opening; lowest tender usually accepted; rejection needs recorded reasons & higher approval</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: डाक-वहन संविदा हेतु धरोहर राशि व प्रतिभूति जमा दर क्या है? → धरोहर 2%, प्रतिभूति 5% (नियम 445)</span>
+      <span class="en">Q: Earnest money & security deposit rates for mail conveyance contracts? → Earnest money 2%, Security 5%</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch10">
+  <div class="ch-head">
+    <div class="ch-num">10</div>
+    <div class="ch-title">
+      <h2>भवन <span class="en">Buildings</span></h2>
+      <span class="rules">नियम / Rules 446–457+</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 450–451 — स्वामित्व की महत्वपूर्ण तिथि <span class="en">Rules 450–451 — Critical Ownership Date</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>1 अप्रैल 1921</b> — इस तिथि तक अधिकृत सभी सरकारी भवनों का स्वामित्व डाक-तार विभाग में निहित, चाहे राज्य-राजस्व से बने हों</span>
+          <span class="en">1st APRIL 1921 — all Govt. buildings occupied by then vest in the Department, even if built from State revenues</span></li>
+      <li>🟡 <span class="hi">डाक विभाग हेतु दूसरी सीमा-तिथि: <b>1-4-1985</b> (P&T विभाजन के बाद)</span>
+          <span class="en">Second cut-off for Dept. of Posts: 1-4-1985 (after P&T bifurcation)</span></li>
+      <li>🟢 <span class="hi"><b>अपवाद</b>: सेना विभाग के स्वामित्व वाले भवन — भले ही 1921 में कब्जे में हों, डाक विभाग में निहित नहीं होते</span>
+          <span class="en">EXCEPTION: Military Department buildings do NOT vest even if occupied in 1921</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: किस तिथि तक अधिकृत सरकारी भवनों का स्वामित्व डाक विभाग में निहित माना जाता है? → 1 अप्रैल 1921 (नियम 450)</span>
+      <span class="en">Q: Ownership of Govt. buildings occupied by which date vests in the Department? → 1st April 1921</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 453 — भवन परियोजनाओं का वर्गीकरण <span class="en">Rule 453 — Classification of Building Projects</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>वर्ग / Class</th><th>परिभाषा / Definition</th></tr>
+      <tr><td class="hi"><b>मूल कार्य (Original Works)</b></td><td><span class="hi">नई खरीद/निर्माण या मौजूदा भवन में वृद्धि — लागत <b>₹30,000 से अधिक</b> (ओवरहेड व भूमि लागत छोड़कर)</span></td></tr>
+      <tr><td class="hi"><b>पुनर्निर्माण कार्य (Reconstruction)</b></td><td><span class="hi">पूर्ण पुनर्निर्माण या नवीनीकरण लागत <b>₹30,000 से अधिक</b></span></td></tr>
+      <tr><td class="hi"><b>मरम्मत (Repairs)</b></td><td><span class="hi">4 प्रकार: सामान्य, आकस्मिक/छोटी, ...</span></td></tr>
+    </table></div>
+    <div class="examq">
+      <span class="hi">प्रश्न: "मूल कार्य" (Original Works) की परिभाषा हेतु लागत-सीमा क्या है? → ₹30,000 से अधिक (नियम 453)</span>
+      <span class="en">Q: Cost threshold defining "Original Works"? → Exceeding Rs. 30,000</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch11">
+  <div class="ch-head">
+    <div class="ch-num">11</div>
+    <div class="ch-title">
+      <h2>विविध नियम <span class="en">Miscellaneous Rules</span></h2>
+      <span class="rules">नियम / Rules 611–622+</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 611 — राष्ट्रीय ध्वज प्रदर्शन (सर्वाधिक पूछा गया!) <span class="en">Rule 611 — National Flag Display (Most Asked!)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi"><b>राष्ट्रीय सप्ताह — 6 से 13 अप्रैल</b>; अन्य असीमित प्रदर्शन दिवस: गणतंत्र दिवस, स्वतंत्रता दिवस, गांधी जयंती, कोई भी राष्ट्रीय हर्ष का दिन</span>
+          <span class="en">NATIONAL WEEK — 6th to 13th APRIL; other unrestricted days: Republic Day, Independence Day, Gandhi Jayanti, any day of national rejoicing</span></li>
+      <li>🟠 <span class="hi">ध्वज को <b>पहले फहराया</b> व <b>अंत में उतारा</b> जाए; अन्य देशों के झंडों के साथ प्रदर्शन में राष्ट्रीय ध्वज <b>सबसे दाईं ओर</b> रहे</span>
+          <span class="en">National Flag hoisted FIRST and lowered LAST; positioned on EXTREME RIGHT when displayed with other national flags</span></li>
+      <li>🟢 <span class="hi">'जन गण मन' राष्ट्रगान है; 'वंदे मातरम्' को <b>समान दर्जा</b> प्राप्त — दोनों गाए जाने पर वंदे मातरम् पहले, जन गण मन अंत में</span>
+          <span class="en">'Jana Gana Mana' is National Anthem; 'Vande Mataram' has EQUAL status — sung first, followed by Jana Gana Mana at end</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: राष्ट्रीय सप्ताह किन तिथियों में मनाया जाता है? → 6 से 13 अप्रैल (नियम 611)</span>
+      <span class="en">Q: National Week is observed on which dates? → 6th to 13th April</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 611-A — डाकघरों के नामकरण के सिद्धांत <span class="en">Rule 611-A — Principles of Naming Post Offices</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">डाकघर का name — जिस <b>गाँव/नगर/इलाके</b> में स्थित हो उसी के नाम पर; व्यक्ति या संस्था के नाम पर <b>नहीं</b> (असाधारण परिस्थिति व DG स्वीकृति छोड़कर)</span>
+          <span class="en">Post Office named after village/town/locality where located — NOT after individuals/institutions (except exceptional cases with DG approval)</span></li>
+      <li>🟢 <span class="hi">एक ही जिले में समान नाम वाले 2 डाकघर होने पर — <b>तहसील/आसपास के गाँव</b> का नाम जोड़ा जाए</span>
+          <span class="en">Same-name POs in same district — suffix with Tehsil/adjacent village name</span></li>
+      <li>🟡 <span class="hi">रेलवे स्टेशन व डाकघर के नाम — यथासंभव <b>समान</b> रखे जाएँ</span>
+          <span class="en">Railway station & Post Office names should be IDENTICAL as far as possible</span></li>
+    </ul>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 613–616 — कार्यालयीन पत्राचार <span class="en">Rules 613–616 — Official Correspondence</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="hi">प्रत्येक पत्राचार में <b>केवल एक विषय</b> होना चाहिए (नियम 613)</span>
+          <span class="en">Each communication should refer to only ONE subject (Rule 613)</span></li>
+      <li>🟢 <span class="hi">वरिष्ठ प्राधिकारी से सीधे पत्राचार निषिद्ध — केवल तत्काल वरिष्ठ के माध्यम से (नियम 614)</span>
+          <span class="en">No direct correspondence with superior authority except through immediate superior (Rule 614)</span></li>
+      <li>🔴 <span class="hi">आधिकारिक पत्राचार में <b>नीली स्याही के अलावा अन्य रंग निषिद्ध</b> (नियम 616)</span>
+          <span class="en">Ink OTHER THAN BLUE prohibited in official correspondence (Rule 616)</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: आधिकारिक पत्राचार में किस रंग की स्याही अनिवार्य है? → नीली स्याही (नियम 616)</span>
+      <span class="en">Q: What colour ink is mandatory for official correspondence? → Blue ink</span>
+    </div>
+  </div>
+</section>
+<section class="ch" id="ch12">
+  <div class="ch-head">
+    <div class="ch-num">12</div>
+    <div class="ch-title">
+      <h2>बजट अनुमान व नियंत्रण <span class="en">Budget Estimates & Control</span></h2>
+      <span class="rules">नियम / Rules 743–755</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 743 — व्यय की दो श्रेणियाँ <span class="en">Rule 743 — Two Categories of Expenditure</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>श्रेणी / Category</th><th>स्वीकृति-प्राधिकारी / Sanctioning Authority</th></tr>
+      <tr><td class="hi"><b>Voted (मतदत्त)</b></td><td class="hi">संसद (Parliament)</td></tr>
+      <tr><td class="hi"><b>Charged (भारित)</b></td><td class="hi">वित्त मंत्रालय, भारत सरकार</td></tr>
+    </table></div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 नियम 745 — विनियोजन बनाम पुनर्विनियोजन <span class="en">Rule 745 — Appropriation vs Re-appropriation</span></h3>
+    <div class="dtree">
+      <div class="fbox start" style="margin:0 auto"><span class="hi">क्या Charged मद से Voted मद में निधि स्थानांतरित हो सकती है?</span><span class="en">Can funds move from Charged to Voted item?</span></div>
+      <div class="branch">
+        <div class="no"><span class="hi"><b>नहीं ✗</b> — Charged↔Voted के बीच पुनर्विनियोजन निषिद्ध</span><span class="en">NO — re-appropriation between Charged↔Voted prohibited</span></div>
+        <div class="no"><span class="hi"><b>नहीं ✗</b> — एक Major Head से दूसरे Major Head में भी पुनर्विनियोजन नहीं</span><span class="en">NO — re-appropriation between Major Heads also prohibited</span></div>
+      </div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: क्या Charged मद की निधि Voted मद में पुनर्विनियोजित हो सकती है? → नहीं (नियम 745)</span>
+      <span class="en">Q: Can Charged-item funds be re-appropriated to a Voted item? → No</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 747 — 31 मार्च व्यपगत नियम <span class="en">Rule 747 — 31st March Lapse Rule</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">सभी अव्ययित अनुदान <b>31 मार्च</b> को <b>व्यपगत (lapse)</b> हो जाते हैं — उस तिथि के बाद व्यय उसी वर्ष के अनुदान से नहीं लिया जा सकता</span>
+          <span class="en">All unexpended grant balances LAPSE on 31st MARCH — no expenditure after that date chargeable to that year's grant</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: अव्ययित अनुदान किस तिथि को व्यपगत हो जाता है? → 31 मार्च (नियम 747)</span>
+      <span class="en">Q: Unexpended grant balances lapse on which date? → 31st March</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 नियम 749 — अनुमानों के प्रकार <span class="en">Rule 749 — Types of Estimates</span></h3>
+    <ul class="points">
+      <li><span class="hi">(a) प्रारंभिक माँग-अनुसूची (b) बजट व संशोधित अनुमान (c) <b>त्रैमासिक अनुमान</b> (d) <b>छमाही अनुमान</b></span>
+          <span class="en">(a) Preliminary Schedule of Demands (b) Budget & Revised estimates (c) THREE-MONTHLY estimates (d) SIX-MONTHLY estimates</span></li>
+    </ul>
+  </div>
+</section>
+<section class="ch" id="master">
+  <div class="ch-head">
+    <div class="ch-num">🔴</div>
+    <div class="ch-title">
+      <h2>मास्टर संख्या-चार्ट <span class="en">Master Numbers Chart</span></h2>
+      <span class="rules">सभी सीमाएँ, तिथियाँ व राशियाँ एक जगह / All Limits, Dates & Amounts in One Place</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 समय-सीमाएँ <span class="en">Time Limits</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>समय / Time</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>6 माह</b></td><td><span class="hi">उच्च प्राधिकारी को याचिका सीमा (नियम 118-D, 120g)</span></td></tr>
+      <tr><td class="hi"><b>3 माह</b></td><td><span class="hi">अस्थायी सेवा समाप्ति याचिका सीमा (नियम 120i)</span></td></tr>
+      <tr><td class="hi"><b>30 दिन</b></td><td><span class="hi">धरोहर राशि वापसी (निविदा अस्वीकृत होने पर) (नियम 445)</span></td></tr>
+      <tr><td class="hi"><b>त्रैमासिक</b></td><td><span class="hi">रोकी गई याचिकाओं की सूची DG को (नियम 121)</span></td></tr>
+      <tr><td class="hi"><b>वर्ष में 1 बार</b></td><td><span class="hi">डेड स्टॉक इन्वेंटरी जाँच (नियम 269-B)</span></td></tr>
+      <tr><td class="hi"><b>प्रतिदिन / माह में 1 बार</b></td><td><span class="hi">मुख्य द्वार / बक्सों के ताले की जाँच (नियम 270)</span></td></tr>
+      <tr><td class="hi"><b>31 मार्च</b></td><td><span class="hi">बजट अनुदान व्यपगत तिथि (नियम 747)</span></td></tr>
+      <tr><td class="hi"><b>6-13 अप्रैल</b></td><td><span class="hi">राष्ट्रीय सप्ताह (नियम 611)</span></td></tr>
+    </table></div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 राशि-सीमाएँ <span class="en">Monetary Limits</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>राशि / Amount</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>₹500</b></td><td><span class="hi">MO/बचत बैंक वाद रिपोर्टिंग छूट सीमा (नियम 127)</span></td></tr>
+      <tr><td class="hi"><b>₹250</b></td><td><span class="hi">भूमि/भवन वाद विधि-व्यय सीमा (नियम 127)</span></td></tr>
+      <tr><td class="hi"><b>₹10,000</b></td><td><span class="hi">GDS SPM/BPM व विभागीय स्टाम्प विक्रेता प्रतिभूति (नियम 191)</span></td></tr>
+      <tr><td class="hi"><b>₹5,000</b></td><td><span class="hi">GDS स्टाम्प विक्रेता व अन्य GDS प्रतिभूति (नियम 191)</span></td></tr>
+      <tr><td class="hi"><b>2/3</b></td><td><span class="hi">नकद/GPN प्रतिभूति की दर (व्यक्तिगत बॉण्ड की तुलना में) (नियम 191, 193)</span></td></tr>
+      <tr><td class="hi"><b>20 गुना वेतन</b></td><td><span class="hi">स्टाम्प विक्रेता प्रतिभूति दर (नियम 193)</span></td></tr>
+      <tr><td class="hi"><b>1/3 + 1/6</b></td><td><span class="hi">किस्त प्रणाली — प्रारंभिक जमा + मासिक कटौती दर (नियम 197)</span></td></tr>
+      <tr><td class="hi"><b>2% / 5%</b></td><td><span class="hi">धरोहर राशि / प्रतिभूति जमा — डाक-वहन संविदा (नियम 445)</span></td></tr>
+      <tr><td class="hi"><b>₹30,000</b></td><td><span class="hi">"मूल कार्य"/"पुनर्निर्माण" परिभाषा सीमा (नियम 453)</span></td></tr>
+    </table></div>
+  </div>
+  <div class="card t-g">
+    <h3>🟢 महत्वपूर्ण तिथियाँ व IPC/CrPC धाराएँ <span class="en">Important Dates & IPC/CrPC Sections</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>तत्व / Element</th><th>विवरण / Detail</th></tr>
+      <tr><th>1 अप्रैल 1921</th><td><span class="hi">भवन-स्वामित्व निहित होने की तिथि (नियम 450)</span></td></tr>
+      <tr><th>1-4-1985</th><td><span class="hi">डाक विभाग हेतु दूसरी स्वामित्व सीमा-तिथि (नियम 451)</span></td></tr>
+      <tr><th>1-6-2005</th><td><span class="hi">भाग II का संशोधन-तिथि (प्राक्कथन)</span></td></tr>
+      <tr><th>IPC 255/260/262/263/263A</th><td><span class="hi">जाली/नकली/धुला/काल्पनिक टिकट अपराध (नियम 389)</span></td></tr>
+      <tr><th>IPC 378/409/411</th><td><span class="hi">चोरी/विश्वासघात/चोरी की संपत्ति प्राप्ति (नियम 389)</span></td></tr>
+      <tr><th>CrPC 92/154/190</th><td><span class="hi">वस्तु-अभिरक्षा आदेश/पुलिस सूचना/मजिस्ट्रेट संज्ञान (नियम 390)</span></td></tr>
+      <tr><th>अनुच्छेद 311(1)/(2)</th><td><span class="hi">बर्खास्तगी संरक्षण — प्राधिकारी-स्तर / उचित अवसर (नियम 128-E)</span></td></tr>
+    </table></div>
+  </div>
+</section>
+<section class="ch" id="mnemo">
+  <div class="ch-head">
+    <div class="ch-num blue">🧠</div>
+    <div class="ch-title">
+      <h2>स्मृति सूत्र व ट्रिक्स <span class="en">Memory Tricks & Mnemonics</span></h2>
+    </div>
+  </div>
+  <div class="mnemo">
+    <div class="key">"22+1 = बेस सर्कल अतिरिक्त"</div>
+    <span class="hi">22 डाक परिमंडल + 1 <b>बेस सर्कल</b> (सेना डाक सेवा, मेजर जनरल रैंक) — कुल 23 गिनने में गलती न करें!</span>
+    <span class="en">22 Postal Circles + 1 Base Circle (APS, Major General rank) = 23 total — don't miscount!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"6 महीने ऊपर, 3 महीने अस्थायी"</div>
+    <span class="hi">सामान्य याचिका सीमा <b>6 माह</b>; पर अस्थायी सेवा-समाप्ति याचिका केवल <b>3 माह</b> — आधी अवधि!</span>
+    <span class="en">Normal petition limit 6 months; but temporary-service termination petition only 3 months — HALF the time!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"500 पैसा, 250 ज़मीन"</div>
+    <span class="hi">MO/बचत बैंक वाद छूट = <b>₹500</b>; भूमि/भवन विधि-व्यय सीमा = <b>₹250</b> — आधी राशि!</span>
+    <span class="en">MO/Savings Bank exemption Rs. 500; Land/building law-charges limit Rs. 250 — half the amount!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"10-10-5-5" — GDS प्रतिभूति</div>
+    <span class="hi">GDS SPM/BPM = <b>10k</b>; विभागीय स्टाम्प विक्रेता = <b>10k</b>; GDS स्टाम्प विक्रेता = <b>5k</b>; अन्य GDS = <b>5k</b></span>
+    <span class="en">GDS SPM/BPM=10k; Dept. Stamp Vendor=10k; GDS Stamp Vendor=5k; other GDS=5k</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"1/3 शुरू में, 1/6 हर महीने"</div>
+    <span class="hi">प्रतिभूति किस्त: प्रारंभ में <b>न्यूनतम 1/3</b> राशि; बाकी वेतन से <b>1/6 प्रति माह</b> — तीन गुना पहले, फिर धीरे-धीरे!</span>
+    <span class="en">Security instalments: min 1/3 upfront, then 1/6 of pay monthly — front-loaded then gradual!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"2-5 निविदा" — धरोहर व प्रतिभूति</div>
+    <span class="hi">डाक-वहन संविदा: धरोहर राशि <b>2%</b> (आवेदन के समय); प्रतिभूति जमा <b>5%</b> (स्वीकृति के बाद) — स्वीकृति पर ढाई गुना!</span>
+    <span class="en">Mail conveyance: Earnest money 2% (at application); Security 5% (after acceptance) — 2.5× jump on acceptance!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"1921 भवन, 311 बर्खास्तगी"</div>
+    <span class="hi"><b>1921</b> = भवन-स्वामित्व तिथि; <b>311</b> = बर्खास्तगी सुरक्षा अनुच्छेद — दोनों याद रखने योग्य नंबर!</span>
+    <span class="en">1921 = building ownership date; 311 = dismissal-protection Article — both memorable numbers!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"255 बनाना, 260 इस्तेमाल"</div>
+    <span class="hi">IPC <b>255</b> = जाली टिकट <b>बनाना</b>; IPC <b>260</b> = जानते हुए <b>इस्तेमाल</b> करना — बनाने व इस्तेमाल की धाराएँ पास-आन!</span>
+    <span class="en">IPC 255=forging; IPC 260=knowingly using — creation & use sections are close by number!</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"6-13 राष्ट्रीय सप्ताह"</div>
+    <span class="hi">6 से 13 अप्रैल = राष्ट्रीय सप्ताह — इस दौरान ध्वज प्रदर्शन <b>असीमित</b> (नियम 611)</span>
+    <span class="en">6th-13th April = National Week — unrestricted flag display during this period</span>
+  </div>
+  <div class="mnemo">
+    <div class="key">"31 मार्च = खत्म"</div>
+    <span class="hi">बजट अनुदान <b>31 मार्च</b> को व्यपगत — ठीक वित्तीय वर्ष के अंत में, नए वर्ष में पुराना पैसा नहीं चलता!</span>
+    <span class="en">Grants lapse on 31st March — end of financial year, old money doesn't carry forward!</span>
+  </div>
+</section>
+<section class="ch" id="rev">
+  <div class="ch-head">
+    <div class="ch-num">📄</div>
+    <div class="ch-title">
+      <h2>एक-पृष्ठ पुनरावृत्ति शीट <span class="en">One-Page Revision Sheet</span></h2>
+    </div>
+  </div>
+  <div class="rev-sheet">
+    <h3>⚡ भाग II — 30 तथ्य, 3 मिनट में / Vol. II — 30 Facts in 3 Minutes</h3>
+    <div class="rev-grid">
+      <div class="rev-cell"><b>विषय:</b> सामान्य विनियम — 12 अध्याय (Ch.II विलोपित) + 19 परिशिष्ट</div>
+      <div class="rev-cell"><b>Ch.1:</b> बोर्ड = अध्यक्ष + <span class="num">3 सदस्य</span> (P/O&M/D)</div>
+      <div class="rev-cell"><b>Ch.1:</b> <span class="num">22</span> परिमंडल + <span class="num">1</span> बेस सर्कल (APS)</div>
+      <div class="rev-cell"><b>Ch.1:</b> APS अन्य रैंक — <span class="num">75%</span> डाक विभाग से</div>
+      <div class="rev-cell"><b>Ch.1:</b> NE परिमंडल में <span class="num">6</span> राज्य</div>
+      <div class="rev-cell"><b>Ch.3:</b> संयुक्त याचिका <span class="num">अस्वीकार्य</span>; identical अलग से स्वीकार्य</div>
+      <div class="rev-cell"><b>Ch.3:</b> उच्च प्राधिकारी याचिका सीमा — <span class="num">6 माह</span></div>
+      <div class="rev-cell"><b>Ch.3:</b> अस्थायी सेवा-समाप्ति याचिका — <span class="num">3 माह</span></div>
+      <div class="rev-cell"><b>Ch.3:</b> रोकी याचिकाओं की सूची — <span class="num">त्रैमासिक</span> DG को</div>
+      <div class="rev-cell"><b>Ch.4:</b> MO/बचत बैंक वाद छूट — <span class="num">₹500</span>; भूमि वाद व्यय — <span class="num">₹250</span></div>
+      <div class="rev-cell"><b>Ch.4:</b> अनुच्छेद <span class="num">311(1)</span> निम्न-प्राधिकारी निषेध; <span class="num">311(2)</span> उचित अवसर</div>
+      <div class="rev-cell"><b>Ch.4:</b> धारा 52 अपराध — <span class="num">संज्ञेय</span>, केवल सेशन कोर्ट</div>
+      <div class="rev-cell"><b>Ch.5:</b> GDS SPM/BPM प्रतिभूति — <span class="num">₹10,000</span></div>
+      <div class="rev-cell"><b>Ch.5:</b> नकद/GPN प्रतिभूति दर — बॉण्ड का <span class="num">2/3</span></div>
+      <div class="rev-cell"><b>Ch.5:</b> स्टाम्प विक्रेता प्रतिभूति — वेतन का <span class="num">20 गुना</span></div>
+      <div class="rev-cell"><b>Ch.5:</b> किस्त — प्रारंभ <span class="num">1/3</span>, मासिक <span class="num">1/6</span> वेतन</div>
+      <div class="rev-cell"><b>Ch.6:</b> डेड स्टॉक जाँच — <span class="num">वर्ष में 1 बार</span>; ताले — <span class="num">प्रतिदिन/मासिक</span></div>
+      <div class="rev-cell"><b>Ch.7:</b> जाली टिकट बनाना IPC <span class="num">255</span>; प्रयोग IPC <span class="num">260</span></div>
+      <div class="rev-cell"><b>Ch.7:</b> चोरी IPC <span class="num">378</span>; विश्वासघात IPC <span class="num">409</span></div>
+      <div class="rev-cell"><b>Ch.7:</b> अभिरक्षा-आदेश — CrPC धारा <span class="num">92</span></div>
+      <div class="rev-cell"><b>Ch.8:</b> प्रकाशन आकार — <span class="num">A-4</span>; फॉर्म प्रेस — अलीगढ़</div>
+      <div class="rev-cell"><b>Ch.9:</b> धरोहर राशि <span class="num">2%</span>; प्रतिभूति <span class="num">5%</span>; वापसी <span class="num">30 दिन</span></div>
+      <div class="rev-cell"><b>Ch.10:</b> भवन-स्वामित्व तिथि — <span class="num">1 अप्रैल 1921</span></div>
+      <div class="rev-cell"><b>Ch.10:</b> मूल/पुनर्निर्माण कार्य सीमा — <span class="num">₹30,000</span></div>
+      <div class="rev-cell"><b>Ch.11:</b> राष्ट्रीय सप्ताह — <span class="num">6-13 अप्रैल</span></div>
+      <div class="rev-cell"><b>Ch.11:</b> पत्राचार स्याही — <span class="num">केवल नीली</span></div>
+      <div class="rev-cell"><b>Ch.12:</b> Voted → संसद; Charged → <span class="num">वित्त मंत्रालय</span></div>
+      <div class="rev-cell"><b>Ch.12:</b> अनुदान व्यपगत — <span class="num">31 मार्च</span></div>
+      <div class="rev-cell"><b>प्राक्कथन:</b> संशोधन-तिथि — <span class="num">1-6-2005</span></div>
+      <div class="rev-cell"><b>अध्याय II:</b> अनुशासन — <span class="num">विलोपित</span></div>
+    </div>
+  </div>
+</section>
+<section class="ch" id="lastday">
+  <div class="ch-head">
+    <div class="ch-num">⏰</div>
+    <div class="ch-title">
+      <h2>अंतिम दिन की पुनरावृत्ति <span class="en">Last Day Revision Notes</span></h2>
+    </div>
+  </div>
+  <div class="card t-g">
+    <h3>🟢 केवल संख्याएँ — रट लें! <span class="en">Numbers Only — Memorise!</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><th>3</th><td><span class="hi">डाक सेवा बोर्ड के सदस्य</span></td></tr>
+      <tr><th>22 + 1</th><td><span class="hi">परिमंडल + बेस सर्कल</span></td></tr>
+      <tr><th>6 माह / 3 माह</th><td><span class="hi">सामान्य / अस्थायी-समाप्ति याचिका सीमा</span></td></tr>
+      <tr><th>₹500 / ₹250</th><td><span class="hi">MO वाद छूट / भूमि वाद व्यय सीमा</span></td></tr>
+      <tr><th>₹10,000 / ₹5,000</th><td><span class="hi">GDS SPM / अन्य GDS प्रतिभूति</span></td></tr>
+      <tr><th>2/3</th><td><span class="hi">नकद प्रतिभूति दर</span></td></tr>
+      <tr><th>20×</th><td><span class="hi">स्टाम्प विक्रेता प्रतिभूति (वेतन गुणक)</span></td></tr>
+      <tr><th>2% / 5%</th><td><span class="hi">धरोहर / प्रतिभूति दर — संविदा</span></td></tr>
+      <tr><th>₹30,000</th><td><span class="hi">मूल कार्य परिभाषा सीमा</span></td></tr>
+      <tr><th>1 अप्रैल 1921</th><td><span class="hi">भवन-स्वामित्व तिथि</span></td></tr>
+      <tr><th>31 मार्च</th><td><span class="hi">बजट व्यपगत तिथि</span></td></tr>
+      <tr><th>6-13 अप्रैल</th><td><span class="hi">राष्ट्रीय सप्ताह</span></td></tr>
+    </table></div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 5 सबसे अधिक पूछे जाने वाले जाल <span class="en">Top 5 Exam Traps</span></h3>
+    <ul class="points">
+      <li>⚠️ <span class="hi">सामान्य याचिका सीमा <b>6 माह</b> बनाम अस्थायी-सेवा-समाप्ति याचिका <b>3 माह</b> — मिलाएँ नहीं!</span>
+          <span class="en">Normal petition (6 months) vs temporary-service termination petition (3 months) — don't mix!</span></li>
+      <li>⚠️ <span class="hi">₹500 (MO/बचत बैंक वाद छूट) बनाम ₹250 (भूमि/भवन वाद विधि-व्यय सीमा) — दोनों अलग-अलग सन्दर्भ में हैं</span>
+          <span class="en">Rs. 500 (MO/Savings suit exemption) vs Rs. 250 (land/building law-charges limit) — different contexts!</span></li>
+      <li>⚠️ <span class="hi">धरोहर राशि <b>2%</b> (आवेदन के समय, अस्वीकृत होने पर 30 दिन में वापस) बनाम प्रतिभूति <b>5%</b> (स्वीकृति के बाद, दीर्घकालिक) — क्रम याद रखें</span>
+          <span class="en">Earnest money 2% (at application) vs Security 5% (after acceptance) — remember the sequence</span></li>
+      <li>⚠️ <span class="hi">भवन-स्वामित्व तिथि <b>1 अप्रैल 1921</b> (P&T मूल) बनाम <b>1-4-1985</b> (डाक विभाग पृथक होने के बाद) — दो अलग तिथियाँ, अलग सन्दर्भ</span>
+          <span class="en">1921 (original P&T) vs 1-4-1985 (after Dept. of Posts bifurcation) — two different dates, different contexts</span></li>
+      <li>⚠️ <span class="hi">IPC धारा <b>255</b> (जाली बनाना) व <b>260</b> (जानते हुए इस्तेमाल) पास-पास संख्याएँ हैं पर <b>अलग कृत्य</b> — निर्माण बनाम उपयोग में अंतर करें</span>
+          <span class="en">IPC 255 (forging) vs 260 (knowingly using) — close numbers but DIFFERENT acts — creation vs use</span></li>
+    </ul>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 प्रशासनिक पदानुक्रम — एक नज़र में <span class="en">Administrative Hierarchy at a Glance</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">डाक सेवा बोर्ड (अध्यक्ष + 3 सदस्य) — नई दिल्ली</span><span class="en">Postal Service Board (Chairman + 3 Members) — New Delhi</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">परिमंडल — CPMG/Principal CPMG (22 + बेस सर्कल)</span><span class="en">Circle — CPMG/Principal CPMG (22 + Base Circle)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">क्षेत्र — Postmaster General (PMG)</span><span class="en">Region — Postmaster General</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox ok"><span class="hi">प्रभाग — Senior/Superintendent (डाक/RMS)</span><span class="en">Division — Senior/Superintendent (Posts/RMS)</span></div>
+    </div>
+  </div>
+</section>
+<div class="footer-note">
+  📚 IP Exam Portal • डाक मैनुअल भाग II — General Regulations (12 अध्याय + 19 परिशिष्ट, चौथा संशोधित संस्करण, संशोधित 1-6-2005)<br>
+  🔴 अति महत्वपूर्ण | 🟠 बार-बार पूछा गया | 🟡 अवधारणा | 🟢 त्वरित पुनरावृत्ति • Offline-ready • No external dependencies
+</div>
+</div>
+</body>
+</html>

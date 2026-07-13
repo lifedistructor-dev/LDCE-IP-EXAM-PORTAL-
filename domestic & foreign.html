@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Foreign Post Manual | विदेश डाक नियम पुस्तिका | IP Exam Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ip-red:#dc2626; --ip-red-dark:#b91c1c;
+  --ip-blue:#1e3a8a; --ip-blue-dark:#172554;
+  --ip-gold:#d97706;
+  --tier-red:#dc2626; --tier-orange:#ea580c; --tier-yellow:#ca8a04; --tier-green:#16a34a;
+  --cream:#fbf8f3; --ink:#1c1a16; --card:#ffffff; --line:#e7e0d3;
+  --muted:#6b6255;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans Devanagari','Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:15px;padding-bottom:40px;}
+.hi{font-weight:500;}
+.en{font-style:italic;color:var(--muted);font-size:0.92em;}
+a{color:inherit;}
+
+header.top{background:linear-gradient(135deg,var(--ip-blue) 0%,var(--ip-blue-dark) 100%);color:#fff;padding:22px 16px 30px;position:relative;overflow:hidden;}
+header.top::after{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(217,119,6,.35),transparent 70%);}
+header.top h1{font-size:20px;font-weight:800;letter-spacing:-.02em;position:relative;z-index:1;}
+header.top .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative;z-index:1;}
+header.top .sub .hi{color:#fef3c7;}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative;z-index:1;}
+.meta-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:600;backdrop-filter:blur(6px);}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 14px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.legend span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);}
+
+.notice-box{background:#eff6ff;border:2px solid var(--ip-blue);border-radius:12px;padding:12px 14px;margin:14px 0;font-size:12.5px;color:var(--ip-blue-dark);}
+.notice-box b{color:var(--ip-red-dark);}
+</style>
+</head>
+<style>
+h2.sec{font-size:18px;font-weight:800;color:var(--ip-blue-dark);margin:30px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--ip-gold);display:flex;align-items:center;gap:8px;}
+h2.sec .num{background:var(--ip-blue-dark);color:#fff;width:32px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+h3.sub{font-size:14.5px;font-weight:700;color:var(--ip-red-dark);margin:18px 0 8px;padding-left:8px;border-left:4px solid var(--ip-red);}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);position:relative;}
+.card .tier{position:absolute;top:10px;right:10px;font-size:15px;}
+.card .clno{display:inline-block;background:#dbeafe;color:var(--ip-blue-dark);font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px;margin-right:6px;}
+.card h4{font-size:13.5px;font-weight:700;margin-bottom:4px;padding-right:22px;}
+.card h4 .en{display:block;font-size:11.5px;font-weight:500;}
+.card p{font-size:12.5px;color:#3a3527;margin-top:3px;}
+.card p.hi-line{font-weight:500;}
+.card p.en-line{font-style:italic;color:var(--muted);font-size:12px;}
+.card .fact{background:#fef9ee;border:1px dashed var(--ip-gold);border-radius:8px;padding:6px 9px;margin-top:6px;font-size:12px;font-weight:600;color:#7c4a03;}
+.card .q{margin-top:7px;font-size:11.5px;background:#f0f6ff;border-left:3px solid var(--ip-blue);padding:5px 8px;border-radius:0 6px 6px 0;color:var(--ip-blue-dark);}
+.card .q b{color:var(--ip-red-dark);}
+
+.tier-red{border-left:4px solid var(--tier-red);}
+.tier-orange{border-left:4px solid var(--tier-orange);}
+.tier-yellow{border-left:4px solid var(--tier-yellow);}
+.tier-green{border-left:4px solid var(--tier-green);}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0 16px;border-radius:10px;border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;min-width:480px;}
+table th{background:var(--ip-blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;font-size:11.5px;}
+table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table tr:nth-child(even) td{background:#faf8f4;}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:14px 0;}
+.mm-root{background:var(--ip-blue-dark);color:#fff;border-radius:10px;padding:10px 14px;font-weight:800;font-size:13px;text-align:center;}
+.mm-level1{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px;}
+.mm-chip{background:#fff;border:2px solid var(--ip-blue);border-radius:8px;padding:7px 9px;font-size:10.5px;font-weight:700;color:var(--ip-blue-dark);text-align:center;}
+.mm-chip.op{border-color:#d1d5db;color:#9ca3af;background:#f9fafb;}
+.mm-arrow{text-align:center;color:var(--ip-gold);font-size:18px;margin:2px 0;}
+.mm-sub{font-size:9.5px;font-weight:500;color:var(--muted);margin-top:2px;display:block;}
+
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:14px 0;}
+.flow-box{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;text-align:center;color:var(--ip-blue-dark);}
+.flow-box.decision{border-color:var(--ip-gold);background:#fffaf0;}
+.flow-box.end{border-color:var(--tier-green);background:#f0fdf4;color:#166534;}
+.flow-arrow{text-align:center;color:var(--muted);font-size:16px;padding:2px 0;}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0;}
+.flow-branch .flow-box{font-size:11px;}
+.branch-label{font-size:10.5px;font-weight:700;text-align:center;color:var(--ip-red-dark);margin-bottom:2px;}
+
+.timeline{position:relative;margin:16px 0 16px 6px;padding-left:20px;border-left:3px solid var(--ip-gold);}
+.tl-item{position:relative;padding-bottom:16px;}
+.tl-item::before{content:'';position:absolute;left:-26px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-red);}
+.tl-year{font-weight:800;color:var(--ip-red-dark);font-size:13px;}
+.tl-text{font-size:12px;margin-top:2px;}
+
+.mnemonic{background:linear-gradient(135deg,#fff7ed,#fef3c7);border:2px dashed var(--ip-gold);border-radius:12px;padding:12px 14px;margin:10px 0;}
+.mnemonic .label{font-weight:800;font-size:12px;color:var(--ip-red-dark);margin-bottom:4px;display:flex;align-items:center;gap:5px;}
+.mnemonic .body{font-size:12.5px;font-weight:600;color:#5c3a02;}
+
+.revision-box{background:var(--ip-blue-dark);color:#fff;border-radius:14px;padding:16px;margin:20px 0;}
+.revision-box h3{color:#fef3c7;font-size:15px;margin-bottom:10px;border:none;padding:0;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rev-item{background:rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:11.5px;}
+.rev-item b{color:var(--ip-gold);display:block;font-size:11px;margin-bottom:2px;}
+
+.lastday{background:#fef2f2;border:2px solid var(--ip-red);border-radius:14px;padding:14px 16px;margin:20px 0;}
+.lastday h3{color:var(--ip-red-dark);border:none;padding:0;font-size:15px;margin-bottom:8px;}
+.lastday ul{padding-left:18px;font-size:12px;}
+.lastday li{margin-bottom:5px;}
+
+.tocbar{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;scrollbar-width:none;}
+.tocbar::-webkit-scrollbar{display:none;}
+.tocbar a{flex-shrink:0;font-size:11px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:5px 11px;color:var(--ip-blue-dark);text-decoration:none;white-space:nowrap;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(220,38,38,.4);cursor:pointer;z-index:100;display:flex;align-items:center;gap:6px;}
+@media print{ .pdf-btn,.tocbar{display:none;} }
+
+footer{text-align:center;font-size:11px;color:var(--muted);padding:24px 14px;}
+</style>
+<body>
+
+<header class="top">
+  <h1>📮 FOREIGN POST MANUAL</h1>
+  <div class="sub"><span class="hi">विदेश डाक नियम पुस्तिका | </span><span class="en">Departmental Manual for Offices of Exchange — IP Exam Notes</span></div>
+  <div class="meta-row">
+    <span class="meta-chip">📅 Incorporates Lausanne Congress 1974 (UPU)</span>
+    <span class="meta-chip">🏛️ Director-General, Posts & Telegraphs</span>
+    <span class="meta-chip">📖 2 Parts · 17 Chapters · 300+ Rules</span>
+  </div>
+</header>
+
+<div class="tocbar">
+  <a href="#s1">Ch.I General</a>
+  <a href="#s2">Ch.II-IV Surface Mail</a>
+  <a href="#s5">Ch.V-VIII Air/Naval</a>
+  <a href="#s10">Ch.X Enquiries</a>
+  <a href="#s13">Ch.XIII+ Parcels</a>
+  <a href="#revision">🎯 Revision</a>
+  <a href="#lastday">🔥 Last-Day</a>
+</div>
+
+<div class="wrap">
+
+<div class="legend">
+  <span style="color:var(--tier-red)">🔴 Very Important</span>
+  <span style="color:var(--tier-orange)">🟠 Frequently Asked</span>
+  <span style="color:var(--tier-yellow)">🟡 Conceptual</span>
+  <span style="color:var(--tier-green)">🟢 Quick Revision</span>
+</div>
+
+<div class="notice-box">📌 <b>Note:</b> This is a departmental <i>administrative</i> manual for postal exchange-office staff (bag handling, accounting, customs liaison). It heavily overlaps with <b>Post Office Guide Part II</b> (which you already have). This infographic focuses only on the genuinely exam-testable parts — definitions, time limits, compensation rules — and summarizes the purely operational chapters (bag sealing, statistical accounts C-17/C-20/C-21) briefly since these have very low MCQ probability.</div>
+
+<!-- MIND MAP -->
+<h2 class="sec"><span class="num">🗺️</span>Chapter Breakdown / अध्याय संरचना</h2>
+<div class="mindmap">
+  <div class="mm-root">FOREIGN POST MANUAL<br><span style="font-weight:500;font-size:10px">(Part → Chapter → Rule → Sub-rule)</span></div>
+  <div class="mm-arrow">↓</div>
+  <div class="mm-level1">
+    <div class="mm-chip">Ch.I – General Principles<span class="mm-sub">UPU, AOPU, Letter Post terms</span></div>
+    <div class="mm-chip op">Ch.II-IV – Surface Mail Ops<span class="mm-sub">Bag handling (operational)</span></div>
+    <div class="mm-chip op">Ch.V-IX – Air/Naval/Bags<span class="mm-sub">Air mail ops (operational)</span></div>
+    <div class="mm-chip">Ch.X – Enquiries & Compensation<span class="mm-sub">Time limits, liability, refunds</span></div>
+    <div class="mm-chip op">Ch.XI-XII – Accounts<span class="mm-sub">Transit charges (operational)</span></div>
+    <div class="mm-chip">Ch.XIII – Parcel Post General<span class="mm-sub">Parcel Post Agreement, weight</span></div>
+    <div class="mm-chip op">Ch.XIV-XVII – Parcel Ops<span class="mm-sub">Handling, transit (operational)</span></div>
+  </div>
+</div>
+<!-- ================= CHAPTER I ================= -->
+<h2 class="sec" id="s1"><span class="num">Ch.I</span>GENERAL PRINCIPLES <span class="en" style="margin-left:6px;font-size:12px">सामान्य सिद्धांत</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">R.1</span>The Universal Postal Union (UPU)</h4>
+  <p class="hi-line">UPU एक अंतरराष्ट्रीय संगठन है जिसमें विश्व के लगभग सभी देश शामिल हैं। इसका उद्देश्य डाक सेवाओं का संगठन व सुधार करना है। इसका केंद्रीय कार्यालय "International Bureau" Berne (स्विट्ज़रलैंड) में स्थित है, जिसका प्रमुख Director-General होता है।</p>
+  <p class="en-line">UPU includes almost all world countries; aims to organize and improve postal services. The International Bureau (headed by a Director-General) functions at Berne under Swiss Confederation supervision.</p>
+  <div class="fact">🔑 International Bureau location: Berne, Switzerland</div>
+  <div class="q"><b>Q.</b> UPU का International Bureau कहाँ स्थित है? — <b>Ans: Berne, Switzerland</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">R.2</span>Acts of the Union — Obligatory vs Optional</h4>
+  <p class="hi-line">अनिवार्य Acts: Constitution, General Regulations, Universal Postal Convention (सभी सदस्य देशों पर बाध्यकारी)। वैकल्पिक Agreements (8 प्रकार): Insured Letters, Postal Parcels, Money Orders/Travellers Cheques, Account Transfers, Cash-on-Delivery, Collection of Bills, Savings Bank Service, Newspaper Subscriptions। भारत ने केवल Insured Letters व Postal Parcels Agreement पर हस्ताक्षर किए हैं।</p>
+  <div class="fact">🔑 India signed only 2 of 8 optional Agreements: Insured Letters + Postal Parcels</div>
+  <div class="q"><b>Q.</b> भारत ने UPU के कौन-से वैकल्पिक Agreements साइन किए हैं? — <b>Ans: Insured Letters and Postal Parcels</b></div>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">R.2-A</span>Asian-Oceanic Postal Union (AOPU)<span class="en">⚠️ Different figures from PO Guide Part II — watch out!</span></h4>
+  <p class="hi-line">AOPU की स्थापना 1962 में हुई (Manila, Philippines मुख्यालय)। भारत 1973 में सदस्य बना। सदस्य देश एक-दूसरे को सतह letter post पर अंतरराष्ट्रीय दर के अधिकतम <b>75%</b> तक रियायती दर दे सकते हैं।</p>
+  <p class="en-line">AOPU established 1962, HQ Manila. India joined 1973. Members may offer concessional surface rates up to 75% of international rates.</p>
+  <div class="fact">⚠️ This Manual: AOPU est. 1962, concession ≤75% | PO Guide Part II: "APPU" est. 1961, concession ≤85% — Both terms refer to the same body renamed over time; check your current syllabus source for the applicable figure.</div>
+  <div class="q"><b>Q.</b> Foreign Post Manual के अनुसार AOPU कब स्थापित हुआ? — <b>Ans: 1962</b> (Manila)</div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">R.3</span>Letter Post Items — Definition & Small Packet Limit</h4>
+  <p class="hi-line">Letter Post में शामिल: Letters, Post Cards, Printed Papers, Literature for the Blind, Small Packets। Small Packets की भार-सीमा अधिकांश देशों हेतु 1 किलो, कुछ देशों हेतु 500 ग्राम।</p>
+  <div class="fact">🔑 L.C. = Letters & Cards | A.O. = Autres Objects (other articles) | Jx = Journaux (newspapers)</div>
+</div>
+
+<h3 class="sub">Key Terms & Definitions / मुख्य परिभाषाएं</h3>
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">R.4</span>Freedom of Transit, Office of Exchange & Foreign Post Office<span class="en">High MCQ value — definitions</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td>Freedom of Transit</td><td>Every UPU country must allow other countries to use its postal services for correspondence transmission (not necessarily free of charge)</td></tr>
+  <tr><td>Office of Exchange</td><td>Post/sorting office that exchanges mail with foreign offices (outward + inward)</td></tr>
+  <tr><td>Office of Exchange of Transit</td><td>Border office handling only closed bags in transit (does not open/close bags for/from other countries)</td></tr>
+  <tr><td>Foreign Post Office</td><td>Exchange office where Customs duty assessment is actually carried out</td></tr>
+  <tr><td>Sub-Foreign Post Office</td><td>Non-exchange office where customs examination/accounting still happens (for sender/addressee convenience)</td></tr>
+  <tr><td>Distant Country</td><td>Conveyance time &gt;10 days OR mail frequency &lt;2×/month</td></tr>
+  <tr><td>à découvert mail</td><td>Articles placed in a bag addressed to a country other than their final destination (open transit)</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> "Foreign Post Office" और "Sub-Foreign Post Office" में मुख्य अंतर क्या है? — <b>Ans: Foreign Post Office एक exchange office भी है; Sub-Foreign Post Office नहीं है, पर वहां भी customs काम होता है</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">R.4(k)</span>Verification Note — Timelines</h4>
+  <p class="hi-line">Verification Note (त्रुटि सूचना) registered डाक व हवाई मार्ग से भेजी जाती है; बीमित वस्तुओं की अनियमितता तुरंत टेलेक्स/टेलीग्राम से भी सूचित की जाती है। यदि मूल या डुप्लिकेट नोट 2 माह (दूर देशों हेतु 4 माह) में वापस नहीं आता, तो इसे "स्वीकृत" मान लिया जाता है।</p>
+  <div class="fact">🔑 Verification note "deemed accepted" window: 2 months (4 months for Distant Countries)</div>
+  <div class="q"><b>Q.</b> Verification Note कितने समय में वापस न आने पर "स्वीकृत" मान ली जाती है? — <b>Ans: 2 months (Distant Countries: 4 months)</b></div>
+</div>
+
+<!-- Decision tree: Distant country -->
+<div class="flow">
+  <div class="flow-box decision">देश तक पहुँचने में कितना समय लगता है? / Conveyance time to that country?</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">&gt;10 days OR &lt;2 mails/month</div><div class="flow-box end">Distant Country → Verification note window = 4 months</div></div>
+    <div><div class="branch-label">≤10 days AND ≥2 mails/month</div><div class="flow-box end">Normal Country → Verification note window = 2 months</div></div>
+  </div>
+</div>
+<!-- ================= CHAPTERS II-IX (brief) ================= -->
+<h2 class="sec" id="s2"><span class="num">Ch.II-IX</span>SURFACE & AIR MAIL OPERATIONS <span class="en" style="margin-left:6px;font-size:12px">परिचालन अध्याय (संक्षिप्त)</span></h2>
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Operational Chapters — Overview Only</h4>
+  <p class="hi-line">Chapters II-IX मुख्यतः exchange office कर्मचारियों के लिए परिचालन निर्देश हैं — bag sealing, letter bills तैयार करना, mail routing, naval mail exchange आदि। ये सीधे MCQ के लिए कम संभावित हैं, पर कुछ उपयोगी तथ्य:</p>
+  <div class="tbl-wrap"><table>
+  <tr><th>Topic</th><th>Key Fact</th></tr>
+  <tr><td>Insured article irregularities (Ch.II)</td><td>Must be notified immediately by telex/telegram (not just verification note)</td></tr>
+  <tr><td>Customs duty window delivery (Ch.III)</td><td>Same principle as PO Guide Part I/II (window delivery beyond threshold)</td></tr>
+  <tr><td>Air mail interruption handling (Ch.V-VI)</td><td>Special procedures for accident/interruption to flights</td></tr>
+  <tr><td>Naval Mails (Ch.VIII)</td><td>Special rates & routing for exchange of mail with naval divisions</td></tr>
+  <tr><td>Bag weight & accounting (Ch.IX)</td><td>Empty bags tracked via registers; damaged bags reported</td></tr>
+  </table></div>
+</div>
+
+<!-- ================= CHAPTER X ================= -->
+<h2 class="sec" id="s10"><span class="num">Ch.X</span>ENQUIRIES & RESPONSIBILITY FOR LOSS/DAMAGE <span class="en" style="margin-left:6px;font-size:12px">पूछताछ एवं क्षति उत्तरदायित्व — सबसे महत्वपूर्ण अध्याय</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">R.150</span>Time Limit for Enquiries — Public vs Foreign Administration<span class="en">Top MCQ topic</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Enquiry Source</th><th>Time Limit</th></tr>
+  <tr><td>Complaint from member of public</td><td>1 year from day after posting</td></tr>
+  <tr><td>Enquiry from a foreign Administration</td><td>Must reach India within 18 months from day after posting</td></tr>
+  <tr><td>Reply from destination administration (missing item)</td><td>Within 5 months of enquiry (quickest possible)</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Public=1, Foreign Admin=18, Reply=5" → <span class="hi">आम जनता की शिकायत 1 वर्ष, विदेशी प्रशासन की पूछताछ 18 माह, जवाब मिलने की सीमा 5 माह</span></div></div>
+  <div class="q"><b>Q.</b> विदेशी प्रशासन से पूछताछ भारत में कितने माह के भीतर पहुंचनी चाहिए? — <b>Ans: 18 months</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">R.153-A</span>Recall of Postal Article / Alteration of Address — Fee</h4>
+  <p class="hi-line">प्रेषक Rs.3.00 शुल्क (डाक टिकट रूप में) देकर वस्तु वापस मंगा सकता है या पता बदल सकता है — साथ ही आवश्यक हवाई/तार शुल्क भी। यह शुल्क किसी भी परिस्थिति में वापस नहीं होता। आवेदन रिकॉर्ड 18 माह तक सुरक्षित रखा जाता है।</p>
+  <div class="fact">🔑 Recall application fee = Rs.3.00 (non-refundable) | Record retention = 18 months</div>
+  <div class="q"><b>Q.</b> Recall आवेदन शुल्क कितना है? — <b>Ans: Rs.3.00</b></div>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">R.163</span>Compensation — Registered Article (Gold Franc Conversion)<span class="en">Critical numeric fact</span></h4>
+  <p class="hi-line">रजिस्टर्ड वस्तु की हानि पर अधिकतम स्वीकृत क्षतिपूर्ति = 40 Gold Francs, अर्थात Rs.98.00 (इस मैनुअल के समय की विनिमय दर पर)।</p>
+  <div class="fact">🔑 Registered article max compensation = 40 Gold Francs = Rs.98 (this manual's rate; PO Guide Part II lists Rs.220 — rates were revised upward over time)</div>
+  <div class="q"><b>Q.</b> रजिस्टर्ड वस्तु की हानि पर अधिकतम क्षतिपूर्ति (Gold Francs में)? — <b>Ans: 40 Gold Francs</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4><span class="clno">R.164</span>Refund Rules — Postage / Registration / Insurance Fee</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Fee Type</th><th>Refunded?</th></tr>
+  <tr><td>Postage (insured letter/box, lost)</td><td>✅ Yes</td></tr>
+  <tr><td>Postage (registered article, lost)</td><td>❌ No</td></tr>
+  <tr><td>Enquiry fee (if compensation paid)</td><td>✅ Yes</td></tr>
+  <tr><td>Registration fee (registered article loss)</td><td>❌ No</td></tr>
+  <tr><td>Registration fee (insured, total loss of contents)</td><td>✅ Yes</td></tr>
+  <tr><td>Insurance fee</td><td>❌ Never refunded</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Insurance fee NEVER refunds" → <span class="hi">चाहे कुछ भी हो, Insurance Fee कभी वापस नहीं होती — यह सबसे पक्का rule है</span></div></div>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4><span class="clno">R.165,166,167</span>Liability & Reimbursement Time Limits — Master Table</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Action</th><th>Time Limit</th></tr>
+  <tr><td>Intimate acceptance/rejection of liability (to foreign admin.)</td><td>6 months from day after enquiry date</td></tr>
+  <tr><td>Settle matter or report "beyond control" cause</td><td>5 months (else other admin. may settle directly)</td></tr>
+  <tr><td>Reimburse Administration that paid indemnity</td><td>4 months from date of despatch of payment notice</td></tr>
+  <tr><td>Claim reimbursement from responsible Administration</td><td>Within 1 year of despatch of payment notice</td></tr>
+  <tr><td>Recovered/discovered lost registered article — option to reclaim</td><td>3 months (repayment then due within 1 year)</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"6-5-4-1-3" → <span class="hi">Liability बताओ 6 माह में, समझौता करो 5 माह में, वापसी करो 4 माह में, दावा करो 1 वर्ष में, वस्तु वापस लो 3 माह में</span></div></div>
+  <div class="q"><b>Q.</b> Reimbursement के लिए दावा करने की समय-सीमा? — <b>Ans: 1 year from date of despatch of payment notice</b></div>
+</div>
+
+<!-- Flowchart: Compensation liability decision -->
+<div class="flow">
+  <div class="flow-box decision">क्षति/हानि किस देश की सेवा में हुई? / Where did the loss/damage occur?</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">भारत में सिद्ध / Proven in India</div><div class="flow-box end">भारत पूर्ण दायित्व स्वीकार करेगा</div></div>
+    <div><div class="branch-label">अस्पष्ट / Uncertain</div><div class="flow-box end">दोनों प्रशासन बराबर हिस्सा साझा कर सकते हैं</div></div>
+  </div>
+  <div class="flow-arrow">⚠️ असहमति होने पर मामला Director-General को भेजा जाता है</div>
+</div>
+<!-- ================= CHAPTER XIII+ (brief) ================= -->
+<h2 class="sec" id="s13"><span class="num">Ch.XIII+</span>PARCEL POST GENERAL PRINCIPLES <span class="en" style="margin-left:6px;font-size:12px">पार्सल डाक — सामान्य सिद्धांत</span></h2>
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4><span class="clno">R.201-212</span>Parcel Post Agreement & Freedom of Transit</h4>
+  <p class="hi-line">विदेशी पार्सल सेवा Universal Postal Union के Parcel Post Agreement द्वारा नियंत्रित है (Chapter I, Rule 2 में सूचीबद्ध वैकल्पिक Agreement, जिसे भारत ने साइन किया है)। पार्सल पर भी Freedom of Transit का सिद्धांत लागू होता है। शेष विवरण (weight/size/insurance/compensation) पहले से covered PO Guide Part II Section V में विस्तार से दिए गए हैं।</p>
+  <div class="fact">🔑 See your PO Guide Part II notes (Section V) for detailed Parcel Post weight/insurance/compensation tables — same rules apply here</div>
+</div>
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Chapters XIV-XVII — Operational Overview</h4>
+  <p class="hi-line">Outward/Inward Surface Parcels, Closed Transit Parcels, Air Parcel Mails — ये सभी exchange office की परिचालन प्रक्रियाएं हैं (despatch notes, customs declarations, parcel bills तैयार करना)। सीधे MCQ की संभावना कम।</p>
+</div>
+
+<!-- ============ MASTER TIME-LIMIT TABLE ============ -->
+<h2 class="sec"><span class="num">⏱️</span>MASTER TIME-LIMIT COMPARISON <span class="en" style="margin-left:6px;font-size:12px">सभी समय-सीमाएं एक तालिका में</span></h2>
+<div class="tbl-wrap"><table>
+<tr><th>Topic</th><th>Time Limit</th></tr>
+<tr><td>Public complaint (loss/damage enquiry)</td><td>1 year from posting</td></tr>
+<tr><td>Foreign Administration enquiry must reach India</td><td>18 months from posting</td></tr>
+<tr><td>Reply to missing-item enquiry from destination country</td><td>5 months (quickest possible)</td></tr>
+<tr><td>Verification Note "deemed accepted" if no reply</td><td>2 months (Distant Countries: 4 months)</td></tr>
+<tr><td>Recall application record retention</td><td>18 months</td></tr>
+<tr><td>Liability acceptance/rejection intimation</td><td>6 months from enquiry</td></tr>
+<tr><td>Settlement or "beyond control" report</td><td>5 months</td></tr>
+<tr><td>Reimbursement to paying Administration</td><td>4 months from payment notice</td></tr>
+<tr><td>Claim reimbursement window</td><td>1 year from payment notice</td></tr>
+<tr><td>Recovered lost article — reclaim option</td><td>3 months (repay within 1 year)</td></tr>
+</table></div>
+
+<!-- ============ TIMELINE ============ -->
+<h2 class="sec"><span class="num">📅</span>KEY HISTORICAL DATES <span class="en" style="margin-left:6px;font-size:12px">महत्वपूर्ण तिथियाँ</span></h2>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">1962</div><div class="tl-text">Asian-Oceanic Postal Union (AOPU) established, HQ Manila (per this Manual)</div></div>
+  <div class="tl-item"><div class="tl-year">1973</div><div class="tl-text">India joined the AOPU</div></div>
+  <div class="tl-item"><div class="tl-year">1974</div><div class="tl-text">Lausanne Congress of UPU — Acts incorporated in this Manual edition</div></div>
+  <div class="tl-item"><div class="tl-year">1980</div><div class="tl-text">DGP&T New Delhi print reference (per manual footer notations)</div></div>
+</div>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-box" id="revision">
+  <h3>🎯 ONE-PAGE REVISION SHEET / एक-पृष्ठ रिवीज़न शीट</h3>
+  <div class="rev-grid">
+    <div class="rev-item"><b>UPU Central Office</b>International Bureau, Berne</div>
+    <div class="rev-item"><b>India's optional UPU Agreements signed</b>Insured Letters + Postal Parcels (2 of 8)</div>
+    <div class="rev-item"><b>AOPU established / HQ</b>1962 / Manila</div>
+    <div class="rev-item"><b>India joined AOPU</b>1973</div>
+    <div class="rev-item"><b>AOPU concessional rate (this Manual)</b>≤75% of Intl. rate</div>
+    <div class="rev-item"><b>Small Packet weight (most/some countries)</b>1 kg / 500g</div>
+    <div class="rev-item"><b>Distant Country criterion</b>&gt;10 days transit OR &lt;2 mails/month</div>
+    <div class="rev-item"><b>Verification note deemed-accepted</b>2 months (Distant: 4 months)</div>
+    <div class="rev-item"><b>Public complaint time limit</b>1 year</div>
+    <div class="rev-item"><b>Foreign admin enquiry limit</b>18 months</div>
+    <div class="rev-item"><b>Recall application fee</b>Rs.3.00 (non-refundable)</div>
+    <div class="rev-item"><b>Registered article compensation</b>40 Gold Francs = Rs.98</div>
+    <div class="rev-item"><b>Insurance fee refund</b>Never</div>
+    <div class="rev-item"><b>Liability intimation window</b>6 months</div>
+    <div class="rev-item"><b>Reimbursement claim window</b>1 year</div>
+    <div class="rev-item"><b>Recovered article reclaim option</b>3 months</div>
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION ============ -->
+<div class="lastday" id="lastday">
+  <h3>🔥 LAST-DAY REVISION NOTES / परीक्षा से एक दिन पहले</h3>
+  <ul>
+    <li><b>AOPU बनाम APPU नाम भ्रम:</b> इस Manual में "Asian-Oceanic Postal Union (1962)" कहा गया है, जबकि PO Guide Part II में "Asian-Pacific Postal Union (1961)" — यह एक ही संगठन के अलग-अलग समय के नाम/आंकड़े हैं। परीक्षा में जो स्रोत बताया गया हो वही आंकड़ा चुनें।</li>
+    <li><b>समय-सीमा क्रम याद रखें:</b> 2 माह (verification note) → 3 माह (recovered article) → 4 माह (reimbursement) → 5 माह (settlement/reply) → 6 माह (liability) → 1 वर्ष (public complaint, claim window) → 18 माह (foreign admin enquiry) — यह बढ़ता क्रम याद कर लें।</li>
+    <li><b>Rs.3 फीस:</b> Recall/address-alteration आवेदन शुल्क Rs.3.00 है — कभी वापस नहीं होता, चाहे request सफल हो या न हो।</li>
+    <li><b>Insurance Fee कभी वापस नहीं:</b> चाहे article पूरी तरह खो जाए या पूरा मुआवज़ा मिले — Insurance Fee कभी refund नहीं होती (Registration Fee कुछ मामलों में होती है)।</li>
+    <li><b>Distant Country की परिभाषा:</b> "10 दिन से ज़्यादा transit समय" या "महीने में 2 बार से कम डाक सेवा" — दोनों में से कोई एक शर्त पूरी होने पर देश "Distant" माना जाता है।</li>
+    <li>यह Manual मुख्यतः departmental/operational है — ज़्यादातर परीक्षा-योग्य सामग्री PO Guide Part II से ही आती है; इस Manual से केवल Chapter I (परिभाषाएं) और Chapter X (समय-सीमा/मुआवज़ा) पर विशेष ध्यान दें।</li>
+  </ul>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  📮 India Post IP Exam Portal · Foreign Post Manual (Departmental Reference) · Prepared for departmental exam revision
+</footer>
+
+<button class="pdf-btn" onclick="window.print()">⬇️ Save as PDF</button>
+
+</body>
+</html>

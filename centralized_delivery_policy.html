@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Centralized Delivery Policy | केंद्रीकृत वितरण नीति | IP Exam Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ip-red:#dc2626; --ip-red-dark:#b91c1c;
+  --ip-blue:#1e3a8a; --ip-blue-dark:#172554;
+  --ip-gold:#d97706;
+  --tier-red:#dc2626; --tier-orange:#ea580c; --tier-yellow:#ca8a04; --tier-green:#16a34a;
+  --cream:#fbf8f3; --ink:#1c1a16; --card:#ffffff; --line:#e7e0d3;
+  --muted:#6b6255;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans Devanagari','Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:15px;padding-bottom:40px;}
+.hi{font-weight:500;}
+.en{font-style:italic;color:var(--muted);font-size:0.92em;}
+a{color:inherit;}
+
+header.top{background:linear-gradient(135deg,var(--ip-blue) 0%,var(--ip-blue-dark) 100%);color:#fff;padding:22px 16px 30px;position:relative;overflow:hidden;}
+header.top::after{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(217,119,6,.35),transparent 70%);}
+header.top h1{font-size:19px;font-weight:800;letter-spacing:-.02em;position:relative;z-index:1;}
+header.top .sub{font-size:13px;opacity:.85;margin-top:4px;position:relative;z-index:1;}
+header.top .sub .hi{color:#fef3c7;}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative;z-index:1;}
+.meta-chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;font-size:11.5px;font-weight:600;backdrop-filter:blur(6px);}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 14px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.legend span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:8px;background:#fff;border:1px solid var(--line);}
+
+h2.sec{font-size:18px;font-weight:800;color:var(--ip-blue-dark);margin:30px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--ip-gold);display:flex;align-items:center;gap:8px;}
+h2.sec .num{background:var(--ip-blue-dark);color:#fff;width:30px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+h3.sub{font-size:14.5px;font-weight:700;color:var(--ip-red-dark);margin:18px 0 8px;padding-left:8px;border-left:4px solid var(--ip-red);}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);position:relative;}
+.card .tier{position:absolute;top:10px;right:10px;font-size:15px;}
+.card .clno{display:inline-block;background:#dbeafe;color:var(--ip-blue-dark);font-weight:700;font-size:11px;padding:2px 8px;border-radius:6px;margin-right:6px;}
+.card h4{font-size:13.5px;font-weight:700;margin-bottom:4px;padding-right:22px;}
+.card h4 .en{display:block;font-size:11.5px;font-weight:500;}
+.card p{font-size:12.5px;color:#3a3527;margin-top:3px;}
+.card p.hi-line{font-weight:500;}
+.card p.en-line{font-style:italic;color:var(--muted);font-size:12px;}
+.card .fact{background:#fef9ee;border:1px dashed var(--ip-gold);border-radius:8px;padding:6px 9px;margin-top:6px;font-size:12px;font-weight:600;color:#7c4a03;}
+.card .q{margin-top:7px;font-size:11.5px;background:#f0f6ff;border-left:3px solid var(--ip-blue);padding:5px 8px;border-radius:0 6px 6px 0;color:var(--ip-blue-dark);}
+.card .q b{color:var(--ip-red-dark);}
+
+.tier-red{border-left:4px solid var(--tier-red);}
+.tier-orange{border-left:4px solid var(--tier-orange);}
+.tier-yellow{border-left:4px solid var(--tier-yellow);}
+.tier-green{border-left:4px solid var(--tier-green);}
+
+.tbl-wrap{overflow-x:auto;margin:10px 0 16px;border-radius:10px;border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;min-width:440px;}
+table th{background:var(--ip-blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;font-size:11.5px;}
+table td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table tr:nth-child(even) td{background:#faf8f4;}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:14px 0;}
+.mm-root{background:var(--ip-blue-dark);color:#fff;border-radius:10px;padding:10px 14px;font-weight:800;font-size:13px;text-align:center;}
+.mm-level1{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px;}
+.mm-chip{background:#fff;border:2px solid var(--ip-blue);border-radius:8px;padding:7px 9px;font-size:10.5px;font-weight:700;color:var(--ip-blue-dark);text-align:center;}
+.mm-arrow{text-align:center;color:var(--ip-gold);font-size:18px;margin:2px 0;}
+.mm-sub{font-size:9.5px;font-weight:500;color:var(--muted);margin-top:2px;display:block;}
+
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:14px 0;}
+.flow-box{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;text-align:center;color:var(--ip-blue-dark);}
+.flow-box.decision{border-color:var(--ip-gold);background:#fffaf0;}
+.flow-box.end{border-color:var(--tier-green);background:#f0fdf4;color:#166534;}
+.flow-arrow{text-align:center;color:var(--muted);font-size:16px;padding:2px 0;}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0;}
+.flow-branch .flow-box{font-size:11px;}
+.branch-label{font-size:10.5px;font-weight:700;text-align:center;color:var(--ip-red-dark);margin-bottom:2px;}
+
+.timeline{position:relative;margin:16px 0 16px 6px;padding-left:20px;border-left:3px solid var(--ip-gold);}
+.tl-item{position:relative;padding-bottom:16px;}
+.tl-item::before{content:'';position:absolute;left:-26px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-red);}
+.tl-year{font-weight:800;color:var(--ip-red-dark);font-size:13px;}
+.tl-text{font-size:12px;margin-top:2px;}
+
+.mnemonic{background:linear-gradient(135deg,#fff7ed,#fef3c7);border:2px dashed var(--ip-gold);border-radius:12px;padding:12px 14px;margin:10px 0;}
+.mnemonic .label{font-weight:800;font-size:12px;color:var(--ip-red-dark);margin-bottom:4px;display:flex;align-items:center;gap:5px;}
+.mnemonic .body{font-size:12.5px;font-weight:600;color:#5c3a02;}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.compare-box{border-radius:10px;padding:10px 12px;font-size:12px;}
+.compare-box.type1{background:#eff6ff;border:1px solid var(--ip-blue);}
+.compare-box.type2{background:#fef2f2;border:1px solid var(--ip-red);}
+.compare-box h5{font-size:12.5px;font-weight:800;margin-bottom:6px;}
+.compare-box.type1 h5{color:var(--ip-blue-dark);}
+.compare-box.type2 h5{color:var(--ip-red-dark);}
+.compare-box ul{padding-left:16px;}
+.compare-box li{margin-bottom:4px;}
+
+.revision-box{background:var(--ip-blue-dark);color:#fff;border-radius:14px;padding:16px;margin:20px 0;}
+.revision-box h3{color:#fef3c7;font-size:15px;margin-bottom:10px;border:none;padding:0;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rev-item{background:rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:11.5px;}
+.rev-item b{color:var(--ip-gold);display:block;font-size:11px;margin-bottom:2px;}
+
+.lastday{background:#fef2f2;border:2px solid var(--ip-red);border-radius:14px;padding:14px 16px;margin:20px 0;}
+.lastday h3{color:var(--ip-red-dark);border:none;padding:0;font-size:15px;margin-bottom:8px;}
+.lastday ul{padding-left:18px;font-size:12px;}
+.lastday li{margin-bottom:5px;}
+
+.tocbar{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;scrollbar-width:none;}
+.tocbar::-webkit-scrollbar{display:none;}
+.tocbar a{flex-shrink:0;font-size:11px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:5px 11px;color:var(--ip-blue-dark);text-decoration:none;white-space:nowrap;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(220,38,38,.4);cursor:pointer;z-index:100;display:flex;align-items:center;gap:6px;}
+@media print{ .pdf-btn,.tocbar{display:none;} }
+
+footer{text-align:center;font-size:11px;color:var(--muted);padding:24px 14px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>🏢 CENTRALIZED DELIVERY POLICY GUIDELINES</h1>
+  <div class="sub"><span class="hi">केंद्रीकृत वितरण नीति दिशा-निर्देश | </span><span class="en">Speed Post, Registered, Parcel & Ordinary Articles via Delivery Centres — IP Exam Notes</span></div>
+  <div class="meta-row">
+    <span class="meta-chip">📅 No. 16-01/2024-D, Dated 17.02.2025</span>
+    <span class="meta-chip">🏛️ Mail Operations Division, Dak Bhawan</span>
+    <span class="meta-chip">✍️ Dushyant Mudgal, DDG (Mail Operations)</span>
+  </div>
+</header>
+
+<div class="tocbar">
+  <a href="#s1">Background</a>
+  <a href="#s2">Justification</a>
+  <a href="#s3">Types of DC</a>
+  <a href="#s4">Process Flow</a>
+  <a href="#s5">Setup Guidelines</a>
+  <a href="#s6">Operational</a>
+  <a href="#s7">Functions</a>
+  <a href="#s8">Security</a>
+  <a href="#revision">🎯 Revision</a>
+  <a href="#lastday">🔥 Last-Day</a>
+</div>
+
+<div class="wrap">
+
+<div class="legend">
+  <span style="color:var(--tier-red)">🔴 Very Important</span>
+  <span style="color:var(--tier-orange)">🟠 Frequently Asked</span>
+  <span style="color:var(--tier-yellow)">🟡 Conceptual</span>
+  <span style="color:var(--tier-green)">🟢 Quick Revision</span>
+</div>
+
+<!-- MIND MAP -->
+<h2 class="sec"><span class="num">🗺️</span>Policy Breakdown / नीति संरचना</h2>
+<div class="mindmap">
+  <div class="mm-root">CENTRALIZED DELIVERY POLICY — DELIVERY CENTRES (DCs)<br><span style="font-weight:500;font-size:11px">(Chapter → Sub-chapter → Micro → Nano Detail)</span></div>
+  <div class="mm-arrow">↓</div>
+  <div class="mm-level1">
+    <div class="mm-chip">1. Background<span class="mm-sub">19,500 delivery POs, volume projections</span></div>
+    <div class="mm-chip">2. Justification<span class="mm-sub">Why Delivery Centres needed</span></div>
+    <div class="mm-chip">3. Types of DC<span class="mm-sub">Integrated vs Separate</span></div>
+    <div class="mm-chip">4. Process Flow<span class="mm-sub">Ordinary/Accountable/Parcel</span></div>
+    <div class="mm-chip">5. Setup Guidelines<span class="mm-sub">Distance, space, PIN, staff</span></div>
+    <div class="mm-chip">6-8. Operations/Functions/Security<span class="mm-sub">Slips, PMA, CCTV, shifts</span></div>
+  </div>
+</div>
+
+<!-- ================= SECTION 1 BACKGROUND ================= -->
+<h2 class="sec" id="s1"><span class="num">1</span>BACKGROUND <span class="en" style="margin-left:6px;font-size:12px">पृष्ठभूमि</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Current Network & Volume Projections<span class="en">Extremely high MCQ probability — exact figures</span></h4>
+  <p class="hi-line">भारत में वर्तमान में लगभग <b>19,500 डिलीवरी डाकघर</b> हैं — विश्व के सबसे बड़े व व्यापक डिलीवरी नेटवर्क में से एक। Parcels की डिलीवरी हेतु चुनिंदा क्षेत्रों में पहले से ही Nodal Delivery Centres (NDCs) स्थापित हैं।</p>
+  <div class="tbl-wrap"><table>
+  <tr><th>Metric</th><th>Current (Existing)</th><th>Projected (2028-29)</th></tr>
+  <tr><td>Accountable Document Volume</td><td>94 Crore</td><td>164 Crore</td></tr>
+  <tr><td>Parcel Volume</td><td>6.7 Crore</td><td>46 Crore</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"94→164, 6.7→46" → <span class="hi">दस्तावेज़ लगभग दोगुना (94→164), पार्सल लगभग 7 गुना (6.7→46) बढ़ने का अनुमान है — पार्सल growth बहुत तेज़ है!</span></div></div>
+  <div class="q"><b>Q.</b> भारत में वर्तमान में डिलीवरी डाकघरों की कुल संख्या कितनी है? — <b>Ans: लगभग 19,500</b></div>
+  <div class="q"><b>Q.</b> 2028-29 तक Parcel volume कितना होने का अनुमान है? — <b>Ans: 46 करोड़</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Mechanization Progress (2-Wheeler)</h4>
+  <p class="hi-line">विभाग ने अक्टूबर 2024 में delivery beats के mechanization हेतु दिशा-निर्देश जारी किए; कर्मचारियों को अपने निजी 2-wheeler उपयोग हेतु mileage charges reimburse किए जा रहे हैं। अब तक विभाग के <b>~62% delivery beats mechanized</b> हो चुके हैं।</p>
+  <div class="fact">🔑 Mechanization guidelines issued: October 2024 | Mechanized beats so far: ~62%</div>
+  <div class="q"><b>Q.</b> अब तक कितने प्रतिशत delivery beats mechanized हो चुके हैं? — <b>Ans: लगभग 62%</b></div>
+</div>
+
+<!-- ================= SECTION 2 JUSTIFICATION ================= -->
+<h2 class="sec" id="s2"><span class="num">2</span>JUSTIFICATION FOR DELIVERY CENTRES <span class="en" style="margin-left:6px;font-size:12px">डिलीवरी सेंटर की आवश्यकता क्यों</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Core Rationale — Separation of Backend from Counter</h4>
+  <p class="hi-line">CEP (Courier Express Parcel) बाज़ार के अन्य players की तरह, विभाग भी "Delivery Centres" स्थापित कर मौजूदा डिलीवरी डाकघरों के क्षेत्रों को समेकित (consolidate) करेगा। ये केंद्र मौजूदा डाकघरों से अलग स्थापित होंगे ताकि डाकघर कर्मचारी काउंटर परिचालन पर पूरी तरह ध्यान केंद्रित कर सकें।</p>
+  <div class="fact">🔑 Purpose: Separate backend delivery function from counter operations → better monitoring + flexible delivery</div>
+  <div class="q"><b>Q.</b> Delivery Centres को मौजूदा डाकघरों से अलग क्यों स्थापित किया जाएगा? — <b>Ans: ताकि डाकघर स्टाफ काउंटर परिचालन पर पूरी तरह केंद्रित रह सके</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Expanded Delivery Capacity — 2 Delivery Sets</h4>
+  <p class="hi-line">काउंटर से डिलीवरी को अलग करने से विभाग की डिलीवरी क्षमता बढ़ेगी — एक ही डिलीवरी सुविधा से <b>2 डिलीवरी सेट्स</b> (सुबह/शाम) संचालित किए जा सकेंगे, साथ ही Sunday/Holiday पर भी डिलीवरी सेवा दी जा सकेगी।</p>
+  <div class="fact">🔑 2 Delivery Sets = Morning + Evening | Also enables Sunday/Holiday delivery</div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>IT 2.0 Tech Functionalities</h4>
+  <p class="hi-line">IT 2.0 प्रोजेक्ट के तहत डिलीवरी ऐप के माध्यम से route optimization, paperless delivery, OTP आधारित delivery, COD/custom payment का digital collection, addressee को App-based calling आदि नई तकनीकी सुविधाएं शुरू की जाएंगी।</p>
+</div>
+
+<!-- ================= SECTION 3 TYPES OF DC ================= -->
+<h2 class="sec" id="s3"><span class="num">3</span>TYPES OF DELIVERY CENTRES <span class="en" style="margin-left:6px;font-size:12px">डिलीवरी सेंटर के प्रकार</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>2 Types Based on Location of Processing Area<span class="en">Classic comparison MCQ</span></h4>
+  <div class="compare-grid">
+    <div class="compare-box type1">
+      <h5>1️⃣ Integrated Delivery Centre</h5>
+      <ul>
+        <li>Document व Parcel processing area एक-दूसरे के आसपास (adjacent)</li>
+        <li>Common bag receipt व dispatch area</li>
+        <li>Staff: Separate या Mix delivery staff दोनों संभव</li>
+      </ul>
+    </div>
+    <div class="compare-box type2">
+      <h5>2️⃣ Separate Processing Areas</h5>
+      <ul>
+        <li>Document व Parcel processing areas अलग-अलग (same compound में, पर adjacent नहीं)</li>
+        <li>Bag receipt/dispatch area भी अलग-अलग</li>
+        <li>Document केंद्र = "Delivery Centre"; Parcel केंद्र = "Nodal Delivery Centre"</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Adjacent = Integrated, Separate = Nodal" → <span class="hi">जब document व parcel area पास-पास हों तो एक ही "Delivery Centre"; जब अलग हों तो parcel वाला हिस्सा "Nodal Delivery Centre" कहलाता है</span></div></div>
+  <div class="q"><b>Q.</b> जब Document व Parcel processing area अलग-अलग हों, तो Parcel केंद्र को क्या कहा जाता है? — <b>Ans: "Nodal Delivery Centre"</b></div>
+</div>
+
+<!-- Decision tree -->
+<div class="flow">
+  <div class="flow-box decision">क्या Document व Parcel processing area के लिए adjacent जगह उपलब्ध है?</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-branch">
+    <div><div class="branch-label">हाँ / Yes</div><div class="flow-box end">Integrated Delivery Centre (एक साझा नाम)</div></div>
+    <div><div class="branch-label">नहीं / No (पर same compound में)</div><div class="flow-box end">"Delivery Centre" (Document) + "Nodal Delivery Centre" (Parcel)</div></div>
+  </div>
+</div>
+
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Mix vs Separate Delivery Staff</h4>
+  <p class="hi-line"><b>Separate Staff:</b> Document व Parcel डिलीवरी हेतु अलग-अलग कर्मचारी (जब separate parcel staff के लिए justification हो)। <b>Mix Staff:</b> यदि separate parcel staff justified नहीं है, तो वही कर्मचारी दोनों डिलीवर करेगा।</p>
+</div>
+
+<!-- ================= SECTION 4 PROCESS FLOW ================= -->
+<h2 class="sec" id="s4"><span class="num">4</span>PROCESS FLOW IN DELIVERY CENTRE <span class="en" style="margin-left:6px;font-size:12px">प्रक्रिया प्रवाह</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Common Steps — All Article Types<span class="en">Sequence-based MCQ likely</span></h4>
+  <p class="hi-line">सभी प्रकार की वस्तुओं (Ordinary/Accountable/Parcel) हेतु शुरुआती 2 कदम समान हैं: (1) MMS से bag प्राप्ति (Common Area) (2) Bag Receipt Scan (Common Area)। इसके बाद प्रत्येक श्रेणी के लिए अलग प्रक्रिया शुरू होती है।</p>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Category-wise Process Flow Comparison</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Step</th><th>Ordinary Mail</th><th>Accountable Mail</th><th>Parcels</th></tr>
+  <tr><td>Opening of Bag</td><td>Simple opening</td><td>+ Article Receipt scan</td><td>+ Parcel Receipt scan & Sector Sorting</td></tr>
+  <tr><td>Sorting</td><td>Segregation & facing → Stamping → Sorting</td><td>Sorting</td><td>Delivery area-wise Sorting</td></tr>
+  <tr><td>Sequencing</td><td>Sequencing</td><td>Sequencing</td><td>Sequencing</td></tr>
+  <tr><td>Slip Generation</td><td>(none)</td><td>Scanning + Delivery Slip</td><td>Scanning + Delivery Slip</td></tr>
+  <tr><td>Common Steps</td><td colspan="3">Out for Delivery → Taking Staff Return → Bag Despatch to Sorting Hub → Tallying of Abstract</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> Ordinary Mail प्रक्रिया में कौन-सा अतिरिक्त कदम है जो Accountable/Parcel में नहीं है? — <b>Ans: Segregation & facing of ordinary mail, तथा Stamping of ordinary mail</b></div>
+</div>
+
+<!-- Flowchart visual -->
+<div class="flow">
+  <div class="flow-box">Bag प्राप्ति from MMS (Common Area)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Bag Receipt Scan (Common Area)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box decision">Article Type अनुसार अलग प्रक्रिया (Opening → Sorting → Sequencing → Slip Generation)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Out for Delivery</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Delivery Staff Return लेना</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">Bag Despatch to Sorting Hub</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box end">Tallying of Abstract</div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>Bag & Article Abstract Tallying — Authority Reference</h4>
+  <p class="hi-line">Bag Abstract व Article Abstract, DG Postal Services के D.O. letter no. <b>30-44/2024-D dated 24/10/2024</b> (Annexure VI) के अनुसार रखे जाएंगे। इसकी दैनिक tallying सुनिश्चित करना Supervisor/Incharge की व्यक्तिगत जिम्मेदारी है।</p>
+  <div class="fact">🔑 Reference letter for Abstract tallying: 30-44/2024-D dated 24.10.2024</div>
+</div>
+
+<!-- ================= SECTION 5 SETUP GUIDELINES ================= -->
+<h2 class="sec" id="s5"><span class="num">5</span>GUIDELINES FOR SETTING UP DELIVERY CENTRES <span class="en" style="margin-left:6px;font-size:12px">स्थापना दिशा-निर्देश</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>One-Way Distance Limit<span class="en">Top numeric MCQ fact</span></h4>
+  <p class="hi-line">डिलीवरी क्षेत्र इस प्रकार पुनर्गठित किया जाए कि डिलीवरी स्टाफ द्वारा तय की जाने वाली one-way दूरी <b>15 km से अधिक न हो</b>। असाधारण परिस्थितियों में यह सीमा परिचालन आवश्यकताओं अनुसार 15 km से अधिक भी हो सकती है।</p>
+  <div class="fact">🔑 Standard one-way distance limit = 15 km (exceptions allowed in special cases)</div>
+  <div class="q"><b>Q.</b> डिलीवरी स्टाफ हेतु मानक one-way दूरी सीमा कितनी है? — <b>Ans: 15 km</b></div>
+</div>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>City-wise Delivery Centre Capacity — Master Table<span class="en">Extremely high MCQ probability</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Parameter</th><th>Metro/Big Cities</th><th>State Capital/Other Cities</th></tr>
+  <tr><td>Threshold to qualify for DC</td><td>&gt;50,000 accountable articles/day</td><td>—</td></tr>
+  <tr><td>Delivery staff per DC</td><td>50-80 staff</td><td>15-60 staff</td></tr>
+  <tr><td>Max accountable articles/day per DC</td><td>8,000 (excl. bulk)</td><td>5,000 (excl. bulk)</td></tr>
+  <tr><td>Space requirement</td><td>2,000-3,500 Sq Ft</td><td>1,000-2,500 Sq Ft</td></tr>
+  </table></div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"Metro: 50-80 staff, 8000 articles, 2000-3500 sqft | State: 15-60 staff, 5000 articles, 1000-2500 sqft" → <span class="hi">Metro के सभी आंकड़े State Capital से लगभग दोगुने हैं</span></div></div>
+  <div class="q"><b>Q.</b> Metro शहर में एक Delivery Centre अधिकतम कितने accountable articles/दिन डिलीवर कर सकता है? — <b>Ans: 8,000 (bulk छोड़कर)</b></div>
+  <div class="q"><b>Q.</b> State Capital में Delivery Centre हेतु स्थान आवश्यकता कितनी है? — <b>Ans: 1,000-2,500 Sq Ft</b></div>
+</div>
+
+<h3 class="sub">Delivery Load per Staff (Mix Delivery Area)</h3>
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Tentative Articles per Delivery Staff<span class="en">Very high MCQ probability — assumes 30km/18km travel</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Article Type</th><th>Number per Staff</th></tr>
+  <tr><td>Ordinary Articles</td><td>95</td></tr>
+  <tr><td>Speed Post (Document)</td><td>43</td></tr>
+  <tr><td>Regd. Articles/SP person-specific/Parcels</td><td>42</td></tr>
+  <tr><td>COD</td><td>3</td></tr>
+  <tr><td>Money Order/eMO</td><td>1</td></tr>
+  <tr><td>Insured</td><td>1</td></tr>
+  </table></div>
+  <div class="fact">🔑 Assumption basis: 30km (less congested) / 18km (congested) travel, 90 minutes travel time | Exclusive Parcel Staff: Speed Post/Business/Regd. Parcel = 60</div>
+  <div class="mnemonic"><div class="label">🧠 Mnemonic</div><div class="body">"95-43-42-3-1-1" → <span class="hi">घटते क्रम में याद रखें: Ordinary सबसे ज्यादा (95), फिर Speed Post (43), Regd/Parcel (42), फिर COD (3), MO व Insured सबसे कम (1-1)</span></div></div>
+  <div class="q"><b>Q.</b> Mix Delivery Area में एक स्टाफ द्वारा प्रतिदिन कितने Ordinary Articles डिलीवर किए जाते हैं? — <b>Ans: 95</b></div>
+  <div class="q"><b>Q.</b> Exclusive Parcel delivery staff द्वारा Speed Post/Business/Regd Parcel की डिलीवरी संख्या कितनी है? — <b>Ans: 60</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>Bulk Delivery Staff</h4>
+  <p class="hi-line">प्रत्येक Delivery Centre में bulk articles की अलग डिलीवरी सुनिश्चित करने हेतु <b>1-2 bulk delivery staff</b> (या आवश्यकतानुसार) नियुक्त किए जा सकते हैं।</p>
+  <div class="fact">🔑 Bulk delivery staff per DC = 1-2 (or as required)</div>
+</div>
+
+<h3 class="sub">Mechanized Delivery — Vehicle Rules</h3>
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>2-Wheeler vs 4-Wheeler Rules</h4>
+  <p class="hi-line">Documents व small parcels — 2-wheeler से डिलीवर; बड़े/भारी parcels — 4-wheeler से डिलीवर। निजी 2-wheeler के ईंधन शुल्क का मासिक reimbursement Postal Directorate के letter no. <b>16-02/2024-D dated 25/10/2024</b> अनुसार दिया जाता है।</p>
+  <div class="fact">🔑 Fuel reimbursement reference letter: 16-02/2024-D dated 25.10.2024</div>
+</div>
+
+<h3 class="sub">Other Setup Parameters</h3>
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Facility ID, PIN Code & Delivery Attempts</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Parameter</th><th>Rule</th></tr>
+  <tr><td>Facility ID</td><td>प्रत्येक Delivery Centre/Nodal Delivery Centre हेतु अलग बनाई जाएगी (CSI में पहचान हेतु)</td></tr>
+  <tr><td>PIN Code</td><td>किसी merged delivery PO का PIN कोड सौंपा जाएगा — आदर्श रूप से major delivery PO का</td></tr>
+  <tr><td>Delivery Attempts</td><td>अधिकतम 2 attempts; अवितरित वस्तुएं अधिकतम 7 दिन जमा रखी जाएंगी</td></tr>
+  </table></div>
+  <div class="q"><b>Q.</b> अवितरित वस्तु (undelivered article) को अधिकतम कितने दिन जमा रखा जा सकता है? — <b>Ans: 7 days</b></div>
+</div>
+
+<!-- ================= SECTION 6 OPERATIONAL ================= -->
+<h2 class="sec" id="s6"><span class="num">6</span>OPERATIONAL GUIDELINES <span class="en" style="margin-left:6px;font-size:12px">परिचालन दिशा-निर्देश</span></h2>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Common Delivery Slip & Postman Mobile App (PMA)</h4>
+  <p class="hi-line">"Mix Delivery Area" में एक साझा Delivery Slip बनेगी (Speed Post + Registered + Parcels सभी शामिल)। अलग Parcel Area की स्थिति में अलग-अलग स्लिप बनेगी। सभी डिलीवरी स्टाफ को PMA सहित mobile phones (Departmental या BYOD scheme के तहत) दी जाएंगी।</p>
+  <div class="fact">🔑 BYOD = Bring Your Own Device (mobile scheme) | PMA upgrades under IT 2.0: route optimization, OTP delivery, digital COD collection</div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>Equipment — Document vs Parcel Processing Area</h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Document Processing Area</th><th>Parcel Processing Area</th></tr>
+  <tr><td>Opening table (ordinary mail)</td><td>Opening Table</td></tr>
+  <tr><td>Sorting case</td><td>Sequencing Table</td></tr>
+  <tr><td>Roller Containers</td><td>Package Trolley</td></tr>
+  <tr><td>Stamping Table</td><td>Roller Containers</td></tr>
+  <tr><td>Postman Table</td><td>Standardized delivery bags</td></tr>
+  <tr><td>Standardized delivery bag</td><td>—</td></tr>
+  </table></div>
+</div>
+
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Treasury Function</h4>
+  <p class="hi-line">अलग Facility ID वाले प्रत्येक Delivery Centre में treasury function होगा — money order भुगतान हेतु नगद वितरण व COD/custom duty/undelivered MO से एकत्र नगद प्राप्ति हेतु।</p>
+</div>
+
+<!-- ================= SECTION 7 FUNCTIONS ================= -->
+<h2 class="sec" id="s7"><span class="num">7</span>FUNCTIONS OF DELIVERY CENTRE <span class="en" style="margin-left:6px;font-size:12px">डिलीवरी सेंटर के कार्य</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>Duty Timing — First & Second Delivery<span class="en">High MCQ probability — exact timings</span></h4>
+  <div class="tbl-wrap"><table>
+  <tr><th>Delivery Set</th><th>Timing</th></tr>
+  <tr><td>Normal Delivery Centre (single shift)</td><td>9:00 hrs – 17:00 hrs</td></tr>
+  <tr><td>First Delivery / Morning (in 2-shift model)</td><td>9:00 hrs – 17:00 hrs</td></tr>
+  <tr><td>Second Delivery / Evening (in 2-shift model)</td><td>12:00 hrs – 20:00 hrs</td></tr>
+  </table></div>
+  <div class="fact">🔑 Second delivery doubles articles delivered through a single Delivery Centre</div>
+  <div class="q"><b>Q.</b> Second Delivery (Evening) की समय-सीमा क्या है? — <b>Ans: 12:00 hrs से 20:00 hrs</b></div>
+</div>
+
+<div class="card tier-orange"><span class="tier">🟠</span>
+  <h4>Separate Facility ID for Shifts</h4>
+  <p class="hi-line">सुबह व शाम की शिफ्ट में कार्यरत Delivery Centre हेतु अलग-अलग Facility ID बनाई जाएगी ताकि दोनों की अलग पहचान सुनिश्चित हो सके। दोनों शिफ्ट हेतु अलग Supervisor व Delivery PA भी नियुक्त होंगे।</p>
+</div>
+
+<div class="card tier-green"><span class="tier">🟢</span>
+  <h4>Sunday/Holiday Delivery</h4>
+  <p class="hi-line">आवश्यकतानुसार प्रत्येक Delivery Centre रविवार व सार्वजनिक अवकाश पर भी डिलीवरी करेगा। कर्मचारियों को साप्ताहिक अवकाश (weekly off) सुनिश्चित करने हेतु duty rotation की जाएगी।</p>
+</div>
+
+<!-- ================= SECTION 8 SECURITY ================= -->
+<h2 class="sec" id="s8"><span class="num">8</span>SECURITY <span class="en" style="margin-left:6px;font-size:12px">सुरक्षा</span></h2>
+
+<div class="card tier-red"><span class="tier">🔴</span>
+  <h4>CCTV Provision — Reference SOP</h4>
+  <p class="hi-line">प्रत्येक Delivery Centre को CCTV कवरेज मिलेगी — बाहरी क्षेत्र, mail motor के साथ bag exchange area व अंदरूनी processing areas सहित। CCTV installation हेतु SOP विभाग द्वारा <b>25 फरवरी 2021</b> को जारी किया गया (Annexure V)।</p>
+  <div class="fact">🔑 CCTV SOP issue date: 25th February 2021</div>
+  <div class="q"><b>Q.</b> CCTV installation हेतु SOP कब जारी हुआ था? — <b>Ans: 25 फरवरी 2021</b></div>
+</div>
+
+<div class="card tier-yellow"><span class="tier">🟡</span>
+  <h4>Access Control</h4>
+  <p class="hi-line">Supervisor/Incharge केवल अधिकृत स्टाफ के प्रवेश को सुनिश्चित करेंगे — बाहरी व्यक्तियों को Delivery Centre में प्रवेश की अनुमति नहीं होगी।</p>
+</div>
+
+<!-- ============ TIMELINE ============ -->
+<h2 class="sec"><span class="num">📅</span>KEY DATES & REFERENCE LETTERS <span class="en" style="margin-left:6px;font-size:12px">महत्वपूर्ण तिथियाँ</span></h2>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-year">25 Feb 2021</div><div class="tl-text">CCTV installation SOP issued (Annexure V)</div></div>
+  <div class="tl-item"><div class="tl-year">Oct 2024</div><div class="tl-text">Mechanization of delivery beats guidelines issued</div></div>
+  <div class="tl-item"><div class="tl-year">24.10.2024</div><div class="tl-text">DG Postal Services D.O. letter 30-44/2024-D — Bag/Article Abstract instructions (Annexure VI)</div></div>
+  <div class="tl-item"><div class="tl-year">25.10.2024</div><div class="tl-text">Postal Directorate letter 16-02/2024-D — Fuel reimbursement guidelines</div></div>
+  <div class="tl-item"><div class="tl-year">17.02.2025</div><div class="tl-text">Policy Guidelines on Centralized Delivery issued (No. 16-01/2024-D)</div></div>
+  <div class="tl-item"><div class="tl-year">31 March 2025</div><div class="tl-text">Deadline for Circles to send initial Action Taken Report to Postal Directorate</div></div>
+  <div class="tl-item"><div class="tl-year">2028-29</div><div class="tl-text">Projected volume: 164 Cr documents + 46 Cr parcels</div></div>
+</div>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-box" id="revision">
+  <h3>🎯 ONE-PAGE REVISION SHEET / एक-पृष्ठ रिवीज़न शीट</h3>
+  <div class="rev-grid">
+    <div class="rev-item"><b>Letter No.</b>16-01/2024-D</div>
+    <div class="rev-item"><b>Dated</b>17.02.2025</div>
+    <div class="rev-item"><b>Issuing Division</b>Mail Operations Division</div>
+    <div class="rev-item"><b>Signed by</b>Dushyant Mudgal, DDG (Mail Ops)</div>
+    <div class="rev-item"><b>Approved by</b>Secretary (Posts)</div>
+    <div class="rev-item"><b>Current delivery POs</b>~19,500</div>
+    <div class="rev-item"><b>Mechanized beats</b>~62%</div>
+    <div class="rev-item"><b>Document volume 2028-29</b>164 Cr (from 94 Cr)</div>
+    <div class="rev-item"><b>Parcel volume 2028-29</b>46 Cr (from 6.7 Cr)</div>
+    <div class="rev-item"><b>Max one-way distance</b>15 km</div>
+    <div class="rev-item"><b>Metro DC staff range</b>50-80</div>
+    <div class="rev-item"><b>State Capital DC staff range</b>15-60</div>
+    <div class="rev-item"><b>Metro max articles/day</b>8,000</div>
+    <div class="rev-item"><b>State Capital max articles/day</b>5,000</div>
+    <div class="rev-item"><b>Metro space requirement</b>2,000-3,500 Sq Ft</div>
+    <div class="rev-item"><b>State Capital space requirement</b>1,000-2,500 Sq Ft</div>
+    <div class="rev-item"><b>Bulk delivery staff per DC</b>1-2</div>
+    <div class="rev-item"><b>Delivery attempts</b>2 (max 7 days deposit)</div>
+    <div class="rev-item"><b>First/Second delivery timing</b>9-17 hrs / 12-20 hrs</div>
+    <div class="rev-item"><b>Action Taken Report deadline</b>31 March 2025</div>
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION ============ -->
+<div class="lastday" id="lastday">
+  <h3>🔥 LAST-DAY REVISION NOTES / परीक्षा से एक दिन पहले</h3>
+  <ul>
+    <li><b>19,500 vs 1,39,086 कन्फ्यूज़न से बचें:</b> 19,500 = वर्तमान delivery POs की संख्या (इस policy का संदर्भ); 1,39,086 = Parcel Network Optimization दस्तावेज़ में last-mile delivery POs की संख्या — दोनों अलग documents के अलग आंकड़े हैं।</li>
+    <li><b>15 km one-way distance</b> मानक सीमा है, पर असाधारण परिस्थितियों में बढ़ सकती है — "कभी नहीं बढ़ सकती" जैसा absolute statement गलत होगा।</li>
+    <li><b>Metro vs State Capital का 50:50 अनुपात याद रखें:</b> Metro के सभी आंकड़े (staff, articles, space) राज्य राजधानी से लगभग दोगुने हैं।</li>
+    <li><b>Article delivery संख्या क्रम:</b> Ordinary (95) > Speed Post (43) > Regd/Parcel (42) > COD (3) > MO/Insured (1 each) — घटते क्रम में याद रखें।</li>
+    <li><b>Delivery Centre बनाम Nodal Delivery Centre:</b> जब processing areas adjacent हों तो एक साझा नाम; जब अलग हों तो अलग नाम (Document=Delivery Centre, Parcel=Nodal Delivery Centre)।</li>
+    <li><b>2 अलग reference dates मत भूलें:</b> Bag/Article Abstract letter = 24.10.2024; Fuel reimbursement letter = 25.10.2024 (एक दिन का अंतर, ध्यान से पढ़ें)।</li>
+    <li><b>Action Taken Report deadline = 31 March 2025</b> — यह policy issue date (17 Feb 2025) से लगभग 6 सप्ताह बाद है।</li>
+    <li>CCTV SOP तारीख (25 Feb 2021) पुरानी है पर इसी policy में reference के रूप में दी गई है — तारीख को policy की खुद की तारीख (17.02.2025) से अलग रखें।</li>
+  </ul>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  📮 India Post IP Exam Portal · Policy Guidelines on Centralized Delivery — Delivery Centres (No. 16-01/2024-D) · Prepared for departmental exam revision
+</footer>
+
+<button class="pdf-btn" onclick="window.print()">⬇️ Save as PDF</button>
+
+</body>
+</html>

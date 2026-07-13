@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLI/RPLI Rules 2011 — Part I Infographic | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --yellow:#a16207; --yellow-light:#fef9c3;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans Gujarati','Noto Sans Devanagari','Segoe UI',sans-serif;
+    background:linear-gradient(180deg,#f4f4f5,#eef2ff);
+    margin:0; padding:0; color:var(--ink); line-height:1.5;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{
+    background:linear-gradient(135deg,#111827,#4c1d95);
+    color:#fff; border-radius:16px; padding:22px 18px; margin:12px 0;
+    text-align:center; box-shadow:0 8px 24px rgba(17,24,39,.35);
+  }
+  header.hero h1{margin:0 0 6px;font-size:1.35rem;}
+  header.hero .sub{font-size:.85rem;opacity:.9;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.72rem;}
+
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;
+    background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .breadcrumb span.arrow{opacity:.6;}
+
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.02rem;display:flex;align-items:center;gap:8px;}
+
+  .tri{margin:6px 0 12px;padding:8px 10px;border-left:4px solid #111827;background:#f3f4f6;border-radius:8px;}
+  .tri .gu{font-weight:700;font-size:.92rem;color:#111827;}
+  .tri .hi{font-weight:500;font-size:.85rem;color:#374151;}
+  .tri .en{font-style:italic;font-size:.78rem;color:#4b5563;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+
+  .tag-imp{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-yellow{background:var(--yellow-light);color:#7c5a06;border:1px solid var(--yellow);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.76rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#f3f4f6;border:2px solid #374151;border-radius:10px;padding:8px 12px;font-size:.81rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#374151;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+  .flow .step .en-line{display:block;font-style:italic;font-size:.72rem;color:#555;margin-top:2px;}
+
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.78rem;}
+  .exam-q b{color:var(--orange);}
+
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.83rem;}
+
+  .grid2{display:grid;grid-template-columns:1fr;gap:10px;}
+  @media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .pill{background:#111827;color:#fff;font-size:.68rem;padding:3px 10px;border-radius:14px;}
+
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.84rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.79rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.76rem;color:var(--green);font-weight:600;}
+
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.74rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+
+  .amend-note{background:#fef2f2;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:.76rem;margin:8px 0;color:#7f1d1d;}
+  .current-note{background:#ecfdf5;border:1px solid var(--green);border-radius:8px;padding:8px 10px;font-size:.76rem;margin:8px 0;color:#14532d;}
+
+  .fab{position:fixed;bottom:18px;right:18px;background:#111827;color:#fff;
+    border:none;border-radius:50px;padding:12px 18px;font-size:.81rem;font-weight:700;
+    box-shadow:0 6px 18px rgba(17,24,39,.4);cursor:pointer;z-index:999;}
+
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.8rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+
+  details{border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;overflow:hidden;background:#fff;}
+  summary{cursor:pointer;list-style:none;padding:9px 12px;font-weight:700;font-size:.83rem;display:flex;align-items:center;justify-content:space-between;background:#f1f5f9;}
+  summary::-webkit-details-marker{display:none;}
+  .d-body{padding:8px 12px 12px;font-size:.78rem;}
+  .d-body ul{margin:4px 0;padding-left:18px;}
+  .d-body li{margin:3px 0;}
+  .d-body .en-line{display:block;font-style:italic;color:#6b7280;font-size:.72rem;}
+
+  ul{margin:6px 0;padding-left:20px;font-size:.82rem;}
+  li{margin:3px 0;}
+
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} details{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🛡️ Post Office Life Insurance (PLI/RPLI) Rules, 2011</h1>
+    <div class="sub">પોસ્ટ ઓફિસ જીવન વીમા નિયમો, 2011 — ભાગ I | डाकघर जीवन बीमा नियम, 2011 — भाग I</div>
+    <div class="tag">Directorate of Postal Life Insurance, Kolkata · Whole of India</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> PLI / RPLI <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> POLI Rules 2011 (Part I) <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> Eligibility / Plans / Medical / Assignment / Premium / Surrender / Loan
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic &amp; Scope <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="tri">
+      <div class="gu">પોસ્ટ ઓફિસ જીવન વીમા નિયમો, 2011 PLI (સરકારી/PSU કર્મચારીઓ માટે) અને RPLI (ગ્રામીણ રહેવાસીઓ માટે) ને સંચાલિત કરે છે.</div>
+      <div class="hi">डाकघर जीवन बीमा नियम, 2011 PLI (सरकारी/PSU कर्मचारियों के लिए) और RPLI (ग्रामीण निवासियों के लिए) को नियंत्रित करते हैं।</div>
+      <div class="en">Post Office Life Insurance Rules, 2011 govern PLI (for Govt./PSU employees) and RPLI (for rural residents).</div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Extent: Whole of India</span>
+      <span class="pill">Accounts: Director PLI, Kolkata</span>
+      <span class="pill">Age eligibility: 19–55 years</span>
+      <span class="pill">Max Sum Assured (PLI): ₹50 lakh</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📖 Key Definitions <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri">
+      <div class="gu">Free Look Period: પોલિસી મળ્યાના 15 દિવસમાં રદ કરવાની વિનંતી કરી શકાય.</div>
+      <div class="hi">Free Look Period: पॉलिसी मिलने के 15 दिनों के भीतर रद्द करने का अनुरोध किया जा सकता है।</div>
+      <div class="en">Free Look Period: 15 days from policy delivery — insurant may request cancellation.</div>
+    </div>
+    <details open>
+      <summary>Tap to expand key defined terms ▾</summary>
+      <div class="d-body">
+        <ul>
+          <li><b>Auto Paid-up:</b> 36+ premiums paid, 3+ years — policy matures on original date even if holder discontinues.</li>
+          <li><b>Commutation:</b> Any contract change EXCEPT maturity date.</li>
+          <li><b>Conversion:</b> Change AFFECTING maturity date (e.g., WLA → EA).</li>
+          <li><b>CWLA:</b> Pays at 80 or death; convertible to EA at end of 5 years.</li>
+          <li><b>Date of Commencement of Risk:</b> Date proposal is accepted — no claim before this.</li>
+          <li><b>Lapsing:</b> Policy &gt;3 years, unpaid premium &gt;12 months.</li>
+          <li><b>Period of Grace:</b> Till last day of the due month.</li>
+          <li><b>Surrender Value:</b> Payable only if 36 premiums paid AND 36 months duration.</li>
+          <li><b>Void:</b> Policy &lt;3 years, premium unpaid beyond due date/grace.</li>
+          <li><b>WLA:</b> Pays at age 80 or death, whichever earlier.</li>
+        </ul>
+      </div>
+    </details>
+    <div class="exam-q"><b>Probable Q:</b> Free Look Period duration? <b>Ans: 15 days</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🔀 Eligibility Conditions (Rule 6) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">ઉંમર 19 થી 55 વર્ષની વચ્ચે હોવી જોઈએ.</div>
+      <div class="hi">आयु 19 से 55 वर्ष के बीच होनी चाहिए।</div>
+      <div class="en">Age must be 19–55 years on next birthday on date of proposal (except AEA, Joint Life, Children Policy).</div>
+    </div>
+    <div class="flow">
+      <div class="step">Central/State Govt. employees, GDS, Nationalized Banks, Defence/Para-military</div>
+      <div class="step">CSIR, Medical/Dental/Nursing/Pharmacy Council employees</div>
+      <div class="step">Industrial/Work-charged employees (Dept. of Posts/Telecom)</div>
+      <div class="step">Autonomous body, Joint Venture (Govt./PSU ≥10%) employees</div>
+      <div class="step">Cooperative Society, Deemed University, Scheduled Commercial Bank employees</div>
+      <div class="step">Private educational institution staff; Professionals (Doctors, Engineers, CAs, Lawyers)</div>
+      <div class="step">Listed company (NSE/BSE) employees with PF/Gratuity coverage</div>
+    </div>
+    <div class="amend-note">⚠️ <b>Exam Trap:</b> Age &gt;50, SA &gt;₹5 lakh: min term 7 years; age 54: min term 6 years.</div>
+    <div class="exam-q"><b>Probable Q:</b> General age eligibility for PLI? <b>Ans: 19–55 years</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Limits of Sum Assured (Rule 7) <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Scheme</th><th>Minimum</th><th>Maximum</th></tr>
+      <tr><td>PLI (all classes)</td><td>₹20,000/class</td><td>₹50,00,000</td></tr>
+      <tr><td>RPLI (medical)</td><td>₹10,000</td><td>₹10,00,000</td></tr>
+      <tr><td>RPLI (non-medical)</td><td>₹10,000</td><td>₹25,000</td></tr>
+      <tr><td>Ten Year Rural PLI</td><td>₹10,000</td><td>₹10,00,000 / ₹25,000</td></tr>
+    </table>
+    <div class="tri">
+      <div class="gu">Policy value ₹10,000 (PLI) અથવા ₹5,000 (RPLI) ના multiples માં લેવાય.</div>
+      <div class="hi">पॉलिसी मूल्य ₹10,000 (PLI) या ₹5,000 (RPLI) के गुणकों में लिया जाता है।</div>
+      <div class="en">Policy value taken in multiples of ₹10,000 (PLI) or ₹5,000 (RPLI).</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Types of Plans <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <details>
+      <summary>Anticipated Endowment Assurance (AEA) — સુમંગલ ▾</summary>
+      <div class="d-body">
+        <div class="gu" style="font-weight:700;">01-02-1984 થી શરૂ. બે term: 15/20-વર્ષ. Entry age 19; મહત્તમ 45/40. Sum assured 4 હપ્તામાં.</div>
+        <span class="en-line">Introduced 1984. Terms: 15yr/20yr. Entry age 19; max age 45/40. SA in 4 instalments. No surrender/loan/conversion.</span>
+      </div>
+    </details>
+    <details>
+      <summary>Rural Postal Life Insurance (RPLI) ▾</summary>
+      <div class="d-body">
+        <div class="gu" style="font-weight:700;">24-03-1995 થી શરૂ. ફક્ત ગ્રામીણ ભારતીય રહેવાસીઓ માટે. ઉંમર 19-55.</div>
+        <span class="en-line">Introduced 1995. For rural Indian residents only. Age 19-55.</span>
+      </div>
+    </details>
+    <details>
+      <summary>Ten Year Rural PLI — ગ્રામ પ્રિય ▾</summary>
+      <div class="d-body">
+        <div class="gu" style="font-weight:700;">10-વર્ષનો term. ઉંમર 19-45. 2 survival હપ્તા + maturity પર બાકી + bonus.</div>
+        <span class="en-line">10-year term only. Age 19-45. 2 survival instalments + remainder at maturity. No surrender/loan/conversion.</span>
+      </div>
+    </details>
+    <details>
+      <summary>Joint Life Assurance / યુગલ સુરક્ષા ▾</summary>
+      <div class="d-body">
+        <div class="gu" style="font-weight:700;">01-08-1997 થી શરૂ. Term 5-20 વર્ષ. Entry age 21-45; maturity પર spouse ≤60 વર્ષ.</div>
+        <span class="en-line">Introduced 1997. Term 5-20 years. Entry age 21-45; at maturity older spouse ≤60. Both need medical exam.</span>
+      </div>
+    </details>
+    <details>
+      <summary>Children Policy — બાલ જીવન બીમા ▾</summary>
+      <div class="d-body">
+        <div class="gu" style="font-weight:700;">20-01-2006 થી શરૂ. મહત્તમ 2 બાળકો; child age 5-20; parent &lt;45. Min SA ₹20,000.</div>
+        <span class="en-line">Introduced 2006. Max 2 children; child age 5-20; parent age &lt;45. Max PLI ₹3L / RPLI ₹1L (or parent's SA, lower).</span>
+      </div>
+    </details>
+    <div class="exam-q"><b>Probable Q:</b> AEA has how many terms and survival instalments? <b>Ans: 2 terms, 4 instalments</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🩺 Medical &amp; Non-Medical Scheme (Rules 13-15) <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <table>
+      <tr><th>Category</th><th>Threshold</th><th>Max Age</th><th>Max SA</th></tr>
+      <tr><td>PLI Non-Medical</td><td>SA ≤₹2L(any age) or ≤₹5L(age≤40)</td><td>40 yrs</td><td>₹5L; total ₹50L</td></tr>
+      <tr><td>RPLI Non-Medical</td><td>SA ≤₹1L, age≤35</td><td>35 yrs</td><td>₹1L; total ₹10L</td></tr>
+    </table>
+    <div class="tri">
+      <div class="gu">Non-Medical Scheme માં ફક્ત Endowment Assurance જ issue થાય.</div>
+      <div class="hi">Non-Medical Scheme में केवल Endowment Assurance जारी होती है।</div>
+      <div class="en">Non-Medical Scheme issues only Endowment Assurance policies — no WLA/CWLA.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Non-Medical Claim Before Maturity (Rule 16) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="decision">
+      <div class="node">Death &lt; 1 year ➜ <b>35%</b> of SA + bonus</div><br>
+      <div class="node">Death 1–2 years ➜ <b>60%</b> of SA + bonus</div><br>
+      <div class="node">Death 2–3 years ➜ <b>90%</b> of SA + bonus</div><br>
+      <div class="node">Death after 3 years ➜ <b>Full</b> SA + bonus</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "35-60-90-100" — climbing tiers each year.</div>
+    <div class="exam-q"><b>Probable Q:</b> Death occurs 1.5 years after acceptance — payout %? <b>Ans: 60%</b></div>
+  </div>
+
+  <div class="card">
+    <h2>✍️ Assignment &amp; Nomination (Rule 36) <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="tri">
+      <div class="gu">પોલિસી "valuable consideration" માટે અથવા "gift" તરીકે assign કરી શકાય.</div>
+      <div class="hi">पॉलिसी "valuable consideration" या "उपहार" के रूप में assign की जा सकती है।</div>
+      <div class="en">Policy assignable for valuable consideration OR as a gift.</div>
+    </div>
+    <ul>
+      <li>🔴 Assignment via endorsement OR separate deed — dated, signed, witnessed.</li>
+      <li>🟠 Notice must reach Postmaster/Manager CPC to be effective.</li>
+      <li>🟡 Nomination can be cancelled/changed anytime before maturity.</li>
+      <li>🔴 If nominee/legal heir is charged with murder, payment withheld until honourable acquittal.</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> In what 2 ways can a policy be assigned? <b>Ans: Valuable consideration OR gift</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💳 Manner of Realising Premium (Rules 43-50) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="flow">
+      <div class="step">Premium due: <b>1st day of the month</b></div>
+      <div class="step">Grace period till last day of calendar month</div>
+      <div class="step">Pay-recovery policies: deducted from salary by month-end</div>
+      <div class="step">Premia payable ONLY within India</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Premium due date? <b>Ans: 1st day of the month</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🔧 Reduction, Discontinuance &amp; Commutation (Rule 51) <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <ul>
+      <li>🔴 Paid-up option after <b>3+ years</b> of premium payment.</li>
+      <li>🟠 No bonus from discontinuance date; proportionate bonus after <b>5 years</b> in force.</li>
+      <li>🔴 <b>NO alteration</b> for AEA and Ten Year Rural PLI.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💵 Payment of Policies — Claims (Rule 52-54) <span class="tag-imp t-orange">🟠</span></h2>
+    <table>
+      <tr><th>Claim Type</th><th>Key Rule</th></tr>
+      <tr><td>Maturity claim</td><td>Application + documents at Postmaster/CPC</td></tr>
+      <tr><td>Death claim</td><td>Application + death certificate</td></tr>
+      <tr><td>Delay compensation (maturity)</td><td>8% p.a. if delayed &gt;30 days</td></tr>
+      <tr><td>Delay compensation (death)</td><td>8% p.a. if delayed &gt;60 days</td></tr>
+      <tr><td>Succession certificate waiver</td><td>Death claim ≤₹3,00,000, no nomination</td></tr>
+    </table>
+    <div class="exam-q"><b>Probable Q:</b> Ex-gratia interest rate for delayed claim settlement? <b>Ans: 8% per annum</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Surrender of Policies (Rule 55) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">Surrender ફક્ત 3 વર્ષ (36 મહિના) પછી જ શક્ય.</div>
+      <div class="hi">Surrender केवल 3 वर्ष (36 महीने) के बाद ही संभव।</div>
+      <div class="en">Surrender allowed after 3 years (36 months) — except AEA, 10-Year Rural PLI, Children Policy.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Minimum duration for policy surrender? <b>Ans: 3 years</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Lapsing &amp; Void (Rules 56-57) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="decision">
+      <div class="node">Policy &lt; 36 months, unpaid ➜ <b>VOID</b></div><br>
+      <div class="node">Policy ≥ 36 months, unpaid ➜ <b>LAPSED</b> after 12 months</div>
+    </div>
+    <table style="margin-top:10px;">
+      <tr><th>Death within</th><th>Remission (Void Policy)</th></tr>
+      <tr><td>&lt; 6 months</td><td>No remission</td></tr>
+      <tr><td>6–12 months</td><td>+30 days</td></tr>
+      <tr><td>12–24 months</td><td>+60 days</td></tr>
+      <tr><td>24–36 months</td><td>+90 days</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6-30, 12-60, 24-90"</div>
+    <ul><li>🟠 Void re-instatement: <b>6 months</b>. Lapsed re-instatement: <b>12 months</b>.</li></ul>
+    <div class="exam-q"><b>Probable Q:</b> 40-month policy, unpaid — void or lapsed? <b>Ans: Lapsed</b></div>
+  </div>
+
+  < class="card">
+    <h2>🔁 Revival of Policies (Rule 58) <span class="tag-imp t-orange">🟠</span></h2>
+    <div class="tri">
+      <div class="gu">Revive કરવાની window: first unpaid premium થી <b>5 વર્ષ</b>.</div>
+      <div class="hi">Revive करने की window: पहले unpaid premium से <b>5 वर्ष</b>।</div>
+      <div class="en">Revival window: 5 consecutive years from first unpaid premium.</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Maximum window for policy revival? <b>Ans: 5 consecutive years</b></div>
+</div>
+
+  <div class="card">
+    <h2>💰 Loan on Policies (Rule 59) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Policy Type</th><th>Min. Duration</th><th>Max Loan</th></tr>
+      <tr><td>Whole Life Assurance</td><td>4 years</td><td>90% of surrender value</td></tr>
+      <tr><td>Endowment Assurance</td><td>3 years</td><td>90% of surrender value</td></tr>
+    </table>
+    <div class="tri">
+      <div class="gu">Loan interest: 10% વાર્ષિક, half-yearly compound.</div>
+      <div class="hi">Loan ब्याज: 10% वार्षिक, half-yearly compound।</div>
+      <div class="en">Loan interest: 10% p.a., compounded half-yearly. Not on AEA/10yr RPLI/Children Policy.</div>
+    </div>
+    <div class="decision" style="margin-top:10px;">
+      <div class="node">90% reached ➜ 1st reminder</div><br>
+      <div class="node">95% ➜ 2nd reminder</div><br>
+      <div class="node">100% ➜ Final notice</div><br>
+      <div class="node">Unpaid 30 days after ➜ <b>Forced Surrender</b></div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "90-95-100-30"</div>
+    <div class="exam-q"><b>Probable Q:</b> Max loan as % of surrender value? <b>Ans: 90%</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚰️ Suicide Cases (Rule 61) <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri rule">
+      <div class="gu">2 વર્ષની અંદર suicide થાય તો policy void ગણાય.</div>
+      <div class="hi">2 वर्ष के भीतर suicide होने पर policy void मानी जाती है।</div>
+      <div class="en">Suicide within 2 years of acceptance/first premium (later) — policy VOID, no claim (except bona-fide third-party interest).</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Suicide clause exclusion period? <b>Ans: 2 years</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ Murder by Nominee/Legal Heir (Rule 62) <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <div class="tri">
+      <div class="gu">Policyholder ની હત્યા nominee દ્વારા થાય તો, એ વ્યક્તિ કાયમ માટે claim receive કરવાથી debarred છે.</div>
+      <div class="hi">Policyholder की हत्या nominee द्वारा होने पर, वह व्यक्ति हमेशा के लिए वंचित है।</div>
+      <div class="en">If policyholder is murdered by legal representative/nominee, permanently debarred from receiving policy money.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — PLI Rules 2011 (Part I)</h2>
+    <div class="grid2">
+      <div class="tri" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Eligibility</b>: Age 19-55</div></div>
+      <div class="tri" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Plans</b>: WLA, EA, CWLA, AEA, RPLI, Joint Life, Children</div></div>
+      <div class="tri" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Lifecycle</b>: Medical → Premium → Surrender/Loan/Revival → Claim</div></div>
+      <div class="tri" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Exclusions</b>: Suicide(2yr) · Murder · Non-medical tiers</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="mcq"><div class="q">Q1. Free Look Period ni avdhi?</div><div class="opts">A) 10 days &nbsp; B) 15 days &nbsp; C) 30 days &nbsp; D) 45 days</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q2. PLI ni general age eligibility?</div><div class="opts">A) 18-58 &nbsp; B) 19-55 &nbsp; C) 21-60 &nbsp; D) 25-50</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q3. PLI ma maximum aggregate sum assured?</div><div class="opts">A) ₹25 lakh &nbsp; B) ₹50 lakh &nbsp; C) ₹1 crore &nbsp; D) No limit</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q4. Death 2.5 years pachi - non-medical payout %?</div><div class="opts">A) 35% &nbsp; B) 60% &nbsp; C) 90% &nbsp; D) 100%</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q5. Surrender mate lyuntam policy duration?</div><div class="opts">A) 1yr &nbsp; B) 2yr &nbsp; C) 3yr &nbsp; D) 5yr</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q6. Suicide clause exclusion period?</div><div class="opts">A) 1yr &nbsp; B) 2yr &nbsp; C) 3yr &nbsp; D) 5yr</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q7. Maximum loan against a policy?</div><div class="opts">A) 50% &nbsp; B) 75% &nbsp; C) 90% &nbsp; D) 100%</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q8. Loan interest rate?</div><div class="opts">A) 6% &nbsp; B) 8% &nbsp; C) 10% &nbsp; D) 12%</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q9. Policy revival mate time window?</div><div class="opts">A) 1yr &nbsp; B) 3yr &nbsp; C) 5yr &nbsp; D) 10yr</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q10. Ex-gratia delay interest rate?</div><div class="opts">A) 6% &nbsp; B) 8% &nbsp; C) 10% &nbsp; D) 12%</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q11. AEA kaya terms ma available?</div><div class="opts">A) 10&amp;15yr &nbsp; B) 15&amp;20yr &nbsp; C) 20&amp;25yr &nbsp; D) 5&amp;10yr</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q12. Ten Year Rural PLI ma ketla survival instalments?</div><div class="opts">A) 1 &nbsp; B) 2 &nbsp; C) 3 &nbsp; D) 4</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q13. Void policy re-instatement window?</div><div class="opts">A) 3mo &nbsp; B) 6mo &nbsp; C) 12mo &nbsp; D) 5yr</div><div class="ans">Answer: B</div></div>
+    <div class="mcq"><div class="q">Q14. Spouses mate kayo plan?</div><div class="opts">A) Children Policy &nbsp; B) AEA &nbsp; C) Yugal Suraksha &nbsp; D) CWLA</div><div class="ans">Answer: C</div></div>
+    <div class="mcq"><div class="q">Q15. Non-medical PLI age limit?</div><div class="opts">A) 30 &nbsp; B) 35 &nbsp; C) 40 &nbsp; D) 45</div><div class="ans">Answer: C</div></div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Age eligibility: <b>19–55 years</b></li>
+      <li>🔴 Max SA: PLI <b>₹50 Lakh</b>; RPLI <b>₹10 Lakh</b> / <b>₹25,000</b></li>
+      <li>🔴 Free Look Period: <b>15 days</b></li>
+      <li>🔴 Surrender eligible: <b>36 premiums + 36 months</b></li>
+      <li>🟠 Non-medical claim tiers: <b>35/60/90/100%</b></li>
+      <li>🟠 Void: &lt;36mo; Lapsed: ≥36mo, 12mo grace</li>
+      <li>🟠 Revival window: <b>5 years</b></li>
+      <li>🔴 Loan: max <b>90%</b>, <b>10% p.a.</b></li>
+      <li>🔴 Suicide clause: <b>2 years</b></li>
+      <li>🟡 Ex-gratia delay interest: <b>8% p.a.</b></li>
+      <li>🟢 AEA &amp; 10-Year RPLI: NO surrender/loan/conversion</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Governing Rules</td><td>POLI Rules, 2011</td></tr>
+      <tr><td>Age Eligibility</td><td>19–55 years</td></tr>
+      <tr><td>Max SA (PLI)</td><td>₹50,00,000</td></tr>
+      <tr><td>Max SA (RPLI)</td><td>₹10,00,000 / ₹25,000</td></tr>
+      <tr><td>Free Look Period</td><td>15 days</td></tr>
+      <tr><td>Non-Medical Age</td><td>PLI:40yrs; RPLI:35yrs</td></tr>
+      <tr><td>Non-Medical Tiers</td><td>35/60/90/100%</td></tr>
+      <tr><td>Surrender</td><td>36 premiums+36mo</td></tr>
+      <tr><td>Void/Lapsed</td><td>&lt;36mo/≥36mo</td></tr>
+      <tr><td>Revival Window</td><td>5 years</td></tr>
+      <tr><td>Loan Max</td><td>90% surrender value</td></tr>
+      <tr><td>Loan Interest</td><td>10% p.a.</td></tr>
+      <tr><td>Suicide Clause</td><td>2 years</td></tr>
+      <tr><td>Ex-Gratia Interest</td><td>8% p.a.</td></tr>
+      <tr><td>Accounts By</td><td>Director PLI, Kolkata</td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>  

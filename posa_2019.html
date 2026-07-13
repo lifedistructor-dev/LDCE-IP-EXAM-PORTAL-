@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSA Scheme 2019 – Trilingual Infographic | IP Exam</title>
+<style>
+:root{
+  --red:#C0392B;--orange:#E67E22;--yellow:#D4AC0D;--green:#1E8449;
+  --blue:#1A5276;--dark:#1C2833;--bg:#EEF2F5;--border:#D5D8DC;
+  --rb:#FADBD8;--ob:#FDEBD0;--yb:#FEF9E7;--gb:#D5F5E3;--ebb:#EBF5FB;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--dark);font-size:13.5px;}
+.hdr{background:linear-gradient(135deg,#0B3D91,#1A5276);color:#fff;padding:18px 16px;text-align:center;}
+.hdr h1{font-size:18px;margin-bottom:3px;}
+.hdr .sub{font-size:12px;color:#AED6F1;}
+.hdr .gu{font-size:12px;color:#FAD7A0;margin-bottom:10px;}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+.badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:3px 10px;font-size:11px;}
+.legend{display:flex;flex-wrap:wrap;gap:8px;background:#fff;padding:8px 14px;border-bottom:2px solid var(--border);}
+.leg{display:flex;align-items:center;gap:4px;font-size:11px;}
+.dot{width:11px;height:11px;border-radius:50%;}
+.toc{background:var(--blue);color:#fff;padding:14px 16px;}
+.toc h2{font-size:14px;text-align:center;border-bottom:2px solid var(--orange);padding-bottom:5px;margin-bottom:8px;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.toc-grid a{color:#AED6F1;font-size:11px;text-decoration:none;padding:2px 0;}
+.section{padding:12px 12px 0;}
+.sec-title{background:var(--blue);color:#fff;padding:7px 12px;border-radius:8px 8px 0 0;font-size:14px;}
+.sec-body{background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:12px;margin-bottom:14px;}
+.hi{font-weight:700;font-size:12px;display:block;color:var(--dark);}
+.en{font-style:italic;font-size:11px;color:#555;display:block;}
+.gu{font-size:11.5px;color:#1A5276;display:block;font-weight:600;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0;}
+.card{border-radius:7px;padding:9px 11px;}
+.card.red{border-left:4px solid var(--red);background:var(--rb);}
+.card.orange{border-left:4px solid var(--orange);background:var(--ob);}
+.card.yellow{border-left:4px solid var(--yellow);background:var(--yb);}
+.card.green{border-left:4px solid var(--green);background:var(--gb);}
+.card.blue{border-left:4px solid var(--blue);background:var(--ebb);}
+.card h4{font-size:11.5px;margin-bottom:4px;}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px;margin:6px 0;}
+.tbl th{background:var(--blue);color:#fff;padding:5px 7px;text-align:left;font-size:11px;}
+.tbl td{border:1px solid var(--border);padding:5px 7px;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#F8F9FA;}
+.tbl .r{background:var(--rb)!important;}
+.tbl .o{background:var(--ob)!important;}
+.tbl .g{background:var(--gb)!important;}
+.flow{display:flex;flex-direction:column;align-items:center;}
+.fbox{padding:7px 14px;border-radius:6px;font-size:11.5px;text-align:center;width:100%;max-width:340px;}
+.fbox.b{background:var(--blue);color:#fff;}
+.fbox.g{background:var(--green);color:#fff;}
+.fbox.r{background:var(--red);color:#fff;}
+.fbox.o{background:var(--orange);color:#fff;}
+.fbox.gray{background:#7F8C8D;color:#fff;}
+.farr{font-size:18px;color:var(--blue);line-height:1.2;text-align:center;}
+.fbranch{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;margin:3px 0;}
+.fbranch .fbox{max-width:100%;}
+.tl{padding-left:28px;position:relative;}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:3px;background:var(--blue);}
+.tl-i{position:relative;margin-bottom:10px;}
+.tl-dot{position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:2px solid #fff;box-shadow:0 0 0 2px var(--orange);}
+.tl-c{background:var(--ebb);border-radius:6px;padding:7px 9px;}
+.tl-c .reg{font-size:10px;background:var(--blue);color:#fff;padding:1px 5px;border-radius:10px;display:inline-block;margin-bottom:2px;}
+.mm{display:flex;flex-direction:column;align-items:center;gap:7px;}
+.mm-c{background:var(--blue);color:#fff;padding:8px 18px;border-radius:24px;font-weight:700;font-size:12.5px;text-align:center;}
+.mm-br{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;}
+.mm-n{border-radius:7px;padding:7px 9px;font-size:11px;text-align:center;border:2px solid var(--blue);}
+.mm-n.r{border-color:var(--red);background:var(--rb);}
+.mm-n.o{border-color:var(--orange);background:var(--ob);}
+.mm-n.g{border-color:var(--green);background:var(--gb);}
+.mm-n.b{background:var(--ebb);}
+.alert{border-radius:7px;padding:8px 11px;margin:6px 0;font-size:11.5px;}
+.alert.red{background:var(--rb);border-left:4px solid var(--red);}
+.alert.orange{background:var(--ob);border-left:4px solid var(--orange);}
+.alert.green{background:var(--gb);border-left:4px solid var(--green);}
+.alert.yellow{background:var(--yb);border-left:4px solid var(--yellow);}
+.alert strong{display:block;margin-bottom:2px;}
+.mcq{background:#F4F6F9;border:1px solid var(--border);border-radius:7px;padding:9px 11px;margin:7px 0;}
+.mcq .q{font-weight:700;font-size:11.5px;margin-bottom:5px;color:var(--blue);}
+.mcq .opts{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.mcq .opt{font-size:11px;padding:3px 6px;border-radius:4px;background:#fff;border:1px solid var(--border);}
+.mcq .opt.ans{background:var(--gb);border-color:var(--green);font-weight:700;}
+.mcq .hint{font-size:10.5px;color:#666;margin-top:4px;font-style:italic;}
+.mnem{background:linear-gradient(135deg,#0B3D91,#1A5276);color:#fff;border-radius:10px;padding:11px;margin:7px 0;}
+.mnem h4{font-size:12.5px;color:#FF9933;margin-bottom:7px;}
+.mnem .lts{display:flex;flex-wrap:wrap;gap:5px;}
+.mnem .lb{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:5px;padding:3px 7px;font-size:11px;text-align:center;}
+.mnem .lb span{color:#FF9933;font-weight:900;font-size:14px;display:block;}
+.ld{background:#1C2833;color:#ECF0F1;padding:12px;border-radius:10px;margin:7px 0;}
+.ld h3{color:#FF9933;border-bottom:1px solid #444;padding-bottom:5px;margin-bottom:8px;font-size:13px;}
+.ld-i{display:flex;gap:7px;margin-bottom:6px;font-size:11.5px;align-items:flex-start;}
+.ld-ic{flex-shrink:0;font-size:13px;}
+.ld-t .h{color:#AED6F1;font-weight:700;}
+.ld-t .e{color:#AAB7B8;font-style:italic;font-size:10.5px;display:block;}
+.ld-t .g{color:#FAD7A0;font-size:10.5px;display:block;}
+.ops{border:3px solid var(--blue);border-radius:10px;overflow:hidden;margin:7px 0;}
+.ops-h{background:var(--blue);color:#fff;padding:9px;text-align:center;font-weight:700;font-size:13px;}
+.ops-g{display:grid;grid-template-columns:1fr 1fr;}
+.ops-c{padding:6px 9px;border:1px solid var(--border);font-size:11px;}
+.ops-c .lbl{font-weight:700;color:var(--blue);font-size:9.5px;display:block;margin-bottom:1px;}
+.dt{background:#F8F9FA;border-radius:9px;padding:10px;}
+.dt-q{background:var(--blue);color:#fff;padding:7px 10px;border-radius:5px;font-size:11.5px;margin-bottom:7px;text-align:center;}
+.dt-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:5px;}
+.dt-y{background:var(--gb);border:2px solid var(--green);border-radius:5px;padding:5px 8px;font-size:11px;text-align:center;}
+.dt-n{background:var(--rb);border:2px solid var(--red);border-radius:5px;padding:5px 8px;font-size:11px;text-align:center;}
+.dt-lbl{text-align:center;font-size:9.5px;font-weight:700;margin-bottom:2px;}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border-radius:7px;overflow:hidden;border:1px solid var(--border);}
+.cmp-h{padding:7px;text-align:center;font-weight:700;font-size:11.5px;color:#fff;}
+.cmp-c{padding:5px 7px;font-size:11px;border-top:1px solid var(--border);}
+h3.sub{font-size:12.5px;color:var(--blue);border-left:3px solid var(--orange);padding-left:7px;margin:9px 0 5px;}
+.tag{background:var(--blue);color:#fff;font-size:9.5px;padding:1px 5px;border-radius:3px;margin-left:3px;}
+.sp{height:7px;}
+ul.chk li{list-style:none;padding:2px 0;font-size:11.5px;}
+ul.chk li::before{content:'✅ ';}
+ul.crs li{list-style:none;padding:2px 0;font-size:11.5px;}
+ul.crs li::before{content:'❌ ';}
+.rmap{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:6px 0;}
+.rmap-i{border-radius:5px;padding:7px 5px;text-align:center;font-size:10px;font-weight:700;border:2px solid var(--blue);background:var(--ebb);}
+.rmap-n{font-size:15px;font-weight:900;color:var(--blue);display:block;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>🏦 डाकघर बचत खाता योजना, 2019</h1>
+  <div class="sub">Post Office Savings Account Scheme, 2019 (POSA 2019)</div>
+  <div class="gu">પોસ્ટ ઓફિસ બચત ખાતા યોજના, ૨૦૧૯ | IP/IPO Exam Visual Infographic</div>
+  <div class="badges">
+    <span class="badge">📅 12 दिसम्बर 2019</span>
+    <span class="badge">🏛 G.S.R. 921(E)</span>
+    <span class="badge">⚖ GSPA 1873 — धारा 3A</span>
+    <span class="badge">📜 11 पैराग्राफ / Paragraphs</span>
+    <span class="badge">📋 2 फॉर्म / Forms</span>
+    <span class="badge">💹 ब्याज 4% वार्षिक</span>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="leg"><div class="dot" style="background:var(--red)"></div>🔴 अत्यंत महत्वपूर्ण / Very Important</div>
+  <div class="leg"><div class="dot" style="background:var(--orange)"></div>🟠 अक्सर पूछा / Frequently Asked</div>
+  <div class="leg"><div class="dot" style="background:var(--yellow)"></div>🟡 वैचारिक / Conceptual</div>
+  <div class="leg"><div class="dot" style="background:var(--green)"></div>🟢 त्वरित / Quick Revision</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>📋 विषय-सूची / Contents / વિષય-સૂચી</h2>
+  <div class="toc-grid">
+    <a href="#overview">📂 अवलोकन / Overview</a><a href="#defs">📖 परिभाषाएँ / Definitions</a>
+    <a href="#types">👥 खाता प्रकार / Account Types</a><a href="#deposits">💰 जमा-निकासी / Deposits</a>
+    <a href="#interest">💹 ब्याज नियम / Interest</a><a href="#cheque">📑 चेक बुक / Cheque Book</a>
+    <a href="#silent">😴 Silent Account</a><a href="#closure">🔐 खाता बंदी / Closure</a>
+    <a href="#mnem">🧠 मेमोरी ट्रिक्स</a><a href="#mcqb">📝 MCQ बैंक</a>
+    <a href="#lastday">🔥 Last Day Revision</a><a href="#opsheet">📋 One-Page Sheet</a>
+  </div>
+</div>
+
+<!-- 1. OVERVIEW -->
+<div class="section" id="overview">
+  <div class="sec-title">📂 POSA 2019 — अवलोकन / Overview / અવલોકન</div>
+  <div class="sec-body">
+    <div class="alert red">
+      <strong>🔴 मूल जानकारी / Basic Info / મૂળભૂત માહિતી</strong>
+      <span class="hi">G.S.R. 921(E) | 12 दिसम्बर 2019 | GSPA 1873 की <b>धारा 3A</b> के तहत</span>
+      <span class="en">Made under Section 3A of Govt. Savings Promotion Act, 1873. In force from publication in Official Gazette. Signed: Jt. Secy. [F.No.2/2/2018 NS (Pt.I)]</span>
+      <span class="gu">GSPA ૧૮૭૩ ની કલમ 3A હેઠળ. રાજપત્રમાં પ્રકાશનની તારીખથી અમલમાં.</span>
+    </div>
+    <div class="rmap">
+      <div class="rmap-i"><span class="rmap-n">₹500</span>न्यूनतम जमा / Min Deposit</div>
+      <div class="rmap-i"><span class="rmap-n">₹10</span>न्यूनतम बाद की जमा / Min Subsequent</div>
+      <div class="rmap-i"><span class="rmap-n">∞</span>अधिकतम सीमा नहीं / No Max Limit</div>
+      <div class="rmap-i"><span class="rmap-n">4%</span>वार्षिक ब्याज / Interest p.a.</div>
+      <div class="rmap-i"><span class="rmap-n">₹50</span>न्यूनतम निकासी / Min Withdrawal</div>
+      <div class="rmap-i"><span class="rmap-n">3</span>वर्ष → Silent Account</div>
+    </div>
+    <div class="alert yellow">🟡 <b>पैरा 10:</b> जिन विषयों पर इस योजना में प्रावधान नहीं — वहाँ <b>GSPR 2018 (General Rules)</b> लागू होंगे। <em>Where Scheme is silent, General Rules 2018 apply.</em> <span class="gu">યોજનામાં જોગવાઈ ન હોય ત્યાં GSPR ૨૦૧૮ લાગુ.</span></div>
+    <div class="alert orange">🟠 <b>पैरा 11 — शिथिलन शक्ति:</b> केंद्र सरकार undue hardship पर लिखित कारणों से प्रावधान शिथिल कर सकती है (अधिनियम से असंगत नहीं)। <em>Central Govt may relax provisions — reasons in writing.</em></div>
+    <div class="mcq">
+      <div class="q">❓ POSA Scheme 2019 किस धारा के तहत बनाई गई?</div>
+      <div class="opts">
+        <div class="opt">A. GSPA 1873 — धारा 15</div><div class="opt ans">B. GSPA 1873 — धारा 3A ✅</div>
+        <div class="opt">C. PO Act 2023 — धारा 13</div><div class="opt">D. GSPA 1873 — धारा 12</div>
+      </div>
+      <div class="hint">💡 Section 3A of GSPA 1873 | (GSPR 2018 = धारा 15 — भ्रमित न हों!)</div>
+    </div>
+  </div>
+</div>
+<!-- 2. DEFINITIONS -->
+<div class="section" id="defs">
+  <div class="sec-title">📖 पैरा 2: परिभाषाएँ / Definitions / વ્યાખ્યાઓ</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <tr><th>पैरा</th><th>परिभाषा / Definition / વ્યાખ્યા</th></tr>
+      <tr><td><b>2(a)</b></td><td><span class="hi">खाता — इस योजना के अधीन खोला गया खाता</span><span class="en">Account = opened under this Scheme</span><span class="gu">ખાતું = આ યોજના હેઠળ ખોલાયેલું</span></td></tr>
+      <tr><td><b>2(b)</b></td><td><span class="hi">खाता धारक — जिसके नाम खाता है</span><span class="en">Account holder = individual in whose name account is held</span><span class="gu">ખાતાધારક = જેના નામે ખાતું છે</span></td></tr>
+      <tr><td><b>2(e)</b></td><td><span class="hi">सामान्य नियम = GSPR 2018</span><span class="en">General Rules = Govt Savings Promotion General Rules, 2018</span><span class="gu">સામાન્ય નિયમો = GSPR ૨૦૧૮</span></td></tr>
+      <tr class="r"><td><b>2(f)</b></td><td><span class="hi">🔴 वर्ष — 1 अप्रैल से आरंभ 12 माह की अवधि</span><span class="en">Year = period of TWELVE months commencing on 1st APRIL</span><span class="gu">વર્ષ = ૧ એપ્રિલથી શરૂ થતા ૧૨ મહિના</span></td></tr>
+    </table>
+    <div class="mcq">
+      <div class="q">❓ POSA योजना में "वर्ष" कब से आरंभ होता है?</div>
+      <div class="opts">
+        <div class="opt">A. 1 जनवरी</div><div class="opt ans">B. 1 अप्रैल ✅</div>
+        <div class="opt">C. 1 जुलाई</div><div class="opt">D. खाता खोलने की तिथि</div>
+      </div>
+      <div class="hint">💡 Para 2(f) — 12 months commencing 1st April (वित्तीय वर्ष)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. ACCOUNT TYPES -->
+<div class="section" id="types">
+  <div class="sec-title">👥 पैरा 3: खाता कौन खोल सकता है? / Who Can Open / કોણ ખોલી શકે?</div>
+  <div class="sec-body">
+    <h3 class="sub">Form-1 द्वारा — 5 श्रेणियाँ / 5 Categories — Mind Map</h3>
+    <div class="mm">
+      <div class="mm-c">POSA खाता — Form-1 / ફોર્મ-૧</div>
+      <div class="mm-br">
+        <div class="mm-n r">(a) एकल वयस्क<br><em>Single Adult</em><br><span class="gu">એકલ પુખ્ત</span></div>
+        <div class="mm-n b">(b) 🔴 दो वयस्क संयुक्त<br><em>TWO adults jointly</em><br><span class="gu">બે પુખ્ત સંયુક્ત</span></div>
+      </div>
+      <div class="mm-br">
+        <div class="mm-n o">(c) नाबालिग की ओर से संरक्षक<br><em>Guardian for minor</em></div>
+        <div class="mm-n o">(d) विकृत चित्त की ओर से संरक्षक<br><em>Guardian for unsound mind</em></div>
+      </div>
+      <div class="mm-br">
+        <div class="mm-n g">(e) 10 वर्ष+ नाबालिग स्वयं<br><em>Minor 10 yrs+ in own name</em><br><span class="gu">૧૦ વર્ષ+ સગીર જાતે</span></div>
+        <div class="mm-n r">🔴 एक व्यक्ति = केवल <b>1 एकल खाता</b><br><em>ONLY ONE single account per individual</em><br><span class="gu">એક વ્યક્તિ = માત્ર ૧ એકલ ખાતું</span></div>
+      </div>
+    </div>
+    <div class="alert red">🔴 <b>POSA में संयुक्त = अधिकतम 2 वयस्क!</b> (GSPR 2018 का सामान्य नियम 4 है, पर POSA योजना में केवल 2) <em>Joint in POSA = TWO adults only (GSPR general limit is 4, but POSA specifies 2)</em> <span class="gu">POSA માં સંયુક્ત = ફક્ત ૨ પુખ્ત! (GSPR માં ૪ છે — ગૂંચવાશો નહીં)</span></div>
+    <div class="alert orange">🟠 <b>पैरा 3(1) परंतुक:</b> नाबालिग के नाम (c) संरक्षक-खाता और (e) स्व-खाता — <b>दोनों एक साथ नहीं</b> हो सकते। <em>Account under (e) only if account under (c) doesn't exist in minor's name & vice versa.</em></div>
+    <h3 class="sub">🔴 पैरा 3(2): संयुक्त खाते के नियम / Joint Account Rules</h3>
+    <div class="flow">
+      <div class="fbox b">संयुक्त खाते में हिस्सा = <b>बराबर अनुपात</b> / Share = EQUAL proportion / સમાન હિસ્સો</div>
+      <div class="farr">↓</div>
+      <div class="fbox o">एक धारक की मृत्यु / One holder dies / એક ધારકનું મૃત્યુ</div>
+      <div class="farr">↓</div>
+      <div class="fbox g">जीवित धारक = <b>एकमात्र स्वामी (sole owner)</b> — खाता जारी रख सकता है<br><em>Survivor = sole owner, may continue</em></div>
+      <div class="farr">↓</div>
+      <div class="fbranch">
+        <div class="fbox g">उसके नाम कोई एकल खाता <b>नहीं</b> → जारी रखें ✅<br><em>No single account → continue</em></div>
+        <div class="fbox r">उसके नाम एकल खाता <b>पहले से है</b> → खाता <b>बंद करना होगा</b> ❌<br><em>Single account exists → must CLOSE</em></div>
+      </div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ POSA में संयुक्त खाता अधिकतम कितने वयस्क खोल सकते हैं?</div>
+      <div class="opts">
+        <div class="opt ans">A. 2 ✅</div><div class="opt">B. 3</div>
+        <div class="opt">C. 4</div><div class="opt">D. कोई सीमा नहीं</div>
+      </div>
+      <div class="hint">💡 Para 3(1)(b) — two adults jointly (GSPR का 4 यहाँ लागू नहीं)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. DEPOSITS -->
+<div class="section" id="deposits">
+  <div class="sec-title">💰 पैरा 4: जमा और निकासी / Deposits & Withdrawals / જમા-ઉપાડ</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <tr><th>मद / Item</th><th>राशि-नियम / Amount-Rule / રકમ</th></tr>
+      <tr class="r"><td>🔴 न्यूनतम प्रारंभिक जमा / Min opening deposit</td><td><b>₹500</b></td></tr>
+      <tr class="r"><td>🔴 न्यूनतम बाद की जमा / Min subsequent deposit</td><td><b>₹10</b></td></tr>
+      <tr class="g"><td>🟢 अधिकतम जमा सीमा / Max deposit limit</td><td><b>कोई सीमा नहीं / NO LIMIT / કોઈ મર્યાદા નહીં</b></td></tr>
+      <tr class="r"><td>🔴 न्यूनतम निकासी / Min withdrawal</td><td><b>₹50</b> (पासबुक + Form-2)</td></tr>
+      <tr class="r"><td>🔴 न्यूनतम शेष / Min balance</td><td><b>₹500</b> — इससे नीचे ले जाने वाली निकासी अनुमत नहीं</td></tr>
+      <tr class="o"><td>🟠 निकासी माध्यम / Withdrawal modes</td><td>पासबुक+Form-2, चेक, इलेक्ट्रॉनिक / Passbook+Form-2, cheque, electronic</td></tr>
+      <tr class="g"><td>🟢 जमा-निकासी / All transactions</td><td><b>केवल पूर्ण रुपयों में / WHOLE RUPEES only / ફક્ત આખા રૂપિયામાં</b></td></tr>
+    </table>
+    <h3 class="sub">🔴 पैरा 4(5)-(6): ₹500 से कम शेष वाले पुराने खाते — Timeline</h3>
+    <div class="tl">
+      <div class="tl-i"><div class="tl-dot"></div><div class="tl-c"><span class="reg">Step 1</span><span class="hi">योजना आरंभ के समय शेष &lt; ₹500 → <b>1 वर्ष के भीतर</b> अंतर जमा कर ₹500 करें</span><span class="en">Balance below ₹500 at commencement → deposit difference within ONE YEAR. Accounts office responsible for advising holder.</span><span class="gu">₹૫૦૦ થી ઓછું → ૧ વર્ષમાં પૂરું કરો</span></div></div>
+      <div class="tl-i"><div class="tl-dot"></div><div class="tl-c"><span class="reg">Step 2</span><span class="hi">विफल रहने पर → प्रत्येक वित्त वर्ष के <b>अंतिम कार्य दिवस</b> पर <b>₹100 खाता रखरखाव शुल्क</b> कटेगा</span><span class="en">Failure → ₹100 ACCOUNT MAINTENANCE FEE deducted on LAST WORKING DAY of each financial year</span><span class="gu">નિષ્ફળ → દર નાણાકીય વર્ષના છેલ્લા કામકાજ દિવસે ₹૧૦૦ ફી</span></div></div>
+      <div class="tl-i"><div class="tl-dot"></div><div class="tl-c"><span class="reg">Step 3</span><span class="hi">शुल्क कटने के बाद शेष <b>शून्य</b> → खाता <b>स्वतः बंद</b> + धारक को सूचना। Silent Account पर भी लागू!</span><span class="en">Balance NIL after fee → account AUTOMATICALLY CLOSED + holder notified. Applies to Silent Accounts too!</span><span class="gu">શેષ શૂન્ય → ખાતું આપોઆપ બંધ. Silent Account ને પણ લાગુ!</span></div></div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ POSA खाते में न्यूनतम शेष कितना रखना अनिवार्य है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹50</div><div class="opt">B. ₹100</div>
+        <div class="opt ans">C. ₹500 ✅</div><div class="opt">D. ₹1000</div>
+      </div>
+      <div class="hint">💡 Para 4(4) — no withdrawal reducing balance below ₹500</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. INTEREST -->
+<div class="section" id="interest">
+  <div class="sec-title">💹 पैरा 5: ब्याज / Interest / વ્યાજ — 🔴 सबसे महत्वपूर्ण पैरा!</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card red">
+        <h4>🔴 ब्याज दर / Rate</h4>
+        <span class="hi" style="font-size:17px;">4% वार्षिक</span>
+        <span class="en">4% per annum</span>
+        <span class="gu">૪% વાર્ષિક</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 गणना आधार / Calculation Base</h4>
+        <span class="hi"><b>10वें दिन की समाप्ति से माह के अंत</b> के बीच का <b>न्यूनतम शेष</b></span>
+        <span class="en">LOWEST balance between close of 10th day and end of month</span>
+        <span class="gu">૧૦મા દિવસથી મહિનાના અંત વચ્ચેની લઘુત્તમ બાકી</span>
+      </div>
+    </div>
+    <table class="tbl">
+      <tr><th>नियम / Rule</th><th>प्रावधान / Provision / જોગવાઈ</th></tr>
+      <tr class="o"><td>🟠 ब्याज जमा / Credit</td><td>प्रत्येक <b>वर्ष के अंत</b> में खाते में जमा / Calculated & credited at END OF EACH YEAR</td></tr>
+      <tr class="o"><td>🟠 पूर्णांकन / Rounding</td><td>निकटतम रुपया — <b>50 पैसे या अधिक = ₹1</b>; 50 पैसे से कम = छोड़ दें / 50 paisa+ = ₹1; below = ignored</td></tr>
+      <tr class="r"><td>🔴 ब्याज नहीं मिलेगा / NO interest</td><td>जिस माह में 10वें और अंतिम दिन के बीच <b>कभी भी</b> शेष <b>₹500 से कम</b> हो / Month where balance falls below ₹500 anytime between 10th & last day</td></tr>
+      <tr class="r"><td>🔴 वर्ष के बीच बंदी / Closure mid-year</td><td>बंदी के माह से <b>पूर्ववर्ती माह के अंत तक</b> ब्याज / Interest upto end of month PRECEDING closure month</td></tr>
+      <tr class="r"><td>🔴 धारक की मृत्यु / Death</td><td>बंदी के <b>पूर्ववर्ती माह के अंत तक</b> ही ब्याज / Interest only till end of month preceding closure</td></tr>
+    </table>
+    <h3 class="sub">🟡 उदाहरण / Example — Decision Tree</h3>
+    <div class="dt">
+      <div class="dt-q">15 तारीख को शेष ₹450 हो गया (10वीं–अंतिम दिन के बीच) / Balance ₹450 on 15th</div>
+      <div class="dt-row">
+        <div class="dt-n"><div class="dt-lbl">❌ परिणाम</div>उस पूरे माह का <b>कोई ब्याज नहीं</b><br><em>NO interest for that month</em></div>
+        <div class="dt-y"><div class="dt-lbl">✅ बचाव</div>10 तारीख तक ₹500+ बनाए रखें<br><em>Keep ₹500+ before 10th matters most</em></div>
+      </div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ POSA ब्याज किस शेष पर गणना होती है?</div>
+      <div class="opts">
+        <div class="opt">A. माह के औसत शेष पर</div><div class="opt">B. माह के अंतिम शेष पर</div>
+        <div class="opt ans">C. 10वें दिन से माह-अंत के न्यूनतम शेष पर ✅</div><div class="opt">D. 1-10 तारीख के शेष पर</div>
+      </div>
+      <div class="hint">💡 Para 5(1) — lowest balance between close of 10th day & end of month; credited yearly</div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. PASSBOOK & CHEQUE -->
+<div class="section" id="cheque">
+  <div class="sec-title">📑 पैरा 6-7: पासबुक व चेक बुक / Passbook & Cheque Book</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card blue">
+        <h4>🟡 पैरा 6: शेष की पुष्टि</h4>
+        <span class="hi">पासबुक/खाता विवरण जारी होगा; कार्यालय समय में पासबुक प्रस्तुत कर शेष की पुष्टि</span>
+        <span class="en">Passbook or statement issued; holder may confirm balance by presenting passbook during office hours</span>
+        <span class="gu">પાસબુક રજૂ કરી બેલેન્સ ચકાસી શકાય</span>
+      </div>
+      <div class="card red">
+        <h4>🔴 पैरा 7: चेक बुक</h4>
+        <span class="hi"><b>10 पन्नों</b> की चेक बुक — वर्ष में <b>निःशुल्क</b>; बाद में <b>₹2 प्रति चेक</b></span>
+        <span class="en">10-leaf cheque book FREE per year on application; subsequent at ₹2 per cheque</span>
+        <span class="gu">૧૦ પાનાની ચેકબુક વર્ષે મફત; પછી ₹૨/ચેક</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. SILENT ACCOUNT -->
+<div class="section" id="silent">
+  <div class="sec-title">😴 पैरा 8: निष्क्रिय खाता / Silent Account / નિષ્ક્રિય ખાતું — 🔴 परीक्षा हॉटस्पॉट!</div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="fbox r"><b>3 पूर्ण वर्ष</b> तक कोई जमा या निकासी नहीं<br><em>NO deposit or withdrawal for THREE COMPLETE YEARS</em><br><span style="font-size:10px">૩ પૂર્ણ વર્ષ સુધી કોઈ જમા/ઉપાડ નહીં</span></div>
+      <div class="farr">↓</div>
+      <div class="fbox gray">खाता = Silent Account / નિષ્ક્રિય ખાતું</div>
+      <div class="farr">↓</div>
+      <div class="fbox o">🔴 ब्याज जमा होना = <b>लेनदेन नहीं माना जाएगा</b><br><em>Credit of interest ≠ transaction</em><br><span style="font-size:10px">વ્યાજ જમા થવું = વ્યવહાર નહીં ગણાય</span></div>
+      <div class="farr">↓</div>
+      <div class="fbox g">पुनः चालू (Revival): धारक का आवेदन + कार्यालय की due process के बाद ही लेनदेन<br><em>Transaction only after REVIVAL — application + due process</em><br><span style="font-size:10px">પુનર્જીવન: અરજી + પ્રક્રિયા પછી જ વ્યવહાર</span></div>
+    </div>
+    <div class="alert red">🔴 याद रखें: Silent Account पर भी ₹500 न्यूनतम शेष / ₹100 रखरखाव शुल्क नियम लागू (पैरा 4(6))! <em>Maintenance fee provision applies to Silent Accounts too!</em></div>
+    <div class="mcq">
+      <div class="q">❓ खाता कितने वर्ष निष्क्रिय रहने पर Silent Account बनता है?</div>
+      <div class="opts">
+        <div class="opt">A. 1 वर्ष</div><div class="opt">B. 2 वर्ष</div>
+        <div class="opt ans">C. 3 पूर्ण वर्ष ✅</div><div class="opt">D. 5 वर्ष</div>
+      </div>
+      <div class="hint">💡 Para 8(1) — three complete years; interest credit is NOT a transaction</div>
+    </div>
+  </div>
+</div>
+<!-- 8. CLOSURE -->
+<div class="section" id="closure">
+  <div class="sec-title">🔐 पैरा 9: खाता बंदी / Closure of Account / ખાતું બંધ કરવું</div>
+  <div class="sec-body">
+    <div class="alert green">🟢 <b>कभी भी बंद कर सकते हैं / Close ANYTIME:</b> पासबुक + अप्रयुक्त/आंशिक प्रयुक्त चेक बुक सरेंडर + <b>Form-2</b> में आवेदन। <em>Surrender passbook + unused/partially used cheque book + application in Form-2.</em> <span class="gu">પાસબુક + ચેકબુક પરત + ફોર્મ-૨ માં અરજી — ગમે ત્યારે.</span></div>
+    <h3 class="sub">दो ही फॉर्म / Only 2 Forms — याद रखें!</h3>
+    <div class="cgrid">
+      <div class="card red"><h4>🔴 Form-1</h4><span class="hi">खाता खोलना (+ नामांकन अनुभाग सहित)</span><span class="en">Opening of account (includes nomination section)</span><span class="gu">ખાતું ખોલવું (નામાંકન સહિત)</span></div>
+      <div class="card red"><h4>🔴 Form-2</h4><span class="hi">निकासी <b>और</b> बंदी — दोनों के लिए</span><span class="en">Withdrawal AND Closure — both</span><span class="gu">ઉપાડ અને બંધ — બંને માટે</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. MNEMONICS -->
+<div class="section" id="mnem">
+  <div class="sec-title">🧠 मेमोरी ट्रिक्स / Mnemonics / યાદ રાખવાની યુક્તિઓ</div>
+  <div class="sec-body">
+    <div class="mnem">
+      <h4>📌 POSA का जादुई फॉर्मूला: "500-10-50-500-4-3"</h4>
+      <div class="lts">
+        <div class="lb"><span>500</span>न्यूनतम खोलना</div>
+        <div class="lb"><span>10</span>न्यूनतम अगली जमा</div>
+        <div class="lb"><span>50</span>न्यूनतम निकासी</div>
+        <div class="lb"><span>500</span>न्यूनतम शेष</div>
+        <div class="lb"><span>4%</span>वार्षिक ब्याज</div>
+        <div class="lb"><span>3</span>वर्ष = Silent</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 ब्याज ट्रिक: "10 तारीख का खेल" — 10th Day Rule</h4>
+      <div class="lts">
+        <div class="lb"><span>10</span>10वें दिन की समाप्ति से</div>
+        <div class="lb"><span>END</span>माह के अंत तक</div>
+        <div class="lb"><span>MIN</span>न्यूनतम शेष पर 4%</div>
+        <div class="lb"><span>YR</span>वर्ष अंत में जमा</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">💡 "10 के बाद जो सबसे कम, उसी पर ब्याज का दम!" | ₹500 से नीचे गया माह = शून्य ब्याज</p>
+    </div>
+    <div class="mnem">
+      <h4>📌 खाता खोलने वाले: "S-J-G-G-M" → "सज्जन-गगन-मौन"</h4>
+      <div class="lts">
+        <div class="lb"><span>S</span>Single adult</div>
+        <div class="lb"><span>J</span>Joint (सिर्फ 2!)</div>
+        <div class="lb"><span>G</span>Guardian (minor)</div>
+        <div class="lb"><span>G</span>Guardian (unsound)</div>
+        <div class="lb"><span>M</span>Minor 10+</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 दो धाराएँ भ्रमित न हों: "3A योजना, 15 नियम"</h4>
+      <div class="lts">
+        <div class="lb"><span>3A</span>POSA Scheme 2019</div>
+        <div class="lb"><span>15</span>GSPR 2018 (General Rules)</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">💡 धारा 3A = व्यक्तिगत योजनाएँ | धारा 15 = सामान्य नियम बनाने की शक्ति</p>
+    </div>
+    <div class="mnem">
+      <h4>📌 ₹100 शुल्क चक्र: "500 नहीं → 100 कटे → 0 पर बंद"</h4>
+      <div class="lts">
+        <div class="lb"><span>&lt;500</span>1 वर्ष में पूरा करो</div>
+        <div class="lb"><span>₹100</span>वित्त वर्ष के अंतिम कार्य दिवस पर फीस</div>
+        <div class="lb"><span>0</span>शेष शून्य = स्वतः बंद</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 10. MCQ BANK -->
+<div class="section" id="mcqb">
+  <div class="sec-title">📝 संभावित परीक्षा प्रश्न / Probable MCQs / સંભવિત પ્રશ્નો</div>
+  <div class="sec-body">
+    <div class="mcq">
+      <div class="q">Q1. POSA Scheme 2019 कब अधिसूचित हुई?</div>
+      <div class="opts">
+        <div class="opt">A. 5 अक्टूबर 2018</div><div class="opt ans">B. 12 दिसम्बर 2019 ✅</div>
+        <div class="opt">C. 1 अप्रैल 2019</div><div class="opt">D. 12 दिसम्बर 2018</div>
+      </div>
+      <div class="hint">💡 G.S.R. 921(E), New Delhi, 12th December 2019</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q2. POSA में ब्याज दर क्या है?</div>
+      <div class="opts">
+        <div class="opt">A. 3.5% वार्षिक</div><div class="opt ans">B. 4% वार्षिक ✅</div>
+        <div class="opt">C. 4.5% वार्षिक</div><div class="opt">D. 5% वार्षिक</div>
+      </div>
+      <div class="hint">💡 Para 5(1) — four per cent per annum</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q3. न्यूनतम निकासी राशि कितनी है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹10</div><div class="opt ans">B. ₹50 ✅</div>
+        <div class="opt">C. ₹100</div><div class="opt">D. ₹500</div>
+      </div>
+      <div class="hint">💡 Para 4(3) — not less than fifty rupees (Form-2 + passbook)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q4. ब्याज का पूर्णांकन कैसे होता है?</div>
+      <div class="opts">
+        <div class="opt ans">A. 50 पैसे+ = ₹1; कम = छोड़ें ✅</div><div class="opt">B. हमेशा ऊपर</div>
+        <div class="opt">C. हमेशा नीचे</div><div class="opt">D. पैसों सहित भुगतान</div>
+      </div>
+      <div class="hint">💡 Para 5(2) — 50 paisa or more = ₹1; less than 50 paisa ignored</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q5. वर्ष के बीच खाता बंद हो तो ब्याज कब तक मिलता है?</div>
+      <div class="opts">
+        <div class="opt">A. बंदी की तिथि तक</div><div class="opt ans">B. बंदी के पूर्ववर्ती माह के अंत तक ✅</div>
+        <div class="opt">C. बंदी के माह के अंत तक</div><div class="opt">D. वर्ष के अंत तक</div>
+      </div>
+      <div class="hint">💡 Para 5(4) — upto end of month PRECEDING the month of closure</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q6. Silent Account में ब्याज जमा होना क्या माना जाता है?</div>
+      <div class="opts">
+        <div class="opt">A. लेनदेन</div><div class="opt ans">B. लेनदेन नहीं ✅</div>
+        <div class="opt">C. आंशिक लेनदेन</div><div class="opt">D. जमा</div>
+      </div>
+      <div class="hint">💡 Para 8(1) — credit of interest NOT treated as transaction</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q7. खाता रखरखाव शुल्क ₹100 कब काटा जाता है?</div>
+      <div class="opts">
+        <div class="opt">A. प्रत्येक माह के अंत में</div><div class="opt ans">B. वित्त वर्ष के अंतिम कार्य दिवस पर ✅</div>
+        <div class="opt">C. 1 अप्रैल को</div><div class="opt">D. खाता वर्षगांठ पर</div>
+      </div>
+      <div class="hint">💡 Para 4(6) — last working day of each financial year</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q8. संयुक्त खाते में एक धारक की मृत्यु पर जीवित धारक की स्थिति?</div>
+      <div class="opts">
+        <div class="opt">A. आधे का स्वामी</div><div class="opt ans">B. एकमात्र स्वामी (sole owner) ✅</div>
+        <div class="opt">C. ट्रस्टी</div><div class="opt">D. खाता स्वतः बंद</div>
+      </div>
+      <div class="hint">💡 Para 3(2) — survivor = sole owner; but must close if own single account already exists</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q9. POSA में जमा-निकासी किस रूप में होती है?</div>
+      <div class="opts">
+        <div class="opt ans">A. केवल पूर्ण रुपयों में ✅</div><div class="opt">B. रुपये-पैसे दोनों</div>
+        <div class="opt">C. ₹10 के गुणकों में</div><div class="opt">D. ₹100 के गुणकों में</div>
+      </div>
+      <div class="hint">💡 Para 4(7) — whole rupees only</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q10. एक व्यक्ति POSA में कितने एकल खाते खोल सकता है?</div>
+      <div class="opts">
+        <div class="opt ans">A. केवल 1 ✅</div><div class="opt">B. 2</div>
+        <div class="opt">C. 3</div><div class="opt">D. असीमित</div>
+      </div>
+      <div class="hint">💡 Para 3(1) proviso — only ONE account as single account</div>
+    </div>
+  </div>
+</div>
+
+<!-- 11. LAST DAY REVISION -->
+<div class="section" id="lastday">
+  <div class="sec-title">🔥 अंतिम दिन पुनरावृत्ति / Last Day Revision / છેલ્લા દિવસનું પુનરાવર્તન</div>
+  <div class="sec-body">
+    <div class="ld">
+      <h3>⚡ परीक्षा से पहले — ये 12 बिंदु अवश्य पढ़ें!</h3>
+      <div class="ld-i"><div class="ld-ic">📅</div><div class="ld-t"><span class="h">POSA 2019 — 12 दिसम्बर 2019, G.S.R. 921(E), GSPA 1873 की धारा 3A</span><span class="e">11 paragraphs + 2 forms | "Year" = from 1st April</span><span class="g">૧૧ પેરા + ૨ ફોર્મ | "વર્ષ" = ૧ એપ્રિલથી</span></div></div>
+      <div class="ld-i"><div class="ld-ic">👥</div><div class="ld-t"><span class="h">खोल सकते हैं: एकल वयस्क | 2 वयस्क संयुक्त | संरक्षक (नाबालिग/विकृत चित्त) | 10 वर्ष+ नाबालिग</span><span class="e">POSA Joint = 2 adults ONLY (not 4!) | One single account per person</span><span class="g">POSA સંયુક્ત = ફક્ત ૨ | વ્યક્તિ દીઠ ૧ એકલ ખાતું</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💰</div><div class="ld-t"><span class="h">जमा: खोलना ₹500 | बाद में न्यूनतम ₹10 | अधिकतम सीमा नहीं | पूर्ण रुपयों में</span><span class="e">Open ₹500 | subsequent min ₹10 | NO max | whole rupees</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🏧</div><div class="ld-t"><span class="h">निकासी: न्यूनतम ₹50 (पासबुक+Form-2/चेक/electronic) | शेष ₹500 से नीचे नहीं</span><span class="e">Withdrawal min ₹50 | balance cannot go below ₹500</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💹</div><div class="ld-t"><span class="h">ब्याज 4% — 10वें दिन की समाप्ति से माह-अंत के न्यूनतम शेष पर | वर्ष के अंत में जमा</span><span class="e">4% on lowest balance between close of 10th & month-end | credited yearly</span><span class="g">૪% — ૧૦મા દિવસ પછીની લઘુત્તમ બાકી પર</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🚫</div><div class="ld-t"><span class="h">₹500 से कम (10वीं–अंतिम दिन के बीच कभी भी) = उस माह ब्याज शून्य</span><span class="e">Below ₹500 anytime in that window = NO interest that month</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🧮</div><div class="ld-t"><span class="h">पूर्णांकन: 50 पैसे+ = ₹1 | बंदी/मृत्यु पर ब्याज = पूर्ववर्ती माह के अंत तक</span><span class="e">Rounding 50p+ = ₹1 | closure/death: interest till end of preceding month</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📑</div><div class="ld-t"><span class="h">चेक बुक: 10 पन्ने वर्ष में मुफ्त, फिर ₹2/चेक</span><span class="e">10 leaves free/year; then ₹2 per cheque</span></div></div>
+      <div class="ld-i"><div class="ld-ic">😴</div><div class="ld-t"><span class="h">Silent Account: 3 पूर्ण वर्ष बिना जमा/निकासी | ब्याज जमा = लेनदेन नहीं | Revival: आवेदन + due process</span><span class="e">3 complete years | interest ≠ transaction | revival by application</span><span class="g">૩ પૂર્ણ વર્ષ | વ્યાજ = વ્યવહાર નહીં</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💸</div><div class="ld-t"><span class="h">पुराने &lt;₹500 खाते: 1 वर्ष में पूरा करें → नहीं तो ₹100/वर्ष शुल्क (वित्त वर्ष के अंतिम कार्य दिवस) → शून्य पर स्वतः बंद</span><span class="e">₹100 maintenance fee cycle → auto-closure at NIL — applies to Silent Accounts too</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🤝</div><div class="ld-t"><span class="h">संयुक्त: बराबर हिस्सा | मृत्यु पर survivor = sole owner | उसका अपना एकल खाता हो तो बंद करना होगा</span><span class="e">Equal share | survivor sole owner | must close if own single account exists</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📋</div><div class="ld-t"><span class="h">Form-1 = खोलना+नामांकन | Form-2 = निकासी+बंदी | योजना मौन हो तो GSPR 2018 लागू</span><span class="e">Form-1 open | Form-2 withdraw & close | GSPR 2018 applies where silent</span><span class="g">ફોર્મ-૧ ખોલવું | ફોર્મ-૨ ઉપાડ-બંધ</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 12. ONE PAGE SHEET -->
+<div class="section" id="opsheet">
+  <div class="sec-title">📋 One-Page Quick Reference Sheet</div>
+  <div class="sec-body">
+    <div class="ops">
+      <div class="ops-h">📋 POSA Scheme 2019 — एक पृष्ठ सार / One-Page Sheet / એક પાનાનો સાર</div>
+      <div class="ops-g">
+        <div class="ops-c"><span class="lbl">अधिनियम-धारा / Act-Section</span>GSPA 1873 — धारा 3A</div>
+        <div class="ops-c"><span class="lbl">अधिसूचना / Notification</span>G.S.R. 921(E), 12 Dec 2019</div>
+        <div class="ops-c"><span class="lbl">संरचना / Structure</span>11 पैरा + 2 फॉर्म</div>
+        <div class="ops-c"><span class="lbl">"वर्ष" / "Year"</span>1 अप्रैल से 12 माह</div>
+        <div class="ops-c"><span class="lbl">एकल खाता / Single</span>प्रति व्यक्ति केवल 1</div>
+        <div class="ops-c"><span class="lbl">संयुक्त / Joint</span>केवल 2 वयस्क</div>
+        <div class="ops-c"><span class="lbl">नाबालिग / Minor</span>10 वर्ष+ स्वयं</div>
+        <div class="ops-c"><span class="lbl">न्यूनतम खोलना / Min open</span>₹500</div>
+        <div class="ops-c"><span class="lbl">न्यूनतम अगली जमा</span>₹10</div>
+        <div class="ops-c"><span class="lbl">अधिकतम जमा / Max</span>कोई सीमा नहीं</div>
+        <div class="ops-c"><span class="lbl">न्यूनतम निकासी</span>₹50 (Form-2)</div>
+        <div class="ops-c"><span class="lbl">न्यूनतम शेष / Min balance</span>₹500</div>
+        <div class="ops-c"><span class="lbl">ब्याज दर / Interest</span>4% वार्षिक</div>
+        <div class="ops-c"><span class="lbl">ब्याज आधार / Base</span>10वें दिन–माह अंत का न्यूनतम शेष</div>
+        <div class="ops-c"><span class="lbl">ब्याज जमा / Credit</span>वर्ष के अंत में</div>
+        <div class="ops-c"><span class="lbl">पूर्णांकन / Rounding</span>50 पैसे+ = ₹1</div>
+        <div class="ops-c"><span class="lbl">&lt;₹500 माह में</span>उस माह ब्याज शून्य</div>
+        <div class="ops-c"><span class="lbl">बंदी/मृत्यु ब्याज</span>पूर्ववर्ती माह के अंत तक</div>
+        <div class="ops-c"><span class="lbl">चेक बुक / Cheque book</span>10 पन्ने मुफ्त/वर्ष; फिर ₹2</div>
+        <div class="ops-c"><span class="lbl">Silent Account</span>3 पूर्ण वर्ष निष्क्रियता</div>
+        <div class="ops-c"><span class="lbl">ब्याज जमा (Silent)</span>लेनदेन नहीं</div>
+        <div class="ops-c"><span class="lbl">रखरखाव शुल्क / Fee</span>₹100 (वित्त वर्ष अंतिम कार्य दिवस)</div>
+        <div class="ops-c"><span class="lbl">शून्य शेष / NIL balance</span>स्वतः बंद + सूचना</div>
+        <div class="ops-c"><span class="lbl">लेनदेन / Transactions</span>केवल पूर्ण रुपयों में</div>
+        <div class="ops-c"><span class="lbl">Form-1</span>खाता खोलना + नामांकन</div>
+        <div class="ops-c"><span class="lbl">Form-2</span>निकासी + बंदी</div>
+        <div class="ops-c"><span class="lbl">मौन विषय / Silent matters</span>GSPR 2018 लागू</div>
+        <div class="ops-c"><span class="lbl">शिथिलन / Relaxation</span>केंद्र सरकार, लिखित कारण</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#1A5276;color:#AED6F1;text-align:center;padding:14px;font-size:11.5px;margin-top:10px;">
+  📮 India Post IP/IPO Exam Preparation | Post Office Savings Account Scheme, 2019<br>
+  <span style="font-size:10px;">Ref: Gazette of India Extraordinary, Part II—Sec 3(i), G.S.R. 921(E), 12 December 2019 | F.No.2/2/2018 NS (Pt.I)</span>
+</div>
+
+
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+
+</body>
+</html>

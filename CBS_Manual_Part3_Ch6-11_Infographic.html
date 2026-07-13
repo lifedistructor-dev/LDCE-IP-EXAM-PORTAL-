@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POSB CBS Manual — भाग 3 | RD | TD | MIS | SCSS | PPF | SSA | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.header{background:linear-gradient(135deg,var(--green) 0%,#00695C 55%,var(--blue) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.5rem;}
+.header .sub{margin-top:8px;font-size:0.88rem;opacity:0.92;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.75rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.75rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.95rem;color:var(--blue);}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.7rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.76rem;}
+table th{background:var(--blue);color:#fff;padding:6px 8px;text-align:left;}
+table td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.78rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:110px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.85rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.74rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.78rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.8rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.78rem;}
+.exam-q b{color:#6A1B9A;}
+
+.timeline{border-left:3px solid var(--blue);margin:10px 0 10px 8px;padding-left:14px;}
+.timeline .tl-item{position:relative;margin-bottom:10px;font-size:0.78rem;}
+.timeline .tl-item::before{content:"";position:absolute;left:-18.5px;top:2px;width:9px;height:9px;border-radius:50%;background:var(--red);}
+.timeline .tl-time{font-weight:700;color:var(--red-dark);}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1.05rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.78rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1.05rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.8rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.72rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;font-size:0.75rem;}
+.compare .old{background:#FFEBEE;border-radius:8px;padding:8px;border:1px solid var(--red);}
+.compare .new{background:#E8F5E9;border-radius:8px;padding:8px;border:1px solid var(--green);}
+.compare b{display:block;margin-bottom:4px;}
+
+.comparechart{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0;font-size:0.7rem;text-align:center;}
+.comparechart .cell{background:#F5F8FF;border-radius:8px;padding:8px 4px;border:1px solid #ddd;}
+.comparechart .head{background:var(--blue);color:#fff;font-weight:700;border-radius:8px;padding:6px 4px;}
+
+footer{text-align:center;color:var(--muted);font-size:0.72rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.78rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>POSB (CBS) मैनुअल — भाग 3</h1>
+  <div class="sub">अध्याय 6-11: RD | TD | MIS | SCSS | PPF | SSA — छह प्रमुख बचत योजनाएं</div>
+  <div class="sub">(Corrected upto 31.12.2021 — Finacle CBS आधारित नवीनतम मैनुअल)</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">💰 6 प्रमुख योजनाएं</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण</span>
+  <span>🟠 बार-बार पूछा गया</span>
+  <span>🟡 संकल्पनात्मक</span>
+  <span>🟢 त्वरित रिवीजन</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची</h2>
+  <div class="toc-grid">
+    <a href="#ch6">6. Recurring Deposit (RD) Scheme</a>
+    <a href="#ch7">7. Time Deposit (TD) Scheme</a>
+    <a href="#ch8">8. Monthly Income Account (MIS) Scheme</a>
+    <a href="#ch9">9. Senior Citizens Savings Scheme (SCSS)</a>
+    <a href="#ch10">10. Public Provident Fund (PPF) Scheme</a>
+    <a href="#ch11">11. Sukanya Samriddhi Account (SSA) Scheme</a>
+    <a href="#compare">📊 सभी योजनाओं की तुलनात्मक तालिका</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH6 RD -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:var(--red);">🔁 अध्याय 6 → Recurring Deposit (RD) Scheme (Rule 81-94)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — न्यूनतम जमा बदल गई है</span>
+      <h3>मुख्य विशेषताएं</h3>
+    </div>
+
+    <div class="compare">
+      <div class="old"><b>❌ पुराना नियम (Vol-III, 1981)</b>न्यूनतम मासिक जमा ₹10 (₹5 के गुणक में)</div>
+      <div class="new"><b>✅ CBS नया नियम (2019 से)</b>न्यूनतम मासिक जमा <b>₹100</b> (₹10 के गुणक में)</div>
+    </div>
+
+    <table>
+      <tr><th>बिंदु</th><th>नियम</th></tr>
+      <tr><td>परिपक्वता अवधि</td><td><b>5 वर्ष</b></td></tr>
+      <tr><td>Joint Account</td><td>अधिकतम <b>3 वयस्क</b> तक (Type A/B)</td></tr>
+      <tr><td>अनुमत डिफॉल्ट</td><td>अधिकतम <b>4</b> — इससे अधिक होने पर "Discontinued"</td></tr>
+      <tr><td>पुनर्जीवन अवधि</td><td>चौथे डिफॉल्ट माह से <b>2 RD महीनों</b> के भीतर</td></tr>
+      <tr><td>Revival Fee</td><td>प्रति ₹100 पर <b>₹1</b> प्रति माह डिफॉल्ट (अनुपातिक अन्य denomination में)</td></tr>
+    </table>
+
+    <div class="flow">
+      <div class="box">डिफॉल्ट ≤ 4</div><span class="arrow">➡</span>
+      <div class="box">Maturity Date बढ़ती है, बिना पेनल्टी भुगतान संभव</div>
+      <div class="box" style="background:var(--red);">डिफॉल्ट &gt; 4</div><span class="arrow">➡</span>
+      <div class="box" style="background:var(--red);">Discontinued</div><span class="arrow">➡</span>
+      <div class="box">2 RD महीनों में Revival Fee सहित पुनर्जीवन</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>नाबालिग खाता (Minor Account) — 18 वर्ष होने पर</h3>
+      <p>Major (18 वर्ष) होने पर नाबालिग को नया SB-AOF व KYC देकर घोषणा-पत्र भरना होता है। खाते की स्थिति Finacle में स्वतः "Freeze" दिखती है — CMRC मेन्यू से "mode of operation" को 012-self में बदला जाता है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "10 से 100 हुई RD जमा" — पुरानी ₹10 न्यूनतम अब CBS में ₹100</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> CBS में RD न्यूनतम मासिक जमा कितनी है? <b>(₹100, ₹10 के गुणक में)</b> Revival Fee की गणना कैसे होती है? <b>(₹1 प्रति ₹100 प्रति माह डिफॉल्ट)</b></div>
+  </div>
+</div>
+
+<!-- CH7 TD -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:var(--blue);">📆 अध्याय 7 → Time Deposit (TD) Scheme (Rule 96-104)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — न्यूनतम जमा बदल गई है</span>
+      <h3>4 प्रकार के TD खाते</h3>
+    </div>
+
+    <div class="compare">
+      <div class="old"><b>❌ पुराना नियम</b>कोई निश्चित न्यूनतम जमा राशि निर्धारित नहीं थी</div>
+      <div class="new"><b>✅ CBS नया नियम (SB Order 13/2019 से)</b>न्यूनतम जमा <b>₹1,000</b> (₹100 के गुणक में)</div>
+    </div>
+
+    <table>
+      <tr><th>Account Type</th><th>अवधि</th><th>टैक्स लाभ</th></tr>
+      <tr><td>1-Year</td><td>1 वर्ष</td><td>—</td></tr>
+      <tr><td>2-Year</td><td>2 वर्ष</td><td>—</td></tr>
+      <tr><td>3-Year</td><td>3 वर्ष</td><td>—</td></tr>
+      <tr><td>5-Year</td><td>5 वर्ष</td><td><b>Section 80C टैक्स छूट</b></td></tr>
+    </table>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>Premature Closure नियम (Rule 102)</h3>
+      <div class="dtree">
+        <div class="q">Q: TD की समय-पूर्व निकासी कब व कैसे संभव है?</div>
+        <div class="yn">➡ <b>6 महीने से पहले:</b> अनुमति नहीं</div>
+        <div class="yn">➡ <b>6 महीने–1 वर्ष:</b> Savings Account दर से ब्याज</div>
+        <div class="yn">➡ <b>1 वर्ष बाद (2/3/5-yr खाते):</b> संबंधित अवधि की दर से <b>2% कम</b> ब्याज (quarterly compounding)</div>
+      </div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6 महीने से पहले नहीं, 1 साल बाद 2% कम" — TD premature closure नियम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> TD की समय-पूर्व निकासी की न्यूनतम अवधि क्या है? <b>(6 महीने)</b> 1 वर्ष बाद निकासी पर ब्याज दर में कितनी कमी होती है? <b>(2%)</b></div>
+  </div>
+</div>
+
+<!-- CH8 MIS -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--green);">💵 अध्याय 8 → Monthly Income Account (MIS) Scheme (Rule 105-109)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>जमा सीमाएं (वर्तमान, 1.8.2007 से लागू)</h3>
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>Single Account अधिकतम</td><td><b>₹4.5 लाख</b></td></tr>
+        <tr><td>Joint Account अधिकतम</td><td><b>₹9 लाख</b></td></tr>
+        <tr><td>न्यूनतम जमा</td><td><b>₹1,000</b> (₹1,000 के गुणक में, केवल एक बार जमा)</td></tr>
+        <tr><td>परिपक्वता</td><td><b>5 वर्ष</b> — इससे पहले निकासी नहीं</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Premature Closure Penalty</h3>
+      <table>
+        <tr><th>अवधि</th><th>कटौती</th></tr>
+        <tr><td>1 वर्ष से पहले</td><td>बंद करने की अनुमति नहीं</td></tr>
+        <tr><td>1-3 वर्ष के बीच</td><td>जमा राशि का <b>2%</b></td></tr>
+        <tr><td>3 वर्ष के बाद</td><td>जमा राशि का <b>1%</b></td></tr>
+      </table>
+    </div>
+
+    <div class="penalty-box">🔴 <b>Bonus नियम (ऐतिहासिक):</b> 13.2.2006 से पहले खोले खातों में 10% bonus; 8.12.2007–30.11.2011 में 5% bonus; <b>1.12.2011 के बाद कोई bonus नहीं</b>।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "4.5-9 लाख, 1-3-5 साल में 2-1% कटौती" — MIS सीमाएं व penalty याद रखने का तरीका</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> MIS Single Account की अधिकतम सीमा? <b>(₹4.5 लाख)</b> 3 वर्ष बाद premature closure पर कटौती? <b>(1%)</b></div>
+  </div>
+</div>
+
+<!-- CH9 SCSS -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:var(--red-dark);">👴 अध्याय 9 → Senior Citizens Savings Scheme (SCSS) (Rule 110-116)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — पात्रता आयु व सीमाएं बदल गई हैं</span>
+      <h3>पात्रता आयु</h3>
+    </div>
+
+    <div class="compare">
+      <div class="old"><b>❌ पुराना नियम (Vol-III, 2004)</b>VRS सेवानिवृत्त: 55-60 वर्ष, <b>3 महीने</b> में खाता खोलना; Defence retirees सामान्यतः आयु-मुक्त; अधिकतम जमा ₹15 लाख (2004 दर)</div>
+      <div class="new"><b>✅ CBS नया नियम (2019 Rules)</b>VRS सेवानिवृत्त: <b>1 महीने</b> में खाता खोलना अनिवार्य; Defence Retirees (Civilian छोड़कर) आयु <b>50 वर्ष</b> से पात्र; अधिकतम जमा अब भी ₹15 लाख</td></div>
+      </div>
+    </div>
+
+    <table>
+      <tr><th>श्रेणी</th><th>आयु पात्रता</th></tr>
+      <tr><td>सामान्य</td><td>60 वर्ष+</td></tr>
+      <tr><td>VRS सेवानिवृत्त</td><td>55-60 वर्ष, सेवानिवृत्ति लाभ मिलने के <b>1 महीने</b> में खाता खोलना</td></tr>
+      <tr><td>रक्षा सेवा सेवानिवृत्त (Civilian छोड़कर)</td><td><b>50 वर्ष</b> से पात्र</td></tr>
+    </table>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>Premature Closure Penalty (3-स्तरीय)</h3>
+      <table>
+        <tr><th>अवधि</th><th>कटौती</th></tr>
+        <tr><td>1 वर्ष से पहले</td><td>दिया गया पूरा ब्याज वापस काटा जाता है</td></tr>
+        <tr><td>1-2 वर्ष के बीच</td><td>जमा राशि का <b>1.5%</b></td></tr>
+        <tr><td>2 वर्ष के बाद</td><td>जमा राशि का <b>1%</b></td></tr>
+      </table>
+    </div>
+
+    <table>
+      <tr><th>बिंदु</th><th>नियम</th></tr>
+      <tr><td>न्यूनतम/अधिकतम जमा</td><td>₹1,000 – <b>₹15 लाख</b> (₹1,000 के गुणक में)</td></tr>
+      <tr><td>बंद न होने की अवधि</td><td>5 वर्ष से पहले सामान्य बंद नहीं</td></tr>
+      <tr><td>ब्याज भुगतान</td><td>त्रैमासिक (Quarterly) — अप्रैल/जुलाई/अक्टूबर/जनवरी</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "60-55(1माह)-50(रक्षा), 15 लाख, 1.5-1% penalty" — SCSS संख्याएं</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> रक्षा सेवा सेवानिवृत्त (Civilian छोड़कर) किस न्यूनतम आयु से SCSS खोल सकते हैं? <b>(50 वर्ष)</b> VRS सेवानिवृत्त को कितने समय में खाता खोलना है? <b>(1 महीना)</b></div>
+  </div>
+</div>
+
+<!-- CH10 PPF -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:#00695C;">🏛 अध्याय 10 → Public Provident Fund (PPF) Scheme (Rule 117-122)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <h3>जमा सीमाएं व मूल नियम</h3>
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>न्यूनतम प्रारंभिक जमा</td><td><b>₹500</b></td></tr>
+        <tr><td>बाद की जमा राशि</td><td>₹50 के गुणक में</td></tr>
+        <tr><td>वित्तीय वर्ष अधिकतम जमा</td><td><b>₹1,50,000</b></td></tr>
+        <tr><td>Joint Account</td><td>अनुमति नहीं</td></tr>
+        <tr><td>एक व्यक्ति के नाम खाते</td><td>केवल <b>1</b> (PO या Bank कहीं भी)</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: खाता Discontinued कब माना जाता है व पुनर्जीवन कैसे?</div>
+      <div class="yn">➡ किसी वर्ष न्यूनतम ₹500 जमा न होने पर Discontinued</div>
+      <div class="yn">➡ पुनर्जीवन: ₹50 फीस + प्रति वर्ष ₹500 बकाया जमा (maturity तक कभी भी)</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>Loan व Withdrawal नियम</h3>
+      <table>
+        <tr><th>सुविधा</th><th>कब से कब तक</th><th>सीमा</th></tr>
+        <tr><td>Loan</td><td>वर्ष 1 पूर्ण होने बाद से वर्ष 5 से पहले तक</td><td>2 वर्ष पूर्व के बैलेंस का 25%</td></tr>
+        <tr><td>पहली Withdrawal</td><td>5 वर्ष बाद से</td><td>4 वर्ष पूर्व या पिछले वर्ष के बैलेंस का 50% (जो कम हो)</td></tr>
+        <tr><td>पूर्ण निकासी (Maturity)</td><td>15 वर्ष बाद</td><td>पूरी राशि</td></tr>
+        <tr><td>Extension (5-वर्ष Block)</td><td>Maturity के 1 वर्ष के भीतर आवेदन</td><td>Block में अधिकतम 60% निकासी अनुमति</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "500-1.5लाख-1(खाता)-25%(loan)-50%(withdraw)-15(maturity)-60%(extension)" — PPF का पूरा सार</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> PPF में Loan सुविधा किस अवधि में उपलब्ध है? <b>(वर्ष 1 पूर्ण होने से वर्ष 5 से पहले तक, 25% सीमा)</b> Extension के दौरान अधिकतम कितनी निकासी अनुमत है? <b>(Block period के 60% तक)</b></div>
+  </div>
+</div>
+
+<!-- CH11 SSA -->
+<div class="chapter" id="ch11">
+  <div class="chapter-head" style="background:#AD1457;">👧 अध्याय 11 → Sukanya Samriddhi Account (SSA) Scheme (Rule 123-131)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+      <h3>खाता खोलने की पात्रता व सीमाएं</h3>
+      <table>
+        <tr><th>बिंदु</th><th>नियम</th></tr>
+        <tr><td>बालिका की आयु सीमा</td><td>10 वर्ष से कम (खाता खोलते समय)</td></tr>
+        <tr><td>प्रति परिवार खाते</td><td>अधिकतम <b>2</b> (जुड़वां/तीन बच्चों के अपवाद सहित)</td></tr>
+        <tr><td>न्यूनतम प्रारंभिक/वार्षिक जमा</td><td><b>₹250</b></td></tr>
+        <tr><td>वार्षिक अधिकतम जमा</td><td><b>₹1,50,000</b></td></tr>
+        <tr><td>जमा करने की अवधि</td><td>खाता खोलने से <b>15 वर्ष</b> तक</td></tr>
+        <tr><td>Birth Certificate</td><td>अनिवार्य (छूट नहीं)</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: खाता कब परिपक्व होता है व कौन संचालित करता है?</div>
+      <div class="yn">➡ अभिभावक द्वारा संचालन — बालिका के <b>18 वर्ष</b> होने तक</div>
+      <div class="yn">➡ 18 वर्ष बाद — बालिका स्वयं (fresh KYC सहित)</div>
+      <div class="yn">➡ पूर्ण परिपक्वता — खाता खोलने से <b>21 वर्ष</b> बाद</div>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <h3>उच्च शिक्षा हेतु आंशिक निकासी</h3>
+      <p>18 वर्ष की आयु या 10वीं पास (जो पहले हो) पर, पिछले वित्तीय वर्ष के अंत के बैलेंस का <b>अधिकतम 50%</b> निकाला जा सकता है — अधिकतम <b>5 किश्तों</b> में, प्रति वित्तीय वर्ष एक ही निकासी।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <h3>विवाह हेतु समय-पूर्व बंद करना</h3>
+      <p>बालिका के विवाह हेतु समय-पूर्व बंद करने की अनुमति है — लेकिन <b>विवाह की तारीख से 1 महीना पहले</b> से पहले नहीं, और <b>विवाह के 3 महीने बाद</b> से अधिक नहीं। आयु न्यूनतम 18 वर्ष सुनिश्चित करने हेतु घोषणा-पत्र (Notary Attested) आवश्यक।</p>
+    </div>
+
+    <div class="penalty-box">🔴 <b>करुणा आधारित (Compassionate) Premature Closure:</b> जीवन-घातक बीमारी/अभिभावक की मृत्यु जैसे मामलों में — लेकिन खाता खोलने से <b>5 वर्ष</b> पूरे होने से पहले नहीं।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "250-1.5लाख-15-18-21" → SSA का पूरा सार: min ₹250, max ₹1.5L/वर्ष, deposit 15yr, self-op 18yr, maturity 21yr</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SSA खाता कितने वर्ष में पूर्ण परिपक्व होता है? <b>(21 वर्ष)</b> उच्च शिक्षा हेतु अधिकतम कितनी निकासी व कितनी किश्तों में? <b>(50% बैलेंस, अधिकतम 5 किश्तें)</b></div>
+  </div>
+</div>
+
+<!-- COMPARISON CHART -->
+<div class="chapter" id="compare">
+  <div class="chapter-head" style="background:#37474F;">📊 सभी योजनाओं की तुलनात्मक तालिका / Comparison Chart</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>योजना</th><th>न्यूनतम जमा</th><th>अधिकतम सीमा</th><th>परिपक्वता</th><th>Premature Closure</th></tr>
+      <tr><td>RD</td><td>₹100/माह</td><td>असीमित</td><td>5 वर्ष</td><td>लागू नहीं (केवल default penalty)</td></tr>
+      <tr><td>TD</td><td>₹1,000</td><td>असीमित</td><td>1/2/3/5 वर्ष</td><td>6 महीने बाद, दर में कटौती</td></tr>
+      <tr><td>MIS</td><td>₹1,000</td><td>Single ₹4.5L/Joint ₹9L</td><td>5 वर्ष</td><td>1 वर्ष बाद, 1-2% कटौती</td></tr>
+      <tr><td>SCSS</td><td>₹1,000</td><td>₹15 लाख</td><td>5 वर्ष</td><td>1 वर्ष बाद, 1-1.5% कटौती</td></tr>
+      <tr><td>PPF</td><td>₹500</td><td>₹1.5 लाख/वर्ष</td><td>15 वर्ष (+5yr blocks)</td><td>5 वर्ष बाद, शर्तों सहित</td></tr>
+      <tr><td>SSA</td><td>₹250</td><td>₹1.5 लाख/वर्ष</td><td>21 वर्ष</td><td>विवाह/करुणा आधार पर</td></tr>
+    </table>
+    <div class="exam-q">❓ <b>Exam Q:</b> किस योजना में न्यूनतम जमा सबसे कम है? <b>(SSA — ₹250)</b> किसकी परिपक्वता अवधि सबसे लंबी है? <b>(SSA — 21 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>RD:</b> ₹100/माह न्यूनतम | 5yr maturity | 4 defaults तक | Revival: ₹1/₹100/माह</div>
+    <div class="rev-card"><b>TD:</b> ₹1,000 न्यूनतम | 1/2/3/5yr | 6 महीने बाद premature; 1yr बाद 2% कम ब्याज</div>
+    <div class="rev-card"><b>MIS:</b> ₹4.5L/₹9L सीमा | 5yr maturity | Premature: 1-3yr=2%, 3yr+=1%</div>
+    <div class="rev-card"><b>SCSS:</b> 60yr सामान्य, 55yr VRS(1 महीना), 50yr Defence | ₹15L सीमा | Premature: &lt;1yr=full recall, 1-2yr=1.5%, 2yr+=1%</div>
+    <div class="rev-card"><b>PPF:</b> ₹500-₹1.5L/वर्ष | 15yr+5yr blocks | Loan 25% (yr1-5) | Withdrawal 50% (5yr बाद)</div>
+    <div class="rev-card"><b>SSA:</b> ₹250-₹1.5L/वर्ष | 21yr maturity | 18yr self-op | 50% withdrawal शिक्षा हेतु (5 किश्तें)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सिर्फ नंबर याद करें)</h2>
+  <ul>
+    <li>🔢 <b>RD:</b> ₹100 न्यूनतम | 5yr | 4 defaults | 2 महीने revival | ₹1/₹100 fee</li>
+    <li>🔢 <b>TD:</b> ₹1,000 न्यूनतम | 4 प्रकार (1/2/3/5yr) | 6 महीने premature सीमा | 2% कटौती</li>
+    <li>🔢 <b>MIS:</b> ₹4.5L/₹9L | 5yr | 2%(1-3yr)/1%(3yr+) penalty | bonus बंद 1.12.2011 से</li>
+    <li>🔢 <b>SCSS:</b> 60/55(1माह)/50(Defence) आयु | ₹15L | 5yr | penalty 1.5%/1%</li>
+    <li>🔢 <b>PPF:</b> ₹500 min | ₹1.5L/yr max | 15yr+5yr | Loan 25%(yr1-5) | Withdraw 50%(yr5+)</li>
+    <li>🔢 <b>SSA:</b> ₹250-₹1.5L | 15yr deposit | 18yr self-op | 21yr maturity | 50% withdrawal(5 किश्तें)</li>
+    <li>🔢 <b>SSA विवाह closure:</b> 1 महीना पहले से 3 महीने बाद तक</li>
+    <li>🔢 <b>SSA compassionate closure:</b> 5yr पूरे होने पर ही</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: POSB (CBS) Manual, Corrected upto 31.12.2021 — अध्याय 6-11 &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>

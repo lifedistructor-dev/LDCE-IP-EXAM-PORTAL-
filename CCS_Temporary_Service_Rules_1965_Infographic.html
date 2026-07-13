@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCS (Temporary Service) Rules, 1965 | IP Exam Notes</title>
+<style>
+:root{
+  --red:#C8102E; --darkred:#8B0000; --blue:#003087; --lightblue:#e8f0ff;
+  --gold:#D4AF37; --black:#1a1a1a; --green:#1a7a3c; --orange:#e07b00;
+  --yellow:#c9a300; --grey:#f4f4f4;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif; background:var(--grey); color:var(--black); line-height:1.5; padding-bottom:40px;}
+.container{max-width:900px; margin:0 auto; background:#fff;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,var(--red),var(--darkred)); color:#fff; padding:22px 16px; text-align:center; position:relative; border-bottom:6px solid var(--gold);}
+.header h1{font-size:1.4rem; margin-bottom:4px;}
+.header h2{font-size:1rem; font-weight:400; opacity:.95;}
+.header .hindi{font-size:1.1rem; font-weight:600; margin-top:6px;}
+.header .meta{margin-top:10px; font-size:.78rem; background:rgba(0,0,0,.2); display:inline-block; padding:6px 12px; border-radius:20px;}
+
+/* NAV PILLS */
+.navbar{display:flex; overflow-x:auto; gap:6px; padding:10px; background:var(--blue); position:sticky; top:0; z-index:99;}
+.navbar a{flex:0 0 auto; color:#fff; text-decoration:none; font-size:.72rem; background:rgba(255,255,255,.15); padding:6px 10px; border-radius:14px; white-space:nowrap;}
+.navbar a:hover{background:var(--gold); color:#000;}
+
+/* SECTION */
+.section{padding:16px;}
+.section-title{background:var(--blue); color:#fff; padding:10px 14px; border-radius:8px 8px 0 0; font-size:1.05rem; display:flex; align-items:center; gap:8px;}
+.section-title .en{font-weight:700;}
+.section-title .hi{font-weight:400; font-size:.85rem; opacity:.9;}
+.section-body{border:2px solid var(--blue); border-top:none; border-radius:0 0 8px 8px; padding:14px; margin-bottom:22px; background:#fff;}
+
+/* IMPORTANCE TAGS */
+.tag{display:inline-block; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle;}
+.tag-red{background:#ffe1e1; color:var(--red); border:1px solid var(--red);}
+.tag-orange{background:#fff1dc; color:var(--orange); border:1px solid var(--orange);}
+.tag-yellow{background:#fff9d6; color:var(--yellow); border:1px solid var(--yellow);}
+.tag-green{background:#e2f7e8; color:var(--green); border:1px solid var(--green);}
+
+/* LEGEND */
+.legend{display:flex; flex-wrap:wrap; gap:8px; padding:12px 16px; background:#fff8e6; border:1px dashed var(--gold); margin:12px 16px; border-radius:8px; font-size:.75rem;}
+.legend span{padding:3px 8px; border-radius:8px;}
+
+/* CHAPTER TREE */
+.tree{padding:10px 0;}
+.tree-level1{background:var(--red); color:#fff; padding:8px 12px; border-radius:6px; font-weight:700; font-size:.85rem; margin-bottom:4px;}
+.tree-level2{background:var(--lightblue); color:var(--blue); padding:6px 12px 6px 26px; border-left:4px solid var(--blue); margin:4px 0; font-size:.8rem; font-weight:600;}
+.tree-level3{background:#f6f6f6; padding:5px 12px 5px 42px; border-left:4px solid var(--gold); margin:2px 0; font-size:.76rem;}
+.tree-level4{padding:4px 12px 4px 58px; border-left:4px solid var(--green); margin:2px 0; font-size:.73rem; color:#333;}
+.arrow{text-align:center; color:var(--blue); font-size:1.1rem;}
+
+/* CARD */
+.card{background:var(--lightblue); border-left:5px solid var(--blue); border-radius:6px; padding:10px 12px; margin:8px 0; font-size:.82rem;}
+.card.red{background:#ffe9e9; border-color:var(--red);}
+.card.gold{background:#fff8e0; border-color:var(--gold);}
+.card.green{background:#e6f7ea; border-color:var(--green);}
+.card b{color:var(--blue);}
+.hi-text{color:#555; font-style:italic; font-size:.78rem; display:block; margin-top:2px;}
+
+/* TABLE */
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.75rem;}
+th{background:var(--blue); color:#fff; padding:7px; text-align:left;}
+td{padding:7px; border:1px solid #ddd; vertical-align:top;}
+tr:nth-child(even){background:#f7f9fc;}
+
+/* FLOWCHART */
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:14px 0;}
+.flow-box{background:#fff; border:2px solid var(--blue); border-radius:8px; padding:8px 14px; text-align:center; font-size:.78rem; width:90%; max-width:340px;}
+.flow-box.decision{background:#fff3d6; border-color:var(--orange); border-radius:50px;}
+.flow-box.action{background:#e6f7ea; border-color:var(--green);}
+.flow-box.end{background:#ffe1e1; border-color:var(--red); font-weight:700;}
+.flow-arrow{color:var(--blue); font-size:1.3rem;}
+.flow-split{display:flex; justify-content:center; gap:14px; width:100%;}
+.flow-branch{display:flex; flex-direction:column; align-items:center; flex:1;}
+.flow-branch-label{font-size:.68rem; font-weight:700; color:var(--orange);}
+
+/* TIMELINE */
+.timeline{border-left:4px solid var(--gold); margin:14px 6px; padding-left:16px;}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{content:''; position:absolute; left:-22px; top:3px; width:12px; height:12px; background:var(--red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--red);}
+.tl-date{font-weight:700; color:var(--red); font-size:.8rem;}
+.tl-desc{font-size:.78rem; color:#333;}
+
+/* EXAM QUESTION */
+.exam-q{background:#f0e6ff; border:1px dashed #7a3fd1; border-radius:6px; padding:8px 10px; margin:6px 0; font-size:.75rem;}
+.exam-q b{color:#5a1fb0;}
+
+/* MNEMONIC */
+.mnemonic{background:linear-gradient(135deg,#fff8e0,#ffe9c9); border:2px dashed var(--gold); border-radius:10px; padding:12px; margin:10px 0; font-size:.8rem;}
+.mnemonic b{color:var(--darkred);}
+
+/* REVISION SHEET */
+.revision-sheet{background:#0d1b2a; color:#fff; border-radius:10px; padding:16px;}
+.revision-sheet h3{color:var(--gold); margin-bottom:8px; font-size:1rem;}
+.revision-sheet ul{margin-left:18px; font-size:.78rem; margin-bottom:10px;}
+.revision-sheet li{margin-bottom:5px;}
+
+/* LAST DAY BOX */
+.lastday{background:var(--red); color:#fff; border-radius:10px; padding:16px; margin-top:16px;}
+.lastday h3{color:var(--gold); margin-bottom:8px;}
+.lastday ul{margin-left:18px; font-size:.8rem;}
+.lastday li{margin-bottom:6px;}
+
+/* CASE LAW */
+.case{background:#fff; border:1px solid #ddd; border-left:5px solid var(--black); padding:8px 10px; margin:6px 0; font-size:.74rem; border-radius:4px;}
+.case b{color:var(--blue);}
+
+.footer{text-align:center; padding:16px; font-size:.72rem; color:#777;}
+h4.subhead{color:var(--darkred); font-size:.88rem; margin:12px 0 6px; border-bottom:2px solid var(--gold); padding-bottom:3px;}
+
+@media(max-width:480px){
+  .header h1{font-size:1.15rem;}
+  .flow-split{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>🏛️ CCS (Temporary Service) Rules, 1965</h1>
+  <h2>Central Civil Services (Temporary Services) Rules, 1965</h2>
+  <div class="hindi">केंद्रीय सिविल सेवा (अस्थायी सेवा) नियम, 1965</div>
+  <div class="meta">G.I., M.H.A. Noti. No. F-59/8/63-Ests.(A), dated 1st May 1965 | IP Exam — Paper I</div>
+</div>
+
+<div class="navbar">
+  <a href="#legend">🎨 Legend</a>
+  <a href="#tree">🌳 Chapter Tree</a>
+  <a href="#r1">R.1 Application</a>
+  <a href="#r2">R.2 Definitions</a>
+  <a href="#r5">R.5 Termination</a>
+  <a href="#r6">R.6 Unfitness</a>
+  <a href="#r10">R.10 Gratuity</a>
+  <a href="#compare">⚖️ Compare</a>
+  <a href="#cases">📜 Case Laws</a>
+  <a href="#revision">📝 Revision</a>
+  <a href="#lastday">⏰ Last Day</a>
+</div>
+
+<div class="legend" id="legend">
+  <span class="tag-red">🔴 Very Important for Exam</span>
+  <span class="tag-orange">🟠 Frequently Asked</span>
+  <span class="tag-yellow">🟡 Conceptual Understanding</span>
+  <span class="tag-green">🟢 Quick Revision Point</span>
+</div>
+
+<!-- CHAPTER TREE -->
+<div class="section" id="tree">
+  <div class="section-title"><span class="en">🌳 Chapter → Sub-Chapter → Micro → Nano Topic</span></div>
+  <div class="section-body">
+    <div class="tree">
+      <div class="tree-level1">CHAPTER: CCS (Temporary Service) Rules, 1965</div>
+      <div class="arrow">↓</div>
+      <div class="tree-level2">SUB-CHAPTER 1: Application & Definitions (R.1–2)</div>
+      <div class="tree-level3">Micro: Who is covered / excluded</div>
+      <div class="tree-level4">Nano: Civil post, work-charged (pension opted), 7 exclusions</div>
+      <div class="arrow">↓</div>
+      <div class="tree-level2">SUB-CHAPTER 2: Termination of Temporary Service (R.5)</div>
+      <div class="tree-level3">Micro: Notice, forthwith termination, re-opening</div>
+      <div class="tree-level4">Nano: 1-month notice, pay-in-lieu, 3-month re-open limit</div>
+      <div class="arrow">↓</div>
+      <div class="tree-level2">SUB-CHAPTER 3: Physical Unfitness Termination (R.6)</div>
+      <div class="tree-level3">Micro: No-notice termination on medical unfitness</div>
+      <div class="arrow">↓</div>
+      <div class="tree-level2">SUB-CHAPTER 4: Terminal Gratuity (R.10)</div>
+      <div class="tree-level3">Micro: Eligibility, calculation, exclusions</div>
+      <div class="tree-level4">Nano: 10-yr rule, 20-yr VR, NPS cut-off 31.12.2003</div>
+    </div>
+  </div>
+</div>
+
+<!-- RULE 1 -->
+<div class="section" id="r1">
+  <div class="section-title"><span class="en">📘 Rule 1 — Title, Commencement & Application</span><span class="tag-orange">🟠</span></div>
+  <div class="section-body">
+    <div class="card"><b>Short Title:</b> CCS (Temporary Service) Rules, 1965 — supersedes 1949 Rules
+      <span class="hi-text">संक्षिप्त नाम: सीसीएस (अस्थायी सेवा) नियम, 1965 — 1949 नियमों का स्थान लेते हैं</span></div>
+    <div class="card"><b>Commencement:</b> With effect at once (1st May 1965)
+      <span class="hi-text">प्रभाव: तत्काल प्रभाव से लागू</span></div>
+    <div class="card"><b>Made under:</b> Proviso to Article 309 & clause (5) of Article 148 of the Constitution
+      <span class="hi-text">संविधान के अनुच्छेद 309 के परंतुक तथा अनुच्छेद 148(5) के अंतर्गत निर्मित</span></div>
+
+    <h4 class="subhead">✅ Applies To (Sub-rule 3)</h4>
+    <table>
+      <tr><th>Category</th><th>Condition</th></tr>
+      <tr><td>(i) Civil post holders</td><td>Incl. civilians paid from Defence Services Estimates, under President's rule-making control, no lien on any Govt post</td></tr>
+      <tr><td>(ii) Work-charged establishment staff</td><td>Only those who have <b>opted for pensionary benefits</b></td></tr>
+    </table>
+
+    <h4 class="subhead">❌ Does NOT Apply To (Sub-rule 4) — 7 Exclusions 🔴</h4>
+    <table>
+      <tr><th>#</th><th>Excluded Category</th></tr>
+      <tr><td>(a)</td><td>Railway servants</td></tr>
+      <tr><td>(b)</td><td>Govt Servants not in wholetime employment</td></tr>
+      <tr><td>(c)</td><td>Govt Servants engaged on contract</td></tr>
+      <tr><td>(d)</td><td>Govt Servants paid out of contingencies</td></tr>
+      <tr><td>(e)</td><td>Extra-temporary / work-charged staff (NOT opted for pension)</td></tr>
+      <tr><td>(f)</td><td>Non-departmental telegraphists/telegraphmen (P&T Dept.)</td></tr>
+      <tr><td>(g)</td><td>Other categories notified by Central Govt.</td></tr>
+    </table>
+    <div class="exam-q"><b>Q.</b> How many categories of employees are excluded under Rule 1(4) of CCS (TS) Rules, 1965? <br><b>Ans:</b> 7 (a–g)</div>
+  </div>
+</div>
+
+<!-- RULE 2 -->
+<div class="section" id="r2">
+  <div class="section-title"><span class="en">📘 Rule 2 — Definitions</span><span class="tag-yellow">🟡</span></div>
+  <div class="section-body">
+    <div class="card gold"><b>"Appointing Authority"</b> — authority declared as such under CCS (CCA) Rules, 1965.
+      <span class="hi-text">"नियुक्ति प्राधिकारी" — सीसीएस (सीसीए) नियम, 1965 के अंतर्गत घोषित प्राधिकारी</span></div>
+    <div class="card gold"><b>"Temporary Service"</b> — service of a temporary Govt Servant in a temporary post, OR officiating service in a permanent post, under Govt of India.
+      <span class="hi-text">"अस्थायी सेवा" — अस्थायी पद पर अस्थायी सरकारी कर्मचारी की सेवा, या स्थायी पद पर स्थानापन्न सेवा</span></div>
+    <div class="card gold"><b>"Defence Service"</b> — service under Ministry of Defence / Defence Accounts Dept., paid from Defence Services Estimates, NOT permanently subject to Air Force Act 1950 / Army Act 1950 / Navy Act 1957.</div>
+    <div class="card"><i>Note: Clauses (b) & (c) omitted by GSR 145, dated 22.2.1989.</i></div>
+  </div>
+</div>
+
+<!-- RULE 5 - MOST IMPORTANT -->
+<div class="section" id="r5">
+  <div class="section-title"><span class="en">🔑 Rule 5 — Termination of Temporary Service</span><span class="tag-red">🔴 MOST IMPORTANT</span></div>
+  <div class="section-body">
+    <div class="card red"><b>Core Rule:</b> Services of a temporary Govt Servant are liable to termination <b>AT ANY TIME</b> by notice in writing — given EITHER by the Govt Servant to the appointing authority OR by the appointing authority to the Govt Servant.
+      <span class="hi-text">अस्थायी सरकारी कर्मचारी की सेवा किसी भी समय लिखित सूचना द्वारा समाप्त की जा सकती है — कर्मचारी या नियुक्ति प्राधिकारी दोनों में से किसी द्वारा</span></div>
+
+    <div class="card red"><b>Notice Period = 1 MONTH</b> ⏱️ (Rule 5(1)(b))</div>
+
+    <div class="card"><b>Proviso — Pay in lieu of notice:</b> Service may be terminated <i>forthwith</i> by paying a sum equal to pay + allowances for the notice period (or shortfall period).</div>
+
+    <h4 class="subhead">🔽 Decision Tree: How Notice is Served (Note to R.5)</h4>
+    <div class="flow">
+      <div class="flow-box decision">Appointing Authority wants to serve termination notice</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box action">Step 1: Deliver/tender notice IN PERSON</div>
+      <div class="flow-arrow">↓ if not practicable</div>
+      <div class="flow-box action">Step 2: Send by Registered Post A.D. to available address</div>
+      <div class="flow-arrow">↓ if returned unserved</div>
+      <div class="flow-box end">Step 3: Publish in Official Gazette → Deemed served on date of publication</div>
+    </div>
+
+    <h4 class="subhead">🔽 Flowchart: Re-opening of Termination Case [Sub-rule (2)]</h4>
+    <div class="flow">
+      <div class="flow-box decision">Notice given / Service terminated (forthwith or on expiry)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Central Govt / specified authority MAY re-open case (suo-motu or otherwise)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box decision">⏳ TIME LIMIT: within 3 months from date of notice/termination (unless special circumstances recorded)</div>
+      <div class="flow-arrow">↓ After enquiry, may:</div>
+      <div class="flow-split">
+        <div class="flow-branch"><div class="flow-branch-label">(i)</div><div class="flow-box action">Confirm action</div></div>
+        <div class="flow-branch"><div class="flow-branch-label">(ii)</div><div class="flow-box action">Withdraw notice</div></div>
+      </div>
+      <div class="flow-split">
+        <div class="flow-branch"><div class="flow-branch-label">(iii)</div><div class="flow-box action">Reinstate in service</div></div>
+        <div class="flow-branch"><div class="flow-branch-label">(iv)</div><div class="flow-box action">Any other proper order</div></div>
+      </div>
+    </div>
+    <div class="card"><b>If reinstated [2(b)]:</b> Order must specify — (i) pay/allowances for absence period, and (ii) whether that period counts as duty for specified purposes.</div>
+
+    <div class="exam-q"><b>Q.</b> What is the notice period for termination of temporary service under Rule 5? <br><b>Ans:</b> One month (either party can waive by pay-in-lieu).</div>
+    <div class="exam-q"><b>Q.</b> Within how many months can a termination case be re-opened under Rule 5(2)? <br><b>Ans:</b> 3 months (exception: special circumstances recorded in writing).</div>
+  </div>
+</div>
+
+<!-- RULE 6 -->
+<div class="section" id="r6">
+  <div class="section-title"><span class="en">📘 Rule 6 — Termination on Physical Unfitness</span><span class="tag-orange">🟠</span></div>
+  <div class="section-body">
+    <div class="card red"><b>Key Point:</b> Services of a temporary Govt Servant may be terminated <b>AT ANY TIME WITHOUT NOTICE</b> if declared physically unfit for continuance by an authority competent to declare him permanently incapacitated (had his appointment been permanent).
+      <span class="hi-text">चिकित्सकीय रूप से अयोग्य घोषित होने पर बिना सूचना के किसी भी समय सेवा समाप्त की जा सकती है</span></div>
+    <div class="card"><b>Rules 3, 4, 7, 9, 11:</b> Omitted / Deleted by GSR 145, dated 22.2.1989. <b>Rule 8:</b> Deleted.</div>
+    <div class="exam-q"><b>Q.</b> Under which Rule can a temporary Govt servant be terminated WITHOUT notice on medical grounds? <br><b>Ans:</b> Rule 6.</div>
+  </div>
+</div>
+
+<!-- RULE 10 -->
+<div class="section" id="r10">
+  <div class="section-title"><span class="en">💰 Rule 10 — Terminal Gratuity</span><span class="tag-red">🔴 MOST IMPORTANT</span></div>
+  <div class="section-body">
+    <div class="card red"><b>Sub-rule (1):</b> Temporary employee retiring on superannuation, discharged, or declared invalid — eligible for gratuity on SAME SCALE as permanent employees under CCS (Pension) Rules, 1972.</div>
+
+    <div class="card"><b>Sub-rule (1-A):</b> Compulsorily retired as disciplinary measure → gratuity ≥ 2/3 of normal rate (but not exceeding full rate).</div>
+
+    <div class="card gold"><b>Sub-rule (1-B):</b> Pension (instead of gratuity alone) applies if:
+      <table>
+        <tr><th>Condition</th><th>Requirement</th></tr>
+        <tr><td>Superannuation / permanently incapacitated</td><td>After 10+ years of temporary service ⏱️</td></tr>
+        <tr><td>Voluntary Retirement</td><td>3 months' notice, after completing 20 years' service ⏱️</td></tr>
+      </table>
+      → Eligible for superannuation/invalid/retiring pension + retirement gratuity; family gets family pension on death after retirement.</div>
+
+    <div class="card"><b>Sub-rule (2):</b> Death in service → family eligible for family pension + death gratuity (same scale as permanent employees).</div>
+
+    <h4 class="subhead">❌ No Gratuity Cases [Sub-rule (3)] 🔴</h4>
+    <table>
+      <tr><th>Case</th><th>Detail</th></tr>
+      <tr><td>(a)</td><td>Resigns from post, OR removed/dismissed as disciplinary measure</td></tr>
+      <tr><td>(b)</td><td>Re-employed after retirement on superannuation/retiring pension</td></tr>
+    </table>
+    <div class="card green"><b>Exception (1st Proviso):</b> Resigned WITH PRIOR PERMISSION to join a Govt-owned/controlled corporation/company/body → paid terminal gratuity for Govt service rendered.</div>
+    <div class="card green"><b>Exception (2nd Proviso):</b> Absorbed in Central Autonomous Body (with parent dept. permission) → OPTION to count Govt service for pension under that body's scheme instead of drawing terminal gratuity.</div>
+
+    <h4 class="subhead">📐 Calculation of Gratuity [Sub-rule (6)]</h4>
+    <table>
+      <tr><th>Basis</th><th>Rule</th></tr>
+      <tr><td>Pay for calculation</td><td>Pay drawn immediately before superannuation/discharge/invalidation/absorption/death + DA</td></tr>
+      <tr><td>'Pay' meaning</td><td>As defined in Fundamental Rule 9(21)(a)(i)</td></tr>
+      <tr><td>Extraordinary leave</td><td>Counted per Rule 21, CCS (Pension) Rules, 1972</td></tr>
+      <tr><td>Increment during EL</td><td>Increment earned during currency of EL (up to 120 days) counted for gratuity even if not drawn</td></tr>
+    </table>
+
+    <div class="card red"><b>Sub-rule (7):</b> Rule 10 applies ONLY to Govt servants appointed <b>ON OR BEFORE 31 December 2003</b> (i.e., Old Pension Scheme employees — NPS cut-off date). 🔴</div>
+
+    <div class="exam-q"><b>Q.</b> Minimum temporary service required for pension eligibility under Rule 10(1-B)? <br><b>Ans:</b> 10 years.</div>
+    <div class="exam-q"><b>Q.</b> Rule 10 of CCS (TS) Rules applies to employees appointed up to which date? <br><b>Ans:</b> 31st December, 2003.</div>
+    <div class="exam-q"><b>Q.</b> "Financed substantially" under Explanation to R.10 means what %? <br><b>Ans:</b> More than 50% of expenditure met by cess/Central Govt grants.</div>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<div class="section" id="compare">
+  <div class="section-title"><span class="en">⚖️ Comparison Chart: Rule 5 vs Rule 6</span><span class="tag-orange">🟠</span></div>
+  <div class="section-body">
+    <table>
+      <tr><th>Point</th><th>Rule 5 (General Termination)</th><th>Rule 6 (Physical Unfitness)</th></tr>
+      <tr><td>Notice</td><td>1 month notice required</td><td>NO notice required</td></tr>
+      <tr><td>Trigger</td><td>Either party's decision</td><td>Medical unfitness declared by competent authority</td></tr>
+      <tr><td>Pay in lieu</td><td>Yes — pay+allowances for notice period</td><td>Not applicable</td></tr>
+      <tr><td>Re-opening</td><td>Within 3 months (special circumstances)</td><td>No such provision</td></tr>
+    </table>
+
+    <h4 class="subhead">Rule 10(1) vs 10(1-A) vs 10(1-B)</h4>
+    <table>
+      <tr><th>Sub-rule</th><th>Trigger</th><th>Benefit</th></tr>
+      <tr><td>10(1)</td><td>Superannuation / discharge / invalidation</td><td>Full gratuity (same scale as permanent)</td></tr>
+      <tr><td>10(1-A)</td><td>Compulsory retirement (disciplinary)</td><td>Min. 2/3 of normal gratuity rate</td></tr>
+      <tr><td>10(1-B)</td><td>10 yrs temp service / 20 yrs + VR</td><td>Pension + retirement gratuity (not just gratuity)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- CASE LAWS -->
+<div class="section" id="cases">
+  <div class="section-title"><span class="en">📜 Important Case Laws</span><span class="tag-yellow">🟡</span></div>
+  <div class="section-body">
+    <div class="case"><b>Anil Kumar Das v. UOI (2011, Jhar):</b> Colour-blindness detected only in 2nd medical exam after complaint, while similarly placed colour-blind constable retained — held discrimination, Article 14 violated.</div>
+    <div class="case"><b>Union of India v. Nand Kishor Aggarwal (2009, Del):</b> Bona fide assessment of trainee's inability to cope with training justified termination; not punitive.</div>
+    <div class="case"><b>Union of India v. Anil Kumar (2019 SC):</b> Termination following absence without leave application held simpliciter, not stigmatic.</div>
+    <div class="case"><b>Municipal Corporation of Delhi v. Prem Chand Gupta (2000, SC):</b> Pay + allowances for notice period need NOT be paid simultaneously with termination order — must be paid within reasonable time.</div>
+    <div class="case"><b>Sudhakar Mishra v. UOI (2009, All):</b> Suppression of pending court case in Verification Roll → valid ground for termination under Rule 5(1).</div>
+    <div class="case"><b>Narendra Kr. B. Bhandari v. Asstt. Director (1999, CAT):</b> Notice pay is NOT mandatory to be mentioned with termination order under T.S. Rules.</div>
+    <div class="case"><b>K. Alex v. Delhi State Mineral Dev. Corp. (2009):</b> TS Rules cannot be wrongly invoked for a regular (non-temporary) employee — termination held illegal.</div>
+    <div class="case"><b>Sujit Saha v. State of Tripura (2021, AIR Online Tri):</b> Where termination cites stigmatic reasons (illegal money demand), a brief hearing opportunity must be given.</div>
+    <div class="case"><b>Gugan Singh v. DG, CRPF (2008, Del):</b> Non-disclosure of criminal case involving moral turpitude in Verification Roll justifies termination.</div>
+    <div class="case"><b>Dr. N.G. Kulkarni v. UOI (2000, Del):</b> A probationer remains probationer till confirmed; Rule 5(1) (applicable to temporary servants) cannot be invoked to terminate a probationer whose termination isn't simpliciter.</div>
+  </div>
+</div>
+
+<!-- TIMELINE OF KEY DATES -->
+<div class="section">
+  <div class="section-title"><span class="en">🗓️ Important Dates Timeline</span><span class="tag-green">🟢</span></div>
+  <div class="section-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">1st May 1965</div><div class="tl-desc">CCS (Temporary Service) Rules, 1965 notified — supersedes 1949 Rules</div></div>
+      <div class="tl-item"><div class="tl-date">30th March 1967</div><div class="tl-desc">O.M. — Service terminated forthwith with pay-in-lieu where notice evasion apprehended</div></div>
+      <div class="tl-item"><div class="tl-date">26th August 1967</div><div class="tl-desc">O.M. — Rule 5(1) not to be applied to probationers if appointment letter has specific termination clause</div></div>
+      <div class="tl-item"><div class="tl-date">23rd June 1972</div><div class="tl-desc">Amendment to Proviso of Rule 5(1) — introduced</div></div>
+      <div class="tl-item"><div class="tl-date">22.9.1977 / 9.3.1978 (GSR 433)</div><div class="tl-desc">Rule 10(4) deleted</div></div>
+      <div class="tl-item"><div class="tl-date">22nd February 1989 (GSR 145)</div><div class="tl-desc">Rules 3, 4, 7, 9, 11 omitted; Rule 2(b)(c) omitted</div></div>
+      <div class="tl-item"><div class="tl-date">18th December 1975</div><div class="tl-desc">Rule 1(3) substituted by notification</div></div>
+      <div class="tl-item"><div class="tl-date">4.12.2003 (w.e.f. 1.1.1996)</div><div class="tl-desc">GSR 446 — Rule 10(1) & 10(6)(a) substituted (gratuity calculation revised)</div></div>
+      <div class="tl-item"><div class="tl-date">12.3.2004 (w.e.f. 1.1.2004)</div><div class="tl-desc">Rule 10(7) inserted — restricts Rule 10 to employees appointed on/before 31.12.2003 (NPS cut-off) 🔴</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section">
+  <div class="section-title"><span class="en">🧠 Memory Tricks / Mnemonics</span><span class="tag-green">🟢</span></div>
+  <div class="section-body">
+    <div class="mnemonic">🖐️ <b>"Rule 5 = Panja (Hand)"</b> — 5 fingers, 1 month notice by EITHER hand (employee ya authority). Pay-in-lieu = "haath uthao, paisa do" (raise hand, forthwith pay & go).
+      <span class="hi-text">नियम 5 = पंजा — 1 महीने का नोटिस, कर्मचारी या प्राधिकारी दोनों तरफ से</span></div>
+    <div class="mnemonic">🩺 <b>"Rule 6 = Chhah mahine ka checkup nahi, seedha chhutti"</b> — Physical unfitness = NO notice, straight termination.</div>
+    <div class="mnemonic">🔟 <b>"Rule 10 = Dus Saal, Das Gratuity"</b> — 10 years temp service = pension eligible; "DAS" also reminds "Dismissed / Absconded(resigned) / Superannuation-reemployed" = No Gratuity (R.10(3): Resign, Removed/Dismissed, re-employed after pension).</div>
+    <div class="mnemonic">📅 <b>"31-12-2003 = OPS Deadline"</b> — Remember "31/12/03" like a closing shop date — after this NPS applies, Rule 10 gratuity rule doesn't.</div>
+    <div class="mnemonic">✉️ <b>Notice Service Order: "PRG"</b> — Person → Registered post → Gazette (in that priority sequence).</div>
+  </div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="section" id="revision">
+  <div class="revision-sheet">
+    <h3>📝 One-Page Revision Sheet — CCS (TS) Rules, 1965</h3>
+    <ul>
+      <li>🔴 Notified: 1st May 1965; supersedes 1949 Rules; under Art.309 proviso + Art.148(5)</li>
+      <li>🔴 Applies to: civil post holders (no lien elsewhere) + work-charged staff (pension opted)</li>
+      <li>🔴 7 exclusions incl. Railway servants, contract staff, non-departmental telegraphists (P&T)</li>
+      <li>🔴 Rule 5: 1-month notice, either side; pay-in-lieu allowed forthwith</li>
+      <li>🔴 Notice service order: Person → Regd. Post A.D. → Official Gazette (deemed served)</li>
+      <li>🔴 Re-opening termination case: within 3 months (else special circumstances recorded)</li>
+      <li>🔴 Rule 6: NO notice needed if physically unfit (competent authority declares)</li>
+      <li>🔴 Rule 10(1): Gratuity same scale as permanent employees (CCS Pension Rules 1972)</li>
+      <li>🔴 Rule 10(1-A): Compulsory retirement (disciplinary) → min 2/3rd gratuity</li>
+      <li>🔴 Rule 10(1-B): 10 yrs service (superannuation/incapacitated) OR 20 yrs + 3-month VR notice → pension eligible</li>
+      <li>🔴 Rule 10(3): No gratuity if resigned / removed / dismissed / re-employed after pension (exceptions: prior-permission resignation to PSU/body; absorption in autonomous body)</li>
+      <li>🔴 Rule 10(7): Applies only to those appointed on/before 31.12.2003</li>
+      <li>🟢 MCD v. Prem Chand Gupta: pay-in-lieu need not be simultaneous with termination order</li>
+      <li>🟢 Forms exist for President-authority & other-authority notices/orders (4 standard proformas)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="section" id="lastday">
+  <div class="lastday">
+    <h3>⏰ Last-Day Revision — Just Before Exam</h3>
+    <ul>
+      <li><b>1 month</b> = Notice period (Rule 5)</li>
+      <li><b>3 months</b> = Re-opening time limit (Rule 5(2))</li>
+      <li><b>10 years</b> = Min. temp service for pension (Rule 10(1-B))</li>
+      <li><b>20 years + 3 months notice</b> = Voluntary retirement condition</li>
+      <li><b>31.12.2003</b> = Rule 10 cut-off (appointed on/before this date)</li>
+      <li><b>2/3rd</b> = Min gratuity if compulsorily retired as punishment</li>
+      <li><b>50%+</b> = "Financed substantially" threshold for autonomous body</li>
+      <li><b>120 days</b> = EL limit for increment-counted-in-gratuity rule</li>
+      <li>No notice → Rule 6 (physical unfitness only)</li>
+      <li>No gratuity → resignation / dismissal / removal / re-employment after pension</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  📚 IP Exam Self-Study Notes | CCS (Temporary Service) Rules, 1965 | Source: All India Services Manual, pp. 2163–2177<br>
+  तैयार — India Post Inspector Posts परीक्षा हेतु
+</div>
+
+</div>
+</body>
+</html>

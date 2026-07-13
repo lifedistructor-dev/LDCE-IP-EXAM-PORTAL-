@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Manual Volume VIII — Visual Infographic | IP Exam</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#1B3A6B; --ip-gold:#E8A317;
+  --vimp:#C8102E; --freq:#E8720C; --conc:#D9A404; --quick:#1E8449;
+  --bg:#F6F4EF; --card:#FFFFFF; --ink:#22252A; --muted:#5B6068;
+  --line:#E2DFD7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Mangal','Nirmala UI',Georgia,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15.5px}
+.wrap{max-width:860px;margin:0 auto;padding:0 12px 60px}
+/* ---------- Header ---------- */
+header.hero{background:linear-gradient(135deg,var(--ip-blue) 0%,#12294e 60%,#0c1d38 100%);color:#fff;padding:28px 16px 22px;text-align:center;border-bottom:5px solid var(--ip-gold)}
+header.hero .badge{display:inline-block;background:var(--ip-red);color:#fff;font-weight:700;font-size:12px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+header.hero h1{font-size:clamp(20px,4.5vw,30px);line-height:1.3}
+header.hero h1 .en{display:block;font-style:italic;font-weight:400;font-size:.72em;opacity:.9;margin-top:4px}
+header.hero .sub{margin-top:10px;font-size:13px;opacity:.85}
+header.hero .sub b{color:var(--ip-gold)}
+
+/* ---------- Legend ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:14px 0}
+.legend span{font-size:12.5px;padding:4px 10px;border-radius:16px;font-weight:600}
+.lg-r{background:#FDECEE;color:var(--vimp)} .lg-o{background:#FEF0E2;color:var(--freq)}
+.lg-y{background:#FCF6DE;color:#9a7500} .lg-g{background:#E7F5EC;color:var(--quick)}
+/* ---------- Chapter nav chips ---------- */
+nav.chips{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.97);padding:8px 4px;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+nav.chips a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ip-blue);background:#fff;border:1.5px solid var(--ip-blue);border-radius:18px;padding:5px 12px;text-decoration:none;white-space:nowrap}
+nav.chips a:active{background:var(--ip-blue);color:#fff}
+
+/* ---------- Cards / sections ---------- */
+section.ch{margin:26px 0;scroll-margin-top:60px}
+.ch-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-num{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--ip-red);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(200,16,46,.3)}
+.ch-num.blue{background:var(--ip-blue);box-shadow:0 3px 8px rgba(27,58,107,.3)}
+.ch-title h2{font-size:18px;color:var(--ip-blue);line-height:1.3}
+.ch-title .en{font-style:italic;font-weight:500;font-size:13px;color:var(--muted)}
+.ch-title .rules{font-size:11.5px;background:var(--ip-gold);color:#3a2b00;font-weight:700;border-radius:10px;padding:1px 8px;display:inline-block;margin-top:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.t-r{border-left:5px solid var(--vimp)} .card.t-o{border-left:5px solid var(--freq)}
+.card.t-y{border-left:5px solid var(--conc)} .card.t-g{border-left:5px solid var(--quick)}
+.card h3{font-size:15.5px;color:var(--ip-blue);margin-bottom:6px}
+.card h3 .en{display:block;font-style:italic;font-weight:500;font-size:12.5px;color:var(--muted)}
+.hi{font-weight:700;display:block}
+.en{font-style:italic;color:#4a4f57;display:block;font-size:.93em}
+.rule-tag{display:inline-block;background:var(--ip-blue);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:middle}
+
+ul.points{list-style:none;margin-top:6px}
+ul.points li{padding:7px 0 7px 2px;border-bottom:1px dashed var(--line)}
+ul.points li:last-child{border-bottom:none}
+
+/* ---------- Tables ---------- */
+.tbl-wrap{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;min-width:480px}
+th{background:var(--ip-blue);color:#fff;padding:8px;text-align:left;font-size:12.5px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#FAF9F5}
+td .en{font-size:.9em}
+/* ---------- Flowchart ---------- */
+.flow{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.fbox{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:9px 14px;text-align:center;max-width:420px;width:100%;font-size:14px}
+.fbox.start{background:var(--ip-blue);color:#fff;border-color:var(--ip-blue)}
+.fbox.start .en{color:#cfd9ea}
+.fbox.warn{border-color:var(--vimp);background:#FDECEE}
+.fbox.ok{border-color:var(--quick);background:#E7F5EC}
+.farrow{color:var(--ip-red);font-size:22px;line-height:1;padding:3px 0;font-weight:800}
+.farrow small{display:block;font-size:11px;color:var(--muted);font-weight:600;font-style:italic}
+
+/* ---------- Decision tree ---------- */
+.dtree .branch{display:flex;gap:8px;margin:6px 0}
+.dtree .branch>div{flex:1;border-radius:10px;padding:8px;font-size:13px;text-align:center}
+.dtree .yes{background:#E7F5EC;border:2px solid var(--quick)}
+.dtree .no{background:#FDECEE;border:2px solid var(--vimp)}
+
+/* ---------- Mind map ---------- */
+.mindmap{position:relative;padding:8px 0}
+.mm-center{background:var(--ip-red);color:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:800;margin-bottom:12px;box-shadow:0 3px 10px rgba(200,16,46,.35)}
+.mm-center .en{color:#ffd9de;font-weight:500}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mm-node{background:#fff;border:2px solid var(--ip-blue);border-radius:10px;padding:8px;font-size:12.5px;text-align:center}
+.mm-node b{color:var(--ip-red);display:block;font-size:14px}
+/* ---------- Timeline ---------- */
+.timeline{border-left:3px solid var(--ip-gold);margin:10px 0 10px 10px;padding-left:16px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--ip-red);border:2px solid #fff;box-shadow:0 0 0 2px var(--ip-gold)}
+.tl-item .when{font-weight:800;color:var(--ip-red);font-size:13.5px}
+
+/* ---------- Exam Q box ---------- */
+.examq{background:#FFF8E8;border:1.5px dashed var(--ip-gold);border-radius:10px;padding:9px 12px;margin:8px 0;font-size:13.5px}
+.examq::before{content:"📝 संभावित प्रश्न / Probable Question";display:block;font-weight:800;color:#8a6400;font-size:11.5px;letter-spacing:.5px;margin-bottom:4px}
+
+/* ---------- Mnemonic ---------- */
+.mnemo{background:linear-gradient(135deg,#EEF3FB,#E4EBF7);border:1.5px solid var(--ip-blue);border-radius:12px;padding:11px 13px;margin:8px 0}
+.mnemo .key{font-size:17px;font-weight:800;color:var(--ip-red);letter-spacing:1px}
+
+/* ---------- Revision sheet ---------- */
+.rev-sheet{background:#fff;border:3px solid var(--ip-red);border-radius:16px;padding:14px;margin:12px 0}
+.rev-sheet h3{background:var(--ip-red);color:#fff;border-radius:8px;padding:6px 10px;font-size:15px;margin:-2px -2px 10px}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
+.rev-cell{background:#FAF9F5;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:12.8px}
+.rev-cell b{color:var(--ip-blue)}
+.rev-cell .num{color:var(--ip-red);font-weight:800}
+
+.footer-note{text-align:center;font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media print{nav.chips{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">IP EXAM PORTAL • PAPER I</span>
+  <h1>डाक मैनुअल भाग VIII — दृश्य इन्फोग्राफिक
+    <span class="en">Postal Manual Volume VIII — Visual Infographic</span>
+  </h1>
+  <div class="sub">डाकघर एवं रेल डाक सेवा — <b>पर्यवेक्षण अधिकारी</b> (Supervising Officers) • नियम 1–449 • 10 अध्याय</div>
+</header>
+<div class="wrap">
+
+<div class="legend">
+  <span class="lg-r">🔴 परीक्षा हेतु अति महत्वपूर्ण / Very Important</span>
+  <span class="lg-o">🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span class="lg-y">🟡 अवधारणा / Conceptual</span>
+  <span class="lg-g">🟢 त्वरित पुनरावृत्ति / Quick Revision</span>
+</div>
+
+<nav class="chips">
+  <a href="#overview">परिचय</a>
+  <a href="#ch1">Ch 1 HoC</a>
+  <a href="#ch2">Ch 2 Supdt</a>
+  <a href="#ch3">Ch 3 IP/ASP</a>
+  <a href="#ch4">Ch 4 TI</a>
+  <a href="#ch5">Ch 5 RMS</a>
+  <a href="#ch7">Ch 7 Overseer</a>
+  <a href="#ch8">Ch 8 Stock</a>
+  <a href="#ch9">Ch 9 RLO</a>
+  <a href="#ch10">Ch 10 Breaks</a>
+  <a href="#insp">🔴 Inspection Master</a>
+  <a href="#mnemo">Mnemonics</a>
+  <a href="#rev">One-Page Revision</a>
+  <a href="#lastday">Last Day Notes</a>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="ch" id="overview">
+  <div class="ch-head">
+    <div class="ch-num blue">📘</div>
+    <div class="ch-title">
+      <h2>विषय एवं परिभाषा <span class="en">Topic & Definition</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 डाक मैनुअल भाग VIII क्या है? <span class="en">What is Postal Manual Volume VIII?</span></h3>
+    <span class="hi">यह मैनुअल <u>डाकघर तथा RMS के पर्यवेक्षण अधिकारियों</u> (Supervising Officers) के व्यक्तिगत कर्तव्यों एवं शक्तियों से संबंधित नियम-पुस्तिका है — महानिदेशक डाक (DG Posts) के प्राधिकार से प्रकाशित।</span>
+    <span class="en">This manual contains rules on the personal duties and powers of Post Office & RMS Supervising Officers — published under the authority of the Director General of Posts.</span>
+    <ul class="points">
+      <li>🟢 <span class="hi">तीसरा मुद्रण (पुनर्मुद्रण) — शुद्धि पर्चियाँ (Correction Slips) 1 से 9</span>
+          <span class="en">Third Print (Reprint) — containing correction slips 1 to 9 (1-7-1976 to 1-4-1979)</span></li>
+      <li>🟡 <span class="hi">प्रशासनिक/वित्तीय शक्तियाँ यहाँ नहीं — वे <b>भाग III</b> तथा <b>वित्तीय शक्तियों की अनुसूची</b> में हैं</span>
+          <span class="en">Administrative/financial powers of Head of Circle are defined in Volume III & Schedule of Financial Powers — NOT in Vol VIII</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: परिमंडल प्रमुख की प्रशासनिक एवं वित्तीय शक्तियाँ किसमें परिभाषित हैं?</span>
+      <span class="en">Q: Where are the administrative & financial powers of Head of Circle defined? → Postal Manual Vol. III & Schedule of Financial Powers (Rule 1)</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 मानसिक मानचित्र — 10 अध्याय <span class="en">Mind Map — Structure of Volume VIII</span></h3>
+    <div class="mindmap">
+      <div class="mm-center">डाक मैनुअल भाग VIII<span class="en">PO & RMS Supervising Officers • Rules 1–449</span></div>
+      <div class="mm-grid">
+        <div class="mm-node"><b>Ch 1</b>परिमंडल प्रमुख<br><i>Heads of Circles</i><br>R. 1–89</div>
+        <div class="mm-node"><b>Ch 2</b>अधीक्षक<br><i>Superintendents</i><br>R. 90–259</div>
+        <div class="mm-node"><b>Ch 3</b>डाकघर निरीक्षक / ASP<br><i>Inspectors Posts</i><br>R. 260–302</div>
+        <div class="mm-node"><b>Ch 4</b>नगर निरीक्षक<br><i>Town Inspectors</i><br>R. 303–319</div>
+        <div class="mm-node"><b>Ch 5</b>ASP / IRM (RMS)<br><i>ASP & Insp. RMS</i><br>R. 320–342</div>
+        <div class="mm-node"><b>Ch 6</b>लुप्त<br><i>Omitted</i></div>
+        <div class="mm-node"><b>Ch 7</b>ओवरसियर<br><i>Overseers</i><br>R. 343–356</div>
+        <div class="mm-node"><b>Ch 8</b>स्टॉक डिपो<br><i>Stock Depots</i><br>R. 357–388</div>
+        <div class="mm-node"><b>Ch 9</b>वापसी पत्र कार्यालय<br><i>Returned Letter Offices</i><br>R. 389–439</div>
+        <div class="mm-node"><b>Ch 10</b>व्यवधान व दुर्घटनाएँ<br><i>Breaks & Accidents</i><br>R. 440–449</div>
+      </div>
+    </div>
+    <div class="examq">
+      <span class="hi">प्रश्न: भाग VIII का कौन-सा अध्याय लुप्त (Omitted) है? → अध्याय 6</span>
+      <span class="en">Q: Which chapter of Vol. VIII is omitted? → Chapter 6</span>
+    </div>
+  </div>
+</section>
+<!-- ================= CHAPTER 1 ================= -->
+<section class="ch" id="ch1">
+  <div class="ch-head">
+    <div class="ch-num">1</div>
+    <div class="ch-title">
+      <h2>परिमंडल प्रमुख <span class="en">Heads of Circles</span></h2>
+      <span class="rules">नियम / Rules 1–89</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 1 — परिमंडल प्रमुख कौन? <span class="en">Rule 1 — Who is Head of a Circle?</span></h3>
+    <span class="hi">डाक-तार परिमंडल का <b>मुख्य अधिकारी</b> — इसमें Postmaster General तथा स्वतंत्र प्रभार वाले Directors शामिल हैं। सभी अधीक्षक, निरीक्षक, पोस्टमास्टर उसके अधीनस्थ।</span>
+    <span class="en">The chief officer in a P&T Circle — includes PMG & Directors in independent charge. All Superintendents, Inspectors, Postmasters are subordinate to him.</span>
+    <ul class="points">
+      <li>🟠 <span class="hi">NOTE 1: नियमों में "Superintendent" शब्द में <b>Senior Superintendent</b> भी शामिल</span>
+          <span class="en">NOTE 1: "Superintendent" includes "Senior Superintendent" wherever it occurs</span></li>
+      <li>🟡 <span class="hi">NOTE 2: टेलीफोन जिलों / P&T कार्यशालाओं में <b>General Manager</b> = परिमंडल प्रमुख</span>
+          <span class="en">NOTE 2: In Telephone districts & P&T workshops, General Managers are Heads of Circles</span></li>
+      <li>🟠 <span class="hi">NOTE 3: सेना डाक सेवा (APS) में <b>Director, Army Postal Services</b> परिमंडल प्रमुख की सभी शक्तियाँ प्रयोग करता है</span>
+          <span class="en">NOTE 3: In Army Postal Service, Dir. APS exercises all powers of a Head of Circle</span></li>
+    </ul>
+    <div class="examq">
+      <span class="hi">प्रश्न: सेना डाक सेवा में परिमंडल प्रमुख की शक्तियाँ कौन प्रयोग करता है? → निदेशक, सेना डाक सेवाएँ (नियम 1, NOTE 3)</span>
+      <span class="en">Q: In APS, who exercises powers of Head of Circle? → Director, Army Postal Services</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 2 व 2-A — निरीक्षण चक्र <span class="en">Rules 2 & 2-A — Inspection Cycle</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>निरीक्षण / Inspection</th><th>कौन / By Whom</th><th>कब / When</th></tr>
+      <tr><td><span class="hi">स्टॉक डिपो — प्रथम निरीक्षण</span><span class="en">Stock Depot — 1st inspection (+ physical verification of stores)</span></td>
+          <td><span class="hi">परिमंडल प्रमुख / DPS</span><span class="en">Head of Circle / Director Postal Services</span></td>
+          <td><span class="hi">छमाही अंत <b>30 सितम्बर</b></span><span class="en">Half-year ending 30 September</span></td></tr>
+      <tr><td><span class="hi">स्टॉक डिपो — द्वितीय निरीक्षण</span><span class="en">Stock Depot — 2nd inspection</span></td>
+          <td><span class="hi">APMG / सहायक निदेशक (स्टॉक डिपो प्रभारी)</span><span class="en">APMG / Asst. Director in-charge</span></td>
+          <td><span class="hi">छमाही अंत <b>31 मार्च</b></span><span class="en">Half-year ending 31 March</span></td></tr>
+      <tr><td><span class="hi">परिमंडल कार्यालय (स्वयं का)</span><span class="en">Own Circle Office (Rule 2-A)</span></td>
+          <td><span class="hi">परिमंडल प्रमुख स्वयं → रिपोर्ट DG को</span><span class="en">Head of Circle himself → report to DG Posts</span></td>
+          <td><span class="hi"><b>वर्ष में एक बार</b>; 6 माह बाद कार्रवाई-रिपोर्ट</span><span class="en">Once a year; action-taken report after 6 months</span></td></tr>
+      <tr><td><span class="hi">निदेशक PLI का कार्यालय</span><span class="en">Office of Director, PLI</span></td>
+          <td><span class="hi">Sr. DDG / DDG (डाक सेवाएँ)</span><span class="en">Sr. DDG or DDG in-charge Postal Services</span></td>
+          <td><span class="hi">वर्ष में एक बार</span><span class="en">Once a year (besides Director's own)</span></td></tr>
+    </table></div>
+    <ul class="points">
+      <li>🟠 <span class="hi">तीन केंद्रीय फॉर्म भंडार: <b>अलीगढ़</b> (Postal Stores, Forms & Seals), <b>कोलकाता</b>, <b>नासिक रोड</b> — फॉर्मों का भौतिक सत्यापन <b>द्वितीय (मार्च) निरीक्षण</b> में</span>
+          <span class="en">3 Central Form Stores: Aligarh, Calcutta, Nasik Road — physical verification of forms during 2nd (March) inspection every year</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 3–11 — व्यक्तिगत कर्तव्य <span class="en">Rules 3–11 — Personal Duties</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.3</span><span class="hi">PMG को प्रत्येक जिला-मुख्यालय स्टेशन का दौरा <b>कम-से-कम 2 वर्ष में एक बार</b> करना चाहिए</span>
+          <span class="en">PMG should visit every district-HQ station at least once in 2 years</span></li>
+      <li>🟢 <span class="rule-tag">R.4</span><span class="hi">आदेश-पुस्तिका टिप्पणियों (Order Book Remarks) की प्रतियों का निपटान — स्वयं करे</span>
+          <span class="en">Personally dispose of copies of order book remarks (inspections/verifications)</span></li>
+      <li>🟠 <span class="rule-tag">R.5</span><span class="hi">अधीक्षकों की डायरियों (फॉर्म <b>Genl-1</b>) की व्यक्तिगत जाँच — आलस्य/लम्बे पड़ाव रोकने हेतु। बड़े परिमंडलों में DPS को साप्ताहिक डायरी-जाँच सौंपी जा सकती है</span>
+          <span class="en">Personally examine Superintendents' diaries (Genl-1) to check idleness & long halts; in major Circles may permit DPS to scrutinise weekly diaries</span></li>
+      <li>🟢 <span class="rule-tag">R.6</span><span class="hi">दंड रजिस्टरों की प्रतियों (APP 32(a)) की जाँच — अनावश्यक निलंबन न हो</span>
+          <span class="en">Examine copies of punishment registers (APP 32(a)) — no unnecessary suspension</span></li>
+      <li>🔴 <span class="rule-tag">R.7</span><span class="hi">पेंशन कार्य पर नियंत्रण — मासिक समेकित विवरणी (<b>Est-52</b> से); <b>3 माह या अधिक</b> से लंबित मामलों में तत्काल कदम</span>
+          <span class="en">Control over pension work — monthly consolidated return (from Est-52); accelerate cases pending 3 months or more</span></li>
+      <li>🔴 <span class="rule-tag">R.10</span><span class="hi">मुंबई, कोलकाता, चेन्नई GPO + दिल्ली HO की शेष-राशियों का सत्यापन <b>वर्ष में 4 बार</b> — 1 बार DPS द्वारा, 3 बार City Superintendent द्वारा। निम्न स्तर के अधिकारी द्वारा सत्यापन में केवल मानक प्रश्न <b>1–21 (भाग A)</b></span>
+          <span class="en">Balances of Mumbai/Kolkata/Chennai GPOs & Delhi HO verified 4 times a year — 1 by DPS, 3 by City Supdt.; officer below Postmaster's status confines to standard questions 1–21, Part A</span></li>
+      <li>🟢 <span class="rule-tag">R.11</span><span class="hi">मुख्यालय पर डाक-व्यवस्था हेतु परिमंडल प्रमुख <b>व्यक्तिगत रूप से उत्तरदायी</b></span>
+          <span class="en">Personally responsible for postal arrangements at his headquarters</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नियम 14-B, 20, 21 — कार्यालय निरीक्षण <span class="en">Rules 14-B, 20, 21 — Office Inspections</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.14-B</span><span class="hi">परिमंडल कार्यालय व प्रमुख डाकघरों की <b>शिकायत शाखाओं</b> का निरीक्षण — VO / CCO / ADTC द्वारा <b>वर्ष में एक बार</b></span>
+          <span class="en">Complaints Branches of circle office & important POs inspected once a year by V.O., CCO or ADTC</span></li>
+      <li>🔴 <span class="rule-tag">R.20</span><span class="hi">प्रत्येक अधीक्षक (डाक व RMS) के कार्यालय का पूर्ण निरीक्षण — <b>प्रत्येक 12 माह में कम-से-कम एक बार</b></span>
+          <span class="en">Office of every Superintendent (Posts & RMS) thoroughly inspected at least once every 12 months</span></li>
+      <li>🔴 <span class="rule-tag">R.21</span><span class="hi">प्रत्येक <b>प्रथम श्रेणी प्रधान डाकघर</b> (प्रेसीडेंसी को छोड़) — <b>प्रत्येक 12 माह में एक बार</b> निरीक्षण; प्रेसीडेंसी कार्यालयों का निरीक्षण <b>वर्ष में दो बार</b> (प्रेसीडेंसी पोस्टमास्टर द्वारा), प्रशासनिक शाखा वर्ष में एक बार</span>
+          <span class="en">Every 1st class HO (except Presidency offices) inspected once every 12 months; Presidency offices twice a year, administrative branch once a year</span></li>
+    </ul>
+  </div>
+
+<!-- ================= CHAPTER 2 ================= -->
+<section class="ch" id="ch2">
+  <div class="ch-head">
+    <div class="ch-num">2</div>
+    <div class="ch-title">
+      <h2>अधीक्षक <span class="en">Superintendents</span></h2>
+      <span class="rules">नियम / Rules 90–259</span>
+    </div>
+  </div>
+  <div class="card t-y">
+    <h3>🟡 अभिलेख परिरक्षण अवधि <span class="en">Preservation Periods of Records (Rule 16)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>अभिलेख / Record</th><th>अवधि / Period</th></tr>
+      <tr><td><span class="hi">अन्य स्थापना मामले</span><span class="en">Other establishment cases</span></td><td class="hi">20 वर्ष / 20 years</td></tr>
+      <tr><td><span class="hi">रिफंड रजिस्टर, ऋण रजिस्टर, अस्वीकृत प्रस्ताव रजिस्टर, प्रीमियम अनुसूचियाँ</span><span class="en">Refund Register, Loan Register, Register of proposals rejected, Schedules of premia</span></td><td class="hi">10 वर्ष / 10 years</td></tr>
+      <tr><td><span class="hi">मेडिकल फ्री रजिस्टर, आवक/जावक रजिस्टर</span><span class="en">Medical Free Register, Inward & Outward Registers</span></td><td class="hi">5 वर्ष / 5 years</td></tr>
+      <tr><td><span class="hi">फॉर्मों का स्टॉक रजिस्टर, अनियमितता रजिस्टर</span><span class="en">Stock Register of forms, Irregularity Register</span></td><td class="hi">3 वर्ष / 3 years</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 सामान्य प्रशासन — मुख्य नियम <span class="en">General Administration — Core Rules</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.90</span><span class="hi">अधीक्षक का क्षेत्राधिकार (Division) — परिमंडल प्रमुख द्वारा निर्धारित</span>
+          <span class="en">Jurisdiction of Superintendent (Division) — fixed by Head of Circle</span></li>
+      <li>🟠 <span class="rule-tag">R.92–93</span><span class="hi">नियमों/संहिताओं का ज्ञान अनिवार्य + नियमों का <b>कठोर पालन</b></span>
+          <span class="en">Knowledge of rules & codes + strict adherence to rules</span></li>
+      <li>🟢 <span class="rule-tag">R.96–98</span><span class="hi">मानचित्र (Maps), मेमोरेंडम बुक, <b>ट्रायल कार्ड</b> (Trial Cards)</span>
+          <span class="en">Maps, memorandum book, trial cards</span></li>
+      <li>🟠 <span class="rule-tag">R.117</span><span class="hi">डाकघरों व मेल कार्यालयों में <b>कार्य-समय</b> (Hours of business) का निर्धारण</span>
+          <span class="en">Hours of business in post offices and mail offices</span></li>
+      <li>🟢 <span class="rule-tag">R.118</span><span class="hi">देय डाक व छँटाई सूचियाँ (Due Mail & Sorting Lists)</span>
+          <span class="en">Due mail and sorting lists; 118A — due bag statements</span></li>
+      <li>🟢 <span class="rule-tag">R.124</span><span class="hi">बीट अनुदेश रजिस्टर (Beat Instruction Register)</span>
+          <span class="en">Beat Instruction Register</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नकद शेष नियम — R.138–151 <span class="en">Cash Balance Rules 138–151 (High-Yield!)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>नियम / Rule</th><th>विषय / Subject</th></tr>
+      <tr><td class="hi">138</td><td><span class="hi">न्यूनतम नकद शेष</span><span class="en">Minimum cash balance</span></td></tr>
+      <tr><td class="hi">139</td><td><span class="hi">अधिकतम नकद शेष</span><span class="en">Maximum cash balance</span></td></tr>
+      <tr><td class="hi">140</td><td><span class="hi">न्यूनतम-अधिकतम निर्धारण के अनुदेश</span><span class="en">Instructions for fixing min & max balances</span></td></tr>
+      <tr><td class="hi">142</td><td><span class="hi">डाक टिकटों में अधिकतम शेष</span><span class="en">Maximum cash balance in stamps</span></td></tr>
+      <tr><td class="hi">143–144</td><td><span class="hi">प्राधिकृत शेष का ज्ञापन + समेकित ज्ञापन</span><span class="en">Memo & consolidated memo of authorised balances</span></td></tr>
+      <tr><td class="hi">147–148</td><td><span class="hi">अधिशेष नकदी का निपटान + नकद प्रेषण का तरीका</span><span class="en">Disposal of surplus cash + mode of transmission of cash</span></td></tr>
+      <tr><td class="hi">151</td><td><span class="hi">शाखा डाकघरों में नकदी की अभिरक्षा (151-A/B: ED उप-डाकघर)</span><span class="en">Custody of cash in BOs (151-A/B: ED sub-offices)</span></td></tr>
+    </table></div>
+  </div>
+
+<!-- ================= CHAPTER 3 ================= -->
+<section class="ch" id="ch3">
+  <div class="ch-head">
+    <div class="ch-num">3</div>
+    <div class="ch-title">
+      <h2>डाकघर निरीक्षक व सहायक अधीक्षक <span class="en">Inspectors Posts & Asst. Superintendents</span></h2>
+      <span class="rules">नियम / Rules 260–302 ⭐ IP परीक्षा हेतु सर्वाधिक महत्वपूर्ण अध्याय</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 डाकघर अधीक्षक — विशेष कर्तव्य <span class="en">Superintendent of Post Offices — Special Duties</span></h3>
+    <ul class="points">
+      <li><span class="rule-tag">R.102</span><span class="hi">प्रथम श्रेणी प्रधान डाकघरों पर नियंत्रण</span>
+          <span class="en">Control over first class head offices</span></li>
+      <li><span class="rule-tag">R.104</span><span class="hi">पारेषण के दौरान डाक-वस्तुओं की <b>वापसी / पते में परिवर्तन</b> (Recall/alteration of address)</span>
+          <span class="en">Recall or alteration of address of postal articles in course of transmission</span></li>
+      <li><span class="rule-tag">R.110–111</span><span class="hi">रजिस्टर्ड वस्तुओं की विशेष सुपुर्दगी-प्रक्रिया; <b>निर्धारित मूल्य-सीमा से अधिक</b> बीमित/VP वस्तुओं की सुपुर्दगी</span>
+          <span class="en">Special delivery procedure for registered articles; delivery of insured & VP articles exceeding prescribed value limits</span></li>
+      <li><span class="rule-tag">R.127</span><span class="hi">पोस्टमैन / ग्रामीण डाक सेवकों द्वारा मनीऑर्डर भुगतान</span>
+          <span class="en">Payment of money orders by postmen & village postmen</span></li>
+      <li><span class="rule-tag">R.132–134</span><span class="hi">ग्रामीण पोस्टमैन की बीट + ग्राम विवरणी (Village Return)</span>
+          <span class="en">Beats of village postmen + village return</span></li>
+      <li><span class="rule-tag">R.145–146</span><span class="hi">नकद कार्यालय (Cash Offices) + उप-डाकघर निधियों का विनियमन</span>
+          <span class="en">Cash offices + regulation of sub-office funds</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 260 — निरीक्षक का क्षेत्राधिकार <span class="en">Rule 260 — Jurisdiction of Inspectors</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">परिमंडल (Circle) — परिमंडल प्रमुख</span><span class="en">Circle — Head of Circle</span></div>
+      <div class="farrow">↓<small>विभाजित / divided into</small></div>
+      <div class="fbox"><span class="hi">प्रभाग (Division) — अधीक्षक</span><span class="en">Division — Superintendent</span></div>
+      <div class="farrow">↓<small>अप्पॉर्टिओनेद / apportioned into</small></div>
+      <div class="fbox"><span class="hi">उप-प्रभाग (Sub-Division) — <b>निरीक्षक (IPO)</b></span><span class="en">Sub-Division — Inspector (immediately subordinate to Supdt.)</span></div>
+      <div class="farrow">↓<small>सीमा तय करता है / extent fixed by</small></div>
+      <div class="fbox warn"><span class="hi">उप-प्रभाग की सीमा <b>परिमंडल प्रमुख</b> तय करता है</span><span class="en">Extent of each sub-division fixed by Head of the Circle</span></div>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 तुलना चार्ट — तीन प्रकार के निरीक्षक <span class="en">Comparison Chart — 3 Types of Inspectors (R. 260-A/B/C)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>पद / Post</th><th>कहाँ संलग्न / Attached To</th><th>मुख्य कार्य / Main Duties</th></tr>
+      <tr>
+        <td><span class="hi"><b>अन्वेषण निरीक्षक</b></span><span class="en">Investigating Inspector (260-A)</span></td>
+        <td><span class="hi">परिमंडल प्रमुख का कार्यालय</span><span class="en">Office of Head of Circle</span></td>
+        <td><span class="hi">हानि/धोखाधड़ी के महत्वपूर्ण मामलों की जाँच (विशेषतः 1 से अधिक प्रभाग वाले); न्यायालयों में अभियोजन</span><span class="en">Investigates important loss/fraud cases (esp. spanning >1 division); conducts prosecutions in courts</span></td>
+      </tr>
+      <tr>
+        <td><span class="hi"><b>सहायक अधीक्षक (ASP)</b></span><span class="en">Asst. Superintendent (260-B)</span></td>
+        <td><span class="hi">HSG अधीक्षक का प्रभागीय कार्यालय</span><span class="en">Office of Supdt. in Higher Selection Grade</span></td>
+        <td><span class="hi">अधीक्षक के दौरे पर मुख्यालय पर रहकर पूर्ण पर्यवेक्षण; नियमित मामलों का निपटान; दंड/नियुक्ति आदेश नहीं</span><span class="en">Stays at HQ when Supdt. on tour; disposes routine cases; NOT punishment/appointment orders</span></td>
+      </tr>
+      <tr>
+        <td><span class="hi"><b>शिकायत निरीक्षक</b></span><span class="en">Complaints Inspector (260-C)</span></td>
+        <td><span class="hi">प्रभागीय कार्यालय / राजपत्रित डाकघर</span><span class="en">Divisional office / Gazetted Post Office</span></td>
+        <td><span class="hi">शिकायत शाखा का प्रभारी — शिकायतों का त्वरित व उचित निपटान, विवरणियाँ</span><span class="en">In-charge of complaints branch — proper & prompt disposal of public complaints</span></td>
+      </tr>
+    </table></div>
+  </div>
+
+<!-- ================= CHAPTER 4 ================= -->
+<section class="ch" id="ch4">
+  <div class="ch-head">
+    <div class="ch-num">4</div>
+    <div class="ch-title">
+      <h2>नगर निरीक्षक व ओवरसियर पोस्टमैन <span class="en">Town Inspectors & Overseer Postmen</span></h2>
+      <span class="rules">नियम / Rules 303–319</span>
+    </div>
+  </div>
+
+<!-- ================= CHAPTER 5 ================= -->
+<section class="ch" id="ch5">
+  <div class="ch-head">
+    <div class="ch-num">5</div>
+    <div class="ch-title">
+      <h2>सहायक अधीक्षक व निरीक्षक, RMS <span class="en">Asst. Superintendents & Inspectors, RMS</span></h2>
+      <span class="rules">नियम / Rules 320–342</span>
+    </div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 ASP को सौंपे जा सकने वाले कार्य — R.260-B(2) <span class="en">Duties Delegable to ASP</span></h3>
+    <ul class="points">
+      <li>🟢 <span class="hi">डाक खोलना व वितरण — <b>परिमंडल प्रमुख की डाक को छोड़कर</b></span>
+          <span class="en">Opening & distribution of dak — EXCEPT dak from Head of Circle</span></li>
+      <li>🟢 <span class="hi">सहायकों/पोस्टमैन/निम्न श्रेणी के TA बिल पास करना; समय-विवरण की जाँच</span>
+          <span class="en">Pass TA bills of assistants/postmen/lower grade staff; scrutiny of time statements</span></li>
+      <li>🟠 <span class="hi">अधीक्षक के दौरे पर स्टाफ को <b>आकस्मिक अवकाश (Casual Leave)</b> देना</span>
+          <span class="en">Grant casual leave to staff when Superintendent is on tour</span></li>
+      <li>🔴 <span class="hi">टाइम-स्केल डाकघरों के <b>प्रथम व द्वितीय दोनों निरीक्षण</b>; LSG उप-डाकघरों के <b>केवल द्वितीय</b> निरीक्षण (प्रथम अधीक्षक द्वारा); BO का निर्धारित कोटा</span>
+          <span class="en">1st & 2nd inspections of time-scale POs; ONLY 2nd inspections of LSG SOs (1st by Supdt.); fixed quota of BOs</span></li>
+      <li>🟢 <span class="hi">पेंशन मामलों की तैयारी; हानि/धोखाधड़ी मामलों का निपटान अंतिम प्रस्तुति तक</span>
+          <span class="en">Preparation of pension cases; disposal of fraud & loss cases till final submission to Supdt.</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 293–302 — डायरी, जाँच व निरीक्षण <span class="en">Rules 293–302 — Diary, Tests & Inspections</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.293</span><span class="hi">निरीक्षक की डायरी — फॉर्म <b>Genl-2</b>; प्रत्येक डाकघर, मेल लाइन व गाँव का नाम + समय दर्ज; पोस्टमैन/GDS द्वारा भुगतान किए MO का <b>परिमंडल प्रमुख द्वारा निर्धारित प्रतिशत</b> सत्यापित करे</span>
+          <span class="en">Inspector's diary in form Genl-2; record every PO, mail line, village visited with time; verify HoC-fixed percentage of MOs paid by postmen/village postmen</span></li>
+      <li>🔴 <span class="rule-tag">R.300</span><span class="hi">निरीक्षक को अपने उप-प्रभाग के आवंटित उप-डाकघरों का निरीक्षण <b>प्रत्येक 12 माह में दो बार</b> + सभी शाखा डाकघर (जो अधीक्षक के जिम्मे नहीं) — टिप्पणी आदेश-पुस्तिका (<b>MS-8</b>) में, प्रति अधीक्षक को</span>
+          <span class="en">Inspector must inspect TWICE every 12 months the assigned SOs + all BOs (except those inspected by Supdt.); remarks in order book (MS-8), copy to Supdt.</span></li>
+      <li>🟠 <span class="rule-tag">R.302</span><span class="hi">मेल लाइनों का आवधिक निरीक्षण</span>
+          <span class="en">Periodical inspection of mail lines</span></li>
+      <li>🟢 <span class="rule-tag">R.270-A</span><span class="hi">जमा में रखी VP/बीमित वस्तुओं व मनीऑर्डरों की जाँच — दौरों के समय</span>
+          <span class="en">Examination of VP & insured articles and MOs in deposit during visits</span></li>
+      <li>🟢 <span class="rule-tag">R.274–275</span><span class="hi">"निश्चित बीट" व "अनिश्चित बीट" प्रणाली (ग्रामीण पोस्टमैन)</span>
+          <span class="en">"Fixed Beat" & "Unfixed Beat" systems for village postmen</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 निर्णय वृक्ष — नगर निरीक्षक की शक्तियाँ (R.304) <span class="en">Decision Tree — Powers of Town Inspector</span></h3>
+    <div class="dtree">
+      <div class="fbox start" style="margin:0 auto"><span class="hi">क्या नगर निरीक्षक अधीनस्थ को दंडित / नियुक्त / स्थानांतरित / बर्खास्त कर सकता है?</span><span class="en">Can a Town Inspector punish / appoint / transfer / dismiss subordinates?</span></div>
+      <div class="branch">
+        <div class="no"><span class="hi"><b>नहीं ✗</b> — उसकी शक्ति केवल संदिग्ध धोखाधड़ी/लापरवाही/अनियमितता की <b>रिपोर्ट</b> अधीक्षक या पोस्टमास्टर को करने तक सीमित</span><span class="en">NO — powers limited to REPORTING suspected fraud, negligence, irregularities to Supdt./Postmaster</span></div>
+        <div class="yes"><span class="hi">परिणाम: वह <b>चरित्र पंजिकाएँ (Character Sheets) नहीं रखेगा</b></span><span class="en">Consequence: He will NOT keep character sheets</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 नगर निरीक्षक के कर्तव्य — R.303, 305–316 <span class="en">Duties of Town Inspector</span></h3>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.303</span><span class="hi">क्षेत्राधिकार <b>प्रभाग प्रमुख (Head of the Division)</b> निर्धारित करता है</span>
+          <span class="en">Jurisdiction fixed by the Head of the Division</span></li>
+      <li>🔴 <span class="rule-tag">R.305</span><span class="hi">प्राथमिक कर्तव्य: कार्यालय के <b>बाहर</b> कार्य करने वाले पोस्टमैन, letter-box प्यून, रनर आदि का पर्यवेक्षण; <b>जनता से पत्राचार कभी नहीं</b>; letter-box से निकाली वस्तुओं की आकस्मिक जाँच (नकली/प्रयुक्त टिकट पकड़ने हेतु)</span>
+          <span class="en">Primary duty: supervise postmen, letter-box peons, runners working OUTSIDE office; must NEVER correspond with public; surprise checks of letter-box clearances for removed/fake/used stamps</span></li>
+      <li>🟢 <span class="rule-tag">R.308–309</span><span class="hi">मेमोरेंडम बुक (उत्तराधिकारी को सौंपे) + नगर का डाक मानचित्र</span>
+          <span class="en">Memorandum book (handed to successor) + postal map of town</span></li>
+      <li>🟢 <span class="rule-tag">R.312–314</span><span class="hi">पोस्टमैन पर पर्यवेक्षण, पोस्टमैन-थैलों की जाँच, अवितरित वस्तुएँ</span>
+          <span class="en">Supervision over postmen, examination of postmen's bags, undelivered articles</span></li>
+      <li>🟡 <span class="rule-tag">N.B.1</span><span class="hi">कोलकाता, मद्रास, बम्बई के नगर निरीक्षकों हेतु परिमंडल प्रमुख नियम संशोधित कर सकता है</span>
+          <span class="en">Rules may be modified by HoC for Town Inspectors of Calcutta, Madras & Bombay</span></li>
+      <li>🟢 <span class="rule-tag">R.318–319</span><span class="hi">प्रधान पोस्टमैन (Head Postmen) के कर्तव्य व डायरियाँ</span>
+          <span class="en">Duties & diaries of Head Postmen</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 मुख्य बिंदु <span class="en">Key Points</span></h3>
+    <ul class="points">
+      <li><span class="hi">RMS प्रभाग भी उप-प्रभागों में विभाजित — प्रत्येक उप-प्रभागीय निरीक्षक/ASP RMS के अधीन; डाक निरीक्षकों के समान सिद्धांत लागू</span>
+          <span class="en">RMS divisions also split into sub-divisions under Sub-divisional Inspectors/ASPs RMS; principles parallel to Postal Inspectors</span></li>
+      <li>🟠 <span class="hi">महत्वपूर्ण मेल व रिकॉर्ड कार्यालयों तथा महत्वपूर्ण छँटाई अनुभागों का निरीक्षण <b>अधीक्षक RMS</b> को; शेष निरीक्षकों को (नियम 21 का सिद्धांत)</span>
+          <span class="en">Inspection of more important mail/record offices & sorting sections assigned to Supdt. RMS; others to Inspectors (principle of Rule 21)</span></li>
+      <li>🟢 <span class="hi">मेल वैन व मेल कार्यालयों में पर्याप्त समय बिताना — डायरी से जाँच (नियम 5 से जुड़ा)</span>
+          <span class="en">Must spend sufficient time in mail vans & mail offices — checked via diaries (linked to Rule 5)</span></li>
+    </ul>
+  </div>
+
+<!-- ================= CHAPTER 7 ================= -->
+<section class="ch" id="ch7">
+  <div class="ch-head">
+    <div class="ch-num">7</div>
+    <div class="ch-title">
+      <h2>ओवरसियर <span class="en">Overseers</span></h2>
+      <span class="rules">नियम / Rules 343–356 (अध्याय 6 लुप्त / Ch. 6 Omitted)</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 343 व 343-A — ओवरसियर के कर्तव्य <span class="en">Rules 343 & 343-A — Duties of Overseer</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">मेल लाइनों के कुशल संचालन हेतु <b>प्राथमिक उत्तरदायी</b>; डाक निर्धारित गति से पहुँचे — व्यक्तिगत जिम्मेदारी; रनरों का पर्यवेक्षण (झोपड़ियों/huts में रहना सुनिश्चित करे)</span>
+          <span class="en">Primarily responsible for efficient working of mail lines; personally responsible mails move at prescribed speed; supervises runners (must live in huts)</span></li>
+      <li>🟠 <span class="hi">NOTE 2: भारी नकद-वहन कार्य पर परिमंडल प्रमुख विशेष <b>"कैश ओवरसियर"</b> स्वीकृत कर सकता है</span>
+          <span class="en">NOTE 2: Where cash conveyance work is heavy, HoC may sanction exclusive "Cash Overseers"</span></li>
+      <li>🔴 <span class="rule-tag">R.343-A</span><span class="hi">BO के <b>हर दौरे पर</b> जमा में रखी बीमित/VP वस्तुओं व MO की जाँच — BO जर्नल से मिलान; सुपुर्दगी-तिथियों की रसीदों से पुष्टि</span>
+          <span class="en">On EVERY visit to a BO — examine insured/VP articles & MOs in deposit, tally with BO Journal; verify delivery dates on receipts</span></li>
+      <li>🟠 <span class="rule-tag">R.344</span><span class="hi">बीट <b>अधीक्षक</b> तय करता है; एक कार्यालय = <b>केंद्रीय कार्यालय</b>, जहाँ नियत अंतराल पर लौटना अनिवार्य; रूट स्टेटमेंट अधीक्षक देता है</span>
+          <span class="en">Beat arranged by Superintendent; one office selected as central office — must return at fixed intervals; route statement supplied by Supdt.</span></li>
+      <li>🟡 <span class="rule-tag">R.345</span><span class="hi">अँगूठा/अँगुली छाप — <b>बाएँ हाथ</b> की, <b>प्रिंटर की स्याही</b> से; लेने वाला अधिकारी नीचे नाम, पदनाम व तिथि लिखे</span>
+          <span class="en">Thumb & finger impressions — LEFT hand, with printer's ink; officer records name, designation & date below</span></li>
+      <li>🟢 <span class="rule-tag">R.348–349, 351, 355</span><span class="hi">वेतन संवितरण, प्राप्ति-सूचियाँ (Acquittance Rolls), नकद प्रेषण का अनुरक्षण, ओवरसियर डायरी</span>
+          <span class="en">Disbursement of pay, acquittance rolls, escort of cash remittances, overseer's diary</span></li>
+    </ul>
+  </div>
+
+<!-- ================= CHAPTER 8 ================= -->
+<section class="ch" id="ch8">
+  <div class="ch-head">
+    <div class="ch-num">8</div>
+    <div class="ch-title">
+      <h2>स्टॉक डिपो <span class="en">Stock Depots</span></h2>
+      <span class="rules">नियम / Rules 357–388</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 नियम 357 — STOCK डिपो का उद्देश्य <span class="en">Rule 357 — Object of a Stock Depot</span></h3>
+    <span class="hi"><b>प्रत्येक परिमंडल के मुख्यालय</b> पर एक स्टॉक डिपो — डाकघरों/RMS कार्यालयों के लिए आवश्यक वस्तुओं की अभिरक्षा व आपूर्ति हेतु। प्रभारी अधिकारी = <b>मैनेजर</b> (डाक परिमंडलों में), जो सीधे <b>परिमंडल प्रमुख</b> के आदेश व पर्यवेक्षण में।</span>
+    <span class="en">A stock depot is established at the HQ of each circle — for custody & supply of articles for POs/RMS offices. Official in charge = Manager (in postal circles), under immediate orders & supervision of the Head of the Circle.</span>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 358 — SK फॉर्म तालिका (अति महत्वपूर्ण!) <span class="en">Rule 358 — SK Forms Table (High-Yield!)</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>फॉर्म / Form</th><th>पुस्तक / Book</th><th>कहाँ / Where Kept</th></tr>
+      <tr><td class="hi"><b>SK-51(a)</b></td><td><span class="hi">प्राप्ति दिन-पुस्तिका</span><span class="en">Receipt day-book</span></td><td rowspan="5"><span class="hi">सभी स्टॉक डिपो</span><span class="en">All stock depots</span></td></tr>
+      <tr><td class="hi"><b>SK-51</b></td><td><span class="hi">स्टॉक रजिस्टर</span><span class="en">Stock register</span></td></tr>
+      <tr><td class="hi"><b>SK-53</b></td><td><span class="hi">प्रेषित बीजकों की अनुक्रमणिका</span><span class="en">Index of invoices despatched</span></td></tr>
+      <tr><td class="hi"><b>SK-54</b></td><td><span class="hi">स्थानीय क्रय-आदेश पुस्तिका</span><span class="en">Book of orders for local purchase</span></td></tr>
+      <tr><td class="hi">—</td><td><span class="hi">व्यय-विवरण</span><span class="en">Statements of expenditure</span></td></tr>
+      <tr><td class="hi"><b>SK-52</b></td><td><span class="hi">रेल/स्टीमर से प्रेषित-प्राप्त माल पर प्रभारों का लेखा</span><span class="en">Account of charges on goods by railway & steamer</span></td><td rowspan="2"><span class="hi">केवल डाक स्टॉक डिपो</span><span class="en">Postal stock depots ONLY</span></td></tr>
+      <tr><td class="hi"><b>SK-55</b></td><td><span class="hi">आपाती अग्रिमों की रसीद-पुस्तिका</span><span class="en">Book of receipts for emergent advances</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 अन्य त्वरित बिंदु <span class="en">Other Quick Points (Ch. 8)</span></h3>
+    <ul class="points">
+      <li><span class="rule-tag">R.359</span><span class="hi">प्राप्त हर वस्तु सर्वप्रथम <b>प्राप्ति दिन-पुस्तिका SK-51(a)</b> में — प्राप्ति-क्रम में, बिना वर्गीकरण; निपटान का तरीका भी दर्ज</span>
+          <span class="en">Every article received first entered in Receipt Day-Book SK-51(a), in order of receipt; disposal also noted</span></li>
+      <li><span class="rule-tag">R.365–366</span><span class="hi">आपूर्ति प्राप्त करने का तरीका; <b>टिकटों व मुहरों (Stamps & Seals) के इंडेंट</b></span>
+          <span class="en">Mode of obtaining supplies; indents for stamps and seals</span></li>
+      <li><span class="rule-tag">R.369/A/B</span><span class="hi">मैजेंटा स्टाम्पिंग स्याही, काली निरसन स्याही, सीलिंग वैक्स</span>
+          <span class="en">Magenta stamping ink, black cancellation ink, sealing wax</span></li>
+      <li><span class="rule-tag">R.377</span><span class="hi">डाकघर प्रमाणपत्रों (PO Certificates) की आपूर्ति</span>
+          <span class="en">Supply of Post Office certificates</span></li>
+      <li><span class="rule-tag">R.384</span><span class="hi">आपाती अग्रिम (Emergent Advances)</span>
+          <span class="en">Emergent advances</span></li>
+      <li><span class="rule-tag">R.387</span><span class="hi">पुस्तकों व लेखाओं की जाँच</span>
+          <span class="en">Examination of books and accounts</span></li>
+    </ul>
+  </div>
+
+<!-- ================= CHAPTER 9 ================= -->
+<section class="ch" id="ch9">
+  <div class="ch-head">
+    <div class="ch-num">9</div>
+    <div class="ch-title">
+      <h2>वापसी पत्र कार्यालय <span class="en">Returned Letter Offices (RLO)</span></h2>
+      <span class="rules">नियम / Rules 389–439</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 नियम 389 — RLO संरचना व नियंत्रण <span class="en">Rule 389 — RLO Structure & Control</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="hi">RLO <b>पोस्टमास्टर जनरल के प्रत्यक्ष नियंत्रण</b> में; प्रभारी = <b>मैनेजर</b> — हर विवरण के लिए PMG के प्रति उत्तरदायी</span>
+          <span class="en">RLOs are under the direct control & supervision of the Postmaster General; officer in charge = Manager, responsible to PMG in every detail</span></li>
+      <li>🟠 <span class="hi">बड़े RLO में सहायक = <b>असिस्टेंट मैनेजर</b>; छोटे RLO में = <b>हेड क्लर्क</b></span>
+          <span class="en">In large RLOs assistant = Assistant Manager; in smaller RLOs = Head Clerk</span></li>
+    </ul>
+    <div class="tbl-wrap"><table>
+      <tr><th>परिमंडल / Circle</th><th>सेवारत RLO / Served by RLO at</th></tr>
+      <tr><td><span class="hi">बिहार, बम्बई, मध्य, पंजाब, मद्रास, प. बंगाल, उ.प्र.</span><span class="en">Bihar, Bombay, Central, Punjab, Madras, West Bengal, UP</span></td><td><span class="hi">अपने-अपने परिमंडल मुख्यालय का RLO</span><span class="en">Own circle-HQ RLO</span></td></tr>
+      <tr><td><span class="hi">असम व उड़ीसा</span><span class="en">Assam & Orissa</span></td><td class="hi"><b>कलकत्ता / Calcutta</b></td></tr>
+      <tr><td><span class="hi">आंध्र व हैदराबाद</span><span class="en">Andhra & Hyderabad</span></td><td class="hi"><b>मद्रास / Madras</b></td></tr>
+      <tr><td><span class="hi">राजस्थान</span><span class="en">Rajasthan</span></td><td class="hi"><b>नागपुर / Nagpur</b></td></tr>
+    </table></div>
+  </div>
+  <div class="card t-o">
+    <h3>🟠 गोपनीयता व अनुशासन — R.395–405 <span class="en">Secrecy & Discipline</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.395</span><span class="hi"><b>बाहरी व्यक्तियों का प्रवेश निषिद्ध</b></span>
+          <span class="en">Admittance of outsiders prohibited</span></li>
+      <li>🔴 <span class="rule-tag">R.400</span><span class="hi"><b>गोपनीयता (Secrecy)</b> — RLO कार्य का मूल सिद्धांत</span>
+          <span class="en">Secrecy — a core principle of RLO working</span></li>
+      <li>🟢 <span class="rule-tag">R.398–399</span><span class="hi">पुनर्निर्देशन (Redirection) का महत्व; अपर्याप्त आधार पर वस्तु जारी न हो</span>
+          <span class="en">Importance of redirection; articles not to be issued on insufficient grounds</span></li>
+      <li>🟢 <span class="rule-tag">R.403–404</span><span class="hi">चाबियों की अभिरक्षा; वस्तुओं पर मुहर लगाना</span>
+          <span class="en">Custody of keys; stamping of articles</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 दंड / शुल्क व सीमाएँ — R.424–427 <span class="en">Penalties / Fees & Limits (High-Yield!)</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">RLO में खोली गई अपंजीकृत वस्तु में क्या मिला?</span><span class="en">What is found inside an unregistered article opened in RLO?</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">पंजीकरण-अनिवार्य वस्तु → RLO रजिस्टर्ड लिफाफे (RLO-6) में; <b>पते वाले को जारी होने पर दोगुना पंजीकरण शुल्क</b> + देय डाक-व्यय; <b>प्रेषक को वापसी पर कोई पंजीकरण शुल्क नहीं</b></span><span class="en">Registration compulsory → RLO-6 envelope; taxed DOUBLE registration fee (+postage) when issued to ADDRESSEE; NO registration fee when returned to SENDER (R.425)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">बीमा-अनिवार्य वस्तु → सुरक्षा-आवरण में, बीमा-सील; <b>विशेष शुल्क ₹2</b> — पुनर्निर्देशन पर पते वाले से; प्रेषक से केवल तब जब पते वाले ने अस्वीकार किया/नहीं मिला</span><span class="en">Insurance compulsory → protecting cover with insurance seal; special fee of Rs. 2 — from addressee on redirection; from sender only if refused/not found (R.426)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox warn"><span class="hi">स्वर्ण सिक्के/बुलियन का मूल्य <b>₹2,500 से अधिक</b> → सुरक्षा-आवरण में <b>पोस्टिंग कार्यालय के पोस्टमास्टर</b> के पते पर, प्रेषक को वापसी हेतु; मूल्य = पोस्टिंग की तिथि व स्थान का बाजार-मूल्य</span><span class="en">Gold coins/bullion exceeding Rs. 2,500 → protecting cover addressed to Postmaster of office of POSTING, for return to sender; value = market value on date & place of posting (R.427)</span></div>
+    </div>
+    <ul class="points">
+      <li>🟠 <span class="rule-tag">R.424</span><span class="hi">रजिस्टर <b>RLO-3</b> — सभी विदेशी रजिस्टर्ड पत्र, वापसी रजिस्टर्ड वस्तुएँ, RLO में खोली रजिस्टर्ड वस्तुएँ, मूल्यवान संपत्ति वाली अपंजीकृत वस्तुएँ; वस्तुएँ <b>मैनेजर + वरिष्ठ/हेड क्लर्क की संयुक्त अभिरक्षा</b> में</span>
+          <span class="en">Register RLO-3; articles in JOINT custody of Manager + senior/head clerk of registration branch</span></li>
+    </ul>
+  </div>
+
+<!-- ================= CHAPTER 10 ================= -->
+<section class="ch" id="ch10">
+  <div class="ch-head">
+    <div class="ch-num">10</div>
+    <div class="ch-title">
+      <h2>व्यवधान व दुर्घटनाएँ <span class="en">Breaks & Accidents</span></h2>
+      <span class="rules">नियम / Rules 440–449</span>
+    </div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 प्रवाह-चार्ट: रेल डाक सेवा में व्यवधान पर कार्रवाई <span class="en">Flowchart: Action on Interruption to RMS</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">रेल पर व्यवधान / दुर्घटना (Break or Accident)</span><span class="en">Interruption on Railway</span></div>
+      <div class="farrow">↓<small>R.441 — तार / by telegraph</small></div>
+      <div class="fbox"><span class="hi">ड्यूटी पर <b>हेड सॉर्टर</b> (व रेलवे प्राधिकारी) → अधीक्षक RMS को सूचना</span><span class="en">Head Sorter of set on duty (& Railway authorities) → intimate Superintendent RMS</span></div>
+      <div class="farrow">↓<small>R.441 — तुरंत / immediately</small></div>
+      <div class="fbox"><span class="hi">अधीक्षक स्वयं घटनास्थल जाए; न जा सके तो → <b>ASP</b>, अन्यथा उप-प्रभागीय निरीक्षक या सक्षम रिकॉर्ड क्लर्क</span><span class="en">Supdt. proceeds to scene; else sends ASP, otherwise Sub-divl. Inspector or competent record clerk</span></div>
+      <div class="farrow">↓<small>R.442–443 — तार से / by telegraph</small></div>
+      <div class="fbox"><span class="hi">प्रभावित <b>सभी परिमंडल प्रमुखों</b> + अपने परिमंडल प्रमुख को तार — कदम, विलंबित डाक के अपेक्षित समय व मार्ग सहित; बाद में विस्तृत लिखित विवरण</span><span class="en">Telegraph every affected Head of Circle + own HoC — steps taken, expected arrival times & routes; fuller written account follows</span></div>
+      <div class="farrow">↓<small>R.445 — घटनास्थल पर / on the spot</small></div>
+      <div class="fbox ok"><span class="hi">सर्वोत्तम व्यवस्था; <b>पार्सल डाक रोकें, पत्र डाक को प्राथमिकता</b>; आवश्यक हो तो अस्थायी मेल कार्यालय (रेलवे से मेल वैन); विदेशी डाक पर कोई कसर नहीं</span><span class="en">Best arrangements; DETAIN PARCEL mails in preference to LETTER mails; temporary mail office if needed; no pains spared for foreign mails</span></div>
+      <div class="farrow">↓<small>R.448 — समाप्ति पर / when over</small></div>
+      <div class="fbox"><span class="hi">अंतिम रिपोर्ट परिमंडल प्रमुख को — कारण, उपाय + व्यय का विस्तृत लेखा (वाउचर सहित); स्वीकृत मदें अगले आकस्मिक बिल में</span><span class="en">Final report to HoC — cause, measures + detailed expenditure account with vouchers; passed items in next contingent bill</span></div>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 विशेष प्रावधान <span class="en">Special Provisions (R.446, 449)</span></h3>
+    <ul class="points">
+      <li>🔴 <span class="rule-tag">R.446</span><span class="hi">परिमंडल प्रमुख विशेष परिस्थितियों में विशेष ट्रेन की व्यवस्था अथवा बम्बई में <b>P&O मेल स्टीमर को अधिकतम 24 घंटे</b> रोक सकता है</span>
+          <span class="en">HoC may arrange special trains or detain the outward P&O Mail steamer at Bombay for a period NOT exceeding 24 hours</span></li>
+      <li>🟠 <span class="rule-tag">R.449</span><span class="hi">महानिदेशक को रिपोर्ट <b>केवल गंभीर/महत्वपूर्ण मामलों</b> में — लंबा व्यवधान, डाक-कर्मियों की मृत्यु या डाक की हानि — <b>तार द्वारा</b>; संचार बहाल होते ही डाक से रिपोर्ट। दौरे पर DG को रिपोर्ट केवल भीषण आपदा पर</span>
+          <span class="en">Report to Director-General ONLY in serious/important cases — prolonged interruption, loss of life of postal officials, or loss of mails — by TELEGRAM; postal report once communication restored. No report to DG on tour unless alarming catastrophe</span></li>
+      <li>🟢 <span class="rule-tag">R.447</span><span class="hi">अस्थायी छँटाई सूचियाँ — परिमंडल प्रमुख की <b>पूर्व स्वीकृति के बिना</b> बदली जा सकती हैं, पर शीघ्र सूचना अनिवार्य</span>
+          <span class="en">Temporary sorting lists may be changed WITHOUT previous sanction of HoC, but must be intimated ASAP</span></li>
+    </ul>
+  </div>
+
+<!-- ================= INSPECTION MASTER TIMELINE ================= -->
+<section class="ch" id="insp">
+  <div class="ch-head">
+    <div class="ch-num">🔴</div>
+    <div class="ch-title">
+      <h2>निरीक्षण मास्टर-चार्ट व समय-सीमाएँ <span class="en">Inspection Master Chart & Time Limits</span></h2>
+      <span class="rules">परीक्षा का सबसे गर्म विषय / Hottest exam topic of Vol. VIII</span>
+    </div>
+  </div>
+  <div class="card t-r">
+    <h3>🔴 समय-रेखा — कौन, क्या, कब? <span class="en">Timeline — Who Inspects What, When?</span></h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="when">वर्ष में 4 बार / 4 times a year</div>
+        <span class="hi">प्रेसीडेंसी GPO (मुंबई-कोलकाता-चेन्नई) + दिल्ली HO की शेष-राशियाँ — 1×DPS + 3×City Supdt. (R.10)</span>
+        <span class="en">Balances of Presidency GPOs + Delhi HO — 1 by DPS + 3 by City Supdt.</span></div>
+      <div class="tl-item"><div class="when">वर्ष में 2 बार / Twice a year</div>
+        <span class="hi">① निरीक्षक द्वारा उप-डाकघर (R.300) ② प्रेसीडेंसी कार्यालय — प्रेसीडेंसी पोस्टमास्टर द्वारा (R.21) ③ स्टॉक डिपो (सितम्बर + मार्च छमाही) (R.2)</span>
+        <span class="en">① Sub-offices by Inspector ② Presidency offices by Presidency Postmaster ③ Stock Depot (Sept + March half-years)</span></div>
+      <div class="tl-item"><div class="when">वर्ष में 1 बार / Once a year</div>
+        <span class="hi">① अधीक्षक का कार्यालय (R.20) ② प्रथम श्रेणी HO (R.21) ③ परिमंडल कार्यालय — HoC स्वयं (R.2-A) ④ RLO — HoC/DPS, 30 सित. तक (R.8) ⑤ शिकायत शाखाएँ — VO/CCO/ADTC (R.14-B) ⑥ निदेशक PLI कार्यालय — Sr.DDG/DDG</span>
+        <span class="en">① Supdt.'s office ② 1st class HO ③ Circle office by HoC himself ④ RLO by HoC/DPS (by 30 Sept) ⑤ Complaints branches ⑥ Director PLI office</span></div>
+      <div class="tl-item"><div class="when">2 वर्ष में 1 बार / Once in 2 years</div>
+        <span class="hi">PMG द्वारा प्रत्येक जिला-मुख्यालय स्टेशन का दौरा (R.3)</span>
+        <span class="en">PMG's visit to every district-HQ station</span></div>
+      <div class="tl-item"><div class="when">3 माह / 3 months</div>
+        <span class="hi">इतने या अधिक समय से लंबित पेंशन/उपदान मामलों में तत्काल कदम (R.7)</span>
+        <span class="en">Pension/gratuity cases pending 3 months or more → immediate acceleration</span></div>
+      <div class="tl-item"><div class="when">6 माह / 6 months</div>
+        <span class="hi">परिमंडल कार्यालय निरीक्षण के बाद कार्रवाई-रिपोर्ट निदेशालय को (R.2-A)</span>
+        <span class="en">Action-taken report to Directorate after circle-office inspection</span></div>
+      <div class="tl-item"><div class="when">24 घंटे / 24 hours</div>
+        <span class="hi">P&O मेल स्टीमर के विलम्बन की अधिकतम सीमा — बम्बई में (R.446)</span>
+        <span class="en">Maximum detention of P&O Mail steamer at Bombay</span></div>
+      <div class="tl-item"><div class="when">1 जनवरी / 1st January</div>
+        <span class="hi">पंजीकृत समाचारपत्रों की वार्षिक सूची इस तिथि तक संशोधित (R.30)</span>
+        <span class="en">Annual list of registered newspapers corrected up to this date</span></div>
+    </div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 तुलना — कौन किसका क्षेत्राधिकार तय करता है? <span class="en">Comparison — Who Fixes Whose Jurisdiction?</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>पद / Post</th><th>क्षेत्राधिकार निर्धारक / Jurisdiction fixed by</th><th>नियम / Rule</th></tr>
+      <tr><td><span class="hi">अधीक्षक</span><span class="en">Superintendent</span></td><td><span class="hi">परिमंडल प्रमुख</span><span class="en">Head of Circle</span></td><td>17, 90</td></tr>
+      <tr><td><span class="hi">निरीक्षक (उप-प्रभाग)</span><span class="en">Inspector (sub-division)</span></td><td><span class="hi">परिमंडल प्रमुख</span><span class="en">Head of Circle</span></td><td>18, 260</td></tr>
+      <tr><td><span class="hi">नगर निरीक्षक</span><span class="en">Town Inspector</span></td><td><span class="hi"><b>प्रभाग प्रमुख</b></span><span class="en">Head of the Division</span></td><td>303</td></tr>
+      <tr><td><span class="hi">ओवरसियर (बीट)</span><span class="en">Overseer (beat)</span></td><td><span class="hi"><b>अधीक्षक</b></span><span class="en">Superintendent</span></td><td>344</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-o">
+    <h3>🟠 महत्वपूर्ण फॉर्म/रजिस्टर <span class="en">Important Forms & Registers of Vol. VIII</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>फॉर्म / Form</th><th>प्रयोग / Use</th><th>नियम / Rule</th></tr>
+      <tr><td><b>Genl-1</b></td><td><span class="hi">अधीक्षक की डायरी</span><span class="en">Superintendent's diary</span></td><td>5</td></tr>
+      <tr><td><b>Genl-2</b></td><td><span class="hi">निरीक्षक की डायरी</span><span class="en">Inspector's diary</span></td><td>293</td></tr>
+      <tr><td><b>Est-52</b></td><td><span class="hi">लंबित पेंशन/उपदान मामलों की विवरणी</span><span class="en">Return of pending pension & gratuity cases</span></td><td>7</td></tr>
+      <tr><td><b>APP 32(a)</b></td><td><span class="hi">दंड रजिस्टर की प्रतियाँ</span><span class="en">Copies of punishment registers</span></td><td>6</td></tr>
+      <tr><td><b>MS-8</b></td><td><span class="hi">आदेश पुस्तिका (निरीक्षण टिप्पणियाँ)</span><span class="en">Order book (inspection remarks)</span></td><td>300</td></tr>
+      <tr><td><b>CPT-3</b></td><td><span class="hi">शिकायत-विवरण</span><span class="en">Statement of complaints</span></td><td>14</td></tr>
+      <tr><td><b>RLO-3</b></td><td><span class="hi">रजिस्टर्ड/मूल्यवान वस्तु रजिस्टर (RLO)</span><span class="en">Register of registered & valuable articles</span></td><td>424</td></tr>
+      <tr><td><b>RLO-6</b></td><td><span class="hi">RLO रजिस्टर्ड वस्तु लिफाफा</span><span class="en">RLO registered article envelope</span></td><td>425</td></tr>
+      <tr><td><b>RLO-22</b></td><td><span class="hi">सामग्री-सूची (Inventory)</span><span class="en">Inventory of contents</span></td><td>426</td></tr>
+      <tr><td><b>SK-51 से 55</b></td><td><span class="hi">स्टॉक डिपो पुस्तकें</span><span class="en">Stock depot books</span></td><td>358</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ================= MNEMONICS ================= -->
+<section class="ch" id="mnemo">
+  <div class="ch-head">
+    <div class="ch-num blue">🧠</div>
+    <div class="ch-title">
+      <h2>स्मृति सूत्र व ट्रिक्स <span class="en">Memory Tricks & Mnemonics</span></h2>
+    </div>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"HSITAO-SRB"</div>
+    <span class="hi">अध्याय क्रम याद रखें: <b>H</b>eads → <b>S</b>updts → <b>I</b>nspectors → <b>T</b>own Insp. → <b>A</b>SP-RMS → (<b>O</b>mitted-6) → ओवरसियर → <b>S</b>tock → <b>R</b>LO → <b>B</b>reaks</span>
+    <span class="en">Chapter order: Heads, Supdts, Inspectors, Town, ASP-RMS, Omitted, Overseers, Stock, RLO, Breaks — "Har Supdt Inspector Town Aaya, Overseer Stock RLO Breaks laya!"</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"सितम्बर में साहब, मार्च में सहायक"</div>
+    <span class="hi">स्टॉक डिपो निरीक्षण: <b>सितम्बर</b>-छमाही = परिमंडल प्रमुख (साहब); <b>मार्च</b>-छमाही = APMG/AD (सहायक)। RLO निरीक्षण का भी यही पैटर्न! (नियम 2 व 8)</span>
+    <span class="en">"September = Sahab (HoC), March = Sahayak (APMG/AD)" — same pattern for both Stock Depot & RLO inspections</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"ACN" — अलीगढ़, Calcutta, नासिक</div>
+    <span class="hi">तीन केंद्रीय फॉर्म भंडार: <b>A</b>ligarh (Postal Stores, Forms & Seals), <b>C</b>alcutta, <b>N</b>asik Road</span>
+    <span class="en">3 Central Form Stores — remember "ACN"</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"1-3 GPO"</div>
+    <span class="hi">GPO शेष-सत्यापन वर्ष में 4 बार = <b>1</b> बार DPS + <b>3</b> बार City Superintendent (नियम 10)</span>
+    <span class="en">GPO balance verification: 4 = 1 (DPS) + 3 (City Supdt.)</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"ICA" — Inspector की तीन शक्लें</div>
+    <span class="hi"><b>I</b>nvestigating (परिमंडल कार्यालय) • <b>C</b>omplaints (शिकायत शाखा) • <b>A</b>SP (HSG प्रभागीय कार्यालय) — नियम 260-A/B/C</span>
+    <span class="en">Three avatars of Inspector Posts: Investigating, Complaints, ASP</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"52-रेल, 55-अग्रिम — केवल डाक!"</div>
+    <span class="hi">SK-<b>52</b> (रेल/स्टीमर प्रभार) व SK-<b>55</b> (आपाती अग्रिम) — केवल <b>डाक</b> स्टॉक डिपो में; बाकी SK-51(a), 51, 53, 54 सभी में</span>
+    <span class="en">SK-52 & SK-55 only in POSTAL stock depots; others in all</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"नगर निरीक्षक = रिपोर्टर, जज नहीं"</div>
+    <span class="hi">TI केवल <b>रिपोर्ट</b> करता है — न दण्ड, न नियुक्ति, न स्थानांतरण, न बर्खास्तगी, न चरित्र पंजिका (नियम 304)</span>
+    <span class="en">Town Inspector = Reporter, not Judge — no punish/appoint/transfer/dismiss, no character sheets</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"पार्सल रुके, पत्र चले"</div>
+    <span class="hi">व्यवधान में पूरी डाक एक साथ न भेज सकें तो <b>पार्सल डाक रोकें</b>, पत्र डाक पहले (नियम 445)</span>
+    <span class="en">During interruption: detain PARCEL mails in preference to LETTER mails</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"2-2500-24"</div>
+    <span class="hi">RLO/Breaks की तीन संख्याएँ: विशेष शुल्क <b>₹2</b> (R.426) • स्वर्ण-सीमा <b>₹2,500</b> (R.427) • स्टीमर विलम्बन <b>24 घंटे</b> (R.446)</span>
+    <span class="en">Three magic numbers: Rs. 2 special fee • Rs. 2,500 gold limit • 24-hour steamer detention</span>
+  </div>
+
+  <div class="mnemo">
+    <div class="key">"CMN" — Calcutta, Madras, Nagpur</div>
+    <span class="hi">बिना अपने RLO वाले परिमंडल: असम+उड़ीसा→<b>C</b>alcutta; आंध्र+हैदराबाद→<b>M</b>adras; राजस्थान→<b>N</b>agpur (नियम 389)</span>
+    <span class="en">Circle→RLO mapping: Assam/Orissa→Calcutta, Andhra/Hyderabad→Madras, Rajasthan→Nagpur</span>
+  </div>
+</section>
+
+<!-- ================= ONE PAGE REVISION ================= -->
+<section class="ch" id="rev">
+  <div class="ch-head">
+    <div class="ch-num">📄</div>
+    <div class="ch-title">
+      <h2>एक-पृष्ठ पुनरावृत्ति शीट <span class="en">One-Page Revision Sheet</span></h2>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ भाग VIII — 30 तथ्य, 3 मिनट में / Vol. VIII — 30 Facts in 3 Minutes</h3>
+    <div class="rev-grid">
+      <div class="rev-cell"><b>विषय:</b> डाकघर व RMS <span class="num">पर्यवेक्षण अधिकारी</span> — नियम 1–449, 10 अध्याय (Ch.6 लुप्त)</div>
+      <div class="rev-cell"><b>R.1:</b> HoC = परिमंडल का मुख्य अधिकारी; APS में = <span class="num">Dir. APS</span>; शक्तियाँ Vol. III में</div>
+      <div class="rev-cell"><b>R.2:</b> स्टॉक डिपो: 1st insp. <span class="num">30 सित.</span> HoC/DPS; 2nd <span class="num">31 मार्च</span> APMG/AD</div>
+      <div class="rev-cell"><b>R.2:</b> केंद्रीय फॉर्म भंडार: <span class="num">अलीगढ़–कलकत्ता–नासिक रोड</span> (फॉर्म-सत्यापन मार्च में)</div>
+      <div class="rev-cell"><b>R.2-A:</b> HoC अपना कार्यालय <span class="num">वर्ष में 1 बार</span>; रिपोर्ट DG को; <span class="num">6 माह</span> बाद ATR</div>
+      <div class="rev-cell"><b>R.3:</b> PMG हर जिला-HQ <span class="num">2 वर्ष में 1 बार</span></div>
+      <div class="rev-cell"><b>R.5:</b> अधीक्षक-डायरी = <span class="num">Genl-1</span>; HoC स्वयं जाँचे</div>
+      <div class="rev-cell"><b>R.7:</b> पेंशन केस <span class="num">3 माह+</span> लंबित → तत्काल कदम (Est-52)</div>
+      <div class="rev-cell"><b>R.8:</b> RLO निरीक्षण: HoC/DPS <span class="num">वर्ष में 1 बार</span> (30 सित. तक); APMG 31 मार्च तक</div>
+      <div class="rev-cell"><b>R.10:</b> GPO शेष-सत्यापन <span class="num">4 बार/वर्ष</span> (1 DPS + 3 City Supdt.); मानक प्रश्न 1–21 भाग A</div>
+      <div class="rev-cell"><b>R.20:</b> अधीक्षक-कार्यालय निरीक्षण <span class="num">12 माह में 1 बार</span></div>
+      <div class="rev-cell"><b>R.21:</b> 1st class HO <span class="num">1 बार/12 माह</span>; प्रेसीडेंसी <span class="num">2 बार/वर्ष</span></div>
+      <div class="rev-cell"><b>R.30:</b> पंजीकृत समाचारपत्र-सूची <span class="num">1 जनवरी</span> तक संशोधित, वार्षिक</div>
+      <div class="rev-cell"><b>रिकॉर्ड:</b> स्थापना-केस <span class="num">20 वर्ष</span>; रिफंड रजि. <span class="num">10</span>; मेडिकल फ्री <span class="num">5</span>; अनियमितता <span class="num">3</span></div>
+      <div class="rev-cell"><b>R.90/260:</b> अधीक्षक व निरीक्षक का क्षेत्राधिकार — <span class="num">परिमंडल प्रमुख</span> तय करे</div>
+      <div class="rev-cell"><b>R.138/139:</b> <span class="num">न्यूनतम / अधिकतम</span> नकद शेष नियम</div>
+      <div class="rev-cell"><b>R.260-A:</b> परिमंडल कार्यालय से संलग्न IP = <span class="num">अन्वेषण निरीक्षक</span> (बहु-प्रभाग धोखाधड़ी, अभियोजन)</div>
+      <div class="rev-cell"><b>R.260-B:</b> ASP: routine केस, CL (दौरे पर), TS-PO के 1st+2nd insp.; LSG-SO का <span class="num">केवल 2nd</span>; दंड/नियुक्ति आदेश ✗</div>
+      <div class="rev-cell"><b>R.293:</b> निरीक्षक-डायरी = <span class="num">Genl-2</span>; MO-सत्यापन % HoC तय करे</div>
+      <div class="rev-cell"><b>R.300:</b> निरीक्षक: SO निरीक्षण <span class="num">2 बार/12 माह</span>; order book <span class="num">MS-8</span></div>
+      <div class="rev-cell"><b>R.303–304:</b> TI का क्षेत्राधिकार <span class="num">प्रभाग प्रमुख</span> तय करे; TI केवल रिपोर्ट करे — चरित्र पंजिका ✗</div>
+      <div class="rev-cell"><b>R.305:</b> TI जनता से पत्राचार <span class="num">कभी नहीं</span></div>
+      <div class="rev-cell"><b>R.343/344:</b> ओवरसियर = मेल लाइनों हेतु उत्तरदायी; बीट <span class="num">अधीक्षक</span> तय करे (केंद्रीय कार्यालय)</div>
+      <div class="rev-cell"><b>R.345:</b> अँगूठा-छाप: <span class="num">बायाँ हाथ</span> + प्रिंटर की स्याही</div>
+      <div class="rev-cell"><b>R.357:</b> स्टॉक डिपो हर परिमंडल-HQ पर; प्रभारी = <span class="num">मैनेजर</span> (HoC के अधीन)</div>
+      <div class="rev-cell"><b>R.358:</b> SK-51(a) प्राप्ति-पुस्तिका, SK-51 स्टॉक रजि., SK-53 बीजक-सूची, SK-54 क्रय; <span class="num">SK-52 व 55 केवल डाक डिपो</span></div>
+      <div class="rev-cell"><b>R.389:</b> RLO <span class="num">PMG के प्रत्यक्ष नियंत्रण</span> में; प्रभारी = मैनेजर; असम/उड़ीसा→कलकत्ता, आंध्र/हैद.→मद्रास, राजस्थान→नागपुर</div>
+      <div class="rev-cell"><b>R.425–427:</b> दोगुना रजि.-शुल्क (पते वाले को); विशेष शुल्क <span class="num">₹2</span>; स्वर्ण-सीमा <span class="num">₹2,500</span></div>
+      <div class="rev-cell"><b>R.441:</b> व्यवधान-सूचना <span class="num">हेड सॉर्टर</span> से तार द्वारा अधीक्षक को</div>
+      <div class="rev-cell"><b>R.445–446:</b> पार्सल रोकें-पत्र भेजें; स्टीमर-विलम्बन अधिकतम <span class="num">24 घंटे</span>; R.449: DG को रिपोर्ट केवल गंभीर केस में, तार से</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAST DAY NOTES ================= -->
+<section class="ch" id="lastday">
+  <div class="ch-head">
+    <div class="ch-num">⏰</div>
+    <div class="ch-title">
+      <h2>अंतिम दिन की पुनरावृत्ति <span class="en">Last Day Revision Notes</span></h2>
+    </div>
+  </div>
+
+  <div class="card t-g">
+    <h3>🟢 केवल संख्याएँ — रट लें! <span class="en">Numbers Only — Memorise!</span></h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>संख्या / Number</th><th>क्या / What</th></tr>
+      <tr><td class="hi"><b>2 बार / 12 माह</b></td><td><span class="hi">निरीक्षक द्वारा SO निरीक्षण (R.300); प्रेसीडेंसी कार्यालय (R.21); स्टॉक डिपो (R.2)</span></td></tr>
+      <tr><td class="hi"><b>1 बार / 12 माह</b></td><td><span class="hi">अधीक्षक-कार्यालय (R.20); 1st class HO (R.21); परिमंडल कार्यालय (R.2-A); RLO (R.8); शिकायत शाखा (R.14-B)</span></td></tr>
+      <tr><td class="hi"><b>4 बार / वर्ष</b></td><td><span class="hi">प्रेसीडेंसी GPO + दिल्ली HO शेष-सत्यापन (R.10)</span></td></tr>
+      <tr><td class="hi"><b>2 वर्ष में 1</b></td><td><span class="hi">PMG का जिला-HQ दौरा (R.3)</span></td></tr>
+      <tr><td class="hi"><b>3 माह</b></td><td><span class="hi">लंबित पेंशन केस की सीमा (R.7)</span></td></tr>
+      <tr><td class="hi"><b>6 माह</b></td><td><span class="hi">परिमंडल-निरीक्षण की ATR (R.2-A)</span></td></tr>
+      <tr><td class="hi"><b>₹2</b></td><td><span class="hi">अनिवार्य-बीमा वाली अबीमित वस्तु पर विशेष शुल्क (R.426)</span></td></tr>
+      <tr><td class="hi"><b>₹2,500</b></td><td><span class="hi">स्वर्ण सिक्के/बुलियन की RLO-सीमा (R.427)</span></td></tr>
+      <tr><td class="hi"><b>24 घंटे</b></td><td><span class="hi">P&O स्टीमर का अधिकतम विलम्बन (R.446)</span></td></tr>
+      <tr><td class="hi"><b>1–21 (भाग A)</b></td><td><span class="hi">निम्न-स्तर अधिकारी के सत्यापन के मानक प्रश्न (R.10)</span></td></tr>
+      <tr><td class="hi"><b>प्रश्न 1–9</b></td><td><span class="hi">शुद्धि पर्चियाँ 1 से 9 (तीसरा मुद्रण)</span></td></tr>
+    </table></div>
+  </div>
+
+  <div class="card t-r">
+    <h3>🔴 5 सबसे अधिक पूछे जाने वाले जाल <span class="en">Top 5 Exam Traps</span></h3>
+    <ul class="points">
+      <li>⚠️ <span class="hi">TI का क्षेत्राधिकार <b>प्रभाग प्रमुख</b> तय करता है — निरीक्षक (IPO) का <b>परिमंडल प्रमुख</b>। दोनों को न मिलाएँ! (R.303 vs R.260)</span>
+          <span class="en">TI's jurisdiction → Head of DIVISION; IPO's sub-division → Head of CIRCLE. Don't mix!</span></li>
+      <li>⚠️ <span class="hi">RLO <b>PMG</b> के नियंत्रण में, जबकि स्टॉक डिपो का मैनेजर <b>HoC</b> के अधीन — दोनों का प्रभारी "मैनेजर" कहलाता है</span>
+          <span class="en">RLO under PMG's direct control; Stock Depot's Manager under HoC — both heads titled "Manager"</span></li>
+      <li>⚠️ <span class="hi">दोगुना पंजीकरण-शुल्क केवल <b>पते वाले को जारी</b> होने पर; <b>प्रेषक को वापसी</b> पर कोई शुल्क नहीं (R.425)</span>
+          <span class="en">Double registration fee ONLY when issued to addressee; NEVER when returned to sender</span></li>
+      <li>⚠️ <span class="hi">ASP: LSG-SO का <b>केवल द्वितीय</b> निरीक्षण; टाइम-स्केल PO के <b>दोनों</b> निरीक्षण कर सकता है (R.260-B)</span>
+          <span class="en">ASP: ONLY 2nd inspection of LSG SOs, but BOTH inspections of time-scale POs</span></li>
+      <li>⚠️ <span class="hi">DG को व्यवधान-रिपोर्ट <b>हर मामले में नहीं</b> — केवल गंभीर/जनहानि/डाक-हानि पर, वह भी <b>तार से</b> (R.449)</span>
+          <span class="en">Interruption reports to DG NOT in every case — only serious cases / loss of life / loss of mails, by telegram</span></li>
+    </ul>
+  </div>
+
+  <div class="card t-y">
+    <h3>🟡 चेन ऑफ कमान — एक नज़र में <span class="en">Chain of Command at a Glance</span></h3>
+    <div class="flow">
+      <div class="fbox start"><span class="hi">महानिदेशक डाक (DG Posts)</span><span class="en">Director General</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">परिमंडल प्रमुख (PMG / Director) — R.1</span><span class="en">Head of Circle</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">अधीक्षक / वरिष्ठ अधीक्षक (प्रभाग) — R.90</span><span class="en">Superintendent (Division)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">निरीक्षक / ASP (उप-प्रभाग) — R.260</span><span class="en">Inspector / ASP (Sub-Division)</span></div>
+      <div class="farrow">↓</div>
+      <div class="fbox"><span class="hi">नगर निरीक्षक • ओवरसियर • प्रधान पोस्टमैन</span><span class="en">Town Inspectors • Overseers • Head Postmen</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-note">
+  📚 IP Exam Portal • डाक मैनुअल भाग VIII — Post Office & RMS Supervising Officers (Third Print, Correction Slips 1–9)<br>
+  🔴 अति महत्वपूर्ण | 🟠 बार-बार पूछा गया | 🟡 अवधारणा | 🟢 त्वरित पुनरावृत्ति • Offline-ready • No external dependencies
+</div>
+
+</div>
+</body>
+</html>

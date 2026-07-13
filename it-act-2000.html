@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Act 2000 - IP/IPO Exam Infographic</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Poppins', 'Noto Sans Gujarati', 'Noto Sans Devanagari', sans-serif;
+  background: #f4f6fb;
+  color: #1a1a2e;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 10px;
+  line-height: 1.5;
+}
+.gu { font-weight:700; font-family:'Noto Sans Gujarati',sans-serif; color:#0d1b4c; }
+.hi { font-weight:500; font-family:'Noto Sans Devanagari',sans-serif; color:#3a3a5c; font-size:0.95em; }
+.en { font-style:italic; font-family:'Poppins',sans-serif; color:#5a5a78; font-size:0.88em; }
+.stack { margin-bottom:8px; }
+
+.header {
+  background: linear-gradient(135deg,#0f4c81,#7c3aed);
+  color:#fff; border-radius:16px; padding:18px; text-align:center; margin-bottom:14px;
+  box-shadow:0 4px 14px rgba(15,76,129,.3);
+}
+.header h1 { font-size:1.25em; margin-bottom:4px; }
+.header .sub { font-size:0.85em; opacity:.9; }
+
+.badge { display:inline-block; padding:2px 8px; border-radius:20px; font-size:0.75em; font-weight:700; margin-left:6px; }
+.b-red{background:#fee2e2;color:#b91c1c;} .b-orange{background:#ffedd5;color:#c2410c;}
+.b-yellow{background:#fef9c3;color:#a16207;} .b-green{background:#dcfce7;color:#15803d;}
+
+.section {
+  background:#fff; border-radius:14px; padding:14px; margin-bottom:14px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06); border-left:6px solid #ccc;
+}
+.sec-def{border-left-color:#3b82f6;background:#eff6ff;}
+.sec-auth{border-left-color:#9333ea;background:#faf5ff;}
+.sec-time{border-left-color:#0d9488;background:#f0fdfa;}
+.sec-penalty{border-left-color:#dc2626;background:#fef2f2;}
+.sec-exception{border-left-color:#f97316;background:#fff7ed;}
+.sec-pyq{border-left-color:#ec4899;background:#fdf2f8;}
+.sec-flow{border-left-color:#6366f1;background:#eef2ff;}
+
+.chapter-tag { font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:#94a3b8; font-weight:700; }
+h2.title { font-size:1.05em; color:#0d1b4c; margin:4px 0 8px; display:flex; align-items:center; gap:6px;}
+h3.subtitle { font-size:0.95em; color:#0f4c81; margin:10px 0 6px; }
+
+table { width:100%; border-collapse:collapse; font-size:0.83em; margin:8px 0; }
+th { background:#0f4c81; color:#fff; padding:6px; text-align:left; font-size:0.8em;}
+td { padding:6px; border-bottom:1px solid #e2e8f0; vertical-align:top; }
+tr:nth-child(even){background:#f8fafc;}
+
+.flow { display:flex; flex-direction:column; gap:4px; margin:10px 0; }
+.flow-step { background:#eef2ff; border:2px solid #6366f1; border-radius:10px; padding:8px 10px; font-size:0.85em; }
+.flow-arrow { text-align:center; color:#6366f1; font-size:1.1em; }
+
+.pyq-box { background:#fdf2f8; border:1px dashed #ec4899; border-radius:8px; padding:8px; margin-top:6px; font-size:0.82em; }
+.pyq-box b { color:#be185d; }
+
+.mnemonic { background:#fefce8; border:2px solid #eab308; border-radius:10px; padding:10px; margin:8px 0; }
+
+.lastday { background:linear-gradient(135deg,#0f172a,#1e293b); color:#fff; border-radius:14px; padding:14px; margin-bottom:14px;}
+.lastday h2 { color:#fbbf24; }
+.lastday .stack .gu{color:#fff;} .lastday .stack .hi{color:#cbd5e1;} .lastday .stack .en{color:#94a3b8;}
+
+.faq-q { font-weight:700; color:#0d1b4c; margin-top:8px; }
+.faq-a { font-size:0.88em; color:#334155; }
+
+.dtree { font-size:0.85em; }
+.dtree ul { list-style:none; padding-left:18px; border-left:2px dashed #94a3b8; }
+.dtree li { margin:6px 0; position:relative; }
+.dtree li::before { content:"↳ "; color:#6366f1; }
+
+.compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.82em; }
+.compare-card { background:#f1f5f9; border-radius:10px; padding:8px; }
+
+.toc { background:#fff; border-radius:14px; padding:12px; margin-bottom:14px; font-size:0.83em;}
+.toc a { display:block; color:#0f4c81; text-decoration:none; padding:4px 0; border-bottom:1px solid #e2e8f0; }
+
+.timeline { border-left:3px solid #0f4c81; padding-left:14px; margin:10px 0; }
+.tl-item { margin-bottom:10px; font-size:0.85em; position:relative; }
+.tl-item::before { content:"●"; color:#0f4c81; position:absolute; left:-19px; }
+
+footer { text-align:center; font-size:0.75em; color:#94a3b8; margin:20px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>💻 માહિતી પ્રૌદ્યોગિકી અધિનિયમ, 2000<br>सूचना प्रौद्योगिकी अधिनियम, 2000<br><span class="en">Information Technology Act, 2000</span></h1>
+  <div class="sub">Act No. 21 of 2000 | 9 June 2000 | Amended 2008/2009 (Act 10 of 2009) &amp; 2017 | IP/IPO Exam — Trilingual Infographic</div>
+</div>
+
+<div class="toc">
+  <b>📑 Quick Navigation</b>
+  <a href="#overview">0. ઝાંખી / Overview &amp; Timeline</a>
+  <a href="#defs">1. વ્યાખ્યાઓ / Definitions (Sec 2) 🔴</a>
+  <a href="#sign">2. ડિજિટલ/ઇલેક્ટ્રોનિક હસ્તાક્ષર / Signatures (Sec 3-3A)</a>
+  <a href="#egov">3. ઇલેક્ટ્રોનિક ગવર્નન્સ / E-Governance (Sec 4-10A)</a>
+  <a href="#attr">4. એટ્રિબ્યુશન/સમય-સ્થળ / Attribution (Sec 11-13)</a>
+  <a href="#secure">5. સુરક્ષિત રેકોર્ડ / Secure Records (Sec 14-16)</a>
+  <a href="#ca">6. પ્રમાણીકરણ સત્તામંડળ / Certifying Authorities (Sec 17-34)</a>
+  <a href="#cert">7. હસ્તાક્ષર પ્રમાણપત્ર / Signature Certificates (Sec 35-42)</a>
+  <a href="#penalty">8. દંડ-વળતર 🔴 / Penalties-Compensation (Sec 43-47)</a>
+  <a href="#tribunal">9. અપીલીય ટ્રિબ્યુનલ / Appellate Tribunal (Sec 48-64)</a>
+  <a href="#offences">10. અપરાધો 🔴 / Offences (Sec 65-78)</a>
+  <a href="#intermediary">11. મધ્યસ્થી દાયિત્વ / Intermediary Liability (Sec 79-79A)</a>
+  <a href="#misc">12. વિવિધ / Miscellaneous (Sec 80-90)</a>
+  <a href="#lastday">📌 Last Day Revision Notes</a>
+  <a href="#faq">❓ FAQ + PYQ</a>
+</div>
+
+<!-- OVERVIEW / TIMELINE -->
+<div class="section sec-flow" id="overview">
+  <span class="chapter-tag">Overview</span>
+  <h2 class="title">🗓️ ઐતિહાસિક સમયરેખા <span class="badge b-red">Timeline</span></h2>
+  <div class="timeline">
+    <div class="tl-item"><b>30 Jan 1997:</b> UN General Assembly resolution A/RES/51/162 — UNCITRAL Model Law on Electronic Commerce adopted</div>
+    <div class="tl-item"><b>9 June 2000:</b> IT Act, 2000 enacted (Act No. 21 of 2000)</div>
+    <div class="tl-item"><b>17 Oct 2000:</b> Act came into force (G.S.R. 788(E))</div>
+    <div class="tl-item"><b>19 Sept 2002:</b> First notification amendments (S.O. 1015(E))</div>
+    <div class="tl-item"><b>26 Feb 2003:</b> Sec 81A (cheque truncation) inserted by Act 55/2002</div>
+    <div class="tl-item"><b>27 Oct 2009:</b> 🔴 Major amendment — Act 10 of 2009 (IT Amendment Act 2008) — "digital signature" → "electronic signature"; Sec 43A, 66A-66F, 67A-67C, 69-69B, 79 substituted</div>
+    <div class="tl-item"><b>24 Mar 2015:</b> 🔴 Sec 66A struck down — Shreya Singhal vs Union of India, AIR 2015 SC 1523</div>
+    <div class="tl-item"><b>26 May 2017:</b> Finance Act 2017 — Cyber Appellate Tribunal merged into TDSAT (Sec 48)</div>
+  </div>
+  <div class="stack">
+    <div class="gu">હેતુ: ઇલેક્ટ્રોનિક ડેટા ઇન્ટરચેન્જ (e-commerce) ને કાનૂની માન્યતા આપવી, સરકારી દસ્તાવેજોનું ઇલેક્ટ્રોનિક ફાઇલિંગ સરળ બનાવવું</div>
+    <div class="hi">उद्देश्य: इलेक्ट्रॉनिक डेटा इंटरचेंज को कानूनी मान्यता, IPC, Evidence Act 1872, Banker's Books Evidence Act 1891, RBI Act 1934 में संशोधन</div>
+    <div class="en">Purpose: legal recognition to e-commerce; amends IPC, Indian Evidence Act 1872, Banker's Books Evidence Act 1891, RBI Act 1934</div>
+  </div>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">IT એક્ટ 2000 કયા UN મોડેલ લૉ પર આધારિત છે? — UNCITRAL Model Law on Electronic Commerce</span><br><span class="hi">66A किस केस में रद्द हुई? — Shreya Singhal vs Union of India (2015)</span></div>
+</div>
+
+<!-- DEFINITIONS -->
+<div class="section sec-def" id="defs">
+  <span class="chapter-tag">Chapter I → Preliminary</span>
+  <h2 class="title">📘 મહત્વની વ્યાખ્યાઓ <span class="badge b-red">Sec 2 — VERY IMPORTANT</span></h2>
+  <table>
+    <tr><th>શબ્દ</th><th>અર્થ</th></tr>
+    <tr><td><b>Access</b></td><td>કમ્પ્યુટરના logical/arithmetical/memory function માં પ્રવેશ મેળવવો</td></tr>
+    <tr><td><b>Addressee</b></td><td>ઇલેક્ટ્રોનિક રેકોર્ડ મેળવનાર (intermediary સિવાય)</td></tr>
+    <tr><td><b>Adjudicating Officer</b></td><td>Sec 46(1) હેઠળ નિયુક્ત અધિકારી — GoI માં Director કક્ષાથી નીચે નહીં</td></tr>
+    <tr><td><b>Appropriate Government</b></td><td>List II વિષય → રાજ્ય સરકાર; અન્ય કિસ્સામાં → કેન્દ્ર સરકાર</td></tr>
+    <tr><td><b>Asymmetric Crypto System</b></td><td>Private key (sign) + Public key (verify) ની જોડ</td></tr>
+    <tr><td><b>Certifying Authority (CA)</b></td><td>Sec 24 હેઠળ ઇલેક્ટ્રોનિક હસ્તાક્ષર પ્રમાણપત્ર આપવાનું લાયસન્સ ધરાવનાર</td></tr>
+    <tr><td><b>Communication Device</b></td><td>સેલફોન, PDA કે ટેક્સ્ટ/વિડિયો/ઓડિયો મોકલવાનું કોઈપણ સાધન</td></tr>
+    <tr><td><b>Computer</b></td><td>કોઈપણ ઈલેક્ટ્રોનિક/મેગ્નેટિક/ઓપ્ટિકલ હાઇ-સ્પીડ ડેટા પ્રોસેસિંગ ડિવાઇસ</td></tr>
+    <tr><td><b>Computer Resource</b></td><td>કમ્પ્યુટર, સિસ્ટમ, નેટવર્ક, ડેટા, ડેટાબેઝ અથવા સોફ્ટવેર</td></tr>
+    <tr><td><b>Controller</b></td><td>Certifying Authorities ના Controller (Sec 17)</td></tr>
+    <tr><td><b>Cyber Cafe</b></td><td>જાહેર જનતાને ઈન્ટરનેટ ઍક્સેસ આપતી કોઈપણ સુવિધા</td></tr>
+    <tr><td><b>Cyber Security</b></td><td>અનધિકૃત ઍક્સેસ/વપરાશ/ફેરફારથી માહિતી-સાધનોનું રક્ષણ</td></tr>
+    <tr><td><b>Digital Signature</b></td><td>Sec 3 પ્રમાણે subscriber દ્વારા ઈલેક્ટ્રોનિક પદ્ધતિથી પ્રમાણીકરણ</td></tr>
+    <tr><td><b>Electronic Signature</b></td><td>Second Schedule માં ઉલ્લેખિત ટેકનિક (digital signature સહિત)</td></tr>
+    <tr><td><b>Intermediary</b></td><td>third party વતી રેકોર્ડ મેળવનાર/સંગ્રહનાર/પ્રસારણ કરનાર — ટેલિકોમ, ISP, search engine, online payment/auction/market વગેરે</td></tr>
+    <tr><td><b>Originator</b></td><td>ઈલેક્ટ્રોનિક સંદેશ મોકલનાર/બનાવનાર (intermediary સિવાય)</td></tr>
+    <tr><td><b>Secure System</b></td><td>અનધિકૃત ઍક્સેસથી સુરક્ષિત, વિશ્વસનીય, યોગ્ય રીતે કાર્ય કરતું hardware/software</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> <span class="gu">"ACID-CC" = Access, Computer, Intermediary, Digital signature, CA, Controller — ટોપ 6 વ્યાખ્યા જે વારંવાર પુછાય છે</span></div>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">"Originator" વ્યાખ્યામાં કોનો સમાવેશ થતો નથી? — Intermediary</span><br><span class="hi">"Intermediary" की परिभाषा में कौन शामिल है? — Telecom/ISP/search engine/cyber cafe आदि</span></div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="section" id="sign">
+  <span class="chapter-tag">Chapter II</span>
+  <h2 class="title">✍️ ડિજિટલ અને ઈલેક્ટ્રોનિક હસ્તાક્ષર <span class="badge b-orange">Sec 3, 3A</span></h2>
+  <div class="flow">
+    <div class="flow-step"><b>Sec 3:</b> Subscriber asymmetric crypto system + hash function વાપરીને digital signature affix કરી શકે</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step"><b>Sec 3A:</b> Electronic signature — Second Schedule માં ઉલ્લેખિત reliable ટેકનિક વાપરી શકાય</div>
+  </div>
+  <h3 class="subtitle">🌳 Electronic Signature ની "Reliability" ની 5 શરતો [Sec 3A(2)]</h3>
+  <div class="dtree">
+    <ul>
+      <li>(a) signature data signatory સાથે જ લિંક હોય</li>
+      <li>(b) signing સમયે ફક્ત signatory ના control માં હોય</li>
+      <li>(c) signature પછી કોઈ ફેરફાર detect થઈ શકે</li>
+      <li>(d) authentication પછી માહિતીમાં ફેરફાર detect થઈ શકે</li>
+      <li>(e) અન્ય prescribed શરતો પૂરી કરે</li>
+    </ul>
+  </div>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">Digital signature બનાવવા કયું ગાણિતિક function વપરાય? — Hash Function (asymmetric crypto system સાથે)</span></div>
+</div>
+
+<!-- E-GOVERNANCE -->
+<div class="section" id="egov">
+  <span class="chapter-tag">Chapter III</span>
+  <h2 class="title">🏛️ ઇલેક્ટ્રોનિક ગવર્નન્સ <span class="badge b-red">Sec 4-10A — VERY IMPORTANT</span></h2>
+  <table>
+    <tr><th>કલમ</th><th>મુખ્ય મુદ્દો</th></tr>
+    <tr><td>Sec 4</td><td>લેખિત/મુદ્રિત સ્વરૂપની જરૂરિયાત → ઈલેક્ટ્રોનિક સ્વરૂપથી પૂર્ણ ગણાશે</td></tr>
+    <tr><td>Sec 5</td><td>હસ્તાક્ષરની જરૂરિયાત → ઈલેક્ટ્રોનિક હસ્તાક્ષરથી પૂર્ણ</td></tr>
+    <tr><td>Sec 6</td><td>સરકારી દસ્તાવેજ ફાઇલિંગ/લાયસન્સ/ચુકવણી ઈલેક્ટ્રોનિક રીતે થઈ શકે</td></tr>
+    <tr><td>Sec 6A</td><td>Service provider દ્વારા સેવા વિતરણ — service charges વસૂલવાની સત્તા</td></tr>
+    <tr><td>Sec 7</td><td>ઈલેક્ટ્રોનિક રેકોર્ડનું retention — જો accessible, original format, origin/destination/date-time જાણી શકાય</td></tr>
+    <tr><td>Sec 7A</td><td>ઈલેક્ટ્રોનિક રેકોર્ડનું ઓડિટ પણ લાગુ થાય</td></tr>
+    <tr><td>Sec 8</td><td>Official Gazette → Electronic Gazette માં પ્રકાશન માન્ય</td></tr>
+    <tr><td>Sec 9 🔴</td><td>Sec 6,7,8 કોઈને ઈલેક્ટ્રોનિક સ્વરૂપ <b>સ્વીકારવાની ફરજ</b> પાડતી નથી — માત્ર વિકલ્પ આપે છે!</td></tr>
+    <tr><td>Sec 10</td><td>કેન્દ્ર સરકારને ઈલેક્ટ્રોનિક હસ્તાક્ષર અંગે નિયમો બનાવવાની સત્તા</td></tr>
+    <tr><td>Sec 10A</td><td>ઈલેક્ટ્રોનિક માધ્યમથી બનેલ કરાર (contract) અમલપાત્ર (enforceable) ગણાશે</td></tr>
+  </table>
+  <div class="pyq-box">📝 <b>PYQ (Tricky):</b> <span class="gu">શું Sec 6 કોઈ સરકારી વિભાગને ઈલેક્ટ્રોનિક દસ્તાવેજ ફરજિયાત સ્વીકારવા બાધ્ય કરે છે? — ના, Sec 9 પ્રમાણે માત્ર વિકલ્પ છે, ફરજ નથી</span></div>
+</div>
+
+<!-- ATTRIBUTION -->
+<div class="section sec-time" id="attr">
+  <span class="chapter-tag">Chapter IV</span>
+  <h2 class="title">📨 એટ્રિબ્યુશન, સ્વીકૃતિ, સમય-સ્થળ <span class="badge b-orange">Sec 11-13</span></h2>
+  <div class="stack">
+    <div class="gu">Sec 11 — Attribution: રેકોર્ડ originator ને attribute થાય જો (a) જાતે મોકલ્યો (b) અધિકૃત વ્યક્તિએ મોકલ્યો (c) automated information system દ્વારા મોકલાયો</div>
+  </div>
+  <h3 class="subtitle">⏱️ Sec 13 — સમય અને સ્થળ — Time Limits Table</h3>
+  <table>
+    <tr><th>ઘટના</th><th>નિયમ</th></tr>
+    <tr><td>Despatch (મોકલવાનો સમય)</td><td>જ્યારે રેકોર્ડ originator ના control બહારના computer resource માં પ્રવેશે</td></tr>
+    <tr><td>Receipt (designated computer resource)</td><td>જે ક્ષણે રેકોર્ડ designated resource માં entry કરે</td></tr>
+    <tr><td>Receipt (non-designated resource)</td><td>જ્યારે addressee તેને retrieve કરે</td></tr>
+    <tr><td>Despatch સ્થળ</td><td>Originator નું place of business</td></tr>
+    <tr><td>Receipt સ્થળ</td><td>Addressee નું place of business</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> <span class="gu">"મોકલવાનું = originator નો control છૂટે ત્યારે; મળવાનું = addressee ના resource માં દાખલ થાય ત્યારે"</span></div>
+</div>
+
+<!-- SECURE RECORDS -->
+<div class="section" id="secure">
+  <span class="chapter-tag">Chapter V</span>
+  <h2 class="title">🔒 સુરક્ષિત ઈલેક્ટ્રોનિક રેકોર્ડ/હસ્તાક્ષર <span class="badge b-yellow">Sec 14-16</span></h2>
+  <div class="stack">
+    <div class="gu">Sec 14: Security procedure લાગુ થયેલ રેકોર્ડ = secure electronic record (તે સમયથી verification સુધી)</div>
+    <div class="gu">Sec 15: Electronic signature "secure" ગણાય જો creation data signing સમયે ફક્ત signatory ના exclusive control માં હોય</div>
+    <div class="gu">Sec 16: કેન્દ્ર સરકાર security procedures પ્રિસ્ક્રાઇબ કરશે (commercial circumstances ધ્યાનમાં રાખીને)</div>
+  </div>
+</div>
+
+<!-- CERTIFYING AUTHORITIES -->
+<div class="section sec-auth" id="ca">
+  <span class="chapter-tag">Chapter VI</span>
+  <h2 class="title">🏢 પ્રમાણીકરણ સત્તામંડળોનું નિયમન <span class="badge b-orange">Sec 17-34</span></h2>
+  <h3 class="subtitle">👮 Controller (Sec 17-18)</h3>
+  <div class="stack">
+    <div class="gu">કેન્દ્ર સરકાર રાજપત્ર અધિસૂચના દ્વારા Controller નિયુક્ત કરે; Deputy/Assistant Controllers પણ નિયુક્ત કરી શકાય</div>
+    <div class="gu">Controller ના કાર્યો: CA પર દેખરેખ, public key પ્રમાણિત કરવી, ધોરણો નક્કી કરવા, database જાળવવો (જાહેર જનતા માટે accessible)</div>
+  </div>
+  <h3 class="subtitle">📜 લાયસન્સ — સમય મર્યાદા અને ફી 🔴</h3>
+  <table>
+    <tr><th>બાબત</th><th>વિગત</th></tr>
+    <tr><td>લાયસન્સ અરજી ફી (Sec 22)</td><td>મહત્તમ ₹25,000</td></tr>
+    <tr><td>નવીકરણ ફી (Sec 23)</td><td>મહત્તમ ₹5,000</td></tr>
+    <tr><td>નવીકરણ અરજી — સમય મર્યાદા</td><td>એક્સપાયરી પહેલાં <b>45 દિવસ</b> કરતાં ઓછા નહીં</td></tr>
+    <tr><td>લાયસન્સ સસ્પેન્શન (કારણ વગર સુનાવણી)</td><td>મહત્તમ <b>10 દિવસ</b> (Sec 25(2))</td></tr>
+    <tr><td>Electronic Signature Certificate ફી (Sec 35)</td><td>મહત્તમ ₹25,000</td></tr>
+  </table>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">લાયસન્સ રિન્યુઅલ માટે અરજી ક્યારે કરવી? — Expiry પહેલા ઓછામાં ઓછા 45 દિવસ</span><br><span class="hi">बिना सुनवाई के लाइसेंस अधिकतम कितने दिनों तक निलंबित हो सकता है? — 10 दिन</span></div>
+  <h3 class="subtitle">⚖️ લાયસન્સ રદ/સસ્પેન્ડ (Sec 25)</h3>
+  <div class="flow">
+    <div class="flow-step">❌ ખોટું/false statement આપ્યું હોય</div>
+    <div class="flow-step">❌ લાયસન્સની શરતોનું પાલન ન કર્યું હોય</div>
+    <div class="flow-step">❌ Sec 30 ની પ્રક્રિયા/ધોરણ જાળવ્યું ન હોય</div>
+    <div class="flow-step">❌ એક્ટ/નિયમ/વિનિયમનું ઉલ્લંઘન કર્યું હોય</div>
+  </div>
+  <div class="stack">
+    <div class="gu">🔴 Sec 33(2): લાયસન્સ surrender ન કરે → 6 માસ સુધી કેદ અથવા ₹10,000 સુધી દંડ અથવા બંને</div>
+  </div>
+</div>
+
+<!-- SIGNATURE CERTIFICATES -->
+<div class="section" id="cert">
+  <span class="chapter-tag">Chapter VII-VIII</span>
+  <h2 class="title">📄 હસ્તાક્ષર પ્રમાણપત્ર અને Subscriber ની ફરજો <span class="badge b-yellow">Sec 35-42</span></h2>
+  <table>
+    <tr><th>કલમ</th><th>મુખ્ય મુદ્દો</th></tr>
+    <tr><td>Sec 37</td><td>DSC સસ્પેન્શન — <b>15 દિવસથી વધુ નહીં</b> સુનાવણી વગર</td></tr>
+    <tr><td>Sec 38</td><td>DSC રદ — subscriber death/dissolution/false fact ના આધારે</td></tr>
+    <tr><td>Sec 42</td><td>Subscriber એ private key control જાળવવી જરૂરી; compromise થાય તો તરત CA ને જાણ કરવી</td></tr>
+  </table>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">DSC સસ્પેન્શન માટેની મહત્તમ સમય મર્યાદા (સુનાવણી વગર)? — 15 દિવસ</span></div>
+</div>
+
+<!-- PENALTIES -->
+<div class="section sec-penalty" id="penalty">
+  <span class="chapter-tag">Chapter IX → Most Exam-Critical</span>
+  <h2 class="title">💰 દંડ, વળતર અને ન્યાયનિર્ણયન <span class="badge b-red">Sec 43-47 — VERY IMPORTANT</span></h2>
+
+  <h3 class="subtitle">🖥️ Sec 43 — કમ્પ્યુટરને નુકસાન (10 કૃત્યો)</h3>
+  <div class="stack">
+    <div class="gu">પરવાનગી વગર: access, download/copy data, virus/contaminant introduce, damage, disruption, access denial, unauthorized access facilitate, બીજાના ખાતે charge લગાવવી, માહિતી destroy/delete/alter, source code ચોરી — <b>compensation ચૂકવવા જવાબદાર</b></div>
+    <div class="en">No fixed monetary cap — civil liability via compensation</div>
+  </div>
+
+  <h3 class="subtitle">💼 Sec 43A — Data Protection Failure</h3>
+  <div class="stack">
+    <div class="gu">Body corporate "sensitive personal data" ની reasonable security ન રાખે અને wrongful loss/gain થાય → compensation જવાબદાર</div>
+  </div>
+
+  <h3 class="subtitle">💸 દંડની રકમ — Quick Table</h3>
+  <table>
+    <tr><th>કલમ</th><th>અપરાધ</th><th>દંડ</th></tr>
+    <tr><td>Sec 44(a)</td><td>document/return ન આપવી</td><td>₹1,50,000 (each failure)</td></tr>
+    <tr><td>Sec 44(b)</td><td>return મોડું ફાઇલ</td><td>₹5,000/day</td></tr>
+    <tr><td>Sec 44(c)</td><td>books of account ન રાખવા</td><td>₹10,000/day</td></tr>
+    <tr><td>Sec 45 (Residuary)</td><td>અન્ય ઉલ્લંઘન</td><td>મહત્તમ ₹25,000</td></tr>
+  </table>
+
+  <h3 class="subtitle">⚖️ Adjudicating Officer (Sec 46) 🔴</h3>
+  <div class="stack">
+    <div class="gu">Director (GoI) કક્ષાથી નીચે નહીં તેવા અધિકારી — appointed by Central Govt</div>
+    <div class="gu">🔴 <b>Jurisdiction મર્યાદા:</b> claim ₹5 કરોડ સુધી → Adjudicating Officer; તેથી વધુ → સક્ષમ કોર્ટ (Sec 46(1A))</div>
+  </div>
+  <div class="pyq-box">📝 <b>PYQ (High Chance):</b> <span class="gu">Adjudicating Officer ની મહત્તમ jurisdiction મર્યાદા કેટલી? — ₹5 કરોડ સુધીના claim</span><br><span class="hi">Sec 44(a) के तहत दस्तावेज़ न देने पर अधिकतम दंड? — ₹1,50,000</span></div>
+
+  <h3 class="subtitle">📊 Sec 47 — વળતરની રકમ નક્કી કરવાના પરિબળો</h3>
+  <div class="flow">
+    <div class="flow-step">(a) અયોગ્ય ફાયદાની રકમ (gain of unfair advantage)</div>
+    <div class="flow-step">(b) અસરગ્રસ્તને થયેલ નુકસાનની રકમ</div>
+    <div class="flow-step">(c) ઉલ્લંઘનનું પુનરાવર્તિત સ્વરૂપ (repetitive nature)</div>
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> <span class="gu">"ગા-નુ-પુ" = ગેરફાયદો, નુકસાન, પુનરાવર્તન — Sec 47 ના 3 પરિબળો</span></div>
+</div>
+
+<!-- APPELLATE TRIBUNAL -->
+<div class="section" id="tribunal">
+  <span class="chapter-tag">Chapter X</span>
+  <h2 class="title">⚖️ અપીલીય ટ્રિબ્યુનલ <span class="badge b-orange">Sec 48-64</span></h2>
+  <div class="stack">
+    <div class="gu">🔴 2017 (Finance Act) થી: <b>TDSAT (Telecom Disputes Settlement and Appellate Tribunal)</b> જ IT Act ની Appellate Tribunal તરીકે કાર્ય કરે છે (પહેલાં અલગ Cyber Appellate Tribunal હતું)</div>
+  </div>
+  <h3 class="subtitle">⏱️ સમય મર્યાદાઓ</h3>
+  <table>
+    <tr><th>ઘટના</th><th>સમય મર્યાદા</th></tr>
+    <tr><td>Appeal to Tribunal (Sec 57(3))</td><td><b>45 દિવસ</b> (order ની નકલ મળ્યાથી)</td></tr>
+    <tr><td>Tribunal નો appeal નિકાલ કરવાનો પ્રયત્ન (Sec 57(6))</td><td><b>6 માસ</b> ની અંદર</td></tr>
+    <tr><td>Appeal to High Court (Sec 62)</td><td><b>60 દિવસ</b> (+ વધુ 60 દિવસ માફ થઈ શકે)</td></tr>
+  </table>
+  <div class="stack">
+    <div class="gu">Sec 61: 🔴 સિવિલ કોર્ટને આ બાબતે jurisdiction નથી (Adjudicating Officer/Tribunal નું ક્ષેત્ર)</div>
+  </div>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">Tribunal ના આદેશ વિરુદ્ધ High Court માં અપીલ કેટલા દિવસમાં? — 60 દિવસ</span><br><span class="hi">वर्तमान में IT Act की Appellate Tribunal कौन सी है? — TDSAT</span></div>
+</div>
+
+<!-- OFFENCES -->
+<div class="section sec-penalty" id="offences">
+  <span class="chapter-tag">Chapter XI → Most Exam-Critical</span>
+  <h2 class="title">🚨 અપરાધો અને સજાઓ <span class="badge b-red">Sec 65-78 — VERY IMPORTANT</span></h2>
+
+  <table>
+    <tr><th>કલમ</th><th>અપરાધ</th><th>સજા</th></tr>
+    <tr><td>65</td><td>Computer source documents સાથે ચેડાં</td><td>3 વર્ષ + ₹2 લાખ</td></tr>
+    <tr><td>66</td><td>Computer related offences (Sec 43 dishonestly/fraudulently)</td><td>3 વર્ષ + ₹5 લાખ</td></tr>
+    <tr><td>66A ⚠️</td><td>Offensive messages — <b>STRUCK DOWN</b> (Shreya Singhal, 2015)</td><td>—</td></tr>
+    <tr><td>66B</td><td>ચોરેલ computer resource મેળવવો</td><td>3 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>66C</td><td>Identity theft</td><td>3 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>66D</td><td>Personation દ્વારા છેતરપિંડી</td><td>3 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>66E</td><td>Privacy ભંગ (private area image)</td><td>3 વર્ષ + ₹2 લાખ</td></tr>
+    <tr><td>66F 🔴</td><td>Cyber Terrorism</td><td><b>આજીવન કેદ</b></td></tr>
+    <tr><td>67</td><td>Obscene material પ્રકાશન</td><td>1st: 3 વર્ષ+₹5 લાખ; 2nd: 5 વર્ષ+₹10 લાખ</td></tr>
+    <tr><td>67A</td><td>Sexually explicit material</td><td>1st: 5 વર્ષ+₹10 લાખ; 2nd: 7 વર્ષ+₹10 લાખ</td></tr>
+    <tr><td>67B 🔴</td><td>Child pornography</td><td>1st: 5 વર્ષ+₹10 લાખ; 2nd: 7 વર્ષ+₹10 લાખ</td></tr>
+    <tr><td>67C</td><td>Intermediary — જાણકારી preserve ન કરવી</td><td>3 વર્ષ + fine</td></tr>
+    <tr><td>68</td><td>Controller ના આદેશનું પાલન ન કરવું</td><td>2 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>69 🔴</td><td>Interception/monitoring/decryption ના આદેશનું પાલન ન કરવું</td><td>7 વર્ષ + fine</td></tr>
+    <tr><td>69A</td><td>Blocking આદેશનું પાલન ન કરવું (intermediary)</td><td>7 વર્ષ + fine</td></tr>
+    <tr><td>69B</td><td>Traffic data monitoring માં અસહકાર</td><td>3 વર્ષ + fine</td></tr>
+    <tr><td>70</td><td>Protected system માં અનધિકૃત પ્રવેશ</td><td>10 વર્ષ + fine</td></tr>
+    <tr><td>70B(7)</td><td>CERT-In ને માહિતી ન આપવી</td><td>1 વર્ષ અથવા ₹1 લાખ અથવા બંને</td></tr>
+    <tr><td>71</td><td>ખોટી રજૂઆત (misrepresentation)</td><td>2 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>72</td><td>ગુપ્તતા ભંગ</td><td>2 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>72A</td><td>કરારભંગમાં માહિતી જાહેર</td><td>3 વર્ષ + ₹5 લાખ</td></tr>
+    <tr><td>73</td><td>ખોટું પ્રમાણપત્ર પ્રકાશન</td><td>2 વર્ષ + ₹1 લાખ</td></tr>
+    <tr><td>74</td><td>છેતરપિંડી હેતુ માટે પ્રકાશન</td><td>2 વર્ષ + ₹1 લાખ</td></tr>
+  </table>
+
+  <div class="mnemonic">🧠 <b>Mnemonic for Section 66 series:</b><br><span class="gu">"66B-ચોરી, 66C-ઓળખ, 66D-છેતરપિંડી, 66E-ગોપનીયતા, 66F-આતંકવાદ" — ક્રમમાં યાદ રાખો!</span></div>
+
+  <h3 class="subtitle">🌍 Sec 75 — બહારથી થયેલ અપરાધ</h3>
+  <div class="stack">
+    <div class="gu">ભારત બહાર કરેલ અપરાધ પણ લાગુ — જો તેમાં ભારતમાં સ્થિત computer/system/network સંકળાયેલ હોય (nationality ધ્યાનમાં લીધા વગર)</div>
+  </div>
+
+  <h3 class="subtitle">⚖️ Sec 77A-77B — Compounding અને Bail</h3>
+  <div class="flow">
+    <div class="flow-step">🔴 Compounding શક્ય નથી: આજીવન કેદ અથવા 3 વર્ષથી વધુ સજાવાળા અપરાધ માટે</div>
+    <div class="flow-step">🔴 Compounding શક્ય નથી: 18 વર્ષથી નાના બાળક કે મહિલા વિરુદ્ધ અપરાધ માટે</div>
+    <div class="flow-step">🟢 3 વર્ષ+ સજાવાળા અપરાધ = Cognizable; બરાબર 3 વર્ષ સજાવાળા = Bailable</div>
+  </div>
+  <div class="stack">
+    <div class="gu">Sec 78: અપરાધની તપાસ — <b>Inspector</b> કક્ષાથી નીચે નહીં તેવો પોલીસ અધિકારી (પહેલા DSP હતું, 2009 amendment માં બદલાયું)</div>
+  </div>
+  <div class="pyq-box">📝 <b>PYQ (Very High Chance):</b> <span class="gu">IT Act હેઠળ તપાસ કોણ કરી શકે? — Inspector કક્ષાથી નીચે નહીં તેવો પોલીસ અધિકારી</span><br><span class="hi">साइबर आतंकवाद (66F) की सज़ा क्या है? — आजीवन कारावास</span></div>
+</div>
+
+<!-- INTERMEDIARY -->
+<div class="section sec-exception" id="intermediary">
+  <span class="chapter-tag">Chapter XII-XIIA</span>
+  <h2 class="title">🛡️ મધ્યસ્થી (Intermediary) ની દાયિત્વ મુક્તિ <span class="badge b-orange">Sec 79-79A</span></h2>
+  <h3 class="subtitle">✅ Sec 79 — જ્યારે Intermediary જવાબદાર ન હોય (Safe Harbour)</h3>
+  <div class="flow">
+    <div class="flow-step">✔️ ફક્ત communication system access આપે છે (transmit/store/host)</div>
+    <div class="flow-step">✔️ transmission શરૂ ન કરે, receiver પસંદ ન કરે, માહિતીમાં ફેરફાર ન કરે</div>
+    <div class="flow-step">✔️ due diligence જાળવે છે + સરકારની માર્ગદર્શિકાનું પાલન કરે</div>
+  </div>
+  <h3 class="subtitle">❌ Exception — જ્યારે Intermediary જવાબદાર બને છે</h3>
+  <div class="flow">
+    <div class="flow-step">❌ ગેરકાયદેસર કૃત્યમાં conspiracy/abetment/inducement કર્યું હોય</div>
+    <div class="flow-step">❌ Actual knowledge / સરકારની સૂચના મળ્યા છતાં material ઝડપથી remove ન કર્યું</div>
+  </div>
+  <div class="stack">
+    <div class="gu">Sec 79A: Examiner of Electronic Evidence — court માં electronic evidence પર expert opinion આપવા સરકાર નોટિફાય કરી શકે</div>
+  </div>
+</div>
+
+<!-- MISC -->
+<div class="section" id="misc">
+  <span class="chapter-tag">Chapter XIII</span>
+  <h2 class="title">📋 વિવિધ જોગવાઈઓ <span class="badge b-yellow">Sec 80-90</span></h2>
+  <table>
+    <tr><th>કલમ</th><th>મુખ્ય મુદ્દો</th></tr>
+    <tr><td>Sec 80</td><td>Inspector કક્ષાથી નીચે નહીં તેવા અધિકારી — વોરંટ વગર search/arrest જાહેર સ્થળે</td></tr>
+    <tr><td>Sec 81 🔴</td><td>Act ને overriding effect — પણ Copyright Act 1957 અને Patents Act 1970 ના અધિકાર પ્રતિબંધિત નહીં</td></tr>
+    <tr><td>Sec 81A</td><td>Electronic cheque અને truncated cheque ને લાગુ (RBI consultation સાથે)</td></tr>
+    <tr><td>Sec 82</td><td>Controller, Deputy Controller, Assistant Controller = Public Servants (IPC Sec 21)</td></tr>
+    <tr><td>Sec 84</td><td>Good faith માં કરેલ કાર્ય માટે કાનૂની રક્ષણ</td></tr>
+    <tr><td>Sec 84B</td><td>Abetment ની સજા = મુખ્ય અપરાધની સજા</td></tr>
+    <tr><td>Sec 84C</td><td>Attempt ની સજા = મહત્તમ સજાનો અડધો ભાગ</td></tr>
+    <tr><td>Sec 85</td><td>કંપની દ્વારા અપરાધ — in-charge વ્યક્તિ + કંપની બંને જવાબદાર</td></tr>
+    <tr><td>Sec 86</td><td>મુશ્કેલી દૂર કરવાનો આદેશ — Act ના પ્રારંભથી <b>2 વર્ષ</b> ની અંદર જ</td></tr>
+    <tr><td>Sec 87-90</td><td>કેન્દ્ર/રાજ્ય સરકારની rules બનાવવાની સત્તા; Sec 88 Cyber Regulations Advisory Committee</td></tr>
+  </table>
+  <div class="pyq-box">📝 <b>PYQ:</b> <span class="gu">Sec 86 પ્રમાણે Removal of Difficulties આદેશ કેટલા સમય સુધી જારી થઈ શકે? — Act ના પ્રારંભથી 2 વર્ષ સુધી</span></div>
+</div>
+
+<!-- SCHEDULES -->
+<div class="section sec-flow">
+  <h2 class="title">📜 પ્રથમ અનુસૂચિ — Act લાગુ ન પડે તેવા દસ્તાવેજ</h2>
+  <div class="flow">
+    <div class="flow-step">1️⃣ Negotiable Instrument (cheque સિવાય)</div>
+    <div class="flow-step">2️⃣ Power of Attorney</div>
+    <div class="flow-step">3️⃣ Trust</div>
+    <div class="flow-step">4️⃣ Will (વસિયત)</div>
+    <div class="flow-step">5️⃣ સ્થાવર મિલકતના વેચાણ/તબદીલીનો કોઈ કરાર</div>
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> <span class="gu">"ને-પા-ટ્ર-વિ-સ્થા" = Negotiable instrument, Power of attorney, Trust, Will, Sthavar mिल्कत — IT Act લાગુ ન પડે!</span></div>
+  <div class="pyq-box">📝 <b>PYQ (Very High Chance):</b> <span class="gu">First Schedule માં કયા 5 દસ્તાવેજ IT Act હેઠળ આવતા નથી?</span></div>
+</div>
+
+<!-- COMPARISON -->
+<div class="section">
+  <h2 class="title">⚖️ Digital Signature vs Electronic Signature</h2>
+  <div class="compare-grid">
+    <div class="compare-card"><b>Digital Signature</b><br>Sec 3 — Asymmetric crypto system + hash function ફરજિયાત</div>
+    <div class="compare-card"><b>Electronic Signature</b><br>Sec 3A — વ્યાપક શબ્દ; Second Schedule ની કોઈપણ reliable technique (digital signature સહિત)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="lastday">
+  <h2 class="title">🌙 Last Day Revision Notes</h2>
+  <div class="stack"><div class="gu">🔴 IT Act 2000 = Act No. 21 of 2000, અમલ 17 ઓક્ટોબર 2000</div></div>
+  <div class="stack"><div class="gu">🔴 2009 Amendment (Act 10/2009) સૌથી મહત્વનું — "digital" → "electronic" signature</div></div>
+  <div class="stack"><div class="gu">🔴 Sec 66A રદ — Shreya Singhal vs UOI (2015)</div></div>
+  <div class="stack"><div class="gu">🔴 Adjudicating Officer jurisdiction = ₹5 કરોડ સુધી; તેથી વધુ → કોર્ટ</div></div>
+  <div class="stack"><div class="gu">🔴 Appellate Tribunal = હવે TDSAT (2017 થી)</div></div>
+  <div class="stack"><div class="gu">🔴 Cyber Terrorism (66F) = આજીવન કેદ; Protected system (70) = 10 વર્ષ</div></div>
+  <div class="stack"><div class="gu">🔴 Sec 69 (interception આદેશ ન માનવું) = 7 વર્ષ સજા</div></div>
+  <div class="stack"><div class="gu">🟠 લાયસન્સ ફી ₹25,000; નવીકરણ ફી ₹5,000; નવીકરણ અરજી 45 દિવસ પહેલાં</div></div>
+  <div class="stack"><div class="gu">🟠 Investigation = Inspector કક્ષાથી નીચે નહીં</div></div>
+  <div class="stack"><div class="gu">🟢 First Schedule: Negotiable instrument, POA, Trust, Will, સ્થાવર મિલકત — Act લાગુ નહીં</div></div>
+  <div class="stack"><div class="gu">🟢 Sec 81: Copyright Act 1957 અને Patents Act 1970 ના અધિકાર પર અસર નહીં</div></div>
+  <div class="stack"><div class="gu">🟡 Appeal to Tribunal = 45 દિવસ; High Court appeal = 60 દિવસ</div></div>
+</div>
+
+<!-- FAQ -->
+<div class="section" id="faq">
+  <h2 class="title">❓ FAQ + Probable Questions</h2>
+  <div class="faq-q">Q1. IT Act 2000 ક્યારે અમલમાં આવ્યો?</div>
+  <div class="faq-a">A. 17 ઓક્ટોબર 2000 (G.S.R. 788(E))</div>
+
+  <div class="faq-q">Q2. 2008/2009 સુધારા (Act 10 of 2009) નો સૌથી મોટો ફેરફાર શું હતો?</div>
+  <div class="faq-a">A. "Digital Signature" ની જગ્યાએ વ્યાપક "Electronic Signature" ની વિભાવના દાખલ થઈ; Sec 43A, 66A-F, 67A-C, 69-69B, 79 નવેસરથી લખાયા</div>
+
+  <div class="faq-q">Q3. Sec 66A હાલમાં લાગુ છે?</div>
+  <div class="faq-a">A. ના — Supreme Court દ્વારા 2015 માં ગેરબંધારણીય જાહેર (Shreya Singhal કેસ)</div>
+
+  <div class="faq-q">Q4. Cyber Terrorism ની સજા શું છે?</div>
+  <div class="faq-a">A. આજીવન કેદ (Sec 66F)</div>
+
+  <div class="faq-q">Q5. Adjudicating Officer અને કોર્ટ વચ્ચે jurisdiction ની વહેંચણી કેવી રીતે થાય?</div>
+  <div class="faq-a">A. ₹5 કરોડ સુધીના claim Adjudicating Officer પાસે; તેથી વધુ સક્ષમ કોર્ટ પાસે</div>
+
+  <div class="faq-q">Q6. હાલમાં Appellate Tribunal કોણ છે?</div>
+  <div class="faq-a">A. TDSAT (Telecom Disputes Settlement and Appellate Tribunal) — 2017 Finance Act થી</div>
+
+  <div class="faq-q">Q7. First Schedule માં કયા દસ્તાવેજ IT Act ની બહાર છે?</div>
+  <div class="faq-a">A. Negotiable instrument (cheque સિવાય), Power of Attorney, Trust, Will, સ્થાવર મિલકતનો વેચાણ કરાર</div>
+</div>
+
+<footer>
+  📚 IP/IPO Exam Prep | Information Technology Act, 2000 (Act 21 of 2000) | Amended by Act 10 of 2009 &amp; Act 7 of 2017<br>
+  Trilingual Format: ગુજરાતી (Bold) → हिंदी (Medium) → English (Italic)
+</footer>
+
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+  
+
+</body>
+</html>
