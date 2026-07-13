@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कल्याण योजनाओं का संशोधन — PSSWB — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E;
+  --blue:#003087;
+  --gold:#D4AF37;
+  --very-imp:#C8102E;
+  --freq:#E67E22;
+  --concept:#D4AF37;
+  --quick:#2E8B57;
+  --bg:#FAF7F0;
+  --card:#FFFFFF;
+  --ink:#1A1A2E;
+  --muted:#6b6b78;
+  --border:#e7e1d3;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  padding-bottom:60px;
+}
+.eng{font-style:italic; color:var(--muted); font-size:0.85em;}
+
+header.top{
+  background:linear-gradient(135deg,var(--blue) 0%,#001a4d 100%);
+  color:#fff;
+  padding:28px 16px 22px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+header.top::before{
+  content:"";
+  position:absolute; top:-60px; right:-60px;
+  width:220px; height:220px; border-radius:50%;
+  background:rgba(200,16,46,0.25);
+}
+header.top h1{
+  font-size:1.35rem;
+  color:var(--gold);
+  letter-spacing:0.5px;
+  position:relative;
+}
+header.top .sub{font-size:0.95rem; margin-top:6px; color:#dbe3ff; position:relative;}
+header.top .dept{font-size:0.78rem; margin-top:10px; color:#b9c4ef; position:relative;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px; position:relative;}
+.badge{
+  font-size:0.72rem; padding:4px 10px; border-radius:20px;
+  background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3);
+}
+
+nav.toc{
+  background:#fff; margin:14px 10px; border-radius:14px;
+  padding:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  border:1px solid var(--border);
+}
+nav.toc h2{font-size:0.95rem; color:var(--blue); margin-bottom:8px;}
+nav.toc ol{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+nav.toc a{
+  font-size:0.78rem; color:var(--ink); text-decoration:none;
+  display:block; padding:6px 8px; border-radius:8px; background:var(--bg);
+  border-left:3px solid var(--red);
+}
+nav.toc a:active{background:#f0e9d8;}
+
+section{margin:18px 10px;}
+.section-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.section-head .icon{
+  width:38px; height:38px; border-radius:10px; background:var(--red);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.section-head h2{font-size:1.08rem; color:var(--blue);}
+.section-head .eng{display:block; font-size:0.75rem;}
+
+.card{
+  background:var(--card); border-radius:14px; padding:14px 14px 16px;
+  margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  border:1px solid var(--border); border-top:4px solid var(--blue);
+}
+.card h3{font-size:1rem; color:var(--red); margin-bottom:6px;}
+.card h3 .eng{display:block; font-size:0.72rem; font-weight:400;}
+.card p{font-size:0.9rem; margin-bottom:6px;}
+.card ul{margin-left:18px; font-size:0.88rem;}
+.card li{margin-bottom:4px;}
+
+.tag{
+  display:inline-block; font-size:0.68rem; padding:2px 8px; border-radius:12px;
+  color:#fff; font-weight:600; margin-right:4px; white-space:nowrap;
+}
+.tag.vi{background:var(--very-imp);}
+.tag.fa{background:var(--freq);}
+.tag.cu{background:var(--concept); color:#3a3000;}
+.tag.qr{background:var(--quick);}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:8px; background:#fff; padding:10px 12px;
+  border-radius:12px; margin:10px 10px; font-size:0.75rem; border:1px solid var(--border);
+}
+.legend span{display:flex; align-items:center; gap:5px;}
+
+.qbox{
+  background:#FFF7E6; border:1px dashed var(--gold); border-radius:10px;
+  padding:8px 10px; font-size:0.82rem; margin-top:8px;
+}
+.qbox b{color:var(--red);}
+
+.om{
+  font-size:0.72rem; color:var(--blue); background:#eef2ff; display:inline-block;
+  padding:2px 6px; border-radius:6px; margin-top:4px;
+}
+
+.tree{padding-left:0;}
+.tree-node{
+  border-left:3px solid var(--gold); margin-left:8px; padding-left:14px; margin-bottom:10px; position:relative;
+}
+.tree-node::before{
+  content:""; position:absolute; left:-8px; top:8px; width:8px; height:8px;
+  border-radius:50%; background:var(--red);
+}
+.tree-node.l1{border-left-color:var(--red);}
+.tree-node.l2{border-left-color:var(--blue); margin-left:22px;}
+.tree-node.l3{border-left-color:var(--gold); margin-left:36px;}
+.tree-node.l4{border-left-color:var(--quick); margin-left:50px;}
+.tree-node .lab{font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.5px;}
+.tree-node .txt{font-size:0.88rem; font-weight:600;}
+
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:10px 0;}
+.flow-box{
+  background:var(--blue); color:#fff; border-radius:10px; padding:9px 14px;
+  font-size:0.82rem; text-align:center; max-width:340px; width:100%;
+}
+.flow-box.alt{background:var(--red);}
+.flow-box.end{background:var(--quick);}
+.flow-box.gold{background:var(--gold); color:#3a3000;}
+.flow-arrow{font-size:1.3rem; color:var(--gold); line-height:1;}
+
+.decision{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:12px;
+}
+.d-q{background:var(--gold); color:#3a3000; padding:8px 10px; border-radius:8px; font-size:0.85rem; font-weight:700; text-align:center; margin-bottom:6px;}
+.d-ans{display:flex; gap:8px; margin-bottom:6px;}
+.d-yes,.d-no{flex:1; padding:8px; border-radius:8px; font-size:0.78rem; text-align:center;}
+.d-yes{background:#e8f5e9; border:1px solid var(--quick);}
+.d-no{background:#fdecea; border:1px solid var(--red);}
+
+.tblwrap{overflow-x:auto; margin:10px 0;}
+table{width:100%; border-collapse:collapse; font-size:0.78rem; min-width:480px;}
+th{background:var(--blue); color:#fff; padding:8px; text-align:right;}
+td{padding:7px 8px; border-bottom:1px solid var(--border); text-align:right;}
+tr:nth-child(even){background:#faf9f4;}
+th:first-child,td:first-child{text-align:right;}
+td.old-val{color:var(--red); text-decoration:line-through; font-size:0.72rem;}
+td.new-val{color:var(--quick); font-weight:700;}
+
+.timeline{position:relative; margin:14px 4px; padding-left:22px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:16px;}
+.t-item::before{
+  content:""; position:absolute; left:-28px; top:2px; width:12px; height:12px;
+  border-radius:50%; background:var(--red); border:2px solid #fff; box-shadow:0 0 0 2px var(--red);
+}
+.t-date{font-weight:700; color:var(--red); font-size:0.82rem;}
+.t-desc{font-size:0.8rem;}
+
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.compare .col{border-radius:10px; padding:10px; font-size:0.78rem;}
+.compare .old{background:#fdecea; border:1px solid var(--red);}
+.compare .new{background:#e8f5e9; border:1px solid var(--quick);}
+.compare h4{font-size:0.82rem; margin-bottom:6px;}
+
+.mnemonic{
+  background:linear-gradient(135deg,#fff8e1,#fff);
+  border:2px dashed var(--gold); border-radius:12px; padding:12px; margin:10px 0; font-size:0.85rem;
+}
+.mnemonic .word{font-size:1.1rem; font-weight:800; color:var(--red); letter-spacing:1px;}
+
+.rev-sheet{
+  background:#0f1b3d; color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.rev-sheet h2{color:var(--gold); font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-box{background:rgba(255,255,255,0.06); border-radius:10px; padding:10px; border-left:4px solid var(--gold);}
+.rev-box h4{font-size:0.85rem; color:#ffd97a; margin-bottom:4px;}
+.rev-box p, .rev-box li{font-size:0.78rem; color:#e8e8f5;}
+.rev-box ul{margin-left:16px;}
+
+.lastday{
+  background:var(--red); color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.lastday h2{color:#fff; font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.lastday .item{background:rgba(255,255,255,0.12); border-radius:10px; padding:9px 12px; margin-bottom:8px; font-size:0.82rem;}
+.lastday .item b{color:var(--gold);}
+
+.mindmap{display:flex; flex-direction:column; align-items:center; gap:10px;}
+.mm-center{
+  background:var(--red); color:#fff; padding:12px 20px; border-radius:50px;
+  font-weight:700; font-size:0.9rem; text-align:center; box-shadow:0 4px 10px rgba(200,16,46,0.3);
+}
+.mm-branches{display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;}
+.mm-branch{
+  background:var(--blue); color:#fff; border-radius:12px; padding:10px; font-size:0.78rem; text-align:center;
+}
+.mm-branch .sub{display:block; font-size:0.66rem; color:#cfe0ff; margin-top:4px;}
+
+footer{text-align:center; padding:24px 16px; font-size:0.75rem; color:var(--muted);}
+
+@media(min-width:700px){
+  nav.toc ol{grid-template-columns:1fr 1fr 1fr;}
+  .rev-grid{grid-template-columns:1fr 1fr;}
+  .mm-branches{grid-template-columns:1fr 1fr 1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>🎗️ कल्याण योजनाओं का संशोधन (Welfare Schemes Revision)</h1>
+  <div class="sub">Revision in Welfare Schemes for Departmental Employee/GDS <span class="eng">| PSSWB 13th Meeting</span></div>
+  <div class="dept">Department of Posts | Welfare & Sports Section</div>
+  <div class="badge-row">
+    <span class="badge">📘 IP Exam — Welfare/Sports उपयोगी</span>
+    <span class="badge">📄 No.1-01/2024-Wl&Sps</span>
+    <span class="badge">🗓️ लागू 1 अप्रैल 2026</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <h2>📑 विषय सूची (Contents)</h2>
+  <ol>
+    <li><a href="#mindmap">🧠 माइंड मैप</a></li>
+    <li><a href="#partI">I. मृत्यु पर वित्तीय सहायता</a></li>
+    <li><a href="#partII">II. गंभीर बीमारी सहायता</a></li>
+    <li><a href="#partIII">III. प्रोत्साहन/छात्रवृत्ति</a></li>
+    <li><a href="#partIV">IV. RWA अनुदान</a></li>
+    <li><a href="#partV">V. भ्रमण यात्रा (Excursion)</a></li>
+    <li><a href="#partVI">VI. Holiday Homes सुधार</a></li>
+    <li><a href="#timeline">🗓️ टाइमलाइन</a></li>
+    <li><a href="#compare">⚖️ तुलना चार्ट</a></li>
+    <li><a href="#mnemonics">🧩 मेमोरी ट्रिक्स</a></li>
+    <li><a href="#revision">📝 रिवीजन शीट</a></li>
+    <li><a href="#lastday">🔥 लास्ट डे नोट्स</a></li>
+  </ol>
+</nav>
+
+<div class="legend">
+  <span>🔴 <b>बहुत महत्वपूर्ण</b> (Very Imp for Exam)</span>
+  <span>🟠 <b>बार-बार पूछा गया</b> (Frequently Asked)</span>
+  <span>🟡 <b>कॉन्सेप्ट समझें</b> (Conceptual)</span>
+  <span>🟢 <b>क्विक रिवीजन</b> (Quick Revision)</span>
+</div>
+
+<!-- CHAPTER BREAKDOWN TREE -->
+<section>
+  <div class="section-head">
+    <div class="icon">🌳</div>
+    <h2>Chapter → Sub-Chapter → Micro → Nano Topic <span class="eng">Structural Breakdown</span></h2>
+  </div>
+  <div class="card">
+    <div class="tree">
+      <div class="tree-node l1"><span class="lab">Chapter</span><div class="txt">कल्याण योजनाओं का संशोधन — PSSWB 13वीं बैठक</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter I</span><div class="txt">मृत्यु पर वित्तीय सहायता (FA)</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">Immediate Relief, दुर्घटना, आतंकी/डकैत हमला</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">On Duty बनाम Not on Duty भेद</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter II</span><div class="txt">गंभीर बीमारी/सर्जरी सहायता</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">DE बनाम GDS की अलग-अलग दरें</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter III</span><div class="txt">प्रोत्साहन व छात्रवृत्ति योजनाएं</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">5 Awards, शिक्षा सहायता, SC/ST/OBC छात्रवृत्ति, दिव्यांग बच्चे</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">90% अंक शर्त; IIT/AIIMS/IIM विशेष दर</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter IV-VI</span><div class="txt">RWA अनुदान, भ्रमण यात्रा, Holiday Homes</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">700KM से 1000KM रेडियस; Rent संशोधन</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MIND MAP -->
+<section id="mindmap">
+  <div class="section-head">
+    <div class="icon">🧠</div>
+    <h2>माइंड मैप — पूरा विषय एक नज़र में <span class="eng">Mind Map Overview</span></h2>
+  </div>
+  <div class="card">
+    <div class="mindmap">
+      <div class="mm-center">Welfare Schemes<br><span style="font-size:0.68rem;">PSSWB 13वीं बैठक Revision</span></div>
+      <div class="mm-branches">
+        <div class="mm-branch">I. मृत्यु FA<span class="sub">₹25K-₹1.1L</span></div>
+        <div class="mm-branch">II. बीमारी FA<span class="sub">DE ₹15K, GDS ₹30K</span></div>
+        <div class="mm-branch">III(a) 5 Awards<span class="sub">₹4500-₹9000</span></div>
+        <div class="mm-branch">III(b) शिक्षा सहायता<span class="sub">IIT/AIIMS/IIM ₹1500/माह</span></div>
+        <div class="mm-branch">III(c) SC/ST/OBC<span class="sub">परीक्षा छात्रवृत्ति</span></div>
+        <div class="mm-branch">III(d) दिव्यांग बच्चे<span class="sub">₹750/माह + Transport</span></div>
+        <div class="mm-branch">IV. RWA अनुदान<span class="sub">₹45/तिमाही प्रति क्वार्टर</span></div>
+        <div class="mm-branch">V-VI भ्रमण/Holiday Home<span class="sub">1000KM; किराया वृद्धि</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART I -->
+<section id="partI">
+  <div class="section-head">
+    <div class="icon">I</div>
+    <h2>मृत्यु पर वित्तीय सहायता (Financial Assistance) <span class="eng">Death of Departmental Employees</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> संशोधित दरें — पुरानी बनाम नई</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>स्थिति</th><th>पुरानी दर</th><th>नई दर</th></tr>
+        <tr><td>Immediate Death Relief</td><td class="old-val">₹10,000</td><td class="new-val">₹25,000</td></tr>
+        <tr><td>दुर्घटना में मृत्यु (On Duty)</td><td class="old-val">₹15,000</td><td class="new-val">₹35,000</td></tr>
+        <tr><td>डकैत/आतंकी/दंगा हमला (On Duty)</td><td class="old-val">₹75,000</td><td class="new-val">₹1,10,000</td></tr>
+        <tr><td>डकैत/आतंकी/दंगा हमला (Not on Duty)</td><td class="old-val">₹15,000</td><td class="new-val">₹35,000</td></tr>
+      </table>
+    </div>
+    <div class="om">No.1-01/2024-Wl&Sps dt. 22.12.2025 | 13वीं PSSWB बैठक, 11.11.2025</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> On Duty व Not on Duty में आतंकी/डकैत हमले की सहायता राशि में क्या अंतर है? — <b>On Duty ₹1,10,000; Not on Duty केवल ₹35,000</b> — तीन गुना से अधिक अंतर!</div>
+  </div>
+
+  <!-- Decision tree -->
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> निर्णय वृक्ष — मृत्यु सहायता राशि कैसे तय हो? <span class="eng">Decision Tree</span></h3>
+    <div class="decision">
+      <div class="d-q">क्या मृत्यु का कारण डकैत/आतंकी/दंगा हमला है?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → आगे Duty स्थिति जांचें</div>
+        <div class="d-no">❌ नहीं → सामान्य दुर्घटना दर (₹35,000) या Immediate Relief (₹25,000)</div>
+      </div>
+      <div class="d-q">क्या कर्मचारी उस समय Duty पर था?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ On Duty → ₹1,10,000</div>
+        <div class="d-no">❌ Not on Duty → ₹35,000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART II -->
+<section id="partII">
+  <div class="section-head">
+    <div class="icon">II</div>
+    <h2>गंभीर बीमारी/सर्जरी सहायता <span class="eng">Financial Assistance for Serious Illness & Major Surgery</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> DE बनाम GDS — संशोधित दरें</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>वर्ग</th><th>पुरानी दर</th><th>नई दर</th></tr>
+        <tr><td>Departmental Employees (DE)</td><td class="old-val">₹10,000</td><td class="new-val">₹15,000</td></tr>
+        <tr><td>Gramin Dak Sevak (GDS)</td><td class="old-val">₹22,000</td><td class="new-val">₹30,000</td></tr>
+      </table>
+    </div>
+    <div class="om">Dte. letter no. 15-43/92-WL&Sports dt. 2.9.92 आदि</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> गंभीर बीमारी सहायता में GDS की दर DE से अधिक है या कम? — <b>अधिक</b> (GDS ₹30,000 बनाम DE ₹15,000)</div>
+  </div>
+</section>
+
+<!-- PART III -->
+<section id="partIII">
+  <div class="section-head">
+    <div class="icon">III</div>
+    <h2>प्रोत्साहन/छात्रवृत्ति योजनाओं में संशोधन <span class="eng">Incentive/Scholarship Schemes</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> (a) 5 Awards — 10वीं/12वीं कक्षा में उत्कृष्टता</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>स्थान</th><th>न्यूनतम %</th><th>पुरानी दर</th><th>नई दर</th></tr>
+        <tr><td>1st</td><td>90%</td><td class="old-val">₹6,000</td><td class="new-val">₹9,000</td></tr>
+        <tr><td>2nd</td><td>90%</td><td class="old-val">₹4,800</td><td class="new-val">₹7,200</td></tr>
+        <tr><td>3rd</td><td>90%</td><td class="old-val">₹4,200</td><td class="new-val">₹6,300</td></tr>
+        <tr><td>4th</td><td>90%</td><td class="old-val">₹3,600</td><td class="new-val">₹5,400</td></tr>
+        <tr><td>5th</td><td>90%</td><td class="old-val">₹3,000</td><td class="new-val">₹4,500</td></tr>
+      </table>
+    </div>
+    <ul>
+      <li>यदि 90% अंक वाले पर्याप्त पात्र बच्चे न मिलें — Circle <b>80%</b> तक के आवेदन मंगवा सकता है (केवल तभी जब कोई Position खाली रह जाए)।</li>
+      <li>प्रथम पांच उच्चतम प्रतिशत बच्चों को — प्राप्त आवेदनों में से चुना जाएगा।</li>
+    </ul>
+    <div class="om">letter no. 15016-1/86-WL&Sports dt. 30.07.1990</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> यदि 90% वाले पर्याप्त बच्चे न मिलें तो Circle कितने % तक आवेदन मांग सकता है? — <b>80%</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> (b) शिक्षा सहायता (Education Scheme) — संशोधित मासिक दरें</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>पाठ्यक्रम</th><th>पुरानी दर/माह</th><th>नई दर/माह</th></tr>
+        <tr><td>IIT, AIIMS, IIM</td><td class="old-val">₹1,000</td><td class="new-val">₹1,500</td></tr>
+        <tr><td>Medical/Technical PG — Degree</td><td class="old-val">₹800</td><td class="new-val">₹1,200</td></tr>
+        <tr><td>Medical/Technical PG — Diploma</td><td class="old-val">₹300</td><td class="new-val">₹450</td></tr>
+        <tr><td>Non-Technical Degree (सामान्य)</td><td class="old-val">₹250</td><td class="new-val">₹375</td></tr>
+        <tr><td>ITI Certificate Courses (प्रति वर्ष)</td><td class="old-val">₹1,400</td><td class="new-val">₹2,100</td></tr>
+      </table>
+    </div>
+    <ul>
+      <li>⚠️ Non-Technical Degree — पहले केवल <b>Girl Students (60% अंक शर्त सहित)</b> पात्र थीं; अब <b>सभी Girl Students, बिना न्यूनतम % शर्त</b> के, किसी भी Field में पात्र।</li>
+      <li>यदि कोई Girl एक से अधिक Scholarship हेतु पात्र हो — जो अधिक हो वही दी जाएगी।</li>
+    </ul>
+    <div class="om">letter No. 13-1/93-WL & Sports dt. 20.5.1993</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> Non-Technical Degree की छात्रवृत्ति हेतु अब न्यूनतम % शर्त क्या है? — <b>कोई शर्त नहीं (60% की पुरानी शर्त हटा दी गई)</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> Technical Scholarship — नियम व शर्तें</h3>
+    <ul>
+      <li>Renewal हेतु — वार्षिक/सेमेस्टर परीक्षा में <b>न्यूनतम 50%</b> अंक अनिवार्य; अन्य स्रोत से समान सहायता नहीं ली जा सकती।</li>
+      <li>Scholarship केवल <b>चालू शैक्षणिक वर्ष</b> हेतु; College/University परीक्षा उत्तीर्ण करने का Certificate Head of Institution द्वारा प्रमाणित होना चाहिए।</li>
+      <li>प्रत्येक बच्चे हेतु अलग आवेदन; नए आवेदकों को 12वीं (या समकक्ष) की Mark Sheet संलग्न करनी होगी।</li>
+    </ul>
+    <div class="om">Point i, ii, iii — Education Scheme Guidelines</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> (c) SC/ST/OBC कर्मचारियों हेतु परीक्षा व उच्च शिक्षा छात्रवृत्ति</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>परीक्षा/पाठ्यक्रम</th><th>पुरानी दर</th><th>नई दर</th></tr>
+        <tr><td>IPO/IRM/AAO Exam</td><td class="old-val">₹1,800</td><td class="new-val">₹2,700</td></tr>
+        <tr><td>Jr. Accountant/UDC आदि</td><td class="old-val">₹1,200</td><td class="new-val">₹1,800</td></tr>
+        <tr><td>PA, SA, Sorter आदि</td><td class="old-val">₹900</td><td class="new-val">₹1,350</td></tr>
+        <tr><td>Higher Study (10वीं-12वीं)</td><td class="old-val">₹1,200</td><td class="new-val">₹1,800</td></tr>
+        <tr><td>Degree/Diploma/PG Degree</td><td class="old-val">₹3,000</td><td class="new-val">₹4,500</td></tr>
+      </table>
+    </div>
+    <div class="om">letter no. 24-46/90-WL/Sports dt. 10.04.1991</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> IPO/IRM/AAO परीक्षा हेतु SC/ST/OBC छात्रवृत्ति की नई दर क्या है? — <b>₹2,700</b> (सबसे ऊंची दर इस तालिका में)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> (d) दिव्यांग बच्चों (Specially Abled) हेतु छात्रवृत्ति व परिवहन</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>पुरानी दर/माह</th><th>नई दर/माह</th></tr>
+        <tr><td>Scholarship</td><td class="old-val">₹500</td><td class="new-val">₹750</td></tr>
+        <tr><td>Transport (A-Class City)</td><td class="old-val">₹300</td><td class="new-val">₹450</td></tr>
+        <tr><td>Transport (अन्य शहर)</td><td class="old-val">₹250</td><td class="new-val">₹375</td></tr>
+      </table>
+    </div>
+    <div class="om">letter No. 1-19/97-WL & Sports dt. 17.09.1997</div>
+  </div>
+</section>
+
+<!-- PART IV -->
+<section id="partIV">
+  <div class="section-head">
+    <div class="icon">IV</div>
+    <h2>Resident Welfare Associations (RWA) को अनुदान <span class="eng">Grant-in-Aid</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> अनुदान दर व शर्तें</h3>
+    <ul>
+      <li>पुरानी दर — <b>₹30/-</b> प्रति Residential Quarter प्रति वर्ष; नई दर — <b>₹45/-</b> प्रति Residential Quarter प्रति वर्ष।</li>
+      <li>RWA में कम से कम <b>200 सदस्य</b> होने चाहिए (Circle/Regional Office केस-दर-केस Relax कर सकता है)।</li>
+      <li>Managing Committee के 2 पद — प्राथमिकता से महिला सदस्यों हेतु आरक्षित (महिला नामांकन न होने पर पुरुष सदस्य से भरे जा सकते हैं)।</li>
+    </ul>
+    <div class="om">letter No. 1-3/99-WL/Sport dt. 01.06.2000 | Annexure-B</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> RWA में सदस्यों की न्यूनतम संख्या क्या है? — <b>200</b> (Circle/Regional Office द्वारा Relax संभव)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> RWA प्रशासन — प्रमुख Annexure-B नियम</h3>
+    <ul>
+      <li>RWA की आय स्रोत — Subscription/Fees, Circle/Regional Office से Grant, Government/Official Bodies से Donation।</li>
+      <li>बैंक से निकासी — केवल Treasurer व President/Secretary के <b>Joint Signatures</b> से अधिकृत।</li>
+      <li>RWA — किसी बाहरी Association से Affiliate/Federate <b>नहीं</b> हो सकता (सदस्य केवल डाक कर्मचारी)।</li>
+      <li>राजनीतिक गतिविधि में शामिल पदाधिकारी/सदस्य — Governing Body से हटाया जा सकता है; CCS (Conduct) Rules, 1964 अंतर्गत अनुशासनात्मक कार्रवाई संभव।</li>
+    </ul>
+    <div class="om">Annexure-B, Point 3, 8, 9, 6(iv)</div>
+  </div>
+</section>
+
+<!-- PART V -->
+<section id="partV">
+  <div class="section-head">
+    <div class="icon">V</div>
+    <h2>भ्रमण यात्रा (Excursion Trip) योजना में संशोधन <span class="eng">Revision in Excursion Trip Scheme</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> दूरी (Radius) व सब्सिडी में बदलाव</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>पुरानी दर</th><th>नई दर</th></tr>
+        <tr><td>Radius (दूरी)</td><td class="old-val">700 KM वर्ष में एक बार</td><td class="new-val">1000 KM (एक-तरफा) वर्ष में एक बार<br>या 200 KM (एक-तरफा) वर्ष में दो बार</td></tr>
+        <tr><td>यात्रा लागत पर सब्सिडी (Basic Pay ₹65,200 तक)</td><td class="old-val">60%</td><td class="new-val">75%</td></tr>
+      </table>
+    </div>
+    <div class="om">letter number 19-2/90-WL&SPORTS dt. 11.7.1990</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> नई दूरी सीमा में विकल्प क्या हैं? — <b>1000 KM (साल में 1 बार) या 200 KM (साल में 2 बार)</b> — दोनों में से चुन सकते हैं</div>
+  </div>
+</section>
+
+<!-- PART VI -->
+<section id="partVI">
+  <div class="section-head">
+    <div class="icon">VI</div>
+    <h2>Holiday Homes — नीति व संरचनात्मक सुधार <span class="eng">Enhancing Policy in Holiday Homes</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> (a) किराया (Rent) — Pay Scale आधारित</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>Pay Scale</th><th>पुरानी दर/दिन</th><th>नई दर/दिन</th></tr>
+        <tr><td>B.P. ₹35,400/- (7th CPC) तक</td><td class="old-val">₹40</td><td class="new-val">₹60</td></tr>
+        <tr><td>B.P. ₹35,400/- (7th CPC) से अधिक</td><td class="old-val">₹100</td><td class="new-val">₹150</td></tr>
+      </table>
+    </div>
+    <div class="om">13वीं PSSWB बैठक निर्णय</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> (b) रख-रखाव व प्रबंधन — कुल लागत विभाजन</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>मद</th><th>पुरानी सीमा</th><th>नई सीमा</th></tr>
+        <tr><td>Common Room — Furniture/Equipment</td><td class="old-val">₹70,000</td><td class="new-val">₹1,00,000</td></tr>
+        <tr><td>प्रति Suite — Furniture/Utensils/Crockery</td><td class="old-val">₹50,000</td><td class="new-val">₹75,000</td></tr>
+        <tr><td>Petty Replacement (बिजली/पानी)</td><td class="old-val">₹5,000</td><td class="new-val">₹7,500</td></tr>
+      </table>
+    </div>
+    <div class="om">letter No. 1-1/2017-WL/Sports dt. 12.03.2019 | Para-III Guidelines</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Common Room की Furniture/Equipment हेतु नई सीमा क्या है? — <b>₹1,00,000</b></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-head">
+    <div class="icon">🗓️</div>
+    <h2>महत्वपूर्ण तिथियां व टाइमलाइन <span class="eng">Timeline</span></h2>
+  </div>
+  <div class="card">
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">11.7.1990</div><div class="t-desc">Excursion Trip Scheme — मूल OM (700 KM नियम) 🟢</div></div>
+      <div class="t-item"><div class="t-date">10.04.1991</div><div class="t-desc">SC/ST/OBC छात्रवृत्ति योजना — मूल OM 🟢</div></div>
+      <div class="t-item"><div class="t-date">30.07.1990</div><div class="t-desc">5 Awards योजना — मूल OM 🟢</div></div>
+      <div class="t-item"><div class="t-date">20.5.1993</div><div class="t-desc">शिक्षा सहायता योजना — मूल OM 🟢</div></div>
+      <div class="t-item"><div class="t-date">01.06.2000</div><div class="t-desc">RWA अनुदान योजना — मूल OM 🟢</div></div>
+      <div class="t-item"><div class="t-date">31.01.2018</div><div class="t-desc">पिछला समेकित Revision — कई योजनाओं में 🟡</div></div>
+      <div class="t-item"><div class="t-date">12.03.2019</div><div class="t-desc">Holiday Homes Guidelines Para-III 🟡</div></div>
+      <div class="t-item"><div class="t-date">11.09.2024</div><div class="t-desc">बीमारी सहायता — पिछला Revision 🟢</div></div>
+      <div class="t-item"><div class="t-date">04.09.2019</div><div class="t-desc">नियुक्ति नियमों की पुनः पुष्टि (संदर्भ) 🟢</div></div>
+      <div class="t-item"><div class="t-date">11.11.2025</div><div class="t-desc"><b>13वीं PSSWB बैठक</b> — MoC की अध्यक्षता में, Jodhpur Hostel, नई दिल्ली 🔴</div></div>
+      <div class="t-item"><div class="t-date">22.12.2025</div><div class="t-desc">वर्तमान OM जारी — No.1-01/2024-Wl&Sps 🔴</div></div>
+      <div class="t-item"><div class="t-date">1 अप्रैल 2026</div><div class="t-desc"><b>सभी संशोधित योजनाएं प्रभावी</b> 🔴</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare">
+  <div class="section-head">
+    <div class="icon">⚖️</div>
+    <h2>तुलना चार्ट <span class="eng">Comparison Charts</span></h2>
+  </div>
+
+  <div class="card">
+    <h3>वृद्धि प्रतिशत — किस योजना में सबसे ज़्यादा बढ़ोतरी?</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>योजना</th><th>पुरानी</th><th>नई</th><th>लगभग वृद्धि</th></tr>
+        <tr><td>Immediate Death Relief</td><td>₹10,000</td><td>₹25,000</td><td>150%</td></tr>
+        <tr><td>Excursion सब्सिडी</td><td>60%</td><td>75%</td><td>+15 अंक</td></tr>
+        <tr><td>Holiday Home किराया (निम्न स्लैब)</td><td>₹40/दिन</td><td>₹60/दिन</td><td>50%</td></tr>
+        <tr><td>शिक्षा/छात्रवृत्ति योजनाएं (सामान्यतः)</td><td>—</td><td>—</td><td>लगभग 50%</td></tr>
+      </table>
+    </div>
+    <div class="qbox"><b>याद रखें:</b> अधिकांश Scholarship/Education योजनाओं में एक समान <b>50% वृद्धि</b> पैटर्न है — जैसे ₹1,000→₹1,500, ₹800→₹1,200, ₹300→₹450।</div>
+  </div>
+
+  <div class="card">
+    <h3>DE बनाम GDS — बीमारी सहायता तुलना</h3>
+    <div class="compare">
+      <div class="col old">
+        <h4>Departmental Employee (DE)</h4>
+        <ul>
+          <li>पुरानी: ₹10,000</li>
+          <li>नई: ₹15,000</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h4>Gramin Dak Sevak (GDS)</h4>
+        <ul>
+          <li>पुरानी: ₹22,000</li>
+          <li>नई: ₹30,000</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MNEMONICS -->
+<section id="mnemonics">
+  <div class="section-head">
+    <div class="icon">🧩</div>
+    <h2>मेमोरी ट्रिक्स व मनेमोनिक्स <span class="eng">Memory Tricks</span></h2>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"25-35-110: मृत्यु सहायता की सीढ़ी"</div>
+    <p>Immediate Relief ₹25,000 → दुर्घटना ₹35,000 → आतंकी/डकैत हमला (On Duty) ₹1,10,000। जितना गंभीर कारण, उतनी बड़ी राशि।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"GDS हमेशा DE से आगे — बीमारी सहायता में"</div>
+    <p>DE ₹15,000 बनाम GDS ₹30,000 — याद रखें GDS की गंभीर बीमारी सहायता ठीक <b>दोगुनी</b> है DE से।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"90-80: Award की Backup शर्त"</div>
+    <p>5 Awards हेतु सामान्य शर्त 90% अंक; यदि पर्याप्त बच्चे न मिलें तो Circle 80% तक जा सकता है।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"1000 एक बार, 200 दो बार — कुल बराबर!"</div>
+    <p>Excursion Trip — 1000 KM साल में एक बार = 200 KM साल में दो बार (यानी कुल 400 KM का विकल्प भी उपलब्ध)।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"लगभग सब जगह डेढ़ गुना (1.5x) वृद्धि"</div>
+    <p>ज़्यादातर छात्रवृत्ति/सहायता राशियों में करीब <b>50% वृद्धि</b> पैटर्न — जल्दी अनुमान लगाने के लिए याद रखें।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"200 सदस्य = 1 RWA"</div>
+    <p>RWA बनाने हेतु न्यूनतम 200 सदस्य चाहिए — Circle/Regional Office केस-दर-केस Relax कर सकता है (BSNL/MTNL Bifurcation जैसे कारणों से)।</p>
+  </div>
+</section>
+
+<!-- REVISION SHEET -->
+<section id="revision">
+  <div class="rev-sheet">
+    <h2>📝 वन-पेज रिवीजन शीट <span class="eng" style="color:#cfcfff;">One Page Revision Sheet</span></h2>
+    <div class="rev-grid">
+      <div class="rev-box">
+        <h4>🔑 मूल तिथियां</h4>
+        <ul>
+          <li>13वीं PSSWB बैठक — 11.11.2025</li>
+          <li>OM जारी — 22.12.2025</li>
+          <li>सभी योजनाएं प्रभावी — 1 अप्रैल 2026</li>
+          <li>स्थान — Jodhpur Hostel, नई दिल्ली</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>💰 मृत्यु/बीमारी सहायता</h4>
+        <ul>
+          <li>Immediate Relief: ₹25,000</li>
+          <li>दुर्घटना: ₹35,000</li>
+          <li>आतंकी हमला (On Duty): ₹1,10,000</li>
+          <li>बीमारी — DE: ₹15,000 / GDS: ₹30,000</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>🎓 छात्रवृत्ति योजनाएं</h4>
+        <ul>
+          <li>5 Awards: ₹4,500-₹9,000 (90% शर्त)</li>
+          <li>IIT/AIIMS/IIM: ₹1,500/माह</li>
+          <li>SC/ST/OBC IPO Exam: ₹2,700</li>
+          <li>दिव्यांग बच्चे: ₹750/माह + Transport</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>🏠 अन्य योजनाएं</h4>
+        <ul>
+          <li>RWA अनुदान: ₹45/Quarter/वर्ष</li>
+          <li>Excursion: 1000KM/वर्ष या 200KM x2; सब्सिडी 75%</li>
+          <li>Holiday Home किराया: ₹60-₹150/दिन</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAST DAY -->
+<section id="lastday">
+  <div class="lastday">
+    <h2>🔥 लास्ट डे रिवीजन नोट्स <span class="eng" style="color:#ffe3e3;">Last Day Revision Notes</span></h2>
+    <div class="item"><b>1.</b> सभी संशोधित योजनाएं — <b>1 अप्रैल 2026</b> से प्रभावी; 13वीं PSSWB बैठक (11.11.2025) में स्वीकृत।</div>
+    <div class="item"><b>2.</b> मृत्यु सहायता — Immediate ₹25,000; दुर्घटना ₹35,000; आतंकी/डकैत (On Duty) ₹1,10,000, (Not on Duty) ₹35,000।</div>
+    <div class="item"><b>3.</b> गंभीर बीमारी सहायता — DE ₹15,000; GDS ₹30,000 (GDS की दर दोगुनी है)।</div>
+    <div class="item"><b>4.</b> 5 Awards — 90% न्यूनतम अंक शर्त; कमी होने पर 80% तक Relax संभव।</div>
+    <div class="item"><b>5.</b> IIT/AIIMS/IIM हेतु शिक्षा सहायता — ₹1,500/माह (सबसे ऊंची दर)।</div>
+    <div class="item"><b>6.</b> Non-Technical Degree Girl Scholarship — अब बिना न्यूनतम % शर्त, सभी Fields में पात्र।</div>
+    <div class="item"><b>7.</b> RWA अनुदान — ₹45/Residential Quarter/वर्ष; न्यूनतम 200 सदस्य आवश्यक।</div>
+    <div class="item"><b>8.</b> Excursion Trip — 1000 KM (एक बार/वर्ष) या 200 KM (दो बार/वर्ष); सब्सिडी 60% से बढ़कर 75%।</div>
+    <div class="item"><b>9.</b> Holiday Home किराया — ₹35,400 (7th CPC) तक ₹60/दिन; उससे ऊपर ₹150/दिन।</div>
+    <div class="item"><b>10.</b> Holiday Home Common Room Furniture सीमा — ₹1,00,000 (नई); प्रति Suite — ₹75,000।</div>
+  </div>
+</section>
+
+<footer>
+  📚 IP Exam Preparation Portal | Source: DoP OM No.1-01/2024-Wl&Sps dt. 22.12.2025 (13वीं PSSWB बैठक)<br>
+  Prepared for Ahmedabad L-1, India Post | ऑफलाइन उपयोग हेतु सुरक्षित
+</footer>
+
+</body>
+</html>

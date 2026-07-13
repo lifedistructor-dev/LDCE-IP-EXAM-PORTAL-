@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भ्रष्टाचार निवारण अधिनियम 1988 | IP Exam Infographic</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#003057; --ip-gold:#D4A017;
+  --very-imp:#ffe1e1; --very-imp-b:#C8102E;
+  --freq:#fff1dd; --freq-b:#e08600;
+  --concept:#fffbd6; --concept-b:#cbb400;
+  --quick:#e2f7e6; --quick-b:#1f9d4d;
+  --bg:#f5f2ea; --card:#ffffff; --text:#26282b;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:70px;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),#8f0c22 60%,var(--ip-blue));
+  color:#fff; padding:18px 14px 22px; text-align:center;
+  border-bottom:6px solid var(--ip-gold);
+}
+.header h1{font-size:1.35rem; margin-bottom:4px;}
+.header .sub{font-size:.85rem; opacity:.95;}
+.header .meta{font-size:.75rem; margin-top:8px; opacity:.9;}
+.profile-bar{
+  background:var(--ip-blue); color:#fff; text-align:center; font-size:.78rem;
+  padding:6px 10px;
+}
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  padding:12px 8px; background:#fff; border-bottom:2px solid #eee;
+}
+.legend span{
+  font-size:.72rem; padding:4px 8px; border-radius:14px; font-weight:600;
+  border:1px solid #ddd;
+}
+.container{max-width:760px; margin:0 auto; padding:12px;}
+.section-title{
+  background:var(--ip-blue); color:#fff; padding:9px 14px; border-radius:8px 8px 0 0;
+  font-size:1rem; font-weight:700; margin-top:22px; display:flex; align-items:center; gap:8px;
+}
+.card{
+  background:var(--card); border:1px solid #e2ddd0; border-radius:0 0 8px 8px;
+  padding:12px 14px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.tag{
+  display:inline-block; font-size:.68rem; font-weight:700; padding:2px 7px;
+  border-radius:10px; margin-right:4px; margin-bottom:2px;
+}
+.tag.vi{background:var(--very-imp); color:var(--very-imp-b); border:1px solid var(--very-imp-b);}
+.tag.fa{background:var(--freq); color:var(--freq-b); border:1px solid var(--freq-b);}
+.tag.co{background:var(--concept); color:#8a7a00; border:1px solid var(--concept-b);}
+.tag.qr{background:var(--quick); color:var(--quick-b); border:1px solid var(--quick-b);}
+h3.micro{color:var(--ip-red); font-size:.95rem; margin:10px 0 4px; border-left:4px solid var(--ip-red); padding-left:8px;}
+h4.nano{color:var(--ip-blue); font-size:.85rem; margin:6px 0 3px;}
+p, li{font-size:.86rem;}
+ul{padding-left:20px; margin:4px 0 8px;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.78rem;}
+th{background:var(--ip-blue); color:#fff; padding:6px 5px; text-align:left;}
+td{padding:6px 5px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#faf8f3;}
+.exam-q{
+  background:#eef3ff; border-left:4px solid #2255cc; padding:6px 10px; margin:6px 0;
+  font-size:.78rem; border-radius:0 6px 6px 0;
+}
+.exam-q b{color:#2255cc;}
+.mnemonic{
+  background:#fff4e0; border:1.5px dashed var(--ip-gold); padding:8px 10px; margin:8px 0;
+  border-radius:8px; font-size:.82rem;
+}
+.mnemonic b{color:#8a5a00;}
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:10px 0;}
+.flow-box{
+  background:#fff; border:2px solid var(--ip-blue); border-radius:8px; padding:8px 12px;
+  font-size:.78rem; text-align:center; width:92%; font-weight:600;
+}
+.flow-arrow{font-size:1.2rem; color:var(--ip-red);}
+.timeline{border-left:3px solid var(--ip-gold); margin-left:8px; padding-left:14px;}
+.tl-item{margin-bottom:14px; position:relative;}
+.tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:11px; height:11px;
+  background:var(--ip-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--ip-red);
+}
+.tl-date{font-weight:700; color:var(--ip-red); font-size:.8rem;}
+.tl-text{font-size:.8rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0;}
+.compare .old{background:#fdeaea; border:1px solid #e08c8c; border-radius:6px; padding:8px; font-size:.75rem;}
+.compare .new{background:#e7f7ea; border:1px solid #8fcf9f; border-radius:6px; padding:8px; font-size:.75rem;}
+.compare .hd{font-weight:700; text-align:center; margin-bottom:4px; font-size:.78rem;}
+.revision-sheet{
+  background:linear-gradient(160deg,#fff7e6,#fff);
+  border:2px solid var(--ip-gold); border-radius:10px; padding:14px; margin:14px 0;
+}
+.revision-sheet h2{color:var(--ip-red); font-size:1.05rem; margin-bottom:8px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px;}
+.rev-item{background:#fff; border-left:4px solid var(--ip-red); padding:6px 10px; font-size:.78rem; border-radius:0 6px 6px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mm-node{
+  background:#fff; border:2px solid var(--ip-red); border-radius:20px; padding:6px 12px;
+  font-size:.75rem; font-weight:700; color:var(--ip-blue); text-align:center;
+}
+.mm-node.center{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue); font-size:.85rem;}
+.penalty-badge{
+  display:inline-block; background:var(--ip-red); color:#fff; font-size:.72rem;
+  padding:2px 8px; border-radius:6px; font-weight:700;
+}
+.dtree{margin:10px 0; font-size:.78rem;}
+.dtree .q{background:var(--ip-blue); color:#fff; padding:6px 10px; border-radius:6px; margin-bottom:4px; font-weight:600;}
+.dtree .branch{padding-left:16px; border-left:2px dashed var(--ip-gold); margin-left:8px; margin-bottom:6px;}
+.dtree .ans{background:#f5f2ea; padding:5px 8px; border-radius:5px; margin:3px 0;}
+.alert{background:#fff3cd; border:1px solid #ffdf7e; padding:8px 10px; border-radius:6px; font-size:.78rem; margin:8px 0;}
+.footer-note{text-align:center; font-size:.72rem; color:#888; padding:20px 10px;}
+.pdf-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--ip-red); color:#fff;
+  border:none; border-radius:50%; width:54px; height:54px; font-size:1.4rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; z-index:99;
+}
+@media print{ .pdf-btn{display:none;} }
+.toc{background:#fff; border:1px solid #e2ddd0; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:.8rem;}
+.toc a{color:var(--ip-blue); text-decoration:none; display:block; padding:3px 0; border-bottom:1px dotted #ddd;}
+.small-note{font-size:.72rem; color:#666; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏛️ भ्रष्टाचार निवारण अधिनियम, 1988</h1>
+  <div class="sub">Prevention of Corruption Act, 1988 (Act No. 49 of 1988) — संशोधित 2018</div>
+  <div class="meta">📌 IP Exam (Inspector Posts) — Paper I | विषय: Acts</div>
+</div>
+<div class="profile-bar">👤 Panthil Rajeshkumar Parmar | Office Assistant | Ahmedabad L-1</div>
+
+<div class="legend">
+  <span class="tag vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="tag fa">🟠 बार-बार पूछा गया</span>
+  <span class="tag co">🟡 अवधारणा समझें</span>
+  <span class="tag qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>📑 अनुक्रमणिका (Contents)</b>
+  <a href="#ch1">Chapter I — प्रारंभिक (धारा 1-2)</a>
+  <a href="#ch2">Chapter II — विशेष न्यायाधीश (धारा 3-6)</a>
+  <a href="#ch3">Chapter III — अपराध व दंड (धारा 7-16)</a>
+  <a href="#ch4">Chapter IV — अन्वेषण (धारा 17-18)</a>
+  <a href="#ch4a">Chapter IVA — कुर्की व जब्ती (धारा 18A)</a>
+  <a href="#ch5">Chapter V — अभियोजन स्वीकृति (धारा 19-31)</a>
+  <a href="#compare">2018 संशोधन — तुलना चार्ट</a>
+  <a href="#timeline">कालक्रम / Timeline</a>
+  <a href="#rev">One-Page Revision Sheet</a>
+  <a href="#mnem">Memory Tricks / Mnemonics</a>
+</div>
+
+<!-- MIND MAP OVERVIEW -->
+<div class="section-title">🧠 संपूर्ण अधिनियम — माइंड मैप</div>
+<div class="card">
+  <div class="mindmap">
+    <div class="mm-node center">PC Act 1988<br>(5 Chapters, 31 Sections)</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch I<br>प्रारंभिक</div>
+    <div class="mm-node">Ch II<br>विशेष न्यायाधीश</div>
+    <div class="mm-node">Ch III<br>अपराध व दंड</div>
+    <div class="mm-node">Ch IV<br>अन्वेषण</div>
+    <div class="mm-node">Ch IVA<br>कुर्की-जब्ती</div>
+    <div class="mm-node">Ch V<br>स्वीकृति व विविध</div>
+  </div>
+  <p class="small-note">🟡 याद रखें क्रम: प्रारंभिक → न्यायाधीश → अपराध → अन्वेषण → संपत्ति कुर्की → स्वीकृति</p>
+</div>
+
+<!-- CHAPTER I -->
+<div class="section-title" id="ch1">📘 Chapter I — प्रारंभिक (धारा 1-2)</div>
+<div class="card">
+  <h3 class="micro">Sub-Chapter: शीर्षक व विस्तार <span class="tag qr">🟢</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>अधिनियम संख्या</td><td>Act No. 49 of 1988</td></tr>
+    <tr><td>प्रारंभ तिथि</td><td>9 सितंबर 1988</td></tr>
+    <tr><td>विस्तार</td><td>संपूर्ण भारत + भारत से बाहर सभी भारतीय नागरिकों पर लागू (Sec 1(2))</td></tr>
+    <tr><td>उद्देश्य</td><td>भ्रष्टाचार निवारण से संबंधित कानून को समेकित व संशोधित करना</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> PC Act 1988 किस तारीख को लागू हुआ? (उत्तर: 9 सितंबर 1988)</div>
+
+  <h3 class="micro">Sub-Chapter: परिभाषाएँ — धारा 2 <span class="tag vi">🔴</span></h3>
+  <h4 class="nano">Micro Topic: महत्वपूर्ण परिभाषाएँ</h4>
+  <table>
+    <tr><th>शब्द</th><th>अर्थ</th></tr>
+    <tr><td>Election (चुनाव)</td><td>संसद/विधानमंडल/स्थानीय प्राधिकरण के सदस्यों के चुनाव हेतु कोई भी चुनाव</td></tr>
+    <tr><td>Public Duty (लोक कर्तव्य)</td><td>ऐसा कर्तव्य जिसमें राज्य/जनता/समुदाय का हित हो</td></tr>
+    <tr><td>Public Servant (लोक सेवक)</td><td>सरकारी सेवा में, स्थानीय प्राधिकरण, निगम, न्यायाधीश, मध्यस्थ, चुनाव अधिकारी, सहकारी समिति पदाधिकारी, विश्वविद्यालय के शिक्षक आदि — 12 उप-श्रेणियाँ (i-xii)</td></tr>
+    <tr><td>Undue Advantage (अनुचित लाभ)</td><td>वैध पारिश्रमिक के अतिरिक्त कोई भी परितोषण (gratification) — <span class="tag fa">🟠 2018 में जोड़ा गया</span></td></tr>
+  </table>
+  <div class="alert">⚠️ 2018 संशोधन से पहले "gratification other than legal remuneration" शब्द का प्रयोग सीधे धारा 7 में होता था। अब यह एक अलग परिभाषा "Undue Advantage" [Sec 2(d)] बन गई है।</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> "Undue Advantage" की परिभाषा किस धारा में दी गई है? (उत्तर: धारा 2(d), 2018 में जोड़ी गई)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Public Servant की परिभाषा में कुल कितनी उप-श्रेणियाँ हैं? (उत्तर: 12 — (i) से (xii) तक)</div>
+</div>
+
+<!-- CHAPTER II -->
+<div class="section-title" id="ch2">📗 Chapter II — विशेष न्यायाधीशों की नियुक्ति (धारा 3-6)</div>
+<div class="card">
+  <h3 class="micro">धारा 3 — विशेष न्यायाधीश नियुक्ति की शक्ति <span class="tag fa">🟠</span></h3>
+  <ul>
+    <li>केंद्र/राज्य सरकार द्वारा राजपत्र में अधिसूचना द्वारा नियुक्ति</li>
+    <li>योग्यता: Sessions Judge / Additional Sessions Judge / Assistant Sessions Judge (CrPC 1973 के अंतर्गत) होना/रहा होना आवश्यक</li>
+  </ul>
+  <h3 class="micro">धारा 4 — विशेष न्यायाधीश द्वारा विचारणीय मामले <span class="tag co">🟡</span></h3>
+  <ul>
+    <li>PC Act के सभी अपराध केवल विशेष न्यायाधीश द्वारा ही विचारित होंगे</li>
+    <li><b>🔴 2018 संशोधन [Sec 4(4)]:</b> मुकदमा प्रतिदिन (day-to-day) आधार पर चलेगा; <span class="penalty-badge">2 वर्ष</span> में पूरा करने का प्रयास; कारण दर्ज कर <span class="penalty-badge">+6 माह प्रत्येक बार</span> बढ़ाया जा सकता है परन्तु कुल मिलाकर सामान्यतः <span class="penalty-badge">अधिकतम 4 वर्ष</span> से अधिक नहीं</li>
+  </ul>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> धारा 4(4) के अनुसार मुकदमा कितने समय में पूरा करने का प्रयास किया जाता है? (उत्तर: 2 वर्ष, अधिकतम कुल 4 वर्ष तक बढ़ाया जा सकता है)</div>
+
+  <h3 class="micro">धारा 5 — प्रक्रिया व शक्तियाँ <span class="tag co">🟡</span></h3>
+  <ul>
+    <li>वारंट मामलों की CrPC प्रक्रिया अपनाई जाती है</li>
+    <li>क्षमादान (pardon) देने की शक्ति (CrPC धारा 307 के समान)</li>
+    <li>विशेष न्यायाधीश का न्यायालय = Court of Session के समान माना जाता है</li>
+  </ul>
+  <h3 class="micro">धारा 6 — संक्षिप्त विचारण (Summary Trial) की शक्ति <span class="tag qr">🟢</span></h3>
+  <ul>
+    <li>Essential Commodities Act 1955 से संबंधित मामलों में लागू</li>
+    <li>अधिकतम सजा: <span class="penalty-badge">1 वर्ष कारावास</span></li>
+    <li>अपील नहीं यदि सजा ≤1 माह कारावास + ≤₹2000 जुर्माना</li>
+  </ul>
+</div>
+
+<!-- CHAPTER III -->
+<div class="section-title" id="ch3">📕 Chapter III — अपराध व दंड (धारा 7-16) <span class="tag vi" style="color:#fff;background:transparent;border:none;">🔴 सबसे महत्वपूर्ण अध्याय</span></div>
+<div class="card">
+  <div class="alert">🔴 <b>2018 संशोधन (Act 16 of 2018):</b> पुरानी धाराएँ 7, 8, 9, 10 को पूर्णतः प्रतिस्थापित (substitute) किया गया — यह सबसे अधिक पूछा जाने वाला topic है।</div>
+
+  <h3 class="micro">धारा 7 — लोक सेवक द्वारा रिश्वत लेना</h3>
+  <table>
+    <tr><th>कृत्य</th><th>दंड</th></tr>
+    <tr><td>अनुचित लाभ प्राप्त करना/स्वीकार करना/प्राप्त करने का प्रयास करना</td><td><span class="penalty-badge">3 से 7 वर्ष कारावास + जुर्माना</span></td></tr>
+  </table>
+  <p><b>Illustration:</b> लोक सेवक 'S', 'P' से राशन कार्ड शीघ्र प्रोसेस करने हेतु ₹5000 माँगे तो 'S' धारा 7 के अंतर्गत दोषी।</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> धारा 7 में न्यूनतम व अधिकतम सजा क्या है? (उत्तर: न्यूनतम 3 वर्ष, अधिकतम 7 वर्ष + जुर्माना)</div>
+
+  <h3 class="micro">धारा 7A — प्रभाव डालने हेतु अनुचित लाभ लेना <span class="tag fa">🟠 (नई धारा, 2018)</span></h3>
+  <p>किसी अन्य व्यक्ति के माध्यम से लोक सेवक को भ्रष्ट तरीके से प्रभावित करने हेतु अनुचित लाभ लेना — सजा <span class="penalty-badge">3-7 वर्ष + जुर्माना</span></p>
+
+  <h3 class="micro">धारा 8 — लोक सेवक को रिश्वत देना <span class="tag vi">🔴 (पहली बार घूस देने वाला भी अपराधी!)</span></h3>
+  <p>रिश्वत देने वाला व्यक्ति भी अब सीधे अपराधी — सजा <span class="penalty-badge">अधिकतम 7 वर्ष या जुर्माना या दोनों</span></p>
+  <ul>
+    <li><b>अपवाद:</b> यदि व्यक्ति मजबूर होकर रिश्वत दे तो धारा लागू नहीं</li>
+    <li><b>शर्त:</b> मजबूर व्यक्ति को <span class="penalty-badge">7 दिन</span> के भीतर कानून प्रवर्तन एजेंसी को रिपोर्ट करनी होगी</li>
+    <li>Commercial organisation द्वारा अपराध होने पर केवल जुर्माना</li>
+  </ul>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> मजबूरी में रिश्वत देने वाले को कितने दिनों में रिपोर्ट करनी होगी? (उत्तर: 7 दिन के भीतर)</div>
+
+  <h3 class="micro">धारा 9 — Commercial Organisation द्वारा रिश्वत <span class="tag fa">🟠 (नई धारा)</span></h3>
+  <ul>
+    <li>Business प्राप्त/बनाए रखने हेतु रिश्वत देने पर संगठन को केवल जुर्माना</li>
+    <li>बचाव: संगठन यह सिद्ध करे कि उसने "adequate procedures" अपनाई थीं</li>
+    <li>धारा 7A, 8, 9 के अपराध — <span class="tag vi">Cognizable</span> हैं</li>
+  </ul>
+
+  <h3 class="micro">धारा 10 — संगठन प्रभारी व्यक्ति की जिम्मेदारी</h3>
+  <p>Director/Manager/Secretary की सहमति से अपराध होने पर उसे भी <span class="penalty-badge">3-7 वर्ष + जुर्माना</span></p>
+
+  <h3 class="micro">धारा 11 — बिना प्रतिफल अनुचित लाभ लेना <span class="tag co">🟡</span></h3>
+  <p>संबंधित कार्यवाही में बिना/अपर्याप्त प्रतिफल के लाभ लेना — सजा <span class="penalty-badge">6 माह से 5 वर्ष + जुर्माना</span></p>
+
+  <h3 class="micro">धारा 12 — दुष्प्रेरण (Abetment) हेतु दंड</h3>
+  <p>अपराध हुआ हो या न हुआ हो, दुष्प्रेरण पर <span class="penalty-badge">3-7 वर्ष + जुर्माना</span></p>
+
+  <h3 class="micro">धारा 13 — लोक सेवक द्वारा आपराधिक कदाचार <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <ul>
+    <li>(a) संपत्ति का बेईमानी से दुरुपयोग/परिवर्तन</li>
+    <li>(b) कार्यकाल में जानबूझकर अवैध रूप से स्वयं को समृद्ध करना (illicit enrichment)</li>
+  </ul>
+  <div class="alert">Explanation 1: यदि लोक सेवक के पास ज्ञात आय स्रोतों से असंगत संपत्ति हो जिसका वह संतोषजनक हिसाब न दे सके — तो "जानबूझकर अवैध संवर्धन" माना जाएगा (Disproportionate Assets — DA cases)।</div>
+  <p>सजा: <span class="penalty-badge">4 से 10 वर्ष + जुर्माना</span> (2014 संशोधन से पहले 1-7 वर्ष था)</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Disproportionate Assets (DA) का प्रावधान किस धारा में है? (उत्तर: धारा 13(1)(b), Explanation 1)</div>
+
+  <h3 class="micro">धारा 14 — आदतन अपराधी हेतु दंड</h3>
+  <p>पुनः अपराध करने पर <span class="penalty-badge">5 से 10 वर्ष + जुर्माना</span></p>
+
+  <h3 class="micro">धारा 15 — प्रयास (Attempt) हेतु दंड</h3>
+  <p>धारा 13(1)(a) के प्रयास पर <span class="penalty-badge">2 से 5 वर्ष + जुर्माना</span></p>
+
+  <h3 class="micro">धारा 16 — जुर्माना निर्धारण हेतु बातें</h3>
+  <p>न्यायालय अपराध से प्राप्त संपत्ति के मूल्य को ध्यान में रखते हुए जुर्माना तय करता है</p>
+
+  <h3 class="micro nano">📊 त्वरित तालिका — सभी धाराओं की सजा एक नज़र में <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>धारा</th><th>अपराध</th><th>न्यूनतम सजा</th><th>अधिकतम सजा</th></tr>
+    <tr><td>7</td><td>लोक सेवक रिश्वत ले</td><td>3 वर्ष</td><td>7 वर्ष</td></tr>
+    <tr><td>7A</td><td>प्रभाव हेतु अनुचित लाभ</td><td>3 वर्ष</td><td>7 वर्ष</td></tr>
+    <tr><td>8</td><td>रिश्वत देना</td><td>—</td><td>7 वर्ष / जुर्माना</td></tr>
+    <tr><td>9</td><td>Commercial org रिश्वत</td><td>—</td><td>केवल जुर्माना</td></tr>
+    <tr><td>10</td><td>संगठन प्रभारी</td><td>3 वर्ष</td><td>7 वर्ष</td></tr>
+    <tr><td>11</td><td>बिना प्रतिफल लाभ</td><td>6 माह</td><td>5 वर्ष</td></tr>
+    <tr><td>12</td><td>दुष्प्रेरण</td><td>3 वर्ष</td><td>7 वर्ष</td></tr>
+    <tr><td>13(2)</td><td>आपराधिक कदाचार</td><td>4 वर्ष</td><td>10 वर्ष</td></tr>
+    <tr><td>14</td><td>आदतन अपराधी</td><td>5 वर्ष</td><td>10 वर्ष</td></tr>
+    <tr><td>15</td><td>प्रयास</td><td>2 वर्ष</td><td>5 वर्ष</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic (सजा याद रखने हेतु):</b> "साथ-साथ चले सात (7=7,7A=7,10=7,12=7) — बारह (12) से पंद्रह (15) तक बढ़ता क्रम" — 7,7A,8,10,12 में अधिकतम "7 वर्ष" कॉमन है; धारा 13 व 14 में "10 वर्ष" अधिकतम है (सबसे कठोर)।</div>
+</div>
+
+<!-- CHAPTER IV -->
+<div class="section-title" id="ch4">📙 Chapter IV — अन्वेषण (धारा 17-18)</div>
+<div class="card">
+  <h3 class="micro">धारा 17 — अन्वेषण हेतु अधिकृत व्यक्ति <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>क्षेत्र</th><th>न्यूनतम रैंक</th></tr>
+    <tr><td>Delhi Special Police Establishment</td><td>Inspector of Police</td></tr>
+    <tr><td>Mumbai, Kolkata, Chennai, Ahmedabad (Metro)</td><td>Assistant Commissioner of Police</td></tr>
+    <tr><td>अन्य स्थान</td><td>Deputy Superintendent of Police (DSP)</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> Ahmedabad में अन्वेषण हेतु न्यूनतम रैंक क्या है? (उत्तर: Assistant Commissioner of Police — यह Metropolitan Area में आता है)</div>
+  <p>धारा 13(1)(b) [DA cases] का अन्वेषण <span class="penalty-badge">Superintendent of Police से नीचे नहीं</span> किया जा सकता</p>
+
+  <h3 class="micro">धारा 17A — अनुमोदन आवश्यक (नई धारा, 2018) <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <p>लोक सेवक के आधिकारिक कर्तव्य से संबंधित निर्णय/सिफारिश की जाँच से पहले सक्षम प्राधिकारी की <b>पूर्व स्वीकृति</b> आवश्यक</p>
+  <ul>
+    <li>अपवाद: घटनास्थल पर गिरफ्तारी (rangehand catch) के मामलों में स्वीकृति आवश्यक नहीं</li>
+    <li>समय सीमा: <span class="penalty-badge">3 माह + 1 माह विस्तार</span> में निर्णय देना होगा</li>
+  </ul>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> धारा 17A के तहत अनुमोदन हेतु अधिकतम समय सीमा क्या है? (उत्तर: 3 माह, कारण सहित +1 माह तक बढ़ाया जा सकता है)</div>
+
+  <h3 class="micro">धारा 18 — बैंकर बहियों के निरीक्षण की शक्ति <span class="tag qr">🟢</span></h3>
+  <p>DSP रैंक से नीचे का अधिकारी नहीं कर सकता जब तक विशेष रूप से अधिकृत न हो</p>
+</div>
+
+<!-- CHAPTER IVA -->
+<div class="section-title" id="ch4a">📒 Chapter IVA — संपत्ति की कुर्की व जब्ती (धारा 18A)</div>
+<div class="card">
+  <h3 class="micro">धारा 18A <span class="tag co">🟡 (नया अध्याय, 2018)</span></h3>
+  <p>Criminal Law Amendment Ordinance, 1944 के प्रावधान इस अधिनियम के तहत कुर्की पर लागू होंगे (PMLA 2002 के अधीन रहते हुए)</p>
+  <p>"District Judge" शब्द का अर्थ "Special Judge" माना जाएगा</p>
+  <div class="alert">📍 <b>राज्य संशोधन (J&K/Ladakh):</b> धारा 17B-17G — Anti-Corruption Bureau की स्थापना, संपत्ति कुर्की की विस्तृत प्रक्रिया (Designated Authority, 30 दिन में पुष्टि, अपील 1 माह में Special Court को)</p>
+</div>
+
+<!-- FLOWCHART -->
+<div class="section-title">🔀 फ्लोचार्ट — अभियोजन हेतु स्वीकृति प्रक्रिया</div>
+<div class="card">
+  <div class="flow">
+    <div class="flow-box">शिकायतकर्ता सक्षम न्यायालय में शिकायत दर्ज करे</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">न्यायालय शिकायत खारिज नहीं करता (Sec 203 CrPC)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">सक्षम सरकार/प्राधिकारी को स्वीकृति हेतु अनुरोध</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">लोक सेवक को सुनवाई का अवसर दिया जाए</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">प्राधिकारी 3 माह (+1 माह कानूनी सलाह हेतु) में निर्णय दे</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box" style="border-color:var(--ip-red); color:var(--ip-red);">स्वीकृति मिलने पर ही धारा 7,11,13,15 में अभियोजन (cognizance)</div>
+  </div>
+</div>
+
+<!-- DECISION TREE -->
+<div class="section-title">🌳 निर्णय वृक्ष — क्या स्वीकृति आवश्यक है?</div>
+<div class="card dtree">
+  <div class="q">क्या अपराध धारा 7, 11, 13 या 15 के अंतर्गत है?</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ → स्वीकृति आवश्यक (Sec 19) — सिवाय Lokpal Act 2013 प्रावधानों के</div>
+    <div class="ans">❌ नहीं → साधारण CrPC प्रक्रिया लागू</div>
+  </div>
+  <div class="q">क्या मामला "आधिकारिक कर्तव्य में लिए निर्णय" से जुड़ा है? (अन्वेषण चरण)</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ → धारा 17A के तहत पूर्व अनुमोदन आवश्यक</div>
+    <div class="ans">❌ नहीं (रंगेहाथ गिरफ्तारी) → अनुमोदन आवश्यक नहीं</div>
+  </div>
+</div>
+
+<!-- COMPARISON CHART -->
+<div class="section-title" id="compare">⚖️ 2018 संशोधन (Act 16 of 2018) — पुराना बनाम नया <span class="tag vi">🔴</span></div>
+<div class="card">
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना प्रावधान (2018 से पहले)</div>Bribe giver को सजा का सीधा प्रावधान नहीं था</div>
+    <div class="new"><div class="hd">✅ नया प्रावधान (2018 बाद)</div>Sec 8 — बिना बाध्यता के रिश्वत देने वाला भी अधिकतम 7 वर्ष/जुर्माना का दोषी</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>"Valuable thing/gratification" शब्द प्रयुक्त</div>
+    <div class="new"><div class="hd">✅ नया</div>एकीकृत परिभाषा "Undue Advantage" [Sec 2(d)]</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>DA सजा: 1-7 वर्ष (2014 से पहले)</div>
+    <div class="new"><div class="hd">✅ नया</div>Sec 13(2): 4-10 वर्ष कारावास</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>ट्रायल पूर्ण करने की समय-सीमा तय नहीं</div>
+    <div class="new"><div class="hd">✅ नया</div>Sec 4(4): 2 वर्ष (अधिकतम कुल 4 वर्ष)</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>धारा 17A जैसा पूर्व-अनुमोदन प्रावधान नहीं था</div>
+    <div class="new"><div class="hd">✅ नया</div>आधिकारिक निर्णय की जाँच हेतु पूर्व अनुमोदन अनिवार्य</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>Sec 24 — बिना अभियोजन के बयान देने का प्रावधान था</div>
+    <div class="new"><div class="hd">✅ नया</div>Sec 24 — 2018 में पूर्णतः Omitted (हटाई गई)</div>
+  </div>
+</div>
+
+<!-- TIME LIMITS TABLE -->
+<div class="section-title">⏱️ महत्वपूर्ण समय-सीमाएँ <span class="tag vi">🔴</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्रावधान</th><th>समय सीमा</th></tr>
+    <tr><td>ट्रायल पूर्ण करना (Sec 4(4))</td><td>2 वर्ष (कुल अधिकतम ~4 वर्ष, हर बार +6 माह विस्तार)</td></tr>
+    <tr><td>17A अनुमोदन निर्णय</td><td>3 माह + 1 माह विस्तार</td></tr>
+    <tr><td>19 सैंक्शन निर्णय</td><td>3 माह + 1 माह (कानूनी सलाह हेतु)</td></tr>
+    <tr><td>मजबूरी में रिश्वत — रिपोर्ट करना (Sec 8)</td><td>7 दिन</td></tr>
+    <tr><td>संपत्ति जब्ती सूचना (Sec 17C, J&K)</td><td>48 घंटे</td></tr>
+    <tr><td>कुर्की पुष्टि (Designated Authority)</td><td>30 दिन</td></tr>
+    <tr><td>अपील (Designated Authority आदेश)</td><td>1 माह</td></tr>
+    <tr><td>अपील (Special Court आदेश → High Court)</td><td>1 माह</td></tr>
+    <tr><td>चार्ज में दिनांक सीमा (Sec 23)</td><td>प्रथम व अंतिम तिथि के बीच अधिकतम 1 वर्ष</td></tr>
+  </table>
+</div>
+
+<!-- AUTHORITIES TABLE -->
+<div class="section-title">👮 महत्वपूर्ण प्राधिकारी <span class="tag fa">🟠</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्राधिकारी</th><th>भूमिका</th></tr>
+    <tr><td>Special Judge</td><td>PC Act अपराधों का विचारण; Sessions Judge स्तर</td></tr>
+    <tr><td>Inspector (DSPE)</td><td>Delhi SPE क्षेत्र में अन्वेषण</td></tr>
+    <tr><td>ACP</td><td>Metro शहरों (Mumbai/Kolkata/Chennai/Ahmedabad) में अन्वेषण</td></tr>
+    <tr><td>DSP</td><td>अन्य क्षेत्रों में अन्वेषण; बैंकर बहियों का निरीक्षण</td></tr>
+    <tr><td>Superintendent of Police</td><td>Sec 13(1)(b) DA मामलों के अन्वेषण हेतु आदेश</td></tr>
+    <tr><td>Designated Authority (J&K)</td><td>कुर्की/जब्ती की पुष्टि व अपील सुनवाई</td></tr>
+    <tr><td>Director, Anti-Corruption Bureau (J&K)</td><td>ACB प्रमुख — कुर्की आदेश हेतु पूर्व अनुमोदन</td></tr>
+  </table>
+</div>
+
+<!-- TIMELINE -->
+<div class="section-title" id="timeline">🕰️ कालक्रम / Legislative Timeline <span class="tag co">🟡</span></div>
+<div class="card">
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-date">1947</div><div class="tl-text">Prevention of Corruption Act, 1947 — पुराना कानून (अब निरस्त)</div></div>
+    <div class="tl-item"><div class="tl-date">1952</div><div class="tl-text">Criminal Law Amendment Act, 1952 (अब निरस्त)</div></div>
+    <div class="tl-item"><div class="tl-date">9 सितंबर 1988</div><div class="tl-text">PC Act 1988 लागू — 1947 व 1952 के अधिनियम निरस्त (Sec 30)</div></div>
+    <div class="tl-item"><div class="tl-date">2014 (Act 1 of 2014)</div><div class="tl-text">Sec 13(2) सजा 1-7 वर्ष से बढ़ाकर 4-10 वर्ष; Sec 15 सजा भी बढ़ी; Lokpal Act संदर्भ जोड़ा गया</div></div>
+    <div class="tl-item"><div class="tl-date">26 जुलाई 2018 (Act 16 of 2018)</div><div class="tl-text">🔴 बड़ा संशोधन — Sec 7,8,9,10 प्रतिस्थापित; Sec 7A, 17A, 18A, 29A नई जोड़ी गईं; Sec 2(aa),2(d) परिभाषाएँ जोड़ी; Sec 24 हटाई गई</div></div>
+    <div class="tl-item"><div class="tl-date">31 अक्टूबर 2019 (Act 34 of 2019)</div><div class="tl-text">"except Jammu & Kashmir" शब्द हटाए गए — अब पूरे भारत में समान रूप से लागू</div></div>
+    <div class="tl-item"><div class="tl-date">18 मार्च 2020</div><div class="tl-text">J&K Reorganization Order — धारा 17B-17G राज्य संशोधन के रूप में जोड़ी गईं</div></div>
+  </div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> 2018 के प्रमुख संशोधन अधिनियम की तारीख क्या है? (उत्तर: 26 जुलाई 2018, Act 16 of 2018)</div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet — Last Day Revision</h2>
+  <div class="rev-grid">
+    <div class="rev-item">🔴 Act No. 49 of 1988, लागू: 9 सितंबर 1988; संशोधन: Act 16 of 2018 (26-7-2018)</div>
+    <div class="rev-item">🔴 5 Chapters + 1 (IVA) = कुल 6 अध्याय, 31 धाराएँ (24 व 31 विलोपित)</div>
+    <div class="rev-item">🔴 Sec 7 = घूस लेना (3-7 वर्ष) | Sec 8 = घूस देना (अधि. 7 वर्ष/जुर्माना)</div>
+    <div class="rev-item">🔴 Sec 13(2) = आपराधिक कदाचार सजा 4-10 वर्ष (सबसे कठोर)</div>
+    <div class="rev-item">🔴 Sec 14 = आदतन अपराधी 5-10 वर्ष</div>
+    <div class="rev-item">🔴 Sec 17 = अन्वेषण रैंक: DSPE-Inspector, Metro-ACP, अन्य-DSP</div>
+    <div class="rev-item">🔴 Sec 17A = आधिकारिक निर्णय जाँच हेतु पूर्व अनुमोदन (3+1 माह)</div>
+    <div class="rev-item">🔴 Sec 19 = अभियोजन स्वीकृति आवश्यक (Sec 7,11,13,15 हेतु)</div>
+    <div class="rev-item">🟠 Sec 4(4) = ट्रायल 2 वर्ष में, अधिकतम कुल 4 वर्ष</div>
+    <div class="rev-item">🟠 Sec 20 = अनुचित लाभ स्वीकार करने पर उपधारणा (presumption)</div>
+    <div class="rev-item">🟠 Sec 18A = Criminal Law Amendment Ordinance 1944 लागू (कुर्की हेतु)</div>
+    <div class="rev-item">🟡 Sec 2(c) = Public Servant परिभाषा में 12 उप-श्रेणियाँ</div>
+    <div class="rev-item">🟢 Sec 30 = 1947 Act व 1952 Act निरस्त</div>
+    <div class="rev-item">🟢 Sec 21 = अभियुक्त स्वयं बचाव हेतु गवाह बन सकता है</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section-title" id="mnem">🧠 Memory Tricks / Mnemonics</div>
+<div class="card">
+  <div class="mnemonic">
+    <b>1️⃣ अध्यायों का क्रम याद रखें — "PSOIAS":</b><br>
+    Preliminary → Special Judges → Offences → Investigation → Attachment → Sanction
+  </div>
+  <div class="mnemonic">
+    <b>2️⃣ धारा 7-10 (घूस चतुष्टय):</b> "7 ले, 7A प्रभाव डाले, 8 दे, 9 कंपनी दे" — 7=लेना, 7A=प्रभाव, 8=देना(व्यक्ति), 9=देना(संगठन)
+  </div>
+  <div class="mnemonic">
+    <b>3️⃣ सजा याद रखने हेतु "3-7-10" रूल:</b> साधारण रिश्वत धाराओं (7,7A,10,12) में 3-7 वर्ष; कदाचार धाराओं (13,14) में 4/5-10 वर्ष — जितना गंभीर अपराध, सजा उतनी ज्यादा
+  </div>
+  <div class="mnemonic">
+    <b>4️⃣ Metro शहर याद रखें "MKCA":</b> Mumbai, Kolkata, Chennai, Ahmedabad — इनमें ACP रैंक से अन्वेषण
+  </div>
+  <div class="mnemonic">
+    <b>5️⃣ 2018 में नई जुड़ी धाराएँ याद रखें "7A-17A-18A-29A":</b> सभी में "A" जुड़ा है — याद रखने का आसान तरीका
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<div class="section-title">✅ Quick Revision Points <span class="tag qr">🟢</span></div>
+<div class="card">
+  <ul>
+    <li>PC Act 1988 पूरे भारत में लागू (2019 संशोधन बाद J&K भी शामिल)</li>
+    <li>Cognizable अपराध: धारा 7A, 8, 9 (Sec 9(4) अनुसार)</li>
+    <li>Special Judge का दर्जा Sessions Court के समान</li>
+    <li>अभियुक्त स्वयं अपने बचाव में गवाह बन सकता है (Sec 21) लेकिन स्वयं के अनुरोध पर ही</li>
+    <li>चार्ज में सटीक तारीखें देना आवश्यक नहीं, परन्तु अवधि 1 वर्ष से अधिक नहीं (Sec 23)</li>
+    <li>Sec 22 — CrPC में कुछ संशोधित प्रावधान (243, 309, 317, 397) PC Act मामलों पर लागू</li>
+    <li>Sec 27 — High Court को अपील व पुनरीक्षण की शक्ति (जैसे Sessions मामलों में)</li>
+    <li>Sec 25 — सेना/नौसेना/वायुसेना कानूनों पर यह अधिनियम प्रभाव नहीं डालता</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  📚 India Post IP Exam Preparation Portal | Prevention of Corruption Act, 1988<br>
+  यह इन्फोग्राफिक केवल परीक्षा तैयारी हेतु सारांश है — मूल अधिनियम का पूर्ण अध्ययन आवश्यक
+</div>
+
+</div>
+
+<button class="pdf-btn" onclick="window.print()" title="PDF Download">⬇</button>
+
+</body>
+</html>

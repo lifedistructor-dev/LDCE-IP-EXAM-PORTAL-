@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDBS 2011 — सेवा मुक्ति लाभ योजना — IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E;
+  --blue:#003087;
+  --gold:#D4AF37;
+  --very-imp:#C8102E;
+  --freq:#E67E22;
+  --concept:#D4AF37;
+  --quick:#2E8B57;
+  --bg:#FAF7F0;
+  --card:#FFFFFF;
+  --ink:#1A1A2E;
+  --muted:#6b6b78;
+  --border:#e7e1d3;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  padding-bottom:60px;
+}
+.eng{font-style:italic; color:var(--muted); font-size:0.85em;}
+
+header.top{
+  background:linear-gradient(135deg,var(--blue) 0%,#001a4d 100%);
+  color:#fff;
+  padding:28px 16px 22px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+header.top::before{
+  content:"";
+  position:absolute; top:-60px; right:-60px;
+  width:220px; height:220px; border-radius:50%;
+  background:rgba(200,16,46,0.25);
+}
+header.top h1{
+  font-size:1.4rem;
+  color:var(--gold);
+  letter-spacing:0.5px;
+  position:relative;
+}
+header.top .sub{font-size:0.95rem; margin-top:6px; color:#dbe3ff; position:relative;}
+header.top .dept{font-size:0.78rem; margin-top:10px; color:#b9c4ef; position:relative;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px; position:relative;}
+.badge{
+  font-size:0.72rem; padding:4px 10px; border-radius:20px;
+  background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3);
+}
+
+nav.toc{
+  background:#fff; margin:14px 10px; border-radius:14px;
+  padding:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  border:1px solid var(--border);
+}
+nav.toc h2{font-size:0.95rem; color:var(--blue); margin-bottom:8px;}
+nav.toc ol{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+nav.toc a{
+  font-size:0.78rem; color:var(--ink); text-decoration:none;
+  display:block; padding:6px 8px; border-radius:8px; background:var(--bg);
+  border-left:3px solid var(--red);
+}
+nav.toc a:active{background:#f0e9d8;}
+
+section{margin:18px 10px;}
+.section-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.section-head .icon{
+  width:38px; height:38px; border-radius:10px; background:var(--red);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+}
+.section-head h2{font-size:1.1rem; color:var(--blue);}
+.section-head .eng{display:block; font-size:0.75rem;}
+
+.card{
+  background:var(--card); border-radius:14px; padding:14px 14px 16px;
+  margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  border:1px solid var(--border); border-top:4px solid var(--blue);
+}
+.card h3{font-size:1rem; color:var(--red); margin-bottom:6px;}
+.card h3 .eng{display:block; font-size:0.72rem; font-weight:400;}
+.card p{font-size:0.9rem; margin-bottom:6px;}
+.card ul{margin-left:18px; font-size:0.88rem;}
+.card li{margin-bottom:4px;}
+
+.tag{
+  display:inline-block; font-size:0.68rem; padding:2px 8px; border-radius:12px;
+  color:#fff; font-weight:600; margin-right:4px; white-space:nowrap;
+}
+.tag.vi{background:var(--very-imp);}
+.tag.fa{background:var(--freq);}
+.tag.cu{background:var(--concept); color:#3a3000;}
+.tag.qr{background:var(--quick);}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:8px; background:#fff; padding:10px 12px;
+  border-radius:12px; margin:10px 10px; font-size:0.75rem; border:1px solid var(--border);
+}
+.legend span{display:flex; align-items:center; gap:5px;}
+
+.qbox{
+  background:#FFF7E6; border:1px dashed var(--gold); border-radius:10px;
+  padding:8px 10px; font-size:0.82rem; margin-top:8px;
+}
+.qbox b{color:var(--red);}
+
+.om{
+  font-size:0.72rem; color:var(--blue); background:#eef2ff; display:inline-block;
+  padding:2px 6px; border-radius:6px; margin-top:4px;
+}
+
+.tree{padding-left:0;}
+.tree-node{
+  border-left:3px solid var(--gold); margin-left:8px; padding-left:14px; margin-bottom:10px; position:relative;
+}
+.tree-node::before{
+  content:""; position:absolute; left:-8px; top:8px; width:8px; height:8px;
+  border-radius:50%; background:var(--red);
+}
+.tree-node.l1{border-left-color:var(--red);}
+.tree-node.l2{border-left-color:var(--blue); margin-left:22px;}
+.tree-node.l3{border-left-color:var(--gold); margin-left:36px;}
+.tree-node.l4{border-left-color:var(--quick); margin-left:50px;}
+.tree-node .lab{font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.5px;}
+.tree-node .txt{font-size:0.88rem; font-weight:600;}
+
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:10px 0;}
+.flow-box{
+  background:var(--blue); color:#fff; border-radius:10px; padding:9px 14px;
+  font-size:0.82rem; text-align:center; max-width:340px; width:100%;
+}
+.flow-box.alt{background:var(--red);}
+.flow-box.end{background:var(--quick);}
+.flow-box.gold{background:var(--gold); color:#3a3000;}
+.flow-arrow{font-size:1.3rem; color:var(--gold); line-height:1;}
+
+.decision{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:12px;
+}
+.d-q{background:var(--gold); color:#3a3000; padding:8px 10px; border-radius:8px; font-size:0.85rem; font-weight:700; text-align:center; margin-bottom:6px;}
+.d-ans{display:flex; gap:8px; margin-bottom:6px;}
+.d-yes,.d-no{flex:1; padding:8px; border-radius:8px; font-size:0.78rem; text-align:center;}
+.d-yes{background:#e8f5e9; border:1px solid var(--quick);}
+.d-no{background:#fdecea; border:1px solid var(--red);}
+
+.tblwrap{overflow-x:auto; margin:10px 0;}
+table{width:100%; border-collapse:collapse; font-size:0.8rem; min-width:480px;}
+th{background:var(--blue); color:#fff; padding:8px; text-align:right;}
+td{padding:7px 8px; border-bottom:1px solid var(--border); text-align:right;}
+tr:nth-child(even){background:#faf9f4;}
+th:first-child,td:first-child{text-align:right;}
+
+.timeline{position:relative; margin:14px 4px; padding-left:22px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:16px;}
+.t-item::before{
+  content:""; position:absolute; left:-28px; top:2px; width:12px; height:12px;
+  border-radius:50%; background:var(--red); border:2px solid #fff; box-shadow:0 0 0 2px var(--red);
+}
+.t-date{font-weight:700; color:var(--red); font-size:0.82rem;}
+.t-desc{font-size:0.8rem;}
+
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.compare .col{border-radius:10px; padding:10px; font-size:0.78rem;}
+.compare .old{background:#fdecea; border:1px solid var(--red);}
+.compare .new{background:#e8f5e9; border:1px solid var(--quick);}
+.compare h4{font-size:0.82rem; margin-bottom:6px;}
+
+.mnemonic{
+  background:linear-gradient(135deg,#fff8e1,#fff);
+  border:2px dashed var(--gold); border-radius:12px; padding:12px; margin:10px 0; font-size:0.85rem;
+}
+.mnemonic .word{font-size:1.1rem; font-weight:800; color:var(--red); letter-spacing:1px;}
+
+.rev-sheet{
+  background:#0f1b3d; color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.rev-sheet h2{color:var(--gold); font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-box{background:rgba(255,255,255,0.06); border-radius:10px; padding:10px; border-left:4px solid var(--gold);}
+.rev-box h4{font-size:0.85rem; color:#ffd97a; margin-bottom:4px;}
+.rev-box p, .rev-box li{font-size:0.78rem; color:#e8e8f5;}
+.rev-box ul{margin-left:16px;}
+
+.lastday{
+  background:var(--red); color:#fff; border-radius:16px; padding:16px; margin:16px 10px;
+}
+.lastday h2{color:#fff; font-size:1.1rem; margin-bottom:10px; text-align:center;}
+.lastday .item{background:rgba(255,255,255,0.12); border-radius:10px; padding:9px 12px; margin-bottom:8px; font-size:0.82rem;}
+.lastday .item b{color:var(--gold);}
+
+.mindmap{display:flex; flex-direction:column; align-items:center; gap:10px;}
+.mm-center{
+  background:var(--red); color:#fff; padding:12px 20px; border-radius:50px;
+  font-weight:700; font-size:0.9rem; text-align:center; box-shadow:0 4px 10px rgba(200,16,46,0.3);
+}
+.mm-branches{display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;}
+.mm-branch{
+  background:var(--blue); color:#fff; border-radius:12px; padding:10px; font-size:0.78rem; text-align:center;
+}
+.mm-branch .sub{display:block; font-size:0.66rem; color:#cfe0ff; margin-top:4px;}
+
+.pie-visual{display:flex; border-radius:10px; overflow:hidden; margin:10px 0; font-size:0.78rem; text-align:center; color:#fff;}
+.pie-visual div{padding:14px 4px;}
+.p40{background:var(--red); flex:4;}
+.p60{background:var(--quick); flex:6;}
+.p20{background:var(--gold); color:#3a3000; flex:2;}
+.p80{background:var(--blue); flex:8;}
+.p85{background:var(--red); flex:85;}
+.p15{background:var(--quick); flex:15;}
+
+footer{text-align:center; padding:24px 16px; font-size:0.75rem; color:var(--muted);}
+
+@media(min-width:700px){
+  nav.toc ol{grid-template-columns:1fr 1fr 1fr;}
+  .rev-grid{grid-template-columns:1fr 1fr;}
+  .mm-branches{grid-template-columns:1fr 1fr 1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>💰 SDBS 2011 — सेवा मुक्ति लाभ योजना</h1>
+  <div class="sub">Service Discharge Benefit Scheme for Gramin Dak Sevaks <span class="eng">| Complete Regulations Guide</span></div>
+  <div class="dept">Department of Posts | Dak Bhawan, Sansad Marg, New Delhi</div>
+  <div class="badge-row">
+    <span class="badge">📘 IP Exam — GDS Rules उपयोगी</span>
+    <span class="badge">📄 No. 6-11/2009-PE.II</span>
+    <span class="badge">🗓️ लागू 01.04.2011</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <h2>📑 विषय सूची (Contents)</h2>
+  <ol>
+    <li><a href="#mindmap">🧠 माइंड मैप</a></li>
+    <li><a href="#part1">Part-I परिचय व परिभाषाएं</a></li>
+    <li><a href="#eligibility">पात्रता व विकल्प</a></li>
+    <li><a href="#part2">Part-II संचालन प्रक्रिया</a></li>
+    <li><a href="#exit">निकास/Exit नियम</a></li>
+    <li><a href="#death">मृत्यु/बर्खास्तगी</a></li>
+    <li><a href="#part3">Part-III लेखा प्रक्रिया</a></li>
+    <li><a href="#forms">फॉर्म सूची</a></li>
+    <li><a href="#timeline">🗓️ टाइमलाइन</a></li>
+    <li><a href="#compare">⚖️ तुलना चार्ट</a></li>
+    <li><a href="#mnemonics">🧩 मेमोरी ट्रिक्स</a></li>
+    <li><a href="#revision">📝 रिवीजन शीट</a></li>
+    <li><a href="#lastday">🔥 लास्ट डे नोट्स</a></li>
+  </ol>
+</nav>
+
+<div class="legend">
+  <span>🔴 <b>बहुत महत्वपूर्ण</b> (Very Imp for Exam)</span>
+  <span>🟠 <b>बार-बार पूछा गया</b> (Frequently Asked)</span>
+  <span>🟡 <b>कॉन्सेप्ट समझें</b> (Conceptual)</span>
+  <span>🟢 <b>क्विक रिवीजन</b> (Quick Revision)</span>
+</div>
+
+<!-- CHAPTER BREAKDOWN TREE -->
+<section>
+  <div class="section-head">
+    <div class="icon">🌳</div>
+    <h2>Chapter → Sub-Chapter → Micro → Nano Topic <span class="eng">Structural Breakdown</span></h2>
+  </div>
+  <div class="card">
+    <div class="tree">
+      <div class="tree-node l1"><span class="lab">Chapter</span><div class="txt">SDBS 2011 — Service Discharge Benefit Scheme (GDS)</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">Part-I — परिचय, परिभाषाएं, पात्रता</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">NPS-Lite आधारित; PFRDA नोडल एजेंसी</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">₹200/माह सब्सक्रिप्शन; ₹1500/वर्ष Severance जोड़</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">Part-II — संचालन प्रक्रिया (Enrolment, PRAN)</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">Collection Centre → CRA → PRAN जारी</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">Duplicate PRAN फीस ₹20/₹30</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">Exit, मृत्यु, बर्खास्तगी नियम</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">Normal Exit 40:60; Premature 20:80; Resignation 85:15</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">58 वर्ष प्रीमैच्योर विकल्प; 65 वर्ष Normal Age</div></div>
+
+      <div class="tree-node l2"><span class="lab">Sub-Chapter</span><div class="txt">Part-III — लेखा प्रक्रिया (Accounting)</div></div>
+      <div class="tree-node l3"><span class="lab">Micro</span><div class="txt">Head of Account — Major/Minor/Sub Head</div></div>
+      <div class="tree-node l4"><span class="lab">Nano</span><div class="txt">10वीं तारीख तक अपलोड अनिवार्य</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MIND MAP -->
+<section id="mindmap">
+  <div class="section-head">
+    <div class="icon">🧠</div>
+    <h2>माइंड मैप — पूरा विषय एक नज़र में <span class="eng">Mind Map Overview</span></h2>
+  </div>
+  <div class="card">
+    <div class="mindmap">
+      <div class="mm-center">SDBS 2011<br><span style="font-size:0.68rem;">Service Discharge Benefit Scheme</span></div>
+      <div class="mm-branches">
+        <div class="mm-branch">परिभाषाएं<span class="sub">PRAN, CRA, AO, OO, CC</span></div>
+        <div class="mm-branch">पात्रता<span class="sub">1 वर्ष सेवा, विकल्प एक बार</span></div>
+        <div class="mm-branch">सब्सक्रिप्शन<span class="sub">₹200/माह (केवल Govt)</span></div>
+        <div class="mm-branch">Exit नियम<span class="sub">Normal/Premature/Resignation</span></div>
+        <div class="mm-branch">मृत्यु/Dismissal<span class="sub">Nominee विकल्प</span></div>
+        <div class="mm-branch">फॉर्म<span class="sub">SDBS-1 से SDBS-8</span></div>
+        <div class="mm-branch">प्राधिकरण<span class="sub">PFRDA, CRA, AO, OO, CC</span></div>
+        <div class="mm-branch">Grievance<span class="sub">7 दिन / 1 माह सीमा</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART I -->
+<section id="part1">
+  <div class="section-head">
+    <div class="icon">I</div>
+    <h2>Part-I — परिचय व परिभाषाएं <span class="eng">Introductory & Definitions</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> पृष्ठभूमि व स्कीम का प्रारंभ <span class="eng">Background</span></h3>
+    <ul>
+      <li><b>R.S. Nataraja Murti Committee</b> (Report Oct. 2008) — GDS को Service Discharge Benefit Scheme सुझाई (पुरानी Severance Amount Scheme के बदले)।</li>
+      <li>NPS-Lite Scheme (PFRDA, 2010) पर आधारित, GDS की ज़रूरतों अनुसार संशोधित।</li>
+      <li>स्कीम का नाम: <b>SDBS, 2011</b>; लागू तिथि: <b>1 अप्रैल 2011</b>।</li>
+      <li>Registration/Records/Funds Management — NPS-Lite प्लेटफार्म का उपयोग होगा।</li>
+    </ul>
+    <div class="om">No. 6-11/2009-PE.II dt. 01.04.2011</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> SDBS किस समिति की सिफारिश पर बनी? — <b>R.S. Nataraja Murti Committee (2008)</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> महत्वपूर्ण परिभाषाएं <span class="eng">Key Definitions</span></h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>शब्द</th><th>अर्थ</th></tr>
+        <tr><td>AO</td><td>Aggregator-Cum-Accounts Office — GM(PAF)/DA(Postal), C/AO</td></tr>
+        <tr><td>CRA</td><td>Central Record Keeping Agency (वर्तमान: NSDL, Mumbai)</td></tr>
+        <tr><td>CC</td><td>Collection Centre — Divisional Head का कार्यालय</td></tr>
+        <tr><td>OO</td><td>Oversight Office — DG Posts का कार्यालय (Postal Directorate)</td></tr>
+        <tr><td>PRA</td><td>Permanent Retirement Account</td></tr>
+        <tr><td>PRAN</td><td>Permanent Retirement Account Number</td></tr>
+        <tr><td>PFM</td><td>Pension Fund Manager</td></tr>
+        <tr><td>Custodian</td><td>Stockholding Corporation of India Ltd (SCIL)</td></tr>
+        <tr><td>Trustee Bank</td><td>PFRDA/NPS Trust द्वारा नामित बैंक</td></tr>
+      </table>
+    </div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> वर्तमान CRA कौन है? — <b>National Securities Depository Limited (NSDL), Mumbai</b></div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section id="eligibility">
+  <div class="section-head">
+    <div class="icon">✅</div>
+    <h2>पात्रता व विकल्प <span class="eng">Eligibility to Join</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> मौजूदा GDS हेतु पात्रता</h3>
+    <ul>
+      <li>Regularly engaged GDS, जिन्होंने GDS (Conduct & Employment) Rules 2001 अनुसार <b>कम से कम 1 वर्ष</b> संतोषजनक सेवा दी हो।</li>
+      <li>⚠️ जो GDS <b>1 जनवरी 2011</b> को अगले <b>3 वर्ष के भीतर</b> Discharge होने वाले हैं — वे पात्र <b>नहीं</b>।</li>
+      <li>Option — प्रारूप <b>SDBS-8</b> में — SDBS या पुरानी Severance Amount Scheme में से एक चुनना होगा।</li>
+      <li><b>Option एक बार Final</b> — बाद में बदला नहीं जा सकता।</li>
+    </ul>
+    <div class="om">Para 3(a), SDBS Regulations 2011</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> कौन से GDS SDBS में शामिल नहीं हो सकते? — <b>जो 1 जनवरी 2011 से 3 वर्ष के भीतर Discharge होने वाले हैं</b></div>
+  </div>
+
+  <!-- Decision tree -->
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> निर्णय वृक्ष — SDBS पात्रता <span class="eng">Decision Tree</span></h3>
+    <div class="decision">
+      <div class="d-q">क्या GDS 1 जनवरी 2011 से पहले नियुक्त है?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → Option चुनने की सुविधा (SDBS/Severance)</div>
+        <div class="d-no">❌ नहीं (नया GDS) → SDBS अनिवार्य, कोई विकल्प नहीं</div>
+      </div>
+      <div class="d-q">क्या GDS 3 वर्ष के भीतर Discharge होने वाला है?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ हाँ → SDBS हेतु अपात्र</div>
+        <div class="d-no">❌ नहीं → पात्र (अन्य शर्तें पूरी होने पर)</div>
+      </div>
+      <div class="d-q">क्या Option तय समय पर नहीं दिया?</div>
+      <div class="d-ans">
+        <div class="d-yes">✅ माना जाएगा — पुरानी Severance Scheme जारी रहेगी</div>
+        <div class="d-no">❌ Option दिया → वह Final व अपरिवर्तनीय</div>
+      </div>
+    </div>
+    <div class="om">Para 17(a)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> नए नियुक्त GDS व अन्य श्रेणियां</h3>
+    <ul>
+      <li><b>नई नियुक्ति (Scheme के बाद):</b> 1 वर्ष संतोषजनक सेवा पूरी होने पर SDBS <b>अनिवार्य</b> — कोई विकल्प नहीं, Severance Scheme का लाभ नहीं मिलेगा।</li>
+      <li><b>Provisional/Substitute GDS</b> (अल्पकालिक रिक्ति हेतु) — SDBS हेतु <b>अपात्र</b>।</li>
+      <li><b>RMS Units के GDS:</b> संबंधित Divisional Head Option प्राप्त करेगा — प्रारूप <b>NLS1</b> में, पड़ोसी Postal Division को भेजा जाएगा।</li>
+    </ul>
+    <div class="om">Para 3(b), 3(c), 3(a)(v)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Severance Amount का समायोजन (Transition)</h3>
+    <ul>
+      <li>SDBS जॉइन करने पर — पिछली सेवा के हर पूर्ण वर्ष हेतु <b>₹1500</b> जोड़ा जाएगा (PRA में)।</li>
+      <li>1 वर्ष से कम अवधि — Proportionate/Pro-rata आधार पर गणना; <b>15 दिन या अधिक</b> = पूर्ण माह; <b>15 दिन से कम</b> = अनदेखा।</li>
+    </ul>
+    <div class="om">Para 3(a)(iv)(1)(2)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> हर पूर्ण वर्ष सेवा हेतु कितनी राशि PRA में जोड़ी जाती है? — <b>₹1500</b></div>
+  </div>
+</section>
+
+<!-- Subscription Flow -->
+<section>
+  <div class="section-head">
+    <div class="icon">💵</div>
+    <h2>सब्सक्रिप्शन नियम <span class="eng">Subscription Rules</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> मासिक अंशदान — केवल सरकार से</h3>
+    <ul>
+      <li>Department of Posts — प्रत्येक GDS हेतु <b>₹200/माह</b> का योगदान करेगा (जहां TRCA आहरित हो)।</li>
+      <li><b>GDS को कोई अंशदान नहीं करना पड़ता</b> — यह विशुद्ध Non-Contributory (कर्मचारी हेतु) स्कीम है।</li>
+      <li>'Put Off Duty' या Unauthorised Absence अवधि में — कोई सब्सक्रिप्शन नहीं दिया जाएगा।</li>
+    </ul>
+    <div class="om">Para 4(a), (b) | Para 28</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> क्या GDS को SDBS में स्वयं योगदान करना पड़ता है? — <b>नहीं, पूरी राशि सरकार देती है</b></div>
+  </div>
+</section>
+
+<!-- ENROLMENT FLOWCHART -->
+<section id="part2">
+  <div class="section-head">
+    <div class="icon">II</div>
+    <h2>Part-II — संचालन प्रक्रिया <span class="eng">Operating Procedure</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Enrolment व PRAN जारी करने की प्रक्रिया — फ्लोचार्ट</h3>
+    <div class="flow">
+      <div class="flow-box">GDS — फॉर्म <b>NLS1</b> में आवेदन (Sub-Divisional Inspector/ASPO के माध्यम से)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box alt">Collection Centre (CC) — सत्यापन व संग्रह</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Facilitation Centre (CRA) को अग्रेषण</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box gold">CRA — Enrolment + PRA खोलना + Digitized PRAN Card जारी</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box end">CC के माध्यम से GDS को Card वितरण (Acknowledgement सहित)</div>
+    </div>
+    <div class="om">Para 8(a)(c)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> Savings Bank Account व Registers</h3>
+    <ul>
+      <li>GDS को संबंधित Post Office में <b>Savings Bank Account</b> खोलना अनिवार्य — Annuity/भुगतान हेतु।</li>
+      <li>CC — Register <b>SDBS-2</b> बनाए रखे (Permanent Record)।</li>
+      <li>CC हर माह की <b>5 तारीख</b> तक Supplementary Lists (नए Enrolled GDS) HPO/HRO/AO को भेजे; कोई नामांकन न हो तो 'NIL' List भेजी जाए।</li>
+    </ul>
+    <div class="om">Para 8(b),(d),(e),(f)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Collection Centre को Supplementary List किस तारीख तक भेजनी होती है? — <b>हर माह की 5 तारीख तक</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> Duplicate PRAN Card — फीस</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>अवसर</th><th>फीस</th></tr>
+        <tr><td>पहली बार</td><td>₹20/-</td></tr>
+        <tr><td>बाद की बार (हर बार)</td><td>₹30/-</td></tr>
+      </table>
+    </div>
+    <div class="om">Para 8(g)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> मासिक सब्सक्रिप्शन प्रक्रिया — फ्लोचार्ट</h3>
+    <div class="flow">
+      <div class="flow-box">HPO/HRO — मासिक List (SDBS-4) + Subscription Bill तैयार करे</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box alt">AO — Consolidated List (SDBS-5) तैयार करे, Cheque बनाए</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Trustee Bank — राशि प्राप्त करे</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box end">Pension Fund Managers (PFM) — निवेश हेतु स्थानांतरण</div>
+    </div>
+    <div class="om">Para 9(a)(b)(c)(d)</div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> त्रुटि व अनियमितता प्रबंधन (Errors/Objections)</h3>
+    <ul>
+      <li>CC/HPO/HRO/AO — त्रुटि मिलने पर <b>Register of Errors/Objections</b> में दर्ज करें।</li>
+      <li>यह Register माह में <b>कम से कम एक बार</b> Head/Incharge द्वारा समीक्षित हो।</li>
+      <li>यदि त्रुटि <b>1 माह से अधिक</b> लंबित रहे — Head of Circle को सूचित करना अनिवार्य।</li>
+    </ul>
+    <div class="om">Para 9(e)</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> त्रुटि कितने समय से अधिक लंबित रहने पर Head of Circle को रिपोर्ट होती है? — <b>1 माह</b></div>
+  </div>
+</section>
+
+<!-- EXIT RULES -->
+<section id="exit">
+  <div class="section-head">
+    <div class="icon">🚪</div>
+    <h2>निकास (Exit) नियम — सबसे महत्वपूर्ण भाग <span class="eng">Exit from SDBS</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Normal Discharge (सामान्य सेवा-मुक्ति)</h3>
+    <div class="pie-visual">
+      <div class="p40">40% Annuity (न्यूनतम)</div>
+      <div class="p60">60% लम्प सम</div>
+    </div>
+    <ul>
+      <li>न्यूनतम <b>40%</b> Accumulations से Life Annuity खरीदनी होगी (IRDA-अनुमोदित Company से)।</li>
+      <li>शेष <b>60%</b> (या अधिक, यदि 40% से ज़्यादा Annuity में निवेश करना चाहें) — GDS को लम्प सम भुगतान।</li>
+      <li>आवेदन फॉर्म: <b>SDBS-6</b>।</li>
+    </ul>
+    <div class="om">Para 11(a)(b)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Normal Exit पर न्यूनतम कितने % की Annuity खरीदनी अनिवार्य है? — <b>40%</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Premature Exit (58 वर्ष के बाद)</h3>
+    <div class="pie-visual">
+      <div class="p20">20% निकासी</div>
+      <div class="p80">80% (Exit पर, पूर्ण Annuity)</div>
+    </div>
+    <ul>
+      <li><b>58 वर्ष</b> की आयु पूरी करने पर GDS — अधिकतम <b>20%</b> Accumulations कभी भी निकाल सकता है।</li>
+      <li>शेष <b>80%</b> — सेवा पूर्ण होने पर Exit के समय <b>पूर्णतः Annuity में निवेश</b> करना अनिवार्य (Lump Sum नहीं मिलेगा)।</li>
+      <li>प्रीमैच्योर निकासी के बाद — Department आगे कोई Contribution नहीं करेगा।</li>
+    </ul>
+    <div class="om">Para 11(c)</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> 58 वर्ष के बाद Premature Withdrawal में 80% राशि का क्या होता है? — <b>पूरी तरह Annuity में निवेश, Lump Sum नहीं</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> Resignation (त्यागपत्र)</h3>
+    <div class="pie-visual">
+      <div class="p85">85% Annuity</div>
+      <div class="p15">15% लम्प सम</div>
+    </div>
+    <ul>
+      <li>Normal Exit से पहले त्यागपत्र देने पर — <b>85%</b> Accumulations से Annuity खरीदना अनिवार्य।</li>
+      <li>केवल <b>15%</b> लम्प सम में मिलेगा।</li>
+      <li>PR Account — Resignation Acceptance की तारीख पर बंद माना जाएगा।</li>
+    </ul>
+    <div class="om">Para 11(d)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Resignation पर कितने % Annuity में निवेश अनिवार्य है? — <b>85%</b> (सबसे अधिक तीनों में से!)</div>
+  </div>
+</section>
+
+<!-- DEATH/DISMISSAL -->
+<section id="death">
+  <div class="section-head">
+    <div class="icon">⚠️</div>
+    <h2>मृत्यु व बर्खास्तगी संबंधी नियम <span class="eng">Death & Dismissal Provisions</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> सेवाकाल में मृत्यु (Death in Service)</h3>
+    <ul>
+      <li>Nominee/Legal Heir को <b>विकल्प</b>: (i) पूरी Accumulations Lump Sum में लें, या (ii) स्वयं के पैसे से (KYC पूरा कर) स्कीम जारी रखें।</li>
+      <li>यदि जारी रखा — खाता तब तक चलेगा जब तक GDS <b>Normal Discharge Age (वर्तमान में 65 वर्ष)</b> तक न पहुंच जाता — तब सामान्य Exit नियम (40:60) लागू होंगे।</li>
+    </ul>
+    <div class="om">Para 12(a)(b)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> GDS की सामान्य Discharge आयु क्या है? — <b>65 वर्ष</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> बर्खास्तगी/हटाना (Dismissal/Removal)</h3>
+    <ul>
+      <li>दंडात्मक कार्रवाई से Dismissed/Removed GDS — SDBS सदस्यता <b>स्वतः समाप्त</b>; पूरी Accumulations पर कोई दावा नहीं।</li>
+      <li>ऐसी राशि — Government/Department of Posts के खाते में जमा (Central Government Account)।</li>
+      <li><b>Reinstatement:</b> यदि Appellate/Court आदेश से बहाल व दोषमुक्त — सदस्यता जारी मानी जाएगी; Put-Off Duty अवधि को Duty माना जाएगा व सामान्य दर पर Contribution जमा होगा।</li>
+    </ul>
+    <div class="om">Para 13(a)(b)</div>
+  </div>
+</section>
+
+<!-- REGISTRATION AUTHORITIES -->
+<section>
+  <div class="section-head">
+    <div class="icon">🏛️</div>
+    <h2>पंजीकरण व प्राधिकरण संरचना <span class="eng">Registration & Authorities</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag cu">🟡 CU</span> 4-स्तरीय संरचना</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>स्तर</th><th>प्राधिकरण</th><th>फॉर्म</th><th>भूमिका</th></tr>
+        <tr><td>1</td><td>Collection Centre (CC)</td><td>NL N3</td><td>Divisional Head — GDS आवेदन एकत्रित</td></tr>
+        <tr><td>2</td><td>Accounts Office (AO)</td><td>NL N2</td><td>Director of Accounts (Postal)</td></tr>
+        <tr><td>3</td><td>Oversight Office (OO)</td><td>NL N1</td><td>Postal Directorate — समग्र निगरानी</td></tr>
+        <tr><td>4</td><td>Nodal Officer</td><td>—</td><td>Director Postal Services(HQs) — समन्वय</td></tr>
+      </table>
+    </div>
+    <div class="om">Para 14(a)(b)(c)(d)(e)</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> SDBS की Nodal Agency कौन है? — <b>PFRDA</b> (CRA रिकॉर्ड बनाए रखे)</div>
+  </div>
+</section>
+
+<!-- GRIEVANCE -->
+<section>
+  <div class="section-head">
+    <div class="icon">📢</div>
+    <h2>शिकायत निवारण <span class="eng">Grievance Redressal</span></h2>
+  </div>
+  <div class="card">
+    <h3><span class="tag vi">🔴 VI</span> समय-सीमाएं <span class="eng">Time Limits</span></h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>प्रक्रिया</th><th>समय-सीमा</th></tr>
+        <tr><td>सामान्य शिकायत निवारण</td><td><b>7 दिन</b></td></tr>
+        <tr><td>अधिकतम अनसुलझी अवधि</td><td><b>1 माह</b> से अधिक नहीं</td></tr>
+        <tr><td>CC/AO व CRA के बीच विवाद</td><td>1 माह में न सुलझे तो OO को रिपोर्ट</td></tr>
+      </table>
+    </div>
+    <p>CC — CRA की Central Grievance Management System (CGMS) में दैनिक Login कर शिकायतें देखे।</p>
+    <div class="om">Para 21(a)(b)(c)(d)(e)</div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> GDS की शिकायत सामान्यतः कितने दिनों में सुलझाई जाए? — <b>7 दिन</b></div>
+  </div>
+</section>
+
+<!-- PART III ACCOUNTING -->
+<section id="part3">
+  <div class="section-head">
+    <div class="icon">III</div>
+    <h2>Part-III — लेखा प्रक्रिया <span class="eng">Accounting Procedure</span></h2>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag fa">🟠 FA</span> Head of Account संरचना</h3>
+    <ul>
+      <li>Major Head: <b>3201-Postal Services</b> (व्यय हेतु) / <b>0071-Postal Services</b> (प्रति-क्रेडिट हेतु)।</li>
+      <li>Sub Head: <b>03-Service Discharge Benefit Scheme for GDS</b>।</li>
+      <li>AO — डेटा को <b>अगले माह की 10 तारीख तक</b> CRA सर्वर पर अपलोड करना अनिवार्य।</li>
+      <li>वित्तीय वर्ष अंत में — इस Head में कोई राशि 'Parked' नहीं रहनी चाहिए।</li>
+    </ul>
+    <div class="om">Para 22, 23, 24</div>
+    <div class="qbox"><b>ट्रैप प्रश्न:</b> AO को CRA सर्वर पर डेटा कब तक अपलोड करना होता है? — <b>अगले माह की 10 तारीख तक</b></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="tag qr">🟢 QR</span> Payment of Charges — वार्षिक दावे</h3>
+    <p>CRA — Enrolment, Servicing, Grievance Handling आदि के दावे <b>अप्रैल माह</b> में वार्षिक रूप से AO को भेजेगा।</p>
+    <div class="om">Para 15-A</div>
+  </div>
+</section>
+
+<!-- FORMS -->
+<section id="forms">
+  <div class="section-head">
+    <div class="icon">📄</div>
+    <h2>फॉर्म सूची — SDBS-1 से SDBS-8 <span class="eng">Forms Reference</span></h2>
+  </div>
+  <div class="card">
+    <div class="tblwrap">
+      <table>
+        <tr><th>फॉर्म</th><th>उद्देश्य</th></tr>
+        <tr><td>SDBS-1</td><td>PRA बंद करना — Permanent Absorption/Appointment पर NPS में ट्रांसफर</td></tr>
+        <tr><td>SDBS-2</td><td>Register of GDS enrolled under SDBS (Collection Centre)</td></tr>
+        <tr><td>SDBS-3</td><td>List/Supplementary List of GDS Enrolled (CC से HPO/HRO/AO)</td></tr>
+        <tr><td>SDBS-4</td><td>मासिक Subscription List (HPO/HRO)</td></tr>
+        <tr><td>SDBS-5</td><td>Consolidated Subscription List (AO, Circle स्तर)</td></tr>
+        <tr><td>SDBS-6</td><td>Exit/Closure आवेदन (Resignation/Premature/Normal)</td></tr>
+        <tr><td>SDBS-7</td><td>Nomination फॉर्म</td></tr>
+        <tr><td>SDBS-8</td><td>Option फॉर्म — SDBS या Severance Scheme चुनना</td></tr>
+      </table>
+    </div>
+    <div class="qbox"><b>संभावित प्रश्न:</b> Nomination हेतु कौन सा फॉर्म भरा जाता है? — <b>SDBS-7</b></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-head">
+    <div class="icon">🗓️</div>
+    <h2>महत्वपूर्ण तिथियां व टाइमलाइन <span class="eng">Timeline</span></h2>
+  </div>
+  <div class="card">
+    <div class="timeline">
+      <div class="t-item"><div class="t-date">अक्टूबर 2008</div><div class="t-desc">R.S. Nataraja Murti Committee Report — SDBS की सिफारिश 🔴</div></div>
+      <div class="t-item"><div class="t-date">2010</div><div class="t-desc">PFRDA द्वारा NPS-Lite Scheme लॉन्च — आधार बनी 🟡</div></div>
+      <div class="t-item"><div class="t-date">1 जनवरी 2011</div><div class="t-desc">पात्रता कट-ऑफ तिथि — 3 वर्ष के भीतर Discharge होने वाले अपात्र 🔴</div></div>
+      <div class="t-item"><div class="t-date">1 अप्रैल 2011</div><div class="t-desc"><b>SDBS 2011 प्रभावी</b> — नई स्कीम लागू 🔴</div></div>
+      <div class="t-item"><div class="t-date">हर माह की 5 तारीख</div><div class="t-desc">CC — Supplementary Enrolment Lists भेजने की तारीख 🟠</div></div>
+      <div class="t-item"><div class="t-date">अगले माह की 10 तारीख</div><div class="t-desc">AO — CRA सर्वर पर डेटा अपलोड की अंतिम तारीख 🔴</div></div>
+      <div class="t-item"><div class="t-date">हर वर्ष अप्रैल</div><div class="t-desc">CRA — वार्षिक Charges Claim Bill AO को भेजे 🟢</div></div>
+      <div class="t-item"><div class="t-date">31.03.2011</div><div class="t-desc">Notification पर DDG(Estt.) A.K. Sharma के हस्ताक्षर 🟢</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare">
+  <div class="section-head">
+    <div class="icon">⚖️</div>
+    <h2>तुलना चार्ट <span class="eng">Comparison Charts</span></h2>
+  </div>
+
+  <div class="card">
+    <h3>Exit Type Comparison — Annuity % बनाम Lump Sum %</h3>
+    <div class="tblwrap">
+      <table>
+        <tr><th>निकास प्रकार</th><th>Annuity में निवेश</th><th>Lump Sum</th><th>शर्त</th></tr>
+        <tr><td>Normal Discharge (65 वर्ष)</td><td>न्यूनतम 40%</td><td>शेष 60% (अधिकतम)</td><td>सामान्य सेवा पूर्ण</td></tr>
+        <tr><td>Premature Exit (58+ वर्ष)</td><td>80% (Exit पर)</td><td>20% (पहले कभी भी निकाल सकते)</td><td>58 वर्ष आयु पूर्ण</td></tr>
+        <tr><td>Resignation</td><td>85%</td><td>15%</td><td>Normal Exit से पहले त्यागपत्र</td></tr>
+      </table>
+    </div>
+    <div class="qbox"><b>याद रखें क्रम:</b> Normal (40%) < Premature (80%) < Resignation (85%) — जितना जल्दी छोड़ो, उतनी ज़्यादा Annuity अनिवार्यता!</div>
+  </div>
+
+  <div class="card">
+    <h3>SDBS बनाम पुरानी Severance Amount Scheme</h3>
+    <div class="compare">
+      <div class="col old">
+        <h4>❌ पुरानी Severance Amount Scheme</h4>
+        <ul>
+          <li>एकमुश्त भुगतान, कोई Annuity नहीं</li>
+          <li>निवेश/Fund Management नहीं</li>
+          <li>PFRDA से असंबद्ध</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h4>✅ SDBS 2011</h4>
+        <ul>
+          <li>PRAN आधारित, NPS-Lite प्लेटफार्म पर</li>
+          <li>PFM द्वारा निवेश प्रबंधन</li>
+          <li>Annuity + Lump Sum का मिश्रण</li>
+          <li>Government-only Contribution (₹200/माह)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MNEMONICS -->
+<section id="mnemonics">
+  <div class="section-head">
+    <div class="icon">🧩</div>
+    <h2>मेमोरी ट्रिक्स व मनेमोनिक्स <span class="eng">Memory Tricks</span></h2>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"40-60 सामान्य, 20-80 प्रीमैच्योर, 85-15 इस्तीफ़ा"</div>
+    <p>Normal Exit = 40% Annuity/60% Lump Sum; Premature = 20% पहले निकासी/80% बाद में Annuity; Resignation = 85% Annuity/15% Lump Sum।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"200 सरकार देगी, GDS का पैसा नहीं लगेगा"</div>
+    <p>₹200/माह — पूरी तरह सरकार का योगदान। GDS को <b>कोई अंशदान नहीं</b> करना पड़ता — यह भूलना मत!</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"58 प्रीमैच्योर, 65 नॉर्मल — 7 का अंतर"</div>
+    <p>58 वर्ष = Premature Withdrawal की न्यूनतम आयु; 65 वर्ष = Normal Discharge Age। दोनों में <b>7 वर्ष</b> का अंतर।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"20 पहली डुप्लीकेट, 30 दूसरी से हर बार"</div>
+    <p>Duplicate PRAN Card फीस — पहली बार ₹20, उसके बाद हर बार ₹30।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"1500 हर साल, 200 हर महीना"</div>
+    <p>₹1500 = पुरानी सेवा के हर पूर्ण वर्ष हेतु Severance जोड़; ₹200 = चालू मासिक Subscription।</p>
+  </div>
+
+  <div class="mnemonic">
+    <div class="word">"5-10-7-1: तारीखों की चेन"</div>
+    <p>CC List भेजे — <b>5</b> तारीख तक; AO अपलोड — <b>10</b> तारीख तक; Grievance निवारण — <b>7</b> दिन में; अधिकतम विलंब — <b>1</b> माह।</p>
+  </div>
+</section>
+
+<!-- REVISION SHEET -->
+<section id="revision">
+  <div class="rev-sheet">
+    <h2>📝 वन-पेज रिवीजन शीट <span class="eng" style="color:#cfcfff;">One Page Revision Sheet</span></h2>
+    <div class="rev-grid">
+      <div class="rev-box">
+        <h4>🔑 मूल तथ्य</h4>
+        <ul>
+          <li>स्कीम नाम: SDBS 2011; लागू: 1 अप्रैल 2011</li>
+          <li>आधार: NPS-Lite Scheme (PFRDA, 2010)</li>
+          <li>समिति: R.S. Nataraja Murti (2008)</li>
+          <li>सब्सक्रिप्शन: ₹200/माह (केवल Govt)</li>
+          <li>पुरानी सेवा: ₹1500/वर्ष जोड़ा जाए</li>
+          <li>Normal Discharge Age: 65 वर्ष</li>
+          <li>Premature Exit आयु: 58+ वर्ष</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>📊 Exit प्रतिशत तालिका</h4>
+        <ul>
+          <li>Normal: 40% Annuity / 60% Lump</li>
+          <li>Premature: 20% पहले / 80% Annuity</li>
+          <li>Resignation: 85% Annuity / 15% Lump</li>
+          <li>Death in Service: Nominee विकल्प</li>
+          <li>Dismissal: पूरी राशि Govt को</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>⚠️ एग्जाम ट्रैप</h4>
+        <ul>
+          <li>3 वर्ष के भीतर Discharge वाले अपात्र</li>
+          <li>Option एक बार Final, बदला नहीं जा सकता</li>
+          <li>Provisional/Substitute GDS अपात्र</li>
+          <li>CRA = NSDL, Mumbai (वर्तमान में)</li>
+          <li>Custodian = SCIL</li>
+        </ul>
+      </div>
+      <div class="rev-box">
+        <h4>🏛️ प्राधिकरण व समय-सीमा</h4>
+        <ul>
+          <li>Nodal Agency: PFRDA</li>
+          <li>CC List: 5 तारीख तक</li>
+          <li>AO Upload: 10 तारीख तक</li>
+          <li>Grievance: 7 दिन (अधिकतम 1 माह)</li>
+          <li>Duplicate PRAN: ₹20/₹30</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAST DAY -->
+<section id="lastday">
+  <div class="lastday">
+    <h2>🔥 लास्ट डे रिवीजन नोट्स <span class="eng" style="color:#ffe3e3;">Last Day Revision Notes</span></h2>
+    <div class="item"><b>1.</b> SDBS 2011 — <b>1 अप्रैल 2011</b> से लागू; NPS-Lite आधारित; R.S. Nataraja Murti Committee की सिफारिश।</div>
+    <div class="item"><b>2.</b> सब्सक्रिप्शन — <b>₹200/माह पूर्णतः सरकार</b> द्वारा; GDS का कोई योगदान नहीं।</div>
+    <div class="item"><b>3.</b> पुरानी सेवा — हर पूर्ण वर्ष हेतु <b>₹1500</b> PRA में जोड़ा जाता है।</div>
+    <div class="item"><b>4.</b> Exit प्रतिशत: Normal <b>40:60</b>, Premature <b>20:80</b>, Resignation <b>85:15</b> (Annuity:Lump Sum)।</div>
+    <div class="item"><b>5.</b> Normal Discharge Age = <b>65 वर्ष</b>; Premature Withdrawal न्यूनतम आयु = <b>58 वर्ष</b>।</div>
+    <div class="item"><b>6.</b> 1 जनवरी 2011 से <b>3 वर्ष के भीतर</b> Discharge होने वाले GDS अपात्र।</div>
+    <div class="item"><b>7.</b> Option (फॉर्म SDBS-8) — एक बार दिया तो <b>Final</b>, बदला नहीं जा सकता।</div>
+    <div class="item"><b>8.</b> Duplicate PRAN Card — पहली बार <b>₹20</b>, बाद में हर बार <b>₹30</b>।</div>
+    <div class="item"><b>9.</b> Dismissal/Removal पर — सदस्यता समाप्त, राशि सरकार को; Reinstatement पर सदस्यता जारी मानी जाए।</div>
+    <div class="item"><b>10.</b> Grievance — <b>7 दिन</b> में सामान्यतः, <b>1 माह</b> से अधिक कभी लंबित नहीं।</div>
+    <div class="item"><b>11.</b> AO — CRA सर्वर पर डेटा <b>10 तारीख तक</b> अपलोड करे; CC — List <b>5 तारीख तक</b> भेजे।</div>
+  </div>
+</section>
+
+<footer>
+  📚 IP Exam Preparation Portal | Source: Department of Posts SDBS 2011 Notification (No. 6-11/2009-PE.II)<br>
+  Prepared for Ahmedabad L-1, India Post | ऑफलाइन उपयोग हेतु सुरक्षित
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1e3a8a">
+<title>राजस्व वसूली अधिनियम, 1890 | IP परीक्षा</title>
+<style>
+:root{
+  --ip-red:#dc2626;--ip-red-dark:#b91c1c;--ip-red-light:#fee2e2;
+  --ip-blue:#1e3a8a;--ip-blue-dark:#172554;--ip-blue-light:#dbeafe;
+  --ip-gold:#d97706;--ip-gold-light:#fef3c7;
+  --success:#059669;--success-light:#d1fae5;
+  --bg:#f8fafc;--surface:#ffffff;--text:#0f172a;--text-sec:#475569;--text-mut:#94a3b8;
+  --border:#e2e8f0;--radius:12px;--radius-lg:16px;--radius-pill:9999px;
+  --shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1);
+  --shadow-md:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-bottom:40px;}
+
+.hero{background:linear-gradient(135deg,var(--ip-red) 0%,var(--ip-blue) 55%,var(--ip-blue-dark) 100%);color:#fff;padding:28px 18px 40px;position:relative;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 16px;border-radius:var(--radius-pill);text-decoration:none;font-size:13px;font-weight:600;backdrop-filter:blur(6px);}
+.hero h1{font-size:20px;font-weight:800;margin-top:16px;letter-spacing:0;}
+.hero .sub-en{font-size:13px;opacity:.9;margin-top:6px;}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.hero .badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;}
+.wave{height:36px;margin-top:-1px;}
+.wave svg{width:100%;height:36px;display:block;}
+
+.container{max-width:760px;margin:0 auto;padding:0 14px;}
+
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-18px 0 20px;position:relative;z-index:5;}
+.legend .item{background:var(--surface);border-radius:var(--radius);padding:10px 12px;box-shadow:var(--shadow);font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:6px;border:1px solid var(--border);}
+
+.section{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sec-num{width:34px;height:34px;border-radius:10px;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;}
+.sec-title{font-size:16.5px;font-weight:800;color:var(--ip-blue-dark);}
+
+.card{background:var(--surface);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:12px;}
+.card-title{font-weight:800;font-size:14px;color:var(--ip-red-dark);margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tag{display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:var(--radius-pill);margin-left:auto;white-space:nowrap;}
+.tag-red{background:var(--ip-red-light);color:var(--ip-red-dark);}
+.card p{font-size:13px;color:var(--text-sec);margin-bottom:4px;}
+
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.def-grid{grid-template-columns:1fr;}}
+.def-card{background:var(--surface);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;box-shadow:var(--shadow);}
+.def-term{font-weight:800;font-size:12.5px;color:var(--ip-blue-dark);}
+.def-desc{font-size:11.5px;color:var(--text-sec);margin-top:2px;}
+
+.flow{display:flex;flex-direction:column;align-items:center;gap:4px;margin:14px 0;}
+.flow-box{background:var(--ip-blue-light);border:1.5px solid var(--ip-blue);color:var(--ip-blue-dark);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:var(--radius);text-align:center;width:100%;max-width:340px;}
+.flow-arrow{color:var(--ip-blue);font-size:18px;line-height:1;}
+
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin:10px 0;}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:480px;}
+th{background:var(--ip-blue);color:#fff;padding:8px 10px;text-align:left;font-weight:700;white-space:nowrap;}
+td{padding:8px 10px;border-top:1px solid var(--border);color:var(--text-sec);vertical-align:top;}
+tr:nth-child(even) td{background:var(--bg);}
+
+.alert{background:var(--ip-gold-light);border-left:4px solid var(--ip-gold);border-radius:0 var(--radius) var(--radius) 0;padding:10px 12px;font-size:12.5px;color:#78350f;margin:10px 0;}
+.alert-red{background:var(--ip-red-light);border-left:4px solid var(--ip-red);color:#7f1d1d;}
+
+.mnemonic{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:1.5px dashed #b45309;border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;}
+.mnemonic .word{font-size:15px;font-weight:900;color:#92400e;}
+.mnemonic .exp{font-size:12.5px;color:#78350f;margin-top:4px;}
+
+.qbox{background:var(--ip-blue-light);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;font-size:12.5px;border-left:4px solid var(--ip-blue);}
+.qbox b{color:var(--ip-blue-dark);}
+
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-row{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:9px 12px;font-size:12px;}
+.rev-row .k{font-weight:700;color:var(--ip-blue-dark);flex:1.5;}
+.rev-row .v{color:var(--text-sec);flex:1;text-align:right;}
+
+.timeline{display:flex;flex-direction:column;gap:0;margin:10px 0;}
+.tl-item{display:flex;gap:12px;padding-bottom:16px;position:relative;}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:10px;top:22px;bottom:-4px;width:2px;background:var(--border);}
+.tl-dot{width:22px;height:22px;border-radius:50%;background:var(--ip-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;z-index:1;}
+.tl-content{font-size:12.5px;color:var(--text-sec);padding-top:2px;}
+.tl-content b{color:var(--ip-blue-dark);display:block;font-size:12.5px;}
+
+.certificate-box{background:#f8fafc;border:2px dashed var(--ip-blue);border-radius:var(--radius);padding:14px;font-size:12px;color:var(--text-sec);line-height:1.9;}
+.certificate-box .title{text-align:center;font-weight:800;color:var(--ip-blue-dark);margin-bottom:8px;}
+
+.pdf-btn{position:fixed;bottom:18px;right:18px;background:var(--ip-red);color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(220,38,38,.4);text-decoration:none;font-size:22px;z-index:50;}
+.footer-note{text-align:center;font-size:11px;color:var(--text-mut);margin:30px 0 10px;padding:0 20px;}
+ul.simple{margin:6px 0 6px 18px;font-size:12.5px;color:var(--text-sec);}
+ul.simple li{margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="Index.html" class="back-btn">&larr; होम</a>
+  <h1>राजस्व वसूली अधिनियम (Revenue Recovery Act), 1890</h1>
+  <div class="sub-en">अधिनियम संख्या 1, वर्ष 1890</div>
+  <div class="badges">
+    <span class="badge">📜 अधिनियमित: 14 फरवरी 1890</span>
+    <span class="badge">📘 10 धाराएं + अनुसूची</span>
+    <span class="badge">🇮🇳 अखिल भारतीय (J&K/लद्दाख भी अब शामिल)</span>
+  </div>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,24 C360,48 720,0 1080,24 C1260,36 1380,30 1440,24 L1440,48 L0,48 Z"/></svg></div>
+
+<div class="container">
+
+<div class="legend">
+  <div class="item">🔴 अति महत्वपूर्ण</div>
+  <div class="item">🟠 बार-बार पूछे जाने वाले</div>
+  <div class="item">🟡 वैचारिक समझ</div>
+  <div class="item">🟢 त्वरित पुनरावृत्ति</div>
+</div>
+
+<!-- परिचय -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div class="sec-title">परिचय 🟡</div></div>
+  <div class="card">
+    <p>यह अधिनियम कुछ <b>लोक मांगों (Public Demands)</b> जैसे भू-राजस्व बकाया की <b>बेहतर वसूली</b> हेतु प्रावधान करता है — विशेषकर जब बकायादार (defaulter) उस जिले से बाहर हो जहां राशि देय है।</p>
+  </div>
+</div>
+
+<!-- धारा 1 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div class="sec-title">धारा 1 — नाम व विस्तार 🔴</div></div>
+  <div class="card">
+    <ul class="simple">
+      <li>नाम: <b>राजस्व वसूली अधिनियम, 1890</b></li>
+      <li>मूल रूप से <b>संपूर्ण भारत</b> पर लागू, सिवाय <b>जम्मू व कश्मीर राज्य</b> के</li>
+    </ul>
+    <div class="alert">🔴 30 अक्टूबर 2019 की अधिसूचना (S.O. 3912(E)) द्वारा यह अब <b>जम्मू-कश्मीर व लद्दाख संघ राज्यक्षेत्र</b> पर भी लागू है (31 अक्टूबर 2019 से प्रभावी)।</div>
+  </div>
+</div>
+
+<!-- धारा 2 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div class="sec-title">धारा 2 — परिभाषाएं 🔴</div></div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">जिला (District)</div><div class="def-desc">प्रेसीडेंसी-नगर भी इसमें शामिल है</div></div>
+    <div class="def-card"><div class="def-term">कलेक्टर (Collector)</div><div class="def-desc">जिले के भू-राजस्व प्रशासन का प्रधान अधिकारी</div></div>
+    <div class="def-card"><div class="def-term">बकायादार (Defaulter)</div><div class="def-desc">जिस पर भू-राजस्व बकाया हो; जमानतदार (surety) भी शामिल</div></div>
+  </div>
+  <div class="alert">🟡 <b>उत्तर प्रदेश राज्य संशोधन:</b> "कलेक्टर" में सहायक कलेक्टर (Assistant Collector) को भी शामिल किया गया, यदि उसे कलेक्टर की शक्तियां सौंपी गई हों।</div>
+</div>
+
+<!-- धारा 3 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">4</div><div class="sec-title">धारा 3 — अन्य जिले में वसूली 🔴</div></div>
+  <div class="card">
+    <div class="card-title">प्रक्रिया — प्रमाणपत्र (Certificate) प्रणाली 🔴 <span class="tag tag-red">परीक्षा में प्रिय</span></div>
+    <div class="flow">
+      <div class="flow-box">1️⃣ बकायादार दूसरे जिले में है / संपत्ति रखता है</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">2️⃣ मूल कलेक्टर अनुसूची प्रारूप में प्रमाणपत्र बनाता है (नाम, राशि, खाता)</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">3️⃣ प्रमाणपत्र दूसरे जिले के कलेक्टर को भेजा जाता है</div><div class="flow-arrow">↓</div>
+      <div class="flow-box">4️⃣ वह कलेक्टर ऐसे वसूल करेगा मानो अपने ही जिले का भू-राजस्व बकाया हो</div>
+    </div>
+    <p style="margin-top:8px;">प्रमाणपत्र पर मूल कलेक्टर (या उसके द्वारा लिखित आदेश से प्राधिकृत अधिकारी) के हस्ताक्षर होंगे और यह <b>निर्णायक साक्ष्य (Conclusive Proof)</b> होगा।</p>
+  </div>
+</div>
+
+<!-- धारा 4 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">5</div><div class="sec-title">धारा 4 — दायित्व अस्वीकार करने का उपचार 🟠</div></div>
+  <div class="card">
+    <ul class="simple">
+      <li>व्यक्ति दायित्व अस्वीकार करते हुए <b>"विरोध सहित" (Under Protest)</b> लिखित रूप में राशि भर सकता है</li>
+      <li>फिर वह राशि वापसी हेतु <b>सिविल न्यायालय</b> में वाद दायर कर सकता है</li>
+      <li>वाद उस <b>स्थानीय क्षेत्र के सिविल न्यायालय</b> में होगा जहां प्रमाणपत्र बनाने वाले कलेक्टर का कार्यालय स्थित है</li>
+    </ul>
+    <div class="alert">🟡 <b>उत्तराखंड संशोधन (2013):</b> यदि वाद में डिक्री मिलती है, तो न्यायालय आनुपातिक लागत (Costs) भी वापस दिलाने का आदेश देगा।</div>
+  </div>
+</div>
+
+<!-- धारा 5 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">6</div><div class="sec-title">धारा 5 — अन्य अधिकारियों/स्थानीय प्राधिकरणों की राशि वसूली 🟠</div></div>
+  <div class="card">
+    <p>जब किसी अन्य लोक अधिकारी (कलेक्टर के अतिरिक्त) या स्थानीय प्राधिकरण की राशि भू-राजस्व बकाया के रूप में वसूली योग्य हो, तो संबंधित जिले का <b>कलेक्टर</b> उनके अनुरोध पर, वह राशि ऐसे वसूल करेगा मानो वह उसकी अपनी हो — और आवश्यकता होने पर धारा 3 अनुसार अन्य जिले के कलेक्टर को प्रमाणपत्र भी भेज सकता है।</p>
+  </div>
+</div>
+
+<!-- धारा 6 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">7</div><div class="sec-title">धारा 6 — विक्रय योग्य संपत्ति 🔴</div></div>
+  <div class="card">
+    <div class="card-title">उद्घोषणा (Proclamation) प्रक्रिया 🔴</div>
+    <ul class="simple">
+      <li>प्रमाणपत्र मिलते ही कलेक्टर बकायादार की <b>अचल संपत्ति के हस्तांतरण/भारग्रस्तता पर रोक</b> लगाते हुए उद्घोषणा जारी कर सकता है</li>
+      <li>कलेक्टर किसी भी समय लिखित आदेश से इसे वापस ले सकता है; राशि वसूल होते ही या संपत्ति बिकते ही यह स्वतः वापस मानी जाती है</li>
+      <li>उद्घोषणा के बाद व निकासी से पहले की गई <b>कोई भी निजी हस्तांतरण (बिक्री/उपहार/बंधक)</b> — सरकार व नीलामी-क्रेता के विरुद्ध <b>शून्य (Void)</b> मानी जाएगी</li>
+      <li>केवल बकायादार का हित ही कार्यवाही के अधीन होगा; सद्भावपूर्वक बनाए गए भार/अनुबंध अमान्य नहीं होंगे</li>
+    </ul>
+    <div class="alert">🔴 <b>उद्घोषणा का तरीका:</b> ढोल पीटकर (Beat of Drum) या स्थानीय प्रचलित रीति से, तथा संपत्ति के निकट किसी दृश्य स्थान पर प्रति चिपकाकर।</div>
+  </div>
+</div>
+
+<!-- धारा 7-10 -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">8</div><div class="sec-title">धारा 7-10 — अन्य प्रावधान 🟡</div></div>
+  <div class="card">
+    <ul class="simple">
+      <li><b>धारा 7 (व्यावृत्ति):</b> स्थानीय राजस्व कानूनों को यह अधिनियम प्रभावित नहीं करता; नगरपालिका कर वसूली हेतु गिरफ्तारी को प्राधिकृत नहीं करता</li>
+      <li><b>धारा 8:</b> भारत के बाहर उत्पन्न कुछ लोक मांगों की भारत में वसूली — जब यह अधिनियम केंद्र सरकार प्रशासित किसी क्षेत्र (भारत का भाग न होते हुए भी) पर लागू किया गया हो</li>
+      <li><b>धारा 9:</b> बर्मा (Burma) में उत्पन्न भू-राजस्व की भारत में वसूली — केंद्र सरकार के निर्देश पर, बशर्ते बर्मा में भी समान उपचार (धारा 4 जैसा) उपलब्ध हो</li>
+      <li><b>धारा 10:</b> दूसरे राज्य/बर्मा के कलेक्टर से प्रमाणपत्र प्राप्त कलेक्टर, वसूली गई राशि (अपने खर्च काटकर) उसे <b>वापस भेजने हेतु बाध्य</b> है</li>
+    </ul>
+  </div>
+</div>
+
+<!-- अनुसूची -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">9</div><div class="sec-title">अनुसूची (The Schedule) — प्रमाणपत्र प्रारूप 🟢</div></div>
+  <div class="card">
+    <div class="certificate-box">
+      <div class="title">प्रमाणपत्र [धारा 3(1) देखें]</div>
+      प्रति,<br>
+      ......... जिले के कलेक्टर<br><br>
+      रु. ......... की राशि ......... के खाते में ......... (नाम), पुत्र ......., निवासी ......., से देय है, जो आपके जिले में निवासरत होने/संपत्ति रखने वाला माना जाता है।<br><br>
+      राजस्व वसूली अधिनियम, 1890 के प्रावधानों के अधीन, उक्त राशि आपके द्वारा ऐसे वसूली योग्य है मानो यह आपके ही जिले में उत्पन्न भू-राजस्व बकाया हो।<br><br>
+      — कलेक्टर के हस्ताक्षर
+    </div>
+  </div>
+</div>
+
+<!-- पुनरावृत्ति पत्रक -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">10</div><div class="sec-title">📋 एक-पृष्ठ पुनरावृत्ति पत्रक 🔴</div></div>
+  <div class="card">
+    <div class="rev-grid">
+      <div class="rev-row"><span class="k">अधिनियम संख्या</span><span class="v">1 of 1890</span></div>
+      <div class="rev-row"><span class="k">अधिनियमित तारीख</span><span class="v">14 फरवरी 1890</span></div>
+      <div class="rev-row"><span class="k">कुल धाराएं</span><span class="v">10 + 1 अनुसूची</span></div>
+      <div class="rev-row"><span class="k">मूल अपवाद (लागू न होने वाला)</span><span class="v">जम्मू व कश्मीर राज्य</span></div>
+      <div class="rev-row"><span class="k">J&K/लद्दाख में लागू होने की अधिसूचना</span><span class="v">S.O. 3912(E), 30 अक्टूबर 2019</span></div>
+      <div class="rev-row"><span class="k">J&K/लद्दाख में प्रभावी तिथि</span><span class="v">31 अक्टूबर 2019</span></div>
+      <div class="rev-row"><span class="k">प्रमाणपत्र प्रारूप — किस धारा में</span><span class="v">धारा 3(1), अनुसूची अनुसार</span></div>
+      <div class="rev-row"><span class="k">दायित्व-अस्वीकार वाद — कहां दाखिल हो</span><span class="v">प्रमाणपत्र-कर्ता कलेक्टर के जिले का सिविल न्यायालय</span></div>
+      <div class="rev-row"><span class="k">प्रमाणपत्र की साक्ष्यिक स्थिति</span><span class="v">निर्णायक साक्ष्य (Conclusive Proof)</span></div>
+      <div class="rev-row"><span class="k">उद्घोषणा का प्रचलित तरीका</span><span class="v">ढोल पीटकर + नोटिस चिपकाना</span></div>
+      <div class="rev-row"><span class="k">उद्घोषणा के बाद हस्तांतरण की स्थिति</span><span class="v">शून्य (Void)</span></div>
+      <div class="rev-row"><span class="k">उत्तराखंड में वसूली लागत सीमा</span><span class="v">राशि का अधिकतम 10%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- स्मरण तकनीक -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">11</div><div class="sec-title">🧠 याद रखने की तरकीबें</div></div>
+  <div class="mnemonic">
+    <div class="word">"3-4-5" — प्रमाणपत्र-वसूली-वाद चक्र</div>
+    <div class="exp">धारा <b>3</b> (प्रमाणपत्र भेजना) → धारा <b>4</b> (विरोध सहित भुगतान व वाद) → धारा <b>5</b> (अन्य अधिकारियों हेतु भी वही प्रक्रिया)।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"ढोल पीटो, संपत्ति रोको" — धारा 6</div>
+    <div class="exp">उद्घोषणा ढोल पीटकर व नोटिस चिपकाकर होती है; इसके बाद संपत्ति का हस्तांतरण शून्य माना जाता है।</div>
+  </div>
+  <div class="mnemonic">
+    <div class="word">"1890 में J&K बाहर, 2019 में अंदर"</div>
+    <div class="exp">मूल अधिनियम (1890) में जम्मू-कश्मीर को बाहर रखा गया था; 2019 के पुनर्गठन के बाद अब यह वहां भी लागू है।</div>
+  </div>
+</div>
+
+<!-- संभावित प्रश्न -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">12</div><div class="sec-title">❓ संभावित परीक्षा प्रश्न</div></div>
+  <div class="qbox"><b>प्र1.</b> राजस्व वसूली अधिनियम कब अधिनियमित हुआ, और इसमें कुल कितनी धाराएं हैं? <br><i>उत्तर: 14 फरवरी 1890; कुल 10 धाराएं + 1 अनुसूची</i></div>
+  <div class="qbox"><b>प्र2.</b> मूल अधिनियम में यह किस राज्य पर लागू नहीं होता था? <br><i>उत्तर: जम्मू व कश्मीर राज्य</i></div>
+  <div class="qbox"><b>प्र3.</b> धारा 2 के अनुसार "बकायादार" (Defaulter) की परिभाषा में कौन शामिल है? <br><i>उत्तर: बकाया राशि देने वाला व्यक्ति तथा उसका जमानतदार (surety)</i></div>
+  <div class="qbox"><b>प्र4.</b> धारा 3 के तहत प्रमाणपत्र की साक्ष्यिक स्थिति क्या है? <br><i>उत्तर: निर्णायक साक्ष्य (Conclusive Proof)</i></div>
+  <div class="qbox"><b>प्र5.</b> धारा 4 के अनुसार दायित्व अस्वीकार करने वाला व्यक्ति किस न्यायालय में वाद दायर करेगा? <br><i>उत्तर: प्रमाणपत्र बनाने वाले कलेक्टर के जिले के सिविल न्यायालय में</i></div>
+  <div class="qbox"><b>प्र6.</b> धारा 6 के अनुसार उद्घोषणा किस पारंपरिक तरीके से की जाती है? <br><i>उत्तर: ढोल पीटकर या स्थानीय प्रचलित रीति से, तथा नोटिस चिपकाकर</i></div>
+  <div class="qbox"><b>प्र7.</b> उद्घोषणा के बाद की गई निजी संपत्ति हस्तांतरण की स्थिति क्या होती है? <br><i>उत्तर: सरकार व नीलामी-क्रेता के विरुद्ध शून्य (Void)</i></div>
+  <div class="qbox"><b>प्र8.</b> यह अधिनियम अब जम्मू-कश्मीर व लद्दाख में कब से लागू है? <br><i>उत्तर: 31 अक्टूबर 2019 से (अधिसूचना S.O. 3912(E), 30 अक्टूबर 2019)</i></div>
+  <div class="qbox"><b>प्र9.</b> प्रमाणपत्र का प्रारूप अधिनियम के किस भाग में दिया गया है? <br><i>उत्तर: अनुसूची (The Schedule), धारा 3(1) के संदर्भ में</i></div>
+  <div class="qbox"><b>प्र10.</b> धारा 10 के अनुसार कलेक्टर की क्या जिम्मेदारी है? <br><i>उत्तर: दूसरे कलेक्टर से प्राप्त प्रमाणपत्र पर वसूली गई राशि (खर्च काटकर) उसे वापस भेजना</i></div>
+</div>
+
+<div class="footer-note">राजस्व वसूली अधिनियम, 1890 से परीक्षा पुनरावृत्ति हेतु सामग्री संक्षेपित · India Post IP परीक्षा स्व-अध्ययन हेतु तैयार · पूर्ण कानूनी सटीकता के लिए आधिकारिक अधिनियम का संदर्भ अवश्य लें।</div>
+
+</div>
+
+<a href="#" onclick="window.print();return false;" class="pdf-btn" title="प्रिंट / PDF सेव करें">⬇️</a>
+
+</body>
+</html>

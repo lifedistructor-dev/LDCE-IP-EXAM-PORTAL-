@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सूचना का अधिकार अधिनियम 2005 | RTI Act | IP Exam Infographic</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#003057; --ip-gold:#D4A017;
+  --very-imp:#ffe1e1; --very-imp-b:#C8102E;
+  --freq:#fff1dd; --freq-b:#e08600;
+  --concept:#fffbd6; --concept-b:#cbb400;
+  --quick:#e2f7e6; --quick-b:#1f9d4d;
+  --bg:#f5f2ea; --card:#ffffff; --text:#26282b;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:70px;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),#8f0c22 60%,var(--ip-blue));
+  color:#fff; padding:18px 14px 22px; text-align:center;
+  border-bottom:6px solid var(--ip-gold);
+}
+.header h1{font-size:1.3rem; margin-bottom:4px;}
+.header .sub{font-size:.82rem; opacity:.95;}
+.header .meta{font-size:.74rem; margin-top:8px; opacity:.9;}
+.profile-bar{
+  background:var(--ip-blue); color:#fff; text-align:center; font-size:.78rem;
+  padding:6px 10px;
+}
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  padding:12px 8px; background:#fff; border-bottom:2px solid #eee;
+}
+.legend span{
+  font-size:.68rem; padding:4px 8px; border-radius:14px; font-weight:600;
+  border:1px solid #ddd;
+}
+.container{max-width:760px; margin:0 auto; padding:12px;}
+.section-title{
+  background:var(--ip-blue); color:#fff; padding:9px 14px; border-radius:8px 8px 0 0;
+  font-size:.95rem; font-weight:700; margin-top:22px; display:flex; align-items:center; gap:8px;
+}
+.card{
+  background:var(--card); border:1px solid #e2ddd0; border-radius:0 0 8px 8px;
+  padding:12px 14px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.tag{
+  display:inline-block; font-size:.66rem; font-weight:700; padding:2px 7px;
+  border-radius:10px; margin-right:4px; margin-bottom:2px;
+}
+.tag.vi{background:var(--very-imp); color:var(--very-imp-b); border:1px solid var(--very-imp-b);}
+.tag.fa{background:var(--freq); color:var(--freq-b); border:1px solid var(--freq-b);}
+.tag.co{background:var(--concept); color:#8a7a00; border:1px solid var(--concept-b);}
+.tag.qr{background:var(--quick); color:var(--quick-b); border:1px solid var(--quick-b);}
+h3.micro{color:var(--ip-red); font-size:.92rem; margin:10px 0 4px; border-left:4px solid var(--ip-red); padding-left:8px;}
+h4.nano{color:var(--ip-blue); font-size:.82rem; margin:6px 0 3px;}
+.eng{color:#555; font-style:italic; font-size:.76rem;}
+p, li{font-size:.84rem;}
+ul{padding-left:20px; margin:4px 0 8px;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.75rem;}
+th{background:var(--ip-blue); color:#fff; padding:6px 5px; text-align:left;}
+td{padding:6px 5px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#faf8f3;}
+.exam-q{
+  background:#eef3ff; border-left:4px solid #2255cc; padding:6px 10px; margin:6px 0;
+  font-size:.76rem; border-radius:0 6px 6px 0;
+}
+.exam-q b{color:#2255cc;}
+.mnemonic{
+  background:#fff4e0; border:1.5px dashed var(--ip-gold); padding:8px 10px; margin:8px 0;
+  border-radius:8px; font-size:.8rem;
+}
+.mnemonic b{color:#8a5a00;}
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:10px 0;}
+.flow-box{
+  background:#fff; border:2px solid var(--ip-blue); border-radius:8px; padding:8px 12px;
+  font-size:.76rem; text-align:center; width:92%; font-weight:600;
+}
+.flow-arrow{font-size:1.2rem; color:var(--ip-red);}
+.timeline{border-left:3px solid var(--ip-gold); margin-left:8px; padding-left:14px;}
+.tl-item{margin-bottom:14px; position:relative;}
+.tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:11px; height:11px;
+  background:var(--ip-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--ip-red);
+}
+.tl-date{font-weight:700; color:var(--ip-red); font-size:.78rem;}
+.tl-text{font-size:.78rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0;}
+.compare .old{background:#fdeaea; border:1px solid #e08c8c; border-radius:6px; padding:8px; font-size:.72rem;}
+.compare .new{background:#e7f7ea; border:1px solid #8fcf9f; border-radius:6px; padding:8px; font-size:.72rem;}
+.compare .hd{font-weight:700; text-align:center; margin-bottom:4px; font-size:.76rem;}
+.revision-sheet{
+  background:linear-gradient(160deg,#fff7e6,#fff);
+  border:2px solid var(--ip-gold); border-radius:10px; padding:14px; margin:14px 0;
+}
+.revision-sheet h2{color:var(--ip-red); font-size:1rem; margin-bottom:8px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px;}
+.rev-item{background:#fff; border-left:4px solid var(--ip-red); padding:6px 10px; font-size:.76rem; border-radius:0 6px 6px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mm-node{
+  background:#fff; border:2px solid var(--ip-red); border-radius:20px; padding:6px 12px;
+  font-size:.72rem; font-weight:700; color:var(--ip-blue); text-align:center;
+}
+.mm-node.center{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue); font-size:.82rem;}
+.penalty-badge{
+  display:inline-block; background:var(--ip-red); color:#fff; font-size:.7rem;
+  padding:2px 8px; border-radius:6px; font-weight:700;
+}
+.dtree{margin:10px 0; font-size:.76rem;}
+.dtree .q{background:var(--ip-blue); color:#fff; padding:6px 10px; border-radius:6px; margin-bottom:4px; font-weight:600;}
+.dtree .branch{padding-left:16px; border-left:2px dashed var(--ip-gold); margin-left:8px; margin-bottom:6px;}
+.dtree .ans{background:#f5f2ea; padding:5px 8px; border-radius:5px; margin:3px 0;}
+.alert{background:#fff3cd; border:1px solid #ffdf7e; padding:8px 10px; border-radius:6px; font-size:.76rem; margin:8px 0;}
+.footer-note{text-align:center; font-size:.7rem; color:#888; padding:20px 10px;}
+.pdf-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--ip-red); color:#fff;
+  border:none; border-radius:50%; width:54px; height:54px; font-size:1.4rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; z-index:99;
+}
+@media print{ .pdf-btn{display:none;} }
+.toc{background:#fff; border:1px solid #e2ddd0; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:.78rem;}
+.toc a{color:var(--ip-blue); text-decoration:none; display:block; padding:3px 0; border-bottom:1px dotted #ddd;}
+.small-note{font-size:.7rem; color:#666; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📜 सूचना का अधिकार अधिनियम, 2005</h1>
+  <div class="sub">The Right to Information Act, 2005 (Act No. 22 of 2005)</div>
+  <div class="meta">📌 IP Exam (Inspector Posts) — Paper I | Subject: Acts</div>
+</div>
+<div class="profile-bar">👤 Panthil Rajeshkumar Parmar | Office Assistant | Ahmedabad L-1</div>
+
+<div class="legend">
+  <span class="tag vi">🔴 अति महत्वपूर्ण / Very Imp</span>
+  <span class="tag fa">🟠 बार-बार पूछा गया / Frequent</span>
+  <span class="tag co">🟡 Conceptual</span>
+  <span class="tag qr">🟢 Quick Revision</span>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>📑 अनुक्रमणिका / Contents</b>
+  <a href="#ch1">Chapter I — Preliminary (Sec 1-2)</a>
+  <a href="#ch2">Chapter II — Right to Info & Obligations (Sec 3-11)</a>
+  <a href="#ch3">Chapter III — Central Information Commission (Sec 12-14)</a>
+  <a href="#ch4">Chapter IV — State Information Commission (Sec 15-17)</a>
+  <a href="#ch5">Chapter V — Powers, Appeal, Penalties (Sec 18-20)</a>
+  <a href="#ch6">Chapter VI — Miscellaneous (Sec 21-31)</a>
+  <a href="#flow">Flowchart / Decision Tree</a>
+  <a href="#timeline">कालक्रम / Timeline</a>
+  <a href="#rev">One-Page Revision Sheet</a>
+  <a href="#mnem">Memory Tricks</a>
+</div>
+
+<div class="section-title">🧠 संपूर्ण अधिनियम — Mind Map</div>
+<div class="card">
+  <div class="mindmap">
+    <div class="mm-node center">RTI Act 2005<br>(6 Chapters, 31 Sections, 2 Schedules)</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">Ch I<br>Preliminary</div>
+    <div class="mm-node">Ch II<br>Right & Obligations</div>
+    <div class="mm-node">Ch III<br>CIC</div>
+    <div class="mm-node">Ch IV<br>SIC</div>
+    <div class="mm-node">Ch V<br>Powers/Appeal/Penalty</div>
+    <div class="mm-node">Ch VI<br>Misc</div>
+  </div>
+  <p class="small-note">🟡 प्रभावी तिथि: 12 अक्टूबर 2005 (120वां दिन) | Act No. 22 of 2005, दिनांक 15 जून 2005</p>
+</div>
+
+<!-- CHAPTER I -->
+<div class="section-title" id="ch1">📘 Chapter I — Preliminary (धारा 1-2)</div>
+<div class="card">
+  <h3 class="micro">धारा 1 — शीर्षक, विस्तार व प्रारंभ <span class="tag vi">🔴</span></h3>
+  <p class="eng">Short title, extent and commencement</p>
+  <table>
+    <tr><th>बिंदु / Point</th><th>विवरण / Detail</th></tr>
+    <tr><td>Act No.</td><td>22 of 2005, दिनांक 15 जून 2005</td></tr>
+    <tr><td>विस्तार / Extent</td><td>संपूर्ण भारत (Whole of India) — 2019 में "except J&K" शब्द हटे</td></tr>
+    <tr><td>तुरंत प्रभावी धाराएँ</td><td>Sec 4(1), 5(1)&(2), 12, 13, 15, 16, 24, 27, 28</td></tr>
+    <tr><td>शेष धाराएँ लागू</td><td>अधिनियमन के 120वें दिन (12 अक्टूबर 2005)</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न / Q:</b> RTI Act पूर्णतः कब लागू हुआ? (उत्तर: 12 अक्टूबर 2005, 120वें दिन)</div>
+
+  <h3 class="micro">धारा 2 — परिभाषाएँ / Definitions <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>शब्द / Term</th><th>अर्थ / Meaning</th></tr>
+    <tr><td>Public Authority</td><td>संविधान/संसद/राज्य विधानमंडल द्वारा या अधिसूचना से स्थापित निकाय, सरकार वित्तपोषित NGO सहित</td></tr>
+    <tr><td>Information (सूचना)</td><td>अभिलेख, दस्तावेज, ई-मेल, राय, सलाह, प्रेस विज्ञप्ति, परिपत्र, आदेश, लॉगबुक, संविदा, रिपोर्ट, नमूने, इलेक्ट्रॉनिक डाटा — निजी निकाय की सूचना भी शामिल</td></tr>
+    <tr><td>Record (अभिलेख)</td><td>दस्तावेज, पांडुलिपि, फाइल, माइक्रोफिल्म, माइक्रोफिशे, कंप्यूटर सामग्री</td></tr>
+    <tr><td>Right to Information</td><td>निरीक्षण, टिप्पण/उद्धरण/प्रमाणित प्रति, प्रमाणित नमूने, डिस्केट/फ्लॉपी/टेप/वीडियो कैसेट/प्रिंटआउट</td></tr>
+    <tr><td>Third Party (पर व्यक्ति)</td><td>आवेदक नागरिक से भिन्न कोई भी व्यक्ति, लोक प्राधिकारी सहित</td></tr>
+    <tr><td>Competent Authority</td><td>Speaker(लोकसभा/विधानसभा), CJI(SC), CJ(HC), President/Governor, Administrator(Art.239)</td></tr>
+  </table>
+  <div class="exam-q"><b>Q:</b> "Information" की परिभाषा में क्या-क्या शामिल है? (उत्तर: अभिलेख, ई-मेल, राय, परिपत्र, इलेक्ट्रॉनिक डाटा आदि — निजी निकाय की जानकारी भी, जो किसी अन्य विधि से लोक प्राधिकारी की पहुंच में हो)</div>
+</div>
+
+<!-- CHAPTER II -->
+<div class="section-title" id="ch2">📗 Chapter II — Right to Information & Obligations of Public Authorities (धारा 3-11)</div>
+<div class="card">
+  <h3 class="micro">धारा 3 — सूचना का अधिकार <span class="tag qr">🟢</span></h3>
+  <p>सभी नागरिकों को सूचना का अधिकार होगा (अधिनियम के उपबंधों के अधीन)</p>
+
+  <h3 class="micro">धारा 4 — लोक प्राधिकारियों की बाध्यताएँ <span class="tag vi">🔴</span></h3>
+  <ul>
+    <li>अभिलेखों का सुव्यवस्थित रख-रखाव व कंप्यूटरीकरण</li>
+    <li><b>120 दिन</b> के भीतर 17 प्रकार की जानकारी स्वतः प्रकाशित (suo-motu) करना — संगठन विवरण, अधिकारियों की शक्तियाँ, निर्णय प्रक्रिया, बजट, वेतन आदि</li>
+    <li>हर वर्ष प्रकाशन अद्यतन करना</li>
+  </ul>
+  <div class="exam-q"><b>Q:</b> धारा 4(1)(b) के तहत suo-motu प्रकाशन कितने दिन में करना है? (उत्तर: 120 दिन)</div>
+
+  <h3 class="micro">धारा 5 — लोक सूचना अधिकारी नामांकन <span class="tag vi">🔴</span></h3>
+  <ul>
+    <li><b>100 दिन</b> में CPIO/SPIO नामित करना (Sec 5(1))</li>
+    <li>प्रत्येक उप-मंडल स्तर पर Assistant PIO (APIO) — आवेदन आगे भेजने हेतु</li>
+    <li>APIO को आवेदन मिलने पर उत्तर अवधि में <b>+5 दिन</b> जोड़े जाते हैं</li>
+  </ul>
+  <div class="exam-q"><b>Q:</b> APIO के माध्यम से आवेदन देने पर कितने दिन अतिरिक्त जुड़ते हैं? (उत्तर: 5 दिन)</div>
+
+  <h3 class="micro">धारा 6 — सूचना अभिप्राप्त करने हेतु अनुरोध <span class="tag fa">🟠</span></h3>
+  <ul>
+    <li>लिखित/इलेक्ट्रॉनिक रूप में, अंग्रेजी/हिन्दी/स्थानीय राजभाषा में</li>
+    <li>कारण बताना आवश्यक नहीं (केवल संपर्क विवरण)</li>
+    <li>गलत प्राधिकारी को आवेदन देने पर <b>5 दिन</b> में स्थानांतरण अनिवार्य</li>
+  </ul>
+
+  <h3 class="micro">धारा 7 — अनुरोध का निपटारा <span class="tag vi">🔴 सबसे महत्वपूर्ण धारा</span></h3>
+  <table>
+    <tr><th>स्थिति</th><th>समय सीमा</th></tr>
+    <tr><td>सामान्य सूचना</td><td><span class="penalty-badge">30 दिन</span></td></tr>
+    <tr><td>जीवन/स्वतंत्रता से संबंधित सूचना</td><td><span class="penalty-badge">48 घंटे</span></td></tr>
+    <tr><td>APIO के माध्यम से</td><td>30+5 = 35 दिन</td></tr>
+    <tr><td>Third Party जानकारी हो</td><td>40 दिन (5+35)</td></tr>
+    <tr><td>निर्धारित समय में उत्तर न देने पर</td><td>Deemed Refusal (अस्वीकृत माना जाएगा)</td></tr>
+    <tr><td>समय सीमा चूकने पर सूचना</td><td>निःशुल्क देनी होगी (Sec 7(6))</td></tr>
+  </table>
+  <div class="exam-q"><b>Q:</b> जीवन या स्वतंत्रता से जुड़ी सूचना कितने समय में देनी होगी? (उत्तर: 48 घंटे)</div>
+  <div class="exam-q"><b>Q:</b> समय सीमा में सूचना न देने पर क्या परिणाम होता है? (उत्तर: निःशुल्क सूचना देनी होगी + Deemed Refusal माना जाता है)</div>
+
+  <h3 class="micro">धारा 8 — सूचना के प्रकट किए जाने से छूट <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <p>निम्न सूचना देने की बाध्यता नहीं (Exemptions):</p>
+  <table>
+    <tr><th>खंड</th><th>छूट का विषय</th></tr>
+    <tr><td>(a)</td><td>प्रभुता, अखंडता, सुरक्षा, रणनीतिक/वैज्ञानिक/आर्थिक हित</td></tr>
+    <tr><td>(b)</td><td>न्यायालय द्वारा प्रकाशन निषिद्ध / न्यायालय अवमानना</td></tr>
+    <tr><td>(c)</td><td>संसद/राज्य विधानमंडल विशेषाधिकार भंग</td></tr>
+    <tr><td>(d)</td><td>वाणिज्यिक विश्वास, व्यापार गोपनीयता, बौद्धिक संपदा</td></tr>
+    <tr><td>(e)</td><td>वैश्वासिक (fiduciary) संबंध की सूचना</td></tr>
+    <tr><td>(f)</td><td>विदेशी सरकार से गोपनीय प्राप्त सूचना</td></tr>
+    <tr><td>(g)</td><td>जीवन/शारीरिक सुरक्षा खतरे में डालने वाली सूचना</td></tr>
+    <tr><td>(h)</td><td>अन्वेषण/गिरफ्तारी/अभियोजन में बाधा</td></tr>
+    <tr><td>(i)</td><td>मंत्रिमंडल कागजपत्र (निर्णय के बाद सार्वजनिक होंगे)</td></tr>
+    <tr><td>(j)</td><td>व्यक्तिगत सूचना — लोक हित न हो तो</td></tr>
+  </table>
+  <div class="alert">⚠️ धारा 8(2): Official Secrets Act 1923 के होते हुए भी, यदि लोकहित संरक्षित हित से अधिक हो तो सूचना दी जा सकती है (Public Interest Override)।</div>
+  <div class="alert">⚠️ धारा 8(3): 20 वर्ष पुरानी घटना/विषय से संबंधित सूचना सामान्यतः देनी होगी (खंड a,c,i को छोड़कर)।</div>
+  <div class="exam-q"><b>Q:</b> कितने वर्ष पुरानी सूचना सामान्यतः देनी अनिवार्य है? (उत्तर: 20 वर्ष, धारा 8(3))</div>
+
+  <h3 class="micro">धारा 9 — कॉपीराइट आधार पर अस्वीकृति <span class="tag co">🟡</span></h3>
+  <p>यदि पहुंच देने से किसी तीसरे व्यक्ति (राज्य के अतिरिक्त) के कॉपीराइट का उल्लंघन होता है</p>
+
+  <h3 class="micro">धारा 10 — पृथक्करणीयता (Severability) <span class="tag qr">🟢</span></h3>
+  <p>छूट-प्राप्त भाग हटाकर शेष भाग की सूचना दी जा सकती है</p>
+
+  <h3 class="micro">धारा 11 — तीसरे पक्ष की सूचना <span class="tag fa">🟠</span></h3>
+  <table>
+    <tr><th>चरण</th><th>समय सीमा</th></tr>
+    <tr><td>Third party को सूचना नोटिस</td><td>5 दिन के भीतर</td></tr>
+    <tr><td>Third party का प्रत्यावेदन</td><td>10 दिन के भीतर</td></tr>
+    <tr><td>अंतिम निर्णय</td><td>40 दिन के भीतर</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> "5-10-40" याद रखें — Third Party notice(5) → Representation(10) → Final Decision(40)</div>
+</div>
+
+<!-- CHAPTER III -->
+<div class="section-title" id="ch3">📕 Chapter III — Central Information Commission (धारा 12-14)</div>
+<div class="card">
+  <h3 class="micro">धारा 12 — गठन <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>गठन</td><td>केंद्र सरकार, राजपत्र अधिसूचना द्वारा</td></tr>
+    <tr><td>सदस्य</td><td>1 CIC (Chief) + अधिकतम 10 Information Commissioners</td></tr>
+    <tr><td>नियुक्ति समिति</td><td>PM (Chairperson) + Leader of Opposition (Lok Sabha) + Union Cabinet Minister (PM नामित)</td></tr>
+    <tr><td>नियुक्तिकर्ता</td><td>राष्ट्रपति (President)</td></tr>
+    <tr><td>मुख्यालय</td><td>दिल्ली</td></tr>
+  </table>
+  <div class="exam-q"><b>Q:</b> CIC नियुक्ति समिति में कौन-कौन शामिल हैं? (उत्तर: PM, Leader of Opposition Lok Sabha, PM द्वारा नामित Cabinet Minister)</div>
+
+  <h3 class="micro">धारा 13 — पदावधि व सेवा शर्तें <span class="tag vi">🔴 2019 संशोधन से बदला</span></h3>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना (2019 से पहले)</div>निश्चित 5 वर्ष कार्यकाल या 65 वर्ष आयु (जो पहले हो)</div>
+    <div class="new"><div class="hd">✅ नया (RTI Amendment Act 2019)</div>केंद्र सरकार द्वारा निर्धारित अवधि (Term prescribed by Central Govt)</div>
+  </div>
+  <p>पुनर्नियुक्ति के लिए पात्र नहीं; शपथ राष्ट्रपति के समक्ष (First Schedule अनुसार)</p>
+
+  <h3 class="micro">धारा 14 — हटाया जाना (Removal) <span class="tag fa">🟠</span></h3>
+  <ul>
+    <li>राष्ट्रपति के आदेश से — सिद्ध कदाचार/असमर्थता पर, Supreme Court जांच के बाद</li>
+    <li>बिना जांच सीधे हटाने के आधार: दिवालिया, नैतिक अधमता का अपराध, वैतनिक नियोजन, मानसिक/शारीरिक अक्षमता, हितबद्ध वित्तीय हित</li>
+  </ul>
+</div>
+
+<!-- CHAPTER IV -->
+<div class="section-title" id="ch4">📙 Chapter IV — State Information Commission (धारा 15-17)</div>
+<div class="card">
+  <h3 class="micro">धारा 15 — गठन <span class="tag co">🟡</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>गठन</td><td>राज्य सरकार, राजपत्र अधिसूचना द्वारा</td></tr>
+    <tr><td>नियुक्ति समिति</td><td>CM (Chairperson) + Leader of Opposition (Vidhan Sabha) + CM नामित Cabinet Minister</td></tr>
+    <tr><td>नियुक्तिकर्ता</td><td>राज्यपाल (Governor)</td></tr>
+  </table>
+  <h3 class="micro">धारा 16 — पदावधि (2019 संशोधन लागू) <span class="tag fa">🟠</span></h3>
+  <p>केंद्रीय आयोग के समान — केंद्र सरकार द्वारा प्रकृत अवधि व वेतन-भत्ते निर्धारित</p>
+  <h3 class="micro">धारा 17 — हटाया जाना</h3>
+  <p>राज्यपाल के आदेश से, समान आधारों पर (धारा 14 समान)</p>
+  <div class="exam-q"><b>Q:</b> CIC व SIC सदस्यों की वेतन-शर्तें किसके द्वारा तय होती हैं (2019 बाद)? (उत्तर: केंद्र सरकार द्वारा, दोनों के लिए ही)</div>
+</div>
+
+<!-- CHAPTER V -->
+<div class="section-title" id="ch5">📒 Chapter V — Powers, Appeal & Penalties (धारा 18-20)</div>
+<div class="card">
+  <h3 class="micro">धारा 18 — आयोगों की शक्तियाँ व कृत्य <span class="tag fa">🟠</span></h3>
+  <p>शिकायत प्राप्त कर जांच करने का कर्तव्य; सिविल न्यायालय जैसी शक्तियाँ (समन, दस्तावेज मंगाना, शपथपत्र आदि — CPC 1908 अनुसार)</p>
+
+  <h3 class="micro">धारा 19 — अपील (2-स्तरीय अपील प्रणाली) <span class="tag vi">🔴 अति महत्वपूर्ण</span></h3>
+  <table>
+    <tr><th>अपील स्तर</th><th>प्राधिकारी</th><th>समय सीमा</th></tr>
+    <tr><td>प्रथम अपील</td><td>Senior/Appellate Officer (लोक प्राधिकरण के भीतर)</td><td>30 दिन (deficiency से या निर्णय से)</td></tr>
+    <tr><td>द्वितीय अपील</td><td>CIC या SIC</td><td>90 दिन</td></tr>
+    <tr><td>Third Party appeal (Sec 11 आदेश पर)</td><td>—</td><td>30 दिन</td></tr>
+    <tr><td>अपील निपटान अवधि</td><td>—</td><td>30 दिन (अधिकतम 45 दिन कारण सहित)</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> "30-90-30-45" — प्रथम अपील 30, द्वितीय अपील 90, third party अपील 30, निपटान अधिकतम 45 दिन</div>
+  <div class="exam-q"><b>Q:</b> द्वितीय अपील कितने दिनों के भीतर CIC/SIC में की जा सकती है? (उत्तर: 90 दिन)</div>
+
+  <h3 class="micro">धारा 20 — शास्ति / Penalties <span class="tag vi">🔴 अति महत्वपूर्ण (गणना आधारित प्रश्न संभव)</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>प्रति दिन जुर्माना</td><td><span class="penalty-badge">₹250/दिन</span></td></tr>
+    <tr><td>अधिकतम जुर्माना</td><td><span class="penalty-badge">₹25,000</span></td></tr>
+    <tr><td>भार (Burden of proof)</td><td>PIO पर — यह सिद्ध करना कि उसने युक्तियुक्त व तत्परतापूर्वक कार्य किया</td></tr>
+    <tr><td>अनुशासनिक कार्यवाही (Sec 20(2))</td><td>लगातार/बिना कारण इनकार पर सेवा नियमों के तहत सिफारिश</td></tr>
+  </table>
+  <div class="exam-q"><b>Q:</b> ₹250/दिन की दर से अधिकतम शास्ति कितने दिनों में ₹25,000 पूर्ण होगी? (उत्तर: 100 दिन — 250×100=25000, गणना आधारित प्रश्न)</div>
+</div>
+
+<!-- CHAPTER VI -->
+<div class="section-title" id="ch6">📓 Chapter VI — Miscellaneous (धारा 21-31)</div>
+<div class="card">
+  <table>
+    <tr><th>धारा</th><th>विषय</th></tr>
+    <tr><td>21</td><td>सद्भावपूर्वक कार्य हेतु संरक्षण</td></tr>
+    <tr><td>22</td><td>अध्यारोही प्रभाव — Official Secrets Act 1923 पर भी भारी</td></tr>
+    <tr><td>23</td><td>न्यायालयों की अधिकारिता वर्जित (सिवाय अपील के)</td></tr>
+    <tr><td>24</td><td>कतिपय संगठनों (आसूचना/सुरक्षा) को लागू नहीं — Second Schedule; भ्रष्टाचार व मानवाधिकार उल्लंघन की सूचना अपवर्जित नहीं</td></tr>
+    <tr><td>25</td><td>मॉनीटरिंग व रिपोर्टिंग (वार्षिक रिपोर्ट)</td></tr>
+    <tr><td>26</td><td>समुचित सरकार द्वारा कार्यक्रम तैयार करना (18 माह में गाइड)</td></tr>
+    <tr><td>27-28</td><td>नियम बनाने की शक्ति (appropriate govt / competent authority)</td></tr>
+    <tr><td>29</td><td>नियमों का रखा जाना (संसद/विधानमंडल में)</td></tr>
+    <tr><td>30</td><td>कठिनाइयाँ दूर करने की शक्ति (2 वर्ष तक सीमित)</td></tr>
+    <tr><td>31</td><td>निरसन — Freedom of Information Act 2002 निरस्त</td></tr>
+  </table>
+  <div class="alert">⚠️ धारा 24: आसूचना/सुरक्षा संगठनों (IB, RAW, CBI, NIA, DRI, ED आदि — 26 संगठन Second Schedule में) पर Act लागू नहीं, परन्तु भ्रष्टाचार व मानवाधिकार उल्लंघन की सूचना पर अपवाद — CIC/SIC अनुमोदन से 45 दिन में देनी होगी।</div>
+  <div class="exam-q"><b>Q:</b> Second Schedule में सम्मिलित संगठनों की सूचना मानवाधिकार उल्लंघन के मामले में कितने दिन में देनी होगी? (उत्तर: 45 दिन, CIC/SIC अनुमोदन बाद)</div>
+  <div class="exam-q"><b>Q:</b> RTI Act किस अधिनियम को निरस्त करता है? (उत्तर: Freedom of Information Act, 2002)</div>
+</div>
+
+<!-- FLOWCHART -->
+<div class="section-title" id="flow">🔀 फ्लोचार्ट — RTI आवेदन प्रक्रिया</div>
+<div class="card">
+  <div class="flow">
+    <div class="flow-box">नागरिक PIO/APIO को लिखित/इलेक्ट्रॉनिक आवेदन दे</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">PIO 30 दिन (या 48 घंटे जीवन/स्वतंत्रता मामले) में उत्तर दे</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">सूचना मिली? ✅ हाँ → समाप्त | ❌ नहीं → आगे बढ़ें</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">30 दिन में प्रथम अपील (Senior Officer को)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">असंतुष्ट? → 90 दिन में द्वितीय अपील (CIC/SIC)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box" style="border-color:var(--ip-red); color:var(--ip-red);">CIC/SIC का निर्णय अंतिम व बाध्यकारी (Binding)</div>
+  </div>
+</div>
+
+<!-- DECISION TREE -->
+<div class="section-title">🌳 निर्णय वृक्ष — क्या सूचना देनी अनिवार्य है?</div>
+<div class="card dtree">
+  <div class="q">क्या सूचना धारा 8(1) की छूट सूची में आती है?</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ, परंतु लोकहित संरक्षित हित से अधिक → Sec 8(2) के तहत दी जा सकती है</div>
+    <div class="ans">❌ नहीं → सामान्य रूप से देनी होगी (30 दिन में)</div>
+  </div>
+  <div class="q">क्या सूचना 20 वर्ष से पुरानी है?</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ (और खंड a,c,i में नहीं आती) → देनी अनिवार्य (Sec 8(3))</div>
+    <div class="ans">❌ नहीं → सामान्य प्रक्रिया लागू</div>
+  </div>
+</div>
+
+<!-- COMPARISON: 2019 AMENDMENT -->
+<div class="section-title">⚖️ RTI Amendment Act, 2019 — पुराना बनाम नया <span class="tag vi">🔴</span></div>
+<div class="card">
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना (2005 मूल अधिनियम)</div>CIC/SIC कार्यकाल: निश्चित 5 वर्ष या 65 वर्ष आयु (जो पहले हो)</div>
+    <div class="new"><div class="hd">✅ नया (2019 संशोधन)</div>कार्यकाल केंद्र सरकार द्वारा नियमानुसार निर्धारित</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>वेतन: CIC = मुख्य निर्वाचन आयुक्त समान; SIC = राज्य के मुख्य सचिव समान</div>
+    <div class="new"><div class="hd">✅ नया</div>वेतन-भत्ते केंद्र सरकार द्वारा प्रकृत (rules अनुसार)</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">❌ पुराना</div>State CIC व Central CIC की सेवा शर्तें भिन्न ढांचे से तय</div>
+    <div class="new"><div class="hd">✅ नया</div>दोनों की सेवा-शर्तें अब केंद्र सरकार द्वारा एकसमान रूप से नियमित</div>
+  </div>
+</div>
+
+<!-- TIME LIMITS TABLE -->
+<div class="section-title">⏱️ महत्वपूर्ण समय-सीमाएँ / Time Limits <span class="tag vi">🔴</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्रावधान</th><th>समय सीमा</th></tr>
+    <tr><td>PIO नामांकन (Sec 5)</td><td>100 दिन</td></tr>
+    <tr><td>Suo-motu प्रकाशन (Sec 4)</td><td>120 दिन</td></tr>
+    <tr><td>सामान्य सूचना उत्तर (Sec 7(1))</td><td>30 दिन</td></tr>
+    <tr><td>जीवन/स्वतंत्रता संबंधी सूचना</td><td>48 घंटे</td></tr>
+    <tr><td>गलत प्राधिकारी — आवेदन स्थानांतरण</td><td>5 दिन</td></tr>
+    <tr><td>APIO के माध्यम से आवेदन — अतिरिक्त समय</td><td>+5 दिन</td></tr>
+    <tr><td>Third Party — सूचना नोटिस</td><td>5 दिन</td></tr>
+    <tr><td>Third Party — प्रत्यावेदन अवसर</td><td>10 दिन</td></tr>
+    <tr><td>Third Party — अंतिम निर्णय (Sec 11(3))</td><td>40 दिन</td></tr>
+    <tr><td>प्रथम अपील (Sec 19(1))</td><td>30 दिन</td></tr>
+    <tr><td>Third Party अपील (Sec 19(2))</td><td>30 दिन</td></tr>
+    <tr><td>द्वितीय अपील (Sec 19(3))</td><td>90 दिन</td></tr>
+    <tr><td>अपील निपटान अवधि</td><td>30 दिन (अधिकतम कुल 45 दिन)</td></tr>
+    <tr><td>Second Schedule संगठन — मानवाधिकार सूचना</td><td>45 दिन</td></tr>
+    <tr><td>Appropriate Govt — गाइड तैयार करना</td><td>18 माह</td></tr>
+    <tr><td>कठिनाई दूर करने की शक्ति (Sec 30)</td><td>प्रारंभ से 2 वर्ष तक सीमित</td></tr>
+  </table>
+</div>
+
+<!-- AUTHORITIES TABLE -->
+<div class="section-title">👮 महत्वपूर्ण प्राधिकारी / Authorities <span class="tag fa">🟠</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्राधिकारी</th><th>भूमिका</th></tr>
+    <tr><td>CPIO / SPIO</td><td>सूचना प्रदान करने हेतु नामित अधिकारी</td></tr>
+    <tr><td>CAPIO / SAPIO</td><td>उप-मंडल स्तर पर आवेदन प्राप्त कर आगे भेजना</td></tr>
+    <tr><td>Chief Information Commissioner (CIC)</td><td>केंद्रीय सूचना आयोग प्रमुख</td></tr>
+    <tr><td>State Chief Information Commissioner</td><td>राज्य सूचना आयोग प्रमुख</td></tr>
+    <tr><td>Appellate Authority</td><td>प्रथम अपील हेतु वरिष्ठ अधिकारी (लोक प्राधिकरण में)</td></tr>
+    <tr><td>Competent Authority (Sec 2e)</td><td>Speaker/CJI/CJ/President/Governor/Administrator — नियम बनाने हेतु</td></tr>
+    <tr><td>Appropriate Government</td><td>Central/State Govt — जिसके नियंत्रण/वित्तपोषण में लोक प्राधिकरण हो</td></tr>
+  </table>
+</div>
+
+<!-- TIMELINE -->
+<div class="section-title" id="timeline">🕰️ कालक्रम / Legislative Timeline <span class="tag co">🟡</span></div>
+<div class="card">
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-date">2002</div><div class="tl-text">Freedom of Information Act, 2002 (5 of 2003) — बाद में निरस्त</div></div>
+    <div class="tl-item"><div class="tl-date">15 जून 2005</div><div class="tl-text">RTI Act 2005 अधिनियमित (Act No. 22 of 2005)</div></div>
+    <div class="tl-item"><div class="tl-date">12 अक्टूबर 2005</div><div class="tl-text">🔴 पूर्ण रूप से लागू (120वां दिन)</div></div>
+    <div class="tl-item"><div class="tl-date">28-9-2005 / 27-3-2008</div><div class="tl-text">Second Schedule में संगठनों का संशोधन (RAW, DGIT-Inv, NTRO, FIU-IND जोड़े गए)</div></div>
+    <div class="tl-item"><div class="tl-date">2011 (9-6-2011)</div><div class="tl-text">NIA व NATGRID जैसे संगठन Second Schedule में जोड़े गए</div></div>
+    <div class="tl-item"><div class="tl-date">31 अक्टूबर 2019 (Act 34 of 2019)</div><div class="tl-text">"except J&K" शब्द हटाए गए — अब पूरे भारत में समान लागू</div></div>
+    <div class="tl-item"><div class="tl-date">24 अक्टूबर 2019 (RTI Amendment Act 24 of 2019)</div><div class="tl-text">🔴 सबसे बड़ा संशोधन — CIC/SIC पदावधि व वेतन अब केंद्र सरकार निर्धारित करेगी (पूर्व में निश्चित 5 वर्ष/65 वर्ष व निर्वाचन आयुक्त/मुख्य सचिव समान वेतन था)</div></div>
+    <div class="tl-item"><div class="tl-date">4-5-2021 (G.S.R. 253)</div><div class="tl-text">Second Schedule अद्यतन — Special Frontier Force जोड़ा, item 7 हटाया</div></div>
+    <div class="tl-item"><div class="tl-date">17-5-2021</div><div class="tl-text">Last Updated तिथि (उपलब्ध दस्तावेज़ अनुसार)</div></div>
+  </div>
+  <div class="exam-q"><b>Q:</b> RTI (Amendment) Act 2019 का मुख्य परिवर्तन क्या था? (उत्तर: CIC/SIC की पदावधि व वेतन अब केंद्र सरकार द्वारा नियमानुसार निर्धारित होंगे, पूर्व के निश्चित 5 वर्ष प्रावधान की जगह)</div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet — Last Day Revision</h2>
+  <div class="rev-grid">
+    <div class="rev-item">🔴 Act No. 22 of 2005, दिनांक 15 जून 2005; पूर्ण लागू: 12 अक्टूबर 2005 (120वां दिन)</div>
+    <div class="rev-item">🔴 6 Chapters, 31 Sections (24, 31 विशेष), 2 Schedules</div>
+    <div class="rev-item">🔴 Sec 7(1) = सामान्य सूचना 30 दिन | जीवन/स्वतंत्रता = 48 घंटे</div>
+    <div class="rev-item">🔴 Sec 8 = 10 प्रकार की छूट (exemptions a-j) | Sec 8(3) = 20 वर्ष पुरानी सूचना देय</div>
+    <div class="rev-item">🔴 Sec 19(1) = प्रथम अपील 30 दिन | Sec 19(3) = द्वितीय अपील 90 दिन</div>
+    <div class="rev-item">🔴 Sec 20 = शास्ति ₹250/दिन, अधिकतम ₹25,000</div>
+    <div class="rev-item">🔴 Sec 24 = आसूचना/सुरक्षा संगठन (Second Schedule, 26 संगठन) — Act लागू नहीं, परंतु भ्रष्टाचार/मानवाधिकार सूचना अपवाद (45 दिन में)</div>
+    <div class="rev-item">🟠 Sec 5 = PIO नामांकन 100 दिन | APIO मिलने पर +5 दिन जुड़ते हैं</div>
+    <div class="rev-item">🟠 Sec 11 = Third party: notice 5 दिन, representation 10 दिन, निर्णय 40 दिन</div>
+    <div class="rev-item">🟠 Sec 12 = CIC नियुक्ति समिति: PM+LoP(LS)+Cabinet Minister | नियुक्ति: राष्ट्रपति</div>
+    <div class="rev-item">🟡 2019 संशोधन: CIC/SIC पदावधि व वेतन अब केंद्र सरकार तय करेगी</div>
+    <div class="rev-item">🟢 Sec 22 = Official Secrets Act 1923 पर अध्यारोही प्रभाव</div>
+    <div class="rev-item">🟢 Sec 31 = Freedom of Information Act 2002 निरस्त</div>
+    <div class="rev-item">🟢 Sec 4(1)(b) = suo-motu प्रकाशन 120 दिन में, 17 उप-श्रेणियाँ</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section-title" id="mnem">🧠 Memory Tricks / Mnemonics</div>
+<div class="card">
+  <div class="mnemonic">
+    <b>1️⃣ समय-सीमाओं का क्रम "5-30-48-40-90":</b><br>
+    Transfer(5) → Normal Reply(30) → Life/Liberty(48hrs) → Third Party Decision(40) → Second Appeal(90)
+  </div>
+  <div class="mnemonic">
+    <b>2️⃣ Chapter क्रम याद रखें — "PROSCM":</b><br>
+    Preliminary → Right & Obligations → cOmmission(Central) → State commission → powers(appeal/Sanction) → Misc
+  </div>
+  <div class="mnemonic">
+    <b>3️⃣ शास्ति याद रखें "250×100=25000":</b> ₹250 प्रतिदिन की दर से 100 दिन में अधिकतम ₹25,000 पूर्ण
+  </div>
+  <div class="mnemonic">
+    <b>4️⃣ अपील क्रम "30-90":</b> पहली अपील में "3" और दूसरी अपील में "9" — दोनों में एक शून्य (0) कॉमन
+  </div>
+  <div class="mnemonic">
+    <b>5️⃣ छूट धाराएँ (Sec 8) याद रखें "SICTFLICP":</b> Sovereignty, Injunction(court), Contempt, Trade secret, Fiduciary, Life-safety, Investigation, Cabinet papers, Personal info — 10 वर्णों वाले शब्द से 10 exemptions
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<div class="section-title">✅ Quick Revision Points <span class="tag qr">🟢</span></div>
+<div class="card">
+  <ul>
+    <li>RTI Act में कुल 6 अध्याय, 31 धाराएँ (धारा 24 विलोपित नहीं, विशेष अपवाद है), 2 अनुसूचियाँ</li>
+    <li>First Schedule = शपथ प्रारूप (CIC/SIC हेतु) | Second Schedule = आसूचना/सुरक्षा संगठनों की सूची</li>
+    <li>CIC सदस्य: अधिकतम 10 + 1 मुख्य = कुल 11</li>
+    <li>SIC नाम में संबंधित राज्य का नाम जुड़ता है (जैसे "गुजरात राज्य सूचना आयोग")</li>
+    <li>Sec 18 के तहत आयोग को CPC 1908 अनुसार सिविल न्यायालय की शक्तियाँ प्राप्त हैं</li>
+    <li>Sec 19(8) — आयोग लोक प्राधिकरण को क्षतिपूर्ति/शास्ति/प्रशिक्षण आदि आदेश दे सकता है</li>
+    <li>Sec 23 — RTI आदेशों पर सिविल न्यायालय की अधिकारिता वर्जित है</li>
+    <li>Sec 25 — आयोग हर वर्ष वार्षिक रिपोर्ट संसद/विधानमंडल में प्रस्तुत करता है</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  📚 India Post IP Exam Preparation Portal | Right to Information Act, 2005 (Bilingual)<br>
+  यह इन्फोग्राफिक केवल परीक्षा तैयारी हेतु सारांश है — मूल अधिनियम का पूर्ण अध्ययन आवश्यक
+</div>
+
+</div>
+
+<button class="pdf-btn" onclick="window.print()" title="PDF Download">⬇</button>
+
+</body>
+</html>

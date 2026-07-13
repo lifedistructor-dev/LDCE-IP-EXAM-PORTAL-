@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सूचना का अधिकार नियम 2012 | RTI Rules | IP Exam Infographic</title>
+<style>
+:root{
+  --ip-red:#C8102E; --ip-blue:#003057; --ip-gold:#D4A017;
+  --very-imp:#ffe1e1; --very-imp-b:#C8102E;
+  --freq:#fff1dd; --freq-b:#e08600;
+  --concept:#fffbd6; --concept-b:#cbb400;
+  --quick:#e2f7e6; --quick-b:#1f9d4d;
+  --bg:#f5f2ea; --card:#ffffff; --text:#26282b;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:70px;
+}
+.header{
+  background:linear-gradient(135deg,var(--ip-red),#8f0c22 60%,var(--ip-blue));
+  color:#fff; padding:18px 14px 22px; text-align:center;
+  border-bottom:6px solid var(--ip-gold);
+}
+.header h1{font-size:1.3rem; margin-bottom:4px;}
+.header .sub{font-size:.85rem; opacity:.95;}
+.header .meta{font-size:.75rem; margin-top:8px; opacity:.9;}
+.profile-bar{
+  background:var(--ip-blue); color:#fff; text-align:center; font-size:.78rem;
+  padding:6px 10px;
+}
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+  padding:12px 8px; background:#fff; border-bottom:2px solid #eee;
+}
+.legend span{
+  font-size:.72rem; padding:4px 8px; border-radius:14px; font-weight:600;
+  border:1px solid #ddd;
+}
+.container{max-width:760px; margin:0 auto; padding:12px;}
+.section-title{
+  background:var(--ip-blue); color:#fff; padding:9px 14px; border-radius:8px 8px 0 0;
+  font-size:1rem; font-weight:700; margin-top:22px; display:flex; align-items:center; gap:8px;
+}
+.card{
+  background:var(--card); border:1px solid #e2ddd0; border-radius:0 0 8px 8px;
+  padding:12px 14px; margin-bottom:4px; box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.tag{
+  display:inline-block; font-size:.68rem; font-weight:700; padding:2px 7px;
+  border-radius:10px; margin-right:4px; margin-bottom:2px;
+}
+.tag.vi{background:var(--very-imp); color:var(--very-imp-b); border:1px solid var(--very-imp-b);}
+.tag.fa{background:var(--freq); color:var(--freq-b); border:1px solid var(--freq-b);}
+.tag.co{background:var(--concept); color:#8a7a00; border:1px solid var(--concept-b);}
+.tag.qr{background:var(--quick); color:var(--quick-b); border:1px solid var(--quick-b);}
+h3.micro{color:var(--ip-red); font-size:.95rem; margin:10px 0 4px; border-left:4px solid var(--ip-red); padding-left:8px;}
+h4.nano{color:var(--ip-blue); font-size:.85rem; margin:6px 0 3px;}
+p, li{font-size:.86rem;}
+ul{padding-left:20px; margin:4px 0 8px;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.78rem;}
+th{background:var(--ip-blue); color:#fff; padding:6px 5px; text-align:left;}
+td{padding:6px 5px; border-bottom:1px solid #eee; vertical-align:top;}
+tr:nth-child(even){background:#faf8f3;}
+.exam-q{
+  background:#eef3ff; border-left:4px solid #2255cc; padding:6px 10px; margin:6px 0;
+  font-size:.78rem; border-radius:0 6px 6px 0;
+}
+.exam-q b{color:#2255cc;}
+.mnemonic{
+  background:#fff4e0; border:1.5px dashed var(--ip-gold); padding:8px 10px; margin:8px 0;
+  border-radius:8px; font-size:.82rem;
+}
+.mnemonic b{color:#8a5a00;}
+.flow{display:flex; flex-direction:column; align-items:center; gap:2px; margin:10px 0;}
+.flow-box{
+  background:#fff; border:2px solid var(--ip-blue); border-radius:8px; padding:8px 12px;
+  font-size:.78rem; text-align:center; width:92%; font-weight:600;
+}
+.flow-arrow{font-size:1.2rem; color:var(--ip-red);}
+.timeline{border-left:3px solid var(--ip-gold); margin-left:8px; padding-left:14px;}
+.tl-item{margin-bottom:14px; position:relative;}
+.tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:11px; height:11px;
+  background:var(--ip-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--ip-red);
+}
+.tl-date{font-weight:700; color:var(--ip-red); font-size:.8rem;}
+.tl-text{font-size:.8rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0;}
+.compare .old{background:#fdeaea; border:1px solid #e08c8c; border-radius:6px; padding:8px; font-size:.75rem;}
+.compare .new{background:#e7f7ea; border:1px solid #8fcf9f; border-radius:6px; padding:8px; font-size:.75rem;}
+.compare .hd{font-weight:700; text-align:center; margin-bottom:4px; font-size:.78rem;}
+.revision-sheet{
+  background:linear-gradient(160deg,#fff7e6,#fff);
+  border:2px solid var(--ip-gold); border-radius:10px; padding:14px; margin:14px 0;
+}
+.revision-sheet h2{color:var(--ip-red); font-size:1.05rem; margin-bottom:8px; text-align:center;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px;}
+.rev-item{background:#fff; border-left:4px solid var(--ip-red); padding:6px 10px; font-size:.78rem; border-radius:0 6px 6px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mm-node{
+  background:#fff; border:2px solid var(--ip-red); border-radius:20px; padding:6px 12px;
+  font-size:.75rem; font-weight:700; color:var(--ip-blue); text-align:center;
+}
+.mm-node.center{background:var(--ip-blue); color:#fff; border-color:var(--ip-blue); font-size:.85rem;}
+.penalty-badge{
+  display:inline-block; background:var(--ip-red); color:#fff; font-size:.72rem;
+  padding:2px 8px; border-radius:6px; font-weight:700;
+}
+.dtree{margin:10px 0; font-size:.78rem;}
+.dtree .q{background:var(--ip-blue); color:#fff; padding:6px 10px; border-radius:6px; margin-bottom:4px; font-weight:600;}
+.dtree .branch{padding-left:16px; border-left:2px dashed var(--ip-gold); margin-left:8px; margin-bottom:6px;}
+.dtree .ans{background:#f5f2ea; padding:5px 8px; border-radius:5px; margin:3px 0;}
+.alert{background:#fff3cd; border:1px solid #ffdf7e; padding:8px 10px; border-radius:6px; font-size:.78rem; margin:8px 0;}
+.footer-note{text-align:center; font-size:.72rem; color:#888; padding:20px 10px;}
+.pdf-btn{
+  position:fixed; bottom:16px; right:16px; background:var(--ip-red); color:#fff;
+  border:none; border-radius:50%; width:54px; height:54px; font-size:1.4rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer; z-index:99;
+}
+@media print{ .pdf-btn{display:none;} }
+.toc{background:#fff; border:1px solid #e2ddd0; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:.8rem;}
+.toc a{color:var(--ip-blue); text-decoration:none; display:block; padding:3px 0; border-bottom:1px dotted #ddd;}
+.small-note{font-size:.72rem; color:#666; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📄 सूचना का अधिकार नियम, 2012</h1>
+  <div class="sub">The Right to Information Rules, 2012 (G.S.R. 603(E), दिनांक 31 जुलाई 2012)</div>
+  <div class="meta">📌 IP Exam (Inspector Posts) — Paper I | विषय: Rules</div>
+</div>
+<div class="profile-bar">👤 Panthil Rajeshkumar Parmar | Office Assistant | Ahmedabad L-1</div>
+
+<div class="legend">
+  <span class="tag vi">🔴 परीक्षा हेतु अति महत्वपूर्ण</span>
+  <span class="tag fa">🟠 बार-बार पूछा गया</span>
+  <span class="tag co">🟡 अवधारणा समझें</span>
+  <span class="tag qr">🟢 त्वरित पुनरावृत्ति</span>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <b>📑 अनुक्रमणिका (Contents)</b>
+  <a href="#intro">परिचय व पृष्ठभूमि</a>
+  <a href="#def">परिभाषाएँ (नियम 2)</a>
+  <a href="#fees">फीस संरचना (नियम 3-6)</a>
+  <a href="#appeal">अपील प्रक्रिया (नियम 7-15)</a>
+  <a href="#format">अपील प्रारूप (Appendix)</a>
+  <a href="#flow">फ्लोचार्ट / निर्णय वृक्ष</a>
+  <a href="#rev">One-Page Revision Sheet</a>
+  <a href="#mnem">Memory Tricks</a>
+</div>
+
+<!-- MIND MAP -->
+<div class="section-title" id="intro">🧠 संपूर्ण नियम — माइंड मैप</div>
+<div class="card">
+  <div class="mindmap">
+    <div class="mm-node center">RTI Rules 2012<br>(15 Rules + Appendix)</div>
+  </div>
+  <div class="mindmap">
+    <div class="mm-node">परिभाषाएँ<br>(नियम 2)</div>
+    <div class="mm-node">फीस<br>(नियम 3-6)</div>
+    <div class="mm-node">सचिव नियुक्ति<br>(नियम 7)</div>
+    <div class="mm-node">अपील प्रक्रिया<br>(नियम 8-15)</div>
+    <div class="mm-node">अपील प्रारूप<br>(Appendix)</div>
+  </div>
+  <h3 class="micro">पृष्ठभूमि व निरसन <span class="tag vi">🔴</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>जारीकर्ता</td><td>कार्मिक, लोक शिकायत व पेंशन मंत्रालय (कार्मिक व प्रशिक्षण विभाग)</td></tr>
+    <tr><td>अधिसूचना क्रमांक</td><td>G.S.R. 603(E)</td></tr>
+    <tr><td>दिनांक</td><td>31 जुलाई 2012, नई दिल्ली</td></tr>
+    <tr><td>शक्ति स्रोत</td><td>RTI Act 2005 की धारा 27 (Power to make rules)</td></tr>
+    <tr><td>निरसित नियम</td><td>1) Central Information Commission (Appeal Procedure) Rules, 2005<br>2) RTI (Regulation of Fee and Cost) Rules, 2005</td></tr>
+    <tr><td>प्रभावी तिथि</td><td>राजपत्र में प्रकाशन की तारीख से (नियम 1(2))</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> RTI Rules 2012 किस धारा की शक्ति से बनाए गए हैं? (उत्तर: RTI Act 2005 की धारा 27)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> RTI Rules 2012 ने कौन से दो पुराने नियम निरस्त किए? (उत्तर: CIC Appeal Procedure Rules 2005 व RTI Fee and Cost Rules 2005)</div>
+</div>
+
+<!-- DEFINITIONS -->
+<div class="section-title" id="def">📘 नियम 2 — परिभाषाएँ <span class="tag vi" style="color:#fff;background:transparent;border:none;">🔴</span></div>
+<div class="card">
+  <table>
+    <tr><th>शब्द</th><th>अर्थ</th></tr>
+    <tr><td>Act (अधिनियम)</td><td>RTI Act, 2005 (22 of 2005)</td></tr>
+    <tr><td>Commission (आयोग)</td><td>धारा 12(1) के तहत गठित Central Information Commission</td></tr>
+    <tr><td>First Appellate Authority</td><td>लोक प्राधिकरण में CPIO से वरिष्ठ अधिकारी, जिसे धारा 19(1) के तहत अपील की जाती है</td></tr>
+    <tr><td>Registrar</td><td>आयोग द्वारा नामित अधिकारी — Additional Registrar, Joint Registrar व Deputy Registrar भी शामिल</td></tr>
+    <tr><td>Section</td><td>अधिनियम की कोई धारा</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> "First Appellate Authority" की परिभाषा RTI Rules 2012 में कैसे दी गई है? (उत्तर: लोक प्राधिकरण में CPIO से वरिष्ठ अधिकारी, जिसके पास धारा 19(1) की अपील जाती है)</div>
+</div>
+
+<!-- FEES -->
+<div class="section-title" id="fees">💰 फीस संरचना — नियम 3-6 <span class="tag vi">🔴 सबसे महत्वपूर्ण भाग</span></div>
+<div class="card">
+  <h3 class="micro">नियम 3 — आवेदन फीस (Application Fee)</h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>फीस राशि</td><td><span class="penalty-badge">₹10</span></td></tr>
+    <tr><td>शब्द सीमा</td><td>सामान्यतः 500 शब्दों से अधिक नहीं (अनुलग्नक छोड़कर)</td></tr>
+    <tr><td>अपवाद</td><td>500 शब्दों से अधिक होने मात्र से आवेदन अस्वीकृत नहीं किया जा सकता</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> RTI आवेदन फीस कितनी है? (उत्तर: ₹10)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> क्या 500 शब्दों से अधिक आवेदन अस्वीकृत हो सकता है? (उत्तर: नहीं, केवल इस आधार पर अस्वीकृत नहीं किया जा सकता)</div>
+
+  <h3 class="micro">नियम 4 — सूचना प्रदान करने की फीस दरें <span class="tag vi">🔴 गणना आधारित प्रश्न संभव</span></h3>
+  <table>
+    <tr><th>क्रम</th><th>प्रकार</th><th>दर</th></tr>
+    <tr><td>(a)</td><td>A-3 या छोटे आकार का प्रति पृष्ठ फोटोकॉपी</td><td><span class="penalty-badge">₹2/पृष्ठ</span></td></tr>
+    <tr><td>(b)</td><td>बड़े आकार में फोटोकॉपी</td><td>वास्तविक लागत/मूल्य</td></tr>
+    <tr><td>(c)</td><td>नमूने या मॉडल हेतु</td><td>वास्तविक लागत/मूल्य</td></tr>
+    <tr><td>(d)</td><td>डिस्केट या फ्लॉपी प्रति</td><td><span class="penalty-badge">₹50/नग</span></td></tr>
+    <tr><td>(e)</td><td>प्रकाशन का उद्धरण (फोटोकॉपी)</td><td>निर्धारित मूल्य या ₹2/पृष्ठ</td></tr>
+    <tr><td>(f)</td><td>अभिलेख निरीक्षण — प्रथम घंटा</td><td><span class="penalty-badge">निःशुल्क</span></td></tr>
+    <tr><td>(f)</td><td>निरीक्षण — प्रत्येक अगला घंटा/भाग</td><td><span class="penalty-badge">₹5/घंटा</span></td></tr>
+    <tr><td>(g)</td><td>डाक खर्च ₹50 से अधिक होने पर</td><td>वास्तविक डाक व्यय आवेदक से</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> "2-50-5-50" — फोटोकॉपी ₹2/पृष्ठ, डिस्केट ₹50, निरीक्षण अतिरिक्त घंटा ₹5, डाक खर्च सीमा ₹50</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> A-4 साइज पेपर पर एक पृष्ठ की फोटोकॉपी फीस कितनी है? (उत्तर: ₹2 प्रति पृष्ठ)</div>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> अभिलेख निरीक्षण का पहला घंटा कितने की फीस पर मिलता है? (उत्तर: निःशुल्क; उसके बाद प्रत्येक घंटे के लिए ₹5)</div>
+  <div class="exam-q"><b>संभावित गणना प्रश्न:</b> यदि कोई व्यक्ति 3 घंटे अभिलेख निरीक्षण करता है, तो कुल फीस कितनी होगी? (उत्तर: पहला घंटा निःशुल्क + शेष 2 घंटे × ₹5 = ₹10)</div>
+
+  <h3 class="micro">नियम 5 — फीस से छूट (Exemption)</h3>
+  <p>गरीबी रेखा से नीचे (BPL) व्यक्ति को नियम 3 व 4 के तहत कोई फीस नहीं — शर्त: समुचित सरकार द्वारा जारी BPL प्रमाणपत्र की प्रति आवेदन के साथ संलग्न होनी चाहिए</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> BPL व्यक्ति को RTI फीस से छूट किस शर्त पर मिलती है? (उत्तर: समुचित सरकार द्वारा जारी BPL प्रमाणपत्र की प्रति आवेदन के साथ संलग्न करने पर)</div>
+
+  <h3 class="micro">नियम 6 — फीस भुगतान का तरीका</h3>
+  <table>
+    <tr><th>विकल्प</th><th>माध्यम</th></tr>
+    <tr><td>(a)</td><td>नकद — लोक प्राधिकरण या CAPIO को, रसीद के विरुद्ध</td></tr>
+    <tr><td>(b)</td><td>डिमांड ड्राफ्ट / बैंकर्स चेक / भारतीय पोस्टल ऑर्डर — लोक प्राधिकरण के लेखा अधिकारी के नाम देय</td></tr>
+    <tr><td>(c)</td><td>इलेक्ट्रॉनिक माध्यम से — यदि लोक प्राधिकरण के पास सुविधा उपलब्ध हो</td></tr>
+  </table>
+  <div class="alert">📮 India Post के लिए विशेष रूप से प्रासंगिक: Indian Postal Order (IPO) फीस भुगतान का मान्य माध्यम है!</div>
+</div>
+
+<!-- APPEAL PROCEDURE -->
+<div class="section-title" id="appeal">⚖️ अपील प्रक्रिया — नियम 7-15 <span class="tag vi">🔴</span></div>
+<div class="card">
+  <h3 class="micro">नियम 7 — आयोग के सचिव की नियुक्ति</h3>
+  <p>केंद्र सरकार आयोग के सचिव के रूप में भारत सरकार के <b>Additional Secretary रैंक से नीचे नहीं</b> के अधिकारी की नियुक्ति करेगी</p>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> आयोग के सचिव की न्यूनतम रैंक क्या है? (उत्तर: Additional Secretary, भारत सरकार)</div>
+
+  <h3 class="micro">नियम 8 — आयोग में अपील दाखिल करना <span class="tag fa">🟠</span></h3>
+  <p>First Appellate Authority के आदेश से व्यथित व्यक्ति, या अपील का निपटारा न होने पर, Appendix में दिए प्रारूप में आयोग को अपील कर सकता है। साथ में संलग्न दस्तावेज:</p>
+  <ul>
+    <li>(i) CPIO को दिए गए आवेदन की प्रति</li>
+    <li>(ii) CPIO से प्राप्त उत्तर की प्रति (यदि हो)</li>
+    <li>(iii) First Appellate Authority को की गई अपील की प्रति</li>
+    <li>(iv) First Appellate Authority के आदेश की प्रति (यदि हो)</li>
+    <li>(v) अन्य निर्भर किए गए दस्तावेजों की प्रतियाँ</li>
+    <li>(vi) अपील में संदर्भित दस्तावेजों की सूची (index)</li>
+  </ul>
+  <div class="mnemonic">🧠 <b>Mnemonic "6 दस्तावेज":</b> Application → Reply → 1st Appeal → 1st Order → Other Docs → Index (क्रमानुसार याद रखें)</div>
+
+  <h3 class="micro">नियम 9 — अपील की वापसी (Return of Appeal)</h3>
+  <p>यदि नियम 8 में विनिर्दिष्ट दस्तावेज संलग्न न हों, तो अपील अपीलार्थी को कमियाँ दूर करने हेतु वापस की जा सकती है</p>
+
+  <h3 class="micro">नियम 10 — अपील की प्रक्रिया <span class="tag co">🟡</span></h3>
+  <ul>
+    <li>आयोग उपयुक्त मामला न लगने पर, सुनवाई का अवसर देकर व कारण दर्ज कर अपील खारिज कर सकता है</li>
+    <li>अपवाद: केवल निर्धारित प्रारूप में न होने के आधार पर अपील खारिज नहीं होगी (यदि नियम 8 के दस्तावेज संलग्न हों)</li>
+    <li>आयोग तभी अपील पर विचार करेगा जब अपीलार्थी ने अधिनियम के तहत सभी उपलब्ध उपचार उपयोग कर लिए हों</li>
+  </ul>
+  <h4 class="nano">उप-नियम (3) — "सभी उपचार उपयोग किए" कब माना जाएगा?</h4>
+  <table>
+    <tr><th>स्थिति</th><th>शर्त</th></tr>
+    <tr><td>(a)</td><td>First Appellate Authority ने अपील पर अंतिम आदेश पारित कर दिया हो</td></tr>
+    <tr><td>(b)</td><td>कोई अंतिम आदेश नहीं दिया गया हो, लेकिन अपील दाखिल करने की तारीख से <span class="penalty-badge">45 दिन</span> बीत चुके हों</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> First Appellate Authority का निर्णय न आने पर आयोग में अपील कब मानी जाएगी कि उपचार समाप्त हो गए? (उत्तर: 45 दिन बीतने पर)</div>
+
+  <h3 class="micro">नियम 11 — अपील निर्णय की प्रक्रिया</h3>
+  <p>अपील निर्णय के समय आयोग निम्न कर सकता है:</p>
+  <ul>
+    <li>(i) संबंधित/इच्छुक व्यक्ति से शपथ या शपथपत्र पर मौखिक/लिखित साक्ष्य लेना</li>
+    <li>(ii) दस्तावेज/लोक अभिलेख या प्रतियाँ देखना/निरीक्षण करना</li>
+    <li>(iii) अधिकृत अधिकारी के माध्यम से अतिरिक्त विवरण मंगाना</li>
+    <li>(iv) CPIO, CAPIO या First Appellate Authority या संबंधित व्यक्ति को सुनना</li>
+    <li>(v) तीसरे पक्ष (third party) को सुनना</li>
+    <li>(vi) CPIO, CAPIO, First Appellate Authority व तीसरे पक्ष से शपथपत्र पर साक्ष्य लेना</li>
+  </ul>
+
+  <h3 class="micro">नियम 12 — आयोग के समक्ष अपीलार्थी की उपस्थिति <span class="tag fa">🟠</span></h3>
+  <table>
+    <tr><th>बिंदु</th><th>विवरण</th></tr>
+    <tr><td>सूचना की समय-सीमा</td><td>सुनवाई तिथि से कम से कम <span class="penalty-badge">7 स्पष्ट दिन</span> पहले</td></tr>
+    <tr><td>उपस्थिति का तरीका</td><td>स्वयं, अधिकृत प्रतिनिधि द्वारा, या वीडियो कॉन्फ्रेंसिंग (यदि सुविधा उपलब्ध हो)</td></tr>
+    <tr><td>अनुपस्थिति पर</td><td>आयोग अतिरिक्त सुनवाई अवसर दे सकता है या अन्य उचित कार्यवाही कर सकता है</td></tr>
+  </table>
+  <div class="exam-q"><b>संभावित प्रश्न:</b> सुनवाई की सूचना अपीलार्थी को कम से कम कितने दिन पहले दी जानी चाहिए? (उत्तर: 7 स्पष्ट दिन)</div>
+
+  <h3 class="micro">नियम 13 — लोक प्राधिकरण द्वारा प्रस्तुतीकरण</h3>
+  <p>लोक प्राधिकरण अपना मामला प्रस्तुत करने हेतु किसी प्रतिनिधि/अधिकारी को अधिकृत कर सकता है</p>
+
+  <h3 class="micro">नियम 14 — आयोग द्वारा नोटिस की तामील <span class="tag fa">🟠</span></h3>
+  <p>नाम से नोटिस जारी होगा; निम्न में से किसी तरीके से तामील:</p>
+  <table>
+    <tr><th>क्रम</th><th>तामील का तरीका</th></tr>
+    <tr><td>(i)</td><td>पक्षकार द्वारा स्वयं तामील</td></tr>
+    <tr><td>(ii)</td><td>प्रोसेस सर्वर द्वारा हाथों-हाथ (dasti) डिलीवरी</td></tr>
+    <tr><td>(iii)</td><td>रजिस्टर्ड डाक, पावती सहित (acknowledgement due)</td></tr>
+    <tr><td>(iv)</td><td>ई-मेल द्वारा (यदि इलेक्ट्रॉनिक पता उपलब्ध हो)</td></tr>
+  </table>
+
+  <h3 class="micro">नियम 15 — आयोग का आदेश</h3>
+  <p>आयोग का आदेश लिखित रूप में होगा और आयोग की मुहर के तहत जारी होगा — Registrar या आयोग द्वारा इस हेतु अधिकृत किसी अन्य अधिकारी द्वारा सत्यापित</p>
+
+  <div class="alert">📋 अधिसूचना संदर्भ: [F. No. 1/35/2009-IR], हस्ताक्षरकर्ता: <b>मनोज जोशी, संयुक्त सचिव (Jt. Secy.)</b></div>
+</div>
+
+<!-- APPEAL FORMAT -->
+<div class="section-title" id="format">📝 अपील प्रारूप — Appendix (नियम 8 अंतर्गत) <span class="tag co">🟡</span></div>
+<div class="card">
+  <p>Appendix में दिए 11-बिंदु प्रारूप के अनुसार अपील जानकारी:</p>
+  <table>
+    <tr><th>क्रम</th><th>विवरण</th></tr>
+    <tr><td>1</td><td>अपीलार्थी का नाम व पता</td></tr>
+    <tr><td>2</td><td>CPIO का नाम व पता, जिसे आवेदन संबोधित था</td></tr>
+    <tr><td>3</td><td>उत्तर देने वाले CPIO का नाम व पता</td></tr>
+    <tr><td>4</td><td>प्रथम अपील निर्णायक First Appellate Authority का नाम व पता</td></tr>
+    <tr><td>5</td><td>आवेदन का विवरण</td></tr>
+    <tr><td>6</td><td>जिस आदेश के विरुद्ध अपील है, उसका विवरण/क्रमांक</td></tr>
+    <tr><td>7</td><td>अपील तक ले जाने वाले संक्षिप्त तथ्य</td></tr>
+    <tr><td>8</td><td>मांगी गई प्रार्थना/राहत (Prayer/Relief)</td></tr>
+    <tr><td>9</td><td>प्रार्थना/राहत के आधार</td></tr>
+    <tr><td>10</td><td>अपील से संबंधित कोई अन्य सूचना</td></tr>
+    <tr><td>11</td><td>अपीलार्थी द्वारा सत्यापन/प्रमाणीकरण</td></tr>
+  </table>
+</div>
+
+<!-- FLOWCHART -->
+<div class="section-title" id="flow">🔀 फ्लोचार्ट — आयोग में अपील प्रक्रिया</div>
+<div class="card">
+  <div class="flow">
+    <div class="flow-box">First Appellate Authority के आदेश से व्यथित / निर्णय न होना</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">Appendix प्रारूप में 6 दस्तावेजों सहित आयोग को अपील</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">दस्तावेज अधूरे? → नियम 9 अंतर्गत अपील वापस (कमी दूर करने हेतु)</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">आयोग उपयुक्तता जांचे — सुनवाई अवसर + कारण दर्ज कर स्वीकार/खारिज</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box">सुनवाई की सूचना 7 दिन पूर्व अपीलार्थी को</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-box" style="border-color:var(--ip-red); color:var(--ip-red);">आयोग का लिखित आदेश — मुहर व Registrar सत्यापन सहित जारी</div>
+  </div>
+</div>
+
+<!-- DECISION TREE -->
+<div class="section-title">🌳 निर्णय वृक्ष — क्या आयोग अपील पर विचार करेगा?</div>
+<div class="card dtree">
+  <div class="q">क्या अपीलार्थी ने अधिनियम के सभी उपचार उपयोग कर लिए?</div>
+  <div class="branch">
+    <div class="ans">✅ First Appellate Authority का अंतिम आदेश आ गया → हाँ, माना जाएगा</div>
+    <div class="ans">✅ अपील किए 45 दिन बीत गए, आदेश नहीं आया → हाँ, माना जाएगा</div>
+    <div class="ans">❌ इनमें से कोई नहीं → आयोग अपील पर विचार नहीं करेगा</div>
+  </div>
+  <div class="q">क्या नियम 8 के दस्तावेज संलग्न हैं?</div>
+  <div class="branch">
+    <div class="ans">✅ हाँ → प्रारूप में त्रुटि होने पर भी अपील खारिज नहीं होगी</div>
+    <div class="ans">❌ नहीं → नियम 9 अंतर्गत अपील वापस (कमी पूर्ति हेतु)</div>
+  </div>
+</div>
+
+<!-- TIME LIMITS TABLE -->
+<div class="section-title">⏱️ महत्वपूर्ण समय-सीमाएँ <span class="tag vi">🔴</span></div>
+<div class="card">
+  <table>
+    <tr><th>प्रावधान</th><th>समय सीमा</th></tr>
+    <tr><td>निःशुल्क निरीक्षण अवधि</td><td>पहला 1 घंटा</td></tr>
+    <tr><td>"सभी उपचार समाप्त" माने जाने की अवधि (नियम 10(3)(b))</td><td>45 दिन</td></tr>
+    <tr><td>सुनवाई सूचना अपीलार्थी को (नियम 12(1))</td><td>न्यूनतम 7 स्पष्ट दिन पूर्व</td></tr>
+    <tr><td>आवेदन शब्द सीमा (सामान्यतः)</td><td>500 शब्द</td></tr>
+  </table>
+</div>
+
+<!-- FEE COMPARISON/SUMMARY CHART -->
+<div class="section-title">💵 फीस सारांश चार्ट <span class="tag fa">🟠</span></div>
+<div class="card">
+  <div class="compare">
+    <div class="old"><div class="hd">📄 आवेदन फीस</div>₹10 (नियम 3)</div>
+    <div class="new"><div class="hd">📇 डिस्केट/फ्लॉपी</div>₹50/नग (नियम 4(d))</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">🖨️ A-3/छोटा फोटोकॉपी</div>₹2/पृष्ठ (नियम 4(a))</div>
+    <div class="new"><div class="hd">🔍 निरीक्षण अतिरिक्त घंटा</div>₹5/घंटा (नियम 4(f))</div>
+  </div>
+  <div class="compare">
+    <div class="old"><div class="hd">🆓 BPL व्यक्ति</div>पूर्णतः निःशुल्क (नियम 5)</div>
+    <div class="new"><div class="hd">📮 डाक व्यय</div>₹50 से अधिक होने पर वास्तविक (नियम 4(g))</div>
+  </div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet — Last Day Revision</h2>
+  <div class="rev-grid">
+    <div class="rev-item">🔴 G.S.R. 603(E), दिनांक 31 जुलाई 2012 — RTI Act धारा 27 के तहत बने</div>
+    <div class="rev-item">🔴 2 पुराने नियम निरस्त: CIC Appeal Procedure Rules 2005 + RTI Fee/Cost Rules 2005</div>
+    <div class="rev-item">🔴 आवेदन फीस = ₹10 | शब्द सीमा = 500 शब्द (अनिवार्य नहीं)</div>
+    <div class="rev-item">🔴 फोटोकॉपी दर = ₹2/पृष्ठ (A-3/छोटा) | डिस्केट = ₹50 | निरीक्षण अतिरिक्त घंटा = ₹5</div>
+    <div class="rev-item">🔴 प्रथम घंटा निरीक्षण निःशुल्क | डाक खर्च सीमा ₹50 से ऊपर वास्तविक वसूल</div>
+    <div class="rev-item">🔴 BPL व्यक्ति — प्रमाणपत्र सहित पूर्णतः फीस मुक्त</div>
+    <div class="rev-item">🔴 "उपचार समाप्त" माने जाने हेतु प्रतीक्षा = 45 दिन (यदि 1st Appeal निर्णय न आए)</div>
+    <div class="rev-item">🟠 सुनवाई सूचना = न्यूनतम 7 स्पष्ट दिन पूर्व</div>
+    <div class="rev-item">🟠 आयोग सचिव = Additional Secretary रैंक से नीचे नहीं</div>
+    <div class="rev-item">🟠 नियम 8 अपील संलग्नक = 6 दस्तावेज (आवेदन, उत्तर, 1st अपील, आदेश, अन्य दस्तावेज, सूची)</div>
+    <div class="rev-item">🟡 नियम 14 — तामील के 4 तरीके: स्वयं, dasti, रजिस्टर्ड डाक, ई-मेल</div>
+    <div class="rev-item">🟢 भुगतान माध्यम: नकद, DD/बैंकर्स चेक/IPO, इलेक्ट्रॉनिक</div>
+    <div class="rev-item">🟢 आयोग आदेश = लिखित + मुहर + Registrar सत्यापन आवश्यक</div>
+    <div class="rev-item">🟢 Appendix में अपील प्रारूप — 11 बिंदु</div>
+  </div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="section-title" id="mnem">🧠 Memory Tricks / Mnemonics</div>
+<div class="card">
+  <div class="mnemonic">
+    <b>1️⃣ फीस दरें याद रखें "10-2-50-5":</b><br>
+    आवेदन फीस ₹10 → फोटोकॉपी ₹2/पृष्ठ → डिस्केट ₹50 → निरीक्षण अतिरिक्त घंटा ₹5
+  </div>
+  <div class="mnemonic">
+    <b>2️⃣ नियम क्रम याद रखें "DAFA":</b><br>
+    Definitions(2) → Application fee(3) → Fee rates(4) → Appeal process(8-15)
+  </div>
+  <div class="mnemonic">
+    <b>3️⃣ अपील दस्तावेज याद रखें "ARAOOI":</b><br>
+    Application copy, Reply copy, Appeal(1st) copy, Order copy, Other docs, Index — 6 दस्तावेज
+  </div>
+  <div class="mnemonic">
+    <b>4️⃣ तामील के 4 तरीके "SDRE":</b><br>
+    Self, Dasti, Registered post, Electronic mail
+  </div>
+  <div class="mnemonic">
+    <b>5️⃣ "45-7" याद रखें:</b> उपचार समाप्ति प्रतीक्षा = 45 दिन; सुनवाई पूर्व सूचना = 7 दिन — दोनों में "4" और "7" उलट क्रम में
+  </div>
+</div>
+
+<!-- QUICK REVISION -->
+<div class="section-title">✅ Quick Revision Points <span class="tag qr">🟢</span></div>
+<div class="card">
+  <ul>
+    <li>RTI Rules 2012 केवल Central Information Commission की प्रक्रिया व फीस से संबंधित हैं (राज्य आयोगों के अपने पृथक नियम हो सकते हैं)</li>
+    <li>नियम 1(2) — नियम राजपत्र प्रकाशन तिथि से ही प्रभावी हुए (कोई विलंबित प्रारंभ नहीं)</li>
+    <li>नियम 10(1) proviso — केवल प्रारूप त्रुटि के आधार पर अपील खारिज नहीं होगी, यदि दस्तावेज संलग्न हों</li>
+    <li>नियम 11 में आयोग को सिविल न्यायालय जैसी जांच शक्तियाँ प्राप्त — शपथ, दस्तावेज निरीक्षण, तीसरे पक्ष को सुनना शामिल</li>
+    <li>नियम 12(3) — अपीलार्थी की असमर्थता की स्थिति में अतिरिक्त अवसर देने का विवेकाधिकार आयोग को है</li>
+    <li>अधिसूचना पर हस्ताक्षरकर्ता — मनोज जोशी, संयुक्त सचिव (Joint Secretary)</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  📚 India Post IP Exam Preparation Portal | Right to Information Rules, 2012<br>
+  यह इन्फोग्राफिक केवल परीक्षा तैयारी हेतु सारांश है — मूल नियमों का पूर्ण अध्ययन आवश्यक
+</div>
+
+</div>
+
+<button class="pdf-btn" onclick="window.print()" title="PDF Download">⬇</button>
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NS Time Deposit Scheme 2019 – Trilingual Infographic | IP Exam</title>
+<style>
+:root{
+  --red:#C0392B;--orange:#E67E22;--yellow:#D4AC0D;--green:#1E8449;
+  --blue:#1A5276;--dark:#1C2833;--bg:#EEF2F5;--border:#D5D8DC;
+  --rb:#FADBD8;--ob:#FDEBD0;--yb:#FEF9E7;--gb:#D5F5E3;--ebb:#EBF5FB;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--dark);font-size:13.5px;}
+.hdr{background:linear-gradient(135deg,#0B3D91,#1A5276);color:#fff;padding:18px 16px;text-align:center;}
+.hdr h1{font-size:18px;margin-bottom:3px;}
+.hdr .sub{font-size:12px;color:#AED6F1;}
+.hdr .gu{font-size:12px;color:#FAD7A0;margin-bottom:10px;}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+.badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:3px 10px;font-size:11px;}
+.legend{display:flex;flex-wrap:wrap;gap:8px;background:#fff;padding:8px 14px;border-bottom:2px solid var(--border);}
+.leg{display:flex;align-items:center;gap:4px;font-size:11px;}
+.dot{width:11px;height:11px;border-radius:50%;}
+.toc{background:var(--blue);color:#fff;padding:14px 16px;}
+.toc h2{font-size:14px;text-align:center;border-bottom:2px solid var(--orange);padding-bottom:5px;margin-bottom:8px;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.toc-grid a{color:#AED6F1;font-size:11px;text-decoration:none;padding:2px 0;}
+.section{padding:12px 12px 0;}
+.sec-title{background:var(--blue);color:#fff;padding:7px 12px;border-radius:8px 8px 0 0;font-size:14px;}
+.sec-body{background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:12px;margin-bottom:14px;}
+.hi{font-weight:700;font-size:12px;display:block;color:var(--dark);}
+.en{font-style:italic;font-size:11px;color:#555;display:block;}
+.gu{font-size:11.5px;color:#1A5276;display:block;font-weight:600;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0;}
+.card{border-radius:7px;padding:9px 11px;}
+.card.red{border-left:4px solid var(--red);background:var(--rb);}
+.card.orange{border-left:4px solid var(--orange);background:var(--ob);}
+.card.yellow{border-left:4px solid var(--yellow);background:var(--yb);}
+.card.green{border-left:4px solid var(--green);background:var(--gb);}
+.card.blue{border-left:4px solid var(--blue);background:var(--ebb);}
+.card h4{font-size:11.5px;margin-bottom:4px;}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px;margin:6px 0;}
+.tbl th{background:var(--blue);color:#fff;padding:5px 7px;text-align:left;font-size:11px;}
+.tbl td{border:1px solid var(--border);padding:5px 7px;vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#F8F9FA;}
+.tbl .r{background:var(--rb)!important;}
+.tbl .o{background:var(--ob)!important;}
+.tbl .g{background:var(--gb)!important;}
+.flow{display:flex;flex-direction:column;align-items:center;}
+.fbox{padding:7px 14px;border-radius:6px;font-size:11.5px;text-align:center;width:100%;max-width:340px;}
+.fbox.b{background:var(--blue);color:#fff;}
+.fbox.g{background:var(--green);color:#fff;}
+.fbox.r{background:var(--red);color:#fff;}
+.fbox.o{background:var(--orange);color:#fff;}
+.fbox.gray{background:#7F8C8D;color:#fff;}
+.farr{font-size:18px;color:var(--blue);line-height:1.2;text-align:center;}
+.fbranch{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;margin:3px 0;}
+.fbranch .fbox{max-width:100%;}
+.tl{padding-left:28px;position:relative;}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:3px;background:var(--blue);}
+.tl-i{position:relative;margin-bottom:10px;}
+.tl-dot{position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:2px solid #fff;box-shadow:0 0 0 2px var(--orange);}
+.tl-c{background:var(--ebb);border-radius:6px;padding:7px 9px;}
+.tl-c .reg{font-size:10px;background:var(--blue);color:#fff;padding:1px 5px;border-radius:10px;display:inline-block;margin-bottom:2px;}
+.mm{display:flex;flex-direction:column;align-items:center;gap:7px;}
+.mm-c{background:var(--blue);color:#fff;padding:8px 18px;border-radius:24px;font-weight:700;font-size:12.5px;text-align:center;}
+.mm-br{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;}
+.mm-n{border-radius:7px;padding:7px 9px;font-size:11px;text-align:center;border:2px solid var(--blue);}
+.mm-n.r{border-color:var(--red);background:var(--rb);}
+.mm-n.o{border-color:var(--orange);background:var(--ob);}
+.mm-n.g{border-color:var(--green);background:var(--gb);}
+.mm-n.b{background:var(--ebb);}
+.alert{border-radius:7px;padding:8px 11px;margin:6px 0;font-size:11.5px;}
+.alert.red{background:var(--rb);border-left:4px solid var(--red);}
+.alert.orange{background:var(--ob);border-left:4px solid var(--orange);}
+.alert.green{background:var(--gb);border-left:4px solid var(--green);}
+.alert.yellow{background:var(--yb);border-left:4px solid var(--yellow);}
+.alert strong{display:block;margin-bottom:2px;}
+.mcq{background:#F4F6F9;border:1px solid var(--border);border-radius:7px;padding:9px 11px;margin:7px 0;}
+.mcq .q{font-weight:700;font-size:11.5px;margin-bottom:5px;color:var(--blue);}
+.mcq .opts{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.mcq .opt{font-size:11px;padding:3px 6px;border-radius:4px;background:#fff;border:1px solid var(--border);}
+.mcq .opt.ans{background:var(--gb);border-color:var(--green);font-weight:700;}
+.mcq .hint{font-size:10.5px;color:#666;margin-top:4px;font-style:italic;}
+.mnem{background:linear-gradient(135deg,#0B3D91,#1A5276);color:#fff;border-radius:10px;padding:11px;margin:7px 0;}
+.mnem h4{font-size:12.5px;color:#FF9933;margin-bottom:7px;}
+.mnem .lts{display:flex;flex-wrap:wrap;gap:5px;}
+.mnem .lb{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:5px;padding:3px 7px;font-size:11px;text-align:center;}
+.mnem .lb span{color:#FF9933;font-weight:900;font-size:14px;display:block;}
+.ld{background:#1C2833;color:#ECF0F1;padding:12px;border-radius:10px;margin:7px 0;}
+.ld h3{color:#FF9933;border-bottom:1px solid #444;padding-bottom:5px;margin-bottom:8px;font-size:13px;}
+.ld-i{display:flex;gap:7px;margin-bottom:6px;font-size:11.5px;align-items:flex-start;}
+.ld-ic{flex-shrink:0;font-size:13px;}
+.ld-t .h{color:#AED6F1;font-weight:700;}
+.ld-t .e{color:#AAB7B8;font-style:italic;font-size:10.5px;display:block;}
+.ld-t .g{color:#FAD7A0;font-size:10.5px;display:block;}
+.ops{border:3px solid var(--blue);border-radius:10px;overflow:hidden;margin:7px 0;}
+.ops-h{background:var(--blue);color:#fff;padding:9px;text-align:center;font-weight:700;font-size:13px;}
+.ops-g{display:grid;grid-template-columns:1fr 1fr;}
+.ops-c{padding:6px 9px;border:1px solid var(--border);font-size:11px;}
+.ops-c .lbl{font-weight:700;color:var(--blue);font-size:9.5px;display:block;margin-bottom:1px;}
+.dt{background:#F8F9FA;border-radius:9px;padding:10px;}
+.dt-q{background:var(--blue);color:#fff;padding:7px 10px;border-radius:5px;font-size:11.5px;margin-bottom:7px;text-align:center;}
+.dt-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:5px;}
+.dt-y{background:var(--gb);border:2px solid var(--green);border-radius:5px;padding:5px 8px;font-size:11px;text-align:center;}
+.dt-n{background:var(--rb);border:2px solid var(--red);border-radius:5px;padding:5px 8px;font-size:11px;text-align:center;}
+.dt-lbl{text-align:center;font-size:9.5px;font-weight:700;margin-bottom:2px;}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border-radius:7px;overflow:hidden;border:1px solid var(--border);}
+.cmp-h{padding:7px;text-align:center;font-weight:700;font-size:11.5px;color:#fff;}
+.cmp-c{padding:5px 7px;font-size:11px;border-top:1px solid var(--border);}
+h3.sub{font-size:12.5px;color:var(--blue);border-left:3px solid var(--orange);padding-left:7px;margin:9px 0 5px;}
+.tag{background:var(--blue);color:#fff;font-size:9.5px;padding:1px 5px;border-radius:3px;margin-left:3px;}
+.sp{height:7px;}
+ul.chk li{list-style:none;padding:2px 0;font-size:11.5px;}
+ul.chk li::before{content:'✅ ';}
+ul.crs li{list-style:none;padding:2px 0;font-size:11.5px;}
+ul.crs li::before{content:'❌ ';}
+.rmap{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:6px 0;}
+.rmap-i{border-radius:5px;padding:7px 5px;text-align:center;font-size:10px;font-weight:700;border:2px solid var(--blue);background:var(--ebb);}
+.rmap-n{font-size:15px;font-weight:900;color:var(--blue);display:block;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>⏰ राष्ट्रीय बचत सावधि जमा योजना, 2019</h1>
+  <div class="sub">National Savings Time Deposit (TD) Scheme, 2019</div>
+  <div class="gu">રાષ્ટ્રીય બચત સાવધિ થાપણ (TD) યોજના, ૨૦૧૯ | IP/IPO Exam Visual Infographic</div>
+  <div class="badges">
+    <span class="badge">📅 12 दिसम्बर 2019 — G.S.R. 922(E)</span>
+    <span class="badge">✏ संशोधन: 5 मई 2020 — G.S.R. 289(E)</span>
+    <span class="badge">⚖ GSPA 1873 — धारा 3A</span>
+    <span class="badge">🗂 4 श्रेणियाँ: 1-2-3-5 वर्ष</span>
+    <span class="badge">📋 फॉर्म 1-5</span>
+    <span class="badge">💹 त्रैमासिक चक्रवृद्धि</span>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="leg"><div class="dot" style="background:var(--red)"></div>🔴 अत्यंत महत्वपूर्ण / Very Important</div>
+  <div class="leg"><div class="dot" style="background:var(--orange)"></div>🟠 अक्सर पूछा / Frequently Asked</div>
+  <div class="leg"><div class="dot" style="background:var(--yellow)"></div>🟡 वैचारिक / Conceptual</div>
+  <div class="leg"><div class="dot" style="background:var(--green)"></div>🟢 त्वरित / Quick Revision</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>📋 विषय-सूची / Contents / વિષય-સૂચી</h2>
+  <div class="toc-grid">
+    <a href="#overview">📂 अवलोकन / Overview</a><a href="#categories">🗂 4 श्रेणियाँ / Categories</a>
+    <a href="#open">👥 खाता खोलना / Opening</a><a href="#deposit">💰 जमा नियम / Deposit</a>
+    <a href="#extension">➕ विस्तार / Extension</a><a href="#interest">💹 ब्याज दरें / Interest</a>
+    <a href="#premature">✂ समयपूर्व बंदी / Premature</a><a href="#pledge">🔒 गिरवी / Pledging</a>
+    <a href="#death">💀 मृत्यु भुगतान / Death</a><a href="#mnem">🧠 मेमोरी ट्रिक्स</a>
+    <a href="#mcqb">📝 MCQ बैंक</a><a href="#lastday">🔥 Last Day Revision</a>
+    <a href="#opsheet">📋 One-Page Sheet</a><a href="#compare">⚖ TD vs RD vs POSA</a>
+  </div>
+</div>
+<!-- 1. OVERVIEW -->
+<div class="section" id="overview">
+  <div class="sec-title">📂 TD Scheme 2019 — अवलोकन / Overview / અવલોકન</div>
+  <div class="sec-body">
+    <div class="alert red">
+      <strong>🔴 मूल जानकारी / Basic Info / મૂળભૂત માહિતી</strong>
+      <span class="hi">G.S.R. 922(E) | 12 दिसम्बर 2019 | GSPA 1873 की धारा 3A | संशोधन: G.S.R. 289(E), 5 मई 2020</span>
+      <span class="en">Under Section 3A of GSPA 1873. Amendment inserted sub-para 7(1A) — new interest rates for deposits on/after 1.4.2020.</span>
+      <span class="gu">GSPA ૧૮૭૩ કલમ 3A હેઠળ. સુધારો: ૫ મે ૨૦૨૦ — નવા વ્યાજ દરો.</span>
+    </div>
+    <div class="rmap">
+      <div class="rmap-i"><span class="rmap-n">4</span>श्रेणियाँ / Categories (1-2-3-5 वर्ष)</div>
+      <div class="rmap-i"><span class="rmap-n">₹1000</span>न्यूनतम जमा / Min deposit</div>
+      <div class="rmap-i"><span class="rmap-n">₹100</span>के गुणकों में / Multiples</div>
+      <div class="rmap-i"><span class="rmap-n">1</span>केवल एक जमा / Only ONE deposit</div>
+      <div class="rmap-i"><span class="rmap-n">2</span>अधिकतम विस्तार / Max extensions</div>
+      <div class="rmap-i"><span class="rmap-n">6</span>माह लॉक-इन / Months lock-in</div>
+    </div>
+    <div class="alert red">🔴 <b>पैरा 2(f) — "वर्ष":</b> खाते में <b>जमा की तारीख से</b> 12 माह। (RD में भी जमा से, POSA में 1 अप्रैल से) <em>"Year" = 12 months from DATE OF DEPOSIT.</em> <span class="gu">"વર્ષ" = થાપણની તારીખથી ૧૨ મહિના.</span></div>
+    <div class="mcq">
+      <div class="q">❓ TD Scheme 2019 की अधिसूचना संख्या क्या है?</div>
+      <div class="opts">
+        <div class="opt">A. GSR 918(E)</div><div class="opt">B. GSR 921(E)</div>
+        <div class="opt ans">C. GSR 922(E) ✅</div><div class="opt">D. GSR 289(E)</div>
+      </div>
+      <div class="hint">💡 922(E)=TD | 921(E)=POSA | 918(E)=RD | 289(E)=TD संशोधन</div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. CATEGORIES -->
+<div class="section" id="categories">
+  <div class="sec-title">🗂 पैरा 3: चार श्रेणियाँ / Four Categories / ચાર શ્રેણીઓ</div>
+  <div class="sec-body">
+    <div class="mm">
+      <div class="mm-c">TD खाता — 4 श्रेणियाँ / 4 Categories</div>
+      <div class="mm-br">
+        <div class="mm-n g">1️⃣ एक-वर्षीय<br><em>One-year</em><br><span class="gu">૧ વર્ષ</span></div>
+        <div class="mm-n b">2️⃣ दो-वर्षीय<br><em>Two-year</em><br><span class="gu">૨ વર્ષ</span></div>
+      </div>
+      <div class="mm-br">
+        <div class="mm-n o">3️⃣ तीन-वर्षीय<br><em>Three-year</em><br><span class="gu">૩ વર્ષ</span></div>
+        <div class="mm-n r">5️⃣ पाँच-वर्षीय<br><em>Five-year</em><br><span class="gu">૫ વર્ષ</span></div>
+      </div>
+    </div>
+    <div class="alert yellow">🟡 <b>4 वर्षीय खाता नहीं होता!</b> श्रेणियाँ: 1-2-3-5 (4 छोड़कर)। <em>NO four-year account! Categories: 1, 2, 3 & 5 years only.</em> <span class="gu">૪ વર્ષનું ખાતું હોતું નથી! ૧-૨-૩-૫ જ.</span></div>
+  </div>
+</div>
+
+<!-- 3. OPENING -->
+<div class="section" id="open">
+  <div class="sec-title">👥 पैरा 4: खाता कौन खोल सकता है? / Who Can Open / કોણ ખોલી શકે?</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card red"><h4>🔴 (i) एकल वयस्क</h4><span class="en">Single adult / એકલ પુખ્ત</span></div>
+      <div class="card red"><h4>🔴 (ii) 3 वयस्क तक संयुक्त</h4><span class="en">Upto MAX THREE adults jointly / ૩ પુખ્ત સુધી સંયુક્ત</span></div>
+      <div class="card orange"><h4>🟠 (iii) 10 वर्ष+ नाबालिग स्वयं</h4><span class="en">Minor 10 yrs+ in own name / ૧૦ વર્ષ+ સગીર</span></div>
+      <div class="card orange"><h4>🟠 (iv) संरक्षक</h4><span class="en">Guardian for minor / person of unsound mind / વાલી</span></div>
+    </div>
+    <div class="alert green">🟢 <b>पैरा 4(2):</b> एक व्यक्ति <b>एक से अधिक खाते</b> — अकेले या संयुक्त — खोल सकता है (RD जैसा)। Form-1 से आवेदन। <em>More than one account allowed. Application in Form-1.</em> <span class="gu">એકથી વધુ ખાતાં માન્ય. ફોર્મ-૧.</span></div>
+  </div>
+</div>
+
+<!-- 4. DEPOSIT -->
+<div class="section" id="deposit">
+  <div class="sec-title">💰 पैरा 5: जमा व वापसी / Deposit & Repayment / થાપણ અને ચુકવણી</div>
+  <div class="sec-body">
+    <div class="cgrid">
+      <div class="card red">
+        <h4>🔴 केवल एक जमा / Only ONE deposit</h4>
+        <span class="hi" style="font-size:15px;">न्यूनतम ₹1000, ₹100 के गुणकों में</span>
+        <span class="en">Min ₹1000; multiples of ₹100; single deposit per account</span>
+        <span class="gu">ઓછામાં ઓછા ₹૧૦૦૦; ₹૧૦૦ ના ગુણાંકમાં; ખાતા દીઠ એક જ થાપણ</span>
+      </div>
+      <div class="card blue">
+        <h4>🟡 वापसी / Repayment</h4>
+        <span class="hi">अवधि (1/2/3/5 वर्ष) पूर्ण होने पर — <b>Form-2</b> से आवेदन</span>
+        <span class="en">Repayable after expiry of 1/2/3/5 years — application in Form-2</span>
+        <span class="gu">મુદત પૂરી થયે — ફોર્મ-૨ થી</span>
+      </div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ TD में न्यूनतम जमा राशि कितनी है?</div>
+      <div class="opts">
+        <div class="opt">A. ₹100</div><div class="opt">B. ₹500</div>
+        <div class="opt ans">C. ₹1000 (₹100 के गुणक) ✅</div><div class="opt">D. ₹5000</div>
+      </div>
+      <div class="hint">💡 Para 5(1) — not less than ₹1000, multiples of ₹100, only ONE deposit</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. EXTENSION -->
+<div class="section" id="extension">
+  <div class="sec-title">➕ पैरा 6: खाते का विस्तार / Extension of Account / ખાતાનું વિસ્તરણ — 🔴 हॉटस्पॉट!</div>
+  <div class="sec-body">
+    <div class="alert orange">🟠 वापसी देय होने पर <b>Form-3</b> से उसी अवधि हेतु विस्तार। विस्तार पर ब्याज = <b>वापसी की तारीख (date of repayment) पर लागू दर</b>। <em>Extension in Form-3 for SAME tenure; interest rate = rate applicable on DATE OF REPAYMENT.</em> <span class="gu">ફોર્મ-૩; વ્યાજ = ચુકવણી તારીખનો દર.</span></div>
+    <h3 class="sub">🔴 विस्तार विकल्प की समय-सीमा / Extension Window — रटें!</h3>
+    <table class="tbl">
+      <tr><th>श्रेणी / Category</th><th>वापसी तिथि से विकल्प अवधि / Window from repayment date</th></tr>
+      <tr class="g"><td>1-वर्षीय / One-year</td><td><b>6 माह / Six months</b></td></tr>
+      <tr class="o"><td>2-वर्षीय / Two-year</td><td><b>12 माह / Twelve months</b></td></tr>
+      <tr class="r"><td>3-वर्षीय / Three-year</td><td><b>18 माह / Eighteen months</b></td></tr>
+      <tr class="r"><td>5-वर्षीय / Five-year</td><td><b>18 माह / Eighteen months</b></td></tr>
+    </table>
+    <div class="cgrid">
+      <div class="card red"><h4>🔴 अधिकतम विस्तार</h4><span class="hi">प्रारंभिक वापसी तिथि के बाद <b>केवल 2 बार</b></span><span class="en">Only TWICE after initial repayment date</span><span class="gu">ફક્ત ૨ વાર</span></div>
+      <div class="card green"><h4>🟢 खोलते समय विकल्प</h4><span class="hi">खोलते समय भी विस्तार विकल्प दे सकते हैं; वापसी तिथि से पहले कभी भी रद्द</span><span class="en">Option may be exercised at opening too; revocable anytime before repayment date</span><span class="gu">ખોલતી વખતે પણ; ગમે ત્યારે રદ કરી શકાય</span></div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ 3-वर्षीय TD के विस्तार का विकल्प वापसी तिथि से कितने समय में देना होगा?</div>
+      <div class="opts">
+        <div class="opt">A. 6 माह</div><div class="opt">B. 12 माह</div>
+        <div class="opt ans">C. 18 माह ✅</div><div class="opt">D. 24 माह</div>
+      </div>
+      <div class="hint">💡 Para 6(2) — 1yr=6m | 2yr=12m | 3yr=18m | 5yr=18m | अधिकतम 2 बार</div>
+    </div>
+  </div>
+</div>
+<!-- 6. INTEREST -->
+<div class="section" id="interest">
+  <div class="sec-title">💹 पैरा 7: ब्याज दरें / Interest Rates / વ્યાજ દરો — 🔴 सबसे महत्वपूर्ण!</div>
+  <div class="sec-body">
+    <h3 class="sub">🔴 दो अवधि-तालिकाएँ / Two Rate Tables</h3>
+    <table class="tbl">
+      <tr><th>श्रेणी / Category</th><th>12.12.2019–31.3.2020</th><th>1.4.2020 से (GSR 289(E))</th></tr>
+      <tr><td>1-वर्षीय / One-year</td><td>6.9%</td><td><b>5.5%</b></td></tr>
+      <tr><td>2-वर्षीय / Two-year</td><td>6.9%</td><td><b>5.5%</b></td></tr>
+      <tr><td>3-वर्षीय / Three-year</td><td>6.9%</td><td><b>5.5%</b></td></tr>
+      <tr class="r"><td>5-वर्षीय / Five-year</td><td><b>7.7%</b></td><td><b>6.7%</b></td></tr>
+    </table>
+    <h3 class="sub">🔴 ब्याज के 7 सुनहरे नियम / 7 Golden Interest Rules</h3>
+    <table class="tbl">
+      <tr><th>#</th><th>नियम / Rule / નિયમ</th></tr>
+      <tr class="r"><td>1</td><td>🔴 चक्रवृद्धि <b>त्रैमासिक</b> (quarterly compounding); भुगतान <b>वार्षिक</b> / Compounded QUARTERLY, payable ANNUALLY / ત્રિમાસિક ચક્રવૃદ્ધિ, વાર્ષિક ચુકવણી</td></tr>
+      <tr class="o"><td>2</td><td>🟠 पूर्णांकन: 50 पैसे+ = ₹1; कम = छोड़ें / Rounding 50p+ = ₹1</td></tr>
+      <tr class="r"><td>3</td><td>🔴 <b>खोलने की तारीख की दर परिपक्वता तक</b> लागू / Rate on date of OPENING applies till maturity / ખોલવાની તારીખનો દર પાકતી સુધી</td></tr>
+      <tr><td>4</td><td>वर्ष की गणना खाता खोलने की तारीख से / Year reckoned from date of opening</td></tr>
+      <tr class="o"><td>5</td><td>🟠 ब्याज-भुगतान तिथि गैर-कार्यदिवस हो → <b>ठीक पहले वाले कार्यदिवस</b> को देय / Non-working day → PRECEDING working day / રજા હોય તો આગલો કામકાજી દિવસ</td></tr>
+      <tr class="r"><td>6</td><td>🔴 देय पर न निकाला गया ब्याज → उस पर <b>कोई अतिरिक्त ब्याज नहीं</b> / NO additional interest on unwithdrawn due interest</td></tr>
+      <tr class="g"><td>7</td><td>🟢 वार्षिक ब्याज विकल्प पर <b>बचत खाते में जमा</b> हो सकता है / Annual interest may be credited to savings account at option</td></tr>
+    </table>
+    <div class="mcq">
+      <div class="q">❓ TD में ब्याज की चक्रवृद्धि कैसे होती है?</div>
+      <div class="opts">
+        <div class="opt">A. मासिक</div><div class="opt ans">B. त्रैमासिक (quarterly) ✅</div>
+        <div class="opt">C. छमाही</div><div class="opt">D. वार्षिक</div>
+      </div>
+      <div class="hint">💡 Para 7(2) — compounded quarterly, payable at end of each year</div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. PREMATURE -->
+<div class="section" id="premature">
+  <div class="sec-title">✂ पैरा 8: समयपूर्व बंदी / Premature Closure / સમય પહેલાં બંધ — 🔴 सबसे कठिन पैरा!</div>
+  <div class="sec-body">
+    <div class="flow">
+      <div class="fbox b">Form-4 में आवेदन / Application in Form-4 / ફોર્મ-૪ થી અરજી</div>
+      <div class="farr">↓</div>
+      <div class="fbox r">🔴 (a) <b>6 माह से पहले कोई निकासी नहीं</b> — पूर्ण लॉक-इन<br><em>NO withdrawal before 6 MONTHS from deposit</em><br><span style="font-size:10px">૬ મહિના પહેલાં કોઈ ઉપાડ નહીં</span></div>
+      <div class="farr">↓</div>
+      <div class="fbranch">
+        <div class="fbox o">(b) 6 माह बाद पर <b>1 वर्ष से पहले</b><br>ब्याज = <b>POSA दर</b> (पूर्ण माहों हेतु)<br><em>After 6m but before 1yr: POSA rate for completed months</em><br><span style="font-size:10px">૬ મહિના પછી, ૧ વર્ષ પહેલાં → POSA દર</span></div>
+        <div class="fbox r">(c) 2/3/5-वर्षीय — <b>1 वर्ष बाद</b><br>ब्याज = श्रेणी दर <b>− 2%</b> (पूर्ण वर्ष: त्रैमासिक चक्रवृद्धि; शेष भाग: POSA दर)<br><em>After 1yr: applicable rate MINUS 2% for completed yrs/months; part year at POSA rate</em><br><span style="font-size:10px">૧ વર્ષ પછી → દર −૨%</span></div>
+      </div>
+      <div class="farr">↓</div>
+      <div class="fbox gray">🔴 परंतुक: 5-वर्षीय खाता <b>4 वर्ष बाद</b> बंद हो → <b>3-वर्षीय TD की दर</b> लागू<br><em>5-yr account closed after 4 years → THREE-YEAR TD rate applies</em><br><span style="font-size:10px">૫-વર્ષીય ૪ વર્ષ પછી બંધ → ૩-વર્ષીય દર</span></div>
+      <div class="farr">↓</div>
+      <div class="fbox o">(d) पहले चुकाया गया ब्याज → वापसी राशि से <b>वसूला जाएगा</b><br><em>Interest already paid under para 7 shall be RECOVERED from repayment</em><br><span style="font-size:10px">ચૂકવાયેલું વ્યાજ વસૂલ થશે</span></div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ 5-वर्षीय TD को 4 वर्ष बाद बंद करने पर ब्याज किस दर से मिलेगा?</div>
+      <div class="opts">
+        <div class="opt">A. 5-वर्षीय दर − 2%</div><div class="opt ans">B. 3-वर्षीय TD की दर ✅</div>
+        <div class="opt">C. POSA दर</div><div class="opt">D. 5-वर्षीय पूर्ण दर</div>
+      </div>
+      <div class="hint">💡 Para 8(c) proviso — closed after 4 years → 3-year TD rate (यह प्रश्न बार-बार आता है!)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">❓ TD से 6 माह के भीतर निकासी की जा सकती है?</div>
+      <div class="opts">
+        <div class="opt">A. हाँ, POSA दर पर</div><div class="opt">B. हाँ, बिना ब्याज</div>
+        <div class="opt ans">C. नहीं, बिल्कुल नहीं ✅</div><div class="opt">D. हाँ, 1% पेनल्टी पर</div>
+      </div>
+      <div class="hint">💡 Para 8(a) — no deposit withdrawn before expiry of SIX MONTHS</div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. PLEDGING -->
+<div class="section" id="pledge">
+  <div class="sec-title">🔒 पैरा 9: गिरवी / Pledging of Account / ગીરવે મૂકવું</div>
+  <div class="sec-body">
+    <div class="alert yellow">🟡 <b>Form-5</b> में आवेदन + गिरवीदार का स्वीकृति पत्र। (GSPR की तरह — वही 5 संस्थाएँ) <em>Form-5 + pledgee's acceptance letter. Same 5 entities as GSPR.</em></div>
+    <table class="tbl">
+      <tr><th></th><th>गिरवी किसे? / Pledge to whom? / કોને ગીરવે?</th></tr>
+      <tr class="r"><td>1</td><td>राष्ट्रपति / राज्यपाल (पदेन) — President / Governor (official capacity)</td></tr>
+      <tr class="r"><td>2</td><td>RBI / अनुसूचित बैंक / सहकारी समिति-बैंक — RBI / Scheduled Bank / Co-op Society-Bank</td></tr>
+      <tr class="r"><td>3</td><td>सार्वजनिक/निजी निगम / सरकारी कंपनी — Public/Private Corporation / Govt Company</td></tr>
+      <tr class="r"><td>4</td><td>स्थानीय प्राधिकरण — Local Authority</td></tr>
+      <tr class="r"><td>5</td><td>NHB-अनुमोदित हाउसिंग फाइनेंस कंपनी — Housing Finance Co. (NHB approved + Centrally notified)</td></tr>
+    </table>
+    <ul class="chk">
+      <li>एंडोर्समेंट: "Transferred as security to….." | वापसी: "transferred back to……"</li>
+      <li>अंतरिती (transferee) = deemed depositor — जब तक पुनः अंतरण न हो</li>
+      <li>नाबालिग का खाता — संरक्षक का लिखित प्रमाण (जीवित + हित में) आवश्यक</li>
+      <li>अंधा/शारीरिक अशक्त — प्राधिकृत साक्षर व्यक्ति द्वारा गिरवी</li>
+    </ul>
+  </div>
+</div>
+<!-- 9. DEATH -->
+<div class="section" id="death">
+  <div class="sec-title">💀 पैरा 10: मृत्यु पर भुगतान / Payment on Death / મૃત્યુ પર ચુકવણી</div>
+  <div class="sec-body">
+    <div class="dt">
+      <div class="dt-q">एकल धारक / संयुक्त के सभी की मृत्यु → नामित/वारिस को देय / Death → payable to nominee/heirs</div>
+      <div class="dt-row">
+        <div class="dt-y"><div class="dt-lbl">✅ जारी रखें (5)</div><b>3 तक</b> जीवित नामित/वारिस — पात्र हों तो — खाता जारी रख सकते हैं (मानो स्वयं खोला)<br><em>Upto 3 may continue if otherwise eligible</em><br><span class="gu">૩ સુધી ચાલુ રાખી શકે</span></div>
+        <div class="dt-n"><div class="dt-lbl">❌ जारी न रखें (6)</div>खाता बंद + जमा ब्याज सहित वापस:<br>(i) पूर्ण वर्षों हेतु <b>योजना दर</b> (जमा-अवधि तक)<br>(ii) उसके बाद पूर्ण माहों हेतु <b>POSA दर</b><br><em>Scheme rate for completed years; POSA rate thereafter</em></div>
+      </div>
+    </div>
+    <ul class="chk">
+      <li>2+ जीवित नामित → निर्दिष्ट अनुपात में; न हो तो <b>बराबर</b> / Specified proportion, else EQUAL</li>
+      <li>मृत नामित का हिस्सा → जीवित नामितों में उनके हिस्सों के अनुपात में / Deceased nominee's share → proportionate</li>
+      <li>नाबालिग नामित → नियुक्त व्यक्ति; न हो तो संरक्षक को / Appointed person, else guardian</li>
+      <li>संयुक्त में 1-2 की मृत्यु → जीवित धारक = स्वामी; जारी रखें या बंद करें / Survivors = owners</li>
+    </ul>
+    <div class="alert green">🟢 पैरा 11: मौन विषयों पर GSPR 2018 लागू। पैरा 12: केंद्र सरकार की शिथिलन शक्ति (लिखित कारण)। <em>General Rules apply; relaxation power with Central Govt.</em></div>
+  </div>
+</div>
+
+<!-- 10. COMPARISON -->
+<div class="section" id="compare">
+  <div class="sec-title">⚖ तीनों योजनाओं की तुलना / POSA vs RD vs TD — Comparison Chart</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <tr><th>बिंदु / Point</th><th>POSA 2019</th><th>RD 2019</th><th>TD 2019</th></tr>
+      <tr class="r"><td>🔴 GSR संख्या</td><td>921(E)</td><td>918(E)</td><td><b>922(E)</b></td></tr>
+      <tr class="r"><td>🔴 संयुक्त धारक</td><td>2</td><td>3</td><td><b>3</b></td></tr>
+      <tr class="o"><td>🟠 "वर्ष" गणना</td><td>1 अप्रैल से</td><td>प्रथम जमा से</td><td><b>जमा की तारीख से</b></td></tr>
+      <tr><td>न्यूनतम राशि</td><td>₹500</td><td>₹100/माह</td><td><b>₹1000 (एकमुश्त)</b></td></tr>
+      <tr class="o"><td>🟠 एक से अधिक खाते</td><td>❌ (1 एकल)</td><td>✅</td><td><b>✅</b></td></tr>
+      <tr><td>अवधि</td><td>असीमित</td><td>5 वर्ष</td><td><b>1/2/3/5 वर्ष</b></td></tr>
+      <tr class="r"><td>🔴 Premature</td><td>कभी भी (₹500 रखते हुए)</td><td>3 वर्ष बाद</td><td><b>6 माह बाद</b></td></tr>
+      <tr><td>ब्याज चक्रवृद्धि</td><td>वार्षिक जमा</td><td>तालिका आधारित</td><td><b>त्रैमासिक चक्रवृद्धि</b></td></tr>
+      <tr class="o"><td>🟠 फॉर्म संख्या</td><td>2</td><td>5</td><td><b>5</b></td></tr>
+      <tr><td>नाबालिग 10+</td><td>✅</td><td>✅</td><td><b>✅</b></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 11. MNEMONICS -->
+<div class="section" id="mnem">
+  <div class="sec-title">🧠 मेमोरी ट्रिक्स / Mnemonics / યાદ રાખવાની યુક્તિઓ</div>
+  <div class="sec-body">
+    <div class="mnem">
+      <h4>📌 TD का जादुई फॉर्मूला: "1235-1000-6-2"</h4>
+      <div class="lts">
+        <div class="lb"><span>1-2-3-5</span>श्रेणियाँ (वर्ष)</div>
+        <div class="lb"><span>₹1000</span>न्यूनतम (₹100 गुणक)</div>
+        <div class="lb"><span>6</span>माह लॉक-इन</div>
+        <div class="lb"><span>2</span>अधिकतम विस्तार</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 विस्तार विंडो: "6-12-18-18" → "छह-बारह-अठारह-अठारह"</h4>
+      <div class="lts">
+        <div class="lb"><span>1yr</span>6 माह</div>
+        <div class="lb"><span>2yr</span>12 माह</div>
+        <div class="lb"><span>3yr</span>18 माह</div>
+        <div class="lb"><span>5yr</span>18 माह</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">💡 ट्रिक: श्रेणी × 6 = विंडो (1×6=6, 2×6=12, 3×6=18) — बस 5-वर्षीय भी 18 पर रुक जाता है!</p>
+    </div>
+    <div class="mnem">
+      <h4>📌 Premature ब्याज: "6 नहीं — 12 POSA — बाद −2"</h4>
+      <div class="lts">
+        <div class="lb"><span>&lt;6माह</span>निकासी नहीं</div>
+        <div class="lb"><span>6-12माह</span>POSA दर</div>
+        <div class="lb"><span>&gt;1वर्ष</span>श्रेणी दर −2%</div>
+        <div class="lb"><span>5yr@4yr</span>3-वर्षीय दर</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 ब्याज: "Q-A-O" → "Quarterly बढ़े, Annually मिले, Opening दर चले"</h4>
+      <div class="lts">
+        <div class="lb"><span>Q</span>त्रैमासिक चक्रवृद्धि</div>
+        <div class="lb"><span>A</span>वार्षिक भुगतान</div>
+        <div class="lb"><span>O</span>Opening-दर परिपक्वता तक</div>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>📌 GSR परिवार: "918-921-922 | 285-289"</h4>
+      <div class="lts">
+        <div class="lb"><span>918</span>RD</div>
+        <div class="lb"><span>921</span>POSA</div>
+        <div class="lb"><span>922</span>TD</div>
+        <div class="lb"><span>285</span>RD संशोधन</div>
+        <div class="lb"><span>289</span>TD संशोधन</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">💡 सभी मूल: 12.12.2019 | सभी संशोधन: 5.5.2020</p>
+    </div>
+    <div class="mnem">
+      <h4>📌 फॉर्म: "खोलो-पाओ-बढ़ाओ-काटो-गिरवी"</h4>
+      <div class="lts">
+        <div class="lb"><span>F-1</span>खोलना</div>
+        <div class="lb"><span>F-2</span>वापसी (repayment)</div>
+        <div class="lb"><span>F-3</span>विस्तार</div>
+        <div class="lb"><span>F-4</span>Premature बंदी</div>
+        <div class="lb"><span>F-5</span>गिरवी</div>
+      </div>
+      <p style="font-size:10.5px;color:#AED6F1;margin-top:6px;">⚠ RD से अलग! RD में F-4=विस्तार, F-5=ऋण | TD में F-4=premature, F-5=गिरवी</p>
+    </div>
+  </div>
+</div>
+
+<!-- 12. MCQ BANK -->
+<div class="section" id="mcqb">
+  <div class="sec-title">📝 संभावित परीक्षा प्रश्न / Probable MCQs / સંભવિત પ્રશ્નો</div>
+  <div class="sec-body">
+    <div class="mcq">
+      <div class="q">Q1. TD की कितनी श्रेणियाँ हैं?</div>
+      <div class="opts">
+        <div class="opt">A. 3 (1, 3, 5 वर्ष)</div><div class="opt ans">B. 4 (1, 2, 3, 5 वर्ष) ✅</div>
+        <div class="opt">C. 5 (1-5 वर्ष)</div><div class="opt">D. 2 (1, 5 वर्ष)</div>
+      </div>
+      <div class="hint">💡 Para 3 — four categories: One, Two, Three & Five-year (4-वर्षीय नहीं!)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q2. TD खाते में कितनी जमा हो सकती हैं?</div>
+      <div class="opts">
+        <div class="opt ans">A. केवल एक ✅</div><div class="opt">B. 12 प्रति वर्ष</div>
+        <div class="opt">C. असीमित</div><div class="opt">D. 60</div>
+      </div>
+      <div class="hint">💡 Para 5(1) — only ONE deposit per account</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q3. 1.4.2020 से 5-वर्षीय TD की ब्याज दर?</div>
+      <div class="opts">
+        <div class="opt">A. 7.7%</div><div class="opt ans">B. 6.7% ✅</div>
+        <div class="opt">C. 5.5%</div><div class="opt">D. 6.9%</div>
+      </div>
+      <div class="hint">💡 Para 7(1A) — 1/2/3yr = 5.5%; 5yr = 6.7% (पहले 6.9%/7.7%)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q4. TD में विस्तार अधिकतम कितनी बार?</div>
+      <div class="opts">
+        <div class="opt">A. 1 बार</div><div class="opt ans">B. 2 बार ✅</div>
+        <div class="opt">C. 3 बार</div><div class="opt">D. असीमित</div>
+      </div>
+      <div class="hint">💡 Para 6(4) — only twice after initial repayment date</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q5. विस्तारित TD पर कौन-सी ब्याज दर लागू होती है?</div>
+      <div class="opts">
+        <div class="opt">A. खोलने की तारीख की दर</div><div class="opt ans">B. वापसी (repayment) की तारीख की दर ✅</div>
+        <div class="opt">C. विस्तार आवेदन की तारीख की दर</div><div class="opt">D. सबसे कम दर</div>
+      </div>
+      <div class="hint">💡 Para 6(3) — rate applicable on the DATE OF REPAYMENT</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q6. ब्याज-भुगतान तिथि रविवार हो तो भुगतान कब देय?</div>
+      <div class="opts">
+        <div class="opt">A. अगले कार्यदिवस</div><div class="opt ans">B. ठीक पहले वाले कार्यदिवस ✅</div>
+        <div class="opt">C. उसी दिन ऑनलाइन</div><div class="opt">D. माह के अंत में</div>
+      </div>
+      <div class="hint">💡 Para 7(6) — working day immediately PRECEDING</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q7. न निकाले गए देय ब्याज पर क्या मिलता है?</div>
+      <div class="opts">
+        <div class="opt">A. POSA दर से ब्याज</div><div class="opt ans">B. कोई अतिरिक्त ब्याज नहीं ✅</div>
+        <div class="opt">C. TD दर से ब्याज</div><div class="opt">D. 2% ब्याज</div>
+      </div>
+      <div class="hint">💡 Para 7(7) — NO additional interest on due but unwithdrawn interest</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q8. 2-वर्षीय TD को 1 वर्ष बाद premature बंद करने पर दर?</div>
+      <div class="opts">
+        <div class="opt">A. POSA दर</div><div class="opt ans">B. लागू दर − 2% ✅</div>
+        <div class="opt">C. पूर्ण 2-वर्षीय दर</div><div class="opt">D. 1-वर्षीय दर</div>
+      </div>
+      <div class="hint">💡 Para 8(c) — rate LESS BY 2 percentage points; part year at POSA rate</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q9. TD में premature closure किस फॉर्म से होती है?</div>
+      <div class="opts">
+        <div class="opt">A. Form-2</div><div class="opt">B. Form-3</div>
+        <div class="opt ans">C. Form-4 ✅</div><div class="opt">D. Form-5</div>
+      </div>
+      <div class="hint">💡 Para 8 — Form-4 (F-2=वापसी, F-3=विस्तार, F-5=गिरवी)</div>
+    </div>
+    <div class="mcq">
+      <div class="q">Q10. मृत्यु पर कितने नामित TD जारी रख सकते हैं?</div>
+      <div class="opts">
+        <div class="opt">A. 1</div><div class="opt">B. 2</div>
+        <div class="opt ans">C. 3 तक ✅</div><div class="opt">D. सभी</div>
+      </div>
+      <div class="hint">💡 Para 10(5) — not more than three surviving nominees/heirs, if otherwise eligible</div>
+    </div>
+  </div>
+</div>
+<!-- 13. LAST DAY -->
+<div class="section" id="lastday">
+  <div class="sec-title">🔥 अंतिम दिन पुनरावृत्ति / Last Day Revision / છેલ્લા દિવસનું પુનરાવર્તન</div>
+  <div class="sec-body">
+    <div class="ld">
+      <h3>⚡ परीक्षा से पहले — ये 12 बिंदु अवश्य पढ़ें!</h3>
+      <div class="ld-i"><div class="ld-ic">📅</div><div class="ld-t"><span class="h">TD 2019 — GSR 922(E), 12.12.2019 | संशोधन GSR 289(E), 5.5.2020 | धारा 3A</span><span class="e">"Year" = from date of deposit</span><span class="g">"વર્ષ" = થાપણની તારીખથી</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🗂</div><div class="ld-t"><span class="h">4 श्रेणियाँ: 1-2-3-5 वर्ष (4-वर्षीय नहीं!) | केवल 1 जमा: ₹1000+, ₹100 गुणक</span><span class="e">4 categories; single deposit ₹1000 min</span></div></div>
+      <div class="ld-i"><div class="ld-ic">👥</div><div class="ld-t"><span class="h">खोलें: एकल | 3 तक संयुक्त | 10+ नाबालिग | संरक्षक | एक से अधिक खाते OK</span><span class="e">Joint upto 3; multiple accounts allowed</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💹</div><div class="ld-t"><span class="h">दरें (1.4.2020 से): 1/2/3yr = 5.5% | 5yr = 6.7% | (पहले: 6.9% / 7.7%)</span><span class="e">Current: 5.5% & 6.7% | earlier 6.9% & 7.7%</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🔄</div><div class="ld-t"><span class="h">ब्याज: त्रैमासिक चक्रवृद्धि + वार्षिक भुगतान | खोलने की दर परिपक्वता तक | बचत खाते में जमा विकल्प</span><span class="e">Quarterly compounding, annual payout, opening rate locked</span><span class="g">ત્રિમાસિક ચક્રવૃદ્ધિ, વાર્ષિક ચુકવણી</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📆</div><div class="ld-t"><span class="h">गैर-कार्यदिवस → पहले वाला कार्यदिवस | बिना निकाले ब्याज पर अतिरिक्त ब्याज नहीं</span><span class="e">Preceding working day; no interest on unwithdrawn interest</span></div></div>
+      <div class="ld-i"><div class="ld-ic">➕</div><div class="ld-t"><span class="h">विस्तार: Form-3, उसी अवधि हेतु, अधिकतम 2 बार | विंडो: 6-12-18-18 माह | दर = वापसी-तिथि की</span><span class="e">Extension twice max; window 6/12/18/18; repayment-date rate</span><span class="g">વિસ્તરણ મહત્તમ ૨ વાર; ૬-૧૨-૧૮-૧૮</span></div></div>
+      <div class="ld-i"><div class="ld-ic">✂</div><div class="ld-t"><span class="h">Premature (Form-4): 6 माह लॉक-इन | 6-12 माह = POSA दर | 1 वर्ष+ = दर −2% | 5yr@4yr = 3yr दर | चुकाया ब्याज वसूली</span><span class="e">6m lock | 6-12m POSA | 1yr+ rate−2% | 5yr closed @4yr → 3yr rate | paid interest recovered</span><span class="g">૬ મહિના લોક | પછી POSA | ૧ વર્ષ+ = દર −૨%</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🔒</div><div class="ld-t"><span class="h">गिरवी (Form-5): President/Governor, RBI/बैंक, निगम, स्थानीय प्राधिकरण, NHB-HFC</span><span class="e">Pledge to 5 entities — same as GSPR list</span></div></div>
+      <div class="ld-i"><div class="ld-ic">💀</div><div class="ld-t"><span class="h">मृत्यु: 3 तक नामित जारी रखें (पात्र हों तो) | बंद करें → पूर्ण वर्ष योजना-दर + बाद POSA दर</span><span class="e">Upto 3 continue; else scheme rate for completed yrs + POSA thereafter</span></div></div>
+      <div class="ld-i"><div class="ld-ic">📋</div><div class="ld-t"><span class="h">फॉर्म: F1-खोलना F2-वापसी F3-विस्तार F4-premature F5-गिरवी (RD से अलग क्रम!)</span><span class="e">Forms differ from RD — memorise separately!</span></div></div>
+      <div class="ld-i"><div class="ld-ic">🔢</div><div class="ld-t"><span class="h">GSR: 918-RD | 921-POSA | 922-TD | संशोधन: 285-RD | 289-TD (सभी 5.5.2020)</span><span class="e">All originals 12.12.2019; amendments 5.5.2020</span><span class="g">બધા મૂળ ૧૨.૧૨.૨૦૧૯; સુધારા ૫.૫.૨૦૨૦</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 14. ONE PAGE SHEET -->
+<div class="section" id="opsheet">
+  <div class="sec-title">📋 One-Page Quick Reference Sheet</div>
+  <div class="sec-body">
+    <div class="ops">
+      <div class="ops-h">📋 NS TD Scheme 2019 — एक पृष्ठ सार / One-Page Sheet / એક પાનાનો સાર</div>
+      <div class="ops-g">
+        <div class="ops-c"><span class="lbl">अधिसूचना / Notification</span>GSR 922(E), 12.12.2019</div>
+        <div class="ops-c"><span class="lbl">संशोधन / Amendment</span>GSR 289(E), 5.5.2020</div>
+        <div class="ops-c"><span class="lbl">धारा / Section</span>GSPA 1873 — 3A</div>
+        <div class="ops-c"><span class="lbl">"वर्ष" / "Year"</span>जमा की तारीख से</div>
+        <div class="ops-c"><span class="lbl">श्रेणियाँ / Categories</span>1, 2, 3, 5 वर्ष (4 नहीं)</div>
+        <div class="ops-c"><span class="lbl">जमा / Deposit</span>केवल 1; ₹1000+; ₹100 गुणक</div>
+        <div class="ops-c"><span class="lbl">संयुक्त / Joint</span>3 वयस्क तक</div>
+        <div class="ops-c"><span class="lbl">खातों की संख्या</span>एक से अधिक OK</div>
+        <div class="ops-c"><span class="lbl">दर 1/2/3yr (1.4.20 से)</span>5.5%</div>
+        <div class="ops-c"><span class="lbl">दर 5yr (1.4.20 से)</span>6.7%</div>
+        <div class="ops-c"><span class="lbl">पुरानी दरें (12.19-3.20)</span>6.9% | 5yr: 7.7%</div>
+        <div class="ops-c"><span class="lbl">चक्रवृद्धि / Compounding</span>त्रैमासिक; भुगतान वार्षिक</div>
+        <div class="ops-c"><span class="lbl">दर लॉक / Rate lock</span>खोलने की दर परिपक्वता तक</div>
+        <div class="ops-c"><span class="lbl">गैर-कार्यदिवस</span>पहले वाला कार्यदिवस</div>
+        <div class="ops-c"><span class="lbl">न निकाला ब्याज</span>अतिरिक्त ब्याज नहीं</div>
+        <div class="ops-c"><span class="lbl">ब्याज क्रेडिट विकल्प</span>बचत खाते में</div>
+        <div class="ops-c"><span class="lbl">विस्तार / Extension</span>Form-3; अधिकतम 2 बार</div>
+        <div class="ops-c"><span class="lbl">विस्तार विंडो</span>6-12-18-18 माह</div>
+        <div class="ops-c"><span class="lbl">विस्तार दर</span>वापसी-तिथि की दर</div>
+        <div class="ops-c"><span class="lbl">लॉक-इन / Lock-in</span>6 माह — निकासी नहीं</div>
+        <div class="ops-c"><span class="lbl">6-12 माह premature</span>POSA दर (पूर्ण माह)</div>
+        <div class="ops-c"><span class="lbl">1 वर्ष+ premature</span>श्रेणी दर − 2%</div>
+        <div class="ops-c"><span class="lbl">5yr बंद @ 4yr</span>3-वर्षीय दर लागू</div>
+        <div class="ops-c"><span class="lbl">चुकाया ब्याज</span>premature पर वसूली</div>
+        <div class="ops-c"><span class="lbl">Premature फॉर्म</span>Form-4</div>
+        <div class="ops-c"><span class="lbl">गिरवी / Pledge</span>Form-5; 5 संस्थाएँ</div>
+        <div class="ops-c"><span class="lbl">मृत्यु — जारी रखें</span>3 तक नामित/वारिस</div>
+        <div class="ops-c"><span class="lbl">मृत्यु — बंद करें</span>योजना दर + बाद POSA दर</div>
+        <div class="ops-c"><span class="lbl">मौन विषय / Silent</span>GSPR 2018 लागू</div>
+        <div class="ops-c"><span class="lbl">शिथिलन / Relaxation</span>केंद्र सरकार, लिखित कारण</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#1A5276;color:#AED6F1;text-align:center;padding:14px;font-size:11.5px;margin-top:10px;">
+  📮 India Post IP/IPO Exam Preparation | National Savings Time Deposit Scheme, 2019<br>
+  <span style="font-size:10px;">Ref: G.S.R. 922(E) dated 12.12.2019, amended vide G.S.R. 289(E) dated 05.05.2020 | Section 3A, GSPA 1873</span>
+</div>
+
+
+<!-- ===== PDF DOWNLOAD BUTTON (paste before </body>) ===== -->
+<style>
+.pdf-dl-btn{position:fixed;bottom:20px;right:20px;z-index:99999;display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(30,58,138,.4);transition:transform .2s,box-shadow .2s;}
+.pdf-dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(30,58,138,.5);}
+.pdf-dl-btn:active{transform:translateY(0);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+@media print{.pdf-dl-btn{display:none !important;}.goog-te-banner-frame,.skiptranslate{display:none !important;}}
+</style>
+<button class="pdf-dl-btn" onclick="downloadPagePDF()">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4"/></svg>
+  Download PDF
+</button>
+<script>
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
+}
+</script>
+<!-- ===== END PDF DOWNLOAD BUTTON ===== -->
+
+</body>
+</html>

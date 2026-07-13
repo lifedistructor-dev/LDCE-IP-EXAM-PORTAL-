@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sukanya Samriddhi Account Scheme 2019 — Infographic | IPO Exam</title>
+<style>
+  :root{
+    --blue:#1e40af; --blue-light:#dbeafe;
+    --red:#b91c1c; --red-light:#fee2e2;
+    --orange:#c2410c; --orange-light:#ffedd5;
+    --yellow:#a16207; --yellow-light:#fef9c3;
+    --green:#15803d; --green-light:#dcfce7;
+    --purple:#6d28d9; --purple-light:#ede9fe;
+    --ink:#1f2937; --paper:#fffdf7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans Gujarati','Noto Sans Devanagari','Segoe UI',sans-serif;
+    background:linear-gradient(180deg,#fef3f6,#eef2ff);
+    margin:0; padding:0; color:var(--ink); line-height:1.5;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:12px;}
+  header.hero{
+    background:linear-gradient(135deg,#9d174d,#7c3aed);
+    color:#fff; border-radius:16px; padding:22px 18px; margin:12px 0;
+    text-align:center; box-shadow:0 8px 24px rgba(157,23,77,.25);
+  }
+  header.hero h1{margin:0 0 6px;font-size:1.4rem;}
+  header.hero .sub{font-size:.9rem;opacity:.9;}
+  header.hero .tag{display:inline-block;margin-top:10px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.4);padding:4px 14px;border-radius:20px;font-size:.75rem;}
+
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.75rem;
+    background:#111827;color:#fff;border-radius:10px;padding:8px 12px;margin:10px 0;}
+  .breadcrumb b{color:#fbbf24;}
+  .breadcrumb span.arrow{opacity:.6;}
+
+  .card{background:var(--paper);border-radius:14px;padding:16px;margin:14px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);border:1px solid #eee;}
+  .card h2{margin-top:0;font-size:1.05rem;display:flex;align-items:center;gap:8px;}
+
+  .tri{margin:6px 0 12px;padding:8px 10px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:8px;}
+  .tri .gu{font-weight:700;font-size:.95rem;color:#111827;}
+  .tri .hi{font-weight:500;font-size:.87rem;color:#374151;}
+  .tri .en{font-style:italic;font-size:.8rem;color:#4b5563;}
+  .rule{border-left-color:var(--red);background:var(--red-light);}
+  .pink{border-left-color:#db2777;background:#fce7f3;}
+
+  .tag-imp{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-left:6px;}
+  .t-red{background:var(--red-light);color:var(--red);border:1px solid var(--red);}
+  .t-orange{background:var(--orange-light);color:var(--orange);border:1px solid var(--orange);}
+  .t-yellow{background:var(--yellow-light);color:#7c5a06;border:1px solid var(--yellow);}
+  .t-green{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.8rem;}
+  th,td{border:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top;}
+  th{background:#111827;color:#fff;}
+  tr:nth-child(even){background:#f8fafc;}
+  .tbl-scroll{overflow-x:auto;}
+
+  .flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+  .flow .step{background:#fdf2f8;border:2px solid #db2777;border-radius:10px;padding:8px 12px;font-size:.83rem;position:relative;}
+  .flow .step::after{content:"⬇";display:block;text-align:center;color:#db2777;font-size:1.1rem;margin-top:4px;}
+  .flow .step:last-child::after{content:"";}
+
+  .exam-q{background:#fff7ed;border:1px dashed var(--orange);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:.8rem;}
+  .exam-q b{color:var(--orange);}
+
+  .mnemonic{background:var(--purple-light);border-left:4px solid var(--purple);border-radius:8px;padding:10px;margin:8px 0;font-size:.86rem;}
+
+  .grid2{display:grid;grid-template-columns:1fr;gap:10px;}
+  @media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;}}
+
+  .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .pill{background:#111827;color:#fff;font-size:.7rem;padding:3px 10px;border-radius:14px;}
+
+  .mcq{border:1px solid #e5e7eb;border-radius:10px;padding:10px;margin:8px 0;background:#fff;}
+  .mcq .q{font-weight:600;font-size:.86rem;margin-bottom:4px;}
+  .mcq .opts{font-size:.81rem;margin:4px 0;padding-left:4px;}
+  .mcq .ans{font-size:.78rem;color:var(--green);font-weight:600;}
+
+  .revision-sheet{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:16px;}
+  .revision-sheet h2{color:#fbbf24;}
+  .revision-sheet table{font-size:.76rem;}
+  .revision-sheet th{background:#1e293b;}
+  .revision-sheet td{border-color:#334155;color:#e2e8f0;}
+  .revision-sheet tr:nth-child(even){background:#1e293b;}
+
+  .amend-note{background:#fef2f2;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:.78rem;margin:8px 0;color:#7f1d1d;}
+  .current-note{background:#ecfdf5;border:1px solid var(--green);border-radius:8px;padding:8px 10px;font-size:.78rem;margin:8px 0;color:#14532d;}
+
+  .fab{position:fixed;bottom:18px;right:18px;background:#9d174d;color:#fff;
+    border:none;border-radius:50px;padding:12px 18px;font-size:.83rem;font-weight:700;
+    box-shadow:0 6px 18px rgba(157,23,77,.4);cursor:pointer;z-index:999;}
+
+  .decision{background:#fff;border:2px dashed #9333ea;border-radius:10px;padding:10px;font-size:.82rem;}
+  .decision .node{background:#f3e8ff;border-radius:8px;padding:6px 10px;margin:4px 0;display:inline-block;}
+
+  ul{margin:6px 0;padding-left:20px;font-size:.84rem;}
+  li{margin:3px 0;}
+
+  @media print{ .fab{display:none;} body{background:#fff;} .card{break-inside:avoid;box-shadow:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>👧 Sukanya Samriddhi Account Scheme, 2019 (SSY)</h1>
+    <div class="sub">સુકન્યા સમૃદ્ધિ ખાતા યોજના, 2019 | सुकन्या समृद्धि खाता योजना, 2019</div>
+    <div class="tag">GSR 914(E) dt. 12/12/2019 · amended GSR 288(E) dt. 05/05/2020 · Sec 3A, Govt. Savings Promotion Act 1873</div>
+  </header>
+
+  <div class="breadcrumb">
+    <b>Chapter:</b> Postal Savings Schemes <span class="arrow">➜</span>
+    <b>Sub-Chapter:</b> Small Savings Schemes (NSI) <span class="arrow">➜</span>
+    <b>Micro-Topic:</b> SSY Scheme 2019 <span class="arrow">➜</span>
+    <b>Nano-Topic:</b> Eligibility / Deposit / Withdrawal / Maturity / Premature Closure
+  </div>
+
+  <div class="card">
+    <h2>🎯 Topic &amp; Definition <span class="tag-imp t-red">🔴 Very Important</span></h2>
+    <div class="tri">
+      <div class="gu">SSY એ ગર્લ ચાઈલ્ડ (10 વર્ષથી નાની) માટેની ખાસ બચત યોજના છે — 21 વર્ષે maturity, ઉચ્ચ વ્યાજ દર, Sec 3A GSP Act 1873 હેઠળ notify.</div>
+      <div class="hi">SSY एक बालिका (10 वर्ष से कम आयु) के लिए विशेष बचत योजना है — 21 वर्ष पर maturity, उच्च ब्याज दर, GSP अधिनियम 1873 की धारा 3A के तहत अधिसूचित।</div>
+      <div class="en">SSY is a special savings scheme for a girl child (under 10 years), maturing at 21 years, offering a high interest rate, notified under Sec 3A of the Govt. Savings Promotion Act, 1873.</div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Short title: SSY Scheme 2019</span>
+      <span class="pill">Maturity: 21 years from opening</span>
+      <span class="pill">Deposits allowed: 15 years only</span>
+      <span class="pill">Governing Act: Govt. Savings Promotion Act 1873</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📜 Important Sections / Paragraphs <span class="tag-imp t-red">🔴</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Para</th><th>Subject</th><th>Key Point</th></tr>
+      <tr><td>1</td><td>Short title &amp; commencement</td><td>SSY Scheme 2019; effective from Gazette publication</td></tr>
+      <tr><td>2</td><td>Definitions</td><td>account holder = girl child; maturity = 21 years; birth certificate, family definition</td></tr>
+      <tr><td>3</td><td>Opening of Account</td><td>Girl child &lt;10 yrs; Form-1; max 2 per family (exceptions for twins/triplets)</td></tr>
+      <tr><td>4</td><td>Deposits</td><td>Min ₹250, Max ₹1,50,000/year; deposits allowed only for 15 years; default rules</td></tr>
+      <tr><td>5</td><td>Interest on Deposit</td><td>Rate; 5th-day-to-month-end rule; annual credit</td></tr>
+      <tr><td>6</td><td>Operation of Account</td><td>Guardian till 18 yrs; account holder herself after 18</td></tr>
+      <tr><td>7</td><td>Premature Closure</td><td>Death (Form-2); compassionate grounds (after 5 yrs)</td></tr>
+      <tr><td>8</td><td>Withdrawal</td><td>For education; up to 50%; after 18 yrs OR 10th pass (Form-3)</td></tr>
+      <tr><td>9</td><td>Closure on Maturity</td><td>21 years; or on marriage (18+); Form-4</td></tr>
+      <tr><td>10</td><td>Application of General Rules</td><td>GSPR 2018 fills gaps</td></tr>
+      <tr><td>11</td><td>Power to Relax</td><td>Central Govt. can relax hardship provisions</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2>🔀 Flowchart — Eligibility &amp; Account Opening <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="tri pink">
+      <div class="gu">Girl child ની ઉંમર ખાતું ખોલવાના સમયે 10 વર્ષથી ઓછી હોવી જોઈએ.</div>
+      <div class="hi">बालिका की आयु खाता खोलने के समय 10 वर्ष से कम होनी चाहिए।</div>
+      <div class="en">Girl child must be under 10 years of age on the date of opening.</div>
+    </div>
+    <div class="flow">
+      <div class="step">👧 Girl child, age &lt; 10 years, opened by guardian (Form-1 + birth certificate)</div>
+      <div class="step">📋 One girl child = ONE account only</div>
+      <div class="step">👨‍👩‍👧‍👧 Maximum <b>2 accounts per family</b> (general rule)</div>
+      <div class="step">👯 Exception: twins/triplets in 1st or 2nd birth order → more than 2 accounts, with affidavit + birth certificates</div>
+      <div class="step">⚠️ Exception does NOT apply if 1st birth order already resulted in 2+ surviving girls</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> સામાન્ય રીતે એક family માં કેટલા SSY ખાતા ખોલી શકાય? <b>Ans: મહત્તમ 2 (twins/triplets exception સિવાય)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>💰 Deposit Rules <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Provision</th><th>Detail</th></tr>
+      <tr><td>Min Initial Deposit</td><td>₹250</td></tr>
+      <tr><td>Subsequent deposits</td><td>Multiples of ₹50</td></tr>
+      <tr><td>Min deposit/financial year</td><td>₹250</td></tr>
+      <tr><td>Max deposit/financial year</td><td>₹1,50,000</td></tr>
+      <tr><td>Deposits allowed till</td><td>15 years from date of opening</td></tr>
+      <tr><td>Excess deposit (accounting error)</td><td>No interest; returned immediately</td></tr>
+    </table>
+    <div class="amend-note">⚠️ <b>Exam Trap:</b> Deposits ફક્ત <b>15 વર્ષ</b> સુધી જ કરી શકાય, પણ ખાતું <b>21 વર્ષે</b> mature થાય — વચ્ચેના 6 વર્ષ ફક્ત interest earn કરે, નવી deposit નહીં.</div>
+    <div class="exam-q"><b>Probable Q:</b> SSY માં deposits કેટલા વર્ષ સુધી કરી શકાય? <b>Ans: 15 વર્ષ (maturity 21 વર્ષે હોવા છતાં)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Default &amp; Regularisation <span class="tag-imp t-orange">🟠 Frequently Asked</span></h2>
+    <div class="flow">
+      <div class="step">Minimum ₹250/year ના ભરાય ➜ ખાતું "under default" ગણાય</div>
+      <div class="step">Regularise: ₹50 penalty/year + minimum deposit for defaulted years</div>
+      <div class="step">Regularise ની સમય-મર્યાદા: 15 વર્ષ પૂરા થાય ત્યાં સુધી</div>
+      <div class="step">Regularise ના થાય તો ➜ આખી deposit પર scheme rate interest, closure સુધી (કોઈ penalty ના, પણ default clear ના થાય)</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Default account regularise કરવાની ફી શું છે? <b>Ans: ₹50/year + minimum deposit arrears</b></div>
+  </div>
+
+  <div class="card">
+    <h2>📈 Interest on Deposit <span class="tag-imp t-red">🔴</span></h2>
+    <table>
+      <tr><th>Period</th><th>Rate</th></tr>
+      <tr><td>12 Dec 2019 – 31 Mar 2020</td><td>8.4% p.a.</td></tr>
+      <tr><td>On/after 1 Apr 2020</td><td>7.6% p.a. (amended GSR 288(E))</td></tr>
+      <tr><td><b>Current Rate — Apr–Jun 2026</b></td><td><b>8.2% p.a.</b> (among highest of all small savings schemes)</td></tr>
+    </table>
+    <div class="current-note">✅ SSY currently offers one of the highest interest rates among Post Office schemes — reflecting its policy priority under Beti Bachao Beti Padhao.</div>
+    <ul>
+      <li>🔴 Interest calculated on <b>lowest balance between 5th day and month-end</b> (same rule as PPF).</li>
+      <li>🟠 Interest credited at end of <b>financial year</b> (not calendar year).</li>
+      <li>🟡 Fraction rounding: ≥50 paisa rounds up, &lt;50 paisa ignored.</li>
+      <li>🟢 Interest credits regardless of account-office transfer during the year.</li>
+    </ul>
+    <div class="exam-q"><b>Probable Q:</b> SSY interest ક્યા balance પર ગણાય છે? <b>Ans: 5th day થી month-end વચ્ચેની lowest balance</b></div>
+  </div>
+
+  <div class="card">
+    <h2>👤 Operation of Account <span class="tag-imp t-yellow">🟡 Conceptual</span></h2>
+    <div class="flow">
+      <div class="step">Guardian ખાતું operate કરે — girl child 18 વર્ષની ના થાય ત્યાં સુધી</div>
+      <div class="step">18 વર્ષ પછી ➜ girl child પોતે ખાતું operate કરી શકે (documents submit કરીને)</div>
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Girl child પોતે ખાતું ક્યારે operate કરી શકે? <b>Ans: 18 વર્ષની ઉંમર પછી</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 Decision Tree — Premature Closure <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <div class="decision">
+      <div class="node">(a) <b>Death</b> of account holder ➜ immediate closure, Form-2, death certificate</div><br>
+      <div class="node">(b) <b>Compassionate grounds</b> — life-threatening disease / guardian's death ➜ after <b>5 years</b> minimum, accounts office order</div>
+    </div>
+    <table style="margin-top:10px;">
+      <tr><th>Ground</th><th>Timing</th><th>Interest</th></tr>
+      <tr><td>Death of account holder</td><td>Immediate, any time</td><td>Scheme rate till death; POSA rate death-to-closure</td></tr>
+      <tr><td>Compassionate closure</td><td>Only after 5 years</td><td>Full scheme rate applicable</td></tr>
+    </table>
+    <div class="mnemonic">
+      🧠 <b>Mnemonic:</b> "DC-5" — <b>D</b>eath (anytime) vs <b>C</b>ompassionate (after <b>5</b> years) — the two premature closure routes.
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> Compassionate ground પર premature closure ક્યારે માન્ય? <b>Ans: ખાતું ખોલ્યાના 5 વર્ષ પૂરા થયા પછી જ</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🎓 Withdrawal — For Education <span class="tag-imp t-orange">🟠</span></h2>
+    <table>
+      <tr><th>Provision</th><th>Detail</th></tr>
+      <tr><td>Purpose</td><td>Education of account holder only</td></tr>
+      <tr><td>Max withdrawal</td><td>50% of balance at end of preceding financial year</td></tr>
+      <tr><td>Eligibility timing</td><td>After age 18 OR after passing 10th standard — whichever EARLIER</td></tr>
+      <tr><td>Mode</td><td>Lump sum OR instalments (max 1/year, up to 5 years)</td></tr>
+      <tr><td>Proof required</td><td>Confirmed admission offer OR fee-slip from institution</td></tr>
+      <tr><td>Amount restriction</td><td>Limited to actual fee/charges as per admission proof</td></tr>
+    </table>
+    <div class="amend-note">⚠️ <b>Exam Trap:</b> Withdrawal age condition is "18 years <b>OR</b> 10th pass, whichever is <b>EARLIER</b>" — many candidates mistakenly answer "later".</div>
+    <div class="exam-q"><b>Probable Q:</b> Education માટે withdrawal ક્યારે eligible બને? <b>Ans: 18 વર્ષ અથવા 10th pass — જે વહેલું હોય</b></div>
+  </div>
+
+  <div class="card">
+    <h2>🔁 Closure on Maturity / Marriage <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+    <table>
+      <tr><th>Closure Type</th><th>Condition</th><th>Form</th></tr>
+      <tr><td>Normal Maturity</td><td>21 years from date of opening</td><td>Form-4</td></tr>
+      <tr><td>Marriage-based closure</td><td>Age 18+ at marriage date; notarised declaration on stamp paper</td><td>Application</td></tr>
+    </table>
+    <div class="tri pink">
+      <div class="gu">Marriage આધારિત closure ફક્ત marriage ના 1 મહિના પહેલા થી 3 મહિના પછી ના gap માં જ થઈ શકે.</div>
+      <div class="hi">Marriage आधारित closure केवल marriage के 1 महीने पहले से 3 महीने बाद के अंतराल में ही हो सकता है।</div>
+      <div class="en">Marriage-based closure allowed ONLY in the window: 1 month before to 3 months after the marriage date.</div>
+    </div>
+    <div class="mnemonic">
+      🧠 <b>Mnemonic:</b> "1 Before, 3 After" — marriage closure window = 1 month before wedding to 3 months after.
+    </div>
+    <div class="exam-q"><b>Probable Q:</b> SSY ની maturity period કેટલી છે? <b>Ans: 21 વર્ષ (opening date થી)</b></div>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ Comparison — SSY vs Other Schemes <span class="tag-imp t-green">🟢 Quick Revision</span></h2>
+    <table>
+      <tr><th>Feature</th><th>SSY</th><th>PPF</th><th>NSC</th><th>SCSS</th></tr>
+      <tr><td>Eligibility</td><td>Girl child &lt;10 yrs</td><td>Any individual</td><td>Any individual</td><td>Senior citizen 60+</td></tr>
+      <tr><td>Maturity</td><td>21 years</td><td>15 years</td><td>5 years</td><td>5 yrs (+3)</td></tr>
+      <tr><td>Deposit window</td><td>15 years</td><td>Till maturity/extension</td><td>One-time</td><td>One-time</td></tr>
+      <tr><td>Current Rate</td><td>8.2%</td><td>7.1%</td><td>~7.7%</td><td>8.2%</td></tr>
+      <tr><td>Max Deposit/year</td><td>₹1.5 Lakh</td><td>₹1.5 Lakh</td><td>No limit</td><td>₹15L (one-time)</td></tr>
+      <tr><td>Joint Account</td><td>❌ No (individual)</td><td>❌ No</td><td>✅ Yes</td><td>✅ Yes (spouse)</td></tr>
+      <tr><td>80C Benefit</td><td>✅ Yes (EEE)</td><td>✅ Yes (EEE)</td><td>✅ Yes</td><td>✅ Yes</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🕐 Timeline <span class="tag-imp t-yellow">🟡</span></h2>
+    <div class="flow">
+      <div class="step">1873 — Govt. Savings Promotion Act enacted</div>
+      <div class="step">2015 — SSY originally launched (Beti Bachao Beti Padhao initiative)</div>
+      <div class="step">2018 — GSPR notified</div>
+      <div class="step">12 Dec 2019 — SSY Scheme 2019 notified (GSR 914(E)), rate 8.4%</div>
+      <div class="step">05 May 2020 — Amendment GSR 288(E) — rate revised to 7.6%</div>
+      <div class="step">Apr–Jun 2026 — Current rate 8.2% p.a. (Q1 FY2026-27)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏛️ Important Authorities <span class="tag-imp t-yellow">🟡</span></h2>
+    <ul>
+      <li><b>Central Government</b> — notifies scheme under Sec 3A of 1873 Act; power to relax hardship (Para 11)।</li>
+      <li><b>Accounts Office (Post Office)</b> — opens/closes accounts, credits interest, approves compassionate closure।</li>
+      <li><b>Guardian</b> — operates account till girl child turns 18; opens account with birth certificate.</li>
+      <li><b>Municipal authority / Registrar of Births &amp; Deaths / Indian Consulate</b> — issues birth certificate for account opening.</li>
+      <li><b>Notary</b> — attests marriage declaration for maturity-before-21 closure.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>⏱️ Important Time Limits <span class="tag-imp t-red">🔴</span></h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Event</th><th>Time Limit</th></tr>
+      <tr><td>Max age of girl child at opening</td><td>Under 10 years</td></tr>
+      <tr><td>Deposits permitted</td><td>15 years from opening</td></tr>
+      <tr><td>Maturity</td><td>21 years from opening</td></tr>
+      <tr><td>Guardian operates account until</td><td>Girl child turns 18</td></tr>
+      <tr><td>Withdrawal eligible after</td><td>Age 18 OR 10th pass (earlier)</td></tr>
+      <tr><td>Withdrawal instalments</td><td>Max 1/year, up to 5 years</td></tr>
+      <tr><td>Compassionate closure eligible after</td><td>5 years from opening</td></tr>
+      <tr><td>Marriage-closure window</td><td>1 month before to 3 months after marriage</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Important Penalties / Deductions <span class="tag-imp t-orange">🟠</span></h2>
+    <table>
+      <tr><th>Situation</th><th>Penalty</th></tr>
+     <tr><td>Default account regularisation</td><td>₹50/year penalty + minimum deposit arrears</td></tr>
+      <tr><td>Excess deposit (&gt;₹1.5L, accounting error)</td><td>No interest; refunded immediately</td></tr>
+      <tr><td>Un-regularised default account</td><td>No extra penalty, but earns interest till closure</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🚩 Important Exceptions <span class="tag-imp t-orange">🟠</span></h2>
+    <ul>
+      <li>Max 2 accounts/family rule has exception for <b>twins/triplets</b> in 1st or 2nd birth order (affidavit + birth certificates required).</li>
+      <li>Exception does NOT apply if 1st birth order already produced 2+ surviving girls.</li>
+      <li>Compassionate premature closure NOT allowed before 5 years, even on medical/guardian-death grounds.</li>
+      <li>Withdrawal restricted strictly to actual fee/charges shown in admission proof — not a blanket 50% cash-out.</li>
+      <li>Marriage-based closure has a strict time window (1 month before to 3 months after) — outside this, not permitted.</li>
+      <li>Central Govt. may relax any hardship-causing provision (Para 11).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🧩 Mind Map — SSY Scheme 2019</h2>
+    <div class="grid2">
+      <div class="tri" style="border-color:var(--red);background:var(--red-light);"><div class="en"><b>Eligibility</b>: Girl child &lt;10 yrs · Max 2/family · Form-1</div></div>
+      <div class="tri" style="border-color:var(--orange);background:var(--orange-light);"><div class="en"><b>Deposit</b>: ₹250-₹1.5L/yr · 15-year window</div></div>
+      <div class="tri" style="border-color:var(--green);background:var(--green-light);"><div class="en"><b>Interest</b>: 8.2% p.a. · 5th-day rule · Annual credit</div></div>
+      <div class="tri" style="border-color:var(--purple);background:var(--purple-light);"><div class="en"><b>Closure</b>: Maturity 21yr · Marriage 18+ · Withdrawal for education</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📝 MCQ Bank <span class="tag-imp t-red">🔴 High-Yield</span></h2>
+
+    <div class="mcq">
+      <div class="q">Q1. SSY खाता खोलते समय बालिका की अधिकतम आयु क्या होनी चाहिए?</div>
+      <div class="opts">A) 5 वर्ष से कम &nbsp; B) 10 वर्ष से कम &nbsp; C) 12 वर्ष से कम &nbsp; D) 18 वर्ष से कम</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q2. SSY की maturity अवधि क्या है?</div>
+      <div class="opts">A) 15 वर्ष &nbsp; B) 18 वर्ष &nbsp; C) 21 वर्ष &nbsp; D) 25 वर्ष</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q3. SSY में deposits कितने वर्ष तक की जा सकती हैं?</div>
+      <div class="opts">A) 10 वर्ष &nbsp; B) 15 वर्ष &nbsp; C) 18 वर्ष &nbsp; D) 21 वर्ष</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q4. एक परिवार में सामान्यतः कितने SSY खाते खोले जा सकते हैं?</div>
+      <div class="opts">A) 1 &nbsp; B) 2 &nbsp; C) 3 &nbsp; D) असीमित</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q5. Education के लिए withdrawal कब eligible होता है?</div>
+      <div class="opts">A) केवल 18 वर्ष पर &nbsp; B) केवल 10वीं पास होने पर &nbsp; C) 18 वर्ष या 10वीं पास, जो पहले हो &nbsp; D) 21 वर्ष पर</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q6. Compassionate ground पर premature closure कब से संभव है?</div>
+      <div class="opts">A) कभी भी &nbsp; B) 3 वर्ष बाद &nbsp; C) 5 वर्ष बाद &nbsp; D) 10 वर्ष बाद</div>
+      <div class="ans">Answer: C</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q7. Marriage आधारित closure किस समयावधि में हो सकती है?</div>
+      <div class="opts">A) शादी के 1 महीने पहले से 3 महीने बाद &nbsp; B) शादी के दिन ही &nbsp; C) शादी के 6 महीने बाद तक कभी भी &nbsp; D) शादी के 1 साल पहले</div>
+      <div class="ans">Answer: A</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q8. Girl child खाता स्वयं कब operate कर सकती है?</div>
+      <div class="opts">A) 15 वर्ष &nbsp; B) 18 वर्ष &nbsp; C) 21 वर्ष &nbsp; D) कभी नहीं</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q9. Default account regularise करने की फीस क्या है?</div>
+      <div class="opts">A) ₹25/वर्ष &nbsp; B) ₹50/वर्ष &nbsp; C) ₹100/वर्ष &nbsp; D) ₹250/वर्ष</div>
+      <div class="ans">Answer: B</div>
+    </div>
+
+    <div class="mcq">
+      <div class="q">Q10. Education withdrawal में अधिकतम कितनी राशि निकाली जा सकती है?</div>
+      <div class="opts">A) 25% &nbsp; B) 50% &nbsp; C) 75% &nbsp; D) 100%</div>
+      <div class="ans">Answer: B</div>
+    </div>
+  </div>
+
+  <div class="card revision-sheet">
+    <h2>🕛 Last Day Revision Notes</h2>
+    <ul>
+      <li>🔴 Enabling law: <b>Sec 3A, Govt. Savings Promotion Act 1873</b></li>
+      <li>🔴 Notified: <b>12 Dec 2019 (GSR 914E)</b>; amended <b>5 May 2020 (GSR 288E)</b></li>
+      <li>🔴 Eligibility: Girl child <b>&lt;10 years</b>; max <b>2/family</b> (twins/triplets exception) — Form-1</li>
+      <li>🔴 Deposit: ₹250-₹1,50,000/year; window = <b>15 years</b> only</li>
+      <li>🔴 Maturity: <b>21 years</b>; current interest <b>8.2% p.a.</b></li>
+      <li>🟠 Guardian operates till 18; girl child operates herself after 18</li>
+      <li>🟠 Withdrawal: for education, ≤50%, after 18yrs OR 10th-pass (earlier) — Form-3</li>
+      <li>🟠 Premature closure: Death (Form-2, anytime) / Compassionate (after 5yrs only)</li>
+      <li>🟡 Marriage closure: 18+ age, window = 1 month before to 3 months after wedding</li>
+      <li>🟢 GSPR 2018 fills gaps; Central Govt. can relax hardship provisions</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 One-Page Quick Reference Sheet</h2>
+    <div class="tbl-scroll"><table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Scheme</td><td>Sukanya Samriddhi Account Scheme, 2019</td></tr>
+      <tr><td>Enabling Section</td><td>Sec 3A, Govt. Savings Promotion Act 1873</td></tr>
+      <tr><td>Notification</td><td>GSR 914(E) — 12/12/2019; amended GSR 288(E) — 05/05/2020</td></tr>
+      <tr><td>Eligibility</td><td>Girl child under 10 years; max 2/family (exceptions apply)</td></tr>
+      <tr><td>Min/Max Deposit</td><td>₹250 min – ₹1,50,000 max/year</td></tr>
+      <tr><td>Deposit Window</td><td>15 years from opening</td></tr>
+      <tr><td>Maturity</td><td>21 years from opening — Form-4</td></tr>
+      <tr><td>Interest (current)</td><td>8.2% p.a., annual credit, 5th-day rule</td></tr>
+      <tr><td>Operation</td><td>Guardian till 18yrs; self after 18yrs</td></tr>
+      <tr><td>Withdrawal</td><td>≤50%, for education, after 18 or 10th-pass — Form-3</td></tr>
+      <tr><td>Premature Closure</td><td>Death (Form-2) / Compassionate after 5yrs</td></tr>
+      <tr><td>Marriage Closure</td><td>Age 18+; window 1mo before–3mo after</td></tr>
+      <tr><td>Gap-filling Rules</td><td>GSPR 2018</td></tr>
+      <tr><td>Relaxation Power</td><td>Central Government (Para 11)</td></tr>
+    </table></div>
+  </div>
+
+</div>
+
+<button class="fab" onclick="window.print()">⬇️ Download PDF</button>
+
+</body>
+</html>

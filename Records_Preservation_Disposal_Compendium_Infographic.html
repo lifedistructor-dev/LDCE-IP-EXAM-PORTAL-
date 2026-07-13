@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compendium on Preservation and Disposal of Records | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E0000; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-dark:#8B6F14;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+  --bg:#FAF7F0; --card:#FFFFFF; --ink:#1A1A1A; --muted:#5c5c5c;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+.header{background:linear-gradient(135deg,var(--gold-dark) 0%,var(--red-dark) 55%,var(--blue) 100%);color:#fff;padding:22px 16px 60px;text-align:center;position:relative;overflow:hidden;}
+.header::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 10px,#fff 10px,#fff 20px);}
+.header h1{margin:0;font-size:1.4rem;}
+.header .hi{font-size:1.1rem;font-weight:700;}
+.header .en{font-style:italic;font-weight:400;font-size:0.9rem;opacity:0.95;}
+.header .sub{margin-top:8px;font-size:0.82rem;opacity:0.9;}
+.badge-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:4px 12px;font-size:0.72rem;}
+
+.container{max-width:900px;margin:-36px auto 0;padding:0 12px 40px;}
+.toc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px;border:2px solid var(--gold);}
+.toc h2{margin:0 0 10px;color:var(--blue);font-size:0.98rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.toc a{display:block;background:var(--bg);border-radius:8px;padding:7px 10px;font-size:0.68rem;color:var(--ink);text-decoration:none;border-left:4px solid var(--blue);}
+
+.chapter{background:var(--card);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid #eee;}
+.chapter-head{padding:12px 16px;color:#fff;font-weight:700;font-size:0.92rem;display:flex;align-items:center;gap:8px;}
+.chapter-body{padding:14px 16px;}
+
+.topic{border-left:4px solid var(--blue);background:#F5F8FF;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.topic h3{margin:0 0 4px;font-size:0.88rem;}
+.topic .hi{font-weight:700;}
+.topic .en{font-style:italic;color:var(--muted);font-size:0.78rem;}
+
+.tier{display:inline-block;border-radius:6px;padding:2px 8px;font-size:0.66rem;font-weight:700;margin-bottom:6px;color:#fff;}
+.tier.red{background:var(--red);}
+.tier.orange{background:var(--orange);}
+.tier.yellow{background:var(--yellow);color:#3a2c00;}
+.tier.green{background:var(--green);}
+
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.7rem;}
+table th{background:var(--blue);color:#fff;padding:5px 6px;text-align:left;}
+table td{padding:4px 6px;border-bottom:1px solid #eee;vertical-align:top;}
+table tr:nth-child(even){background:#F7F7F7;}
+.per{font-weight:700;color:var(--red-dark);white-space:nowrap;}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:0.74rem;}
+.flow .box{background:var(--blue);color:#fff;border-radius:8px;padding:6px 10px;flex:1;min-width:100px;text-align:center;}
+.flow .arrow{font-size:1.1rem;color:var(--red);}
+
+.mindmap{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.mindmap .root{background:var(--red);color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:0.8rem;}
+.mindmap .branches{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mindmap .branch{background:#FFF3E0;border:1px solid var(--orange);border-radius:8px;padding:6px 8px;font-size:0.7rem;}
+
+.dtree{background:#FFFDF5;border:1px dashed var(--gold-dark);border-radius:8px;padding:10px;font-size:0.74rem;margin:8px 0;}
+.dtree .q{font-weight:700;color:var(--red-dark);}
+.dtree .yn{margin-left:10px;}
+
+.mnemonic{background:#FFF8E1;border-left:4px solid var(--gold-dark);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:0.76rem;}
+.mnemonic b{color:var(--gold-dark);}
+
+.exam-q{background:#EDE7F6;border-left:4px solid #6A1B9A;border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:0.74rem;}
+.exam-q b{color:#6A1B9A;}
+
+.revision-sheet{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border:2px solid var(--gold);border-radius:14px;padding:14px;margin-bottom:16px;}
+.revision-sheet h2{color:var(--red-dark);margin-top:0;font-size:1rem;}
+.revision-grid{display:grid;grid-template-columns:1fr;gap:8px;font-size:0.74rem;}
+.rev-card{background:#fff;border-radius:8px;padding:8px 10px;border-left:4px solid var(--green);}
+
+.lastday{background:var(--red-dark);color:#fff;border-radius:14px;padding:14px;margin-bottom:16px;}
+.lastday h2{margin-top:0;font-size:1rem;}
+.lastday ul{margin:6px 0 0;padding-left:18px;font-size:0.76rem;}
+.lastday li{margin-bottom:6px;}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;font-size:0.68rem;}
+.legend span{background:#fff;border-radius:20px;padding:4px 10px;box-shadow:var(--shadow);}
+
+footer{text-align:center;color:var(--muted);font-size:0.68rem;padding:20px 10px;}
+
+#dlBtn{position:fixed;bottom:18px;right:18px;background:var(--red);color:#fff;border:none;border-radius:50px;padding:12px 18px;font-size:0.85rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,0.3);z-index:999;cursor:pointer;}
+
+.penalty-box{background:#FFEBEE;border:1px solid var(--red);border-radius:8px;padding:8px 10px;font-size:0.74rem;margin:6px 0;}
+.penalty-box b{color:var(--red-dark);}
+
+@media print{ #dlBtn{display:none;} .header{padding-top:10px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="hi">अभिलेखों का संरक्षण व निपटान</span></h1>
+  <div class="en">Compendium on Preservation and Disposal of Records</div>
+  <div class="sub">Rafi Ahmed Kidwai National Postal Academy | 29 Sections — Complete Records Retention Guide</div>
+  <div class="badge-row">
+    <span class="badge">📮 India Post</span>
+    <span class="badge">📘 IP Exam 2026</span>
+    <span class="badge">📁 Records Preservation</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 अति महत्वपूर्ण / Very Imp.</span>
+  <span>🟠 बार-बार पूछा गया / Frequently Asked</span>
+  <span>🟡 संकल्पनात्मक / Conceptual</span>
+  <span>🟢 त्वरित रिवीजन / Quick Revision</span>
+</div>
+
+<div class="toc">
+  <h2>📑 विषय सूची / Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#ch0">0. सामान्य नियम (General Rules)</a>
+    <a href="#ch1">1. Mail, Franking, Bag Account, Delivery</a>
+    <a href="#ch2">2. Registration/Parcel, Money Order, IPO</a>
+    <a href="#ch3">3. Treasury/Cash, Sub Accounts, Accounts</a>
+    <a href="#ch4">4. Savings Bank (SB) — 69 Records</a>
+    <a href="#ch5">5. Savings Certificates — 31 Records</a>
+    <a href="#ch6">6. SB Control, Pairing, Internal Check</a>
+    <a href="#ch7">7. RMS, Administration, Circle Office</a>
+    <a href="#ch8">8. Vigilance</a>
+    <a href="#ch9">9. Postal Accounts Office</a>
+    <a href="#ch10">10. GPF, NSC, Pension</a>
+    <a href="#ch11">11. Ancillary Services</a>
+    <a href="#ch12">12. Miscellaneous Items (Computer/Forms/Stock)</a>
+    <a href="#rev">📝 One-Page Revision Sheet</a>
+    <a href="#last">⏰ Last-Day Revision Notes</a>
+  </div>
+</div>
+
+<!-- CH0 General Rules -->
+<div class="chapter" id="ch0">
+  <div class="chapter-head" style="background:var(--red);">📋 अध्याय 0 → सामान्य नियम / General Rules on Recording & Preservation</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — RTI Act अनुसार परिभाषा</span>
+      <h3 class="hi">"Record" की परिभाषा</h3>
+      <p class="hi">RTI Act अनुसार "Record" में शामिल है: (a) कोई दस्तावेज़, पांडुलिपि व फाइल (b) कोई माइक्रोफिल्म, माइक्रोफिश व Facsimile कॉपी (c) माइक्रोफिल्म में embedded किसी image का reproduction (d) Computer या अन्य Device द्वारा उत्पन्न कोई अन्य सामग्री।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Recording Process</span>
+      <table>
+        <tr><th>नियम</th></tr>
+        <tr><td>Recording = फाइल पर सभी कार्रवाई पूर्ण होने पर उसे बंद करने की प्रक्रिया</td></tr>
+        <tr><td>Ephemeral Nature की फाइलें Record नहीं होतीं — <b>1 वर्ष</b> की होते ही नष्ट</td></tr>
+        <tr><td>हर Section हर <b>महीने</b> Recording करेगा</td></tr>
+        <tr><td>फाइल कवर पर "to be destroyed" या "Permanent Record" स्टाम्प लगेगा</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — कभी नष्ट न होने वाले रिकॉर्ड्स</span>
+      <div class="mindmap">
+        <div class="branches">
+          <div class="branch">Limitation Period के अंदर व्यय संबंधी Records</div>
+          <div class="branch">अधूरी Projects/Schemes के Records (भले ही Limitation Period पार हो)</div>
+          <div class="branch">सेवा दावों व व्यक्तिगत मामलों से संबंधित Records</div>
+          <div class="branch">स्थायी प्रकार के Orders/Sanctions (जब तक संशोधित न हों)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — विनाश प्राधिकारी</span>
+      <p class="hi">न्यूनतम अवधि के बाद, <b>Heads of Departments/Circles, Divisional Heads, या First Class Postmasters</b> रिकॉर्ड नष्ट करने का लिखित आदेश दे सकते हैं — गणना अंतिम आधिकारिक वर्ष के अंतिम दिन से।</p>
+      <p class="en">(Para (c) of Appendix 5 of P&T FHB Volume-I)</p>
+    </div>
+
+    <div class="penalty-box">🔴 <b>ACG-91 Register:</b> हर कार्यालय में नष्ट किए गए Records का Register (Form ACG-91) रखा जाता है — यह <b>स्थायी रूप से (Permanently)</b> संरक्षित होता है।</div>
+
+    <div class="dtree">
+      <div class="q">Q: पुराने Records का निपटान कैसे होता है?</div>
+      <div class="yn">➡ सामान्यतः: फाड़कर Waste Paper के रूप में Contractors को बेचा जाता है</div>
+      <div class="yn">➡ अपवाद (आग से नष्ट): Confidential Records, Postmark की Book</div>
+      <div class="yn">➡ विशेष अनुमति आवश्यक (Head of Circle): Post Office Order Book, Undeliverable Passbook Register, PO Certificate Ledger</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "ACG-91 = हमेशा के लिए" — Destruction Register कभी नष्ट नहीं होता</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> नष्ट किए गए Records का Register किस Form में रखा जाता है? <b>(ACG-91, Permanent)</b> Confidential Records किस तरीके से नष्ट होते हैं? <b>(आग से/By Fire)</b></div>
+  </div>
+</div>
+
+<!-- CH1 Mail Franking Bag Delivery -->
+<div class="chapter" id="ch1">
+  <div class="chapter-head" style="background:var(--blue);">📬 अध्याय 1 → Mail & Sorting, Franking Machine, Bag Account, Delivery</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>Mail Lists (received व despatched)</td><td class="per">2 वर्ष</td></tr>
+        <tr><td>अन्य सभी Mail Department Records</td><td class="per">1 वर्ष</td></tr>
+        <tr><td>Franking Machine Licence Register</td><td class="per">3 वर्ष (last entry से)</td></tr>
+        <tr><td>Franking Machine Daily Docket</td><td class="per">2 वर्ष</td></tr>
+        <tr><td>Day Bag Book — CBOs</td><td class="per">10 वर्ष</td></tr>
+        <tr><td>Day Bag Book — UBOs/DBOs</td><td class="per">2 वर्ष</td></tr>
+        <tr><td>Stock/Repairable/Unserviceable Bags Register</td><td class="per">10 वर्ष</td></tr>
+        <tr><td>Deposit Account / Letter Postage Account (Delivery)</td><td class="per">18 महीने</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CBO 10, UBO/DBO 2" — Bag Book preservation अलग-अलग</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Mail Lists की preservation अवधि क्या है? <b>(2 वर्ष)</b> Day Bag Book (CBO) की अवधि? <b>(10 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH2 Registration MO IPO -->
+<div class="chapter" id="ch2">
+  <div class="chapter-head" style="background:var(--green);">✉️ अध्याय 2 → Registration/Parcel, Money Order, Indian Postal Orders</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>Registered/Parcel Lists (received व despatched)</td><td class="per">2 वर्ष</td></tr>
+        <tr><td>Registration/Parcel Dept के अन्य Records</td><td class="per">1 वर्ष</td></tr>
+        <tr><td>अधिकांश Foreign Parcel/Customs Records</td><td class="per">1-1½ वर्ष</td></tr>
+        <tr><td>MO Journals/Register/List (MO.2/3/4/23)</td><td class="per">18 महीने</td></tr>
+        <tr><td>Books of MO Receipts (MO.1)</td><td class="per">2 वर्ष</td></tr>
+        <tr><td>Foreign MO Records (Exchange Offices)</td><td class="per">3 वर्ष</td></tr>
+        <tr><td>Counterfoils of used RMO Cheque Books</td><td class="per">5 वर्ष (last cheque से)</td></tr>
+        <tr><td>IPO List/Journals/Register</td><td class="per">18 महीने</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Foreign Post के disputed cases में क्या नियम है?</div>
+      <div class="yn">➡ Enquiry पूरी होने तक Records रखे जाएं — चाहे निर्धारित अवधि पार हो जाए</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "MO सब 18 महीने, RMO Cheque 5 साल" — Money Order records याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Books of Money Order Receipts (MO.1) की अवधि? <b>(2 वर्ष)</b> RMO Cheque Book Counterfoils? <b>(5 वर्ष, last cheque से)</b></div>
+  </div>
+</div>
+
+<!-- CH3 Treasury Sub Accounts Accounts -->
+<div class="chapter" id="ch3">
+  <div class="chapter-head" style="background:var(--orange);">💰 अध्याय 3 → Treasury/Cash, Sub Accounts, Accounts (HO)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>Treasurer's Cash Book / Passbook</td><td class="per">10 वर्ष</td></tr>
+        <tr><td>Treasury Vouchers/Receipts</td><td class="per">3 वर्ष</td></tr>
+        <tr><td>Register of cheques received/cleared (ACG 28)</td><td class="per">5 वर्ष</td></tr>
+        <tr><td>Head Office Summary (Sub Accounts)</td><td class="per">3 वर्ष</td></tr>
+        <tr><td>SO/BO Daily Accounts</td><td class="per">18 महीने / 2 वर्ष</td></tr>
+        <tr><td>Head Office Cash Book</td><td class="per">3 वर्ष</td></tr>
+        <tr><td>Runner's Appointment Certificates</td><td class="per"><b>Permanent</b></td></tr>
+        <tr><td>Letter of authority for payment to agent</td><td class="per"><b>35 वर्ष</b></td></tr>
+        <tr><td>Register of losses, recoverable advances</td><td class="per">4 वर्ष</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Treasury=10yr, Sub A/c=3yr, Payment authority=35yr" — Accounts के मुख्य आंकड़े</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Letter of authority for payment to agent कितने वर्ष रखा जाता है? <b>(35 वर्ष — असामान्य रूप से लंबा)</b> Treasurer's Cash Book? <b>(10 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH4 SB -->
+<div class="chapter" id="ch4">
+  <div class="chapter-head" style="background:var(--red-dark);">🏦 अध्याय 4 → Savings Bank (SB) — 69 Records (Appendix III, POSB Manual Vol-I)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — सबसे बड़ा व सबसे परीक्षा-संबंधी Section</span>
+    </div>
+
+    <table>
+      <tr><th>Record</th><th>Preservation Period</th></tr>
+      <tr><td>SO SB Ledgers</td><td class="per">6 वर्ष (सभी खाते बंद/स्थानांतरित होने बाद)</td></tr>
+      <tr><td>SO CTD Journals — 5yr accounts</td><td class="per">6 वर्ष</td></tr>
+      <tr><td>SO CTD Journals — 10yr accounts</td><td class="per">12 वर्ष</td></tr>
+      <tr><td>SO CTD Journals — 15yr accounts</td><td class="per">18 वर्ष</td></tr>
+      <tr><td>Specimen Signature Books — HO</td><td class="per">तुरंत नष्ट (आवेदन तैयार होने बाद)</td></tr>
+      <tr><td>Specimen Signature Books — SO</td><td class="per">5 वर्ष</td></tr>
+      <tr><td>Special Error Book (SB Branch)</td><td class="per">3 वर्ष</td></tr>
+      <tr><td><b>List of Silent Accounts (SBCO से)</b></td><td class="per"><b>Permanent</b></td></tr>
+      <tr><td>List of withdrawals ≥ ₹2,500 (BO/single-handed SO)</td><td class="per">1 वर्ष</td></tr>
+      <tr><td>Stock Register of Passbooks</td><td class="per">18 महीने</td></tr>
+      <tr><td><b>Ledger Cards of Silent Accounts</b></td><td class="per"><b>Permanent</b></td></tr>
+      <tr><td>Index to Ledger Cards</td><td class="per">6 वर्ष (सभी खाते बंद बाद)</td></tr>
+      <tr><td>Register of Nomination</td><td class="per">5 वर्ष (सभी खाते बंद बाद)</td></tr>
+      <tr><td>Deceased Depositor's Claim Cases</td><td class="per">3 वर्ष; <b>Indemnity Bond मामलों में 6 वर्ष</b></td></tr>
+      <tr><td>Guard book for revival of silent accounts</td><td class="per">5 वर्ष (Rule 81, POSB Manual Vol-I)</td></tr>
+      <tr><td>Error Book (auto transfer SB→CTD/RD)</td><td class="per">5 वर्ष</td></tr>
+      <tr><td>Nominal Roll (SB/SC Branch)</td><td class="per">10 वर्ष</td></tr>
+      <tr><td>Objection Register (SB.61)</td><td class="per">2 वर्ष (आपत्ति निपटान बाद)</td></tr>
+    </table>
+
+    <div class="penalty-box">🔴 <b>याद रखें:</b> Silent Accounts से जुड़े 2 Records — "List of Silent Accounts" व "Ledger Cards of Silent Accounts" — दोनों <b>Permanent</b> हैं। यह Vol-I के Appendix III से मेल खाता है।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6-12-18 CTD क्रम में" — 5yr→6, 10yr→12, 15yr→18 वर्ष (Journal preservation)</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Deceased Depositor's Claim Cases (Indemnity Bond सहित) कितने वर्ष रखे जाते हैं? <b>(6 वर्ष)</b> SO SB Ledgers की अवधि? <b>(6 वर्ष, खाते बंद होने बाद)</b></div>
+  </div>
+</div>
+
+<!-- CH5 Savings Certificates -->
+<div class="chapter" id="ch5">
+  <div class="chapter-head" style="background:#00695C;">📜 अध्याय 5 → Savings Certificates — 31 Records</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>Application for purchase/transfer (NC 69/71)</td><td class="per">6 वर्ष (maturity पर भुनाने बाद)</td></tr>
+        <tr><td>Nomination Application/Register (NC.51/52/53)</td><td class="per">5 वर्ष + maturity अवधि</td></tr>
+        <tr><td>Yearly List of Unclaimed Certificates</td><td class="per">3 वर्ष</td></tr>
+        <tr><td>Identity Slips (Counterfoils)</td><td class="per">18 महीने (भुनाने बाद)</td></tr>
+        <tr><td><b>Bonds of Indemnity — 5yr NSC</b></td><td class="per"><b>23 वर्ष</b> (जारी होने से)</td></tr>
+        <tr><td>Bonds of Indemnity — 7yr NSC</td><td class="per">18 वर्ष</td></tr>
+        <tr><td>Bonds of Indemnity — 12yr NSC</td><td class="per">23 वर्ष</td></tr>
+        <tr><td>Bonds of Indemnity — 10yr NPC</td><td class="per">21 वर्ष</td></tr>
+        <tr><td>Stock Register of Certificates</td><td class="per">10 वर्ष (नया रजिस्टर खुलने बाद)</td></tr>
+        <tr><td><b>Unclaimed Certificates (Postal Accounts Office में)</b></td><td class="per"><b>30 वर्ष</b> (maturity से)</td></tr>
+        <tr><td>Claims of Deceased Holders</td><td class="per">3 वर्ष; Indemnity Bond मामलों में 6 वर्ष</td></tr>
+        <tr><td>Nominal Roll (SB & SC Branches)</td><td class="per">10 वर्ष</td></tr>
+      </table>
+    </div>
+
+    <div class="penalty-box">🔴 <b>महत्वपूर्ण गणना:</b> Indemnity Bond की अवधि = 6 वर्ष (maturity/extended maturity के बाद) — फिर भी विभिन्न Certificate types में कुल अवधि अलग (5yr NSC=23yr, 7yr NSC=18yr) क्योंकि यह "जारी होने की तारीख" से गिना जाता है।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Unclaimed Certificate = 30 वर्ष" — CBS Manual से भी मेल खाता है</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Unclaimed Savings Certificates Postal Accounts Office में कितने वर्ष रखे जाते हैं? <b>(30 वर्ष, maturity से)</b> 5-वर्षीय NSC के Indemnity Bond की अवधि? <b>(23 वर्ष, जारी होने से)</b></div>
+  </div>
+</div>
+
+<!-- CH6 SB Control -->
+<div class="chapter" id="ch6">
+  <div class="chapter-head" style="background:#6A1B9A;">🔍 अध्याय 6 → SB Control, Pairing व Internal Check Organisation</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — SBCO Records</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>SB Vouchers (SB 3 applications सहित)</td><td class="per">6 वर्ष</td></tr>
+        <tr><td>Undeliverable Passbooks (SBCO में)</td><td class="per">6 वर्ष (प्राप्ति वर्ष से)</td></tr>
+        <tr><td><b>Certified Lists of Accounts व Balances</b></td><td class="per"><b>Permanent</b></td></tr>
+        <tr><td><b>Register of corrections to opening balances</b></td><td class="per"><b>Permanent</b></td></tr>
+        <tr><td><b>List of Silent Accounts (SBCO)</b></td><td class="per"><b>Permanent</b></td></tr>
+        <tr><td>Statistical Register (SBCO)</td><td class="per">5 वर्ष</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p class="hi">Vouchers, spoilt passbooks, undeliverable passbooks व unused cheque foils/books — <b>आग से (By Burning)</b> नष्ट किए जाते हैं। अन्य Records फाड़कर Waste Paper के रूप में बेचे जाते हैं।</p>
+      <p class="hi"><b>महत्वपूर्ण:</b> यह preservation अवधि CTD, FD, RD, TD व CDS Records पर भी mutatis mutandis लागू होती है।</p>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Silent, Balances, Corrections = 3 Permanent" — SBCO के स्थायी Records याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> SBCO में कौन से 3 Records Permanent हैं? <b>(Certified Lists, Corrections Register, Silent Accounts List)</b></div>
+  </div>
+</div>
+
+<!-- CH7 RMS Admin -->
+<div class="chapter" id="ch7">
+  <div class="chapter-head" style="background:#37474F;">🚂 अध्याय 7 → RMS, Administration व Circle Office</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p class="hi">यह Section Head Record Office, Sub Record Office (RMS), Sub Divisional Inspector, Divisional Superintendents (Postal व RMS) व Circle Office के Records को कवर करता है — जिसमें RMS Records, Welfare Fund व Returned Letter Office शामिल हैं।</p>
+    </div>
+    <div class="exam-q">❓ <b>Exam Q:</b> RMS Records को Circle Office के किस Section में रखा जाता है? <b>(12.1 — Railway Mail Service Records)</b></div>
+  </div>
+</div>
+
+<!-- CH8 Vigilance -->
+<div class="chapter" id="ch8">
+  <div class="chapter-head" style="background:var(--red);">⚖️ अध्याय 8 → Vigilance — 14 प्रकार के Records</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — हर वर्ष पूछा जाता है</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>CCS (Conduct) Rules — clarifications, notifications</td><td class="per"><b>Permanent</b></td></tr>
+        <tr><td><b>Vigilance complaints (disciplinary cases)</b></td><td class="per"><b>10 वर्ष या Appeal निपटान के 3 वर्ष बाद, जो बाद में हो</b></td></tr>
+        <tr><td>Anonymous/Pseudonymous Complaints (कार्रवाई नहीं)</td><td class="per">उसी वर्ष के अंत में नष्ट</td></tr>
+        <tr><td>Files — Penalty imposed (Disciplinary)</td><td class="per">10 वर्ष या Appeal के 3 वर्ष बाद</td></tr>
+        <tr><td>Files — Exoneration (आरोप सिद्ध नहीं)</td><td class="per">3 वर्ष</td></tr>
+        <tr><td>Files — Prosecution</td><td class="per">10 वर्ष या Judgement के 3 वर्ष बाद</td></tr>
+        <tr><td>Appeals व Petitions</td><td class="per">7 वर्ष</td></tr>
+        <tr><td>Court Cases</td><td class="per">10 वर्ष (final judgement बाद)</td></tr>
+        <tr><td>Vigilance Control Measures/Statistical Returns</td><td class="per">5 वर्ष</td></tr>
+        <tr><td><b>CVC/MHA/CBI के General Rulings</b></td><td class="per"><b>Permanent</b></td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Disciplinary Case की preservation अवधि किस पर निर्भर है?</div>
+      <div class="yn">➡ 10 वर्ष <b>या</b> Appeal के अंतिम निपटान के 3 वर्ष बाद — जो भी <b>बाद</b> में हो</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "10-या-3 बाद वाला" — Vigilance disciplinary cases का सार्वभौमिक नियम</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Penalty लगने वाले Disciplinary Case Files की अवधि क्या है? <b>(10 वर्ष या Appeal निपटान के 3 वर्ष बाद, जो बाद में हो)</b> Appeals व Petitions? <b>(7 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH9 Postal Accounts Office -->
+<div class="chapter" id="ch9">
+  <div class="chapter-head" style="background:#00838F;">🧮 अध्याय 9 → Postal Accounts Office — General Records</div>
+  <div class="chapter-body">
+    <table>
+      <tr><th>Record</th><th>Preservation Period</th></tr>
+      <tr><td>Scale Check Register, TA Bills, Objection Statements</td><td class="per">3 वर्ष</td></tr>
+      <tr><td>Register of reminders</td><td class="per">1 वर्ष</td></tr>
+      <tr><td>DG Circular व General Order Files</td><td class="per">5 वर्ष</td></tr>
+      <tr><td>Compassionate Gratuities Register</td><td class="per"><b>35 वर्ष</b></td></tr>
+      <tr><td>Vouchers (pay bills सहित)</td><td class="per">6 वर्ष</td></tr>
+      <tr><td>Cash Accounts व Schedules</td><td class="per">6 वर्ष</td></tr>
+      <tr><td>Register of Files/Vouchers/Registers</td><td class="per">10 वर्ष</td></tr>
+      <tr><td>— Departmental Recording Wing को Transfer</td><td class="per">25 वर्ष</td></tr>
+      <tr><td>— National Archives को Transfer</td><td class="per"><b>Permanent</b></td></tr>
+      <tr><td>Register of lapsed deposits</td><td class="per">6 वर्ष</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Gratuity 35, Voucher 6, Files 10→25→Permanent" — 3-स्तरीय क्रम याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Compassionate Gratuities Register की अवधि? <b>(35 वर्ष)</b> National Archives को Transfer हुए Files कितने समय रहते हैं? <b>(Permanent)</b></div>
+  </div>
+</div>
+
+<!-- CH10 GPF NSC Pension -->
+<div class="chapter" id="ch10">
+  <div class="chapter-head" style="background:var(--gold-dark);">👴 अध्याय 10 → General Provident Fund, NSC व Pension (Accounts Section)</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Pension Records</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>Register of Verification Cases</td><td class="per">5 वर्ष</td></tr>
+        <tr><td><b>Register of Pension Cases</b></td><td class="per"><b>25 वर्ष</b></td></tr>
+        <tr><td>Commutation Payment Register</td><td class="per">6 वर्ष</td></tr>
+        <tr><td>Gratuity Register (ATC 24)</td><td class="per">6 वर्ष</td></tr>
+        <tr><td>Pension Schedules</td><td class="per">10 वर्ष</td></tr>
+        <tr><td>Pension Reports</td><td class="per">15 वर्ष</td></tr>
+        <tr><td><b>Pension Cases (सेवानिवृत्त/मृत)</b></td><td class="per"><b>7 वर्ष (पेंशनर की मृत्यु बाद)</b></td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="q">Q: Pension Case की मृत्यु-पश्चात अवधि की शर्त क्या है?</div>
+      <div class="yn">➡ 7 वर्ष — बशर्ते सभी Arrears/Family Pension दावे उस समय तक निपट चुके हों</div>
+    </div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "25-15-10-7-6" → Pension Cases-Reports-Schedules-Death बाद-Gratuity क्रम याद रखें</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Register of Pension Cases की अवधि क्या है? <b>(25 वर्ष)</b> पेंशनर की मृत्यु के बाद Pension Case कितने वर्ष रखा जाता है? <b>(7 वर्ष)</b></div>
+  </div>
+</div>
+
+<!-- CH11 Ancillary Services -->
+<div class="chapter" id="ch11">
+  <div class="chapter-head" style="background:#263238;">🏭 अध्याय 11 → Ancillary Services (Postal Stores Depot, Circle Stamp Depot, Mail Motor Service आदि)</div>
+  <div class="chapter-body">
+    <div class="topic">
+      <span class="tier yellow">🟡 संकल्पनात्मक</span>
+      <p class="hi">इस Section में Postal Stores Depots, Circle Stamp Depot, Mail Motor Service, Postal Dispensary, Postal Civil Wing व Departmental Examination Records शामिल हैं।</p>
+    </div>
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Departmental Examination Records</span>
+      <table>
+        <tr><th>Record</th><th>Preservation Period</th></tr>
+        <tr><td>Tabulated Results/Mark Sheet Registers</td><td class="per">3 वर्ष (परिणाम घोषणा से)</td></tr>
+        <tr><td>Answer Books (सभी परीक्षाएं)</td><td class="per">12 महीने</td></tr>
+        <tr><td><b>Z-Register (Merit व Seniority)</b></td><td class="per"><b>40 वर्ष</b></td></tr>
+        <tr><td>LGO/PA-SA/Postmaster Grade-I परीक्षा Answer Script</td><td class="per">1 वर्ष; Tabulation 3 वर्ष</td></tr>
+        <tr><td>e-Payment Records (Application Fee)</td><td class="per">18 महीने</td></tr>
+      </table>
+    </div>
+
+    <div class="penalty-box">🔴 <b>याद रखें:</b> Z-Register की अवधि सबसे लंबी (40 वर्ष) है क्योंकि इसमें Merit व Seniority की जानकारी होती है जो करियर भर उपयोगी रहती है।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Z se 40, Answer Books se 1" — परीक्षा Records की दो सीमाएं</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Z-Register कितने वर्ष तक संरक्षित रहता है? <b>(40 वर्ष)</b> Answer Books की अवधि? <b>(12 महीने)</b></div>
+  </div>
+</div>
+
+<!-- CH12 Misc Items -->
+<div class="chapter" id="ch12">
+  <div class="chapter-head" style="background:#AD1457;">🖥️ अध्याय 12 → Miscellaneous Items — Computer, Damaged Articles, Obsolete Forms</div>
+  <div class="chapter-body">
+
+    <div class="topic">
+      <span class="tier red">🔴 अति महत्वपूर्ण — Computer Life</span>
+      <table>
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>Computer व Peripherals की जीवन अवधि</td><td class="per">5 वर्ष (निर्धारित)</td></tr>
+        <tr><td>Warranty विस्तार सुनिश्चित करें</td><td>5 वर्ष तक</td></tr>
+        <tr><td>महत्वपूर्ण नोट</td><td>5 वर्ष केवल "Indicative Guideline" है, condemn करने का स्वतः आधार नहीं — यदि उपयोगी हो तो आगे भी चल सकता है</td></tr>
+      </table>
+    </div>
+
+    <div class="topic">
+      <span class="tier orange">🟠 बार-बार पूछा गया — Damaged/Unserviceable Articles</span>
+      <div class="dtree">
+        <div class="q">Q: कौन से Articles Local Repair योग्य हैं व कौन से Stores Depot भेजे जाते हैं?</div>
+        <div class="yn">➡ Local Repair: Furniture, Bag-stands, Belts, Boxes, Letter boxes (यदि संभव हो)</div>
+        <div class="yn">➡ Stores Depot अनिवार्य: Locks व Padlocks (कभी Local Repair नहीं)</div>
+        <div class="yn">➡ Obsolete Forms: Waste Paper के रूप में बेचे जाएं, या Aligarh Forms Press भेजे जाएं</div>
+      </div>
+    </div>
+
+    <div class="penalty-box">🔴 <b>महत्वपूर्ण:</b> Unserviceable Articles बेचने से प्राप्त राशि सरकार को Credit होती है। बेचने/नष्ट करने से पहले Superintendent का आदेश अनिवार्य है (सिवाय जब Inspector ने Store Depot वापसी का आदेश दिया हो)।</div>
+
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Locks कभी Local नहीं" — Locks/Padlocks हमेशा Stores Depot भेजे जाते हैं</div>
+    <div class="exam-q">❓ <b>Exam Q:</b> Computer व Peripherals की निर्धारित जीवन अवधि क्या है? <b>(5 वर्ष — indicative guideline)</b> Locks/Padlocks खराब होने पर क्या होता है? <b>(हमेशा Stores Depot भेजे जाते हैं, Local Repair नहीं)</b></div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="revision-sheet" id="rev">
+  <h2>📝 One-Page Revision Sheet</h2>
+  <div class="revision-grid">
+    <div class="rev-card"><b>General:</b> ACG-91=Permanent; Recording हर महीने; Ephemeral files=1 वर्ष में नष्ट</div>
+    <div class="rev-card"><b>Mail/Bag:</b> Mail Lists=2yr; CBO Bag Book=10yr; UBO/DBO=2yr</div>
+    <div class="rev-card"><b>MO/IPO:</b> ज्यादातर 18 महीने; RMO Cheque Counterfoil=5yr</div>
+    <div class="rev-card"><b>Treasury/Accounts:</b> Treasurer's Cash Book=10yr; Payment Authority Letter=35yr</div>
+    <div class="rev-card"><b>SB (69 records):</b> Silent A/c List व Ledger Cards=Permanent; Deceased claim(indemnity)=6yr; SO Ledger=6yr</div>
+    <div class="rev-card"><b>Savings Certificates:</b> Unclaimed=30yr; Indemnity Bond(5yr NSC)=23yr; Nomination=5yr+maturity</div>
+    <div class="rev-card"><b>SBCO:</b> Certified Lists/Corrections/Silent List=Permanent; SB Vouchers=6yr</div>
+    <div class="rev-card"><b>Vigilance:</b> Disciplinary=10yr या Appeal+3yr(जो बाद); Appeals=7yr; CVC Rulings=Permanent</div>
+    <div class="rev-card"><b>Postal A/c Office:</b> Gratuities Register=35yr; National Archives Transfer=Permanent</div>
+    <div class="rev-card"><b>Pension:</b> Pension Cases Register=25yr; मृत्यु बाद=7yr; Reports=15yr</div>
+    <div class="rev-card"><b>Exam Records:</b> Z-Register=40yr(सबसे लंबा); Answer Books=12 महीने</div>
+    <div class="rev-card"><b>Computer:</b> जीवन अवधि 5 वर्ष (indicative, mandatory नहीं)</div>
+  </div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="lastday" id="last">
+  <h2>⏰ Last-Day Revision Notes (सबसे लंबी/छोटी अवधियां याद रखें)</h2>
+  <ul>
+    <li>🔢 <b>सबसे लंबी अवधि (गैर-Permanent):</b> Z-Register = 40 वर्ष</li>
+    <li>🔢 <b>दूसरी सबसे लंबी:</b> Payment Authority Letter व Compassionate Gratuities = 35 वर्ष</li>
+    <li>🔢 <b>Unclaimed Savings Certificates:</b> 30 वर्ष</li>
+    <li>🔢 <b>Pension Cases Register:</b> 25 वर्ष</li>
+    <li>🔢 <b>National Archives Transfer / Silent Accounts / SBCO Certified Lists:</b> Permanent</li>
+    <li>🔢 <b>Vigilance Disciplinary:</b> 10 वर्ष या Appeal+3 वर्ष (जो बाद में)</li>
+    <li>🔢 <b>सबसे छोटी अवधि:</b> Register of Reminders, State of Work Returns = 1 वर्ष</li>
+    <li>🔢 <b>Answer Books:</b> 12 महीने (सबसे छोटी परीक्षा-संबंधी)</li>
+    <li>🔢 <b>Computer Life:</b> 5 वर्ष (indicative केवल)</li>
+    <li>🔢 <b>ACG-91 Destruction Register:</b> हमेशा Permanent — कभी नष्ट नहीं होता</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  📮 India Post IP Exam Self-Study Portal &nbsp;|&nbsp; Source: Compendium on Preservation and Disposal of Records — Rafi Ahmed Kidwai National Postal Academy, Ghaziabad &nbsp;|&nbsp; परीक्षा हेतु सदैव नवीनतम DoP परिपत्र देखें
+</footer>
+
+<button id="dlBtn" onclick="window.print()">⬇️ PDF Save करें</button>
+
+</body>
+</html>
