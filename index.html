@@ -190,6 +190,18 @@
         .category-title span { color: var(--text-secondary); font-weight: 500; font-size: 16px; }
         .category-chevron { width: 20px; height: 20px; color: var(--text-muted); transition: transform .25s; flex-shrink: 0; }
         .category-section.collapsed .category-chevron { transform: rotate(-90deg); }
+
+        .category-header.paper-tile { border-radius: var(--radius-lg); padding: 18px 16px; margin-bottom: 16px; box-shadow: var(--shadow-md); transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+        .category-header.paper-tile:active { transform: scale(0.98); }
+        .category-header.paper-tile .category-icon { background: rgba(255,255,255,0.22); width: 44px; height: 44px; }
+        .category-header.paper-tile .category-icon svg { color: #fff; width: 22px; height: 22px; }
+        .category-header.paper-tile .category-title { color: #fff; }
+        .category-header.paper-tile .category-title span { color: rgba(255,255,255,0.88); }
+        .category-header.paper-tile .category-chevron { color: #fff; }
+        .category-header.tile-red { background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); box-shadow: 0 8px 20px rgba(220,38,38,0.28); }
+        .category-header.tile-purple { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); box-shadow: 0 8px 20px rgba(109,40,217,0.28); }
+        .category-header.tile-yellow { background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); box-shadow: 0 8px 20px rgba(180,83,9,0.28); }
+        .category-header.tile-green { background: linear-gradient(135deg, #10b981 0%, #047857 100%); box-shadow: 0 8px 20px rgba(4,120,87,0.28); }
         .category-cards { display: block; overflow: hidden; }
         .category-section.collapsed .category-cards { display: none; }
       .sub-card { background: var(--surface); border-radius: var(--radius); margin-bottom: 12px; padding: 0; box-shadow: var(--shadow-xs); border: 1px solid var(--border); display: flex; align-items: stretch; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; opacity: 0; transform: translateY(14px); animation: cardIn .5s ease forwards; }
@@ -440,9 +452,17 @@
             <div class="mini-row" id="recent-list"></div>
         </div>
 
-        <div class="category-section" data-cat="paper1">
+        <div class="category-section collapsed" data-cat="ldce-ip-exam">
             <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
-                <div class="category-icon black"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+                <div class="category-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12.083 12.083 0 0118 20.944m-6-6.944L5.84 10.578A12.083 12.083 0 006 20.944m12-10.472V19a2 2 0 01-2 2H8a2 2 0 01-2-2v-8.528"/></svg></div>
+                <h2 class="category-title">LDCE IP EXAM PREPARATION <span>(Paper I / II / III + 2025 Q&amp;A)</span></h2>
+                <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="category-cards" style="padding:0;">
+
+        <div class="category-section collapsed" data-cat="paper1">
+            <div class="category-header paper-tile tile-red" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+                <div class="category-icon red"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
                 <h2 class="category-title">PAPER I <span>(Acts / Rules / Manuals — 250 Marks)</span></h2>
                 <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </div>
@@ -1545,8 +1565,8 @@
             </div>
         </div>
 
-        <div class="category-section" data-cat="paper2">
-            <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+        <div class="category-section collapsed" data-cat="paper2">
+            <div class="category-header paper-tile tile-purple" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
                 <div class="category-icon purple"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></div>
                 <h2 class="category-title">PAPER II <span>(Noting/Drafting/Charge Sheet)</span></h2>
                 <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -1616,9 +1636,9 @@
             </div>
         </div>
 
-        <div class="category-section" data-cat="paper3">
-            <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
-                <div class="category-icon black"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <div class="category-section collapsed" data-cat="paper3">
+            <div class="category-header paper-tile tile-yellow" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+                <div class="category-icon yellow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                 <h2 class="category-title">PAPER III <span>(MCQ — 300 Marks)</span></h2>
                 <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </div>
@@ -2062,7 +2082,7 @@
 </div>
 
         <div class="category-section collapsed" data-cat="ip-2025-paper">
-            <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+            <div class="category-header paper-tile tile-green" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
                 <div class="category-icon green"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                 <h2 class="category-title">2025 IP PAPER <span>(Series D &ndash; Q&amp;A)</span></h2>
                 <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -2113,6 +2133,9 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
 
             </div>
         </div>
