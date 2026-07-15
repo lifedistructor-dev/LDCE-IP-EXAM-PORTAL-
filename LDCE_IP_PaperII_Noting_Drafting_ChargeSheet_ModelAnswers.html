@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LDCE IP - Paper II - Noting, Drafting &amp; Charge Sheet - Model Answers</title>
+<style>
+  :root {
+    --red: #b71c1c;
+    --blue: #0d3b66;
+    --gold: #d4af37;
+    --bg: #fdfaf3;
+    --card-bg: #ffffff;
+    --border: #e0d9c4;
+    --note-bg: #fff8e1;
+    --rule-bg: #e8f0fe;
+    --rule-border: #1a56b0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans", "Noto Sans Devanagari", Arial, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: #222;
+    line-height: 1.55;
+  }
+  header {
+    background: linear-gradient(135deg, var(--red), var(--blue));
+    color: #fff;
+    padding: 18px 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+  header h1 { margin: 0; font-size: 1.1rem; line-height: 1.4; }
+  header p { margin: 4px 0 0; font-size: 0.78rem; opacity: 0.9; }
+  nav.toc {
+    background: #fff8e7;
+    border-bottom: 2px solid var(--gold);
+    padding: 10px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    position: sticky;
+    top: 66px;
+    z-index: 9;
+  }
+  nav.toc a {
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 16px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  main { max-width: 820px; margin: 0 auto; padding: 14px; }
+  .qgroup {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--red);
+    border-radius: 10px;
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .qgroup h2 {
+    color: var(--red);
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+    border-bottom: 2px dashed var(--gold);
+    padding-bottom: 6px;
+  }
+  .qgroup h2 .hi { display:block; font-size:0.95rem; color:#333; font-weight:600; margin-top:2px;}
+  .marks { font-size:0.75rem; color:#777; font-weight:600;}
+  .option-card {
+    background: #fbfaf6;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 14px 0;
+  }
+  .option-title {
+    font-weight: 700;
+    color: var(--blue);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  .qtext { font-size: 0.88rem; color: #444; background: #f3f1ea; border-radius:6px; padding:8px 10px; margin-bottom:10px;}
+  .qtext .en { margin:0 0 4px; }
+  .qtext .hi { margin:0; color:#555;}
+  .ans-block {
+    background: var(--note-bg);
+    border: 1px solid #e8d488;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .ans-block h4 {
+    margin: 0 0 6px;
+    font-size: 0.85rem;
+    color: #7a5b00;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .ans-block pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Noto Sans", "Noto Sans Devanagari", Arial, sans-serif;
+    font-size: 0.86rem;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .lang-tab-btns { display:flex; gap:6px; margin-bottom:8px;}
+  .lang-tab-btns button {
+    border:1px solid var(--blue);
+    background:#fff;
+    color:var(--blue);
+    padding:4px 10px;
+    border-radius: 14px;
+    font-size:0.75rem;
+    cursor:pointer;
+  }
+  .lang-tab-btns button.active { background:var(--blue); color:#fff; }
+  .lang-block { display:none; }
+  .lang-block.show { display:block; }
+  .rules-box {
+    background: var(--rule-bg);
+    border-left: 4px solid var(--rule-border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 0.82rem;
+  }
+  .rules-box h4 { margin: 0 0 4px; color: var(--rule-border); font-size:0.8rem;}
+  .rules-box ul { margin: 4px 0 0 18px; padding:0; }
+  .rules-box li { margin-bottom: 3px; }
+  footer {
+    text-align: center;
+    padding: 20px 14px;
+    font-size: 0.75rem;
+    color: #777;
+  }
+  @media (min-width: 700px) {
+    .qgroup h2 .hi { display:inline; margin-left:8px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>LDCE IP &ndash; Paper II<br>Noting, Drafting &amp; Draft Major Penalty Charge Sheet &ndash; Model Answers</h1>
+  <p>Question Booklet No. 221148 &bull; Time: 1 Hour &bull; Max Marks: 50 &bull; प्रश्नानुसार तैयार मॉडल उत्तर (हिंदी/अंग्रेज़ी)</p>
+</header>
+<nav class="toc">
+  <a href="#q1">Q1 &ndash; Note / नोट</a>
+  <a href="#q2">Q2 &ndash; Letter / पत्र</a>
+  <a href="#q3">Q3 &ndash; Charge Sheet / आरोप पत्र</a>
+</nav>
+<main>
+
+<!-- ============ QUESTION 1 ============ -->
+<div class="qgroup" id="q1">
+  <h2>Question 1 &ndash; Noting<span class="hi">प्रश्न 1 &ndash; टिप्पण</span></h2>
+  <p class="marks">15 marks / 15 अंक &mdash; Prepare a note in about 200 words for the orders of the competent authority</p>
+
+  <!-- Q1(i) -->
+  <div class="option-card">
+    <div class="option-title">Option (i) &mdash; Aadhaar Camp at Village 'C'</div>
+    <div class="qtext">
+      <p class="en">The District Magistrate of District 'AB' has requested the Superintendent of Division 'AB' to organize a special Aadhaar camp in Village 'C' for the convenience of the general public. You are working in the relevant branch of Divisional Office of 'AB' Division. Prepare an appropriate note for the orders of the competent authority.</p>
+      <p class="hi">'AB' जिला के जिलाधिकारी ने 'AB' मंडल के डाक अधीक्षक से 'C' ग्राम में आम जनता की सुविधा हेतु आधार के विशेष शिविर लगाने हेतु अनुरोध किया है। आप 'AB' मंडल की संबंधित शाखा में कार्यरत हैं। जिलाधिकारी के उक्त अनुरोध के मामले में सक्षम अधिकारी के आदेश हेतु उचित नोट तैयार करें।</p>
+    </div>
+    <div class="ans-block">
+      <h4>Model Note / मॉडल नोट</h4>
+      <div class="lang-tab-btns">
+        <button class="active" onclick="showLang(this,'q1i-en')">English</button>
+        <button onclick="showLang(this,'q1i-hi')">हिंदी</button>
+      </div>
+      <div class="lang-block show" id="q1i-en">
+<pre>File No. AB/Camp/Aadhaar/2025
+Subject: Organizing of a Special Aadhaar Camp at Village 'C', 'XY' Sub-Division - request of District Magistrate, District 'AB' - reg.
+
+NOTE
+
+1. The District Magistrate, District 'AB', vide his letter cited above, has requested this office to organize a special Aadhaar enrolment/update camp at Village 'C' for the convenience of the general public residing there.
+
+2. Village 'C' is served by Branch Post Office 'C' functioning under 'XY' Sub-Division of this Division. Post Offices are already authorized to undertake Aadhaar enrolment and update work through the Aadhaar Seva Kendra / Head Post Office network, and camps at the request of District Administration may be organized subject to availability of a trained Aadhaar operator, enrolment kit and connectivity at the proposed venue.
+
+3. It is proposed that:
+   (a) Inspector Posts, 'XY' Sub-Division be directed to immediately assess feasibility of the venue at Village 'C' (space, power supply, connectivity) in consultation with the local administration;
+   (b) A Special Aadhaar Camp be organized at Village 'C' for two days on dates to be mutually decided with the District Administration;
+   (c) A trained Aadhaar operator with kit be deputed from the nearest Head Post Office/Aadhaar Seva Kendra for the duration of the camp;
+   (d) The District Magistrate's office be requested to provide publicity and local logistic support (venue, seating, crowd management);
+   (e) A compliance/performance report of the camp be called for and submitted to the Divisional Office on completion.
+
+4. A suitable reply may also be sent to the District Magistrate, District 'AB', intimating the arrangements being made.
+
+5. Submitted for kind orders of the Competent Authority (Superintendent of Post Offices, 'AB' Division).
+
+                                                                    Sd/-
+                                                        Dealing Assistant, 'AB' Division</pre>
+      </div>
+      <div class="lang-block" id="q1i-hi">
+<pre>फाइल संख्या AB/Camp/Aadhaar/2025
+विषय: 'XY' उपमंडल के 'C' ग्राम में विशेष आधार शिविर आयोजित करना - जिलाधिकारी, जिला 'AB' का अनुरोध - regarding
+
+नोट
+
+1. जिलाधिकारी, जिला 'AB' ने उपरोक्त उल्लिखित पत्र के माध्यम से इस कार्यालय से अनुरोध किया है कि 'C' ग्राम में निवासरत आम जनता की सुविधा हेतु आधार नामांकन/अद्यतनीकरण का विशेष शिविर आयोजित किया जाए।
+
+2. 'C' ग्राम, 'XY' उपमंडल के अंतर्गत आने वाले 'C' शाखा डाकघर द्वारा सेवित है। डाकघर पहले से ही आधार सेवा केंद्र/प्रधान डाकघर नेटवर्क के माध्यम से आधार नामांकन एवं अद्यतनीकरण कार्य हेतु अधिकृत हैं, और जिला प्रशासन के अनुरोध पर शिविर आयोजित किए जा सकते हैं, बशर्ते प्रस्तावित स्थल पर प्रशिक्षित आधार ऑपरेटर, नामांकन किट तथा कनेक्टिविटी उपलब्ध हो।
+
+3. प्रस्तावित है कि:
+   (क) निरीक्षक डाक, 'XY' उपमंडल को निर्देशित किया जाए कि वे स्थानीय प्रशासन के परामर्श से 'C' ग्राम में स्थल की व्यवहार्यता (स्थान, विद्युत आपूर्ति, कनेक्टिविटी) का तुरंत आकलन करें;
+   (ख) 'C' ग्राम में जिला प्रशासन के साथ परस्पर तय तिथियों पर दो दिवसीय विशेष आधार शिविर आयोजित किया जाए;
+   (ग) शिविर की अवधि के लिए निकटतम प्रधान डाकघर/आधार सेवा केंद्र से प्रशिक्षित आधार ऑपरेटर को किट सहित प्रतिनियुक्त किया जाए;
+   (घ) जिलाधिकारी कार्यालय से प्रचार-प्रसार तथा स्थानीय व्यवस्था (स्थल, बैठक व्यवस्था, भीड़ प्रबंधन) में सहयोग हेतु अनुरोध किया जाए;
+   (ङ) शिविर पूर्ण होने पर अनुपालन/निष्पादन रिपोर्ट मंडल कार्यालय को प्रस्तुत करने हेतु कहा जाए।
+
+4. जिलाधिकारी, जिला 'AB' को की जा रही व्यवस्था की सूचना देते हुए उचित उत्तर भी भेजा जा सकता है।
+
+5. सक्षम प्राधिकारी (डाक अधीक्षक, 'AB' मंडल) के आदेश हेतु प्रस्तुत।
+
+                                                                    हस्ताक्षर
+                                                        निपटान सहायक, 'AB' मंडल</pre>
+      </div>
+    </div>
+    <div class="rules-box">
+      <h4>Rules / Format referred &mdash; संदर्भित नियम/प्रारूप</h4>
+      <ul>
+        <li>Noting principles under the Manual of Office Procedure (CSMOP) &mdash; note to be self-contained, factual, precise and end with a clear recommendation for orders of the Competent Authority.</li>
+        <li>Department of Posts guidelines on Aadhaar enrolment/update services through Post Offices (Aadhaar Seva Kendra network).</li>
+        <li>निपटान सहायक स्तर पर तैयार नोट में तथ्यों का उल्लेख, नियमों का संदर्भ तथा स्पष्ट सिफारिश आवश्यक (कार्यालय प्रक्रिया नियमावली)।</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q1(ii) -->
+  <div class="option-card">
+    <div class="option-title">Option (ii) &mdash; Unauthorized Absence of Branch Postmaster</div>
+    <div class="qtext">
+      <p class="en">The Inspector Posts of the 'XY' Sub-Division of the 'AB' Division has reported that the Branch Postmaster of the 'C' Branch Post Office remained absent without information for the last seven days. You are posted in the relevant branch of the Division. Prepare a suitable note for the competent authority's orders in this matter.</p>
+      <p class="hi">'AB' मंडल के 'XY' उपमंडल के निरीक्षक डाक ने 'C' शाखा डाकघर के शाखा डाकपाल के विगत 7 दिनों से बिना सूचना अनुपस्थित रहने की आख्या प्रेषित की है। आप मंडल के संबंधित शाखा में कार्यरत हैं। उक्त मामले में सक्षम अधिकारी के आदेश हेतु उचित नोट तैयार करें।</p>
+    </div>
+    <div class="ans-block">
+      <h4>Model Note / मॉडल नोट</h4>
+      <div class="lang-tab-btns">
+        <button class="active" onclick="showLang(this,'q1ii-en')">English</button>
+        <button onclick="showLang(this,'q1ii-hi')">हिंदी</button>
+      </div>
+      <div class="lang-block show" id="q1ii-en">
+<pre>File No. AB/XY/BPM-C/Absence/2025
+Subject: Unauthorized absence of Branch Postmaster, Branch Post Office 'C', 'XY' Sub-Division - report of Inspector Posts - reg.
+
+NOTE
+
+1. Inspector Posts, 'XY' Sub-Division has reported that the Branch Postmaster (BPM), Branch Post Office 'C', has remained absent from duty without any prior intimation or sanctioned leave for the last seven days, resulting in disruption of postal, savings bank and other public-facing services at the said Branch Office.
+
+2. Absence from duty without proper intimation/sanction is a violation of Rule 3(1)(ii) of the CCS (Conduct) Rules, 1964, as applicable, and in the case of a Gramin Dak Sevak (GDS), of the corresponding conduct provisions under the GDS (Conduct and Engagement) Rules, 2020.
+
+3. In view of the disruption of public service and possible risk to Government cash/stamps in the custody of the BPM, the following course of action is proposed:
+
+   (a) An officiating arrangement (substitute BPM) be made forthwith so that postal services at BPO 'C' are not further disrupted;
+   (b) A joint physical verification of cash, stamps and other Government property in the custody of the BPM be carried out immediately by Inspector Posts along with the substitute BPM, and a verification report obtained;
+   (c) A show-cause/explanation call notice be issued to the BPM at his/her last known address, calling for explanation for unauthorized absence within 7 days, under intimation that failure to respond/report for duty may attract action under the GDS (Conduct and Engagement) Rules, 2020, including withholding of TRCA and initiation of disciplinary/discharge proceedings;
+   (d) If the BPM fails to respond or resume duty, proceedings for discharge/removal be initiated as per the applicable Rules.
+
+4. Submitted for orders of the Competent Authority (Superintendent of Post Offices, 'AB' Division).
+
+                                                                    Sd/-
+                                                        Dealing Assistant, 'AB' Division</pre>
+      </div>
+      <div class="lang-block" id="q1ii-hi">
+<pre>फाइल संख्या AB/XY/BPM-C/Absence/2025
+विषय: 'XY' उपमंडल के 'C' शाखा डाकघर के शाखा डाकपाल की अनधिकृत अनुपस्थिति - निरीक्षक डाक की आख्या - regarding
+
+नोट
+
+1. निरीक्षक डाक, 'XY' उपमंडल ने आख्या प्रेषित की है कि 'C' शाखा डाकघर के शाखा डाकपाल (BPM) विगत सात दिनों से बिना किसी पूर्व सूचना अथवा स्वीकृत अवकाश के कर्तव्य से अनुपस्थित हैं, जिसके परिणामस्वरूप उक्त शाखा डाकघर में डाक, बचत बैंक तथा अन्य जनसुविधाएं बाधित हो रही हैं।
+
+2. बिना उचित सूचना/स्वीकृति के कर्तव्य से अनुपस्थित रहना केंद्रीय सिविल सेवा (आचरण) नियम, 1964 के नियम 3(1)(ii) का उल्लंघन है, तथा यदि संबंधित व्यक्ति ग्रामीण डाक सेवक (GDS) है, तो GDS (आचरण एवं संलग्नता) नियम, 2020 के संगत आचरण प्रावधानों का भी उल्लंघन है।
+
+3. जनसेवा में व्यवधान तथा शाखा डाकपाल की अभिरक्षा में रखी सरकारी नकदी/डाक टिकटों को संभावित जोखिम को देखते हुए निम्नलिखित कार्रवाई प्रस्तावित है:
+
+   (क) 'C' शाखा डाकघर में डाक सेवाएं और अधिक बाधित न हों, इसके लिए तत्काल एक स्थानापन्न (कार्यवाहक) शाखा डाकपाल की व्यवस्था की जाए;
+   (ख) निरीक्षक डाक द्वारा स्थानापन्न शाखा डाकपाल के साथ शाखा डाकपाल की अभिरक्षा में रखी नकदी, डाक टिकटों तथा अन्य सरकारी संपत्ति का संयुक्त भौतिक सत्यापन तत्काल कराया जाए और सत्यापन रिपोर्ट प्राप्त की जाए;
+   (ग) शाखा डाकपाल के अंतिम ज्ञात पते पर एक स्पष्टीकरण/कारण बताओ सूचना जारी की जाए, जिसमें 7 दिनों के भीतर अनधिकृत अनुपस्थिति हेतु स्पष्टीकरण मांगा जाए, साथ ही यह भी सूचित किया जाए कि यदि उत्तर न मिला अथवा कर्तव्य पर उपस्थित न हुए, तो GDS (आचरण एवं संलग्नता) नियम, 2020 के अंतर्गत टीआरसीए रोकने तथा अनुशासनिक/पदच्युति कार्यवाही सहित कार्रवाई की जा सकती है;
+   (घ) यदि शाखा डाकपाल कोई उत्तर नहीं देते अथवा कर्तव्य पर पुनः उपस्थित नहीं होते, तो लागू नियमों के अनुसार पदच्युति/हटाने की कार्यवाही प्रारंभ की जाए।
+
+4. सक्षम प्राधिकारी (डाक अधीक्षक, 'AB' मंडल) के आदेश हेतु प्रस्तुत।
+
+                                                                    हस्ताक्षर
+                                                        निपटान सहायक, 'AB' मंडल</pre>
+      </div>
+    </div>
+    <div class="rules-box">
+      <h4>Rules referred &mdash; संदर्भित नियम</h4>
+      <ul>
+        <li>Rule 3(1)(ii), CCS (Conduct) Rules, 1964 &ndash; devotion to duty / unauthorized absence.</li>
+        <li>GDS (Conduct and Engagement) Rules, 2020 &ndash; conduct provisions and disciplinary action applicable to Gramin Dak Sevaks including discharge for continued unauthorized absence.</li>
+        <li>Manual of Office Procedure &ndash; noting to record facts, cite applicable rule, and end with clear recommendation.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUESTION 2 ============ -->
+<div class="qgroup" id="q2">
+  <h2>Question 2 &ndash; Drafting<span class="hi">प्रश्न 2 &ndash; प्रारूपण</span></h2>
+  <p class="marks">15 marks / 15 अंक &mdash; Draft a letter of about 200 words</p>
+
+  <!-- Q2(i) -->
+  <div class="option-card">
+    <div class="option-title">Option (i) &mdash; Letter to SSP for Police Deployment</div>
+    <div class="qtext">
+      <p class="en">New Aadhaar creation and updation work is being carried out at the 'C' Head Post Office in the 'AB' Division, attracting significant crowds. Draft a letter to be sent by the Divisional Head of 'AB' Division to the Senior Superintendent of Police of the district, requesting deployment of police force to manage the crowd and maintain law and order.</p>
+      <p class="hi">'AB' मंडल के 'C' प्रधान डाकघर में नये आधार बनाने तथा अद्यतनीकरण का कार्य किया जा रहा है जिसमें काफ़ी भीड़ एकत्रित हो रही है। भीड़ के उचित प्रबंधन व कानून व्यवस्था बनाए रखने के लिए पुलिस बल उपलब्ध कराने हेतु 'AB' मंडल के मंडलाध्यक्ष द्वारा भेजे जाने वाले पत्र का मसौदा तैयार करें।</p>
+    </div>
+    <div class="ans-block">
+      <h4>Model Draft Letter / मॉडल पत्र मसौदा</h4>
+      <div class="lang-tab-btns">
+        <button class="active" onclick="showLang(this,'q2i-en')">English</button>
+        <button onclick="showLang(this,'q2i-hi')">हिंदी</button>
+      </div>
+      <div class="lang-block show" id="q2i-en">
+<pre>OFFICE OF THE SUPERINTENDENT OF POST OFFICES
+'AB' DIVISION
+
+No. AB/Admin/Aadhaar-Police/2025                                Date: ___________
+
+To,
+The Senior Superintendent of Police,
+District 'AB'.
+
+Subject: Request for deployment of police force at 'C' Head Post Office for crowd management during Aadhaar enrolment/updation work - reg.
+
+Sir/Madam,
+
+I am directed to inform you that new Aadhaar creation and updation work is presently being carried out at 'C' Head Post Office of this Division, which is attracting a large number of members of the public every day.
+
+2. In view of the heavy rush of applicants, there is genuine apprehension of overcrowding at the premises, which may give rise to law and order problems and cause inconvenience to the public as well as hindrance to the smooth functioning of the Post Office.
+
+3. You are, therefore, requested to kindly arrange deployment of adequate police personnel at 'C' Head Post Office during working hours, for proper crowd management, maintenance of queue discipline and law and order, for the duration the Aadhaar enrolment/updation activity continues.
+
+4. Early action in the matter would be appreciated.
+
+Yours faithfully,
+
+Sd/-
+Superintendent of Post Offices,
+'AB' Division</pre>
+      </div>
+      <div class="lang-block" id="q2i-hi">
+<pre>कार्यालय अधीक्षक डाकघर
+'AB' मंडल
+
+संख्या AB/Admin/Aadhaar-Police/2025                                दिनांक: ___________
+
+सेवा में,
+वरिष्ठ पुलिस अधीक्षक,
+जिला 'AB'।
+
+विषय: आधार नामांकन/अद्यतनीकरण कार्य के दौरान 'C' प्रधान डाकघर में भीड़ प्रबंधन हेतु पुलिस बल की तैनाती का अनुरोध - regarding
+
+महोदय/महोदया,
+
+मुझे यह सूचित करने का निर्देश मिला है कि इस मंडल के 'C' प्रधान डाकघर में वर्तमान में नये आधार बनाने तथा अद्यतनीकरण का कार्य किया जा रहा है, जिसके कारण प्रतिदिन बड़ी संख्या में आम जनता वहाँ पहुँच रही है।
+
+2. आवेदकों की भारी भीड़ को देखते हुए, परिसर में अत्यधिक भीड़भाड़ की वास्तविक आशंका है, जिससे कानून-व्यवस्था संबंधी समस्याएं उत्पन्न हो सकती हैं और आम जनता को असुविधा तथा डाकघर के सुचारु संचालन में बाधा हो सकती है।
+
+3. अतः आपसे अनुरोध है कि जब तक आधार नामांकन/अद्यतनीकरण कार्य जारी रहे, तब तक कार्यालय समय के दौरान 'C' प्रधान डाकघर में उचित भीड़ प्रबंधन, कतार अनुशासन तथा कानून व्यवस्था बनाए रखने हेतु पर्याप्त पुलिस बल की तैनाती की व्यवस्था करने की कृपा करें।
+
+4. इस मामले में शीघ्र कार्रवाई की अपेक्षा है।
+
+भवदीय,
+
+हस्ताक्षर
+अधीक्षक डाकघर,
+'AB' मंडल</pre>
+      </div>
+    </div>
+    <div class="rules-box">
+      <h4>Format/Rules referred &mdash; संदर्भित प्रारूप/नियम</h4>
+      <ul>
+        <li>Manual of Office Procedure &ndash; standard official letter format: sender's office, letter/reference number, subject line, salutation, numbered paragraphs, complimentary close.</li>
+        <li>Drafting principles: clarity, brevity, courtesy and correct form of address to an officer of another department (inter-departmental correspondence).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q2(ii) -->
+  <div class="option-card">
+    <div class="option-title">Option (ii) &mdash; Letter to Municipal Corporation for Water Supply</div>
+    <div class="qtext">
+      <p class="en">The water supply system in the Postal Colony of 'AB' Division has become irregular for the past few days, causing inconvenience to employees and their families. Draft a letter to be sent by the Divisional Head of 'AB' Division to the Chief Executive Officer of the Municipal Corporation of 'AB' City, requesting regular water supply.</p>
+      <p class="hi">'AB' मंडल के डाक कॉलोनी में विगत कुछ दिनों से जलापूर्ति की व्यवस्था अनियमित हो गई है जिससे वहाँ निवास करने वाले कर्मचारियों तथा उनके परिजनों को असुविधा हो रही है। नियमित जलापूर्ति की व्यवस्था करने हेतु 'AB' मंडल के मंडलाध्यक्ष द्वारा भेजे जाने वाले पत्र का मसौदा तैयार करें।</p>
+    </div>
+    <div class="ans-block">
+      <h4>Model Draft Letter / मॉडल पत्र मसौदा</h4>
+      <div class="lang-tab-btns">
+        <button class="active" onclick="showLang(this,'q2ii-en')">English</button>
+        <button onclick="showLang(this,'q2ii-hi')">हिंदी</button>
+      </div>
+      <div class="lang-block show" id="q2ii-en">
+<pre>OFFICE OF THE SUPERINTENDENT OF POST OFFICES
+'AB' DIVISION
+
+No. AB/Admin/Water-Colony/2025                                  Date: ___________
+
+To,
+The Chief Executive Officer,
+Municipal Corporation, 'AB' City.
+
+Subject: Irregular water supply in Postal Colony, 'AB' Division - request for regular supply - reg.
+
+Sir/Madam,
+
+It is brought to your kind notice that the water supply system in the Postal Colony under this Division has remained irregular for the past few days, causing considerable inconvenience to the departmental employees and their families residing therein.
+
+2. Regular and adequate water supply is essential for the day-to-day living of the residents of the Colony, and the present irregularity is seriously affecting their well-being.
+
+3. You are, therefore, requested to kindly look into the matter on priority and arrange for restoration of regular water supply to the Postal Colony, 'AB' Division, at the earliest.
+
+4. This may kindly be treated as urgent.
+
+Yours faithfully,
+
+Sd/-
+Superintendent of Post Offices,
+'AB' Division</pre>
+      </div>
+      <div class="lang-block" id="q2ii-hi">
+<pre>कार्यालय अधीक्षक डाकघर
+'AB' मंडल
+
+संख्या AB/Admin/Water-Colony/2025                                  दिनांक: ___________
+
+सेवा में,
+मुख्य कार्यकारी अधिकारी,
+नगर निगम, 'AB' शहर।
+
+विषय: 'AB' मंडल की डाक कॉलोनी में अनियमित जलापूर्ति - नियमित जलापूर्ति की व्यवस्था हेतु अनुरोध - regarding
+
+महोदय/महोदया,
+
+आपके संज्ञान में लाया जाता है कि इस मंडल के अंतर्गत डाक कॉलोनी में विगत कुछ दिनों से जलापूर्ति की व्यवस्था अनियमित बनी हुई है, जिससे वहाँ निवासरत विभागीय कर्मचारियों तथा उनके परिजनों को काफ़ी असुविधा हो रही है।
+
+2. कॉलोनी के निवासियों के दैनिक जीवन हेतु नियमित एवं पर्याप्त जलापूर्ति अत्यावश्यक है, तथा वर्तमान अनियमितता से उनकी सुख-सुविधा गंभीर रूप से प्रभावित हो रही है।
+
+3. अतः आपसे अनुरोध है कि इस मामले को प्राथमिकता के आधार पर देखते हुए 'AB' मंडल की डाक कॉलोनी में शीघ्रातिशीघ्र नियमित जलापूर्ति बहाल करने की व्यवस्था करने की कृपा करें।
+
+4. इसे अत्यावश्यक माना जाए।
+
+भवदीय,
+
+हस्ताक्षर
+अधीक्षक डाकघर,
+'AB' मंडल</pre>
+      </div>
+    </div>
+    <div class="rules-box">
+      <h4>Format/Rules referred &mdash; संदर्भित प्रारूप/नियम</h4>
+      <ul>
+        <li>Manual of Office Procedure &ndash; standard demi-official/official letter format for correspondence with an external civic authority.</li>
+        <li>Drafting principle: precise statement of problem, its impact, and a clear, courteous request for action with urgency indicated where warranted.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUESTION 3 ============ -->
+<div class="qgroup" id="q3">
+  <h2>Question 3 &ndash; Draft Major Penalty Charge Sheet<span class="hi">प्रश्न 3 &ndash; प्रमुख दंड आरोप पत्र का प्रारूप</span></h2>
+  <p class="marks">20 marks / 20 अंक &mdash; Charge sheet under Rule 14 of CCS (CCA) Rules, 1965</p>
+
+  <!-- Q3(i) -->
+  <div class="option-card">
+    <div class="option-title">Option (i) &mdash; Misappropriation via Passbook Entry (SPM 'X', SO 'C')</div>
+    <div class="qtext">
+      <p class="en">A Sub-Postmaster 'X' at single-handed Sub Post Office 'C' entered a deposit of ₹1,00,000/- made by account holder 'Y' in the passbook but misappropriated the funds instead of accounting for them. Prepare a charge sheet under Rule 14 of the CCS (CCA) Rules, 1965.</p>
+      <p class="hi">'AB' डाकमंडल के 'C' एकल पदीय उपडाकघर में उपडाकपाल 'X' ने खाता धारक 'Y' द्वारा जमा किए गए ₹1,00,000/- की प्रविष्टि पासबुक में कर दी परंतु उक्त धनराशि का लेखाबद्ध न करते हुए दुर्विनियोजन कर लिया। केंद्रीय सिविल सेवा (नियंत्रण, वर्गीकरण एवं अपील) नियमावली, 1965 के नियम-14 के अंतर्गत आरोप पत्र तैयार करें।</p>
+    </div>
+    <div class="ans-block">
+      <h4>Model Charge Sheet / मॉडल आरोप पत्र</h4>
+      <div class="lang-tab-btns">
+        <button class="active" onclick="showLang(this,'q3i-en')">English</button>
+        <button onclick="showLang(this,'q3i-hi')">हिंदी</button>
+      </div>
+      <div class="lang-block show" id="q3i-en">
+<pre>OFFICE OF THE SUPERINTENDENT OF POST OFFICES
+'AB' POSTAL DIVISION
+
+No. AB/Estt/Disc/X/2025                                          Date: ___________
+
+MEMORANDUM
+
+It is proposed to hold an inquiry against Shri/Smt. 'X', Sub-Postmaster, Sub Post Office 'C', 'AB' Postal Division, under Rule 14 of the Central Civil Services (Classification, Control and Appeal) Rules, 1965. The substance of the imputations of misconduct in respect of which the inquiry is proposed to be held is set out in the enclosed Articles of Charge (Annexure-I) and the Statement of Imputations of Misconduct (Annexure-II).
+
+2. Shri/Smt. 'X' is directed to submit a written statement of his/her defence within ten (10) days of receipt of this Memorandum, along with a list of documents and witnesses he/she wishes to rely upon, as per Rule 14(4) of the said Rules.
+
+3. He/she is also informed that failure to submit the written statement within the specified time, without sufficient reason, will lead to the presumption that he/she has no defence to put forward, and the Inquiry Officer will proceed with the inquiry ex-parte.
+
+                                                                    Sd/-
+                                                        Disciplinary Authority
+                                                        Superintendent of Post Offices, 'AB' Division
+
+-----------------------------------------------------------
+ANNEXURE - I
+ARTICLES OF CHARGE
+
+Article I: That Shri/Smt. 'X', while functioning as Sub-Postmaster, Sub Post Office 'C', 'AB' Postal Division, entered a deposit of ₹1,00,000/- (Rupees One Lakh only) made by account holder 'Y' in Savings Bank Account No. XXXXXXXX10, in the passbook of the account holder on PP/QQ/RRRR, but failed to account for the said amount in the departmental Savings Bank records/system of Sub Post Office 'C', thereby misappropriating a sum of ₹1,00,000/- entrusted to him/her in his/her official capacity.
+
+By the above act, Shri/Smt. 'X' failed to maintain absolute integrity and devotion to duty and acted in a manner unbecoming of a Government servant, in violation of Rule 3(1)(i), 3(1)(ii) and 3(1)(iii) of the CCS (Conduct) Rules, 1964, rendering himself/herself liable for disciplinary action under Rule 14 of the CCS (CCA) Rules, 1965.
+
+-----------------------------------------------------------
+ANNEXURE - II
+STATEMENT OF IMPUTATIONS OF MISCONDUCT
+
+1. Shri/Smt. 'X' was posted and functioning as Sub-Postmaster, Sub Post Office 'C', 'AB' Postal Division, at the relevant time.
+
+2. Account holder 'Y' deposited a sum of ₹1,00,000/- (Rupees One Lakh only) in his/her Savings Bank Account No. XXXXXXXX10 at Sub Post Office 'C'.
+
+3. Sub-Postmaster 'X' made an entry of the said deposit of ₹1,00,000/- in the passbook of the account holder on PP/QQ/RRRR but did not credit/account for the amount in the departmental records/system.
+
+4. The discrepancy came to light when account holder 'Y' lodged a complaint with the Department regarding non-reflection of the deposit in his/her account.
+
+5. The complaint was investigated by Inspector Posts 'M'. During investigation, account holder 'Y', in his/her statement dated JJ/KK/LLLL, confirmed having deposited ₹1,00,000/- at Sub Post Office 'C' on PP/QQ/RRRR and produced the passbook bearing the entry of the said deposit dated PP/QQ/RRRR.
+
+6. Inspector Posts 'M' submitted an investigation report along with the original passbook to the Divisional Office, establishing that Sub-Postmaster 'X' had received the deposit of ₹1,00,000/- but had misappropriated the same instead of crediting it to the account.
+
+7. By the above acts and omissions, Shri/Smt. 'X' has failed to maintain absolute integrity and devotion to duty and has acted in a manner unbecoming of a Government servant.
+
+-----------------------------------------------------------
+ANNEXURE - III
+LIST OF DOCUMENTS RELIED UPON
+
+1. Passbook of Savings Bank Account No. XXXXXXXX10 of account holder 'Y' showing the entry dated PP/QQ/RRRR.
+2. Complaint of account holder 'Y'.
+3. Investigation report of Inspector Posts 'M', 'XY' Sub-Division.
+4. Statement of account holder 'Y' dated JJ/KK/LLLL.
+5. Relevant Savings Bank/System records of Sub Post Office 'C' for the period in question.
+
+-----------------------------------------------------------
+ANNEXURE - IV
+LIST OF WITNESSES
+
+1. Shri/Smt. 'Y', Account holder, SB A/c No. XXXXXXXX10, Sub Post Office 'C'.
+2. Inspector Posts 'M', 'XY' Sub-Division, 'AB' Postal Division.
+3. Any other departmental official connected with the investigation/verification, as required.</pre>
+      </div>
+      <div class="lang-block" id="q3i-hi">
+<pre>कार्यालय अधीक्षक डाकघर
+'AB' डाक मंडल
+
+संख्या AB/Estt/Disc/X/2025                                          दिनांक: ___________
+
+ज्ञापन (MEMORANDUM)
+
+श्री/श्रीमती 'X', उपडाकपाल, उपडाकघर 'C', 'AB' डाक मंडल के विरुद्ध केंद्रीय सिविल सेवा (वर्गीकरण, नियंत्रण एवं अपील) नियमावली, 1965 के नियम-14 के अंतर्गत जांच कराया जाना प्रस्तावित है। जिस दुराचरण के आरोप के संबंध में जांच किया जाना प्रस्तावित है, उसका सार संलग्न आरोप विवरण (अनुबंध-I) तथा दुराचरण के आक्षेपों के कथन (अनुबंध-II) में दिया गया है।
+
+2. श्री/श्रीमती 'X' को निर्देशित किया जाता है कि वे इस ज्ञापन की प्राप्ति के दस (10) दिनों के भीतर, उपरोक्त नियमावली के नियम 14(4) के अनुसार, अपना लिखित बचाव कथन उन दस्तावेजों तथा साक्षियों की सूची सहित प्रस्तुत करें जिन पर वे भरोसा करना चाहते हैं।
+
+3. उन्हें यह भी सूचित किया जाता है कि निर्धारित समय के भीतर पर्याप्त कारण के बिना लिखित कथन प्रस्तुत न करने की स्थिति में यह उपधारणा की जाएगी कि उनके पास कोई बचाव प्रस्तुत करने के लिए नहीं है, और जांच अधिकारी उनकी अनुपस्थिति में (ex-parte) जांच आगे बढ़ाएंगे।
+
+                                                                    हस्ताक्षर
+                                                        अनुशासनिक प्राधिकारी
+                                                        अधीक्षक डाकघर, 'AB' मंडल
+
+-----------------------------------------------------------
+अनुबंध - I
+आरोप विवरण (Articles of Charge)
+
+आरोप I: यह कि श्री/श्रीमती 'X' ने उपडाकपाल, उपडाकघर 'C', 'AB' डाक मंडल के पद पर कार्यरत रहते हुए, खाता धारक 'Y' द्वारा बचत बैंक खाता संख्या XXXXXXXX10 में जमा की गई राशि ₹1,00,000/- (रुपये एक लाख मात्र) की प्रविष्टि दिनांक PP/QQ/RRRR को खाता धारक की पासबुक में कर दी, परंतु उक्त राशि को उपडाकघर 'C' के विभागीय बचत बैंक अभिलेख/प्रणाली में लेखाबद्ध नहीं किया, जिससे उन्होंने अपनी शासकीय हैसियत में सौंपी गई ₹1,00,000/- की राशि का दुर्विनियोजन किया।
+
+उक्त कृत्य से श्री/श्रीमती 'X' ने पूर्ण सत्यनिष्ठा एवं कर्तव्यनिष्ठा बनाए रखने में विफल रहकर, केंद्रीय सिविल सेवा (आचरण) नियम, 1964 के नियम 3(1)(i), 3(1)(ii) एवं 3(1)(iii) का उल्लंघन करते हुए, एक सरकारी कर्मचारी के लिए अशोभनीय आचरण किया, जिसके फलस्वरूप वे केंद्रीय सिविल सेवा (नियंत्रण, वर्गीकरण एवं अपील) नियमावली, 1965 के नियम-14 के अंतर्गत अनुशासनिक कार्रवाई के भागी हैं।
+
+-----------------------------------------------------------
+अनुबंध - II
+दुराचरण के आक्षेपों का कथन (Statement of Imputations)
+
+1. श्री/श्रीमती 'X' संबंधित अवधि में उपडाकपाल, उपडाकघर 'C', 'AB' डाक मंडल के पद पर पदस्थ एवं कार्यरत थे।
+
+2. खाता धारक 'Y' ने उपडाकघर 'C' में अपने बचत बैंक खाता संख्या XXXXXXXX10 में ₹1,00,000/- (रुपये एक लाख मात्र) की राशि जमा की।
+
+3. उपडाकपाल 'X' ने उक्त ₹1,00,000/- की जमा राशि की प्रविष्टि दिनांक PP/QQ/RRRR को खाता धारक की पासबुक में कर दी, परंतु उक्त राशि को विभागीय अभिलेख/प्रणाली में जमा/लेखाबद्ध नहीं किया।
+
+4. यह भिन्नता तब प्रकाश में आई जब खाता धारक 'Y' ने विभाग में अपने खाते में जमा राशि प्रतिबिंबित न होने की शिकायत दर्ज कराई।
+
+5. शिकायत की जांच निरीक्षक डाक 'M' द्वारा की गई। जांच के दौरान खाता धारक 'Y' ने अपने बयान दिनांक JJ/KK/LLLL में यह स्वीकार किया कि उन्होंने दिनांक PP/QQ/RRRR को उपडाकघर 'C' में ₹1,00,000/- जमा किए थे, तथा उक्त जमा की प्रविष्टि दर्शाने वाली अपनी पासबुक प्रस्तुत की।
+
+6. निरीक्षक डाक 'M' ने मूल पासबुक सहित जांच आख्या मंडल कार्यालय को प्रेषित की, जिससे यह स्थापित हुआ कि उपडाकपाल 'X' ने ₹1,00,000/- की जमा राशि प्राप्त की थी परंतु उसे खाते में जमा करने के बजाय उसका दुर्विनियोजन कर लिया।
+
+7. उपरोक्त कृत्यों एवं चूकों से श्री/श्रीमती 'X' पूर्ण सत्यनिष्ठा एवं कर्तव्यनिष्ठा बनाए रखने में विफल रहे हैं तथा उन्होंने एक सरकारी कर्मचारी के लिए अशोभनीय आचरण किया है।
+
+-----------------------------------------------------------
+अनुबंध - III
+भरोसा किए गए दस्तावेजों की सूची (List of Documents)
+
+1. खाता धारक 'Y' की बचत बैंक खाता संख्या XXXXXXXX10 की पासबुक, जिसमें दिनांक PP/QQ/RRRR की प्रविष्टि है।
+2. खाता धारक 'Y' की शिकायत।
+3. निरीक्षक डाक 'M', 'XY' उपमंडल की जांच आख्या।
+4. खाता धारक 'Y' का बयान दिनांक JJ/KK/LLLL।
+5. संबंधित अवधि के उपडाकघर 'C' के बचत बैंक/प्रणाली अभिलेख।
+
+-----------------------------------------------------------
+अनुबंध - IV
+साक्षियों की सूची (List of Witnesses)
+
+1. श्री/श्रीमती 'Y', खाता धारक, बचत बैंक खाता संख्या XXXXXXXX10, उपडाकघर 'C'।
+2. निरीक्षक डाक 'M', 'XY' उपमंडल, 'AB' डाक मंडल।
+3. जांच/सत्यापन से संबंधित कोई अन्य विभागीय अधिकारी, यदि आवश्यक हो।</pre>
+      </div>
+    </div>
+    <div class="rules-box">
+      <h4>Rules/Format referred &mdash; संदर्भित नियम/प्रारूप</h4>
+      <ul>
+        <li>Rule 14, CCS (Classification, Control and Appeal) Rules, 1965 &ndash; procedure for imposing major penalties (Memorandum, Articles of Charge, Statement of Imputations, List of Documents, List of Witnesses).</li>
+        <li>Rule 14(4), CCS (CCA) Rules, 1965 &ndash; requirement for the charged official to submit written statement of defence within specified time.</li>
+        <li>Rule 3(1)(i)/(ii)/(iii), CCS (Conduct) Rules, 1964 &ndash; integrity, devotion to duty, and conduct unbecoming of a Government servant.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q3(ii) -->
+  <div class="option-card">
+    <div class="option-title">Option (ii) &mdash; Cash Shortage on Surprise Verification (SPM 'X', SO 'C')</div>
+    <div class="qtext">
+      <p class="en">During a surprise verification, Inspector Posts 'M' found a cash shortage of ₹1,00,000/- against the book balance of ₹2,33,417/- at single-post Sub-Office 'C', and Sub-Postmaster 'X' admitted spending the amount for personal expenses. Prepare a charge sheet under Rule 14 of the CCS (CCA) Rules, 1965.</p>
+      <p class="hi">'AB' डाक मंडल के निरीक्षक डाकघर 'M' ने 'C' एकल पदीय उपडाकघर के औचक वीक्षण में इतिशेष ₹2,33,417 के सापेक्ष ₹1,00,000/- कम पाया, तथा उपडाकपाल 'X' ने स्वीकार किया कि उक्त राशि व्यक्तिगत व्यय हेतु खर्च कर दी गई। केंद्रीय सिविल सेवा (नियंत्रण, वर्गीकरण एवं अपील) नियमावली, 1965 के नियम-14 के अंतर्गत आरोप पत्र तैयार करें।</p>
+    </div>
+    <div class="ans-block">
+      <h4>Model Charge Sheet / मॉडल आरोप पत्र</h4>
+      <div class="lang-tab-btns">
+        <button class="active" onclick="showLang(this,'q3ii-en')">English</button>
+        <button onclick="showLang(this,'q3ii-hi')">हिंदी</button>
+      </div>
+      <div class="lang-block show" id="q3ii-en">
+<pre>OFFICE OF THE SUPERINTENDENT OF POST OFFICES
+'AB' POSTAL DIVISION
+
+No. AB/Estt/Disc/X/2025                                          Date: ___________
+
+MEMORANDUM
+
+It is proposed to hold an inquiry against Shri/Smt. 'X', Sub-Postmaster, Sub Post Office 'C', 'AB' Postal Division, under Rule 14 of the Central Civil Services (Classification, Control and Appeal) Rules, 1965. The substance of the imputations of misconduct in respect of which the inquiry is proposed to be held is set out in the enclosed Articles of Charge (Annexure-I) and the Statement of Imputations of Misconduct (Annexure-II).
+
+2. Shri/Smt. 'X' is directed to submit a written statement of his/her defence within ten (10) days of receipt of this Memorandum, along with a list of documents and witnesses he/she wishes to rely upon, as per Rule 14(4) of the said Rules.
+
+3. Failure to submit the written statement within the specified time, without sufficient reason, will lead to the presumption that he/she has no defence to put forward, and the Inquiry Officer will proceed with the inquiry ex-parte.
+
+                                                                    Sd/-
+                                                        Disciplinary Authority
+                                                        Superintendent of Post Offices, 'AB' Division
+
+-----------------------------------------------------------
+ANNEXURE - I
+ARTICLES OF CHARGE
+
+Article I: That Shri/Smt. 'X', while functioning as Sub-Postmaster, single-handed Sub Office 'C', 'AB' Postal Division, on a surprise physical verification of cash conducted by Inspector Posts 'M' on FF/GG/HHHH, was found short by ₹1,00,000/- (Rupees One Lakh only) against the book balance of ₹2,33,417/-, and admitted that the said amount of Government money was utilized by him/her for personal expenses, thereby misappropriating a sum of ₹1,00,000/- entrusted to him/her in his/her official capacity.
+
+By the above act, Shri/Smt. 'X' failed to maintain absolute integrity as required under Rule 3(1)(i) of the CCS (Conduct) Rules, 1964, and acted in a manner unbecoming of a Government servant under Rule 3(1)(iii) of the said Rules, rendering himself/herself liable for disciplinary action under Rule 14 of the CCS (CCA) Rules, 1965.
+
+-----------------------------------------------------------
+ANNEXURE - II
+STATEMENT OF IMPUTATIONS OF MISCONDUCT
+
+1. Shri/Smt. 'X' was posted and functioning as Sub-Postmaster, single-handed Sub Office 'C', 'AB' Postal Division, at the relevant time, and was solely responsible for the safe custody of cash and Government property at the said Sub-Office.
+
+2. Inspector Posts 'M' of 'AB' Postal Division carried out a surprise visit to Sub-Office 'C' on FF/GG/HHHH and physically verified the cash balance, which as per books stood at ₹2,33,417/-.
+
+3. On physical count, the actual cash found was short by ₹1,00,000/- (Rupees One Lakh only) as compared to the book balance.
+
+4. Inspector Posts 'M' immediately enquired into the discrepancy, whereupon Sub-Postmaster 'X' admitted that the said amount of ₹1,00,000/- had been utilized by him/her for personal expenses.
+
+5. Inspector Posts 'M' submitted a report of the case along with relevant documents to the Divisional Office, establishing that Sub-Postmaster 'X' had misappropriated Government money amounting to ₹1,00,000/-.
+
+6. By the above acts, Shri/Smt. 'X' has failed to safeguard Government cash entrusted to his/her custody and has failed to maintain absolute integrity and devotion to duty expected of a Government servant.
+
+-----------------------------------------------------------
+ANNEXURE - III
+LIST OF DOCUMENTS RELIED UPON
+
+1. Cash Book/Balance Sheet of Sub Office 'C' showing book balance of ₹2,33,417/- as on FF/GG/HHHH.
+2. Physical verification report of cash prepared by Inspector Posts 'M' dated FF/GG/HHHH, showing shortage of ₹1,00,000/-.
+3. Written admission/statement of Sub-Postmaster 'X' regarding utilization of Government money for personal expenses.
+4. Report of Inspector Posts 'M' to the Divisional Office along with relevant documents.
+
+-----------------------------------------------------------
+ANNEXURE - IV
+LIST OF WITNESSES
+
+1. Inspector Posts 'M', 'AB' Postal Division, who conducted the surprise verification.
+2. Any departmental official/witness present at the time of surprise verification of cash at Sub Office 'C'.
+3. Any other official connected with subsequent investigation, as required.</pre>
+      </div>
+      <div class="lang-block" id="q3ii-hi">
+<pre>कार्यालय अधीक्षक डाकघर
+'AB' डाक मंडल
+
+संख्या AB/Estt/Disc/X/2025                                          दिनांक: ___________
+
+ज्ञापन (MEMORANDUM)
+
+श्री/श्रीमती 'X', उपडाकपाल, उपडाकघर 'C', 'AB' डाक मंडल के विरुद्ध केंद्रीय सिविल सेवा (वर्गीकरण, नियंत्रण एवं अपील) नियमावली, 1965 के नियम-14 के अंतर्गत जांच कराया जाना प्रस्तावित है। जिस दुराचरण के आरोप के संबंध में जांच किया जाना प्रस्तावित है, उसका सार संलग्न आरोप विवरण (अनुबंध-I) तथा दुराचरण के आक्षेपों के कथन (अनुबंध-II) में दिया गया है।
+
+2. श्री/श्रीमती 'X' को निर्देशित किया जाता है कि वे इस ज्ञापन की प्राप्ति के दस (10) दिनों के भीतर, उपरोक्त नियमावली के नियम 14(4) के अनुसार, अपना लिखित बचाव कथन उन दस्तावेजों तथा साक्षियों की सूची सहित प्रस्तुत करें जिन पर वे भरोसा करना चाहते हैं।
+
+3. निर्धारित समय के भीतर पर्याप्त कारण के बिना लिखित कथन प्रस्तुत न करने की स्थिति में यह उपधारणा की जाएगी कि उनके पास कोई बचाव प्रस्तुत करने के लिए नहीं है, और जांच अधिकारी उनकी अनुपस्थिति में (ex-parte) जांच आगे बढ़ाएंगे।
+
+                                                                    हस्ताक्षर
+                                                        अनुशासनिक प्राधिकारी
+                                                        अधीक्षक डाकघर, 'AB' मंडल
+
+-----------------------------------------------------------
+अनुबंध - I
+आरोप विवरण (Articles of Charge)
+
+आरोप I: यह कि श्री/श्रीमती 'X' ने उपडाकपाल, 'C' एकल पदीय उपडाकघर, 'AB' डाक मंडल के पद पर कार्यरत रहते हुए, निरीक्षक डाक 'M' द्वारा दिनांक FF/GG/HHHH को कराए गए नकदी के औचक भौतिक सत्यापन में, इतिशेष ₹2,33,417/- के सापेक्ष ₹1,00,000/- (रुपये एक लाख मात्र) कम पाए गए, तथा उन्होंने यह स्वीकार किया कि उक्त सरकारी धनराशि का उपयोग उन्होंने अपने व्यक्तिगत व्यय हेतु किया, जिससे उन्होंने अपनी शासकीय हैसियत में सौंपी गई ₹1,00,000/- की राशि का दुर्विनियोजन किया।
+
+उक्त कृत्य से श्री/श्रीमती 'X' केंद्रीय सिविल सेवा (आचरण) नियम, 1964 के नियम 3(1)(i) के अंतर्गत अपेक्षित पूर्ण सत्यनिष्ठा बनाए रखने में विफल रहे तथा उक्त नियमावली के नियम 3(1)(iii) के अंतर्गत एक सरकारी कर्मचारी के लिए अशोभनीय आचरण किया, जिसके फलस्वरूप वे केंद्रीय सिविल सेवा (नियंत्रण, वर्गीकरण एवं अपील) नियमावली, 1965 के नियम-14 के अंतर्गत अनुशासनिक कार्रवाई के भागी हैं।
+
+-----------------------------------------------------------
+अनुबंध - II
+दुराचरण के आक्षेपों का कथन (Statement of Imputations)
+
+1. श्री/श्रीमती 'X' संबंधित अवधि में उपडाकपाल, 'C' एकल पदीय उपडाकघर, 'AB' डाक मंडल के पद पर पदस्थ एवं कार्यरत थे, तथा उक्त उपडाकघर में नकदी एवं सरकारी संपत्ति की सुरक्षित अभिरक्षा हेतु स्वयं उत्तरदायी थे।
+
+2. 'AB' डाक मंडल के निरीक्षक डाक 'M' ने दिनांक FF/GG/HHHH को उपडाकघर 'C' का औचक निरीक्षण किया तथा नकदी इतिशेष का भौतिक सत्यापन किया, जो बहियों के अनुसार ₹2,33,417/- था।
+
+3. भौतिक गणना में, बही इतिशेष की तुलना में वास्तविक नकदी ₹1,00,000/- (रुपये एक लाख मात्र) कम पाई गई।
+
+4. निरीक्षक डाक 'M' ने तुरंत इस भिन्नता की जांच की, जिस पर उपडाकपाल 'X' ने स्वीकार किया कि उक्त ₹1,00,000/- की राशि का उपयोग उन्होंने अपने व्यक्तिगत व्यय हेतु किया था।
+
+5. निरीक्षक डाक 'M' ने प्रकरण की आख्या संबंधित दस्तावेजों सहित मंडल कार्यालय को प्रेषित की, जिससे यह स्थापित हुआ कि उपडाकपाल 'X' ने ₹1,00,000/- की सरकारी धनराशि का दुर्विनियोजन किया है।
+
+6. उपरोक्त कृत्यों से श्री/श्रीमती 'X' अपनी अभिरक्षा में सौंपी गई सरकारी नकदी की सुरक्षा करने में विफल रहे हैं तथा एक सरकारी कर्मचारी से अपेक्षित पूर्ण सत्यनिष्ठा एवं कर्तव्यनिष्ठा बनाए रखने में विफल रहे हैं।
+
+-----------------------------------------------------------
+अनुबंध - III
+भरोसा किए गए दस्तावेजों की सूची (List of Documents)
+
+1. उपडाकघर 'C' की नकद बही/इतिशेष पत्रक, जिसमें दिनांक FF/GG/HHHH को बही इतिशेष ₹2,33,417/- दर्शाया गया है।
+2. निरीक्षक डाक 'M' द्वारा दिनांक FF/GG/HHHH को तैयार नकदी के भौतिक सत्यापन की आख्या, जिसमें ₹1,00,000/- की कमी दर्शाई गई है।
+3. उपडाकपाल 'X' का व्यक्तिगत व्यय हेतु सरकारी धनराशि के उपयोग संबंधी लिखित स्वीकृति/कथन।
+4. निरीक्षक डाक 'M' की मंडल कार्यालय को प्रेषित आख्या तथा संबंधित दस्तावेज।
+
+-----------------------------------------------------------
+अनुबंध - IV
+साक्षियों की सूची (List of Witnesses)
+
+1. निरीक्षक डाक 'M', 'AB' डाक मंडल, जिन्होंने औचक सत्यापन किया।
+2. उपडाकघर 'C' में नकदी के औचक सत्यापन के समय उपस्थित कोई भी विभागीय अधिकारी/साक्षी।
+3. आगे की जांच से संबंधित कोई अन्य अधिकारी, यदि आवश्यक हो।</pre>
+      </div>
+    </div>
+    <div class="rules-box">
+      <h4>Rules/Format referred &mdash; संदर्भित नियम/प्रारूप</h4>
+      <ul>
+        <li>Rule 14, CCS (CCA) Rules, 1965 &ndash; procedure for imposing major penalty (framing of Articles of Charge, Statement of Imputations, List of Documents, List of Witnesses).</li>
+        <li>Rule 3(1)(i) &amp; 3(1)(iii), CCS (Conduct) Rules, 1964 &ndash; absolute integrity and conduct unbecoming of a Government servant.</li>
+        <li>Rule 14(4), CCS (CCA) Rules, 1965 &ndash; time-bound submission of written statement of defence by the charged officer.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer>
+  Source: LDCE IP 2025, Paper-II (Question Booklet No. 221148), Time Allowed: 1 Hour, Max. Marks: 50.<br>
+  Model answers prepared as per the standard format of Manual of Office Procedure (Noting/Drafting) and Rule 14 of the CCS (Classification, Control and Appeal) Rules, 1965 (Charge Sheet). These are illustrative model answers for exam practice; actual answers should be adapted to the specific facts and dates given in the question paper.<br>
+  यह उत्तर अभ्यास हेतु मॉडल उत्तर हैं; वास्तविक परीक्षा में दिए गए तथ्यों/तिथियों के अनुसार उत्तर तैयार करें।
+</footer>
+<script>
+function showLang(btn, id) {
+  var parent = btn.closest('.ans-block');
+  parent.querySelectorAll('.lang-tab-btns button').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  parent.querySelectorAll('.lang-block').forEach(function(b){ b.classList.remove('show'); });
+  document.getElementById(id).classList.add('show');
+}
+</script>
+</body>
+</html>
