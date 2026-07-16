@@ -808,7 +808,9 @@ document.querySelectorAll('details.card summary').forEach(s=>{
         this.innerText + '. ' + this.closest('details').querySelector('.card-body').innerText.slice(0,400) : this.innerText;
       speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(txt);
-      speechSynthesis.speak(u);
+      u.lang = 'hi-IN';
+      u.rate = 0.95;
+      setTimeout(function(){ speechSynthesis.speak(u); }, 120);
     }
   });
 });
