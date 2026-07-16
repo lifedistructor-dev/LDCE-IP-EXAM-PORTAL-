@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Postal FHB Vol.I: Audit | Accounts | Cash | Pay | Establishment | Contingent | Loans | GPF - IP Exam</title>
+<meta name="description" content="Postal Financial Handbook Vol.I 2022 Infographic - Relations with Audit, General Principles, Accounts System, Cash, Pay & Allowances, Establishment, Contingent Charges, Loans & Advances, GPF - IP Exam Prep">
+<style>
+:root{
+  --red:#DA251C; --blue:#003893; --gold:#FFB81C;
+  --bg:#f7f5f0; --card:#ffffff; --text:#1a1a1a; --muted:#5a5a5a;
+  --border:#e2ddd0;
+  --tier-red:#e53935; --tier-orange:#fb8c00; --tier-yellow:#f9a825; --tier-green:#43a047;
+  --radius:14px;
+  --shadow:0 2px 10px rgba(0,0,0,.08);
+}
+body.dark{
+  --bg:#12151c; --card:#1b202b; --text:#eae6da; --muted:#a9a9a9; --border:#2b3242;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  transition:background .3s,color .3s; padding-bottom:70px;
+}
+.hi{ font-family:"Nirmala UI","Mangal",sans-serif; }
+header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(120deg,var(--blue),var(--red));
+  color:#fff; padding:14px 14px 10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+header h1{ margin:0; font-size:1.0rem; font-weight:800; letter-spacing:.3px;}
+header .sub{ font-size:.78rem; opacity:.92; margin-top:2px;}
+.toolbar{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.toolbar button, .toolbar input{
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.4);
+  color:#fff; border-radius:20px; padding:6px 12px; font-size:.78rem; cursor:pointer;
+}
+.toolbar input{ flex:1; min-width:120px; background:rgba(255,255,255,.94); color:#222;}
+.toolbar button:active{ transform:scale(.96); }
+nav.chips{
+  display:flex; gap:8px; overflow-x:auto; padding:10px 12px; background:var(--card);
+  border-bottom:2px solid var(--gold); position:sticky; top:100px; z-index:40;
+  -webkit-overflow-scrolling:touch;
+}
+nav.chips a{
+  flex:0 0 auto; text-decoration:none; font-size:.72rem; font-weight:700;
+  color:var(--blue); background:var(--bg); border:1.5px solid var(--blue);
+  padding:6px 11px; border-radius:20px; white-space:nowrap;
+}
+body.dark nav.chips a{ color:var(--gold); border-color:var(--gold); }
+main{ max-width:820px; margin:0 auto; padding:14px 12px 40px; }
+.legend{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:6px;
+  background:var(--card); border-radius:var(--radius); padding:10px 14px; margin:14px 0;
+  box-shadow:var(--shadow); font-size:.78rem; border:1px solid var(--border);
+}
+.chapter-header{
+  margin:26px 0 12px; padding:14px 16px; border-radius:var(--radius);
+  background:linear-gradient(100deg,var(--blue),#00287a); color:#fff; box-shadow:var(--shadow);
+}
+.chapter-header h2{ margin:0 0 3px; font-size:1.1rem; }
+.chapter-header h2.hi{ font-size:1.0rem; font-weight:600; opacity:.95;}
+.chapter-header .rulerange{ font-size:.72rem; background:var(--gold); color:#3a2a00; display:inline-block;
+  margin-top:6px; padding:2px 10px; border-radius:12px; font-weight:700;}
+details.card{
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  margin:10px 0; box-shadow:var(--shadow); overflow:hidden;
+}
+details.card summary{
+  padding:12px 14px; font-weight:700; font-size:.9rem; cursor:pointer;
+  list-style:none; display:flex; align-items:center; justify-content:space-between; gap:8px;
+  color:var(--blue);
+}
+body.dark details.card summary{ color:var(--gold); }
+details.card summary::-webkit-details-marker{ display:none; }
+details.card summary::after{
+  content:"▾"; transition:transform .25s; font-size:.85rem; color:var(--muted); flex:0 0 auto;
+}
+details.card[open] summary::after{ transform:rotate(180deg); }
+.card-body{ padding:2px 14px 14px; font-size:.85rem; }
+.card-body p{ margin:6px 0; }
+table{ width:100%; border-collapse:collapse; font-size:.76rem; margin:8px 0; }
+th,td{ border:1px solid var(--border); padding:6px 7px; text-align:left; vertical-align:top; }
+th{ background:var(--blue); color:#fff; font-size:.7rem; }
+body.dark th{ background:#2b3550; }
+tr:nth-child(even) td{ background:rgba(0,0,0,.03); }
+body.dark tr:nth-child(even) td{ background:rgba(255,255,255,.03); }
+.tag{ display:inline-block; padding:1px 7px; border-radius:10px; font-size:.68rem; font-weight:700; color:#fff; margin-left:4px;}
+.tag.r{background:var(--tier-red);} .tag.o{background:var(--tier-orange);}
+.tag.y{background:var(--tier-yellow); color:#3a2a00;} .tag.g{background:var(--tier-green);}
+.exam-q{
+  background:#fff8e1; border-left:4px solid var(--gold); border-radius:8px;
+  padding:9px 12px; margin:8px 0; font-size:.78rem; color:#5c4200;
+}
+body.dark .exam-q{ background:#2a2410; color:#f0d98c; }
+.exam-q b{ color:var(--red); }
+.flowchart{ display:flex; flex-direction:column; align-items:center; gap:4px; margin:8px 0;}
+.fbox{
+  background:var(--blue); color:#fff; padding:8px 12px; border-radius:10px; font-size:.75rem;
+  text-align:center; width:92%; font-weight:600;
+}
+.fbox.alt{ background:var(--red); }
+.fbox.gold{ background:var(--gold); color:#3a2a00; }
+.arrow{ font-size:1.1rem; color:var(--muted); }
+.dtree{ display:flex; flex-direction:column; gap:6px; margin:8px 0; }
+.dtree .q{ background:var(--gold); color:#3a2a00; padding:7px 10px; border-radius:8px; font-size:.77rem; font-weight:700;}
+.dtree .yn{ display:flex; gap:6px; padding-left:12px; }
+.dtree .yn div{ flex:1; background:var(--bg); border:1px dashed var(--muted); border-radius:8px; padding:6px 8px; font-size:.73rem;}
+.timeline{ position:relative; margin:10px 0 10px 10px; padding-left:16px; border-left:3px solid var(--gold); }
+.tl-item{ position:relative; margin-bottom:14px; }
+.tl-item::before{ content:""; position:absolute; left:-22px; top:3px; width:11px; height:11px; border-radius:50%; background:var(--red); border:2px solid #fff;}
+.tl-item .tl-title{ font-weight:700; font-size:.81rem; color:var(--blue);}
+body.dark .tl-item .tl-title{ color:var(--gold); }
+.tl-item .tl-desc{ font-size:.75rem; color:var(--muted); }
+.mnemonic{
+  background:linear-gradient(120deg,#fff4e0,#ffe9cc); border:1px dashed var(--gold);
+  border-radius:10px; padding:10px 12px; margin:8px 0; font-size:.8rem;
+}
+body.dark .mnemonic{ background:#241d10; }
+.revision-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.rev-card{ background:var(--card); border-left:5px solid var(--red); border-radius:10px; padding:10px 12px; box-shadow:var(--shadow); font-size:.78rem;}
+.rev-card h4{ margin:0 0 4px; color:var(--blue); font-size:.84rem;}
+body.dark .rev-card h4{ color:var(--gold); }
+.section-title{
+  font-size:1.03rem; font-weight:800; margin:30px 0 10px; color:var(--red);
+  border-bottom:3px solid var(--gold); padding-bottom:5px;
+}
+.badge-def{ background:var(--gold); color:#3a2a00; font-size:.68rem; font-weight:800; padding:2px 8px; border-radius:8px; }
+footer{ text-align:center; font-size:.72rem; color:var(--muted); margin-top:30px; padding:14px;}
+.fab-bar{
+  position:fixed; bottom:0; left:0; right:0; background:var(--card); border-top:2px solid var(--gold);
+  display:flex; justify-content:space-around; padding:8px 2px; z-index:60; box-shadow:0 -3px 10px rgba(0,0,0,.15);
+  overflow-x:auto;
+}
+.fab-bar button{
+  background:none; border:none; color:var(--blue); font-size:.62rem; display:flex; flex-direction:column;
+  align-items:center; gap:2px; cursor:pointer; font-weight:700; flex:0 0 auto; padding:2px 5px;
+}
+body.dark .fab-bar button{ color:var(--gold); }
+.fab-bar button .ic{ font-size:1.05rem; }
+mark{ background:var(--gold); color:#3a2a00; }
+.hidden{ display:none !important; }
+.progress-wrap{ background:var(--card); border-radius:var(--radius); padding:10px 14px; margin:14px 0; box-shadow:var(--shadow); font-size:.78rem;}
+.progress-bar{ height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-top:6px;}
+.progress-fill{ height:100%; background:linear-gradient(90deg,var(--gold),var(--red)); width:0%; transition:width .4s;}
+.mindmap{ display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; justify-content:center;}
+.mindmap div{ background:var(--bg); border:1.5px solid var(--blue); border-radius:20px; padding:6px 12px; font-size:.72rem; font-weight:600; color:var(--blue);}
+body.dark .mindmap div{ color:var(--gold); border-color:var(--gold);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Postal FHB Vol.I 2022 — 9 Chapters</h1>
+  <div class="sub hi">लेखापरीक्षा संबंध • लेखा प्रणाली • नकदी • वेतन • स्थापना • आकस्मिक व्यय • अग्रिम • जीपीएफ | IP Exam Portal</div>
+  <div class="toolbar">
+    <input id="searchBox" type="text" placeholder="🔍 Search rule / नियम खोजें...">
+    <button onclick="toggleDark()">🌓 Dark</button>
+    <button onclick="toggleTTS()">🔊 TTS</button>
+  </div>
+</header>
+
+<nav class="chips">
+  <a href="#ch4">🔎 Audit</a>
+  <a href="#ch2">📗 सामान्य नियम</a>
+  <a href="#ch3">📘 लेखा प्रणाली</a>
+  <a href="#ch5">💰 नकदी</a>
+  <a href="#ch8">💵 वेतन</a>
+  <a href="#ch9">👥 स्थापना</a>
+  <a href="#ch10">🧾 आकस्मिक</a>
+  <a href="#ch12">🏦 अग्रिम</a>
+  <a href="#ch16">🪙 GPF</a>
+  <a href="#revision">🧠 Revision</a>
+</nav>
+
+<main id="main">
+
+<div class="legend">
+  <div>🔴 <b>Very Important</b> / अति महत्वपूर्ण</div>
+  <div>🟠 <b>Frequently Asked</b> / बार-बार पूछा गया</div>
+  <div>🟡 <b>Conceptual</b> / अवधारणात्मक</div>
+  <div>🟢 <b>Quick Revision</b> / त्वरित रिवीजन</div>
+</div>
+
+<div class="progress-wrap">
+  📊 Study Progress / अध्ययन प्रगति: <span id="progText">0/9 chapters opened</span>
+  <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+</div>
+
+<!-- ============ CHAPTER IV: RELATIONS WITH AUDIT ============ -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <h2>Chapter IV — Relations with Audit</h2>
+    <h2 class="hi">अध्याय 4 — लेखापरीक्षा से संबंध</h2>
+    <span class="rulerange">Rules 80 – 98</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Accounts of the Department of Posts are maintained by 23 Circle Postal Accounts Offices, while external/statutory audit is done by P&amp;T Audit under the Comptroller &amp; Auditor General (C&amp;AG). This chapter governs how Disbursing Officers respond to audit objections, retrenchments, inspection reports, and requisitions for documents.</p>
+      <p class="hi"><b>HI:</b> डाक विभाग के लेखा 23 सर्कल डाक लेखा कार्यालयों द्वारा रखे जाते हैं, जबकि बाह्य/सांविधिक लेखापरीक्षा नियंत्रक एवं महालेखा परीक्षक (CAG) के अधीन P&amp;T Audit द्वारा की जाती है। यह अध्याय आपत्तियों, कटौती आदेशों, निरीक्षण रिपोर्टों तथा दस्तावेज़ मांग की प्रक्रिया को नियंत्रित करता है।</p>
+      <p>Chapter → Sub-chapter → Micro → Nano: <b>Relations with Audit</b> → <i>Objections</i> / <i>Retrenchment</i> / <i>Inspection</i> / <i>Requisitions</i> → Rule-wise duty → Specific time-limit/format.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>80</td><td>Accounts by 23 Circle Postal Accounts Offices; Audit by P&amp;T Audit under CAG</td><td class="hi">23 सर्कल लेखा कार्यालय; लेखापरीक्षा CAG के अधीन</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>81</td><td>Every Govt servant must promptly attend to objections/orders from Accounts/Audit Officer</td><td class="hi">आपत्तियों पर तुरंत ध्यान देना अनिवार्य</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>82</b></td><td>DO must return objection statement <b>within a fortnight (15 days)</b> or explain delay</td><td class="hi">15 दिन में आपत्ति विवरण वापस करना</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>83</b></td><td>Disallowed payment must be recovered without protest; future payment stopped till Audit authorizes resumption</td><td class="hi">अस्वीकृत भुगतान बिना विरोध वसूला जाए</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>83 Note 3</td><td>Representation against retrenchment not considered if submitted after <b>3 months</b></td><td class="hi">कटौती के विरुद्ध प्रतिनिधित्व 3 माह बाद स्वीकार्य नहीं</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>84</td><td>Recovery rate ordinarily not exceeding <b>1/3rd of pay</b> (unless contrary to orders)</td><td class="hi">वसूली दर सामान्यतः वेतन के 1/3 से अधिक नहीं</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>85</td><td>Register ACG-60 maintained for all retrenchments/advances/losses; Head checks 10% entries monthly</td><td class="hi">रजिस्टर ACG-60; प्रधान द्वारा मासिक 10% जांच</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>91</td><td>Objection remains in force till sanction obtained or Audit withdraws it; records not destroyed while pending</td><td class="hi">स्वीकृति मिलने तक आपत्ति प्रभावी रहती है</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>94-95</td><td>Audit inspection reports issued in 3 Parts (I-Intro/Outstanding, II-Major/Minor irregularities, III-Test audit)</td><td class="hi">निरीक्षण रिपोर्ट 3 भागों में जारी</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>95</td><td>Part I &amp; II reply within <b>1 month</b> of issue of inspection report</td><td class="hi">भाग I व II का उत्तर 1 माह में</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>96</td><td>Sub/Branch Postmasters cannot address Audit directly — only through Divisional Supdt./HO Postmaster</td><td class="hi">उप/शाखा डाकघर सीधे लेखापरीक्षा से संपर्क नहीं कर सकते</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>97</td><td>Audit gives no opinion on hypothetical cases; appeals lie to executive authority, not Director of Audit</td><td class="hi">काल्पनिक मामलों पर राय नहीं; अपील कार्यकारी प्राधिकारी को</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>98</td><td>Audited documents not normally supplied except via requisition through Head of Circle</td><td class="hi">लेखापरीक्षित दस्तावेज़ केवल अनुरोध पर</td><td><span class="tag g">🟢</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Rule 98 exception — requisitions for paid Money Orders, paid IPOs, discharged POSB certificates/withdrawal warrants may be sent directly to Circle Postal Accounts Office by Superintendents/Senior Postmasters (no need to route through Head of Circle).</p>
+      <p class="hi"><b>HI:</b> भुगतान किए गए मनीऑर्डर, आईपीओ आदि की मांग सीधे सर्कल लेखा कार्यालय को भेजी जा सकती है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Return of objection statement (Rule 82)</td><td>Within a <b>fortnight</b></td></tr>
+        <tr><td>Representation against retrenchment (Rule 83)</td><td>Within <b>3 months</b> of intimation</td></tr>
+        <tr><td>Reply to Inspection Report Parts I &amp; II (Rule 95)</td><td>Within <b>1 month</b> of issue</td></tr>
+        <tr><td>Maximum rate of recovery (Rule 84)</td><td>Not exceeding <b>1/3rd of pay</b></td></tr>
+        <tr><td>Head's check of ACG-60 Register (Rule 85 Note 2)</td><td>At least <b>10% of entries every month</b></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Comptroller &amp; Auditor General (CAG) • Director General of Audit, P&amp;T • Circle Postal Accounts Office / Audit Office • Disbursing Officer • Head of Circle • Director General (Posts)</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties / Consequences <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Habitual delay in returning objection statements → special report to Director General. Disbursing Officer who ignores a disallowance risks personal responsibility for continued unauthorized payment.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🔀 Flowchart — Audit Objection Handling / आपत्ति निपटान प्रक्रिया</summary>
+    <div class="card-body">
+      <div class="flowchart">
+        <div class="fbox">Audit Office raises Objection / Audit Memo</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Disbursing Officer replies within 15 days (Rule 82)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Payment disallowed? → Recover at once, stop future payment (Rule 83)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Objection stays "in force" until sanction obtained or Audit withdraws it</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Persistent delay → reported to Head of Circle → Director General</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> आपत्ति विवरण (objection statement) कितने दिनों में लौटाना अनिवार्य है? <b>(Ans: एक पखवाड़े/15 दिन में — नियम 82)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Recovery from a Government servant's pay ordinarily should not exceed what fraction of pay? <b>(Ans: 1/3rd — Rule 84)</b></div>
+</section>
+
+<!-- ============ CHAPTER II: GENERAL PRINCIPLES AND RULES ============ -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <h2>Chapter II — General Principles and Rules</h2>
+    <h2 class="hi">अध्याय 2 — सामान्य सिद्धांत एवं नियम</h2>
+    <span class="rulerange">Rules 4 – 69</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Lays down the foundational rules on Receipt of Money (Part A), Payment of Money (Part B), Standards of Financial Propriety, Control of Expenditure, and Reporting of Losses/Defalcations for all Post Office Disbursing Officers.</p>
+      <p class="hi"><b>HI:</b> यह अध्याय धन प्राप्ति (भाग अ), धन भुगतान (भाग ब), वित्तीय औचित्य के मानक, व्यय नियंत्रण, एवं हानि/गबन रिपोर्टिंग के मूल नियम सभी संवितरण अधिकारियों हेतु निर्धारित करता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>4</td><td>All Govt money received must be paid into Treasury/Bank without delay; departmental receipts cannot fund departmental expenditure (except Postmasters using surplus per regulations)</td><td class="hi">सरकारी धन बिना देरी कोषागार/बैंक में जमा</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>5-6</td><td>Public Account (Art. 284) — money outside official capacity not covered</td><td class="hi">लोक लेखा — अनुच्छेद 284</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>15</td><td>No expenditure without sanction of President/delegated authority + provision in grant</td><td class="hi">स्वीकृति व अनुदान प्रावधान के बिना व्यय नहीं</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>16</td><td>Disbursing Officer has no general authority beyond Handbook/Manual rules — must decline unauthorized demands</td><td class="hi">संवितरण अधिकारी नियम-बाह्य भुगतान अस्वीकार करे</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>48</b></td><td>Receipts for sums <b>exceeding ₹5,000</b> must bear Revenue Stamp (Indian Stamp Act)</td><td class="hi">₹5,000 से अधिक की रसीद पर स्टाम्प अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>52</b></td><td>Defalcation/loss reported immediately to superior + Accounting Authority; petty cases ≤ <b>₹10,000</b> exempt (unless important features)</td><td class="hi">हानि तुरंत रिपोर्ट; ₹10,000 तक की छोटी हानि मुक्त</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>GoI Decision below 55</b></td><td>Material loss (fire/theft/fraud) of <b>₹50,000 &amp; above</b> reported to Police; sabotage reported regardless of value</td><td class="hi">₹50,000 से अधिक की हानि पुलिस को रिपोर्ट</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>56</td><td>Controlling Officer must ensure internal checks against waste/fraud</td><td class="hi">नियंत्रक अधिकारी आंतरिक जांच सुनिश्चित करे</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>57</td><td>"Serious loss" of immovable property = value exceeding <b>₹50,000</b> (book value)</td><td class="hi">"गंभीर हानि" = ₹50,000 से अधिक मूल्य</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>58</b></td><td>Officer personally responsible for loss through his own fraud/negligence, or contributory negligence</td><td class="hi">धोखाधड़ी/लापरवाही हेतु व्यक्तिगत उत्तरदायित्व</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>59</td><td>Overcharge primarily recoverable from drawer of bill; Controlling Officer only if culpably negligent</td><td class="hi">अधिक भुगतान वसूली प्राथमिकतः बिल तैयार करने वाले से</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>60</b></td><td>Standards of Financial Propriety — 5 principles (same as GFR Rule 21 + allowances-not-profit clause)</td><td class="hi">वित्तीय औचित्य के 5 मानक</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>63</td><td>Erasures/over-writings in accounts strictly forbidden — correct in red ink with dated initials</td><td class="hi">लेखा में काट-छांट वर्जित — लाल स्याही से सुधार</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>64-65</td><td>Officer preparing accounts/certificates personally responsible for accuracy</td><td class="hi">खाता/प्रमाणपत्र तैयार करने वाला व्यक्तिगत उत्तरदायी</td><td><span class="tag g">🟢</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🧩 Mind Map — Rule 60: Standards of Financial Propriety</summary>
+    <div class="card-body">
+      <div class="mindmap">
+        <div>1. Vigilance like own money</div>
+        <div>2. Not more than occasion demands</div>
+        <div>3. No self-advantage in sanctioning</div>
+        <div>4. No benefit to particular person (unless legal/policy)</div>
+        <div>5. Allowances shouldn't become profit source</div>
+      </div>
+      <p class="hi">वित्तीय औचित्य मानक (नियम 60 = GFR नियम 21 + अतिरिक्त 5वां सिद्धांत)</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison — Loss Reporting Thresholds</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Threshold</th><th>Action Required</th></tr>
+        <tr><td>Up to ₹10,000 (petty loss)</td><td>Not reported to Audit unless important features (Rule 52 Exception)</td></tr>
+        <tr><td>Above ₹10,000</td><td>Reported to Accounting Authority + higher official immediately</td></tr>
+        <tr><td>₹50,000 &amp; above (material loss)</td><td>Reported to Police for investigation (GoI Decision)</td></tr>
+        <tr><td>Any value (suspected sabotage)</td><td>Reported to Police immediately, irrespective of value</td></tr>
+        <tr><td>&gt;₹50,000 immovable property</td><td>"Serious loss" — reported to Govt + Audit Officer (Rule 57)</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Losses/deficiencies of buildings, lands, stores need not be recorded under a separate accounting head (Rule 54) — written off value/commercial accounts instead. Rule 57 Note 2 — losses ≤ ₹50,000 need only be reported to Head of Department, not Government/Audit.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Dates / Investigation Monetary Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Investigating Authority</th><th>Revised Monetary Limit</th></tr>
+        <tr><td>Inspector Posts / ASP</td><td>Up to ₹1 lakh</td></tr>
+        <tr><td>Divisional Heads / Sr. PM / Chief PM</td><td>&gt;₹1 lakh – ₹2 lakh</td></tr>
+        <tr><td>Asst. Director / APMG of Circle</td><td>&gt;₹2 lakh – ₹5 lakh</td></tr>
+        <tr><td>Director / PMG / CPMG</td><td>&gt;₹5 lakh</td></tr>
+        <tr><td>All Circles</td><td>Cases &gt;₹5 lakh reported to ADG (Investigation), Directorate immediately</td></tr>
+      </table>
+      <p>Annual statement of stock losses submitted by <b>15th May</b> each year (Rule 51).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Accounts Officer • Disbursing Officer • Controlling Officer • Head of Department • Statutory Audit Officer • Secretary, Department of Posts</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Personal responsibility for loss through fraud/negligence (Rule 58); departmental proceedings per Appendix-2; overcharge recovery from drawer of bill (Rule 59); disciplinary action after investigation (Rule 53).</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Standards of Financial Propriety के तहत कितने सिद्धांत हैं (Postal FHB नियम 60 में)? <b>(Ans: 5 सिद्धांत)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Above what amount must receipts be stamped under the Indian Stamp Act? <b>(Ans: ₹5,000 — Rule 48)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Petty loss cases up to what amount are exempt from reporting to Audit? <b>(Ans: ₹10,000 — Rule 52 Exception)</b></div>
+</section>
+
+<!-- ============ CHAPTER III: GENERAL OUTLINES OF THE SYSTEM OF ACCOUNTS ============ -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <h2>Chapter III — General Outlines of the System of Accounts</h2>
+    <h2 class="hi">अध्याय 3 — लेखा प्रणाली की सामान्य रूपरेखा</h2>
+    <span class="rulerange">Rules 70 – 79</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Department of Posts accounts form part of General Government Accounts. The Department plays a <b>dual role</b> — providing communication services (Postal Services) and managing large financial business on behalf of Government (Savings Bank, Certificates, Insurance). It is recognized as a <b>commercial department</b> (Rule 71) and pays interest on its Capital outlay.</p>
+      <p class="hi"><b>HI:</b> डाक विभाग के लेखे सामान्य सरकारी लेखों का भाग हैं। विभाग की दोहरी भूमिका है — संचार सेवाएं प्रदान करना तथा सरकार की ओर से बड़ा वित्तीय व्यवसाय (बचत बैंक, प्रमाणपत्र, बीमा) संभालना। यह एक <b>वाणिज्यिक विभाग</b> माना जाता है (नियम 71)।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🧩 Mind Map — Major Account Head Structure</summary>
+    <div class="card-body">
+      <div class="mindmap">
+        <div>Revenue Receipts (1201-Postal Receipts)</div>
+        <div>Expenditure (3201-Postal Services)</div>
+        <div>Capital Outlay (5201)</div>
+        <div>Loans &amp; Advances (7610)</div>
+        <div>Deposits (8446-Postal Deposits)</div>
+        <div>Suspense (8661)</div>
+        <div>Remittances (8781-Money Orders)</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>70</td><td>Departmental accounts built on same general plan as Govt Accounts; dual role — communication + financial business</td><td class="hi">विभागीय लेखे सामान्य सरकारी लेखों की तरह; दोहरी भूमिका</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>71</b></td><td>Dept of Posts recognized as <b>Commercial Department</b>; pays interest on Capital head 5201</td><td class="hi">डाक विभाग "वाणिज्यिक विभाग" माना जाता है</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>72</td><td>Receipts → Major Head 1201; Expenditure → Major Head 3201 (8 sub-heads: Admin/Operation/Agency/Audit/Engineering/Amenities/Pension/Stationery)</td><td class="hi">प्राप्तियां शीर्ष 1201; व्यय शीर्ष 3201</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>74</td><td>All receipts credited to Treasury/Bank; expenditure drawn from Treasury/Bank</td><td class="hi">प्राप्तियां कोषागार में जमा; व्यय कोषागार से आहरित</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>75-76</td><td>Each Head Post Office is an accounting unit submitting monthly Cash Account to Circle Postal Accounts Office</td><td class="hi">प्रत्येक प्रधान डाकघर मासिक नकद लेखा प्रस्तुत करे</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>78</td><td>Monthly account totals cross-checked against Treasury/Bank figures — independent verification</td><td class="hi">मासिक लेखा बैंक आंकड़ों से मिलान अनिवार्य</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>79</td><td>Main revenue sources: sale of stamps/postage, MO/IPO commission, sale of assets, inter-departmental recoveries, Speed Post/Business Post etc.</td><td class="hi">मुख्य राजस्व स्रोत: डाक टिकट बिक्री, कमीशन, स्पीड पोस्ट आदि</td><td><span class="tag g">🟢</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison — Major Heads Table</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Category</th><th>Major Head(s)</th></tr>
+        <tr><td>Revenue Receipts</td><td>0049, 0070, 1201-Postal Receipts</td></tr>
+        <tr><td>Revenue Expenditure</td><td>2016-Audit, 2049-Interest, 3201-Postal Services</td></tr>
+        <tr><td>Capital Outlay</td><td>5201-Capital Outlay on Postal Services</td></tr>
+        <tr><td>Loans &amp; Advances</td><td>7610-Loans to Govt Servants, 8014/8015/8016-PLI Schemes</td></tr>
+        <tr><td>Deposits</td><td>8446-Postal Deposits, 8455-IPPB Settlement, 8553-Postal Advances</td></tr>
+        <tr><td>Suspense &amp; Misc.</td><td>8661-Suspense (Postal), 8670-Cheques &amp; Bills, 8672-Permanent Cash Imprest</td></tr>
+        <tr><td>Remittances</td><td>8781-Money Orders, 8782-Cash Remittances, 8787-Railways Adjustment</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Business managed on behalf of Government (Savings Bank, Post Office Certificates) is <b>NOT</b> recorded under the standard Revenue/Expenditure major heads — it goes under the <b>Remittance and Debt</b> sections of Government Accounts instead.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Circle Postal Accounts Office (headed by GM (PA&amp;F)/Director of Accounts/Dy. Director of Accounts) • Head Post Office • Head Record Office • Central Stamp Store, Nasik</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Department of Posts is recognized as which type of department, and under which Rule? <b>(Ans: Commercial Department — Rule 71)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Under which Major Head are Postal Receipts recorded? <b>(Ans: 1201-Postal Receipts)</b></div>
+</section>
+
+<!-- ============ CHAPTER V: CASH ============ -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <h2>Chapter V — Cash</h2>
+    <h2 class="hi">अध्याय 5 — नकदी</h2>
+    <span class="rulerange">Rules 99 – 123</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> "Cash" (Rule 100) includes legal tender coins, currency/bank notes, treasury certificates, cheques payable on demand, and demand drafts. It does <b>NOT</b> include Government Securities, deposit receipts, or postage stamps/stationery (these are treated as "stock"). Every Government servant is personally responsible for cash passing through his hands (Rule 99).</p>
+      <p class="hi"><b>HI:</b> "नकदी" (नियम 100) में वैध मुद्रा सिक्के, करेंसी/बैंक नोट, कोषागार प्रमाणपत्र, मांग पर देय चेक व डिमांड ड्राफ्ट शामिल हैं। सरकारी प्रतिभूतियां व डाक टिकट/स्टेशनरी इसमें शामिल नहीं (ये "स्टॉक" माने जाते हैं)।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td><b>99</b></td><td>Every Govt servant personally responsible for money passing through his hands; private &amp; public cash must never be mixed</td><td class="hi">नकदी हेतु व्यक्तिगत उत्तरदायित्व; निजी-सरकारी धन मिश्रण वर्जित</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>100</b></td><td>Definition of "Cash" — coins, currency/bank notes, treasury certificates, cheques payable on demand, demand drafts (excludes securities, stamps)</td><td class="hi">"नकदी" की परिभाषा</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>102</b></td><td>Public money kept in strong treasure chest with <b>2 locks of different patterns</b>; keys with 2 different custodians</td><td class="hi">तिजोरी में 2 भिन्न तालों की व्यवस्था अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>103</td><td>MTS employment to carry money discouraged; only trustworthy officials with security to be used</td><td class="hi">धन ले जाने हेतु MTS का उपयोग हतोत्साहित</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>106-107</td><td>Cheques accepted from public; receipt given only after clearance for final receipt</td><td class="hi">चेक स्वीकृति — क्लीयरेंस के बाद अंतिम रसीद</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>115</b></td><td>Erasure in Cash Book strictly prohibited; corrections in red ink with dated initials; post-submission errors need sanction of submitting authority</td><td class="hi">कैश बुक में काट-छांट वर्जित; लाल स्याही से सुधार</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>116</td><td>Disbursing Officer checks all entries promptly; signs Cash Book at month-end fixing responsibility</td><td class="hi">माह के अंत में हस्ताक्षर — जिम्मेदारी तय</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>119</b></td><td>Cash Book closed &amp; balanced on prescribed date; Head Office Cash Book/Treasurer's Cash Book closed <b>daily</b></td><td class="hi">कैश बुक निर्धारित तिथि पर बंद; प्रधान डाकघर में प्रतिदिन</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>120</td><td>Actual cash counted &amp; certified personally by Officer in-charge at close of each accounting period</td><td class="hi">वास्तविक शेष की व्यक्तिगत गणना व प्रमाणीकरण</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>122</td><td>Excess/deficient cash entered as "Cash found excess/deficient in chest"</td><td class="hi">अधिक/कम नकदी हेतु विशेष प्रविष्टि</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>123</td><td>Inspecting Officers verify HO cash balances (incl. stamp portion) — report in Form ACG-84</td><td class="hi">निरीक्षण अधिकारी द्वारा शेष सत्यापन</td><td><span class="tag y">🟡</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🔀 Flowchart — Cash Book Verification &amp; Balancing</summary>
+    <div class="card-body">
+      <div class="flowchart">
+        <div class="fbox">Transaction occurs → entered immediately in Cash Book (Rule 114)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Disbursing Officer checks &amp; initials entries (Rule 116)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Cash Book closed &amp; balanced on prescribed date / daily for HO (Rule 119)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Actual cash counted &amp; certified by Officer in-charge (Rule 120)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Mismatch? → Entry "Cash found excess/deficient in chest" (Rule 122)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Inspecting Officer verifies HO balances monthly — Form ACG-84 (Rule 123)</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Cash Book/daily transaction report need not be closed on days with no transactions and unopened cash chest (Rule 119 Exception). Officers with only fixed imprests need not maintain a full Cash Book — only Imprest Cash Accounts (Rule 111).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>HO/Treasurer's Cash Book closing</td><td>Daily</td></tr>
+        <tr><td>Other office Cash Book closing</td><td>Prescribed date each month (weekly/daily recommended if numerous transactions)</td></tr>
+        <tr><td>Cash count certification</td><td>Last working day of accounting period (or next working day before any disbursement)</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Disbursing Officer • Postmaster (Head Office) • Head Record Clerk • Inspecting Officers (ADPS, Supdt. of Post Offices, Inspector of Post Offices) • State Bank of India (as RBI agent)</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Under Rule 100, is postage stamp considered "cash"? <b>(Ans: No — it is treated as stock/inventory)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> How many locks of different patterns must secure a treasure chest? <b>(Ans: 2 — Rule 102)</b></div>
+</section>
+
+<!-- ============ CHAPTER VIII: PAY AND ALLOWANCES GENERAL RULES ============ -->
+<section class="chapter" id="ch8">
+  <div class="chapter-header">
+    <h2>Chapter VIII — Pay and Allowances: General Rules</h2>
+    <h2 class="hi">अध्याय 8 — वेतन एवं भत्ते: सामान्य नियम</h2>
+    <span class="rulerange">Rules 169 – 198</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Governs the due date of pay disbursement, deductions/attachments from pay for Court decrees, Last Pay Certificate (LPC) requirements, last payment on quitting service, and payment on death of a Government servant.</p>
+      <p class="hi"><b>HI:</b> यह अध्याय वेतन भुगतान की देय तिथि, न्यायालय आदेश से वेतन कुर्की/कटौती, अंतिम वेतन प्रमाणपत्र (LPC), सेवा समाप्ति पर अंतिम भुगतान, तथा मृत्यु की स्थिति में भुगतान को नियंत्रित करता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td><b>169</b></td><td>Pay/fixed allowances due &amp; disbursed on <b>last working day of the month</b>; <b>March pay paid on 1st working day of April</b></td><td class="hi">वेतन माह के अंतिम कार्यदिवस को देय; मार्च का वेतन अप्रैल के पहले कार्यदिवस को</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>174</td><td>Court attachment order — proper deduction recorded in Form GAR-22 (TR-13)</td><td class="hi">न्यायालय कुर्की आदेश — फॉर्म GAR-22 में दर्ज</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>174 Note 1 / CPC S.60</b></td><td>Attachable salary = ₹1,000 exempt + <b>2/3rd of remainder</b> attachable (other than maintenance decree); TA, conveyance, HRA, medical reimbursement, CEA are fully <b>exempt</b> from attachment</td><td class="hi">कुर्की योग्य राशि = ₹1000 + शेष का 2/3; भत्ते कुर्की मुक्त</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>174</td><td>If attachment continues for total <b>24 months</b>, exempt for a further <b>12 months</b>; permanently exempt after 24 months in same decree</td><td class="hi">24 माह लगातार कुर्की के बाद 12 माह की छूट</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>175</td><td>Formula: Net attachable = <b>[X − Y − 1000] / 3</b> where X=gross emoluments, Y=exempt allowances</td><td class="hi">सूत्र: [X − Y − 1000] / 3</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>178(i-a)</td><td>1/3rd of salary attachable for maintenance decree</td><td class="hi">भरण-पोषण डिक्री हेतु वेतन का 1/3 कुर्की योग्य</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>180</td><td>First pay bill must be supported by Last Pay Certificate (LPC) in prescribed form</td><td class="hi">प्रथम वेतन बिल के साथ LPC अनिवार्य</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>182</td><td>DO must not pay a Government servant to whom LPC has been granted unless certificate surrendered</td><td class="hi">LPC समर्पण के बिना भुगतान नहीं</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>187</b></td><td>Last payment on quitting service (retirement/resignation/dismissal/death) only after confirming <b>no outstanding demands</b></td><td class="hi">सेवा समाप्ति पर अंतिम भुगतान — कोई बकाया न हो यह सुनिश्चित करना</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>188</td><td>Pay/allowances drawable for the day of death; hour of death immaterial</td><td class="hi">मृत्यु के दिन का वेतन देय; समय का महत्व नहीं</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>238</td><td>Head of Office personally responsible for amount drawn until paid &amp; valid quittance obtained</td><td class="hi">भुगतान तक कार्यालय प्रधान व्यक्तिगत उत्तरदायी</td><td><span class="tag o">🟠</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison — Allowances Exempt vs Attachable</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Fully Exempt from Attachment</th><th>Attachable (subject to formula)</th></tr>
+        <tr><td>All Travelling Allowances</td><td>Basic Pay</td></tr>
+        <tr><td>All Conveyance Allowances</td><td>Dearness Allowance</td></tr>
+        <tr><td>House Rent Allowance</td><td>Other regular pay components</td></tr>
+        <tr><td>Children's Education Allowance</td><td>—</td></tr>
+        <tr><td>Medical reimbursement</td><td>—</td></tr>
+        <tr><td>Uniform/Ration allowance</td><td>—</td></tr>
+        <tr><td>Subsistence grant (under suspension)</td><td>—</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🌳 Decision Tree — Court Attachment of Pay</summary>
+    <div class="card-body">
+      <div class="dtree">
+        <div class="q">Is the decree for maintenance?</div>
+        <div class="yn"><div>✅ Yes → 1/3rd of salary attachable</div><div>❌ No → Next</div></div>
+        <div class="q">Other decree — apply formula [X−Y−1000]/3</div>
+        <div class="yn"><div>Compute net attachable amount</div><div>Deduct exempt allowances (Y) first</div></div>
+        <div class="q">Has attachment run continuously 24 months?</div>
+        <div class="yn"><div>✅ Yes → Exempt for next 12 months (then permanently exempt in that decree)</div><div>❌ No → Continue attachment</div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Field Allowance to P&amp;T staff on Military Service is <b>NOT exempt</b> from attachment (Note 4 to Rule 174) since it's a general addition to emoluments, not a specific-purpose allowance. TA claim for retiring servant's journey may be paid even without surrendering LPC (Rule 182 Note 1).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🕒 Timeline — Monthly Pay Cycle</summary>
+    <div class="card-body">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-title">5 days before month-end</div><div class="tl-desc">Pay bills may be signed (not earlier)</div></div>
+        <div class="tl-item"><div class="tl-title">Last working day of month</div><div class="tl-desc">Pay &amp; fixed allowances disbursed</div></div>
+        <div class="tl-item"><div class="tl-title">March (exception)</div><div class="tl-desc">Pay disbursed on 1st working day of April</div></div>
+        <div class="tl-item"><div class="tl-title">Within 3 months</div><div class="tl-desc">Undisbursed pay retained maximum (Rule 238), else refunded by short-drawal</div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Drawing &amp; Disbursing Officer (DDO) • Accounts Officer • Court of Law • Head of Office • Appropriate Government (Section 60 CPC declarations)</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> On which date is pay for the month of March disbursed? <b>(Ans: 1st working day of April — Rule 169)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Give the formula for maximum attachable pay under a non-maintenance decree. <b>(Ans: [X − Y − 1000] / 3 — Rule 175)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Is House Rent Allowance attachable by a Court order? <b>(Ans: No, fully exempt)</b></div>
+</section>
+
+<!-- ============ CHAPTER IX: ESTABLISHMENT ============ -->
+<section class="chapter" id="ch9">
+  <div class="chapter-header">
+    <h2>Chapter IX — Establishment</h2>
+    <h2 class="hi">अध्याय 9 — स्थापना</h2>
+    <span class="rulerange">Rules 199 – 240</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Governs how establishments are organized into "Sections," how new posts/changes are proposed and sanctioned (Proposition Statements), maintenance of Service Books, recording Date of Birth, and rules for TA/Overtime Allowance bills.</p>
+      <p class="hi"><b>HI:</b> यह अध्याय स्थापना को "अनुभागों" में विभाजित करने, नए पदों/परिवर्तनों के प्रस्ताव व स्वीकृति (प्रस्ताव विवरण), सेवा पुस्तिका रखरखाव, जन्म तिथि दर्ज करने, तथा TA/अधिसमय भत्ता बिलों के नियमों को नियंत्रित करता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>199</td><td>Establishment divided into "Sections" — by scale of pay, one Officer's control; Post/Sub-Postmasters on same scale = one section</td><td class="hi">स्थापना का "अनुभागों" में विभाजन</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>200</td><td>New establishment/change proposal must show present cost, proposed additions, and estimated extra cost</td><td class="hi">नई स्थापना प्रस्ताव में लागत विवरण अनिवार्य</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>205</td><td>Register ACG-19(a) maintained by Heads of Offices for sanctioned establishments — kept updated; Head personally responsible</td><td class="hi">स्वीकृत स्थापना रजिस्टर ACG-19(a)</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>207</b></td><td>Date of Birth declared at appointment with documentary evidence; once recorded, alteration only with Department's sanction</td><td class="hi">जन्म तिथि नियुक्ति के समय घोषित; बाद में परिवर्तन कठिन</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>207 conditions</b></td><td>DOB alteration allowed only if: (a) request within <b>5 years</b> of entry into service, (b) genuine bonafide mistake, (c) doesn't affect exam/service eligibility</td><td class="hi">जन्म तिथि सुधार — सेवा प्रवेश के 5 वर्ष के भीतर आवेदन आवश्यक</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>208</td><td>If exact DOB unknown: only year known → 1st July assumed; year+month known → 16th of month assumed</td><td class="hi">अज्ञात जन्म तिथि — 1 जुलाई या माह की 16 तारीख मानी जाए</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>211-213</td><td>Service Books kept in custody of Head of Office; arranged alphabetically with index maintained</td><td class="hi">सेवा पुस्तिका कार्यालय प्रधान की अभिरक्षा में</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>238</b></td><td>Head of Office personally responsible for bill amount until paid + valid quittance; undisbursed pay retainable max <b>3 months</b>; never placed in deposit</td><td class="hi">अवितरित वेतन अधिकतम 3 माह तक रोका जा सकता है</td><td><span class="tag r">🔴</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🔀 Flowchart — Date of Birth Correction Process</summary>
+    <div class="card-body">
+      <div class="flowchart">
+        <div class="fbox">DOB declared at appointment with documentary evidence (Rule 207)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Recorded in Service Book — becomes final normally</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Correction request within 5 years of entry into service?</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Genuine bonafide mistake proven? + doesn't affect exam/service eligibility?</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Sanction of Ministry/Department required → DOB corrected</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Exception to Rule 199 — In Post Offices, Postal Accounts &amp; Sub-Postmasters on the same time-scale form ONE section (not split further). Inordinate/unexplained delay in seeking DOB correction can itself justify refusal, per Supreme Court ruling in <i>Union of India vs Harnam Singh</i> (1993).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>DOB correction request window (Rule 207)</td><td>Within <b>5 years</b> of entry into Government service</td></tr>
+        <tr><td>Undisbursed pay retention (Rule 238)</td><td>Maximum <b>3 months</b></td></tr>
+        <tr><td>Medical fitness certificate deferment for new appointee</td><td>Maximum <b>2 months</b> without certificate</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Circle Postal Accounts Officer • Head of Office • Head of Department • Ministry/Department (Central Govt) for DOB sanction • Comptroller and Auditor General (for IA&amp;AD staff)</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Undisbursed pay must NEVER be placed in deposit — custody must be proportionate to the official's security amount (Rule 238). Head of Office bears personal responsibility for any charges not duly sanctioned but included in the Establishment Pay Bill (Rule 205).</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Within how many years of entering service must a request for DOB correction be made? <b>(Ans: 5 years — Rule 207)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> If only the year of birth is known, what date is assumed? <b>(Ans: 1st July — Rule 208)</b></div>
+</section>
+
+<!-- ============ CHAPTER X: CONTINGENT CHARGES ============ -->
+<section class="chapter" id="ch10">
+  <div class="chapter-header">
+    <h2>Chapter X — Contingent Charges</h2>
+    <h2 class="hi">अध्याय 10 — आकस्मिक व्यय</h2>
+    <span class="rulerange">Rules 241 – 280</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> "Contingent Charges" (Rule 241) means incidental office-management expenses NOT falling under 'works', 'repairs', 'stock', or 'tools and plant', and excluding pay/allowances/pension/grants. This chapter classifies contingencies into 4 types and governs sanctioning powers, permanent advances, and sub-voucher handling.</p>
+      <p class="hi"><b>HI:</b> "आकस्मिक व्यय" (नियम 241) का अर्थ कार्यालय प्रबंधन हेतु आकस्मिक व्यय है जो 'कार्य', 'मरम्मत', 'स्टॉक' या 'उपकरण' के अंतर्गत नहीं आता, और वेतन/भत्ते/पेंशन को छोड़ता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🧩 Mind Map — Rule 243: 4 Classes of Contingent Charges</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Class</th><th>Description</th></tr>
+        <tr><td><b>Contract Contingencies</b></td><td>Lump sum placed annually — no further sanction needed within allotment</td></tr>
+        <tr><td><b>Special Contingencies</b></td><td>Require previous sanction of superior authority (recurring or non-recurring)</td></tr>
+        <tr><td><b>Countersigned Contingencies</b></td><td>Require Controlling Authority's approval — counter-signature after payment</td></tr>
+        <tr><td><b>Fully Vouched Contingencies</b></td><td>No sanction/countersignature needed — Head of Office's own authority, fully vouched bills</td></tr>
+      </table>
+      <p class="mnemonic">🎯 <b>Mnemonic:</b> "<b>C-S-C-F</b>" = Contract → Special → Countersigned → Fully-Vouched (decreasing control, increasing autonomy).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td><b>244(4)</b></td><td>Monetary limits (if not otherwise fixed): Heads of Dept — <b>₹200/yr recurring, ₹1000 non-recurring</b>; Other Gazetted DOs — <b>₹10/month, ₹100 non-recurring</b></td><td class="hi">मौद्रिक सीमाएं — विभाग प्रधान व अन्य अधिकारी</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>245-246</td><td>Casual workers (MTS) not for regular work; same-work rate = 1/30th of min. pay + DA per 8-hr day; different work = Minimum Wages Act rate</td><td class="hi">आकस्मिक श्रमिक वेतन गणना</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>247</td><td>All charges incurred must be paid at once — cannot carry over to next year's grant</td><td class="hi">व्यय तुरंत भुगतान — अगले वर्ष स्थानांतरित नहीं</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>248</td><td>No money drawn unless required for immediate disbursement (no anticipatory drawal)</td><td class="hi">तत्काल संवितरण हेतु ही धन आहरण</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>250</b></td><td>Drawing Officer exercises same vigilance for petty expenses as for personal money (mirrors Financial Propriety)</td><td class="hi">व्यक्तिगत धन जैसी सतर्कता आवश्यक</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>252</b></td><td>Permanent Advance/Imprest — claims <b>up to ₹500</b> may be disbursed from it, subject to recoupment</td><td class="hi">स्थायी अग्रिम से ₹500 तक के दावे निपटाए जा सकते हैं</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>259(i)</b></td><td>Sub-vouchers not destroyed until lapse of <b>3 years</b></td><td class="hi">उप-वाउचर 3 वर्ष तक नष्ट नहीं किए जा सकते</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>259(iii)</td><td>Sub-vouchers ₹50–₹200: cancelled after check by Controlling Officer; ≤₹50: defaced so they cannot be reused</td><td class="hi">₹50-200 उप-वाउचर रद्द; ₹50 तक विरूपित</td><td><span class="tag o">🟠</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🌳 Decision Tree — Contingent Expenditure Sanction Path</summary>
+    <div class="card-body">
+      <div class="dtree">
+        <div class="q">Is it Contract Contingency within annual lump-sum allotment?</div>
+        <div class="yn"><div>✅ Yes → No further sanction needed</div><div>❌ No → Next</div></div>
+        <div class="q">Does it fall within Head of Office's monetary powers (₹200/yr or ₹1000 non-recurring for HoD)?</div>
+        <div class="yn"><div>✅ Yes → Head of Office sanctions directly</div><div>❌ No → Next</div></div>
+        <div class="q">Unusual character / departure from rule?</div>
+        <div class="yn"><div>✅ Yes → Previous sanction of Government required</div><div>❌ No → Normal countersignature process</div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Rule 252 Note 1 — the ₹500 permanent-advance monetary limit does NOT apply to telephone, electricity, and water bill claims for non-cheque-drawing DDOs stationed away from their PAO. Contingent bills of Director General &amp; Heads of Circles do NOT require countersignature (Rule 243 Note 2).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Sub-voucher destruction (Rule 259)</td><td>Not before <b>3 years</b></td></tr>
+        <tr><td>Charges payment</td><td>At once — no carry-over to next year's grant (Rule 247)</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Head of Office/Department • Countersigning/Controlling Officer • Internal Financial Advisers • Competent Authority (per Schedule of Financial Powers)</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> आकस्मिक व्यय कितनी श्रेणियों में बांटा गया है? <b>(Ans: 4 — Contract, Special, Countersigned, Fully Vouched — Rule 243)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Up to what amount may claims be disbursed out of a Permanent Advance/Imprest? <b>(Ans: ₹500 — Rule 252)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Sub-vouchers cannot be destroyed before how many years? <b>(Ans: 3 years — Rule 259)</b></div>
+</section>
+
+<!-- ============ CHAPTER XII: LOANS AND ADVANCES TO GOVERNMENT SERVANTS ============ -->
+<section class="chapter" id="ch12">
+  <div class="chapter-header">
+    <h2>Chapter XII — Loans and Advances to Government Servants</h2>
+    <h2 class="hi">अध्याय 12 — सरकारी सेवकों को ऋण एवं अग्रिम</h2>
+    <span class="rulerange">Rules 292 – 319</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Governs sanction, disbursement, interest, and recovery of advances to Government servants — both departmental advances and personal advances (Motor Car, Personal Computer, House Building, etc.). Most interest-free personal advances were <b>abolished post-7th CPC</b> (2016).</p>
+      <p class="hi"><b>HI:</b> यह अध्याय सरकारी सेवकों को दिए जाने वाले अग्रिमों — विभागीय एवं व्यक्तिगत (मोटर कार, कंप्यूटर, गृह निर्माण आदि) — की स्वीकृति, संवितरण, ब्याज एवं वसूली को नियंत्रित करता है। 7वें वेतन आयोग के बाद अधिकांश ब्याज-मुक्त व्यक्तिगत अग्रिम <b>समाप्त</b> कर दिए गए।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>292</td><td>No advance granted except by specifically empowered authorities</td><td class="hi">केवल सशक्त प्राधिकारियों द्वारा अग्रिम स्वीकृति</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>294</td><td>Advance sanction must not breach Rule 60 (Financial Propriety) principles</td><td class="hi">अग्रिम स्वीकृति नियम 60 का उल्लंघन नहीं करे</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>295</td><td>Interest-bearing advance sanctioned only after confirming fund availability in that year</td><td class="hi">ब्याज-सहित अग्रिम — निधि उपलब्धता सुनिश्चित करना</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>300</td><td>Advances ordinarily NOT granted to non-permanent employees (pay = inadequate security); exceptions with surety from permanent servant</td><td class="hi">अस्थायी कर्मचारियों को अग्रिम सामान्यतः नहीं</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>305-306</b></td><td>Interest-bearing advances must be <b>fully recovered within the originally fixed period</b>; if servant is retiring, installments adjusted to complete recovery before retirement</td><td class="hi">सेवानिवृत्ति से पूर्व अग्रिम की पूर्ण वसूली अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>Post-7th CPC (2016)</b></td><td>Bicycle, Warm Clothing, Advance of Pay, Festival, Natural Calamity, Leave Salary, Law Suit advances — ALL <b>abolished</b></td><td class="hi">7वें वेतन आयोग बाद कई अग्रिम समाप्त</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>Retained</b></td><td>Medical Treatment, TA for family of deceased, TA on tour/transfer, LTC — interest-free advances <b>retained</b></td><td class="hi">चिकित्सा, मृतक परिवार TA, तबादला TA, LTC अग्रिम बरकरार</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>PC Advance</b></td><td>Personal Computer Advance = <b>₹50,000 or actual price, whichever lower</b>; max <b>5 times</b> in entire service</td><td class="hi">कंप्यूटर अग्रिम ₹50,000 तक, सेवाकाल में अधिकतम 5 बार</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>Motor Car/Scooter Advance</td><td>Interest-bearing conveyance advances discontinued post-7th CPC</td><td class="hi">मोटर कार/स्कूटर अग्रिम बंद</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>Advance payment to suppliers</td><td>Max <b>30% to private firms, 40% to PSU/Govt agency</b> of contract value (GFR Rule 172 reference)</td><td class="hi">आपूर्तिकर्ता अग्रिम भुगतान सीमा 30%/40%</td><td><span class="tag o">🟠</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison — Advances: Abolished vs Retained (Post-7th CPC)</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>❌ Abolished</th><th>✅ Retained / Continuing</th></tr>
+        <tr><td>Bicycle Advance</td><td>Medical Treatment Advance</td></tr>
+        <tr><td>Warm Clothing Advance</td><td>TA for family of deceased employee</td></tr>
+        <tr><td>Advance of Pay on Transfer</td><td>TA on Tour/Transfer</td></tr>
+        <tr><td>Festival Advance</td><td>Leave Travel Concession (LTC) Advance</td></tr>
+        <tr><td>Natural Calamity Advance</td><td>Personal Computer Advance (₹50,000, ×5 times)</td></tr>
+        <tr><td>Advance of Leave Salary</td><td>House Building Advance (HBA — separate rules)</td></tr>
+        <tr><td>Law Suit Advance</td><td>—</td></tr>
+        <tr><td>Hindi Correspondence Course Advance</td><td>—</td></tr>
+        <tr><td>Motor Car / Motor Cycle / Scooter Advance</td><td>—</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Head of Department may grant conveyance advance (other than bicycle) to a quasi-permanent/temporary employee with ≥3 years' service and acceptable surety (Rule 300 Note 3). Cases with advances already sanctioned before the 7th CPC OM need not be reopened.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Recovery of interest-bearing advance</td><td>Within originally fixed period; completed before retirement (Rule 306)</td></tr>
+        <tr><td>TA advance recovery</td><td>In full on submission of TA bill (Rule 310)</td></tr>
+        <tr><td>PC Advance frequency</td><td>Maximum 5 times in entire service</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Competent Authority (per Schedule of Financial Powers) • Ministry of Finance • Head of Department • Financial Adviser</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> What is the maximum Personal Computer Advance amount and frequency? <b>(Ans: ₹50,000 or actual price, whichever lower; max 5 times in service)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Name two interest-free advances retained after the 7th CPC. <b>(Ans: Medical Treatment Advance, TA on tour/transfer/LTC)</b></div>
+</section>
+
+<!-- ============ CHAPTER XVI: PROVIDENT & OTHER FUNDS (GPF) ============ -->
+<section class="chapter" id="ch16">
+  <div class="chapter-header">
+    <h2>Chapter XVI — Provident &amp; Other Funds (General Provident Fund)</h2>
+    <h2 class="hi">अध्याय 16 — भविष्य निधि एवं अन्य निधियां (सामान्य भविष्य निधि)</h2>
+    <span class="rulerange">Rules 412 – 420</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> GPF is governed by the <b>General Provident Fund (Central Services) Rules, 1960</b>. GPF applies only to Government servants who joined Central Government service <b>on or before 31.12.2003</b> — those joining after this date come under the National Pension System (NPS) instead. Covers subscription recovery, nomination, withdrawal, advances, and final payment.</p>
+      <p class="hi"><b>HI:</b> GPF, सामान्य भविष्य निधि (केंद्रीय सेवा) नियम 1960 द्वारा शासित है। यह केवल उन सरकारी सेवकों पर लागू होता है जो <b>31.12.2003 को या उससे पहले</b> केंद्र सरकार सेवा में शामिल हुए — इसके बाद शामिल होने वालों पर NPS लागू है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>412</td><td>GPF governed by GPF (Central Services) Rules, 1960</td><td class="hi">GPF, GPF (CS) नियम 1960 द्वारा शासित</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>414/415</b></td><td>GPF subscription only for those who joined Central Govt service <b>on or before 31.12.2003</b></td><td class="hi">31.12.2003 तक शामिल कर्मचारियों हेतु GPF</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>415(b)</td><td>Subscription amount must be within min/max rate prescribed by Fund rules; consistency checked against first month of year</td><td class="hi">अंशदान न्यूनतम/अधिकतम दर के भीतर हो</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>GoI Decision below 416</b></td><td>GPF subscription <b>compulsorily discontinued during last 3 months</b> of service before superannuation</td><td class="hi">सेवानिवृत्ति से पूर्व अंतिम 3 माह में अंशदान अनिवार्य रूप से बंद</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>417</td><td>On transfer, subscription fact certified on Last Pay Certificate with account number &amp; monthly subscription amount</td><td class="hi">तबादले पर LPC में अंशदान प्रमाणित</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>418(c)</td><td>DOs may pay advances/temporary withdrawals without pre-audit, on sanctioning officer's authority (Form GAR-42/TR-58-A)</td><td class="hi">अग्रिम/अस्थायी आहरण बिना पूर्व-लेखापरीक्षा भुगतान योग्य</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>418 Note 1</td><td>No PF payment without express authority of Accounts Officer, except as permitted in this rule</td><td class="hi">लेखा अधिकारी की स्पष्ट अनुमति के बिना भुगतान नहीं</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>420 Note 1</td><td>Death, retirement, dismissal, reinstatement of a subscriber must be reported <b>immediately</b> to Accounts Office</td><td class="hi">मृत्यु/सेवानिवृत्ति की तुरंत सूचना लेखा कार्यालय को</td><td><span class="tag r">🔴</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🔀 Flowchart — GPF Subscription to Final Payment Cycle</summary>
+    <div class="card-body">
+      <div class="flowchart">
+        <div class="fbox">Joins service ≤31.12.2003 → compulsory GPF subscriber</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Head of Office statement to Circle PAO by 15th of month; Account Number allotted</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Monthly subscription deducted from pay bill</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Advances/withdrawals during service (Rules 418-419) — with sanction</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Last 3 months before superannuation → subscription compulsorily stopped</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Retirement/death → Last Deduction Certificate sent to Accounts Officer → Final Payment</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Optional subscribers (temporary Government servants with less than 1 year's continuous service) follow the older application-based procedure, unlike compulsory subscribers who are enrolled automatically via the monthly statement system. Service under a State Government or another Central Department counts as continuous service for GPF eligibility, requiring no fresh 1-year wait (subject to balance transfer under Rule 35 of GPF Rules).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Dates / Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Head of Office statement to Circle PAO</td><td>By <b>15th of every month</b></td></tr>
+        <tr><td>GPF subscription cut-off for compulsory enrolment</td><td>Joined on/before <b>31.12.2003</b></td></tr>
+        <tr><td>Subscription discontinuation before superannuation</td><td>Compulsorily stopped in the <b>last 3 months</b></td></tr>
+        <tr><td>Report of death/retirement of subscriber</td><td>Immediately, by Head of Office</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Circle Postal Accounts Office (maintains GPF accounts) • Head of Office/DDO • Accounts Officer (GPF) • Sanctioning Authority for advances</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> GPF subscription applies to Government servants who joined service on or before which date? <b>(Ans: 31.12.2003)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> When is GPF subscription compulsorily discontinued before retirement? <b>(Ans: Last 3 months of service — GoI Decision below Rule 416)</b></div>
+</section>
+
+<!-- ============ ONE-PAGE REVISION SHEET ============ -->
+<div class="section-title" id="revision">🧠 One-Page Revision Sheet / एक-पृष्ठ रिवीजन शीट</div>
+<div class="revision-grid">
+  <div class="rev-card">
+    <h4>🔎 Ch.IV Relations with Audit</h4>
+    Objection reply: 15 days (82) • Recovery ≤1/3 pay (84) • Representation vs retrenchment: 3 months (83) • Inspection report reply: 1 month (95) • ACG-60 register, 10% monthly check (85)
+  </div>
+  <div class="rev-card">
+    <h4>📗 Ch.II General Principles</h4>
+    Receipt stamp &gt;₹5,000 (48) • Petty loss ≤₹10,000 exempt (52) • Material loss ≥₹50,000 → Police • Financial Propriety: 5 principles (60) • Personal responsibility for fraud/negligence (58)
+  </div>
+  <div class="rev-card">
+    <h4>📘 Ch.III Accounts System</h4>
+    Dept of Posts = Commercial Department (71) • Receipts: 1201 • Expenditure: 3201 • Capital: 5201 • SB/Certificates NOT under standard heads — go to Remittance/Debt section
+  </div>
+  <div class="rev-card">
+    <h4>💰 Ch.V Cash</h4>
+    Cash = coins/notes/cheques/DDs (NOT stamps/securities) • 2 different locks for chest (102) • No erasures (115) • HO Cash Book closed daily (119)
+  </div>
+  <div class="rev-card">
+    <h4>💵 Ch.VIII Pay &amp; Allowances</h4>
+    Pay on last working day; March pay → 1st working day April (169) • Attachment formula: [X−Y−1000]/3 (175) • Maintenance decree: 1/3 attachable • TA/HRA/CEA exempt from attachment
+  </div>
+  <div class="rev-card">
+    <h4>👥 Ch.IX Establishment</h4>
+    DOB correction: within 5 years of entry (207) • Unknown DOB → 1 July / 16th of month (208) • Undisbursed pay retained max 3 months, never in deposit (238)
+  </div>
+  <div class="rev-card">
+    <h4>🧾 Ch.X Contingent Charges</h4>
+    4 classes: Contract/Special/Countersigned/Fully-Vouched (243) • HoD limit ₹200/yr, ₹1000 non-recurring (244) • Permanent advance claims ≤₹500 (252) • Sub-vouchers kept 3 years (259)
+  </div>
+  <div class="rev-card">
+    <h4>🏦 Ch.XII Loans &amp; Advances</h4>
+    PC Advance ₹50,000, max 5 times (Rule 21(5)) • Most interest-free advances abolished post-7th CPC • Medical/TA/LTC advances retained • Recovery complete before retirement (306)
+  </div>
+  <div class="rev-card">
+    <h4>🪙 Ch.XVI GPF</h4>
+    GPF for those who joined ≤31.12.2003 (post-2003 → NPS) • Statement to PAO by 15th of month • Subscription stopped last 3 months before superannuation
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION NOTES ============ -->
+<div class="section-title">⏰ Last Day Revision Notes / अंतिम दिन के नोट्स</div>
+<details class="card" open>
+  <summary>🎯 Top Numbers to Memorize / याद रखने योग्य आंकड़े</summary>
+  <div class="card-body">
+    <table>
+      <tr><th>Number</th><th>Meaning</th></tr>
+      <tr><td>15 days</td><td>Objection statement reply (Rule 82)</td></tr>
+      <tr><td>1/3rd of pay</td><td>Max ordinary recovery rate (Rule 84) / max attachment for maintenance decree</td></tr>
+      <tr><td>3 months</td><td>Representation window vs retrenchment (83); GPF stop before superannuation; max undisbursed pay retention (238)</td></tr>
+      <tr><td>1 month</td><td>Reply to Inspection Report Parts I &amp; II (95)</td></tr>
+      <tr><td>₹5,000</td><td>Receipt stamping threshold (48)</td></tr>
+      <tr><td>₹10,000</td><td>Petty loss exemption from Audit reporting (52)</td></tr>
+      <tr><td>₹50,000</td><td>Material loss → Police reporting threshold; "Serious loss" of immovable property (57)</td></tr>
+      <tr><td>2 locks</td><td>Treasure chest security (Rule 102)</td></tr>
+      <tr><td>[X−Y−1000]/3</td><td>Pay attachment formula (Rule 175)</td></tr>
+      <tr><td>5 years</td><td>DOB correction request window (207)</td></tr>
+      <tr><td>₹200/₹1000</td><td>HoD contingent sanction limit: recurring/non-recurring (244)</td></tr>
+      <tr><td>₹500</td><td>Permanent Advance/Imprest disbursal limit (252)</td></tr>
+      <tr><td>3 years</td><td>Sub-voucher retention before destruction (259)</td></tr>
+      <tr><td>₹50,000, ×5</td><td>PC Advance ceiling and max frequency in service</td></tr>
+      <tr><td>31.12.2003</td><td>GPF vs NPS cut-off joining date</td></tr>
+      <tr><td>24 + 12 months</td><td>Continuous attachment exemption cycle (Rule 174)</td></tr>
+    </table>
+  </div>
+</details>
+
+<!-- ============ MNEMONICS ============ -->
+<div class="section-title" id="mnemonics">🎯 Memory Tricks &amp; Mnemonics / स्मृति युक्तियां</div>
+
+<div class="mnemonic">
+  <b>1. Audit Timeline — "15-30-90"</b><br>
+  <b>15</b> days objection reply → <b>30</b> days inspection report reply (≈1 month) → <b>90</b> days (3 months) representation window.<br>
+  <span class="hi">"पंद्रह-तीस-नब्बे" क्रम याद रखें — आपत्ति, निरीक्षण, प्रतिनिधित्व।</span>
+</div>
+
+<div class="mnemonic">
+  <b>2. Loss Thresholds — "10-50 Ladder"</b><br>
+  ₹10,000 (petty, audit-exempt) &lt; ₹50,000 (material/serious → Police/Govt report).<br>
+  <span class="hi">"दस हज़ार माफ, पचास हज़ार पुलिस के पास" — याद रखने की तुकबंदी।</span>
+</div>
+
+<div class="mnemonic">
+  <b>3. Contingency Classes — "C-S-C-F"</b><br>
+  <b>C</b>ontract → <b>S</b>pecial → <b>C</b>ountersigned → <b>F</b>ully-Vouched (decreasing prior control).<br>
+  <span class="hi">"संविदा-विशेष-प्रतिहस्ताक्षरित-पूर्ण सत्यापित" क्रम याद रखें।</span>
+</div>
+
+<div class="mnemonic">
+  <b>4. Attachment Formula — "X-Y-1000 by 3"</b><br>
+  Net attachable = <b>(Gross − Exempt allowances − ₹1000) ÷ 3</b>. Remember "कुल घटाओ छूट घटाओ हज़ार, फिर तीन से बाँटो।"
+</div>
+
+<div class="mnemonic">
+  <b>5. Cash Definition — "CCTCD"</b><br>
+  <b>C</b>oins, <b>C</b>urrency notes, <b>T</b>reasury certificates, <b>C</b>heques (on demand), <b>D</b>emand drafts = Cash. Securities &amp; stamps are NOT cash.
+</div>
+
+<div class="mnemonic">
+  <b>6. GPF vs NPS — "2003 Divide"</b><br>
+  Joined <b>on/before 31.12.2003</b> → GPF. Joined <b>after</b> → NPS. "2003 से पहले GPF, 2003 के बाद NPS।"
+</div>
+
+<div class="mnemonic">
+  <b>7. Post-7th CPC Advances — "Abolished BAFN-LSL"</b><br>
+  <b>B</b>icycle, <b>A</b>dvance of pay, <b>F</b>estival, <b>N</b>atural calamity, <b>L</b>eave salary, <b>S</b>uit(law), warm clothing — all gone. Only Medical/TA/LTC/PC survive.
+</div>
+
+<!-- ============ QUICK MCQ-STYLE SELF TEST ============ -->
+<div class="section-title">📝 Quick Self-Test / त्वरित स्व-परीक्षण</div>
+<details class="card">
+  <summary>❓ Test Your Memory (tap to reveal answers)</summary>
+  <div class="card-body">
+    <ol>
+      <li>Objection statement must be returned within ___ days. <mark>15 days (fortnight)</mark></li>
+      <li>Petty loss cases up to ₹___ are exempt from reporting to Audit. <mark>₹10,000</mark></li>
+      <li>Department of Posts is recognized as a ___ department. <mark>Commercial</mark></li>
+      <li>A treasure chest must have ___ locks of different patterns. <mark>2</mark></li>
+      <li>Pay for March is disbursed on ___. <mark>1st working day of April</mark></li>
+      <li>DOB correction must be requested within ___ years of entry into service. <mark>5 years</mark></li>
+      <li>Permanent Advance/Imprest may cover claims up to ₹___. <mark>₹500</mark></li>
+      <li>Sub-vouchers cannot be destroyed before ___ years. <mark>3 years</mark></li>
+      <li>PC Advance ceiling and maximum frequency: ₹___, ___ times. <mark>₹50,000, 5 times</mark></li>
+      <li>GPF applies to those who joined service on/before ___. <mark>31.12.2003</mark></li>
+    </ol>
+  </div>
+</details>
+
+</main>
+
+<div class="fab-bar">
+  <button onclick="location.hash='ch4'"><span class="ic">🔎</span>Audit</button>
+  <button onclick="location.hash='ch2'"><span class="ic">📗</span>Ch.II</button>
+  <button onclick="location.hash='ch5'"><span class="ic">💰</span>Cash</button>
+  <button onclick="location.hash='ch8'"><span class="ic">💵</span>Pay</button>
+  <button onclick="location.hash='ch10'"><span class="ic">🧾</span>Cont.</button>
+  <button onclick="location.hash='ch16'"><span class="ic">🪙</span>GPF</button>
+  <button onclick="location.hash='revision'"><span class="ic">🧠</span>Revise</button>
+</div>
+
+<footer>
+  LDCE IP Exam Portal • Postal Financial Handbook Vol.I, 2022 (Department of Posts) • For departmental exam preparation only<br>
+  Source: Postal Financial Handbook Vol.I 2022, Department of Posts, Ministry of Communications
+</footer>
+
+<script>
+// Dark mode
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  localStorage.setItem('pfhbDark', document.body.classList.contains('dark') ? '1':'0');
+}
+if(localStorage.getItem('pfhbDark')==='1'){ document.body.classList.add('dark'); }
+
+// TTS
+let ttsOn = false;
+function toggleTTS(){
+  ttsOn = !ttsOn;
+  if(!ttsOn){ speechSynthesis.cancel(); }
+  alert(ttsOn ? "TTS ON: Tap any card heading to hear it read aloud." : "TTS OFF");
+}
+document.querySelectorAll('details.card summary').forEach(s=>{
+  s.addEventListener('click', function(e){
+    if(ttsOn){
+      const txt = this.closest('details').querySelector('.card-body') ?
+        this.innerText + '. ' + this.closest('details').querySelector('.card-body').innerText.slice(0,400) : this.innerText;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(txt);
+      speechSynthesis.speak(u);
+    }
+  });
+});
+
+// Search filter
+document.getElementById('searchBox').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  document.querySelectorAll('.chapter details.card, .chapter .exam-q').forEach(el=>{
+    const match = el.innerText.toLowerCase().includes(q);
+    el.classList.toggle('hidden', q.length>1 && !match);
+    if(q.length>1 && match && el.tagName==='DETAILS'){ el.open = true; }
+  });
+});
+
+// Progress tracker (chapters opened)
+const chapterIds = ['ch4','ch2','ch3','ch5','ch8','ch9','ch10','ch12','ch16'];
+let opened = new Set(JSON.parse(localStorage.getItem('pfhbOpened')||'[]'));
+function updateProgress(){
+  document.getElementById('progText').innerText = opened.size + '/9 chapters opened';
+  document.getElementById('progFill').style.width = (opened.size/9*100)+'%';
+  localStorage.setItem('pfhbOpened', JSON.stringify([...opened]));
+}
+chapterIds.forEach(id=>{
+  const sec = document.getElementById(id);
+  if(sec){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ opened.add(id); updateProgress(); } });
+    }, {threshold:0.2});
+    obs.observe(sec);
+  }
+});
+updateProgress();
+</script>
+</body>
+</html>

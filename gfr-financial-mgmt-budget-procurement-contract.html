@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>GFR 2017: Financial Mgmt | Budget | Procurement | Contract - IP Exam</title>
+<meta name="description" content="GFR 2017 Infographic - General System of Financial Management, Budget Formulation, Procurement of Goods & Services, Contract Management - IP Exam Prep">
+<style>
+:root{
+  --red:#DA251C; --blue:#003893; --gold:#FFB81C;
+  --bg:#f7f5f0; --card:#ffffff; --text:#1a1a1a; --muted:#5a5a5a;
+  --border:#e2ddd0;
+  --tier-red:#e53935; --tier-orange:#fb8c00; --tier-yellow:#f9a825; --tier-green:#43a047;
+  --radius:14px;
+  --shadow:0 2px 10px rgba(0,0,0,.08);
+}
+body.dark{
+  --bg:#12151c; --card:#1b202b; --text:#eae6da; --muted:#a9a9a9; --border:#2b3242;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  transition:background .3s,color .3s; padding-bottom:70px;
+}
+.hi{ font-family:"Nirmala UI","Mangal",sans-serif; }
+header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(120deg,var(--blue),var(--red));
+  color:#fff; padding:14px 14px 10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+header h1{ margin:0; font-size:1.05rem; font-weight:800; letter-spacing:.3px;}
+header .sub{ font-size:.8rem; opacity:.92; margin-top:2px;}
+.toolbar{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.toolbar button, .toolbar input{
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.4);
+  color:#fff; border-radius:20px; padding:6px 12px; font-size:.78rem; cursor:pointer;
+}
+.toolbar input{ flex:1; min-width:120px; background:rgba(255,255,255,.94); color:#222;}
+.toolbar button:active{ transform:scale(.96); }
+nav.chips{
+  display:flex; gap:8px; overflow-x:auto; padding:10px 12px; background:var(--card);
+  border-bottom:2px solid var(--gold); position:sticky; top:96px; z-index:40;
+  -webkit-overflow-scrolling:touch;
+}
+nav.chips a{
+  flex:0 0 auto; text-decoration:none; font-size:.75rem; font-weight:700;
+  color:var(--blue); background:var(--bg); border:1.5px solid var(--blue);
+  padding:6px 12px; border-radius:20px; white-space:nowrap;
+}
+body.dark nav.chips a{ color:var(--gold); border-color:var(--gold); }
+main{ max-width:820px; margin:0 auto; padding:14px 12px 40px; }
+.legend{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:6px;
+  background:var(--card); border-radius:var(--radius); padding:10px 14px; margin:14px 0;
+  box-shadow:var(--shadow); font-size:.78rem; border:1px solid var(--border);
+}
+.chapter-header{
+  margin:26px 0 12px; padding:14px 16px; border-radius:var(--radius);
+  background:linear-gradient(100deg,var(--blue),#00287a); color:#fff; box-shadow:var(--shadow);
+}
+.chapter-header h2{ margin:0 0 3px; font-size:1.15rem; }
+.chapter-header h2.hi{ font-size:1.02rem; font-weight:600; opacity:.95;}
+.chapter-header .rulerange{ font-size:.72rem; background:var(--gold); color:#3a2a00; display:inline-block;
+  margin-top:6px; padding:2px 10px; border-radius:12px; font-weight:700;}
+details.card{
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  margin:10px 0; box-shadow:var(--shadow); overflow:hidden;
+}
+details.card summary{
+  padding:12px 14px; font-weight:700; font-size:.92rem; cursor:pointer;
+  list-style:none; display:flex; align-items:center; justify-content:space-between; gap:8px;
+  color:var(--blue);
+}
+body.dark details.card summary{ color:var(--gold); }
+details.card summary::-webkit-details-marker{ display:none; }
+details.card summary::after{
+  content:"▾"; transition:transform .25s; font-size:.85rem; color:var(--muted); flex:0 0 auto;
+}
+details.card[open] summary::after{ transform:rotate(180deg); }
+.card-body{ padding:2px 14px 14px; font-size:.86rem; }
+.card-body p{ margin:6px 0; }
+table{ width:100%; border-collapse:collapse; font-size:.78rem; margin:8px 0; }
+th,td{ border:1px solid var(--border); padding:6px 7px; text-align:left; vertical-align:top; }
+th{ background:var(--blue); color:#fff; font-size:.72rem; }
+body.dark th{ background:#2b3550; }
+tr:nth-child(even) td{ background:rgba(0,0,0,.03); }
+body.dark tr:nth-child(even) td{ background:rgba(255,255,255,.03); }
+.tag{ display:inline-block; padding:1px 7px; border-radius:10px; font-size:.68rem; font-weight:700; color:#fff; margin-left:4px;}
+.tag.r{background:var(--tier-red);} .tag.o{background:var(--tier-orange);}
+.tag.y{background:var(--tier-yellow); color:#3a2a00;} .tag.g{background:var(--tier-green);}
+.exam-q{
+  background:#fff8e1; border-left:4px solid var(--gold); border-radius:8px;
+  padding:9px 12px; margin:8px 0; font-size:.79rem; color:#5c4200;
+}
+body.dark .exam-q{ background:#2a2410; color:#f0d98c; }
+.exam-q b{ color:var(--red); }
+.flowchart{ display:flex; flex-direction:column; align-items:center; gap:4px; margin:8px 0;}
+.fbox{
+  background:var(--blue); color:#fff; padding:8px 12px; border-radius:10px; font-size:.76rem;
+  text-align:center; width:92%; font-weight:600;
+}
+.fbox.alt{ background:var(--red); }
+.fbox.gold{ background:var(--gold); color:#3a2a00; }
+.arrow{ font-size:1.1rem; color:var(--muted); }
+.dtree{ display:flex; flex-direction:column; gap:6px; margin:8px 0; }
+.dtree .q{ background:var(--gold); color:#3a2a00; padding:7px 10px; border-radius:8px; font-size:.78rem; font-weight:700;}
+.dtree .yn{ display:flex; gap:6px; padding-left:12px; }
+.dtree .yn div{ flex:1; background:var(--bg); border:1px dashed var(--muted); border-radius:8px; padding:6px 8px; font-size:.74rem;}
+.timeline{ position:relative; margin:10px 0 10px 10px; padding-left:16px; border-left:3px solid var(--gold); }
+.tl-item{ position:relative; margin-bottom:14px; }
+.tl-item::before{ content:""; position:absolute; left:-22px; top:3px; width:11px; height:11px; border-radius:50%; background:var(--red); border:2px solid #fff;}
+.tl-item .tl-title{ font-weight:700; font-size:.82rem; color:var(--blue);}
+body.dark .tl-item .tl-title{ color:var(--gold); }
+.tl-item .tl-desc{ font-size:.76rem; color:var(--muted); }
+.mnemonic{
+  background:linear-gradient(120deg,#fff4e0,#ffe9cc); border:1px dashed var(--gold);
+  border-radius:10px; padding:10px 12px; margin:8px 0; font-size:.8rem;
+}
+body.dark .mnemonic{ background:#241d10; }
+.revision-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.rev-card{ background:var(--card); border-left:5px solid var(--red); border-radius:10px; padding:10px 12px; box-shadow:var(--shadow); font-size:.79rem;}
+.rev-card h4{ margin:0 0 4px; color:var(--blue); font-size:.85rem;}
+body.dark .rev-card h4{ color:var(--gold); }
+.section-title{
+  font-size:1.05rem; font-weight:800; margin:30px 0 10px; color:var(--red);
+  border-bottom:3px solid var(--gold); padding-bottom:5px;
+}
+.badge-def{ background:var(--gold); color:#3a2a00; font-size:.68rem; font-weight:800; padding:2px 8px; border-radius:8px; }
+footer{ text-align:center; font-size:.72rem; color:var(--muted); margin-top:30px; padding:14px;}
+.fab-bar{
+  position:fixed; bottom:0; left:0; right:0; background:var(--card); border-top:2px solid var(--gold);
+  display:flex; justify-content:space-around; padding:8px 4px; z-index:60; box-shadow:0 -3px 10px rgba(0,0,0,.15);
+}
+.fab-bar button{
+  background:none; border:none; color:var(--blue); font-size:.68rem; display:flex; flex-direction:column;
+  align-items:center; gap:2px; cursor:pointer; font-weight:700;
+}
+body.dark .fab-bar button{ color:var(--gold); }
+.fab-bar button .ic{ font-size:1.1rem; }
+mark{ background:var(--gold); color:#3a2a00; }
+.hidden{ display:none !important; }
+.progress-wrap{ background:var(--card); border-radius:var(--radius); padding:10px 14px; margin:14px 0; box-shadow:var(--shadow); font-size:.78rem;}
+.progress-bar{ height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-top:6px;}
+.progress-fill{ height:100%; background:linear-gradient(90deg,var(--gold),var(--red)); width:0%; transition:width .4s;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚖️ GFR 2017 — Ch.2, 3, 6 &amp; 8</h1>
+  <div class="sub hi">वित्तीय प्रबंधन • बजट • खरीद • अनुबंध प्रबंधन | IP Exam Study Portal</div>
+  <div class="toolbar">
+    <input id="searchBox" type="text" placeholder="🔍 Search rule / नियम खोजें...">
+    <button onclick="toggleDark()">🌓 Dark</button>
+    <button onclick="toggleTTS()">🔊 TTS</button>
+  </div>
+</header>
+
+<nav class="chips">
+  <a href="#ch2">📗 Ch.2 वित्त प्रबंधन</a>
+  <a href="#ch3">📘 Ch.3 बजट</a>
+  <a href="#ch6">📙 Ch.6 खरीद</a>
+  <a href="#ch8">📕 Ch.8 अनुबंध</a>
+  <a href="#revision">🧠 Revision Sheet</a>
+  <a href="#mnemonics">🎯 Mnemonics</a>
+</nav>
+
+<main id="main">
+
+<div class="legend">
+  <div>🔴 <b>Very Important</b> / अति महत्वपूर्ण</div>
+  <div>🟠 <b>Frequently Asked</b> / बार-बार पूछा गया</div>
+  <div>🟡 <b>Conceptual</b> / अवधारणात्मक</div>
+  <div>🟢 <b>Quick Revision</b> / त्वरित रिवीजन</div>
+</div>
+
+<div class="progress-wrap">
+  📊 Study Progress / अध्ययन प्रगति: <span id="progText">0/4 chapters opened</span>
+  <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+</div>
+
+<!-- ============ CHAPTER 2 ============ -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <h2>Ch.2 — General System of Financial Management</h2>
+    <h2 class="hi">अध्याय 2 — वित्तीय प्रबंधन की सामान्य प्रणाली</h2>
+    <span class="rulerange">Rules 7 – 41</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition <span class="badge-def">Micro</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> This chapter lays down the general rules on (a) receipt &amp; custody of Government money, (b) standards of financial propriety while incurring expenditure, (c) delegation &amp; communication of sanctions, and (d) reporting of losses/defalcation of public money or property.</p>
+      <p class="hi"><b>HI:</b> यह अध्याय सरकारी धन की प्राप्ति व अभिरक्षा, व्यय के वित्तीय औचित्य के मानकों, स्वीकृतियों के प्रत्यायोजन एवं संप्रेषण, तथा सरकारी धन/संपत्ति की हानि या गबन की रिपोर्टिंग से संबंधित सामान्य नियम प्रस्तुत करता है।</p>
+      <p>Chapter → Sub-chapter → Micro → Nano: <b>Financial Management</b> → <i>Receipts</i> / <i>Expenditure</i> / <i>Sanctions</i> / <i>Losses</i> → Rule-wise provisions → Individual clauses/notes.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules / महत्वपूर्ण नियम <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td>7</td><td>All moneys received on Govt's behalf must be brought into Govt Account without delay (Art.150 &amp; 283(1))</td><td class="hi">सरकार की ओर से प्राप्त सभी धनराशि बिना देरी सरकारी खाते में जमा करनी होगी</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>8</td><td>Moneys received by officers "in connection with affairs of Union" (not revenue) go to Public Account (Art.284)</td><td class="hi">संघ के कार्यों से संबंधित प्राप्त धन (राजस्व नहीं) लोक लेखा में जाता है</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>12</td><td>Amounts due to Govt shall not be left outstanding without sufficient reason</td><td class="hi">सरकार को देय राशि बिना पर्याप्त कारण बकाया नहीं रहनी चाहिए</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>18</td><td>Remission of revenue only with sanction of competent authority</td><td class="hi">राजस्व की छूट केवल सक्षम प्राधिकारी की स्वीकृति से</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>21</b></td><td><b>Standards of Financial Propriety</b> — 4 canons every officer must follow</td><td class="hi"><b>वित्तीय औचित्य के मानक</b> — 4 सिद्धांत</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>22</td><td>No expenditure/liability from public funds without sanction of competent authority</td><td class="hi">सक्षम प्राधिकारी की स्वीकृति के बिना कोई व्यय नहीं</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>23</td><td>Delegation of Financial Powers Rules (DFPR) — undelegated powers vest in Finance Ministry</td><td class="hi">अप्रत्यायोजित शक्तियां वित्त मंत्रालय में निहित</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>27(1)</td><td>Sanctions/orders take effect from date of issue unless otherwise specified</td><td class="hi">स्वीकृतियां जारी होने की तिथि से प्रभावी</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>30</b></td><td>Sanction for fresh charge <b>lapses after 12 months</b> if no payment made, unless renewed</td><td class="hi">नई स्वीकृति यदि 12 माह में भुगतान न हो तो समाप्त</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>31</td><td>Sanction for permanent establishment addition (recurring) does NOT lapse</td><td class="hi">स्थायी स्थापना हेतु स्वीकृति समाप्त नहीं होती</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>33</b></td><td>Report of Losses — any loss of public money/stores reported immediately to next higher authority + Statutory Audit Officer</td><td class="hi">हानि की तुरंत उच्च अधिकारी व लेखापरीक्षा अधिकारी को रिपोर्ट</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>34</td><td>Losses above <b>₹50,000</b> due to fire/theft/fraud must be reported to Police</td><td class="hi">₹50,000 से अधिक की हानि पुलिस को अनिवार्य रूप से रिपोर्ट</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>35</td><td>Immovable property loss above ₹50,000 by fire/flood etc. reported to Govt through usual channel</td><td class="hi">₹50,000 से अधिक अचल संपत्ति की हानि सामान्य माध्यम से रिपोर्ट</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>37</td><td>Officer personally responsible for loss due to fraud/negligence on his part</td><td class="hi">धोखाधड़ी/लापरवाही से हानि हेतु अधिकारी व्यक्तिगत रूप से उत्तरदायी</td><td><span class="tag r">🔴</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions / अपवाद <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Under Rule 33(1), the following losses need <u>not</u> be reported: (i) losses of revenue from mistakes in assessment discovered too late; (ii) under-assessments overruled by higher authority after limitation period; (iii) petty losses not exceeding <b>₹10,000</b>.</p>
+      <p class="hi"><b>HI:</b> नियम 33(1) के अंतर्गत ₹10,000 तक की छोटी हानियां तथा देर से पता चली आकलन त्रुटियां रिपोर्ट करने से मुक्त हैं।</p>
+      <p><b>EN:</b> Rule 22 exception — expenditure benefiting a particular person allowed only if (a) enforceable in court, or (b) in pursuance of recognized policy/custom.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Dates / Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Statement of revenue remissions (Rule 19)</td><td>Annually by <b>1st June</b></td></tr>
+        <tr><td>Lapse of fresh sanction (Rule 30)</td><td><b>12 months</b> from date of issue</td></tr>
+        <tr><td>Report loss to Police (Rule 34)</td><td>Immediately / "as early as possible" — for losses &gt; ₹50,000</td></tr>
+        <tr><td>Petty loss reporting exemption (Rule 33)</td><td>Losses ≤ ₹10,000 exempt</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Finance Ministry • Controlling Officer • Head of Department • Disbursing Officer • Statutory Audit Officer • Accounts Officer • Competent Authority</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties / Consequences <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Personal responsibility (Rule 37) for loss through fraud/negligence; Departmental proceedings per Appendix-1; sanction lapse (Rule 30) if unused for 12 months; loss of sanctioned funds if not surrendered before year-close (Rule 62 link).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🔀 Flowchart — Loss Reporting Procedure / हानि रिपोर्टिंग प्रक्रिया</summary>
+    <div class="card-body">
+      <div class="flowchart">
+        <div class="fbox">Loss/Shortage Detected<br>हानि का पता चलना</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Immediate report to next higher authority + Audit/Accounts Officer</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Full enquiry into cause &amp; extent</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Loss &gt; ₹50,000 (fire/theft/fraud)? → Report to Police</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Detailed report to Govt via proper channel</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Departmental action against delinquents + write-off/recovery decision</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🧩 Mind Map — Rule 21: Standards of Financial Propriety</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>#</th><th>Principle (EN)</th><th>सिद्धांत (HI)</th></tr>
+        <tr><td>i</td><td>Same vigilance as spending one's own money</td><td class="hi">अपने पैसे जैसी सतर्कता</td></tr>
+        <tr><td>ii</td><td>Expenditure not more than occasion demands</td><td class="hi">आवश्यकता से अधिक व्यय नहीं</td></tr>
+        <tr><td>iii</td><td>No sanctioning of expenditure to one's own advantage</td><td class="hi">स्वयं के लाभ हेतु स्वीकृति नहीं</td></tr>
+        <tr><td>iv</td><td>No expenditure for benefit of a particular person/section (except by law)</td><td class="hi">किसी विशेष व्यक्ति के लाभ हेतु व्यय नहीं</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> "Standards of Financial Propriety" के अंतर्गत कितने सिद्धांत हैं? / What is the time limit within which a sanction for a fresh charge lapses if unutilised? <b>(Ans: 4 सिद्धांत, 12 months)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Loss of Govt money above what amount must compulsorily be reported to Police? <b>(Ans: ₹50,000 — Rule 34)</b></div>
+</section>
+
+<!-- ============ CHAPTER 3 ============ -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <h2>Ch.3 — Budget Formulation &amp; Implementation</h2>
+    <h2 class="hi">अध्याय 3 — बजट निर्माण एवं क्रियान्वयन</h2>
+    <span class="rulerange">Rules 42 – 70</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> Covers the Financial Year, presentation of the Annual Financial Statement (Budget) to Parliament, preparation of receipt/expenditure estimates, Demands for Grants, Vote on Account, control of expenditure against grants, re-appropriation, surrender of savings, supplementary grants, Contingency Fund advances, and duties of the Chief Accounting Authority (CAA).</p>
+      <p class="hi"><b>HI:</b> इस अध्याय में वित्तीय वर्ष, संसद में वार्षिक वित्तीय विवरण (बजट) प्रस्तुति, प्राप्ति/व्यय अनुमान, अनुदान मांगें, लेखानुदान (Vote on Account), अनुदान के विरुद्ध व्यय नियंत्रण, पुनर्विनियोजन, बचत का समर्पण, अनुपूरक अनुदान, आकस्मिकता निधि से अग्रिम, एवं मुख्य लेखा प्राधिकारी (CAA) के कर्तव्यों को शामिल किया गया है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules / महत्वपूर्ण नियम <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td><b>42</b></td><td>Financial Year: <b>1 April – 31 March</b></td><td class="hi">वित्तीय वर्ष: 1 अप्रैल – 31 मार्च</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>43</td><td>Budget (Annual Financial Statement) presented under <b>Article 112(1)</b> of Constitution</td><td class="hi">बजट अनुच्छेद 112(1) के तहत प्रस्तुत</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>43(2)</td><td>Railway Budget merged with General Budget w.e.f. <b>2017-18</b></td><td class="hi">रेल बजट सामान्य बजट में विलय 2017-18 से</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>51(1)-(2)</td><td>Demand for Grants — normally <b>one per Ministry/Department</b></td><td class="hi">सामान्यतः प्रति मंत्रालय एक अनुदान मांग</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>54</td><td>Outcome Budget prepared with NITI Aayog linking outlays to deliverables</td><td class="hi">परिणाम बजट - NITI Aayog के परामर्श से</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>55</b></td><td>Vote on Account (Art.116) — covers brief period expenditure; cannot fund "New Service"</td><td class="hi">लेखानुदान — नई सेवा हेतु उपयोग नहीं</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>57(2)-(3)</td><td>Grant/Appropriation usable only within its financial year; no expenditure beyond sanctioned total without Supplementary Grant/Contingency Fund advance</td><td class="hi">अनुदान केवल उसी वित्त वर्ष में प्रयोग; अधिक व्यय हेतु अनुपूरक अनुदान आवश्यक</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>62(1)-(2)</b></td><td>Surrender of savings before close of FY; unutilised funds <b>lapse</b> at year-end; no savings held in reserve for future excess</td><td class="hi">बचत वित्त वर्ष समाप्ति से पूर्व समर्पित; अप्रयुक्त राशि वर्षांत में व्यपगत</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>63</td><td>No expenditure on "New Service" without Supplementary Grant/Appropriation or Contingency Fund advance</td><td class="hi">"नई सेवा" पर व्यय बिना अनुपूरक अनुदान के नहीं</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>65(1)-(3)</b></td><td>Re-appropriation of funds between primary units (Object Head) within a grant, before close of FY; not to restore later excess; voted/charged &amp; revenue/capital portions cannot be inter-mixed</td><td class="hi">पुनर्विनियोजन — केवल एक ही अनुदान के भीतर वस्तु शीर्ष के बीच</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>66</td><td>Supplementary Grant under <b>Article 115(1)</b></td><td class="hi">अनुपूरक अनुदान अनुच्छेद 115(1)</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>67</b></td><td>Advance from Contingency Fund under <b>Article 267(1)</b> for unforeseen/new-service expenditure</td><td class="hi">आकस्मिकता निधि से अग्रिम अनुच्छेद 267(1)</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>70</b></td><td>Duties of Chief Accounting Authority (Secretary of Ministry) — 9 responsibilities incl. procurement compliance, internal controls, PAC appearance</td><td class="hi">मुख्य लेखा प्राधिकारी (सचिव) के कर्तव्य</td><td><span class="tag r">🔴</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Rule 65(3) — funds shall NOT be re-appropriated from a unit with the intention of restoring the diverted amount later when savings appear elsewhere. Voted &amp; Charged, Revenue &amp; Capital sections are treated as distinct — re-appropriation between them is <b>not permissible</b>.</p>
+      <p class="hi"><b>HI:</b> मतदत्त एवं भारित तथा राजस्व व पूंजी मदों के बीच पुनर्विनियोजन <b>अनुमत नहीं</b> है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Dates / Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Timeline</th></tr>
+        <tr><td>Financial Year</td><td>1 April → 31 March</td></tr>
+        <tr><td>Railway Budget merger</td><td>Effective 2017-18</td></tr>
+        <tr><td>DDO figures to Head of Dept (Form GFR 8)</td><td>By 15th of following month</td></tr>
+        <tr><td>Quarterly certificate by PAO/Accounts Officer</td><td>By 15th of 2nd following month after quarter-end</td></tr>
+        <tr><td>Surrender of savings</td><td>Before close of financial year (dates fixed by Finance Ministry)</td></tr>
+        <tr><td>Re-appropriation sanction</td><td>Any time before close of the financial year</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>Finance Minister • Parliament (Lok Sabha) • Finance Ministry Budget Division • Departmentally Related Standing Committee (DRSC) • Controlling Officer • Chief Accounting Authority (Secretary) • Financial Adviser • Accounts Officer / PAO</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties / Consequences <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Rush of expenditure in closing months = "breach of financial propriety" (Rule 62(3)). Unsurrendered savings lapse automatically. Expenditure exceeding grant without supplementary sanction is unauthorized.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🕒 Timeline — Budget Cycle / बजट चक्र</summary>
+    <div class="card-body">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-title">Pre-Budget</div><div class="tl-desc">Ministries submit estimates → scrutiny by Budget Division, Finance Ministry</div></div>
+        <div class="tl-item"><div class="tl-title">Feb (Budget Day)</div><div class="tl-desc">Annual Financial Statement laid before Parliament (Art.112)</div></div>
+        <div class="tl-item"><div class="tl-title">1 April</div><div class="tl-desc">Financial Year begins; Vote on Account (if Budget not yet passed)</div></div>
+        <div class="tl-item"><div class="tl-title">During Year</div><div class="tl-desc">Control of expenditure, re-appropriation, liability register maintenance</div></div>
+        <div class="tl-item"><div class="tl-title">Oct onward</div><div class="tl-desc">Liability statements (Form GFR 3-A) from October each year</div></div>
+        <div class="tl-item"><div class="tl-title">Before Year-Close</div><div class="tl-desc">Surrender of anticipated savings; re-appropriation sanctioned</div></div>
+        <div class="tl-item"><div class="tl-title">31 March</div><div class="tl-desc">Financial year ends; unutilised grant lapses</div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🧩 Mind Map — CAA (Rule 70) Duties</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>#</th><th>Duty (EN)</th></tr>
+        <tr><td>i</td><td>Responsible &amp; accountable for financial management of Ministry</td></tr>
+        <tr><td>ii</td><td>Ensure appropriated funds used for intended purpose</td></tr>
+        <tr><td>iii</td><td>Effective, efficient, economical &amp; transparent use of resources</td></tr>
+        <tr><td>iv</td><td>Appear before PAC / Parliamentary Committees</td></tr>
+        <tr><td>v</td><td>Review &amp; monitor programme/project performance</td></tr>
+        <tr><td>vi</td><td>Prepare expenditure statements as per MoF directives</td></tr>
+        <tr><td>vii</td><td>Ensure proper records &amp; internal controls</td></tr>
+        <tr><td>viii</td><td>Ensure Govt procurement procedure followed (fair, transparent, competitive)</td></tr>
+        <tr><td>ix</td><td>Collect all Govt dues + avoid unauthorized/wasteful expenditure</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Under which Article is Vote on Account obtained, and what is its key restriction? <b>(Ans: Article 116; cannot be used for "New Service")</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> What happens to unutilised budget provisions at the close of the financial year? <b>(Ans: They lapse — Rule 62(1))</b></div>
+</section>
+
+<!-- ============ CHAPTER 6 ============ -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <h2>Ch.6 — Procurement of Goods &amp; Services</h2>
+    <h2 class="hi">अध्याय 6 — वस्तुओं एवं सेवाओं की खरीद</h2>
+    <span class="rulerange">Rules 142 – 206</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> "Goods" (Rule 143) includes all articles, material, machinery, equipment, software, IP etc. (excludes library books) plus incidental services like transport/installation. This chapter lays down fundamental principles of public buying, tender methods, GeM, bid/performance security, and rules for procuring Consulting &amp; Non-Consulting Services.</p>
+      <p class="hi"><b>HI:</b> "वस्तु" (नियम 143) में सभी सामग्री, मशीनरी, उपकरण, सॉफ्टवेयर आदि शामिल हैं (पुस्तकालय पुस्तकें छोड़कर)। यह अध्याय सार्वजनिक खरीद के मूल सिद्धांत, निविदा विधियां, GeM, बोली/निष्पादन प्रतिभूति तथा परामर्श व गैर-परामर्श सेवाओं की खरीद के नियम प्रस्तुत करता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🧩 Mind Map — Rule 144: Fundamental Principles of Public Buying <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>#</th><th>Principle</th></tr>
+        <tr><td>i</td><td>Specification must be objective, functional, generic — no brand-name bias</td></tr>
+        <tr><td>ii</td><td>Specs clearly spelt out; no superfluous features causing excess cost</td></tr>
+        <tr><td>iii</td><td>Based on national/international technical standards where they exist</td></tr>
+        <tr><td>iv</td><td>Avoid purchasing quantities beyond requirement (inventory cost)</td></tr>
+        <tr><td>v</td><td>Fair, transparent &amp; reasonable procedure for inviting offers</td></tr>
+        <tr><td>vi</td><td>Selected offer must adequately meet requirement</td></tr>
+        <tr><td>vii</td><td>Price of selected offer must be reasonable &amp; consistent with quality</td></tr>
+        <tr><td>viii</td><td>Complete procurement-cycle schedule published with tender</td></tr>
+        <tr><td>ix</td><td>Annual Procurement Plan prepared &amp; published before year begins</td></tr>
+      </table>
+      <p class="hi">सार्वजनिक खरीद के 9 मूल सिद्धांत — निष्पक्षता, पारदर्शिता, प्रतिस्पर्धा एवं मूल्य-औचित्य पर आधारित।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules — Value Thresholds <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Method</th><th>Threshold</th><th>Key Condition</th></tr>
+        <tr><td>154</td><td>Purchase without quotation</td><td>Up to <b>₹50,000</b></td><td>Certificate by competent authority</td></tr>
+        <tr><td>155</td><td>Purchase Committee</td><td><b>₹50,000 – ₹5,00,000</b></td><td>3-member committee; only if item not on GeM</td></tr>
+        <tr><td>161</td><td>Advertised Tender Enquiry</td><td><b>₹50 lakh &amp; above</b></td><td>Published on GeM/CPPP; min. 3 weeks bid time</td></tr>
+        <tr><td>162</td><td>Limited Tender Enquiry</td><td>Up to <b>₹50 lakh</b></td><td>More than 3 registered suppliers invited</td></tr>
+        <tr><td>161(iv)</td><td>Global Tender Enquiry (GTE) exemption</td><td>Not required up to <b>₹200 crore</b></td><td>Domestic sourcing preferred below this limit</td></tr>
+        <tr><td>170</td><td>Bid Security (EMD)</td><td><b>2% – 5%</b> of estimated value</td><td>Exempt for MSEs/Startups (DPIIT)</td></tr>
+        <tr><td>171</td><td>Performance Security</td><td><b>3% – 5%</b> of contract value</td><td>Valid 60 days beyond warranty completion</td></tr>
+        <tr><td>224(2)(iv)</td><td>Purchase Order (no formal contract)</td><td>Up to <b>₹2,50,000</b></td><td>Basic terms &amp; conditions suffice</td></tr>
+        <tr><td>225(xiii)</td><td>Copy of contract to Audit/Accounts Officer</td><td>₹25 lakh &amp; above</td><td>Mandatory for civil departments</td></tr>
+        <tr><td>183/201</td><td>EOI mandatory for Consultancy/Non-consulting service</td><td>Above <b>₹50 lakh</b></td><td>Published on GeM-CPPP</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison Chart — Tender Enquiry Methods (Rule 158)</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Method</th><th>When Used</th><th>Special Feature</th></tr>
+        <tr><td><b>Advertised Tender</b></td><td>Value ≥ ₹50 lakh</td><td>Open to all; published on GeM/CPPP; widest competition</td></tr>
+        <tr><td><b>Limited Tender</b></td><td>Value up to ₹50 lakh; &gt;3 known suppliers</td><td>Sent to &gt;3 registered firms directly</td></tr>
+        <tr><td><b>Two-Stage Bidding</b></td><td>Complex/technical items where specs can't be fixed upfront</td><td>Stage-1: technical only; Stage-2: revised bid + price</td></tr>
+        <tr><td><b>Single Tender</b></td><td>Sole manufacturer / emergency / standardisation (PAC)</td><td>Only one source approached; Proprietary Article Certificate needed</td></tr>
+        <tr><td><b>E-Reverse Auction</b></td><td>Well-defined specs, competitive market</td><td>Online real-time descending-price bidding</td></tr>
+      </table>
+      <p class="mnemonic">🎯 <b>Mnemonic (HI):</b> "<b>अ-सी-दो-एक-ई</b>" → <b>अ</b>ज्ञापित (Advertised), लि<b>सी</b>टेड (Limited), <b>दो</b>-चरण (Two-Stage), <b>एक</b>ल (Single), <b>ई</b>-रिवर्स नीलामी (E-auction). / EN: Remember "<b>A-L-T-S-E</b>" (Advertised, Limited, Two-stage, Single, E-auction).</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🌳 Decision Tree — Which Procurement Method to Choose? <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <div class="dtree">
+        <div class="q">Value up to ₹50,000?</div>
+        <div class="yn"><div>✅ Yes → Purchase without quotation (Rule 154)</div><div>❌ No → Next</div></div>
+        <div class="q">Value ₹50,000 – ₹5,00,000, item not on GeM?</div>
+        <div class="yn"><div>✅ Yes → Local Purchase Committee (Rule 155)</div><div>❌ No → Next</div></div>
+        <div class="q">Value up to ₹50 lakh, sources known &amp; &gt;3 suppliers?</div>
+        <div class="yn"><div>✅ Yes → Limited Tender Enquiry (Rule 162)</div><div>❌ No → Next</div></div>
+        <div class="q">Value ≥ ₹50 lakh?</div>
+        <div class="yn"><div>✅ Yes → Advertised Tender Enquiry (Rule 161)</div><div>❌ No → Reconsider value</div></div>
+        <div class="q">Only 1 manufacturer / emergency / standardisation?</div>
+        <div class="yn"><div>✅ Yes → Single Tender Enquiry (Rule 166) + PAC</div><div>❌ No → Two-Stage / E-Auction as suited</div></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison — Bid Security vs Performance Security</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Aspect</th><th>Bid Security / EMD (Rule 170)</th><th>Performance Security (Rule 171)</th></tr>
+        <tr><td>Purpose</td><td>Prevents bid withdrawal during validity</td><td>Ensures due performance of contract</td></tr>
+        <tr><td>Amount</td><td>2%–5% of estimated value</td><td>3%–5% of contract value</td></tr>
+        <tr><td>Validity</td><td>45 days beyond bid validity</td><td>60 days beyond completion of obligations</td></tr>
+        <tr><td>Refund</td><td>Unsuccessful bidders: within 30 days of contract award</td><td>Returned after satisfactory performance/warranty</td></tr>
+        <tr><td>Exemption</td><td>MSEs, Startups (DPIIT)</td><td>Depends on market practice for goods</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Rule 154/155 purchases are exempt from the standard bidding process. GTE not required for tenders up to ₹200 crore. E-procurement can be exempted where national security/confidentiality demands (with Secretary + FA approval). Rule 173(xx): even a single bid may be treated as valid competition if properly advertised, criteria not restrictive, and prices reasonable.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Minimum bid submission time (Advertised)</td><td>3 weeks (4 weeks if foreign bidders expected)</td></tr>
+        <tr><td>Bid Security validity</td><td>45 days beyond final bid validity</td></tr>
+        <tr><td>Refund of unsuccessful Bid Security</td><td>Within 30 days of contract award (30 days after Stage-1 for two-packet bids)</td></tr>
+        <tr><td>Performance Security validity</td><td>60 days beyond completion of contractual/warranty obligations</td></tr>
+        <tr><td>Shortlisting consultants</td><td>Not less than 3 consultants (Rule 184)</td></tr>
+        <tr><td>Non-consulting service — limited tender contractors</td><td>More than 3 identified (Rule 201)</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>GeM SPV • Central Purchase Organisation • Local Purchase Committee • Department of Expenditure • Financial Adviser • Competent Authority • Ministry/Department (Procuring Entity)</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties / Consequences <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Rule 151 — firms found indulging in fraud/collusion/cartelisation are <b>debarred</b> after reasonable opportunity to represent. Rule 175 (Code of Integrity) — bribery, misrepresentation, collusion, bid-rigging invite appropriate action incl. debarment. Late bids (Rule 165/202) are outright rejected — no exceptions.</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Bid Security should ordinarily range between what percentage of estimated value? <b>(Ans: 2%–5% — Rule 170)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> What is GeM, and which Rule governs it? <b>(Ans: Government e-Marketplace — Rule 149; mandatory for common-use goods/services)</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Up to what value may goods be purchased without inviting quotations? <b>(Ans: ₹50,000 — Rule 154)</b></div>
+</section>
+
+<!-- ============ CHAPTER 8 ============ -->
+<section class="chapter" id="ch8">
+  <div class="chapter-header">
+    <h2>Ch.8 — Contract Management</h2>
+    <h2 class="hi">अध्याय 8 — अनुबंध प्रबंधन</h2>
+    <span class="rulerange">Rules 224 – 227A</span>
+  </div>
+
+  <details class="card" open>
+    <summary>📖 Topic &amp; Definition</summary>
+    <div class="card-body">
+      <p><b>EN:</b> All Government contracts must be made under <b>Article 299(1)</b> of the Constitution, executed "for and on behalf of the President." This chapter prescribes general principles for drafting contracts, price variation clauses, liquidated damages, warranty, monitoring of contracts &amp; bank guarantees, legal advice, and handling of arbitration awards.</p>
+      <p class="hi"><b>HI:</b> सभी सरकारी अनुबंध संविधान के <b>अनुच्छेद 299(1)</b> के तहत "राष्ट्रपति की ओर से" निष्पादित किए जाते हैं। यह अध्याय अनुबंध प्रारूपण के सामान्य सिद्धांत, मूल्य परिवर्तन खंड, परिसमापित हर्जाना, वारंटी, अनुबंध व बैंक गारंटी की निगरानी, विधिक सलाह एवं मध्यस्थता निर्णयों की प्रक्रिया निर्धारित करता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules / महत्वपूर्ण नियम <span class="tag r">🔴</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Rule</th><th>Provision (EN)</th><th>प्रावधान (HI)</th><th>Tier</th></tr>
+        <tr><td><b>224(1)</b></td><td>All contracts made by authority empowered under Article 299(1)</td><td class="hi">अनुबंध अनुच्छेद 299(1) के अधीन सक्षम प्राधिकारी द्वारा</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>224(2)</td><td>Signed "for and on behalf of the President of India"</td><td class="hi">"राष्ट्रपति की ओर से" हस्ताक्षरित</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>224(2)(iv)(a)</td><td>Purchases up to ₹2.5 lakh — simple Purchase Order suffices</td><td class="hi">₹2.5 लाख तक क्रय आदेश पर्याप्त</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>224(2)(iv)(b)</td><td>Works ₹1–10 lakh — Letter of Acceptance with GCC/SCC = binding contract</td><td class="hi">₹1-10 लाख कार्य — स्वीकृति पत्र पर्याप्त</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>224(2)(iv)(c)</td><td>Works/purchase above ₹10 lakh — full Contract Document mandatory</td><td class="hi">₹10 लाख से अधिक — पूर्ण अनुबंध दस्तावेज़ अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>225(i)</td><td>Contract terms must be precise, definite, unambiguous</td><td class="hi">शर्तें स्पष्ट व असंदिग्ध होनी चाहिए</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td><b>225(vi)</b></td><td>Contract document executed <b>within 21 days</b> of Letter of Acceptance; failure = grounds for annulment + EMD forfeiture</td><td class="hi">21 दिन के भीतर अनुबंध निष्पादन अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>225(vii)</td><td>Cost-plus contracts ordinarily avoided; full justification if unavoidable</td><td class="hi">लागत-वृद्धि अनुबंध सामान्यतः वर्जित</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td>225(viii)(a)</td><td>Price Variation Clause only for long-term contracts (delivery period &gt; 18 months)</td><td class="hi">मूल्य परिवर्तन खंड — 18 माह से अधिक अवधि के अनुबंधों में ही</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>225(x)</td><td>Lump-sum contracts avoided except absolute necessity</td><td class="hi">एकमुश्त अनुबंध केवल अत्यावश्यक होने पर</td><td><span class="tag g">🟢</span></td></tr>
+        <tr><td>225(xiii)</td><td>Contracts of ₹25 lakh &amp; above sent to Audit/Accounts Officer</td><td class="hi">₹25 लाख व अधिक के अनुबंध लेखापरीक्षा अधिकारी को भेजे जाएं</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td><b>225(xvi)</b></td><td>Every contract must contain Liquidated Damages clause for contractor default</td><td class="hi">हर अनुबंध में परिसमापित हर्जाना खंड अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td><b>225(xvii)</b></td><td>Warranty clause mandatory — free repair/replacement of defective goods</td><td class="hi">वारंटी खंड अनिवार्य</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>225(xix)</td><td>No claim from contractor entertained after <b>3 years</b> of arising of claim</td><td class="hi">दावा उत्पन्न होने के 3 वर्ष बाद स्वीकार नहीं</td><td><span class="tag r">🔴</span></td></tr>
+        <tr><td>226</td><td>Management of Contracts — strict monitoring; monthly review of Bank Guarantees expiring within 3 months</td><td class="hi">बैंक गारंटी की मासिक समीक्षा (3 माह में समाप्त होने वाली)</td><td><span class="tag o">🟠</span></td></tr>
+        <tr><td>227</td><td>Legal advice sought before arbitration/conciliation/litigation</td><td class="hi">मध्यस्थता से पूर्व विधिक सलाह आवश्यक</td><td><span class="tag y">🟡</span></td></tr>
+        <tr><td><b>227A(i)</b></td><td>If arbitral award challenged, <b>75%</b> of award paid to contractor against Bank Guarantee</td><td class="hi">चुनौती दिए गए मध्यस्थता निर्णय का 75% बैंक गारंटी के विरुद्ध भुगतान</td><td><span class="tag r">🔴</span></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📊 Comparison — Contract Documentation by Value</summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Value Range</th><th>Documentation Required</th></tr>
+        <tr><td>Up to ₹2,50,000</td><td>Purchase Order with basic terms &amp; conditions</td></tr>
+        <tr><td>Works: ₹1,00,000 – ₹10,00,000</td><td>Letter of Acceptance + GCC + SCC (binding contract)</td></tr>
+        <tr><td>Works/Purchase ≥ ₹10,00,000</td><td>Full self-contained Contract Document</td></tr>
+        <tr><td>Turnkey works / maintenance / services</td><td>Contract Document always mandatory</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🔀 Flowchart — Contract Execution Process</summary>
+    <div class="card-body">
+      <div class="flowchart">
+        <div class="fbox">Tender Evaluated &amp; Bidder Selected</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Letter of Acceptance (LOA) issued</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Performance Security obtained from bidder</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Contract Document executed within 21 days (Rule 225-vi)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox alt">Copy sent to Audit/Accounts Officer (if ≥₹25 lakh)</div>
+        <div class="arrow">↓</div>
+        <div class="fbox">Contract Monitored — BG review every month</div>
+        <div class="arrow">↓</div>
+        <div class="fbox gold">Dispute? → Legal Advice → Conciliation/Arbitration</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="tag y">🟡</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Extension of delivery/completion dates normally NOT granted except in cases of <b>Force Majeure</b> or terms specifically providing for it (Rule 225-xv). Price variation not admissible beyond original Scheduled Delivery Date if delay is the supplier's default.</p>
+      <p class="hi"><b>HI:</b> डिलीवरी तिथि विस्तार केवल अप्रत्याशित घटना (Force Majeure) की स्थिति में ही स्वीकार्य।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Time Limits <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <table>
+        <tr><th>Event</th><th>Time Limit</th></tr>
+        <tr><td>Contract document execution after LOA</td><td>Within <b>21 days</b></td></tr>
+        <tr><td>Claim from contractor</td><td>Barred after <b>3 years</b> of arising</td></tr>
+        <tr><td>Bank Guarantee review cycle</td><td>Monthly, for BGs expiring within 3 months</td></tr>
+        <tr><td>Price Variation Clause applicability</td><td>Only if delivery period &gt; <b>18 months</b></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="tag g">🟢</span></summary>
+    <div class="card-body">
+      <p>President of India (contracting authority) • Competent Authority under DFPR • Audit Officer / Accounts Officer • Financial Adviser • Arbitrator/Conciliator</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚖️ Penalties / Consequences <span class="tag o">🟠</span></summary>
+    <div class="card-body">
+      <p><b>EN:</b> Failure to execute contract within 21 days → annulment of award + forfeiture of Earnest Money Deposit (Rule 225-vi). Contractor default triggers Liquidated Damages recovery (Rule 225-xvi). Defective goods must be repaired/replaced free under Warranty (Rule 225-xvii).</p>
+    </div>
+  </details>
+
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Under which Constitutional Article are Government contracts executed? <b>(Ans: Article 299(1))</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> Within how many days must a Contract Document be executed after the Letter of Acceptance? <b>(Ans: 21 days — Rule 225(vi))</b></div>
+  <div class="exam-q">💡 <b>Probable Exam Q:</b> If an arbitral award is challenged by the Ministry, what % is paid to the contractor against a Bank Guarantee? <b>(Ans: 75% — Rule 227A)</b></div>
+</section>
+
+<!-- ============ ONE-PAGE REVISION SHEET ============ -->
+<div class="section-title" id="revision">🧠 One-Page Revision Sheet / एक-पृष्ठ रिवीजन शीट</div>
+<div class="revision-grid">
+  <div class="rev-card">
+    <h4>📗 Ch.2 Financial Management</h4>
+    Rule 21: 4 Standards of Propriety • Rule 30: sanction lapses in 12 months • Rule 34: loss &gt;₹50,000 → report Police • Rule 37: personal responsibility for loss by fraud/negligence • Rule 33: petty loss ≤₹10,000 exempt from report
+  </div>
+  <div class="rev-card">
+    <h4>📘 Ch.3 Budget</h4>
+    FY = 1 Apr–31 Mar (Rule 42) • Budget: Art.112(1) • Vote on Account: Art.116 (no New Service) • Supplementary Grant: Art.115(1) • Contingency Fund advance: Art.267(1) • Savings lapse at year-close (Rule 62) • CAA = Secretary (Rule 70, 9 duties)
+  </div>
+  <div class="rev-card">
+    <h4>📙 Ch.6 Procurement</h4>
+    ₹50,000 → no quotation (154) • ₹50k–5L → Purchase Committee (155) • ≤₹50L → Limited Tender (162) • ≥₹50L → Advertised Tender (161) • GTE exempt up to ₹200 Cr • Bid Security 2-5% • Performance Security 3-5% • GeM mandatory for common goods (Rule 149)
+  </div>
+  <div class="rev-card">
+    <h4>📕 Ch.8 Contract Management</h4>
+    Art.299(1) → all contracts • ≤₹2.5L → Purchase Order • &gt;₹10L → full Contract Document • Contract signed within 21 days of LOA • Copy to Audit if ≥₹25L • Claim barred after 3 years • Arbitration challenge → 75% paid against BG (227A)
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION NOTES ============ -->
+<div class="section-title">⏰ Last Day Revision Notes / अंतिम दिन के नोट्स</div>
+<details class="card" open>
+  <summary>🎯 Top Numbers to Memorize / याद रखने योग्य आंकड़े</summary>
+  <div class="card-body">
+    <table>
+      <tr><th>Number</th><th>Meaning</th></tr>
+      <tr><td>12 months</td><td>Sanction lapse period (Rule 30)</td></tr>
+      <tr><td>₹50,000</td><td>Loss reporting to Police threshold (Rule 34); no-quotation purchase limit (154)</td></tr>
+      <tr><td>₹10,000</td><td>Petty loss reporting exemption (Rule 33)</td></tr>
+      <tr><td>₹50,000–₹5,00,000</td><td>Purchase Committee range (Rule 155)</td></tr>
+      <tr><td>₹50 lakh</td><td>Limited ↔ Advertised Tender threshold (161/162)</td></tr>
+      <tr><td>₹200 crore</td><td>GTE exemption limit</td></tr>
+      <tr><td>2%–5% / 3%–5%</td><td>Bid Security % / Performance Security %</td></tr>
+      <tr><td>45 days / 60 days</td><td>Bid Security validity / Performance Security validity</td></tr>
+      <tr><td>30 days</td><td>Refund of unsuccessful Bid Security</td></tr>
+      <tr><td>21 days</td><td>Contract execution after LOA (Rule 225-vi)</td></tr>
+      <tr><td>₹2.5 lakh / ₹10 lakh / ₹25 lakh</td><td>PO only / Full contract mandatory / Copy to Audit Officer</td></tr>
+      <tr><td>3 years</td><td>Contractor claim time-bar (Rule 225-xix)</td></tr>
+      <tr><td>18 months</td><td>Minimum delivery period for Price Variation Clause</td></tr>
+      <tr><td>75%</td><td>Arbitral award paid against BG if challenged (227A)</td></tr>
+    </table>
+  </div>
+</details>
+
+<!-- ============ MNEMONICS ============ -->
+<div class="section-title" id="mnemonics">🎯 Memory Tricks &amp; Mnemonics / स्मृति युक्तियां</div>
+
+<div class="mnemonic">
+  <b>1. Financial Propriety (Rule 21) — "VNSS"</b><br>
+  <b>V</b>igilance like own money → <b>N</b>ot more than needed → <b>S</b>elf-advantage forbidden → <b>S</b>pecific-person benefit forbidden.<br>
+  <span class="hi">हिंदी: "सावधानी-सीमा-स्व-विशेष" — सतर्कता, सीमित व्यय, स्व-लाभ नहीं, विशेष व्यक्ति लाभ नहीं।</span>
+</div>
+
+<div class="mnemonic">
+  <b>2. Tender Methods — "A-L-T-S-E" / "अलसे"</b><br>
+  <b>A</b>dvertised, <b>L</b>imited, <b>T</b>wo-Stage, <b>S</b>ingle, <b>E</b>-Reverse Auction.<br>
+  <span class="hi">याद रखें "अ-ली-दो-एक-ई" क्रम में, मूल्य सीमा घटते क्रम में — Advertised (₹50L+) से Single (कोई सीमा नहीं, केवल परिस्थिति) तक।</span>
+</div>
+
+<div class="mnemonic">
+  <b>3. Money Ladder — Procurement Escalation</b><br>
+  50k <b>&lt;</b> 5L <b>&lt;</b> 50L <b>&lt;</b> 200Cr → No-Quote → Committee → Limited/Advertised → GTE-exempt zone.<br>
+  <span class="hi">"पचास हज़ार से पाँच लाख से पचास लाख से दो सौ करोड़" — क्रम याद रखें।</span>
+</div>
+
+<div class="mnemonic">
+  <b>4. Security Deposits — "2-5 Bid, 3-5 Perform"</b><br>
+  Bid Security = <b>2 to 5%</b> (2-5 = "आ जाओ, चले जाओ" bidding stage) | Performance Security = <b>3 to 5%</b> (higher floor because commitment is firmer).
+</div>
+
+<div class="mnemonic">
+  <b>5. CAA Duties (Rule 70) — "RARE-PRICE"</b><br>
+  <b>R</b>esponsible for finance • <b>A</b>ppropriated funds used properly • <b>R</b>eview performance • <b>E</b>ffective/efficient use • <b>P</b>AC appearance • <b>R</b>ecords &amp; internal control • <b>I</b>nternal controls • <b>C</b>ollect dues • <b>E</b>xpenditure statements.
+</div>
+
+<div class="mnemonic">
+  <b>6. Article Numbers — "112-113-115-116-267"</b><br>
+  112 = Budget presented • 113 = Vote required for expenditure • 115 = Supplementary Grant • 116 = Vote on Account • 267 = Contingency Fund.<br>
+  <span class="hi">क्रम याद रखने हेतु: "112 दिखाओ, 113 वोट लो, 115 अतिरिक्त लो, 116 अग्रिम वोट लो, 267 आकस्मिक निधि"</span>
+</div>
+
+<div class="mnemonic">
+  <b>7. Contract Value Ladder — "2.5-10-25 Lakh"</b><br>
+  ₹2.5L → PO only | ₹1-10L (works) → LOA+GCC/SCC | ≥₹10L → Full Contract | ≥₹25L → Copy to Audit Officer.
+</div>
+
+<!-- ============ QUICK MCQ-STYLE SELF TEST ============ -->
+<div class="section-title">📝 Quick Self-Test / त्वरित स्व-परीक्षण</div>
+<details class="card">
+  <summary>❓ Test Your Memory (tap to reveal answers)</summary>
+  <div class="card-body">
+    <ol>
+      <li>Financial Year runs from ___ to ___. <mark>1 April – 31 March</mark></li>
+      <li>Sanction for fresh charge lapses after ___ months. <mark>12</mark></li>
+      <li>Bid Security should range between ___% and ___% of estimated value. <mark>2% – 5%</mark></li>
+      <li>Contract document must be executed within ___ days of LOA. <mark>21 days</mark></li>
+      <li>GTE is exempt for tenders up to ₹___ crore. <mark>200 crore</mark></li>
+      <li>Loss above ₹___ must be reported to Police. <mark>50,000</mark></li>
+      <li>Article ___ governs Vote on Account. <mark>116</mark></li>
+      <li>Contracts are made under Article ___ of the Constitution. <mark>299(1)</mark></li>
+      <li>Contractor's claim is time-barred after ___ years. <mark>3 years</mark></li>
+      <li>If arbitral award is challenged, ___% is paid against Bank Guarantee. <mark>75%</mark></li>
+    </ol>
+  </div>
+</details>
+
+</main>
+
+<div class="fab-bar">
+  <button onclick="location.hash='ch2'"><span class="ic">📗</span>Ch.2</button>
+  <button onclick="location.hash='ch3'"><span class="ic">📘</span>Ch.3</button>
+  <button onclick="location.hash='ch6'"><span class="ic">📙</span>Ch.6</button>
+  <button onclick="location.hash='ch8'"><span class="ic">📕</span>Ch.8</button>
+  <button onclick="location.hash='revision'"><span class="ic">🧠</span>Revise</button>
+</div>
+
+<footer>
+  LDCE IP Exam Portal • GFR 2017 (as amended up to Aug 2024) • For departmental exam preparation only<br>
+  Source: General Financial Rules 2017, Department of Expenditure, Ministry of Finance
+</footer>
+
+<script>
+// Dark mode
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  localStorage.setItem('gfrDark', document.body.classList.contains('dark') ? '1':'0');
+}
+if(localStorage.getItem('gfrDark')==='1'){ document.body.classList.add('dark'); }
+
+// TTS
+let ttsOn = false;
+function toggleTTS(){
+  ttsOn = !ttsOn;
+  if(!ttsOn){ speechSynthesis.cancel(); }
+  alert(ttsOn ? "TTS ON: Tap any card heading to hear it read aloud." : "TTS OFF");
+}
+document.querySelectorAll('details.card summary').forEach(s=>{
+  s.addEventListener('click', function(e){
+    if(ttsOn){
+      const txt = this.closest('details').querySelector('.card-body') ?
+        this.innerText + '. ' + this.closest('details').querySelector('.card-body').innerText.slice(0,400) : this.innerText;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(txt);
+      speechSynthesis.speak(u);
+    }
+  });
+});
+
+// Search filter
+document.getElementById('searchBox').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  document.querySelectorAll('.chapter details.card, .chapter .exam-q').forEach(el=>{
+    const match = el.innerText.toLowerCase().includes(q);
+    el.classList.toggle('hidden', q.length>1 && !match);
+    if(q.length>1 && match && el.tagName==='DETAILS'){ el.open = true; }
+  });
+});
+
+// Progress tracker (chapters opened)
+const chapterIds = ['ch2','ch3','ch6','ch8'];
+let opened = new Set(JSON.parse(localStorage.getItem('gfrOpened')||'[]'));
+function updateProgress(){
+  document.getElementById('progText').innerText = opened.size + '/4 chapters opened';
+  document.getElementById('progFill').style.width = (opened.size/4*100)+'%';
+  localStorage.setItem('gfrOpened', JSON.stringify([...opened]));
+}
+chapterIds.forEach(id=>{
+  const sec = document.getElementById(id);
+  if(sec){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ opened.add(id); updateProgress(); } });
+    }, {threshold:0.2});
+    obs.observe(sec);
+  }
+});
+updateProgress();
+</script>
+</body>
+</html>
