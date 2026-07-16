@@ -64,20 +64,38 @@
   .note{background:#fef2f2;border:1px solid var(--danger);border-radius:8px;padding:8px 10px;font-size:11px;color:#7f1d1d;margin-top:6px;}
   .source{text-align:center;font-size:10.5px;color:var(--text-secondary);margin-top:6px;}
   .home-link{display:block;text-align:center;margin-top:14px;color:var(--primary);font-weight:700;font-size:13px;text-decoration:none;}
+
+  .tab-switch{display:flex;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:4px;margin-bottom:14px;box-shadow:var(--shadow-sm);position:sticky;top:8px;z-index:5;}
+  .tab-btn{flex:1;border:none;background:transparent;padding:9px 6px;border-radius:var(--radius-pill);font-family:'Inter',sans-serif;font-weight:700;font-size:12.5px;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;gap:5px;}
+  .tab-btn.active{background:var(--primary-gradient);color:#fff;box-shadow:0 3px 8px rgba(30,58,138,.3);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  .badge.teal{background:#0d9488;} .badge.indigo{background:#4f46e5;}
+  .badge.pink{background:#db2777;} .badge.cyan{background:#0284c7;}
+  .badge.violet{background:#7c3aed;}
+  summary .sr-no.aao{background:#0d9488;}
 </style>
 </head>
 <body>
 
 <div class="header-gradient">
   <a href="index.html" class="back-btn">← Home</a>
-  <h1 class="header-title">📘 IPO Exam Syllabus 2025</h1>
-  <div class="header-sub">Inspector Posts (IPO) — LDCE | DoP Letter No. 7-14/2011-SPN-II dt. 22.08.2025</div>
+  <h1 class="header-title" id="syllabus-h1">📘 IPO Exam Syllabus 2025</h1>
+  <div class="header-sub" id="syllabus-sub">Inspector Posts (IPO) — LDCE | DoP Letter No. 7-14/2011-SPN-II dt. 22.08.2025</div>
 </div>
 <div class="wave-divider">
   <svg viewBox="0 0 1440 40" preserveAspectRatio="none"><path fill="#f8fafc" d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,25 1440,20 L1440,40 L0,40 Z"/></svg>
 </div>
 
 <div class="container">
+
+  <div class="tab-switch">
+    <button class="tab-btn active" id="tab-btn-ip" onclick="switchSyllabusTab('ip')">📘 IP Syllabus</button>
+    <button class="tab-btn" id="tab-btn-aao" onclick="switchSyllabusTab('aao')">📗 AAO Syllabus</button>
+  </div>
+
+  <div id="ip-panel" class="tab-panel active">
 
   <div class="card">
     <h2>📋 परीक्षा पैटर्न / Exam Pattern (2025 से लागू)</h2>
@@ -336,8 +354,411 @@
   </div>
   <div class="source">Source content shared by user (postaladda.com reference) · Compiled into portal format</div>
 
+  </div><!-- /ip-panel -->
+
+  <div id="aao-panel" class="tab-panel">
+
+  <div class="card">
+    <h2>📋 AAO Exam — 6 Papers Overview</h2>
+    <div class="bi">
+      <div class="hi">कुल 6 पेपर हैं — नीचे प्रत्येक पेपर पर टैप करें।</div>
+      <div class="en">Total 6 papers — tap each below to expand the topic list.</div>
+    </div>
+    <table>
+      <tr><th>Paper</th><th>Subject</th></tr>
+      <tr><td>I</td><td>Financial Rules and Procedures &amp; Book-keeping</td></tr>
+      <tr><td>II</td><td>Service Rules</td></tr>
+      <tr><td>III</td><td>Postal Accounts</td></tr>
+      <tr><td>IV</td><td>Telecom Accounts, USOF &amp; Taxation</td></tr>
+      <tr><td>V</td><td>Logical, Analytical &amp; Quantitative Abilities + Language Skills</td></tr>
+      <tr><td>VI</td><td>Information Technology</td></tr>
+    </table>
+    <div class="badge-row">
+      <span class="badge teal">Paper I</span><span class="badge indigo">Paper II</span>
+      <span class="badge pink">Paper III</span><span class="badge cyan">Paper IV</span>
+      <span class="badge amber">Paper V</span><span class="badge violet">Paper VI</span>
+    </div>
+    <div class="tip"><span>💡</span><div><b>ध्यान दें:</b> Marks/Duration की official table Annexure F के इस भाग में नहीं दी गई — सिर्फ़ Syllabus Content है। <span style="color:var(--text-secondary);">(Marks/duration per paper are not specified in this Annexure F excerpt — only syllabus content is listed.)</span></div></div>
+  </div>
+
+  <div class="card">
+    <h2>📖 Paper I — Financial Rules &amp; Book-keeping</h2>
+    <details>
+      <summary><span><span class="sr-no aao">1</span>General Financial Rules, 2017</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Introduction</li>
+        <li>General System of Financial Management</li>
+        <li>Budget Formulation and Implementation</li>
+        <li>Procurement of Goods and Services</li>
+        <li>Contract Management</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">2</span>FHB Volume-I</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>General Principles and Rules</li>
+        <li>General Outlines of the Systems of Accounts</li>
+        <li>Relations with Audit</li>
+        <li>Cash</li>
+        <li>Pay and Allowances General Rules</li>
+        <li>Establishment</li>
+        <li>Contingent Charges</li>
+        <li>Loans &amp; Advances to Govt Servant</li>
+        <li>Provident &amp; Other Funds</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">3</span>Accounting Principles / Book-keeping</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Preparation of Trial Balance</li>
+        <li>Preparation and analysis of P &amp; L Account</li>
+        <li>Preparation and analysis of Balance Sheet</li>
+        <li>Provision for Bad Debts/Depreciation/Reserves/provisions</li>
+        <li>Bank reconciliation statement</li>
+        <li>Receipts &amp; Payments Account</li>
+        <li>Income &amp; Expenditure Account</li>
+        <li>Single entry</li>
+        <li>Correction of Errors</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">4</span>Govt. Accounting Rules 1990 (GAR 1990)</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>Complete GAR 1990 provisions</li></ul></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>✍️ Paper II — Service Rules</h2>
+    <details>
+      <summary><span><span class="sr-no aao">1</span>FR SR Part-I: General Rules</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Definition</li><li>General Conditions of Service</li><li>Pay</li>
+        <li>Dismissal, Removal and Suspension</li>
+        <li>Delegation made under Fundamental Rule 6</li>
+        <li>CCS (Joining Time) Rules, 1979</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">2</span>FR SR Part-II: Travelling Allowances</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Grades of Government Servant</li><li>Different kinds of TA</li>
+        <li>T.A. admissible for different class of Journey</li><li>Controlling Officers</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">3</span>FR SR Part-III: Leave Rules</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Preliminary</li><li>General Conditions</li>
+        <li>Kinds of Leave due and admissible</li>
+        <li>Special kinds of leave other than study leave</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">4</span>CCS (Pension) Rules, 1972</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Preliminary / General Conditions</li><li>Qualifying Service</li>
+        <li>Emoluments and Average Emoluments</li>
+        <li>Classes of pensions and conditions governing their grant</li>
+        <li>Regulation of Amount of Pension</li>
+        <li>Determination and Authorization of Amounts of Pension and Gratuity</li>
+        <li>Determination and Authorization of Amount of Family Pension and Death Gratuity (death while in service)</li>
+        <li>CCS (Commutation of Pension) Rules, 1981</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">5</span>General Provident Fund (Central Services) Rules, 1960</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Definitions / Conditions of eligibility</li><li>Nominations</li>
+        <li>Subscriber's Account, Conditions &amp; Rates of subscription</li>
+        <li>Advances &amp; Withdrawals from the Fund, Conditions of withdrawal</li>
+        <li>Conversion of an advance into a withdrawal</li>
+        <li>Final withdrawal of accumulations, Retirement of subscriber</li>
+        <li>Procedure on death of a subscriber</li>
+        <li>Manner of payment of amount, Annual statement of accounts</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">6</span>CEA Rules &amp; LTC Rules</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>Children Education Allowance Rules</li><li>Leave Travel Concession Rules</li></ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">7</span>CCS (CCA) Rules</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Appointing Authority</li>
+        <li>Penalties and Disciplinary Authorities</li>
+        <li>Procedure for Imposing Penalties</li>
+        <li>Appeals, Revision and Review</li>
+        <li>Suspension — General Orders &amp; Entitlements</li>
+        <li>Unauthorized Absence</li>
+        <li>Orders regarding grant of T.A. to various persons during disciplinary proceedings</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">8</span>CCS (Conduct) Rules</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Definitions / General</li>
+        <li>Prohibition of sexual harassment of working women</li>
+        <li>Joining of associations by Government servants</li>
+        <li>Demonstration and strikes</li>
+        <li>Criticism of Government</li>
+        <li>Private trade or employment</li>
+        <li>Investments, Lending and borrowing</li>
+        <li>Insolvency and habitual indebtedness</li>
+        <li>Movable, immovable and valuable property</li>
+        <li>Restriction regarding marriage</li>
+        <li>Consumption of intoxicating drinks and drugs</li>
+        <li>The Prevention of Corruption Act, 1988</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">9</span>RTI Act 2005 &amp; Constitution of India</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Knowledge of various provisions of RTI Act 2005</li>
+        <li>General Principles of Natural Justice (Preamble to Constitution of India, Article 14, 21, 22, 32, 226, 227, 311)</li>
+      </ul></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>💰 Paper III — Postal Accounts</h2>
+    <details>
+      <summary><span><span class="sr-no aao">1</span>Postal Accounts Manual Vol-I</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Ch. I Definitions &amp; General System of Accounts</li>
+        <li>Ch. II Organisation and Control</li>
+        <li>Ch. III Postal Accounts Work</li>
+        <li>Ch. IV Compilation of Accounts</li>
+        <li>Ch. V Remittances</li>
+        <li>Ch. VI Account Current Section</li>
+        <li>Ch. VII Transfer Entries, Journal and Ledger</li>
+        <li>Ch. IX Budget &amp; Budgetary Control</li>
+        <li>Ch. X Capital Accounts</li>
+        <li>Ch. XI Principles &amp; Procedures regarding Expense Coverage Ratio</li>
+        <li>Ch. XIII Pension</li>
+        <li>Ch. XV General Provident Fund</li>
+        <li>Ch. XVIII Internal Audit</li>
+        <li>Ch. XXI Premium Product Services — Checks &amp; Balances</li>
+        <li>Ch. XXII Remotely Managed Franking System</li>
+        <li>Ch. XXIV Postal Life Insurance &amp; Rural Postal Life Insurance</li>
+        <li>Ch. XXV Western Union International Money Transfer</li>
+        <li>Ch. XXVI India Post Payment Bank</li>
+        <li>Appendix I to IV</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">2</span>Postal Accounts Manual Vol-II</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Ch. I Electronic Money Orders, Foreign Money Orders, Value Payable Money Orders</li>
+        <li>Ch. II Postal Office Cash Certificates</li>
+        <li>Ch. III Indian Postal Orders, e-Indian Postal Orders</li>
+        <li>Ch. VI Savings Bank (Para 6.01 to 6.13)</li>
+        <li>Ch. VIII Custom Duty</li>
+        <li>Ch. IX Goods and Service Tax — DOP perspective</li>
+        <li>Ch. X India Post Passenger Reservation System</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">3</span>Appendix-V to Postal Accounts Manual Vol-I</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>Appendix-V provisions</li></ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">4</span>Delegation of Financial Power Rules, 1978</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>DFPR 1978 — complete rules</li></ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">5</span>Schedule of Financial Powers</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>Schedule of Financial Powers of Head of Circle, Regional PMGs, SSPOs/SPOs</li></ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">6</span>FHB — Volume-II</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Supply of Stamps</li><li>Revenue Receipts</li><li>Post Office Accounts</li>
+        <li>Railway Mail Service Accounts</li><li>Pension Payments</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">7</span>Manual of Internal Audit Questionnaire</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Postal and RMS Units</li><li>Circle Office and Regional Offices</li>
+        <li>Postal Stores Depot</li><li>Postal Life Insurance</li><li>Civil &amp; Electrical Wing</li>
+      </ul></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>📡 Paper IV — Telecom Accounts, USOF &amp; Taxation</h2>
+    <details>
+      <summary><span><span class="sr-no aao">1</span>License Agreements and NIA</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Financial Conditions of various License Agreements</li>
+        <li>Spectrum Usage Charges &amp; Bank Guarantees in NIA 2010, 2012, 2013, 2014, 2015, 2016 &amp; 2021</li>
+        <li>Reconciliation of revenue shown in AGR (Adjusted Gross Revenue) and P&amp;L Account</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">2</span>USOF (Universal Service Obligation Fund)</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>Schemes sponsored by USOF</li><li>Financial conditions in various Agreements</li></ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">3</span>GST</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Provision for registration under GST Act</li>
+        <li>Requirement of Monthly/quarterly return under GST Act</li>
+        <li>Time line for depositing amount due under GST Act</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">4</span>Income Tax</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Provision of Income Tax on salaried employees (including pensioners)</li>
+        <li>Provision of TDS on salaried employees (including pensioners)</li>
+        <li>Monthly/Quarterly/Annual Returns to be submitted by DDOs under Income Tax Act</li>
+        <li>Admissible deduction to be allowed by DDO to salaried employees (including pensioners)</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">5</span>National Pension System</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul><li>NPS structure, contribution &amp; withdrawal framework</li></ul></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>🧮 Paper V — Logical, Analytical &amp; Quantitative Abilities + Language Skills</h2>
+    <details>
+      <summary><span><span class="sr-no aao">1</span>Part A: Logical, Analytical &amp; Quantitative Abilities</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Data Interpretation — Data Tables, Linear Graphs, Pie Charts, Bar Charts, Venn Diagram</li>
+        <li>Number systems, Decimals &amp; Fractions, Simple Equation</li>
+        <li>Ratio-Proportion-Variation, Percentages</li>
+        <li>Profit &amp; Loss, Simple &amp; Compound Interest</li>
+        <li>Average/Weighted Averages, Discount, Time &amp; Work</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">2</span>Part B: Language Skills — English</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Verbal Reasoning, Sentence corrections</li>
+        <li>Idioms and phrases, Grammar Applications</li>
+        <li>Antonyms, Synonyms, Vocabulary</li>
+        <li>Arranging sentences in order, Comprehension of passage</li>
+        <li>Précis of any topic</li>
+        <li>Drafting official letter</li>
+        <li>Preparation of Office Note</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">3</span>भाग ब: भाषा ज्ञान — हिन्दी</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>अशुद्ध वाक्य शोधन <span class="en-line">(Sentence correction)</span></li>
+        <li>मुहावरे व लोकोक्तियाँ <span class="en-line">(Idioms &amp; proverbs)</span></li>
+        <li>विलोम शब्द, समानार्थक शब्द <span class="en-line">(Antonyms, Synonyms)</span></li>
+        <li>अपठित गद्यांश <span class="en-line">(Unseen passage)</span></li>
+        <li>किसी भी विषय का सारांश <span class="en-line">(Précis of any topic)</span></li>
+        <li>कार्यालय पत्रों की रचना <span class="en-line">(Drafting official letter)</span></li>
+        <li>कार्यालय टिप्पणी तैयार करना <span class="en-line">(Preparation of office note)</span></li>
+      </ul></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>💻 Paper VI — Information Technology</h2>
+    <details>
+      <summary><span><span class="sr-no aao">1</span>Introduction to Windows</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Operating system basics &amp; User Interface</li>
+        <li>Mouse/Icons, My Computer, Recycle Bin</li>
+        <li>Status Bar, Start/Menu, Running an Application</li>
+        <li>Windows Explorer — Files, Folders, Directories</li>
+        <li>Creating/Renaming files &amp; folders, Opening/closing Windows</li>
+        <li>Windows Settings — Control Panel, Help</li>
+        <li>Advanced Windows — right-click, shortcuts, setup, Notepad</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">2</span>Word Processor / Word</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Word Processing basics — Menu Bar, Help, Icons</li>
+        <li>Opening/Closing/Saving documents, Page Setup, Printing</li>
+        <li>Moving around a document, Scrolling</li>
+        <li>Text Creation &amp; Manipulation — Tab setting, Selection, Cut/Copy/Paste</li>
+        <li>Font/Size/Color, Bold/Italic/Underline, Alignment</li>
+        <li>Formatting — indenting, Bullets &amp; Numbering, Tab setting, Case</li>
+        <li>Handling Multiple Documents, Table Manipulation, Printing</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">3</span>Spreadsheet / Excel</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Elements of Electronic Spread Sheet, Menu Bar</li>
+        <li>Creation &amp; addressing of cells, Cell inputting</li>
+        <li>Manipulation of Cells — text/numbers/dates, Cell Height &amp; Width</li>
+        <li>Providing Formulas — basic functions, SUM(), Average, Percentage</li>
+        <li>Spread sheets for small accounting — invoices/budgets, totaling transactions</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">4</span>Presentation / Power Point</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Basics — Using Power Point, Wizard for presentation</li>
+        <li>Creation — Title, Text Creation, Fonts &amp; Sizes, Bullets/Indenting</li>
+        <li>Preparation of Slides — Type Selection, Importing text, Slide manager</li>
+        <li>Providing aesthetics — Slide designs, Background/Text colors, Footnotes</li>
+        <li>Slide Manipulation &amp; Slide Show, Printing handouts</li>
+        <li>Inserting/Formatting Tables, Charts, Media, Images</li>
+        <li>Applying Transitions &amp; Animations, Setting Time</li>
+      </ul></div>
+    </details>
+    <details>
+      <summary><span><span class="sr-no aao">5</span>E-mail</span><svg class="chev" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+      <div class="d-body"><ul>
+        <li>Basics — what is E-mail, E-mail addressing, Inbox/Outbox</li>
+        <li>Using E-mails — Viewing, Sending, Saving, sending to multiple users</li>
+        <li>Document handling — soft copy as attachment, enclosures, sending part of document</li>
+      </ul></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>🎯 तैयारी के सुझाव / Preparation Tips</h2>
+    <div class="tip"><span>🔀</span><div><b>Overlap topics साथ पढ़ें:</b> GST (Paper III + IV), Pension/GPF (Paper II + III), Drafting (Paper V) — एक बार पढ़ें, दोनों जगह लागू करें। <span style="color:var(--text-secondary);">Study overlapping topics once, apply across papers.</span></div></div>
+    <div class="tip"><span>🧮</span><div><b>रोज़ाना अभ्यास:</b> Paper V (Quant) व Paper VI (Excel formulas) practical papers हैं — रोज़ थोड़ा अभ्यास करें। <span style="color:var(--text-secondary);">Practice Paper V &amp; VI daily — they are practical/skill-based.</span></div></div>
+    <div class="tip"><span>📌</span><div><b>Service Rules पर फोकस:</b> Paper II में CCS(CCA), CCS(Pension), CCS(Conduct) सबसे ज़्यादा weight रखते हैं। <span style="color:var(--text-secondary);">CCS(CCA)/Pension/Conduct Rules carry the most weight in Paper II.</span></div></div>
+  </div>
+
+  <div class="note">
+    ⚠️ यह AAO Syllabus Annexure F (Syllabus Content पेज) पर आधारित है — इसमें केवल topic list है, marks/duration table शामिल नहीं। सटीक rule numbers, sections व penalties के लिए संबंधित Bare Act/Rules से पुष्टि करें।<br>
+    <span style="color:#7f1d1d;">Based on Annexure F (Syllabus Content pages) — marks/duration table not included in this excerpt. Verify exact rule numbers, sections &amp; penalties from the concerned Bare Acts/Rules.</span>
+  </div>
+  <div class="source">Source: Annexure F — AAO LDCE Syllabus Content · Compiled into portal format</div>
+
+  </div><!-- /aao-panel -->
+
   <a href="index.html" class="home-link">⬅ पोर्टल पर वापस जाएँ / Back to Portal</a>
 </div>
+
+<script>
+function switchSyllabusTab(tab){
+  document.getElementById('ip-panel').classList.toggle('active', tab==='ip');
+  document.getElementById('aao-panel').classList.toggle('active', tab==='aao');
+  document.getElementById('tab-btn-ip').classList.toggle('active', tab==='ip');
+  document.getElementById('tab-btn-aao').classList.toggle('active', tab==='aao');
+  if(tab==='ip'){
+    document.getElementById('syllabus-h1').textContent = '📘 IPO Exam Syllabus 2025';
+    document.getElementById('syllabus-sub').textContent = 'Inspector Posts (IPO) — LDCE | DoP Letter No. 7-14/2011-SPN-II dt. 22.08.2025';
+  }else{
+    document.getElementById('syllabus-h1').textContent = '📗 AAO Exam Syllabus';
+    document.getElementById('syllabus-sub').textContent = 'Assistant Accounts Officer (AAO) — LDCE | Annexure F, Syllabus Content';
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+  try{ sessionStorage.setItem('syllabusTab', tab); }catch(e){}
+}
+(function(){
+  try{
+    var saved = sessionStorage.getItem('syllabusTab');
+    if(saved === 'aao'){ switchSyllabusTab('aao'); }
+  }catch(e){}
+})();
+</script>
 
 </body>
 </html>
