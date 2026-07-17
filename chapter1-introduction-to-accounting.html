@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Ch.1 Introduction to Accounting — Exam Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --paper:#FAF6EA;
+  --paper2:#F1E9D3;
+  --card:#FFFFFF;
+  --ink:#1B2A4A;
+  --ink-soft:#4C5A78;
+  --ink-faint:#8A93A8;
+  --red:#B3261E;
+  --red-soft:#F6E2E0;
+  --gold:#B9862F;
+  --gold-soft:#F3E7CA;
+  --green:#1F6F54;
+  --green-soft:#DCEEE6;
+  --blue:#2A4E86;
+  --blue-soft:#DEE6F3;
+  --line:rgba(27,42,74,0.14);
+  --line-strong:rgba(27,42,74,0.28);
+  --shadow: 0 2px 10px rgba(27,42,74,0.08), 0 1px 2px rgba(27,42,74,0.06);
+  --radius: 10px;
+  --font-display:'Lora', 'Georgia', serif;
+  --font-body:'Source Serif 4', 'Georgia', serif;
+  --font-mono:'IBM Plex Mono', monospace;
+}
+body.dark{
+  --paper:#0E1524;
+  --paper2:#141D30;
+  --card:#182238;
+  --ink:#F1E9D3;
+  --ink-soft:#C6CEE0;
+  --ink-faint:#7C88A3;
+  --red:#E4776E;
+  --red-soft:#3A2020;
+  --gold:#E3B65E;
+  --gold-soft:#332A17;
+  --green:#63C7A4;
+  --green-soft:#173229;
+  --blue:#8FB0E8;
+  --blue-soft:#1B2A45;
+  --line:rgba(241,233,211,0.14);
+  --line-strong:rgba(241,233,211,0.28);
+  --shadow: 0 2px 14px rgba(0,0,0,0.35);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:
+    repeating-linear-gradient(var(--paper), var(--paper) 37px, var(--line) 38px);
+  background-color:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.55;
+  transition:background-color .3s, color .3s;
+  padding-bottom:60px;
+}
+.ledger-margin{
+  position:fixed; top:0; bottom:0; left:38px; width:2px;
+  background:var(--red); opacity:.35; z-index:0; pointer-events:none;
+}
+@media (max-width:600px){ .ledger-margin{left:22px;} }
+.wrap{max-width:760px;margin:0 auto;padding:0 18px;position:relative;z-index:1;}
+
+/* ============ TOP BAR ============ */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:var(--paper2);
+  border-bottom:1px solid var(--line-strong);
+  backdrop-filter:blur(4px);
+}
+.topbar-inner{
+  max-width:760px;margin:0 auto;padding:8px 18px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.brand{font-family:var(--font-display);font-weight:700;font-size:.92rem;color:var(--red);letter-spacing:.02em;margin-right:auto;}
+.brand small{display:block;font-family:var(--font-mono);font-size:.62rem;color:var(--ink-faint);font-weight:500;letter-spacing:.03em;}
+.iconbtn{
+  border:1px solid var(--line-strong); background:var(--card); color:var(--ink);
+  border-radius:8px; padding:6px 10px; font-size:.85rem; cursor:pointer;
+  font-family:var(--font-mono); display:flex; align-items:center; gap:5px;
+}
+.iconbtn:active{transform:translateY(1px);}
+.progress-pill{
+  font-family:var(--font-mono); font-size:.68rem; color:var(--ink-soft);
+  border:1px solid var(--line-strong); border-radius:20px; padding:5px 10px;
+  background:var(--card);
+}
+#progressBarWrap{width:64px;height:6px;background:var(--line);border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:5px;}
+#progressBarFill{height:100%;width:0%;background:var(--green);transition:width .3s;}
+
+/* ============ HERO ============ */
+.hero{padding:26px 0 10px;}
+.eyebrow{
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--red); font-weight:600; display:flex; align-items:center; gap:6px;
+}
+.eyebrow::before{content:"";width:16px;height:2px;background:var(--red);display:inline-block;}
+h1.title{
+  font-family:var(--font-display); font-weight:700; font-size:2rem; line-height:1.15;
+  margin:8px 0 6px; color:var(--ink);
+}
+.subtitle{color:var(--ink-soft); font-size:.95rem; margin-bottom:16px;}
+.breadcrumb-diagram{
+  display:flex;flex-wrap:wrap;gap:0;align-items:stretch;
+  font-family:var(--font-mono); font-size:.68rem; margin:14px 0 22px;
+}
+.bc-node{
+  background:var(--card); border:1px solid var(--line-strong); border-radius:7px;
+  padding:7px 10px; display:flex; flex-direction:column; gap:2px; min-width:88px;
+}
+.bc-node b{font-family:var(--font-display); font-size:.78rem; color:var(--ink);}
+.bc-node span{color:var(--ink-faint);}
+.bc-arrow{display:flex;align-items:center;color:var(--gold);padding:0 6px;font-size:1rem;}
+
+/* ============ TOC CHIPS ============ */
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px;}
+.toc a{
+  font-family:var(--font-mono); font-size:.72rem; text-decoration:none; color:var(--ink);
+  border:1px solid var(--line-strong); padding:6px 11px; border-radius:20px; background:var(--card);
+}
+.toc a:hover{border-color:var(--red);color:var(--red);}
+
+/* ============ SECTION / CARD ============ */
+section.block{margin-bottom:34px; scroll-margin-top:64px;}
+.section-head{display:flex;align-items:baseline;gap:9px;margin-bottom:4px;flex-wrap:wrap;}
+.section-num{font-family:var(--font-mono);color:var(--gold);font-weight:700;font-size:.85rem;}
+h2.h{font-family:var(--font-display);font-weight:700;font-size:1.35rem;margin:0;color:var(--ink);}
+h3.h3{font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin:18px 0 8px;color:var(--ink);}
+.section-sub{color:var(--ink-soft);font-size:.85rem;margin:2px 0 14px;}
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:14px 16px; margin-bottom:12px; box-shadow:var(--shadow);
+}
+
+/* tags */
+.tag{
+  display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);
+  font-size:.66rem; font-weight:600; padding:3px 8px; border-radius:20px; letter-spacing:.02em;
+  margin-bottom:8px;
+}
+.tag.veryimp{background:var(--red-soft);color:var(--red);}
+.tag.freq{background:var(--gold-soft);color:var(--gold);}
+.tag.concept{background:var(--blue-soft);color:var(--blue);}
+.tag.quick{background:var(--green-soft);color:var(--green);}
+
+/* definition box */
+.def-box{
+  border-left:3px solid var(--red); background:var(--red-soft); border-radius:0 8px 8px 0;
+  padding:10px 14px; margin:10px 0; font-size:.92rem;
+}
+.def-box b{color:var(--red);}
+.def-source{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-faint);margin-top:4px;display:block;}
+
+/* exam question callout */
+.examq{
+  border:1px dashed var(--gold); background:var(--gold-soft); border-radius:8px;
+  padding:9px 12px; margin:10px 0; font-size:.83rem; color:var(--ink);
+}
+.examq .lbl{font-family:var(--font-mono);font-size:.65rem;font-weight:700;color:var(--gold);display:block;margin-bottom:3px;letter-spacing:.03em;}
+
+/* flowchart */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:14px 0;justify-content:center;}
+.flow-step{
+  background:var(--blue-soft); border:1px solid var(--blue); color:var(--ink);
+  border-radius:8px; padding:10px 12px; text-align:center; font-size:.8rem; font-weight:600;
+  min-width:90px; font-family:var(--font-mono);
+}
+.flow-arrow{color:var(--gold);font-size:1.3rem;padding:0 6px;}
+@media(max-width:480px){.flow{flex-direction:column;} .flow-arrow{transform:rotate(90deg);padding:2px 0;}}
+
+/* timeline */
+.timeline{position:relative;margin:18px 0 6px;padding-left:22px;border-left:2px solid var(--gold);}
+.tl-item{position:relative;margin-bottom:18px;}
+.tl-item::before{
+  content:"";position:absolute;left:-27px;top:3px;width:10px;height:10px;border-radius:50%;
+  background:var(--gold); border:2px solid var(--paper);
+}
+.tl-date{font-family:var(--font-mono);font-weight:700;color:var(--gold);font-size:.78rem;}
+.tl-text{font-size:.87rem;color:var(--ink-soft);margin-top:2px;}
+
+/* mind map */
+.mindmap{display:flex;flex-direction:column;align-items:center;gap:0;margin:16px 0;}
+.mm-root{
+  background:var(--ink); color:var(--paper); font-family:var(--font-display); font-weight:700;
+  padding:10px 18px; border-radius:8px; font-size:.92rem;
+}
+.mm-branches{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;justify-content:center;}
+.mm-branch{
+  border:1px solid var(--line-strong); border-radius:8px; padding:10px 12px; background:var(--card);
+  min-width:140px; max-width:220px;
+}
+.mm-branch .mm-title{font-family:var(--font-mono);font-weight:700;font-size:.75rem;color:var(--blue);margin-bottom:5px;}
+.mm-branch ul{margin:0;padding-left:16px;font-size:.78rem;color:var(--ink-soft);}
+.mm-branch ul li{margin-bottom:2px;}
+
+/* comparison table */
+.tbl-wrap{overflow-x:auto;margin:14px 0;}
+table.cmp{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--card);border-radius:8px;overflow:hidden;}
+table.cmp th{
+  background:var(--ink); color:var(--paper); font-family:var(--font-mono); font-weight:600;
+  text-align:left; padding:8px 10px; font-size:.72rem; letter-spacing:.02em;
+}
+table.cmp td{padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp td.hl{color:var(--red);font-weight:600;font-family:var(--font-mono);}
+
+/* decision tree */
+.dtree{margin:14px 0;font-size:.85rem;}
+.dtree-node{
+  border:1px solid var(--line-strong); border-radius:8px; padding:9px 12px; background:var(--card);
+  margin-bottom:6px;
+}
+.dtree-q{font-weight:600;color:var(--ink);}
+.dtree-branches{display:flex;gap:10px;margin:6px 0 14px 18px;flex-wrap:wrap;}
+.dtree-branch{
+  border-left:3px solid var(--green); background:var(--green-soft); border-radius:0 6px 6px 0;
+  padding:6px 10px; font-size:.78rem; flex:1; min-width:130px;
+}
+.dtree-branch.no{border-color:var(--red);background:var(--red-soft);}
+
+/* accordion */
+.acc{border:1px solid var(--line-strong); border-radius:8px; margin-bottom:8px; background:var(--card); overflow:hidden;}
+.acc-head{
+  display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 13px;
+  cursor:pointer; font-family:var(--font-display); font-weight:600; font-size:.92rem;
+}
+.acc-head .chev{font-family:var(--font-mono);color:var(--gold);transition:transform .2s;font-size:.8rem;}
+.acc-head.open .chev{transform:rotate(90deg);}
+.acc-body{display:none; padding:0 13px 13px; font-size:.85rem; color:var(--ink-soft); border-top:1px solid var(--line);}
+.acc-body.open{display:block;}
+.acc-body .examq, .acc-body .def-box{margin-top:8px;}
+.studied-check{
+  display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.68rem;
+  border:1px solid var(--line-strong); border-radius:20px; padding:3px 9px; cursor:pointer; margin-top:8px;
+  color:var(--ink-soft); background:var(--paper2);
+}
+.studied-check.done{background:var(--green-soft);color:var(--green);border-color:var(--green);}
+.studied-check input{display:none;}
+
+/* glossary filter */
+.filter-input{
+  width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--line-strong);
+  background:var(--card); color:var(--ink); font-family:var(--font-body); font-size:.88rem; margin-bottom:12px;
+}
+
+/* mnemonic cards */
+.mnemonic{
+  background:linear-gradient(135deg, var(--gold-soft), var(--card)); border:1px solid var(--gold);
+  border-radius:10px; padding:12px 14px; margin-bottom:10px;
+}
+.mnemonic .word{font-family:var(--font-display);font-weight:700;color:var(--gold);font-size:1.05rem;letter-spacing:.03em;}
+.mnemonic .expand{font-size:.82rem;color:var(--ink-soft);margin-top:5px;}
+
+/* revision sheet grid */
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:520px){.rev-grid{grid-template-columns:1fr;}}
+.rev-card{border:1px solid var(--line-strong);border-radius:8px;padding:10px 12px;background:var(--card);}
+.rev-card h4{margin:0 0 6px;font-family:var(--font-mono);font-size:.72rem;color:var(--red);letter-spacing:.03em;text-transform:uppercase;}
+.rev-card ul{margin:0;padding-left:16px;font-size:.8rem;color:var(--ink-soft);}
+.rev-card ul li{margin-bottom:3px;}
+
+/* last day crash list */
+.crash-list{list-style:none;margin:0;padding:0;}
+.crash-list li{
+  display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:.86rem;
+}
+.crash-list li:last-child{border-bottom:none;}
+.crash-num{font-family:var(--font-mono);color:var(--red);font-weight:700;min-width:22px;}
+
+/* footer */
+footer{text-align:center;padding:30px 18px 10px;color:var(--ink-faint);font-family:var(--font-mono);font-size:.68rem;}
+
+/* legend bar */
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 24px;font-size:.72rem;font-family:var(--font-mono);color:var(--ink-soft);}
+.legend span{display:flex;align-items:center;gap:4px;}
+
+/* nano list */
+.nano-list{margin:6px 0 0;padding-left:18px;font-size:.83rem;color:var(--ink-soft);}
+.nano-list li{margin-bottom:4px;}
+
+.qtag{font-family:var(--font-mono);font-size:.65rem;color:var(--ink-faint);}
+::selection{background:var(--gold-soft);}
+</style>
+</head>
+<body>
+<div class="ledger-margin"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">EXAM LEDGER<small>Accountancy · Ch.1</small></div>
+    <div class="progress-pill"><span id="progressBarWrap"><span id="progressBarFill"></span></span><span id="progressText">0/20 studied</span></div>
+    <button class="iconbtn" id="ttsBtn" onclick="toggleTTS()">🔊 Read</button>
+    <button class="iconbtn" onclick="toggleDark()">🌓</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">India Post IP Exam · Paper II support subject</div>
+    <h1 class="title">Introduction to Accounting</h1>
+    <div class="subtitle">NCERT Class 11 Accountancy — Chapter 1 · Meaning, Objectives, Qualitative Characteristics, Role &amp; Basic Terms</div>
+
+    <div class="breadcrumb-diagram">
+      <div class="bc-node"><b>Chapter</b><span>1. Intro to Accounting</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Sub-Chapter</b><span>1.1–1.5</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Micro Topic</b><span>e.g. Qualitative Char.</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Nano Topic</b><span>e.g. Reliability</span></div>
+    </div>
+
+    <div class="legend">
+      <span>🔴 Very Important</span>
+      <span>🟠 Frequently Asked</span>
+      <span>🟡 Conceptual</span>
+      <span>🟢 Quick Revision</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <a href="#meaning">1.1 Meaning</a>
+    <a href="#history">History Timeline</a>
+    <a href="#events">Economic Events</a>
+    <a href="#source">1.2 Source of Info</a>
+    <a href="#branches">Branches</a>
+    <a href="#qualitative">Qualitative Char.</a>
+    <a href="#objectives">1.3 Objectives</a>
+    <a href="#role">1.4 Role</a>
+    <a href="#terms">1.5 Basic Terms</a>
+    <a href="#mnemonics">Mnemonics</a>
+    <a href="#revision">Revision Sheet</a>
+    <a href="#lastday">Last-Day Notes</a>
+    <a href="#examqs">Exam Questions</a>
+  </div>
+
+  <!-- ============ 1.1 MEANING ============ -->
+  <section class="block" id="meaning">
+    <div class="section-head"><span class="section-num">1.1</span><h2 class="h">Meaning of Accounting</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+
+    <div class="def-box">
+      <b>AICPA (1941):</b> Accounting is the art of recording, classifying and summarising, in a significant manner and in terms of money, transactions and events which are of a financial character, and interpreting the results.
+      <span class="def-source">American Institute of Certified Public Accountants</span>
+    </div>
+    <div class="def-box">
+      <b>AAA (1966):</b> Accounting is the process of identifying, measuring and communicating economic information to permit informed judgements and decisions by users.
+      <span class="def-source">American Accounting Association</span>
+    </div>
+    <div class="def-box">
+      <b>APB (1970):</b> The function of accounting is to provide quantitative financial information about economic entities, useful in making economic decisions.
+      <span class="def-source">Accounting Principles Board of AICPA</span>
+    </div>
+
+    <h3 class="h3">Flowchart — The Accounting Process</h3>
+    <div class="flow">
+      <div class="flow-step">IDENTIFY<br>economic events</div><div class="flow-arrow">→</div>
+      <div class="flow-step">MEASURE<br>in money terms</div><div class="flow-arrow">→</div>
+      <div class="flow-step">RECORD<br>chronologically</div><div class="flow-arrow">→</div>
+      <div class="flow-step">COMMUNICATE<br>to users</div>
+    </div>
+
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Define accounting and explain the four steps involved in the accounting process (IMRC).</div>
+  </section>
+
+  <!-- ============ HISTORY TIMELINE ============ -->
+  <section class="block" id="history">
+    <div class="section-head"><h2 class="h">History &amp; Development of Accounting</h2></div>
+    <div class="tag concept">🟡 Conceptual Understanding</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">~4000 B.C.</div><div class="tl-text">Babylonia &amp; Egypt — wage/tax transactions recorded on clay tablets; Egyptian treasury reports sent daily to <i>Wazirs</i> (PM), monthly to kings.</div></div>
+      <div class="tl-item"><div class="tl-date">~2000 B.C.</div><div class="tl-text">China develops a sophisticated form of government accounting.</div></div>
+      <div class="tl-item"><div class="tl-date">700 B.C.–400 A.D.</div><div class="tl-text">Greece apportions government revenue among treasuries; Rome uses a memorandum/daybook posted monthly to ledgers.</div></div>
+      <div class="tl-item"><div class="tl-date">~23 centuries ago</div><div class="tl-text">India — Kautilya (minister to Chandragupta) writes <i>Arthashastra</i>, describing how accounting records should be maintained.</div></div>
+      <div class="tl-item"><div class="tl-date">1494 A.D.</div><div class="tl-text"><b>Luca Pacioli</b> (Franciscan friar) publishes <i>Summa de Arithmetica...</i> in Venice — first book describing double-entry bookkeeping. Introduced terms <b>Debit</b> (Italian <i>debito</i>) &amp; <b>Credit</b> (Italian <i>credito</i>).</div></div>
+      <div class="tl-item"><div class="tl-date">1941</div><div class="tl-text">AICPA defines accounting as an art of recording, classifying, summarising.</div></div>
+      <div class="tl-item"><div class="tl-date">1966</div><div class="tl-text">AAA redefines accounting as a process of identifying, measuring, communicating.</div></div>
+      <div class="tl-item"><div class="tl-date">1970</div><div class="tl-text">APB (AICPA) emphasises providing quantitative financial information for decisions.</div></div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Who is regarded as the father of double-entry bookkeeping, and in which book/year did it first appear? <span class="qtag">(Very frequently asked)</span></div>
+  </section>
+
+  <!-- ============ ECONOMIC EVENTS ============ -->
+  <section class="block" id="events">
+    <div class="section-head"><span class="section-num">1.1.1</span><h2 class="h">Economic Events</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <p class="section-sub">A happening of consequence to a business, measurable in money terms.</p>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>External Event</th><th>Internal Event</th></tr>
+        <tr><td>Between the organisation &amp; an outsider</td><td>Entirely within the enterprise</td></tr>
+        <tr><td>Sale to customers; purchase from suppliers; payment of rent</td><td>Supply of raw material store→factory; payment of wages</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 1.2 SOURCE OF INFO / USERS ============ -->
+  <section class="block" id="source">
+    <div class="section-head"><span class="section-num">1.2</span><h2 class="h">Accounting as a Source of Information</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+    <p class="section-sub">Mind Map — Users of Accounting Information</p>
+    <div class="mindmap">
+      <div class="mm-root">Users of Accounting Info</div>
+      <div class="mm-branches">
+        <div class="mm-branch">
+          <div class="mm-title">INTERNAL USERS</div>
+          <ul><li>Chief Executive</li><li>Financial Officer</li><li>Vice President</li><li>Business Unit Managers</li><li>Plant / Store Managers</li><li>Line Supervisors</li></ul>
+        </div>
+        <div class="mm-branch">
+          <div class="mm-title">EXTERNAL USERS</div>
+          <ul><li>Investors &amp; potential investors</li><li>Creditors (banks, debenture-holders)</li><li>Tax authorities</li><li>Regulatory agencies (RoC, SEBI)</li><li>Labour unions, trade associations</li><li>Stock exchanges, customers</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Distinguish between internal and external users of accounting information with examples.</div>
+  </section>
+
+  <!-- ============ BRANCHES COMPARISON ============ -->
+  <section class="block" id="branches">
+    <div class="section-head"><h2 class="h">Branches of Accounting</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Financial Accounting</th><th>Cost Accounting</th><th>Management Accounting</th></tr>
+        <tr><td>Systematic record of transactions; measures organisational success &amp; financial soundness</td><td>Analyses expenditure to ascertain cost of products/services; fixes prices</td><td>Provides info to management for decision-making, planning, control</td></tr>
+        <tr><td>Relates to the <span class="hl">past</span> period</td><td>Helps <span class="hl">control costs</span></td><td>Draws from both financial &amp; cost accounting; <span class="hl">future</span>-oriented</td></tr>
+        <tr><td>Stewardship function; monetary in nature</td><td>Provides costing info for decisions</td><td>Used for budgeting, pricing, capital expenditure decisions</td></tr>
+      </table>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Differentiate between Financial, Cost and Management Accounting. <span class="qtag">(Almost every year)</span></div>
+  </section>
+
+  <!-- ============ QUALITATIVE CHARACTERISTICS ============ -->
+  <section class="block" id="qualitative">
+    <div class="section-head"><span class="section-num">1.2.1</span><h2 class="h">Qualitative Characteristics of Accounting Information</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+    <div class="mindmap">
+      <div class="mm-root">Decision-Useful Info</div>
+      <div class="mm-branches">
+        <div class="mm-branch"><div class="mm-title">RELIABILITY</div><ul><li>Verifiability</li><li>Neutrality</li><li>Faithfulness</li><li>Free from error &amp; bias</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">RELEVANCE</div><ul><li>Timeliness</li><li>Predictive value</li><li>Feedback value</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">UNDERSTAND-ABILITY</div><ul><li>Same sense as prepared &amp; conveyed</li><li>Effective communication</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">COMPARABILITY</div><ul><li>Common period</li><li>Common unit of measurement</li><li>Common format</li></ul></div>
+      </div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Explain any two qualitative characteristics of accounting information with their sub-elements.</div>
+  </section>
+
+  <!-- ============ 1.3 OBJECTIVES ============ -->
+  <section class="block" id="objectives">
+    <div class="section-head"><span class="section-num">1.3</span><h2 class="h">Objectives of Accounting</h2></div>
+    <div class="tag quick">🟢 Quick Revision Points</div>
+    <div class="flow">
+      <div class="flow-step">Maintain Records<br>of transactions</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Calculate<br>Profit/Loss</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Depict<br>Financial Position</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Provide Info<br>to Users</div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>State the primary objectives of accounting.</div>
+  </section>
+
+  <!-- ============ 1.4 ROLE ============ -->
+  <section class="block" id="role">
+    <div class="section-head"><span class="section-num">1.4</span><h2 class="h">Role of Accounting</h2></div>
+    <div class="tag concept">🟡 Conceptual Understanding</div>
+    <div class="card">
+      <b>Five roles (Box 4):</b>
+      <ul class="nano-list">
+        <li><b>As a Language</b> — the language of business used to communicate</li>
+        <li><b>As a Historical Record</b> — chronological record at actual amounts</li>
+        <li><b>As Current Economic Reality</b> — measures true income / change in wealth</li>
+        <li><b>As an Information System</b> — links accountant (source) to external users (receivers)</li>
+        <li><b>As a Commodity</b> — a specialised information service in demand in society</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 1.5 BASIC TERMS (GLOSSARY) ============ -->
+  <section class="block" id="terms">
+    <div class="section-head"><span class="section-num">1.5</span><h2 class="h">Basic Terms in Accounting</h2></div>
+    <div class="tag veryimp">🔴 Very Important — MCQ &amp; Distinguish-Between Goldmine</div>
+    <input class="filter-input" id="glossaryFilter" placeholder="🔍 Filter glossary terms (e.g. debtor, discount)..." oninput="filterGlossary()">
+    <div id="glossaryList"></div>
+  </section>
+
+  <!-- ============ DECISION TREE — ASSETS/LIABILITIES ============ -->
+  <section class="block" id="classify">
+    <div class="section-head"><h2 class="h">Decision Tree — Classifying Assets &amp; Liabilities</h2></div>
+    <div class="tag freq">🟠 Frequently Asked (True/False &amp; MCQ)</div>
+    <div class="dtree">
+      <div class="dtree-node"><span class="dtree-q">Q: Will it be realised / settled within 12 months, or is it held for trading / is cash-equivalent?</span></div>
+      <div class="dtree-branches">
+        <div class="dtree-branch">YES → <b>Current</b> Asset / Liability<br><span style="color:var(--ink-faint)">e.g. Debtors, Stock, Bills Payable, Trade Payables</span></div>
+        <div class="dtree-branch no">NO → <b>Non-Current</b> Asset / Liability<br><span style="color:var(--ink-faint)">e.g. Land, Machinery, Long-term Borrowings</span></div>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Test</th><th>Meaning</th></tr>
+        <tr><td>Operating cycle</td><td>Involved in the firm's normal operating cycle</td></tr>
+        <tr><td>12-month rule</td><td>Realised / settled within 12 months</td></tr>
+        <tr><td>Purpose</td><td>Primarily held for trading</td></tr>
+        <tr><td>Liquidity</td><td>Is cash or a cash equivalent</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON CHARTS — TRICKY PAIRS ============ -->
+  <section class="block" id="pairs">
+    <div class="section-head"><h2 class="h">Comparison Charts — Frequently Confused Pairs</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+
+    <h3 class="h3">Debtors vs Creditors</h3>
+    <div class="tbl-wrap"><table class="cmp">
+      <tr><th></th><th>Debtor</th><th>Creditor</th></tr>
+      <tr><td>Owes / Is owed</td><td class="hl">Owes money to us</td><td class="hl">We owe money to them</td></tr>
+      <tr><td>Balance Sheet side</td><td>Asset side</td><td>Liabilities side</td></tr>
+      <tr><td>Arises from</td><td>Credit sale of goods/services</td><td>Credit purchase of goods/services</td></tr>
+    </table></div>
+
+    <h3 class="h3">Trade Discount vs Cash Discount</h3>
+    <div class="tbl-wrap"><table class="cmp">
+      <tr><th></th><th>Trade Discount</th><th>Cash Discount</th></tr>
+      <tr><td>Given by</td><td>Manufacturer→Wholesaler, Wholesaler→Retailer</td><td>Seller to debtor on prompt payment</td></tr>
+      <tr><td>When</td><td>At the time of sale, on list price</td><td>At the time of payment, within stipulated period</td></tr>
+      <tr><td>Shown in books?</td><td>Not shown separately (net amount recorded)</td><td>Shown as an expense/income</td></tr>
+    </table></div>
+
+    <h3 class="h3">Profit vs Gain vs Loss</h3>
+    <div class="tbl-wrap"><table class="cmp">
+      <tr><th>Profit</th><th>Gain</th><th>Loss</th></tr>
+      <tr><td>Excess of revenue over expenses (regular operations)</td><td>Arises from incidental events — sale of fixed asset, winning a court case, appreciation of asset</td><td>Excess of expenses over revenue; also money/goods lost (theft, fire) without benefit</td></tr>
+    </table></div>
+
+    <h3 class="h3">Expense vs Expenditure</h3>
+    <div class="tbl-wrap"><table class="cmp">
+      <tr><th></th><th>Revenue Expenditure (Expense)</th><th>Capital Expenditure</th></tr>
+      <tr><td>Benefit lasts</td><td>Within the accounting year</td><td>More than a year</td></tr>
+      <tr><td>Examples</td><td>Rent, wages, salaries, depreciation</td><td>Purchase of machinery, furniture</td></tr>
+      <tr><td>Treated as</td><td>Expense in P&amp;L account</td><td>Asset in Balance Sheet</td></tr>
+    </table></div>
+
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>"Distinguish between: (a) Debtors &amp; Creditors (b) Profit &amp; Gain" — a recurring 3-mark question.</div>
+  </section>
+
+  <!-- ============ MNEMONICS ============ -->
+  <section class="block" id="mnemonics">
+    <div class="section-head"><h2 class="h">Memory Tricks &amp; Mnemonics</h2></div>
+    <div class="tag quick">🟢 Quick Revision</div>
+
+    <div class="mnemonic"><div class="word">I‑M‑R‑C</div><div class="expand">Accounting process → <b>I</b>dentify → <b>M</b>easure → <b>R</b>ecord → <b>C</b>ommunicate. Say it as "I Made Rice Curry."</div></div>
+
+    <div class="mnemonic"><div class="word">R‑R‑U‑C</div><div class="expand">Qualitative characteristics → <b>R</b>eliability, <b>R</b>elevance, <b>U</b>nderstandability, <b>C</b>omparability. "Really Reliable Users Compare."</div></div>
+
+    <div class="mnemonic"><div class="word">V‑N‑F</div><div class="expand">Sub-parts of Reliability → <b>V</b>erifiability, <b>N</b>eutrality, <b>F</b>aithfulness. "Very Neutral Facts."</div></div>
+
+    <div class="mnemonic"><div class="word">M‑P‑D‑P</div><div class="expand">Objectives of Accounting → <b>M</b>aintain records, calculate <b>P</b>rofit/Loss, <b>D</b>epict financial position, <b>P</b>rovide info to users.</div></div>
+
+    <div class="mnemonic"><div class="word">DR owes, CR owed</div><div class="expand"><b>D</b>ebtor <b>owes</b> us money (asset) · <b>C</b>reditor is <b>owed</b> by us (liability). Same first letters, opposite direction — say "D for Due-to-us."</div></div>
+
+    <div class="mnemonic"><div class="word">Pacioli 1494 = "Pac-1494"</div><div class="expand">Luca Pacioli's <i>Summa</i> published in Venice, 1494 — first documented double-entry system. Remember "PAC-man ate 1-4-9-4 apples."</div></div>
+
+    <div class="mnemonic"><div class="word">L‑H‑I‑C</div><div class="expand">Different roles of accounting → <b>L</b>anguage, <b>H</b>istorical record, current economic reality (<b>I</b>ncome/wealth), <b>I</b>nformation system, <b>C</b>ommodity. Think "LHIC — Language, History, Income, Commodity."</div></div>
+  </section>
+
+  <!-- ============ ONE-PAGE REVISION SHEET ============ -->
+  <section class="block" id="revision">
+    <div class="section-head"><h2 class="h">One-Page Revision Sheet</h2></div>
+    <div class="rev-grid">
+      <div class="rev-card"><h4>Definitions</h4><ul>
+        <li>AICPA 1941 — art of recording, classifying, summarising</li>
+        <li>AAA 1966 — process of identifying, measuring, communicating</li>
+        <li>APB 1970 — provides quantitative financial info</li>
+      </ul></div>
+      <div class="rev-card"><h4>Process (IMRC)</h4><ul>
+        <li>Identify → Measure → Record → Communicate</li>
+      </ul></div>
+      <div class="rev-card"><h4>Users</h4><ul>
+        <li>Internal: CEO, CFO, managers, supervisors</li>
+        <li>External: investors, creditors, tax authorities, regulators</li>
+      </ul></div>
+      <div class="rev-card"><h4>Branches</h4><ul>
+        <li>Financial (past) · Cost (product cost) · Management (future decisions)</li>
+      </ul></div>
+      <div class="rev-card"><h4>Qualitative Char. (RRUC)</h4><ul>
+        <li>Reliability (Verifiable, Neutral, Faithful)</li>
+        <li>Relevance (Timely, Predictive, Feedback)</li>
+        <li>Understandability · Comparability</li>
+      </ul></div>
+      <div class="rev-card"><h4>Objectives</h4><ul>
+        <li>Maintain records · Calculate P&amp;L · Depict position · Inform users</li>
+      </ul></div>
+      <div class="rev-card"><h4>Key Pairs</h4><ul>
+        <li>Debtor (asset) vs Creditor (liability)</li>
+        <li>Trade discount (not recorded) vs Cash discount (recorded)</li>
+        <li>Profit (operations) vs Gain (incidental)</li>
+      </ul></div>
+      <div class="rev-card"><h4>Milestones</h4><ul>
+        <li>4000 BC Babylonia/Egypt · 1494 Pacioli · 1941 AICPA</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- ============ LAST DAY REVISION ============ -->
+  <section class="block" id="lastday">
+    <div class="section-head"><h2 class="h">Last-Day Revision Notes</h2></div>
+    <div class="tag veryimp">🔴 Read this 30 minutes before the exam</div>
+    <ol class="crash-list">
+      <li><span class="crash-num">01</span>Accounting = Identify → Measure → Record → Communicate.</li>
+      <li><span class="crash-num">02</span>Luca Pacioli, 1494, Venice = father of double-entry bookkeeping.</li>
+      <li><span class="crash-num">03</span>Kautilya's Arthashastra (India) predates Pacioli by ~23 centuries.</li>
+      <li><span class="crash-num">04</span>Internal users decide inside the firm; external users decide about the firm.</li>
+      <li><span class="crash-num">05</span>Financial Accounting = past · Cost Accounting = product cost · Management Accounting = future decisions.</li>
+      <li><span class="crash-num">06</span>Qualitative characteristics: Reliability, Relevance, Understandability, Comparability.</li>
+      <li><span class="crash-num">07</span>Debtor = asset (owes us); Creditor = liability (we owe them).</li>
+      <li><span class="crash-num">08</span>Trade discount is deducted before recording; cash discount is recorded as an expense/income.</li>
+      <li><span class="crash-num">09</span>Profit = regular business surplus; Gain = incidental surplus (e.g. sale of fixed asset).</li>
+      <li><span class="crash-num">10</span>Current asset/liability tests: operating cycle, 12-month rule, trading purpose, cash-equivalence.</li>
+    </ol>
+  </section>
+
+  <!-- ============ EXAM QUESTION BANK ============ -->
+  <section class="block" id="examqs">
+    <div class="section-head"><h2 class="h">Exam Question Bank (from the textbook)</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <h3 class="h3">Short Answers</h3>
+    <div class="card">
+      <ul class="nano-list">
+        <li>Define accounting.</li>
+        <li>State the end product of financial accounting.</li>
+        <li>Enumerate the main objectives of accounting.</li>
+        <li>Who are the users of accounting information?</li>
+        <li>Distinguish between debtors and creditors; profit and gain.</li>
+        <li>"Accounting information should be comparable." Do you agree? Give two reasons.</li>
+      </ul>
+    </div>
+    <h3 class="h3">Long Answers</h3>
+    <div class="card">
+      <ul class="nano-list">
+        <li>What is accounting? Define its objectives.</li>
+        <li>Describe the informational needs of external users.</li>
+        <li>What do you mean by an asset, and what are its different types?</li>
+        <li>Explain the meaning of gain and profit. Distinguish between them.</li>
+        <li>Explain the qualitative characteristics of accounting information.</li>
+        <li>Describe the role of accounting in the modern world.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Built for India Post IP Exam preparation · Chapter 1 of 8 · Chapter 2 (Theory Base of Accounting) coming next
+  </footer>
+</div>
+
+<script>
+/* ============ GLOSSARY DATA (1.5 Basic Terms) ============ */
+const glossary = [
+  {t:"Entity", tag:"quick", d:"A specifically identifiable business enterprise (e.g. ITC Ltd). An accounting system is devised for a specific business entity."},
+  {t:"Transaction", tag:"quick", d:"An event involving exchange of value between two or more entities — cash or credit."},
+  {t:"Assets", tag:"veryimp", d:"Economic resources of an enterprise usable in operations, expressed in money terms. Classified as Current and Non-Current.", q:"List and classify five items each as current/non-current assets."},
+  {t:"Liabilities", tag:"veryimp", d:"Obligations/debts the enterprise must pay in future; represent creditors' claims on assets. Classified as Current and Non-Current."},
+  {t:"Capital", tag:"freq", d:"Amount invested by the owner in the firm — shown on the liabilities side of the Balance Sheet as it's an obligation to the owner."},
+  {t:"Sales", tag:"quick", d:"Total revenue from goods/services sold — may be cash sales or credit sales."},
+  {t:"Revenues", tag:"quick", d:"Amounts earned by selling products/services — includes commission, interest, dividends, royalties, rent received. Also called income."},
+  {t:"Expenses", tag:"quick", d:"Costs incurred in earning revenue — e.g. depreciation, rent, wages, salaries, interest."},
+  {t:"Expenditure", tag:"freq", d:"Spending money / incurring liability for a benefit. If benefit exhausts within a year → Revenue Expenditure (expense). If it lasts beyond a year → Capital Expenditure (asset)."},
+  {t:"Profit", tag:"veryimp", d:"Excess of revenues over related expenses during an accounting period — increases owner's investment."},
+  {t:"Gain", tag:"veryimp", d:"A profit arising from events incidental to business — sale of fixed assets, winning a court case, appreciation of an asset."},
+  {t:"Loss", tag:"veryimp", d:"Excess of expenses over revenues — decreases owner's equity; also money/goods lost without any benefit received (theft, fire)."},
+  {t:"Discount", tag:"veryimp", d:"Deduction in price. Trade Discount = % off list price at time of sale (not recorded separately). Cash Discount = deduction for prompt payment (recorded as expense/income)."},
+  {t:"Voucher", tag:"quick", d:"Documentary evidence supporting a transaction — cash memo, invoice, receipt, etc."},
+  {t:"Goods", tag:"freq", d:"Products the business deals in (buys/sells/produces). Items purchased for use in business (e.g. furniture for a furniture dealer's own office) are NOT 'goods' — they're assets."},
+  {t:"Drawings", tag:"quick", d:"Withdrawal of money/goods by the owner for personal use — reduces owner's investment."},
+  {t:"Purchases", tag:"quick", d:"Total goods procured (cash + credit) for use or resale — cash purchases or credit purchases."},
+  {t:"Stock (Inventory)", tag:"quick", d:"Goods lying unsold at period end = Closing Stock; stock at period start = Opening Stock."},
+  {t:"Debtors", tag:"veryimp", d:"Persons/entities who owe the enterprise money for goods/services bought on credit — shown as Sundry Debtors on the Asset side."},
+  {t:"Creditors", tag:"veryimp", d:"Persons/entities to whom the enterprise owes money for goods/services bought on credit — shown as Sundry Creditors on the Liabilities side."},
+];
+
+const list = document.getElementById('glossaryList');
+function renderGlossary(filter=""){
+  list.innerHTML = "";
+  const f = filter.trim().toLowerCase();
+  glossary.forEach((g,i)=>{
+    if(f && !(g.t.toLowerCase().includes(f) || g.d.toLowerCase().includes(f))) return;
+    const tagMap = {veryimp:["🔴","veryimp","Very Important"], freq:["🟠","freq","Frequently Asked"], concept:["🟡","concept","Conceptual"], quick:["🟢","quick","Quick Revision"]};
+    const [emo,cls,label] = tagMap[g.tag];
+    const acc = document.createElement('div');
+    acc.className = 'acc';
+    acc.innerHTML = `
+      <div class="acc-head" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+        <span>${g.t}</span><span class="chev">▶</span>
+      </div>
+      <div class="acc-body">
+        <div class="tag ${cls}">${emo} ${label}</div>
+        <div>${g.d}</div>
+        ${g.q ? `<div class="examq"><span class="lbl">📝 Probable Exam Question</span>${g.q}</div>` : ""}
+        <label class="studied-check" id="sc-${i}" onclick="event.stopPropagation(); toggleStudied(${i})">
+          <input type="checkbox"> ✓ Mark as studied
+        </label>
+      </div>`;
+    list.appendChild(acc);
+  });
+}
+renderGlossary();
+function filterGlossary(){ renderGlossary(document.getElementById('glossaryFilter').value); }
+
+/* studied tracking — in-memory only (no persistence between visits) */
+const studied = new Set();
+function toggleStudied(i){
+  const el = document.getElementById('sc-'+i);
+  if(studied.has(i)){ studied.delete(i); el.classList.remove('done'); }
+  else { studied.add(i); el.classList.add('done'); }
+  updateProgress();
+}
+function updateProgress(){
+  const pct = Math.round((studied.size/glossary.length)*100);
+  document.getElementById('progressBarFill').style.width = pct+'%';
+  document.getElementById('progressText').textContent = studied.size+'/'+glossary.length+' studied';
+}
+
+/* dark mode */
+function toggleDark(){ document.body.classList.toggle('dark'); }
+
+/* text-to-speech */
+let speaking = false;
+function toggleTTS(){
+  const btn = document.getElementById('ttsBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.textContent="🔊 Read"; return; }
+  const text = document.querySelector('.wrap').innerText.slice(0, 6000);
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking=false; btn.textContent="🔊 Read"; };
+  window.speechSynthesis.speak(utter);
+  speaking = true;
+  btn.textContent = "⏸ Stop";
+}
+</script>
+</body>
+</html>

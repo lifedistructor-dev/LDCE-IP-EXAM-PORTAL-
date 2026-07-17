@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Ch.8 Bills of Exchange — Exam Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EA; --paper2:#F1E9D3; --card:#FFFFFF; --ink:#1B2A4A; --ink-soft:#4C5A78; --ink-faint:#8A93A8;
+  --red:#B3261E; --red-soft:#F6E2E0; --gold:#B9862F; --gold-soft:#F3E7CA; --green:#1F6F54; --green-soft:#DCEEE6;
+  --blue:#2A4E86; --blue-soft:#DEE6F3; --line:rgba(27,42,74,0.14); --line-strong:rgba(27,42,74,0.28);
+  --shadow: 0 2px 10px rgba(27,42,74,0.08), 0 1px 2px rgba(27,42,74,0.06); --radius: 10px;
+  --font-display:'Lora','Georgia',serif; --font-body:'Source Serif 4','Georgia',serif; --font-mono:'IBM Plex Mono',monospace;
+}
+body.dark{
+  --paper:#0E1524; --paper2:#141D30; --card:#182238; --ink:#F1E9D3; --ink-soft:#C6CEE0; --ink-faint:#7C88A3;
+  --red:#E4776E; --red-soft:#3A2020; --gold:#E3B65E; --gold-soft:#332A17; --green:#63C7A4; --green-soft:#173229;
+  --blue:#8FB0E8; --blue-soft:#1B2A45; --line:rgba(241,233,211,0.14); --line-strong:rgba(241,233,211,0.28);
+  --shadow: 0 2px 14px rgba(0,0,0,0.35);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:repeating-linear-gradient(var(--paper), var(--paper) 37px, var(--line) 38px);background-color:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;transition:background-color .3s,color .3s;padding-bottom:60px;}
+.ledger-margin{position:fixed;top:0;bottom:0;left:38px;width:2px;background:var(--red);opacity:.35;z-index:0;pointer-events:none;}
+@media (max-width:600px){.ledger-margin{left:22px;}}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px;position:relative;z-index:1;}
+.topbar{position:sticky;top:0;z-index:50;background:var(--paper2);border-bottom:1px solid var(--line-strong);backdrop-filter:blur(4px);}
+.topbar-inner{max-width:760px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.brand{font-family:var(--font-display);font-weight:700;font-size:.92rem;color:var(--red);letter-spacing:.02em;margin-right:auto;}
+.brand small{display:block;font-family:var(--font-mono);font-size:.62rem;color:var(--ink-faint);font-weight:500;letter-spacing:.03em;}
+.iconbtn{border:1px solid var(--line-strong);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 10px;font-size:.85rem;cursor:pointer;font-family:var(--font-mono);display:flex;align-items:center;gap:5px;}
+.iconbtn:active{transform:translateY(1px);}
+.progress-pill{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:20px;padding:5px 10px;background:var(--card);}
+#progressBarWrap{width:64px;height:6px;background:var(--line);border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:5px;}
+#progressBarFill{height:100%;width:0%;background:var(--green);transition:width .3s;}
+.hero{padding:26px 0 10px;}
+.eyebrow{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:600;display:flex;align-items:center;gap:6px;}
+.eyebrow::before{content:"";width:16px;height:2px;background:var(--red);display:inline-block;}
+h1.title{font-family:var(--font-display);font-weight:700;font-size:2rem;line-height:1.15;margin:8px 0 6px;color:var(--ink);}
+.subtitle{color:var(--ink-soft);font-size:.95rem;margin-bottom:16px;}
+.breadcrumb-diagram{display:flex;flex-wrap:wrap;gap:0;align-items:stretch;font-family:var(--font-mono);font-size:.68rem;margin:14px 0 22px;}
+.bc-node{background:var(--card);border:1px solid var(--line-strong);border-radius:7px;padding:7px 10px;display:flex;flex-direction:column;gap:2px;min-width:88px;}
+.bc-node b{font-family:var(--font-display);font-size:.78rem;color:var(--ink);}
+.bc-node span{color:var(--ink-faint);}
+.bc-arrow{display:flex;align-items:center;color:var(--gold);padding:0 6px;font-size:1rem;}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px;}
+.toc a{font-family:var(--font-mono);font-size:.72rem;text-decoration:none;color:var(--ink);border:1px solid var(--line-strong);padding:6px 11px;border-radius:20px;background:var(--card);}
+.toc a:hover{border-color:var(--red);color:var(--red);}
+section.block{margin-bottom:34px;scroll-margin-top:64px;}
+.section-head{display:flex;align-items:baseline;gap:9px;margin-bottom:4px;flex-wrap:wrap;}
+.section-num{font-family:var(--font-mono);color:var(--gold);font-weight:700;font-size:.85rem;}
+h2.h{font-family:var(--font-display);font-weight:700;font-size:1.35rem;margin:0;color:var(--ink);}
+h3.h3{font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin:18px 0 8px;color:var(--ink);}
+.section-sub{color:var(--ink-soft);font-size:.85rem;margin:2px 0 14px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;box-shadow:var(--shadow);}
+.tag{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.66rem;font-weight:600;padding:3px 8px;border-radius:20px;letter-spacing:.02em;margin-bottom:8px;}
+.tag.veryimp{background:var(--red-soft);color:var(--red);}
+.tag.freq{background:var(--gold-soft);color:var(--gold);}
+.tag.concept{background:var(--blue-soft);color:var(--blue);}
+.tag.quick{background:var(--green-soft);color:var(--green);}
+.def-box{border-left:3px solid var(--red);background:var(--red-soft);border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0;font-size:.92rem;}
+.def-box b{color:var(--red);}
+.def-source{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-faint);margin-top:4px;display:block;}
+.examq{border:1px dashed var(--gold);background:var(--gold-soft);border-radius:8px;padding:9px 12px;margin:10px 0;font-size:.83rem;color:var(--ink);}
+.examq .lbl{font-family:var(--font-mono);font-size:.65rem;font-weight:700;color:var(--gold);display:block;margin-bottom:3px;letter-spacing:.03em;}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:14px 0;justify-content:center;}
+.flow-step{background:var(--blue-soft);border:1px solid var(--blue);color:var(--ink);border-radius:8px;padding:10px 12px;text-align:center;font-size:.8rem;font-weight:600;min-width:90px;font-family:var(--font-mono);}
+.flow-arrow{color:var(--gold);font-size:1.3rem;padding:0 6px;}
+@media(max-width:480px){.flow{flex-direction:column;}.flow-arrow{transform:rotate(90deg);padding:2px 0;}}
+.mindmap{display:flex;flex-direction:column;align-items:center;gap:0;margin:16px 0;}
+.mm-root{background:var(--ink);color:var(--paper);font-family:var(--font-display);font-weight:700;padding:10px 18px;border-radius:8px;font-size:.92rem;text-align:center;}
+.mm-branches{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;justify-content:center;}
+.mm-branch{border:1px solid var(--line-strong);border-radius:8px;padding:10px 12px;background:var(--card);min-width:130px;max-width:220px;}
+.mm-branch .mm-title{font-family:var(--font-mono);font-weight:700;font-size:.73rem;color:var(--blue);margin-bottom:5px;}
+.mm-branch ul{margin:0;padding-left:16px;font-size:.76rem;color:var(--ink-soft);}
+.mm-branch ul li{margin-bottom:2px;}
+.tbl-wrap{overflow-x:auto;margin:14px 0;}
+table.cmp{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--card);border-radius:8px;overflow:hidden;}
+table.cmp th{background:var(--ink);color:var(--paper);font-family:var(--font-mono);font-weight:600;text-align:left;padding:8px 10px;font-size:.72rem;letter-spacing:.02em;}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp td.hl{color:var(--red);font-weight:600;font-family:var(--font-mono);}
+.dtree{margin:14px 0;font-size:.85rem;}
+.dtree-node{border:1px solid var(--line-strong);border-radius:8px;padding:9px 12px;background:var(--card);margin-bottom:6px;}
+.dtree-q{font-weight:600;color:var(--ink);}
+.dtree-branches{display:flex;gap:10px;margin:6px 0 14px 18px;flex-wrap:wrap;}
+.dtree-branch{border-left:3px solid var(--green);background:var(--green-soft);border-radius:0 6px 6px 0;padding:6px 10px;font-size:.78rem;flex:1;min-width:130px;}
+.dtree-branch.no{border-color:var(--red);background:var(--red-soft);}
+.acc{border:1px solid var(--line-strong);border-radius:8px;margin-bottom:8px;background:var(--card);overflow:hidden;}
+.acc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:.92rem;}
+.acc-head .chev{font-family:var(--font-mono);color:var(--gold);transition:transform .2s;font-size:.8rem;}
+.acc-head.open .chev{transform:rotate(90deg);}
+.acc-body{display:none;padding:0 13px 13px;font-size:.85rem;color:var(--ink-soft);border-top:1px solid var(--line);}
+.acc-body.open{display:block;}
+.acc-body .examq,.acc-body .def-box{margin-top:8px;}
+.studied-check{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.68rem;border:1px solid var(--line-strong);border-radius:20px;padding:3px 9px;cursor:pointer;margin-top:8px;color:var(--ink-soft);background:var(--paper2);}
+.studied-check.done{background:var(--green-soft);color:var(--green);border-color:var(--green);}
+.studied-check input{display:none;}
+.filter-input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);font-family:var(--font-body);font-size:.88rem;margin-bottom:12px;}
+.mnemonic{background:linear-gradient(135deg,var(--gold-soft),var(--card));border:1px solid var(--gold);border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.mnemonic .word{font-family:var(--font-display);font-weight:700;color:var(--gold);font-size:1.05rem;letter-spacing:.03em;}
+.mnemonic .expand{font-size:.82rem;color:var(--ink-soft);margin-top:5px;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:520px){.rev-grid{grid-template-columns:1fr;}}
+.rev-card{border:1px solid var(--line-strong);border-radius:8px;padding:10px 12px;background:var(--card);}
+.rev-card h4{margin:0 0 6px;font-family:var(--font-mono);font-size:.72rem;color:var(--red);letter-spacing:.03em;text-transform:uppercase;}
+.rev-card ul{margin:0;padding-left:16px;font-size:.8rem;color:var(--ink-soft);}
+.rev-card ul li{margin-bottom:3px;}
+.crash-list{list-style:none;margin:0;padding:0;}
+.crash-list li{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:.86rem;}
+.crash-list li:last-child{border-bottom:none;}
+.crash-num{font-family:var(--font-mono);color:var(--red);font-weight:700;min-width:22px;}
+footer{text-align:center;padding:30px 18px 10px;color:var(--ink-faint);font-family:var(--font-mono);font-size:.68rem;}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 24px;font-size:.72rem;font-family:var(--font-mono);color:var(--ink-soft);}
+.legend span{display:flex;align-items:center;gap:4px;}
+.nano-list{margin:6px 0 0;padding-left:18px;font-size:.83rem;color:var(--ink-soft);}
+.nano-list li{margin-bottom:4px;}
+.qtag{font-family:var(--font-mono);font-size:.65rem;color:var(--ink-faint);}
+::selection{background:var(--gold-soft);}
+.jtbl{width:100%;border-collapse:collapse;font-size:.72rem;margin:10px 0;}
+.jtbl th{background:var(--ink);color:var(--paper);font-family:var(--font-mono);padding:5px 6px;text-align:left;font-size:.6rem;}
+.jtbl td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top;}
+.jtbl td.amt{text-align:right;font-family:var(--font-mono);}
+.finalbadge{background:var(--ink);color:var(--paper);border-radius:10px;padding:14px 16px;text-align:center;font-family:var(--font-display);font-weight:700;font-size:1rem;margin:20px 0;}
+.finalbadge small{display:block;font-family:var(--font-mono);font-weight:500;font-size:.68rem;opacity:.75;margin-top:6px;letter-spacing:.03em;}
+</style>
+</head>
+<body>
+<div class="ledger-margin"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">EXAM LEDGER<small>Accountancy · Ch.8</small></div>
+    <div class="progress-pill"><span id="progressBarWrap"><span id="progressBarFill"></span></span><span id="progressText">0/11 studied</span></div>
+    <button class="iconbtn" id="ttsBtn" onclick="toggleTTS()">🔊 Read</button>
+    <button class="iconbtn" onclick="toggleDark()">🌓</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">India Post IP Exam · Paper II support subject</div>
+    <h1 class="title">Bills of Exchange</h1>
+    <div class="subtitle">NCERT Class 11 Accountancy — Chapter 8 · Meaning, Promissory Note, Maturity, Discounting, Endorsement, Dishonour, Renewal, Retiring</div>
+
+    <div class="breadcrumb-diagram">
+      <div class="bc-node"><b>Chapter</b><span>8. Bills of Exch.</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Sub-Chapter</b><span>8.1–8.12</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Micro Topic</b><span>e.g. Dishonour</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Nano Topic</b><span>e.g. Reversing entry</span></div>
+    </div>
+
+    <div class="legend">
+      <span>🔴 Very Important</span><span>🟠 Frequently Asked</span><span>🟡 Conceptual</span><span>🟢 Quick Revision</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <a href="#meaning">8.1 Meaning</a>
+    <a href="#parties">Parties</a>
+    <a href="#pnote">8.2 Promissory Note</a>
+    <a href="#advantages">8.3 Advantages</a>
+    <a href="#maturity">8.4 Maturity</a>
+    <a href="#discounting">8.5–8.6 Discount/Endorse</a>
+    <a href="#treatment">8.7 Accounting Treatment</a>
+    <a href="#dishonour">8.8 Dishonour</a>
+    <a href="#renewal">8.9 Renewal</a>
+    <a href="#retiring">8.10 Retiring</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#mnemonics">Mnemonics</a>
+    <a href="#revision">Revision Sheet</a>
+    <a href="#lastday">Last-Day Notes</a>
+    <a href="#examqs">Exam Questions</a>
+  </div>
+
+  <!-- ============ 8.1 MEANING ============ -->
+  <section class="block" id="meaning">
+    <div class="section-head"><span class="section-num">8.1</span><h2 class="h">Meaning of Bill of Exchange</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+    <div class="def-box"><b>Bill of Exchange</b> (Negotiable Instruments Act, 1881): an instrument in writing containing an unconditional order, signed by the maker, directing a certain person to pay a certain sum of money only to, or to the order of, a certain person or to the bearer.</div>
+    <h3 class="h3">Essential Features</h3>
+    <div class="card"><ul class="nano-list">
+      <li>Must be in writing, signed by the maker</li>
+      <li>Contains an unconditional ORDER to pay</li>
+      <li>Sum and date of payment must be certain</li>
+      <li>Payable to a certain person; properly stamped</li>
+      <li>Before acceptance it's just a "draft"; becomes a bill once the drawee writes "accepted" and signs</li>
+    </ul></div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Define a bill of exchange and state its essential features.</div>
+  </section>
+
+  <!-- ============ PARTIES ============ -->
+  <section class="block" id="parties">
+    <div class="section-head"><span class="section-num">8.1.1</span><h2 class="h">Parties to a Bill of Exchange</h2></div>
+    <div class="tag veryimp">🔴 Very Important — 1-mark question every year</div>
+    <div class="mindmap">
+      <div class="mm-root">3 Parties</div>
+      <div class="mm-branches">
+        <div class="mm-branch"><div class="mm-title">DRAWER</div><ul><li>Maker of the bill</li><li>The seller / creditor</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">DRAWEE</div><ul><li>Person on whom drawn</li><li>The buyer / debtor</li><li>Becomes "Acceptor" once he signs</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">PAYEE</div><ul><li>Receives payment</li><li>Usually = Drawer</li><li>Can change: bank (if discounted) or a creditor (if endorsed)</li></ul></div>
+      </div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Who are the parties to a bill of exchange? When does the payee change?</div>
+  </section>
+
+  <!-- ============ 8.2 PROMISSORY NOTE ============ -->
+  <section class="block" id="pnote">
+    <div class="section-head"><span class="section-num">8.2</span><h2 class="h">Promissory Note</h2></div>
+    <div class="tag veryimp">🔴 Very Important — Comparison guaranteed in exam</div>
+    <div class="def-box"><b>Promissory Note:</b> an instrument in writing containing an unconditional undertaking (promise), signed by the maker, to pay a certain sum only to, or to the order of, a certain person. Cannot be made payable to bearer (RBI Act).</div>
+
+    <h3 class="h3">Bill of Exchange vs Promissory Note</h3>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Basis</th><th>Bill of Exchange</th><th>Promissory Note</th></tr>
+        <tr><td>Drawn by</td><td>The creditor</td><td>The debtor</td></tr>
+        <tr><td>Contains</td><td>An ORDER to pay</td><td>A PROMISE to pay</td></tr>
+        <tr><td>Parties</td><td>3 — Drawer, Drawee, Payee</td><td>2 — Drawer (Maker) &amp; Payee</td></tr>
+        <tr><td>Acceptance</td><td>Required, by the drawee</td><td>Not required</td></tr>
+        <tr><td>Can drawer = payee?</td><td>Yes</td><td>No</td></tr>
+        <tr><td>Notice of dishonour</td><td>Must be given to the drawer</td><td>Not required</td></tr>
+      </table>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Distinguish between a Bill of Exchange and a Promissory Note on any five points. <span class="qtag">(Almost every year)</span></div>
+  </section>
+
+  <!-- ============ 8.3 ADVANTAGES ============ -->
+  <section class="block" id="advantages">
+    <div class="section-head"><span class="section-num">8.3</span><h2 class="h">Advantages of a Bill of Exchange</h2></div>
+    <div class="tag quick">🟢 Quick Revision</div>
+    <div class="card"><ul class="nano-list">
+      <li><b>Framework for relationship</b> — structures the credit transaction</li>
+      <li><b>Certainty of terms</b> — amount, date, interest all fixed in writing</li>
+      <li><b>Convenient credit</b> — seller can still get immediate cash via discounting/endorsing</li>
+      <li><b>Conclusive legal proof</b> of the credit transaction</li>
+      <li><b>Easy transferability</b> — settle debts via endorsement and delivery</li>
+    </ul></div>
+  </section>
+
+  <!-- ============ 8.4 MATURITY ============ -->
+  <section class="block" id="maturity">
+    <div class="section-head"><span class="section-num">8.4</span><h2 class="h">Maturity of a Bill</h2></div>
+    <div class="tag veryimp">🔴 Very Important — date calculation numericals</div>
+    <div class="def-box"><b>Maturity</b> = the due date of the bill. Add <b>3 days of grace</b> to the nominal due date.</div>
+    <div class="dtree">
+      <div class="dtree-node"><span class="dtree-q">Q: Does the calculated maturity date fall on a public holiday?</span></div>
+      <div class="dtree-branches">
+        <div class="dtree-branch">Ordinary holiday → maturity = the <b>preceding</b> business day</div>
+        <div class="dtree-branch no">Emergency holiday (govt-declared) → maturity = the <b>next</b> working day</div>
+      </div>
+    </div>
+    <p class="section-sub">Example: Bill dated March 05, payable 30 days after date → due 33 days later = April 07 (30 + 3 grace days).</p>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Calculate the date of maturity for a bill dated [X], payable [N] months/days after date.</div>
+  </section>
+
+  <!-- ============ 8.5-8.6 DISCOUNTING & ENDORSEMENT ============ -->
+  <section class="block" id="discounting">
+    <div class="section-head"><span class="section-num">8.5 – 8.6</span><h2 class="h">Discounting &amp; Endorsement of a Bill</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Discounting</th><th>Endorsement</th></tr>
+        <tr><td>Holder encashes the bill with the BANK before maturity</td><td>Holder transfers the bill to a THIRD PARTY (creditor) by signing on the back</td></tr>
+        <tr><td>Bank deducts interest, called "Discount"</td><td>No interest deducted — settles a debt owed by the endorser</td></tr>
+        <tr><td>Bank collects from drawee on maturity</td><td>Endorsee (new holder) collects from drawee on maturity</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 8.7 ACCOUNTING TREATMENT ============ -->
+  <section class="block" id="treatment">
+    <div class="section-head"><span class="section-num">8.7</span><h2 class="h">Accounting Treatment — 4 Fates of a Bill</h2></div>
+    <div class="tag veryimp">🔴 The core numerical of this chapter</div>
+    <div class="def-box">For the <b>drawer</b> → it's a <b>Bills Receivable</b> (asset). For the <b>acceptor</b> → it's a <b>Bills Payable</b> (liability).</div>
+
+    <div class="mindmap">
+      <div class="mm-root">A Bill Receivable can be...</div>
+      <div class="mm-branches">
+        <div class="mm-branch"><div class="mm-title">1. Retained</div><ul><li>Held till maturity, collected directly or via bank</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">2. Discounted</div><ul><li>Encashed early with the bank (minus discount)</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">3. Endorsed</div><ul><li>Transferred to a creditor to settle a debt</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">4. Sent for Collection</div><ul><li>Given to bank just before maturity to collect on drawer's behalf</li></ul></div>
+      </div>
+    </div>
+
+    <h3 class="h3">Journal Entries — In the Drawer's Books</h3>
+    <table class="jtbl">
+      <tr><th>Event</th><th>Entry</th></tr>
+      <tr><td>Receiving the bill</td><td>Bills Receivable A/c Dr. → To Debtor's A/c</td></tr>
+      <tr><td>Retained, collected on maturity</td><td>Cash/Bank A/c Dr. → To Bills Receivable A/c</td></tr>
+      <tr><td>Discounted with bank</td><td>Bank A/c Dr., Discount A/c Dr. → To Bills Receivable A/c</td></tr>
+      <tr><td>Endorsed to a creditor</td><td>Creditor's A/c Dr. → To Bills Receivable A/c</td></tr>
+      <tr><td>Sent for collection</td><td>Bills Sent for Collection A/c Dr. → To Bills Receivable A/c</td></tr>
+    </table>
+
+    <h3 class="h3">In the Acceptor's Books (same regardless of drawer's choice)</h3>
+    <table class="jtbl">
+      <tr><th>Event</th><th>Entry</th></tr>
+      <tr><td>Accepting the bill</td><td>Creditor's A/c Dr. → To Bills Payable A/c</td></tr>
+      <tr><td>Maturity — bill honoured</td><td>Bills Payable A/c Dr. → To Bank A/c</td></tr>
+    </table>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Journalise the transactions relating to a bill of exchange in the books of both drawer and drawee, under (a) retained (b) discounted (c) endorsed. <span class="qtag">(Compulsory numerical)</span></div>
+  </section>
+
+  <!-- ============ 8.8 DISHONOUR ============ -->
+  <section class="block" id="dishonour">
+    <div class="section-head"><span class="section-num">8.8</span><h2 class="h">Dishonour of a Bill</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+    <div class="def-box"><b>Dishonour:</b> the drawee fails to pay on the maturity date. The acceptor's liability is restored — so the receiver reverses the earlier entry, regardless of what they did with the bill.</div>
+    <table class="jtbl">
+      <tr><th>Bill was...</th><th>Rectifying entry on dishonour</th></tr>
+      <tr><td>Retained till maturity</td><td>Drawee's A/c Dr. → To Bills Receivable A/c</td></tr>
+      <tr><td>Discounted with bank</td><td>Drawee's A/c Dr. → To Bank A/c</td></tr>
+      <tr><td>Endorsed to a creditor</td><td>Drawee's A/c Dr. → To Endorsee's A/c</td></tr>
+      <tr><td>Sent for collection</td><td>Drawee's A/c Dr. → To Bills Sent for Collection A/c</td></tr>
+    </table>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>What is meant by dishonour of a bill? Record the entries in the drawer's books if the bill had been discounted before dishonour.</div>
+  </section>
+
+  <!-- ============ 8.9 RENEWAL ============ -->
+  <section class="block" id="renewal">
+    <div class="section-head"><span class="section-num">8.9</span><h2 class="h">Renewal of a Bill</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="def-box"><b>Renewal:</b> the acceptor requests more time before maturity; the old bill is cancelled and a fresh bill (often plus interest for the extension) is drawn and accepted.</div>
+    <div class="flow">
+      <div class="flow-step">Old bill<br>cancelled</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Interest for<br>extension charged</div><div class="flow-arrow">→</div>
+      <div class="flow-step">New bill<br>drawn &amp; accepted</div>
+    </div>
+    <p class="section-sub">Interest may be paid in cash, or added into the new bill's amount. Entries mirror a dishonour, plus an interest entry.</p>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>What is renewal of a bill? Record journal entries in the books of both parties for cancellation, interest, and the new bill.</div>
+  </section>
+
+  <!-- ============ 8.10 RETIRING ============ -->
+  <section class="block" id="retiring">
+    <div class="section-head"><span class="section-num">8.10</span><h2 class="h">Retiring of a Bill</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="def-box"><b>Retiring:</b> the drawee pays the bill BEFORE the due date (by mutual agreement). The holder allows a discount called <b>Rebate on Bills</b> for the early-payment period.</div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Renewal</th><th>Retiring</th></tr>
+        <tr><td>Payment DELAYED beyond original maturity</td><td>Payment made EARLY, before maturity</td></tr>
+        <tr><td>Drawee pays extra — interest</td><td>Drawee is rewarded — gets a Rebate (discount)</td></tr>
+      </table>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Distinguish between renewal and retirement of a bill of exchange.</div>
+  </section>
+
+  <!-- ============ GLOSSARY ============ -->
+  <section class="block" id="glossary">
+    <div class="section-head"><h2 class="h">Key Terms Glossary — Chapter 8</h2></div>
+    <div class="tag veryimp">🔴 Quick-fire revision</div>
+    <input class="filter-input" id="glossaryFilter" placeholder="🔍 Filter terms (e.g. drawee, rebate)..." oninput="filterGlossary()">
+    <div id="glossaryList"></div>
+  </section>
+
+  <!-- ============ MNEMONICS ============ -->
+  <section class="block" id="mnemonics">
+    <div class="section-head"><h2 class="h">Memory Tricks &amp; Mnemonics</h2></div>
+    <div class="tag quick">🟢 Quick Revision</div>
+
+    <div class="mnemonic"><div class="word">D‑D‑P = Draws, is Drawn upon, gets Paid</div><div class="expand"><b>D</b>rawer draws the bill, <b>D</b>rawee is drawn upon (becomes Acceptor once signed), <b>P</b>ayee gets paid.</div></div>
+
+    <div class="mnemonic"><div class="word">Bill = Order (3 parties); Note = Promise (2 parties)</div><div class="expand">A Bill of Exchange is an ORDER from creditor to debtor (3 parties). A Promissory Note is a PROMISE from debtor to creditor (2 parties, no acceptance needed).</div></div>
+
+    <div class="mnemonic"><div class="word">"3 days of Grace, like 3 cheers"</div><div class="expand">Always add 3 days of grace to the nominal due date to find the maturity date.</div></div>
+
+    <div class="mnemonic"><div class="word">Renewal = Late + Interest; Retiring = Early + Rebate</div><div class="expand">Renewal pushes payment LATER (drawee pays interest). Retiring brings payment EARLIER (drawee earns a rebate/discount).</div></div>
+
+    <div class="mnemonic"><div class="word">Dishonour = "Undo Button"</div><div class="expand">Whatever the drawer did with the bill (retained/discounted/endorsed/sent for collection), dishonour simply reverses that specific entry, debiting the drawee again.</div></div>
+  </section>
+
+  <!-- ============ REVISION SHEET ============ -->
+  <section class="block" id="revision">
+    <div class="section-head"><h2 class="h">One-Page Revision Sheet</h2></div>
+    <div class="rev-grid">
+      <div class="rev-card"><h4>Bill of Exchange</h4><ul><li>Written order to pay; needs acceptance by drawee</li></ul></div>
+      <div class="rev-card"><h4>3 Parties</h4><ul><li>Drawer, Drawee (→Acceptor), Payee</li></ul></div>
+      <div class="rev-card"><h4>Promissory Note</h4><ul><li>Written promise; 2 parties; no acceptance needed</li></ul></div>
+      <div class="rev-card"><h4>Maturity</h4><ul><li>Due date + 3 days of grace</li></ul></div>
+      <div class="rev-card"><h4>4 Fates of a Bill</h4><ul><li>Retained, Discounted, Endorsed, Sent for Collection</li></ul></div>
+      <div class="rev-card"><h4>Dishonour</h4><ul><li>Reverses the specific entry made when the bill was received</li></ul></div>
+      <div class="rev-card"><h4>Renewal</h4><ul><li>Old bill cancelled + interest + new bill</li></ul></div>
+      <div class="rev-card"><h4>Retiring</h4><ul><li>Early payment + rebate on bills</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ============ LAST DAY REVISION ============ -->
+  <section class="block" id="lastday">
+    <div class="section-head"><h2 class="h">Last-Day Revision Notes</h2></div>
+    <div class="tag veryimp">🔴 Read this 30 minutes before the exam</div>
+    <ol class="crash-list">
+      <li><span class="crash-num">01</span>Bill of Exchange = order to pay, drawn by creditor, needs acceptance. Promissory Note = promise to pay, drawn by debtor, no acceptance needed.</li>
+      <li><span class="crash-num">02</span>3 parties in a bill: Drawer, Drawee/Acceptor, Payee. Only 2 in a note: Maker, Payee.</li>
+      <li><span class="crash-num">03</span>Add 3 days of grace to find the maturity date; adjust for holidays.</li>
+      <li><span class="crash-num">04</span>Drawer's asset = Bills Receivable; Acceptor's liability = Bills Payable.</li>
+      <li><span class="crash-num">05</span>Discounting = cash from bank early, minus interest. Endorsing = transfer to settle a debt, no cash involved.</li>
+      <li><span class="crash-num">06</span>On maturity, if discounted or endorsed, NO entry is passed by the drawer — the new holder collects.</li>
+      <li><span class="crash-num">07</span>Dishonour reverses the earlier entry: debit the drawee, credit whatever account was originally credited.</li>
+      <li><span class="crash-num">08</span>Renewal = late payment + interest charged to drawee. Retiring = early payment + rebate given to drawee.</li>
+      <li><span class="crash-num">09</span>Promissory note can NEVER be made payable to bearer (RBI Act restriction).</li>
+      <li><span class="crash-num">10</span>Acceptor's entries are the SAME regardless of what the drawer does with the bill (retain/discount/endorse).</li>
+    </ol>
+  </section>
+
+  <!-- ============ EXAM QUESTION BANK ============ -->
+  <section class="block" id="examqs">
+    <div class="section-head"><h2 class="h">Exam Question Bank</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="card"><ul class="nano-list">
+      <li>Define a bill of exchange and state its essential features.</li>
+      <li>Distinguish between a bill of exchange and a promissory note.</li>
+      <li>Explain the parties to a bill of exchange with an example.</li>
+      <li>What is meant by discounting and endorsement of a bill?</li>
+      <li>Journalise transactions relating to a bill in the books of both drawer and drawee.</li>
+      <li>What is dishonour of a bill? Record the necessary journal entries.</li>
+      <li>Distinguish between renewal and retirement of a bill.</li>
+    </ul></div>
+  </section>
+
+  <div class="finalbadge">📚 That's all 8 chapters of NCERT Class 11 Accountancy!<small>Introduction → Theory Base → Recording I &amp; II → Bank Reconciliation → Trial Balance &amp; Rectification → Depreciation, Provisions &amp; Reserves → Bills of Exchange</small></div>
+
+  <footer>Built for India Post IP Exam preparation · Chapter 8 of 8 · Complete revision set</footer>
+</div>
+
+<script>
+const glossary = [
+  {t:"Bill of Exchange", tag:"veryimp", d:"A written, unconditional order signed by the maker (creditor), directing a certain person to pay a certain sum to a certain person or the bearer. Needs acceptance by the drawee.", q:"What features must a valid bill of exchange possess?"},
+  {t:"Drawer", tag:"veryimp", d:"The maker of the bill of exchange — usually the seller/creditor entitled to receive money."},
+  {t:"Drawee", tag:"veryimp", d:"The person upon whom the bill is drawn — the buyer/debtor. Becomes the 'Acceptor' once they sign acceptance."},
+  {t:"Payee", tag:"freq", d:"The person to whom payment is to be made — usually the drawer, but changes to the bank if discounted, or to a creditor if endorsed."},
+  {t:"Promissory Note", tag:"veryimp", d:"A written, unconditional promise signed by the maker (debtor) to pay a certain sum to a certain person. Cannot be payable to bearer, and needs no acceptance.", q:"Why does a promissory note not require acceptance?"},
+  {t:"Maturity", tag:"veryimp", d:"The due date of a bill or note — calculated as the nominal due date PLUS 3 days of grace, adjusted for holidays."},
+  {t:"Discounting", tag:"veryimp", d:"Encashing a bill with the bank before its due date, in exchange for a deduction called discount (interest for the remaining period)."},
+  {t:"Endorsement", tag:"freq", d:"Transferring a bill to a third party (usually one's own creditor) by signing on the back — settles a debt without cash changing hands."},
+  {t:"Dishonour", tag:"veryimp", d:"When the drawee fails to pay on the maturity date — restores the acceptor's liability; the receiver reverses whatever entry was originally made."},
+  {t:"Renewal", tag:"freq", d:"Cancelling an old bill and drawing a fresh one with extended payment terms, usually with interest charged for the extension."},
+  {t:"Retiring (of a Bill)", tag:"freq", d:"Paying a bill before its due date by mutual agreement — the holder grants a discount called Rebate on Bills for the early payment."},
+];
+
+const listEl0 = document.getElementById('glossaryList');
+function renderGlossary(filter=""){
+  listEl0.innerHTML = "";
+  const f = filter.trim().toLowerCase();
+  glossary.forEach((g,i)=>{
+    if(f && !(g.t.toLowerCase().includes(f) || g.d.toLowerCase().includes(f))) return;
+    const tagMap = {veryimp:["🔴","veryimp","Very Important"], freq:["🟠","freq","Frequently Asked"], concept:["🟡","concept","Conceptual"], quick:["🟢","quick","Quick Revision"]};
+    const [emo,cls,label] = tagMap[g.tag];
+    const acc = document.createElement('div');
+    acc.className = 'acc';
+    acc.innerHTML = `
+      <div class="acc-head" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+        <span>${g.t}</span><span class="chev">▶</span>
+      </div>
+      <div class="acc-body">
+        <div class="tag ${cls}">${emo} ${label}</div>
+        <div>${g.d}</div>
+        ${g.q ? `<div class="examq"><span class="lbl">📝 Probable Exam Question</span>${g.q}</div>` : ""}
+        <label class="studied-check" id="sc-${i}" onclick="event.stopPropagation(); toggleStudied(${i})">
+          <input type="checkbox"> ✓ Mark as studied
+        </label>
+      </div>`;
+    listEl0.appendChild(acc);
+  });
+}
+renderGlossary();
+function filterGlossary(){ renderGlossary(document.getElementById('glossaryFilter').value); }
+
+const studied = new Set();
+function toggleStudied(i){
+  const el = document.getElementById('sc-'+i);
+  if(studied.has(i)){ studied.delete(i); el.classList.remove('done'); }
+  else { studied.add(i); el.classList.add('done'); }
+  updateProgress();
+}
+function updateProgress(){
+  const pct = Math.round((studied.size/glossary.length)*100);
+  document.getElementById('progressBarFill').style.width = pct+'%';
+  document.getElementById('progressText').textContent = studied.size+'/'+glossary.length+' studied';
+}
+function toggleDark(){ document.body.classList.toggle('dark'); }
+let speaking = false;
+function toggleTTS(){
+  const btn = document.getElementById('ttsBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.textContent="🔊 Read"; return; }
+  const text = document.querySelector('.wrap').innerText.slice(0, 6000);
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking=false; btn.textContent="🔊 Read"; };
+  window.speechSynthesis.speak(utter);
+  speaking = true;
+  btn.textContent = "⏸ Stop";
+}
+</script>
+</body>
+</html>

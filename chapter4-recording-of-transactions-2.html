@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Ch.4 Recording of Transactions-II — Exam Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EA; --paper2:#F1E9D3; --card:#FFFFFF; --ink:#1B2A4A; --ink-soft:#4C5A78; --ink-faint:#8A93A8;
+  --red:#B3261E; --red-soft:#F6E2E0; --gold:#B9862F; --gold-soft:#F3E7CA; --green:#1F6F54; --green-soft:#DCEEE6;
+  --blue:#2A4E86; --blue-soft:#DEE6F3; --line:rgba(27,42,74,0.14); --line-strong:rgba(27,42,74,0.28);
+  --shadow: 0 2px 10px rgba(27,42,74,0.08), 0 1px 2px rgba(27,42,74,0.06); --radius: 10px;
+  --font-display:'Lora','Georgia',serif; --font-body:'Source Serif 4','Georgia',serif; --font-mono:'IBM Plex Mono',monospace;
+}
+body.dark{
+  --paper:#0E1524; --paper2:#141D30; --card:#182238; --ink:#F1E9D3; --ink-soft:#C6CEE0; --ink-faint:#7C88A3;
+  --red:#E4776E; --red-soft:#3A2020; --gold:#E3B65E; --gold-soft:#332A17; --green:#63C7A4; --green-soft:#173229;
+  --blue:#8FB0E8; --blue-soft:#1B2A45; --line:rgba(241,233,211,0.14); --line-strong:rgba(241,233,211,0.28);
+  --shadow: 0 2px 14px rgba(0,0,0,0.35);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:repeating-linear-gradient(var(--paper), var(--paper) 37px, var(--line) 38px);background-color:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;transition:background-color .3s,color .3s;padding-bottom:60px;}
+.ledger-margin{position:fixed;top:0;bottom:0;left:38px;width:2px;background:var(--red);opacity:.35;z-index:0;pointer-events:none;}
+@media (max-width:600px){.ledger-margin{left:22px;}}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px;position:relative;z-index:1;}
+.topbar{position:sticky;top:0;z-index:50;background:var(--paper2);border-bottom:1px solid var(--line-strong);backdrop-filter:blur(4px);}
+.topbar-inner{max-width:760px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.brand{font-family:var(--font-display);font-weight:700;font-size:.92rem;color:var(--red);letter-spacing:.02em;margin-right:auto;}
+.brand small{display:block;font-family:var(--font-mono);font-size:.62rem;color:var(--ink-faint);font-weight:500;letter-spacing:.03em;}
+.iconbtn{border:1px solid var(--line-strong);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 10px;font-size:.85rem;cursor:pointer;font-family:var(--font-mono);display:flex;align-items:center;gap:5px;}
+.iconbtn:active{transform:translateY(1px);}
+.progress-pill{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:20px;padding:5px 10px;background:var(--card);}
+#progressBarWrap{width:64px;height:6px;background:var(--line);border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:5px;}
+#progressBarFill{height:100%;width:0%;background:var(--green);transition:width .3s;}
+.hero{padding:26px 0 10px;}
+.eyebrow{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:600;display:flex;align-items:center;gap:6px;}
+.eyebrow::before{content:"";width:16px;height:2px;background:var(--red);display:inline-block;}
+h1.title{font-family:var(--font-display);font-weight:700;font-size:2rem;line-height:1.15;margin:8px 0 6px;color:var(--ink);}
+.subtitle{color:var(--ink-soft);font-size:.95rem;margin-bottom:16px;}
+.breadcrumb-diagram{display:flex;flex-wrap:wrap;gap:0;align-items:stretch;font-family:var(--font-mono);font-size:.68rem;margin:14px 0 22px;}
+.bc-node{background:var(--card);border:1px solid var(--line-strong);border-radius:7px;padding:7px 10px;display:flex;flex-direction:column;gap:2px;min-width:88px;}
+.bc-node b{font-family:var(--font-display);font-size:.78rem;color:var(--ink);}
+.bc-node span{color:var(--ink-faint);}
+.bc-arrow{display:flex;align-items:center;color:var(--gold);padding:0 6px;font-size:1rem;}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px;}
+.toc a{font-family:var(--font-mono);font-size:.72rem;text-decoration:none;color:var(--ink);border:1px solid var(--line-strong);padding:6px 11px;border-radius:20px;background:var(--card);}
+.toc a:hover{border-color:var(--red);color:var(--red);}
+section.block{margin-bottom:34px;scroll-margin-top:64px;}
+.section-head{display:flex;align-items:baseline;gap:9px;margin-bottom:4px;flex-wrap:wrap;}
+.section-num{font-family:var(--font-mono);color:var(--gold);font-weight:700;font-size:.85rem;}
+h2.h{font-family:var(--font-display);font-weight:700;font-size:1.35rem;margin:0;color:var(--ink);}
+h3.h3{font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin:18px 0 8px;color:var(--ink);}
+.section-sub{color:var(--ink-soft);font-size:.85rem;margin:2px 0 14px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;box-shadow:var(--shadow);}
+.tag{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.66rem;font-weight:600;padding:3px 8px;border-radius:20px;letter-spacing:.02em;margin-bottom:8px;}
+.tag.veryimp{background:var(--red-soft);color:var(--red);}
+.tag.freq{background:var(--gold-soft);color:var(--gold);}
+.tag.concept{background:var(--blue-soft);color:var(--blue);}
+.tag.quick{background:var(--green-soft);color:var(--green);}
+.def-box{border-left:3px solid var(--red);background:var(--red-soft);border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0;font-size:.92rem;}
+.def-box b{color:var(--red);}
+.def-source{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-faint);margin-top:4px;display:block;}
+.examq{border:1px dashed var(--gold);background:var(--gold-soft);border-radius:8px;padding:9px 12px;margin:10px 0;font-size:.83rem;color:var(--ink);}
+.examq .lbl{font-family:var(--font-mono);font-size:.65rem;font-weight:700;color:var(--gold);display:block;margin-bottom:3px;letter-spacing:.03em;}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:14px 0;justify-content:center;}
+.flow-step{background:var(--blue-soft);border:1px solid var(--blue);color:var(--ink);border-radius:8px;padding:10px 12px;text-align:center;font-size:.8rem;font-weight:600;min-width:90px;font-family:var(--font-mono);}
+.flow-arrow{color:var(--gold);font-size:1.3rem;padding:0 6px;}
+@media(max-width:480px){.flow{flex-direction:column;}.flow-arrow{transform:rotate(90deg);padding:2px 0;}}
+.mindmap{display:flex;flex-direction:column;align-items:center;gap:0;margin:16px 0;}
+.mm-root{background:var(--ink);color:var(--paper);font-family:var(--font-display);font-weight:700;padding:10px 18px;border-radius:8px;font-size:.92rem;text-align:center;}
+.mm-branches{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;justify-content:center;}
+.mm-branch{border:1px solid var(--line-strong);border-radius:8px;padding:10px 12px;background:var(--card);min-width:130px;max-width:210px;}
+.mm-branch .mm-title{font-family:var(--font-mono);font-weight:700;font-size:.73rem;color:var(--blue);margin-bottom:5px;}
+.mm-branch ul{margin:0;padding-left:16px;font-size:.76rem;color:var(--ink-soft);}
+.mm-branch ul li{margin-bottom:2px;}
+.tbl-wrap{overflow-x:auto;margin:14px 0;}
+table.cmp{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--card);border-radius:8px;overflow:hidden;}
+table.cmp th{background:var(--ink);color:var(--paper);font-family:var(--font-mono);font-weight:600;text-align:left;padding:8px 10px;font-size:.72rem;letter-spacing:.02em;}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp td.hl{color:var(--red);font-weight:600;font-family:var(--font-mono);}
+.dtree{margin:14px 0;font-size:.85rem;}
+.dtree-node{border:1px solid var(--line-strong);border-radius:8px;padding:9px 12px;background:var(--card);margin-bottom:6px;}
+.dtree-q{font-weight:600;color:var(--ink);}
+.dtree-branches{display:flex;gap:10px;margin:6px 0 14px 18px;flex-wrap:wrap;}
+.dtree-branch{border-left:3px solid var(--green);background:var(--green-soft);border-radius:0 6px 6px 0;padding:6px 10px;font-size:.78rem;flex:1;min-width:130px;}
+.dtree-branch.no{border-color:var(--red);background:var(--red-soft);}
+.acc{border:1px solid var(--line-strong);border-radius:8px;margin-bottom:8px;background:var(--card);overflow:hidden;}
+.acc-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:.92rem;}
+.acc-head .chev{font-family:var(--font-mono);color:var(--gold);transition:transform .2s;font-size:.8rem;}
+.acc-head.open .chev{transform:rotate(90deg);}
+.acc-body{display:none;padding:0 13px 13px;font-size:.85rem;color:var(--ink-soft);border-top:1px solid var(--line);}
+.acc-body.open{display:block;}
+.acc-body .examq,.acc-body .def-box{margin-top:8px;}
+.studied-check{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.68rem;border:1px solid var(--line-strong);border-radius:20px;padding:3px 9px;cursor:pointer;margin-top:8px;color:var(--ink-soft);background:var(--paper2);}
+.studied-check.done{background:var(--green-soft);color:var(--green);border-color:var(--green);}
+.studied-check input{display:none;}
+.filter-input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--line-strong);background:var(--card);color:var(--ink);font-family:var(--font-body);font-size:.88rem;margin-bottom:12px;}
+.mnemonic{background:linear-gradient(135deg,var(--gold-soft),var(--card));border:1px solid var(--gold);border-radius:10px;padding:12px 14px;margin-bottom:10px;}
+.mnemonic .word{font-family:var(--font-display);font-weight:700;color:var(--gold);font-size:1.05rem;letter-spacing:.03em;}
+.mnemonic .expand{font-size:.82rem;color:var(--ink-soft);margin-top:5px;}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:520px){.rev-grid{grid-template-columns:1fr;}}
+.rev-card{border:1px solid var(--line-strong);border-radius:8px;padding:10px 12px;background:var(--card);}
+.rev-card h4{margin:0 0 6px;font-family:var(--font-mono);font-size:.72rem;color:var(--red);letter-spacing:.03em;text-transform:uppercase;}
+.rev-card ul{margin:0;padding-left:16px;font-size:.8rem;color:var(--ink-soft);}
+.rev-card ul li{margin-bottom:3px;}
+.crash-list{list-style:none;margin:0;padding:0;}
+.crash-list li{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:.86rem;}
+.crash-list li:last-child{border-bottom:none;}
+.crash-num{font-family:var(--font-mono);color:var(--red);font-weight:700;min-width:22px;}
+footer{text-align:center;padding:30px 18px 10px;color:var(--ink-faint);font-family:var(--font-mono);font-size:.68rem;}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 24px;font-size:.72rem;font-family:var(--font-mono);color:var(--ink-soft);}
+.legend span{display:flex;align-items:center;gap:4px;}
+.nano-list{margin:6px 0 0;padding-left:18px;font-size:.83rem;color:var(--ink-soft);}
+.nano-list li{margin-bottom:4px;}
+.qtag{font-family:var(--font-mono);font-size:.65rem;color:var(--ink-faint);}
+::selection{background:var(--gold-soft);}
+.taccount{border:1px solid var(--line-strong);border-radius:8px;overflow:hidden;margin:10px 0;background:var(--card);font-size:.78rem;}
+.taccount .ta-title{background:var(--ink);color:var(--paper);font-family:var(--font-display);font-weight:700;padding:6px 10px;text-align:center;font-size:.82rem;}
+.taccount .ta-body{display:flex;}
+.taccount .ta-side{flex:1;padding:8px 10px;}
+.taccount .ta-side.dr{border-right:1px solid var(--line-strong);}
+.taccount .ta-label{font-family:var(--font-mono);font-weight:700;font-size:.68rem;color:var(--gold);margin-bottom:5px;}
+.taccount .ta-row{display:flex;justify-content:space-between;color:var(--ink-soft);margin-bottom:3px;}
+.cashbook-tbl{width:100%;border-collapse:collapse;font-size:.68rem;margin:12px 0;}
+.cashbook-tbl th{background:var(--ink);color:var(--paper);font-family:var(--font-mono);padding:5px 6px;text-align:left;font-size:.62rem;}
+.cashbook-tbl td{padding:5px 6px;border-bottom:1px solid var(--line);}
+.cashbook-tbl td.amt{text-align:right;font-family:var(--font-mono);}
+.cashbook-tbl tr.total td{font-weight:700;border-top:2px solid var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="ledger-margin"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">EXAM LEDGER<small>Accountancy · Ch.4</small></div>
+    <div class="progress-pill"><span id="progressBarWrap"><span id="progressBarFill"></span></span><span id="progressText">0/10 studied</span></div>
+    <button class="iconbtn" id="ttsBtn" onclick="toggleTTS()">🔊 Read</button>
+    <button class="iconbtn" onclick="toggleDark()">🌓</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">India Post IP Exam · Paper II support subject</div>
+    <h1 class="title">Recording of Transactions – II</h1>
+    <div class="subtitle">NCERT Class 11 Accountancy — Chapter 4 · Cash Book, Petty Cash, Purchases/Sales Books, Returns Books, Journal Proper, Balancing</div>
+
+    <div class="breadcrumb-diagram">
+      <div class="bc-node"><b>Chapter</b><span>4. Recording-II</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Sub-Chapter</b><span>4.1–4.7</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Micro Topic</b><span>e.g. Petty Cash Book</span></div>
+      <div class="bc-arrow">→</div>
+      <div class="bc-node"><b>Nano Topic</b><span>e.g. Imprest Amount</span></div>
+    </div>
+
+    <div class="legend">
+      <span>🔴 Very Important</span><span>🟠 Frequently Asked</span><span>🟡 Conceptual</span><span>🟢 Quick Revision</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <a href="#cashbook">4.1 Cash Book</a>
+    <a href="#doublecol">Double Column</a>
+    <a href="#pettycash">4.1.3 Petty Cash</a>
+    <a href="#purchbook">4.2–4.3 Purchases</a>
+    <a href="#salesbook">4.4–4.5 Sales</a>
+    <a href="#journalproper">4.6 Journal Proper</a>
+    <a href="#balancing">4.7 Balancing</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#mnemonics">Mnemonics</a>
+    <a href="#revision">Revision Sheet</a>
+    <a href="#lastday">Last-Day Notes</a>
+    <a href="#examqs">Exam Questions</a>
+  </div>
+
+  <!-- ============ WHY SPECIAL JOURNALS ============ -->
+  <section class="block" id="why">
+    <div class="section-head"><h2 class="h">Why Special Purpose Books (Subsidiary Books)?</h2></div>
+    <div class="tag concept">🟡 Conceptual Understanding</div>
+    <p class="section-sub">As a business grows, journalising every transaction becomes cumbersome. Repetitive transactions are grouped into special journals (day books) — economical and enables division of labour.</p>
+    <div class="mindmap">
+      <div class="mm-root">Subsidiary Books</div>
+      <div class="mm-branches">
+        <div class="mm-branch"><div class="mm-title">Cash Book</div></div>
+        <div class="mm-branch"><div class="mm-title">Purchases Book</div></div>
+        <div class="mm-branch"><div class="mm-title">Purchases Return Book</div></div>
+        <div class="mm-branch"><div class="mm-title">Sales Book</div></div>
+        <div class="mm-branch"><div class="mm-title">Sales Return Book</div></div>
+        <div class="mm-branch"><div class="mm-title">Journal Proper</div><span style="font-size:.7rem;color:var(--ink-faint)">for everything else</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4.1 CASH BOOK ============ -->
+  <section class="block" id="cashbook">
+    <div class="section-head"><span class="section-num">4.1</span><h2 class="h">Cash Book</h2></div>
+    <div class="tag veryimp">🔴 Very Important — practical numerical every year</div>
+    <div class="def-box"><b>Cash Book:</b> records all cash receipts &amp; payments. Serves as both a Journal (original entry) AND a Ledger (cash account) — so no separate Cash A/c is opened in the ledger when a cash book is kept.</div>
+
+    <h3 class="h3">4.1.1 Single Column Cash Book</h3>
+    <p class="section-sub">One amount column each side — pure cash transactions only.</p>
+    <table class="cashbook-tbl">
+      <tr><th>Date</th><th>Receipts</th><th>Amt ₹</th><th>Date</th><th>Payments</th><th>Amt ₹</th></tr>
+      <tr><td>Nov 01</td><td>Balance b/d</td><td class="amt">30,000</td><td>Nov 08</td><td>Insurance</td><td class="amt">6,000</td></tr>
+      <tr><td>Nov 04</td><td>Gurmeet</td><td class="amt">12,000</td><td>Nov 13</td><td>Furniture</td><td class="amt">13,800</td></tr>
+      <tr><td>Nov 16</td><td>Sales</td><td class="amt">28,000</td><td>Nov 30</td><td>Balance c/d</td><td class="amt">23,400</td></tr>
+      <tr class="total"><td colspan="2">Total</td><td class="amt">88,200*</td><td colspan="2">Total</td><td class="amt">88,200*</td></tr>
+    </table>
+    <p class="section-sub" style="margin-top:-8px">*Full worked example has more rows — totals shown for the balanced figure.</p>
+
+    <h3 class="h3" id="doublecol">4.1.2 Double Column (Cash + Bank) Cash Book</h3>
+    <div class="def-box"><b>Contra Entry</b> — when cash is deposited into bank or withdrawn from bank, BOTH aspects appear in the cash book itself (cash column + bank column). Marked <b>'C'</b> in the L.F. column and <b>not posted to the ledger.</b></div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Situation</th><th>Treatment</th></tr>
+        <tr><td>Cash deposited into bank</td><td>Bank column (Dr./receipt side) + Cash column (Cr./payment side) — Contra 'C'</td></tr>
+        <tr><td>Cash withdrawn from bank (self)</td><td>Cash column (Dr.) + Bank column (Cr.) — Contra 'C'</td></tr>
+        <tr><td>Cheque received &amp; deposited same day</td><td>Bank column, receipt side</td></tr>
+        <tr><td>Cheque received, deposited later</td><td>Cash column on receipt; contra entry on the day of deposit</td></tr>
+        <tr><td>Cheque dishonoured</td><td>Credit side, Bank column (reverses the earlier receipt)</td></tr>
+        <tr><td>Bank overdraft</td><td>Bank column shows a <span class="hl">credit</span> balance (withdrawals &gt; deposits)</td></tr>
+      </table>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>What is a contra entry? Why is it not posted to the ledger?</div>
+  </section>
+
+  <!-- ============ 4.1.3 PETTY CASH BOOK ============ -->
+  <section class="block" id="pettycash">
+    <div class="section-head"><span class="section-num">4.1.3</span><h2 class="h">Petty Cash Book &amp; the Imprest System</h2></div>
+    <div class="tag veryimp">🔴 Very Important for Exam</div>
+    <div class="def-box"><b>Imprest System:</b> a fixed sum (e.g. ₹2,000) is advanced to the petty cashier at the start of a period. As it's spent on small repetitive expenses (postage, conveyance, stationery, etc.), the cashier is <b>reimbursed exactly the amount spent</b> — restoring the full imprest amount for the next period.</div>
+    <div class="flow">
+      <div class="flow-step">Head Cashier<br>gives Imprest ₹</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Petty Cashier<br>pays small expenses</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Total spent<br>calculated</div><div class="flow-arrow">→</div>
+      <div class="flow-step">Reimbursed<br>= amount spent</div>
+    </div>
+    <h3 class="h3">Advantages of Petty Cash Book</h3>
+    <div class="card"><ul class="nano-list">
+      <li><b>Saves chief cashier's time</b> — he focuses only on large transactions</li>
+      <li><b>Effective control</b> — division of work reduces fraud risk</li>
+      <li><b>Convenient recording</b> — keeps the main cash book from becoming bulky (Materiality principle)</li>
+    </ul></div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Explain the Imprest System of petty cash with a suitable example.</div>
+  </section>
+
+  <!-- ============ 4.2 / 4.3 PURCHASES & RETURNS ============ -->
+  <section class="block" id="purchbook">
+    <div class="section-head"><span class="section-num">4.2 – 4.3</span><h2 class="h">Purchases Book &amp; Purchases Return Book</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Purchases (Journal) Book</th><th>Purchases Return Book</th></tr>
+        <tr><td>Records only <span class="hl">credit purchases of goods</span> (not assets like furniture)</td><td>Records goods returned to suppliers</td></tr>
+        <tr><td>Source document: Invoice/Bill (net of trade discount)</td><td>Source document: <b>Debit Note</b></td></tr>
+        <tr><td>Monthly total → Dr. to Purchases A/c</td><td>Monthly total → Cr. to Purchases Return A/c</td></tr>
+        <tr><td>Individual supplier accounts credited</td><td>Individual supplier accounts debited</td></tr>
+      </table>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>What is a Debit Note? How does it differ from a Credit Note?</div>
+  </section>
+
+  <!-- ============ 4.4 / 4.5 SALES & RETURNS ============ -->
+  <section class="block" id="salesbook">
+    <div class="section-head"><span class="section-num">4.4 – 4.5</span><h2 class="h">Sales Book &amp; Sales Return Book</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <tr><th>Sales (Journal) Book</th><th>Sales Return Book</th></tr>
+        <tr><td>Records only <span class="hl">credit sales of goods</span></td><td>Records goods returned by customers</td></tr>
+        <tr><td>Source document: Sales Invoice/Bill</td><td>Source document: <b>Credit Note</b></td></tr>
+        <tr><td>Monthly total → Cr. to Sales A/c</td><td>Monthly total → Dr. to Sales Return A/c</td></tr>
+        <tr><td>Individual customer accounts debited</td><td>Individual customer accounts credited</td></tr>
+      </table>
+    </div>
+
+    <div class="dtree">
+      <div class="dtree-node"><span class="dtree-q">Q: Who prepares the note — buyer (us) or seller?</span></div>
+      <div class="dtree-branches">
+        <div class="dtree-branch"><b>Debit Note</b> — WE prepare, sent to <u>our supplier</u> when WE return goods (purchases return)</div>
+        <div class="dtree-branch no"><b>Credit Note</b> — WE prepare, sent to <u>our customer</u> when THEY return goods (sales return)</div>
+      </div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>Prepare the Sales Book and post it to the Sales Account and individual customer accounts from given transactions.</div>
+  </section>
+
+  <!-- ============ 4.6 JOURNAL PROPER ============ -->
+  <section class="block" id="journalproper">
+    <div class="section-head"><span class="section-num">4.6</span><h2 class="h">Journal Proper (Journal Residual)</h2></div>
+    <div class="tag veryimp">🔴 Very Important — "which entries go where" MCQs</div>
+    <div class="def-box">Records everything that does NOT fit any special journal.</div>
+    <div class="mindmap">
+      <div class="mm-root">Journal Proper Records</div>
+      <div class="mm-branches">
+        <div class="mm-branch"><div class="mm-title">Opening Entries</div><ul><li>New year's opening balances</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">Adjustment Entries</div><ul><li>Outstanding rent, prepaid insurance, depreciation, advance income</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">Rectification Entries</div><ul><li>Correcting recording/posting errors</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">Transfer / Closing Entries</div><ul><li>Drawings → Capital</li><li>Trading &amp; P&amp;L transfers</li></ul></div>
+        <div class="mm-branch"><div class="mm-title">Other Entries</div><ul><li>Goods withdrawn for personal use</li><li>Goods given as free samples</li><li>Loss by fire/theft</li><li>Credit purchase/sale of assets (not goods)</li><li>Bills of exchange, consignment</li></ul></div>
+      </div>
+    </div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>List any five types of transactions recorded in the Journal Proper.</div>
+  </section>
+
+  <!-- ============ 4.7 BALANCING ============ -->
+  <section class="block" id="balancing">
+    <div class="section-head"><span class="section-num">4.7</span><h2 class="h">Balancing the Accounts</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="def-box"><b>Balancing:</b> totalling both sides of an account and inserting the difference on the shorter side (as "Balance c/d") to make both sides equal — then bringing it down as "Balance b/d" for the next period.</div>
+    <div class="examq"><span class="lbl">📝 Probable Exam Question</span>What does "balancing an account" mean? Illustrate with a Cash Account.</div>
+  </section>
+
+  <!-- ============ GLOSSARY ============ -->
+  <section class="block" id="glossary">
+    <div class="section-head"><h2 class="h">Key Terms Glossary — Chapter 4</h2></div>
+    <div class="tag veryimp">🔴 Quick-fire revision</div>
+    <input class="filter-input" id="glossaryFilter" placeholder="🔍 Filter terms (e.g. imprest, contra)..." oninput="filterGlossary()">
+    <div id="glossaryList"></div>
+  </section>
+
+  <!-- ============ MNEMONICS ============ -->
+  <section class="block" id="mnemonics">
+    <div class="section-head"><h2 class="h">Memory Tricks &amp; Mnemonics</h2></div>
+    <div class="tag quick">🟢 Quick Revision</div>
+
+    <div class="mnemonic"><div class="word">"C for Contra, C for Cancelled (from ledger)"</div><div class="expand">A contra entry is marked 'C' in the L.F. column and is NEVER posted to the ledger — both effects already sit inside the cash book itself.</div></div>
+
+    <div class="mnemonic"><div class="word">Debit Note = "Debit note leaves with us"</div><div class="expand">WE issue a Debit Note when returning goods to our supplier (Purchases Return); a Credit Note is issued BY US when our customer returns goods to us (Sales Return).</div></div>
+
+    <div class="mnemonic"><div class="word">Imprest = "I'm-prest with a Fixed Amount"</div><div class="expand">Petty cashier always starts each period with the SAME fixed imprest sum — reimbursement exactly replaces what was spent.</div></div>
+
+    <div class="mnemonic"><div class="word">"OART C" for Journal Proper</div><div class="expand"><b>O</b>pening, <b>A</b>djustment, <b>R</b>ectification, <b>T</b>ransfer/closing, <b>C</b>ompound/other entries — the five buckets of Journal Proper.</div></div>
+
+    <div class="mnemonic"><div class="word">Purchases/Sales Book = "Goods on Credit only"</div><div class="expand">Cash purchases/sales NEVER go in these books — only in the Cash Book. Purchases/Sales books record only credit transactions of goods (not fixed assets).</div></div>
+  </section>
+
+  <!-- ============ REVISION SHEET ============ -->
+  <section class="block" id="revision">
+    <div class="section-head"><h2 class="h">One-Page Revision Sheet</h2></div>
+    <div class="rev-grid">
+      <div class="rev-card"><h4>Cash Book</h4><ul><li>Journal + Ledger combined; single/double column</li></ul></div>
+      <div class="rev-card"><h4>Contra Entry</h4><ul><li>Marked 'C', both effects in cash book, not posted to ledger</li></ul></div>
+      <div class="rev-card"><h4>Petty Cash</h4><ul><li>Imprest system — reimburse exactly what's spent</li></ul></div>
+      <div class="rev-card"><h4>Purchases/Sales Books</h4><ul><li>Credit transactions of goods only; cash → Cash Book</li></ul></div>
+      <div class="rev-card"><h4>Debit/Credit Notes</h4><ul><li>Debit Note → purchases return; Credit Note → sales return</li></ul></div>
+      <div class="rev-card"><h4>Journal Proper</h4><ul><li>Opening, Adjustment, Rectification, Transfer, Other</li></ul></div>
+      <div class="rev-card"><h4>Balancing</h4><ul><li>Difference shown on shorter side as c/d, brought down as b/d</li></ul></div>
+      <div class="rev-card"><h4>Overdraft</h4><ul><li>Credit balance in Bank column of cash book</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ============ LAST DAY REVISION ============ -->
+  <section class="block" id="lastday">
+    <div class="section-head"><h2 class="h">Last-Day Revision Notes</h2></div>
+    <div class="tag veryimp">🔴 Read this 30 minutes before the exam</div>
+    <ol class="crash-list">
+      <li><span class="crash-num">01</span>Cash Book = Journal + Ledger in one — no separate Cash/Bank A/c opened in ledger.</li>
+      <li><span class="crash-num">02</span>Contra entry = both aspects inside cash book, marked 'C', never posted to ledger.</li>
+      <li><span class="crash-num">03</span>Petty Cash uses the Imprest System — reimbursement = exact amount spent.</li>
+      <li><span class="crash-num">04</span>Purchases/Sales Books record ONLY credit transactions of GOODS (not assets, not cash).</li>
+      <li><span class="crash-num">05</span>Debit Note → issued by buyer for purchases return; Credit Note → issued by seller for sales return.</li>
+      <li><span class="crash-num">06</span>Journal Proper = catch-all: opening, adjustment, rectification, transfer/closing, and "other" entries.</li>
+      <li><span class="crash-num">07</span>Balancing = insert difference on shorter side as "Balance c/d"; bring down as "Balance b/d".</li>
+      <li><span class="crash-num">08</span>Bank overdraft = credit balance in the bank column (withdrawals exceed deposits).</li>
+      <li><span class="crash-num">09</span>Cheque received but not yet deposited → recorded in Cash column first, contra entry on deposit day.</li>
+      <li><span class="crash-num">10</span>Dishonoured cheque → credit side, Bank column, customer's name in particulars.</li>
+    </ol>
+  </section>
+
+  <!-- ============ EXAM QUESTION BANK ============ -->
+  <section class="block" id="examqs">
+    <div class="section-head"><h2 class="h">Exam Question Bank</h2></div>
+    <div class="tag freq">🟠 Frequently Asked</div>
+    <div class="card"><ul class="nano-list">
+      <li>Prepare a Double Column Cash Book from a given set of transactions.</li>
+      <li>What is the Imprest System? Explain with an example, and show the petty cash account.</li>
+      <li>What is a contra entry? Give two examples.</li>
+      <li>Prepare a Purchases Book and post it to the ledger.</li>
+      <li>Distinguish between a Debit Note and a Credit Note.</li>
+      <li>What transactions are recorded in the Journal Proper? Give five examples.</li>
+      <li>Explain the process of balancing a ledger account.</li>
+    </ul></div>
+  </section>
+
+  <footer>Built for India Post IP Exam preparation · Chapter 4 of 8 · Chapter 5 (Bank Reconciliation Statement) coming next</footer>
+</div>
+
+<script>
+const glossary = [
+  {t:"Cash Book", tag:"veryimp", d:"Records all cash receipts and payments; serves as both Journal and Ledger (cash account). No separate cash account is opened in the ledger when maintained.", q:"Why is the Cash Book called both a book of original entry and a principal book?"},
+  {t:"Contra Entry", tag:"veryimp", d:"An entry where both aspects of a transaction (cash↔bank) are recorded within the cash book itself — marked 'C' in the L.F. column, and NOT posted to the ledger.", q:"Give two examples of transactions that result in a contra entry."},
+  {t:"Overdraft", tag:"freq", d:"A situation where cash withdrawn from the bank exceeds the amount deposited — shown as a credit balance in the bank column of the cash book."},
+  {t:"Petty Cash Book", tag:"veryimp", d:"A separate cash book maintained by a petty cashier for numerous small, repetitive payments (conveyance, postage, stationery) — keeps the main cash book from becoming bulky.", q:"State any two advantages of maintaining a petty cash book."},
+  {t:"Imprest Amount", tag:"veryimp", d:"A fixed sum advanced to the petty cashier at the start of a period; reimbursed exactly to the extent spent, so the same fixed balance is restored each period."},
+  {t:"Purchases (Journal) Book", tag:"freq", d:"Records only credit purchases of goods (not fixed assets). Source document = Invoice/Bill, entered net of trade discount. Cash purchases go in the Cash Book."},
+  {t:"Sales (Journal) Book", tag:"freq", d:"Records only credit sales of goods. Source document = Sales Invoice. Cash sales go in the Cash Book."},
+  {t:"Debit Note", tag:"veryimp", d:"Document prepared by the BUYER when returning goods to the supplier (or when an extra amount is recoverable) — source document for the Purchases Return Book.", q:"Who prepares a Debit Note, and for what purpose?"},
+  {t:"Credit Note", tag:"veryimp", d:"Document prepared by the SELLER when goods are received back from a customer — source document for the Sales Return Book. Often printed in red ink."},
+  {t:"Journal Proper", tag:"veryimp", d:"Records transactions that don't fit any special journal — opening entries, adjustment entries, rectification entries, transfer/closing entries, and 'other' entries like goods withdrawn for personal use or loss by fire.", q:"Why is the Journal Proper also called the 'Journal Residual'?"},
+];
+
+const listEl0 = document.getElementById('glossaryList');
+function renderGlossary(filter=""){
+  listEl0.innerHTML = "";
+  const f = filter.trim().toLowerCase();
+  glossary.forEach((g,i)=>{
+    if(f && !(g.t.toLowerCase().includes(f) || g.d.toLowerCase().includes(f))) return;
+    const tagMap = {veryimp:["🔴","veryimp","Very Important"], freq:["🟠","freq","Frequently Asked"], concept:["🟡","concept","Conceptual"], quick:["🟢","quick","Quick Revision"]};
+    const [emo,cls,label] = tagMap[g.tag];
+    const acc = document.createElement('div');
+    acc.className = 'acc';
+    acc.innerHTML = `
+      <div class="acc-head" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+        <span>${g.t}</span><span class="chev">▶</span>
+      </div>
+      <div class="acc-body">
+        <div class="tag ${cls}">${emo} ${label}</div>
+        <div>${g.d}</div>
+        ${g.q ? `<div class="examq"><span class="lbl">📝 Probable Exam Question</span>${g.q}</div>` : ""}
+        <label class="studied-check" id="sc-${i}" onclick="event.stopPropagation(); toggleStudied(${i})">
+          <input type="checkbox"> ✓ Mark as studied
+        </label>
+      </div>`;
+    listEl0.appendChild(acc);
+  });
+}
+renderGlossary();
+function filterGlossary(){ renderGlossary(document.getElementById('glossaryFilter').value); }
+
+const studied = new Set();
+function toggleStudied(i){
+  const el = document.getElementById('sc-'+i);
+  if(studied.has(i)){ studied.delete(i); el.classList.remove('done'); }
+  else { studied.add(i); el.classList.add('done'); }
+  updateProgress();
+}
+function updateProgress(){
+  const pct = Math.round((studied.size/glossary.length)*100);
+  document.getElementById('progressBarFill').style.width = pct+'%';
+  document.getElementById('progressText').textContent = studied.size+'/'+glossary.length+' studied';
+}
+function toggleDark(){ document.body.classList.toggle('dark'); }
+let speaking = false;
+function toggleTTS(){
+  const btn = document.getElementById('ttsBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.textContent="🔊 Read"; return; }
+  const text = document.querySelector('.wrap').innerText.slice(0, 6000);
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking=false; btn.textContent="🔊 Read"; };
+  window.speechSynthesis.speak(utter);
+  speaking = true;
+  btn.textContent = "⏸ Stop";
+}
+</script>
+</body>
+</html>
