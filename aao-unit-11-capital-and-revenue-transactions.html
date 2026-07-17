@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 11 · Capital and Revenue Transactions | AAO Exam Ledger</title>
+<style>
+  :root{
+    --paper:#F7F2E6; --paper-dark:#EFE7D4; --ink:#1F3A5F; --ink-soft:#4A5A72;
+    --ledger-red:#A63D40; --ledger-red-deep:#7E2E30; --gold:#B8892B; --gold-light:#EBD9A8;
+    --stamp-green:#2F6B4F; --yellow-flag:#F4B942; --green-flag:#3F8F5F;
+    --shadow: 0 3px 10px rgba(31,58,95,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Georgia','Iowan Old Style',serif;
+    background: repeating-linear-gradient(to bottom, transparent, transparent 33px, rgba(31,58,95,0.08) 34px), var(--paper);
+    color:var(--ink); padding-bottom:60px; }
+  .rule-margin{ position:fixed; top:0; left:46px; bottom:0; width:2px; background:rgba(166,61,64,0.35); z-index:0; }
+  @media(max-width:600px){ .rule-margin{left:28px;} }
+  header.hero{ position:relative; z-index:1; background:linear-gradient(135deg,var(--ink) 0%, #274A73 100%);
+    color:var(--paper); padding:34px 20px 28px 56px; border-bottom:6px solid var(--gold); }
+  @media(max-width:600px){ header.hero{padding-left:36px;} }
+  header.hero .eyebrow{ font-family:'Courier New',monospace; letter-spacing:2px; font-size:12px; color:var(--gold-light); text-transform:uppercase; }
+  header.hero h1{ font-size:clamp(20px,6vw,30px); margin:6px 0 4px; font-weight:700; }
+  header.hero p.sub{ margin:0; font-size:14px; color:#D8E1EC; }
+  .stamp{ position:absolute; top:20px; right:16px; width:78px; height:78px; border:3px solid var(--stamp-green);
+    border-radius:50%; color:var(--stamp-green); background:rgba(47,107,79,0.08);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:'Courier New',monospace; font-weight:700; font-size:10px; letter-spacing:1px; line-height:1.2;
+    transform:rotate(-12deg); }
+  .breadcrumb-flow{ position:relative; z-index:1; margin:18px 20px 0 56px; padding:14px 16px; background:var(--paper-dark);
+    border:1px dashed var(--gold); border-radius:8px; font-size:12.5px; color:var(--ink-soft);
+    display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-family:'Courier New',monospace; }
+  @media(max-width:600px){ .breadcrumb-flow{margin-left:36px;} }
+  .breadcrumb-flow b{ color:var(--ledger-red-deep); }
+  .breadcrumb-flow .arrow{ color:var(--gold); font-weight:700; }
+  main{ position:relative; z-index:1; padding:20px 20px 20px 56px; max-width:900px; margin:0 auto; }
+  @media(max-width:600px){ main{padding-left:36px;} }
+  h2.section-title{ font-size:19px; color:var(--ledger-red-deep); border-bottom:3px solid var(--gold);
+    padding-bottom:6px; margin:34px 0 14px; display:flex; align-items:center; gap:8px; }
+  h2.section-title .num{ background:var(--ledger-red-deep); color:var(--paper); font-family:'Courier New',monospace;
+    font-size:12px; padding:3px 8px; border-radius:4px; }
+  .revision-sheet{ background:#FFFDF6; border:2px solid var(--stamp-green); border-radius:10px; padding:18px; box-shadow:var(--shadow); position:relative; }
+  .revision-sheet::before{ content:"✔ ONE-PAGE REVISION"; position:absolute; top:-13px; left:16px; background:var(--stamp-green);
+    color:#fff; font-family:'Courier New',monospace; font-size:11px; padding:3px 10px; border-radius:12px; letter-spacing:1px; }
+  .rev-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+  @media(max-width:600px){ .rev-grid{grid-template-columns:1fr;} }
+  .rev-box{ background:var(--paper-dark); border-left:4px solid var(--gold); padding:10px 12px; border-radius:6px; font-size:13px; }
+  .rev-box h4{ margin:0 0 6px; font-size:12.5px; color:var(--ledger-red-deep); font-family:'Courier New',monospace; text-transform:uppercase; }
+  .rev-box ul{ margin:0; padding-left:18px; } .rev-box li{ margin-bottom:4px; }
+  .vault-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  @media(max-width:560px){ .vault-grid{grid-template-columns:1fr;} }
+  .vault-card{ background:#fff; border:1px solid var(--paper-dark); border-radius:8px; padding:12px 14px; box-shadow:var(--shadow); }
+  .vault-card h4{ margin:0 0 8px; font-size:13px; color:var(--ink); display:flex; gap:6px; align-items:center; }
+  .vault-card p, .vault-card li{ font-size:13px; color:var(--ink-soft); margin:4px 0; }
+  .vault-card ul{ margin:0; padding-left:16px; }
+  .tag-na{ color:#999; font-style:italic; font-size:12.5px; }
+  .topic-card{ background:#fff; border:1px solid var(--paper-dark); border-radius:10px; margin-bottom:12px; box-shadow:var(--shadow); overflow:hidden; }
+  .topic-head{ width:100%; text-align:left; background:var(--gold-light); border:none; padding:13px 14px; font-size:14.5px;
+    font-weight:700; color:var(--ink); cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:inherit; }
+  .topic-head .plus{ font-size:20px; color:var(--ledger-red-deep); }
+  .topic-body{ display:none; padding:14px 16px 18px; } .topic-body.open{ display:block; }
+  .def-box{ background:#EFF4F9; border-left:4px solid var(--ink); padding:10px 12px; border-radius:6px; font-size:13.5px; margin-bottom:10px; }
+  .def-box b{ color:var(--ink); }
+  .callout{ border-radius:6px; padding:9px 12px; font-size:13px; margin:8px 0; }
+  .callout.yellow{ background:#FFF6DE; border:1px solid var(--yellow-flag); }
+  .callout.green{ background:#E9F6EE; border:1px solid var(--green-flag); }
+  .callout b{ display:block; margin-bottom:2px; }
+  .examq{ background:var(--ledger-red-deep); color:#fff; font-size:12px; padding:8px 12px; border-radius:6px; margin-top:10px; font-family:'Courier New',monospace; }
+  .examq b{ color:var(--gold-light); }
+  table.data-table{ width:100%; border-collapse:collapse; font-size:12.3px; margin:10px 0; }
+  table.data-table th{ background:var(--ink); color:#fff; padding:6px 8px; text-align:left; }
+  table.data-table td{ padding:6px 8px; border-bottom:1px solid var(--paper-dark); vertical-align:top; }
+  table.data-table tr:nth-child(even){ background:#FAF6EC; }
+  .hub-wrap{ text-align:center; margin:14px 0; }
+  .hub-center{ display:inline-block; background:var(--ledger-red-deep); color:#fff; padding:10px 18px; border-radius:8px; font-weight:700; font-size:13px; margin-bottom:10px; }
+  .spokes{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .spoke{ background:var(--paper-dark); border:1px solid var(--gold); padding:7px 11px; border-radius:6px; font-size:12px; }
+  .dtree{ background:#FAF6EC; border:1px dashed var(--ink-soft); border-radius:8px; padding:12px; font-size:12.8px; margin:10px 0; }
+  .dtree .q{ font-weight:700; color:var(--ink); }
+  .dtree .branch{ margin:6px 0 6px 14px; padding-left:10px; border-left:2px solid var(--gold); }
+  .comp-chart{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:10px 0; }
+  @media(max-width:600px){ .comp-chart{grid-template-columns:1fr;} }
+  .comp-col{ background:#fff; border:1px solid var(--paper-dark); border-radius:8px; padding:10px; }
+  .comp-col h5{ margin:0 0 6px; font-size:12.5px; color:var(--ledger-red-deep); text-align:center; border-bottom:1px solid var(--gold); padding-bottom:4px; }
+  .comp-col ul{ margin:0; padding-left:16px; font-size:12px; color:var(--ink-soft); }
+  .tree-diagram{ background:#FAF6EC; border:1px solid var(--paper-dark); border-radius:8px; padding:14px; margin:12px 0; font-size:12.5px; }
+  .tree-diagram .lvl1{ text-align:center; font-weight:700; color:var(--ledger-red-deep); margin-bottom:8px; }
+  .tree-diagram .lvl2-row{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .tree-diagram .lvl2{ background:var(--ink); color:#fff; padding:6px 12px; border-radius:6px; font-size:11.5px; }
+  footer{ text-align:center; padding:22px; font-size:12px; color:var(--ink-soft); font-family:'Courier New',monospace; }
+  .toc{ display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; }
+  .toc a{ background:#fff; border:1px solid var(--gold); color:var(--ink); text-decoration:none; font-size:11px; padding:5px 9px; border-radius:14px; }
+</style>
+</head>
+<body>
+<div class="rule-margin"></div>
+
+<header class="hero">
+  <div class="eyebrow">Accountancy · Higher Secondary Book · Unit 11</div>
+  <h1>Capital and Revenue Transactions</h1>
+  <p class="sub">Expenditure &amp; receipt classification for AAO exam</p>
+  <div class="stamp">EXAM<br>READY<br>UNIT 11</div>
+</header>
+
+<div class="breadcrumb-flow">
+  <b>Chapter:</b> Accountancy Unit 11 <span class="arrow">→</span>
+  <b>Sub-Chapters:</b> 9 (11.1–11.9) <span class="arrow">→</span>
+  <b>Micro Topics:</b> 3 Expenditure Types · 2 Receipt Types <span class="arrow">→</span>
+  <b>Nano Topics:</b> 4 Classification Considerations · Deferred Revenue Write-off
+</div>
+
+<main>
+
+<h2 class="section-title"><span class="num">★</span> One-Page Revision Sheet</h2>
+<div class="revision-sheet">
+  <div class="rev-grid">
+    <div class="rev-box">
+      <h4>3 Types of Expenditure</h4>
+      <ul><li>Capital — benefit &gt; 1 year, shown in Balance Sheet (asset side)</li><li>Revenue — benefit within 1 year, in Trading/P&amp;L A/c</li><li>Deferred Revenue — revenue in nature, benefit over several years, written off gradually</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>4 Considerations to Classify</h4>
+      <ul><li>Nature of business</li><li>Effect on revenue-generating capacity</li><li>Purpose of expenditure</li><li>Materiality of amount</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>2 Types of Receipts</h4>
+      <ul><li>Capital receipt — non-recurring, substantial, Balance Sheet (liabilities side)</li><li>Revenue receipt — recurring, smaller, distributable as profit</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>Golden Test</h4>
+      <ul><li>Goods for the firm's OWN TRADE = revenue expenditure</li><li>Same item bought as an ASSET (not for resale) = capital expenditure</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>Deferred Revenue Treatment</h4>
+      <ul><li>Amount written off this year → debit side of P&amp;L A/c</li><li>Unwritten-off balance → asset side of Balance Sheet</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>Materiality Exception</h4>
+      <ul><li>Immaterial amount → treated as revenue even if benefit extends beyond one year (e.g. cost of a waste basket)</li></ul>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="num">§</span> Exam Vault — Sections, Dates, Authorities</h2>
+<div class="vault-grid">
+  <div class="vault-card">
+    <h4>📜 Important Rules</h4>
+    <ul>
+      <li>Classification is based on the <b>matching principle</b> — expenses matched with the revenue of the period they generate.</li>
+      <li>Nature of business decides whether an item is "goods" (revenue) or "asset" (capital).</li>
+    </ul>
+  </div>
+  <div class="vault-card">
+    <h4>⚖️ Important Exceptions</h4>
+    <ul>
+      <li><b>Materiality exception:</b> immaterial-value items are expensed as revenue even if their benefit technically extends beyond one accounting period.</li>
+      <li><b>Same item, different treatment:</b> furniture is "goods" (revenue) for a furniture dealer but an "asset" (capital) for any other business — nature of business overrides the item itself.</li>
+    </ul>
+  </div>
+  <div class="vault-card">
+    <h4>📅 Important Dates</h4>
+    <p class="tag-na">No historical dates in this unit — classification is a conceptual/recurring accounting-period matter, not date-specific.</p>
+  </div>
+  <div class="vault-card">
+    <h4>🏛️ Important Authorities</h4>
+    <p class="tag-na">No external regulatory body cited — classification follows accounting concepts (matching, periodicity) rather than a named statute in this unit.</p>
+  </div>
+  <div class="vault-card">
+    <h4>⏱️ Important Time Limits</h4>
+    <ul><li>Deferred revenue expenditure benefit "usually accrues for a period of two or more years" — written off gradually over that span.</li></ul>
+  </div>
+  <div class="vault-card">
+    <h4>🚫 Important Penalties</h4>
+    <p class="tag-na">No penalty provision — misclassification affects the accuracy of profit/loss and balance sheet, not a statutory penalty, in this unit's scope.</p>
+  </div>
+</div>
+
+<div class="toc">
+  <a href="#s1">11.1–3 Intro/Considerations</a><a href="#s4">11.4 Capital Exp.</a>
+  <a href="#s5">11.5 Revenue Exp.</a><a href="#s6">11.6 Deferred Rev. Exp.</a>
+  <a href="#s7">11.7 Comparison</a><a href="#s8">11.8–9 Receipts</a>
+</div>
+
+<h2 class="section-title"><span class="num">11</span> Sub-Chapters — Tap to expand</h2>
+
+<div class="topic-card" id="s1">
+  <button class="topic-head" onclick="toggleSection('b1')">11.1–11.3 Introduction, Considerations &amp; Classification <span class="plus">+</span></button>
+  <div class="topic-body" id="b1">
+    <div class="def-box">Based on the <b>matching principle</b>: revenue-period expenses are matched with revenue-period income. Revenue items → Trading/P&amp;L A/c; Capital items → Balance Sheet.</div>
+    <div class="tree-diagram">
+      <div class="lvl1">Expenditure</div>
+      <div class="lvl2-row"><div class="lvl2">Capital</div><div class="lvl2">Revenue</div><div class="lvl2">Deferred Revenue</div></div>
+    </div>
+    <div class="hub-wrap">
+      <div class="hub-center">4 Considerations to Classify</div>
+      <div class="spokes">
+        <div class="spoke">Nature of business</div><div class="spoke">Effect on revenue-generating capacity</div>
+        <div class="spoke">Purpose of expenditure</div><div class="spoke">Materiality of amount</div>
+      </div>
+    </div>
+    <div class="callout yellow">🟡 <b>Conceptual Understanding</b> Same expenditure, different classification: furniture purchase is REVENUE for a furniture dealer (it's their "goods") but CAPITAL for any other business (it's an "asset" for them). The nature of the business — not the item itself — decides the classification.</div>
+    <div class="examq">📝 <b>Probable Question:</b> State the considerations in determining capital and revenue expenditure. (5 marks — very frequently asked)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s4">
+  <button class="topic-head" onclick="toggleSection('b4')">11.4 Capital Expenditure <span class="plus">+</span></button>
+  <div class="topic-body" id="b4">
+    <div class="def-box">Expenditure whose benefit extends beyond one accounting period — acquisition of fixed assets or anything adding to the revenue-earning capacity of the business. <b>Non-recurring.</b></div>
+    <table class="data-table">
+      <tr><th>Feature</th></tr>
+      <tr><td>Benefit &gt; 1 accounting period · Includes fixed asset acquisition + all expenses till asset is ready for use · Contributes to revenue-earning capacity · Non-recurring · Shown on Assets side of Balance Sheet</td></tr>
+    </table>
+    <div class="def-box"><b>Examples:</b> Land &amp; building acquisition · Office equipment/computer/AC · Plant &amp; machinery including installation &amp; trial run charges.</div>
+    <div class="examq">📝 <b>Probable Question:</b> State the features of capital expenditure with examples. (4 marks)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s5">
+  <button class="topic-head" onclick="toggleSection('b5')">11.5 Revenue Expenditure <span class="plus">+</span></button>
+  <div class="topic-body" id="b5">
+    <div class="def-box">Expenditure for day-to-day running or maintaining the earning capacity of the business. <b>Recurring in nature</b>, benefit expires within the same accounting period.</div>
+    <table class="data-table">
+      <tr><th>Feature</th></tr>
+      <tr><td>Recurring · Maintains earning capacity · Benefit expires same period · Shown on Debit side of Trading/P&amp;L A/c</td></tr>
+    </table>
+    <div class="def-box"><b>Examples:</b> Purchase of goods for resale · Administrative/selling/distribution expenses · Manufacturing expenses.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Distinguish capital expenditure from revenue expenditure. (5 marks — high repeat rate)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s6">
+  <button class="topic-head" onclick="toggleSection('b6')">11.6 Deferred Revenue Expenditure <span class="plus">+</span></button>
+  <div class="topic-body" id="b6">
+    <div class="def-box">A REVENUE expenditure in nature, but its benefit is derived over a subsequent period or periods (usually 2+ years) — so it's temporarily deferred and written off gradually rather than charged fully in the year incurred.</div>
+    <table class="data-table">
+      <tr><th>Feature</th></tr>
+      <tr><td>Revenue in nature, multi-year benefit · Not fully written off in year of expenditure · Balance after writing off shown on Assets side of Balance Sheet</td></tr>
+    </table>
+    <div class="def-box"><b>Examples:</b> Heavy advertising expenditure · Major repairs to plant and machinery.</div>
+    <div class="examq">📝 <b>Probable Question:</b> What is deferred revenue expenditure? Give two examples. (3 marks)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s7">
+  <button class="topic-head" onclick="toggleSection('b7')">11.7 Comparison — Capital vs Revenue vs Deferred Revenue <span class="plus">+</span></button>
+  <div class="topic-body" id="b7">
+    <table class="data-table">
+      <tr><th>Basis</th><th>Capital</th><th>Revenue</th><th>Deferred Revenue</th></tr>
+      <tr><td>Nature</td><td>Non-recurring</td><td>Recurring</td><td>Non-recurring</td></tr>
+      <tr><td>Purpose</td><td>Boost revenue-earning capacity</td><td>Day-to-day activities</td><td>Benefit for certain years</td></tr>
+      <tr><td>Period of benefit</td><td>Longer period</td><td>Within one accounting period</td><td>More than one accounting period</td></tr>
+      <tr><td>Effect on earning capacity</td><td>Increases it</td><td>Maintains it</td><td>Benefits for certain years</td></tr>
+      <tr><td>Accounting treatment</td><td>Assets side of Balance Sheet</td><td>Debit side of Trading/P&amp;L A/c</td><td>Written-off part → P&amp;L A/c; balance → Assets side</td></tr>
+    </table>
+    <div class="examq">📝 <b>Probable Question:</b> Compare capital, revenue and deferred revenue expenditure on any four points. (8 marks — most repeated table question)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s8">
+  <button class="topic-head" onclick="toggleSection('b8')">11.8–11.9 Capital &amp; Revenue Receipts <span class="plus">+</span></button>
+  <div class="topic-body" id="b8">
+    <div class="comp-chart">
+      <div class="comp-col"><h5>Capital Receipt</h5><ul><li>Not revenue in nature</li><li>Non-recurring, substantial amount</li><li>Balance Sheet — liabilities side</li></ul></div>
+      <div class="comp-col"><h5>Revenue Receipt</h5><ul><li>Obtained in normal course of business</li><li>Recurring, generally small amount</li><li>Distributable as profit</li></ul></div>
+    </div>
+    <table class="data-table">
+      <tr><th>Capital Receipt Examples</th><th>Revenue Receipt Examples</th></tr>
+      <tr><td>Issue of shares/debentures</td><td>Sale of goods proceeds</td></tr>
+      <tr><td>Long-term bank loan raised</td><td>Interest on investments</td></tr>
+      <tr><td>Sale of fixed assets</td><td>Rent received</td></tr>
+      <tr><td>Sale of long-term investments</td><td>Dividend from share investment</td></tr>
+      <tr><td>Special donations received</td><td>—</td></tr>
+    </table>
+    <table class="data-table">
+      <tr><th>Basis</th><th>Capital Receipts</th><th>Revenue Receipts</th></tr>
+      <tr><td>Nature</td><td>Non-recurring</td><td>Recurring</td></tr>
+      <tr><td>Size</td><td>Substantial</td><td>Smaller</td></tr>
+      <tr><td>Distribution</td><td>Not available for profit distribution</td><td>Excess over expenses distributable as profit</td></tr>
+    </table>
+    <div class="callout green">🟢 <b>Quick Revision</b> Capital receipts sit on the LIABILITIES side of the Balance Sheet (they represent funds raised); Capital expenditures sit on the ASSETS side (they represent what was acquired) — easy to mix up, so anchor this pairing.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Distinguish between capital receipts and revenue receipts with examples. (5 marks)</div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="num">✓</span> Points to Remember (from textbook)</h2>
+<div class="vault-card">
+  <ul>
+    <li>Capital expenditure benefits more than one accounting period; revenue expenditure benefits only the current period.</li>
+    <li>Deferred revenue expenditure is revenue in nature but written off over several years.</li>
+    <li>Capital receipts are non-recurring and shown on the liabilities side of the balance sheet.</li>
+    <li>Revenue receipts are recurring and can be distributed as profit.</li>
+  </ul>
+</div>
+
+</main>
+
+<footer>UNIT 11 OF 14 · ACCOUNTANCY FOR AAO EXAM · Source: TN HSC First Year Accountancy Textbook</footer>
+
+<script>
+function toggleSection(id){
+  var el = document.getElementById(id);
+  var btn = el.previousElementSibling;
+  var plus = btn.querySelector('.plus');
+  if(el.classList.contains('open')){ el.classList.remove('open'); plus.textContent = '+'; }
+  else { el.classList.add('open'); plus.textContent = '−'; }
+}
+</script>
+</body>
+</html>

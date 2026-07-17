@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 · Conceptual Framework of Accounting | AAO Exam Ledger</title>
+<style>
+  :root{
+    --paper:#F7F2E6; --paper-dark:#EFE7D4; --ink:#1F3A5F; --ink-soft:#4A5A72;
+    --ledger-red:#A63D40; --ledger-red-deep:#7E2E30; --gold:#B8892B; --gold-light:#EBD9A8;
+    --stamp-green:#2F6B4F; --yellow-flag:#F4B942; --green-flag:#3F8F5F;
+    --shadow: 0 3px 10px rgba(31,58,95,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Georgia','Iowan Old Style',serif;
+    background: repeating-linear-gradient(to bottom, transparent, transparent 33px, rgba(31,58,95,0.08) 34px), var(--paper);
+    color:var(--ink); padding-bottom:60px; }
+  .rule-margin{ position:fixed; top:0; left:46px; bottom:0; width:2px; background:rgba(166,61,64,0.35); z-index:0; }
+  @media(max-width:600px){ .rule-margin{left:28px;} }
+  header.hero{ position:relative; z-index:1; background:linear-gradient(135deg,var(--ink) 0%, #274A73 100%);
+    color:var(--paper); padding:34px 20px 28px 56px; border-bottom:6px solid var(--gold); }
+  @media(max-width:600px){ header.hero{padding-left:36px;} }
+  header.hero .eyebrow{ font-family:'Courier New',monospace; letter-spacing:2px; font-size:12px; color:var(--gold-light); text-transform:uppercase; }
+  header.hero h1{ font-size:clamp(22px,6vw,32px); margin:6px 0 4px; font-weight:700; }
+  header.hero p.sub{ margin:0; font-size:14px; color:#D8E1EC; }
+  .stamp{ position:absolute; top:20px; right:16px; width:78px; height:78px; border:3px solid var(--stamp-green);
+    border-radius:50%; color:var(--stamp-green); background:rgba(47,107,79,0.08);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:'Courier New',monospace; font-weight:700; font-size:10px; letter-spacing:1px; line-height:1.2;
+    transform:rotate(-12deg); }
+  .breadcrumb-flow{ position:relative; z-index:1; margin:18px 20px 0 56px; padding:14px 16px; background:var(--paper-dark);
+    border:1px dashed var(--gold); border-radius:8px; font-size:12.5px; color:var(--ink-soft);
+    display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-family:'Courier New',monospace; }
+  @media(max-width:600px){ .breadcrumb-flow{margin-left:36px;} }
+  .breadcrumb-flow b{ color:var(--ledger-red-deep); }
+  .breadcrumb-flow .arrow{ color:var(--gold); font-weight:700; }
+  main{ position:relative; z-index:1; padding:20px 20px 20px 56px; max-width:900px; margin:0 auto; }
+  @media(max-width:600px){ main{padding-left:36px;} }
+  h2.section-title{ font-size:19px; color:var(--ledger-red-deep); border-bottom:3px solid var(--gold);
+    padding-bottom:6px; margin:34px 0 14px; display:flex; align-items:center; gap:8px; }
+  h2.section-title .num{ background:var(--ledger-red-deep); color:var(--paper); font-family:'Courier New',monospace;
+    font-size:12px; padding:3px 8px; border-radius:4px; }
+  .revision-sheet{ background:#FFFDF6; border:2px solid var(--stamp-green); border-radius:10px; padding:18px; box-shadow:var(--shadow); position:relative; }
+  .revision-sheet::before{ content:"✔ ONE-PAGE REVISION"; position:absolute; top:-13px; left:16px; background:var(--stamp-green);
+    color:#fff; font-family:'Courier New',monospace; font-size:11px; padding:3px 10px; border-radius:12px; letter-spacing:1px; }
+  .rev-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+  @media(max-width:600px){ .rev-grid{grid-template-columns:1fr;} }
+  .rev-box{ background:var(--paper-dark); border-left:4px solid var(--gold); padding:10px 12px; border-radius:6px; font-size:13px; }
+  .rev-box h4{ margin:0 0 6px; font-size:12.5px; color:var(--ledger-red-deep); font-family:'Courier New',monospace; text-transform:uppercase; }
+  .rev-box ul{ margin:0; padding-left:18px; } .rev-box li{ margin-bottom:4px; }
+  .vault-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  @media(max-width:560px){ .vault-grid{grid-template-columns:1fr;} }
+  .vault-card{ background:#fff; border:1px solid var(--paper-dark); border-radius:8px; padding:12px 14px; box-shadow:var(--shadow); }
+  .vault-card h4{ margin:0 0 8px; font-size:13px; color:var(--ink); display:flex; gap:6px; align-items:center; }
+  .vault-card p, .vault-card li{ font-size:13px; color:var(--ink-soft); margin:4px 0; }
+  .vault-card ul{ margin:0; padding-left:16px; }
+  .tag-na{ color:#999; font-style:italic; font-size:12.5px; }
+  .topic-card{ background:#fff; border:1px solid var(--paper-dark); border-radius:10px; margin-bottom:12px; box-shadow:var(--shadow); overflow:hidden; }
+  .topic-head{ width:100%; text-align:left; background:var(--gold-light); border:none; padding:13px 14px; font-size:15px;
+    font-weight:700; color:var(--ink); cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:inherit; }
+  .topic-head .plus{ font-size:20px; color:var(--ledger-red-deep); }
+  .topic-body{ display:none; padding:14px 16px 18px; } .topic-body.open{ display:block; }
+  .def-box{ background:#EFF4F9; border-left:4px solid var(--ink); padding:10px 12px; border-radius:6px; font-size:13.5px; margin-bottom:10px; }
+  .def-box b{ color:var(--ink); }
+  .callout{ border-radius:6px; padding:9px 12px; font-size:13px; margin:8px 0; }
+  .callout.yellow{ background:#FFF6DE; border:1px solid var(--yellow-flag); }
+  .callout.green{ background:#E9F6EE; border:1px solid var(--green-flag); }
+  .callout b{ display:block; margin-bottom:2px; }
+  .examq{ background:var(--ledger-red-deep); color:#fff; font-size:12px; padding:8px 12px; border-radius:6px; margin-top:10px; font-family:'Courier New',monospace; }
+  .examq b{ color:var(--gold-light); }
+  table.data-table{ width:100%; border-collapse:collapse; font-size:12.8px; margin:10px 0; }
+  table.data-table th{ background:var(--ink); color:#fff; padding:6px 8px; text-align:left; }
+  table.data-table td{ padding:6px 8px; border-bottom:1px solid var(--paper-dark); vertical-align:top; }
+  table.data-table tr:nth-child(even){ background:#FAF6EC; }
+  .hub-wrap{ text-align:center; margin:14px 0; }
+  .hub-center{ display:inline-block; background:var(--ledger-red-deep); color:#fff; padding:10px 18px; border-radius:8px; font-weight:700; font-size:13px; margin-bottom:10px; }
+  .spokes{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .spoke{ background:var(--paper-dark); border:1px solid var(--gold); padding:7px 11px; border-radius:6px; font-size:12px; }
+  .dtree{ background:#FAF6EC; border:1px dashed var(--ink-soft); border-radius:8px; padding:12px; font-size:12.8px; margin:10px 0; }
+  .dtree .q{ font-weight:700; color:var(--ink); }
+  .dtree .branch{ margin:6px 0 6px 14px; padding-left:10px; border-left:2px solid var(--gold); }
+  .timeline{ position:relative; margin:16px 0; padding-left:20px; border-left:3px solid var(--gold); }
+  .t-item{ margin-bottom:14px; position:relative; }
+  .t-item::before{ content:""; position:absolute; left:-27px; top:3px; width:10px; height:10px; background:var(--ledger-red); border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px var(--gold); }
+  .t-item .yr{ font-family:'Courier New',monospace; color:var(--ledger-red-deep); font-weight:700; font-size:12.5px; }
+  .t-item p{ margin:2px 0 0; font-size:13px; color:var(--ink-soft); }
+  .comp-chart{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0; }
+  @media(max-width:600px){ .comp-chart{grid-template-columns:1fr;} }
+  .comp-col{ background:#fff; border:1px solid var(--paper-dark); border-radius:8px; padding:10px; }
+  .comp-col h5{ margin:0 0 6px; font-size:12.5px; color:var(--ledger-red-deep); text-align:center; border-bottom:1px solid var(--gold); padding-bottom:4px; }
+  .comp-col ul{ margin:0; padding-left:16px; font-size:12px; color:var(--ink-soft); }
+  .pyramid{ display:flex; flex-direction:column; align-items:center; gap:6px; margin:14px 0; }
+  .pyr-box{ color:#fff; text-align:center; padding:10px; border-radius:6px; font-size:13px; font-weight:700; }
+  .pyr-1{ width:60%; background:var(--ink); } .pyr-2{ width:75%; background:var(--ledger-red-deep); } .pyr-3{ width:90%; background:var(--gold); color:var(--ink); }
+  .fund-flag{ display:inline-block; background:var(--stamp-green); color:#fff; font-size:10px; padding:1px 6px; border-radius:8px; margin-left:6px; vertical-align:middle; }
+  footer{ text-align:center; padding:22px; font-size:12px; color:var(--ink-soft); font-family:'Courier New',monospace; }
+  .toc{ display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; }
+  .toc a{ background:#fff; border:1px solid var(--gold); color:var(--ink); text-decoration:none; font-size:11.5px; padding:5px 9px; border-radius:14px; }
+</style>
+</head>
+<body>
+<div class="rule-margin"></div>
+
+<header class="hero">
+  <div class="eyebrow">Accountancy · Higher Secondary Book · Unit 02</div>
+  <h1>Conceptual Framework of Accounting</h1>
+  <p class="sub">Book-keeping, GAAP, Accounting Standards &amp; IFRS for India Post AAO exam</p>
+  <div class="stamp">EXAM<br>READY<br>UNIT 2</div>
+</header>
+
+<div class="breadcrumb-flow">
+  <b>Chapter:</b> Accountancy Unit 2 <span class="arrow">→</span>
+  <b>Sub-Chapters:</b> 7 (2.1–2.7) <span class="arrow">→</span>
+  <b>Micro Topics:</b> Concepts · Conventions · Standards <span class="arrow">→</span>
+  <b>Nano Topics:</b> 14 Accounting Concepts/Conventions
+</div>
+
+<main>
+
+<h2 class="section-title"><span class="num">★</span> One-Page Revision Sheet</h2>
+<div class="revision-sheet">
+  <div class="rev-grid">
+    <div class="rev-box">
+      <h4>Hierarchy</h4>
+      <ul><li>Accountancy (knowledge) ⊃ Accounting (process) ⊃ Book-keeping (recording)</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>Book-keeping Definitions</h4>
+      <ul><li>Batliboi: "art of recording business dealings"</li><li>Carter: "science and art of recording correctly"</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>3 Fundamental Assumptions</h4>
+      <ul><li>Going Concern · Consistency · Accrual</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>Basic Accounting Equation</h4>
+      <ul><li>Capital + Liabilities = Assets (from Dual Aspect concept)</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>Standards Bodies</h4>
+      <ul><li>India → ICAI / ASB (est. 21 Apr 1977)</li><li>Global → IASB issues IFRS</li><li>Convergence → Ind AS</li></ul>
+    </div>
+    <div class="rev-box">
+      <h4>14 Concepts &amp; Conventions</h4>
+      <ul><li>Entity, Money measurement, Going concern, Cost, Dual aspect, Periodicity, Matching, Realisation, Objective evidence, Accrual, Consistency, Full disclosure, Materiality, Conservatism</li></ul>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="num">§</span> Exam Vault — Sections, Dates, Authorities</h2>
+<div class="vault-grid">
+  <div class="vault-card">
+    <h4>📜 Important Rules</h4>
+    <ul>
+      <li><b>GAAP</b> — Generally Accepted Accounting Principles: universal norms adopted by accountants for uniformity.</li>
+      <li>Accounting principles = <b>Concepts</b> (basic assumptions) + <b>Conventions</b> (practice-based guidelines).</li>
+    </ul>
+  </div>
+  <div class="vault-card">
+    <h4>⚖️ Important Exceptions</h4>
+    <ul>
+      <li><b>Materiality convention</b> is an exception to the <b>Full Disclosure</b> principle — immaterial items need not be disclosed.</li>
+      <li><b>Conservatism</b> restricts realisation concept further: anticipate no income, but provide for all possible losses.</li>
+    </ul>
+  </div>
+  <div class="vault-card">
+    <h4>📅 Important Dates</h4>
+    <ul><li><b>21 April 1977:</b> ICAI Council constituted the Accounting Standards Board (ASB).</li></ul>
+  </div>
+  <div class="vault-card">
+    <h4>🏛️ Important Authorities</h4>
+    <ul>
+      <li><b>ICAI</b> — issues Accounting Standards in India.</li>
+      <li><b>ASB</b> — formulates AS under ICAI Council.</li>
+      <li><b>IASB</b> — International Accounting Standards Board, issues IFRS.</li>
+    </ul>
+  </div>
+  <div class="vault-card">
+    <h4>⏱️ Important Time Limits</h4>
+    <p class="tag-na">No statutory time-limit in this unit — Periodicity concept fixes the reporting period, generally one year.</p>
+  </div>
+  <div class="vault-card">
+    <h4>🚫 Important Penalties</h4>
+    <p class="tag-na">No penalty provision specified in this conceptual unit.</p>
+  </div>
+</div>
+
+<div class="toc">
+  <a href="#s1">2.1 Book-keeping</a><a href="#s2">2.2 BK vs Acc</a><a href="#s3">2.3 Relationship</a>
+  <a href="#s4">2.4 Principles</a><a href="#s5">2.5 AS</a><a href="#s6">2.6 IFRS</a><a href="#s7">2.7 AS in India</a>
+</div>
+
+<h2 class="section-title"><span class="num">02</span> Sub-Chapters — Tap to expand</h2>
+
+<div class="topic-card" id="s1">
+  <button class="topic-head" onclick="toggleSection('b1')">2.1 Book-keeping — An Introduction <span class="plus">+</span></button>
+  <div class="topic-body" id="b1">
+    <div class="def-box"><b>Batliboi:</b> "Book-keeping is an art of recording business dealings in a set of books."<br>
+    <b>Carter:</b> "Book-keeping is the science and art of recording correctly in the books of account all business transactions of money or money's worth."</div>
+    <table class="data-table">
+      <tr><th>Micro Topic</th><th>Key Points</th></tr>
+      <tr><td>Features</td><td>Recording process · monetary transactions only · primary stage · includes journalising &amp; ledger posting</td></tr>
+      <tr><td>Objectives</td><td>Permanent record · ascertain profit/loss · ascertain financial position · know progress · find tax liability · fulfil legal requirements</td></tr>
+      <tr><td>Advantages</td><td>Systematic record · financial info · control · legal evidence · comparison · tax liability</td></tr>
+      <tr><td>Limitations</td><td>Only monetary txns · ignores price-level changes · historical data only</td></tr>
+    </table>
+    <div class="callout yellow">🟡 <b>Conceptual Understanding</b> Book-keeping is <i>routine and clerical</i>; accounting is <i>analytical</i>. Book-keeping feeds accounting, not the other way round.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Define book-keeping as per Carter. State any three objectives of book-keeping. (5 marks)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s2">
+  <button class="topic-head" onclick="toggleSection('b2')">2.2 Book-keeping vs Accounting <span class="plus">+</span></button>
+  <div class="topic-body" id="b2">
+    <table class="data-table">
+      <tr><th>Basis</th><th>Book-keeping</th><th>Accounting</th></tr>
+      <tr><td>Scope</td><td>Recording &amp; classifying</td><td>Recording, classifying, summarising, analysing, interpreting</td></tr>
+      <tr><td>Stage</td><td>Primary stage</td><td>Primary + secondary (analysis &amp; interpretation)</td></tr>
+      <tr><td>Nature of job</td><td>Routine, clerical</td><td>Analytical</td></tr>
+      <tr><td>Knowledge required</td><td>Basic — journalising &amp; posting</td><td>Thorough — principles, procedures, practices</td></tr>
+      <tr><td>Skill required</td><td>Analytical skill not required</td><td>Analytical skill required</td></tr>
+    </table>
+    <div class="examq">📝 <b>Probable Question:</b> Distinguish between book-keeping and accounting on any four bases. (4 marks — very frequently asked)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s3">
+  <button class="topic-head" onclick="toggleSection('b3')">2.3 Relationship: Book-keeping, Accounting, Accountancy <span class="plus">+</span></button>
+  <div class="topic-body" id="b3">
+    <div class="pyramid">
+      <div class="pyr-box pyr-1">Book-keeping (base — recording)</div>
+      <div class="pyr-box pyr-2">Accounting (recording + classifying + analysing + interpreting)</div>
+      <div class="pyr-box pyr-3">Accountancy (the entire systematic knowledge, standards &amp; principles)</div>
+    </div>
+    <div class="def-box">Book-keeping is <b>part of</b> Accounting. Accounting is <b>part of</b> Accountancy. Accountancy = the theory; Accounting = the process; Book-keeping = the primary record.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Explain the relationship among book-keeping, accounting and accountancy. (3 marks)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s4">
+  <button class="topic-head" onclick="toggleSection('b4')">2.4 Accounting Principles — Concepts &amp; Conventions <span class="plus">+</span></button>
+  <div class="topic-body" id="b4">
+    <div class="def-box"><b>GAAP</b> = Generally Accepted Accounting Principles — universal norms giving uniformity &amp; consistency.<br>
+    <b>Concepts</b> = basic assumptions (broad consensus). <b>Conventions</b> = practice/usage-based guidelines.</div>
+    <table class="data-table">
+      <tr><th>#</th><th>Concept/Convention</th><th>Core Idea</th></tr>
+      <tr><td>i</td><td>Business Entity</td><td>Owner &amp; business are separate entities</td></tr>
+      <tr><td>ii</td><td>Money Measurement</td><td>Only monetary transactions recorded</td></tr>
+      <tr><td>iii</td><td>Going Concern <span class="fund-flag">Fundamental</span></td><td>Business continues for foreseeable future</td></tr>
+      <tr><td>iv</td><td>Cost</td><td>Assets recorded at historical/acquisition cost</td></tr>
+      <tr><td>v</td><td>Dual Aspect</td><td>Every transaction has two effects → Capital + Liabilities = Assets</td></tr>
+      <tr><td>vi</td><td>Periodicity</td><td>Accounts closed at end of a period, usually 1 year</td></tr>
+      <tr><td>vii</td><td>Matching</td><td>Match expenses to revenues of the same period</td></tr>
+      <tr><td>viii</td><td>Realisation</td><td>Record value change only when realised</td></tr>
+      <tr><td>ix</td><td>Objective Evidence</td><td>Every entry needs supporting documentary evidence</td></tr>
+      <tr><td>x</td><td>Accrual <span class="fund-flag">Fundamental</span></td><td>Record when transaction occurs, not when cash settles</td></tr>
+      <tr><td>xi</td><td>Consistency <span class="fund-flag">Fundamental</span></td><td>Same accounting policy followed period to period</td></tr>
+      <tr><td>xii</td><td>Full Disclosure</td><td>Accounts must disclose full and fair information</td></tr>
+      <tr><td>xiii</td><td>Materiality</td><td>Only significant items need disclosure (exception to xii)</td></tr>
+      <tr><td>xiv</td><td>Conservatism / Prudence</td><td>Anticipate no income, provide for all possible losses</td></tr>
+    </table>
+    <div class="dtree">
+      <div class="q">Decision Tree: Concept or Convention?</div>
+      <div class="branch">Is it a basic assumption behind the accounting system (i–xi)? → <b>Concept</b></div>
+      <div class="branch">Is it a usage/practice adopted for realistic reporting (xii–xiv)? → <b>Convention</b></div>
+    </div>
+    <div class="callout green">🟢 <b>Quick Revision</b> Fundamental accounting assumptions = <b>Going Concern + Consistency + Accrual</b> (mnemonic: <b>G-C-A</b>). These three, if not disclosed, must be assumed followed.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Name the three fundamental accounting assumptions. Explain matching concept with an example. (5 marks — high repeat rate)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s5">
+  <button class="topic-head" onclick="toggleSection('b5')">2.5 Accounting Standards (AS) <span class="plus">+</span></button>
+  <div class="topic-body" id="b5">
+    <div class="def-box"><b>Kohler:</b> "Accounting standards are codes of conduct imposed by customs, law or professional bodies for the benefit of public accountants and accountants generally."</div>
+    <div class="hub-wrap">
+      <div class="hub-center">Need for Accounting Standards</div>
+      <div class="spokes">
+        <div class="spoke">Better understanding of statements</div><div class="spoke">Uniform procedures</div>
+        <div class="spoke">Meaningful comparison</div><div class="spoke">Enhance reliability</div>
+        <div class="spoke">Meet legal requirements</div>
+      </div>
+    </div>
+    <div class="examq">📝 <b>Probable Question:</b> Why are Accounting Standards needed? State any three reasons. (3 marks)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s6">
+  <button class="topic-head" onclick="toggleSection('b6')">2.6 IFRS — International Financial Reporting Standards <span class="plus">+</span></button>
+  <div class="topic-body" id="b6">
+    <div class="def-box">IFRS is issued by the <b>IASB</b> (International Accounting Standards Board) — a set of international standards on how transactions/events should be reported, aimed at worldwide acceptability and improved global financial reporting.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Who issues IFRS and what is its purpose? (2 marks)</div>
+  </div>
+</div>
+
+<div class="topic-card" id="s7">
+  <button class="topic-head" onclick="toggleSection('b7')">2.7 Accounting Standards in India <span class="plus">+</span></button>
+  <div class="topic-body" id="b7">
+    <div class="timeline">
+      <div class="t-item"><div class="yr">21 April 1977</div><p>ICAI Council constitutes the Accounting Standards Board (ASB), recognising the need for AS in India.</p></div>
+      <div class="t-item"><div class="yr">Ongoing / present</div><p>Globalisation drives convergence of Indian AS with IFRS → results in <b>Ind AS</b>.</p></div>
+      <div class="t-item"><div class="yr">Current practice</div><p>Big companies follow Ind AS; smaller units may continue with AS. Full migration to Ind AS expected in future.</p></div>
+    </div>
+    <div class="def-box"><b>Ind AS</b> = International Accounting Standards modified to suit Indian accounting practices, customs &amp; traditions.</div>
+    <div class="callout yellow">🟡 <b>Conceptual Understanding</b> ASB formulates AS considering Indian law, custom, business environment AND the International Accounting Standards — it is not a blind copy of IFRS.</div>
+    <div class="examq">📝 <b>Probable Question:</b> Who issues Accounting Standards in India? When was ASB constituted? What is Ind AS? (5 marks)</div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="num">✓</span> Points to Remember (from textbook)</h2>
+<div class="vault-card">
+  <ul>
+    <li>Established accounting principles are applied in preparing accounting records and financial statements.</li>
+    <li>Accounting Standards ensure uniformity in accounting methods and practices.</li>
+  </ul>
+</div>
+
+</main>
+
+<footer>UNIT 2 OF 14 · ACCOUNTANCY FOR AAO EXAM · Source: TN HSC First Year Accountancy Textbook</footer>
+
+<script>
+function toggleSection(id){
+  var el = document.getElementById(id);
+  var btn = el.previousElementSibling;
+  var plus = btn.querySelector('.plus');
+  if(el.classList.contains('open')){ el.classList.remove('open'); plus.textContent = '+'; }
+  else { el.classList.add('open'); plus.textContent = '−'; }
+}
+</script>
+</body>
+</html>
