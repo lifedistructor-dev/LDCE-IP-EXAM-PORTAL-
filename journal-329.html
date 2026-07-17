@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5 — Journal | 32 Solved Questions | AAO Exam</title>
+<style>
+:root{
+  --red:#C8102E; --red-dark:#9E0B22; --navy:#00274D; --navy-2:#003E7E; --gold:#FFB81C;
+  --cream:#FFF8ED; --paper:#FFFFFF; --ink:#1A1A1A; --muted:#5B5B5B; --line:#EAD9B8; --green:#1E8A4C;
+  --shadow:0 6px 18px rgba(0,39,77,0.12);
+}
+[data-theme="dark"]{ --cream:#0F1620; --paper:#161F2C; --ink:#F2EFE6; --muted:#B7BFC9; --line:#2A3644; --shadow:0 6px 18px rgba(0,0,0,0.45); }
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--cream); color:var(--ink); line-height:1.5; padding-bottom:60px; transition:background .3s,color .3s;}
+.wrap{max-width:760px; margin:0 auto; padding:0 12px;}
+header.hero{background:linear-gradient(135deg,var(--navy) 0%, var(--navy-2) 55%, var(--red) 130%); color:#fff; padding:24px 14px 30px; position:relative; overflow:hidden; border-bottom:6px solid var(--gold);}
+header.hero::before{content:""; position:absolute; top:-40px; right:-40px; width:170px; height:170px; border-radius:50%; background:rgba(255,184,28,0.15);}
+.eyebrow{display:inline-block; background:var(--gold); color:var(--navy); font-weight:800; font-size:11px; letter-spacing:1px; padding:4px 10px; border-radius:20px; text-transform:uppercase; margin-bottom:10px;}
+h1{font-size:21px; font-weight:800; margin-bottom:6px;}
+.hero-sub{font-size:13px; color:#EFE6D3; max-width:560px;}
+.topbtns{position:absolute; top:14px; right:12px; display:flex; gap:8px; z-index:2;}
+.icon-btn{width:34px;height:34px;border-radius:50%; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.35); color:#fff; font-size:15px; display:flex;align-items:center;justify-content:center; cursor:pointer;}
+.icon-btn:active{transform:scale(0.92);}
+.formula-strip{display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:12px; margin-top:18px; box-shadow:var(--shadow); font-weight:800; font-size:13px;}
+.formula-strip .pill{padding:5px 10px; border-radius:9px; color:#fff; font-size:12px;}
+.pill.dr{background:var(--navy);} .pill.cr{background:var(--red);}
+.jump{display:flex; gap:6px; flex-wrap:wrap; margin-top:14px; max-height:110px; overflow-y:auto; padding-bottom:4px;}
+.jump a{font-size:10.5px; font-weight:700; background:var(--paper); border:1px solid var(--line); color:var(--navy); padding:4px 8px; border-radius:7px; text-decoration:none;}
+[data-theme="dark"] .jump a{color:var(--gold);}
+.sec-label{display:flex; align-items:center; gap:8px; margin:24px 0 10px; font-weight:800; font-size:14.5px; color:var(--navy);}
+[data-theme="dark"] .sec-label{color:var(--gold);}
+.sec-label .dot{width:10px;height:10px;border-radius:50%; background:var(--red);}
+.sec-label .line{flex:1; height:2px; background:var(--line);}
+.qcard{background:var(--paper); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); overflow:hidden; margin-bottom:12px; scroll-margin-top:12px;}
+.qhead{display:flex; align-items:center; gap:10px; padding:12px 14px; cursor:pointer; user-select:none;}
+.qnum{min-width:40px;height:40px;border-radius:10px; background:var(--navy); color:#fff; display:flex;align-items:center;justify-content:center; font-weight:800; font-size:12px; flex-shrink:0; padding:0 4px;}
+.qhead .txt{flex:1;}
+.qhead .txt .lbl{font-size:10.5px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.4px;}
+.qhead .txt .ttl{font-size:13px; font-weight:800; color:var(--ink);}
+.chev{font-size:13px; color:var(--muted); transition:transform .25s; flex-shrink:0;}
+.qcard.open .chev{transform:rotate(180deg);}
+.qbody{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.qbody-inner{padding:0 14px 16px;}
+.given{background:var(--cream); border-left:3px solid var(--gold); border-radius:8px; padding:10px 12px; font-size:12.3px; margin-bottom:12px;}
+.given div{margin-bottom:3px;}
+.given .amt{font-weight:800; color:var(--red);}
+.jsec-title{font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:.4px; margin:10px 0 4px; display:flex; align-items:center; gap:6px;}
+[data-theme="dark"] .jsec-title{color:var(--gold);}
+.jsec-title .n{background:var(--navy); color:#fff; border-radius:5px; font-size:10px; padding:1px 6px;}
+.entry{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:8px 10px; margin-bottom:8px;}
+.entry-date{font-size:10px; font-weight:800; color:var(--red-dark); margin-bottom:4px; text-transform:uppercase;}
+.jline{display:flex; align-items:baseline; gap:6px; font-size:12px; padding:1.5px 0;}
+.jline .jacc{flex:1; font-weight:600;}
+.jline.sub .jacc{padding-left:16px; font-weight:500;}
+.jline .jdr{width:22px; text-align:right; color:var(--muted); font-size:9.5px; flex-shrink:0;}
+.jline .jamt-d{width:62px; text-align:right; font-weight:800; color:var(--navy); flex-shrink:0;}
+.jline .jamt-c{width:62px; text-align:right; font-weight:800; color:var(--red-dark); flex-shrink:0;}
+[data-theme="dark"] .jline .jamt-d{color:#8fb8e8;}
+.jnarr{font-size:10.3px; font-style:italic; color:var(--muted); margin:2px 0 2px 16px;}
+.jcolhead{display:flex; gap:6px; font-size:8.5px; font-weight:800; color:var(--muted); text-transform:uppercase; border-bottom:1px solid var(--line); padding-bottom:3px; margin-bottom:4px;}
+.jcolhead .jacc{flex:1;}
+.jcolhead .jdr{width:22px;} .jcolhead .jamt-d{width:62px; text-align:right;} .jcolhead .jamt-c{width:62px; text-align:right;}
+.wnote{background:var(--cream); border-left:3px solid var(--red); border-radius:8px; padding:8px 10px; font-size:11.5px; margin-top:8px;}
+.wnote b{color:var(--navy);}
+[data-theme="dark"] .wnote b{color:var(--gold);}
+.bsheet{overflow-x:auto; margin-top:6px;}
+table.bs{border-collapse:collapse; width:100%; min-width:300px; font-size:11px; border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+table.bs th{background:var(--navy); color:#fff; padding:5px; font-size:10px;}
+table.bs td{padding:5px; border-bottom:1px solid var(--line);}
+table.bs tr.tot td{font-weight:800; background:var(--cream);}
+.tier{font-size:9px; font-weight:800; padding:2px 6px; border-radius:20px; margin-left:5px; white-space:nowrap;}
+.tier.high{background:#FDEAEA;color:var(--red-dark);}
+.tier.gst{background:#E4F5EA;color:var(--green);}
+[data-theme="dark"] .tier.high{background:#3A1414;} [data-theme="dark"] .tier.gst{background:#123320;}
+.mnemonic{background:linear-gradient(135deg,var(--gold),#FFD874); color:var(--navy); border-radius:14px; padding:16px; margin-top:22px; box-shadow:var(--shadow);}
+.mnemonic h3{font-size:14px; margin-bottom:8px; font-weight:900;}
+.mnemonic p{font-size:12px; margin-bottom:6px;}
+.actions{display:flex; gap:10px; margin-top:20px;}
+.abtn{flex:1; padding:12px; border-radius:12px; border:none; font-weight:800; font-size:13px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;}
+.abtn.expand{background:var(--navy); color:#fff;} .abtn.top{background:var(--red); color:#fff;}
+footer{text-align:center; font-size:11px; color:var(--muted); margin-top:24px;}
+</style>
+</head>
+<body data-theme="light">
+<header class="hero">
+  <div class="topbtns"><button class="icon-btn" id="darkBtn" title="Dark mode">🌙</button></div>
+  <div class="wrap">
+    <span class="eyebrow">Chapter 5 · Journal</span>
+    <h1>32 Solved Questions — Journal Entries</h1>
+    <p class="hero-sub">Full worked journal entries with narrations, GST splits and working notes. Built for India Post AAO Exam revision.</p>
+  </div>
+</header>
+<div class="wrap">
+  <div class="formula-strip"><span class="pill dr">Debit what comes in / Expenses &amp; Losses</span><span class="pill cr">Credit what goes out / Incomes &amp; Gains</span></div>
+  <div class="sec-label"><span class="dot"></span>Jump to a Question<span class="line"></span></div>
+  <div class="jump" id="jumpNav"></div>
+</div>
+<!--QUESTIONS_START-->
+<div class="wrap"><div id="qc-1">
+
+<div class="qcard" id="q1">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q1</div>
+    <div class="txt"><div class="lbl">Journal — Ramesh, April 2019</div><div class="ttl">12 transactions: capital, bank, purchases, sales, discount, expenses</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Apr 1 Ramesh started business with cash <span class="amt">₹1,00,000</span></div>
+      <div>Apr 2 Paid into bank <span class="amt">₹20,000</span></div>
+      <div>Apr 3 Bought goods for cash <span class="amt">₹50,000</span></div>
+      <div>Apr 4 Drew cash from bank for office use <span class="amt">₹10,000</span></div>
+      <div>Apr 13 Sold goods to Krishna <span class="amt">₹15,000</span></div>
+      <div>Apr 20 Bought goods from Shyam <span class="amt">₹22,500</span></div>
+      <div>Apr 22 Krishna returned goods <span class="amt">₹2,000</span></div>
+      <div>Apr 24 Received from Krishna ₹12,500, allowed him discount <span class="amt">₹500</span></div>
+      <div>Apr 28 Paid cash to Shyam ₹21,500, discount received <span class="amt">₹1,000</span></div>
+      <div>Apr 30 Cash sales for the month <span class="amt">₹80,000</span></div>
+      <div>Apr 30 Paid rent <span class="amt">₹5,000</span>; Paid salary <span class="amt">₹10,000</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">12 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Apr 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,00,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">1,00,000</span></div>
+      <div class="jnarr">Started business with cash</div></div>
+    <div class="entry"><div class="entry-date">Apr 02</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Paid into bank</div></div>
+    <div class="entry"><div class="entry-date">Apr 03</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Apr 04</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Drew from bank for office use</div></div>
+    <div class="entry"><div class="entry-date">Apr 13</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">15,000</span></div>
+      <div class="jnarr">Goods sold to Krishna for cash</div></div>
+    <div class="entry"><div class="entry-date">Apr 20</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">22,500</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">22,500</span></div>
+      <div class="jnarr">Goods purchased for cash</div></div>
+    <div class="entry"><div class="entry-date">Apr 22</div>
+      <div class="jline"><span class="jacc">Sales Return A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Goods sold to Krishna returned</div></div>
+    <div class="entry"><div class="entry-date">Apr 24</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,500</span><span class="jamt-c"></span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">500</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Krishna A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">13,000</span></div>
+      <div class="jnarr">Received from Krishna</div></div>
+    <div class="entry"><div class="entry-date">Apr 28</div>
+      <div class="jline"><span class="jacc">Shyam A/c</span><span class="jdr">Dr.</span><span class="jamt-d">22,500</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">21,500</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Paid to Shyam</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">80,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">80,000</span></div>
+      <div class="jnarr">Cash sales for the month of April</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Paid rent</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jdr"></span><span class="jamt-d"></span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Paid salary</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-2">
+
+<div class="qcard" id="q2">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q2</div>
+    <div class="txt"><div class="lbl">Journal — Mr. Rahul, Jan 2019</div><div class="ttl">19 transactions: bank, furniture, printers advance, discount, drawings</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Jan 1 Rahul started business with cash <span class="amt">₹1,00,000</span></div>
+      <div>Jan 2 Paid into bank <span class="amt">₹60,000</span></div>
+      <div>Jan 3 Bought goods from M/s. Singh &amp; Co. ₹20,000; paid cartage <span class="amt">₹300</span></div>
+      <div>Jan 4 Furniture ₹2,000; advance for HP Printers (list ₹15,000) ₹5,000; calculator ₹1,000; computer by cheque <span class="amt">₹13,000</span></div>
+      <div>Jan 6 Paid postage <span class="amt">₹150</span></div>
+      <div>Jan 8 Sold goods for cash <span class="amt">₹4,000</span></div>
+      <div>Jan 9 Sold goods to M/s. Sharda &amp; Co. ₹10,000; paid cartage <span class="amt">₹200</span></div>
+      <div>Jan 15 Paid to M/s Singh &amp; Co. on account <span class="amt">₹17,500</span></div>
+      <div>Jan 25 Sold goods to M/s. Ray &amp; Co. <span class="amt">₹5,600</span></div>
+      <div>Jan 27 Received cheque from M/s. Sharda &amp; Co. in full settlement <span class="amt">₹9,750</span></div>
+      <div>Jan 31 Electricity ₹1,000; Salary ₹1,500; Rent (by cheque, half building for residential use) ₹5,000; Drawings <span class="amt">₹3,500</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">14 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jan 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,00,000</span><span class="jamt-c"></span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">1,00,000</span></div>
+      <div class="jnarr">Business started with cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 02</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">60,000</span></div>
+      <div class="jnarr">Cash deposited into bank</div></div>
+    <div class="entry"><div class="entry-date">Jan 03</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Goods purchased for cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 03</div>
+      <div class="jline"><span class="jacc">Cartage A/c</span><span class="jdr">Dr.</span><span class="jamt-d">300</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">300</span></div>
+      <div class="jnarr">Cartage paid</div></div>
+    <div class="entry"><div class="entry-date">Jan 04</div>
+      <div class="jline"><span class="jacc">Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Furniture purchased by cheque</div></div>
+    <div class="entry"><div class="entry-date">Jan 04</div>
+      <div class="jline"><span class="jacc">HP Printers A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Advance paid for placing an order for printer</div></div>
+    <div class="entry"><div class="entry-date">Jan 04</div>
+      <div class="jline"><span class="jacc">Office Equipments A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Calculator purchased by cheque</div></div>
+    <div class="entry"><div class="entry-date">Jan 04</div>
+      <div class="jline"><span class="jacc">Computer A/c</span><span class="jamt-d">13,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">13,000</span></div>
+      <div class="jnarr">Computer purchased by cheque</div></div>
+    <div class="entry"><div class="entry-date">Jan 06</div>
+      <div class="jline"><span class="jacc">Postage A/c</span><span class="jdr">Dr.</span><span class="jamt-d">150</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">150</span></div>
+      <div class="jnarr">Postage paid</div></div>
+    <div class="entry"><div class="entry-date">Jan 08</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">4,000</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 09</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Goods sold <span class="wnote-inline">(Note: source table shows this as a cash receipt entry against Sharda &amp; Co. sale)</span></div></div>
+    <div class="entry"><div class="entry-date">Jan 09</div>
+      <div class="jline"><span class="jacc">Cartage A/c</span><span class="jdr">Dr.</span><span class="jamt-d">200</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">200</span></div>
+      <div class="jnarr">Cartage paid</div></div>
+    <div class="entry"><div class="entry-date">Jan 15</div>
+      <div class="jline"><span class="jacc">M/s Singh &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">17,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">17,500</span></div>
+      <div class="jnarr">Payment made</div></div>
+    <div class="entry"><div class="entry-date">Jan 25</div>
+      <div class="jline"><span class="jacc">M/s Ray &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,600</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">5,600</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 27</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">9,750</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">250</span></div>
+      <div class="jline sub"><span class="jacc">To M/s Sharda &amp; Co. A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Payment received</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Electricity Charges A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Electricity charges paid</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">1,500</span></div>
+      <div class="jnarr">Salary paid</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Rent paid (half building used by proprietor for residential use, so half is Drawings)</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">3,500</span></div>
+      <div class="jnarr">Cash withdrawn for personal use</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-3">
+
+<div class="qcard" id="q3">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q3</div>
+    <div class="txt"><div class="lbl">Journal — M/s. R.K. &amp; Co.</div><div class="ttl">12 transactions: trade discount, cost-plus pricing, sales returns <span class="tier high">Complex</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Purchased goods list price ₹20,000 from Vishal at 20% trade discount, by cheque</div>
+      <div>(ii) Purchased goods list price ₹20,000 from Naman at 15% trade discount, for cash</div>
+      <div>(iii) Purchased goods list price ₹30,000 from Amrit at <span class="amt">20% trade discount</span> (credit)</div>
+      <div>(iv) Purchased goods list price ₹40,000 for ₹35,000 for cash</div>
+      <div>(v) Goods returned, list price ₹10,000, purchased from Amrit</div>
+      <div>(vi) Sold goods to Parul list price ₹40,000 at 10% trade discount, by cheque</div>
+      <div>(vii) Sold goods to Aman list price ₹30,000 at 10% trade discount, for cash</div>
+      <div>(viii) Sold goods to Pawan list price ₹20,000 at <span class="amt">10% trade discount</span> (credit)</div>
+      <div>(ix) Sold goods to Yamini list price ₹25,000 for <span class="amt">₹23,000</span> (credit)</div>
+      <div>(x) Sold goods costing ₹10,000 at cost plus 20% less 10% trade discount to Bhupesh</div>
+      <div>(xi) Sold goods purchased at list price ₹50,000 less 15% trade discount, sold at a profit of 25% less 10% trade discount, by cheque</div>
+      <div>(xii) Aman returned goods of list price ₹10,000 sold to him at 10% trade discount</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">12 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Purchase A/c</span><span class="jdr">Dr.</span><span class="jamt-d">16,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">16,000</span></div>
+      <div class="jnarr">Goods purchased from Vishal by cheque</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Purchase A/c</span><span class="jdr">Dr.</span><span class="jamt-d">17,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">17,000</span></div>
+      <div class="jnarr">Goods purchased from Naman for cash</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Purchase A/c</span><span class="jdr">Dr.</span><span class="jamt-d">24,000</span></div>
+      <div class="jline sub"><span class="jacc">To Amrit</span><span class="jamt-c">24,000</span></div>
+      <div class="jnarr">Goods purchased from Amrit on credit</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Purchase A/c</span><span class="jdr">Dr.</span><span class="jamt-d">35,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">35,000</span></div>
+      <div class="jnarr">Goods purchased for cash</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Amrit</span><span class="jdr">Dr.</span><span class="jamt-d">8,000</span></div>
+      <div class="jline sub"><span class="jacc">To Purchase Returns A/c</span><span class="jamt-c">8,000</span></div>
+      <div class="jnarr">Goods returned by Amrit</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">36,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">36,000</span></div>
+      <div class="jnarr">Goods sold to Parul by cheque</div></div>
+    <div class="entry"><div class="entry-date">(vii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">27,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">27,000</span></div>
+      <div class="jnarr">Goods sold to Aman for cash</div></div>
+    <div class="entry"><div class="entry-date">(viii)</div>
+      <div class="jline"><span class="jacc">Pawan</span><span class="jdr">Dr.</span><span class="jamt-d">18,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">18,000</span></div>
+      <div class="jnarr">Goods sold to Pawan on credit</div></div>
+    <div class="entry"><div class="entry-date">(ix)</div>
+      <div class="jline"><span class="jacc">Yamini</span><span class="jdr">Dr.</span><span class="jamt-d">23,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">23,000</span></div>
+      <div class="jnarr">Goods sold to Yamini on credit</div></div>
+    <div class="entry"><div class="entry-date">(x)</div>
+      <div class="jline"><span class="jacc">Bhupesh</span><span class="jdr">Dr.</span><span class="jamt-d">10,800</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,800</span></div>
+      <div class="jnarr">Goods sold to Bhupesh on credit</div></div>
+    <div class="entry"><div class="entry-date">(xi)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">47,812.50</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">47,812.50</span></div>
+      <div class="jnarr">Goods sold against cheque</div></div>
+    <div class="entry"><div class="entry-date">(xii)</div>
+      <div class="jline"><span class="jacc">Sales Returns A/c</span><span class="jdr">Dr.</span><span class="jamt-d">9,000</span></div>
+      <div class="jline sub"><span class="jacc">To Aman</span><span class="jamt-c">9,000</span></div>
+      <div class="jnarr">Goods returned by Aman</div></div>
+    <div class="wnote">
+      <b>WN1 — Sales price (x):</b> (10,000 + 20% = 12,000 − 10%) = Rs 10,800<br>
+      <b>WN2 — Purchase &amp; Sale price (xi):</b> Purchase Price = (50,000 − 15%) = Rs 42,500. Sales Price = (42,500 + 25% = 53,125 − 10%) = Rs 47,812.5
+    </div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-4">
+
+<div class="qcard" id="q4">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q4</div>
+    <div class="txt"><div class="lbl">Journal — Bhushan Agencies</div><div class="ttl">11 transactions: discount allowed/received, GST-free cash/cheque settlements</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Received from Bharat cash ₹20,000, allowed discount <span class="amt">₹500</span></div>
+      <div>(ii) Received from Vikas ₹35,000 by cheque, allowed discount <span class="amt">₹750</span></div>
+      <div>(iii) Received from Akhil ₹38,000 in settlement of dues of <span class="amt">₹40,000</span> in cash</div>
+      <div>(iv) Received from Amrit ₹50,000 by cheque on account against dues of <span class="amt">₹60,000</span></div>
+      <div>(v) Paid cash ₹40,000 to Suresh, availed discount of <span class="amt">2%</span></div>
+      <div>(vi) Paid by cheque ₹25,000 to Mehar, settled dues of <span class="amt">₹26,000</span></div>
+      <div>(vii) Paid ₹25,000 to Yogesh by cheque on account</div>
+      <div>(viii) Purchased goods costing ₹1,00,000 against cheque, discount of <span class="amt">3%</span></div>
+      <div>(ix) Purchased goods costing ₹60,000 from Akash &amp; Co., paid 50% immediately availing <span class="amt">3% discount</span></div>
+      <div>(x) Sold goods of ₹30,000 against cheque allowing <span class="amt">2% discount</span></div>
+      <div>(xi) Sold goods of ₹60,000 to Vimal, received 50% allowing <span class="amt">2% discount</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">11 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">500</span></div>
+      <div class="jline sub"><span class="jacc">To Bharat</span><span class="jamt-c">20,500</span></div>
+      <div class="jnarr">Payment received from Bharat</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">35,000</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">750</span></div>
+      <div class="jline sub"><span class="jacc">To Vikas</span><span class="jamt-c">35,750</span></div>
+      <div class="jnarr">Payment received from Vikas</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">38,000</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Akhil</span><span class="jamt-c">40,000</span></div>
+      <div class="jnarr">Payment received from Akhil</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Amrit</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Payment received from Amrit</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Suresh</span><span class="jdr">Dr.</span><span class="jamt-d">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">39,200</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">800</span></div>
+      <div class="jnarr">Payment made to Suresh</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Mehar</span><span class="jdr">Dr.</span><span class="jamt-d">26,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Payment made to Mehar</div></div>
+    <div class="entry"><div class="entry-date">(vii)</div>
+      <div class="jline"><span class="jacc">Yogesh</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jnarr">Payment made to Yogesh</div></div>
+    <div class="entry"><div class="entry-date">(viii)</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">97,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">97,000</span></div>
+      <div class="jnarr">Goods bought against cheque</div></div>
+    <div class="entry"><div class="entry-date">(ix)</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Akash &amp; Co.</span><span class="jamt-c">30,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">29,100</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">900</span></div>
+      <div class="jnarr">Goods bought from Akash &amp; Co.</div></div>
+    <div class="entry"><div class="entry-date">(x)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">29,400</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">29,400</span></div>
+      <div class="jnarr">Goods sold against cheque</div></div>
+    <div class="entry"><div class="entry-date">(xi)</div>
+      <div class="jline"><span class="jacc">Vimal</span><span class="jdr">Dr.</span><span class="jamt-d">30,000</span></div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">29,400</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">600</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">60,000</span></div>
+      <div class="jnarr">Goods sold to Vimal</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q5">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q5</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Insolvency, bad debts recovered, outstanding rent/salary, advance order</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Shyam became insolvent — first &amp; final compensation of 75 paise/rupee received from Official Receiver; he owed <span class="amt">₹10,000</span></div>
+      <div>(ii) Received cash for bad debts written off last year <span class="amt">₹5,000</span></div>
+      <div>(iii) Rent due to landlord <span class="amt">₹8,000</span></div>
+      <div>(iv) Salaries due to clerks <span class="amt">₹10,000</span></div>
+      <div>(v) Placed order with Rakesh Mohan for goods of list price ₹1,00,000; Raman paid <span class="amt">10% advance by cheque</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">5 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">7,500</span></div>
+      <div class="jline"><span class="jacc">Bad Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline sub"><span class="jacc">To Shyam's A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Insolvency of Shyam with 75 paise in a rupee recoverable</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bad Debts Recovered A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Amount written off as bad debts recovered</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,000</span></div>
+      <div class="jline sub"><span class="jacc">To Outstanding Rent A/c</span><span class="jamt-c">8,000</span></div>
+      <div class="jnarr">Rent due to landlord</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Outstanding Salary A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Salary due to clerk</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Advance to Rakesh Mohan A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Advance paid to Rakesh Mohan for a future order</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q6">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q6</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Charity, part-cheque/credit sale, full settlement, insolvency dividend, interest on drawings</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Goods costing ₹500 given as charity</div>
+      <div>(ii) Sold goods to Mayank of ₹1,00,000, payable 25% by cheque at sale, balance after <span class="amt">30 days</span></div>
+      <div>(iii) Received ₹975 from Harikrishna in full settlement of account of <span class="amt">₹1,000</span></div>
+      <div>(iv) Received first &amp; final dividend of 60 paise/rupee from Official Receiver of Rajan, who owed <span class="amt">₹1,000</span></div>
+      <div>(v) Charge interest on Drawings <span class="amt">₹1,500</span></div>
+      <div>(vi) Sold goods costing ₹40,000 to Anil for cash at 25% profit on cost less 20% trade discount; paid cartage ₹100 not chargeable to customer</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">7 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Charity A/c</span><span class="jdr">Dr.</span><span class="jamt-d">500</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">500</span></div>
+      <div class="jnarr">Goods given as charity</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline"><span class="jacc">Mayank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">75,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">1,00,000</span></div>
+      <div class="jnarr">Goods sold partly through cheque and partly through credit</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">975</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25</span></div>
+      <div class="jline sub"><span class="jacc">To Harikrishna A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Cash received from Harikrishna in full and final settlement</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">600</span></div>
+      <div class="jline"><span class="jacc">Bad Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">400</span></div>
+      <div class="jline sub"><span class="jacc">To Rajan A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">First and final dividend received from Rajan in full settlement of his debt</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,500</span></div>
+      <div class="jline sub"><span class="jacc">To Interest on Drawings A/c</span><span class="jamt-c">1,500</span></div>
+      <div class="jnarr">Interest on drawings charged</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">40,000</span></div>
+      <div class="jnarr">Goods sold to Anil at 25% profit less 20% trade discount</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Cartage A/c</span><span class="jdr">Dr.</span><span class="jamt-d">100</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">100</span></div>
+      <div class="jnarr">Cartage paid</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-5">
+
+<div class="qcard" id="q7">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q7</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Insolvency, bad debts recovered, rent/salary due, depreciation, income tax, commission advance</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(a) Shyam insolvent — first &amp; final compensation of 75 paise/rupee received; owed debt of <span class="amt">₹50,000</span></div>
+      <div>(b) Received cash for bad debt written off last year <span class="amt">₹25,000</span></div>
+      <div>(c) Rent due to landlord <span class="amt">₹40,000</span></div>
+      <div>(d) Depreciation on office furniture <span class="amt">₹5,000</span></div>
+      <div>(e) Salaries due to staff <span class="amt">₹50,000</span></div>
+      <div>(f) Paid income tax <span class="amt">₹1,50,000</span></div>
+      <div>(g) Received commission ₹25,000, half of which is <span class="amt">in advance</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">7 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(a)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">37,500</span></div>
+      <div class="jline"><span class="jacc">Bad-Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,500</span></div>
+      <div class="jline sub"><span class="jacc">To Shyam A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">75 paise in a rupee received from Shyam</div></div>
+    <div class="entry"><div class="entry-date">(b)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bad-Debts Recovered A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jnarr">Received cash against debts written off as bad earlier</div></div>
+    <div class="entry"><div class="entry-date">(c)</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Rent Outstanding A/c</span><span class="jamt-c">40,000</span></div>
+      <div class="jnarr">Rent due</div></div>
+    <div class="entry"><div class="entry-date">(d)</div>
+      <div class="jline"><span class="jacc">Depreciation A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Office Furniture A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Depreciation on office furniture</div></div>
+    <div class="entry"><div class="entry-date">(e)</div>
+      <div class="jline"><span class="jacc">Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Salary Outstanding A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Salary due</div></div>
+    <div class="entry"><div class="entry-date">(f)</div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">1,50,000</span></div>
+      <div class="jnarr">Paid income tax</div></div>
+    <div class="entry"><div class="entry-date">(g)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Commission A/c</span><span class="jamt-c">12,500</span></div>
+      <div class="jline sub"><span class="jacc">To Commission Received in Advance A/c</span><span class="jamt-c">12,500</span></div>
+      <div class="jnarr">Commission received, half of which is advance</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q8">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q8</div>
+    <div class="txt"><div class="lbl">Journal — Singh Enterprises, Delhi</div><div class="ttl">10 transactions: capital, bank deposit, credit sale, furniture, rent, salary</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>June 1 Started business with cash <span class="amt">₹50,000</span></div>
+      <div>June 2 Deposited cheque from Savings A/c in firm's a/c <span class="amt">₹2,00,000</span></div>
+      <div>June 3 Received cash from Ram <span class="amt">₹50,000</span></div>
+      <div>June 4 Purchased goods for cash <span class="amt">₹15,000</span></div>
+      <div>June 11 Sold goods to M/s. Hari Sales, Delhi <span class="amt">₹12,000</span></div>
+      <div>June 13 Paid to Ramavtar <span class="amt">₹40,000</span></div>
+      <div>June 17 Received from M/s. Hari Sales <span class="amt">₹10,000</span></div>
+      <div>June 20 Bought furniture from S.R. Furnishers against cash <span class="amt">₹22,400</span></div>
+      <div>June 27 Paid rent <span class="amt">₹28,000</span>; June 30 Paid salary <span class="amt">₹50,000</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">9 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jun 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Started business with cash</div></div>
+    <div class="entry"><div class="entry-date">Jun 02</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,00,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">2,00,000</span></div>
+      <div class="jnarr">Cheque from Savings A/c to Firm's A/c</div></div>
+    <div class="entry"><div class="entry-date">Jun 03</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Ram's A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Received cash</div></div>
+    <div class="entry"><div class="entry-date">Jun 04</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Jun 11</div>
+      <div class="jline"><span class="jacc">M/s Hari A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">12,000</span></div>
+      <div class="jnarr">Goods sold on credit</div></div>
+    <div class="entry"><div class="entry-date">Jun 13</div>
+      <div class="jline"><span class="jacc">Ramavtar's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">40,000</span></div>
+      <div class="jnarr">Paid cash to Ramavtar</div></div>
+    <div class="entry"><div class="entry-date">Jun 17</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To M/s Hari A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Received cash from M/s Hari A/c</div></div>
+    <div class="entry"><div class="entry-date">Jun 20</div>
+      <div class="jline"><span class="jacc">Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Bought furniture for cash <span class="tier high">as per solution table</span></div></div>
+    <div class="entry"><div class="entry-date">Jun 27</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">28,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">28,000</span></div>
+      <div class="jnarr">Paid rent</div></div>
+    <div class="entry"><div class="entry-date">Jun 30</div>
+      <div class="jline"><span class="jacc">Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Paid salary</div></div>
+    <div class="wnote">Given transaction amount for furniture was ₹22,400; the journal solution as printed in the source records ₹20,000.</div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q9">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q9</div>
+    <div class="txt"><div class="lbl">Journal — Rakesh Agencies, Delhi</div><div class="ttl">Bank a/c, credit sale/purchase, sales &amp; purchase returns</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Jan 1 Rakesh commenced business with cash <span class="amt">₹50,000</span></div>
+      <div>Jan 2 Purchased goods for cash <span class="amt">₹10,000</span></div>
+      <div>Jan 5 Purchased goods from Mohan, Delhi <span class="amt">₹6,000</span></div>
+      <div>Jan 7 Opened bank account with Bank of India <span class="amt">₹10,000</span></div>
+      <div>Jan 10 Purchased furniture for office <span class="amt">₹2,000</span></div>
+      <div>Jan 15 Sold goods for cash <span class="amt">₹8,000</span></div>
+      <div>Jan 20 Sold goods to Ram, Delhi <span class="amt">₹5,000</span></div>
+      <div>Jan 25 Cash sales <span class="amt">₹3,500</span></div>
+      <div>Jan 27 Paid to Mohan on account <span class="amt">₹3,000</span></div>
+      <div>Jan 28 Ram returns goods costing <span class="amt">₹500</span></div>
+      <div>Jan 31 Paid salaries <span class="amt">₹9,000</span></div>
+      <div>Jan 31 Rejected and returned 10% of goods supplied by Mohan</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">11 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jan 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Started business with cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 02</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Jan 05</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Mohan A/c</span><span class="jamt-c">6,000</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Jan 07</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Opened Bank A/c</div></div>
+    <div class="entry"><div class="entry-date">Jan 10</div>
+      <div class="jline"><span class="jacc">Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Furniture purchased</div></div>
+    <div class="entry"><div class="entry-date">Jan 15</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">8,000</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 20</div>
+      <div class="jline"><span class="jacc">Ram A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 25</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,500</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">3,500</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 27</div>
+      <div class="jline"><span class="jacc">Mohan's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">3,000</span></div>
+      <div class="jnarr">Paid to Mohan on account</div></div>
+    <div class="entry"><div class="entry-date">Jan 28</div>
+      <div class="jline"><span class="jacc">Sales Return A/c</span><span class="jdr">Dr.</span><span class="jamt-d">500</span></div>
+      <div class="jline sub"><span class="jacc">To Ram's A/c</span><span class="jamt-c">500</span></div>
+      <div class="jnarr">Goods returned by Ram</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">9,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash</span><span class="jamt-c">9,000</span></div>
+      <div class="jnarr">Paid salaries</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Mohan's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">600</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases Return A/c</span><span class="jamt-c">600</span></div>
+      <div class="jnarr">Returned 10% of goods supplied by Mohan</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-6">
+
+<div class="qcard" id="q10">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q10</div>
+    <div class="txt"><div class="lbl">Journal — Satish, Noida (UP)</div><div class="ttl">Bank, additional capital, discount, rent split (business/residential)</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Jan 1 Started business with cash <span class="amt">₹40,000</span></div>
+      <div>Jan 2 Opened Bank A/c by cheque from Savings A/c <span class="amt">₹60,000</span></div>
+      <div>Jan 3 Bought goods from M/s. S. Singh &amp; Co., Delhi <span class="amt">₹20,000</span></div>
+      <div>Jan 4 Introduced additional capital by cheque ₹5,000; purchased computer against cheque <span class="amt">₹15,000</span></div>
+      <div>Jan 6 Paid for postage stamps <span class="amt">₹150</span></div>
+      <div>Jan 8 Sold goods for cash <span class="amt">₹4,000</span></div>
+      <div>Jan 9 Sold goods to M/s Sharda &amp; Co., Delhi <span class="amt">₹10,000</span></div>
+      <div>Jan 15 Paid M/s S. Singh &amp; Co. after availing discount of <span class="amt">₹400</span></div>
+      <div>Jan 25 Sold goods to M/s Ray &amp; Co., Kolkata <span class="amt">₹5,600</span></div>
+      <div>Jan 27 Received cheque from M/s Sharda &amp; Co. in full settlement <span class="amt">₹11,000</span></div>
+      <div>Jan 31 Electricity ₹1,000; Rent (by cheque, half building residential) ₹5,000; Drawings <span class="amt">₹3,500</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">12 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jan 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">40,000</span></div>
+      <div class="jnarr">Started business with cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 02</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">60,000</span></div>
+      <div class="jnarr">Cheque from Savings A/c to Firm's A/c</div></div>
+    <div class="entry"><div class="entry-date">Jan 03</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To M/s S. Singh &amp; Co. A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Jan 04</div>
+      <div class="jline"><span class="jacc">Computer A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jnarr">Purchased computer</div></div>
+    <div class="entry"><div class="entry-date">Jan 06</div>
+      <div class="jline"><span class="jacc">Postage A/c</span><span class="jdr">Dr.</span><span class="jamt-d">150</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">150</span></div>
+      <div class="jnarr">Paid for postage</div></div>
+    <div class="entry"><div class="entry-date">Jan 08</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">4,000</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 09</div>
+      <div class="jline"><span class="jacc">M/s Sharda &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 15</div>
+      <div class="jline"><span class="jacc">M/s S. Singh &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">19,600</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">400</span></div>
+      <div class="jnarr">Paid to M/s S. Singh &amp; Co.</div></div>
+    <div class="entry"><div class="entry-date">Jan 25</div>
+      <div class="jline"><span class="jacc">M/s Ray &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,600</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">5,600</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jan 27</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To M/s Sharda &amp; Co. A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Received from M/s Sharda &amp; Co.</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Electricity Charges A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Paid for electricity charges</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Paid rent for building — half building occupied by proprietor for residential purpose</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash</span><span class="jamt-c">3,500</span></div>
+      <div class="jnarr">Drawings made by proprietor</div></div>
+    <div class="wnote"><b>Note (as given in source):</b> There is an error in the question as the amount paid by M/s Sharda &amp; Co. against goods sold can be equal to or less than the amount due but not more. Thus, taken to be ₹10,000 instead of ₹11,000.</div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q11">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q11</div>
+    <div class="txt"><div class="lbl">Journal — R.Singh &amp; Co., Kanpur (GST)</div><div class="ttl">CGST/SGST intra-state, IGST inter-state, discount received <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>July 1 Started business with cash ₹80,000; cash paid into bank <span class="amt">₹50,000</span></div>
+      <div>July 1 Bought stationery ₹300 plus CGST &amp; SGST @ <span class="amt">6% each</span></div>
+      <div>July 2 Bought goods ₹21,000 plus CGST &amp; SGST @ <span class="amt">6% each</span></div>
+      <div>July 5 Sold goods ₹7,500 plus CGST &amp; SGST @ <span class="amt">6% each</span></div>
+      <div>July 6 Bought office furniture ₹5,000 plus CGST &amp; SGST @6% each from Banerjee Bros.</div>
+      <div>July 11 Sold goods ₹10,000 plus CGST &amp; SGST @6% each to Mahendra; July 12 received cheque from Mahendra</div>
+      <div>July 16 Sold goods ₹5,000 plus CGST &amp; SGST @6% each to Ramesh &amp; Co.</div>
+      <div>July 20 Bought goods ₹20,000 plus IGST @12% from S. Seth &amp; Bros., Delhi</div>
+      <div>July 23 Bought goods ₹2,250 plus IGST @12% for cash from S. Narain &amp; Co., Ludhiana</div>
+      <div>July 26 Ramesh &amp; Co. paid ₹2,500 on account; July 28 Paid S. Seth &amp; Bros. ₹22,000 by cheque in full settlement</div>
+      <div>July 31 Rent ₹1,000 due to S. Sharma, not yet paid</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">12 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jul 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">80,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">80,000</span></div>
+      <div class="jnarr">Started business with cash</div></div>
+    <div class="entry"><div class="entry-date">Jul 01</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Cash paid into bank</div></div>
+    <div class="entry"><div class="entry-date">Jul 01</div>
+      <div class="jline"><span class="jacc">Stationery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">300</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">18</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">18</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">336</span></div>
+      <div class="jnarr">Stationery purchased</div></div>
+    <div class="entry"><div class="entry-date">Jul 02</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">21,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,260</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,260</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">23,520</span></div>
+      <div class="jnarr">Purchased goods</div></div>
+    <div class="entry"><div class="entry-date">Jul 05</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,400</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">7,500</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">450</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">450</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jul 06</div>
+      <div class="jline"><span class="jacc">Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">300</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">300</span></div>
+      <div class="jline sub"><span class="jacc">To Banerjee Bros. A/c</span><span class="jamt-c">5,600</span></div>
+      <div class="jnarr">Furniture purchased</div></div>
+    <div class="entry"><div class="entry-date">Jul 11</div>
+      <div class="jline"><span class="jacc">Mahendra A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,200</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">600</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">600</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jul 12</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,200</span></div>
+      <div class="jline sub"><span class="jacc">To Mahendra A/c</span><span class="jamt-c">11,200</span></div>
+      <div class="jnarr">Received from Mahendra</div></div>
+    <div class="entry"><div class="entry-date">Jul 16</div>
+      <div class="jline"><span class="jacc">Ramesh &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,600</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">300</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">300</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">Jul 20</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,400</span></div>
+      <div class="jline sub"><span class="jacc">To S. Seth &amp; Bros. A/c</span><span class="jamt-c">22,400</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Jul 23</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,250</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">270</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,520</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry"><div class="entry-date">Jul 26</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline sub"><span class="jacc">To Ramesh &amp; Co. A/c</span><span class="jamt-c">2,500</span></div>
+      <div class="jnarr">Paid to Ramesh &amp; Co. on account</div></div>
+    <div class="entry"><div class="entry-date">Jul 28</div>
+      <div class="jline"><span class="jacc">S. Seth &amp; Bros. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">22,400</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">22,000</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">400</span></div>
+      <div class="jnarr">Paid to S. Seth &amp; Bros., received discount</div></div>
+    <div class="entry"><div class="entry-date">Jul 31</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,000</span></div>
+      <div class="jline sub"><span class="jacc">To Rent Outstanding A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jnarr">Rent outstanding</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-7">
+
+<div class="qcard" id="q12">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q12</div>
+    <div class="txt"><div class="lbl">Journal — Ashoka Furniture Traders, Ludhiana (GST)</div><div class="ttl">Machinery, timber trade discount, installation, GST @ 6% each <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Jan 1 Started business with cash <span class="amt">₹50,000</span>; Jan 2 Opened Current A/c by personal cheque <span class="amt">₹3,50,000</span></div>
+      <div>Jan 10 Purchased machinery against cheque <span class="amt">₹1,00,000</span>; Jan 15 Paid wages for installation <span class="amt">₹2,000</span></div>
+      <div>Jan 20 Purchased timber from Singh &amp; Co., list price ₹20,000 at <span class="amt">10% trade discount</span></div>
+      <div>Jan 25 Timber used for furnishing the office <span class="amt">₹5,000</span></div>
+      <div>Jan 31 Sold timber to Rakesh, list price ₹10,000, allowed <span class="amt">10% trade discount</span></div>
+      <div>Feb 10 Cheque to Singh &amp; Co. in full settlement ₹20,000; Feb 15 Received from Rakesh in full settlement <span class="amt">₹10,000</span></div>
+      <div>Feb 20 Paid wages ₹15,000; Feb 28 Cheque ₹5,000 for rent of February</div>
+      <div>CGST &amp; SGST @ 6% each on intra-state; IGST @ 12% on inter-state.</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">9 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jan 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Started business with cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 02</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">3,50,000</span></div>
+      <div class="jnarr">Deposited cash into bank</div></div>
+    <div class="entry"><div class="entry-date">Jan 10</div>
+      <div class="jline"><span class="jacc">Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,00,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,000</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">1,12,000</span></div>
+      <div class="jnarr">Purchased machinery @ 6% CGST and SGST</div></div>
+    <div class="entry"><div class="entry-date">Jan 15</div>
+      <div class="jline"><span class="jacc">Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Paid installation charges</div></div>
+    <div class="entry"><div class="entry-date">Jan 20</div>
+      <div class="jline"><span class="jacc">Purchase A/c</span><span class="jdr">Dr.</span><span class="jamt-d">18,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,080</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,080</span></div>
+      <div class="jline sub"><span class="jacc">To Singh &amp; Co.</span><span class="jamt-c">20,160</span></div>
+      <div class="jnarr">Purchased timber @ 6% CGST and SGST</div></div>
+    <div class="entry"><div class="entry-date">Jan 25</div>
+      <div class="jline"><span class="jacc">Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,600</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input CGST A/c</span><span class="jamt-c">300</span></div>
+      <div class="jline sub"><span class="jacc">To Input SGST A/c</span><span class="jamt-c">300</span></div>
+      <div class="jnarr">Timber used for office furniture and GST reversed</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Rakesh A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,080</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">9,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">540</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">540</span></div>
+      <div class="jnarr">Sold goods to Rakesh @ 6% CGST and SGST</div></div>
+    <div class="entry"><div class="entry-date">Feb 10</div>
+      <div class="jline"><span class="jacc">Singh &amp; Co.</span><span class="jdr">Dr.</span><span class="jamt-d">20,160</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">160</span></div>
+      <div class="jnarr">Sent cheque to Singh &amp; Co. and discount received</div></div>
+    <div class="entry"><div class="entry-date">Feb 15</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">80</span></div>
+      <div class="jline sub"><span class="jacc">To Rakesh</span><span class="jamt-c">10,080</span></div>
+      <div class="jnarr">Received cash from Rakesh and discount allowed</div></div>
+    <div class="entry"><div class="entry-date">Feb 20</div>
+      <div class="jline"><span class="jacc">Wages A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jnarr">Paid wages</div></div>
+    <div class="entry"><div class="entry-date">Feb 25</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Paid rent <span class="tier high">dated Feb 25 in solution though question states Feb 28</span></div></div>
+    <div class="wnote"><b>Note (as given in source):</b> In the entry dated Feb 10 the amount paid exceeds the amount due to Singh &amp; Co. and in the entry dated Feb 15 the amount received exceeds the amount due from Rakesh. These two are not possible. So, the amount paid and received has been assumed.</div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-8">
+
+<div class="qcard" id="q13">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q13</div>
+    <div class="txt"><div class="lbl">Invoice Value Calculation</div><div class="ttl">M/s. Auto Aid — car horns, trade discount + IGST <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>500 pieces of car horns @ ₹200 each, less 10% Trade Discount, plus IGST @ <span class="amt">12%</span>, from M/s Auto Horns, Chandigarh.</div></div>
+    <div class="wnote">
+      List Price 500 × 200 = <b>1,00,000</b><br>
+      Less: Trade Discount @ 10% = 10,000<br>
+      Value of Goods = <b>90,000</b><br>
+      Add: IGST @ 12% = 10,800<br>
+      <b>Invoice Value = Rs 1,00,800</b>
+    </div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q14">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q14</div>
+    <div class="txt"><div class="lbl">Trade &amp; Cash Discount Calculation</div><div class="ttl">M/s. Vaish Traders — Parker Pens, CGST/SGST <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>500 Parker Pens @ ₹200 each, less Trade Discount @ 15%, from Luxor Pens Ltd., Delhi. CGST &amp; SGST @ 6% each. Cash Discount @ <span class="amt">5%</span> for prompt payment.</div></div>
+    <div class="wnote">
+      List Price 500 × 200 = <b>1,00,000</b><br>
+      Less: Trade Discount @ 15% = 15,000 → Value of Goods = <b>85,000</b><br>
+      Add: CGST @ 6% = 5,100; Add: SGST @ 6% = 5,100 → Invoice Value = <b>95,200</b><br>
+      Less: Cash Discount @ 5% = 4,760<br>
+      <b>Amount Payable = Rs 90,440</b>
+    </div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q15">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q15</div>
+    <div class="txt"><div class="lbl">Trade &amp; Cash Discount Calculation</div><div class="ttl">M/s. Auto Help — motor cycle horns, IGST, late payment <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>500 motor cycle horns @ ₹100 each plus IGST @ 12% from M/s G.S. Auto, Ghaziabad. Trade Discount @ 10%, Cash Discount @ 5% if paid within 7 days. Payment made after <span class="amt">30 days</span>.</div></div>
+    <div class="wnote">
+      List Price 500 × 100 = <b>50,000</b><br>
+      Less: Trade Discount @ 10% = 5,000<br>
+      <b>Value of Goods = Rs 45,000</b><br>
+      <i>No cash discount allowed — payment made after the stipulated 7-day period.</i>
+    </div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q16">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q16</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Accounts to be credited — payment to Ajay in full settlement</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>Payment to Ajay of ₹4,800 by cheque in full settlement of <span class="amt">₹5,000</span>.</div></div>
+    <div class="jsec-title">Journal <span class="n">1 entry</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Ajay A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">4,800</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">200</span></div>
+      <div class="jnarr">Paid to Ajay in full and final settlement</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q17">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q17</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Rahul → Anish sale, trade + cash discount, CGST/SGST <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>Sale of goods by Rahul, Delhi to Anish, Delhi for ₹10,000 less 10% Trade Discount and <span class="amt">2% Cash Discount</span>. Payment received at time of sale. CGST &amp; SGST @ 6% each.</div></div>
+    <div class="jsec-title">Journal <span class="n">1 entry</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">9,878</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">202</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">9,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">540</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">540</span></div>
+      <div class="jnarr">Goods sold and discount allowed</div></div>
+    <div class="wnote">
+      List Price = <b>10,000</b>; Less: Trade Discount @ 10% = 1,000 → Value of Goods = <b>9,000</b><br>
+      Add: CGST @ 6% = 540; Add: SGST @ 6% = 540 → Invoice Value = <b>10,080</b><br>
+      Less: Cash Discount @ 2% = 202<br>
+      <b>Amount Received = Rs 9,878</b>
+    </div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-9">
+
+<div class="qcard" id="q18">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q18</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Amrit ← Ayur Products, Agra: purchase, trade discount, IGST <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>Purchase of goods by Amrit, Delhi from Ayur Products, Agra (UP) for ₹25,000 less Trade Discount @ 15% plus IGST @ <span class="amt">12%</span>.</div></div>
+    <div class="jsec-title">Journal <span class="n">1 entry</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">21,250</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,550</span></div>
+      <div class="jline sub"><span class="jacc">To Ayur Products A/c</span><span class="jamt-c">23,800</span></div>
+      <div class="jnarr">Goods purchased on credit</div></div>
+    <div class="wnote">
+      List Price = <b>25,000</b>; Less: Trade Discount @ 15% = 3,750 → Value of Goods = <b>21,250</b><br>
+      Add: IGST @ 12% = 2,550<br><b>Amount Payable = Rs 23,800</b>
+    </div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q19">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q19</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Amrit ← Add Gel Pens, Delhi: trade + cash discount, CGST/SGST <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given"><div>Purchase of goods by Amrit, Delhi from Add Gel Pens, Delhi for ₹15,000 less Trade Discount 10% and Cash Discount 3%. CGST &amp; SGST @ 6% each. Payment made at time of purchase.</div></div>
+    <div class="jsec-title">Journal <span class="n">1 entry</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">13,500</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">810</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">810</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">14,666</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">454</span></div>
+      <div class="jnarr">Goods purchased and discount received</div></div>
+    <div class="wnote">
+      List Price = <b>15,000</b>; Less: Trade Discount @ 10% = 1,500 → Value of Goods = <b>13,500</b><br>
+      Add: CGST @ 6% = 810; Add: SGST @ 6% = 810 → Invoice Value = <b>15,120</b><br>
+      Less: Cash Discount @ 3% = 454<br><b>Amount Paid = Rs 14,666</b>
+    </div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q20">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q20</div>
+    <div class="txt"><div class="lbl">Journal — Mittal Cycles ← Hero Cycles, Ludhiana</div><div class="ttl">Purchase, damaged goods return, trade + cash discount, IGST <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>100 cycles @ ₹1,200/cycle plus IGST @ 12% from Hero Cycles. Trade Discount 10%, Cash Discount 3% if paid within <span class="amt">14 days</span>.</div>
+      <div>10 cycles received damaged, returned. Payment settled in <span class="amt">10 days</span>.</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">3 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,08,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,960</span></div>
+      <div class="jline sub"><span class="jacc">To Hero Cycles A/c</span><span class="jamt-c">1,20,960</span></div>
+      <div class="jnarr">Goods purchased @ 10% trade discount, 12% IGST</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Hero Cycles A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,096</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases Return A/c</span><span class="jamt-c">10,800</span></div>
+      <div class="jline sub"><span class="jacc">To Input IGST A/c</span><span class="jamt-c">1,296</span></div>
+      <div class="jnarr">Returned 10 cycles</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Hero Cycles A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,08,864</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">1,05,598</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">3,266</span></div>
+      <div class="jnarr">Balance paid and received cash discount of 3%</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-10">
+
+<div class="qcard" id="q21">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q21</div>
+    <div class="txt"><div class="lbl">Journal — Oswal Woollen Mills → Gupta Shawls</div><div class="ttl">Sale, IGST, trade + cash discount, part payments in 2 instalments <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>100 shawls @ ₹200/shawl sold on 4 Jan 2019. IGST @ 12%. Trade Discount 25%, Cash Discount 5% if paid within <span class="amt">14 days</span>.</div>
+      <div>Gupta Shawls sent 50% payment on 14 Jan 2019, balance on <span class="amt">10 Feb 2019</span> (after 14-day window, so no cash discount).</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">3 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jan 04, 2019</div>
+      <div class="jline"><span class="jacc">Gupta Shawls A/c</span><span class="jdr">Dr.</span><span class="jamt-d">16,800</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">1,800</span></div>
+      <div class="jnarr">Goods sold @ 25% trade discount, 12% IGST</div></div>
+    <div class="entry"><div class="entry-date">Jan 14, 2019</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,400</span></div>
+      <div class="jline sub"><span class="jacc">To Gupta Shawls A/c</span><span class="jamt-c">8,400</span></div>
+      <div class="jnarr">50% payment received</div></div>
+    <div class="entry"><div class="entry-date">Feb 10, 2019</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,400</span></div>
+      <div class="jline sub"><span class="jacc">To Gupta Shawls A/c</span><span class="jamt-c">8,400</span></div>
+      <div class="jnarr">Balance 50% payment received (no cash discount, paid beyond 14 days)</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q22">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q22</div>
+    <div class="txt"><div class="lbl">Journal — Ashok</div><div class="ttl">Full settlement discount, insolvency dividend, on-account payments</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Received ₹11,700 from Hari Krishan in full settlement of account for <span class="amt">₹12,000</span></div>
+      <div>(ii) Received ₹11,700 from Shyam on his account for <span class="amt">₹12,000</span></div>
+      <div>(iii) First &amp; final dividend of 70 paise/rupee from official receiver of Rajagopal, who owed <span class="amt">₹7,000</span></div>
+      <div>(iv) Paid ₹2,880 to A.K. Mandal in full settlement of account for <span class="amt">₹3,000</span></div>
+      <div>(v) Paid ₹2,880 to S.K. Gupta on his account for <span class="amt">₹3,000</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">5 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,700</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">300</span></div>
+      <div class="jline sub"><span class="jacc">To Hari Krishan's A/c</span><span class="jamt-c">12,000</span></div>
+      <div class="jnarr">Received in full settlement</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,700</span></div>
+      <div class="jline sub"><span class="jacc">To Shyam's A/c</span><span class="jamt-c">11,700</span></div>
+      <div class="jnarr">Received from Shyam on account</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,900</span></div>
+      <div class="jline"><span class="jacc">Bad Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,100</span></div>
+      <div class="jline sub"><span class="jacc">To Rajagopal's A/c</span><span class="jamt-c">7,000</span></div>
+      <div class="jnarr">Received 70 paise in a rupee from Rajagopal</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">A.K. Mandal's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,880</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">120</span></div>
+      <div class="jnarr">Paid in full settlement</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">S.K. Gupta's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,880</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,880</span></div>
+      <div class="jnarr">Paid on account to S.K. Gupta</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q23">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q23</div>
+    <div class="txt"><div class="lbl">Journal — Suresh, Delhi (GST) <span class="tier high">17 entries</span></div><div class="ttl">Ready-made garments trader: bank, credit, loan, cost-plus sales <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Apr 1 Paid into bank as Capital* ₹60,000; Apr 2 Bought goods, paid by cheque <span class="amt">₹24,000</span></div>
+      <div>Apr 3 Sold goods to Mukand &amp; Co., Delhi ₹6,700; Apr 4 Sold goods for cash <span class="amt">₹10,900</span></div>
+      <div>Apr 5 Paid sundry expenses in cash* ₹3,000; Apr 8 Office furniture by cheque <span class="amt">₹4,000</span></div>
+      <div>Apr 9 Bought goods from Ramesh &amp; Bros., Faridabad (Haryana) ₹10,600; Apr 11 Returned goods <span class="amt">₹1,500</span></div>
+      <div>Apr 12 Cheque to Ramesh &amp; Bros. in full settlement* <span class="amt">₹9,500</span></div>
+      <div>Apr 30 Bank charged interest* ₹200; Borrowed from Ridhi @10% p.a.* <span class="amt">₹50,000</span></div>
+      <div>Apr 30 Received from Mahendra on account* ₹6,000; Sold household furniture, paid into business* <span class="amt">₹2,000</span></div>
+      <div>Apr 30 Sold goods costing ₹5,000 to Anita for cash at 20% profit on cost, less <span class="amt">20% trade discount</span></div>
+      <div>Apr 30 Sold goods costing ₹20,000 to Sunil at 20% profit on sale less 20% Trade Discount, cartage ₹150 charged to customer</div>
+      <div>CGST &amp; SGST @ 6% each intra-state; IGST @ 12% inter-state. * marked transactions are GST-exempt.</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">14 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Apr 01</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">60,000</span></div>
+      <div class="jnarr">Paid into Bank as Capital</div></div>
+    <div class="entry"><div class="entry-date">Apr 02</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">24,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,440</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,440</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">26,880</span></div>
+      <div class="jnarr">Bought goods for cheque @6% CGST &amp; SGST</div></div>
+    <div class="entry"><div class="entry-date">Apr 03</div>
+      <div class="jline"><span class="jacc">Mukand &amp; Co.</span><span class="jdr">Dr.</span><span class="jamt-d">7,504</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">6,700</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">402</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">402</span></div>
+      <div class="jnarr">Sold goods to Mukand &amp; Co. @ 6% CGST and SGST</div></div>
+    <div class="entry"><div class="entry-date">Apr 04</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,208</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,900</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">654</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">654</span></div>
+      <div class="jnarr">Sold goods for Cash @6%</div></div>
+    <div class="entry"><div class="entry-date">Apr 05</div>
+      <div class="jline"><span class="jacc">Sundry Expenses A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">3,000</span></div>
+      <div class="jnarr">Paid Sundry Expenses</div></div>
+    <div class="entry"><div class="entry-date">Apr 08</div>
+      <div class="jline"><span class="jacc">Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">4,000</span></div>
+      <div class="jnarr">Bought Office furniture by cheque</div></div>
+    <div class="entry"><div class="entry-date">Apr 09</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,600</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,272</span></div>
+      <div class="jline sub"><span class="jacc">To Ramesh and Bros.</span><span class="jamt-c">11,872</span></div>
+      <div class="jnarr">Bought goods from Ramesh and Bros. @12%</div></div>
+    <div class="entry"><div class="entry-date">Apr 11</div>
+      <div class="jline"><span class="jacc">Ramesh and Bros.</span><span class="jdr">Dr.</span><span class="jamt-d">1,680</span></div>
+      <div class="jline sub"><span class="jacc">To Purchase Return A/c</span><span class="jamt-c">1,500</span></div>
+      <div class="jline sub"><span class="jacc">To Input IGST A/c</span><span class="jamt-c">180</span></div>
+      <div class="jnarr">Goods returned to Ramesh and Bros. and IGST @12%</div></div>
+    <div class="entry"><div class="entry-date">Apr 12</div>
+      <div class="jline"><span class="jacc">Ramesh Bros. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,192</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">9,500</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">692</span></div>
+      <div class="jnarr">Cheque sent to Ramesh and Bros. and discount received</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Interest A/c</span><span class="jdr">Dr.</span><span class="jamt-d">200</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">200</span></div>
+      <div class="jnarr">Bank charged Interest</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Loan from Ridhi A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jnarr">Borrowed from Ridhi @10%</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Mahendra</span><span class="jamt-c">6,000</span></div>
+      <div class="jnarr">Received from Mahendra on account</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Sold household furniture and paid the amount into business</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,376</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">4,800</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">288</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">288</span></div>
+      <div class="jnarr">Sold goods for Cash @6%</div></div>
+    <div class="entry"><div class="entry-date">Apr 30</div>
+      <div class="jline"><span class="jacc">Sunil</span><span class="jdr">Dr.</span><span class="jamt-d">22,550</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">1,200</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">1,200</span></div>
+      <div class="jline sub"><span class="jacc">To Cartage A/c</span><span class="jamt-c">150</span></div>
+      <div class="jnarr">Sold goods to Anil @6% <span class="tier high">(as printed in source narration)</span></div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-11">
+
+<div class="qcard" id="q24">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q24</div>
+    <div class="txt"><div class="lbl">Journal</div><div class="ttl">Bank/drawings/FD, cheque received, dishonour &amp; re-settlement with interest</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Apr 1 Paid into bank ₹21,000 to open Current A/c; Apr 2 Withdrew for personal expenses <span class="amt">₹5,000</span></div>
+      <div>Apr 4 Withdrew from bank ₹3,000; Apr 5 Placed ₹5,000 in Fixed Deposit by transfer from Current A/c</div>
+      <div>Apr 10 Received cheque from Shiv &amp; Co. for goods sold ₹3,000 last year, allowed <span class="amt">2% discount</span></div>
+      <div>Apr 14 Shiv &amp; Co.'s cheque deposited into bank; Apr 16 Cheque dishonoured (bank charges ₹10)</div>
+      <div>Apr 17 Shiv &amp; Co. settled account by cheque for ₹3,000, ₹40 being interest charged</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">7 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Apr 01</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">21,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">21,000</span></div>
+      <div class="jnarr">Paid into bank for opening a Current A/c</div></div>
+    <div class="entry"><div class="entry-date">Apr 02</div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Withdrew for private expenses</div></div>
+    <div class="entry"><div class="entry-date">Apr 04</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">3,000</span></div>
+      <div class="jnarr">Withdrew from bank for office use</div></div>
+    <div class="entry"><div class="entry-date">Apr 05</div>
+      <div class="jline"><span class="jacc">Fixed Deposit A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Placed on FD by transfer from Current A/c</div></div>
+    <div class="entry"><div class="entry-date">Apr 10</div>
+      <div class="jline"><span class="jacc">Cheques in Hand A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,940</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">60</span></div>
+      <div class="jline sub"><span class="jacc">To Shiv &amp; Co. A/c</span><span class="jamt-c">3,000</span></div>
+      <div class="jnarr">Received from Shiv &amp; Co. and allowed 2% discount</div></div>
+    <div class="entry"><div class="entry-date">Apr 14</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,940</span></div>
+      <div class="jline sub"><span class="jacc">To Cheques in Hand A/c</span><span class="jamt-c">2,940</span></div>
+      <div class="jnarr">Shiv &amp; Co.'s cheque banked</div></div>
+    <div class="entry"><div class="entry-date">Apr 16</div>
+      <div class="jline"><span class="jacc">Shiv &amp; Co. A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,950</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">2,950</span></div>
+      <div class="jnarr">Shiv &amp; Co.'s cheque dishonoured</div></div>
+    <div class="entry"><div class="entry-date">Apr 17</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,000</span></div>
+      <div class="jline sub"><span class="jacc">To Shiv &amp; Co. A/c</span><span class="jamt-c">2,950</span></div>
+      <div class="jline sub"><span class="jacc">To Interest A/c</span><span class="jamt-c">50</span></div>
+      <div class="jnarr">Shiv &amp; Co. settled his account</div></div>
+    <div class="wnote"><b>Note (as given in source):</b> Cheque of ₹2,940 dishonoured. Bank charged ₹10, recoverable from Shiv &amp; Co. Total due from Shiv &amp; Co. ₹2,950. New cheque received for ₹3,000, so interest charged should be ₹50, <i>not ₹40 as given in the book</i>.</div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q25">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q25</div>
+    <div class="txt"><div class="lbl">Journal — Amit Saini, Gurugram (GST)</div><div class="ttl">Drawings, bad debts, fire loss, cost-plus sale, charity, prepaid rent <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Goods of ₹5,000 taken by him for personal use</div>
+      <div>(ii) ₹2,000 due from Sohan were bad debts</div>
+      <div>(iii) Goods of ₹6,000 destroyed by fire, not insured</div>
+      <div>(iv) Paid ₹4,000 cash as wages on installation of machine (GST not levied)</div>
+      <div>(v) Sold goods to Arjun of Delhi, list price ₹20,000, 10% trade discount, 5% cash discount, paid same day</div>
+      <div>(vi) Received ₹2,000 from Ramesh, whose account was written off as bad debts</div>
+      <div>(vii) Goods costing ₹1,000 given as charity</div>
+      <div>(viii) Received ₹9,750 from Ramesh in full settlement of account of <span class="amt">₹10,000</span></div>
+      <div>(ix) Paid rent in advance ₹4,000. CGST/SGST @6% each intra-state, IGST @12% inter-state.</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">9 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Drawings A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,600</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input CGST A/c</span><span class="jamt-c">300</span></div>
+      <div class="jline sub"><span class="jacc">To Input SGST A/c</span><span class="jamt-c">300</span></div>
+      <div class="jnarr">Goods used for personal use</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Bad Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sohan's A/c</span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Debtors proved bad</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Loss of Stock by Fire A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,720</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input CGST A/c</span><span class="jamt-c">360</span></div>
+      <div class="jline sub"><span class="jacc">To Input SGST A/c</span><span class="jamt-c">360</span></div>
+      <div class="jnarr">Uninsured goods lost by fire</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Machine A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">4,000</span></div>
+      <div class="jnarr">Wages paid for installation of machine</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">19,152</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,008</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">18,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">2,160</span></div>
+      <div class="jnarr">Goods sold and discount allowed</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bad Debts Recovered A/c</span><span class="jamt-c">2,000</span></div>
+      <div class="jnarr">Ramesh's debt written-off previously recovered</div></div>
+    <div class="entry"><div class="entry-date">(vii)</div>
+      <div class="jline"><span class="jacc">Charity A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,200</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">1,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input CGST A/c</span><span class="jamt-c">600</span></div>
+      <div class="jline sub"><span class="jacc">To Input SGST A/c</span><span class="jamt-c">600</span></div>
+      <div class="jnarr">Goods given as charity</div></div>
+    <div class="entry"><div class="entry-date">(viii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">9,750</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">250</span></div>
+      <div class="jline sub"><span class="jacc">To Ramesh's A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Received from Ramesh in full settlement</div></div>
+    <div class="entry"><div class="entry-date">(ix)</div>
+      <div class="jline"><span class="jacc">Prepaid Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">4,000</span></div>
+      <div class="jnarr">Paid rent in advance</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q26">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q26</div>
+    <div class="txt"><div class="lbl">Journal — Mohan, Delhi (GST)</div><div class="ttl">Insolvency, rent/salaries due, depreciation, cost-plus sale, interest on capital, theft loss <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Raj of Alwar, Rajasthan (owed ₹25,000) became insolvent, received <span class="amt">60 paise/rupee</span> full &amp; final</div>
+      <div>(ii) Mohan owes landlord rent <span class="amt">₹10,000</span></div>
+      <div>(iii) Depreciation @10% on furniture costing <span class="amt">₹50,000</span></div>
+      <div>(iv) Salaries due to employees <span class="amt">₹20,000</span></div>
+      <div>(v) Sold to Sunil goods (cash) ₹10,000 less 10% trade discount plus CGST/SGST @6% each, received net <span class="amt">₹8,500</span></div>
+      <div>(vi) Interest on capital of ₹1,00,000 @10% p.a.</div>
+      <div>(vii) Goods lost in theft ₹5,000, purchased paying IGST @12% from Alwar, Rajasthan</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">7 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,000</span></div>
+      <div class="jline"><span class="jacc">Bad-Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Raj's A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jnarr">Received 60 paise in full and final settlement</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Rent Outstanding A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Owed rent to landlord</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Depreciation A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Furniture A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Depreciation @10%</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Salaries A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Salaries Outstanding A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Salaries due to employees</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,500</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,580</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">9,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">540</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">540</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Interest on Capital A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jnarr">Interest on capital allowed @10%</div></div>
+    <div class="entry"><div class="entry-date">(vii)</div>
+      <div class="jline"><span class="jacc">Loss of Stock by Theft A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,600</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input IGST A/c</span><span class="jamt-c">600</span></div>
+      <div class="jnarr">Goods lost by theft</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-12">
+
+<div class="qcard" id="q27">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q27</div>
+    <div class="txt"><div class="lbl">Journal — Puneet, Delhi (GST) <span class="tier high">16 parts</span></div><div class="ttl">Orders, dishonour, insolvency, inter-state GST, TV trading, insurance claim, cash discount <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Order received from Karan &amp; Co. for goods of ₹50,000 (no entry — order only)</div>
+      <div>(ii) Order from AK &amp; Co. for goods ₹1,00,000 with cheque advance <span class="amt">₹25,000</span></div>
+      <div>(iii) Paid staff ₹40,000 against outstanding salary of <span class="amt">₹60,000</span></div>
+      <div>(iv) Sold goods to Bharat, Kaithal (Haryana) ₹10,000 plus IGST @12%, 1/5th returned defective</div>
+      <div>(v) Cheque of ₹20,000 issued by Feroz was dishonoured</div>
+      <div>(vi) Received 40 paise/rupee from Feroz against the above dues</div>
+      <div>(vii) Received cheque of ₹25,000 from Mohan after banking hours</div>
+      <div>(viii) Purchased goods from Barun, Chandigarh ₹10,000 plus IGST@12%; sold to Arun, Shimla (HP) at <span class="amt">₹22,400 incl. IGST@12%</span></div>
+      <div>(ix) Arun returned goods of ₹6,720 (incl. IGST), returned to Barun</div>
+      <div>(x) ABC &amp; Co. purchased 10 TV sets @₹20,000/set +IGST@12%; sold all @₹25,000/set +CGST/SGST@6% each</div>
+      <div>(xi) Paid insurance ₹12,000 plus CGST/SGST@6% each for one year</div>
+      <div>(xii) Sold personal car for ₹1,00,000, invested in the firm</div>
+      <div>(xiii) Goods costing ₹1,00,000 destroyed in fire (purchased within Delhi); insurance claim admitted <span class="amt">₹75,000</span></div>
+      <div>(xiv) Purchased machinery ₹56,000 incl. IGST ₹6,000; cartage ₹5,000; installation <span class="amt">₹10,000</span></div>
+      <div>(xv) Goods costing ₹40,000 sold to Mr. X at 20% profit on sales less 10% Trade Discount plus CGST/SGST@6% each, cheque under <span class="amt">2% cash discount</span></div>
+      <div>(xvi) Purchased machinery from New Machinery House for ₹50,000, paid by bank draft; draft charges <span class="amt">₹500</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">16 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc"><i>No Entry</i></span></div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Advance from Ak &amp; Co.</span><span class="jamt-c">25,000</span></div>
+      <div class="jnarr">Advance received for order</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Outstanding Salary A/c</span><span class="jdr">Dr.</span><span class="jamt-d">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">40,000</span></div>
+      <div class="jnarr">Payment of outstanding salaries</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Bharat's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,200</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">1,200</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Sales Return A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline"><span class="jacc">Output IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">240</span></div>
+      <div class="jline sub"><span class="jacc">To Bharat's A/c</span><span class="jamt-c">2,240</span></div>
+      <div class="jnarr">1/5th goods returned by Bharat</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Feroz's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Cheque issued by Feroz dishonoured</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">8,000</span></div>
+      <div class="jline"><span class="jacc">Bad Debts A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,000</span></div>
+      <div class="jline sub"><span class="jacc">To Feroz's A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Received 40 paise in a rupee as full and final settlement from Feroz</div></div>
+    <div class="entry"><div class="entry-date">(vii)</div>
+      <div class="jline"><span class="jacc">Cheque in Hand A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Mohan's A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jnarr">Received cheque from Mohan</div></div>
+    <div class="entry"><div class="entry-date">(viii)</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,200</span></div>
+      <div class="jline sub"><span class="jacc">To Barun's A/c</span><span class="jamt-c">11,200</span></div>
+      <div class="jnarr">Goods purchased</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Arun's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">22,400</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">2,400</span></div>
+      <div class="jnarr">Goods sold</div></div>
+    <div class="entry"><div class="entry-date">(ix)</div>
+      <div class="jline"><span class="jacc">Sales Return A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,000</span></div>
+      <div class="jline"><span class="jacc">Output IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">720</span></div>
+      <div class="jline sub"><span class="jacc">To Arun's A/c</span><span class="jamt-c">6,720</span></div>
+      <div class="jnarr">Goods returned by Arun</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Barun's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,720</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases Return A/c</span><span class="jamt-c">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input IGST A/c</span><span class="jamt-c">720</span></div>
+      <div class="jnarr">Goods returned to Barun</div></div>
+    <div class="entry"><div class="entry-date">(x)</div>
+      <div class="jline"><span class="jacc">TV A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,00,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">24,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,24,000</span></div>
+      <div class="jnarr">TV purchased</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,80,000</span></div>
+      <div class="jline sub"><span class="jacc">To TV A/c</span><span class="jamt-c">2,00,000</span></div>
+      <div class="jline sub"><span class="jacc">To Profit on Sale of TV A/c</span><span class="jamt-c">50,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jnarr">TV sold</div></div>
+    <div class="entry"><div class="entry-date">(xi)</div>
+      <div class="jline"><span class="jacc">Insurance A/c</span><span class="jdr">Dr.</span><span class="jamt-d">12,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">720</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">720</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">13,440</span></div>
+      <div class="jnarr">Paid insurance</div></div>
+    <div class="entry"><div class="entry-date">(xii)</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,00,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">1,00,000</span></div>
+      <div class="jnarr">Sold personal car and invested the proceeds into business</div></div>
+    <div class="entry"><div class="entry-date">(xiii)</div>
+      <div class="jline"><span class="jacc">Insurance Company A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,12,000</span></div>
+      <div class="jline sub"><span class="jacc">To Purchases A/c</span><span class="jamt-c">1,00,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input CGST A/c</span><span class="jamt-c">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Input SGST A/c</span><span class="jamt-c">6,000</span></div>
+      <div class="jnarr">Claim lodged with insurance company, including CGST and SGST</div></div>
+    <div class="entry">
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">75,000</span></div>
+      <div class="jline"><span class="jacc">Loss of Stock by Fire A/c</span><span class="jdr">Dr.</span><span class="jamt-d">37,000</span></div>
+      <div class="jline sub"><span class="jacc">To Insurance Company A/c</span><span class="jamt-c">1,12,000</span></div>
+      <div class="jnarr"></div></div>
+    <div class="entry"><div class="entry-date">(xiv)</div>
+      <div class="jline"><span class="jacc">Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">65,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">6,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">71,000</span></div>
+      <div class="jnarr">Purchased machinery</div></div>
+    <div class="entry"><div class="entry-date">(xv)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">47,416</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">968</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">43,200</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">2,592</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">2,592</span></div>
+      <div class="jnarr">Goods sold @10%</div></div>
+    <div class="entry"><div class="entry-date">(xvi)</div>
+      <div class="jline"><span class="jacc">Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">50,000</span></div>
+      <div class="jline"><span class="jacc">Bank Charges A/c</span><span class="jdr">Dr.</span><span class="jamt-d">500</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">50,500</span></div>
+      <div class="jnarr">Purchased machinery and paid by bank draft</div></div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap"><div id="qc-13">
+
+<div class="qcard" id="q28">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q28</div>
+    <div class="txt"><div class="lbl">Journal — D. Chadha, Delhi (GST) <span class="tier high">17 entries</span></div><div class="ttl">Intra/inter-state trade, discount, sales returns, wages</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Jan 1 Commenced business with Cash ₹25,000; Jan 2 Opened Bank A/c with cheque from Savings A/c <span class="amt">₹2,25,000</span></div>
+      <div>Jan 3 Bought goods from Ramesh &amp; Co., Delhi, plus CGST/SGST@6% each ₹54,000; Sold goods to Rajesh ₹60,000, charged CGST/SGST@6% each</div>
+      <div>Jan 7 Bought goods from Rahul, Chennai, plus IGST@12% ₹65,000; Jan 8 Paid wages in cash (GST not levied) <span class="amt">₹8,000</span></div>
+      <div>Jan 8 Sold goods to Mahesh, Kochi ₹60,000; charged IGST@12%</div>
+      <div>Jan 10 Received cheque from Rajesh (discount ₹1,200) ₹66,000; Jan 11 Paid to Ramesh &amp; Co. (discount ₹2,700) <span class="amt">₹51,300</span></div>
+      <div>Jan 12 Paid rent @₹15,000/month for 3 months up to March, plus CGST/SGST@6% each</div>
+      <div>Jan 15 Office expenses ₹700; Jan 21 Sold to Rakesh, Delhi goods ₹25,000, charged CGST/SGST@6% each</div>
+      <div>Jan 22 Office expenses ₹500; Paid to Rahul by cheque (discount ₹3,200) ₹61,300</div>
+      <div>Jan 25 Received cheque from Mahesh Kochi (discount ₹1,500) ₹65,700</div>
+      <div>Jan 27 Rakesh, Delhi returned goods (not as per sample) ₹2,000; Jan 31 Paid salaries <span class="amt">₹20,000</span></div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">17 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Jan 01</div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jnarr">Started business with Cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 02</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,25,000</span></div>
+      <div class="jnarr">Opened Bank A/c with his Savings Bank A/c Cheque</div></div>
+    <div class="entry"><div class="entry-date">Jan 03</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">54,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,240</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">3,240</span></div>
+      <div class="jline sub"><span class="jacc">To Ramesh &amp; Co</span><span class="jamt-c">60,480</span></div>
+      <div class="jnarr">Bought goods from Ramesh &amp; Co @6% CGST and SGST</div></div>
+    <div class="entry"><div class="entry-date">Jan 03</div>
+      <div class="jline"><span class="jacc">Rajesh</span><span class="jdr">Dr.</span><span class="jamt-d">67,200</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">3,600</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">3,600</span></div>
+      <div class="jnarr">Sold goods to Rajesh @6%</div></div>
+    <div class="entry"><div class="entry-date">Jan 07</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">65,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">7,800</span></div>
+      <div class="jline sub"><span class="jacc">To Rahul</span><span class="jamt-c">72,800</span></div>
+      <div class="jnarr">Bought goods from Rahul @12%</div></div>
+    <div class="entry"><div class="entry-date">Jan 08</div>
+      <div class="jline"><span class="jacc">Wages A/c</span><span class="jdr">Dr.</span><span class="jamt-d">800</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">800</span></div>
+      <div class="jnarr">Paid Wages <span class="tier high">(as printed; ₹8,000 given in question)</span></div></div>
+    <div class="entry"><div class="entry-date">Jan 08</div>
+      <div class="jline"><span class="jacc">Mahesh</span><span class="jdr">Dr.</span><span class="jamt-d">67,200</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">7,200</span></div>
+      <div class="jnarr">Sold goods to Mahesh @12%</div></div>
+    <div class="entry"><div class="entry-date">Jan 10</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">66,000</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,200</span></div>
+      <div class="jline sub"><span class="jacc">To Rajesh</span><span class="jamt-c">67,200</span></div>
+      <div class="jnarr">Received cheque from Rajesh and discount allowed</div></div>
+    <div class="entry"><div class="entry-date">Jan 11</div>
+      <div class="jline"><span class="jacc">Ramesh &amp; Co</span><span class="jdr">Dr.</span><span class="jamt-d">54,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">51,300</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received</span><span class="jamt-c">2,700</span></div>
+      <div class="jnarr">Paid to Ramesh &amp; Co and Discount Received</div></div>
+    <div class="entry"><div class="entry-date">Jan 12</div>
+      <div class="jline"><span class="jacc">Prepaid Rent A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,000</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">900</span></div>
+      <div class="jline"><span class="jacc">Input SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">900</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">16,800</span></div>
+      <div class="jnarr">Paid rent in advance up to March plus 6%</div></div>
+    <div class="entry"><div class="entry-date">Jan 15</div>
+      <div class="jline"><span class="jacc">Expenses A/c</span><span class="jdr">Dr.</span><span class="jamt-d">700</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">700</span></div>
+      <div class="jnarr">Paid office expenses in cash</div></div>
+    <div class="entry"><div class="entry-date">Jan 21</div>
+      <div class="jline"><span class="jacc">Rakesh</span><span class="jdr">Dr.</span><span class="jamt-d">28,000</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">25,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output CGST A/c</span><span class="jamt-c">1,500</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">1,500</span></div>
+      <div class="jnarr">Sold goods to Rakesh</div></div>
+    <div class="entry"><div class="entry-date">Jan 22</div>
+      <div class="jline"><span class="jacc">Expenses A/c</span><span class="jdr">Dr.</span><span class="jamt-d">500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">500</span></div>
+      <div class="jnarr">Paid office expenses</div></div>
+    <div class="entry"><div class="entry-date">Jan 22</div>
+      <div class="jline"><span class="jacc">Rahul</span><span class="jdr">Dr.</span><span class="jamt-d">64,500</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">61,300</span></div>
+      <div class="jline sub"><span class="jacc">To Discount Received A/c</span><span class="jamt-c">3,200</span></div>
+      <div class="jnarr">Paid to Rahul and discount received</div></div>
+    <div class="entry"><div class="entry-date">Jan 25</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">65,700</span></div>
+      <div class="jline"><span class="jacc">Discount Allowed A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,500</span></div>
+      <div class="jline sub"><span class="jacc">To Mahesh</span><span class="jamt-c">67,200</span></div>
+      <div class="jnarr">Received cheque from Mahesh, Kochi and discount allowed</div></div>
+    <div class="entry"><div class="entry-date">Jan 27</div>
+      <div class="jline"><span class="jacc">Sales Return A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,000</span></div>
+      <div class="jline"><span class="jacc">Output CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">120</span></div>
+      <div class="jline"><span class="jacc">Output SGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">120</span></div>
+      <div class="jline sub"><span class="jacc">To Rakesh</span><span class="jamt-c">2,240</span></div>
+      <div class="jnarr">Goods returned by Rakesh and GST @6% reversed</div></div>
+    <div class="entry"><div class="entry-date">Jan 31</div>
+      <div class="jline"><span class="jacc">Salaries A/c</span><span class="jdr">Dr.</span><span class="jamt-d">20,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">20,000</span></div>
+      <div class="jnarr">Paid office expenses and salaries in cash</div></div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q29">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q29</div>
+    <div class="txt"><div class="lbl">Journal — Manoj Store (GST)</div><div class="ttl">Trade discount + IGST, savings deposit, machinery exchange &amp; part-cheque <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>(i) Purchased goods from Ramesh ₹20,000 less Trade Discount 20% plus IGST <span class="amt">@12%</span></div>
+      <div>(ii) Sold goods costing ₹7,000 to Krishna for ₹9,000 plus IGST <span class="amt">@12%</span></div>
+      <div>(iii) Sold goods for ₹10,000, charged IGST @12% against cheque</div>
+      <div>(iv) ₹5,000 deposited into Savings A/c</div>
+      <div>(v) Machinery costing ₹4,00,000 (order placed earlier, advance ₹40,000 paid). Balance: (a) old personal machine valued ₹30,000 given in exchange; (b) cheque from savings a/c ₹1,30,000; (c) balance by firm's bank a/c cheque</div>
+      <div>(vi) Paid wages ₹2,500 for installation of machine</div>
+    </div>
+    <div class="jsec-title">Journal <span class="n">6 entries</span></div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">(i)</div>
+      <div class="jline"><span class="jacc">Purchases A/c</span><span class="jdr">Dr.</span><span class="jamt-d">18,000</span></div>
+      <div class="jline"><span class="jacc">Input IGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,160</span></div>
+      <div class="jline sub"><span class="jacc">To Ramesh's A/c</span><span class="jamt-c">20,160</span></div>
+      <div class="jnarr">Goods purchased from Ramesh at 20% discount</div></div>
+    <div class="entry"><div class="entry-date">(ii)</div>
+      <div class="jline"><span class="jacc">Krishna's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">10,080</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">9,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">1,080</span></div>
+      <div class="jnarr">Goods worth Rs 7,000 sold to Krishna for Rs 9,000 plus IGST @12%</div></div>
+    <div class="entry"><div class="entry-date">(iii)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,200</span></div>
+      <div class="jline sub"><span class="jacc">To Sales A/c</span><span class="jamt-c">10,000</span></div>
+      <div class="jline sub"><span class="jacc">To Output IGST A/c</span><span class="jamt-c">1,200</span></div>
+      <div class="jnarr">Goods worth Rs 10,000 sold and IGST charged @12%</div></div>
+    <div class="entry"><div class="entry-date">(iv)</div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jnarr">Cash deposited into Savings A/c</div></div>
+    <div class="entry"><div class="entry-date">(v)</div>
+      <div class="jline"><span class="jacc">Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,00,000</span></div>
+      <div class="jline sub"><span class="jacc">To Advance on order</span><span class="jamt-c">40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c (Note)</span><span class="jamt-c">1,60,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bank A/c</span><span class="jamt-c">2,00,000</span></div>
+      <div class="jnarr">Machinery purchased for exchange of personal machine and by issuing cheque</div></div>
+    <div class="entry"><div class="entry-date">(vi)</div>
+      <div class="jline"><span class="jacc">Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,500</span></div>
+      <div class="jline sub"><span class="jacc">To Cash A/c</span><span class="jamt-c">2,500</span></div>
+      <div class="jnarr">Wages paid for installation of machine</div></div>
+    <div class="wnote"><b>Note (as given in source):</b> An old personal machine given in exchange of Rs 30,000 and cheque of Rs 1,30,000 from Savings A/c will increase the Capital A/c of proprietor (₹30,000 + ₹1,30,000 = ₹1,60,000).</div>
+  </div></div>
+</div>
+
+</div></div>
+<div class="wrap">
+  <div class="sec-label"><span class="dot"></span>Opening Entries (Q30–Q32)<span class="line"></span></div>
+  <div id="qc-14">
+
+<div class="qcard" id="q30">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q30</div>
+    <div class="txt"><div class="lbl">Opening Journal Entry — Rahman</div><div class="ttl">Find capital as balancing figure from assets &amp; liabilities</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>1 Apr 2019: Cash-in-Hand ₹11,200; Cash at Bank ₹2,57,600; Bills Receivable ₹68,800; Jai Ram (Dr.) ₹16,000; Ram Kumar (Dr.) ₹48,080; Office Furniture ₹52,800; Stock-in-Trade ₹4,16,000</div>
+      <div>Doulat Ram (Cr.) ₹1,74,720; Hari Ram (Cr.) ₹2,16,960; Bills Payable <span class="amt">₹80,000</span></div>
+    </div>
+    <div class="jsec-title">Opening Journal Entry</div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Apr 01, 2019</div>
+      <div class="jline"><span class="jacc">Cash-in-Hand A/c</span><span class="jdr">Dr.</span><span class="jamt-d">11,200</span></div>
+      <div class="jline"><span class="jacc">Cash at Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,57,600</span></div>
+      <div class="jline"><span class="jacc">Bills Receivable A/c</span><span class="jdr">Dr.</span><span class="jamt-d">68,800</span></div>
+      <div class="jline"><span class="jacc">Jai Ram's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">16,000</span></div>
+      <div class="jline"><span class="jacc">Ram Kumar's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">48,080</span></div>
+      <div class="jline"><span class="jacc">Office Furniture A/c</span><span class="jdr">Dr.</span><span class="jamt-d">52,800</span></div>
+      <div class="jline"><span class="jacc">Stock-in-Trade A/c</span><span class="jdr">Dr.</span><span class="jamt-d">4,16,000</span></div>
+      <div class="jline sub"><span class="jacc">To Doulat Ram's A/c</span><span class="jamt-c">1,74,720</span></div>
+      <div class="jline sub"><span class="jacc">To Hari Ram's A/c</span><span class="jamt-c">2,16,960</span></div>
+      <div class="jline sub"><span class="jacc">To Bills Payable A/c</span><span class="jamt-c">80,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c (Balancing Figure)</span><span class="jamt-c">3,98,800</span></div>
+      <div class="jnarr">Being the balances of assets, liabilities and capital brought forward</div></div>
+    <div class="wnote">Therefore, the amount of Capital of Rahman on 1st April, 2019 is <b>Rs 3,98,800</b>.</div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q31">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q31</div>
+    <div class="txt"><div class="lbl">Opening Journal Entry — Tendulkar</div><div class="ttl">Find capital as balancing figure from assets &amp; liabilities</div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>1 Apr 2019: Stock-in-Hand ₹2,88,000; Bills Payable ₹48,000; Cash at Bank ₹2,16,000; Plant &amp; Machinery ₹1,20,000</div>
+      <div>Debtors ₹60,000; Creditors ₹96,000; Investment ₹2,40,000; Loan from Suresh <span class="amt">₹1,80,000</span></div>
+    </div>
+    <div class="jsec-title">Opening Journal Entry</div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Apr 01, 2019</div>
+      <div class="jline"><span class="jacc">Stock-in-Hand A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,88,000</span></div>
+      <div class="jline"><span class="jacc">Cash at Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,16,000</span></div>
+      <div class="jline"><span class="jacc">Plant &amp; Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,20,000</span></div>
+      <div class="jline"><span class="jacc">Debtors A/c</span><span class="jdr">Dr.</span><span class="jamt-d">60,000</span></div>
+      <div class="jline"><span class="jacc">Investments A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,40,000</span></div>
+      <div class="jline sub"><span class="jacc">To Bills Payable A/c</span><span class="jamt-c">48,000</span></div>
+      <div class="jline sub"><span class="jacc">To Creditors A/c</span><span class="jamt-c">96,000</span></div>
+      <div class="jline sub"><span class="jacc">To Loan from Suresh A/c</span><span class="jamt-c">1,80,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c (Balancing Figure)</span><span class="jamt-c">6,00,000</span></div>
+      <div class="jnarr">Being the balances of assets, liabilities and capital brought forward</div></div>
+    <div class="wnote">Therefore, the amount of Capital of Tendulkar on 1st April, 2019 is <b>Rs 6,00,000</b>.</div>
+  </div></div>
+</div>
+
+<div class="qcard" id="q32">
+  <div class="qhead" onclick="toggleQ(this)">
+    <div class="qnum">Q32</div>
+    <div class="txt"><div class="lbl">Opening Journal Entry — Vikas (from Balance Sheet)</div><div class="ttl">GST accounts, salary/creditors payable, capital + profit − drawings <span class="tier gst">GST</span></div></div>
+    <div class="chev">▼</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="given">
+      <div>Balance Sheet as at 31 March 2019 — <b>Assets:</b> Land &amp; Building ₹1,50,000; Plant &amp; Machinery ₹2,50,750; Chandra &amp; Sons ₹71,270; Closing Stock ₹56,250; Cash in Hand ₹15,700; Cash at Bank ₹75,250; Input CGST <span class="amt">₹5,000</span></div>
+      <div><b>Liabilities:</b> Capital (Opening ₹5,05,115 + Profit ₹1,20,115 − Drawings ₹60,000 = ₹5,65,230); Salary Payable ₹15,000; Magic Trades ₹27,220; Babbar &amp; Co. ₹11,770; Output SGST ₹5,000 <span class="amt">(Total both sides ₹6,24,220)</span></div>
+    </div>
+    <div class="jsec-title">Opening Journal Entry</div>
+    <div class="jcolhead"><span class="jacc">Particulars</span><span class="jdr">Dr</span><span class="jamt-d">Debit</span><span class="jamt-c">Credit</span></div>
+    <div class="entry"><div class="entry-date">Apr 01, 2019</div>
+      <div class="jline"><span class="jacc">Land &amp; Building A/c</span><span class="jdr">Dr.</span><span class="jamt-d">1,50,000</span></div>
+      <div class="jline"><span class="jacc">Plant &amp; Machinery A/c</span><span class="jdr">Dr.</span><span class="jamt-d">2,50,750</span></div>
+      <div class="jline"><span class="jacc">Chandra &amp; Son's A/c</span><span class="jdr">Dr.</span><span class="jamt-d">71,270</span></div>
+      <div class="jline"><span class="jacc">Closing Stock A/c</span><span class="jdr">Dr.</span><span class="jamt-d">56,250</span></div>
+      <div class="jline"><span class="jacc">Cash A/c</span><span class="jdr">Dr.</span><span class="jamt-d">15,700</span></div>
+      <div class="jline"><span class="jacc">Bank A/c</span><span class="jdr">Dr.</span><span class="jamt-d">75,250</span></div>
+      <div class="jline"><span class="jacc">Input CGST A/c</span><span class="jdr">Dr.</span><span class="jamt-d">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Salary Payable A/c</span><span class="jamt-c">15,000</span></div>
+      <div class="jline sub"><span class="jacc">To Magic Traders's A/c</span><span class="jamt-c">27,220</span></div>
+      <div class="jline sub"><span class="jacc">To Babbar &amp; Co.Ltd's A/c</span><span class="jamt-c">11,770</span></div>
+      <div class="jline sub"><span class="jacc">To Output SGST A/c</span><span class="jamt-c">5,000</span></div>
+      <div class="jline sub"><span class="jacc">To Capital A/c (Balancing Figure)</span><span class="jamt-c">5,65,230</span></div>
+      <div class="jnarr">Opening entry made</div></div>
+  </div></div>
+</div>
+
+  </div>
+
+  <div class="mnemonic">
+    <h3>🧠 Quick Memory Trick</h3>
+    <p><b>Golden Rules:</b> Personal A/c — Debit the receiver, Credit the giver. Real A/c — Debit what comes in, Credit what goes out. Nominal A/c — Debit expenses/losses, Credit incomes/gains.</p>
+    <p>🔵 <b>Discount Allowed</b> is an expense (Dr.) when <i>we</i> receive payment; <b>Discount Received</b> is an income (Cr.) when <i>we</i> make payment.</p>
+    <p>🟢 <b>GST:</b> Input CGST/SGST/IGST on purchases is an asset (Dr.); Output CGST/SGST/IGST on sales is a liability (Cr.) until set off.</p>
+  </div>
+
+  <div class="actions">
+    <button class="abtn expand" id="expandBtn" onclick="toggleAll()">⬇ Expand All</button>
+    <button class="abtn top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆ Top</button>
+  </div>
+
+  <footer>India Post AAO Exam Prep · Chapter 5: Journal · 32 Questions</footer>
+</div>
+
+<script>
+function toggleQ(head){
+  const card = head.parentElement;
+  const body = card.querySelector('.qbody');
+  card.classList.toggle('open');
+  if(card.classList.contains('open')){ body.style.maxHeight = body.scrollHeight + 'px'; }
+  else { body.style.maxHeight = 0; }
+}
+let allExpanded = false;
+function toggleAll(){
+  const cards = document.querySelectorAll('.qcard');
+  allExpanded = !allExpanded;
+  cards.forEach(card=>{
+    const body = card.querySelector('.qbody');
+    if(allExpanded){ card.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+    else { card.classList.remove('open'); body.style.maxHeight = 0; }
+  });
+  document.getElementById('expandBtn').innerHTML = allExpanded ? '⬆ Collapse All' : '⬇ Expand All';
+}
+(function(){
+  const nav = document.getElementById('jumpNav');
+  for(let i=1;i<=32;i++){
+    const a = document.createElement('a');
+    a.href = '#q'+i;
+    a.textContent = 'Q'+i;
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const card = document.getElementById('q'+i);
+      if(!card.classList.contains('open')){ toggleQ(card.querySelector('.qhead')); }
+      setTimeout(()=>{ card.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
+    });
+    nav.appendChild(a);
+  }
+})();
+const darkBtn = document.getElementById('darkBtn');
+darkBtn.addEventListener('click', ()=>{
+  const body = document.body;
+  const isDark = body.getAttribute('data-theme') === 'dark';
+  body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  darkBtn.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('journal-theme', isDark ? 'light' : 'dark');
+});
+(function(){
+  const saved = localStorage.getItem('journal-theme');
+  if(saved === 'dark'){ document.body.setAttribute('data-theme','dark'); darkBtn.textContent = '☀️'; }
+})();
+</script>
+</body>
+</html>

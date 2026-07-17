@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Chapter 10 · Trial Balance — Visual Study Cards</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --paper:#F2F0E8;
+  --paper-2:#E8E4D6;
+  --ink:#1B2140;
+  --ink-soft:#565E77;
+  --rule:#C9C3AD;
+  --debit:#2A5DAA;
+  --debit-bg:#E2EBF7;
+  --credit:#C1701F;
+  --credit-bg:#F7E9D8;
+  --balance:#276E5C;
+  --balance-bg:#DFF0EA;
+  --card:#FFFDF8;
+  --shadow: 0 2px 0 rgba(27,33,64,.08), 0 8px 24px -12px rgba(27,33,64,.26);
+  --radius: 14px;
+}
+[data-theme="dark"]{
+  --paper:#12141F;
+  --paper-2:#191C2B;
+  --ink:#E9E7DD;
+  --ink-soft:#AEB2C4;
+  --rule:#353A52;
+  --debit:#7FAEF0;
+  --debit-bg:#1B2C48;
+  --credit:#EFB06A;
+  --credit-bg:#3B2C14;
+  --balance:#6ADAB9;
+  --balance-bg:#123028;
+  --card:#191C2C;
+  --shadow: 0 2px 0 rgba(0,0,0,.35), 0 10px 28px -12px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background-color:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  padding-bottom:80px;
+  transition:background-color .3s, color .3s;
+}
+.grid-bg{
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 27px, var(--rule) 28px);
+  opacity:.28;
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+}
+
+header.hero{
+  position:relative;
+  padding:30px 18px 24px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(39,110,92,.16), transparent 55%),
+    var(--paper-2);
+  border-bottom:3px double var(--rule);
+  overflow:hidden;
+}
+.scale-icon{ position:absolute; top:16px; right:16px; width:70px; height:70px; opacity:.5; color:var(--balance);}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--balance); font-weight:600;
+  background:var(--balance-bg); padding:4px 10px; border-radius:20px;
+  border:1px solid var(--balance);
+}
+h1.title{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(26px,7.5vw,40px);
+  line-height:1.05;
+  margin:10px 0 6px;
+  letter-spacing:-.01em;
+  max-width:75%;
+}
+h1.title em{ color:var(--balance); font-style:normal; border-bottom:4px solid var(--balance); }
+.hero-sub{ color:var(--ink-soft); font-size:14px; max-width:520px; line-height:1.5; margin:0 0 16px;}
+.hero-row{ display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none;}
+.hero-row::-webkit-scrollbar{display:none;}
+.stat-chip{
+  flex:0 0 auto;
+  background:var(--card); border:1px solid var(--rule); border-radius:12px;
+  padding:10px 14px; box-shadow:var(--shadow); min-width:88px; text-align:center;
+}
+.stat-chip .num{ font-family:'Fraunces',serif; font-size:20px; font-weight:700; color:var(--ink);}
+.stat-chip .lbl{ font-size:9.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); font-weight:600;}
+
+.toolbar{
+  position:sticky; top:0; z-index:20;
+  display:flex; gap:8px; padding:10px 14px;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.tbtn{
+  border:1px solid var(--rule); background:var(--card); color:var(--ink);
+  font-family:'Inter'; font-weight:600; font-size:12.5px;
+  padding:8px 12px; border-radius:20px; cursor:pointer; display:flex; align-items:center; gap:6px;
+}
+.tbtn.active{ background:var(--ink); color:var(--paper); border-color:var(--ink);}
+.tbtn:active{ transform:scale(.97); }
+.spacer{flex:1;}
+
+main{ max-width:760px; margin:0 auto; padding:14px 12px 40px; position:relative; z-index:1;}
+
+.qcard{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.qhead{
+  display:flex; align-items:center; gap:12px;
+  padding:13px 15px; cursor:pointer; user-select:none;
+}
+.qnum{
+  font-family:'Fraunces',serif; font-weight:700; font-size:17px;
+  width:36px; height:36px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ink); color:var(--paper); flex:0 0 auto;
+}
+.qhead .qtitle{ flex:1; min-width:0;}
+.qhead .qtitle .qlabel{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--balance); font-weight:700;}
+.qhead .qtitle .qsum{ font-size:13.8px; font-weight:600; color:var(--ink); line-height:1.35; margin-top:2px;}
+.chev{ transition:transform .25s; color:var(--ink-soft); flex:0 0 auto;}
+.qcard.open .chev{ transform:rotate(180deg);}
+.qbody{ max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.qbody-inner{ padding:0 15px 16px; border-top:1px dashed var(--rule); }
+
+.given-box{
+  background:var(--paper-2); border-radius:10px; padding:11px 13px; margin:13px 0;
+  font-size:13px; line-height:1.55; color:var(--ink-soft);
+  border-left:4px solid var(--balance);
+}
+.given-box b{ color:var(--ink); }
+.given-tx{ list-style:none; margin:8px 0 0; padding:0; }
+.given-tx li{ display:flex; justify-content:space-between; gap:10px; padding:4px 0; border-bottom:1px dotted var(--rule); font-family:'IBM Plex Mono',monospace; font-size:11.5px;}
+.given-tx li:last-child{border-bottom:none;}
+.given-tx .amt{ color:var(--ink); font-weight:700; white-space:nowrap;}
+
+.sec-label{
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--balance); font-weight:700; margin:16px 0 6px; display:flex; align-items:center; gap:6px;
+}
+.sec-label svg{ width:14px; height:14px; }
+.sec-sub{ font-size:11.5px; color:var(--ink-soft); margin:-2px 0 8px; font-style:italic;}
+
+.subtabs{ display:flex; gap:6px; margin:14px 0 10px; flex-wrap:wrap;}
+.stbtn{
+  border:1px solid var(--rule); background:transparent; color:var(--ink-soft);
+  font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;
+  font-family:'Inter';
+}
+.stbtn.active{ background:var(--balance); border-color:var(--balance); color:#fff;}
+.pane{ display:none; }
+.pane.active{ display:block; }
+
+/* Trial Balance table (S.No format) */
+.tb-table{ width:100%; border-collapse:collapse; font-size:12.3px; margin-bottom:6px;}
+.tb-table th{
+  text-align:left; font-family:'IBM Plex Mono'; font-size:9.5px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--ink-soft); border-bottom:2px solid var(--ink);
+  padding:6px 4px;
+}
+.tb-table th.num{ text-align:right; }
+.tb-table td{ padding:5px 4px; vertical-align:top; border-bottom:1px solid var(--rule); line-height:1.4;}
+.tb-table td.sno{ font-family:'IBM Plex Mono'; color:var(--balance); font-weight:700; font-size:11px; white-space:nowrap; width:22px;}
+.tb-table td.num{ font-family:'IBM Plex Mono'; text-align:right; white-space:nowrap; font-weight:700;}
+.tb-table td.num.debit{ color:var(--debit);}
+.tb-table td.num.credit{ color:var(--credit);}
+.tb-table tr.total td{ border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); font-weight:800; background:var(--balance-bg); font-family:'IBM Plex Mono';}
+.tb-table tr.total td.num{ color:var(--ink); }
+
+/* Two-column (Dr list | Cr list) layout for given/corrected raw trial balances */
+.twocol-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;}
+.twocol{ border:1.5px solid var(--ink); border-radius:10px; overflow:hidden;}
+.twocol-head{ padding:7px 9px; font-family:'Fraunces',serif; font-weight:700; font-size:12.5px; border-bottom:1.5px solid var(--ink);}
+.twocol.dr .twocol-head{ background:var(--debit-bg); color:var(--debit);}
+.twocol.cr .twocol-head{ background:var(--credit-bg); color:var(--credit);}
+.twocol-row{ display:flex; justify-content:space-between; gap:4px; padding:4px 9px; font-size:11px; border-bottom:1px dotted var(--rule);}
+.twocol-row:last-of-type{ border-bottom:none;}
+.twocol-row .amt{ font-family:'IBM Plex Mono'; font-weight:700; white-space:nowrap;}
+.twocol.dr .amt{ color:var(--debit);}
+.twocol.cr .amt{ color:var(--credit);}
+.twocol-total{ display:flex; justify-content:space-between; padding:5px 9px; font-family:'IBM Plex Mono'; font-weight:800; border-top:2px solid var(--ink); background:var(--paper-2);}
+
+/* Journal table (for Q2) */
+.jtable{ width:100%; border-collapse:collapse; font-size:12.5px; }
+.jtable th{
+  text-align:left; font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink-soft); border-bottom:2px solid var(--ink);
+  padding:6px 4px;
+}
+.jtable td{ padding:5px 4px; vertical-align:top; border-bottom:1px solid var(--rule);}
+.jtable .je-date{ font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); white-space:nowrap;}
+.jtable .je-part{ line-height:1.45;}
+.jtable .je-part .dr-line{ color:var(--debit); font-weight:700;}
+.jtable .je-part .cr-line{ padding-left:14px; color:var(--credit); font-weight:600;}
+.jtable .je-part .narr{ font-style:italic; color:var(--ink-soft); font-size:11.3px; display:block; margin-top:2px;}
+.jtable .num{ font-family:'IBM Plex Mono'; text-align:right; white-space:nowrap; font-weight:600;}
+.jtable .num.d{ color:var(--debit);}
+.jtable .num.c{ color:var(--credit);}
+.jentry-block{ border-bottom:2px solid var(--rule); }
+.jentry-block:last-child{ border-bottom:none; }
+
+/* Ledger T-accounts (for Q2) */
+.ledger-grid{ display:flex; flex-direction:column; gap:14px;}
+.tacc{ border:1.5px solid var(--ink); border-radius:10px; overflow:hidden; background:var(--card);}
+.tacc-head{ background:var(--paper-2); padding:8px 12px; font-family:'Fraunces',serif; font-weight:700; font-size:14px; border-bottom:1.5px solid var(--ink);}
+.tacc-cols{ display:grid; grid-template-columns:1fr 1fr; position:relative;}
+.tacc-cols::after{ content:""; position:absolute; top:0; bottom:0; left:50%; width:0; border-left:1.5px dashed var(--rule);}
+.tcol{ padding:8px 8px 10px;}
+.tcol-lbl{ font-family:'IBM Plex Mono'; font-size:9.5px; text-transform:uppercase; letter-spacing:.08em; font-weight:700; margin-bottom:5px; display:flex; justify-content:space-between;}
+.tcol.dr .tcol-lbl{ color:var(--debit);}
+.tcol.cr .tcol-lbl{ color:var(--credit);}
+.trow{ display:flex; justify-content:space-between; gap:4px; font-size:11.3px; padding:2.5px 0; line-height:1.3;}
+.trow .tdate{ font-family:'IBM Plex Mono'; color:var(--ink-soft); font-size:10px; flex:0 0 auto; width:38px;}
+.trow .tpart{ flex:1; padding:0 3px;}
+.trow .tamt{ font-family:'IBM Plex Mono'; font-weight:700; white-space:nowrap;}
+.tcol.dr .trow .tamt{ color:var(--debit);}
+.tcol.cr .trow .tamt{ color:var(--credit);}
+.ttotal{ border-top:2px solid var(--ink); margin-top:5px; padding-top:4px; font-weight:800;}
+
+.note-box{
+  background:var(--credit-bg); border-left:4px solid var(--credit); border-radius:8px;
+  padding:9px 12px; margin-top:10px; font-size:11.8px; line-height:1.5; color:var(--ink);
+}
+.note-box b{ color:var(--credit); }
+
+footer.site-foot{ text-align:center; color:var(--ink-soft); font-size:11.5px; padding:24px 16px 10px; font-family:'IBM Plex Mono';}
+@media (max-width:480px){ .twocol-wrap{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<header class="hero">
+  <svg class="scale-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M7 21h10M5 7h14M5 7L2 13a3 3 0 006 0L5 7zM19 7l-3 6a3 3 0 006 0l-3-6z"/></svg>
+  <span class="eyebrow">✎ Accountancy · Class XI</span>
+  <h1 class="title">Chapter 10 — <em>Trial Balance</em></h1>
+  <p class="hero-sub">12 worked problems turned into tap‑to‑open study cards — every account sorted onto its correct pan of the scale. Debit balances in blue, Credit balances in amber, totals always in balance.</p>
+  <div class="hero-row" id="statChips"></div>
+</header>
+
+<div class="toolbar">
+  <button class="tbtn active" id="expandAllBtn">⤢ Expand all</button>
+  <button class="tbtn" id="collapseAllBtn">⤡ Collapse all</button>
+  <div class="spacer"></div>
+  <button class="tbtn" id="themeBtn">🌙 Dark</button>
+</div>
+
+<main id="app"></main>
+
+
+
+<script>
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderTB(tb){
+  const wrap = el('div');
+  if(tb.label) wrap.appendChild(el('div','sec-label', tb.label));
+  if(tb.asOn) wrap.appendChild(el('div','sec-sub', 'Trial Balance as on ' + tb.asOn));
+  const table = el('table','tb-table');
+  table.innerHTML = `<thead><tr><th style="width:8%">#</th><th>Account / Particulars</th><th class="num" style="width:24%">Debit (₹)</th><th class="num" style="width:24%">Credit (₹)</th></tr></thead>`;
+  const tbody = el('tbody');
+  tb.rows.forEach(r=>{
+    const [sno, name, debit, credit] = r;
+    const tr = el('tr');
+    tr.innerHTML = `<td class="sno">${sno||''}</td><td>${name}</td><td class="num debit">${debit||''}</td><td class="num credit">${credit||''}</td>`;
+    tbody.appendChild(tr);
+  });
+  const totalTr = el('tr','total');
+  totalTr.innerHTML = `<td></td><td>Total</td><td class="num">${tb.total[0]}</td><td class="num">${tb.total[1]}</td>`;
+  tbody.appendChild(totalTr);
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function renderTwoCol(tc){
+  const wrap = el('div');
+  if(tc.label) wrap.appendChild(el('div','sec-label', tc.label));
+  const outer = el('div','twocol-wrap');
+  const dr = el('div','twocol dr');
+  dr.innerHTML = `<div class="twocol-head">Debit Balances</div>`;
+  tc.debit.forEach(r=> dr.innerHTML += `<div class="twocol-row"><span>${r[0]}</span><span class="amt">${r[1]}</span></div>`);
+  dr.innerHTML += `<div class="twocol-total"><span>Total</span><span>${tc.total[0]}</span></div>`;
+  const cr = el('div','twocol cr');
+  cr.innerHTML = `<div class="twocol-head">Credit Balances</div>`;
+  tc.credit.forEach(r=> cr.innerHTML += `<div class="twocol-row"><span>${r[0]}</span><span class="amt">${r[1]}</span></div>`);
+  cr.innerHTML += `<div class="twocol-total"><span>Total</span><span>${tc.total[1]}</span></div>`;
+  outer.appendChild(dr); outer.appendChild(cr);
+  wrap.appendChild(outer);
+  return wrap;
+}
+
+function renderJournal(entries){
+  const wrap = el('div');
+  const table = el('table','jtable');
+  table.innerHTML = `<thead><tr><th style="width:15%">Date</th><th>Particulars</th><th style="width:22%">Debit (₹)</th><th style="width:22%">Credit (₹)</th></tr></thead>`;
+  const tbody = el('tbody');
+  entries.forEach(en=>{
+    const tr = el('tr','jentry-block');
+    let partHtml = '';
+    en.lines.forEach(l=>{
+      if(l.dr) partHtml += `<span class="dr-line">${l.text}</span><br>`;
+      else partHtml += `<span class="cr-line">To ${l.text}</span><br>`;
+    });
+    if(en.narration) partHtml += `<span class="narr">${en.narration}</span>`;
+    let debitCol = en.lines.filter(l=>l.dr).map(l=>l.amt||'').join('<br>');
+    let creditCol = en.lines.filter(l=>!l.dr).map(l=>l.amt||'').join('<br>');
+    tr.innerHTML = `<td class="je-date">${en.date}</td><td class="je-part">${partHtml}</td><td class="num d">${debitCol}</td><td class="num c">${creditCol}</td>`;
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function renderLedger(accounts){
+  const wrap = el('div','ledger-grid');
+  accounts.forEach(acc=>{
+    const card = el('div','tacc');
+    card.innerHTML = `<div class="tacc-head">${acc.name}</div>`;
+    const cols = el('div','tacc-cols');
+    const drCol = el('div','tcol dr');
+    drCol.innerHTML = `<div class="tcol-lbl"><span>Dr.</span><span>₹</span></div>`;
+    acc.dr.forEach(r=>{ drCol.innerHTML += `<div class="trow"><span class="tdate">${r[0]}</span><span class="tpart">${r[1]}</span><span class="tamt">${r[2]}</span></div>`;});
+    if(acc.drTotal) drCol.innerHTML += `<div class="trow ttotal"><span class="tdate"></span><span class="tpart">Total</span><span class="tamt">${acc.drTotal}</span></div>`;
+    const crCol = el('div','tcol cr');
+    crCol.innerHTML = `<div class="tcol-lbl"><span>Cr.</span><span>₹</span></div>`;
+    acc.cr.forEach(r=>{ crCol.innerHTML += `<div class="trow"><span class="tdate">${r[0]}</span><span class="tpart">${r[1]}</span><span class="tamt">${r[2]}</span></div>`;});
+    if(acc.crTotal) crCol.innerHTML += `<div class="trow ttotal"><span class="tdate"></span><span class="tpart">Total</span><span class="tamt">${acc.crTotal}</span></div>`;
+    cols.appendChild(drCol); cols.appendChild(crCol);
+    card.appendChild(cols);
+    wrap.appendChild(card);
+  });
+  return wrap;
+}
+
+function buildQuestionCard(q){
+  const card = el('div','qcard');
+  const head = el('div','qhead');
+  head.innerHTML = `
+    <div class="qnum">${q.num}</div>
+    <div class="qtitle"><div class="qlabel">Question ${q.num}</div><div class="qsum">${q.summary}</div></div>
+    <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>`;
+  const body = el('div','qbody');
+  const inner = el('div','qbody-inner');
+
+  if(q.given){
+    const gb = el('div','given-box');
+    gb.innerHTML = `<b>📋 Given</b><br>${q.given}` + (q.givenTx ? `<ul class="given-tx">${q.givenTx.map(t=>`<li><span>${t[0]}</span><span class="amt">₹ ${t[1]}</span></li>`).join('')}</ul>` : '');
+    inner.appendChild(gb);
+  }
+
+  if(q.givenTwoCol) inner.appendChild(renderTwoCol(q.givenTwoCol));
+
+  const tabsAvail = [];
+  if(q.journal) tabsAvail.push('Journal');
+  if(q.ledgers) tabsAvail.push('Ledger');
+  if(q.trial) tabsAvail.push('Trial Balance');
+
+  if(tabsAvail.length>1){
+    const subtabs = el('div','subtabs');
+    const panes = el('div');
+    tabsAvail.forEach((t,i)=>{
+      const b = el('button','stbtn'+(i===0?' active':''), t);
+      b.onclick = ()=>{
+        subtabs.querySelectorAll('.stbtn').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+        panes.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+        panes.querySelector(`[data-pane="${t}"]`).classList.add('active');
+      };
+      subtabs.appendChild(b);
+    });
+    inner.appendChild(subtabs);
+    if(q.journal){ const p=el('div','pane active'); p.dataset.pane='Journal'; p.appendChild(renderJournal(q.journal)); panes.appendChild(p); }
+    if(q.ledgers){ const p=el('div','pane'); p.dataset.pane='Ledger'; p.appendChild(renderLedger(q.ledgers)); panes.appendChild(p); }
+    if(q.trial){ const p=el('div','pane'); p.dataset.pane='Trial Balance'; p.appendChild(renderTB(q.trial)); panes.appendChild(p); }
+    inner.appendChild(panes);
+  } else if(q.trial){
+    inner.appendChild(renderTB(q.trial));
+  }
+
+  if(q.correctedTwoCol) inner.appendChild(renderTwoCol(q.correctedTwoCol));
+
+  if(q.note){
+    const nb = el('div','note-box');
+    nb.innerHTML = `<b>Note:</b> ${q.note}`;
+    inner.appendChild(nb);
+  }
+
+  body.appendChild(inner);
+
+  head.onclick = ()=>{
+    const isOpen = card.classList.toggle('open');
+    body.style.maxHeight = isOpen ? body.scrollHeight+'px' : '0px';
+  };
+  card.appendChild(head);
+  card.appendChild(body);
+  return card;
+}
+
+function init(){
+  const app = document.getElementById('app');
+  QUESTIONS.forEach(q=> app.appendChild(buildQuestionCard(q)));
+
+  const chips = document.getElementById('statChips');
+  [['12','Questions'],['3','With GST'],['4','Correction cases'],['100%','Content match']].forEach(s=>{
+    chips.innerHTML += `<div class="stat-chip"><div class="num">${s[0]}</div><div class="lbl">${s[1]}</div></div>`;
+  });
+
+  document.getElementById('expandAllBtn').onclick = ()=>{
+    document.querySelectorAll('.qcard').forEach(c=>{
+      c.classList.add('open');
+      const b = c.querySelector('.qbody');
+      b.style.maxHeight = b.scrollHeight+'px';
+    });
+  };
+  document.getElementById('collapseAllBtn').onclick = ()=>{
+    document.querySelectorAll('.qcard').forEach(c=>{
+      c.classList.remove('open');
+      c.querySelector('.qbody').style.maxHeight = '0px';
+    });
+  };
+  const themeBtn = document.getElementById('themeBtn');
+  themeBtn.onclick = ()=>{
+    const d = document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){ d.removeAttribute('data-theme'); themeBtn.innerHTML='🌙 Dark';}
+    else { d.setAttribute('data-theme','dark'); themeBtn.innerHTML='☀️ Light';}
+  };
+
+  window.addEventListener('load', ()=>{
+    document.querySelectorAll('.qcard.open .qbody').forEach(b=> b.style.maxHeight = b.scrollHeight+'px');
+  });
+}
+</script>
+<script>
+// Data transcribed exactly from the source solutions (Chapter 10 - Trial Balance)
+const QUESTIONS = [];
+
+QUESTIONS.push({
+  num:1,
+  summary:"Eight balances (Capital, Stock, Cash, Debtors, Creditors, Bank Loan, Sales, Purchases) sorted straight onto the Trial Balance.",
+  given:"Prepare a Trial Balance with the following information:",
+  givenTx:[
+    ["(i) Capital","2,00,000"],
+    ["(ii) Stock","70,000"],
+    ["(iii) Cash","1,80,000"],
+    ["(iv) Debtors","3,00,000"],
+    ["(v) Creditors","1,00,000"],
+    ["(vi) Bank Loan","1,50,000"],
+    ["(vii) Sales","3,00,000"],
+    ["(viii) Purchases","2,00,000"]
+  ],
+  trial:{ rows:[
+    ["(i)","Capital","","2,00,000"],
+    ["(ii)","Stock","70,000",""],
+    ["(iii)","Cash","1,80,000",""],
+    ["(iv)","Debtors","3,00,000",""],
+    ["(v)","Creditors","","1,00,000"],
+    ["(vi)","Bank Loan","","1,50,000"],
+    ["(vii)","Sales","","3,00,000"],
+    ["(viii)","Purchases","2,00,000",""]
+  ], total:["7,50,000","7,50,000"]}
+});
+
+/* ===== Question 2: full Journal + Ledger + Trial Balance ===== */
+QUESTIONS.push({
+  num:2, place:"Books of Mohan",
+  summary:"Mohan starts business with ₹1,00,000; buys/sells on credit with Gopal and Ram, then a Journal → Ledger → Trial Balance walk-through.",
+  given:"Journalise the following transactions, post them into Ledger and prepare a Trial Balance:",
+  givenTx:[
+    ["April 1 — Mohan commenced business with cash","1,00,000"],
+    ["April 3 — Bought goods","5,000"],
+    ["April 4 — Sold goods to Gopal","4,000"],
+    ["April 10 — Bought goods from Ram","8,000"],
+    ["April 15 — Paid trade expenses","2,000"],
+    ["April 20 — Received cash from Gopal 3,950; discount allowed",""],
+    ["April 25 — Paid wages","700"],
+    ["April 27 — Paid to Ram in full settlement","7,700"],
+    ["April 30 — Paid rent","1,500"]
+  ],
+  journal:[
+    {date:"April 01",lines:[{dr:1,text:"Cash A/c",amt:"1,00,000"},{dr:0,text:"Capital A/c",amt:"1,00,000"}],narration:"(Commenced business with Cash)"},
+    {date:"April 03",lines:[{dr:1,text:"Purchases A/c",amt:"5,000"},{dr:0,text:"Cash A/c",amt:"5,000"}],narration:"(Bought goods)"},
+    {date:"April 04",lines:[{dr:1,text:"Gopal",amt:"4,000"},{dr:0,text:"Sales A/c",amt:"4,000"}],narration:"(Goods Sold to Gopal)"},
+    {date:"April 10",lines:[{dr:1,text:"Purchases A/c",amt:"8,000"},{dr:0,text:"Ram",amt:"8,000"}],narration:"(Bought goods from Ram)"},
+    {date:"April 15",lines:[{dr:1,text:"Trade Expenses A/c",amt:"2,000"},{dr:0,text:"Cash A/c",amt:"2,000"}],narration:"(Paid trade expenses)"},
+    {date:"April 20",lines:[{dr:1,text:"Cash A/c",amt:"3,950"},{dr:1,text:"Discount Allowed A/c",amt:"50"},{dr:0,text:"Gopal",amt:"4,000"}],narration:"(Cash received from Gopal and discount allowed)"},
+    {date:"April 25",lines:[{dr:1,text:"Wages A/c",amt:"700"},{dr:0,text:"Cash",amt:"700"}],narration:"(Paid Wages)"},
+    {date:"April 27",lines:[{dr:1,text:"Ram",amt:"8,000"},{dr:0,text:"Cash A/c",amt:"7,700"},{dr:0,text:"Discount Received A/c",amt:"300"}],narration:"(Paid to Ram and discount received from him)"},
+    {date:"April 30",lines:[{dr:1,text:"Rent A/c",amt:"1,500"},{dr:0,text:"Cash A/c",amt:"1,500"}],narration:"(Paid Rent)"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["April 01","Capital","1,00,000"],["April 20","Gopal","3,950"]], drTotal:"1,03,950",
+      cr:[["April 03","Purchases","5,000"],["April 15","Trade Expenses","2,000"],["April 25","Wages","700"],["April 27","Ram","7,700"],["April 30","Rent","1,500"],["","Balance c/d","87,050"]], crTotal:"1,03,950"},
+    {name:"Capital Account",
+      dr:[["April 30","Balance c/d","1,00,000"]], drTotal:"1,00,000",
+      cr:[["April 01","Cash","1,00,000"]], crTotal:"1,00,000"},
+    {name:"Purchases Account",
+      dr:[["April 03","Cash","5,000"],["April 10","Ram","8,000"]], drTotal:"13,000",
+      cr:[["April 30","Balance c/d","13,000"]], crTotal:"13,000"},
+    {name:"Sales Account",
+      dr:[["April 30","Balance c/d","4,000"]], drTotal:"4,000",
+      cr:[["April 04","Gopal","4,000"]], crTotal:"4,000"},
+    {name:"Gopal's Account",
+      dr:[["April 04","Sales","4,000"]], drTotal:"4,000",
+      cr:[["April 20","Cash","3,950"],["April 20","Discount Allowed","50"]], crTotal:"4,000"},
+    {name:"Ram's Account",
+      dr:[["April 27","Cash","7,700"],["","Discount Received","300"]], drTotal:"8,000",
+      cr:[["April 10","Purchases","8,000"]], crTotal:"8,000"},
+    {name:"Trade Expenses Account",
+      dr:[["April 15","Cash","2,000"]], drTotal:"2,000",
+      cr:[["April 30","Balance c/d","2,000"]], crTotal:"2,000"},
+    {name:"Discount Received Account",
+      dr:[["April 20","Balance c/d","300"]], drTotal:"300",
+      cr:[["April 20","Ram","300"]], crTotal:"300"},
+    {name:"Wages Account",
+      dr:[["April 25","Cash","700"]], drTotal:"700",
+      cr:[["April 30","Balance c/d","700"]], crTotal:"700"},
+    {name:"Discount Allowed Account",
+      dr:[["April 27","Gopal","50"]], drTotal:"50",
+      cr:[["April 01","Balance c/d","50"]], crTotal:"50"},
+    {name:"Rent Account",
+      dr:[["April 30","Cash","1,500"]], drTotal:"1,500",
+      cr:[["April 30","Balance c/d","1,500"]], crTotal:"1,500"}
+  ],
+  trial:{ rows:[
+    ["(i)","Cash","87,050",""],
+    ["(ii)","Capital","","1,00,000"],
+    ["(iii)","Sales","","4,000"],
+    ["(iv)","Trade Expenses","2,000",""],
+    ["(v)","Discount Received","","300"],
+    ["(vi)","Wages","700",""],
+    ["(vii)","Discount Allowed","50",""],
+    ["(viii)","Rent","1,500",""],
+    ["(ix)","Purchases","13,000",""]
+  ], total:["1,04,300","1,04,300"]}
+});
+
+QUESTIONS.push({
+  num:3,
+  summary:"Ankit's Capital was never opened as an account — it's recovered as the balancing figure (₹1,58,750) once everything else is placed.",
+  given:"Prepare the Trial Balance of Ankit as on 31st March, 2019. He has omitted to open a Capital Account:",
+  givenTx:[
+    ["Bank Overdraft","85,000"],
+    ["Sales","8,10,000"],
+    ["Purchases Return","22,500"],
+    ["Debtors","4,00,500"],
+    ["Wages","96,000"],
+    ["Capital","?"],
+    ["Purchases","4,45,000"],
+    ["Cash in Hand","8,500"],
+    ["Creditors","2,15,000"],
+    ["Sales Return","15,750"],
+    ["Equipment","25,000"],
+    ["Opening Stock","3,00,500"]
+  ],
+  trial:{ asOn:"March 31, 2019", rows:[
+    ["1","Bank Overdraft","","85,000"],
+    ["2","Sales","","8,10,000"],
+    ["3","Purchases Return","","22,500"],
+    ["4","Debtors","4,00,500",""],
+    ["5","Wages","96,000",""],
+    ["6","Capital","","1,58,750"],
+    ["7","Purchases","4,45,000",""],
+    ["8","Cash in hand","8,500",""],
+    ["9","Creditors","","2,15,000"],
+    ["10","Sales Return","15,750",""],
+    ["11","Equipment","25,000",""],
+    ["12","Opening Stock","3,00,500",""]
+  ], total:["12,91,250","12,91,250"]}
+});
+
+QUESTIONS.push({
+  num:4,
+  summary:"Fourteen straightforward balances — Capital, Stock, Furniture, Purchases, Cash, Carriage, Sales, Building, Returns, Trade Expenses, Discount, Salary and Rent.",
+  given:"Prepare a Trial Balance from the following items:",
+  givenTx:[
+    ["Capital","24,000"],["Building","12,000"],
+    ["Opening Stock","8,500"],["Returns Inward","1,900"],
+    ["Furniture","2,600"],["Returns Outward","350"],
+    ["Purchases","8,950"],["Trade Expenses","1,000"],
+    ["Cash","7,300"],["Discount Received","970"],
+    ["Carriage","300"],["Salary","3,000"],
+    ["Sales","22,500"],["Office Rent","2,270"]
+  ],
+  trial:{ asOn:"March 31, 2018", rows:[
+    ["1","Capital","","24,000"],
+    ["2","Opening Stock","8,500",""],
+    ["3","Furniture","2,600",""],
+    ["4","Purchases","8,950",""],
+    ["5","Cash","7,300",""],
+    ["6","Carriage","300",""],
+    ["7","Sales","","22,500"],
+    ["8","Building","12,000",""],
+    ["9","Returns Inward","1,900",""],
+    ["10","Returns Outwards","","350"],
+    ["11","Trade Expenses","1,000",""],
+    ["12","Discount Received","","970"],
+    ["13","Salary","3,000",""],
+    ["14","Office Rent","2,270",""]
+  ], total:["47,820","47,820"]}
+});
+
+QUESTIONS.push({
+  num:5, place:"Mr. A. Mukhopadhyay",
+  summary:"A long balance list including full GST accounts (Input/Output CGST, SGST and IGST) sorted onto the Trial Balance.",
+  given:"The following are the balances extracted from the books of Mr. A. Mukhopadhyay. Prepare a Trial Balance as on 31st March, 2019:",
+  givenTx:[
+    ["Cash","2,000"],["Sundry Creditors","40,000"],
+    ["Capital","80,000"],["Investment","8,000"],
+    ["Purchases","85,000"],["Plant and Machinery","15,000"],
+    ["Sales","1,08,400"],["Building","20,000"],
+    ["Purchases Return","6,000"],["Furniture","6,000"],
+    ["Sales Return","4,000"],["Electricity","700"],
+    ["Transportation","1,800"],["Postage","400"],
+    ["Discount Allowed","500"],["Drawings","8,000"],
+    ["Printing","5,000"],["Salaries","6,000"],
+    ["Sundry Debtors","70,000"],["Travelling Expenses","2,000"],
+    ["Input CGST A/c","2,500"],["Output CGST A/c","1,500"],
+    ["Input SGST A/c","2,500"],["Output SGST A/c","1,500"],
+    ["Input IGST A/c","4,000"],["Output IGST A/c","6,000"]
+  ],
+  trial:{ asOn:"March 31, 2019", rows:[
+    ["1","Cash","2,000",""],
+    ["2","Capital","","80,000"],
+    ["3","Purchases","85,000",""],
+    ["4","Sales","","1,08,400"],
+    ["5","Purchases Return","","6,000"],
+    ["6","Sales Return","4,000",""],
+    ["7","Transportation","1,800",""],
+    ["8","Discount Allowed","500",""],
+    ["9","Printing","5,000",""],
+    ["10","Sundry Debtors","70,000",""],
+    ["11","Input CGST A/c","2,500",""],
+    ["12","Input SGST A/c","2,500",""],
+    ["13","Input IGST A/c","4,000",""],
+    ["14","Sundry Creditors","","40,000"],
+    ["15","Investments","8,000",""],
+    ["16","Plant & Machinery","15,000",""],
+    ["17","Building","20,000",""],
+    ["18","Furniture","6,000",""],
+    ["19","Electricity","700",""],
+    ["20","Postage","400",""],
+    ["21","Drawings","8,000",""],
+    ["22","Salaries","6,000",""],
+    ["23","Travelling Expenses","2,000",""],
+    ["24","Output CGST A/c","","1,500"],
+    ["25","Output SGST A/c","","1,500"],
+    ["26","Output IGST A/c","","6,000"]
+  ], total:["2,43,400","2,43,400"]}
+});
+
+QUESTIONS.push({
+  num:6, place:"M/s. Prayag",
+  summary:"22 balances including a Bank overdraft, Commission and Interest accounts already marked Dr./Cr. — sorted onto the Trial Balance.",
+  given:"From the following information, prepare a Trial Balance of M/s. Prayag for the year ended 31st March, 2019:",
+  givenTx:[
+    ["Capital Accounts","1,25,000"],["Sales","1,54,500"],
+    ["Furniture and Fittings","6,400"],["Bank (Cr. Balance)","28,500"],
+    ["Motor Car","62,500"],["Purchase Returns","1,250"],
+    ["Buildings","75,000"],["Commission (Cr.)","3,750"],
+    ["Total Debtors","38,000"],["Sales Return","2,000"],
+    ["Total Creditors","25,000"],["Advertisement","2,500"],
+    ["Bad Debts","1,250"],["Interest Account (Dr.)","1,180"],
+    ["Stock (1st April 2018)","34,600"],["Cash Balance","6,500"],
+    ["Purchases","54,750"],["Insurance and Taxes","12,500"],
+    ["Input IGST A/c","3,000"],["Salaries","40,820"],
+    ["Output CGST A/c","1,500"],["Output SGST A/c","1,500"]
+  ],
+  trial:{ asOn:"March 31, 2019", rows:[
+    ["1","Capital Accounts","","1,25,000"],
+    ["2","Furniture & Fittings","6,400",""],
+    ["3","Motor Car","62,500",""],
+    ["4","Buildings","75,000",""],
+    ["5","Total Debtors","38,000",""],
+    ["6","Total Creditors","","25,000"],
+    ["7","Bad Debts","1,250",""],
+    ["8","Opening Stock","34,600",""],
+    ["9","Purchases","54,750",""],
+    ["10","Input IGST A/c","3,000",""],
+    ["11","Output CGST A/c","","1,500"],
+    ["12","Sales","","1,54,500"],
+    ["13","Bank Overdraft","","28,500"],
+    ["14","Purchases Return","","1,250"],
+    ["15","Commission (Cr.)","","3,750"],
+    ["16","Sales Return","2,000",""],
+    ["17","Advertisement","2,500",""],
+    ["18","Interest Account (Dr.)","1,180",""],
+    ["19","Cash Balance","6,500",""],
+    ["20","Insurance & Tax","12,500",""],
+    ["21","Salaries","40,820",""],
+    ["22","Output SGST A/c","","1,500"]
+  ], total:["3,41,000","3,41,000"]}
+});
+
+QUESTIONS.push({
+  num:7, place:"Sri Narugopal",
+  summary:"A large 28-item list that doesn't naturally balance — the solution adds a ₹1,90,000 Suspense A/c on the debit side to force equality.",
+  given:"From the following balances extracted from the Ledger of Sri Narugopal, prepare Trial Balance as on 31st March, 2019:",
+  givenTx:[
+    ["Capital","75,00,000"],["Building","7,50,000"],
+    ["Plant","15,00,000"],["Stock on 1st April, 2018","12,50,000"],
+    ["Cash in Hand","2,500"],["Cash at Bank","5,75,000"],
+    ["Commission Received","1,75,000"],["Rates, Taxes and Insurance","30,000"],
+    ["Discount (Dr.)","55,000"],["Discount (Cr.)","45,000"],
+    ["Purchases Return","50,000"],["Sundry Creditors","2,50,000"],
+    ["Interest Received","30,000"],["Sales","62,50,000"],
+    ["Repairing Charges","1,25,000"],["Book Debts","15,00,000"],
+    ["General Expenses","3,00,000"],["Rent","62,500"],
+    ["Wages","5,00,000"],["Purchases","48,00,000"],
+    ["Furnitures","1,20,000"],["Carriage and Freight","75,000"],
+    ["Sales Return","90,000"],["Delivery Van","5,00,000"],
+    ["Loan Advanced","6,00,000"],["Travelling Expenses","50,000"],
+    ["Office Salaries","6,25,000"],["Drawings","6,00,000"]
+  ],
+  trial:{ asOn:"March 31, 2019", rows:[
+    ["1","Capital","","75,00,000"],
+    ["2","Plant","15,00,000",""],
+    ["3","Cash in Hand","2,500",""],
+    ["4","Commission Received","","1,75,000"],
+    ["5","Discount (Dr.)","55,000",""],
+    ["6","Purchases Return","","50,000"],
+    ["7","Interest Received","","30,000"],
+    ["8","Repairing Charges","1,25,000",""],
+    ["9","General Expenses","3,00,000",""],
+    ["10","Wages","5,00,000",""],
+    ["11","Furnitures","1,20,000",""],
+    ["12","Sales Return","90,000",""],
+    ["13","Loan Advanced","6,00,000",""],
+    ["14","Office Salaries","6,25,000",""],
+    ["15","Building","7,50,000",""],
+    ["16","Opening Stock","12,50,000",""],
+    ["17","Cash at Bank","5,75,000",""],
+    ["18","Rates, Taxes & Insurance","30,000",""],
+    ["19","Discount (Cr.)","","45,000"],
+    ["20","Sundry Creditors","","2,50,000"],
+    ["21","Sales","","62,50,000"],
+    ["22","Book Debts","15,00,000",""],
+    ["23","Rent","62,500",""],
+    ["24","Purchases","48,00,000",""],
+    ["25","Carriage & Freight","75,000",""],
+    ["26","Delivery Van","5,00,000",""],
+    ["27","Travelling Expenses","50,000",""],
+    ["28","Drawings","6,00,000",""],
+    ["29","Suspense A/c","1,90,000",""]
+  ], total:["1,43,00,000","1,43,00,000"]}
+});
+
+QUESTIONS.push({
+  num:8, place:"R.J. Gupta",
+  summary:"25 balances including Input/Output GST accounts and a Factory Wages / Carriage split — sorted onto the Trial Balance.",
+  given:"From the following Ledger account balances extracted from the books of R.J. Gupta, prepare a Trial Balance as on 31st March, 2019:",
+  givenTx:[
+    ["Purchases","1,04,000"],["Drawings","7,950"],
+    ["Sundry Debtors","18,550"],["Sundry Creditors","8,300"],
+    ["Premises","62,000"],["Returns Inward","5,360"],
+    ["Sales","1,49,000"],["Furniture","15,600"],
+    ["Returns Outward","8,900"],["Cash in Hand","390"],
+    ["Rates and Taxes","780"],["Capital","85,000"],
+    ["Cash at Bank","1,560"],["Factory wages","5,830"],
+    ["Carriage Inwards","650"],["Carriage Outwards","260"],
+    ["Salaries","3,900"],["Rent Received","2,990"],
+    ["Stock (1st April, 2018)","25,000"],["Insurance","2,100"],
+    ["Input IGST A/c","5,000"],["Bad Debts","260"],
+    ["Input CGST A/c","2,500"],["Output IGST A/c","10,000"],
+    ["Input SGST A/c","2,500"]
+  ],
+  trial:{ asOn:"March 31, 2019", rows:[
+    ["(i)","Purchases","1,04,000",""],
+    ["(ii)","Sundry Debtors","18,550",""],
+    ["(iii)","Premises","62,000",""],
+    ["(iv)","Sales","","1,49,000"],
+    ["(v)","Return Outwards","","8,900"],
+    ["(vi)","Rates and Taxes","780",""],
+    ["(vii)","Cash at Bank","1,560",""],
+    ["(viii)","Carriage Inwards","650",""],
+    ["(ix)","Salaries","3,900",""],
+    ["(x)","Stock (1st April, 2014)","25,000",""],
+    ["(xi)","Drawings","7,950",""],
+    ["(xii)","Sundry Creditors","","8,300"],
+    ["(xiii)","Return Inwards","5,360",""],
+    ["(xiv)","Furniture","15,600",""],
+    ["(xv)","Cash in hand","390",""],
+    ["(xvi)","Capital","","85,000"],
+    ["(xvii)","Factory Wages","5,830",""],
+    ["(xviii)","Carriage Outwards","260",""],
+    ["(xix)","Rent Received","","2,990"],
+    ["(xx)","Insurance","2,100",""],
+    ["(xxi)","Bad Debts","260",""],
+    ["(xxii)","Input IGST A/c","5,000",""],
+    ["(xxiii)","Input CGST A/c","2,500",""],
+    ["(xxiv)","Input SGST A/c","2,500",""],
+    ["(xxv)","Output IGST A/c","","10,000"]
+  ], total:["2,64,190","2,64,190"]}
+});
+
+QUESTIONS.push({
+  num:9,
+  summary:"An incorrectly-drawn Trial Balance (Furniture, Debtors & Interest Received wrongly placed on the Credit side) is redrafted correctly.",
+  given:"Following Trial Balance is given but it is not correct. Prepare correct Trial Balance.",
+  givenTwoCol:{ label:"❌ Given (incorrect) Trial Balance",
+    debit:[["Building","3,00,000"],["Machinery","85,000"],["Returns Outward","13,000"],["Bad Debts","14,000"],["Cash","2,000"],["Discount Received","15,000"],["Bank Overdraft","50,000"],["Creditors","2,50,000"],["Purchases","5,00,000"]],
+    credit:[["Capital","3,68,000"],["Furniture","28,000"],["Sales","5,20,000"],["Debtors","3,00,000"],["Interest Received","13,000"]],
+    total:["12,29,000","12,29,000"]
+  },
+  trial:{ asOn:"March 31, 2018", rows:[
+    ["1","Building","3,00,000",""],
+    ["2","Machinery","85,000",""],
+    ["3","Returns Outward","","13,000"],
+    ["4","Bad Debts","14,000",""],
+    ["5","Cash","2,000",""],
+    ["6","Discount Received","","15,000"],
+    ["7","Bank Overdraft","","50,000"],
+    ["8","Creditors","","2,50,000"],
+    ["9","Purchases","5,00,000",""],
+    ["10","Capital","","3,68,000"],
+    ["11","Furniture","28,000",""],
+    ["12","Sales","","5,20,000"],
+    ["13","Debtors","3,00,000",""],
+    ["14","Interest Received","","13,000"]
+  ], total:["12,29,000","12,29,000"]}
+});
+
+QUESTIONS.push({
+  num:10,
+  summary:"Debtors, Bank Deposits, Discount Allowed, Drawings and Returns Inward were on the wrong side — redrafted correctly.",
+  given:"Redraft correctly the Trial Balance given below:",
+  givenTwoCol:{ label:"❌ Given (incorrect) Trial Balance",
+    debit:[["Capital","8,000"],["Bad Debts Recovered","250"],["Creditors","1,250"],["Returns Outward","350"],["Bank Overdraft","1,570"],["Rent","360"],["Salaries","850"],["Trade Expenses","300"],["Cash in Hand","210"],["Opening Stock","2,450"],["Purchases","11,870"]],
+    credit:[["Debtors","7,580"],["Bank Deposits","2,750"],["Discount Allowed","40"],["Drawings","600"],["Returns Inward","450"],["Sales","13,690"],["Bills Payable","1,350"],["Grant Received","1,000"]],
+    total:["27,460","27,460"]
+  },
+  trial:{ asOn:"March 31, 2018", rows:[
+    ["1","Capital","","8,000"],
+    ["2","Bad Debts Recovered","","250"],
+    ["3","Creditors","","1,250"],
+    ["4","Returns Outward","","350"],
+    ["5","Bank Overdraft","","1,570"],
+    ["6","Rent","360",""],
+    ["7","Salaries","850",""],
+    ["8","Trade Expenses","300",""],
+    ["9","Cash in Hand","210",""],
+    ["10","Opening Stock","2,450",""],
+    ["11","Purchases","11,870",""],
+    ["12","Debtors","7,580",""],
+    ["13","Bank Deposits","2,750",""],
+    ["14","Discount Allowed","40",""],
+    ["15","Drawings","600",""],
+    ["16","Returns Inward","450",""],
+    ["17","Sales","","13,690"],
+    ["18","Bills Payable","","1,350"],
+    ["19","Grants Received","","1,000"]
+  ], total:["27,460","27,460"]}
+});
+
+QUESTIONS.push({
+  num:11,
+  summary:"Ten items were on the wrong side of a lopsided Trial Balance — corrected into a clean two-column list where both totals meet at ₹7,98,600.",
+  given:"Correct the following Trial Balance:",
+  givenTwoCol:{ label:"❌ Given (incorrect) Trial Balance",
+    debit:[["Opening Stock","1,02,600"],["Returns Outward","48,000"],["Salaries","36,000"],["Creditors","84,000"],["Bank","1,35,000"],["Carriage Inwards","18,000"],["Rent Received","9,000"],["Discount Allowed","6,000"],["Purchases","3,00,000"],["Bills Payable","60,000"]],
+    credit:[["Debtors","45,000"],["Carriage Outwards","15,000"],["Capital","1,65,600"],["Machinery","54,000"],["Returns Inward","9,000"],["Insurance Claim Received","12,000"],["Trade Expenses","18,000"],["Sales","4,20,000"],["Building","60,000"]],
+    total:["7,98,600","7,98,600"]
+  },
+  correctedTwoCol:{ label:"✅ Trial Balance (Corrected)",
+    debit:[["Opening Stock","1,02,600"],["Return Inwards","9,000"],["Salaries","36,000"],["Bank","1,35,000"],["Carriage Inward","18,000"],["Discount Allowed","6,000"],["Purchases","3,00,000"],["Debtors","45,000"],["Carriage Outwards","15,000"],["Machinery","54,000"],["Trade Expenses","18,000"],["Building","60,000"]],
+    credit:[["Creditors","84,000"],["Rent Received","9,000"],["Bills Payable","60,000"],["Capital","1,65,600"],["Return Outwards","48,000"],["Discount Received","12,000"],["Sales","4,20,000"]],
+    total:["7,98,600","7,98,600"]
+  }
+});
+
+QUESTIONS.push({
+  num:12,
+  summary:"Cost of Goods Sold, Closing Stock and Debtors were wrongly on the Credit side, and Expenses were wrongly on the Credit side too — all reclassified.",
+  given:"Prepare correct Trial Balance from the following Trial Balance in which there are certain mistakes:",
+  givenTwoCol:{ label:"❌ Given (incorrect) Heads of Accounts",
+    debit:[["Cost of Goods Sold","1,50,000"],["Fixed Assets","50,000"],["Opening Stock","60,000"],["Capital","90,000"]],
+    credit:[["Closing Stock","40,000"],["Debtors","60,000"],["Creditors","30,000"],["Expenses","20,000"],["Sales","2,00,000"]],
+    total:["3,50,000","3,50,000"]
+  },
+  trial:{ rows:[
+    ["(i)","Cost of Goods Sold","1,50,000",""],
+    ["(ii)","Closing Stock","40,000",""],
+    ["(iii)","Debtors","60,000",""],
+    ["(iv)","Creditors","","30,000"],
+    ["(v)","Fixed Assets","50,000",""],
+    ["(vi)","Expenses","20,000",""],
+    ["(vii)","Sales","","2,00,000"],
+    ["(viii)","Capital","","90,000"]
+  ], total:["3,20,000","3,20,000"]}
+});
+
+
+</script>
+<script>init();</script>
+</body>
+</html>

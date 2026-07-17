@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Chapter 6 · Ledger — Visual Study Cards</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --paper:#F7F3E9;
+  --paper-2:#EFE8D6;
+  --ink:#1C2541;
+  --ink-soft:#4A5578;
+  --rule:#C9BFA0;
+  --debit:#0E6F5C;
+  --debit-bg:#E3F1EA;
+  --credit:#8B2635;
+  --credit-bg:#F6E4E4;
+  --gold:#B8860B;
+  --gold-bg:#FBF0D6;
+  --card:#FFFDF7;
+  --shadow: 0 2px 0 rgba(28,37,65,.08), 0 8px 24px -12px rgba(28,37,65,.25);
+  --radius: 14px;
+}
+[data-theme="dark"]{
+  --paper:#151A2E;
+  --paper-2:#1C233D;
+  --ink:#F1EEE2;
+  --ink-soft:#B7BCD6;
+  --rule:#3A4266;
+  --debit:#5FD9B4;
+  --debit-bg:#173730;
+  --credit:#F3919B;
+  --credit-bg:#3A1C22;
+  --gold:#E8C46A;
+  --gold-bg:#332705;
+  --card:#1E2540;
+  --shadow: 0 2px 0 rgba(0,0,0,.3), 0 10px 28px -12px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    linear-gradient(var(--paper),var(--paper));
+  background-color:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  padding-bottom:80px;
+  transition:background-color .3s, color .3s;
+}
+.ledger-lines{
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 27px, var(--rule) 28px);
+  opacity:.35;
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+}
+
+/* ---------- HERO ---------- */
+header.hero{
+  position:relative;
+  padding:34px 18px 26px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(184,134,11,.16), transparent 55%),
+    var(--paper-2);
+  border-bottom:3px double var(--rule);
+  overflow:hidden;
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--gold); font-weight:600;
+  background:var(--gold-bg); padding:4px 10px; border-radius:20px;
+  border:1px solid var(--gold);
+}
+h1.title{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(28px,8vw,42px);
+  line-height:1.02;
+  margin:10px 0 6px;
+  letter-spacing:-.01em;
+}
+h1.title em{ color:var(--debit); font-style:normal; border-bottom:4px solid var(--debit); }
+.hero-sub{ color:var(--ink-soft); font-size:14.5px; max-width:520px; line-height:1.5; margin:0 0 16px;}
+.hero-ledgerbook{
+  display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none;
+}
+.hero-ledgerbook::-webkit-scrollbar{display:none;}
+.stat-chip{
+  flex:0 0 auto;
+  background:var(--card); border:1px solid var(--rule); border-radius:12px;
+  padding:10px 14px; box-shadow:var(--shadow); min-width:96px; text-align:center;
+}
+.stat-chip .num{ font-family:'Fraunces',serif; font-size:22px; font-weight:700; color:var(--ink);}
+.stat-chip .lbl{ font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); font-weight:600;}
+
+.toolbar{
+  position:sticky; top:0; z-index:20;
+  display:flex; gap:8px; padding:10px 14px;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.tbtn{
+  border:1px solid var(--rule); background:var(--card); color:var(--ink);
+  font-family:'Inter'; font-weight:600; font-size:12.5px;
+  padding:8px 12px; border-radius:20px; cursor:pointer; display:flex; align-items:center; gap:6px;
+}
+.tbtn.active{ background:var(--ink); color:var(--paper); border-color:var(--ink);}
+.tbtn:active{ transform:scale(.97); }
+.spacer{flex:1;}
+
+main{ max-width:760px; margin:0 auto; padding:16px 12px 40px; position:relative; z-index:1;}
+
+/* ---------- QUESTION CARD ---------- */
+.qcard{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:var(--radius);
+  margin-bottom:16px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.qhead{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 16px; cursor:pointer; user-select:none;
+  position:relative;
+}
+.qnum{
+  font-family:'Fraunces',serif; font-weight:700; font-size:20px;
+  width:40px; height:40px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ink); color:var(--paper); flex:0 0 auto;
+}
+.qhead .qtitle{ flex:1; }
+.qhead .qtitle .qlabel{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:700;}
+.qhead .qtitle .qsum{ font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.35; margin-top:2px;}
+.chev{ transition:transform .25s; color:var(--ink-soft); flex:0 0 auto;}
+.qcard.open .chev{ transform:rotate(180deg);}
+.qbody{ max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.qbody-inner{ padding:0 16px 18px; border-top:1px dashed var(--rule); }
+
+.given-box{
+  background:var(--paper-2); border-radius:10px; padding:12px 14px; margin:14px 0;
+  font-size:13.3px; line-height:1.6; color:var(--ink-soft);
+  border-left:4px solid var(--gold);
+}
+.given-box b{ color:var(--ink); }
+.given-tx{ list-style:none; margin:8px 0 0; padding:0; }
+.given-tx li{ display:flex; justify-content:space-between; gap:10px; padding:4px 0; border-bottom:1px dotted var(--rule); font-family:'IBM Plex Mono',monospace; font-size:12px;}
+.given-tx li:last-child{border-bottom:none;}
+.given-tx .amt{ color:var(--ink); font-weight:700; white-space:nowrap;}
+
+.subtabs{ display:flex; gap:6px; margin:14px 0 10px; flex-wrap:wrap;}
+.stbtn{
+  border:1px solid var(--rule); background:transparent; color:var(--ink-soft);
+  font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;
+  font-family:'Inter';
+}
+.stbtn.active{ background:var(--debit); border-color:var(--debit); color:#fff;}
+.pane{ display:none; }
+.pane.active{ display:block; }
+
+/* Journal table */
+.jtable{ width:100%; border-collapse:collapse; font-size:12.5px; }
+.jtable th{
+  text-align:left; font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink-soft); border-bottom:2px solid var(--ink);
+  padding:6px 4px;
+}
+.jtable td{ padding:5px 4px; vertical-align:top; border-bottom:1px solid var(--rule);}
+.jtable .je-date{ font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); white-space:nowrap;}
+.jtable .je-part{ line-height:1.45;}
+.jtable .je-part .dr-line{ color:var(--debit); font-weight:700;}
+.jtable .je-part .cr-line{ padding-left:14px; color:var(--credit); font-weight:600;}
+.jtable .je-part .narr{ font-style:italic; color:var(--ink-soft); font-size:11.3px; display:block; margin-top:2px;}
+.jtable .num{ font-family:'IBM Plex Mono'; text-align:right; white-space:nowrap; font-weight:600;}
+.jtable .num.d{ color:var(--debit);}
+.jtable .num.c{ color:var(--credit);}
+.jentry-block{ border-bottom:2px solid var(--rule); }
+.jentry-block:last-child{ border-bottom:none; }
+
+/* Ledger T-accounts */
+.ledger-grid{ display:flex; flex-direction:column; gap:14px;}
+.tacc{
+  border:1.5px solid var(--ink); border-radius:10px; overflow:hidden;
+  background:var(--card);
+}
+.tacc-head{
+  background:var(--paper-2); padding:8px 12px; font-family:'Fraunces',serif; font-weight:700;
+  font-size:14.5px; display:flex; align-items:center; gap:8px; border-bottom:1.5px solid var(--ink);
+}
+.tacc-head .ic{ width:22px; height:22px; flex:0 0 auto;}
+.tacc-cols{ display:grid; grid-template-columns:1fr 1fr; position:relative;}
+.tacc-cols::after{
+  content:""; position:absolute; top:0; bottom:0; left:50%; width:0;
+  border-left:1.5px dashed var(--rule);
+}
+.tcol{ padding:8px 8px 10px;}
+.tcol-lbl{
+  font-family:'IBM Plex Mono'; font-size:9.5px; text-transform:uppercase; letter-spacing:.08em;
+  font-weight:700; margin-bottom:5px; display:flex; justify-content:space-between;
+}
+.tcol.dr .tcol-lbl{ color:var(--debit);}
+.tcol.cr .tcol-lbl{ color:var(--credit);}
+.trow{ display:flex; justify-content:space-between; gap:4px; font-size:11.3px; padding:2.5px 0; line-height:1.3;}
+.trow .tdate{ font-family:'IBM Plex Mono'; color:var(--ink-soft); font-size:10px; flex:0 0 auto; width:38px;}
+.trow .tpart{ flex:1; padding:0 3px;}
+.trow .tamt{ font-family:'IBM Plex Mono'; font-weight:700; white-space:nowrap;}
+.tcol.dr .trow .tamt{ color:var(--debit);}
+.tcol.cr .trow .tamt{ color:var(--credit);}
+.ttotal{ border-top:2px solid var(--ink); margin-top:5px; padding-top:4px; font-weight:800;}
+.tbd{ font-size:10.5px; color:var(--gold); font-style:italic; margin-top:3px;}
+
+/* Trial balance */
+.tb-table{ width:100%; border-collapse:collapse; font-size:12px; margin-top:8px;}
+.tb-table th{ background:var(--ink); color:var(--paper); padding:6px 6px; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em;}
+.tb-table td{ padding:5px 6px; border-bottom:1px solid var(--rule);}
+.tb-table td.num{ font-family:'IBM Plex Mono'; text-align:right; font-weight:600;}
+.tb-table tr.total td{ font-weight:800; border-top:2px solid var(--ink); background:var(--gold-bg);}
+
+.badge-gst{ display:inline-block; font-size:9.5px; font-family:'IBM Plex Mono'; background:var(--credit-bg); color:var(--credit); padding:1px 6px; border-radius:8px; margin-left:6px; font-weight:700;}
+
+footer.site-foot{ text-align:center; color:var(--ink-soft); font-size:11.5px; padding:24px 16px 10px; font-family:'IBM Plex Mono';}
+
+@media (min-width:640px){
+  .trow .tdate{ width:46px; }
+}
+</style>
+</head>
+<body>
+<div class="ledger-lines"></div>
+
+<header class="hero">
+  <span class="eyebrow">✎ Accountancy · Class XI</span>
+  <h1 class="title">Chapter 6 — <em>Ledger</em></h1>
+  <p class="hero-sub">11 fully worked problems — Journal entries, Ledger T‑accounts &amp; Trial Balance — turned into tap‑to‑open visual study cards. Every figure below matches the original solutions exactly.</p>
+  <div class="hero-ledgerbook" id="statChips"></div>
+</header>
+
+<div class="toolbar">
+  <button class="tbtn active" id="expandAllBtn">⤢ Expand all</button>
+  <button class="tbtn" id="collapseAllBtn">⤡ Collapse all</button>
+  <div class="spacer"></div>
+  <button class="tbtn" id="themeBtn">🌙 Dark</button>
+</div>
+
+<main id="app"></main>
+
+
+
+<script>
+const ICONS = {
+  cash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>',
+  bank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-6 9 6"/><path d="M4 10v9M9 10v9M15 10v9M20 10v9"/><path d="M2 21h20"/></svg>',
+  person: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>',
+  goods: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>',
+  capital: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>',
+  gst: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4.5A2.5 2.5 0 016.5 2H20v18H6.5A2.5 2.5 0 004 17.5v-13z"/><path d="M4 17.5A2.5 2.5 0 016.5 15H20"/></svg>',
+  misc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>'
+};
+function iconFor(name){
+  const n = name.toLowerCase();
+  if(n.includes('cash')) return ICONS.cash;
+  if(n.includes('bank')) return ICONS.bank;
+  if(n.includes('purchase')||n.includes('sales')||n.includes('stock')||n.includes('goods')) return ICONS.goods;
+  if(n.includes('capital')||n.includes('drawing')) return ICONS.capital;
+  if(n.includes('gst')) return ICONS.gst;
+  if(n.includes('account') && (n.includes('total')||n.includes('trial'))) return ICONS.book;
+  if(/^[a-z .&]+$/.test(n) && !n.includes('a/c')) return ICONS.person;
+  return ICONS.misc;
+}
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderJournal(entries){
+  const wrap = el('div');
+  const table = el('table','jtable');
+  table.innerHTML = `<thead><tr><th style="width:15%">Date</th><th>Particulars</th><th style="width:22%">Debit (₹)</th><th style="width:22%">Credit (₹)</th></tr></thead>`;
+  const tbody = el('tbody');
+  entries.forEach(en=>{
+    const tr = el('tr','jentry-block');
+    let partHtml = '';
+    en.lines.forEach(l=>{
+      if(l.dr) partHtml += `<span class="dr-line">${l.text} ${l.gst?('<span class="badge-gst">'+l.gst+'</span>'):''}</span><br>`;
+      else partHtml += `<span class="cr-line">To ${l.text}</span><br>`;
+    });
+    if(en.narration) partHtml += `<span class="narr">${en.narration}${en.gst?(' <span class="badge-gst">'+en.gst+'</span>'):''}</span>`;
+    let debitCol = en.lines.filter(l=>l.dr).map(l=>l.amt||'').join('<br>');
+    let creditCol = en.lines.filter(l=>!l.dr).map(l=>l.amt||'').join('<br>');
+    tr.innerHTML = `<td class="je-date">${en.date}</td><td class="je-part">${partHtml}</td><td class="num d">${debitCol}</td><td class="num c">${creditCol}</td>`;
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function renderLedger(accounts){
+  const wrap = el('div','ledger-grid');
+  accounts.forEach(acc=>{
+    const card = el('div','tacc');
+    card.innerHTML = `<div class="tacc-head"><span class="ic">${iconFor(acc.name)}</span>${acc.name}</div>`;
+    const cols = el('div','tacc-cols');
+    const drCol = el('div','tcol dr');
+    drCol.innerHTML = `<div class="tcol-lbl"><span>Dr.</span><span>₹</span></div>`;
+    acc.dr.forEach(r=>{ drCol.innerHTML += `<div class="trow"><span class="tdate">${r[0]}</span><span class="tpart">${r[1]}</span><span class="tamt">${r[2]}</span></div>`;});
+    if(acc.drTotal) drCol.innerHTML += `<div class="trow ttotal"><span class="tdate"></span><span class="tpart">Total</span><span class="tamt">${acc.drTotal}</span></div>`;
+    if(acc.drBd) drCol.innerHTML += `<div class="tbd">${acc.drBd}</div>`;
+    const crCol = el('div','tcol cr');
+    crCol.innerHTML = `<div class="tcol-lbl"><span>Cr.</span><span>₹</span></div>`;
+    acc.cr.forEach(r=>{ crCol.innerHTML += `<div class="trow"><span class="tdate">${r[0]}</span><span class="tpart">${r[1]}</span><span class="tamt">${r[2]}</span></div>`;});
+    if(acc.crTotal) crCol.innerHTML += `<div class="trow ttotal"><span class="tdate"></span><span class="tpart">Total</span><span class="tamt">${acc.crTotal}</span></div>`;
+    if(acc.crBd) crCol.innerHTML += `<div class="tbd">${acc.crBd}</div>`;
+    cols.appendChild(drCol); cols.appendChild(crCol);
+    card.appendChild(cols);
+    wrap.appendChild(card);
+  });
+  return wrap;
+}
+
+function renderTrial(tb){
+  const wrap = el('div');
+  wrap.innerHTML = `<p style="font-size:12.5px;color:var(--ink-soft);margin:10px 0 0;">Trial Balance as on ${tb.asOn}</p>`;
+  const table = el('table','tb-table');
+  table.innerHTML = `<thead><tr><th>#</th><th>Particulars</th><th>Debit ₹</th><th>Credit ₹</th></tr></thead>`;
+  const tbody = el('tbody');
+  tb.rows.forEach((r,i)=>{
+    tbody.innerHTML += `<tr><td>${i+1}</td><td>${r[0]}</td><td class="num">${r[1]||''}</td><td class="num">${r[2]||''}</td></tr>`;
+  });
+  tbody.innerHTML += `<tr class="total"><td></td><td>Total</td><td class="num">${tb.total[0]}</td><td class="num">${tb.total[1]}</td></tr>`;
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function buildQuestionCard(q, idx){
+  const card = el('div','qcard');
+  const head = el('div','qhead');
+  head.innerHTML = `
+    <div class="qnum">${q.num}</div>
+    <div class="qtitle"><div class="qlabel">Question ${q.num}${q.place?(' · '+q.place):''}</div><div class="qsum">${q.summary}</div></div>
+    <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>`;
+  const body = el('div','qbody');
+  const inner = el('div','qbody-inner');
+
+  if(q.given){
+    const gb = el('div','given-box');
+    gb.innerHTML = `<b>📋 Given</b><br>${q.given}` + (q.givenTx ? `<ul class="given-tx">${q.givenTx.map(t=>`<li><span>${t[0]}</span><span class="amt">₹ ${t[1]}</span></li>`).join('')}</ul>` : '');
+    inner.appendChild(gb);
+  }
+
+  const tabsAvail = [];
+  if(q.journal) tabsAvail.push('Journal');
+  if(q.ledgers) tabsAvail.push('Ledger');
+  if(q.trial) tabsAvail.push('Trial Balance');
+
+  const subtabs = el('div','subtabs');
+  const panes = el('div');
+  tabsAvail.forEach((t,i)=>{
+    const b = el('button','stbtn'+(i===0?' active':''), t);
+    b.onclick = ()=>{
+      subtabs.querySelectorAll('.stbtn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      panes.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+      panes.querySelector(`[data-pane="${t}"]`).classList.add('active');
+    };
+    subtabs.appendChild(b);
+  });
+  inner.appendChild(subtabs);
+
+  if(q.journal){
+    const p = el('div','pane active'); p.dataset.pane='Journal';
+    p.appendChild(renderJournal(q.journal));
+    panes.appendChild(p);
+  }
+  if(q.ledgers){
+    const p = el('div','pane'+(!q.journal?' active':'')); p.dataset.pane='Ledger';
+    p.appendChild(renderLedger(q.ledgers));
+    panes.appendChild(p);
+  }
+  if(q.trial){
+    const p = el('div','pane'); p.dataset.pane='Trial Balance';
+    p.appendChild(renderTrial(q.trial));
+    panes.appendChild(p);
+  }
+  inner.appendChild(panes);
+  body.appendChild(inner);
+
+  head.onclick = ()=>{
+    const isOpen = card.classList.toggle('open');
+    body.style.maxHeight = isOpen ? body.scrollHeight+'px' : '0px';
+  };
+  card.appendChild(head);
+  card.appendChild(body);
+  return card;
+}
+
+function init(){
+  const app = document.getElementById('app');
+  QUESTIONS.forEach((q,i)=> app.appendChild(buildQuestionCard(q,i)));
+
+  const chips = document.getElementById('statChips');
+  const totalLedgers = QUESTIONS.reduce((a,q)=>a+(q.ledgers?q.ledgers.length:0),0);
+  [['11','Questions'],[totalLedgers+'','Ledger A/cs'],['4','With GST'],['100%','Content match']].forEach(s=>{
+    chips.innerHTML += `<div class="stat-chip"><div class="num">${s[0]}</div><div class="lbl">${s[1]}</div></div>`;
+  });
+
+  document.getElementById('expandAllBtn').onclick = ()=>{
+    document.querySelectorAll('.qcard').forEach(c=>{
+      c.classList.add('open');
+      const b = c.querySelector('.qbody');
+      b.style.maxHeight = b.scrollHeight+'px';
+    });
+  };
+  document.getElementById('collapseAllBtn').onclick = ()=>{
+    document.querySelectorAll('.qcard').forEach(c=>{
+      c.classList.remove('open');
+      c.querySelector('.qbody').style.maxHeight = '0px';
+    });
+  };
+  const themeBtn = document.getElementById('themeBtn');
+  themeBtn.onclick = ()=>{
+    const d = document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){ d.removeAttribute('data-theme'); themeBtn.innerHTML='🌙 Dark';}
+    else { d.setAttribute('data-theme','dark'); themeBtn.innerHTML='☀️ Light';}
+  };
+
+  // recompute open heights on resize (font load reflow)
+  window.addEventListener('load', ()=>{
+    document.querySelectorAll('.qcard.open .qbody').forEach(b=> b.style.maxHeight = b.scrollHeight+'px');
+  });
+}
+</script>
+<script>
+// Data transcribed exactly from the source solutions (Chapter 6 - Ledger)
+const QUESTIONS = [];
+
+/* ================= QUESTION 1 ================= */
+QUESTIONS.push({
+  num:1, place:"Mohit, Delhi",
+  summary:"Mohit starts business with ₹50,000 capital; trades goods on credit with Rita (supplier) and Rohit (customer) through April.",
+  given:"On 1st April, 2019, Mohit, Delhi started business with a capital of ₹50,000.",
+  givenTx:[
+    ["Apr 3 — Purchased goods from Rita, Delhi on credit","20,000"],
+    ["Apr 4 — Cash paid to Rita","10,000"],
+    ["Apr 6 — Goods sold to Rohit, Chandigarh","25,000"],
+    ["Apr 8 — Received cash from Rohit","20,000"],
+    ["Apr 12 — Goods purchased from Rita","12,000"],
+    ["Apr 18 — Cash paid to Rita","20,000"],
+    ["Apr 25 — Goods sold to Rohit, Chandigarh","10,000"],
+    ["Apr 30 — Received cash from Rohit","6,000"]
+  ],
+  journal:[
+    {date:"Apr.01",lines:[{dr:1,text:"Cash A/c",amt:"50,000"},{dr:0,text:"Capital A/c",amt:"50,000"}],narration:"Business started with cash"},
+    {date:"Apr.03",lines:[{dr:1,text:"Purchases A/c",amt:"20,000"},{dr:0,text:"Rita",amt:"20,000"}],narration:"Goods purchased from Rita on credit"},
+    {date:"Apr.04",lines:[{dr:1,text:"Rita",amt:"10,000"},{dr:0,text:"Cash A/c",amt:"10,000"}],narration:"Cash paid to Rita"},
+    {date:"Apr.06",lines:[{dr:1,text:"Rohit",amt:"25,000"},{dr:0,text:"Sales A/c",amt:"25,000"}],narration:"Goods sold to Rohit on credit"},
+    {date:"Apr.08",lines:[{dr:1,text:"Cash A/c",amt:"20,000"},{dr:0,text:"Rohit",amt:"20,000"}],narration:"Cash received from Rohit"},
+    {date:"Apr.12",lines:[{dr:1,text:"Purchases A/c",amt:"12,000"},{dr:0,text:"Rita",amt:"12,000"}],narration:"Goods purchased from Rita on credit"},
+    {date:"Apr.18",lines:[{dr:1,text:"Rita",amt:"20,000"},{dr:0,text:"Cash A/c",amt:"20,000"}],narration:"Cash paid to Rita"},
+    {date:"Apr.25",lines:[{dr:1,text:"Rohit",amt:"10,000"},{dr:0,text:"Sales A/c",amt:"10,000"}],narration:"Goods Sold to Rohit"},
+    {date:"Apr.30",lines:[{dr:1,text:"Cash A/c",amt:"6,000"},{dr:0,text:"Rohit",amt:"6,000"}],narration:"Cash received from Rohit"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["Apr.01","Capital A/c","50,000"],["Apr.08","Rohit","20,000"],["Apr.30","Rohit","6,000"]], drTotal:"76,000",
+      cr:[["Apr.04","Rita","10,000"],["Apr.18","Rita","20,000"],["Apr.30","Balance c/d","46,000"]], crTotal:"76,000",
+      drBd:"May.01 Balance b/d 46,000"},
+    {name:"Capital Account",
+      dr:[["Apr.30","Balance c/d","50,000"]], drTotal:"50,000",
+      cr:[["Apr.01","Cash A/c","50,000"]], crTotal:"50,000",
+      crBd:"May.01 Balance b/d 50,000"},
+    {name:"Purchases Account",
+      dr:[["Apr.03","Rita","20,000"],["Apr.12","Rita","12,000"]], drTotal:"32,000",
+      cr:[["Apr.30","Balance c/d","32,000"]], crTotal:"32,000",
+      drBd:"May.01 Balance b/d 32,000"},
+    {name:"Rita",
+      dr:[["Apr.04","Cash A/c","10,000"],["Apr.18","Cash A/c","20,000"],["Apr.30","Balance c/d","2,000"]], drTotal:"32,000",
+      cr:[["Apr.03","Purchases A/c","20,000"],["Apr.12","Purchases A/c","12,000"]], crTotal:"32,000",
+      crBd:"May.01 Balance b/d 2,000"},
+    {name:"Rohit",
+      dr:[["Apr.06","Sales A/c","25,000"],["Apr.25","Sales A/c","10,000"]], drTotal:"35,000",
+      cr:[["Apr.08","Cash A/c","20,000"],["Apr.30","Cash A/c","6,000"],["Apr.30","Balance c/d","9,000"]], crTotal:"35,000",
+      drBd:"May.01 Balance b/d 9,000"},
+    {name:"Sales Account",
+      dr:[["Apr.30","Balance c/d","35,000"]], drTotal:"35,000",
+      cr:[["Apr.06","Rohit","25,000"],["Apr.25","Rohit","10,000"]], crTotal:"35,000",
+      drBd:"May.01 Balance b/d 35,000"}
+  ]
+});
+
+/* ================= QUESTION 2 ================= */
+QUESTIONS.push({
+  num:2, place:"Suresh, Kanpur",
+  summary:"Suresh commences business with ₹1,00,000 cash capital; mix of cash & credit sales/purchases plus routine expenses for January.",
+  given:"Suresh, Kanpur commenced business on 1st January, 2019 introducing capital in cash ₹1,00,000.",
+  givenTx:[
+    ["Jan 1 — Started business with cash","1,00,000"],
+    ["Jan 2 — Bought goods for cash","20,000"],
+    ["Jan 3 — Sold goods for cash","7,000"],
+    ["Jan 15 — Sold goods to Shravan, Delhi","6,000"],
+    ["Jan 18 — Bought goods on credit from Anurag, Kanpur","50,000"],
+    ["Jan 19 — Goods returned to Anurag","5,000"],
+    ["Jan 20 — Sold goods for cash","30,000"],
+    ["Jan 22 — Paid electricity bill","1,000"],
+    ["Jan 28 — Paid for telephone bill","500"],
+    ["Jan 29 — Paid rent","800"],
+    ["Jan 31 — Paid wages","3,000"]
+  ],
+  journal:[
+    {date:"Jan 01",lines:[{dr:1,text:"Cash A/c",amt:"1,00,000"},{dr:0,text:"Capital A/c",amt:"1,00,000"}],narration:"Started business with cash"},
+    {date:"Jan 02",lines:[{dr:1,text:"Purchases A/c",amt:"20,000"},{dr:0,text:"Cash A/c",amt:"20,000"}],narration:"Goods purchased"},
+    {date:"Jan 03",lines:[{dr:1,text:"Cash A/c",amt:"7,000"},{dr:0,text:"Sales A/c",amt:"7,000"}],narration:"Goods sold"},
+    {date:"Jan 15",lines:[{dr:1,text:"Shravan A/c",amt:"6,000"},{dr:0,text:"Sales A/c",amt:"6,000"}],narration:"Goods sold"},
+    {date:"Jan 18",lines:[{dr:1,text:"Purchases A/c",amt:"50,000"},{dr:0,text:"Anurag A/c",amt:"50,000"}],narration:"Goods purchased"},
+    {date:"Jan 19",lines:[{dr:1,text:"Anurag A/c",amt:"5,000"},{dr:0,text:"Purchases Return A/c",amt:"5,000"}],narration:"Goods returned"},
+    {date:"Jan 20",lines:[{dr:1,text:"Cash A/c",amt:"30,000"},{dr:0,text:"Sales A/c",amt:"30,000"}],narration:"Goods sold"},
+    {date:"Jan 22",lines:[{dr:1,text:"Electricity Expenses A/c",amt:"1,000"},{dr:0,text:"Cash A/c",amt:"1,000"}],narration:"Paid electricity bill"},
+    {date:"Jan 28",lines:[{dr:1,text:"Telephone Expenses A/c",amt:"500"},{dr:0,text:"Cash A/c",amt:"500"}],narration:"Paid telephone bill"},
+    {date:"Jan 29",lines:[{dr:1,text:"Rent A/c",amt:"800"},{dr:0,text:"Cash A/c",amt:"800"}],narration:"Paid rent"},
+    {date:"Jan 31",lines:[{dr:1,text:"Wages A/c",amt:"3,000"},{dr:0,text:"Cash A/c",amt:"3,000"}],narration:"Paid wages"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["Jan 01","Capital A/c","1,00,000"],["Jan 03","Sales A/c","7,000"],["Jan 20","Sales A/c","30,000"]], drTotal:"1,37,000",
+      cr:[["Jan 02","Purchases A/c","20,000"],["Jan 22","Electricity Expenses A/c","1,000"],["Jan 28","Telephone Expenses A/c","500"],["Jan 29","Rent A/c","800"],["Jan 31","Wages A/c","3,000"],["Jan 31","Balance c/d","1,11,700"]], crTotal:"1,37,000"},
+    {name:"Capital Account",
+      dr:[["Jan 31","Balance c/d","1,00,000"]], drTotal:"1,00,000",
+      cr:[["Jan 01","Cash A/c","1,00,000"]], crTotal:"1,00,000"},
+    {name:"Purchases Account",
+      dr:[["Jan 02","Cash A/c","20,000"],["Jan 18","Anurag A/c","50,000"]], drTotal:"70,000",
+      cr:[["Jan 31","Balance c/d","70,000"]], crTotal:"70,000"},
+    {name:"Sales Account",
+      dr:[["Jan 31","Balance c/d","43,000"]], drTotal:"43,000",
+      cr:[["Jan 03","Cash A/c","7,000"],["Jan 15","Shravan A/c","6,000"],["Jan 20","Cash A/c","30,000"]], crTotal:"43,000"},
+    {name:"Shravan Account",
+      dr:[["Jan 15","Sales A/c","6,000"]], drTotal:"6,000",
+      cr:[["Jan 31","Balance c/d","6,000"]], crTotal:"6,000"},
+    {name:"Anurag Account",
+      dr:[["Jan 19","Purchases Return A/c","5,000"],["Jan 31","Balance c/d","45,000"]], drTotal:"50,000",
+      cr:[["Jan 18","Purchases A/c","50,000"]], crTotal:"50,000"},
+    {name:"Purchases Return Account",
+      dr:[["Jan 31","Balance c/d","5,000"]], drTotal:"5,000",
+      cr:[["Jan 19","Anurag A/c","5,000"]], crTotal:"5,000"},
+    {name:"Electricity Expenses Account",
+      dr:[["Jan 22","Cash A/c","1,000"]], drTotal:"1,000",
+      cr:[["Jan 31","Balance c/d","1,000"]], crTotal:"1,000"},
+    {name:"Telephone Expenses Account",
+      dr:[["Jan 28","Cash A/c","500"]], drTotal:"500",
+      cr:[["Jan 31","Balance c/d","500"]], crTotal:"500"},
+    {name:"Rent Account",
+      dr:[["Jan 29","Cash A/c","800"]], drTotal:"800",
+      cr:[["Jan 31","Balance c/d","800"]], crTotal:"800"},
+    {name:"Wages Account",
+      dr:[["Jan 31","Cash A/c","3,000"]], drTotal:"3,000",
+      cr:[["Jan 31","Balance c/d","3,000"]], crTotal:"3,000"}
+  ]
+});
+
+/* ================= QUESTION 3 ================= */
+QUESTIONS.push({
+  num:3, place:"Afzal, Kolkata",
+  summary:"20 varied transactions — credit purchases/sales, bank dealings, a loan from Mehboob, an accident loss, discounts & full settlements.",
+  given:"Journalise the following transactions in the books of Afzal, Kolkata and post them to the Ledger:",
+  givenTx:[
+    ["Jan. 1 — Started business with cash","1,00,000"],
+    ["Jan. 3 — Bought goods on credit from Gupta & Co., Delhi","20,000"],
+    ["Jan. 5 — Cash sales","5,000"],
+    ["Jan. 8 — Cash purchases","8,000"],
+    ["Jan. 10 — Sold goods to Ahmed & Co., Lucknow","10,000"],
+    ["Jan. 11 — Deposited cash in bank","50,000"],
+    ["Jan. 13 — Purchased a computer for office","20,000"],
+    ["Jan. 15 — Took a loan from Mehboob","70,000"],
+    ["Jan. 16 — Goods returned by Ahmed & Co.","2,000"],
+    ["Jan. 17 — Purchased furniture from Mehfil Mart, Kolkata","10,000"],
+    ["Jan. 18 — Paid interest to Mehboob","2,000"],
+    ["Jan. 19 — Claim accepted for defective goods to Ahmed & Co.","1,000"],
+    ["Jan. 22 — Paid rent by cheque","2,000"],
+    ["Jan. 24 — Withdrew from bank","20,000"],
+    ["Jan. 25 — Counter sales after 10% trade discount","10,000"],
+    ["Jan. 26 — Gupta & Co. goods destroyed by accident","10,000"],
+    ["Jan. 27 — Advertisement expenses paid through bank","5,000"],
+    ["Jan. 28 — Ahmed & Co. settled account by cheque","7,000"],
+    ["Jan. 29 — Paid Gupta & Co. by cheque, discount availed ₹800",""],
+    ["Jan. 31 — Sold old newspapers","500"]
+  ],
+  journal:[
+    {date:"Jan.01",lines:[{dr:1,text:"Cash A/c",amt:"1,00,000"},{dr:0,text:"Capital A/c",amt:"1,00,000"}],narration:"Business started with cash"},
+    {date:"Jan.03",lines:[{dr:1,text:"Purchases A/c",amt:"20,000"},{dr:0,text:"Gupta & Co.",amt:"20,000"}],narration:"Goods purchased on credit"},
+    {date:"Jan.05",lines:[{dr:1,text:"Cash A/c",amt:"5,000"},{dr:0,text:"Sales A/c",amt:"5,000"}],narration:"Goods sold for cash"},
+    {date:"Jan.08",lines:[{dr:1,text:"Purchases",amt:"8,000"},{dr:0,text:"Cash A/c",amt:"8,000"}],narration:"Goods purchased for cash"},
+    {date:"Jan.10",lines:[{dr:1,text:"Ahmed & Co.",amt:"10,000"},{dr:0,text:"Sales A/c",amt:"10,000"}],narration:"Goods sold on credit"},
+    {date:"Jan.11",lines:[{dr:1,text:"Bank A/c",amt:"50,000"},{dr:0,text:"Cash A/c",amt:"50,000"}],narration:"Cash deposited into bank"},
+    {date:"Jan.13",lines:[{dr:1,text:"Computers A/c",amt:"20,000"},{dr:0,text:"Cash A/c",amt:"20,000"}],narration:"Computers purchased"},
+    {date:"Jan.15",lines:[{dr:1,text:"Cash A/c",amt:"70,000"},{dr:0,text:"Loan from Mehboob",amt:"70,000"}],narration:"Loan taken from Mehboob"},
+    {date:"Jan.16",lines:[{dr:1,text:"Sales Return A/c",amt:"2,000"},{dr:0,text:"Ahmed & Co.",amt:"2,000"}],narration:"Goods returned by Ahmed & Co."},
+    {date:"Jan.17",lines:[{dr:1,text:"Furniture A/c",amt:"10,000"},{dr:0,text:"Mehfil Mart",amt:"10,000"}],narration:"Furniture purchased"},
+    {date:"Jan.18",lines:[{dr:1,text:"Interest on Mehboob Loan A/c",amt:"2,000"},{dr:0,text:"Cash A/c",amt:"2,000"}],narration:"Interest on Loan paid"},
+    {date:"Jan.19",lines:[{dr:1,text:"Insurance Claim A/c",amt:"1,000"},{dr:0,text:"Ahmed & Company",amt:"1,000"}],narration:"Insurance Claim due"},
+    {date:"Jan.22",lines:[{dr:1,text:"Rent A/c",amt:"2,000"},{dr:0,text:"Bank A/c",amt:"2,000"}],narration:"Rent paid"},
+    {date:"Jan.24",lines:[{dr:1,text:"Cash A/c",amt:"20,000"},{dr:0,text:"Bank A/c",amt:"20,000"}],narration:"Cash withdrawn from bank"},
+    {date:"Jan.25",lines:[{dr:1,text:"Cash A/c",amt:"9,000"},{dr:0,text:"Sales A/c",amt:"9,000"}],narration:"Goods sold for cash"},
+    {date:"Jan.26",lines:[{dr:1,text:"Loss by Accident A/c",amt:"10,000"},{dr:0,text:"Purchases A/c",amt:"10,000"}],narration:"Goods lost by accident"},
+    {date:"Jan.27",lines:[{dr:1,text:"Advertisement A/c",amt:"5,000"},{dr:0,text:"Bank A/c",amt:"5,000"}],narration:"Advertisement expenses paid"},
+    {date:"Jan.28",lines:[{dr:1,text:"Bank A/c",amt:"7,000"},{dr:0,text:"Ahmed & Company",amt:"7,000"}],narration:"Payment Received in full settlement"},
+    {date:"Jan.29",lines:[{dr:1,text:"Gupta & Company",amt:"20,000"},{dr:0,text:"Bank A/c",amt:"19,200"},{dr:0,text:"Discount Received A/c",amt:"800"}],narration:"Payment made"},
+    {date:"Jan.31",lines:[{dr:1,text:"Cash A/c",amt:"500"},{dr:0,text:"Sundry Income A/c",amt:"500"}],narration:"Sundry Income received"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["Jan.01","Capital","1,00,000"],["Jan.05","Sales","5,000"],["Jan.15","Loan from Mehboob","70,000"],["Jan.24","Bank","20,000"],["Jan.25","Sales","9,000"],["Jan.31","Sundry income","500"]], drTotal:"2,04,500",
+      cr:[["Jan.08","Purchases","8,000"],["Jan.11","Bank","50,000"],["Jan.13","Computer","20,000"],["Jan.18","Interest on Mehboob Loan","2,000"],["Jan.31","Balance c/d","1,24,500"]], crTotal:"2,04,500",
+      drBd:"Feb.01 Balance b/d 1,24,500"},
+    {name:"Purchases Account",
+      dr:[["Jan.03","Gupta & Company","20,000"],["Jan.08","Cash","8,000"]], drTotal:"28,000",
+      cr:[["Jan.26","Loss by Accident","10,000"],["Jan.31","Balance c/d","18,000"]], crTotal:"28,000",
+      drBd:"Feb.01 Balance b/d 18,000"},
+    {name:"Capital Account",
+      dr:[["Jan.31","Balance c/d","1,00,000"]], drTotal:"1,00,000",
+      cr:[["Jan.01","Cash","1,00,000"]], crTotal:"1,00,000",
+      crBd:"Feb.01 Balance b/d 1,00,000"},
+    {name:"Sales Account",
+      dr:[["Jan.31","Balance c/d","24,000"]], drTotal:"24,000",
+      cr:[["Jan.05","Cash","5,000"],["Jan.10","Ahmed & Company","10,000"],["Jan.25","Cash","9,000"]], crTotal:"24,000",
+      crBd:"Feb.01 Balance b/d 24,000"},
+    {name:"Gupta & Company",
+      dr:[["Jan.29","Bank","19,200"],["Jan.29","Discount Received","800"]], drTotal:"20,000",
+      cr:[["Jan.03","Purchases","20,000"]], crTotal:"20,000"},
+    {name:"Ahmed & Company",
+      dr:[["Jan.10","Sales","10,000"]], drTotal:"10,000",
+      cr:[["Jan.16","Sales returns","2,000"],["Jan.19","Insurance claim","1,000"],["Jan.28","Bank","7,000"]], crTotal:"10,000"},
+    {name:"Bank Account",
+      dr:[["Jan.11","Cash","50,000"],["Jan.28","Ahmed & Company","7,000"]], drTotal:"57,000",
+      cr:[["Jan.22","Rent","2,000"],["Jan.24","Cash","20,000"],["Jan.27","Advertisement","5,000"],["Jan.29","Gupta & Company","19,200"],["Jan.31","Balance c/d","10,800"]], crTotal:"57,000",
+      drBd:"Feb.01 Balance b/d 10,800"},
+    {name:"Computers Account",
+      dr:[["Jan.13","Cash","20,000"]], drTotal:"20,000",
+      cr:[["Jan.31","Balance c/d","20,000"]], crTotal:"20,000",
+      drBd:"Feb.01 Balance b/d 20,000"},
+    {name:"Loan from Mehboob",
+      dr:[["Jan.31","Balance c/d","70,000"]], drTotal:"70,000",
+      cr:[["Jan.15","Cash","70,000"]], crTotal:"70,000",
+      crBd:"Feb.01 Balance b/d 70,000"},
+    {name:"Insurance Claim Account",
+      dr:[["Jan.19","Ahmed & Company","1,000"]], drTotal:"1,000",
+      cr:[["Jan.31","Balance c/d","1,000"]], crTotal:"1,000",
+      drBd:"Feb.01 Balance b/d 1,000"},
+    {name:"Rent Account",
+      dr:[["Jan.22","Bank","2,000"]], drTotal:"2,000",
+      cr:[["Jan.31","Balance c/d","2,000"]], crTotal:"2,000",
+      drBd:"Feb.01 Balance b/d 2,000"},
+    {name:"Loss by Accident Account",
+      dr:[["Jan.26","Purchases","10,000"]], drTotal:"10,000",
+      cr:[["Jan.31","Balance c/d","11,200"]], crTotal:"10,000",
+      drBd:"Feb.01 Balance b/d 10,000"},
+    {name:"Advertisement Account",
+      dr:[["Jan.27","Bank","5,000"]], drTotal:"5,000",
+      cr:[["Jan.31","Balance c/d","5,000"]], crTotal:"5,000",
+      drBd:"Feb.01 Balance b/d 5,000"},
+    {name:"Sales Returns Account",
+      dr:[["Jan.16","Ahmed & Company","2,000"]], drTotal:"2,000",
+      cr:[["Jan.31","Balance c/d","2,000"]], crTotal:"2,000",
+      drBd:"Feb.01 Balance b/d 2,000"},
+    {name:"Furniture Account",
+      dr:[["Jan.17","Mehfil Mart","10,000"]], drTotal:"10,000",
+      cr:[["Jan.31","Balance c/d","10,000"]], crTotal:"10,000",
+      drBd:"Feb.01 Balance b/d 10,000"},
+    {name:"Mehfil Mart",
+      dr:[["Jan.31","Balance c/d","10,000"]], drTotal:"10,000",
+      cr:[["Jan.17","Furniture","10,000"]], crTotal:"10,000",
+      crBd:"Feb.01 Balance b/d 10,000"},
+    {name:"Interest on Mehboob Loan Account",
+      dr:[["Jan.18","Cash A/c","2,000"]], drTotal:"2,000",
+      cr:[["Jan.31","Balance c/d","2,000"]], crTotal:"2,000",
+      drBd:"Feb.01 Balance b/d 2,000"},
+    {name:"Discount Allowed Account",
+      dr:[["Jan.28","Ahmed & Company","800"]], drTotal:"800",
+      cr:[["Jan.31","Balance c/d","800"]], crTotal:"800",
+      drBd:"Feb.01 Balance b/d 800"},
+    {name:"Discount Received Account",
+      dr:[["Jan.31","Balance c/d","2,000"]], drTotal:"2,000",
+      cr:[["Jan.29","Gupta & Company","2,000"]], crTotal:"2,000",
+      crBd:"Feb.01 Balance b/d 2,000"},
+    {name:"Sundry Incomes Account",
+      dr:[["Jan.31","Balance c/d","500"]], drTotal:"500",
+      cr:[["Jan.31","Cash","500"]], crTotal:"500",
+      crBd:"Feb.01 Balance b/d 500"}
+  ]
+});
+
+/* ================= QUESTION 4 ================= */
+QUESTIONS.push({
+  num:4, place:"M/s Bhanu Traders, Delhi",
+  summary:"Business begins with ₹1,50,000 cash; a PNB bank account is opened and goods are traded with Rupa, Hema & Gupta Traders.",
+  given:"Pass Journal entries of M/s Bhanu Traders, Delhi from the following transactions. Post them to the Ledger:",
+  givenTx:[
+    ["April 1 — Commenced business with cash","1,50,000"],
+    ["April 2 — Opened a bank account with PNB","50,000"],
+    ["April 3 — Purchased furniture","20,000"],
+    ["April 7 — Bought goods for cash from M/s Rupa Traders, Delhi","30,000"],
+    ["April 8 — Purchased goods from M/s Hema Traders, Chandigarh","42,000"],
+    ["April 10 — Cash sales","30,000"],
+    ["April 14 — Sold goods on credit to M/s Gupta Traders, Kolkata","12,000"],
+    ["April 16 — Rent paid","4,000"],
+    ["April 18 — Paid Electricity expenses","1,000"],
+    ["April 20 — Received cash from Gupta Traders","12,000"],
+    ["April 22 — Goods returned to Hema Traders","2,000"],
+    ["April 23 — Cash paid to Hema Traders","40,000"],
+    ["April 25 — Bought postage stamps","100"],
+    ["April 30 — Paid salary to Mohan","4,000"]
+  ],
+  journal:[
+    {date:"Apr 01",lines:[{dr:1,text:"Cash A/c",amt:"1,50,000"},{dr:0,text:"Capital A/c",amt:"1,50,000"}],narration:"Started business with cash"},
+    {date:"Apr 02",lines:[{dr:1,text:"Bank A/c",amt:"50,000"},{dr:0,text:"Cash A/c",amt:"50,000"}],narration:"Opened Bank A/c"},
+    {date:"Apr 03",lines:[{dr:1,text:"Furniture A/c",amt:"20,000"},{dr:0,text:"Cash A/c",amt:"20,000"}],narration:"Furniture purchased"},
+    {date:"Apr 07",lines:[{dr:1,text:"Purchases A/c",amt:"30,000"},{dr:0,text:"Cash A/c",amt:"30,000"}],narration:"Goods purchased"},
+    {date:"Apr 08",lines:[{dr:1,text:"Purchases A/c",amt:"42,000"},{dr:0,text:"M/s Hema Traders A/c",amt:"42,000"}],narration:"Goods purchased"},
+    {date:"Apr 10",lines:[{dr:1,text:"Cash A/c",amt:"30,000"},{dr:0,text:"Sales A/c",amt:"30,000"}],narration:"Goods sold"},
+    {date:"Apr 14",lines:[{dr:1,text:"M/s Gupta Traders A/c",amt:"12,000"},{dr:0,text:"Sales A/c",amt:"12,000"}],narration:"Goods sold"},
+    {date:"Apr 16",lines:[{dr:1,text:"Rent A/c",amt:"4,000"},{dr:0,text:"Cash A/c",amt:"4,000"}],narration:"Rent paid"},
+    {date:"Apr 18",lines:[{dr:1,text:"Electricity Expenses A/c",amt:"1,000"},{dr:0,text:"Cash A/c",amt:"1,000"}],narration:"Paid electricity expenses"},
+    {date:"Apr 20",lines:[{dr:1,text:"Cash A/c",amt:"12,000"},{dr:0,text:"Gupta Traders A/c",amt:"12,000"}],narration:"Cash received from Gupta Traders"},
+    {date:"Apr 22",lines:[{dr:1,text:"Hema Traders A/c",amt:"2,000"},{dr:0,text:"Purchases Return A/c",amt:"2,000"}],narration:"Goods returned"},
+    {date:"Apr 23",lines:[{dr:1,text:"Hema Traders A/c",amt:"40,000"},{dr:0,text:"Cash A/c",amt:"40,000"}],narration:"Cash paid"},
+    {date:"Apr 25",lines:[{dr:1,text:"Postage A/c",amt:"100"},{dr:0,text:"Cash A/c",amt:"100"}],narration:"Bought postage stamps"},
+    {date:"Apr 30",lines:[{dr:1,text:"Salary A/c",amt:"4,000"},{dr:0,text:"Cash A/c",amt:"4,000"}],narration:"Paid salary"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["Apr 01","Capital A/c","1,50,000"],["Apr 10","Sales A/c","30,000"],["Apr 20","Gupta Traders A/c","12,000"]], drTotal:"1,92,000",
+      cr:[["Apr 02","Bank A/c","50,000"],["Apr 03","Furniture A/c","20,000"],["Apr 07","Purchases A/c","30,000"],["Apr 16","Rent A/c","4,000"],["Apr 18","Electricity Expenses A/c","1,000"],["Apr 23","Hema Traders A/c","40,000"],["Apr 25","Postage A/c","100"],["Apr 30","Salary A/c","4,000"],["Apr 30","Balance c/d","42,900"]], crTotal:"1,92,000"},
+    {name:"Capital Account",
+      dr:[["Apr 30","Balance c/d","1,50,000"]], drTotal:"1,50,000",
+      cr:[["Apr 01","Cash A/c","1,50,000"]], crTotal:"1,50,000"},
+    {name:"Bank Account",
+      dr:[["Apr 02","Cash A/c","50,000"]], drTotal:"50,000",
+      cr:[["Apr 30","Balance c/d","50,000"]], crTotal:"50,000"},
+    {name:"Furniture Account",
+      dr:[["Apr 03","Cash A/c","20,000"]], drTotal:"20,000",
+      cr:[["Apr 30","Balance c/d","20,000"]], crTotal:"20,000"},
+    {name:"Purchases Account",
+      dr:[["Apr 07","Cash A/c","30,000"],["Apr 08","M/s Hema Traders A/c","42,000"]], drTotal:"72,000",
+      cr:[["Apr 30","Balance c/d","72,000"]], crTotal:"72,000"},
+    {name:"Hema Traders Account",
+      dr:[["Apr 22","Purchases Return A/c","2,000"],["Apr 23","Cash A/c","40,000"]], drTotal:"42,000",
+      cr:[["Apr 08","Purchases","42,000"]], crTotal:"42,000"},
+    {name:"Sales Account",
+      dr:[["Apr 30","Balance c/d","42,000"]], drTotal:"42,000",
+      cr:[["Apr 10","Cash A/c","30,000"],["Apr 14","Gupta Traders A/c","12,000"]], crTotal:"42,000"},
+    {name:"Gupta Traders Account",
+      dr:[["Apr 14","Sales A/c","12,000"]], drTotal:"12,000",
+      cr:[["Apr 20","Cash A/c","12,000"]], crTotal:"12,000"},
+    {name:"Rent Account",
+      dr:[["Apr 16","Cash A/c","4,000"]], drTotal:"4,000",
+      cr:[["Apr 30","Balance c/d","4,000"]], crTotal:"4,000"},
+    {name:"Electricity Expenses Account",
+      dr:[["Apr 18","Cash A/c","1,000"]], drTotal:"1,000",
+      cr:[["Apr 30","Balance c/d","1,000"]], crTotal:"1,000"},
+    {name:"Purchases Return Account",
+      dr:[["Apr 30","Balance c/d","2,000"]], drTotal:"2,000",
+      cr:[["Apr 22","Hema Traders A/c","2,000"]], crTotal:"2,000"},
+    {name:"Postage Account",
+      dr:[["Apr 25","Cash A/c","100"]], drTotal:"100",
+      cr:[["Apr 30","Balance c/d","100"]], crTotal:"100"},
+    {name:"Salary Account",
+      dr:[["Apr 30","Cash A/c","4,000"]], drTotal:"4,000",
+      cr:[["Apr 30","Balance c/d","4,000"]], crTotal:"4,000"}
+  ]
+});
+
+/* ================= QUESTION 5 ================= */
+QUESTIONS.push({
+  num:5, place:"M/s Gupta Brothers (Prop. R.K. Gupta), Delhi",
+  summary:"₹2,00,000 cash capital, an SBI current account, trading with Raj & Naman, plus drawings, commission and routine office expenses.",
+  given:"Journalise the following transactions in the Journal of M/s. Gupta Brothers, Delhi and post them to the Ledger:",
+  givenTx:[
+    ["March 1 — Started business with cash","2,00,000"],
+    ["March 2 — Opened bank account with SBI","80,000"],
+    ["March 4 — Goods purchased from Raj, Jaipur (Rajasthan)","22,000"],
+    ["March 5 — Goods purchased for cash","30,000"],
+    ["March 8 — Goods sold to Naman, Delhi","12,000"],
+    ["March 10 — Cash paid to Raj","22,000"],
+    ["March 15 — Cash received from Naman (discount allowed ₹300)","11,700"],
+    ["March 16 — Paid wages","200"],
+    ["March 18 — Furniture purchased for office use","5,000"],
+    ["March 20 — Withdrawn from bank for personal use","4,000"],
+    ["March 22 — Issued cheque for rent","3,000"],
+    ["March 23 — Goods taken for household use (purchased from Raj)","2,000"],
+    ["March 24 — Drawn cash from bank for office use","6,000"],
+    ["March 26 — Commission received","1,000"],
+    ["March 27 — Bank charges","300"],
+    ["March 28 — Cheque for proprietor's life insurance premium","3,000"],
+    ["March 29 — Paid salary","10,000"],
+    ["March 30 — Cash sales","20,000"]
+  ],
+  journal:[
+    {date:"Mar.01",lines:[{dr:1,text:"Cash A/c",amt:"2,00,000"},{dr:0,text:"Capital A/c",amt:"2,00,000"}],narration:"Started business with Cash"},
+    {date:"Mar.02",lines:[{dr:1,text:"Bank A/c",amt:"80,000"},{dr:0,text:"Cash A/c",amt:"80,000"}],narration:"Opened Bank account with SBI"},
+    {date:"Mar.04",lines:[{dr:1,text:"Purchases A/c",amt:"24,000"},{dr:0,text:"Raj A/c",amt:"24,000"}],narration:"Purchased goods on credit"},
+    {date:"Mar.05",lines:[{dr:1,text:"Purchases A/c",amt:"30,000"},{dr:0,text:"Cash A/c",amt:"30,000"}],narration:"Purchased goods in cash"},
+    {date:"Mar.08",lines:[{dr:1,text:"Naman A/c",amt:"12,000"},{dr:0,text:"Sales A/c",amt:"12,000"}],narration:"Sold goods on credit"},
+    {date:"Mar.10",lines:[{dr:1,text:"Raj",amt:"22,000"},{dr:0,text:"Cash A/c",amt:"22,000"}],narration:"Cash Paid to Raj"},
+    {date:"Mar.15",lines:[{dr:1,text:"Cash A/c",amt:"11,700"},{dr:1,text:"Discount Allowed A/c",amt:"300"},{dr:0,text:"Naman",amt:"12,000"}],narration:"Cash received from Naman and discount allowed"},
+    {date:"Mar.16",lines:[{dr:1,text:"Wages A/c",amt:"200"},{dr:0,text:"Cash",amt:"200"}],narration:"Paid Wages"},
+    {date:"Mar.18",lines:[{dr:1,text:"Furniture A/c",amt:"5,000"},{dr:0,text:"Cash",amt:"5,000"}],narration:"Purchased furniture in cash"},
+    {date:"Mar.20",lines:[{dr:1,text:"Drawings A/c",amt:"4,000"},{dr:0,text:"Bank A/c",amt:"4,000"}],narration:"Withdrawn from bank for personal use"},
+    {date:"Mar.22",lines:[{dr:1,text:"Rent A/c",amt:"3,000"},{dr:0,text:"Bank A/c",amt:"3,000"}],narration:"Paid Rent through cheque"},
+    {date:"Mar.23",lines:[{dr:1,text:"Drawings A/c",amt:"2,000"},{dr:0,text:"Purchases A/c",amt:"2,000"}],narration:"Goods taken for personal use and IGST reversed"},
+    {date:"Mar.24",lines:[{dr:1,text:"Cash A/c",amt:"6,000"},{dr:0,text:"Bank",amt:"6,000"}],narration:"Cash withdrawn from bank"},
+    {date:"Mar.26",lines:[{dr:1,text:"Cash A/c",amt:"1,000"},{dr:0,text:"Commission A/c",amt:"1,000"}],narration:"Cash received for commission"},
+    {date:"Mar.27",lines:[{dr:1,text:"Bank Charges A/c",amt:"300"},{dr:0,text:"Bank A/c",amt:"300"}],narration:"Bank Charges debited"},
+    {date:"Mar.28",lines:[{dr:1,text:"Drawings A/c",amt:"3,000"},{dr:0,text:"Bank",amt:"3,000"}],narration:"Amount withdrawn to pay Insurance Premium of proprietor"},
+    {date:"Mar.29",lines:[{dr:1,text:"Salary A/c",amt:"10,000"},{dr:0,text:"Cash A/c",amt:"10,000"}],narration:"Paid Salary"},
+    {date:"Mar.30",lines:[{dr:1,text:"Cash A/c",amt:"20,000"},{dr:0,text:"Sales A/c",amt:"20,000"}],narration:"Sold goods for Cash"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["Mar.01","Capital","2,00,000"],["Mar.15","Naman","11,700"],["Mar.24","Bank","6,000"],["Mar.26","Commission","1,000"],["Mar.30","Sales","20,000"]], drTotal:"2,38,700",
+      cr:[["Mar.02","Bank","80,000"],["Mar.05","Purchases","30,000"],["Mar.10","Raj","22,000"],["Mar.16","Wages","200"],["Mar.18","Furniture","5,000"],["Mar.29","Salary","10,000"],["Mar.31","Balance c/d","91,500"]], crTotal:"2,38,700"},
+    {name:"Bank Account",
+      dr:[["Mar.02","Cash","80,000"]], drTotal:"80,000",
+      cr:[["Mar.20","Drawings","4,000"],["Mar.22","Rent","3,000"],["Mar.24","Cash","6,000"],["Mar.27","Bank Charges","300"],["Mar.28","Drawings","3,000"],["Mar.31","Balance C/d","63,700"]], crTotal:"80,000"},
+    {name:"Capital Account",
+      dr:[["Mar.31","Balance c/d","2,00,000"]], drTotal:"2,00,000",
+      cr:[["Mar.01","Cash","2,00,000"]], crTotal:"2,00,000"},
+    {name:"Purchases Account",
+      dr:[["Mar.04","Raj","22,000"],["Mar.05","Cash","30,000"]], drTotal:"52,000",
+      cr:[["Mar.23","Drawings","2,000"],["Mar.31","Balance c/d","50,000"]], crTotal:"52,000"},
+    {name:"Raj Account",
+      dr:[["Mar.10","Cash","22,000"]], drTotal:"22,000",
+      cr:[["Mar.04","Purchase","22,000"]], crTotal:"22,000"},
+    {name:"Sales Account",
+      dr:[["Mar.31","Balance c/d","32,000"]], drTotal:"32,000",
+      cr:[["Mar.08","Naman","12,000"],["Mar.30","Cash","20,000"]], crTotal:"32,000"},
+    {name:"Naman",
+      dr:[["Mar.08","Sales","12,000"]], drTotal:"12,000",
+      cr:[["Mar.15","Cash","11,700"],["Mar.15","Discount Allowed","300"]], crTotal:"12,000"},
+    {name:"Discount Allowed Account",
+      dr:[["Mar.15","Naman","300"]], drTotal:"300",
+      cr:[["Mar.31","Balance c/d","300"]], crTotal:"300"},
+    {name:"Wages Account",
+      dr:[["Mar.16","Cash","200"]], drTotal:"200",
+      cr:[["Mar.31","Balance c/d","200"]], crTotal:"200"},
+    {name:"Furniture Account",
+      dr:[["Mar.18","Cash","5,000"]], drTotal:"5,000",
+      cr:[["Mar.31","Balance c/d","5,000"]], crTotal:"5,000"},
+    {name:"Drawings Account",
+      dr:[["Mar.20","Bank","4,000"],["Mar.23","Purchases A/c","2,000"],["Mar.28","Bank","3,000"]], drTotal:"9,000",
+      cr:[["Mar.31","Balance c/d","9,000"]], crTotal:"9,000"},
+    {name:"Commission Account",
+      dr:[["Mar.31","Balance c/d","1,000"]], drTotal:"1,000",
+      cr:[["Mar.26","Cash","1,000"]], crTotal:"1,000"},
+    {name:"Bank Charges Account",
+      dr:[["Mar.22","Bank A/c","300"]], drTotal:"300",
+      cr:[["Mar.31","Balance c/d","300"]], crTotal:"300"},
+    {name:"Rent Account",
+      dr:[["Mar.22","Bank","3,000"]], drTotal:"3,000",
+      cr:[["Mar.22","Balance c/d","3,000"]], crTotal:"3,000"},
+    {name:"Salary Account",
+      dr:[["Mar.29","Cash","10,000"]], drTotal:"10,000",
+      cr:[["Mar.31","Balance c/d","10,000"]], crTotal:"10,000"}
+  ]
+});
+
+/* ================= QUESTION 6 (GST) ================= */
+QUESTIONS.push({
+  num:6, place:"Ashok, Delhi",
+  summary:"Opening balances are journalised first, then April's transactions apply CGST/SGST (intra-state) and IGST (inter-state) at 6%/6%/12%.",
+  given:"Opening balances on 1st April, 2019 — Assets: Cash ₹50,000; Stock ₹30,000; Debtors–Ram ₹50,000; Machinery ₹60,000. Liabilities: Creditor–Rajesh ₹30,000. CGST & SGST @6% each on intra-state; IGST @12% on inter-state. Items marked * carry no GST.",
+  givenTx:[
+    ["April 4 — Sold goods for cash","7,000"],
+    ["April 6 — Goods returned by Ram, Delhi","1,000"],
+    ["April 10 — Purchased from Rajesh, Jaipur (list ₹10,000) for","9,000"],
+    ["April 15 — Bought from Rakesh (list ₹15,000) less 10% trade & 5% cash discount; 40% paid now",""],
+    ["April 20 — Paid Rajesh in full settlement*","38,600"],
+    ["April 25 — Paid proprietor's life insurance premium*","500"],
+    ["April 30 — Received commission incl. CGST & SGST @6%","2,000"]
+  ],
+  journal:[
+    {date:"April 01",lines:[{dr:1,text:"Cash A/c",amt:"50,000"},{dr:1,text:"Stock A/c",amt:"30,000"},{dr:1,text:"Ram",amt:"50,000"},{dr:1,text:"Machinery A/c",amt:"60,000"},{dr:0,text:"Rajesh",amt:"30,000"},{dr:0,text:"Capital A/c (Balancing Figure)",amt:"1,60,000"}],narration:"Balance Brought forward"},
+    {date:"April 04",lines:[{dr:1,text:"Cash A/c",amt:"7,840"},{dr:0,text:"Sales A/c",amt:"7,000"},{dr:0,text:"Output CGST A/c",amt:"420"},{dr:0,text:"Output SGST A/c",amt:"420"}],narration:"Sold Goods for Cash plus CGST and SGST @6",gst:"CGST+SGST 6%+6%"},
+    {date:"April 06",lines:[{dr:1,text:"Sales Return A/c",amt:"1,000"},{dr:1,text:"Output CGST A/c",amt:"60"},{dr:1,text:"Output SGST A/c",amt:"60"},{dr:0,text:"Ram",amt:"1,120"}],narration:"Goods returned and GST reversed"},
+    {date:"April 10",lines:[{dr:1,text:"Purchases A/c",amt:"9,000"},{dr:1,text:"Input IGST A/c",amt:"1,080"},{dr:0,text:"Rajesh",amt:"10,080"}],narration:"Bought goods from Rajesh plus IGST @12",gst:"IGST 12%"},
+    {date:"April 15",lines:[{dr:1,text:"Purchases A/c",amt:"13,500"},{dr:1,text:"Input IGST A/c",amt:"1,620"},{dr:0,text:"Rakesh",amt:"8,100"},{dr:0,text:"Cash (5,130 + 1,620)",amt:"6,750"},{dr:0,text:"Discount Received A/c",amt:"270"}],narration:"Bought goods from Rakesh, 40% of price paid immediately and availed 5% cash discount on payment",gst:"IGST 12%"},
+    {date:"April 20",lines:[{dr:1,text:"Rajesh A/c",amt:"40,080"},{dr:0,text:"Cash A/c",amt:"38,600"},{dr:0,text:"Discount Received",amt:"1,480"}],narration:"Paid to Rajesh and discount received"},
+    {date:"April 25",lines:[{dr:1,text:"Drawings A/c",amt:"500"},{dr:0,text:"Cash A/c",amt:"500"}],narration:"Paid Life Insurance Premium of Proprietor"},
+    {date:"April 30",lines:[{dr:1,text:"Cash A/c",amt:"2,240"},{dr:0,text:"Commission A/c",amt:"2,000"},{dr:0,text:"Output CGST A/c",amt:"120"},{dr:0,text:"Output SGST A/c",amt:"120"}],narration:"Received Commission plus CGST and SGST @6",gst:"CGST+SGST 6%+6%"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["April 01","Balance b/d","50,000"],["April 04","Sales","7,000"],["April 04","Output CGST","420"],["April 04","Output SGST","420"],["April 30","Commission","2,000"],["April 30","Output CGST","120"],["April 30","Output SGST","120"]], drTotal:"60,080",
+      cr:[["April 15","Purchases","5,130"],["April 15","Input IGST","1,620"],["April 20","Rajesh","38,600"],["April 25","Drawings","500"],["April 30","Balance c/d","14,230"]], crTotal:"60,080"},
+    {name:"Capital Account",
+      dr:[["April 30","Balance c/d","1,60,000"]], drTotal:"1,60,000",
+      cr:[["April 01","Balance b/d","1,60,000"]], crTotal:"1,60,000"},
+    {name:"Rakesh",
+      dr:[["Apr.30","Balance c/d","8,100"]], drTotal:"8,100",
+      cr:[["Apr.15","Purchases","8,100"]], crTotal:"8,100"},
+    {name:"Stock Account",
+      dr:[["April 01","Balance b/d","30,000"]], drTotal:"30,000",
+      cr:[["April 30","Balance c/d","30,000"]], crTotal:"30,000"},
+    {name:"Ram",
+      dr:[["April 01","Balance b/d","50,000"]], drTotal:"50,000",
+      cr:[["April 06","Sales Return","1,000"],["April 06","Output CGST A/c","60"],["April 06","Output SGST A/c","60"],["April 30","Balance c/d","48,880"]], crTotal:"50,000"},
+    {name:"Machinery Account",
+      dr:[["April 01","Balance b/d","60,000"]], drTotal:"60,000",
+      cr:[["April 30","Balance c/d","60,000"]], crTotal:"60,000"},
+    {name:"Rajesh Account",
+      dr:[["April 20","Cash","38,600"],["April 20","Discount Received","1,480"]], drTotal:"40,080",
+      cr:[["April 01","Balance b/d","30,000"],["April 10","Purchases","9,000"],["April 10","Input IGST A/c","1,080"]], crTotal:"40,080"},
+    {name:"Sales Return Account",
+      dr:[["April 06","Ram","1,000"]], drTotal:"1,000",
+      cr:[["April 30","Balance c/d","1,000"]], crTotal:"1,000"},
+    {name:"Drawings Account",
+      dr:[["April 25","Cash","500"]], drTotal:"500",
+      cr:[["April 30","Balance c/d","500"]], crTotal:"500"},
+    {name:"Commission Account",
+      dr:[["April 30","Balance c/d","2,000"]], drTotal:"2,000",
+      cr:[["April 30","Cash","2,000"]], crTotal:"2,000"},
+    {name:"Discount Received",
+      dr:[["April 30","Balance c/d","1,750"]], drTotal:"1,750",
+      cr:[["April 15","Purchases","270"],["April 20","Rajesh","1,480"]], crTotal:"1,750"},
+    {name:"Purchases Account",
+      dr:[["April 10","Rajesh","9,000"],["April 15","Rakesh","8,100"],["April 15","Cash A/c","5,130"],["April 15","Discount Received A/c","270"]], drTotal:"22,500",
+      cr:[["April 30","Balance c/d","22,500"]], crTotal:"22,500"},
+    {name:"Sales Account",
+      dr:[["April 30","Balance c/d","7,000"]], drTotal:"7,000",
+      cr:[["April 04","Cash A/c","7,000"]], crTotal:"7,000"},
+    {name:"Input IGST Account",
+      dr:[["Apr.10","Rajesh","1,080"],["Apr.15","Cash","1,620"],["Apr.15","Cash","648"]], drTotal:"3,348",
+      cr:[["Apr.30","Balance c/d","3,348"]], crTotal:"3,348"},
+    {name:"Output CGST Account",
+      dr:[["Apr.06","Ram","60"],["Apr.30","Balance c/d","60"]], drTotal:"120",
+      cr:[["Apr.30","Cash","120"]], crTotal:"120"},
+    {name:"Output SGST Account",
+      dr:[["Apr.06","Ram","60"],["Apr.30","Balance c/d","60"]], drTotal:"120",
+      cr:[["Apr.30","Cash","120"]], crTotal:"120"}
+  ]
+});
+
+/* ================= QUESTION 7 (GST, no journal asked) ================= */
+QUESTIONS.push({
+  num:7, place:"M/s Ram & Co., Delhi",
+  summary:"Only Ledger posting is required here (no Journal) — opening balances plus April trade with Gobind, Sharma, Rahul & Zahir, closing in a Trial Balance.",
+  given:"On 1st April, 2019 opening balances: Cash in Hand ₹300; Cash at Bank ₹7,000; Bills Payable ₹1,000; Zahir Dr. ₹800; Stock ₹4,000; Gobind Cr. ₹2,000; Sharma Dr. ₹1,500; Rahul Cr. ₹900; Capital ₹9,700. IGST @12% inter-state; CGST+SGST @6%+6% intra-state.",
+  givenTx:[
+    ["April 2 — Bought goods from Gobind, Delhi","900"],
+    ["April 3 — Sold goods to Sharma, Kanpur","1,000"],
+    ["April 5 — Bought goods from Rahul, Delhi","1,200"],
+    ["April 8 — Sold goods to Zahir, Kolkata","500"],
+    ["April 15 — Paid Gobind by cheque on account*","1,500"],
+    ["April 18 — Cheque from Sharma (discount allowed ₹50*)","2,000"],
+    ["April 20 — Sold goods to Sharma, Kanpur","800"],
+    ["April 20 — Paid rent by cheque","200"],
+    ["April 25 — Sold goods to Zahir, Kolkata","1,000"],
+    ["April 30 — Paid salaries in cash*","300"]
+  ],
+  ledgers:[
+    {name:"Cash in Hand Account",
+      dr:[["Apr 01","Balance b/d","300"]], drTotal:"300",
+      cr:[["Apr 30","Salaries","300"]], crTotal:"300"},
+    {name:"Cash at Bank Account",
+      dr:[["Apr 01","Balance b/d","7,000"],["Apr 18","Sharma A/c","2,000"]], drTotal:"9,000",
+      cr:[["Apr 15","Gobind A/c","1,500"],["Apr 20","Rent A/c","200"],["Apr 20","Input CGST A/c","12"],["Apr 20","Input SGST A/c","12"],["Apr 30","Balance c/d","7,276"]], crTotal:"9,000"},
+    {name:"Bills Payable Account",
+      dr:[["Apr 30","Balance c/d","1,000"]], drTotal:"1,000",
+      cr:[["Apr 01","Balance b/d","1,000"]], crTotal:"1,000"},
+    {name:"Zahir Account",
+      dr:[["Apr 01","Balance b/d","800"],["Apr 08","Sales A/c","500"],["Apr 08","Output IGST A/c","60"],["Apr 25","Sales A/c","1,000"],["Apr 25","Output IGST A/c","120"]], drTotal:"2,480",
+      cr:[["Apr 30","Balance c/d","2,480"]], crTotal:"2,480"},
+    {name:"Stock Account",
+      dr:[["Apr 01","Balance b/d","4,000"]], drTotal:"4,000",
+      cr:[["Apr 30","Balance c/d","4,000"]], crTotal:"4,000"},
+    {name:"Gobind Account",
+      dr:[["Apr 15","Bank A/c","1,500"],["Apr 30","Balance c/d","1,508"]], drTotal:"3,008",
+      cr:[["Apr 01","Balance b/d","2,000"],["Apr 02","Purchases A/c","900"],["Apr 02","Input CGST A/c","54"],["Apr 02","Input CGST A/c","54"]], crTotal:"3,008"},
+    {name:"Sharma Account",
+      dr:[["Apr 01","Balance b/d","1,500"],["Apr 03","Sales A/c","1,000"],["Apr 03","Output IGST A/c","120"],["Apr 20","Sales A/c","800"],["Apr 20","Output IGST A/c","96"]], drTotal:"3,516",
+      cr:[["Apr 18","Bank A/c","2,000"],["Apr 18","Discount Allowed A/c","50"],["Apr 30","Balance c/d","1,466"]], crTotal:"3,516"},
+    {name:"Rahul Account",
+      dr:[["","Balance c/d","2,244"]], drTotal:"2,244",
+      cr:[["Apr 01","Balance b/d","900"],["Apr 05","Purchases A/c","1,200"],["Apr 05","Input CGST A/c","72"],["Apr 05","Input CGST A/c","72"]], crTotal:"2,244"},
+    {name:"Capital Account",
+      dr:[["Apr 01","Balance b/d","9,700"]], drTotal:"9,700",
+      cr:[["Apr 30","Balance c/d","9,700"]], crTotal:"9,700"},
+    {name:"Purchases Account",
+      dr:[["Apr 02","Gobind A/c","900"],["Apr 05","Rahul A/c","1,200"]], drTotal:"2,100",
+      cr:[["Apr 30","Balance c/d","2,100"]], crTotal:"2,100"},
+    {name:"Input CGST Account",
+      dr:[["Apr 02","Gobind A/c","54"],["Apr 05","Rahul A/c","72"],["Apr 20","Bank A/c","12"]], drTotal:"138",
+      cr:[["Apr 30","Balance c/d","138"]], crTotal:"138"},
+    {name:"Input SGST Account",
+      dr:[["Apr 02","Gobind A/c","54"],["Apr 05","Rahul A/c","72"],["Apr 20","Bank A/c","12"]], drTotal:"138",
+      cr:[["Apr 30","Balance c/d","138"]], crTotal:"138"},
+    {name:"Sales Account",
+      dr:[["Apr 30","Balance c/d","3,300"]], drTotal:"3,300",
+      cr:[["Apr 03","Sharma A/c","1,000"],["Apr 08","Zahir A/c","500"],["Apr 20","Sharma A/c","800"],["Apr 25","Zahir A/c","1,000"]], crTotal:"3,300"},
+    {name:"Output IGST Account",
+      dr:[["Apr 30","Balance c/d","396"]], drTotal:"396",
+      cr:[["Apr 03","Sharma A/c","120"],["Apr 08","Zahir A/c","60"],["Apr 20","Sharma A/c","96"],["Apr 25","Zahir A/c","120"]], crTotal:"396"},
+    {name:"Discount Allowed Account",
+      dr:[["Apr 18","Sharma A/c","50"]], drTotal:"50",
+      cr:[["Apr 30","Balance c/d","50"]], crTotal:"50"},
+    {name:"Rent Account",
+      dr:[["Apr 20","Bank A/c","200"]], drTotal:"200",
+      cr:[["Apr 30","Balance c/d","200"]], crTotal:"200"},
+    {name:"Salary Account",
+      dr:[["Apr 30","Cash A/c","300"]], drTotal:"300",
+      cr:[["Apr 30","Balance c/d","300"]], crTotal:"300"}
+  ],
+  trial:{ asOn:"30th April, 2019",
+    rows:[
+      ["Bank","7,276",""],
+      ["Bills Payable","","1,000"],
+      ["Zahir","2,480",""],
+      ["Stock","4,000",""],
+      ["Gobind","","1,508"],
+      ["Sharma","1,466",""],
+      ["Rahul","","2,244"],
+      ["Capital","","9,700"],
+      ["Purchases","2,100",""],
+      ["Input CGST A/c","138",""],
+      ["Input SGST A/c","138",""],
+      ["Sales","","3,300"],
+      ["Output IGST A/c","","396"],
+      ["Discount Allowed","50",""],
+      ["Rent","200",""],
+      ["Salary","300",""]
+    ],
+    total:["18,148","18,148"]
+  }
+});
+
+/* ================= QUESTION 8 (GST, large) ================= */
+QUESTIONS.push({
+  num:8, place:"Rajesh Prabhu, Gurugram (Haryana)",
+  summary:"Full month: opening entry with GST payables, credit purchases from 3 suppliers, credit sales to 2 debtors, returns, cheque discounting & full settlements.",
+  given:"Opening (1 Apr 2019) — Assets: Premises ₹2,00,000; Delivery Van ₹50,000; Fixtures ₹5,000; Stock ₹75,000; Debtors Hariharan ₹30,000, Rajhans ₹50,000; Bank ₹45,000; Cash ₹30,000. Liabilities: Jawahar ₹1,00,000; Vikas ₹45,000; Telephone Payable ₹4,000; Output CGST ₹240; Output SGST ₹240; Electricity Payable ₹4,520; Salaries Payable ₹7,000. IGST @12% inter-state; CGST+SGST @6%+6% intra-state.",
+  givenTx:[
+    ["April 1 — Paid rent by cheque","5,000"],
+    ["April 2 — Purchased on credit: Prabhat 15,000, Rajan 8,000, Passi",""],
+    ["April 3 — Sold on credit: Rakesh (Gurugram) 17,000, Devender (Delhi)",""],
+    ["April 3 — Paid Telephone Expenses payable by cheque*",""],
+    ["April 4 — Paid petrol bill for Delivery Van*","5,700"],
+    ["April 5 — Cash drawings by proprietor*","4,000"],
+    ["April 7 — Paid March 2019 salaries*","7,000"],
+    ["April 9 — Cash sales","5,000"],
+    ["April 11 — Goods returned by Rakesh 5,000 & Devender","1,000"],
+    ["April 12 — Cheques from Hariharan 20,000 & Rajhans*","40,000"],
+    ["April 16 — Goods returned to Prabhat 4,000 & Rajan","1,000"],
+    ["April 20 — Cheques issued: Jawahar 50,000, Vikas*","10,000"],
+    ["April 22 — Cheques from Hariharan, Rajhans, Rakesh, Devender (Rakesh/Devender post-dated 25 May)",""],
+    ["April 24 — Rakesh & Devender cheques discounted @10% p.a.*",""],
+    ["April 25 — Cash from Devender in full settlement*","21,000"]
+  ],
+  journal:[
+    {date:"April 01",lines:[{dr:1,text:"Premises A/c",amt:"2,00,000"},{dr:1,text:"Delivery Van A/c",amt:"50,000"},{dr:1,text:"Fixtures A/c",amt:"5,000"},{dr:1,text:"Stock A/c",amt:"75,000"},{dr:1,text:"Hariharan",amt:"30,000"},{dr:1,text:"Rajhans",amt:"50,000"},{dr:1,text:"Bank A/c",amt:"45,000"},{dr:1,text:"Cash A/c",amt:"30,000"},{dr:0,text:"Jawahar",amt:"1,00,000"},{dr:0,text:"Vikas",amt:"45,000"},{dr:0,text:"Telephone Expenses Payable A/c",amt:"4,000"},{dr:0,text:"Output CGST A/c",amt:"240"},{dr:0,text:"Output SGST A/c",amt:"240"},{dr:0,text:"Electricity Expenses Payable A/c",amt:"4,520"},{dr:0,text:"Salaries Payable A/c",amt:"7,000"},{dr:0,text:"Capital A/c (Balancing Figure)",amt:"3,24,000"}],narration:"Balance forwarded from the last month"},
+    {date:"April 01",lines:[{dr:1,text:"Rent A/c",amt:"5,000"},{dr:1,text:"Input CGST A/c",amt:"300"},{dr:1,text:"Input SGST A/c",amt:"300"},{dr:0,text:"Bank A/c",amt:"5,600"}],narration:"Rent paid by cheque plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 02",lines:[{dr:1,text:"Purchases A/c",amt:"30,000"},{dr:1,text:"Input IGST A/c",amt:"3,600"},{dr:0,text:"Prabhat",amt:"16,800"},{dr:0,text:"Rajan",amt:"8,960"},{dr:0,text:"Passi",amt:"7,840"}],narration:"Goods purchased from Prabhat, Rajan and Passi @12",gst:"IGST 12%"},
+    {date:"April 03",lines:[{dr:1,text:"Rakesh",amt:"19,040"},{dr:1,text:"Devender",amt:"28,000"},{dr:0,text:"Sales A/c",amt:"42,000"},{dr:0,text:"Output CGST A/c",amt:"1,020"},{dr:0,text:"Output SGST A/c",amt:"1,020"},{dr:0,text:"Output IGST A/c",amt:"3,000"}],narration:"Sold goods to Rakesh of Gurugram @6% & Devender of Delhi @12%"},
+    {date:"April 03",lines:[{dr:1,text:"Telephone Expenses Payable A/c",amt:"4,000"},{dr:0,text:"Bank A/c",amt:"4,000"}],narration:"Outstanding paid by cheque"},
+    {date:"April 04",lines:[{dr:1,text:"Delivery Van Expenses A/c",amt:"5,700"},{dr:0,text:"Cash A/c",amt:"5,700"}],narration:"Paid for petrol expenses of Delivery Van"},
+    {date:"April 05",lines:[{dr:1,text:"Drawings A/c",amt:"4,000"},{dr:0,text:"Cash A/c",amt:"4,000"}],narration:"Cash drawn by proprietor for personal use"},
+    {date:"April 07",lines:[{dr:1,text:"Salaries Payable A/c",amt:"7,000"},{dr:0,text:"Cash A/c",amt:"7,000"}],narration:"Outstanding paid by cheque"},
+    {date:"April 09",lines:[{dr:1,text:"Cash A/c",amt:"5,600"},{dr:0,text:"Sales A/c",amt:"5,000"},{dr:0,text:"Output CGST A/c",amt:"300"},{dr:0,text:"Output SGST A/c",amt:"300"}],narration:"Goods Sold for Cash @6",gst:"CGST+SGST 6%+6%"},
+    {date:"April 11",lines:[{dr:1,text:"Sales Return A/c",amt:"6,000"},{dr:1,text:"Output CGST A/c",amt:"300"},{dr:1,text:"Output SGST A/c",amt:"300"},{dr:1,text:"Output IGST A/c",amt:"120"},{dr:0,text:"Rakesh",amt:"5,600"},{dr:0,text:"Devender",amt:"1,120"}],narration:"Goods returned by Rakesh of Gurugram and Devender of Delhi; GST reversed"},
+    {date:"April 12",lines:[{dr:1,text:"Bank A/c",amt:"60,000"},{dr:0,text:"Hariharan",amt:"20,000"},{dr:0,text:"Rajhans",amt:"40,000"}],narration:"Received Cheques from Hariharan and Rajhans"},
+    {date:"April 16",lines:[{dr:1,text:"Prabhat",amt:"4,480"},{dr:1,text:"Rajan",amt:"1,120"},{dr:0,text:"Purchases Return A/c",amt:"5,000"},{dr:0,text:"Input IGST A/c",amt:"600"}],narration:"Goods returned to Prabhat and Rajan and GST reversed"},
+    {date:"April 20",lines:[{dr:1,text:"Jawahar",amt:"50,000"},{dr:1,text:"Vikas",amt:"10,000"},{dr:0,text:"Bank A/c",amt:"60,000"}],narration:"Cheques issued to Jawahar and Vikas"},
+    {date:"April 22",lines:[{dr:1,text:"Bank A/c",amt:"20,000"},{dr:0,text:"Hariharan",amt:"10,000"},{dr:0,text:"Rajhans",amt:"10,000"}],narration:"Cheques received from debtors"},
+    {date:"April 22",lines:[{dr:1,text:"Cheques-in-hand A/c",amt:"15,000"},{dr:0,text:"Rakesh",amt:"10,000"},{dr:0,text:"Devender",amt:"5,000"}],narration:"Received postdated cheques from Rakesh and Devender dated 25th May, 2018"},
+    {date:"April 24",lines:[{dr:1,text:"Bank A/c",amt:"14,873"},{dr:1,text:"Discounting Charges A/c",amt:"127"},{dr:0,text:"Cheques-in-hand A/c",amt:"15,000"}],narration:"Rakesh and Devender's Cheque discounted with bank at interest of 10%"},
+    {date:"April 25",lines:[{dr:1,text:"Cash A/c",amt:"21,000"},{dr:1,text:"Discount Allowed A/c",amt:"880"},{dr:0,text:"Devender",amt:"21,880"}],narration:"Cash Received from Devender and discount allowed"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["April 01","Balance b/d","30,000"],["April 09","Sales","5,000"],["April 09","Output CGST","300"],["April 09","Output SGST","300"],["April 25","Devender","21,000"]], drTotal:"56,600",
+      cr:[["April 04","Delivery Van Exp.","5,700"],["April 05","Drawings","4,000"],["April 07","Salaries Payable","7,000"],["April 30","Balance c/d","39,900"]], crTotal:"56,600"},
+    {name:"Bank Account",
+      dr:[["April 01","Balance b/d","45,000"],["April 12","Hari Haran","20,000"],["April 12","Rajhans","40,000"],["April 22","Hari Haran","10,000"],["April 22","Rajhans","10,000"],["April 24","Cheques in Hand","14,873"]], drTotal:"1,39,873",
+      cr:[["April 01","Rent","5,000"],["April 01","Input CGST","300"],["April 01","Input SGST","300"],["April 03","Telephone Expenses Payable","4,000"],["April 20","Jawahar","50,000"],["April 20","Vikas","10,000"],["April 30","Balance c/d","70,273"]], crTotal:"1,39,873"},
+    {name:"Capital Account",
+      dr:[["April 30","Balance c/d","3,24,000"]], drTotal:"3,24,000",
+      cr:[["April 01","Balance b/d","3,24,000"]], crTotal:"3,24,000"},
+    {name:"Premises Account",
+      dr:[["April 01","Balance b/d","2,00,000"]], drTotal:"2,00,000",
+      cr:[["April 30","Balance c/d","2,00,000"]], crTotal:"2,00,000"},
+    {name:"Delivery Van Account",
+      dr:[["April 01","Balance b/d","50,000"]], drTotal:"50,000",
+      cr:[["April 30","Balance c/d","50,000"]], crTotal:"50,000"},
+    {name:"Fixtures Account",
+      dr:[["April 01","Balance b/d","5,000"]], drTotal:"5,000",
+      cr:[["April 30","Balance c/d","5,000"]], crTotal:"5,000"},
+    {name:"Stock Account",
+      dr:[["April 01","Balance b/d","75,000"]], drTotal:"75,000",
+      cr:[["April 30","Balance c/d","75,000"]], crTotal:"75,000"},
+    {name:"Hariharan",
+      dr:[["April 01","Balance b/d","30,000"]], drTotal:"30,000",
+      cr:[["April 12","Bank","20,000"],["April 22","Bank","10,000"]], crTotal:"30,000"},
+    {name:"Rajhans",
+      dr:[["April 01","Balance b/d","50,000"]], drTotal:"50,000",
+      cr:[["April 12","Bank","40,000"],["April 22","Bank","10,000"]], crTotal:"50,000"},
+    {name:"Jawahar",
+      dr:[["April 20","Bank","50,000"],["April 30","Balance c/d","50,000"]], drTotal:"1,00,000",
+      cr:[["April 01","Balance b/d","1,00,000"]], crTotal:"1,00,000"},
+    {name:"Vikas",
+      dr:[["April 20","Bank","10,000"],["April 30","Balance c/d","35,000"]], drTotal:"45,000",
+      cr:[["April 01","Balance b/d","45,000"]], crTotal:"45,000"},
+    {name:"Telephone Expense Payable Account",
+      dr:[["April 03","Bank A/c","4,000"]], drTotal:"4,000",
+      cr:[["April 01","Balance b/d","4,000"]], crTotal:"4,000"},
+    {name:"Electricity Expenses Payable Account",
+      dr:[["April 30","Balance c/d","4,520"]], drTotal:"4,520",
+      cr:[["April 01","Balance b/d","4,520"]], crTotal:"4,520"},
+    {name:"Salaries Payable Account",
+      dr:[["April 07","Cash","7,000"]], drTotal:"7,000",
+      cr:[["April 01","Balance b/d","7,000"]], crTotal:"7,000"},
+    {name:"Output IGST Account",
+      dr:[["April 11","Devender","120"],["April 30","Balance c/d","2,880"]], drTotal:"3,000",
+      cr:[["April 03","Devender","3,000"]], crTotal:"3,000"},
+    {name:"Output CGST Account",
+      dr:[["April 11","Rakesh","300"],["April 30","Balance c/d","1,260"]], drTotal:"1,560",
+      cr:[["April 01","Balance b/d","240"],["April 03","Rakesh","1,020"],["April 09","Cash","300"]], crTotal:"1,560"},
+    {name:"Output SGST Account",
+      dr:[["April 11","Rakesh","300"],["April 30","Balance b/d","1,260"]], drTotal:"1,560",
+      cr:[["April 01","Balance b/d","240"],["April 03","Rakesh","1,020"],["April 09","Cash","300"]], crTotal:"1,560"},
+    {name:"Input IGST Account",
+      dr:[["April 02","Prabhat","1,800"],["April 02","Rajan","960"],["April 02","Passi","840"]], drTotal:"3,600",
+      cr:[["April 16","Prabhat","480"],["April 16","Rajan","120"],["April 30","Balance c/d","3,000"]], crTotal:"3,600"},
+    {name:"Cheques in hand Account",
+      dr:[["April 22","Rakesh","10,000"],["April 22","Devender","5,000"]], drTotal:"15,000",
+      cr:[["April 24","Bank","14,873"],["April 24","Discounting Charges","127"]], crTotal:"15,000"},
+    {name:"Prabhat",
+      dr:[["April 16","Purchases Return","4,000"],["April 16","Input IGST","480"],["April 30","Balance c/d","12,320"]], drTotal:"16,800",
+      cr:[["April 02","Purchases","15,000"],["April 02","Input IGST","1,800"]], crTotal:"16,800"},
+    {name:"Rajan",
+      dr:[["April 16","Purchases Return","1,000"],["April 16","Input IGST","120"],["April 30","Balance c/d","7,840"]], drTotal:"8,960",
+      cr:[["April 02","Purchases","8,000"],["April 02","Input IGST","960"]], crTotal:"8,960"},
+    {name:"Passi",
+      dr:[["April 30","Balance c/d","7,840"]], drTotal:"7,840",
+      cr:[["April 02","Purchases","7,000"],["April 02","Input IGST","840"]], crTotal:"7,840"},
+    {name:"Rakesh",
+      dr:[["April 03","Sales","17,000"],["April 03","Output CGST","1,020"],["April 03","Output SGST","1,020"]], drTotal:"19,040",
+      cr:[["April 11","Sales Return","5,000"],["April 11","Output CGST","300"],["April 11","Output SGST","300"],["April 22","Cheques in hand","10,000"],["April 30","Balance c/d","3,440"]], crTotal:"19,040"},
+    {name:"Devender",
+      dr:[["April 03","Sales","25,000"],["April 03","Output IGST","3,000"]], drTotal:"28,000",
+      cr:[["April 11","Sales Return","1,000"],["April 11","Output IGST","120"],["April 22","Cheques in hand","5,000"],["April 25","Cash","21,000"],["April 25","Discount Allowed","880"]], crTotal:"28,000"},
+    {name:"Discounting Charges Account",
+      dr:[["April 24","Cheques in hand","127"]], drTotal:"127",
+      cr:[["April 30","Balance c/d","127"]], crTotal:"127"},
+    {name:"Discount Allowed Account",
+      dr:[["April 25","Devender","880"]], drTotal:"880",
+      cr:[["April 30","Balance c/d","880"]], crTotal:"880"},
+    {name:"Delivery Van Expenses Account",
+      dr:[["April 04","Cash A/c","5,700"]], drTotal:"5,700",
+      cr:[["April 30","Balance c/d","5,700"]], crTotal:"5,700"},
+    {name:"Rent Account",
+      dr:[["April 01","Bank","5,000"]], drTotal:"5,000",
+      cr:[["April 30","Balance c/d","5,000"]], crTotal:"5,000"},
+    {name:"Input CGST Account",
+      dr:[["April 01","Bank","300"]], drTotal:"300",
+      cr:[["April 30","Balance c/d","300"]], crTotal:"300"},
+    {name:"Input SGST Account",
+      dr:[["April 01","Bank","300"]], drTotal:"300",
+      cr:[["April 30","Balance c/d","300"]], crTotal:"300"},
+    {name:"Purchases Account",
+      dr:[["April 02","Prabhat","15,000"],["April 02","Rajan","8,000"],["April 02","Passi","7,000"]], drTotal:"30,000",
+      cr:[["April 30","Balance c/d","30,000"]], crTotal:"30,000"},
+    {name:"Sales Account",
+      dr:[["April 30","Balance c/d","47,000"]], drTotal:"47,000",
+      cr:[["April 03","Rakesh","17,000"],["April 03","Devender","25,000"],["April 09","Cash","5,000"]], crTotal:"47,000"},
+    {name:"Purchases Return Account",
+      dr:[["April 30","Balance c/d","5,000"]], drTotal:"5,000",
+      cr:[["April 16","Prabhat","4,000"],["April 16","Rajan","1,000"]], crTotal:"5,000"},
+    {name:"Sales Return Account",
+      dr:[["April 11","Rakesh","5,000"],["April 11","Devender","1,000"]], drTotal:"6,000",
+      cr:[["April 30","Balance c/d","6,000"]], crTotal:"6,000"},
+    {name:"Drawings Account",
+      dr:[["April 05","Cash","4,000"]], drTotal:"4,000",
+      cr:[["April 30","Balance c/d","4,000"]], crTotal:"4,000"}
+  ],
+  trial:{ asOn:"30 April, 2019",
+    rows:[
+      ["Cash A/c","39,900",""],
+      ["Bank A/c","70,273",""],
+      ["Stock A/c","75,000",""],
+      ["Fixtures A/c","5,000",""],
+      ["Premises","2,000,000",""],
+      ["Delivery Van","50,000",""],
+      ["Jawahar","","50,000"],
+      ["Vikas","","35,000"],
+      ["Capital A/c","","3,24,000"],
+      ["Purchases A/c","30,000",""],
+      ["Electricity Expenses Payable A/c","","4,520"],
+      ["Sales A/c","","47,000"],
+      ["Delivery Van Expenses A/c","5,700",""],
+      ["Rent A/c","5,000",""],
+      ["Prabhat","","12,320"],
+      ["Rajan","","7,840"],
+      ["Passi","","7,840"],
+      ["Rakesh","3,440",""],
+      ["Discount Allowed A/c","880",""],
+      ["Discounting Charges","127",""],
+      ["Purchses Return A/c","","5,000"],
+      ["Sales Return A/c","6,000",""],
+      ["Drawings A/c","4,000",""],
+      ["Input IGST A/c","3,000",""],
+      ["Input CGST A/c","300",""],
+      ["Input SGST A/c","300",""],
+      ["Output IGST A/c","","2,880"],
+      ["Output CGST A/c","","1,260"],
+      ["Output SGST A/c","","1,260"]
+    ],
+    total:["4,98,920","4,98,920"]
+  }
+});
+
+/* ================= QUESTION 9 (GST) ================= */
+QUESTIONS.push({
+  num:9, place:"M/s Karim Bros. (Prop. Karim Khan), Kolkata",
+  summary:"Opening stock/debtors/creditors with pre-existing Input GST balances, then a month of credit trade with Pankaj, Ashok, Poonam & Sonu.",
+  given:"Opening (1 Apr 2019) — Cash ₹20,000; Bank ₹35,000; Stock ₹15,000; Furniture ₹4,500; Input SGST ₹5,000; Input IGST ₹2,000. Debtors: Poonam ₹20,000, Sonu ₹10,000. Creditors: Ashok ₹13,500, Pankaj ₹21,500.",
+  givenTx:[
+    ["April 4 — Purchased goods from Pankaj, Kolkata","5,000"],
+    ["April 7 — Paid Ashok by cheque, full settlement*","13,000"],
+    ["April 10 — Sold goods to Poonam, Delhi","11,000"],
+    ["April 12 — Purchased goods from Ashok, Delhi","15,000"],
+    ["April 15 — Sold goods to Sonu, Kanpur","6,000"],
+    ["April 18 — Cheque from Poonam* 24,500, discount* 500",""],
+    ["April 25 — Paid for stationery","1,200"],
+    ["April 27 — Paid telephone bill by cheque","3,500"],
+    ["April 30 — Paid salaries*","6,000"]
+  ],
+  journal:[
+    {date:"Apr.01",lines:[{dr:1,text:"Cash A/c",amt:"20,000"},{dr:1,text:"Bank A/c",amt:"35,000"},{dr:1,text:"Stock A/c",amt:"15,000"},{dr:1,text:"Furniture A/c",amt:"4,500"},{dr:1,text:"Poonam",amt:"20,000"},{dr:1,text:"Sonu",amt:"10,000"},{dr:1,text:"Input SGST",amt:"5,000"},{dr:1,text:"Input IGST",amt:"2,000"},{dr:0,text:"Ashok",amt:"13,500"},{dr:0,text:"Pankaj",amt:"21,500"},{dr:0,text:"Capital A/c",amt:"76,500"}],narration:"Opening entry made"},
+    {date:"Apr.04",lines:[{dr:1,text:"Purchases A/c",amt:"5,000"},{dr:1,text:"Input CGST A/c",amt:"300"},{dr:1,text:"Input SGST A/c",amt:"300"},{dr:0,text:"Pankaj",amt:"5,600"}],narration:"Goods purchased from Pankaj on credit plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"Apr.07",lines:[{dr:1,text:"Ashok",amt:"13,500"},{dr:0,text:"Bank A/c",amt:"13,000"},{dr:0,text:"Discount Received A/c",amt:"500"}],narration:"Payment made to Ashok"},
+    {date:"Apr.10",lines:[{dr:1,text:"Poonam",amt:"12,320"},{dr:0,text:"Sales A/c",amt:"11,000"},{dr:0,text:"Output IGST A/c",amt:"1,320"}],narration:"Goods sold to Poonam on credit plus 12%",gst:"IGST 12%"},
+    {date:"Apr.12",lines:[{dr:1,text:"Purchases A/c",amt:"15,000"},{dr:1,text:"Input IGST A/c",amt:"1,800"},{dr:0,text:"Ashok",amt:"16,800"}],narration:"Goods purchased from Ashok on Credit plus 12%",gst:"IGST 12%"},
+    {date:"Apr.15",lines:[{dr:1,text:"Sonu",amt:"6,720"},{dr:0,text:"Sales A/c",amt:"6,000"},{dr:0,text:"Output IGST A/c",amt:"720"}],narration:"Goods sold to Sonu on credit plus 12%",gst:"IGST 12%"},
+    {date:"Apr.18",lines:[{dr:1,text:"Bank A/c",amt:"24,500"},{dr:1,text:"Discount Allowed A/c",amt:"500"},{dr:0,text:"Poonam",amt:"25,000"}],narration:"Payment received from Poonam"},
+    {date:"Apr.25",lines:[{dr:1,text:"Stationery A/c",amt:"1,200"},{dr:1,text:"Input CGST A/c",amt:"72"},{dr:1,text:"Input SGST A/c",amt:"72"},{dr:0,text:"Cash A/c",amt:"1,344"}],narration:"Stationery purchased in cash plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"Apr.27",lines:[{dr:1,text:"Telephone Bill A/c",amt:"3,500"},{dr:1,text:"Input CGST A/c",amt:"210"},{dr:1,text:"Input SGST A/c",amt:"210"},{dr:0,text:"Bank A/c",amt:"3,920"}],narration:"Rent paid by cheque plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"Apr.30",lines:[{dr:1,text:"Salaries A/c",amt:"6,000"},{dr:0,text:"Cash A/c",amt:"6,000"}],narration:"Salaries paid"}
+  ],
+  ledgers:[
+    {name:"Cash Account",
+      dr:[["Apr.01","Balance b/d","20,000"]], drTotal:"20,000",
+      cr:[["Apr.25","Stationery A/c","1,200"],["Apr.25","Input CGST A/c","72"],["Apr.25","Input SGST A/c","72"],["Apr.30","Salaries A/c","6,000"],["Apr.30","Balance c/d","12,656"]], crTotal:"20,000",
+      drBd:"May.01 Balance b/d 12,656"},
+    {name:"Bank Account",
+      dr:[["Apr.01","Balance b/d","35,000"],["Apr.18","Poonam","24,500"]], drTotal:"59,500",
+      cr:[["Apr.07","Ashok","13,000"],["Apr.27","Telephone Bill A/c","3,500"],["Apr.27","Input CGST A/c","210"],["Apr.27","Input SGST A/c","210"],["Apr.30","Balance c/d","42,580"]], crTotal:"59,500",
+      drBd:"May.01 Balance b/d 42,580"},
+    {name:"Stock Account",
+      dr:[["Apr.01","Balance b/d","15,000"]], drTotal:"15,000",
+      cr:[["Apr.30","Balance c/d","15,000"]], crTotal:"15,000",
+      drBd:"May.01 Balance b/d 15,000"},
+    {name:"Furniture Account",
+      dr:[["Apr.01","Balance b/d","4,500"]], drTotal:"4,500",
+      cr:[["Apr.30","Balance c/d","4,500"]], crTotal:"4,500",
+      drBd:"May.01 Balance b/d 4,500"},
+    {name:"Poonam",
+      dr:[["Apr.01","Balance b/d","20,000"],["Apr.10","Sales A/c","11,000"],["Apr.10","Output IGST A/c","1,320"]], drTotal:"32,320",
+      cr:[["Apr.18","Bank A/c","24,500"],["Apr.18","Discount Allowed","500"],["Apr.30","Balance c/d","7,320"]], crTotal:"32,320",
+      drBd:"May.01 Balance b/d 7,320"},
+    {name:"Sonu",
+      dr:[["Apr.01","Balance b/d","10,000"],["Apr.15","Sales A/c","6,000"],["Apr.15","Output IGST A/c","720"]], drTotal:"16,720",
+      cr:[["Apr.30","Balance c/d","16,720"]], crTotal:"16,720",
+      drBd:"May.01 Balance b/d 16,720"},
+    {name:"Ashok",
+      dr:[["Apr.07","Bank A/c","13,000"],["Apr.07","Discount Received","500"],["Apr.30","Balance c/d","16,800"]], drTotal:"30,300",
+      cr:[["Apr.01","Balance b/d","13,500"],["Apr.12","Purchases a/c","15,000"],["Apr.12","Input IGST A/c","1,800"]], crTotal:"30,300",
+      crBd:"May.01 Balance b/d 16,800"},
+    {name:"Pankaj",
+      dr:[["Apr.30","Balance c/d","27,100"]], drTotal:"27,100",
+      cr:[["Apr.01","Balance b/d","21,500"],["Apr.04","Purchases a/c","5,000"],["Apr.04","Input CGST A/c","300"],["Apr.04","Input SGST A/c","300"]], crTotal:"27,100",
+      crBd:"May.01 Balance b/d 27,100"},
+    {name:"Capital Account",
+      dr:[["Apr.30","Balance c/d","76,500"]], drTotal:"76,500",
+      cr:[["Apr.01","Balance b/d","76,500"]], crTotal:"76,500",
+      crBd:"May.01 Balance b/d 76,500"},
+    {name:"Purchases Account",
+      dr:[["Apr.04","Pankaj","5,000"],["Apr.12","Ashok","15,000"]], drTotal:"20,000",
+      cr:[["Apr.30","Balance c/d","20,000"]], crTotal:"20,000",
+      drBd:"May.01 Balance b/d 20,000"},
+    {name:"Discount Received Account",
+      dr:[["Apr.30","Balance c/d","500"]], drTotal:"500",
+      cr:[["Apr.07","Ashok","500"]], crTotal:"500",
+      crBd:"May.01 Balance b/d 500"},
+    {name:"Sales Account",
+      dr:[["Apr.30","Balance c/d","17,000"]], drTotal:"17,000",
+      cr:[["Apr.10","Poonam","11,000"],["Apr.15","Sonu","6,000"]], crTotal:"17,000",
+      crBd:"May.01 Balance b/d 17,000"},
+    {name:"Stationery Account",
+      dr:[["Apr.25","Cash A/c","1,200"]], drTotal:"1,200",
+      cr:[["Apr.30","Balance c/d","1,200"]], crTotal:"1,200",
+      drBd:"May.01 Balance b/d 1,200"},
+    {name:"Telephone Bill Account",
+      dr:[["Apr.27","Bank A/c","3,500"]], drTotal:"3,500",
+      cr:[["Apr.30","Balance c/d","3,500"]], crTotal:"3,500",
+      drBd:"May.01 Balance b/d 3,500"},
+    {name:"Salaries Account",
+      dr:[["Apr.30","Cash A/c","6,000"]], drTotal:"6,000",
+      cr:[["Apr.30","Balance c/d","6,000"]], crTotal:"6,000",
+      drBd:"May.01 Balance b/d 6,000"},
+    {name:"Discount allowed Account",
+      dr:[["Apr.18","Poonam","500"]], drTotal:"500",
+      cr:[["Apr.30","Balance c/d","500"]], crTotal:"500",
+      drBd:"May.01 Balance b/d 500"},
+    {name:"Input IGST Account",
+      dr:[["Apr.01","Balance b/d","2,000"],["Apr.12","Ashok","1,800"]], drTotal:"3,800",
+      cr:[["Apr.30","Balance c/d","3,800"]], crTotal:"3,800",
+      drBd:"May.01 Balance b/d 3,800"},
+    {name:"Input CGST Account",
+      dr:[["Apr.04","Pankaj","300"],["Apr.25","Cash A/c","72"],["Apr.27","Telephone Bill A/c","210"]], drTotal:"582",
+      cr:[["Apr.30","Balance c/d","582"]], crTotal:"582",
+      drBd:"May.01 Balance b/d 582"},
+    {name:"Input SGST Account",
+      dr:[["Apr.01","Balance b/d","5,000"],["Apr.04","Pankaj","300"],["Apr.25","Cash A/c","72"],["Apr.27","Telephone Bill A/c","210"]], drTotal:"5,582",
+      cr:[["Apr.30","Balance c/d","5,582"]], crTotal:"5,582",
+      drBd:"May.01 Balance b/d 5,582"},
+    {name:"Output IGST Account",
+      dr:[["Apr.30","","2,040"]], drTotal:"2,040",
+      cr:[["Apr.10","Poonam","1,320"],["Apr.15","Sonu","720"]], crTotal:"2,040",
+      drBd:"May.01 Balance b/d 2,040"}
+  ],
+  trial:{ asOn:"30 April, 2019",
+    rows:[
+      ["Cash A/c","12,656",""],
+      ["Bank A/c","42,580",""],
+      ["Stock A/c","15,000",""],
+      ["Furniture A/c","4,500",""],
+      ["Poonam","7,320",""],
+      ["Sonu","16,720",""],
+      ["Ashok","","16,800"],
+      ["Pankaj","","27,100"],
+      ["Capital A/c","","76,500"],
+      ["Purchases A/c","20,000",""],
+      ["Discount Received A/c","","500"],
+      ["Sales A/c","","17,000"],
+      ["Stationery A/c","1,200",""],
+      ["Telephone Bill A/c","3,500",""],
+      ["Salaries A/c","6,000",""],
+      ["Discount Allowed A/c","500",""],
+      ["Input IGST A/c","3,800",""],
+      ["Input CGST A/c","582",""],
+      ["Input SGST A/c","5,582",""],
+      ["Output IGST A/c","","2,040"]
+    ],
+    total:["1,39,940","1,39,940"]
+  }
+});
+
+/* ================= QUESTION 10 (GST) ================= */
+QUESTIONS.push({
+  num:10, place:"Shri S.K. Gupta, Chandigarh",
+  summary:"₹1,20,000 opening capital split between bank (₹60,000) and cash; furniture, stationery & credit trading with Ramesh, Sen, Sameer and Raj Banwari.",
+  given:"Shri S.K. Gupta, Chandigarh commenced business on 1st April, 2019 with a capital of ₹1,20,000 — ₹60,000 into Bank, balance retained as cash. IGST @12% inter-state; CGST+SGST @6%+6% intra-state.",
+  givenTx:[
+    ["April 2 — Bought office furniture","20,000"],
+    ["April 5 — Purchased goods","16,000"],
+    ["April 8 — Purchased goods from Ramesh, Chandigarh","11,000"],
+    ["April 12 — Sold goods to Sameer, Delhi","21,000"],
+    ["April 13 — Purchased stationery for cash","1,800"],
+    ["April 13 — Paid Ramesh in cash* 10,000, discount by him*","1,000"],
+    ["April 17 — Withdrawn cash for office use*","4,000"],
+    ["April 18 — Sen of Chandigarh sold goods to S.K. Gupta","30,000"],
+    ["April 19 — Cash from Sameer* 20,000, discount allowed*","1,000"],
+    ["April 20 — Sold to Raj Banwari, Delhi","40,000"],
+    ["April 28 — Cash sales","1,400"],
+    ["April 30 — Paid salary by cheque*","8,000"],
+    ["April 30 — Paid rent by cheque","5,000"],
+    ["April 30 — Paid telephone expenses by cheque","2,000"],
+    ["April 30 — Paid cash into bank*","2,000"]
+  ],
+  journal:[
+    {date:"2019 April 01",lines:[{dr:1,text:"Bank A/c",amt:"60,000"},{dr:1,text:"Cash A/c",amt:"60,000"},{dr:0,text:"Capital A/c",amt:"1,20,000"}],narration:"Being business commenced"},
+    {date:"April 02",lines:[{dr:1,text:"Furniture A/c",amt:"20,000"},{dr:1,text:"Input CGST A/c",amt:"1,200"},{dr:1,text:"Input SGST A/c",amt:"1,200"},{dr:0,text:"Cash A/c",amt:"22,400"}],narration:"Being furniture purchased plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 08",lines:[{dr:1,text:"Purchases A/c",amt:"11,000"},{dr:1,text:"Input CGST A/c",amt:"660"},{dr:1,text:"Input SGST A/c",amt:"660"},{dr:0,text:"Ramesh A/c",amt:"12,320"}],narration:"Being goods purchased on credit plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 12",lines:[{dr:1,text:"Sameer",amt:"23,520"},{dr:0,text:"Sales A/c",amt:"21,000"},{dr:0,text:"Output CGST A/c",amt:"1,260"},{dr:0,text:"Output SGST A/c",amt:"1,260"}],narration:"Being goods sold on credit plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 13",lines:[{dr:1,text:"Stationery A/c",amt:"1,800"},{dr:1,text:"Input CGST A/c",amt:"108"},{dr:1,text:"Input SGST A/c",amt:"108"},{dr:0,text:"Cash A/c",amt:"2,016"}],narration:"Being Stationery purchased plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 13",lines:[{dr:1,text:"Ramesh",amt:"11,000"},{dr:0,text:"Cash A/c",amt:"10,000"},{dr:0,text:"Discount Received A/c",amt:"1,000"}],narration:"Being cash paid and discount received"},
+    {date:"April 17",lines:[{dr:1,text:"Cash A/c",amt:"4,000"},{dr:0,text:"Bank A/c",amt:"4,000"}],narration:"Being cash withdrawn from bank for office use"},
+    {date:"April 18",lines:[{dr:1,text:"Purchases A/c",amt:"30,000"},{dr:1,text:"Input CGST A/c",amt:"1,800"},{dr:1,text:"Input SGST A/c",amt:"1,800"},{dr:0,text:"Sen",amt:"33,600"}],narration:"Being goods purchased on credit plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 19",lines:[{dr:1,text:"Cash A/c",amt:"20,000"},{dr:1,text:"Discount Allowed A/c",amt:"1,000"},{dr:0,text:"Sameer",amt:"21,000"}],narration:"Being Cash received and discount allowed"},
+    {date:"April 20",lines:[{dr:1,text:"Raj Banwari",amt:"44,800"},{dr:0,text:"Sales A/c",amt:"40,000"},{dr:0,text:"Output IGST A/c",amt:"4,800"}],narration:"Being goods sold plus 12%",gst:"IGST 12%"},
+    {date:"April 28",lines:[{dr:1,text:"Cash A/c",amt:"1,568"},{dr:0,text:"Sales A/c",amt:"1,400"},{dr:0,text:"Output CGST A/c",amt:"84"},{dr:0,text:"Output SGST A/c",amt:"84"}],narration:"Being goods sold in cash plus 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 30",lines:[{dr:1,text:"Salary A/c",amt:"8,000"},{dr:0,text:"Bank A/c",amt:"8,000"}],narration:"Being salary paid by cheque"},
+    {date:"April 30",lines:[{dr:1,text:"Rent A/c",amt:"5,000"},{dr:1,text:"Input CGST A/c",amt:"300"},{dr:1,text:"Input SGST A/c",amt:"300"},{dr:0,text:"Bank A/c",amt:"5,600"}],narration:"Being rent paid with 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 30",lines:[{dr:1,text:"Telephone expenses A/c",amt:"2,000"},{dr:1,text:"Input CGST A/c",amt:"120"},{dr:1,text:"Input SGST A/c",amt:"120"},{dr:0,text:"Bank A/c",amt:"2,240"}],narration:"Being telephone expenses paid with 6%",gst:"CGST+SGST 6%+6%"},
+    {date:"April 30",lines:[{dr:1,text:"Bank A/c",amt:"2,000"},{dr:0,text:"Cash A/c",amt:"2,000"}],narration:"Being cash deposited into bank account"}
+  ],
+  ledgers:[
+    {name:"Bank Account",
+      dr:[["April 01","Capital A/c","60,000"],["April 30","Cash A/c","2,000"]], drTotal:"62,000",
+      cr:[["April 17","Cash A/c","4,000"],["April 30","Salary A/c","8,000"],["April 30","Rent A/c","5,000"],["April 30","Input CGST","300"],["April 30","Input SGST","300"],["April 30","Telephone Exp.","2,000"],["April 30","Input CGST","120"],["April 30","Input SGST","120"],["April 30","Balance c/d","42,160"]], crTotal:"62,000"},
+    {name:"Capital Account",
+      dr:[["April 30","Balance c/d","1,20,000"]], drTotal:"1,20,000",
+      cr:[["April 01","Bank A/c","60,000"],["April 01","Cash A/c","60,000"]], crTotal:"1,20,000"},
+    {name:"Cash Account",
+      dr:[["April 01","Capital A/c","60,000"],["April 17","Bank A/c","4,000"],["April 19","Sameer","20,000"],["April 28","Sales A/c","1,400"],["April 28","output CGST A/c","84"],["April 28","output SGST A/c","84"]], drTotal:"85,568",
+      cr:[["April 02","Furniture A/c","20,000"],["April 02","Input CGST A/c","1,200"],["April 02","Input SGST A/c","1,200"],["April 13","Stationery A/c","1,800"],["April 13","Input CGST A/c","108"],["April 13","Input SGST A/c","108"],["April 13","Ramesh","10,000"],["April 30","Bank A/c","2,000"],["April 30","Balance c/d","49,152"]], crTotal:"85,568"},
+    {name:"Furniture Account",
+      dr:[["April 02","Cash A/c","20,000"]], drTotal:"20,000",
+      cr:[["April 30","Balance c/d","20,000"]], crTotal:"20,000"},
+    {name:"Purchases Account",
+      dr:[["April 08","Ramesh","11,000"],["April 18","Sen","30,000"]], drTotal:"41,000",
+      cr:[["April 30","Balance c/d","41,000"]], crTotal:"41,000"},
+    {name:"Sales Account",
+      dr:[["April 30","Balance c/d","62,400"]], drTotal:"62,400",
+      cr:[["April 12","Sameer","21,000"],["April 20","Raj Banwari","40,000"],["April 28","Cash A/c","1,400"]], crTotal:"62,400"},
+    {name:"Ramesh",
+      dr:[["April 13","Cash","10,000"],["April 13","Discount Received","1,000"],["April 30","Balance c/d","1,320"]], drTotal:"12,320",
+      cr:[["April 08","Purchases","11,000"],["April 08","Input CGST","660"],["April 08","Input SGST","660"]], crTotal:"12,320"},
+    {name:"Input CGST Account",
+      dr:[["April 02","Cash A/c","1,200"],["April 08","Ramesh","660"],["April 13","Cash","108"],["April 18","Sen","1,800"],["April 30","Bank A/c","300"],["April 30","Bank A/c","120"]], drTotal:"4,188",
+      cr:[["April 30","Balance c/d","4,188"]], crTotal:"4,188"},
+    {name:"Input SGST Account",
+      dr:[["April 02","Cash A/c","1,200"],["April 08","Ramesh","660"],["April 13","Cash","108"],["April 18","Sen","1,800"],["April 30","Bank A/c","300"],["April 30","Bank A/c","120"]], drTotal:"4,188",
+      cr:[["April 30","Balance c/d","4,188"]], crTotal:"4,188"},
+    {name:"Output CGST Account",
+      dr:[["April 30","Balance c/d","1,344"]], drTotal:"1,344",
+      cr:[["April 12","Sameer","1,260"],["April 28","Cash A/c","84"]], crTotal:"1,344"},
+    {name:"Output SGST Account",
+      dr:[["April 30","Balance c/d","1,344"]], drTotal:"1,344",
+      cr:[["April 12","Sameer","1,260"],["April 28","Cash A/c","84"]], crTotal:"1,344"},
+    {name:"Sameer",
+      dr:[["April 12","Sales A/c","21,000"],["April 12","Output CGST","1,260"],["April 12","Output SGST","1,260"]], drTotal:"23,520",
+      cr:[["April 19","Cash A/c","20,000"],["April 19","Discount Allowed A/c","1,000"],["April 30","balance c/d","2,520"]], crTotal:"23,520"},
+    {name:"Stationery Account",
+      dr:[["April 13","Cash A/c","1,800"]], drTotal:"1,800",
+      cr:[["April 30","Balance c/d","1,800"]], crTotal:"1,800"},
+    {name:"Ramesh (Discount Received)",
+      dr:[["April 30","Balance c/d","1,000"]], drTotal:"1,000",
+      cr:[["April 13","Ramesh","1,000"]], crTotal:"1,000"},
+    {name:"Salary Account",
+      dr:[["April 30","Bank A/c","8,000"]], drTotal:"8,000",
+      cr:[["April 30","Balance c/d","8,000"]], crTotal:"8,000"},
+    {name:"Rent Account",
+      dr:[["April 30","Bank A/c","5,000"]], drTotal:"5,000",
+      cr:[["April 30","Balance c/d","5,000"]], crTotal:"5,000"},
+    {name:"Telephone Expenses Account",
+      dr:[["April 30","Bank A/c","2,000"]], drTotal:"2,000",
+      cr:[["April 30","Balance c/d","2,000"]], crTotal:"2,000"},
+    {name:"Output IGST Account",
+      dr:[["April 30","Balance c/d","4,800"]], drTotal:"4,800",
+      cr:[["April 20","Raj Banwari","4,800"]], crTotal:"4,800"},
+    {name:"Discount Allowed Account",
+      dr:[["April 19","Sameer","1,000"]], drTotal:"1,000",
+      cr:[["April 30","Balance c/d","1,000"]], crTotal:"1,000"},
+    {name:"Sen",
+      dr:[["April 30","Balance c/d","33,600"]], drTotal:"33,600",
+      cr:[["April 18","Purchases","30,000"],["April 18","Input CGST","1,800"],["April 18","Input SGST","1,800"]], crTotal:"33,600"},
+    {name:"Raj Banwari",
+      dr:[["April 20","Sales A/c","40,000"],["April 20","output IGST A/c","4,800"]], drTotal:"44,800",
+      cr:[["April 30","Balance c/d","44,800"]], crTotal:"44,800"}
+  ],
+  trial:{ asOn:"30th April 2019",
+    rows:[
+      ["Cash","49,152",""],
+      ["Bank","42,160",""],
+      ["Capital","","1,20,000"],
+      ["Furniture","20,000",""],
+      ["Purchase","41,000",""],
+      ["Sales","","62,400"],
+      ["Ramesh","","1,320"],
+      ["Sameer","2,520",""],
+      ["Sen","","33,600"],
+      ["Raj Banwari","44,800",""],
+      ["Telephone expenses","2,000",""],
+      ["Stationery","1,800",""],
+      ["Salary","8,000",""],
+      ["Rent","5,000",""],
+      ["Discount Received","","1,000"],
+      ["Discount Allowed","1,000",""],
+      ["Input CGST","4,188",""],
+      ["Input SGST","4,188",""],
+      ["Output CGST","","1,344"],
+      ["Output SGST","","1,344"],
+      ["Output IGST","","4,800"]
+    ],
+    total:["2,25,808","2,25,808"]
+  }
+});
+
+/* ================= QUESTION 11 (GST, largest) ================= */
+QUESTIONS.push({
+  num:11, place:"Shri Manoj, Kolkata",
+  summary:"A full month of high-volume trading — opening balances, a discounted purchase, bad-debt recovery, charity & award adjustments, and bulk cash/credit sales & purchases.",
+  given:"Opening Debit Balances — Cash ₹15,000; Bank ₹55,000; Stock ₹28,000; Debtors: Sunil ₹5,000, Abhay ₹10,000, Alok ₹10,000; Computer & Printer ₹50,000; Furniture ₹10,000; Delivery Van ₹25,000. Opening Credit Balances — Bank Loan ₹90,000; Salaries Outstanding ₹15,000; Creditors ₹20,000; Bills Payable ₹10,000; Capital ₹73,000. IGST @12% inter-state; CGST+SGST @6%+6% intra-state.",
+  givenTx:[
+    ["i — Purchased from Prabhat Electricals (10% trade + 2% cash discount)",""],
+    ["ii — Cheque from Abhay, 2% discount allowed*",""],
+    ["iii — Cheque from Alok for balance due*",""],
+    ["iv — Sunil paid 75% of dues, balance written off*",""],
+    ["v — Goods costing ₹1,000 given as charity (Kolkata)",""],
+    ["vi — Electric iron (cost ₹500, ex-Prabhat) given as RWA award",""],
+    ["vii — Old bad debt of ₹10,000 recovered*",""],
+    ["viii — March salaries ₹15,000 paid by cheque*",""],
+    ["ix — Cash sales ₹15,00,000 (intra) + credit sales ₹3,00,000 (inter)",""],
+    ["x — Cash purchases ₹1,00,000 (intra) + credit purchases ₹9,00,000 (inter)",""],
+    ["x — Cheques from debtors ₹2,00,000; cash deposited ₹15,00,000",""],
+    ["xi — Paid creditors by cheque*","8,90,000"],
+    ["xii — Bank loan repaid*","20,000"]
+  ],
+  journal:[
+    {date:"2019 April 01",lines:[{dr:1,text:"Cash A/c",amt:"15,000"},{dr:1,text:"Bank A/c",amt:"55,000"},{dr:1,text:"Stock A/c",amt:"28,000"},{dr:1,text:"Sunil",amt:"5,000"},{dr:1,text:"Abhay",amt:"10,000"},{dr:1,text:"Alok",amt:"10,000"},{dr:1,text:"Computer and Printer A/c",amt:"50,000"},{dr:1,text:"Furniture A/c",amt:"10,000"},{dr:1,text:"Delivery Van A/c",amt:"25,000"},{dr:0,text:"Bank Loan",amt:"90,000"},{dr:0,text:"Salaries Outstanding A/c",amt:"15,000"},{dr:0,text:"Creditors A/c",amt:"20,000"},{dr:0,text:"Bills payable A/c",amt:"10,000"},{dr:0,text:"Capital",amt:"73,000"}],narration:"Being opening entry passed"},
+    {date:"i",lines:[{dr:1,text:"Purchases A/c",amt:"9,000"},{dr:1,text:"Input IGST A/c",amt:"1,080"},{dr:0,text:"Bank A/c",amt:"9,900"},{dr:0,text:"Discount Received A/c",amt:"180"}],narration:"Being goods purchased plus 6% intra-state GST and availed discount"},
+    {date:"ii",lines:[{dr:1,text:"Bank A/c",amt:"9,800"},{dr:1,text:"Discount Allowed A/c",amt:"200"},{dr:0,text:"Abhay",amt:"10,000"}],narration:"Being amount received and discount allocated"},
+    {date:"iii",lines:[{dr:1,text:"Bank A/c",amt:"10,000"},{dr:0,text:"Alok",amt:"10,000"}],narration:"Being cheque received on account"},
+    {date:"iv",lines:[{dr:1,text:"Bank A/c",amt:"3,750"},{dr:1,text:"Bad Debts A/c",amt:"1,250"},{dr:0,text:"Sunil",amt:"5,000"}],narration:"Being cheque received for part and balance turned bad"},
+    {date:"v",lines:[{dr:1,text:"Charity A/c",amt:"1,120"},{dr:0,text:"Purchaser A/c",amt:"1,000"},{dr:0,text:"Input CGST A/c",amt:"60"},{dr:0,text:"Input SGST A/c",amt:"60"}],narration:"Being goods given as charity and GST reversed"},
+    {date:"vi",lines:[{dr:1,text:"Advertisements A/c",amt:"560"},{dr:0,text:"Purchases A/c",amt:"500"},{dr:0,text:"Input IGST A/c",amt:"60"}],narration:"(Being goods given as an award and GST reversed)"},
+    {date:"vii",lines:[{dr:1,text:"Cash A/c",amt:"10,000"},{dr:0,text:"Bad Debts Recovered A/c",amt:"10,000"}],narration:"Being bad debts recovered"},
+    {date:"viii",lines:[{dr:1,text:"Salaries Outstanding A/c",amt:"15,000"},{dr:0,text:"Bank A/c",amt:"15,000"}],narration:"Being outstanding paid by cheque"},
+    {date:"ix",lines:[{dr:1,text:"Cash A/c",amt:"16,80,000"},{dr:0,text:"Sales A/c",amt:"15,00,000"},{dr:0,text:"Output CGST A/c",amt:"90,000"},{dr:0,text:"Output SGST A/c",amt:"90,000"}],narration:"Being cash sales at 6% intra-state GST",gst:"CGST+SGST 6%+6%"},
+    {date:"ix",lines:[{dr:1,text:"Debtors' A/c",amt:"3,36,000"},{dr:0,text:"Sales A/c",amt:"3,00,000"},{dr:0,text:"Output IGST A/c",amt:"36,000"}],narration:"Being inter-state sales for the month @12% IGST on credit",gst:"IGST 12%"},
+    {date:"x",lines:[{dr:1,text:"Purchases A/c",amt:"10,00,000"},{dr:1,text:"Input CGST A/c",amt:"6,000"},{dr:1,text:"Input SGST A/c",amt:"6,000"},{dr:1,text:"Input IGST A/c",amt:"1,08,000"},{dr:0,text:"Cash A/c",amt:"1,12,000"},{dr:0,text:"Creditors' A/c",amt:"10,08,000"}],narration:"Being intra-state cash purchases and inter-state credit purchases GST @6% and 12% respectively"},
+    {date:"x",lines:[{dr:1,text:"Bank A/c",amt:"17,00,000"},{dr:0,text:"Debtors' A/c",amt:"2,00,000"},{dr:0,text:"Cash A/c",amt:"15,00,000"}],narration:"Being cheque received and cash deposited in Bank"},
+    {date:"xi",lines:[{dr:1,text:"Creditors' A/c",amt:"8,90,000"},{dr:0,text:"Bank A/c",amt:"8,90,000"}],narration:"Being cheque issued"},
+    {date:"xi",lines:[{dr:1,text:"Bank Loan A/c",amt:"20,000"},{dr:0,text:"Bank A/c",amt:"20,000"}],narration:"Being part of the loan repaid"}
+  ],
+  ledgers:[
+    {name:"Cash in Hand Account",
+      dr:[["April 01","Balance b/d","15,000"],["vii","Bad Debts Recovered A/c","10,000"],["ix","Sales A/c","15,00,000"],["ix","output CGST A/c","90,000"],["ix","output SGST A/c","90,000"]], drTotal:"17,05,000",
+      cr:[["x","Purchases","1,00,000"],["x","Input CGST A/c","6,000"],["x","Input SGST A/c","6,000"],["x","Bank A/c","15,00,000"],["April 30","Balance c/d","93,000"]], crTotal:"17,05,000"},
+    {name:"Bank Account",
+      dr:[["April 01","Balance b/d","55,000"],["ii","Abhay","9,800"],["iii","Alok","10,000"],["iv","Sunil","3,750"],["x","Debtors' A/c","2,00,000"],["x","Cash A/c","15,00,000"]], drTotal:"17,78,550",
+      cr:[["i","Purchases","9,900"],["viii","Salaries outstanding A/c","15,000"],["xi","Creditors' A/c","8,90,000"],["xii","Bank Loan A/c","20,000"],["April 30","Balance c/d","8,43,650"]], crTotal:"17,78,550"},
+    {name:"Stock Account",
+      dr:[["April 01","Balance b/d","28,000"]], drTotal:"28,000",
+      cr:[["April 30","Balance c/d","28,000"]], crTotal:"28,000"},
+    {name:"Sunil",
+      dr:[["April 01","Balance b/d","5,000"]], drTotal:"5,000",
+      cr:[["iv","Bank A/c","3,750"],["iv","Bad Debts A/c","1,250"]], crTotal:"5,000"},
+    {name:"Abhay",
+      dr:[["April 01","Balance b/d","10,000"]], drTotal:"10,000",
+      cr:[["ii","Bank A/c","9,800"],["ii","Discount Allowed A/c","200"]], crTotal:"10,000"},
+    {name:"Alok",
+      dr:[["April 01","Balance b/d","10,000"]], drTotal:"10,000",
+      cr:[["iii","Bank A/c","10,000"]], crTotal:"10,000"},
+    {name:"Computer and Printer Account",
+      dr:[["April 01","Balance b/d","50,000"]], drTotal:"50,000",
+      cr:[["April 30","Balance c/d","50,000"]], crTotal:"50,000"},
+    {name:"Furniture Account",
+      dr:[["April 01","Balance b/d","10,000"]], drTotal:"10,000",
+      cr:[["April 30","Balance c/d","10,000"]], crTotal:"10,000"},
+    {name:"Delivery Van Account",
+      dr:[["April 01","Balance b/d","25,000"]], drTotal:"25,000",
+      cr:[["April 30","Balance c/d","25,000"]], crTotal:"25,000"},
+    {name:"Bank Loan Account",
+      dr:[["xii","Bank A/c","20,000"],["April 30","Balance c/d","70,000"]], drTotal:"90,000",
+      cr:[["April 01","Balance b/d","90,000"]], crTotal:"90,000"},
+    {name:"Salaries Outstanding Account",
+      dr:[["viii","Bank A/c","15,000"]], drTotal:"15,000",
+      cr:[["April 01","Balance b/d","15,000"]], crTotal:"15,000"},
+    {name:"Creditors Account",
+      dr:[["xi","Bank A/c","8,90,000"],["April 30","Balance c/d","1,38,000"]], drTotal:"10,28,000",
+      cr:[["April 01","Balance b/d","20,000"],["x","Purchases","9,00,000"],["","Input IGST","1,08,000"]], crTotal:"10,28,000"},
+    {name:"Bills Payable Account",
+      dr:[["April 30","Balance c/d","10,000"]], drTotal:"10,000",
+      cr:[["April 01","Balance b/d","10,000"]], crTotal:"10,000"},
+    {name:"Capital Account",
+      dr:[["April 30","Balance c/d","73,000"]], drTotal:"73,000",
+      cr:[["April 01","Balance b/d","73,000"]], crTotal:"73,000"},
+    {name:"Output IGST Account",
+      dr:[["April 30","Balance c/d","36,000"]], drTotal:"36,000",
+      cr:[["ix","Debtors' A/c","36,000"]], crTotal:"36,000"},
+    {name:"Input IGST Account",
+      dr:[["i","Bank A/c","1,080"],["x","Creditors' A/c","1,08,000"]], drTotal:"1,09,080",
+      cr:[["vi","Advertisements A/c","60"],["April 30","Balance c/d","1,09,020"]], crTotal:"1,09,080"},
+    {name:"Advertisement Account",
+      dr:[["vi","Purchases A/c","500"],["","Input IGST A/c","60"]], drTotal:"560",
+      cr:[["April 30","Balance c/d","560"]], crTotal:"560"},
+    {name:"Bad Debts Recovered Account",
+      dr:[["April 30","Balance c/d","10,000"]], drTotal:"10,000",
+      cr:[["vii","Cash A/c","10,000"]], crTotal:"10,000"},
+    {name:"Debtors Account",
+      dr:[["ix","Sales A/c","3,00,000"],["","Output IGST A/c","36,000"]], drTotal:"3,36,000",
+      cr:[["xi","Bank A/c","2,00,000"],["April 30","Balance c/d","1,36,000"]], crTotal:"3,36,000"},
+    {name:"Purchases Account",
+      dr:[["i","Bank A/c","8,820"],["","Discount Received","180"],["x","Cash A/c","1,00,000"],["","Creditors' A/c","9,00,000"]], drTotal:"10,09,000",
+      cr:[["v","Charity A/c","1,000"],["vi","Advertisement A/c","500"],["April 30","Balance c/d","1,07,500"]], crTotal:"10,09,000"},
+    {name:"Input CGST Account",
+      dr:[["x","Cash A/c","6,000"]], drTotal:"6,000",
+      cr:[["v","Charity A/c","60"],["April 30","Balance c/d","5,940"]], crTotal:"6,000"},
+    {name:"Input SGST Account",
+      dr:[["x","Cash A/c","6,000"]], drTotal:"6,000",
+      cr:[["v","Charity A/c","60"],["April 30","Balance c/d","5,940"]], crTotal:"6,000"},
+    {name:"Discount Received Account",
+      dr:[["April 30","Balance c/d","180"]], drTotal:"180",
+      cr:[["i","Purchases","180"]], crTotal:"180"},
+    {name:"Sales Account",
+      dr:[["April 30","Balance c/d","18,00,000"]], drTotal:"18,00,000",
+      cr:[["ix","Cash A/c","15,00,000"],["","Debtors' A/c","3,00,000"]], crTotal:"18,00,000"},
+    {name:"Output CGST Account",
+      dr:[["April 30","Balance c/d","90,000"]], drTotal:"90,000",
+      cr:[["ix","Cash A/c","90,000"]], crTotal:"90,000"},
+    {name:"Output SGST Account",
+      dr:[["April 30","Balance c/d","90,000"]], drTotal:"90,000",
+      cr:[["ix","Cash A/c","90,000"]], crTotal:"90,000"},
+    {name:"Charity Account",
+      dr:[["v","Purchases A/c","1,000"],["","Input CGST A/c","60"],["","Input SGST A/c","60"]], drTotal:"1,120",
+      cr:[["April 30","Balance c/d","1,120"]], crTotal:"1,120"},
+    {name:"Bad Debts Account",
+      dr:[["iv","Sunil","1,250"]], drTotal:"1,250",
+      cr:[["April 30","Balance c/d","1,250"]], crTotal:"1,250"},
+    {name:"Discount Allowed Account",
+      dr:[["ii","Abhay","200"]], drTotal:"200",
+      cr:[["April 30","Balance c/d","200"]], crTotal:"200"}
+  ],
+  trial:{ asOn:"30th April 2019",
+    rows:[
+      ["Cash","93,000",""],
+      ["Bank","8,43,650",""],
+      ["Stock","28,000",""],
+      ["Computer & Printers","50,000",""],
+      ["Furniture","10,000",""],
+      ["Delivery Van","25,000",""],
+      ["Creditors","","1,38,000"],
+      ["Bills Payable","","10,000"],
+      ["Capital","","73,000"],
+      ["Output IGST","","36,000"],
+      ["Input IGST","1,09,020",""],
+      ["Advertisement","560",""],
+      ["Debtors","1,36,000",""],
+      ["Purchases","10,07,500",""],
+      ["Input CGST","5,940",""],
+      ["Input SGST","5,940",""],
+      ["Discount Received","","180"],
+      ["Sales","","18,00,000"],
+      ["Output CGST","","90,000"],
+      ["Output SGST","","90,000"],
+      ["Bank Loan","","70,000"],
+      ["Charity","1,120",""],
+      ["Bad Debts","1,250",""],
+      ["Discount Allowed","200",""],
+      ["Bad Debts Recovered","","10,000"]
+    ],
+    total:["23,17,180","23,17,180"]
+  }
+});
+
+</script>
+<script>init();</script>
+</body>
+</html>

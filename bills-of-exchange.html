@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 12 · Bills of Exchange — Ledger Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF6EA;
+    --paper-dark:#F1E8D6;
+    --ink:#2B2118;
+    --ink-soft:#5B4E3E;
+    --post-red:#B4272B;
+    --post-red-deep:#8E1E22;
+    --navy:#1B3A63;
+    --navy-deep:#122845;
+    --gold:#C0912F;
+    --gold-soft:#E9D9AE;
+    --honour:#3E7D52;
+    --honour-bg:#E4EFE4;
+    --dishonour:#B4272B;
+    --dishonour-bg:#F6E3E1;
+    --line:#D9CCAE;
+    --shadow: 0 8px 24px rgba(43,33,24,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 8%, rgba(180,39,43,0.05), transparent 40%),
+      radial-gradient(circle at 90% 20%, rgba(27,58,99,0.06), transparent 45%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    line-height:1.5;
+  }
+  .display{font-family:'Fraunces', serif;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  /* ===== TOP BAND ===== */
+  .topband{
+    background: repeating-linear-gradient(135deg, var(--navy-deep), var(--navy-deep) 10px, var(--navy) 10px, var(--navy) 20px);
+    color:#F6EFDC;
+    text-align:center;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:6px 10px;
+    font-weight:600;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:52px 20px 40px;
+    max-width:980px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .postmark{
+    width:118px;height:118px;
+    margin:0 auto 18px;
+    border:3px solid var(--post-red);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    transform:rotate(-6deg);
+    background:
+      repeating-radial-gradient(circle at center, transparent 0 3px, rgba(180,39,43,0.06) 3px 4px);
+  }
+  .postmark::before, .postmark::after{
+    content:"";
+    position:absolute;
+    border:2px dashed var(--post-red);
+    border-radius:50%;
+  }
+  .postmark::before{inset:9px;}
+  .postmark span{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--post-red);
+    letter-spacing:0.04em;
+    line-height:1.15;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:0.78rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--post-red-deep);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  h1.title{
+    font-size:clamp(2rem, 5vw, 3.1rem);
+    margin:0 0 14px;
+    color:var(--navy-deep);
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    max-width:640px;
+    margin:0 auto 26px;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+  .hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    margin-top:8px;
+  }
+  .stat-chip{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:8px 18px;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--navy-deep);
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .stat-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);}
+
+  /* ===== FLOW EXPLAINER (signature element) ===== */
+  .flow-explainer{
+    max-width:1040px;
+    margin:10px auto 46px;
+    padding:26px 20px 30px;
+  }
+  .flow-explainer h2{
+    text-align:center;
+    font-size:1.5rem;
+    color:var(--navy-deep);
+    margin:0 0 26px;
+  }
+  .flow-rail{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:0;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:26px 18px;
+  }
+  .flow-node{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    width:150px;
+    padding:6px 8px;
+  }
+  .flow-node .icon{
+    width:52px;height:52px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:8px;
+    font-size:1.5rem;
+    color:#fff;
+  }
+  .flow-node.drawer .icon{background:var(--navy);}
+  .flow-node.drawee .icon{background:var(--post-red);}
+  .flow-node.bank .icon{background:var(--gold);}
+  .flow-node.third .icon{background:#6B4C8A;}
+  .flow-node b{font-size:0.88rem;color:var(--ink);}
+  .flow-node span.role{font-size:0.72rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.05em;}
+  .flow-arrow{
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    color:var(--ink-soft);
+    font-size:1.4rem;
+    padding:0 4px;
+    min-width:34px;
+    justify-content:center;
+  }
+  @media (max-width:720px){
+    .flow-rail{flex-direction:column;}
+    .flow-arrow{transform:rotate(90deg);padding:6px 0;}
+  }
+
+  .legend-row{
+    display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;margin-top:20px;
+  }
+  .legend-item{display:flex;align-items:center;gap:7px;font-size:0.8rem;color:var(--ink-soft);}
+  .legend-swatch{width:14px;height:14px;border-radius:4px;}
+
+  /* ===== NAV INDEX ===== */
+  .index-wrap{max-width:1040px;margin:0 auto 50px;padding:0 20px;}
+  .index-wrap h3{
+    color:var(--navy-deep);font-size:1.1rem;margin-bottom:14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .index-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(56px,1fr));
+    gap:8px;
+  }
+  .index-grid a{
+    display:flex;align-items:center;justify-content:center;
+    height:40px;border-radius:8px;
+    background:#fff;border:1px solid var(--line);
+    color:var(--navy-deep);font-weight:700;font-size:0.85rem;
+    text-decoration:none;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .index-grid a:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:var(--shadow);}
+
+  /* ===== QUESTION CARDS ===== */
+  .qwrap{max-width:1040px;margin:0 auto;padding:0 20px 80px;}
+  .qcard{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    margin-bottom:22px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    scroll-margin-top:16px;
+  }
+  .qhead{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 20px;
+    cursor:pointer;
+    background:linear-gradient(90deg, var(--paper-dark), #fff 65%);
+    border-bottom:1px solid transparent;
+    user-select:none;
+  }
+  .qhead:hover{background:linear-gradient(90deg, var(--gold-soft), #fff 70%);}
+  .qnum{
+    flex:0 0 auto;
+    width:42px;height:42px;
+    border-radius:10px;
+    background:var(--navy);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;
+  }
+  .qhead-text{flex:1;min-width:0;}
+  .qhead-text .qtag{
+    font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--post-red-deep);font-weight:700;margin-bottom:2px;
+  }
+  .qhead-text .qsnippet{
+    font-size:0.95rem;color:var(--ink);
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .qtoggle{
+    flex:0 0 auto;
+    width:30px;height:30px;
+    border-radius:50%;
+    border:1.5px solid var(--navy);
+    color:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;
+    transition:transform .2s ease;
+  }
+  .qcard.open .qtoggle{transform:rotate(45deg);}
+
+  .qbody{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .qcard.open .qbody{max-height:none;}
+  .qbody-inner{padding:4px 22px 26px;}
+
+  .stampstrip{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin:6px 0 16px;
+  }
+  .stamp{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 12px;border-radius:999px;
+    font-size:0.74rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;
+    border:1.5px solid currentColor;
+  }
+  .stamp.drawer-s{color:var(--navy);background:rgba(27,58,99,0.06);}
+  .stamp.drawee-s{color:var(--post-red);background:rgba(180,39,43,0.06);}
+  .stamp.bank-s{color:var(--gold);background:rgba(192,145,47,0.10);}
+  .stamp.third-s{color:#6B4C8A;background:rgba(107,76,138,0.08);}
+  .stamp.honour-s{color:var(--honour);background:var(--honour-bg);}
+  .stamp.dishonour-s{color:var(--dishonour);background:var(--dishonour-bg);}
+  .stamp.gst-s{color:#8A6D1C;background:#FBF0D2;}
+  .stamp.discount-s{color:#1B6E7D;background:#DFF0F1;}
+  .stamp.renew-s{color:#7A4A1E;background:#F3E2CE;}
+
+  .question-box{
+    background:var(--paper-dark);
+    border-left:4px solid var(--post-red);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;
+    margin-bottom:18px;
+    font-size:0.96rem;
+  }
+  .question-box .qlabel{
+    font-family:'Fraunces',serif;font-weight:700;color:var(--post-red-deep);
+    display:block;margin-bottom:4px;font-size:0.95rem;
+  }
+
+  .flowmini{
+    display:flex;align-items:center;flex-wrap:wrap;gap:6px;
+    margin-bottom:18px;font-size:0.8rem;color:var(--ink-soft);
+  }
+  .flowmini .fm-node{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:4px 10px;border-radius:8px;background:var(--paper-dark);font-weight:600;color:var(--ink);
+  }
+  .flowmini .fm-arrow{color:var(--gold);font-weight:700;}
+
+  .solution-label{
+    display:flex;align-items:center;gap:8px;
+    font-family:'Fraunces',serif;font-weight:600;color:var(--navy-deep);
+    font-size:1.02rem;margin:20px 0 10px;
+  }
+  .solution-label::before{content:"§";color:var(--gold);font-size:1.2rem;}
+
+  .book-block{
+    border:1px solid var(--line);
+    border-radius:12px;
+    margin-bottom:18px;
+    overflow:hidden;
+  }
+  .book-block .book-title{
+    padding:10px 16px;
+    font-family:'Fraunces',serif;font-weight:700;font-size:0.95rem;
+    color:#fff;
+    display:flex;align-items:center;gap:8px;
+  }
+  .book-block.drawer-book .book-title{background:var(--navy);}
+  .book-block.drawee-book .book-title{background:var(--post-red);}
+  .book-block.third-book .book-title{background:#6B4C8A;}
+  .book-block .book-title small{font-weight:500;opacity:0.85;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;}
+
+  table.ledger{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.84rem;
+    background:#fff;
+  }
+  table.ledger th{
+    background:var(--paper-dark);
+    color:var(--ink);
+    text-align:left;
+    padding:8px 10px;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    border-bottom:2px solid var(--line);
+  }
+  table.ledger td{
+    padding:7px 10px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.ledger td.amt, table.ledger th.amt{
+    font-family:'JetBrains Mono',monospace;
+    text-align:right;
+    white-space:nowrap;
+  }
+  table.ledger tr.narration td{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:0.78rem;
+    padding-top:0;
+    border-bottom:1px dashed var(--line);
+  }
+  table.ledger tr.entry-gap td{border-bottom:1px solid var(--line);height:4px;padding:2px;}
+
+  .wn-box{
+    background:#FBF0D2;
+    border:1px dashed var(--gold);
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:0.85rem;
+    margin-top:10px;
+  }
+  .wn-box b{color:#7A5A14;}
+
+  .duecalc-table{width:100%;border-collapse:collapse;font-size:0.83rem;margin-top:6px;}
+  .duecalc-table th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-size:0.72rem;text-transform:uppercase;}
+  .duecalc-table td{padding:8px 10px;border-bottom:1px solid var(--line);}
+  .duecalc-table tr:nth-child(even) td{background:var(--paper-dark);}
+  .duecalc-table .due-final{font-weight:700;color:var(--honour);}
+
+  footer{
+    text-align:center;
+    padding:34px 20px 50px;
+    color:var(--ink-soft);
+    font-size:0.85rem;
+    border-top:1px solid var(--line);
+  }
+  .back-top{
+    position:fixed;right:18px;bottom:18px;
+    width:46px;height:46px;border-radius:50%;
+    background:var(--post-red);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);text-decoration:none;font-size:1.2rem;
+    opacity:0;pointer-events:none;
+    transition:opacity .2s ease;
+    z-index:50;
+  }
+  .back-top.show{opacity:1;pointer-events:auto;}
+
+  @media (max-width:600px){
+    .qhead{padding:13px 14px;gap:10px;}
+    .qnum{width:36px;height:36px;font-size:0.92rem;}
+    .qbody-inner{padding:2px 14px 20px;}
+    table.ledger{font-size:0.76rem;}
+    table.ledger th,table.ledger td{padding:6px 6px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topband">Chapter 12 · Accounting for Bills of Exchange — Journal Entry Workbook</div>
+
+<header class="hero">
+  <div class="postmark"><span>DUE&nbsp;DATE<br>+ 3 DAYS<br>GRACE</span></div>
+  <span class="eyebrow">Class XI · Accountancy</span>
+  <h1 class="title">Bills of Exchange, Traced Like a Ledger</h1>
+  <p class="subtitle">Every question below, unchanged word for word, laid out as a bill moves in real life — drawn, accepted, discounted, endorsed, and either honoured or dishonoured. Follow the coloured trail through each party's own books.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><span class="dot"></span>39 Worked Questions</div>
+    <div class="stat-chip"><span class="dot" style="background:var(--post-red);"></span>Drawer · Drawee · Endorsee Books</div>
+    <div class="stat-chip"><span class="dot" style="background:var(--navy);"></span>Discounting, GST &amp; Renewal Cases</div>
+  </div>
+</header>
+
+<section class="flow-explainer">
+  <h2 class="display">How a Bill of Exchange Travels</h2>
+  <div class="flow-rail">
+    <div class="flow-node drawer">
+      <div class="icon">✎</div>
+      <b>Drawer</b>
+      <span class="role">Seller · draws bill</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node drawee">
+      <div class="icon">✔</div>
+      <b>Drawee</b>
+      <span class="role">Buyer · accepts bill</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node bank">
+      <div class="icon">🏦</div>
+      <b>Bank</b>
+      <span class="role">Discounts / collects</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node third">
+      <div class="icon">↻</div>
+      <b>Endorsee</b>
+      <span class="role">Third party, if any</span>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="width:150px;">
+      <div class="icon" style="background:var(--honour);">✓</div>
+      <b>Honoured</b>
+      <span class="role">or Dishonoured</span>
+    </div>
+  </div>
+  <div class="legend-row">
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--navy);"></span>Drawer's Books</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--post-red);"></span>Drawee's Books</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:#6B4C8A;"></span>Third Party's Books</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--gold);"></span>Discounting / Bank</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--honour);"></span>Honoured</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--dishonour);"></span>Dishonoured</div>
+  </div>
+</section>
+
+<nav class="index-wrap">
+  <h3>📌 Jump to a Question</h3>
+  <div class="index-grid" id="indexGrid"></div>
+</nav>
+
+<main class="qwrap" id="qwrap">
+
+<article class="qcard" id="q1" data-num="1">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">1</div>
+    <div class="qhead-text">
+      <div class="qtag">Due Date Calculation</div>
+      <div class="qsnippet">Calculate the due dates of the bills in the following cases</div>
+    </div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">📅 Days of Grace</span></div>
+    <div class="question-box">
+      <span class="qlabel">Question:1</span>
+      Calculate the due dates of the bills in the following cases:
+      <table class="duecalc-table" style="margin-top:10px;">
+        <tr><th></th><th>Date of Bill</th><th>Tenure Period</th></tr>
+        <tr><td>i</td><td>1st December, 2018</td><td>60 Days</td></tr>
+        <tr><td>ii</td><td>30th April, 2019</td><td>2 Months</td></tr>
+        <tr><td>iii</td><td>28th January, 2019</td><td>1 Month</td></tr>
+        <tr><td>iv</td><td>23rd November, 2018</td><td>2 Months</td></tr>
+        <tr><td>v</td><td>29th May, 2018</td><td>4 Months</td></tr>
+      </table>
+    </div>
+    <div class="solution-label">Solution</div>
+    <table class="duecalc-table">
+      <tr><th>Date of Bill</th><th>Tenure</th><th>Calculation</th><th>Due Date</th></tr>
+      <tr><td>i December 01, 2018</td><td>60 Days</td><td>30 December + 30 January + 3 days of grace</td><td class="due-final">February 02, 2019</td></tr>
+      <tr><td>ii April 30, 2019</td><td>2 Months</td><td>2 Months from April 30, 2019 would be June 30, 2019 + 3 days of grace</td><td class="due-final">July 03, 2019</td></tr>
+      <tr><td>iii January 28, 2019</td><td>1 Month</td><td>1 Month from January 28, 2019 would be February 28, 2019 + 3 days of grace</td><td class="due-final">March 03, 2019</td></tr>
+      <tr><td>iv November 23, 2018</td><td>2 Months</td><td>2 Months from November 23, 2018 would be January 23, 2019 + 3 days of grace</td><td class="due-final">January 26, 2019, but it is a national holiday so, due date would be one day before i.e., January 25, 2019</td></tr>
+      <tr><td>v May 29, 2018</td><td>4 Months</td><td>4 Months from May 29, 2019 would be September 29, 2019 + 3 days of grace</td><td class="due-final">October 02, 2019 but it is a national holiday so, due date would be one day before i.e., October 01, 2019</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q2" data-num="2">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">2</div>
+    <div class="qhead-text">
+      <div class="qtag">Bill Honoured on Maturity</div>
+      <div class="qsnippet">A draws on B a bill at 3 months for ₹20,000, honoured on due date</div>
+    </div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box">
+      <span class="qlabel">Question:2</span>
+      On 10th March, 2019, A draws on B a bill at 3 months for ₹20,000 which B accepts immediately and returns to A. The bill is honoured due date. Pass necessary Journal entries in the books of both the parties.
+    </div>
+    <div class="solution-label">Solution</div>
+
+    <div class="book-block drawer-book">
+      <div class="book-title">Journal — In the books of A <small>Drawer</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Mar 10</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B's A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received</td></tr>
+        <tr><td>June 13</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash received against bill</td></tr>
+      </table>
+    </div>
+
+    <div class="book-block drawee-book">
+      <div class="book-title">Journal — In the books of B <small>Drawee</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Mar 10</td><td>A A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill accepted</td></tr>
+        <tr><td>June 13</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash paid against bill</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q3" data-num="3">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">3</div>
+    <div class="qhead-text">
+      <div class="qtag">Bill with IGST</div>
+      <div class="qsnippet">A sold goods to B for ₹5,000 plus IGST @ 18%, part cash + bill</div>
+    </div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp gst-s">IGST @ 18%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box">
+      <span class="qlabel">Question:3</span>
+      On 1st January, 2019, A sold goods to B for ₹5,000 plus IGST @ 18%. A received ₹900 by cheque from B and drew on him a bill for the balance amount payable 3 months after date. The bill was duly accepted by B. A retained the bill till due date. On due date, the bill was paid. Pass Journal entries in the books of A and B. Also, show necessary accounts in the books of both the parties.
+    </div>
+    <div class="solution-label">Solution</div>
+
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Output IGST A/c</td><td class="amt">5,900</td><td class="amt">5,000<br>900</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods sold to B plus IGST @18</td></tr>
+        <tr><td>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">5,000<br>900</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B accepted the bill and paid IGST by cheque</td></tr>
+        <tr><td>Apr.04</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Amount of bill received on its maturity</td></tr>
+      </table>
+    </div>
+
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>Input IGST A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">5,000<br>900</td><td class="amt">5,900</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods bought from A plus IGST @18</td></tr>
+        <tr><td>Jan.01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">5,900</td><td class="amt">5,000<br>900</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by A accepted and IGST paid by cheque</td></tr>
+        <tr><td>Apr.04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment of bill was made on its due date</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q4" data-num="4">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">4</div>
+    <div class="qhead-text">
+      <div class="qtag">Bill Discounted with Bank</div>
+      <div class="qsnippet">Vinod sold goods to Darbara Singh for ₹1,000, discounted with bank</div>
+    </div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Vinod</span><span class="stamp drawee-s">Drawee: Darbara Singh</span><span class="stamp bank-s">🏦 Discounted</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box">
+      <span class="qlabel">Question:4</span>
+      Vinod sold goods to Darbara Singh for ₹1,000 on 1st January, 2019. He drew on the latter a bill for the amount payable 3 months after date. He discounted the bill with his bank for ₹990 on 4th January, 2019. On maturity, the bill is duly met. Make the Journal entries in the books of Vinod and Darbara Singh.
+    </div>
+    <div class="solution-label">Solution</div>
+
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of Vinod <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.1</td><td>Darbara Singh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods sold to Darbara Singh</td></tr>
+        <tr><td>Jan.1</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Darbara Singh</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills accepted by Darbara Singh</td></tr>
+        <tr><td>Jan.4</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">990<br>10</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Darbara Singh's acceptance discounted at 9</td></tr>
+      </table>
+    </div>
+
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of Darbara Singh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.1</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Vinod</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods bought from Vinod</td></tr>
+        <tr><td>Jan.1</td><td>Vinod&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by Vinod accepted</td></tr>
+        <tr><td>Mar.4</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment of bill was made on its due date.</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q5" data-num="5">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">5</div>
+    <div class="qhead-text">
+      <div class="qtag">Discounting @ 12% p.a.</div>
+      <div class="qsnippet">X sold goods of ₹20,000 to Y, discounted bill @ 12% p.a.</div>
+    </div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp bank-s">🏦 Discounted @12%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box">
+      <span class="qlabel">Question:5</span>
+      On 1st January, 2019, X sold goods of ₹20,000 to Y and drew a bill on Y at three months for the amount. Y accepted the bill. The bill is met on maturity. Pass the necessary Journal entries in the books of X and Y, if X discounted the bill @ 12% p.a. from bank on 4th January.
+    </div>
+    <div class="solution-label">Solution</div>
+
+    <div class="book-block drawer-book">
+      <div class="book-title">In the books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>January 01</td><td>Y's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being goods sold to Y on credit</td></tr>
+        <tr><td>January 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y's A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill drawn on Y for three months</td></tr>
+        <tr><td>January 04</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discounting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">19,400<br>600</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill discounted with bank and charges paid @12</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Discounting Charges = 20,000 × 12/100 × 3/12 = ₹600</div>
+    </div>
+
+    <div class="book-block drawee-book">
+      <div class="book-title">In the books of Y <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan. 01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X's A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being goods purchased from X on credit</td></tr>
+        <tr><td>Jan. 01</td><td>X's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being acceptance given to X</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill paid on maturity</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q6" data-num="6">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">6</div>
+    <div class="qhead-text">
+      <div class="qtag">Acceptance Discounted @9%</div>
+      <div class="qsnippet">Dinesh received an acceptance for ₹3,000 from Shridhar</div>
+    </div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Dinesh</span><span class="stamp drawee-s">Drawee: Shridhar</span><span class="stamp bank-s">🏦 Discounted @9%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box">
+      <span class="qlabel">Question:6</span>
+      Dinesh received from Shridhar an acceptance for ₹3,000 on 1st September, 2018 at 3 months. Dinesh got the acceptance discounted at 9% p.a. from his bank. On the due date, Shridhar paid the required amount. Give the Journal entries in the books of Dinesh and Shridhar.
+    </div>
+    <div class="solution-label">Solution</div>
+
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of Dinesh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Sep.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Shridhar</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Shridhar acceptance was received</td></tr>
+        <tr><td>Sep.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">2,932.50<br>67.50</td><td class="amt">3,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Shridhar's acceptance was discounted with bank</td></tr>
+      </table>
+    </div>
+
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of Shridhar <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Sep.01</td><td>Dinesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills drawn by Shridhar accepted</td></tr>
+        <tr><td>Dec.04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Shridhar's acceptance discharged on its due date</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q7" data-num="7">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">7</div>
+    <div class="qhead-text"><div class="qtag">Discounting @ 6% p.a.</div><div class="qsnippet">A sells goods of ₹10,000 to B on credit, bill discounted @6%</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp bank-s">🏦 Discounted @6%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:7</span>A sells goods of ₹10,000 on 1st March, 2019 to B on credit. B accepts a bill on the same date for the amount payable three months after date. A discounts the bill at 6% p.a. from bank on 4th April. On maturity, the bill is met by B. Pass the necessary Journal entries in the books of both the parties.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">In the books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>March 01</td><td>B's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being goods sold to B on credit</td></tr>
+        <tr><td>March 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B's A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill drawn on B for three months</td></tr>
+        <tr><td>April 04</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discounting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">10,000<br>100</td><td class="amt">9,900</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill discounted with bank and charges paid @6</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Discounting Charges = 10,000 × 6/100 × 2/12 = ₹100</div>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">In the books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>March 01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A's A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being goods purchased from A on credit</td></tr>
+        <tr><td>March 01</td><td>A's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being acceptance given to A</td></tr>
+        <tr><td>June 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill paid on maturity</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q8" data-num="8">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">8</div>
+    <div class="qhead-text"><div class="qtag">Endorsement Chain</div><div class="qsnippet">A drew a bill of ₹1,000 on B, endorsed to C, C endorsed to B</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp third-s">↻ Endorsed to C</span></div>
+    <div class="question-box"><span class="qlabel">Question:8</span>A drew a bill of ₹1,000 on B for 3 months which was duly accepted by the latter. A endorsed the bill to C in full payment of his own acceptance to C for a like amount. C endorsed the bill to B. Pass the Journal entries in the books of A, B and C.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance endorsed in favour of C</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill drawn by A was accepted</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Amount owed from C was settled by Bill Payable</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book">
+      <div class="book-title">Books of C <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bills Receivable was received from A</td></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Amount owed to B was settled by Bills Receivable</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q9" data-num="9">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">9</div>
+    <div class="qhead-text"><div class="qtag">Endorsed then Discounted</div><div class="qsnippet">A owed B ₹8,000, B endorsed to C, C discounted @12%</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A owes B</span><span class="stamp third-s">↻ B endorses to C</span><span class="stamp bank-s">🏦 C discounts @12%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:9</span>A owed B ₹8,000. He gave a bill for the same on 1st August, 2018 payable after 4 months at the Bank of India, Chandni Chowk, Delhi. Immediately after receiving the bill, B endorsed it to C in payment of his debt. On 1st September, C discounted the bill at 12% p.a. The bill is met on due date. Pass the necessary Journal entries in the books of A, B and C.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Aug.01</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">8,000</td><td class="amt">8,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by B was accepted</td></tr>
+        <tr><td>Dec.04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">8,000</td><td class="amt">8,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment made to meet the bill on its maturity</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Aug 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">8,000</td><td class="amt">8,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">A's acceptance was received</td></tr>
+        <tr><td>Aug 01</td><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">8,000</td><td class="amt">8,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">A's acceptance endorsed in favour of C</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book">
+      <div class="book-title">Books of C <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Aug 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">8,000</td><td class="amt">8,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills Receivable was received from B</td></tr>
+        <tr><td>Sep 01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">7,760<br>240</td><td class="amt">8,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill discount at 12</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Discount Charges = Bill Receivable × Rate/100 × Period of Maturity/12 = 8,000 × 12/100 × 3/12 = Rs 240</div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q10" data-num="10">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">10</div>
+    <div class="qhead-text"><div class="qtag">CGST + SGST · Draft Endorsed</div><div class="qsnippet">A sold goods to B for ₹20,000 plus CGST &amp; SGST @9% each</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp gst-s">CGST+SGST @9% each</span><span class="stamp third-s">↻ Draft endorsed to C</span></div>
+    <div class="question-box"><span class="qlabel">Question:10</span>A sold goods to B for ₹20,000 plus CGST and SGST @ 9% each on credit 3 months. B paid A ₹3,600 by cheque and accepted a draft for the balance amount. The draft was endorsed in favour of C, who got the payment on maturity. Give Journal entries in the books of A.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Output CGST A/c<br>&nbsp;&nbsp;To Output SGST A/c</td><td class="amt">23,600</td><td class="amt">20,000<br>1,800<br>1,800</td></tr>
+        <tr class="narration"><td colspan="3">Goods sold to B plus CGST and SGST @9</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">20,000<br>3,600</td><td class="amt">23,600</td></tr>
+        <tr class="narration"><td colspan="3">B accepted the bill and paid GST by cheque</td></tr>
+        <tr><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance endorsed in favour of C</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q11" data-num="11">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">11</div>
+    <div class="qhead-text"><div class="qtag">Sent for Collection</div><div class="qsnippet">Mohan Singh draws a bill on Jagat for ₹1,000, sent for collection</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Mohan Singh</span><span class="stamp drawee-s">Drawee: Jagat</span><span class="stamp bank-s">🏦 Sent for Collection</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:11</span>Mohan Singh draws a bill on Jagat for ₹1,000 payable 2 months after date. Immediately after its acceptance, Mohan Singh sends the bill to his bank for collection. On due date, bank gets the payment. Make the entries in the books of all the parties.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of Mohan Singh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Jagat</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Jagat acceptance was received</td></tr>
+        <tr><td>Bills Sent for Collection A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill Receivable sent to bank for collection</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Sent for Collection A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Payment of bill received by bank</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of Jagat <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Mohan Singh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bills drawn by Mohan Singh was accepted</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Payment was made to meet the bill</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q12" data-num="12">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">12</div>
+    <div class="qhead-text"><div class="qtag">4 Scenarios, One Bill</div><div class="qsnippet">X draws on Y ₹4,000 — retain / discount / endorse / collection</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp honour-s">✓ Honoured (all cases)</span></div>
+    <div class="question-box"><span class="qlabel">Question:12</span>X draws on Y a bill for ₹4,000 which was duly accepted by Y. Y meets the bill on its due date. Show what entries would be passed in the books of X under each of the following circumstances:<br>
+    <i>a</i> If X retains the bill till due date.<br>
+    <i>b</i> If X discounts the same with his banker paying ₹100 for discount.<br>
+    <i>c</i> If X endorses the same to his creditor Z in full settlement of his debt of ₹4,080.<br>
+    <i>d</i> If X sends the bill to his banker for collection the next day.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Case a — Books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance was received</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Amount of bill received on its maturity</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Case b — Discounted for ₹100 charge</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance was received</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">3,900<br>100</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance discount with bank</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book">
+      <div class="book-title">Case c — Endorsed to Z, debt ₹4,080</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance was received</td></tr>
+        <tr><td>Z&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount Received A/c<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">4,080</td><td class="amt">80<br>4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance endorsed in favour of Z and discount allowed by Z is Rs 80</td></tr>
+      </table>
+    </div>
+    <div class="book-block bank-book" style="border:1px solid var(--line);">
+      <div class="book-title" style="background:var(--gold);">Case d — Sent for collection</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance was received</td></tr>
+        <tr><td>Bills Sent for Collection A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance sent to bank for collection</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Sent for Collection A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td colspan="3">Y's acceptance net on maturity</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q13" data-num="13">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">13</div>
+    <div class="qhead-text"><div class="qtag">Dishonour</div><div class="qsnippet">Ram draws a bill for ₹2,000 on Shyam, dishonoured on maturity</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Ram</span><span class="stamp drawee-s">Drawee: Shyam</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:13</span>Ram draws a bill for ₹2,000 on Shyam on 15th September, 2018 for 3 months. On maturity, Shyam failed to honour the bill. Pass the necessary Journal entries in the books of Ram and Shyam.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of Ram <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Sep.15</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Shyam</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Shyam's acceptance received</td></tr>
+        <tr><td>Dec.18</td><td>Shyam A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Shyam's acceptance dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of Shyam <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Sep.15</td><td>Ram&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by Ram was accepted</td></tr>
+        <tr><td>Dec.18</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ram</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills Payable dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q14" data-num="14">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">14</div>
+    <div class="qhead-text"><div class="qtag">Dishonour + Noting Charges</div><div class="qsnippet">Naresh sold to Kailash ₹1,250, dishonoured, noting charges paid</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Naresh</span><span class="stamp drawee-s">Drawee: Kailash</span><span class="stamp dishonour-s">✕ Dishonoured</span><span class="stamp renew-s">Noting ₹10</span></div>
+    <div class="question-box"><span class="qlabel">Question:14</span>On 20th March, 2019, Naresh sold goods to Kailash to the value of ₹1,250, taking a bill at 3 months for the amount. On maturity, the bill was dishonoured. Naresh paid ₹10 as noting charges. On 1st July, Kailash cleared his account by paying ₹1,260. Make the entries in the books of both the parties to record the above transactions.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of Naresh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Mar.20</td><td>Kailash&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">1,250</td><td class="amt">1,250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods sold to Kailash</td></tr>
+        <tr><td>Mar.20</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Kailash</td><td class="amt">1,250</td><td class="amt">1,250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Kailash's acceptance was received</td></tr>
+        <tr><td>Jun.23</td><td>Kailash&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">1,260</td><td class="amt">1,250<br>10</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received from Kailash dishonoured and Rs 10 paid for Noting the bill</td></tr>
+        <tr><td>July 01</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Kailash</td><td class="amt">1,260</td><td class="amt">1,260</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Received cash from Kailash</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of Kailash <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Mar.20</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Naresh</td><td class="amt">1,250</td><td class="amt">1,250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from Naresh</td></tr>
+        <tr><td>Mar.20</td><td>Naresh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">1,250</td><td class="amt">1,250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by Naresh was accepted</td></tr>
+        <tr><td>Jun.23</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Naresh</td><td class="amt">1,250<br>10</td><td class="amt">1,260</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Payable was dishonoured</td></tr>
+        <tr><td>July 01</td><td>Naresh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">1,260</td><td class="amt">1,260</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Paid cash to Naresh</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q15" data-num="15">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">15</div>
+    <div class="qhead-text"><div class="qtag">Part Cash + Dishonour</div><div class="qsnippet">X sold to Y ₹25,000, part cheque, dishonoured, paid 10 days later</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp dishonour-s">✕ Dishonoured</span><span class="stamp renew-s">Noting ₹150</span></div>
+    <div class="question-box"><span class="qlabel">Question:15</span>On 1st January, 2019, X sold goods to Y for ₹25,000 and immediately received from Y ₹10,000 by cheque and drew a bill on Y at three months for the balance amount. Bill is accepted by Y. Bill was dishonoured on the due date and Y paid ₹150 as noting charges. Ten days later, Y pays the due amount to X. Pass the Journal entries in the books of both the parties.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">In the books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan. 01</td><td>Y's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">25,000</td><td class="amt">25,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being goods sold to Y on credit</td></tr>
+        <tr><td>Jan. 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y's A/c</td><td class="amt">15,000<br>10,000</td><td class="amt">25,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill drawn on Y for three months and part payment received</td></tr>
+        <tr><td>April 04</td><td>Y's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill dishonoured by Y</td></tr>
+        <tr><td>April 14</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y's A/c</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being amount due paid by Y after 10 days</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">In the books of Y <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan. 01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X's A/c</td><td class="amt">25,000</td><td class="amt">25,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being goods purchased from X on credit</td></tr>
+        <tr><td>Jan. 01</td><td>X's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">25,000</td><td class="amt">10,000<br>15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being acceptance given to X and part payment given</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X's A/c<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">15,000<br>150</td><td class="amt">15,000<br>150</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being bill dishonoured and noting charges paid</td></tr>
+        <tr><td>April 14</td><td>X's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Being due amount paid to X</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q16" data-num="16">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">16</div>
+    <div class="qhead-text"><div class="qtag">Bank Pays Noting Charges</div><div class="qsnippet">A drew bill ₹5,000 on B, discounted, dishonoured, bank paid noting</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp bank-s">🏦 Discounted</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:16</span>On 1st July, 2019, A drew a bill for ₹5,000 on B payable after 3 months. A discounted it with the Bank for ₹4,850. On maturity, B failed to pay the amount of his acceptance and the bank had to pay ₹50 as noting charges. Pass the necessary Journal entries in the books of A and B.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jul.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>Jul.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">4,850<br>150</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance discounted with bank</td></tr>
+        <tr><td>Oct.04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">5,050</td><td class="amt">5,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance became dishonoured, bank paid Noting Charges Rs 50</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jul.01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by A was accepted</td></tr>
+        <tr><td>Oct.04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">5,000<br>50</td><td class="amt">5,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills Payable dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q17" data-num="17">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">17</div>
+    <div class="qhead-text"><div class="qtag">Drawer Pays Bank on Dishonour</div><div class="qsnippet">Mohan sold to Sohan ₹2,000, discounted, dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Mohan</span><span class="stamp drawee-s">Drawee: Sohan</span><span class="stamp bank-s">🏦 Discounted</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:17</span>On 15th June, 2019, Mohan sold goods to Sohan valued at ₹2,000. He drew a bill at 3 months for the amount and discounted the same with his bank for ₹1,960. On the due date the bill was dishonoured and Mohan paid to the bank the amount due plus the noting charges of ₹10. Draft the Journal entries in the books of all parties.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of Mohan <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>June 15</td><td>Sohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods sold to Sohan</td></tr>
+        <tr><td>June 15</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sohan</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Sohan's acceptance was received</td></tr>
+        <tr><td>June 15</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,960<br>40</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Sohan's acceptance discounted with bank</td></tr>
+        <tr><td>Sep.18</td><td>Sohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">2,010</td><td class="amt">2,010</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Sohan's acceptance became dishonoured and Bank paid Rs 10 Noting Charges</td></tr>
+        <tr><td>Sep.18</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">2,010</td><td class="amt">2,010</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Liabilities on account bill dishonoured was discharged</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of Sohan <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>June 15</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from Sohan</td></tr>
+        <tr><td>June 15</td><td>Mohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills drawn by Mohan was accepted</td></tr>
+        <tr><td>Sep.18</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan</td><td class="amt">2,000<br>10</td><td class="amt">2,010</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills Payable became dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q18" data-num="18">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">18</div>
+    <div class="qhead-text"><div class="qtag">Full Settlement + Cheque Combo</div><div class="qsnippet">R accepted BoE ₹20,000 from S, endorsed to T with cheque</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawee-s">Acceptor: R</span><span class="stamp drawer-s">Drawer: S</span><span class="stamp third-s">↻ Endorsed to T</span><span class="stamp bank-s">🏦 T discounts @6%</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:18</span>On 1st March, 2019, R accepted a Bill of Exchange of ₹20,000 from S payable 3 months after date in full settlement of his dues. On the same day S endorsed the Bill of Exchange to T together with a cheque for ₹5,000 in settlement of his debt to the latter. On 2nd March, 2019, T discounted the Bill of Exchange @ 6% p.a. with his bank. On maturity the Bill of Exchange was dishonoured. Journalise the transactions in the books of R and T.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of R <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Mar.01</td><td>S&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by S was accepted</td></tr>
+        <tr><td>June 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To S</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills Payable dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book">
+      <div class="book-title">Books of T <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Mar.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To S</td><td class="amt">5,000<br>20,000</td><td class="amt">25,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Receivable and cheque received from S</td></tr>
+        <tr><td>Mar.02</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">19,700<br>300</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">R's acceptance discounted with bank at 6</td></tr>
+        <tr><td>June 04</td><td>S&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received from S was dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q19" data-num="19">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">19</div>
+    <div class="qhead-text"><div class="qtag">Endorsed after 10 Days</div><div class="qsnippet">A drew bill ₹10,000 on B, endorsed to C, dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp third-s">↻ Endorsed to C</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:19</span>On 1st January, 2019, A drew a bill on B for ₹10,000 payable after 3 months. B accepted the bill and returned it to A. After 10 days, A endorsed the bill to his creditor C. On the due date, the bill was dishonoured and C paid ₹50 as noting charges. Record the transactions in the books of A, B and C.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan. 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>Jan. 11</td><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance endorsed in favour of C</td></tr>
+        <tr><td>April 04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C</td><td class="amt">10,050</td><td class="amt">10,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill endorsed in favour of C was dishonoured and C paid Rs 50 Noting Charges</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan. 01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by A was accepted</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">10,000<br>50</td><td class="amt">10,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Payable dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book">
+      <div class="book-title">Books of C <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.11</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Receivable received from A</td></tr>
+        <tr><td>April 04</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">10,050</td><td class="amt">10,000<br>50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Receivable received from A became dishonoured and Noting Charge paid Rs 50</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q20" data-num="20">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">20</div>
+    <div class="qhead-text"><div class="qtag">Discount Allowed + Received</div><div class="qsnippet">Y owes X ₹4,000, bill for ₹3,900 endorsed to Z at ₹3,980</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawee-s">Acceptor: Y</span><span class="stamp drawer-s">Drawer: X</span><span class="stamp third-s">↻ Endorsed to Z</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:20</span>Y owes X ₹4,000. On 1st January, 2019, Y accepts a 3 months bill for ₹3,900 in satisfaction of his full claim. On the same date, it was endorsed by X to Z in satisfaction of his claim of ₹3,980. The bill is dishonoured on the due date. Give the Journal entries in the books of X.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Discount Allowed A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">3,900<br>100</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">(Y's acceptance received in full settlement of amount due from him and allowed with discount)</td></tr>
+        <tr><td>Jan.01</td><td>Z&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">3,980</td><td class="amt">3,900<br>80</td></tr>
+        <tr class="narration"><td></td><td colspan="3">(Y's acceptance endorsed in favour of Z and discount received)</td></tr>
+        <tr><td>Mar.04</td><td>Y&nbsp;&nbsp;Dr.<br>Discount Received A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Z<br>&nbsp;&nbsp;To Discount Allowed A/c</td><td class="amt">4,000<br>80</td><td class="amt">3,980<br>100</td></tr>
+        <tr class="narration"><td></td><td colspan="3">(Y's acceptance was endorsed to Z, now dishonoured)</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q21" data-num="21">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">21</div>
+    <div class="qhead-text"><div class="qtag">Collection + Dishonour</div><div class="qsnippet">A draws bill on B ₹1,000, sent for collection, dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp bank-s">🏦 Sent for Collection</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:21</span>On 1st January, 2019, A draws a bill on B for ₹1,000 payable after 3 months. Immediately after its acceptance, A sends the bill to his bank for collection. On the due date, the bill was dishonoured. Record the transactions in the Journals of A and B.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book">
+      <div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>Jan.01</td><td>Bills Sent for Collection A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance sent to bank for Collection</td></tr>
+        <tr><td>April 04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Sent for Collection A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance became dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book">
+      <div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by A was accepted</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills Payable to A became dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q22" data-num="22">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">22</div>
+    <div class="qhead-text"><div class="qtag">4 Scenarios + Dishonour</div><div class="qsnippet">Bill of ₹1,000 by A on B — retain / discount / endorse / collection, each dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp dishonour-s">✕ Dishonoured (all cases)</span></div>
+    <div class="question-box"><span class="qlabel">Question:22</span>A bill for ₹1,000 is drawn by A on B and accepted by the latter payable at the New Delhi, Bank of India. Show what entries should be passed in the books of A under each of the following circumstances:<br>
+    <i>a</i> If A retained the bill till the due date and then realized it on maturity.<br>
+    <i>b</i> If A discounted it with his bank for ₹950.<br>
+    <i>c</i> If A endorsed it to his creditor C in full settlement of his debt.<br>
+    <i>d</i> If A sent it to his bank for collection.<br>
+    Also, give the necessary entries in each of the cases if the bill is dishonoured.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Case a — Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td><u>On honouring of the bill</u><br>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance honoured</td></tr>
+        <tr><td><u>On dishonour of the bill</u><br>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawer-book"><div class="book-title">Case b — Discounted for ₹950</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bills Receivable received from B</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">950<br>50</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill acceptance discounted with bank</td></tr>
+        <tr><td><u>On dishonour of the bill</u><br>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book"><div class="book-title">Case c — Endorsed to Creditor C</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance endorsed in favour of C</td></tr>
+        <tr><td><u>On dishonour of the bill</u><br>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance which had transferred to C now became dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block" style="border:1px solid var(--line);"><div class="book-title" style="background:var(--gold);">Case d — Sent for Collection</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>Bills Sent to Bank for Collection A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill Sent to bank for collection</td></tr>
+        <tr><td><u>On dishonour of Bill</u><br>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bill Sent to Bank for Collection A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q23" data-num="23">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">23</div>
+    <div class="qhead-text"><div class="qtag">Chain of 4 Parties</div><div class="qsnippet">Ramesh → Mahesh → Mukesh → Suresh, discounted @5%, dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Ramesh</span><span class="stamp drawee-s">Acceptor: Mahesh</span><span class="stamp third-s">↻ Mukesh → Suresh</span><span class="stamp bank-s">🏦 Discounted @5%</span><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:23</span>On 1st January, 2019 for goods sold, Ramesh drew a Bill of Exchange on Mahesh for ₹4,000, for a period of 3 months. Mahesh accepts it and returns to Ramesh. Ramesh then endorses it to Mukesh who in turn endorses it to Suresh on 1st February, 2019. The bill is then discounted by Suresh on the same date with his bank at 5% p.a. On the due date the bill is dishonoured. Pass the necessary Journal entries in the books of all the four parties.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of Ramesh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Mahesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to Mahesh</td></tr>
+        <tr><td>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mahesh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Mahesh's acceptance was received</td></tr>
+        <tr><td>Jan.01</td><td>Mukesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Mahesh's acceptance was endorsed in favour of Mukesh</td></tr>
+        <tr><td>April 04</td><td>Mahesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mukesh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Mahesh's acceptance was dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of Mahesh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ramesh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from Ramesh</td></tr>
+        <tr><td>Jan.01</td><td>Ramesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by Ramesh was accepted</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ramesh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Payable was dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book"><div class="book-title">Books of Mukesh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ramesh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received from Ramesh</td></tr>
+        <tr><td>Feb.01</td><td>Suresh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills which had received from Suresh, endorsed to Suresh</td></tr>
+        <tr><td>April 04</td><td>Ramesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suresh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received from Ramesh was dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block" style="border:1px solid var(--line);"><div class="book-title" style="background:var(--gold);">Books of Suresh <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Feb.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mukesh</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill Receivable received from Mukesh</td></tr>
+        <tr><td>Feb.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">3,967<br>33</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill discount with bank at 5</td></tr>
+        <tr><td>April 04</td><td>Mukesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received from Mukesh was dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q24" data-num="24">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">24</div>
+    <div class="qhead-text"><div class="qtag">3-Party Chain + Cheque Top-Up</div><div class="qsnippet">A → B ₹6,000 acceptance, B → C endorsed + cheque, dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawee-s">Acceptor: A</span><span class="stamp drawer-s">Drawer: B</span><span class="stamp third-s">↻ Endorsed to C</span><span class="stamp dishonour-s">✕ Dishonoured, Noting ₹100</span></div>
+    <div class="question-box"><span class="qlabel">Question:24</span>A purchases goods worth ₹6,200 from B and gives him his acceptance for ₹6,000 in full satisfaction. B purchases goods worth ₹10,000 from C and endorses the bill to him, paying the balance by cheque. On maturity the bill is dishonoured, noting charges amounted to ₹100. Give the Journal entries in the books of A, B and C.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawee-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">6,200</td><td class="amt">6,200</td></tr>
+        <tr class="narration"><td colspan="3">Goods purchased from B</td></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">6,200</td><td class="amt">6,000<br>200</td></tr>
+        <tr class="narration"><td colspan="3">Bill drawn by B accepted and discount allowed by him</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Discount Received A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">6,000<br>200<br>100</td><td class="amt">6,300</td></tr>
+        <tr class="narration"><td colspan="3">Bill payable dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawer-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">6,200</td><td class="amt">6,200</td></tr>
+        <tr class="narration"><td colspan="3">Goods sold to A</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Discount Allowed A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">6,000<br>200</td><td class="amt">6,200</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance received and discount allowed</td></tr>
+        <tr><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Goods bought from C</td></tr>
+        <tr><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">10,000</td><td class="amt">6,000<br>4,000</td></tr>
+        <tr class="narration"><td colspan="3">Bills Receivable and Cheque given to C to settle due</td></tr>
+        <tr><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C<br>&nbsp;&nbsp;To Discount Allowed A/c</td><td class="amt">6,300</td><td class="amt">6,100<br>200</td></tr>
+        <tr class="narration"><td colspan="3">Bill accepted by B was dishonoured and C paid Rs 100 as Noting Charges</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book"><div class="book-title">Books of C <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Goods sold to B</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">6,000<br>4,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill Receivable and Cheque received from B</td></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">6,100</td><td class="amt">6,000<br>100</td></tr>
+        <tr class="narration"><td colspan="3">Bills Receivable received from B dishonoured and Rs 100 paid for noting the bill</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q25" data-num="25">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">25</div>
+    <div class="qhead-text"><div class="qtag">Dishonour + Renewal with Interest</div><div class="qsnippet">X sells ₹40,000 to Y, discounted @6%, dishonoured, renewed @12%</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp bank-s">🏦 Discounted @6%</span><span class="stamp dishonour-s">✕ Dishonoured</span><span class="stamp renew-s">↺ Renewed @12%</span></div>
+    <div class="question-box"><span class="qlabel">Question:25</span>X sells goods for ₹40,000 to Y on 1st January, 2019 and on the same day draws a bill on Y at three months for the amount. Y accepts it and returns it to X, who discounted it on 4th January, 2019 with his bank at 6% p.a. The acceptance is dishonoured on the due date and the noting charges were paid by bank being ₹200. On 4th April, 2019, Y accepts a new bill at three months for the amount then due to X together with interest at 12% p.a. Make Journal entries to record these transactions in the books of X.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">X's Journal</div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Y A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">40,000</td><td class="amt">40,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods sold on credit to Y</td></tr>
+        <tr><td>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y A/c</td><td class="amt">40,000</td><td class="amt">40,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Acceptance received from Y</td></tr>
+        <tr><td>Jan.04</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discounting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">39,400<br>600</td><td class="amt">40,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill discounted at 6</td></tr>
+        <tr><td>Apr.04</td><td>Y A/c (40,000+200)&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">40,200</td><td class="amt">40,200</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill dishonoured and noting charges of Rs 200 paid by bank</td></tr>
+        <tr><td>Apr.04</td><td>Y A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">1,206</td><td class="amt">1,206</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due for three months from Y on renewal of bill</td></tr>
+        <tr><td>Apr.04</td><td>Bills Receivable <i>New</i> A/c (40,200+1,206)&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y A/c</td><td class="amt">41,406</td><td class="amt">41,406</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Acceptance received from Y</td></tr>
+      </table>
+      <div class="wn-box">
+        <b>WN 1:</b> Discounting Charges = 40,000 × 6 × 3 / (100 × 12) = Rs 200<br>
+        <b>WN 2:</b> Interest on Renewal of Bill = 40,200 × 12 × 3 / (100 × 12) = Rs 1,206
+      </div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q26" data-num="26">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">26</div>
+    <div class="qhead-text"><div class="qtag">Part Payment + Renewal</div><div class="qsnippet">Ram owes ₹2,000 to Mohan, dishonoured, part paid + renewed @9%</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Mohan</span><span class="stamp drawee-s">Drawee: Ram</span><span class="stamp bank-s">🏦 Discounted @6%</span><span class="stamp dishonour-s">✕ Dishonoured</span><span class="stamp renew-s">↺ Renewed @9%</span></div>
+    <div class="question-box"><span class="qlabel">Question:26</span>Ram owes ₹2,000 to Mohan on 1st January, 2019. On this date, he accepted a draft for the amount for 3 months. Mohan got the bill discounted at his bank @ 6% p.a. On the due date, the bill was dishonoured, noting charges ₹20. Ram agreed to pay ₹520 immediately and accept another bill for the remaining amount for 3 months together with interest at 9% p.a. This bill was met on the due date. Give the Journal entries in the books of both the parties.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of Mohan <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ram</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Ram's acceptance received</td></tr>
+        <tr><td>Jan.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,970<br>30</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Ram's acceptance was discounted at 6</td></tr>
+        <tr><td>April 04</td><td>Ram&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank</td><td class="amt">2,020</td><td class="amt">2,020</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Ram's acceptance which was discounted with bank dishonoured</td></tr>
+        <tr><td>April 04</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ram</td><td class="amt">520</td><td class="amt">520</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash received from Ram</td></tr>
+        <tr><td>April 04</td><td>Ram&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">34</td><td class="amt">34</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due from on amount outstanding at 9</td></tr>
+        <tr><td>April 04</td><td>Bill Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ram</td><td class="amt">1,534</td><td class="amt">1,534</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Ram's acceptance received for outstanding amount including interest</td></tr>
+        <tr><td>April 04</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,534</td><td class="amt">1,534</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash received on honouring of bill</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Interest = 1,500 × 9% × 3/12 = Rs 34</div>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of Ram <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Mohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by Mohan was accepted</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan</td><td class="amt">2,000<br>20</td><td class="amt">2,020</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill dishonoured on its due date</td></tr>
+        <tr><td>April 04</td><td>Mohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">520</td><td class="amt">520</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash paid to Mohan</td></tr>
+        <tr><td>April 04</td><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan</td><td class="amt">34</td><td class="amt">34</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due to Mohan on outstanding balance for 3 months</td></tr>
+        <tr><td>April 04</td><td>Mohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">1,534</td><td class="amt">1,534</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill accepted for the amount outstanding including interest to Mohan</td></tr>
+        <tr><td>April 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">1,534</td><td class="amt">1,534</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill discharged on maturity</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q27" data-num="27">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">27</div>
+    <div class="qhead-text"><div class="qtag">Two Bills, One Dishonoured</div><div class="qsnippet">X sold to Y ₹15,000 via two bills; one discounted, one endorsed &amp; dishonoured</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp bank-s">🏦 Bill 1 discounted @6%</span><span class="stamp third-s">↻ Bill 2 endorsed to Z</span><span class="stamp dishonour-s">✕ Bill 2 Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:27</span>On 15th June, 2019, X sold to Y goods to the value of ₹15,000 drawing upon the latter two bills, one for ₹10,000 payable 2 months after date and other for ₹5,000 payable 3 months after date, X discounted the first bill with his bank at 6% p.a. and endorsed the second bill in favour of his creditor, Z. The first bill was met on maturity but the second was dishonoured. Z paid ₹50 as noting charges. On 1st October, Y cleared his account to X by paying ₹5,100 which included ₹50 as interest. Record the necessary Journal entries in the books of both X and Y.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>June 15</td><td>Y&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to Y</td></tr>
+        <tr><td>June 15</td><td>Bills Receivable A/c <i>Bill no1</i>&nbsp;&nbsp;Dr.<br>Bills Receivable A/c <i>Bill no2</i>&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">10,000<br>5,000</td><td class="amt">15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance was received</td></tr>
+        <tr><td>June 15</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c <i>Bill no1</i></td><td class="amt">9,900<br>100</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no1 which was issued for two months discounted at 6</td></tr>
+        <tr><td>June 15</td><td>Z&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c <i>Bill no2</i></td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance Bill no2 endorsed in favour of Z</td></tr>
+        <tr><td>Sep.18</td><td>Y&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Z</td><td class="amt">5,050</td><td class="amt">5,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance which had endorsed in favour Z dishonoured</td></tr>
+        <tr><td>Oct.01</td><td>Y&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">50</td><td class="amt">50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due from Y</td></tr>
+        <tr><td></td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">5,100</td><td class="amt">5,100</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Amount due from Y received</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of Y <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>June 15</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from X</td></tr>
+        <tr><td>June 15</td><td>X&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c <i>Bill no1</i><br>&nbsp;&nbsp;To Bills Payable A/c <i>Bill no2</i></td><td class="amt">15,000</td><td class="amt">10,000<br>5,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills drawn by X were accepted</td></tr>
+        <tr><td>Aug.18</td><td>Bills Payable A/c <i>Bill no1</i>&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment made for bill on maturity</td></tr>
+        <tr><td>Sep.18</td><td>Bills Payable A/c <i>Bill no2</i>&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X</td><td class="amt">5,000<br>50</td><td class="amt">5,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill dishonoured</td></tr>
+        <tr><td>Oct.01</td><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X</td><td class="amt">50</td><td class="amt">50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due to X</td></tr>
+        <tr><td>Oct.01</td><td>X&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">5,100</td><td class="amt">5,100</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment made to X</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q28" data-num="28">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">28</div>
+    <div class="qhead-text"><div class="qtag">Discount Allowed on Full Settlement</div><div class="qsnippet">X draws bill ₹2,000 on Y for a debt of ₹2,050, discounted for ₹1,980</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp bank-s">🏦 Discounted for ₹1,980</span></div>
+    <div class="question-box"><span class="qlabel">Question:28</span>X draws a bill on Y for ₹2,000 on 1st January, 2019, Y accepts the same and returns it to X. The bill was drawn by X in full settlement of a debt owing by Y amounted to ₹2,050. X discounts the bill on the same date with the Central Bank of India for ₹1,980. On maturity the bill was duly met by Y. Give the entries in the books of X and Y. Suppose the bill is dishonoured, what entries will be passed?</div>
+    <div class="solution-label">Solution — If Bill is Honoured</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Discount Allowed A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">2,000<br>50</td><td class="amt">2,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance was received and discount allowed</td></tr>
+        <tr><td>Jan.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,980<br>20</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance was discounted with bank</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of Y <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>X&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">2,050</td><td class="amt">2,000<br>50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by X was accepted</td></tr>
+        <tr><td></td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment made for meeting the bill</td></tr>
+      </table>
+    </div>
+    <div class="solution-label">Journal Entries — If Bill is Dishonoured</div>
+    <div class="stampstrip"><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="book-block drawer-book"><div class="book-title">Books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Discount Allowed A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">2,000<br>50</td><td class="amt">2,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance was received and discount allowed</td></tr>
+        <tr><td>Jan.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,980<br>20</td><td class="amt">2,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance was discounted with bank</td></tr>
+        <tr><td></td><td>Y&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c<br>&nbsp;&nbsp;To Discount Allowed A/c</td><td class="amt">2,050</td><td class="amt">2,000<br>50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance became dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of Y <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>Jan.01</td><td>X&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">2,050</td><td class="amt">2,000<br>50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by X was accepted and discount received</td></tr>
+        <tr><td></td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Discount Received A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X</td><td class="amt">2,000<br>50</td><td class="amt">2,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill became dishonoured</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q29" data-num="29">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">29</div>
+    <div class="qhead-text"><div class="qtag">Simple Renewal + Interest</div><div class="qsnippet">A sold goods to B for ₹250, renewed adding ₹10 interest</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp renew-s">↺ Renewed +₹10 interest</span></div>
+    <div class="question-box"><span class="qlabel">Question:29</span>On 1st June, 2019, A sold goods to B for ₹250. B gave to A his acceptance payable 1 month after date. Before maturity B requests A to renew it, which A does adding ₹10 to the new bill for interest. Make the necessary Journal entries to record these transactions in the books of both A and B.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>June 01</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">250</td><td class="amt">250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to B</td></tr>
+        <tr><td>June 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">250</td><td class="amt">250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>July 04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">250</td><td class="amt">250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was cancelled</td></tr>
+        <tr><td>July 04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">10</td><td class="amt">10</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due from B on account cancelling the bill</td></tr>
+        <tr><td>July 04</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">260</td><td class="amt">260</td></tr>
+        <tr class="narration"><td></td><td colspan="3">New bill including interest was accepted by B</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>June 01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">250</td><td class="amt">250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from A</td></tr>
+        <tr><td>June 01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">250</td><td class="amt">250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills drawn by A was accepted</td></tr>
+        <tr><td>July 04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">250</td><td class="amt">250</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill got cancelled</td></tr>
+        <tr><td>July 04</td><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">10</td><td class="amt">10</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due to for cancelling the bill</td></tr>
+        <tr><td>July 04</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">260</td><td class="amt">260</td></tr>
+        <tr class="narration"><td></td><td colspan="3">New bill including interest drawn by A was accepted</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q30" data-num="30">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">30</div>
+    <div class="qhead-text"><div class="qtag">Renewed for 2 More Months</div><div class="qsnippet">A sold to B ₹16,000, renewed for 2 months with interest @9%</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp renew-s">↺ Renewed 2 months @9%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:30</span>A sold goods to B on 1st September, 2018 for ₹16,000. B immediately accepted a 3 months bill. On the due date, B requested that the bill be renewed for a further period of 2 months. A agreed provided interest at 9% p.a. was paid immediately in cash. To this B was agreeable. The second bill was met on the due date. Give the Journal entries in the books of A.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Sep.01</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to B</td></tr>
+        <tr><td>Sep.01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was received</td></tr>
+        <tr><td>Dec.04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance was cancelled</td></tr>
+        <tr><td>Dec.04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">240</td><td class="amt">240</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due from at 9</td></tr>
+        <tr><td>Dec.04</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">240</td><td class="amt">240</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Amount for interest were received from B</td></tr>
+        <tr><td>Dec.04</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B accepted a new bill</td></tr>
+        <tr><td>2019<br>Feb.07</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment received on honouring of the bill</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Interest = 16,000 × 9% × 2/12 = Rs 240</div>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2018<br>Sep.01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from A</td></tr>
+        <tr><td>Sep.01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills drawn by A was accepted</td></tr>
+        <tr><td>Dec.04</td><td>Bill Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill got cancelled due to inability to pay</td></tr>
+        <tr><td>Dec.04</td><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">240</td><td class="amt">240</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due to A at 9</td></tr>
+        <tr><td>Dec.04</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">240</td><td class="amt">240</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment for interest to A</td></tr>
+        <tr><td>Dec.04</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">New bill drawn by A was accepted</td></tr>
+        <tr><td>2019<br>Feb.04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">16,000</td><td class="amt">16,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment of the bill made on due date</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q31" data-num="31">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">31</div>
+    <div class="qhead-text"><div class="qtag">Part Cash + Renewal with Interest</div><div class="qsnippet">Merchant &amp; Co sold to AB &amp; Co ₹500, renewed with 6% interest</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Merchant &amp; Co.</span><span class="stamp drawee-s">Drawee: AB &amp; Co.</span><span class="stamp renew-s">↺ Renewed @6%</span><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:31</span>On 1st May, 2019 Merchant &amp; Co. sold goods to AB &amp; Co. valued at ₹500 and drew upon them a bill at 3 months for the amount. AB &amp; Co. accepted the draft on presentation. When the bill was about to mature, AB &amp; Co. expressed their inability to meet it, and offered to pay Merchant &amp; Co. ₹200 in cash and to accept a fresh bill for the balance plus interest at 6% p.a. for 3 months. Merchant &amp; Co. agreed to the proposal and bill was renewed. On maturity, the bill was duly met. Make the entries in the books of both the parties to record the above transactions.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of Merchant &amp; Co. <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>May 01</td><td>AB &amp; Co&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to AB &amp; Co</td></tr>
+        <tr><td>May 01</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To AB &amp; Co</td><td class="amt">500</td><td class="amt">500</td></tr>
+        <tr class="narration"><td></td><td colspan="3">AB &amp; Co's acceptance was received</td></tr>
+        <tr><td>Aug.04</td><td>AB &amp; Co&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+        <tr class="narration"><td></td><td colspan="3">AB &amp; Co's acceptance was cancelled</td></tr>
+        <tr><td>Aug.04</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To AB &amp; Co</td><td class="amt">200</td><td class="amt">200</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash received from AB &amp; Co</td></tr>
+        <tr><td>Aug.04</td><td>AB &amp; Co&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">4.50</td><td class="amt">4.50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest-due from AB &amp; Co at 6% p.a. for 3 months</td></tr>
+        <tr><td>Aug.04</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To AB &amp; Co</td><td class="amt">304.50</td><td class="amt">304.50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">AB &amp; Co's acceptance was received including the interest for 3 months</td></tr>
+        <tr><td>Nov.07</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">304.50</td><td class="amt">304.50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Payment received on maturity the bill</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> 300 × 6% × 3/12 = Rs 4.50</div>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of AB &amp; Co <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>2019<br>May 01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Merchant &amp; Co</td><td class="amt">500</td><td class="amt">500</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from Merchant &amp; Co</td></tr>
+        <tr><td>May 01</td><td>Merchant &amp; Co&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill drawn by Merchant &amp; Co was accepted</td></tr>
+        <tr><td>Aug.04</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Merchant &amp; Co</td><td class="amt">500</td><td class="amt">500</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill got cancelled</td></tr>
+        <tr><td>Aug.04</td><td>Merchant &amp; Co&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">200</td><td class="amt">200</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash paid to Merchant &amp; Co</td></tr>
+        <tr><td>Aug.04</td><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Merchant &amp; Co</td><td class="amt">4.50</td><td class="amt">4.50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Interest due to Merchant &amp; Co at 6% p.a. for 3 months on the amount due</td></tr>
+        <tr><td>Aug.04</td><td>Merchant &amp; Co&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bill Payable A/c</td><td class="amt">304.50</td><td class="amt">304.50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">New bill drawn by Merchant &amp; Co was accepted</td></tr>
+        <tr><td>Nov.07</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">304.50</td><td class="amt">304.50</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash paid for honouring the bill</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q32" data-num="32">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">32</div>
+    <div class="qhead-text"><div class="qtag">3 Outcomes: Dishonour / Honour / Rebate</div><div class="qsnippet">A owed B ₹400, accepted BoE discounted for ₹380 — 3 cases</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawee-s">Acceptor: A</span><span class="stamp drawer-s">Drawer: B</span><span class="stamp bank-s">🏦 Discounted for ₹380</span></div>
+    <div class="question-box"><span class="qlabel">Question:32</span>A owed B ₹400. A accepted a Bill of Exchange at 3 months for this amount which B discounted for ₹380. Give the necessary Journal entries in the books of A and B if this bill is:<br>
+    <i>a</i> dishonoured on the due date;<br>
+    <i>b</i> met at maturity and<br>
+    <i>c</i> retired under rebate at 6% p.a. 2 months before its maturity.</div>
+    <div class="solution-label">Case a — Dishonoured</div>
+    <div class="stampstrip"><span class="stamp dishonour-s">✕ Dishonoured</span></div>
+    <div class="book-block drawer-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance was received</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">380<br>20</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance was discounted with bank</td></tr>
+        <tr><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">Bill drawn by A was accepted</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">Bill drawn by B was dishonoured on maturity</td></tr>
+      </table>
+    </div>
+    <div class="solution-label">Case b — Met at Maturity</div>
+    <div class="stampstrip"><span class="stamp honour-s">✓ Honoured</span></div>
+    <div class="book-block drawer-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance was received</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">380<br>20</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance was discounted with bank</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">Bills drawn by A was accepted</td></tr>
+        <tr><td>Bill Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">Payment made meeting the bill on maturity</td></tr>
+      </table>
+    </div>
+    <div class="solution-label">Case c — Retired Under Rebate 2 Months Early</div>
+    <div class="stampstrip"><span class="stamp renew-s">↺ Rebate @6%</span></div>
+    <div class="book-block drawer-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">A's acceptance was received</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>Rebate A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">396<br>4</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">Payment received 2 months before its maturity and gave rebate</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Rebate = 400 × 6/100 × 2/12 = Rs 4</div>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+        <tr class="narration"><td colspan="3">Bill drawn by B was accepted</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c<br>&nbsp;&nbsp;To Rebate A/c</td><td class="amt">400</td><td class="amt">396<br>4</td></tr>
+        <tr class="narration"><td colspan="3">Bill discharge before 2 months of its due date and rebate was received</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q33" data-num="33">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">33</div>
+    <div class="qhead-text"><div class="qtag">Discount + Dishonour + New Bill</div><div class="qsnippet">Amar sells to Bhola ₹10,000, dishonoured, fresh bill met at maturity</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Amar</span><span class="stamp drawee-s">Drawee: Bhola</span><span class="stamp bank-s">🏦 Discount ₹150</span><span class="stamp dishonour-s">✕ Dishonoured</span><span class="stamp renew-s">↺ New bill ₹10,250</span></div>
+    <div class="question-box"><span class="qlabel">Question:33</span>Amar sells goods to Bhola for ₹10,000 and draws upon him a bill for the amount payable 3 months after date. The bill is accepted by Bhola. Amar discounts the bill with his bankers at a discount of ₹150 inclusive of all charges. Bhola fails to meet this bill on maturity. Amar pays off his banker and his expenses amounting to ₹100. Bhola gives a fresh bill, 2 months' date to Amar for ₹10,250, which he met at maturity. Show the necessary Journal entries in Amar's books.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of Amar <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bhola&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Goods were sold to Bhola</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bhola</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Bhola's acceptance was received</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">9,850<br>150</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Bhola's acceptance discounted with bank</td></tr>
+        <tr><td>Bhola&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">10,100</td><td class="amt">10,100</td></tr>
+        <tr class="narration"><td colspan="3">Bhola's acceptance declared dishonoured</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">10,100</td><td class="amt">10,100</td></tr>
+        <tr class="narration"><td colspan="3">Payment made to bank with noting charges for dishonoring of the bill</td></tr>
+        <tr><td>Bhola&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">150</td><td class="amt">150</td></tr>
+        <tr class="narration"><td colspan="3">Interest due from Bhola for on account of bill dishonor</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bhola</td><td class="amt">10,250</td><td class="amt">10,250</td></tr>
+        <tr class="narration"><td colspan="3">New bill accepted by Bhola for the amount due including rating charges and interest</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">10,250</td><td class="amt">10,250</td></tr>
+        <tr class="narration"><td colspan="3">Amount received</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q34" data-num="34">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">34</div>
+    <div class="qhead-text"><div class="qtag">3 Quick-Fire Renewal Entries</div><div class="qsnippet">B's acceptance, Chandra's bill, and a part-cash renewal</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp renew-s">↺ Renewal Practice Set</span></div>
+    <div class="question-box"><span class="qlabel">Question:34</span>Give the Journal entries for the following:<br>
+    <i>a</i> B's acceptance to us for ₹1,000 due this day, renewed at his request for 3 months with interest @ 6% p.a.<br>
+    <i>b</i> Our bill to Chandra for ₹5,000 renewed for 2 months with interest @ 6% p.a.<br>
+    <i>c</i> B's acceptance of ₹3,000 is discharged on his paying us cash ₹1,000 and accepting a fresh bill for the balance with interest ₹100.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">a — B's Acceptance Renewed</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">B's acceptance was cancelled</td></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">15</td><td class="amt">15</td></tr>
+        <tr class="narration"><td colspan="3">Interest due from B</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,015</td><td class="amt">1,015</td></tr>
+        <tr class="narration"><td colspan="3">New bill was accepted by B including interest</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Interest = 1,000 × 6/100 × 3/12 = Rs 15</div>
+    </div>
+    <div class="book-block drawer-book"><div class="book-title">b — Our Bill to Chandra Renewed</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C. Chandra</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill Payable was cancelled</td></tr>
+        <tr><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C. Chandra</td><td class="amt">50</td><td class="amt">50</td></tr>
+        <tr class="narration"><td colspan="3">Interest at 6</td></tr>
+        <tr><td>C. Chandra&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">5,050</td><td class="amt">5,050</td></tr>
+        <tr class="narration"><td colspan="3">New bill drawn by C. Chandra was accepted</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Interest = 5,000 × 6/100 × 2/12 = Rs 50</div>
+    </div>
+    <div class="book-block third-book"><div class="book-title">c — Part Cash + New Bill</div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+        <tr class="narration"><td colspan="3">B got cancelled his acceptance</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Cash received from B</td></tr>
+        <tr><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+        <tr class="narration"><td colspan="3">Interest due from B</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">2,100</td><td class="amt">2,100</td></tr>
+        <tr class="narration"><td colspan="3">New bill accepted by B for balance amount including interest</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q35" data-num="35">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">35</div>
+    <div class="qhead-text"><div class="qtag">Two Bills — One Rebate, One Dishonour</div><div class="qsnippet">Leena sold to Meena ₹68,000 via two equal bills</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Leena</span><span class="stamp drawee-s">Drawee: Meena</span><span class="stamp bank-s">🏦 Bill 1 discounted @12%</span><span class="stamp dishonour-s">✕ Bill 1 dishonoured</span><span class="stamp renew-s">↺ Bill 2 rebate @6%</span></div>
+    <div class="question-box"><span class="qlabel">Question:35</span>Leena sold goods to Meena on 1st March, 2009 for ₹68,000 and drew two Bills of Exchange of the equal amount upon Meena payable after three months. Leena immediately discounted the first bill with her bank at 12% p.a. The bill was dishonoured by Meena and Bank paid ₹55 as noting charges. The second bill was retired on 4th May, 2009 under a rebate of 6% p.a. with mutual agreement. Journalise the above in the books of Leena and Meena.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of Leena <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>2009<br>Mar.01</td><td>Meena&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">68,000</td><td class="amt">68,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to Meena</td></tr>
+        <tr><td>Mar.01</td><td>Bills Receivable A/c <i>Bill no.1</i>&nbsp;&nbsp;Dr.<br>Bills Receivable A/c <i>Bill no.2</i>&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Meena</td><td class="amt">34,000<br>34,000</td><td class="amt">68,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Meena's acceptance were received</td></tr>
+        <tr><td>Mar.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c <i>Bill no.01</i></td><td class="amt">32,980<br>1,020</td><td class="amt">34,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no.1 discount with bank at 12</td></tr>
+        <tr><td>May 04</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>Rebate A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c <i>Bill no.2</i></td><td class="amt">33,830<br>170</td><td class="amt">34,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no.2 retired before one month under a rebate at 6</td></tr>
+        <tr><td>June 04</td><td>Meena&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">34,055</td><td class="amt">34,055</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no.1 which was discounted with bank proved dishonoured</td></tr>
+      </table>
+      <div class="wn-box"><b>WN:</b> Interest = 34,000 × 12% × 3/12 &nbsp;·&nbsp; Rebate = 34,000 × 6% × 1/12</div>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of Meena <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>2009<br>Mar.01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Leena</td><td class="amt">68,000</td><td class="amt">68,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were bought from Leena</td></tr>
+        <tr><td>Mar.01</td><td>Leena&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c <i>Bill no.1</i><br>&nbsp;&nbsp;To Bills Payable A/c <i>Bill no.2</i></td><td class="amt">68,000</td><td class="amt">34,000<br>34,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills drawn by Leena were accepted</td></tr>
+        <tr><td>May 04</td><td>Bills Payable A/c <i>Bill no.2</i>&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c<br>&nbsp;&nbsp;To Rebate A/c</td><td class="amt">34,000</td><td class="amt">33,830<br>170</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no.2 discharge one month before due and received</td></tr>
+        <tr><td>June 04</td><td>Bills Payable A/c <i>Bill no.1</i>&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Leena</td><td class="amt">34,000<br>55</td><td class="amt">34,055</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no.2 was dishonoured due to non-payment</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q36" data-num="36">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">36</div>
+    <div class="qhead-text"><div class="qtag">Renewal &amp; Dishonour, One Book</div><div class="qsnippet">Books of Kapadia — Dalpat's renewal and Swamy/Ghosh dishonour</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Books of Kapadia</span><span class="stamp renew-s">↺ Renewal + Interest</span><span class="stamp dishonour-s">✕ Dishonoured + Noting</span></div>
+    <div class="question-box"><span class="qlabel">Question:36</span>How will you record the following transactions in the books Kapadia?<br>
+    <i>a</i> A bill received from Dalpat for ₹1,000 has to be renewed, Dalpat agrees to pay ₹20 as interest.<br>
+    <i>b</i> Swamy's bill for ₹800 endorsed in favour of Ghosh dishonoured, Ghosh pays ₹10 as noting charges. Swamy pays ₹300 immediately and agrees to accept a new bill for 3 months for the balance together with interest at 6% p.a. Ghosh's Account is settled by cheque.</div>
+    <div class="solution-label">a — Books of Kapadia</div>
+    <div class="book-block drawer-book">
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Dalpat&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">Dalpat acceptance cancelled</td></tr>
+        <tr><td>Dalpat&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">20</td><td class="amt">20</td></tr>
+        <tr class="narration"><td colspan="3">Interest due from Dalpat</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Dalpat</td><td class="amt">20</td><td class="amt">20</td></tr>
+        <tr class="narration"><td colspan="3">Cash received from Dalpat for interest on renewal of the bill</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Dalpat</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+        <tr class="narration"><td colspan="3">New bill accepted by Dalpat</td></tr>
+      </table>
+    </div>
+    <div class="solution-label">b — Books of Kapadia</div>
+    <div class="book-block third-book">
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>Swamy&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ghosh</td><td class="amt">810</td><td class="amt">810</td></tr>
+        <tr class="narration"><td colspan="3">Swamy's acceptance dishonoured and Ghosh paid Rs 10 as Noting Charges</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Swamy</td><td class="amt">300</td><td class="amt">300</td></tr>
+        <tr class="narration"><td colspan="3">Cash received from Swamy</td></tr>
+        <tr><td>Swamy&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">7.65</td><td class="amt">7.65</td></tr>
+        <tr class="narration"><td colspan="3">Interest due from Swamy</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Swamy</td><td class="amt">517.65</td><td class="amt">517.65</td></tr>
+        <tr class="narration"><td colspan="3">Swamy's acceptance received for the balance due including interest</td></tr>
+        <tr><td>Ghosh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">810</td><td class="amt">810</td></tr>
+        <tr class="narration"><td colspan="3">Amount due to Ghosh was paid through cheque</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Interest = 510 × 6% × 3/12 = Rs 7.65</div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q37" data-num="37">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">37</div>
+    <div class="qhead-text"><div class="qtag">Endorsed, Dishonoured, Renewed</div><div class="qsnippet">Y purchased goods ₹6,000, bill endorsed to Z, dishonoured, renewed</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: X</span><span class="stamp drawee-s">Drawee: Y</span><span class="stamp third-s">↻ Endorsed to Z</span><span class="stamp dishonour-s">✕ Dishonoured, Noting ₹50</span><span class="stamp renew-s">↺ Renewed +₹90 interest</span></div>
+    <div class="question-box"><span class="qlabel">Question:37</span>Y purchased goods for ₹6,000 on 1st June, 2011 from X and on the same date accepted a bill payable after three months. 3 days later, X endorsed the bill to Z. On maturity, the bill was dishonoured for non-payment and Z had to pay ₹50 as noting charges. Two days after the dishonour of bill, Y paid ₹2,000 to X and requested him to draw a second bill for the balance plus ₹90 for the amount of interest, payable after two months. X accepted the proposal and draws the bill on Y, which was accepted by Y and was duly met on maturity. Pass Journal entries for the above transactions in the books of X.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of X <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>2011<br>June 01</td><td>Y&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">6,000</td><td class="amt">6,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods sold to Y</td></tr>
+        <tr><td>June 01</td><td>Bills Receivable A/c <i>Bill no.1</i>&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y</td><td class="amt">6,000</td><td class="amt">6,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Y's acceptance received</td></tr>
+        <tr><td>June 04</td><td>Z&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c <i>Bill no.1</i></td><td class="amt">6,000</td><td class="amt">6,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill endorsed in favour of Z</td></tr>
+        <tr><td>Sept.04</td><td>Y&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Z</td><td class="amt">6,050</td><td class="amt">6,050</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Endorsed bill got dishonoured and noting charges were paid</td></tr>
+        <tr><td>Sept.06</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>Bills Receivable A/c <i>Bill no.2</i> (4,050+90)&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Y<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">2,000<br>4,140</td><td class="amt">6,050<br>90</td></tr>
+        <tr class="narration"><td></td><td colspan="3">(Cash of Rs 2,000 was received and for the remaining balance new bill issued including interest of Rs 90)</td></tr>
+        <tr><td>Nov.09</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c <i>Bill no.2</i></td><td class="amt">4,140</td><td class="amt">4,140</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill met on the due date</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q38" data-num="38">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">38</div>
+    <div class="qhead-text"><div class="qtag">Two Bills, Both Dishonoured</div><div class="qsnippet">A sold to B ₹1,00,000, two bills, one endorsed, one discounted</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: A</span><span class="stamp drawee-s">Drawee: B</span><span class="stamp third-s">↻ Bill 1 endorsed to C</span><span class="stamp bank-s">🏦 Bill 2 discounted @12%</span><span class="stamp dishonour-s">✕ Both Dishonoured</span></div>
+    <div class="question-box"><span class="qlabel">Question:38</span>On 1st January, 2008, A sold goods to B for ₹1,00,000 received ₹25,000 in cash and drew two bills, first ₹45,000 and second for ₹30,000 of two months each. Both bills were duly accepted by B. First bill was endorsed to C in settlement of his account of ₹45,000 and second bill was discounted from the bank at the rate of 12% p.a. On the due date of these bills, both bills were dishonoured, C has paid ₹100 and bank has paid ₹80 as noting charges. Pass Journal entries in the books of A, B and C.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Books of A <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>2008<br>Jan.01</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">1,00,000</td><td class="amt">1,00,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods were sold to B</td></tr>
+        <tr><td>Jan.01</td><td>Cash A/c&nbsp;&nbsp;Dr.<br>Bills Receivable A/c <i>Bill no.1</i>&nbsp;&nbsp;Dr.<br>Bills Receivable A/c <i>Bill no.2</i>&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To B</td><td class="amt">25,000<br>45,000<br>30,000</td><td class="amt">1,00,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash and acceptances were received from B</td></tr>
+        <tr><td>Jan.01</td><td>C&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bill Receivable A/c <i>Bill no.1</i></td><td class="amt">45,000</td><td class="amt">45,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill endorsed in favour of C</td></tr>
+        <tr><td>Jan.01</td><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discount Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable <i>Bill no.2</i></td><td class="amt">29,400<br>600</td><td class="amt">30,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill no.2 discounted with bank at 12</td></tr>
+        <tr><td>Mar.04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To C</td><td class="amt">45,100</td><td class="amt">45,100</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance which had endorsed to C was dishonoured and C paid Rs 100 as noting charges</td></tr>
+        <tr><td>Mar.04</td><td>B&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">30,080</td><td class="amt">30,080</td></tr>
+        <tr class="narration"><td></td><td colspan="3">B's acceptance which had discounted with bank was dishonoured and bank paid Rs 80 as noting charges</td></tr>
+      </table>
+      <div class="wn-box"><b>Working Note:</b> Discount Charges = 30,000 × 12% × 2/12</div>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Books of B <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>2008<br>Jan. 01</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">1,00,000</td><td class="amt">1,00,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Goods purchased from A</td></tr>
+        <tr><td>Jan. 01</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c<br>&nbsp;&nbsp;To Bills Payable A/c 1<br>&nbsp;&nbsp;To Bills Payable A/c 2</td><td class="amt">1,00,000</td><td class="amt">25,000<br>45,000<br>30,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Cash and bills given to A</td></tr>
+        <tr><td>March 04</td><td>Bills Payable A/c 1&nbsp;&nbsp;Dr.<br>Bills Payable A/c 2&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">45,000<br>30,000<br>180</td><td class="amt">75,180</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bills dishonoured</td></tr>
+      </table>
+    </div>
+    <div class="book-block third-book"><div class="book-title">Books of C <small>Journal</small></div>
+      <table class="ledger">
+        <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+        <tr><td>2008<br>Jan. 01</td><td>Bills Receivable A/c 1&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">45,000</td><td class="amt">45,000</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill received from A</td></tr>
+        <tr><td>March 04</td><td>A&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c 1<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">45,100</td><td class="amt">45,000<br>100</td></tr>
+        <tr class="narration"><td></td><td colspan="3">Bill dishonoured on due date</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q39" data-num="39">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">39</div>
+    <div class="qhead-text"><div class="qtag">CGST+SGST · Discount · Dishonour · Renewal</div><div class="qsnippet">Amar sells to Bhola ₹10,000 plus CGST/SGST @9% each</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="stampstrip"><span class="stamp drawer-s">Drawer: Amar</span><span class="stamp drawee-s">Drawee: Bhola</span><span class="stamp gst-s">CGST+SGST @9% each</span><span class="stamp bank-s">🏦 Discount ₹150</span><span class="stamp dishonour-s">✕ Dishonoured</span><span class="stamp renew-s">↺ New bill ₹10,250</span></div>
+    <div class="question-box"><span class="qlabel">Question:39</span>Amar sells goods to Bhola for ₹10,000 plus CGST and SGST @ 9% each. He receives the GST amount in cash and draws upon Bhola a bill for the balance amount payable 3 months after date. The bill is accepted by Bhola. Amar discounts the bill with his bank at a discount of ₹150 inclusive of all charges. Bhola fails to meet this bill on maturity. Amar pays off his bank and his expenses amounting to ₹100. Bhola gives a fresh bill of 2 months' date to Amar for ₹10,250, which he meets at maturity. Show necessary Journal entries in Amar's books.</div>
+    <div class="solution-label">Solution</div>
+    <div class="book-block drawer-book"><div class="book-title">Journal — in the books of Amar <small>Drawer</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>Bhola's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Output CGST A/c<br>&nbsp;&nbsp;To Output SGST A/c</td><td class="amt">11,800</td><td class="amt">10,000<br>900<br>900</td></tr>
+        <tr class="narration"><td colspan="3">Goods sold to Bhola</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bhola's A/c</td><td class="amt">1,800<br>10,000</td><td class="amt">11,800</td></tr>
+        <tr class="narration"><td colspan="3">Cash and bill received</td></tr>
+        <tr><td>Bank A/c&nbsp;&nbsp;Dr.<br>Discounting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">9,850<br>150</td><td class="amt">10,000</td></tr>
+        <tr class="narration"><td colspan="3">Bill discounted</td></tr>
+        <tr><td>Bhola's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bank A/c</td><td class="amt">10,100</td><td class="amt">10,100</td></tr>
+        <tr class="narration"><td colspan="3">Bill dishonoured</td></tr>
+        <tr><td>Bhola's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest A/c</td><td class="amt">150</td><td class="amt">150</td></tr>
+        <tr class="narration"><td colspan="3">Interest due</td></tr>
+        <tr><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bhola's A/c</td><td class="amt">10,250</td><td class="amt">10,250</td></tr>
+        <tr class="narration"><td colspan="3">New bill received</td></tr>
+        <tr><td>Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">10,250</td><td class="amt">10,250</td></tr>
+        <tr class="narration"><td colspan="3">New bill met on maturity</td></tr>
+      </table>
+    </div>
+    <div class="book-block drawee-book"><div class="book-title">Journal — in the books of Bhola <small>Drawee</small></div>
+      <table class="ledger">
+        <tr><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+        <tr><td>Purchases A/c&nbsp;&nbsp;Dr.<br>Input CGST A/c&nbsp;&nbsp;Dr.<br>Input SGST A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Amar's A/c</td><td class="amt">10,000<br>900<br>900</td><td class="amt">11,800</td></tr>
+        <tr class="narration"><td colspan="3">Goods purchased from Amar</td></tr>
+        <tr><td>Amar's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">11,800</td><td class="amt">10,000<br>1,800</td></tr>
+        <tr class="narration"><td colspan="3">Cash paid and bill accepted</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Noting Charges A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">10,000<br>100</td><td class="amt">10,100</td></tr>
+        <tr class="narration"><td colspan="3">Bill dishonoured</td></tr>
+        <tr><td>Interest A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Amar's A/c</td><td class="amt">150</td><td class="amt">150</td></tr>
+        <tr class="narration"><td colspan="3">Interest due</td></tr>
+        <tr><td>Amar's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Payable A/c</td><td class="amt">10,250</td><td class="amt">10,250</td></tr>
+        <tr class="narration"><td colspan="3">New bill accepted</td></tr>
+        <tr><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">10,250</td><td class="amt">10,250</td></tr>
+        <tr class="narration"><td colspan="3">New bill met on maturity</td></tr>
+      </table>
+    </div>
+  </div></div>
+</article>
+
+</main>
+
+<footer>
+  Chapter 12 · Accounting for Bills of Exchange — content sourced verbatim from StudyGuide360 worksheet. Built as a revision ledger for exam-day recall.
+</footer>
+
+<a href="#top" class="back-top" id="backTop">↑</a>
+
+<script>
+function buildIndexAndScroll(){
+  const cards = document.querySelectorAll('.qcard');
+  const grid = document.getElementById('indexGrid');
+  cards.forEach(c=>{
+    const n = c.getAttribute('data-num');
+    const a = document.createElement('a');
+    a.href = '#q'+n;
+    a.textContent = n;
+    grid.appendChild(a);
+  });
+}
+function toggleCard(el){
+  const card = el.closest('.qcard');
+  const body = card.querySelector('.qbody');
+  const isOpen = card.classList.contains('open');
+  if(isOpen){
+    card.classList.remove('open');
+    body.style.maxHeight = null;
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+window.addEventListener('scroll', ()=>{
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 500);
+});
+document.addEventListener('DOMContentLoaded', buildIndexAndScroll);
+</script>
+</body>
+</html>

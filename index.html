@@ -266,6 +266,10 @@
 .card-btn.pink-btn:hover { background: #be185d; }
       .card-btn.cyan-btn { background: #0284c7; }
 .card-btn.cyan-btn:hover { background: #0369a1; }
+
+        /* Unified light-green Open button color (overrides all per-card variants above) */
+        .card-btn, .card-btn.red-btn, .card-btn.black-btn, .card-btn.yellow-btn, .card-btn.purple-btn, .card-btn.darkblue-btn, .card-btn.green-btn, .card-btn.teal-btn, .card-btn.indigo-btn, .card-btn.pink-btn, .card-btn.cyan-btn { background: #86efac; color: #14532d; }
+        .card-btn:hover, .card-btn.red-btn:hover, .card-btn.black-btn:hover, .card-btn.yellow-btn:hover, .card-btn.purple-btn:hover, .card-btn.darkblue-btn:hover, .card-btn.green-btn:hover, .card-btn.teal-btn:hover, .card-btn.indigo-btn:hover, .card-btn.pink-btn:hover, .card-btn.cyan-btn:hover { background: #4ade80; color: #14532d; }
         .card-btn svg { width: 14px; height: 14px; }
         .sub-card.is-studied { background: linear-gradient(180deg, var(--success-light) 0%, var(--surface) 30%); }
 
@@ -2206,13 +2210,170 @@
                     </div>
                 </div>
 
-                <div class="sub-card" data-id="aao-p1-accounting-principles" data-search="accounting principles book keeping" data-soon="true" style="animation-delay:.1s">
-                    <div class="card-accent teal"></div>
-                    <div class="card-body">
-                        <div class="card-main-row">
-                            <span class="act-title">ACCOUNTING PRINCIPLES / BOOK-KEEPING<br><span class="gujarati">(હિસાબી સિદ્ધાંતો / બુક-કીપિંગ)</span></span>
-                            <span class="card-btn teal-btn" style="opacity:.5;pointer-events:none;">Soon</span>
+                <div class="category-section collapsed" data-cat="aao-p1-accounting-principles">
+                    <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+                        <div class="category-icon teal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3v-6m-3 6v-9m12 9V7a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2z"/></svg></div>
+                        <h2 class="category-title" style="font-size:14px;">ACCOUNTING PRINCIPLES / BOOK-KEEPING <span style="font-size:12px;">(Theory + Practical)</span></h2>
+                        <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                    <div class="category-cards">
+
+                        <div class="sub-card" data-id="aao-p1-accounting-theory" data-search="theory of accounting book keeping principles" data-soon="true" style="animation-delay:.02s">
+                            <div class="card-accent purple"></div>
+                            <div class="card-body">
+                                <div class="card-main-row">
+                                    <span class="act-title">THEORY OF ACCOUNTING<br><span class="gujarati">(હિસાબી સિદ્ધાંતોનો સિદ્ધાંત ભાગ)</span></span>
+                                    <span class="card-btn purple-btn" style="opacity:.5;pointer-events:none;">Soon</span>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="category-section collapsed" data-cat="aao-p1-accounting-practical">
+                            <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+                                <div class="category-icon green"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3v-6m-3 6v-9m12 9V7a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2z"/></svg></div>
+                                <h2 class="category-title" style="font-size:14px;">PRACTICAL OF ACCOUNTING <span style="font-size:12px;">(9 Chapters)</span></h2>
+                                <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                            <div class="category-cards">
+
+                                <div class="sub-card" data-id="aao-p1-prac-01-basic-terms" data-search="basic accounting terms mr gopal case study" style="animation-delay:.02s">
+                                    <div class="card-accent purple"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-01-basic-terms" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-01-basic-terms" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">1. BASIC ACCOUNTING TERMS<br><span class="gujarati">(Chapter 1 – Mr. Gopal Case Study)</span></span>
+                                            <a href="basic-accounting-terms-gopal.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-02-accounting-equation" data-search="accounting equation" style="animation-delay:.04s">
+                                    <div class="card-accent indigo"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-02-accounting-equation" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-02-accounting-equation" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">2. ACCOUNT EQUATION</span>
+                                            <a href="accounting-equation-279.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-03-journal" data-search="journal accounting" style="animation-delay:.06s">
+                                    <div class="card-accent pink"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-03-journal" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-03-journal" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">3. JOURNAL</span>
+                                            <a href="journal-329.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-04-ledger" data-search="ledger accounting" style="animation-delay:.08s">
+                                    <div class="card-accent cyan"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-04-ledger" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-04-ledger" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">4. LEDGER</span>
+                                            <a href="ledger-infographics.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-05-brs" data-search="bank reconciliation statement brs" style="animation-delay:.1s">
+                                    <div class="card-accent teal"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-05-brs" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-05-brs" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">5. BANK RECONCILIATION STATEMENT</span>
+                                            <a href="brs-infographic.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-06-trial-balance" data-search="trial balance" style="animation-delay:.12s">
+                                    <div class="card-accent yellow"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-06-trial-balance" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-06-trial-balance" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">6. TRIAL BALANCE</span>
+                                            <a href="trial-balance-infographic.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-07-depreciation" data-search="depreciation chapter 11" style="animation-delay:.14s">
+                                    <div class="card-accent darkblue"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-07-depreciation" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-07-depreciation" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">7. DEPRECIATION</span>
+                                            <a href="chapter-11-depreciation.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-08-bills-of-exchange" data-search="accounting for bills of exchange" style="animation-delay:.16s">
+                                    <div class="card-accent black"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-08-bills-of-exchange" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-08-bills-of-exchange" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">8. ACCOUNTING FOR BILLS OF EXCHANGE</span>
+                                            <a href="bills-of-exchange.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-card" data-id="aao-p1-prac-09-rectification-of-errors" data-search="rectification of errors" style="animation-delay:.18s">
+                                    <div class="card-accent red"></div>
+                                    <div class="card-body">
+                                        <div class="card-top-row">
+                                            <button class="icon-btn bookmark-btn" data-id="aao-p1-prac-09-rectification-of-errors" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p1-prac-09-rectification-of-errors" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                                            <span class="studied-label-text">Studied</span>
+                                        </div>
+                                        <div class="card-main-row">
+                                            <span class="act-title">9. RECTIFICATION OF ERRORS</span>
+                                            <a href="ch13-rectification-of-errors.html" class="card-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 13 · Rectification of Errors — Correction Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E7;
+    --paper-alt:#ECE4D2;
+    --ink:#25201A;
+    --ink-soft:#5A5145;
+    --red:#C13A2E;
+    --red-deep:#8E2A21;
+    --navy:#1F3352;
+    --navy-deep:#152540;
+    --gold:#B8862E;
+    --gold-bg:#F3E5C4;
+    --sage:#3F7859;
+    --sage-bg:#DFEBE2;
+    --line:#D9CBA9;
+    --shadow:0 8px 22px rgba(37,32,26,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 10% 4%, rgba(193,58,46,0.06), transparent 42%),
+      radial-gradient(circle at 92% 14%, rgba(31,51,82,0.06), transparent 45%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+  }
+  .display{font-family:'Spectral', serif;}
+  .mono{font-family:'Space Mono', monospace;}
+
+  .topband{
+    background:repeating-linear-gradient(135deg, var(--navy-deep), var(--navy-deep) 9px, var(--navy) 9px, var(--navy) 18px);
+    color:#F1E9D5;
+    text-align:center;
+    font-size:0.7rem;
+    letter-spacing:0.13em;
+    text-transform:uppercase;
+    padding:6px 10px;
+    font-weight:700;
+  }
+
+  /* HERO — red-pen correction motif */
+  .hero{
+    max-width:960px;
+    margin:0 auto;
+    padding:50px 20px 34px;
+    text-align:center;
+  }
+  .correction-mark{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px;
+    font-family:'Space Mono', monospace;
+    font-size:1.5rem;
+  }
+  .wrong-figure{
+    color:var(--ink-soft);
+    position:relative;
+    padding:2px 10px;
+  }
+  .wrong-figure::after{
+    content:"";
+    position:absolute;
+    left:-4px; right:-4px; top:50%;
+    height:2px;
+    background:var(--red);
+    transform:rotate(-4deg);
+  }
+  .correction-arrow{color:var(--red); font-size:1.3rem;}
+  .right-figure{
+    color:var(--sage);
+    font-weight:700;
+    border:2px solid var(--sage);
+    border-radius:8px;
+    padding:2px 10px;
+    transform:rotate(-2deg);
+  }
+  .eyebrow{
+    display:block;
+    font-size:0.76rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--red-deep);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  h1.title{
+    font-size:clamp(1.9rem, 5vw, 3rem);
+    margin:0 0 14px;
+    color:var(--navy-deep);
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    max-width:640px;
+    margin:0 auto 24px;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+  .hero-stats{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+  }
+  .stat-chip{
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:8px 16px;font-size:0.82rem;font-weight:600;color:var(--navy-deep);
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:7px;
+  }
+  .stat-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);}
+
+  /* EXPLAINER: two paths */
+  .paths{
+    max-width:1000px;margin:8px auto 44px;padding:0 20px;
+  }
+  .paths h2{text-align:center;color:var(--navy-deep);font-size:1.4rem;margin-bottom:22px;}
+  .path-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  @media (max-width:640px){.path-grid{grid-template-columns:1fr;}}
+  .path-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:20px;box-shadow:var(--shadow);
+  }
+  .path-card .path-icon{
+    width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;color:#fff;margin-bottom:10px;
+  }
+  .path-card.one-sided .path-icon{background:var(--red);}
+  .path-card.two-sided .path-icon{background:var(--sage);}
+  .path-card h3{margin:0 0 6px;font-family:'Spectral',serif;font-size:1.08rem;color:var(--ink);}
+  .path-card p{margin:0;font-size:0.86rem;color:var(--ink-soft);}
+
+  /* NAV INDEX */
+  .index-wrap{max-width:1040px;margin:0 auto 46px;padding:0 20px;}
+  .index-wrap h3{color:var(--navy-deep);font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(48px,1fr));gap:7px;}
+  .index-grid a{
+    display:flex;align-items:center;justify-content:center;height:36px;border-radius:8px;
+    background:#fff;border:1px solid var(--line);color:var(--navy-deep);font-weight:700;font-size:0.8rem;
+    text-decoration:none;transition:all .12s ease;
+  }
+  .index-grid a:hover{background:var(--gold-bg);transform:translateY(-2px);box-shadow:var(--shadow);}
+
+  /* QUESTION CARDS */
+  .qwrap{max-width:1040px;margin:0 auto;padding:0 20px 80px;}
+  .qcard{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    margin-bottom:18px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:14px;
+  }
+  .qhead{
+    display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;
+    background:linear-gradient(90deg, var(--paper-alt), #fff 65%);user-select:none;
+  }
+  .qhead:hover{background:linear-gradient(90deg, var(--gold-bg), #fff 70%);}
+  .qnum{
+    flex:0 0 auto;width:38px;height:38px;border-radius:9px;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Spectral',serif;font-weight:700;font-size:0.98rem;
+  }
+  .qhead-text{flex:1;min-width:0;}
+  .qhead-text .qtag{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--red-deep);font-weight:700;margin-bottom:2px;}
+  .qhead-text .qsnippet{font-size:0.92rem;color:var(--ink);display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;}
+  .qtoggle{
+    flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--navy);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:transform .2s ease;
+  }
+  .qcard.open .qtoggle{transform:rotate(45deg);}
+  .qbody{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .qcard.open .qbody{max-height:none;}
+  .qbody-inner{padding:4px 20px 24px;}
+
+  .tagstrip{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 14px;}
+  .tag{
+    display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:999px;
+    font-size:0.71rem;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;border:1.4px solid currentColor;
+  }
+  .tag.suspense{color:var(--gold);background:var(--gold-bg);}
+  .tag.no-suspense{color:var(--sage);background:var(--sage-bg);}
+  .tag.principle{color:#6B4C8A;background:#EDE3F3;}
+  .tag.commission{color:var(--red);background:#F7E4E1;}
+  .tag.omission{color:var(--navy);background:#E3E9F1;}
+  .tag.compensating{color:#8A6D1C;background:#FBF0D2;}
+
+  .question-box{
+    background:var(--paper-alt);border-left:4px solid var(--red);border-radius:0 10px 10px 0;
+    padding:13px 16px;margin-bottom:16px;font-size:0.94rem;
+  }
+  .question-box .qlabel{font-family:'Spectral',serif;font-weight:700;color:var(--red-deep);display:block;margin-bottom:4px;font-size:0.94rem;}
+  .question-box ol, .question-box ul{margin:6px 0 0;padding-left:20px;}
+  .question-box li{margin-bottom:3px;}
+
+  .solution-label{
+    display:flex;align-items:center;gap:8px;font-family:'Spectral',serif;font-weight:600;color:var(--navy-deep);
+    font-size:0.98rem;margin:16px 0 8px;
+  }
+  .solution-label::before{content:"✎";color:var(--red);font-size:1.05rem;}
+
+  table.ledger{width:100%;border-collapse:collapse;font-size:0.82rem;background:#fff;margin-bottom:8px;}
+  table.ledger th{
+    background:var(--paper-alt);color:var(--ink);text-align:left;padding:7px 9px;font-size:0.7rem;
+    text-transform:uppercase;letter-spacing:0.03em;border-bottom:2px solid var(--line);
+  }
+  table.ledger td{padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top;}
+  table.ledger td.amt, table.ledger th.amt{font-family:'Space Mono',monospace;text-align:right;white-space:nowrap;}
+  table.ledger tr.narration td{font-style:italic;color:var(--ink-soft);font-size:0.76rem;padding-top:0;border-bottom:1px dashed var(--line);}
+
+  .tacct-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--navy);border-radius:10px;overflow:hidden;margin:10px 0 6px;}
+  @media (max-width:560px){.tacct-wrap{grid-template-columns:1fr;}}
+  .tacct-title{
+    grid-column:1/-1;background:var(--navy);color:#fff;text-align:center;font-family:'Spectral',serif;font-weight:700;
+    padding:8px;font-size:0.92rem;
+  }
+  .tacct-side{padding:0;}
+  .tacct-side.dr{border-right:1.5px solid var(--navy);}
+  @media (max-width:560px){.tacct-side.dr{border-right:none;border-bottom:1.5px solid var(--navy);}}
+  .tacct-side .side-label{
+    text-align:center;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;
+    padding:6px;background:var(--paper-alt);color:var(--ink-soft);
+  }
+  .tacct-side table{width:100%;border-collapse:collapse;font-size:0.78rem;}
+  .tacct-side td{padding:5px 8px;border-bottom:1px dashed var(--line);}
+  .tacct-side td.amt{font-family:'Space Mono',monospace;text-align:right;}
+  .tacct-side tr.total td{border-top:2px solid var(--navy);border-bottom:none;font-weight:700;}
+
+  .book-block{border:1px solid var(--line);border-radius:10px;margin-bottom:14px;overflow:hidden;}
+  .book-block .book-title{
+    padding:8px 14px;font-family:'Spectral',serif;font-weight:700;font-size:0.88rem;color:#fff;background:var(--navy);
+  }
+
+  .wn-box{
+    background:var(--gold-bg);border:1px dashed var(--gold);border-radius:9px;padding:10px 14px;font-size:0.82rem;margin-top:6px;
+  }
+  .wn-box b{color:#7A5A14;}
+
+  footer{text-align:center;padding:30px 20px 46px;color:var(--ink-soft);font-size:0.82rem;border-top:1px solid var(--line);}
+  .back-top{
+    position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;
+    display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);text-decoration:none;font-size:1.15rem;
+    opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:50;
+  }
+  .back-top.show{opacity:1;pointer-events:auto;}
+
+  @media (max-width:600px){
+    .qhead{padding:12px 14px;gap:9px;}
+    .qnum{width:34px;height:34px;font-size:0.85rem;}
+    .qbody-inner{padding:2px 13px 18px;}
+    table.ledger{font-size:0.74rem;}
+    table.ledger th,table.ledger td{padding:5px 6px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topband">Chapter 13 · Rectification of Errors — Journal &amp; Suspense Account Workbook</div>
+
+<header class="hero">
+  <div class="correction-mark">
+    <span class="wrong-figure">₹402</span>
+    <span class="correction-arrow">→</span>
+    <span class="right-figure">₹204 ✓</span>
+  </div>
+  <span class="eyebrow">Class XI · Accountancy</span>
+  <h1 class="title">Every Mistake, Traced and Corrected</h1>
+  <p class="subtitle">48 questions, exactly as set, worked as a correction ledger. Each card marks whether the error needed a Suspense Account and what kind of mistake it was — so the pattern shows through, not just the numbers.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><span class="dot"></span>48 Worked Questions</div>
+    <div class="stat-chip"><span class="dot" style="background:var(--red);"></span>One-Sided vs Two-Sided Errors</div>
+    <div class="stat-chip"><span class="dot" style="background:var(--navy);"></span>Suspense Account Ledgers</div>
+  </div>
+</header>
+
+<section class="paths">
+  <h2 class="display">Two Kinds of Mistake</h2>
+  <div class="path-grid">
+    <div class="path-card one-sided">
+      <div class="path-icon">⚠</div>
+      <h3>One-Sided Errors</h3>
+      <p>Only one account is disturbed — a wrong posting, a short total, a carry-forward slip. The Trial Balance won't tally, so the gap is parked in a <b>Suspense Account</b> until the culprit is found.</p>
+    </div>
+    <div class="path-card two-sided">
+      <div class="path-icon">⇄</div>
+      <h3>Two-Sided Errors</h3>
+      <p>Both sides move together — the wrong book, the wrong person, the wrong nature of expense. Debits and credits stay equal throughout, so the Trial Balance still agrees and <b>no Suspense Account</b> is needed.</p>
+    </div>
+  </div>
+</section>
+
+<nav class="index-wrap">
+  <h3>📌 Jump to a Question</h3>
+  <div class="index-grid" id="indexGrid"></div>
+</nav>
+
+<main class="qwrap" id="qwrap">
+
+<article class="qcard" id="q1" data-num="1">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">1</div>
+    <div class="qhead-text"><div class="qtag">Overcast / Excess Carry Forward</div><div class="qsnippet">Purchases Book overcasted, Purchases Return Book errors</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:1</span>How will be the following errors rectified?<br>
+      (i) Purchases Book is overcasted by ₹10,000.<br>
+      (ii) Purchases Return Book is overcasted by ₹1,000.<br>
+      (iii) Purchases Return Book's balance is carried forward in excess by ₹100.<br>
+      (iv) Purchases Book's balance is carried forward in excess by ₹1,000.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase book was overcastted by Rs 10,000, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase return book was overcastted by Rs 1,000, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase return book's balance was carried forward in excess of Rs 100, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase book's balance was carried forward in excess of Rs 1,000, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q2" data-num="2">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">2</div>
+    <div class="qhead-text"><div class="qtag">Short Casting</div><div class="qsnippet">Sales Book and Sales Return Book short casted / carried forward short</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:2</span>How will be the following errors rectified?<br>
+      (i) Sales Book is short casted by ₹5,000.<br>
+      (ii) Sales Return Book is short casted by ₹500.<br>
+      (iii) Balance of Sales Book is carried forward short by ₹1,000.<br>
+      (iv) Balance of Sales Return Book is carried forward short by ₹100.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book was undercasted by Rs 5,000, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales return book was undercasted by Rs 500, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book' balance carried forward was short by Rs 1,000, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales return book' balance carried forward was short by Rs 100, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q3" data-num="3">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">3</div>
+    <div class="qhead-text"><div class="qtag">Overcast + Excess Carry Forward</div><div class="qsnippet">Sales Book and Sales Return Book overcast / carried forward in excess</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:3</span>How will you rectify the following errors?<br>
+      (i) Sales Book is overcasted by ₹5,000.<br>
+      (ii) Sales Return Book is short casted by ₹500.<br>
+      (iii) Balance of Sales Book is carried forward in excess by ₹1,000.<br>
+      (iv) Balance of Sales Return Book is carried forward in excess by ₹100.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book was overcasted by Rs 5,000, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book was undercasted by Rs 500, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book's balance was carried forward in excess by Rs 1,000, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales Return A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales return book's balance was carried forward in excess by Rs 100, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q4" data-num="4">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">4</div>
+    <div class="qhead-text"><div class="qtag">Wrong Amount, Wrong Person, Wrong Book</div><div class="qsnippet">Six credit-sale posting errors — Mohan, Sohan, Meenu, Ram, machinery, bill</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:4</span>Pass the necessary Journal entries to rectify the following errors:<br>
+      (i) Credit sale of ₹570 to Mohan was recorded as ₹750.<br>
+      (ii) Credit sale of ₹850 to Sohan was recorded as sale to Mohan.<br>
+      (iii) Credit sale of ₹850 to Meenu was recorded as sale to Meena as ₹580.<br>
+      (iv) Credit sale of ₹850 to Ram was recorded in the Purchases Book.<br>
+      (v) Credit sale of old machinery to Sohan for ₹1,700 was entered in the Sales Book as ₹7,100.<br>
+      (vi) Bill Receivable for ₹5,000 accepted by Mahinder recorded as acceptance given to Mahinder for ₹6,000.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan's A/c</td><td class="amt">180</td><td class="amt">180</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting goods sold on credit to Mohan recorded at wrong amount)</td></tr>
+      <tr><td>ii)</td><td>Sohan's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan's A/c</td><td class="amt">850</td><td class="amt">850</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sale to Sohan recorded as sale to Mohan)</td></tr>
+      <tr><td>iii)</td><td>Meenu's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Meena's A/c</td><td class="amt">850</td><td class="amt">270<br>580</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sale to Meenu recorded to Meena at wrong amount)</td></tr>
+      <tr><td>iv)</td><td>Ram's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">1,700</td><td class="amt">850<br>850</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sales to Ram wrongly recorded in the purchases book)</td></tr>
+      <tr><td>v)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Machinery A/c<br>&nbsp;&nbsp;To Soahn's A/c</td><td class="amt">7,100</td><td class="amt">1,700<br>5,400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sale of machinery to Sohan wrongly recorded in sales book)</td></tr>
+      <tr><td>vi)</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mahinder's A/c</td><td class="amt">6,000<br>5,000</td><td class="amt">11,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being bills receivable wrongly recorded as bills payable now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q5" data-num="5">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">5</div>
+    <div class="qhead-text"><div class="qtag">Wrong Posting Errors</div><div class="qsnippet">Kishan/Krishan, Meenu/Meena, drawings, furniture, cheque dishonour</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:5</span>Pass the necessary Journal entries to rectify the following errors:<br>
+      (i) Credit sale of ₹850 to Kishan was posted to Krishan's Account.<br>
+      (ii) Cash sale of ₹850 to Meenu was posted to the credit of Meena.<br>
+      (iii) Amount of ₹1,500 withdrawn from bank by the proprietor for his personal use was debited to Purchases Account.<br>
+      (iv) Credit sale of old furniture to Mohan for ₹1,700 was posted as ₹7,100.<br>
+      (v) Credit sale of old furniture to Babu Ram for ₹3,000 was credited to Sales Account.<br>
+      (vi) Cheque of ₹1,280 received from Farid was dishonoured and has been posted to the debit of Sales Return Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>i)</td><td>Kishan's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Krishan's A/c</td><td class="amt">850</td><td class="amt">850</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sales to Kishan wrongly posted to Krishan's Account)</td></tr>
+      <tr><td>ii)</td><td>Meena's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">850</td><td class="amt">850</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting cash sales to Meenu wrongly posted to credit of Meena's A/c)</td></tr>
+      <tr><td>iii)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">1,500</td><td class="amt">1,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting amount withdrawn for personal use debited to Purchases A/c)</td></tr>
+      <tr><td>iv)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan's A/c</td><td class="amt">5,400</td><td class="amt">5,400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sale of furniture to Mohan posted at a wrong amount)</td></tr>
+      <tr><td>v)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Furniture A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting credit sale of furniture posted to the credit of sales account)</td></tr>
+      <tr><td>vi)</td><td>Farid's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales Return A/c</td><td class="amt">1,280</td><td class="amt">1,280</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting cheque dishonoured wrongly debited to Sales Return A/c)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q6" data-num="6">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">6</div>
+    <div class="qhead-text"><div class="qtag">Wrong Amount Posted to Vinod</div><div class="qsnippet">Sales to Vinod of ₹143 posted/debited/credited as ₹134</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:6</span>Rectify the following errors:<br>
+      (i) Sales to Vinod of ₹143 posted to his account as ₹134.<br>
+      (ii) Sales to Vinod of ₹143 debited to his account as ₹134.<br>
+      (iii) Sales to Vinod of ₹143 credited to his account as ₹134.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Vinod&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">9</td><td class="amt">9</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Rs 9 was posted less in Vinod's Account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Vinod&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">9</td><td class="amt">9</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Vinod's Account was wrongly debited with Rs 9 less, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Vinod&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">277</td><td class="amt">277</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales to Vinod of Rs 143 was wrongly credited as Rs 134, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q7" data-num="7">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">7</div>
+    <div class="qhead-text"><div class="qtag">Capital vs Revenue Expenditure</div><div class="qsnippet">Building construction, machinery installation wrongly charged to revenue accounts</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span><span class="tag principle">Error of Principle</span></div>
+    <div class="question-box"><span class="qlabel">Question:7</span>Pass the necessary Journal entries to rectify the following errors:<br>
+      (i) ₹15,000 paid as wages for the construction of office building debited to Salaries Account.<br>
+      (ii) ₹20,000 spent on the purchases of material for the construction of building debited to Purchases Account.<br>
+      (iii) ₹50,000 spent on the extension of building was debited to Building Repairs Account.<br>
+      (iv) ₹25,000 spent on whitewash of a new building was charged to Building Repairs Account.<br>
+      (v) ₹1,000 paid as installation charges for newly purchased second hand machinery posted to Cartage Account.<br>
+      (vi) ₹10,000 paid as repairing charges on the reconditioning of a newly purchased second hand machinery debited to General Expenses Account.<br>
+      (vii) ₹5,000 paid as repairing charges of an existing machine in use charged to Machinery Account.<br>
+      (viii) ₹10,000 paid by cheque for a printer was charged to the Office Expense Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>i)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Salaries A/c</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting wages paid for construction of building debited to Salaries A/c)</td></tr>
+      <tr><td>ii)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting purchases of material on construction debited to Purchases A/c)</td></tr>
+      <tr><td>iii)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Building Repairs A/c</td><td class="amt">50,000</td><td class="amt">50,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting amount spent on extension of building wrongly debited to Building Repairs A/c)</td></tr>
+      <tr><td>iv)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Building Repairs A/c</td><td class="amt">25,000</td><td class="amt">25,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting amount spent on whitewash of new building debited to Building Repairs A/c)</td></tr>
+      <tr><td>v)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cartage A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting installation charges on machinery wrongly debited to Cartage A/c)</td></tr>
+      <tr><td>vi)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To General Expenses A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting repair charges to a newly paid second hand machinery wrongly debited to General Expenses A/c)</td></tr>
+      <tr><td>vii)</td><td>Repairs A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Machinery A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting repairs on existing machinery wrongly debited to Machinery A/c)</td></tr>
+      <tr><td>viii)</td><td>Printer A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Office Expenses A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting amount paid for Printer wrongly debited to Office Expenses A/c)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q8" data-num="8">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">8</div>
+    <div class="qhead-text"><div class="qtag">Omissions Not Recorded</div><div class="qsnippet">Returns, free samples, depreciation, and charity not recorded at all</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span><span class="tag omission">Error of Omission</span></div>
+    <div class="question-box"><span class="qlabel">Question:8</span>Give rectifying Journal entries for the following errors:<br>
+      (i) Goods returned by Mohan of ₹1,500 not recorded in books.<br>
+      (ii) Goods distributed as free samples for ₹5,000 not recorded.<br>
+      (iii) Depreciation of machinery of ₹10,000 not charged.<br>
+      (iv) Goods costing ₹780, selling price ₹1,000 given as charity not recorded.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>i)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan's A/c</td><td class="amt">1,500</td><td class="amt">1,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being recording goods returned by Mohan not recorded earlier)</td></tr>
+      <tr><td>ii)</td><td>Advertisement A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being recording goods distributed as free sample not recorded earlier)</td></tr>
+      <tr><td>iii)</td><td>Depreciation A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Machinery A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being recording depreciation charged on machinery not recorded earlier)</td></tr>
+      <tr><td>iv)</td><td>Charity A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">780</td><td class="amt">780</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being recording goods given away as charity not recorded earlier)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q9" data-num="9">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">9</div>
+    <div class="qhead-text"><div class="qtag">Swapped Postings</div><div class="qsnippet">Kunal/Kapil, Anil/Suraj, Parkar/Manisha, Roopak/Sagar — figures swapped</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span><span class="tag commission">Error of Commission</span></div>
+    <div class="question-box"><span class="qlabel">Question:9</span>Rectify the following errors:<br>
+      (i) Goods purchased from Kunal for ₹8,000 and from Kapil of ₹9,000 recorded correctly in the Purchases Book. However, ₹9,000 was posted to Kunal and ₹8,000 to Kapil.<br>
+      (ii) Anil's Account was excess debited by ₹500 while Suraj's Account was short debited by ₹500.<br>
+      (iii) Parkar's Account was short credited by ₹700 while Manisha's Account was excess credited by ₹700.<br>
+      (iv) Goods sold to Roopak for ₹1,000 and to Sagar for ₹1,800 recorded correctly in the Sales Book. However, ₹1,800 was posted to Roopak and ₹1,000 to Sagar.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>i)</td><td>Kunal's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Kapil's A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting goods purchased from Kunal and Kapil posted with wrong amounts)</td></tr>
+      <tr><td>ii)</td><td>Suraj's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Anil's A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being rectifying wrong debit and credit to the accounts)</td></tr>
+      <tr><td>iii)</td><td>Manisha's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Parkar's A/c</td><td class="amt">700</td><td class="amt">700</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being rectifying excess and short credits in the accounts)</td></tr>
+      <tr><td>iv)</td><td>Roopak's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sagar's A/c</td><td class="amt">800</td><td class="amt">800</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Being correcting goods sold to Roopak and Sagar posted with wrong amounts)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q10" data-num="10">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">10</div>
+    <div class="qhead-text"><div class="qtag">Nature of Mistake Classified</div><div class="qsnippet">Das &amp; Co — furniture sold as goods, rent of residence, wrong-name posting</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:10</span>Following errors affecting the accounts of the year 2018–19 were detected in the books of Das &amp; Co., Meerut:<br>
+      (i) Sale of old furniture for ₹5,000 was treated as sales of goods.<br>
+      (ii) Rent of proprietor's residence ₹6,000 was debited to Rent Account.<br>
+      (iii) Cash received from Rajesh ₹2,150 was credited to Brajesh.<br>
+      Pass the rectifying Journal entries. State the nature of each of these mistakes.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th>Date</th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>2018-19<br>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Furniture A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of old furniture treated as sale of goods, now rectified) — <b>Nature: Error of Principle</b></td></tr>
+      <tr><td>(ii)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Rent A/c</td><td class="amt">6,000</td><td class="amt">6,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Rent paid for proprietor's residence treated as rent paid, now rectified) — <b>Nature: Error of Principle</b></td></tr>
+      <tr><td>(iii)</td><td>Brajesh's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Rajesh's A/c</td><td class="amt">2,150</td><td class="amt">2,150</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash received from Rajesh, credited to Brajesh, now rectified) — <b>Nature: Error of Commission</b></td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q11" data-num="11">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">11</div>
+    <div class="qhead-text"><div class="qtag">No Suspense — Ledger Accounts</div><div class="qsnippet">Salary not posted; Amrish, Vijay, Pal posting errors</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ Assuming No Suspense A/c</span></div>
+    <div class="question-box"><span class="qlabel">Question:11</span>Rectify the following errors assuming that there is no Suspense Account:<br>
+      (i) Salary of ₹5,000 paid to Rahul was not posted to Salaries Account.<br>
+      (ii) Sales to Amrish of ₹1,430 posted to his account as ₹1,340.<br>
+      (iii) Sales to Vijay of ₹2,470 posted to his account as ₹2,740.<br>
+      (iv) Purchases from Pal of ₹1,430 posted to his account as ₹1,340.</div>
+    <div class="solution-label">Solution — Individual Ledger Accounts</div>
+    <div class="wn-box" style="margin-bottom:12px;">(i) Salary of Rs. 5,000 paid to Rahul was not posted to Salary A/c</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Salaries Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>Cash A/c</td><td class="amt">5,000</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+    </div>
+    <div class="wn-box" style="margin:14px 0 12px;">(ii) Sales to Amrish of Rs 1,430 posted to his account as Rs 1,340</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Amrish's Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>Sales A/c</td><td class="amt">90</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+    </div>
+    <div class="wn-box" style="margin:14px 0 12px;">(iii) Sales to Vijay of Rs 2,470 posted to his account as Rs 2,740</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Vijay's Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>Sales A/c</td><td class="amt">270</td></tr></table></div>
+    </div>
+    <div class="wn-box" style="margin:14px 0 12px;">(iv) Purchases from Pal of Rs 1,430 posted to his account as Rs 1,340</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Pal's Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>Purchases A/c</td><td class="amt">90</td></tr></table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q12" data-num="12">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">12</div>
+    <div class="qhead-text"><div class="qtag">Concept Check — MCQ</div><div class="qsnippet">Which of these errors will affect the Trial Balance?</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">Affects Trial Balance</span></div>
+    <div class="question-box"><span class="qlabel">Question:12</span>Which of the following errors will affect the Trial Balance?<br>
+      (i) The total of the Sales Book has not been posted to the Sales Account.<br>
+      (ii) ₹1,000 paid as installation charges of a new machine has been debited to Repairs Account.<br>
+      (iii) Goods costing ₹4,000 taken by the proprietor for personal use have been debited to Debtors' Account.<br>
+      (iv) ₹1,000 paid for repairs to building have been debited to Building Account.</div>
+    <div class="solution-label">Solution</div>
+    <p style="font-size:0.92rem;">'Total of Sales book has not been posted to Sales Account' will affect the Trial Balance because due to this Sales Account undercasts, which results in undercasting of credit side of Trial Balance.</p>
+    <div class="wn-box"><b>Correct Answer:</b> Option (i)</div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q13" data-num="13">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">13</div>
+    <div class="qhead-text"><div class="qtag">No Suspense — Ledger Accounts</div><div class="qsnippet">Returns Inward overcast, carry-forward errors, Gautam posting</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ Assuming No Suspense A/c</span></div>
+    <div class="question-box"><span class="qlabel">Question:13</span>Rectify the following errors assuming that there is no Suspense Account:<br>
+      (i) The Returns Inward Book has been overcasted by ₹200.<br>
+      (ii) Purchases Book carried forward ₹75 <i>less</i>.<br>
+      (iii) Sales Book carried forward ₹41 <i>less</i> on Page 10 and ₹43 <i>more</i> on Page 12.<br>
+      (iv) Goods sold to Gautam were posted as ₹215 instead of ₹251.</div>
+    <div class="solution-label">Solution — Individual Ledger Accounts</div>
+    <div class="wn-box" style="margin-bottom:12px;">(i)</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Return Inwards Book</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>Over Casting of Return Inwards Book</td><td class="amt">200</td></tr></table></div>
+    </div>
+    <div class="wn-box" style="margin:14px 0 12px;">(ii)</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Purchases Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>Carry forwarding of Purchases Book Less</td><td class="amt">75</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+    </div>
+    <div class="wn-box" style="margin:14px 0 12px;">(iii)</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Sales Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>Net Carry forwarding of Sales Book excess</td><td class="amt">2</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+    </div>
+    <div class="wn-box" style="margin:14px 0 12px;">(iv)</div>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Sales Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>Difference in the amount posted</td><td class="amt">36</td></tr></table></div>
+    </div>
+    <div class="tacct-wrap" style="margin-top:10px;">
+      <div class="tacct-title">Gautam Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table><tr><td>Difference in the amount posted</td><td class="amt">36</td></tr></table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table><tr><td>&nbsp;</td><td class="amt">&nbsp;</td></tr></table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q14" data-num="14">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">14</div>
+    <div class="qhead-text"><div class="qtag">Sh. Ram Lal's Books</div><div class="qsnippet">Purchases undercast, K. Krishna, drawings, R. Gopalan wrong amount</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:14</span>Following errors are discovered in the books of Sh. Ram Lal. Make the necessary entries to rectify them:<br>
+      (i) Purchases Journal was undercasted by ₹2,150.<br>
+      (ii) ₹500 received from K. Krishna was debited to his account.<br>
+      (iii) An amount of ₹3,000 withdrawn by the proprietor of the firm for his personal use was posted to the Travelling Expenses Account.<br>
+      (iv) An amount of ₹175 for a credit sale to R. Gopalan correctly entered in the Sales Book, has been debited to his account as ₹157.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">2,150</td><td class="amt">2,150</td></tr>
+      <tr class="narration"><td colspan="3">(Purchases Book was under cast now rectified)</td></tr>
+      <tr><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To K. Krishna</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td colspan="3">(Received from K. Krishna was wrongly debited, now rectified)</td></tr>
+      <tr><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Travelling Expense A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td colspan="3">(Amount withdrawn by proprietor for personal use wrongly posted to Travelling Expenses Account, now rectified)</td></tr>
+      <tr><td>R.Gopalan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">18</td><td class="amt">18</td></tr>
+      <tr class="narration"><td colspan="3">(R. Gopalan's Account was debited by Rs 157 instead of Rs 175, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q15" data-num="15">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">15</div>
+    <div class="qhead-text"><div class="qtag">Omission + Wrong Book</div><div class="qsnippet">Purchases omitted, furniture, rent, machine sale, Mukesh's bill</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:15</span>Pass the Journal entries rectifying the following errors:<br>
+      (i) Purchases of ₹10,000 was omitted to be recorded.<br>
+      (ii) Purchases of office furniture of ₹10,000 was recorded in Purchases Book.<br>
+      (iii) Office Rent of ₹15,000 was debited to the Personal Account of the landlord.<br>
+      (iv) Old machine sold for ₹5,000 was credited to Sales Account.<br>
+      (v) Bill for ₹800 received from Mukesh for repair of machinery was entered in the Purchases Book as ₹700.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>(i)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of goods worth Rs 10,000 were omitted to be recorded, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of office furniture was recorded in purchase book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Rent A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Landlord's A/c</td><td class="amt">15,000</td><td class="amt">15,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Office rent of Rs 15,000 was debited to Landlord's personal account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Machinery A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of machinery costing Rs 5,000 was credited to Sales A/c, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Repairs to Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">800</td><td class="amt">800</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repairs to machinery costing 700 wrongly entered in purchase book, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q16" data-num="16">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">16</div>
+    <div class="qhead-text"><div class="qtag">Undercast + Wrong Book</div><div class="qsnippet">Purchases undercast, Anu Prakash's sale wrongly in Purchases Book</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:16</span>Rectify the following errors:<br>
+      (i) Purchases Book has been undercast by ₹1,000.<br>
+      (ii) Credit sale to Anu Prakash ₹7,000 was recorded in Purchases Book.<br>
+      (iii) Credit sale to Rahul ₹7,000 was recorded as ₹700.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases Book was undercasted by Rs 1,000, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Aru Prakash's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">14,000</td><td class="amt">7,000<br>7,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales to Aru Prakash was recorded in Purchases Book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Rahul's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">6,300</td><td class="amt">6,300</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales to Rahul Rs 7,000 was recorded as Rs 700, now rectified)</td></tr>
+    </table>
+    <div class="wn-box"><b>Note:</b> In the book, this transaction is incomplete, thus it has been assumed that 'Credit sales to Rahul was recorded as Rs 700 instead of Rs 7,000'.</div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q17" data-num="17">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">17</div>
+    <div class="qhead-text"><div class="qtag">Carry Forward, Dishonour, Return Errors</div><div class="qsnippet">Sales carried forward wrong, dishonoured cheque, sundry creditors error</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:17</span>Rectify the following errors:<br>
+      (i) Total of one page of the Sales Book was carried forward to the next page as ₹2,785 instead of ₹2,587.<br>
+      (ii) A cheque of ₹400 received from Mohan was dishonoured and had been posted to the debit side of the 'Allowance Account'.<br>
+      (iii) Return of goods worth ₹5,000 by a customer was entered in the Purchases Return Book.<br>
+      (iv) Sum of ₹200 owed by 'X' has been included in the list of Sundry Creditors.<br>
+      (v) Sale of old furniture worth ₹430 was credited to the Sales Account as ₹340.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particular</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">198</td><td class="amt">198</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Carry forwarding Rs 2,785 instead of Rs 2,587, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Mohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Allowance A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(A Cheque received from Mohan was dishonoured but debited wrongly to Allowance's Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sale Return A/c&nbsp;&nbsp;Dr.<br>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Customer / Debtor</td><td class="amt">5,000<br>5,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods return by a customer was recorded wrongly to Purchase Return Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Sundry Creditors&nbsp;&nbsp;Dr.<br>Sundry Debtors&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To X</td><td class="amt">200<br>200</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount owed by X was included in Sundry Creditors, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Furniture A/c</td><td class="amt">340<br>90</td><td class="amt">430</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Old furniture Rs 430 was wrongly debited to Sales Account for Rs 340, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q18" data-num="18">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">18</div>
+    <div class="qhead-text"><div class="qtag">Overcast, Personal A/c, Wrong Book</div><div class="qsnippet">Purchases overcast, Mr. Ajay's salary, Shashi's sale, chair from Happy Traders</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:18</span>Rectify the following errors:<br>
+      (i) Purchases Book is overcast by ₹500.<br>
+      (ii) Salary paid to an employee, Mr. Ajay, is debited to his Personal account ₹3,000.<br>
+      (iii) Goods sold to Shashi on credit ₹300 have been wrongly passed through the Purchases Book.<br>
+      (iv) Total of Returns Inward Book has been added ₹9 short.<br>
+      (v) Purchase of chair from Happy Traders for ₹35 has been entered in the Purchases Book as ₹53.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particular</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase Book was over cast now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Salaries A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mr. Ajay</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Salary paid to Mr. Ajay was debited wrongly to Mr. Ajay's Account)</td></tr>
+      <tr><td>(iii)</td><td>Shashi&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">600</td><td class="amt">300<br>300</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods sold to Shashi was wrongly passed through Purchases Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Return Inwards A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">9</td><td class="amt">9</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Inwards Book was added short by Rs 9, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>Happy Traders A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">35<br>18</td><td class="amt">53</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Chair Rs 35 was recorded in the Purchases Book As Rs 53, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q19" data-num="19">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">19</div>
+    <div class="qhead-text"><div class="qtag">Double Posting, Cash Omission</div><div class="qsnippet">Mohan Lal's books — salary posted twice, Rajesh omitted, Sales overcast</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:19</span>Correct the following errors in Mohan Lal's Book:<br>
+      (i) A payment of ₹5,000 for salaries (to Mr. Ram) has been posted twice to the Salaries Account.<br>
+      (ii) ₹750 received from Rajesh are entered on the debit side of the Cash Book. No posting was done in Rajesh's Account.<br>
+      (iii) Sales Book was overcasted by ₹3,000.<br>
+      (iv) Goods (Cost ₹2,000, Sales Price ₹2,500) distributed as samples among prospective customers were not recorded anywhere.<br>
+      (v) A sum of ₹1,500 written off as depreciation on furniture was not debited to Depreciation Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit</th><th class="amt">Credit</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Salaries A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Payment of Salaries Rs 5,000 was posted twice wrongly in Salaries Account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Rajesh</td><td class="amt">750</td><td class="amt">750</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Received Rs 750 from Rajesh was omitted to be posted his account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales was overcast, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Advertisement A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods distributed as free sample were not recorded, now recorded)</td></tr>
+      <tr><td>(v)</td><td>Depreciation A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,500</td><td class="amt">1,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Depreciation on furniture not debited to furniture a/c, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q20" data-num="20">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">20</div>
+    <div class="qhead-text"><div class="qtag">Wrong Amount, Wrong Book, Wrong Column</div><div class="qsnippet">Manoj's sale, machinery extension, Ram &amp; Co discount, Mahesh's goods</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:20</span>Give the rectifying entries of the following:<br>
+      (i) Sales of ₹20,000 to Manoj were recorded as ₹2,000 in the Sales Book.<br>
+      (ii) An amount of ₹25,000 spent for the extension of machinery has been debited to the Wages Account.<br>
+      (iii) Discount received from Ram &amp; Co. ₹350, has not been entered in the discount column of the Cash Book.<br>
+      (iv) Goods of ₹3,000 sold to Mahesh were recorded in the Purchases Book.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Monoj&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">18,000</td><td class="amt">18,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales Rs 20,000 was recorded wrongly as Rs 2,000, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Wages A/c</td><td class="amt">25,000</td><td class="amt">25,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount spent on Installation of machinery was debited wrongly to Wages Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Ram &amp; Co. A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">4,750</td><td class="amt">4,750</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount received from Ram &amp; Co. not been entered in Cash Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Mahesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">6,000</td><td class="amt">3,000<br>3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods sold to Mahesh was recorded wrongly in Purchases Book now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q21" data-num="21">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">21</div>
+    <div class="qhead-text"><div class="qtag">Hari's Books</div><div class="qsnippet">R. Krishan wrong posting, Ramesh's overcast, typewriter, Pandey's return</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:21</span>Correct the following errors in Hari's Books:<br>
+      (i) Credit sale of ₹132 to R. Krishan correctly entered in Sales Journal but posted to his account as ₹312.<br>
+      (ii) The total of the credit side of Ramesh's Account was overcasted by ₹2,000.<br>
+      (iii) Total of the Purchases Journal of ₹5,250 has been posted to Purchases Account as ₹5,205.<br>
+      (iv) Printer purchased from R. Ltd. for ₹4,000 on credit was entered in the Purchases Book.<br>
+      (v) An item of ₹2,000 entered in the Sales Return Book was posted to the debit of Pandey who had returned the goods.</div>
+    <div class="solution-label">Solution — Books of Hari · Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To R. Krishan</td><td class="amt">180</td><td class="amt">180</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods sold to R. Krishan of Rs 132 was posted as Rs 312 in his account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Ramesh A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Credit side of Ramesh's Account overcast, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">45</td><td class="amt">45</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Total of Purchases Book was posted less by 45, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Typewriter A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of type writer was wrongly posted to Purchases Account, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Pandey's A/c</td><td class="amt">4,000</td><td class="amt">4,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount wrongly debited to Pandey's Account for Goods returned by him, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q22" data-num="22">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">22</div>
+    <div class="qhead-text"><div class="qtag">Mukesh's Trial Balance</div><div class="qsnippet">Sales Book carry-forward, Anshuka's return, Riya's dishonoured bill</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:22</span>Mukesh found that the Trial Balance did not agree. He found the following errors:<br>
+      (i) In the Sales Book for the month of January, total of Page No. 3 was carried forward to Page No. 4 as ₹1,000 instead of ₹1,200 and total of Page No. 7 was carried forward to Page No. 8 as ₹5,600 instead of ₹5,000.<br>
+      (ii) Goods returned to Anshuka ₹10,000 were recorded in the Sales Book.<br>
+      (iii) Bill Receivable for ₹800 from Riya was dishonoured and posted to the debit of Allowances Account.</div>
+    <div class="solution-label">Solution — Journal Entries</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">200</td><td class="amt">200</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book balance wrongly carried forward by less amount, now rectified)</td></tr>
+      <tr><td></td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">600</td><td class="amt">600</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales book balance wrongly carried forward by more amount, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchase Returns A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned wrongly recorded in sales book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Riya A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Allowances A/c</td><td class="amt">800</td><td class="amt">800</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Bill dishonoured wrongly posted to the debit of Allowances A/c, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q23" data-num="23">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">23</div>
+    <div class="qhead-text"><div class="qtag">Wrong Book + Amount + Account</div><div class="qsnippet">Madan's sale, Mohan's purchase, customer's return, Rajan's cheque, Ramesh's repair</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:23</span>Pass the rectifying entries for the following:<br>
+      (i) Sales of goods ₹6,000 to Madan were recorded as ₹600 in the Sales Book.<br>
+      (ii) Credit purchase of goods from Mohan amounting to ₹2,000 has been wrongly passed through the Sales Book.<br>
+      (iii) Return of goods worth ₹500 by a customer was entered in 'Purchases Return Book'.<br>
+      (iv) Cheque of ₹400 received from Ranjan was dishonoured and debited to the Discount Account.<br>
+      (v) Bill for ₹820 received from Ramesh for repair of machinery was entered in the Purchases Book as ₹720.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Madan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">5,400</td><td class="amt">5,400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Goods to Madan Rs 6,000 was wrongly recorded as Rs 600)</td></tr>
+      <tr><td>(ii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohan</td><td class="amt">2,000<br>2,000</td><td class="amt">4,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases of goods from Mohan was wrongly recorded in the Sales Book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Customer A/c</td><td class="amt">500<br>500</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales Return was entered wrongly in Purchases Return Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Rajan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount Account was debited wrongly on dishonour of Rajan's Cheque, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Repair A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c<br>&nbsp;&nbsp;To Ramesh A/c</td><td class="amt">820</td><td class="amt">720<br>100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repair of Machinery Rs 820 was recorded wrongly to Purchases Book now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q24" data-num="24">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">24</div>
+    <div class="qhead-text"><div class="qtag">Wrong Book, Wrong Person, Overcast</div><div class="qsnippet">Madan, Ajay, building repairs, Rohit/Mohit mix-up, Purchases Return overcast</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:24</span>Give rectifying Journal entries for the following errors:<br>
+      (i) Sales of goods to Madan ₹6,000 were entered in the Sales Book as ₹600.<br>
+      (ii) Credit purchase of ₹1,500 from Ajay has been wrongly passed through the Sales Book.<br>
+      (iii) Repairs to building ₹300 were debited to Building Account.<br>
+      (iv) ₹2,050 paid to Rohit is posted to the debit of Mohit's Account as ₹5,020.<br>
+      (v) Purchases Return Book is overcasted by ₹400.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particular</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Madan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">5,400</td><td class="amt">5,400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Goods Rs 6,000 to Madan was wrongly recorded as Rs 600)</td></tr>
+      <tr><td>(ii)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ajay</td><td class="amt">1,500<br>1,500</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Goods from Ajay was wrongly passed through Sales Book)</td></tr>
+      <tr><td>(iii)</td><td>Repair A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Building A/c</td><td class="amt">300</td><td class="amt">300</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repair of Building Rs 300 was wrongly debited to Building Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Rohit&nbsp;&nbsp;Dr.<br>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mohit</td><td class="amt">2,050<br>2,970</td><td class="amt">5,020</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Payment to Rohit Rs 2,050 was wrongly debited Mohit's Account as Rs 5,020, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase Return Book was overcast now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q25" data-num="25">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">25</div>
+    <div class="qhead-text"><div class="qtag">Debit-Posting, Overcast, Return Book Swap</div><div class="qsnippet">Mr. A's receipt, Sales Return overcast, motor car repairs, Shyam's return</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:25</span>Give rectifying entries for the following:<br>
+      (i) ₹5,400 received from Mr. A was posted to the debit of his account.<br>
+      (ii) The total of Sales Return Book overcasted by ₹800.<br>
+      (iii) ₹2,740 paid for repairs to motor car was debited to Motor Car Account as ₹1,740.<br>
+      (iv) Returned goods to Shyam ₹1,500 were passed through Returns Inward Book.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mr.A</td><td class="amt">10,800</td><td class="amt">10,800</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Received Rs 5,400 from Mr A was wrongly debited to his Account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales Return A/c</td><td class="amt">800</td><td class="amt">800</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales Return Book was overcast, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Repair A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Motor Car A/c<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">2,740</td><td class="amt">1,740<br>1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repairs of Motor Cars Rs 2,740 was wrongly debited to Motor Car Account as Rs 1,740, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Shyam&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Return Inwards A/c<br>&nbsp;&nbsp;To Return Outwards A/c</td><td class="amt">3,000</td><td class="amt">1,500<br>1,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Outward to Shyam was wrongly recorded in the Return Inwards Book, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q26" data-num="26">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">26</div>
+    <div class="qhead-text"><div class="qtag">Discount, Wages, Bad Debt Recovered</div><div class="qsnippet">Ranjan's dishonoured cheque, wages, Rakesh's recovery, repair bill</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:26</span>Pass Journal entries rectifying the following errors:<br>
+      (i) A cheque for ₹10,000 was received from Ranjan on which ₹200 Cash Discount was allowed. The cheque was not honoured on due date and the amount of discount was credited to Discount Received Account.<br>
+      (ii) ₹2,000 paid as wages for machinery installation was debited to Wages Account.<br>
+      (iii) ₹5,000 received from Rakesh were credited to his Personal Account. The amount had been written off as bad debts earlier.<br>
+      (iv) Repair bill of machinery was recorded as ₹100 against the bill amount of ₹1,000.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Discount Received A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount Allowed A/c</td><td class="amt">200</td><td class="amt">200</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(On dishonour of Ranjan's cheque, instead of crediting Discount Allowed Account, Discount Received Account was wrongly credited, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Wages A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Wages paid for Installation of Machinery was debited wrongly to Wages Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Rakesh A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bad Debt Recovered A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash received from Rakesh was Credited wrongly to Rakesh's Account was previously written off as Bad Debt, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Repair A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">900</td><td class="amt">900</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repair bill Rs 1,000 was recorded as Rs 100, now rectified) — <i>Since error is made at time of recording so correct entry would be as above</i></td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q27" data-num="27">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">27</div>
+    <div class="qhead-text"><div class="qtag">Undertotal, Omission, Wrong Debit, Wrong Book</div><div class="qsnippet">Sales Book short, Green &amp; Co's return, Gupta &amp; Co, Gulab &amp; Co's furniture</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:27</span>Rectifying the following errors:<br>
+      (i) Sales Book has been totalled ₹1,000 short.<br>
+      (ii) Goods worth ₹1,500 returned by Green &amp; Co. have not been recorded anywhere.<br>
+      (iii) Goods purchased worth ₹2,500 have been posted to the debit of the supplier, Gupta &amp; Co.<br>
+      (iv) Furniture purchased from Gulab &amp; Co. worth ₹10,000 has been entered in Purchases Book.<br>
+      (v) Cash received from A ₹2,500 has not been posted in his account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales Book was undercast, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Green &amp; Co</td><td class="amt">1,500</td><td class="amt">1,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned by Green &amp; Co was not recorded, now recorded)</td></tr>
+      <tr><td>(iii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Gupta &amp; Co</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods purchased of Rs 2,500 from Gupta &amp; Co was wrongly debited to his account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of goods Rs 10,000 was debited wrongly to Purchases Book, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To A</td><td class="amt">2,500</td><td class="amt">2,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash received from A was not posted to his account, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q28" data-num="28">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">28</div>
+    <div class="qhead-text"><div class="qtag">Wrong Book, Personal A/c, Amount Swap</div><div class="qsnippet">David, Peter, Bimal, Krishan/Kishan mix-up, Ramesh twice-credited</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:28</span>Pass Journal entries to rectify the errors in the following cases:<br>
+      (i) A purchase of goods from David amounting to ₹150 has been wrongly passed through the Sales Book.<br>
+      (ii) A credit sale of goods of ₹120 to Peter has been wrongly passed through the Purchases Book.<br>
+      (iii) ₹200, salary paid to Cashier, Bimal, stands wrongly debited to his Personal Account.<br>
+      (iv) A credit sale of ₹4,230 to Krishan entered as purchase from Kishan ₹4,320.<br>
+      (v) Ramesh's Account was credited with ₹840 twice instead of once.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+      <tr><td>(i)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To David</td><td class="amt">150<br>150</td><td class="amt">300</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Goods from David was wrongly passed through Sales Book, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Peter&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">240</td><td class="amt">120<br>120</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of goods to Peter was wrongly passed through Purchases Book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Salaries A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bimal</td><td class="amt">200</td><td class="amt">200</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Salary paid to Bimal was passed wrongly to his account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Krishan&nbsp;&nbsp;Dr.<br>Kishan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">4,230<br>4,320</td><td class="amt">4,230<br>4,320</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales to Krishan recorded wrongly as purchases from Kishan with a wrong amount, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Ramesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">840</td><td class="amt">840</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount twice Credit to Ramesh's Account, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q29" data-num="29">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">29</div>
+    <div class="qhead-text"><div class="qtag">Causes of Disagreement + Errors</div><div class="qsnippet">Trial Balance theory + Krishna, freight, Return Inward, Ramesh, Hari</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:29</span>(i) What are the different causes that make a Trial Balance incorrect?<br>
+      (ii) Pass the rectifying Journal entries:<br>
+      (a) A credit sale of goods for ₹2,500 to Krishna has been wrongly passed through the Purchases Book.<br>
+      (b) ₹5,000 paid for freight on machinery purchased was debited to the Freight Account as ₹500.<br>
+      (c) The Returns Inward Book has been wrongly overcasted by ₹100.<br>
+      (d) An amount of ₹500 due from Ramesh which had been written off as bad debt in previous year was recovered and had been posted to the Personal Account of Ramesh.<br>
+      (e) A sum of ₹460 owed by Hari had not been included in the list of debtors.</div>
+    <div class="solution-label">Solution — Part (i)</div>
+    <ol style="font-size:0.9rem;">
+      <li>Incomplete posting of Journal Entry</li>
+      <li>Posting in the wrong side of Account</li>
+      <li>Wrong totalling of Subsidiary Books</li>
+      <li>Wrong balance of Account</li>
+      <li>Omission of total of Subsidiary book into Account</li>
+      <li>Wrong totalling of the Trial Balance</li>
+    </ol>
+    <div class="solution-label">Part (ii) — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(a)</td><td>Krishna&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">5,000</td><td class="amt">2,500<br>2,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Credit Sale of goods to Krishna was posted wrongly to Purchases Book, now rectified)</td></tr>
+      <tr><td>(b)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Freight<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">5,000</td><td class="amt">500<br>4,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Freight Rs 5,000 paid on machinery was wrongly recorded in Freight Account as Rs 500)</td></tr>
+      <tr><td>(c)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Return Inwards A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Inwards Book was overcast, now rectified)</td></tr>
+      <tr><td>(d)</td><td>Ramesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bad Debt Recovered A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Received Rs 500 which previously written off as Bad debt wrongly credited to Ramesh Account, now rectified)</td></tr>
+      <tr><td>(e)</td><td>Sundry Debtors A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Hari</td><td class="amt">460</td><td class="amt">460</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Hari which was not in the List of Sundry Debtors, now recorded)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q30" data-num="30">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">30</div>
+    <div class="qhead-text"><div class="qtag">Capital/Revenue + Personal A/c</div><div class="qsnippet">Wages for office, machinery in Purchases Book, furniture, Mehta/Malhotra, Ram/Shyam</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag no-suspense">✓ No Suspense Needed</span></div>
+    <div class="question-box"><span class="qlabel">Question:30</span>Rectify the following errors:<br>
+      (i) Wages paid for the construction of office debited to the Wages Account, ₹5,000.<br>
+      (ii) Machinery purchased for ₹35,000 was passed through the Purchases Book.<br>
+      (iii) Old furniture sold for ₹1,000, passed through the Sales Book.<br>
+      (iv) ₹2,000 paid to Mehta Bros. against acceptance were debited to Malhotra Bros. Account.<br>
+      (v) Sales of ₹204 to Ram debited to his account as ₹402 and purchases of ₹1,012 from Shyam credited to his account as ₹1,210.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Wages A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Wages paid for construction of office was debited wrongly to Wages Account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">35,000</td><td class="amt">35,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Machinery was recorded wrongly in Invoice Book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Furniture A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Old Furniture was passed wrongly to Sales Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Malhotra Bros.</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount paid against acceptance to Mehta Bros was wrongly debited to Malhotra Bros, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Shyam&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ram</td><td class="amt">198</td><td class="amt">198</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales to Ram Rs 204 was debited to his account as Rs 402 and Purchase from Shyam Rs 1,012 was Credited to his account as Rs 1,210, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q31" data-num="31">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">31</div>
+    <div class="qhead-text"><div class="qtag">Timing, Omission, Wrong Account, Discounted Bill</div><div class="qsnippet">Mohan's cash, Rahim's bad debt, Returns Inward, petty cash, discounted bill returned</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:31</span>Pass the rectification entries for the following transactions:<br>
+      (i) An amount of ₹2,000 received from Mohan on 1st April, 2019 had been entered in the Cash Book as having been received on 31st March, 2019.<br>
+      (ii) The balance in the account of Rahim ₹1,000 had been written off as bad but no other account has been debited.<br>
+      (iii) An addition in the Returns Inward Book had been cast ₹100 short.<br>
+      (iv) A cheque for ₹200 drawn for the Petty Cash Account has been posted in the account of Asif.<br>
+      (v) A discounted Bill of Exchange for ₹20,000 returned by the firm's bank had been credited to the Bank Account and debited to Bills Receivable Account. A cheque was received later from the customer for ₹20,000 and duly paid.<br>
+      (vi) Ramesh's Account was credited with ₹840 twice instead of once.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+      <tr><td>2019<br>(i)</td><td>Mohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Cash A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash received from Mohan on April 01,2017 but was wrongly passed on March 31, 2017) — <i>Note: On April 01,2017 in Cash Book Mohan's Account is debited</i></td></tr>
+      <tr><td>(ii)</td><td>Bad Debts A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Bad Debt of Rahim was not posted to Bad Debts Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Return Inwards A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Inwards Book was undercast, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Petty Cash A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Asif</td><td class="amt">200</td><td class="amt">200</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cheque Drawn for Petty Cash was wrongly debited to Asif's Account, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Customer's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bills Receivable A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(A discounted bill dishonored wrongly debited to Bills Receivable A/c, now rectified)</td></tr>
+      <tr><td>(vi)</td><td>Ramesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">840</td><td class="amt">840</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Ramesh's Account was Credited twice, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q32" data-num="32">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">32</div>
+    <div class="qhead-text"><div class="qtag">Principle + Overcast + Posting Error</div><div class="qsnippet">Old furniture, Sales Book short, proprietor's rent, Manav's return</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:32</span>Rectify the following errors:<br>
+      (i) Sale of old furniture worth ₹3,000 treated as sales of goods.<br>
+      (ii) Sales Book added ₹5,000 short.<br>
+      (iii) Rent of proprietor's residence, ₹6,500 debited to Rent Account.<br>
+      (iv) Goods worth ₹11,970 returned by Manav posted to his debit as ₹11,790.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Furniture A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of old Furniture was wrongly treated as Sales of Goods, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sales Book was undercast, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Rent A/c</td><td class="amt">6,500</td><td class="amt">6,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Rent of proprietor's residence was wrongly debited to Rent Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Manav</td><td class="amt">23,760</td><td class="amt">23,760</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned by Manav Rs 11,970 was wrongly posted to the debit of his account as Rs 11,790, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q33" data-num="33">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">33</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">M/s Jain &amp; Sons — Purchases Return, legal expense, Rajat's sale</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:33</span>There was a difference in the Trial Balance of M/s. Jain &amp; Sons, prepared for the year ended 31st March, 2009. The accountant put the difference in Suspense Account. The following errors were found:<br>
+      (i) Purchases Return Book total ₹400 has not been posted to Ledger Account.<br>
+      (ii) ₹5,100 spent on legal expense for the newly acquired Building was debited to the Building Account as ₹1,500.<br>
+      (iii) A sale of ₹6,540 to Rajat has been credited to his account.<br>
+      Rectify the errors and show the Suspense Account with Nil closing balance.</div>
+    <div class="solution-label">Solution — Books of M/s Jain &amp; Sons · Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases Return A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases Return Book total was not posted to Purchase Return Account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">3,600</td><td class="amt">3,600</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Legal expenses Rs 5,100 on acquiring a Building was recorded as Rs 1,500 in Building Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Rajat&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">13,080</td><td class="amt">13,080</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Rajat Rs 6,540 was posted wrongly to Credit of his account, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(i) Purchases Return</td><td class="amt">400</td></tr>
+        <tr><td>Difference in the Trial Balance</td><td class="amt">16,280</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">16,680</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>(ii) Building</td><td class="amt">3,600</td></tr>
+        <tr><td>(iii) Rajat</td><td class="amt">13,080</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">16,680</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q34" data-num="34">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">34</div>
+    <div class="qhead-text"><div class="qtag">Overcast, Wrong Amount, Wrong Book, Omission</div><div class="qsnippet">Purchases overcast, machinery installation, Radhey Shyam's return, drawings</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:34</span>Give the Journal entries to rectify the following errors:<br>
+      (i) Purchases Book was overcast by ₹1,000.<br>
+      (ii) Installation charges on new machinery purchased ₹500 were debited to Sundry Expenses Account as ₹50.<br>
+      (iii) Radhey Shyam returned goods worth ₹500 which was entered in the Purchases Return Book.<br>
+      (iv) Goods taken by the proprietor for ₹5,000 have not been entered in the books at all.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases Book was overcast, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sundry Expense A/c<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">500</td><td class="amt">50<br>450</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Installation charges of Machinery Rs 1,500 was wrongly debited as Rs 50 in Sundry Expenses Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Radhey Shyam</td><td class="amt">500<br>500</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned by Radhey Shyam was wrongly entered in Purchases Return Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods taken by proprietor was not recorded, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q35" data-num="35">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">35</div>
+    <div class="qhead-text"><div class="qtag">Carry Forward, Wrong Debit, Overcast</div><div class="qsnippet">Sales Book page total, Yatin's receipt, Purchases Return overcast, furniture</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:35</span>Rectify the following errors:<br>
+      (i) The total of one page of Sales Book was carried forward as ₹371 instead of ₹317.<br>
+      (ii) ₹540 received from Yatin was posted to the debit of his Account.<br>
+      (iii) Purchases Returns Book was overcast by ₹300.<br>
+      (iv) An item of ₹1,062 entered in Sales Return Book had been posted to the debit of customer who returned the goods.<br>
+      (v) ₹1,500 paid for furniture purchased had been charged to ordinary Purchase Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">54</td><td class="amt">54</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(One page of Sale Book Rs 317 was wrongly forwarded as Rs 371, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Yatin</td><td class="amt">1,080</td><td class="amt">1,080</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Received Rs 540 from Yatin posted wrongly to the debit side of his account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">300</td><td class="amt">300</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases Return Book was overcast, by now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Customer</td><td class="amt">2,124</td><td class="amt">2,124</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods return by Customer Rs 1,062 was posted wrongly to the debit of his account, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">1,500</td><td class="amt">1,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount paid for purchase of Furniture wrongly debited to Purchases Account, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q36" data-num="36">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">36</div>
+    <div class="qhead-text"><div class="qtag">Principle, Wrong Book, Posting, Depreciation</div><div class="qsnippet">Old furniture, Raman's machinery, Rajat/Bhagat mix-up, depreciation posting</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:36</span>Rectify the following errors by passing Journal entries:<br>
+      (i) Old furniture sold for ₹500 has been credited to Sales Account.<br>
+      (ii) Machinery purchased on credit from Raman for ₹2,000 recorded through Purchases Book as ₹16,000.<br>
+      (iii) Cash received from Rajat ₹5,000 was posted to the debit of Bhagat as ₹6,000.<br>
+      (iv) Depreciation provided on machinery ₹3,000 was posted to Machinery Account as ₹300.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Furniture A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of old Furniture was wrongly treated as Sales of Goods, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>Raman&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">2,000<br>14,000</td><td class="amt">16,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Machinery purchased on credit of Rs 2,000 was wrongly recorded in the purchase book as Rs 16,000, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bhagat<br>&nbsp;&nbsp;To Rajat</td><td class="amt">11,000</td><td class="amt">6,000<br>5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash received from Rajat Rs 5,000 was wrongly posted to the debit of Bhagat as Rs 6,000, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Machinery A/c</td><td class="amt">2,700</td><td class="amt">2,700</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Depreciation provided on Machinery Rs 3,000 was posted to Machinery A/c as Rs 300, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q37" data-num="37">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">37</div>
+    <div class="qhead-text"><div class="qtag">Wrong Debit, Undercast, Wrong A/c Type, Return Book</div><div class="qsnippet">Ganga's receipt, Mr. John's balance, Brown's bill, Mridul's return</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:37</span>Rectify the following errors by passing Journal entries:<br>
+      (i) A sum of ₹470 received from Ganga was posted to her debit as ₹740.<br>
+      (ii) A debit balance of ₹550 in the personal account of Mr. John was undercast.<br>
+      (iii) Bills Receivable from Brown for ₹3,000 posted to the credit of Bills Payable Account and credited to Brown's Account.<br>
+      (iv) Goods returned by Mridul ₹225 have been entered in the Returns Outward Book.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c (740+470)&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ganga's A/c</td><td class="amt">1,210</td><td class="amt">1,210</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Rs 470 received from Ganga was posted to her debit as Rs 740, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Mr. John's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">550</td><td class="amt">550</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Debit balance of Mr. John's personal account was undercasted by Rs 550, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Bills Receivable A/c&nbsp;&nbsp;Dr.<br>Bills Payable A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">3,000<br>3,000</td><td class="amt">6,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Bills Receivable from Brown, posted to credit of bills payable and credited to Brown's Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>Purchases Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mridul's A/c</td><td class="amt">225<br>225</td><td class="amt">450</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned by Mridul was entered in the Return Outward book, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q38" data-num="38">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">38</div>
+    <div class="qhead-text"><div class="qtag">Mahesh's Trial Balance</div><div class="qsnippet">Sales Book carry-forward errors, Ram's return, Noor's dishonoured bill</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:38</span>While trying to close his books for the year ended 31st March, 2014, Mahesh found that the Trial Balance did not agree. He traced the following errors:<br>
+      (i) In the Sales Book for the month of January total of Page No. 2 was carried forward to Page No. 3 as ₹1,000 instead of ₹1,200 and total of Page No. 6 was carried forward to Page No. 7 as ₹5,600 instead of ₹5,000.<br>
+      (ii) Goods returned to Ram ₹1,000 were recorded in the Sales Book.<br>
+      (iii) Bills Receivable for ₹1,600 from Noor was dishonoured and posted to debit of Allowances Account.<br>
+      Rectify the above errors.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale book was undercasted by Rs 200 and overcastted by Rs 600, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases Return A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods Returned to Ram recorded in Sales Book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Noor's A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Allowances A/c</td><td class="amt">1,600</td><td class="amt">1,600</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Bills Receivable from Noor dishonoured and recorded to allowances account, now rectified)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q39" data-num="39">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">39</div>
+    <div class="qhead-text"><div class="qtag">Seven Mixed Errors</div><div class="qsnippet">Repairs capitalised, wages, cheque mix-up, samples, machinery, discount columns</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:39</span>Pass the rectification entries for the following transactions:<br>
+      (i) Repairs to plant amounting to ₹2,000 had been charged to Plant and Machinery Account.<br>
+      (ii) Wages paid to the firm's workmen for making certain additions to machinery amounting to ₹1,340 were debited to Wages Account.<br>
+      (iii) A cheque for ₹7,500 received from Sandesh was credited to the account of Ramesh.<br>
+      (iv) Goods to the value of ₹7,000 returned by Prateek were included in closing stock, but no entry was made in the books.<br>
+      (v) Goods costing ₹5,000 were purchased for various members of the staff and the cost was included in 'Purchases'. A similar amount was deducted from the salaries of the staff members concerned and the net payments to them debited to Salaries Account.<br>
+      (vi) Credit purchase of old machinery from Sohan for ₹1,70,000 was entered in the Purchase Book as purchase from Mohan for ₹7,10,000. ₹30,000 paid as repairing charges on the reconditioning of a newly purchased second hand machinery were debited to General Expenses Account.<br>
+      (vii) Debit and Credit totals of discount columns in the Cash Book which come to ₹400 and ₹370 respectively have not been posted to Discount Accounts.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+      <tr><td>(i)</td><td>Repairs A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Plant and Machinery A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repairs wrongly capitalised, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Wages A/c</td><td class="amt">1,340</td><td class="amt">1,340</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Wages paid to Workmen for certain addition to Machinery wrongly debited to Wages Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Ramesh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sandesh</td><td class="amt">7,500</td><td class="amt">7,500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cheque of Rs 7,500 received from Sandesh was wrongly Credited to Ramesh's Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Prateek</td><td class="amt">7,000</td><td class="amt">7,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned by Prateek had not recorded in the book, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Salaries A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">5,000</td><td class="amt">5,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods purchased for Staff was wrongly debited to Purchases Account, now rectified)</td></tr>
+      <tr><td>(vi)</td><td>Mohan&nbsp;&nbsp;Dr.<br>Machinery A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sohan<br>&nbsp;&nbsp;To Purchases A/c<br>&nbsp;&nbsp;To General Expenses A/c</td><td class="amt">7,10,000<br>2,00,000</td><td class="amt">1,70,000<br>7,10,000<br>30,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Credit purchase of an old machinery from Sohan and repairs charges were wrongly recoreded as purchase from Mohan and General Expenses, now rectified)</td></tr>
+      <tr><td>(vii) (a)</td><td>Discount Allowed A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount allowed omitted to be recorded, now recorded)</td></tr>
+      <tr><td>(vii) (b)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">370</td><td class="amt">370</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount received omitted to be recorded, now recorded)</td></tr>
+    </table>
+  </div></div>
+</article>
+
+<article class="qcard" id="q40" data-num="40">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">40</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">₹417 credit difference — Sohan, furniture, Gian, Gian's return</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:40</span>A Trial Balance disclosed a difference of ₹417 placed on the credit side of the Suspense Account. Later on the following errors were located:<br>
+      (i) Goods worth ₹200 purchased from Sohan had been posted to his account as ₹250.<br>
+      (ii) A purchase of furniture for ₹500 was recorded in the Purchases Book.<br>
+      (iii) Instead of crediting Gian's Account with ₹512, it was debited with ₹215.<br>
+      (iv) Goods worth ₹130 returned by Gian were entered in the Sales Book and posted therefrom to the credit of Gian's Personal Account.<br>
+      Pass the rectifying entries and prepare a Suspense Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Sohan&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">50</td><td class="amt">50</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods Purchased from Sohan Rs 200 was posted to his account as Rs 250, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Furniture was entered in Purchases Book, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Gian</td><td class="amt">727</td><td class="amt">727</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Gian's Account was debited by Rs 215 Instead of Crediting Rs 512, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Sales Return A/c&nbsp;&nbsp;Dr.<br>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense</td><td class="amt">130<br>130</td><td class="amt">260</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale returned by Gian was wrongly entered in the Sales Book, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(iii) Gian</td><td class="amt">727</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">727</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>Balance b/d</td><td class="amt">417</td></tr>
+        <tr><td>(i) Sohan</td><td class="amt">50</td></tr>
+        <tr><td>(iv) Sales Return</td><td class="amt">130</td></tr>
+        <tr><td>Sales</td><td class="amt">130</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">727</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q41" data-num="41">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">41</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">₹720 credit difference — Commission, Personal A/c, Surinder, D's godown</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:41</span>There was a difference of ₹720 in the Trial Balance which has been transferred to the credit side of the Suspense Account. Pass the rectifying entries and prepare a Suspense Account to rectify the following errors:<br>
+      (i) An amount of ₹375 now posted on the debit side of the Commission Account instead of ₹275.<br>
+      (ii) Credit amount of ₹260 posted to the debit of the Personal Account as ₹360.<br>
+      (iii) Goods sold to Surinder recorded in Purchases Book ₹300.<br>
+      (iv) D's bill for erection of godown at a cost of ₹1,200 has been charged to the Repairs Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Commission A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Commission Rs 275 was debited as Rs 375, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Personal Account</td><td class="amt">620</td><td class="amt">620</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Credit amount Rs 260 was wrongly posted to the debit Rs 360 in Personal Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Surinder&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">600</td><td class="amt">300<br>300</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods sold to Surinder was wrongly recorded in the Purchases Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Building A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Repair A/c</td><td class="amt">1,200</td><td class="amt">1,200</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cost of erection of Godown Rs 1,200 was debited to Repair Account, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(i) Commission</td><td class="amt">100</td></tr>
+        <tr><td>(ii) Personal Account</td><td class="amt">620</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">720</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>Balance b/d</td><td class="amt">720</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">720</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q42" data-num="42">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">42</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">Ram Gopal — Mayank, purchases return, discount, motor car, Naman/Manan</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:42</span>There was an error in the Trial Balance of Ram Gopal on 31st March, 2018 and the difference in books was carried to the Suspense Account. On going through the books, you find that:<br>
+      (i) ₹540 received from Mayank was posted to the debit side of his account.<br>
+      (ii) ₹100 being purchases return was posted to the debit of the Purchases Account.<br>
+      (iii) Discount of ₹300 received was posted to the debit of the Discount Account.<br>
+      (iv) ₹374 paid for motor car repairs was debited to the Motor Car Account as ₹174.<br>
+      (v) ₹400 paid to Naman was debited to the account of Manan.<br>
+      Pass the Journal entries to rectify the above errors and state what amount was carried to the Suspense Account.</div>
+    <div class="solution-label">Solution — Books of Ram Gopal · Journal</div>
+    <table class="ledger">
+      <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+      <tr><td>2018<br>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Mayank</td><td class="amt">1,080</td><td class="amt">1,080</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash received from Mayank was wrongly posted to the debit of his account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c<br>&nbsp;&nbsp;To Purchases Return A/c</td><td class="amt">200</td><td class="amt">100<br>100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases Return Rs 100 was wrongly debited to Purchases Account , now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount A/c</td><td class="amt">600</td><td class="amt">600</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount Received Rs 300 was wrongly posted to the debit of Discount Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Motor Car Repair A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Motor Car A/c<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">374</td><td class="amt">174<br>200</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Paid Rs 374 for Motor Car Repair was wrongly debited to Motor Car Account as Rs 174, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Naman A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Manan A/c</td><td class="amt">400</td><td class="amt">400</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Amount paid to Naman was wrongly debited to Manan, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(i) Mayank</td><td class="amt">1,080</td></tr>
+        <tr><td>(ii) Purchases / Purchases Return</td><td class="amt">200</td></tr>
+        <tr><td>(iii) Discount</td><td class="amt">600</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">1,880</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>(iv) Motor Car Repair</td><td class="amt">200</td></tr>
+        <tr><td>Balance c/d</td><td class="amt">1,680</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">1,880</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+
+<article class="qcard" id="q43" data-num="43">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">43</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">₹261 excess debit — credit item, depreciation, furniture, discount, sales, returns</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:43</span>Trial Balance of a bookkeeper shows an excess of debits over credits by ₹261. This difference is placed in a Suspense Account to facilitate books closure. Later on the following errors were discovered:<br>
+      (i) A credit item of ₹349 has been debited to a Personal Account as ₹439.<br>
+      (ii) A sum of ₹625 written off from fixtures as depreciation has not been posted to the Depreciation Account.<br>
+      (iii) ₹9,000 paid for furniture bought have been charged to the Purchases Account.<br>
+      (iv) A discount allowed to a customer has been credited to him as ₹145 in place of ₹154.<br>
+      (v) A sale of ₹594 was posted as ₹495 in the Sales Account.<br>
+      (vi) The total of Returns Inward Book has been added ₹10 short.<br>
+      Pass the Journal entries to correct these errors and prepare the Suspense Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Personal A/c</td><td class="amt">788</td><td class="amt">788</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Credit item was wrongly debited to a Personal Account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Depreciation A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">625</td><td class="amt">625</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Depreciation on Fixtures was not posted to Depreciation Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">9,000</td><td class="amt">9,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Furniture was wrongly charged to Purchases Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Customer</td><td class="amt">9</td><td class="amt">9</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount allowed to Customer Rs 154 was Credited wrongly as Rs 145, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">99</td><td class="amt">99</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Rs 594 was wrongly posted as Rs 495, now rectified)</td></tr>
+      <tr><td>(vi)</td><td>Return Inwards A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">10</td><td class="amt">10</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Inwards Book was undercasted, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(i) Personal</td><td class="amt">788</td></tr>
+        <tr><td>(iv) Customer</td><td class="amt">9</td></tr>
+        <tr><td>(v) Sales</td><td class="amt">99</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">896</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>Balance b/d</td><td class="amt">261</td></tr>
+        <tr><td>(ii) Depreciation</td><td class="amt">625</td></tr>
+        <tr><td>(vi) Return Inwards</td><td class="amt">10</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">896</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q44" data-num="44">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">44</div>
+    <div class="qhead-text"><div class="qtag">Suspense Doesn't Fully Close</div><div class="qsnippet">₹283 excess debit — Amar Nath/Singh, Brijesh's discount, drawings, Jhaveri Bros</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:44</span>The accountant of a firm finds that the Trial Balance as on 31st March, 2019 is out by an excess debit of ₹283. He placed the amount in the Suspense Account. In the first week of April, 2019, he discovered the following errors. Pass the Journal entries necessary to rectify these errors and show the Suspense Account as it would appear at the end of the week. Have you any comment to make?<br>
+      (i) Cash paid to Amar Nath, ₹75, was posted to the credit of Amar Singh's Account as ₹57.<br>
+      (ii) Discount allowed by Brijesh of ₹5 was not entered in the Cash Book but Brijesh stands debited correctly.<br>
+      (iii) No entry was made for goods worth ₹40 taken away by proprietor for personal use.<br>
+      (iv) ₹500 received from Jhaveri Bros. for interest on loan advanced to them were recorded in the Cash Book. But the entry was not posted in the Ledger.<br>
+      (v) The total of Returns Outward Book was short by ₹100.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+      <tr><td>2019<br>(i)</td><td>Amar Nath&nbsp;&nbsp;Dr.<br>Amar Singh&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">75<br>57</td><td class="amt">132</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash paid to Amar Nath Rs 75 was wrongly Credited to Amar Singh as Rs 57, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Discount Received A/c</td><td class="amt">5</td><td class="amt">5</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount Received by Brijesh was omitted to be recorded in Discount column but was recorded in Brijesh's Account, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">40</td><td class="amt">40</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods Drawn by proprietor was not recorded, now recorded)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Interest on Advance A/c</td><td class="amt">500</td><td class="amt">500</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Interest on Advances received from Jhaveri Bros was not posted into Ledger, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Return Outwards A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Outwards Book undercasted, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(ii) Discount Received</td><td class="amt">5</td></tr>
+        <tr><td>(iv) Interest on Advances</td><td class="amt">500</td></tr>
+        <tr><td>(v) Return Outwards</td><td class="amt">100</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">605</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>Balanced b/d</td><td class="amt">283</td></tr>
+        <tr><td>(i) Amar Nath</td><td class="amt">75</td></tr>
+        <tr><td>(i) Amar Singh</td><td class="amt">57</td></tr>
+        <tr><td>Balance c/d</td><td class="amt">190</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">605</td></tr>
+      </table></div>
+    </div>
+    <div class="wn-box">There is some error in the book of account after rectifying the traced error, Suspense Account is not closed.</div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q45" data-num="45">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">45</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">Bheem — Return Inward, office table, wages, Creditors, Nakul, Prasad</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:45</span>Rectify the following errors found in the books of Bheem. Trial Balance had ₹930 excess credit. The difference has been posted to a Suspense Account:<br>
+      (i) The total of Returns Inward Book has been cast ₹1,000 short.<br>
+      (ii) The purchase of an office table costing ₹3,000 has been passed through the Purchases Book.<br>
+      (iii) ₹3,750 paid for wages to workmen for making showcases had been charged to the Wages Account.<br>
+      (iv) A purchase of ₹670 had been posted to the Creditors' Account as ₹600.<br>
+      (v) A cheque for ₹2,000 received from Nakul had been dishonoured and was passed to the debit of the Allowances Account.<br>
+      (vi) An amount of ₹15,720 due from Prasad written off as bad in a previous year, was recovered and credited to the Personal Account of Prasad.<br>
+      After rectification reflect the transactions in the Suspense Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Return Inwards A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Inwards was undercast, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">3,000</td><td class="amt">3,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Office Furniture was wrongly entered in Purchases Book , now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Wages A/c</td><td class="amt">3,750</td><td class="amt">3,750</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Wages paid for making showcases was wrongly charged to Wages Account, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Creditors</td><td class="amt">70</td><td class="amt">70</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchase of Rs 670 was Credited to Creditors as Rs 600, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Nakul&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Allowances A/c</td><td class="amt">2,000</td><td class="amt">2,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Nakul's Cheque was dishonoured and was wrongly debited to Allowances Account, now rectified)</td></tr>
+      <tr><td>(vi)</td><td>Prasad&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bad Debts Recovered A/c</td><td class="amt">15,720</td><td class="amt">15,720</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Bad debts recovered from Prasad wrongly credited to his personal account, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>Balance b/d</td><td class="amt">930</td></tr>
+        <tr><td>(iv) Creditors</td><td class="amt">70</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">1,000</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>(i) Return Inwards</td><td class="amt">1,000</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">1,000</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q46" data-num="46">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">46</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">M/s Gupta &amp; Sons — ₹52,200 difference, Vasudev, Returns Outward/Inward</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:46</span>The Trial Balance of M/s. Gupta &amp; Sons shows a difference of ₹52,200. To prepare the Final Account on 31st March, 2019, this difference is placed in a Suspense Account. Afterwards the following errors were disclosed. Pass the necessary entries to rectify them and show the Suspense Account.<br>
+      (i) Purchases Book total had been undercasted by ₹20,000.<br>
+      (ii) A cheque received from Vasudev for ₹7,800 had been debited in the Cash Book but not posted in Vasudev's Personal Account.<br>
+      (iii) Returns Outward Book had been overcasted by ₹10,000.<br>
+      (iv) Goods returned by Yash Pal worth ₹15,000 have been entered in Returns Outward Book. However, Yash Pal's Account is correctly posted.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th>Date</th><th>Particulars</th><th class="amt">Debit (₹)</th><th class="amt">Credit (₹)</th></tr>
+      <tr><td>2019<br>(i)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">20,000</td><td class="amt">20,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases was undercast, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Vasudev</td><td class="amt">7,800</td><td class="amt">7,800</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cheque received from Vasudev was not recorded in his account, now recorded)</td></tr>
+      <tr><td>(iii)</td><td>Return Outwards A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">10,000</td><td class="amt">10,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Return Outwards Book was overcast, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Return Inward A/c&nbsp;&nbsp;Dr.<br>Return Outwards A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">15,000<br>15,000</td><td class="amt">30,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods returned by Yash Pal was wrongly entered in the Return Outwards Book but Correctly posted to his account, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>Difference in Trial Balance</td><td class="amt">52,200</td></tr>
+        <tr><td>(ii) Vasu Dev</td><td class="amt">7,800</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">60,000</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>(i) Suspense</td><td class="amt">20,000</td></tr>
+        <tr><td>(iii) Return Outwards</td><td class="amt">10,000</td></tr>
+        <tr><td>(iv) Return Inwards</td><td class="amt">15,000</td></tr>
+        <tr><td>Return Outwards</td><td class="amt">15,000</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">60,000</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q47" data-num="47">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">47</div>
+    <div class="qhead-text"><div class="qtag">Suspense Account Shown</div><div class="qsnippet">S. Sen — Basu's invoice, Ram Lal's debit, Commission, Sales, building repairs</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:47</span>The Trial Balance of S. Sen did not agree and the difference in books was carried to a Suspense Account. Pass the entries required to rectify the following errors which accounted for the difference. Also, prepare the Suspense Account:<br>
+      (i) A Sales Invoice for ₹1,000 for goods sold on credit to B. Basu was entered in the Purchases Book but in the Ledger, the amount was correctly debited to the account of B. Basu.<br>
+      (ii) Goods bought on credit from Ram Lal for ₹1,500 were wrongly debited to his account as ₹5,100<br>
+      (iii) An amount of ₹275 was posted as ₹325 to the debit side of the Commission Account.<br>
+      (iv) The Sales Book for the month of April was undercasted by ₹100.<br>
+      (v) ₹460 paid for building repairs was debited to the Building Account as ₹640.</div>
+    <div class="solution-label">Solution — Books of S. Sen · Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">2,000</td><td class="amt">1,000<br>1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods sold to B. Basu was entered in Purchases book and debited to his account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ram Lal</td><td class="amt">6,600</td><td class="amt">6,600</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Bought goods from Ram Lal Rs 1,500 was wrongly debited to his account as Rs 5,100, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Commission A/c</td><td class="amt">50</td><td class="amt">50</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Commission Rs 275 was wrongly debited a Rs 325, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c</td><td class="amt">100</td><td class="amt">100</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale Book was undercast, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Building Repair A/c&nbsp;&nbsp;Dr.<br>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Building A/c</td><td class="amt">460<br>180</td><td class="amt">640</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Building Repair Rs 460 was debited to Building Account as 640, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>(i) Sales / Purchases</td><td class="amt">1,000 / 1,000</td></tr>
+        <tr><td>(ii) Ram Lal</td><td class="amt">6,600</td></tr>
+        <tr><td>(iii) Commission</td><td class="amt">50</td></tr>
+        <tr><td>(iv) Sales</td><td class="amt">100</td></tr>
+        <tr><td>(v) Building</td><td class="amt">180</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">8,930</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>Balance c/d</td><td class="amt">8,930</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">8,930</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+<article class="qcard" id="q48" data-num="48">
+  <div class="qhead" onclick="toggleCard(this)">
+    <div class="qnum">48</div>
+    <div class="qhead-text"><div class="qtag">Ten Mixed Errors — Suspense Account Shown</div><div class="qsnippet">Ramesh, Purchases short, Kohli, Bose, Maitra, furniture, Sales carry-forward, drawings, Kassim</div></div>
+    <div class="qtoggle">+</div>
+  </div>
+  <div class="qbody"><div class="qbody-inner">
+    <div class="tagstrip"><span class="tag suspense">⚠ Suspense A/c Used</span></div>
+    <div class="question-box"><span class="qlabel">Question:48</span>The bookkeeper of a firm found that his Trial Balance was out (excess credit) by ₹742. He placed the amount in a Suspense Account and subsequently found the following errors:<br>
+      (i) A discount of ₹178 was allowed to Ramesh but in his account only ₹100 is recorded.<br>
+      (ii) The total of the Purchases Book was ₹1,000 short.<br>
+      (iii) A sale of ₹375 to Kohli was entered in the Sales Book as ₹735.<br>
+      (iv) From the Purchases Book, Bose's Account was debited with ₹175.<br>
+      (v) Cash ₹250 received from Maitra against debt previously written off was credited to his account.<br>
+      (vi) Purchase of office furniture worth ₹750 on credit from Delhi Furnitures was entered in the Purchases Book.<br>
+      (vii) While carrying forward the total of the Sales Book from one page to another the amount of ₹11,358 was written as ₹11,538.<br>
+      (viii) The proprietor took goods of the value of ₹150 for his domestic consumption. No record of it has been made in the books.<br>
+      (ix) Repairs bill of ₹410 for the proprietor's personal car, has been paid by the firm and debited to the Repairs Account.<br>
+      (x) A sale to Kassim of ₹700 has been entered in the Purchases Book.<br>
+      Rectify the errors by means of suitable Journal entries and show the Suspense Account.</div>
+    <div class="solution-label">Solution — Journal</div>
+    <table class="ledger">
+      <tr><th></th><th>Particulars</th><th class="amt">Debit (Rs)</th><th class="amt">Credit (Rs)</th></tr>
+      <tr><td>(i)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Ramesh</td><td class="amt">78</td><td class="amt">78</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Discount allowed Rs 178 to Ramesh was wrongly entered as Rs 100 in his account, now rectified)</td></tr>
+      <tr><td>(ii)</td><td>Purchases A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">1,000</td><td class="amt">1,000</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases Book was undercast, now rectified)</td></tr>
+      <tr><td>(iii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Kohli</td><td class="amt">360</td><td class="amt">360</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale of Goods Rs 375 was wrongly entered as Rs 735 in Sales Book, now rectified)</td></tr>
+      <tr><td>(iv)</td><td>Suspense A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bose</td><td class="amt">350</td><td class="amt">350</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases from Bose Rs 175 was debited to his account, now rectified)</td></tr>
+      <tr><td>(v)</td><td>Maitra&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Bad Debt Recovered A/c</td><td class="amt">250</td><td class="amt">250</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Cash Received from Maitra which had been previously written off as bad debt, was Credited to account, now rectified)</td></tr>
+      <tr><td>(vi)</td><td>Furniture A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">750</td><td class="amt">750</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Purchases of Office furniture was wrongly entered in the Purchases Book, now rectified)</td></tr>
+      <tr><td>(vii)</td><td>Sales A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Suspense A/c</td><td class="amt">180</td><td class="amt">180</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Total of Sales Book carry forward by excess amount, now rectified)</td></tr>
+      <tr><td>(viii)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">150</td><td class="amt">150</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Goods drawn by proprietor was not recorded, now rectified)</td></tr>
+      <tr><td>(ix)</td><td>Drawings A/c&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Repair A/c</td><td class="amt">410</td><td class="amt">410</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Repair of proprietor's personal Car was wrongly debited to Repairs Account, now rectified)</td></tr>
+      <tr><td>(x)</td><td>Kassim&nbsp;&nbsp;Dr.<br>&nbsp;&nbsp;To Sales A/c<br>&nbsp;&nbsp;To Purchases A/c</td><td class="amt">1,400</td><td class="amt">700<br>700</td></tr>
+      <tr class="narration"><td></td><td colspan="3">(Sale to Kassim was wrongly entered in the Purchases Book, now rectified)</td></tr>
+    </table>
+    <div class="tacct-wrap">
+      <div class="tacct-title">Suspense Account</div>
+      <div class="tacct-side dr"><div class="side-label">Dr.</div><table>
+        <tr><td>Balance b/d</td><td class="amt">742</td></tr>
+        <tr><td>(i) Ramesh</td><td class="amt">78</td></tr>
+        <tr><td>(iv) Bose</td><td class="amt">350</td></tr>
+        <tr><td>Balance c/d</td><td class="amt">10</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">1,180</td></tr>
+      </table></div>
+      <div class="tacct-side cr"><div class="side-label">Cr.</div><table>
+        <tr><td>(ii) Purchases</td><td class="amt">1,000</td></tr>
+        <tr><td>(vii) Sales</td><td class="amt">180</td></tr>
+        <tr class="total"><td>Total</td><td class="amt">1,180</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</article>
+
+</main>
+
+<footer>
+  Chapter 13 · Rectification of Errors — content sourced verbatim from StudyGuide360 worksheet. Built as a correction ledger for exam-day recall.
+</footer>
+
+<a href="#top" class="back-top" id="backTop">↑</a>
+
+<script>
+function buildIndexAndScroll(){
+  const cards = document.querySelectorAll('.qcard');
+  const grid = document.getElementById('indexGrid');
+  cards.forEach(c=>{
+    const n = c.getAttribute('data-num');
+    const a = document.createElement('a');
+    a.href = '#q'+n;
+    a.textContent = n;
+    grid.appendChild(a);
+  });
+}
+function toggleCard(el){
+  const card = el.closest('.qcard');
+  const body = card.querySelector('.qbody');
+  const isOpen = card.classList.contains('open');
+  if(isOpen){
+    card.classList.remove('open');
+    body.style.maxHeight = null;
+  } else {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+window.addEventListener('scroll', ()=>{
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 500);
+});
+document.addEventListener('DOMContentLoaded', buildIndexAndScroll);
+</script>
+</body>
+</html>

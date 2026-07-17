@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 11 — Depreciation | Ledger Lab</title>
+<style>
+:root{
+  --red:#B3282D;
+  --red-dark:#7A1B1F;
+  --blue:#0B3D66;
+  --blue-light:#E8F1F8;
+  --gold:#C99A2E;
+  --cream:#FBF6EC;
+  --ink:#20262B;
+  --slm:#1E7A4C;
+  --slm-bg:#E7F5EC;
+  --wdv:#B15C00;
+  --wdv-bg:#FCEEDD;
+  --card:#FFFFFF;
+  --line:#E4DCC8;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --cream:#181512;
+  --ink:#EFE7D8;
+  --card:#231F1B;
+  --line:#3A342B;
+  --blue-light:#1B2A38;
+  --slm-bg:#12291D;
+  --wdv-bg:#2E2013;
+}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Segoe UI', 'Noto Sans', Arial, sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  transition:background .3s, color .3s;
+  padding-bottom:70px;
+}
+/* ===== HEADER / LEDGER SPINE ===== */
+header.hero{
+  position:relative;
+  background:linear-gradient(135deg, var(--blue) 0%, var(--red-dark) 100%);
+  color:#fff;
+  padding:34px 18px 26px;
+  overflow:hidden;
+}
+header.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 48px);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gold); font-weight:700; margin-bottom:6px;
+}
+.hero h1{
+  margin:0 0 6px; font-size:1.55rem; line-height:1.25;
+  font-weight:800; letter-spacing:.01em;
+}
+.hero p.sub{margin:0; font-size:.88rem; opacity:.9; max-width:46ch;}
+.ledger-strip{
+  display:flex; gap:10px; margin-top:16px; font-size:.72rem;
+  flex-wrap:wrap;
+}
+.ledger-strip span{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:20px; padding:4px 10px;
+  display:flex; align-items:center; gap:5px;
+}
+
+/* ===== TOOLBAR ===== */
+.toolbar{
+  position:sticky; top:0; z-index:50;
+  background:var(--card);
+  border-bottom:1px solid var(--line);
+  padding:10px 14px;
+  display:flex; gap:8px; align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.toolbar input{
+  flex:1; padding:9px 12px; border-radius:20px;
+  border:1px solid var(--line); background:var(--cream); color:var(--ink);
+  font-size:.85rem;
+}
+.icon-btn{
+  border:1px solid var(--line); background:var(--cream); color:var(--ink);
+  border-radius:20px; padding:8px 12px; font-size:.85rem; cursor:pointer;
+  white-space:nowrap;
+}
+.icon-btn:active{transform:scale(.96);}
+
+/* ===== LEGEND ===== */
+.legend{
+  display:flex; gap:10px; padding:14px; flex-wrap:wrap;
+}
+.legend .chip{
+  flex:1; min-width:140px;
+  border-radius:12px; padding:10px 12px;
+  font-size:.78rem; font-weight:600;
+  display:flex; align-items:center; gap:8px;
+  border:1px solid var(--line);
+}
+.chip.slm{background:var(--slm-bg); color:var(--slm);}
+.chip.wdv{background:var(--wdv-bg); color:var(--wdv);}
+.chip.both{background:var(--blue-light); color:var(--blue);}
+
+/* ===== QUICK NAV ===== */
+.quicknav{
+  display:flex; gap:6px; overflow-x:auto; padding:4px 14px 14px;
+  -webkit-overflow-scrolling:touch;
+}
+.quicknav a{
+  flex:0 0 auto;
+  text-decoration:none; font-size:.75rem; font-weight:700;
+  color:var(--blue); background:var(--card); border:1px solid var(--line);
+  border-radius:10px; padding:6px 10px;
+}
+body.dark .quicknav a{color:var(--gold);}
+
+/* ===== CARDS ===== */
+main{padding:0 12px; max-width:900px; margin:0 auto;}
+.qcard{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+  overflow:hidden;
+  scroll-margin-top:64px;
+}
+.qhead{
+  display:flex; align-items:center; gap:10px;
+  padding:14px 14px; cursor:pointer;
+  border-left:6px solid var(--blue);
+}
+.qhead.slm{border-left-color:var(--slm);}
+.qhead.wdv{border-left-color:var(--wdv);}
+.qnum{
+  font-weight:800; font-size:1rem; color:#fff;
+  background:var(--blue); border-radius:50%;
+  width:34px; height:34px; flex:0 0 34px;
+  display:flex; align-items:center; justify-content:center;
+}
+.qhead.slm .qnum{background:var(--slm);}
+.qhead.wdv .qnum{background:var(--wdv);}
+.qhead .qtitle{flex:1; font-size:.86rem; font-weight:700; line-height:1.3;}
+.qhead .badge{
+  font-size:.65rem; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; padding:3px 8px; border-radius:8px;
+  white-space:nowrap;
+}
+.badge.slm{background:var(--slm-bg); color:var(--slm);}
+.badge.wdv{background:var(--wdv-bg); color:var(--wdv);}
+.badge.both{background:var(--blue-light); color:var(--blue);}
+.caret{transition:transform .25s; font-size:.9rem; color:var(--gold);}
+.qcard.open .caret{transform:rotate(90deg);}
+
+.qbody{display:none; padding:0 16px 18px;}
+.qcard.open .qbody{display:block;}
+
+.qtext{
+  background:var(--cream); border:1px dashed var(--gold);
+  border-radius:10px; padding:12px 14px; font-size:.82rem;
+  line-height:1.55; margin:6px 0 14px; white-space:pre-line;
+}
+.qtext b{color:var(--red);}
+
+h4.section-lbl{
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--gold); margin:16px 0 8px; display:flex; align-items:center; gap:6px;
+}
+h4.section-lbl::before{content:"▸"; color:var(--red);}
+
+.formula-box{
+  background:var(--blue-light); border-radius:10px; padding:10px 14px;
+  font-size:.82rem; line-height:1.7; margin-bottom:12px;
+  overflow-x:auto;
+}
+.formula-box .frac{display:inline-block; text-align:center; vertical-align:middle; margin:0 4px;}
+.formula-box .frac .num{display:block; border-bottom:1.5px solid var(--ink); padding:0 4px;}
+.formula-box .frac .den{display:block; padding:0 4px;}
+.result{color:var(--red); font-weight:800;}
+
+.tablewrap{overflow-x:auto; margin-bottom:14px; border-radius:10px; border:1px solid var(--line);}
+table.ledger{
+  border-collapse:collapse; width:100%; min-width:560px; font-size:.74rem;
+}
+table.ledger caption{
+  text-align:center; font-weight:800; font-size:.78rem;
+  padding:8px; background:var(--blue); color:#fff;
+}
+table.ledger th, table.ledger td{
+  border:1px solid var(--line); padding:5px 6px; text-align:left; white-space:nowrap;
+}
+table.ledger td.num, table.ledger th.num{text-align:right; font-variant-numeric:tabular-nums;}
+table.ledger thead.dr th{background:var(--slm-bg); color:var(--slm);}
+table.ledger thead.cr th{background:var(--wdv-bg); color:var(--wdv);}
+table.ledger tr.total td{font-weight:800; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);}
+table.ledger tr.yearsep td{background:var(--blue-light); font-weight:700;}
+
+table.wn{
+  border-collapse:collapse; width:100%; font-size:.76rem; margin-bottom:10px;
+}
+table.wn th, table.wn td{border:1px solid var(--line); padding:6px 8px;}
+table.wn th{background:var(--gold); color:#fff; text-align:left;}
+table.wn td.num{text-align:right;}
+
+.note{
+  background:var(--slm-bg); border-left:4px solid var(--slm);
+  border-radius:8px; padding:8px 12px; font-size:.78rem; margin-bottom:10px;
+}
+.ans-strip{
+  display:flex; flex-direction:column; gap:6px; margin-top:10px;
+}
+.ans-strip .pill{
+  background:var(--red); color:#fff; border-radius:8px;
+  padding:7px 10px; font-size:.78rem; font-weight:600;
+}
+
+.top-btn{
+  position:fixed; right:16px; bottom:16px; z-index:60;
+  width:46px; height:46px; border-radius:50%;
+  background:var(--red); color:#fff; border:none; font-size:1.2rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.25); cursor:pointer;
+}
+footer{
+  text-align:center; font-size:.72rem; opacity:.6; padding:24px 12px 10px;
+}
+mark.hl{background:var(--gold); color:#20262B; border-radius:3px; padding:0 2px;}
+@media (max-width:420px){
+  .hero h1{font-size:1.3rem;}
+  .qhead .qtitle{font-size:.8rem;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-eyebrow">📘 Accountancy · Straight Line &amp; Written Down Value</div>
+  <h1>Chapter 11 — Depreciation</h1>
+  <p class="sub">29 solved ledger problems: Machinery, Furniture, Plant, Van &amp; Asset accounts — worked exactly as per the textbook solutions, made scannable.</p>
+  <div class="ledger-strip">
+    <span>📏 SLM = Straight&nbsp;Line</span>
+    <span>📉 WDV = Written&nbsp;Down&nbsp;Value</span>
+    <span>🧾 29 Questions</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <input id="searchBox" type="text" placeholder="🔍 Search a question (e.g. 'furniture', 'GST', 'loss')...">
+  <button class="icon-btn" onclick="toggleDark()">🌓</button>
+</div>
+
+<div class="legend">
+  <div class="chip slm">📏 SLM — fixed depreciation every year</div>
+  <div class="chip wdv">📉 WDV — % on reducing balance</div>
+  <div class="chip both">🔁 GST / Disposal A/c involved</div>
+</div>
+
+<div class="quicknav" id="quicknav"></div>
+
+<main id="qlist"></main>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<footer>Chapter 11 · Depreciation — Ledger Lab infographic</footer>
+
+<script>
+/* ================= DATA ================= */
+const Q = [
+{n:1, tag:"slm", title:"SLM formula — second-hand machine, 4-yr life",
+ q:`Calculate the Amount of annual Depreciation and Rate of Depreciation under Straight Line Method (SLM) from the following:
+Purchased a second-hand machine for ₹96,000, spent ₹24,000 on its cartage, repairs and installation, estimated useful life of machine 4 years.
+Estimated residual value ₹72,000.`,
+ formula:`Amount of Annual Depreciation = <span class="frac"><span class="num">Cost of Machine − Scrap Value</span><span class="den">Life in Years</span></span> = <span class="frac"><span class="num">1,20,000 − 72,000</span><span class="den">4</span></span> = <b class="result">Rs 12,000</b>
+<br><br>
+Rate of Depreciation = <span class="frac"><span class="num">Amount of Depreciation</span><span class="den">Cost of Machine</span></span> × 100 = <span class="frac"><span class="num">12,000</span><span class="den">1,20,000</span></span> × 100 = <b class="result">10% p.a.</b>`,
+ tables:[]},
+
+{n:2, tag:"slm", title:"X Ltd. — Machinery A/c for 3 years (Fixed Instalment)",
+ q:`On 1st April, 2016, X Ltd. purchased a machine costing ₹4,00,000 and spent ₹50,000 on its installation. The estimated life of the machinery is 10 years, after which its residual value will be ₹50,000 only. Find the amount of annual depreciation according to the Fixed Instalment Method and prepare Machinery Account for the first three years. The books are closed on 31st March every year.`,
+ formula:`Depreciation p.a. = <span class="frac"><span class="num">4,00,000 + 50,000 − 50,000 (Scrap Value)</span><span class="den">10 years</span></span> = <b class="result">Rs 40,000 p.a.</b>`,
+ tables:[{title:"Machinery Account — Books of X Ltd.", rows:[
+   ["2016 Apr 01","Bank","4,00,000","2017 Mar.31","Depreciation","40,000"],
+   ["2016 Apr 01","Bank – Erection Expense","50,000","2017 Mar.31","Balance c/d","4,10,000"],
+   ["","Total","4,50,000","","Total","4,50,000"],
+   ["2017 Apr 01","Balance b/d","4,10,000","2018 Mar.31","Depreciation","40,000"],
+   ["","","","2018 Mar.31","Balance c/d","3,70,000"],
+   ["","Total","4,10,000","","Total","4,10,000"],
+   ["2018 Apr 01","Balance b/d","3,70,000","2019 Mar.31","Depreciation","40,000"],
+   ["","","","2019 Mar.31","Balance c/d","3,30,000"],
+   ["","Total","3,70,000","","Total","3,70,000"]
+ ]}]},
+
+{n:3, tag:"slm", title:"Furniture A/c — additions across 4 years",
+ q:`On 1st April, 2015, furniture costing ₹55,000 was purchased. It is estimated that its life is 10 years at the end of which it will be sold for ₹5,000. Additions are made on 1st April 2016 and 1st October, 2018 to the value of ₹9,500 and ₹8,400 (Residual values ₹500 and ₹400 respectively). Show the Furniture Account for the first four years, if Depreciation is written off according to the Straight Line Method.`,
+ formula:`Depreciation on F1 = (55,000 − 5,000)/10 = <b class="result">Rs 5,000 p.a.</b><br>
+Depreciation on F2 = (9,500 − 500)/10 = <b class="result">Rs 900 p.a.</b><br>
+Depreciation on F3 = (8,400 − 400)/10 = Rs 800 p.a. → for 6 months = <b class="result">Rs 400</b>`,
+ tables:[{title:"Furniture Account", rows:[
+   ["2015 Apr 01","Bank F1","55,000","2016 Mar.31","Depreciation F1","5,000"],
+   ["","","","2016 Mar.31","Balance c/d F1","50,000"],
+   ["","Total","55,000","","Total","55,000"],
+   ["2016 Apr 01","Balance b/d F1","50,000","2017 Mar.31","Depreciation F1 5,000 / F2 900","5,900"],
+   ["2016 Apr 01","Bank F2","9,500","2017 Mar.31","Balance c/d F1 45,000 / F2 8,600","53,600"],
+   ["","Total","59,500","","Total","59,500"],
+   ["2017 Apr 01","Balance b/d F1 45,000 / F2 8,600","53,600","2018 Mar.31","Depreciation F1 5,000 / F2 900","5,900"],
+   ["","","","2018 Mar.31","Balance c/d F1 40,000 / F2 7,700","47,700"],
+   ["","Total","53,600","","Total","53,600"],
+   ["2018 Apr 01","Balance b/d F1 40,000 / F2 7,700","47,700","2019 Mar.31","Depreciation F1 5,000 / F2 900 / F3 400","6,300"],
+   ["2018 Oct 01","Bank F3","8,400","2019 Mar.31","Balance c/d F1 35,000 / F2 6,800 / F3 8,000","49,800"],
+   ["","Total","56,100","","Total","56,100"]
+ ]}]},
+
+{n:4, tag:"slm", title:"Second-hand machinery + additional machine, repairs excluded",
+ q:`From the following transactions of a concern, prepare the Machinery Account for the year ended 31st March, 2019:
+1st April, 2018: Purchased a second-hand machinery for ₹40,000
+1st April, 2018: Spent ₹10,000 on repairs for making it serviceable.
+30th September, 2018: Purchased additional new machinery for ₹20,000.
+31st December, 2018: Repairs and renewal of machinery ₹3,000.
+31st March, 2019: Depreciate the machinery at 10% p.a.`,
+ formula:`Note: Repair and renewal made on December 31, 2018 will not be recorded in Machinery Account because this repair was made after putting the Machinery into use.`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2018 Apr.01","Bank M1","50,000","2019 Mar.31","Depreciation M1 5,000 / M2(6mo) 1,000","6,000"],
+   ["2018 Sept 30","Bank M2","20,000","2019 Mar.31","Balance c/d M1 45,000 / M2 19,000","64,000"],
+   ["","Total","70,000","","Total","70,000"]
+ ]}]},
+
+{n:5, tag:"slm", title:"Asset sold at end of life — i) Depreciation ii) NBV iii) Loss on sale",
+ q:`An asset was purchased for ₹10,500 on 1st April, 2012. The scrap value was estimated to be ₹500 at the end of asset's 10 years' life. Straight Line Method of depreciation was used. The accounting year ends on 31st March every year. The asset was sold for ₹600 on 31st March, 2019. Calculate:
+i) The Depreciation expense for the year ended 31st March, 2013.
+ii) The net book value of the asset on 31st March, 2017.
+iii) The gain or loss on sale of the asset on 31st March, 2019.`,
+ formula:`Annual Depreciation = (10,500 − 500)/10 = <b class="result">Rs 1,000 p.a.</b>`,
+ tables:[{title:"Asset Account", rows:[
+   ["2012 Apr 01","Bank","10,500","2013 Mar.31","Depreciation / Balance c/d","1,000 / 9,500"],
+   ["2013 Apr 01","Balance b/d","9,500","2014 Mar.31","Depreciation / Balance c/d","1,000 / 8,500"],
+   ["2014 Apr 01","Balance b/d","8,500","2015 Mar.31","Depreciation / Balance c/d","1,000 / 7,500"],
+   ["2015 Apr 01","Balance b/d","7,500","2016 Mar.31","Depreciation / Balance c/d","1,000 / 6,500"],
+   ["2016 Apr 01","Balance b/d","6,500","2017 Mar.31","Depreciation / Balance c/d","1,000 / 5,500"],
+   ["2017 Apr 01","Balance b/d","5,500","2018 Mar.31","Depreciation / Balance c/d","1,000 / 4,500"],
+   ["2018 Apr 01","Balance b/d","4,500","2019 Mar.31","Depreciation 1,000 / Bank 600 / P&L Loss 2,900","4,500"]
+ ]}],
+ ans:["i) Depreciation Expense for year ended Mar 31, 2013 = Rs 1,000","ii) Net Book Value on Mar 31, 2017 = Rs 5,500","iii) Loss on Sale on Mar 31, 2019 = Rs 2,900"]},
+
+{n:6, tag:"slm", title:"A Ltd. — 3 machines, sale &amp; purchase mid-year (5% p.a.)",
+ q:`On 1st April, 2015, A Ltd. purchased a machine for ₹2,40,000 and spent ₹10,000 on its erection. On 1st October, 2015 an additional machinery costing ₹1,00,000 was purchased. On 1st October, 2017, the machine purchased on 1st April, 2015 was sold for ₹1,43,000 and on the same date, a new machine was purchased at cost of ₹2,00,000.
+Show the Machinery Account for the first four financial years after charging Depreciation at 5% p.a. by the Straight Line Method.`,
+ formula:`Machine 1 = 2,50,000 × 5/100 = Rs 12,500 p.a.<br>Machine 2 = 1,00,000 × 5/100 = Rs 5,000 p.a.<br>Machine 3 = 2,00,000 × 5/100 = Rs 10,000 p.a.
+<br><br><b>Loss on sale of Machine 1:</b> Book Value on 1/4/2017 = 2,25,000; Less Dep. 6 months = 6,250 → Book Value on Oct 01,2017 = 2,18,750; Less Sale = 1,43,000 → <b class="result">Loss = Rs 75,750</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2015 Apr 01","Bank M1","2,50,000","2016 Mar 31","Depreciation M1 12,500 / M2(6mo) 2,500","15,000"],
+   ["2015 Oct 01","Bank M2","1,00,000","2016 Mar 31","Balance c/d M1 2,37,500 / M2 97,500","3,35,000"],
+   ["","Total","3,50,000","","Total","3,50,000"],
+   ["2016 Apr 01","Balance b/d M1 2,37,500 / M2 97,500","3,35,000","2017 Mar 31","Depreciation M1 12,500 / M2 5,000","17,500"],
+   ["","","","2017 Mar 31","Balance c/d M1 2,25,000 / M2 92,500","3,17,500"],
+   ["","Total","3,35,000","","Total","3,35,000"],
+   ["2017 Apr 01","Balance b/d M1 2,25,000 / M2 92,500","3,17,500","2017 Oct 01","Depreciation (6mo on M1) 6,250","6,250"],
+   ["2017 July 01","Bank M3","2,00,000","2017 Oct 01","Bank (M1 sold) / P&L Loss","1,43,000 / 75,750"],
+   ["","","","2018 Mar 31","Depreciation M2 5,000 / M3(6mo) 5,000","10,000"],
+   ["","","","2018 Mar 31","Balance c/d M2 87,500 / M3 1,95,000","2,82,500"],
+   ["","Total","5,17,500","","Total","5,17,500"],
+   ["2018 Apr 01","Balance b/d M2 87,500 / M3 1,95,000","2,82,500","2019 Mar 31","Depreciation M2 5,000 / M3 10,000","15,000"],
+   ["","","","2019 Mar 31","Balance c/d M2 82,500 / M3 1,85,000","2,67,500"],
+   ["","Total","2,82,500","","Total","2,82,500"]
+ ]}]},
+
+{n:7, tag:"slm", title:"Van Account — sale &amp; replacement (10% p.a.)",
+ q:`A Van was purchased on 1st April, 2016 for ₹60,000 and ₹5,000 was spent on its repair and registration. On 1st October, 2017 another van was purchased for ₹70,000. On 1st April, 2018, the first van purchased on 1st April, 2016 was sold for ₹45,000 and a new van costing ₹1,70,000 was purchased on the same date. Show the Van Account from 2016-17 to 2018-19 on the basis of Straight Line Method, if the rate of Depreciation charged is 10% p.a. Assume that books are closed on 31st March every year.`,
+ formula:`Van I = 65,000 × 10% = Rs 6,500 p.a. | Van II = 70,000 × 10% = Rs 7,000 p.a. | Van III = 1,70,000 × 10% = Rs 17,000 p.a.
+<br><br><b>Loss on sale of Van I:</b> Book Value 1/4/2018 = 52,000; Less Sale 45,000 → <b class="result">Loss = Rs 7,000</b>`,
+ tables:[{title:"Van Account", rows:[
+   ["2016 Apr 01","Bank I","65,000","2017 Mar 31","Depreciation I / Balance c/d","6,500 / 58,500"],
+   ["","Total","65,000","","Total","65,000"],
+   ["2017 Apr 01","Balance b/d I","58,500","2018 Mar 31","Depreciation I 6,500 / II(6mo) 3,500","10,000"],
+   ["2017 Oct 01","Bank II","70,000","2018 Mar 31","Balance c/d I 52,000 / II 66,500","1,18,500"],
+   ["","Total","1,28,500","","Total","1,28,500"],
+   ["2018 Apr 01","Balance b/d I 52,000 / II 66,500","1,18,500","2019 Apr 01","Bank I 45,000 / P&L Loss 7,000","52,000"],
+   ["2018 Apr 01","Bank III","1,70,000","2018 Mar 31 (2019)","Depreciation II 7,000 / III 17,000","24,000"],
+   ["","","","2019 Mar 31","Balance c/d II 59,500 / III 1,53,000","2,12,500"],
+   ["","Total","2,88,500","","Total","2,88,500"]
+ ]}]},
+
+{n:8, tag:"slm", title:"Star Ltd. — 5 identical machines, two sold at a loss",
+ q:`On 1st April, 2015, Star Ltd. purchased 5 machines for ₹60,000 each. On 1st April, 2017, one of the machine was sold at a loss of ₹8,000. On 1st July, 2018, second machine was sold at a loss of ₹12,500. A new machine was purchased for ₹1,00,000 on 1st October, 2018.
+Prepare Machinery Account for 4 years, assuming accounts are closed on 31st March each year and depreciation is charged @ 10% per annum as per Straight Line Method.`,
+ formula:`WN1: Book Value of Machine as on 1/4/2017 = 2,40,000/5 = 48,000; Less Loss 8,000 → Sale Proceeds = <b class="result">Rs 40,000</b>
+<br>WN2: Book Value as on 1/7/2018 = (1,68,000/4) − 1,500 = 40,500; Less Loss 12,500 → Sale Proceeds = <b class="result">Rs 28,000</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2015 Apr 01","Cash/Bank (60,000×5)","3,00,000","2016 Mar 31","Depreciation 30,000 / Balance c/d 2,70,000","3,00,000"],
+   ["2016 Apr 01","Balance b/d","2,70,000","2017 Mar 31","Depreciation 30,000 / Balance c/d 2,40,000","2,70,000"],
+   ["2017 Apr 01","Balance b/d","2,40,000","2017 Apr 01","Bank (WN1) 40,000 / P&L Loss 8,000","48,000"],
+   ["","","","2018 Mar 31","Depreciation (remaining) 24,000 / Balance c/d 1,68,000","1,92,000"],
+   ["2018 Apr 01","Balance c/d","1,68,000","2018 Jul 01","Depreciation 1,500 / Bank(WN2) 28,000 / P&L Loss 12,500","42,000"],
+   ["2018 Oct 01","Cash/Bank","1,00,000","2019 Mar 31","Depreciation (remaining) 23,000 / Balance c/d 2,03,000","2,26,000"]
+ ]}]},
+
+{n:9, tag:"slm", title:"Company — 3 machines, 1/3rd of one machine sold as obsolete",
+ q:`A company whose accounting year is a financial year, purchased on 1st July, 2015 machinery costing ₹30,000.
+It purchased further machinery on 1st January, 2016 costing ₹20,000 and on 1st October, 2016 costing ₹10,000.
+On 1st April, 2017, one-third of the machinery installed on 1st July, 2015 became obsolete and was sold for ₹3,000.
+Show how Machinery Account would appear in the books of the company. It being given that machinery was depreciated by Fixed Instalment Method at 10% p.a. What would be the value of Machinery Account on 1st April, 2018?`,
+ formula:`Machine I = 30,000×10% = Rs 3,000 p.a. (2/3rd portion = Rs 2,000)<br>Machine II = 20,000×10% = Rs 2,000 p.a.<br>Machine III = 10,000×10% = Rs 1,000 p.a.
+<br><br><b>Loss on sale of 1/3rd of Machine I:</b> Book Value (24,750×1/3) = 8,250; Less Sale 3,000 → <b class="result">Loss = Rs 5,250</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2015 Jul 01","Bank I","30,000","2016 Mar 31","Depreciation I(9mo) 2,250 / II(3mo) 500","2,750"],
+   ["2016 Jan 01","Bank II","20,000","2016 Mar 31","Balance c/d I 27,750 / II 19,500","47,250"],
+   ["","Total","50,000","","Total","50,000"],
+   ["2016 Apr 01","Balance b/d I 27,750 / II 19,500","47,250","2017 Mar 31","Depreciation I 3,000 / II 2,000 / III 500","5,500"],
+   ["2016 Oct 01","Bank III","10,000","2017 Mar 31","Balance c/d I 24,750 / II 17,500 / III 9,500","51,750"],
+   ["","Total","57,250","","Total","57,250"],
+   ["2017 Apr 01","Balance b/d I 24,750/II 17,500/III 9,500","51,750","2017 Apr 01","Bank I(1/3rd) 3,000 / P&L Loss 5,250","8,250"],
+   ["","","","2018 Mar 31","Depreciation I(2/3rd) 2,000/II 2,000/III 1,000","5,000"],
+   ["","","","2018 Mar 31","Balance c/d I 14,500/II 15,500/III 8,500","38,500"],
+   ["","Total","51,750","","Total","51,750"]
+ ]}]},
+
+{n:10, tag:"slm", title:"A Co. Ltd. — reconditioned machine, sold, plant on instalments",
+ q:`On 1st July, 2015, A Co. Ltd. purchases second-hand machinery for ₹20,000 and spends ₹3,000 on reconditioning and installing it. On 1st January, 2016, the firm purchases new machinery worth ₹12,000. On 30th June, 2017, the machinery purchased on 1st January, 2016, was sold for ₹8,000 and on 1st July, 2017, a fresh plant was installed.
+Payments for this plant was to be made as follows: 1st July 2017 – ₹5,000; 30th June 2018 – ₹6,000; 30th June 2019 – ₹5,500.
+Payments in 2018 and 2019 include interest of ₹1,000 and ₹500 respectively.
+The company writes off 10% p.a. on the original cost. The accounts are closed every year on 31st March. Show the Machinery Account for the year ended 31st March, 2018.`,
+ formula:`Machine(I) = 23,000×10% = Rs 2,300 p.a. | Machine(II) = 12,000×10% = Rs 1,200 p.a. | Machine(III) = 15,000×10% = Rs 1,500 p.a.
+<br><br><b>Loss on sale of Machine II:</b> Book Value 1/4/2017 = 10,500; Less Dep(3mo) 300 → 10,200; Less Sale 8,000 → <b class="result">Loss = Rs 2,200</b>`,
+ tables:[{title:"Machinery — Books of A. Co. Ltd", rows:[
+   ["2015 Jul 01","Bank I (20,000+3,000)","23,000","2016 Mar.31","Depreciation I(9mo) 1,725 / II(3mo) 300","2,025"],
+   ["2016 Jan.01","Bank II","12,000","2016 Mar.31","Balance c/d I 21,275 / II 11,700","32,975"],
+   ["","Total","35,000","","Total","35,000"],
+   ["2016 Apr 01","Balance b/d I 21,275 / II 11,700","32,975","2017 Mar.31","Depreciation I 2,300 / II 1,200","3,500"],
+   ["","","","2017 Mar.31","Balance c/d I 18,975 / II 10,500","29,475"],
+   ["","Total","32,975","","Total","32,975"],
+   ["2017 Apr 01","Balance b/d I 18,975 / II 10,500","29,475","2017 Jun 30","Bank II 8,000 / Dep II(3mo) 300 / P&L Loss 2,200","10,500"],
+   ["2017 Jul 01","Bank III","5,000","2018 Mar.31","Depreciation I 2,300 / III(on 15,000 for 8mo) 1,125","3,425"],
+   ["2017 Jul 01","Creditors for plant III","10,000","2018 Mar.31","Balance c/d I 16,675 / III 13,875","30,550"],
+   ["","Total","44,475","","Total","44,475"]
+ ]}]},
+
+{n:11, tag:"slm", title:"Shivam Enterprise — sale with commission, rate derivation",
+ q:`On 1st April, 2016, Shivam Enterprise purchased a second-hand machinery for ₹52,000 and spent ₹2,000 on cartage, ₹3,000 on unloading, ₹2,000 on installation and ₹1,000 as brokerage of the middle man. It was estimated that the machinery will have a scrap value of ₹6,000 at the end of its useful life, which is 10 years. On 31st December 2016, repairs and renewals amounted to ₹2,500 were paid. On 1st October, 2018, this machine was sold for ₹30,600 and an amount of ₹600 was paid as commission to an agent. Calculate the amount of annual depreciation and rate of depreciation. Also prepare the Machinery Account for first 3 years, assuming that firm follows financial year for accounting.`,
+ formula:`Cost of Machine = 52,000+2,000+3,000+2,000+1,000 = Rs 60,000<br>
+Depreciation = (60,000−6,000)/10 = <b class="result">Rs 5,400</b> | Rate = 5,400/60,000×100 = <b class="result">9% p.a.</b>
+<br><br>Note: repairs of Rs 2,500 (recurring) not added to Machinery A/c.`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2016 Apr.01","Bank A/c","60,000","2017 Mar.31","Depreciation A/c / Balance c/d","5,400 / 54,600"],
+   ["2017 Apr.01","Balance b/d","54,600","2018 Mar.31","Depreciation A/c / Balance c/d","5,400 / 49,200"],
+   ["2018 Apr.01","Balance b/d","49,200","2018 Oct.01","Dep(6mo) 2,700 / Bank(Sale) 30,000 / P&L Loss 16,500","49,200"]
+ ]}],
+ note:"Loss on Sale: Value as on 1/4/2018 = 49,200; Less Dep 6mo = 2,700 → 46,500; Less Sale Value = 30,000 → Loss = Rs 16,500"},
+
+{n:12, tag:"both", title:"Modern Ltd. — GST purchase &amp; IGST sale (20% p.a.)",
+ q:`Modern Ltd. purchased a machinery on 1st August, 2016 for ₹60,000. On 1st October, 2017, it purchased another machine for ₹20,000 plus CGST and SGST @ 6% each. On 30th June, 2018, it sold the first machine purchased in 2016 for ₹38,500 charging IGST @ 12%. Depreciation is provided @ 20% p.a. on the original cost each year. Accounts are closed on 31st March every year. Prepare the Machinery Account for three years.`,
+ formula:`Machine 1 = 60,000×20% = Rs 12,000 p.a. | Machine 2 = 20,000×20% = Rs 4,000 p.a.
+<br><br>Profit on sale of Machine 1: Value 1/4/2018 = 40,000; Less Dep(3mo) 3,000 = 37,000; Sale value 38,500 → <b class="result">Profit = Rs 1,500</b>`,
+ tables:[{title:"Machinery Account — Books of Modern Ltd.", rows:[
+   ["2016 Aug.01","Bank M1","60,000","2017 Mar 31","Depreciation M1(8mo) / Balance c/d","8,000 / 52,000"],
+   ["2017 Apr 01","Balance b/d","52,000","2018 Mar 31","Depreciation M1 12,000 / M2(6mo) 2,000","14,000"],
+   ["2017 Oct.01","Bank M2","20,000","2018 Mar 31","Balance c/d M1 40,000 / M2 18,000","58,000"],
+   ["","Total","72,000","","Total","72,000"],
+   ["2018 Apr 01","Balance b/d M1 40,000/M2 18,000","58,000","2019 Jun 30","Dep M1(3mo) 3,000 / Bank(M1 sale) 38,500","41,500"],
+   ["2018 Jun 30","P&L (profit)","1,500","2019 Mar.31","Depreciation M2 4,000 / Balance c/d 14,000","18,000"],
+   ["","Total","59,500","","Total","59,500"]
+ ]}],
+ note:"Journal (GST): Oct 2017 — Machinery Dr 20,000, Input CGST Dr 1,200, Input SGST Dr 1,200 → To Bank 22,400. Jun 2018 — Bank Dr 43,120 → To Machinery 38,500, To Output IGST 4,620."},
+
+{n:13, tag:"both", title:"Sohan Lal &amp; Sons — Plant A/c with GST purchase &amp; sale",
+ q:`On 1st July, 2016, Sohan Lal &amp; Sons purchased a plant costing ₹60,000. Additional plant was purchased on 1st January, 2017 for ₹40,000 and on 1st October, 2017, for ₹20,000, plus CGST and SGST @ 6% each. On 1st April, 2018, one-third of the plant purchased on 1st July, 2016, was found to have become obsolete and was sold for ₹6,000, charging CGST and SGST @ 6% each.
+Prepare the Plant Account for the first three years. Depreciation is charged @ 10% p.a. on Straight Line Method. Accounts are closed on 31st March each year.`,
+ formula:`Plant I = 60,000×10% = Rs 6,000 p.a. | Plant II = 40,000×10% = Rs 4,000 p.a. | Plant III = 20,000×10% = Rs 2,000 p.a.
+<br><br>Loss on sale of Plant I (1/3rd): 49,500×1/3 = 16,500; Less Sale 6,000 → <b class="result">Loss = Rs 10,500</b>`,
+ tables:[{title:"Plant Account — Books of Sohan Lal &amp; Sons", rows:[
+   ["2016 Jul 01","Bank I","60,000","2017 Mar31","Depreciation I(9mo) 4,500 / II(3mo) 1,000","5,500"],
+   ["2016 Jan.01","Bank II","40,000","2017 Mar31","Balance c/d I 55,500 / II 39,000","94,500"],
+   ["","Total","1,00,000","","Total","1,00,000"],
+   ["2017 Apr 01","Balance b/d I 55,500/II 39,000","94,500","2018 Mar31","Depreciation I 6,000/II 4,000/III(6mo) 1,000","11,000"],
+   ["2017 Oct 01","Bank III","20,000","2018 Mar31","Balance c/d I 49,500/II 35,000/III 19,000","1,03,500"],
+   ["","Total","1,14,500","","Total","1,14,500"],
+   ["2018 Apr 01","Balance b/d I 49,500/II 35,000/III 19,000","1,03,500","2018 Apr 01","Bank 6,000 / P&L Loss 10,500","16,500"],
+   ["","","","2019 Mar31","Depreciation I 4,000/II 4,000/III 2,000","10,000"],
+   ["","","","2019 Mar31","Balance c/d I 29,000/II 31,000/III 17,000","77,000"],
+   ["","Total","1,03,500","","Total","1,03,500"]
+ ]}],
+ note:"Journal (GST): Oct 2017 — Machinery Dr 20,000, Input CGST/SGST Dr 1,200 each → To Bank 22,400. Apr 2018 — Bank Dr 6,720 → To Machinery 6,000, To Output CGST 360, To Output SGST 360."},
+
+{n:14, tag:"slm", title:"Rama Bros — Provision for Depreciation A/c (opening balances given)",
+ q:`Following balances appear in the books of Rama Bros: 1st April, 2016 — Machinery A/c ₹80,000, Provision for Depreciation A/c ₹36,000.
+On 1st April, 2016, they decided to sell a machine for ₹8,700. This machine was purchased for ₹16,000 in April, 2012. Prepare the Provision for Depreciation Account and Machinery Account on 31st March, 2017, assuming the firm has been charging Depreciation at 10% p.a. on Straight Line Method.`,
+ formula:`Book Value of Machine Sold (1/4/2016): 16,000 − (1,600×4) = <b class="result">Rs 9,600</b><br>
+Less Sale Value 8,700 → <b class="result">Loss = Rs 900</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2016 Apr.01","Balance b/d (64,000+16,000)","80,000","2016 Apr.01","Provision for Dep. 6,400 / Bank 8,700 / P&L 900","16,000"],
+   ["","","","2017 Mar.31","Balance c/d","64,000"],
+   ["","Total","80,000","","Total","80,000"]
+ ]},
+ {title:"Provision for Depreciation Account", rows:[
+   ["2016 Apr.01","Machinery A/c (Accum. Dep. on Machine Sold)","6,400","2016 Apr.01","Balance b/d","36,000"],
+   ["2017 Mar.31","Balance c/d","36,000","2017 Mar.31","Depreciation on 64,000@10%","6,400"],
+   ["","Total","42,400","","Total","42,400"]
+ ]}]},
+
+{n:15, tag:"slm", title:"Priyank Brothers — Provision A/c (large figures, ₹ Lakhs)",
+ q:`Following balances appear in the books of Priyank Brothers: 1st April, 2017 — Machinery A/c ₹20,00,000, Provision for Depreciation A/c ₹8,00,000.
+On 1st April, 2017, they decide to sell a machine for ₹5,00,000. This machine was purchased for ₹7,50,000 on 1st April, 2014. Prepare the Machinery Account and Provision for Depreciation Account for the year ended 31st March, 2018 assuming Depreciation @ 10% p.a. on the Straight Line Method.`,
+ formula:`Accum. Dep. on Machine Sold (3 yrs, 7,50,000×10%) = 2,25,000<br>
+Book Value on Sale = 7,50,000 − 2,25,000 = 5,25,000; Less Sale 5,00,000 → <b class="result">Loss = Rs 25,000</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2017 Apr.01","Balance b/d","20,00,000","2017 Apr.01","Provision for Dep 2,25,000 / Bank 5,00,000 / P&L Loss 25,000","7,50,000"],
+   ["","","","2018 Mar.31","Balance c/d","12,50,000"],
+   ["","Total","20,00,000","","Total","20,00,000"]
+ ]},
+ {title:"Provision for Depreciation Account", rows:[
+   ["2017 Apr.01","Machinery","2,25,000","2017 Apr.01","Balance b/d","8,00,000"],
+   ["2018 Mar.31","Balance c/d","7,00,000","2018 Mar.31","Depreciation for the year","1,25,000"],
+   ["","Total","9,25,000","","Total","9,25,000"]
+ ]}]},
+
+{n:16, tag:"both", title:"X Ltd. — Provision A/c + GST sale &amp; purchase",
+ q:`Following balances appear in the books of X Ltd. as on 1st April, 2018: Machinery A/c ₹5,00,000, Provision for Depreciation A/c ₹2,25,000.
+The machinery is depreciated @ 10% p.a. on the Fixed Instalment Method. On 1st October, 2018, a machinery purchased on 1st July, 2015 for ₹1,00,000 was sold for ₹42,000 plus CGST and SGST @ 6% each and on the same date a new machine was purchased for ₹2,00,000 paying IGST @ 12%. Prepare Machinery Account and Provision for Depreciation Account for the year ended 31st March, 2019.`,
+ formula:`Accum. Dep on Machine Sold (Jul 2015–Oct 2018, 3.25 yrs @10%) = 32,500<br>
+Book Value = 1,00,000 − 32,500 = 67,500; Less Sale 42,000 → <b class="result">Loss = Rs 25,500</b>
+<br><br>Depreciation for year: 4,00,000@10%=40,000 + 2,00,000@10%(6mo)=10,000 + 1,00,000@10%(6mo)=5,000 → Total <b class="result">Rs 55,000</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2018 Apr.01","Balance b/d (4,00,000+1,00,000)","5,00,000","2018 Oct.01","Provision for Dep 32,500 / Bank 42,000 / P&L 25,500","1,00,000"],
+   ["2018 Oct.01","Bank","2,00,000","2019 Mar.31","Balance c/d","6,00,000"],
+   ["","Total","7,00,000","","Total","7,00,000"]
+ ]},
+ {title:"Provision for Depreciation Account", rows:[
+   ["2018 Oct.01","Machinery","32,500","2018 Apr.01","Balance b/d","2,25,000"],
+   ["2019 Mar.31","Balance c/d","2,47,500","2019 Mar.31","Depreciation","55,000"],
+   ["","Total","2,80,000","","Total","2,80,000"]
+ ]}],
+ note:"Journal: Oct 2018 — Bank Dr 47,040 → To Machinery 42,000, To Output CGST 2,520, To Output SGST 2,520. Machinery Dr 2,00,000, Input IGST Dr 24,000 → To Bank 2,24,000."},
+
+{n:17, tag:"wdv", title:"Boiler imported — 10% p.a. Diminishing Balance",
+ q:`A boiler was purchased from abroad for ₹10,000. Shipping and forwarding charges ₹2,000, Import duty ₹7,000 and expenses of installation amounted to ₹1,000.
+Calculate the Depreciation for the first three years separately for each year @ 10% p.a. on Diminishing Balance Method.`,
+ formula:`Cost = 10,000+2,000+7,000+1,000 = Rs 20,000`,
+ tables:[{title:"Boiler Account", rows:[
+   ["I year Jan.01","Bank","20,000","I year Dec.31","Depreciation / Balance c/d","2,000 / 18,000"],
+   ["II year Jan.01","Balance b/d","18,000","II year Dec.31","Depreciation / Balance c/d","1,800 / 16,200"],
+   ["III year Jan.01","Balance b/d","16,200","III year Dec.31","Depreciation / Balance c/d","1,620 / 14,580"]
+ ]}]},
+
+{n:18, tag:"both", title:"Furniture ₹4,000 — Original Cost vs Diminishing Balance (5% p.a.)",
+ q:`The original cost of furniture amounted to ₹4,000 and it is decided to write off 5% on the original cost as Depreciation at the end of each year. Show the Ledger Account as it will appear during the first four years. Show also how the same account will appear if it was decided to write off 5% p.a. on the diminishing balance of the asset each year.`,
+ formula:`Original Cost Method: Depreciation p.a. = 4,000×5% = <b class="result">Rs 200 p.a. (constant)</b><br>
+Diminishing Balance Method: Depreciation p.a. = Opening Balance × 5%`,
+ tables:[{title:"Furniture Account — Original Cost Method", rows:[
+   ["I year Jan.01","Bank","4,000","I year Dec.31","Depreciation / Balance c/d","200 / 3,800"],
+   ["II year Jan.01","Balance b/d","3,800","II year Dec.31","Depreciation / Balance c/d","200 / 3,600"],
+   ["III year Jan.01","Balance b/d","3,600","III year Dec.31","Depreciation / Balance c/d","200 / 3,400"],
+   ["IV year Jan.01","Balance b/d","3,400","IV year Dec.31","Depreciation / Balance c/d","200 / 3,200"]
+ ]},
+ {title:"Furniture Account — Diminishing Balance Method", rows:[
+   ["I year Jan.01","Bank","4,000","I year Dec.31","Depreciation / Balance c/d","200 / 3,800"],
+   ["II year Jan.01","Balance b/d","3,800","II year Dec.31","Depreciation / Balance c/d","190 / 3,610"],
+   ["III year Jan.01","Balance b/d","3,610","III year Dec.31","Depreciation / Balance c/d","181 / 3,429"],
+   ["IV year Jan.01","Balance b/d","3,429","IV year Dec.31","Depreciation / Balance c/d","171 / 3,258"]
+ ]}]},
+
+{n:19, tag:"wdv", title:"Babu — two machines, one sold at loss (10% WDV)",
+ q:`Babu purchased on 1st April, 2017, a machine for ₹6,000. On 1st October, 2017, he also purchased another machine for ₹5,000. On 1st October, 2018, he sold the machine purchased on 1st April, 2017 for ₹4,000.
+It was decided that Depreciation @ 10% p.a. was to be written off every year under Diminishing Balance Method.
+Assuming the accounts were closed on 31st March every year, show the Machinery Account for the years ended 31st March, 2018 and 2019.`,
+ formula:`Loss on sale: Book Value 1/4/2018 = 5,400; Less Dep(6mo) 270 → 5,130; Less Sale 4,000 → <b class="result">Loss = Rs 1,130</b>`,
+ tables:[{title:"Machinery Account — Books of Babu", rows:[
+   ["2017 Apr.01","Bank I","6,000","2018 Mar.31","Depreciation I 600 / II(6mo) 250","850"],
+   ["2017 Oct.01","Bank II","5,000","2018 Mar.31","Balance c/d I 5,400 / II 4,750","10,150"],
+   ["","Total","11,000","","Total","11,000"],
+   ["2018 Apr.01","Balance b/d I 5,400/II 4,750","10,150","2018 Oct.01","Dep I(6mo) 270 / Bank I 4,000 / P&L Loss 1,130","5,400"],
+   ["","","","2019 Mar.31","Depreciation II 475 / Balance c/d II 4,275","4,750"],
+   ["","Total","10,150","","Total","10,150"]
+ ]}]},
+
+{n:20, tag:"wdv", title:"X — machine sold to Y with commission (10% WDV, 3 yrs)",
+ q:`X bought a machine for ₹25,000 on which he spent ₹5,000 for carriage and freight, ₹1,000 for brokerage of the middleman, ₹3,500 for installation and ₹500 for an iron pad. The machine is depreciated @ 10% p.a. on Written Down Value basis. After three years, the machine was sold to Y for ₹30,500 and ₹500 was paid as commission to the broker through whom the sale was effected. Find out the profit and loss on sale of machine.`,
+ formula:`Cost = 25,000+5,000+1,000+3,500+500 = Rs 35,000<br>
+Sale net of commission = 30,500 − 500 = 30,000; Book value end of yr 3 = 25,515 → <b class="result">Profit = Rs 4,485</b>`,
+ tables:[{title:"Machinery Account — Books of X", rows:[
+   ["I year Jan.01","Bank","35,000","I year Dec.31","Depreciation / Balance c/d","3,500 / 31,500"],
+   ["II year Jan.01","Balance b/d","31,500","II year Dec.31","Depreciation / Balance c/d","3,150 / 28,350"],
+   ["III year Jan.01","Balance b/d","28,350","III year Dec.31","Depreciation / Balance c/d","2,835 / 25,515"],
+   ["IV year Jan.01","Balance b/d","25,515","IV year Jan.01","Bank (30,500−500 brokerage)","30,000"],
+   ["","P&L (Profit)","4,485","","","30,000"]
+ ]}]},
+
+{n:21, tag:"wdv", title:"Company — 2 machines, one sold at a stated loss (15% WDV)",
+ q:`A company purchased a machinery for ₹50,000 on 1st October, 2016. Another machinery costing ₹10,000 was purchased on 1st December, 2017. On 31st March, 2019, the machinery purchased in 2016 was sold at a loss of ₹5,000. The company charges depreciation @ 15% p.a. on Diminishing Balance Method. Accounts are closed on 31st March every year. Prepare the Machinery Account for 3 years.`,
+ formula:`Book Value of Machine I on 1/4/2018 = 39,312; Less Dep 5,897 → 33,415; Less Sale 28,415 → given <b class="result">Loss = Rs 5,000</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2016 Oct.01","Bank I","50,000","2017 Mar.31","Depreciation(6mo) 3,750 / Balance c/d 46,250","50,000"],
+   ["2017 Apr.01","Balance b/d I","46,250","2018 Mar.31","Depreciation I 6,938 / II(part) 500","7,438"],
+   ["2017 Dec.01","Bank II","10,000","2018 Mar.31","Balance c/d I 39,312 / II 9,500","48,812"],
+   ["","Total","56,250","","Total","56,250"],
+   ["2018 Apr.01","Balance b/d I 39,312/II 9,500","48,812","2019 Mar.31","Depreciation I 5,897 / II 1,425","7,322"],
+   ["","","","2019 Mar.31","Bank I 28,415 / P&L Loss 5,000","33,415"],
+   ["","","","2019 Mar.31","Balance c/d II","8,075"],
+   ["","Total","48,812","","Total","48,812"]
+ ]}]},
+
+{n:22, tag:"wdv", title:"Three machines purchased over years — annual depreciation table (10% WDV)",
+ q:`On 1st April, 2016, a machinery was purchased for ₹20,000. On 1st October, 2017 another machine was purchased for ₹10,000 and on 1st April, 2018, one more machine was purchased for ₹5,000. The firm depreciates its machinery @ 10% p.a. on the Diminishing Balance Method.
+What is the amount of Depreciation for the years ended 31st March, 2017, 2018 and 2019? What will be the balance in Machinery Account as on 31st March, 2019?`,
+ formula:`2016-17: M1 Dep = Rs 2,000 → Total <b class="result">Rs 2,000</b><br>
+2017-18: M1 Dep 1,800 + M2(6mo) 500 → Total <b class="result">Rs 2,300</b><br>
+2018-19: M1 1,620 + M2 950 + M3 500 → Total <b class="result">Rs 3,070</b><br>
+Balance in Machinery A/c on 31 Mar 2019 = <b class="result">Rs 27,630</b>`,
+ tables:[{title:"Machinery Account (optional working)", rows:[
+   ["2016 April 01","Bank A/c M1","20,000","2017 March 31","Depreciation M1 / Balance c/d","2,000 / 18,000"],
+   ["2017 April 01","Balance b/d M1","18,000","2018 March 31","Depreciation M1 1,800 / M2 500","2,300"],
+   ["2017 Oct.01","Bank A/c M2","10,000","2018 March 31","Balance c/d M1 16,200 / M2 9,500","25,700"],
+   ["","Total","28,000","","Total","28,000"],
+   ["2018 April 01","Balance b/d M1 16,200/M2 9,500","25,700","2019 March 31","Depreciation M1 1,620/M2 950/M3 500","3,070"],
+   ["2018 April 01","Bank A/c M3","5,000","2019 March 31","Balance c/d M1 14,580/M2 8,550/M3 4,500","27,630"],
+   ["","Total","30,700","","Total","30,700"]
+ ]}],
+ note:"Since the question does not specify to prepare the Machinery Account, it is optional to prepare this account."},
+
+{n:23, tag:"wdv", title:"M/s. P &amp; Q — 1/4th of machinery disposed, new machinery bought same day",
+ q:`M/s. P &amp; Q purchased machinery for ₹40,000 on 1st October, 2016. Depreciation is provided @ 10% p.a. on the Diminishing Balance. On 31st January, 2019, one-fourth of the machinery was found unsuitable and disposed off for ₹5,600. On the same date new machinery at a cost of ₹15,000 was purchased. Write up the Machinery account for the years ended 31st March, 2017, 2018 and 2019. Accounts are closed on 31st March each year.`,
+ formula:`Loss on sale of Machine I (1/4th): Book Value 8,550 → Dep(10mo) 713 → 7,837; Less Sale 5,600 → <b class="result">Loss = Rs 2,237</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2016 Oct.01","Bank I(3/4) 30,000 / I(1/4) 10,000","40,000","2017 Mar.31","Dep I(3/4,6mo) 1,500 / I(1/4,6mo) 500","2,000"],
+   ["","","","2017 Mar.31","Balance c/d I(3/4) 28,500 / I(1/4) 9,500","38,000"],
+   ["","Total","40,000","","Total","40,000"],
+   ["2017 Apr.01","Balance b/d I(3/4) 28,500/I(1/4) 9,500","38,000","2018 Mar.31","Dep I(3/4) 2,850 / I(1/4) 950","3,800"],
+   ["","","","2018 Mar.31","Balance c/d I(3/4) 25,650 / I(1/4) 8,550","34,200"],
+   ["","Total","38,000","","Total","38,000"],
+   ["2018 Apr.01","Balance b/d I(3/4) 25,650/I(1/4) 8,550","34,200","2019 Jan.31","Dep I(1/4,10mo) 713 / Bank I(1/4) 5,600 / P&L Loss 2,237","8,550"],
+   ["2019 Jan.31","Bank II","15,000","2019 Mar.31","Dep I(3/4) 2,565 / II(2mo) 250","2,815"],
+   ["","","","2019 Mar.31","Balance c/d I(3/4) 23,085 / II 14,750","37,835"],
+   ["","Total","49,200","","Total","49,200"]
+ ]}]},
+
+{n:24, tag:"wdv", title:"Meenal Sharma — sold to Deepa with commission (10% WDV)",
+ q:`On 1st October, 2015, Meenal Sharma bought a machine for ₹25,000 on which he spent ₹5,000 for carriage and freight; ₹1,000 for brokerage of the middle-man, ₹4,000 for installation. The machine is depreciated @ 10% p.a. on written down value basis. On 31st March, 2018 the machine was sold to Deepa for ₹30,500 and ₹500 was paid as commission to broker through whom the sales was effected. Find out the profit or loss on sale of machine if accounts are closed on 31st March, every year.`,
+ formula:`Cost = 25,000+5,000+1,000+4,000 = Rs 35,000<br>
+Book Value 31/3/2018 = 26,932; Sale net = 30,500−500 = 30,000 → <b class="result">Profit = Rs 3,068</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2015 Oct 01","Bank","35,000","2016 Mar.31","Depreciation(6mo) / Balance c/d","1,750 / 33,250"],
+   ["2016 Apr.01","Balance b/d","33,250","2017 Mar.31","Depreciation / Balance c/d","3,325 / 29,925"],
+   ["2017 Apr.01","Balance b/d","29,925","2018 Mar.31","Depreciation","2,993"],
+   ["2018 Mar.31","P&L A/c (Profit on Sale)","3,068","2018 Mar.31","Bank A/c (30,500−500)","30,000"],
+   ["","Total","32,993","","Total","32,993"]
+ ]}]},
+
+{n:25, tag:"wdv", title:"Company — 3 machines, one-third of Plant I sold at loss (10% WDV)",
+ q:`A company purchased on 1st July, 2015 machinery costing ₹30,000. It further purchased machinery on 1st January, 2016 costing ₹20,000 and on 1st October, 2016 costing ₹10,000. On 1st April, 2017, one-third of the machinery installed on 1st July, 2015 became obsolete and was sold for ₹3,000. The company follows financial year as accounting year.
+Show how the Machinery Account would appear in the books of company if depreciation is charged @ 10% p.a. on Written Down Value Method.`,
+ formula:`Loss on Sale of Plant I (1/3rd): Book Value 8,325; Less Sale 3,000 → <b class="result">Loss = Rs 5,325</b>`,
+ tables:[{title:"Machinery Account", rows:[
+   ["2015 Jul 01","Bank I(2/3) 20,000/I(1/3) 10,000","30,000","2016 Mar.31","Dep I(2/3) 1,500/I(1/3) 750/II 500","2,750"],
+   ["2016 Jan.01","Bank II","20,000","2016 Mar.31","Balance c/d I(2/3) 18,500/I(1/3) 9,250/II 19,500","47,250"],
+   ["","Total","50,000","","Total","50,000"],
+   ["2016 Apr 01","Balance b/d I(2/3)18,500/I(1/3)9,250/II19,500","47,250","2017 Mar 31","Dep I(2/3)1,850/I(1/3)925/II1,950/III500","5,225"],
+   ["2016 Oct 01","Bank III","10,000","2017 Mar 31","Balance c/d I(2/3)16,650/I(1/3)8,325/II17,550/III9,500","52,025"],
+   ["","Total","57,250","","Total","57,250"],
+   ["2017 Apr.01","Balance b/d I(2/3)16,650/I(1/3)8,325/II17,550/III9,500","52,025","2017 Apr.01","Bank I(1/3) 3,000 / P&L Loss 5,325","8,325"],
+   ["","","","2018 Mar.31","Dep I(2/3)1,665/II1,755/III950","4,370"],
+   ["","","","2018 Mar.31","Balance c/d I(2/3)14,985/II15,795/III8,550","39,330"],
+   ["","Total","52,025","","Total","52,025"]
+ ]}]},
+
+{n:26, tag:"both", title:"Astha Engineering Works — GST sale &amp; purchase (10% WDV)",
+ q:`Astha Engineering Works purchased a machine on 1st July, 2015 for ₹1,80,000 and spent ₹20,000 on its installation.
+On 1st April, 2016, it purchased another machine for ₹2,40,000. On 1st October, 2017, the machine purchased on 1st July, 2015 was sold for ₹1,45,000 plus CGST and SGST @ 6% each. On 1st January, 2018, another machine was purchased for ₹4,00,000 plus IGST @ 12%.
+Prepare the Machinery Account for the years ended 31st March, 2016 to 2018 after charging Depreciation @ 10% p.a. by Diminishing Balance Method.`,
+ formula:`Loss on sale of Machine I: Book Value 1/4/2017 = 1,66,500; Less Dep(6mo) 8,325 → 1,58,175; Less Sale 1,45,000 → <b class="result">Loss = Rs 13,175</b>`,
+ tables:[{title:"Machinery Account — Book of Astha Engineering Works", rows:[
+   ["2015-16 Jul 01","Bank I (1,80,000+20,000)","2,00,000","2015-16 Mar.31","Depreciation(9mo) / Balance c/d","15,000 / 1,85,000"],
+   ["2016-17 Apr.01","Balance b/d I","1,85,000","2016-17 Mar.31","Depreciation I 18,500 / II 24,000","42,500"],
+   ["2016-17 Apr.01","Bank II","2,40,000","2016-17 Mar.31","Balance c/d I 1,66,500 / II 2,16,000","3,82,500"],
+   ["","Total","4,25,000","","Total","4,25,000"],
+   ["2017-18 Apr.01","Balance b/d I 1,66,500/II 2,16,000","3,82,500","2017-18 Oct.01","Dep I(6mo) 8,325 / Bank I 1,45,000 / P&L Loss 13,175","1,66,500"],
+   ["2017-18 Jan.01","Bank III","4,00,000","2017-18 Mar.31","Depreciation II 21,600 / III(3mo) 10,000","31,600"],
+   ["","","","2017-18 Mar.31","Balance c/d II 1,94,400 / III 3,90,000","5,84,400"],
+   ["","Total","7,82,500","","Total","7,82,500"]
+ ]}],
+ note:"Journal: Jan 2018 — Machinery Dr 4,00,000, Input IGST Dr 48,000 → To Bank 4,48,000."},
+
+{n:27, tag:"slm", title:"M/s. Amrit — Machinery Disposal Account (10% p.a. SLM)",
+ q:`Following balances appear in the books of M/s. Amrit as on 1st April, 2018: Machinery A/c ₹60,000, Provision for Depreciation A/c ₹36,000.
+On 1st April, 2018, they decided to dispose off a machinery for ₹8,400 which was purchased on 1st April, 2014 for ₹16,000.
+Prepare the Machinery Account, Provision for Depreciation Account and Machinery Disposal Account for the year ended 31st March, 2019. Depreciation was charged at 10% p.a on Cost following Straight Line Method.`,
+ formula:`Book Value of Machine Sold (1/4/2018): 16,000 − (1,600×4) = 9,600; Less Sale 8,400 → <b class="result">Loss = Rs 1,200</b>`,
+ tables:[{title:"Machinery Account — Books of M/s. Amrit", rows:[
+   ["2018 April 01","Balance b/d (44,000+16,000)","60,000","2018 April 01","Machinery Disposal","16,000"],
+   ["","","","2019 Mar.31","Balance c/d","44,000"],
+   ["","Total","60,000","","Total","60,000"]
+ ]},
+ {title:"Provision for Depreciation Account", rows:[
+   ["2018 April 01","Machinery Disposal (4 years)","6,400","2018 April 01","Balance b/d","36,000"],
+   ["2019 Mar.31","Balance c/d","34,000","2019 Mar.31","Depreciation on Machine costing Rs 44,000","4,400"],
+   ["","Total","40,400","","Total","40,400"]
+ ]},
+ {title:"Machinery Disposal Account", rows:[
+   ["2018 April 01","Machinery","16,000","2018 April 01","Provision for Depreciation","6,400"],
+   ["","","","2019 Mar.31","Bank (Sale) / P&L (Loss)","8,400 / 1,200"],
+   ["","Total","16,000","","Total","16,000"]
+ ]}]},
+
+{n:28, tag:"wdv", title:"X Ltd. — Machinery Disposal A/c with part-machinery split (10% WDV)",
+ q:`On 1st October, 2011, X Ltd. purchased a machinery for ₹2,50,000. A part of machinery which was purchased for ₹20,000 on 1st October, 2011 became obsolete and was disposed off on 1st January, 2014 (having a book value ₹17,100 on 1st April, 2013) for ₹2,000. Depreciation is charged @ 10% annually on written down value. Prepare Machinery Disposal Account and also show your workings. The books being closed on 31st March of every year.`,
+ formula:`Loss on disposal of Part 2: Book Value 1/4/2013 = 17,100; Less Dep(9mo) 1,283 → 15,817; Less Sale 2,000 → <b class="result">Loss = Rs 13,817</b>`,
+ tables:[{title:"Machinery Account — Books of X Ltd.", rows:[
+   ["2011 Oct 01","Bank I(part1) 2,30,000 / I(part2) 20,000","2,50,000","2012 Mar.31","Dep part1(6mo) 11,500 / part2(6mo) 1,000","12,500"],
+   ["","","","2012 Mar.31","Balance c/d part1 2,18,500 / part2 19,000","2,37,500"],
+   ["","Total","2,50,000","","Total","2,50,000"],
+   ["2012 Apr.01","Balance b/d part1 2,18,500/part2 19,000","2,37,500","2013 Mar.31","Dep part1 21,850 / part2 1,900","23,750"],
+   ["","","","2013 Mar.31","Balance c/d part1 1,96,650 / part2 17,100","2,13,750"],
+   ["","Total","2,37,500","","Total","2,37,500"],
+   ["2013 Apr.01","Balance b/d part1 1,96,650/part2 17,100","2,13,750","2014 Jan.01","Dep part2(9mo) 1,283 / Bank part2 2,000 / P&L Loss 13,817","17,100"],
+   ["","","","2014 Mar.31","Depreciation part1 19,665 / Balance c/d 1,76,985","1,96,650"],
+   ["","Total","2,13,750","","Total","2,13,750"]
+ ]}]},
+
+{n:29, tag:"slm", title:"Sharma &amp; Co. — full disposal-account treatment (10% SLM)",
+ q:`Sharma &amp; Co. whose books are closed on 31st March, purchased a machinery for ₹1,50,000 on 1st April, 2016, Additional machinery was acquired for ₹50,000 on 1st October, 2016. Certain machinery which was purchased for ₹50,000 on 1st October, 2016 was sold for ₹40,000 on 30th September, 2018.
+Prepare the Machinery Account and Accumulated Depreciation Account for all the years up to the year ended 31st March, 2019. Depreciation is charged @ 10% p.a. on Straight Line Method. Also, show the Machinery Disposal Account.`,
+ formula:`Machine II sold — Original Cost 50,000; Less Accum. Dep 10,000 → Book Value 40,000; Sale Value 40,000 → <b class="result">Profit / Loss = NIL</b>`,
+ tables:[{title:"Machinery Account — Books of Sharma &amp; Co.", rows:[
+   ["2016 Apr.01","Bank I","1,50,000","2017 Mar.31","Balance c/d","2,00,000"],
+   ["2016 Oct 01","Bank II","50,000","","","2,00,000"],
+   ["","Total","2,00,000","","Total","2,00,000"],
+   ["2017 Apr.01","Balance b/d","2,00,000","2018 Mar.31","Balance c/d","2,00,000"],
+   ["2018 Apr.01","Balance b/d","2,00,000","2018 Sep 30","Machinery Disposal A/c","50,000"],
+   ["","","","2019 Mar.31","Balance c/d","1,50,000"],
+   ["","Total","2,00,000","","Total","2,00,000"]
+ ]},
+ {title:"Accumulated Depreciation Account", rows:[
+   ["2017 Mar.31","Balance c/d I 15,000 / II(6mo) 2,500","17,500","2017 Mar.31","Depreciation I 15,000 / II(6mo) 2,500","17,500"],
+   ["2018 Mar.31","Balance c/d I 30,000 / II 7,500","37,500","2017 Apr.01","Balance b/d I 15,000/II 2,500","17,500"],
+   ["","","","2018 Mar.31","Depreciation I 15,000 / II 5,000","20,000"],
+   ["2018 Sep 30","Machinery Disposal II","10,000","2018 Apr.01","Balance b/d I 30,000/II 7,500","37,500"],
+   ["2019 Mar.31","Balance c/d I","45,000","2018 Sep 30","Depreciation II","2,500"],
+   ["","","","2019 Mar.31","Depreciation I","15,000"],
+   ["","Total","55,000","","Total","55,000"]
+ ]},
+ {title:"Machinery Disposal Account", rows:[
+   ["2018 Sep 30","Machinery","50,000","2018 Sep 30","Accumulated Depreciation / Bank","10,000 / 40,000"],
+   ["","Total","50,000","","Total","50,000"]
+ ]}]}
+];
+
+/* ================= RENDER ================= */
+const qlist = document.getElementById('qlist');
+const quicknav = document.getElementById('quicknav');
+const tagIcon = {slm:'📏', wdv:'📉', both:'🔁'};
+const tagLabel = {slm:'SLM', wdv:'WDV', both:'GST/Disposal'};
+
+Q.forEach(item=>{
+  quicknav.innerHTML += `<a href="#q${item.n}">Q${item.n}</a>`;
+
+  let tablesHtml = '';
+  item.tables.forEach(t=>{
+    let drRows = '', crRows = '';
+    t.rows.forEach(r=>{
+      const drCls = r[1]==='Total' ? ' class="total"' : '';
+      const crCls = r[4]==='Total' ? ' class="total"' : '';
+      drRows += `<tr${drCls}><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td></tr>`;
+      crRows += `<tr${crCls}><td>${r[3]}</td><td>${r[4]}</td><td class="num">${r[5]}</td></tr>`;
+    });
+    tablesHtml += `
+    <div class="tablewrap"><table class="ledger"><caption>${t.title} — Dr. side</caption>
+      <thead class="dr"><tr><th>Date</th><th>Particulars</th><th class="num">Amt (₹)</th></tr></thead>
+      <tbody>${drRows}</tbody>
+    </table></div>
+    <div class="tablewrap"><table class="ledger"><caption>${t.title} — Cr. side</caption>
+      <thead class="cr"><tr><th>Date</th><th>Particulars</th><th class="num">Amt (₹)</th></tr></thead>
+      <tbody>${crRows}</tbody>
+    </table></div>`;
+  });
+
+  const noteHtml = item.note ? `<div class="note">📌 ${item.note}</div>` : '';
+  const ansHtml = item.ans ? `<div class="ans-strip">${item.ans.map(a=>`<div class="pill">✅ ${a}</div>`).join('')}</div>` : '';
+
+  const card = document.createElement('div');
+  card.className = 'qcard';
+  card.id = 'q'+item.n;
+  card.innerHTML = `
+    <div class="qhead ${item.tag}" onclick="this.parentElement.classList.toggle('open')">
+      <div class="qnum">${item.n}</div>
+      <div class="qtitle">${item.title}</div>
+      <div class="badge ${item.tag}">${tagIcon[item.tag]} ${tagLabel[item.tag]}</div>
+      <div class="caret">▶</div>
+    </div>
+    <div class="qbody">
+      <div class="qtext"><b>Question:</b>\n${item.q}</div>
+      <h4 class="section-lbl">Working / Formula</h4>
+      <div class="formula-box">${item.formula}</div>
+      <h4 class="section-lbl">Ledger Solution</h4>
+      ${tablesHtml}
+      ${noteHtml}
+      ${ansHtml}
+    </div>`;
+  qlist.appendChild(card);
+});
+
+/* ================= INTERACTIONS ================= */
+function toggleDark(){document.body.classList.toggle('dark');}
+
+document.getElementById('searchBox').addEventListener('input', e=>{
+  const val = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.qcard').forEach(card=>{
+    const text = card.textContent.toLowerCase();
+    const match = text.includes(val);
+    card.style.display = match ? '' : 'none';
+    if(val && match) card.classList.add('open'); 
+  });
+});
+
+// open first card by default
+if(document.querySelector('.qcard')) document.querySelector('.qcard').classList.add('open');
+</script>
+</body>
+</html>

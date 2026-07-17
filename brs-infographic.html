@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Chapter 9 · Bank Reconciliation Statement — Visual Study Cards</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --paper:#F4F0E2;
+  --paper-2:#EAE3CC;
+  --ink:#182A20;
+  --ink-soft:#4C5F52;
+  --rule:#C7BE9C;
+  --plus:#1F6F4A;
+  --plus-bg:#E1F0E6;
+  --minus:#AE3327;
+  --minus-bg:#F7E4E1;
+  --gold:#9C7A26;
+  --gold-bg:#F2E7C6;
+  --card:#FFFDF6;
+  --shadow: 0 2px 0 rgba(24,42,32,.09), 0 8px 24px -12px rgba(24,42,32,.28);
+  --radius: 14px;
+}
+[data-theme="dark"]{
+  --paper:#101913;
+  --paper-2:#182319;
+  --ink:#EDEADC;
+  --ink-soft:#AEB8AC;
+  --rule:#39473C;
+  --plus:#59C98B;
+  --plus-bg:#123324;
+  --minus:#EE8A7E;
+  --minus-bg:#3A1A16;
+  --gold:#E6C871;
+  --gold-bg:#2E260C;
+  --card:#16201A;
+  --shadow: 0 2px 0 rgba(0,0,0,.35), 0 10px 28px -12px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background-color:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  padding-bottom:80px;
+  transition:background-color .3s, color .3s;
+}
+.passbook-lines{
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 27px, var(--rule) 28px);
+  opacity:.3;
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+}
+
+/* ---------- HERO ---------- */
+header.hero{
+  position:relative;
+  padding:30px 18px 24px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(156,122,38,.18), transparent 55%),
+    var(--paper-2);
+  border-bottom:3px double var(--rule);
+  overflow:hidden;
+}
+.stamp{
+  position:absolute; top:18px; right:18px; width:78px; height:78px;
+  border:2.5px solid var(--minus); border-radius:50%;
+  color:var(--minus); font-family:'IBM Plex Mono',monospace; font-weight:700;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  transform:rotate(-14deg); opacity:.55; font-size:9px; letter-spacing:.05em; line-height:1.3;
+  padding:6px;
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--gold); font-weight:600;
+  background:var(--gold-bg); padding:4px 10px; border-radius:20px;
+  border:1px solid var(--gold);
+}
+h1.title{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(26px,7.5vw,40px);
+  line-height:1.05;
+  margin:10px 0 6px;
+  letter-spacing:-.01em;
+  max-width:78%;
+}
+h1.title em{ color:var(--plus); font-style:normal; border-bottom:4px solid var(--plus); }
+.hero-sub{ color:var(--ink-soft); font-size:14px; max-width:520px; line-height:1.5; margin:0 0 16px;}
+.hero-row{ display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none;}
+.hero-row::-webkit-scrollbar{display:none;}
+.stat-chip{
+  flex:0 0 auto;
+  background:var(--card); border:1px solid var(--rule); border-radius:12px;
+  padding:10px 14px; box-shadow:var(--shadow); min-width:88px; text-align:center;
+}
+.stat-chip .num{ font-family:'Fraunces',serif; font-size:20px; font-weight:700; color:var(--ink);}
+.stat-chip .lbl{ font-size:9.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); font-weight:600;}
+
+.toolbar{
+  position:sticky; top:0; z-index:20;
+  display:flex; gap:8px; padding:10px 14px;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.tbtn{
+  border:1px solid var(--rule); background:var(--card); color:var(--ink);
+  font-family:'Inter'; font-weight:600; font-size:12.5px;
+  padding:8px 12px; border-radius:20px; cursor:pointer; display:flex; align-items:center; gap:6px;
+}
+.tbtn.active{ background:var(--ink); color:var(--paper); border-color:var(--ink);}
+.tbtn:active{ transform:scale(.97); }
+.spacer{flex:1;}
+.search-wrap{ padding:10px 14px 0; }
+.search-input{
+  width:100%; border:1px solid var(--rule); border-radius:10px; padding:9px 12px;
+  font-family:'Inter'; font-size:13.5px; background:var(--card); color:var(--ink);
+}
+
+main{ max-width:760px; margin:0 auto; padding:14px 12px 40px; position:relative; z-index:1;}
+
+/* ---------- QUESTION CARD ---------- */
+.qcard{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.qhead{
+  display:flex; align-items:center; gap:12px;
+  padding:13px 15px; cursor:pointer; user-select:none;
+}
+.qnum{
+  font-family:'Fraunces',serif; font-weight:700; font-size:17px;
+  width:36px; height:36px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ink); color:var(--paper); flex:0 0 auto;
+}
+.qhead .qtitle{ flex:1; min-width:0;}
+.qhead .qtitle .qlabel{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:700;}
+.qhead .qtitle .qsum{ font-size:13.8px; font-weight:600; color:var(--ink); line-height:1.35; margin-top:2px;}
+.chev{ transition:transform .25s; color:var(--ink-soft); flex:0 0 auto;}
+.qcard.open .chev{ transform:rotate(180deg);}
+.qbody{ max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.qbody-inner{ padding:0 15px 16px; border-top:1px dashed var(--rule); }
+
+.given-box{
+  background:var(--paper-2); border-radius:10px; padding:11px 13px; margin:13px 0;
+  font-size:13px; line-height:1.55; color:var(--ink-soft);
+  border-left:4px solid var(--gold);
+}
+.given-box b{ color:var(--ink); }
+.given-tx{ list-style:none; margin:8px 0 0; padding:0; }
+.given-tx li{ display:flex; justify-content:space-between; gap:10px; padding:4px 0; border-bottom:1px dotted var(--rule); font-family:'IBM Plex Mono',monospace; font-size:11.5px;}
+.given-tx li:last-child{border-bottom:none;}
+.given-tx .amt{ color:var(--ink); font-weight:700; white-space:nowrap;}
+
+.sec-label{
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--gold); font-weight:700; margin:16px 0 6px; display:flex; align-items:center; gap:6px;
+}
+.sec-label svg{ width:14px; height:14px; }
+.sec-sub{ font-size:11.5px; color:var(--ink-soft); margin:-2px 0 8px; font-style:italic;}
+
+/* BRS table */
+.brs-table{ width:100%; border-collapse:collapse; font-size:12.3px; margin-bottom:6px;}
+.brs-table th{
+  text-align:left; font-family:'IBM Plex Mono'; font-size:9.5px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--ink-soft); border-bottom:2px solid var(--ink);
+  padding:6px 4px;
+}
+.brs-table th.num{ text-align:right; }
+.brs-table td{ padding:5px 4px; vertical-align:top; border-bottom:1px solid var(--rule); line-height:1.4;}
+.brs-table td.sno{ font-family:'IBM Plex Mono'; color:var(--gold); font-weight:700; font-size:11px; white-space:nowrap; width:22px;}
+.brs-table td.num{ font-family:'IBM Plex Mono'; text-align:right; white-space:nowrap; font-weight:700;}
+.brs-table td.num.plus{ color:var(--plus);}
+.brs-table td.num.minus{ color:var(--minus);}
+.brs-table tr.bold td{ font-weight:800; }
+.brs-table tr.bold td.sno{ color:transparent; }
+.brs-table tr.total td{ border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); font-weight:800; background:var(--gold-bg); font-family:'IBM Plex Mono';}
+.brs-table tr.total td.num{ color:var(--ink); }
+
+/* generic small table (cash book / pass book given) */
+.mini-table{ width:100%; border-collapse:collapse; font-size:11px; margin-bottom:10px;}
+.mini-table th{ background:var(--ink); color:var(--paper); padding:5px 5px; font-size:9px; text-transform:uppercase; letter-spacing:.04em; text-align:left;}
+.mini-table td{ padding:4px 5px; border-bottom:1px solid var(--rule);}
+.mini-table td.num{ font-family:'IBM Plex Mono'; text-align:right; font-weight:600;}
+.mini-table tr.total td{ font-weight:800; border-top:2px solid var(--ink); background:var(--paper-2);}
+.table-title{ font-weight:700; font-size:12.5px; margin:10px 0 4px; font-family:'Fraunces',serif;}
+
+.note-box{
+  background:var(--minus-bg); border-left:4px solid var(--minus); border-radius:8px;
+  padding:9px 12px; margin-top:10px; font-size:11.8px; line-height:1.5; color:var(--ink);
+}
+.note-box b{ color:var(--minus); }
+
+footer.site-foot{ text-align:center; color:var(--ink-soft); font-size:11.5px; padding:24px 16px 10px; font-family:'IBM Plex Mono';}
+
+.no-results{ text-align:center; padding:40px 20px; color:var(--ink-soft); font-size:14px; display:none;}
+</style>
+</head>
+<body>
+<div class="passbook-lines"></div>
+
+<header class="hero">
+  <div class="stamp">RECON<br>CILED<br>★</div>
+  <span class="eyebrow">✎ Accountancy · Class XI</span>
+  <h1 class="title">Chapter 9 — <em>Bank Reconciliation</em></h1>
+  <p class="hero-sub">32 worked problems turned into tap‑to‑open passbook cards. Every figure below matches the original solutions exactly — Plus items in green, Minus items in red, just like reconciling a real passbook.</p>
+  <div class="hero-row" id="statChips"></div>
+</header>
+
+<div class="toolbar">
+  <button class="tbtn active" id="expandAllBtn">⤢ Expand all</button>
+  <button class="tbtn" id="collapseAllBtn">⤡ Collapse all</button>
+  <div class="spacer"></div>
+  <button class="tbtn" id="themeBtn">🌙 Dark</button>
+</div>
+<div class="search-wrap">
+  <input class="search-input" id="searchBox" placeholder="🔍 Search a question (e.g. overdraft, dishonoured, discount)…">
+</div>
+
+<main id="app"></main>
+<p class="no-results" id="noResults">No questions match your search.</p>
+
+
+
+<script>
+const ICONS = {
+  cheque:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 15h4M14 15h4M6 9h12"/></svg>',
+  bank:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-6 9 6"/><path d="M4 10v9M9 10v9M15 10v9M20 10v9"/><path d="M2 21h20"/></svg>',
+  interest:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7h-6v6"/></svg>',
+  overdraft:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 12l4-4M3 12l4 4"/></svg>',
+  book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4.5A2.5 2.5 0 016.5 2H20v18H6.5A2.5 2.5 0 004 17.5v-13z"/><path d="M4 17.5A2.5 2.5 0 016.5 15H20"/></svg>',
+  calc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>'
+};
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderBRS(brs){
+  const wrap = el('div');
+  if(brs.label){
+    const lbl = el('div','sec-label', ICONS.calc + ' ' + brs.label);
+    wrap.appendChild(lbl);
+  }
+  if(brs.asOn) wrap.appendChild(el('div','sec-sub', 'Bank Reconciliation Statement as on ' + brs.asOn));
+  const table = el('table','brs-table');
+  table.innerHTML = `<thead><tr><th style="width:8%">#</th><th>Particulars</th><th class="num" style="width:22%">Plus (₹)</th><th class="num" style="width:22%">Minus (₹)</th></tr></thead>`;
+  const tbody = el('tbody');
+  brs.rows.forEach(r=>{
+    const [sno, particulars, plus, minus, bold] = r;
+    const tr = el('tr', bold?'bold':'');
+    tr.innerHTML = `<td class="sno">${sno||''}</td><td>${particulars}</td><td class="num plus">${plus||''}</td><td class="num minus">${minus||''}</td>`;
+    tbody.appendChild(tr);
+  });
+  const totalTr = el('tr','total');
+  totalTr.innerHTML = `<td></td><td>Total</td><td class="num">${brs.total[0]}</td><td class="num">${brs.total[1]}</td>`;
+  tbody.appendChild(totalTr);
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function renderMiniTable(t){
+  const wrap = el('div');
+  wrap.appendChild(el('div','table-title', t.title));
+  if(t.subtitle) wrap.appendChild(el('div','sec-sub', t.subtitle));
+  const table = el('table','mini-table');
+  table.innerHTML = `<thead><tr>${t.cols.map(c=>`<th${c.num?' class="num"':''}>${c.label}</th>`).join('')}</tr></thead>`;
+  const tbody = el('tbody');
+  t.rows.forEach(r=>{
+    const tr = el('tr', r.total?'total':'');
+    tr.innerHTML = r.cells.map((c,i)=>`<td${t.cols[i].num?' class="num"':''}>${c}</td>`).join('');
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function buildQuestionCard(q){
+  const card = el('div','qcard');
+  const head = el('div','qhead');
+  head.innerHTML = `
+    <div class="qnum">${q.num}</div>
+    <div class="qtitle"><div class="qlabel">Question ${q.num}</div><div class="qsum">${q.summary}</div></div>
+    <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>`;
+  const body = el('div','qbody');
+  const inner = el('div','qbody-inner');
+
+  if(q.given){
+    const gb = el('div','given-box');
+    gb.innerHTML = `<b>📋 Given</b><br>${q.given}` + (q.givenTx ? `<ul class="given-tx">${q.givenTx.map(t=>`<li><span>${t[0]}</span><span class="amt">₹ ${t[1]}</span></li>`).join('')}</ul>` : '');
+    inner.appendChild(gb);
+  }
+
+  if(q.extraTables){
+    q.extraTables.forEach(t=> inner.appendChild(renderMiniTable(t)));
+  }
+
+  if(q.brsList){
+    q.brsList.forEach(b=> inner.appendChild(renderBRS(b)));
+  }
+
+  if(q.note){
+    const nb = el('div','note-box');
+    nb.innerHTML = `<b>Note:</b> ${q.note}`;
+    inner.appendChild(nb);
+  }
+
+  body.appendChild(inner);
+
+  head.onclick = ()=>{
+    const isOpen = card.classList.toggle('open');
+    body.style.maxHeight = isOpen ? body.scrollHeight+'px' : '0px';
+  };
+  card.appendChild(head);
+  card.appendChild(body);
+  return card;
+}
+
+function init(){
+  const app = document.getElementById('app');
+  QUESTIONS.forEach(q=> app.appendChild(buildQuestionCard(q)));
+
+  const chips = document.getElementById('statChips');
+  [['32','Questions'],['5','Overdraft cases'],['3','Adjusted Cash Books'],['100%','Content match']].forEach(s=>{
+    chips.innerHTML += `<div class="stat-chip"><div class="num">${s[0]}</div><div class="lbl">${s[1]}</div></div>`;
+  });
+
+  document.getElementById('expandAllBtn').onclick = ()=>{
+    document.querySelectorAll('.qcard').forEach(c=>{
+      c.classList.add('open');
+      const b = c.querySelector('.qbody');
+      b.style.maxHeight = b.scrollHeight+'px';
+    });
+  };
+  document.getElementById('collapseAllBtn').onclick = ()=>{
+    document.querySelectorAll('.qcard').forEach(c=>{
+      c.classList.remove('open');
+      c.querySelector('.qbody').style.maxHeight = '0px';
+    });
+  };
+  const themeBtn = document.getElementById('themeBtn');
+  themeBtn.onclick = ()=>{
+    const d = document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){ d.removeAttribute('data-theme'); themeBtn.innerHTML='🌙 Dark';}
+    else { d.setAttribute('data-theme','dark'); themeBtn.innerHTML='☀️ Light';}
+  };
+
+  const searchBox = document.getElementById('searchBox');
+  const noResults = document.getElementById('noResults');
+  searchBox.addEventListener('input', ()=>{
+    const q = searchBox.value.trim().toLowerCase();
+    let visibleCount = 0;
+    document.querySelectorAll('.qcard').forEach((card, i)=>{
+      const text = card.textContent.toLowerCase();
+      const match = q==='' || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if(match) visibleCount++;
+    });
+    noResults.style.display = visibleCount===0 ? 'block' : 'none';
+  });
+
+  window.addEventListener('load', ()=>{
+    document.querySelectorAll('.qcard.open .qbody').forEach(b=> b.style.maxHeight = b.scrollHeight+'px');
+  });
+}
+</script>
+<script>
+// Data transcribed exactly from the source solutions (Chapter 9 - Bank Reconciliation Statement)
+const QUESTIONS = [];
+
+QUESTIONS.push({
+  num:1,
+  summary:"Simple 4-item reconciliation from a Debit cash-book balance of ₹15,000.",
+  given:"Prepare Bank Reconciliation Statement from the following:",
+  givenTx:[
+    ["(i) Debit balance as per the Cash Book","15,000"],
+    ["(ii) Cheques deposited but not cleared","1,000"],
+    ["(iii) Cheques issued but not presented","1,500"],
+    ["(iv) Bank interest","200"]
+  ],
+  brsList:[{ rows:[
+    ["(i)","Debit balance as per the Cash Book","15,000",""],
+    ["(ii)","Cheques deposited but not cleared","","1,000"],
+    ["(iii)","Cheques issued but not presented","1,500",""],
+    ["(iv)","Bank Interest","200",""],
+    ["","Credit Balance as per the Pass Book","","15,700",1]
+  ], total:["16,700","16,700"]}]
+});
+
+QUESTIONS.push({
+  num:2, 
+  summary:"Ramesh (PNB, Delhi) — Cash Book balance ₹72,950 reconciled for uncleared and unpresented cheques.",
+  given:"Ramesh has his account at Punjab National Bank, Delhi. Cash Book bank balance on 31st March, 2019 was ₹72,950. He sent cheques for ₹90,075 for collection but ₹43,769 were not collected by that date. Of cheques issued in payment of debts, ₹29,344 were not presented for payment.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Balance as per the Cash Book","72,950",""],
+    ["(i)","Cheques sent to bank but not yet cleared","","43,769"],
+    ["(ii)","Cheques issued but not yet presented for payment","29,344",""],
+    ["","Balance as per the Pass Book","","58,525",1]
+  ], total:["1,02,294","1,02,294"]}]
+});
+
+QUESTIONS.push({
+  num:3,
+  summary:"Mahesh — ₹75,000 debit balance; two uncleared deposits, three unpresented cheques, unrecorded bank interest/charges and an insurance premium recording error.",
+  given:"On 31st March, 2019, Cash Book of Mahesh showed debit bank balance of ₹75,000. Two cheques of ₹5,000 and ₹7,000 deposited on 30th March not yet realised. Three cheques of ₹6,000, ₹8,000 and ₹12,000 issued on 28th March not yet presented. Bank credited ₹1,250 interest and charged ₹150 bank charges, neither recorded in Cash Book. Bank paid insurance premium of ₹5,000 but it was recorded as ₹500 in Cash Book.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Balance as per the Cash Book","75,000",""],
+    ["(i)","Two cheques Rs 5,000 and Rs 7,000 were deposited but were not cleared","","12,000"],
+    ["(ii)","Three cheques Rs 6,000, Rs 8,000 and Rs 12,000 were issued but were not presented for payment","26,000",""],
+    ["(iii)","Bank allowed Interest","1,250",""],
+    ["(iv)","Bank Charges","","150"],
+    ["(v)","Insurance premium less charged","","4,500"],
+    ["","Balance as per the Pass Book","","85,600",1]
+  ], total:["1,02,250","1,02,250"]}]
+});
+
+QUESTIONS.push({
+  num:4,
+  summary:"₹12,000 Cash Book balance vs Pass Book: partly-cleared deposit, undercast receipts, a direct deposit, an unpresented cheque and bank interest/charges.",
+  given:"On 30th June, 2019, bank column of the Cash Book showed balance of ₹12,000 but the Pass Book showed a different balance: (i) Cheques paid into bank ₹8,000, only ₹6,500 credited by bankers. (ii) Receipts column of Cash Book undercast by ₹200. (iii) On 29th June a customer deposited ₹3,000 directly, entered in Pass Book only. (iv) Cheques of ₹9,200 issued, of which ₹2,200 presented for payment on 15th July. (v) Pass Book shows credit of ₹330 as interest and debit of ₹60 as bank charges.",
+  brsList:[{ asOn:"June 30, 2019", rows:[
+    ["","Balance as per the Cash Book","12,000",""],
+    ["(i)","Cheques paid in to bank but not cleared","","1,500"],
+    ["(ii)","Receipt side of Cash Book undercast","200",""],
+    ["(iii)","Amount directly deposited by customer","3,000",""],
+    ["(iv)","Cheque issued in June but presented in July","2,200",""],
+    ["(v)","Bank allowed Interest","330",""],
+    ["","Bank Charges","","60"],
+    ["","Balance as per the Pass Book","","16,170",1]
+  ], total:["17,730","17,730"]}]
+});
+
+QUESTIONS.push({
+  num:5,
+  summary:"Cash Book shows ₹12,500; seven discrepancies including unpresented/uncollected cheques, direct deposit, bank-collected interest and a discount misposting.",
+  given:"Cash Book shows a balance of ₹12,500. Discrepancies noted:",
+  givenTx:[
+    ["(i) Cheques issued but not yet presented","6,000"],
+    ["(ii) Cheques deposited but not collected","9,000"],
+    ["(iii) Bank paid insurance premium","5,000"],
+    ["(iv) Bank charges","300"],
+    ["(v) Directly deposited by a customer","8,000"],
+    ["(vi) Interest on investment collected by bank","2,000"],
+    ["(vii) Cash discount allowed of ₹200 recorded on debit side of Bank column",""]
+  ],
+  brsList:[{ rows:[
+    ["","Balance as per the Cash Book","12,500",""],
+    ["(i)","Cheques Issued but not yet presented for payment","6,000",""],
+    ["(ii)","Cheques deposited into bank but not collected","","9,000"],
+    ["(iii)","Bank paid Insurance Premium","","5,000"],
+    ["(iv)","Bank Charges","","300"],
+    ["(v)","Amount directly deposited by a customer","8,000",""],
+    ["(vi)","Interest on Investment Collected by bank","2,000",""],
+    ["(vii)","Cash discount debited to bank column","","200"],
+    ["","Balance as per the Pass Book","","14,000",1]
+  ], total:["28,500","28,500"]}]
+});
+
+QUESTIONS.push({
+  num:6,
+  summary:"₹10,000 debit balance; a rebate on a retired bill, a dishonoured cheque, a mis-posted deposit, an undercast payment side and an unrecorded bill dishonour.",
+  given:"From the following particulars, prepare Bank Reconciliation Statement as on 31st December, 2008:",
+  givenTx:[
+    ["(i) Debit balance as per Cash Book","10,000"],
+    ["(ii) A cheque for ₹500 issued to Karan not presented for payment",""],
+    ["(iii) A bill for ₹700 retired by bank under a rebate of ₹20, full amount credited in Cash Book",""],
+    ["(iv) A cheque for ₹295 deposited has been dishonoured",""],
+    ["(v) A sum of ₹800 deposited has been credited as ₹80 in the Pass Book",""],
+    ["(vi) Payments side of the Cash Book undercast by ₹200",""],
+    ["(vii) A bill receivable for ₹1,000 (discounted in Nov 2008) dishonoured on 31st Dec 2008",""]
+  ],
+  brsList:[{ asOn:"December 31, 2008", rows:[
+    ["(i)","Balance as per the Cash Book","10,000",""],
+    ["(ii)","A cheque for Rs 500 issued to Karan was not presented for payment","500",""],
+    ["(iii)","Rebate of retiring bill was not recorded","20",""],
+    ["(iv)","Cheque deposited and dishonoured","","295"],
+    ["(v)","A sum of Rs 800 deposited in bank recorded wrongly as Rs 80 in the pass book","","720"],
+    ["(vi)","Payment side of the Cash book undercast","","200"],
+    ["(vii)","Dishonour of bill has not been recorded in the Cash book","","1,000"],
+    ["","Balance as per the Pass Book","","8,305",1]
+  ], total:["10,520","10,520"]}]
+});
+
+QUESTIONS.push({
+  num:7,
+  summary:"Green Ltd — ₹23,650 Cash Book balance; late-credited deposit, bank/discount charges, unpresented cheques, a direct deposit and a dishonoured cheque never recorded.",
+  given:"Green Ltd's Bank Statement balance on 31st March, 2019 differs from Cash Book balance of ₹23,650. Found: (i) ₹2,860 paid into bank 31 Mar but not credited till next day. (ii) Bank charges ₹70 not entered in Cash Book. (iii) A bill for ₹5,500 discounted, entered without the ₹270 discount charge. (iv) Cheques totalling ₹16,720 issued & recorded before 31 Mar but not presented until after. (v) A debtor paid ₹1,000 directly into the bank on 25 March, no entry made. (vi) No entry made for dishonour on 15 March of a ₹550 cheque from Ram Babu.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Balance as per the Cash Book","23,650",""],
+    ["(i)","Cash deposited into bank but not entered in the Pass book","","2,860"],
+    ["(ii)","Bank Charges not entered the Cash Book","","70"],
+    ["(iii)","Bank Charges for discounting bill not recorded in the Cash Book","","270"],
+    ["(iv)","Cheques issued but not presented for payment","16,720",""],
+    ["(v)","Amount directly deposited by the debtor","1,000",""],
+    ["(vi)","Cheque received from Ram Babu was dishonoured and not recorded in Cash Book","","550"],
+    ["","Balance as per the Pass Book","","37,620",1]
+  ], total:["41,370","41,370"]}]
+});
+
+QUESTIONS.push({
+  num:8,
+  summary:"₹36,000 favourable Cash Book balance; part-presented cheques, two uncredited deposits, a dishonoured cheque, bank charges and a direct debtor deposit.",
+  given:"(i) On 31st March, 2019, Cash Book showed bank balance of ₹36,000 (Dr.). (ii) Cheques issued for ₹30,000, of which ₹24,000 presented for payment. (iii) Cheques of ₹8,400 deposited 28 March not yet credited; also a ₹3,000 cheque entered 30 March was banked 3rd April. (iv) A cheque from Suresh for ₹2,400 deposited 26 March was dishonoured, advice received 2nd April. (v) Pass Book showed bank charges of ₹120. (vi) A debtor deposited ₹3,000 on 26 March, intimation received 2nd April.",
+  brsList:[{ asOn:"31st March, 2019", rows:[
+    ["(i)","Favourable Balance as per Cash Book","36,000",""],
+    ["(ii)","Cheques issued but not presented for payment (30,000 – 24,000)","6,000",""],
+    ["(iii)","Cheques deposited but not yet credited by bank (8,400 + 3,000)","","11,400"],
+    ["(iv)","Cheque received from Suresh dishonoured","","2,400"],
+    ["(v)","Bank Charges debited by the bank","","120"],
+    ["(vi)","Cheque deposited directly into the bank by debtors","3,000",""],
+    ["","Balance as per Pass Book (Cr.) (45,000 – 13,920)","","31,080",1]
+  ], total:["45,000","45,000"]}]
+});
+
+QUESTIONS.push({
+  num:9,
+  summary:"Pass Book balance ₹50,000; three unpresented cheques, two uncollected deposits, bank commission and allowed interest.",
+  given:"Prepare Bank Reconciliation Statement from the following particulars on 31st July, 2018: (i) Balance as per Pass Book ₹50,000. (ii) Three cheques for ₹6,000, ₹3,937 and ₹1,525 issued in last week of July 2018 presented for payment in August 2018. (iii) Two cheques of ₹500 and ₹650 sent for collection not entered in Pass Book by 31 July 2018. (iv) Bank charged ₹460 commission and allowed ₹100 interest, not mentioned in Bank column of Cash Book.",
+  brsList:[{ asOn:"July 31, 2018", rows:[
+    ["(i)","Balance as per the Pass Book","50,000",""],
+    ["(ii)","Three Cheques of Rs 6,000, Rs 3,937, Rs 1,525 were issued but not presented for payment in July, 2015","","11,462"],
+    ["(iii)","Cheques sent to bank for collection but not entered in the Pass Book","1,150",""],
+    ["(iv)","Bank charges not entered in the Cash Book","","460"],
+    ["(v)","Bank allowed interest","100",""],
+    ["","Balance as per the Cash Book","","40,048",1]
+  ], total:["51,610","51,610"]}]
+});
+
+QUESTIONS.push({
+  num:10,
+  summary:"Pass Book credit balance ₹6,000; part-presented cheques, an uncredited deposit, credited interest, and a cheque omitted from the Cash Book.",
+  given:"Draw Bank Reconciliation Statement as on 31st March, 2011. (i) Pass book showed balance of ₹6,000 to your credit. (ii) Cheques issued amounting to ₹1,500, of which ₹900 presented for payment. (iii) A cheque of ₹800 paid in on 29 March 2011 not yet credited in pass book. (iv) A credit of ₹85 for interest on Current Account in the pass book. (v) On 31 March 2011 a cheque for ₹510 received and paid into bank was omitted from cash book.",
+  brsList:[{ asOn:"March 31,2011", rows:[
+    ["(i)","Balance as per the Pass Book","6,000",""],
+    ["(ii)","Cheque Issued but not presented for payment (1,500 – 900)","","600"],
+    ["(iii)","Cheque deposited but not entered in the Pass Book","800",""],
+    ["(iv)","Bank allowed Interest","","85"],
+    ["(v)","Cheque deposited but not entered in the Cash Book","","510"],
+    ["","Balance as per the Cash Book","","5,605",1]
+  ], total:["6,800","6,800"]}]
+});
+
+QUESTIONS.push({
+  num:11,
+  summary:"Pass Book balance ₹10,000; an unentered deposit, an unsent cheque, a direct insurance payment, twice-entered items, and a dishonoured discounted bill.",
+  given:"Prepare Bank Reconciliation Statement as on 30th September, 2016:",
+  givenTx:[
+    ["(i) Bank Balance as per Pass Book","10,000"],
+    ["(ii) Cheque deposited into bank but no entry in Cash Book","500"],
+    ["(iii) Cheque received and entered in Cash Book but not sent to bank","1,200"],
+    ["(iv) Insurance premium paid directly by the bank","800"],
+    ["(v) Bank charges entered twice in the Cash Book","20"],
+    ["(vi) Cheque received entered twice in Cash Book","1,000"],
+    ["(vii) Bill discounted dishonoured not recorded in the cash book","5,000"]
+  ],
+  brsList:[{ asOn:"September 30, 2016", rows:[
+    ["(i)","Balance as per the Pass Book","10,000",""],
+    ["(ii)","Cheque deposited but not entered in the Cash Book","","500"],
+    ["(iii)","Cheque entered in the Cash Book but not sent to bank","1,200",""],
+    ["(iv)","Insurance premium paid directly by bank","800",""],
+    ["(v)","Bank Charges entered twice in the Cash Book","","20"],
+    ["(vi)","Cheque received entered twice in the Cash Book","1,000",""],
+    ["(vii)","Bill discounted dishonoured not entered in the Cash Book","5,000",""],
+    ["","Balance as per the Cash Book","","17,480",1]
+  ], total:["18,000","18,000"]}]
+});
+
+QUESTIONS.push({
+  num:12,
+  summary:"Pass Book bank statement ₹62,000; three cheques credited late, two unpresented cheques, an unbanked receipt, and bank-charge/interest mismatches.",
+  given:"Bank Statement shows balance of ₹62,000 on 31st March, 2019. Discrepancies: (i) Cheques paid into bank in March credited in April: P–₹3,500, Q–₹2,500, R–₹2,000. (ii) Cheques issued in March presented in April: X–₹4,000, Q–₹4,500. (iii) A ₹1,000 cheque from a customer entered in Cash Book but not banked. (iv) Pass Book shows debit of ₹1,000 bank charges and credit of ₹2,000 interest. (v) Interest on investment ₹2,500 collected by bank appeared in Pass Book.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Balance as per the Pass Book","62,000",""],
+    ["(i)","Cheque deposited but not credited not credited in the Pass book during March 2017 (3,500 + 2,500 + 2,000)","8,000",""],
+    ["(ii)","Cheques Issued but not presented in March 2017 (4,000 + 4,500)","","8,500"],
+    ["(iii)","Cheque received from Customer was recorded in Cash Book but not sent to Bank","1,000",""],
+    ["(iv)","Bank Charges","1,000",""],
+    ["","Bank allowed interest","","2,000"],
+    ["(v)","Interest on Investment Collected by bank but not entered in the Cash Book","","2,500"],
+    ["","Balance as per the Cash Book","","59,000",1]
+  ], total:["72,000","72,000"]}]
+});
+
+QUESTIONS.push({
+  num:13,
+  summary:"Pass Book ₹10,000 with ten discrepancies — the longest single-list reconciliation, covering undercast, doubled entries, dishonours and a reversed interest error.",
+  given:"Prepare Bank Reconciliation Statement as on 31st March, 2019:",
+  givenTx:[
+    ["(i) Bank balance as per Pass Book","10,000"],
+    ["(ii) Cheque deposited into the Bank, no entry passed in Cash Book","500"],
+    ["(iii) Cheque received and entered in Cash Book but not sent to bank","1,200"],
+    ["(iv) Credit side of the Cash Book bank column cast short","200"],
+    ["(v) Insurance premium paid directly by the bank under standing advice","600"],
+    ["(vi) Bank charges entered twice in the Cash Book","20"],
+    ["(vii) Cheque issued but not presented to the bank for payment","500"],
+    ["(viii) Cheque received entered twice in the Cash Book","1,000"],
+    ["(ix) Bill discounted dishonoured not recorded in the Cash Book","5,000"],
+    ["(x) Bank wrongly allowed interest of ₹5,000, reversed on 5th April, 2019",""]
+  ],
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["(i)","Balance as per the Pass Book","10,000",""],
+    ["(ii)","Cheque deposited but not entered in the Cash book","","500"],
+    ["(iii)","Cheque entered in the Cash Book but not deposited in the bank","1,200",""],
+    ["(iv)","Credit side of the Cash Book undercast","200",""],
+    ["(v)","Insurance premium paid directly by the bank but not entered in the Cash Book","600",""],
+    ["(vi)","Bank charges entered twice in the Cash book","","20"],
+    ["(vii)","Cheque issued but not presented for payment","500",""],
+    ["(viii)","Cheque received entered twice in the Cash Book","1,000",""],
+    ["(ix)","Bill discounted and dishonoured but not entered in the Cash Book","5,000",""],
+    ["(x)","Interest allowed by the bank to be reversed","","5,000"],
+    ["","Balance as per the Cash Book","","11,980",1]
+  ], total:["18,000","18,000"]}]
+});
+
+QUESTIONS.push({
+  num:14,
+  summary:"First overdraft case — Naresh's ₹40,000 overdraft reconciled for uncollected deposits, unpresented cheques, and Pass Book interest/charges.",
+  given:"On 1st January, 2019, Naresh had an overdraft of ₹40,000 per Cash Book. Cheques of ₹10,000 deposited but not collected by 1 Jan 2019. He issued cheques of ₹7,000 not presented for payment. Pass Book also debited ₹600 interest and ₹500 bank charges.",
+  brsList:[{ asOn:"January 01,2019", rows:[
+    ["","Overdraft as per the Cash Book","","40,000"],
+    ["","Cheques deposited but not Cleared","","10,000"],
+    ["","Cheques Issued but not presented for payment","7,000",""],
+    ["","Bank Charged Interest","","600"],
+    ["","Bank Charges","","500"],
+    ["","Overdraft as per the Pass Book","44,100","",1]
+  ], total:["51,100","51,100"]}]
+});
+
+QUESTIONS.push({
+  num:15,
+  summary:"Tiwari & Sons — ₹40,500 credit (overdraft) balance; an unpresented cheque, a post-dated debit, an uncollected deposit + dishonour, and a bill rebate.",
+  given:"Tiwari & Sons' Cash Book bank balance on 31st March, 2019 is ₹40,500 (credit) but differs from the Pass Book: (i) A cheque for ₹5,000 to Manohar not yet presented. (ii) A post-dated cheque for ₹900 debited in Cash Book but could not have been presented. (iii) Cheques totalling ₹10,200 deposited not yet collected; a ₹4,000 cheque dishonoured. (iv) A bill for ₹10,000 retired under rebate of ₹150 but full amount credited in Cash Book.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Overdraft as per the Cash Book","","40,500"],
+    ["(i)","Cheque issued but not presented for payment","5,000",""],
+    ["(ii)","Post-dated Cheque entered in the Cash Book but not deposited in the bank","900",""],
+    ["(iii)","Cheques deposited into bank but not collected","","10,200"],
+    ["","Cheque dishonoured","","4,000"],
+    ["(iv)","Rebate on retiring of bill not entered in the Cash Book","150",""],
+    ["","Overdraft as per the Pass Book","","50,450",1]
+  ], total:["55,600","55,600"]}]
+});
+
+QUESTIONS.push({
+  num:16,
+  summary:"Merchant's ₹1,72,985 overdraft; unpresented/uncollected cheques, a dishonoured cheque, a collected bill, bank charges/interest, and a carry-forward error (with explanatory note).",
+  given:"On 31st March, 2019, Cash Book of a merchant showed bank overdraft of ₹1,72,985. Discrepancies: (i) Cheques issued for ₹60,000 not presented till 7 April 2019. (ii) Cheques amounting to ₹75,000 deposited but not collected. (iii) A cheque of ₹15,000 from Mahesh Chand deposited was dishonoured, non-payment advice not received till 1 April 2019. (iv) ₹1,50,000 proceeds of a bill receivable collected appeared in Pass Book but not Cash Book. (v) Bank charges ₹1,500 and interest on overdraft ₹8,500 appeared in Pass Book but not Cash Book. (vi) Overdraft balance of ₹500 on 28 Feb 2019 was wrongly carried forward as debit balance.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Overdraft as per the Cash Book","","1,72,985"],
+    ["(i)","Cheques issued but not presented for payment","60,000",""],
+    ["(ii)","Cheques deposited but not collected","","75,000"],
+    ["(iii)","Cheque deposited but dishonoured","","15,000"],
+    ["(iv)","Bill sent for collection honoured but not entered in the Cash Book","1,50,000",""],
+    ["(v)a","Bank Charges","","1,500"],
+    ["(v)b","Bank Interest on overdraft","","8,500"],
+    ["(vi)","Overdraft balance wrongly taken as debit balance (Note)","","1,000"],
+    ["","Overdraft as per the Pass Book","63,985","",1]
+  ], total:["2,73,985","2,73,985"]}],
+  note:"Overdraft balance has credit balance but taken as debit balance, so to correct the error credit cash book by double amount. Therefore, ₹1,000 should be shown in the minus side."
+});
+
+QUESTIONS.push({
+  num:17,
+  summary:"Credit bank balance ₹10,500; an unpresented cheque, a post-dated debit, an uncollected deposit + dishonour, a direct insurance payment and mismatched charges/interest.",
+  given:"On 31st March, 2019, a merchant's Cash Book showed a credit bank balance of ₹10,500. (i) A cheque of ₹540 to Mohan not presented. (ii) A post-dated cheque for ₹100 debited in Cash Book but couldn't be presented. (iii) Four cheques of ₹1,200 not yet collected; a ₹400 cheque dishonoured. (iv) Bank paid ₹50 Fire Insurance premium not entered in Cash Book. (v) Pass Book debit of ₹15 bank charges, credit of ₹25 interest, no record in Cash Book. (vi) A ₹5,000 cheque dated 15 April 2019 issued to M & Co. dishonoured (post-dated), not yet recorded.",
+  brsList:[{ asOn:"March 31,2019", rows:[
+    ["","Credit bank balance as per the Cash Book","","10,500"],
+    ["(i)","Cheque issued but not presented for payment","540",""],
+    ["(ii)","Post-dated Cheque entered in the Cash Book but not deposited in the Bank","","100"],
+    ["(iii)","Cheque deposited but not cleared","","1,200"],
+    ["","Cheque dishonoured","","400"],
+    ["(iv)","Insurance premium paid by bank was not entered in the Cash Book","","50"],
+    ["(v)","Bank Charges","","15"],
+    ["","Bank allowed Interest","25",""],
+    ["","Overdraft as per the Pass Book","11,700","",1]
+  ], total:["12,265","12,265"]}],
+  note:"Cheque dated 15th April, 2019 issued to M & Co. dishonoured will have no impact as this statement is as on 31st March 2019."
+});
+
+QUESTIONS.push({
+  num:18,
+  summary:"Trader's ₹52,100 overdraft; late-cleared deposit, unpresented/uncashed creditor cheques, an unrecorded bank payment, a direct deposit and Pass Book charges/interest.",
+  given:"(i) Bank overdraft as per Cash Book ₹52,100. (ii) ₹94,400 total cheques deposited, of which one for ₹11,160 entered in Pass Book on 5 April. (iii) Cheques for ₹89,580 drawn for creditors — one of ₹38,580 encashed 7 April, another for ₹4,320 not encashed. (iv) Bank paid out ₹10,500 to a creditor on 28 March, not entered in Cash Book. (v) A debtor deposited ₹9,000 directly on 25 March, not recorded. (vi) Bank debited ₹120 charges and credited ₹180 interest without intimation. (vii) A ₹5,780 deposit was recorded as ₹7,580, rectified by the Bank before 31 March 2019.",
+  brsList:[{ asOn:"March 31,2019", rows:[
+    ["(i)","Overdraft as per the Cash Book","","52,100"],
+    ["(ii)","Cheques of Rs 94,400 deposited in March but cheques of Rs 11,160 not cleared in April","","11,160"],
+    ["(iii)","Cheques issued but not presented for payment in the March (38,580 + 4,320)","42,900",""],
+    ["(iv)","Payment made to creditor by bank but not entered in the Cash Book","","10,500"],
+    ["(v)","Amount directly deposited by debtor into Bank","9,000",""],
+    ["(vi)","Bank Charges","","120"],
+    ["","Bank credited interest","180",""],
+    ["","Overdraft as per the Pass Book","21,800","",1]
+  ], total:["73,880","73,880"]}],
+  note:"Point (vii) will have no affect on the statement as error in recording cash deposit entry is already rectified."
+});
+
+QUESTIONS.push({
+  num:19,
+  summary:"Pass Book shows a ₹2,500 debit (overdraft); a part-cleared cheque, an omitted cheque, an uncollected deposit, a dishonoured bill, and an unbanked cheque.",
+  given:"Prepare Bank Reconciliation Statement as on 31st March, 2019, when Pass Book shows a debit balance of ₹2,500: (i) Cheque issued for ₹5,000, only ₹3,000 cleared by 31 March. (ii) Cheques issued for ₹1,000 omitted from Cash Book. (iii) Cheques deposited for ₹5,500, but ₹500 collected on 4 April 2019. (iv) A discounted Bill of Exchange dishonoured ₹1,000. (v) A cheque of ₹500 debited in Cash Book but omitted to be banked. (vi) Interest allowed by bank ₹200, no entry passed in Cash Book.",
+  brsList:[{ asOn:"March 31,2019", rows:[
+    ["","Overdraft as per the Pass Book","","2,500"],
+    ["(i)","Cheques issued for Rs 5,000 but cheques of Rs 3,000 cleared till March 31","2,000",""],
+    ["(ii)","Cheque issued but not entered in the Cash Book","1,000",""],
+    ["(iii)","Cheque deposited but cleared in April","500",""],
+    ["(iv)","Bill dishonoured","1,000",""],
+    ["(v)","Cheque entered in the Cash Book but not deposited","500",""],
+    ["(vi)","Interest allowed not recorded in the Cash Book","","200"],
+    ["","Overdraft as per the Cash Book","1,700","",1]
+  ], total:["4,700","4,700"]}]
+});
+
+QUESTIONS.push({
+  num:20,
+  summary:"Pass Book overdraft ₹36,000; an unpresented cheque, an uncollected deposit, an unbanked cheque and a customer's direct deposit.",
+  given:"From the following information, prepare Bank Reconciliation Statement as on 31st March, 2019:",
+  givenTx:[
+    ["(i) Bank overdraft as per Pass Book","36,000"],
+    ["(ii) Cheques issued but not presented for payment","19,700"],
+    ["(iii) Cheques deposited with bank but not collected","25,000"],
+    ["(iv) Cheques entered in Cash Book but not banked","9,000"],
+    ["(v) Directly deposited to bank by a customer","11,000"]
+  ],
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["(i)","Overdraft as per the Pass Book","","36,000"],
+    ["(ii)","Cheques issued but not presented for payment","","19,700"],
+    ["(iii)","Cheques deposited with bank but not collected","25,000",""],
+    ["(iv)","Cheques entered in the Cash book but not deposited in bank","9,000",""],
+    ["(v)","Amount directly deposited by Customer","","11,000"],
+    ["","Overdraft as per the Cash Book","32,700","",1]
+  ], total:["66,700","66,700"]}]
+});
+
+QUESTIONS.push({
+  num:21,
+  summary:"Pass Book debit balance ₹10,000; a partly-cleared cheque batch, uncredited bank charges/dividend, an unbanked cheque and a discounted bill.",
+  given:"On 31st March, 2019, Pass Book of Shri Bhama Shah shows debit balance of ₹10,000. (i) Cheques amounting to ₹8,000 drawn 25 March, of which ₹5,000 cashed in April 2019. (ii) Cheques paid in for collection of ₹5,000, but only ₹2,200 collected in March 2019. (iii) Bank charges ₹25 and dividend of ₹350 on investment collected by bank not shown in Cash Book. (iv) A cheque of ₹600 debited in Cash Book omitted to be banked. (v) Bill of ₹5,000 discounted with Bank but not recorded in Cash Book.",
+  brsList:[{ asOn:"March 31,2019", rows:[
+    ["","Debit Balance as per the Pass Book","","10,000"],
+    ["(i)","Cheque issued in March but presented for payment in April","","5,000"],
+    ["(ii)","Cheques deposited but not cleared in March","2,800",""],
+    ["(iii)","Bank Charges not entered in the Cash Book","25",""],
+    ["","Interest on Investment collected by bank not entered in the Cash Book","","350"],
+    ["(iv)","Cheque entered in the Cash Book but not deposited in bank","600",""],
+    ["(v)","Bill discounted with bank not recorded in cash book","","5,000"],
+    ["","Credit Balance (Overdraft) as per the Cash Book","16,925","",1]
+  ], total:["20,350","20,350"]}]
+});
+
+QUESTIONS.push({
+  num:22,
+  summary:"Naresh & Co. — Pass Book overdraft ₹10,700; a delayed cheque, an uncollected deposit, overdraft interest, investment interest, bank charges and a dishonoured cheque.",
+  given:"On 31st March, 2019, Bank Pass Book of Naresh & Co. showed an overdraft of ₹10,700. (i) Cheques issued before 31 March 2019 but presented after, amounted to ₹900. (ii) Cheques paid into bank but not collected/credited until 31 March 2019 amounted to ₹2,200. (iii) Interest on overdraft ₹1,200 did not appear in Cash Book. ₹5,000 interest on investments collected and credited in Pass Book not shown in Cash Book. (iv) Bank charges of ₹50 not entered in Cash Book. (v) ₹800 dishonoured cheque entered in Pass Book but not Cash Book.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Overdraft as per the Pass Book","","10,700"],
+    ["(i)","Cheque issued in March 2018 but presented after that date","","900"],
+    ["(ii)","Cheques deposited but not cleared during March 2018","2,200",""],
+    ["(iii)","Interest on Overdraft","","1,200"],
+    ["(iv)","Interest on Investment not recorded in the Cash Book","","5,000"],
+    ["(v)","Bank Charges","","50"],
+    ["(vi)","Amount of bill dishonoured not entered in the Cash Book","800",""],
+    ["","Overdraft as per the Cash Book","12,350","",1]
+  ], total:["16,600","16,600"]}]
+});
+
+QUESTIONS.push({
+  num:23,
+  summary:"Pass Book overdraft ₹5,220; an uncleared deposit, a dishonoured cheque, bank charges, excess interest credit, a wrongly-credited third-party amount and an unpresented cheque.",
+  given:"On checking, Bank Pass Book showed overdraft of ₹5,220 on 31st March, 2019, differing from the Ledger. (i) Cheques deposited but not yet credited ₹6,000. (ii) Cheques dishonoured and debited by bank but not in Ledger ₹800. (iii) Bank charges debited, Debit Memo not received ₹50. (iv) Interest on overdraft excess credited in Ledger ₹200. (v) Wrongly credited by bank — deposit of some other party ₹900. (vi) Cheques issued but not presented ₹400.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Overdraft as per the Pass Book","","5,220"],
+    ["(i)","Cheques deposited but not cleared","6,000",""],
+    ["(ii)","Cheques dishonoured not entered in the Cash Book","800",""],
+    ["(iii)","Bank Charges","50",""],
+    ["(iv)","Interest on Overdraft excess credited in the Cash Book","","200"],
+    ["(v)","Amount wrongly credited in the Pass Book","","900"],
+    ["(vi)","Cheques issued but not presented for payment","","400"],
+    ["","Balance as per the Cash Book","130","",1]
+  ], total:["6,850","6,850"]}]
+});
+
+QUESTIONS.push({
+  num:24,
+  summary:"Pass Book debit balance ₹2,500; a part-cleared cheque, a late-cleared deposit, a dishonoured bill, an unbanked cheque and unrecorded bank interest.",
+  given:"Prepare Bank Reconciliation Statement as on 31st March, 2019 when Pass Book shows a debit balance of ₹2,500: (i) Cheque issued for ₹5,000, only ₹3,000 cleared by 31 March. (ii) Cheques deposited for ₹5,500, but ₹500 collected on 10 April 2019. (iii) A discounted Bill of Exchange dishonoured ₹2,000. (iv) A cheque of ₹300 debited in Cash Book but omitted to be banked. (v) Interest allowed by bank ₹400, no entry passed in Cash Book.",
+  brsList:[{ asOn:"March 31,2019", rows:[
+    ["","Debit balance as per the Pass Book","","2,500"],
+    ["(i)","Cheques issued but not presented in March","2,000",""],
+    ["(ii)","Cheque deposited in March but cleared in April","500",""],
+    ["(iii)","Bill dishonoured was not entered in the Cash Book","2,000",""],
+    ["(iv)","Cheque debited in the Cash book but not deposited into bank","300",""],
+    ["(v)","Interest allowed by bank but was not entered in the Cash Book","","400"],
+    ["","Overdraft as per the Cash Book","2,100","",1]
+  ], total:["4,900","4,900"]}]
+});
+
+QUESTIONS.push({
+  num:25,
+  summary:"Ramesh — Pass Book overdraft ₹16,500; unrecorded overdraft interest & bank charges, an unpresented cheque batch, an uncollected deposit, and collected investment interest.",
+  given:"Ascertain the bank balance as per Cash Book of Ramesh as on 31st October, 2018: (i) Bank Pass Book showed overdraft of ₹16,500 on 31 October. (ii) Interest of ₹1,250 on overdraft debited in Pass Book, not entered in Cash Book. (iii) Bank charges debited ₹35. (iv) Cheques issued prior to 31 October, not presented, amounted to ₹11,500. (v) Cheques paid into bank before 31 October, not collected, were ₹2,500. (vi) Interest on investment collected by bankers, credited in Pass Book, ₹1,800.",
+  brsList:[{ asOn:"October 31,2018", rows:[
+    ["(i)","Overdraft as per the Pass Book","","16,500"],
+    ["(ii)","Interest on Overdraft","1,250",""],
+    ["(iii)","Bank Charges","35",""],
+    ["(iv)","Cheques issued but not presented for payment","","11,500"],
+    ["(v)","Cheques deposited but not cleared","2,500",""],
+    ["(vi)","Interest on Investment was not recorded in the Cash Book","","1,800"],
+    ["","Overdraft as per the Cash Book","26,015","",1]
+  ], total:["29,800","29,800"]}]
+});
+
+QUESTIONS.push({
+  num:26,
+  summary:"R's Pass Book overdraft ₹12,000; a mostly-uncashed cheque batch, a part-credited deposit, overdraft interest, and two items R had no knowledge of.",
+  given:"R's overdraft as per Pass Book ₹12,000 as on 31st March. (ii) Cheques issued for ₹70,000 on 30 March, only ₹3,000 encashed by 31 March. (iii) Cheques amounting to ₹3,500 paid in for collection, only ₹500 credited in Pass Book. (iv) Bank charged ₹500 interest on overdraft, intimation received 2 April 2019. (v) Pass Book shows credit of ₹1,000 — ₹400 paid by a debtor directly, ₹600 interest on R's investment — R had no knowledge. (vi) A ₹200 cheque debited in Cash Book by R but never sent to bank.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["(i)","Overdraft as per the Pass Book","","12,000"],
+    ["(ii)","Cheques issued but not presented for payment","","67,000"],
+    ["(iii)","Cheques deposited but not collected","3,000",""],
+    ["(iv)","Bank Charged Interest on Overdraft","500",""],
+    ["(v)","Amount directly paid by a debtor","","400"],
+    ["","Interest received on Investment","","600"],
+    ["(vi)","A Cheque entered in the Cash book but not sent to bank for collection","200",""],
+    ["","Overdraft as per the Cash Book","76,300","",1]
+  ], total:["80,000","80,000"]}]
+});
+
+QUESTIONS.push({
+  num:27,
+  summary:"Pass Book overdrawn ₹10,000; an uncleared cheque batch, overdraft interest, an uncollected deposit, a direct insurance payment, and a bank commission error.",
+  given:"Show balance as per Cash Book: (i) Balance as per Pass Book on 31 March, 2019 overdrawn ₹10,000. (ii) Cheques drawn in last week of March 2019, not cleared till 3 April 2019, ₹20,000. (iii) Interest on bank overdraft not entered in Cash Book ₹1,500. (iv) Cheques of ₹20,000 deposited in March 2019, not collected/credited till 3 April 2019. (v) ₹100 Insurance Premium paid by bank under standing order, not entered in Cash Book. (vi) A draft of ₹10,000 favouring Atul & Co. issued by bank charging commission of ₹200; Cash Book entry was passed by ₹10,000.",
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["(i)","Overdraft as per the Pass Book","","10,000"],
+    ["(ii)","Cheques issued but not presented for payment during March","","20,000"],
+    ["(iii)","Interest charged by bank on Overdraft","1,500",""],
+    ["(iv)","Cheques deposited in to bank but not collected","20,000",""],
+    ["(v)","Insurance premium paid by bank but not entered in the Cash Book","100",""],
+    ["(vi)","Bank charging commission not entered in the cash book","200",""],
+    ["","Overdraft as per the Cash Book","8,200","",1]
+  ], total:["30,000","30,000"]}]
+});
+
+QUESTIONS.push({
+  num:28,
+  summary:"Sanjay — Pass Book overdraft ₹16,500; unpresented/uncollected cheques, an unsent cheque, a direct customer payment, bank charges, a direct premium payment, and a dishonoured discounted bill with noting charges.",
+  given:"From information supplied by Sanjay, prepare his Bank Reconciliation Statement as on 31st March, 2019:",
+  givenTx:[
+    ["(i) Bank overdraft as per Pass Book","16,500"],
+    ["(ii) Cheques issued but not presented for payment","8,750"],
+    ["(iii) Cheques deposited with the Bank but not collected","10,500"],
+    ["(iv) Cheques recorded in the Cash Book but not sent to the bank","2,000"],
+    ["(v) Payments received from customers directly by the bank","3,500"],
+    ["(vi) Bank charges debited in the Pass Book","200"],
+    ["(vii) Premium on life policy of Sanjay paid by the bank on standing advice","1,980"],
+    ["(viii) A bill for ₹3,000 (discounted with bank in Feb) dishonoured 31 March 2019; noting charges paid by bank","100"]
+  ],
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["(i)","Overdraft as per the Pass Book","","16,500"],
+    ["(ii)","Cheques issued but not presented for payment","8,750",""],
+    ["(iii)","Cheques deposited but not collected","","10,500"],
+    ["(iv)","Cheques entered in the Cash Book but not sent to bank for collection","2,000",""],
+    ["(v)","Amount directly deposited into bank by customer","","3,500"],
+    ["(vi)","Bank Charges","","200"],
+    ["(vii)","Insurance Premium paid by bank not recorded in the Cash Book","1,980",""],
+    ["(viii)","Bill dishonoured","3,000",""],
+    ["","Noting Charges paid by bank","100",""],
+    ["","Overdraft as per the Cash Book","10,970","",1]
+  ], total:["28,750","28,750"]}]
+});
+
+QUESTIONS.push({
+  num:29,
+  summary:"Mr. D.H. — Pass Book overdraft ₹33,000; unpresented/uncollected cheques, an unsent cheque, a direct customer payment, bank charges, a direct premium payment, and a dishonoured bill with noting charges.",
+  given:"From information supplied by Mr. D.H., prepare his Bank Reconciliation Statement as on 31st March, 2019:",
+  givenTx:[
+    ["(i) Bank overdraft as per Pass Book","33,000"],
+    ["(ii) Cheques issued but not presented for payment","17,500"],
+    ["(iii) Cheques deposited but not collected","21,000"],
+    ["(iv) Cheques recorded in the Cash Book but not sent to the bank","4,000"],
+    ["(v) Payment received from customers directly by the bank","7,000"],
+    ["(vi) Bank charges debited in the Pass Book","40"],
+    ["(vii) Premium of Life Insurance Policy of Mr. D.H. paid by the bank","360"],
+    ["(viii) A bill for ₹6,000 dishonoured 30 March 2019, bank paid Noting charges ₹20; discounted 30 January 2019",""]
+  ],
+  brsList:[{ asOn:"March 31, 2018", rows:[
+    ["(i)","Overdraft as per the Pass Book","","33,000"],
+    ["(ii)","Cheques issued but not presented for payment","17,500",""],
+    ["(iii)","Cheques deposited but not collected","","21,000"],
+    ["(iv)","Cheques recorded in the Cash Book but not sent to bank for collection","4,000",""],
+    ["(v)","Payment directly deposited by customer in the bank","","7,000"],
+    ["(vi)","Bank Charges","","40"],
+    ["(vii)","Insurance Premium of life Insurance policy directly paid from the bank but not recorded in the Cash Book","","360"],
+    ["(viii)","Bill dishonoured","6,000",""],
+    ["","Noting charged paid by bank","20",""],
+    ["","Overdraft as per the Cash Book","26,080","",1]
+  ], total:["57,500","57,500"]}]
+});
+
+/* ===== Question 30: two-part solution with adjusted cash book ===== */
+QUESTIONS.push({
+  num:30,
+  summary:"Two-part answer — (a) BRS without correcting the Cash Book, and (b) an Adjusted Cash Book followed by a shorter BRS.",
+  given:"Ascertain the bank balance as per Pass Book as on 31st March, 2019 (a) without correcting the Cash Book balance and (b) after correcting the Cash Book balance:",
+  givenTx:[
+    ["(i) Bank balance as per Cash Book on 31st March, 2019","40,000"],
+    ["(ii) Cheques issued but not encashed up to 31st March, 2019","10,000"],
+    ["(iii) Cheques paid into bank but not cleared up to 31st March, 2019","15,000"],
+    ["(iv) Interest on investments collected by bank not entered in Cash Book","500"],
+    ["(v) Cheques deposited in bank but not entered in Cash Book","12,500"],
+    ["(vi) Bank charges debited in Pass Book but not entered in Cash Book","100"]
+  ],
+  brsList:[
+    { label:"(a) Without correcting Cash Book Balance", asOn:"March 31,2019", rows:[
+      ["(i)","Bank Balance as per Cash Book","40,000",""],
+      ["(ii)","Cheques issued but not encashed","10,000",""],
+      ["(iii)","Cheques deposited but not cleared","","15,000"],
+      ["(iv)","Interest on Investments collected by Bank","500",""],
+      ["(v)","Cheques deposited directly in Bank","12,500",""],
+      ["(vi)","Bank Charges","","100"],
+      ["","Balance as per the Pass Book","","47,900",1]
+    ], total:["63,000","63,000"]}
+  ],
+  extraTables:[
+    { title:"(b) After correcting Cash Book Balance — Cash Book (Adjusted)", subtitle:"for the month of March 31, 2019 — Dr. | Cr. (Bank column)",
+      cols:[{label:"Date"},{label:"Particulars"},{label:"Bank (₹)",num:true},{label:"Date"},{label:"Particulars"},{label:"Bank (₹)",num:true}],
+      rows:[
+        {cells:["2019<br>Mar.31","Balance b/d","40,000","2019<br>Mar.31","Bank Charges","100"]},
+        {cells:["","Interest on Investments","500","","Balance c/d","52,900"]},
+        {cells:["","Cheques omitted to enter","12,500","",""," "]},
+        {cells:["","Total","53,000","","Total","53,000"], total:true}
+      ]
+    }
+  ],
+  note:null
+});
+// Second BRS block for part (b), appended after the adjusted cash book
+QUESTIONS[QUESTIONS.length-1].brsList.push(
+  { asOn:"March 31,2019", rows:[
+    ["","Adjusted Balance as per the Cash Book","52,900",""],
+    ["(i)","Cheque issued but not encashed","10,000",""],
+    ["(ii)","Cheques deposited but not cleared","","15,000"],
+    ["","Balance as per the Pass Book","","47,900",1]
+  ], total:["62,900","62,900"]}
+);
+
+/* ===== Question 31: adjusted cash book then BRS ===== */
+QUESTIONS.push({
+  num:31,
+  summary:"Sole proprietor — first an Adjusted Cash Book correcting nine errors on an ₹80,000 overdraft, then a short BRS to the Pass Book.",
+  given:"Find corrected bank balance as per Cash Book, then prepare a Bank Reconciliation Statement as on 31st March, 2019:",
+  givenTx:[
+    ["(i) Bank overdraft as per the Cash Book","80,000"],
+    ["(ii) Cheques deposited per bank statement but not entered in Cash Book","3,000"],
+    ["(iii) Cheques recorded for collection but not sent to the bank","10,000"],
+    ["(iv) Credit side of bank column casted short","1,000"],
+    ["(v) Bank charges recorded twice in the Cash Book","100"],
+    ["(vi) Customer's cheque returned as per the Bank Statement","4,000"],
+    ["(vii) Cheques issued but dishonoured on technical grounds","3,000"],
+    ["(viii) Bills collected by bank directly","20,000"],
+    ["(ix) Cheque received entered twice in the Cash Book","5,000"]
+  ],
+  extraTables:[
+    { title:"Cash Book (Adjusted)", subtitle:"for the month of March 31, 2019 — Dr. | Cr. (Bank column)",
+      cols:[{label:"Date"},{label:"Particulars"},{label:"Bank (₹)",num:true},{label:"Date"},{label:"Particulars"},{label:"Bank (₹)",num:true}],
+      rows:[
+        {cells:["2019<br>Mar.31","Cheques Omitted to enter","3,000","2019<br>Mar.31","Balance b/d (Overdraft)","80,000"]},
+        {cells:["","Bills Collection","20,000","","Adjustment for undercasting","1,000"]},
+        {cells:["","Bank Charges","100","","Cheques returned","4,000"]},
+        {cells:["","Balance c/d","66,900","","Cheque recorded twice","5,000"]},
+        {cells:["","Total","90,000","","Total","90,000"], total:true}
+      ]
+    }
+  ],
+  brsList:[{ asOn:"March 31, 2019", rows:[
+    ["","Overdraft as per the (adjusted) Cash Book","","66,900"],
+    ["(i)","Cheques recorded in the Cash Book but not sent to bank for collection","","10,000"],
+    ["(ii)","Cheque issued but not cleared on technical grounds","3,000",""],
+    ["","Overdraft as per the Pass Book","73,900","",1]
+  ], total:["76,900","76,900"]}]
+});
+
+/* ===== Question 32: extracts given as Cash Book + Pass Book tables ===== */
+QUESTIONS.push({
+  num:32,
+  summary:"Reconciliation built directly from real Cash Book and Pass Book extracts for January 2019 — includes a dishonoured cheque with a net-nil note.",
+  given:"From the following extracts from the Cash Book and the Pass Book for the month of January, 2019, prepare Bank Reconciliation Statement:",
+  extraTables:[
+    { title:"Cash Book (Bank Columns Only)", subtitle:"Dr. | Cr.",
+      cols:[{label:"Date"},{label:"Particulars"},{label:"Bank (₹)",num:true},{label:"Date"},{label:"Particulars"},{label:"Bank (₹)",num:true}],
+      rows:[
+        {cells:["2019<br>Jan.01","To Balance b/d","4,510","2019<br>Jan.02","By S. Gidwani & Co.","1,230"]},
+        {cells:["Jan.03","To Cash","300","Jan.06","By Wages","3,000"]},
+        {cells:["Jan.10","To G. Basu & Co.","1,000","Jan.14","By Basu & Co. (Cheque dishonoured)","1,000"]},
+        {cells:["Jan.15","To Mohan & Co.","2,300","Jan.15","By V. Kumar & Co.","300"]},
+        {cells:["Jan.17","To Cash","600","Jan.18","By S. Sharda & Sons","470"]},
+        {cells:["Jan.20","To M. Mohan & Bros.","1,550","Jan.24","By Cash","400"]},
+        {cells:["Jan.24","To T.P. Bhalla & Co.","740","Jan.28","By R. Ramdas & Co.","780"]},
+        {cells:["Jan.31","To S. Leader & Sons","2,130","Jan.31","By B. Bansal & Bros.","340"]},
+        {cells:["","","","Jan.31","By Balance c/d","5,610"]},
+        {cells:["","Total","13,130","","Total","13,130"], total:true},
+        {cells:["2019<br>Feb.","To Balance b/d","5,610","","",""]}
+      ]
+    },
+    { title:"Pass Book",
+      cols:[{label:"Date"},{label:"Particulars"},{label:"Withdrawals (₹)",num:true},{label:"Deposits (₹)",num:true},{label:"Dr/Cr"},{label:"Balance (₹)",num:true}],
+      rows:[
+        {cells:["2019<br>Jan.01","By Balance","","","Cr.","4,510"]},
+        {cells:["Jan.03","By Cash","","300","Cr.","4,810"]},
+        {cells:["Jan.06","To Selves–Cash","3,000","","Cr.","1,810"]},
+        {cells:["Jan.10","To S. Gidwani & Co.","1,230","","Cr.","580"]},
+        {cells:["Jan.16","By Mohan & Co.","","2,300","Cr.","2,880"]},
+        {cells:["Jan.17","By Cash","","600","Cr.","3,480"]},
+        {cells:["Jan.20","To S. Sharda & Sons","470","","Cr.","3,010"]},
+        {cells:["Jan.24","To Cash","400","","Cr.","2,610"]},
+        {cells:["Jan.31","To Bank Charges","10","","Cr.","2,600"]},
+        {cells:["Jan.31","To Life insurance Premium as per instructions","250","","Cr.","2,350"]},
+        {cells:["Jan.31","By Interest on Government Securities","","300","Cr.","2,650"]}
+      ]
+    }
+  ],
+  brsList:[{ asOn:"January 31, 2019", rows:[
+    ["","Balance as per the Cash Book","5,610",""],
+    ["(i)","Three Cheques of M. Mohan & Bros, T.P. Bhalla & Co and S. Leader & Sons of Rs 1,550 Rs 740 and Rs 2,130 respectively were received but not cleared","","4,420"],
+    ["(ii)","Three Cheques of V. Kumar & Co, R. Ramdas & Co and B. Bansal & Bros. of Rs 300, Rs 780 and Rs 340 respectively were issued but not presented for payment","1,420",""],
+    ["(iii)","Bank Charges","","10"],
+    ["(iv)","Life Insurance premium paid by bank not recorded in the Cash Book","","250"],
+    ["(v)","Interest on Government Securities received by bank","300",""],
+    ["","Balance as per the Pass Book","","2,650",1]
+  ], total:["7,330","7,330"]}],
+  note:"In Cash Book cheque received from G. Basu &amp; Co is debited with Rs 1,000 and at the time of dishonour entry is reversed by crediting G. Basu &amp; Co with Rs 1,000. Therefore its net effect is nil in Cash Book."
+});
+
+
+
+
+</script>
+<script>init();</script>
+</body>
+</html>
