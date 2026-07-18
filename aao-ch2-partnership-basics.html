@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: Partnership Basic Concepts | AAO Exam</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2a20;
+  --blue:#1a5276; --blue-light:#2980b9;
+  --gold:#c8960c; --gold-light:#f4d35e;
+  --green:#1e8449; --orange:#d35400; --yellow:#b7950b;
+  --bg:#f7f4ee; --card:#ffffff; --ink:#222; --muted:#666;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.5;
+  padding-bottom:60px;
+}
+body.dark{ --bg:#121417; --card:#1c1f24; --ink:#eee; --muted:#aaa; }
+header{
+  background:linear-gradient(135deg,var(--red),var(--blue));
+  color:#fff; padding:22px 16px 70px; text-align:center; position:relative;
+  border-radius:0 0 30px 30px;
+}
+header h1{margin:0 0 6px; font-size:1.35rem;}
+header p{margin:0; font-size:.9rem; opacity:.9;}
+.badge-row{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.badge{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.4); padding:4px 10px; border-radius:20px; font-size:.72rem;}
+.top-controls{ display:flex; justify-content:center; gap:10px; margin:-46px auto 14px; max-width:420px; padding:0 10px; position:relative; z-index:5; }
+.ctrl-btn{ flex:1; background:var(--card); border:none; border-radius:12px; padding:10px 6px; box-shadow:0 3px 10px rgba(0,0,0,.15); font-size:.78rem; font-weight:600; color:var(--blue); }
+.container{max-width:480px; margin:0 auto; padding:0 12px;}
+.nav-chips{display:flex; overflow-x:auto; gap:8px; padding:6px 2px 14px; -webkit-overflow-scrolling:touch;}
+.nav-chips a{ flex:0 0 auto; background:var(--card); border:1px solid #ddd; padding:6px 12px; border-radius:20px; font-size:.72rem; text-decoration:none; color:var(--blue); white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.section{ background:var(--card); border-radius:var(--radius); margin-bottom:16px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.08); border-left:6px solid var(--blue); scroll-margin-top:12px; }
+.section h2{margin:0 0 10px; font-size:1.05rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+.section h3{font-size:.92rem; color:var(--red-dark); margin:14px 0 6px;}
+.tag{ display:inline-block; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
+.tag-red{background:#fdecea; color:var(--red);}
+.tag-orange{background:#fdf0e2; color:var(--orange);}
+.tag-yellow{background:#fdf7e0; color:var(--yellow);}
+.tag-green{background:#e9f7ef; color:var(--green);}
+p{font-size:.87rem; margin:6px 0;}
+ul,ol{font-size:.87rem; padding-left:20px; margin:6px 0;}
+li{margin-bottom:4px;}
+.def-box{ background:#fff8e6; border:1px dashed var(--gold); border-radius:10px; padding:10px 12px; font-size:.85rem; margin:8px 0; }
+.def-box b{color:#8a6d00;}
+.mnemonic{ background:#eaf4ff; border-left:4px solid var(--blue-light); border-radius:8px; padding:10px 12px; font-size:.83rem; margin:10px 0; }
+.mnemonic b{color:var(--blue);}
+table{width:100%; border-collapse:collapse; font-size:.75rem; margin:10px 0;}
+th,td{border:1px solid #ddd; padding:6px 6px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.7rem;}
+tr:nth-child(even){background:rgba(0,0,0,.03);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.04);}
+body.dark th{background:var(--blue-light);}
+.formula-box{ background:#f0fff4; border:1px solid var(--green); border-radius:10px; padding:10px 12px; font-size:.82rem; margin:8px 0; font-family:'Courier New',monospace; overflow-x:auto; }
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{ background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.8rem; text-align:center; }
+.flow-arrow{text-align:center; color:var(--blue); font-size:1.1rem; margin:-2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{ background:var(--gold); color:#fff; padding:8px 10px; border-radius:20px; font-size:.75rem; font-weight:600; text-align:center; }
+.mindmap .center{background:var(--red); font-size:.82rem; padding:10px 14px; width:100%; border-radius:12px;}
+.decision-tree{font-size:.8rem; margin:10px 0;}
+.dt-q{background:var(--red); color:#fff; padding:8px 10px; border-radius:8px 8px 0 0; font-weight:600;}
+.dt-branch{display:flex; gap:6px; margin-top:2px;}
+.dt-yes,.dt-no{flex:1; padding:8px; border-radius:0 0 8px 8px; font-size:.76rem;}
+.dt-yes{background:#e9f7ef; border:1px solid var(--green);}
+.dt-no{background:#fdecea; border:1px solid var(--red);}
+.qbox{ background:#fdf0e2; border-radius:8px; padding:8px 10px; font-size:.78rem; margin-top:8px; border-left:3px solid var(--orange); }
+.qbox b{color:var(--orange);}
+.accordion-toggle{ width:100%; text-align:left; background:none; border:none; font-size:.92rem; font-weight:700; color:var(--red-dark); padding:8px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+.accordion-body{display:none; padding:4px 2px 10px;}
+.accordion-body.open{display:block;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .t-item{margin-bottom:12px; position:relative;}
+.timeline .t-item::before{content:'●'; color:var(--gold); position:absolute; left:-19px; top:0;}
+.timeline .t-title{font-weight:700; font-size:.82rem; color:var(--blue);}
+.timeline .t-desc{font-size:.78rem; color:var(--muted);}
+.revision-sheet{ background:linear-gradient(135deg,#fff9e6,#fff); border:2px solid var(--gold); border-radius:14px; padding:14px; }
+.revision-sheet h2{color:var(--red-dark);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px;}
+.rev-item{background:#fff; border-radius:8px; padding:8px 10px; font-size:.78rem; border-left:4px solid var(--gold);}
+.footer-nav{ position:fixed; bottom:0; left:0; right:0; background:var(--card); box-shadow:0 -2px 10px rgba(0,0,0,.15); display:flex; justify-content:space-around; padding:8px 4px; z-index:10; }
+.footer-nav button{ background:none; border:none; font-size:.68rem; color:var(--blue); display:flex; flex-direction:column; align-items:center; gap:2px; }
+.footer-nav button span.ic{font-size:1.1rem;}
+#ttsBtn{ position:fixed; bottom:64px; right:14px; background:var(--red); color:#fff; border:none; border-radius:50%; width:48px; height:48px; font-size:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,.3); z-index:11; }
+.legend{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:.68rem; margin-bottom:14px; }
+.legend span{background:var(--card); padding:4px 8px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.08);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🤝 Chapter 2: Accounting for Partnership – Basic Concepts</h1>
+  <p>AAO Exam | NCERT Class XII Accountancy | Mobile Study Card</p>
+  <div class="badge-row">
+    <span class="badge">Pages 64–114</span>
+    <span class="badge">8 Sub-Topics</span>
+    <span class="badge">Highest Weightage</span>
+  </div>
+</header>
+
+<div class="top-controls">
+  <button class="ctrl-btn" onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="ctrl-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">⏭ Revision Sheet</button>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 Very Important</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual</span>
+  <span>🟢 Quick Revision</span>
+</div>
+
+<div class="nav-chips">
+  <a href="#s1">1.Nature</a>
+  <a href="#s2">2.Deed</a>
+  <a href="#s3">3.Aspects</a>
+  <a href="#s4">4.Capital A/cs</a>
+  <a href="#s5">5.Profit Dist.</a>
+  <a href="#s6">6.Interest Capital</a>
+  <a href="#s7">7.Interest Drawings</a>
+  <a href="#s8">8.Guarantee</a>
+  <a href="#s9">9.Past Adj.</a>
+  <a href="#s10">10.Final A/cs</a>
+  <a href="#rev">11.Revision</a>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <h2>🏢 2.1 Nature of Partnership <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box">
+    <b>Section 4, Indian Partnership Act 1932:</b> Partnership is the "relation between persons who have agreed to share the profits of a business carried on by all or any of them acting for all."
+  </div>
+  <p>Individuals = <b>Partners</b>; collectively = <b>Firm</b>; business name = <b>Firm's Name</b>. Firm has <b>no separate legal entity</b> from its partners.</p>
+
+  <h3>6 Essential Features</h3>
+  <ol>
+    <li><b>Two or more persons</b> — min 2 partners. Max: <b>50 partners</b> (Companies Act 2013, Sec 464 + Rule 10 of Companies (Misc.) Rules 2014)</li>
+    <li><b>Agreement</b> — oral or written (written preferred to avoid disputes)</li>
+    <li><b>Business</b> — mere co-ownership of property ≠ partnership</li>
+    <li><b>Mutual Agency</b> — each partner is both principal &amp; agent for others</li>
+    <li><b>Sharing of Profit</b> (loss-sharing implied); charitable activity ≠ partnership</li>
+    <li><b>Unlimited Liability</b> — joint &amp; several; private assets liable too</li>
+  </ol>
+  <div class="mnemonic">🧠 <b>Mnemonic — "TABM-SL":</b> Two persons, Agreement, Business, Mutual agency, Sharing of profit, Liability unlimited</div>
+
+  <h3>Limited Liability Partnership (LLP) <span class="tag tag-yellow">🟡</span></h3>
+  <ul>
+    <li>Registered under <b>LLP Act, 2008</b>; separate legal entity, perpetual succession</li>
+    <li>Min <b>2 partners</b>; min 2 designated partners, at least 1 resident in India</li>
+    <li>Indian Partnership Act 1932 <b>does NOT apply</b> to LLP</li>
+    <li>Central Govt can investigate LLP affairs via a Competent Inspector</li>
+  </ul>
+  <div class="qbox">📝 <b>Probable Q:</b> "State the maximum number of partners a firm can have as per Companies Act, 2013." / "Distinguish between a Partnership Firm and an LLP."</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <h2>📄 2.2 Partnership Deed <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> Written document containing the terms of the partnership agreement. Not legally compulsory (oral valid too), but preferred to avoid disputes. Should follow the <b>Stamp Act</b> and preferably be registered with the <b>Registrar of Firms</b>.</div>
+
+  <h3>Typical Contents (🟠 list-type question)</h3>
+  <ul>
+    <li>Name/address of firm &amp; partners; nature of business</li>
+    <li>Capital contribution by each partner; profit-sharing ratio</li>
+    <li>Interest on capital, loan, drawings; salary/commission to partners</li>
+    <li>Rules for admission, retirement, death; dissolution settlement</li>
+    <li>Dispute resolution method</li>
+  </ul>
+
+  <h3>2.2.1 Provisions Relevant for Accounting — WHEN DEED IS SILENT <span class="tag tag-red">🔴 EXAM FAVOURITE</span></h3>
+  <table>
+    <tr><th>Matter</th><th>Rule if Deed is Silent</th></tr>
+    <tr><td>Profit Sharing Ratio</td><td><b>Equal</b> share (irrespective of capital contributed)</td></tr>
+    <tr><td>Interest on Capital</td><td><b>No interest</b> allowed; if allowed by deed, payable only out of profits</td></tr>
+    <tr><td>Interest on Drawings</td><td><b>No interest</b> charged</td></tr>
+    <tr><td>Interest on Partner's Loan/Advance</td><td><b>6% p.a.</b> — payable even if firm incurs a loss</td></tr>
+    <tr><td>Salary/Remuneration to Partner</td><td><b>Not allowed</b> unless deed provides</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic — "PEDSR = 6% only for Loan":</b> Profit-Equal, Drawings-No interest, Salary-No, Remuneration-No, but Loan/Advance = 6% always (the ONE exception that's payable even in losses)</div>
+  <div class="qbox">📝 <b>Probable Q (very high frequency):</b> "What are the provisions of the Indian Partnership Act 1932 relevant to accounting, applicable when the partnership deed is silent?" — Always mention the 6% loan interest exception.</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <h2>🧩 2.3 Special Aspects of Partnership Accounts <span class="tag tag-yellow">🟡</span></h2>
+  <p>Partnership accounting differs from sole proprietorship in 5 special aspects:</p>
+  <div class="mindmap">
+    <div class="node center">Special Aspects (5)</div>
+    <div class="node">Partners' Capital A/cs</div>
+    <div class="node">Distribution of Profit/Loss</div>
+    <div class="node">Past Adjustments</div>
+    <div class="node">Reconstitution of Firm</div>
+    <div class="node">Dissolution of Firm</div>
+  </div>
+  <p style="font-size:.78rem;color:var(--muted);">*Reconstitution &amp; Dissolution are covered in later chapters (3, 4, 5)</p>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <h2>💼 2.4 Capital Accounts of Partners <span class="tag tag-red">🔴</span></h2>
+  <p>Two methods to maintain partners' capital accounts:</p>
+
+  <div class="decision-tree">
+    <div class="dt-q">Fixed or Fluctuating Capital Method?</div>
+    <div class="dt-branch">
+      <div class="dt-yes"><b>FIXED:</b> 2 accounts per partner (Capital A/c + Current A/c). Capital A/c stays fixed; all adjustments (interest, salary, drawings, share of P&amp;L) go through Current A/c, which can be Dr or Cr.</div>
+      <div class="dt-no"><b>FLUCTUATING:</b> Only 1 account per partner. All adjustments recorded directly in Capital A/c, so balance fluctuates yearly. <b>Default method if no instruction given.</b></div>
+    </div>
+  </div>
+
+  <h3>Distinction Table</h3>
+  <table>
+    <tr><th>Basis</th><th>Fixed Capital</th><th>Fluctuating Capital</th></tr>
+    <tr><td>No. of accounts</td><td>2 (Capital + Current)</td><td>1 (Capital only)</td></tr>
+    <tr><td>Adjustments recorded in</td><td>Current A/c</td><td>Capital A/c itself</td></tr>
+    <tr><td>Balance</td><td>Remains unchanged (unless addition/withdrawal of capital)</td><td>Fluctuates every year</td></tr>
+    <tr><td>Balance sign</td><td>Always Credit</td><td>May be Debit sometimes</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic — "FIXED = 2 accounts, always Credit; FLUCTUATING = 1 account, can go Negative":</b> Remember "Fixed = Frozen number, Current = Changing mood"</div>
+  <div class="qbox">📝 <b>Probable Q (very high frequency):</b> "Distinguish between Fixed and Fluctuating Capital Accounts." — Board favourite, 3-4 marks, always asked as a table.</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <h2>📈 2.5 Distribution of Profit — P&amp;L Appropriation A/c <span class="tag tag-red">🔴 CORE TOPIC</span></h2>
+  <div class="def-box"><b>Definition:</b> P&amp;L Appropriation Account is an <b>extension of the P&amp;L Account</b>. It shows how profit is appropriated/distributed among partners — via interest on capital, salary, commission, interest on drawings — before transferring balance to Capital A/cs in the profit-sharing ratio.</div>
+
+  <h3>Format (Fig 2.3)</h3>
+  <table>
+    <tr><th>Dr. (Appropriations)</th><th>Cr. (Additions)</th></tr>
+    <tr><td>P&amp;L A/c (if loss)</td><td>P&amp;L A/c (if profit)</td></tr>
+    <tr><td>Interest on Capital</td><td>Interest on Drawings</td></tr>
+    <tr><td>Salary to Partner</td><td></td></tr>
+    <tr><td>Commission to Partner</td><td></td></tr>
+    <tr><td>Interest on Partner's Loan</td><td></td></tr>
+    <tr><td>Partners' Capital A/cs (share of profit)</td><td></td></tr>
+  </table>
+
+  <h3>Journal Entry Sequence <span class="tag tag-orange">🟠</span></h3>
+  <div class="flow">
+    <div class="flow-step">1. P&amp;L A/c → P&amp;L Appropriation A/c (transfer net profit/loss)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Interest on Capital A/c → Partners' Capital/Current A/cs</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Partners' Capital/Current A/cs → Interest on Drawings A/c</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">4. Salary/Commission to Partner A/c → Partners' Capital/Current A/cs</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">5. Appropriation A/c → Partners' Capital A/cs (final share of profit)</div>
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> Numerical — "Prepare P&amp;L Appropriation Account and Partners' Capital Accounts" — appears almost every year, 6-8 marks.</div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <h2>💹 2.5.2 Interest on Capital <span class="tag tag-red">🔴</span></h2>
+  <ul>
+    <li>Allowed <b>only if expressly agreed</b> in the deed; NOT a matter of right</li>
+    <li>Given when: (i) unequal capital but equal profit sharing, or (ii) equal capital but unequal profit sharing</li>
+    <li>Payable only <b>out of profits</b></li>
+  </ul>
+  <h3>Calculation with Additions/Withdrawals</h3>
+  <div class="flow">
+    <div class="flow-step">1. Interest on Opening Capital → for full year</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Interest on Additional Capital → from date introduced to year-end</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Interest on Capital Withdrawn → deduct, from date withdrawn to year-end</div>
+  </div>
+  <div class="formula-box">Interest on Capital = Capital × Rate/100 × Period(months)/12</div>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section" id="s7">
+  <h2>💸 2.5.3 Interest on Drawings <span class="tag tag-red">🔴 VERY NUMERICAL-HEAVY</span></h2>
+  <p>Charged only if deed provides. Discourages excessive drawings.</p>
+
+  <h3>Fixed Amount Withdrawn Monthly (Avg Period Method)</h3>
+  <table>
+    <tr><th>Withdrawal Timing</th><th>Average Period</th></tr>
+    <tr><td>Beginning of every month</td><td><b>6½ months</b></td></tr>
+    <tr><td>Middle of every month</td><td><b>6 months</b></td></tr>
+    <tr><td>End of every month</td><td><b>5½ months</b></td></tr>
+  </table>
+  <div class="formula-box">Avg Period = (Total months ± 1) / 2
+  (+1 for beginning-of-month, −1 for end-of-month, no adjustment for middle)</div>
+
+  <h3>Fixed Amount Withdrawn Quarterly</h3>
+  <table>
+    <tr><th>Withdrawal Timing</th><th>Average Period</th></tr>
+    <tr><td>Beginning of every quarter</td><td><b>7½ months</b></td></tr>
+    <tr><td>End of every quarter</td><td><b>4½ months</b></td></tr>
+  </table>
+
+  <h3>Varying Amounts at Different Dates → Product Method</h3>
+  <div class="formula-box">
+For each withdrawal: Product = Amount × Months outstanding (till year-end)
+Total Products → Interest = ΣProducts × Rate/100 × 1/12
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic — "BEM 6½-6-5½, Quarter 7½-4½":</b> Beginning-Middle-End of month = 6½-6-5½; Quarter Beginning-End = 7½-4½. Chant this before the exam!</div>
+  <div class="qbox">📝 <b>Probable Q:</b> Numerical using average period / product method — appears almost every year. Practice all 5 scenarios (monthly-begin/mid/end, quarterly-begin/end, varying amounts).</div>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section" id="s8">
+  <h2>🛡️ 2.6 Guarantee of Profit to a Partner <span class="tag tag-orange">🟠</span></h2>
+  <div class="def-box"><b>Definition:</b> A new/existing partner is assured a <b>minimum guaranteed profit share</b>. If his actual share (as per PSR) is less than guaranteed amount, the shortfall (deficiency) is borne by the guaranteeing partner(s).</div>
+  <div class="decision-tree">
+    <div class="dt-q">Who gave the guarantee?</div>
+    <div class="dt-branch">
+      <div class="dt-yes"><b>ALL old partners</b> gave it → Deficiency borne by them in their <b>profit-sharing ratio</b> (unless stated otherwise)</div>
+      <div class="dt-no"><b>ONE partner alone</b> gave it → That partner bears the <b>entire deficiency</b></div>
+    </div>
+  </div>
+  <div class="formula-box">
+Deficiency = Guaranteed Amount − Actual Share as per PSR
+Guaranteeing Partner's Final Share = His Original Share − His portion of Deficiency
+Guaranteed Partner's Final Share = Guaranteed Amount (always)
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> "A and B are partners... admit C with a guarantee of minimum profit of Rs. X... Prepare P&amp;L Appropriation Account." — Classic recurring numerical.</div>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section" id="s9">
+  <h2>🔧 2.7 Past Adjustments <span class="tag tag-orange">🟠</span></h2>
+  <div class="def-box"><b>Definition:</b> Errors/omissions (interest on capital/drawings/loan, salary, commission, outstanding expenses) discovered <b>after</b> final accounts are prepared &amp; profit already distributed. Corrected WITHOUT altering old accounts.</div>
+  <h3>Two Methods of Correction</h3>
+  <table>
+    <tr><th>Method</th><th>How</th></tr>
+    <tr><td>(a) Profit &amp; Loss <b>Adjustment</b> Account</td><td>Pass entries through a separate adjustment account; net effect distributed to partners in old PSR</td></tr>
+    <tr><td>(b) Direct in Partners' Capital A/cs</td><td>Prepare a "Statement Showing Net Effect" comparing what SHOULD have been credited vs what WAS credited; adjust the difference directly between partners</td></tr>
+  </table>
+  <div class="formula-box">
+Net Effect = (i) Amount that should've been credited/debited
+           − (ii) Amount actually credited/debited (as extra share of profit)
+= (iii) Excess (Dr partner) / Short (Cr partner) → single adjusting entry
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> "After final accounts were prepared, it was found that interest on capital was omitted. Give the adjusting journal entry." — Practice the "Statement of Net Effect" table format.</div>
+</div>
+
+<!-- SECTION 10 -->
+<div class="section" id="s10">
+  <h2>📑 2.8 Final Accounts of a Partnership Firm <span class="tag tag-yellow">🟡</span></h2>
+  <p>Prepared the <b>same way</b> as a sole proprietorship's final accounts — <b>only difference:</b> after Trading &amp; P&amp;L A/c, net profit/loss is transferred to the <b>P&amp;L Appropriation Account</b> (not directly to Capital A/c) to distribute among partners.</p>
+  <div class="flow">
+    <div class="flow-step">Trading A/c → Gross Profit/Loss</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">P&amp;L A/c → Net Profit/Loss</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">P&amp;L Appropriation A/c → Interest, Salary, Commission adjustments</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Balance → Partners' Capital A/cs (in PSR)</div>
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="section revision-sheet" id="rev">
+  <h2>🏁 One-Page Revision Sheet <span class="tag tag-green">🟢 Last-Day Ready</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item">✅ Sec 4, Indian Partnership Act 1932 = definition of partnership</div>
+    <div class="rev-item">✅ Min 2 partners; Max 50 (Companies Act 2013 + Rule 10 of 2014 Rules)</div>
+    <div class="rev-item">✅ Deed silent → Equal PSR, No interest on capital/drawings, No salary, but 6% interest on partner's loan</div>
+    <div class="rev-item">✅ LLP Act 2008 — Partnership Act does NOT apply to LLP</div>
+    <div class="rev-item">✅ Fixed Capital = 2 A/cs (Capital+Current); Fluctuating = 1 A/c (default method)</div>
+    <div class="rev-item">✅ P&amp;L Appropriation A/c = extension of P&amp;L A/c; distributes profit after interest/salary/commission</div>
+    <div class="rev-item">✅ Drawings avg period: Monthly Begin/Mid/End = 6½/6/5½ months; Quarterly Begin/End = 7½/4½ months</div>
+    <div class="rev-item">✅ Varying drawings → Product Method: ΣProducts × Rate% × 1/12</div>
+    <div class="rev-item">✅ Guarantee: all partners → deficiency in PSR; one partner → bears it alone</div>
+    <div class="rev-item">✅ Past adjustments: via P&amp;L Adjustment A/c OR direct capital account entry using Net Effect Statement</div>
+  </div>
+
+  <h3 style="margin-top:16px;">⏱️ Last-Minute Memory Tricks</h3>
+  <div class="mnemonic">📌 <b>"PEDSR-6"</b>: Profit-Equal, No interest on capital/Drawings, No Salary/Remuneration — but 6% on partner's loan (the exception).</div>
+  <div class="mnemonic">📌 <b>"6½-6-5½ / 7½-4½"</b>: Chant for interest on drawings average period (monthly / quarterly).</div>
+  <div class="mnemonic">📌 <b>"Fixed=2, Fluctuating=1"</b>: Number of accounts per partner under each capital method.</div>
+
+  <h3>Key Terms Quick List</h3>
+  <ul>
+    <li>Partnership Deed / Partnership Act 1932</li>
+    <li>Fixed Capital / Fluctuating Capital / Current Account</li>
+    <li>Profit &amp; Loss Appropriation Account</li>
+    <li>Interest on Capital / Interest on Drawings</li>
+    <li>Guarantee of Profit / Deficiency</li>
+    <li>Past Adjustments / Profit &amp; Loss Adjustment Account</li>
+  </ul>
+
+  <h3>Logic Flow</h3>
+  <div class="timeline">
+    <div class="t-item"><div class="t-title">Step 1</div><div class="t-desc">Check deed → if silent, apply Partnership Act 1932 defaults</div></div>
+    <div class="t-item"><div class="t-title">Step 2</div><div class="t-desc">Prepare P&amp;L Appropriation A/c → adjust interest, salary, commission</div></div>
+    <div class="t-item"><div class="t-title">Step 3</div><div class="t-desc">Distribute balance in PSR → post to Capital/Current A/cs</div></div>
+    <div class="t-item"><div class="t-title">Step 4</div><div class="t-desc">If guarantee exists → adjust deficiency between guaranteeing partners</div></div>
+    <div class="t-item"><div class="t-title">Step 5</div><div class="t-desc">If past errors found → correct via Adjustment A/c or direct capital entry</div></div>
+  </div>
+</div>
+
+</div>
+
+<button id="ttsBtn" onclick="speakPage()">🔊</button>
+
+<div class="footer-nav">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="ic">⬆️</span>Top</button>
+  <button onclick="toggleDark()"><span class="ic">🌓</span>Theme</button>
+  <button onclick="document.getElementById('rev').scrollIntoView({behavior:'smooth'})"><span class="ic">📋</span>Revision</button>
+  <button onclick="window.print()"><span class="ic">🖨️</span>Print</button>
+</div>
+
+<script>
+function toggleDark(){document.body.classList.toggle('dark');}
+function toggleAcc(btn){
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+  btn.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+let speaking=false;
+function speakPage(){
+  if(speaking){window.speechSynthesis.cancel(); speaking=false; return;}
+  const text = document.querySelector('.container').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0,4000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{speaking=false;};
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

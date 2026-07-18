@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Not-for-Profit Organisation Accounting | AAO Exam</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2a20;
+  --blue:#1a5276; --blue-light:#2980b9;
+  --gold:#c8960c; --gold-light:#f4d35e;
+  --green:#1e8449; --orange:#d35400; --yellow:#b7950b;
+  --bg:#f7f4ee; --card:#ffffff; --ink:#222; --muted:#666;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.5;
+  padding-bottom:60px;
+}
+body.dark{
+  --bg:#121417; --card:#1c1f24; --ink:#eee; --muted:#aaa;
+}
+header{
+  background:linear-gradient(135deg,var(--red),var(--blue));
+  color:#fff; padding:22px 16px 70px; text-align:center; position:relative;
+  border-radius:0 0 30px 30px;
+}
+header h1{margin:0 0 6px; font-size:1.4rem;}
+header p{margin:0; font-size:.9rem; opacity:.9;}
+.badge-row{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.badge{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.4); padding:4px 10px; border-radius:20px; font-size:.72rem;}
+.top-controls{
+  display:flex; justify-content:center; gap:10px; margin:-46px auto 14px; max-width:420px; padding:0 10px; position:relative; z-index:5;
+}
+.ctrl-btn{
+  flex:1; background:var(--card); border:none; border-radius:12px; padding:10px 6px;
+  box-shadow:0 3px 10px rgba(0,0,0,.15); font-size:.78rem; font-weight:600; color:var(--blue);
+}
+.container{max-width:480px; margin:0 auto; padding:0 12px;}
+
+/* Progress / TOC nav chips */
+.nav-chips{display:flex; overflow-x:auto; gap:8px; padding:6px 2px 14px; -webkit-overflow-scrolling:touch;}
+.nav-chips a{
+  flex:0 0 auto; background:var(--card); border:1px solid #ddd; padding:6px 12px; border-radius:20px;
+  font-size:.72rem; text-decoration:none; color:var(--blue); white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+
+.section{
+  background:var(--card); border-radius:var(--radius); margin-bottom:16px; padding:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08); border-left:6px solid var(--blue);
+  scroll-margin-top:12px;
+}
+.section h2{margin:0 0 10px; font-size:1.05rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+.section h3{font-size:.92rem; color:var(--red-dark); margin:14px 0 6px;}
+.tag{
+  display:inline-block; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle;
+}
+.tag-red{background:#fdecea; color:var(--red);}
+.tag-orange{background:#fdf0e2; color:var(--orange);}
+.tag-yellow{background:#fdf7e0; color:var(--yellow);}
+.tag-green{background:#e9f7ef; color:var(--green);}
+
+p{font-size:.87rem; margin:6px 0;}
+ul,ol{font-size:.87rem; padding-left:20px; margin:6px 0;}
+li{margin-bottom:4px;}
+
+.def-box{
+  background:#fff8e6; border:1px dashed var(--gold); border-radius:10px; padding:10px 12px; font-size:.85rem; margin:8px 0;
+}
+.def-box b{color:var(--gold-light) ; color:#8a6d00;}
+
+.mnemonic{
+  background:#eaf4ff; border-left:4px solid var(--blue-light); border-radius:8px; padding:10px 12px; font-size:.83rem; margin:10px 0;
+}
+.mnemonic b{color:var(--blue);}
+
+table{width:100%; border-collapse:collapse; font-size:.76rem; margin:10px 0;}
+th,td{border:1px solid #ddd; padding:6px 6px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.72rem;}
+tr:nth-child(even){background:rgba(0,0,0,.03);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.04);}
+body.dark th{background:var(--blue-light);}
+
+.formula-box{
+  background:#f0fff4; border:1px solid var(--green); border-radius:10px; padding:10px 12px; font-size:.82rem; margin:8px 0; font-family:'Courier New',monospace;
+}
+
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{
+  background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.8rem; text-align:center; position:relative;
+}
+.flow-arrow{text-align:center; color:var(--blue); font-size:1.1rem; margin:-2px 0;}
+
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{
+  background:var(--gold); color:#fff; padding:8px 10px; border-radius:20px; font-size:.75rem; font-weight:600; text-align:center;
+}
+.mindmap .center{background:var(--red); font-size:.82rem; padding:10px 14px; width:100%; border-radius:12px;}
+
+.decision-tree{font-size:.8rem; margin:10px 0;}
+.dt-q{background:var(--red); color:#fff; padding:8px 10px; border-radius:8px 8px 0 0; font-weight:600;}
+.dt-branch{display:flex; gap:6px; margin-top:2px;}
+.dt-yes,.dt-no{flex:1; padding:8px; border-radius:0 0 8px 8px; font-size:.76rem;}
+.dt-yes{background:#e9f7ef; border:1px solid var(--green);}
+.dt-no{background:#fdecea; border:1px solid var(--red);}
+
+.eq-card{
+  background:var(--card); border:1px solid #ddd; border-radius:10px; padding:10px; margin:6px 0;
+}
+
+.qbox{
+  background:#fdf0e2; border-radius:8px; padding:8px 10px; font-size:.78rem; margin-top:8px; border-left:3px solid var(--orange);
+}
+.qbox b{color:var(--orange);}
+
+.accordion-toggle{
+  width:100%; text-align:left; background:none; border:none; font-size:.92rem; font-weight:700; color:var(--red-dark);
+  padding:8px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+}
+.accordion-body{display:none; padding:4px 2px 10px;}
+.accordion-body.open{display:block;}
+
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .t-item{margin-bottom:12px; position:relative;}
+.timeline .t-item::before{content:'●'; color:var(--gold); position:absolute; left:-19px; top:0;}
+.timeline .t-title{font-weight:700; font-size:.82rem; color:var(--blue);}
+.timeline .t-desc{font-size:.78rem; color:var(--muted);}
+
+.revision-sheet{
+  background:linear-gradient(135deg,#fff9e6,#fff);
+  border:2px solid var(--gold); border-radius:14px; padding:14px;
+}
+.revision-sheet h2{color:var(--red-dark);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px;}
+.rev-item{background:#fff; border-radius:8px; padding:8px 10px; font-size:.78rem; border-left:4px solid var(--gold);}
+
+.footer-nav{
+  position:fixed; bottom:0; left:0; right:0; background:var(--card); box-shadow:0 -2px 10px rgba(0,0,0,.15);
+  display:flex; justify-content:space-around; padding:8px 4px; z-index:10;
+}
+.footer-nav button{
+  background:none; border:none; font-size:.68rem; color:var(--blue); display:flex; flex-direction:column; align-items:center; gap:2px;
+}
+.footer-nav button span.ic{font-size:1.1rem;}
+
+.bookmark-star{cursor:pointer; font-size:1.1rem; margin-left:auto;}
+
+#ttsBtn{
+  position:fixed; bottom:64px; right:14px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:48px; height:48px; font-size:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,.3); z-index:11;
+}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:.68rem; margin-bottom:14px;
+}
+.legend span{background:var(--card); padding:4px 8px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.08);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Chapter 1: Accounting for Not-for-Profit Organisation</h1>
+  <p>AAO Exam | NCERT Class XII Accountancy | Mobile Study Card</p>
+  <div class="badge-row">
+    <span class="badge">Pages 1–63</span>
+    <span class="badge">9 Sub-Topics</span>
+    <span class="badge">High Weightage</span>
+  </div>
+</header>
+
+<div class="top-controls">
+  <button class="ctrl-btn" onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="ctrl-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">⏭ Revision Sheet</button>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 Very Important</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual</span>
+  <span>🟢 Quick Revision</span>
+</div>
+
+<div class="nav-chips">
+  <a href="#s1">1.Meaning</a>
+  <a href="#s2">2.Records</a>
+  <a href="#s3">3.R&amp;P A/c</a>
+  <a href="#s4">4.I&amp;E A/c</a>
+  <a href="#s5">5.Balance Sheet</a>
+  <a href="#s6">6.Peculiar Items</a>
+  <a href="#s7">7.Special Funds</a>
+  <a href="#s9">8.Trading Activity</a>
+  <a href="#rev">9.Revision</a>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <h2>🏛️ 1.1 Meaning &amp; Characteristics <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box">
+    <b>Definition:</b> Not-for-Profit Organisations (NPOs) are entities set up for the <b>welfare of society</b> — clubs, charitable institutions, schools, hospitals, religious bodies, trade unions — that function <b>without profit motive</b>. Main aim = service, not profit.
+  </div>
+  <h3>Key Characteristics</h3>
+  <ul>
+    <li>Formed to serve a specific group / public at large (education, health, sports, culture)</li>
+    <li>Organised as <b>trusts / societies</b>; contributors called <b>members</b></li>
+    <li>Managed by an elected <b>managing/executive committee</b></li>
+    <li>Income sources: subscriptions, donations, legacies, grant-in-aid, investment income</li>
+    <li>Funds credited to <b>Capital Fund / General Fund</b> (not "Capital A/c")</li>
+    <li>Surplus (Income − Expenditure) is <b>NOT distributed</b> — added to Capital Fund</li>
+    <li>Reputation built on <b>service to society</b>, not profit</li>
+    <li>Accounting info meant for contributors + statutory compliance (<b>Registrar of Societies</b>)</li>
+  </ul>
+  <div class="mnemonic">🧠 <b>Mnemonic — "SOMCAR":</b> Service motive, Organised as trust, Managed by committee, Capital fund (not capital a/c), Accountable to Registrar</div>
+  <div class="qbox">📝 <b>Probable Q:</b> "Distinguish between Profit-seeking entities and Not-for-Profit entities." (Very common 3-4 mark question)</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <h2>📚 1.2 Accounting Records <span class="tag tag-yellow">🟡</span></h2>
+  <p>NPOs maintain 3 core records:</p>
+  <ol>
+    <li><b>Cash Book</b> — all receipts &amp; payments</li>
+    <li><b>Ledger</b> — income, expense, asset, liability accounts</li>
+    <li><b>Stock Register</b> — fixed assets &amp; consumables</li>
+  </ol>
+  <div class="def-box"><b>Note:</b> NPOs do NOT maintain a "Capital Account" — instead they maintain <b>Capital Fund / General Fund</b>, accumulated from surpluses, life membership fees, donations, legacies.</div>
+  <h3>Final Accounts / Financial Statements (3 statements)</h3>
+  <div class="mindmap">
+    <div class="node center">Final Accounts of NPO</div>
+    <div class="node">Receipt &amp; Payment A/c</div>
+    <div class="node">Income &amp; Expenditure A/c</div>
+    <div class="node">Balance Sheet</div>
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> "What are the financial statements prepared by a Not-for-Profit Organisation?" — always list all 3, in order.</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <h2>💰 1.3 Receipt &amp; Payment Account <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> Summary of the <b>Cash Book</b> — records ALL cash &amp; bank receipts/payments during the year, regardless of period (past/current/future) or nature (capital/revenue).</div>
+
+  <h3>Salient Features (🟠 frequently asked as "features/characteristics")</h3>
+  <ul>
+    <li>It's a summarised Cash Book (Dr = Receipts, Cr = Payments)</li>
+    <li>Shows <b>total amounts</b> irrespective of period — includes arrears &amp; advances</li>
+    <li>Includes BOTH capital and revenue receipts/payments</li>
+    <li>No cash/bank distinction — single total per item</li>
+    <li>NO non-cash items (no depreciation, no outstanding/accrued items)</li>
+    <li>Opens with opening cash/bank balance (or overdraft); closes with year-end balance</li>
+  </ul>
+
+  <h3>Format (Fig 1.1)</h3>
+  <table>
+    <tr><th>Receipts (Dr)</th><th>Payments (Cr)</th></tr>
+    <tr><td>Balance b/d (Cash/Bank)</td><td>Insurance, Salaries, Rent, Rates</td></tr>
+    <tr><td>Subscriptions, Entrance Fees</td><td>Printing &amp; Stationery, Postage</td></tr>
+    <tr><td>Legacies, Specific Donations</td><td>Purchase of Assets/Investments</td></tr>
+    <tr><td>Sale of Investments/Fixed Assets</td><td>Honorarium, Newspapers</td></tr>
+    <tr><td>Life Membership Fees</td><td>Balance c/d (Cash/Bank)</td></tr>
+  </table>
+
+  <h3>Steps to Prepare</h3>
+  <div class="flow">
+    <div class="flow-step">1. Enter opening cash/bank balance (Dr side)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Enter total of ALL receipts (any period)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Enter total of ALL payments (any period)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">4. Balancing figure = Closing cash/bank</div>
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> Numerical — "Prepare Receipt and Payment Account from a given Cash Book." Also theory: "State the features of Receipt and Payment Account."</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <h2>📊 1.4 Income &amp; Expenditure Account <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> Equivalent of <b>Profit &amp; Loss A/c</b>. Prepared on <b>accrual basis</b>. Records ONLY revenue items of the <b>current year</b>. Balance = Surplus (income&gt;expenditure) or Deficit (expenditure&gt;income), transferred to Capital Fund.</div>
+
+  <h3>Steps to Convert R&amp;P A/c → I&amp;E A/c</h3>
+  <div class="flow">
+    <div class="flow-step">1. Study R&amp;P Account thoroughly</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Exclude opening/closing cash-bank balances</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Exclude capital receipts &amp; payments</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">4. Adjust revenue items for current year only (remove arrears/advances, add outstanding)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">5. Add non-cash items: depreciation, provisions</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">6. Balance = Surplus/Deficit</div>
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic — "SECAB":</b> Study R&amp;P → Exclude balances → Capital items excluded → Adjust for current year → Balance (Surplus/Deficit)</div>
+</div>
+
+<!-- Distinction Table -->
+<div class="section" id="s4b">
+  <h2>⚖️ I&amp;E A/c vs R&amp;P A/c <span class="tag tag-orange">🟠</span></h2>
+  <table>
+    <tr><th>Basis</th><th>Income &amp; Expenditure</th><th>Receipt &amp; Payment</th></tr>
+    <tr><td>Nature</td><td>Like P&amp;L Account</td><td>Summary of Cash Book</td></tr>
+    <tr><td>Items</td><td>Revenue only</td><td>Revenue + Capital</td></tr>
+    <tr><td>Period</td><td>Current year only</td><td>Any period (past/future too)</td></tr>
+    <tr><td>Depreciation</td><td>Included</td><td>Not included</td></tr>
+    <tr><td>Opening Balance</td><td>None</td><td>Cash/Bank/O.D. b/d</td></tr>
+    <tr><td>Closing Balance</td><td>Surplus/Deficit</td><td>Cash/Bank c/d</td></tr>
+  </table>
+  <div class="qbox">📝 <b>Probable Q (very high frequency):</b> "Distinguish between Income and Expenditure Account and Receipt and Payment Account." — Tabulate at least 4 points.</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <h2>🧾 1.5 Balance Sheet <span class="tag tag-yellow">🟡</span></h2>
+  <p>Prepared like a normal Balance Sheet, BUT:</p>
+  <ul>
+    <li>Liabilities side has <b>Capital Fund / General Fund</b> instead of Capital</li>
+    <li>Surplus/Deficit from I&amp;E A/c is added/deducted from Capital Fund</li>
+    <li>Capitalised items (legacies, entrance fees, life membership fees) directly added to Capital Fund</li>
+    <li>Special/specific purpose funds (building fund, sports fund) shown <b>separately</b> on liabilities side</li>
+  </ul>
+  <div class="formula-box">
+Capital Fund (Opening) + Surplus (or − Deficit)
+   + Legacies + Entrance Fees + Life Membership Fees
+   = Capital Fund (Closing)
+  </div>
+</div>
+
+<!-- SECTION 6 - PECULIAR ITEMS -->
+<div class="section" id="s6">
+  <h2>⭐ 1.6 Peculiar Items <span class="tag tag-red">🔴 HIGHEST WEIGHTAGE</span></h2>
+  <p>These items get special treatment — <b>this is the single most-tested part of Chapter 1.</b></p>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">1️⃣ Subscription <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Main recurring income. R&amp;P A/c shows cash received; I&amp;E A/c shows amount <b>related to current year only</b> (accrual basis).</p>
+    <div class="formula-box">
+Subscription received (R&amp;P)
++ Outstanding at end (current yr)
++ Advance received last yr (for this yr)
+− Outstanding at start (last yr, now received)
+− Advance received this yr (for next yr)
+= Income from Subscription (I&amp;E A/c)
+    </div>
+    <div class="qbox">📝 Most repeated numerical type in board/AAO exams — practice the subscription account format too.</div>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">2️⃣ Donations <span>▾</span></button>
+  <div class="accordion-body">
+    <table>
+      <tr><th>Type</th><th>Treatment</th></tr>
+      <tr><td><b>Specific Donation</b></td><td>Capitalised → Liabilities side of Balance Sheet (any amount)</td></tr>
+      <tr><td><b>General Donation</b></td><td>Revenue receipt → Income side of I&amp;E A/c</td></tr>
+    </table>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">3️⃣ Legacies <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Amount received as per a deceased person's <b>will</b>. Non-recurring → added directly to Capital/General Fund. (Small legacies may be treated as income.)</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">4️⃣ Life Membership Fees <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Lump sum instead of periodic subscription → <b>Capital receipt</b> → credited directly to Capital/General Fund.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">5️⃣ Entrance Fees <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Paid once at admission. Default treatment: <b>Capital receipt</b> → Capital Fund. Exception: for institutions like schools where it's regular/small — may be treated as revenue income. <b>Follow question's specific instruction if given.</b></p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">6️⃣ Sale of Old Asset <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Full sale proceeds → Receipts side of R&amp;P A/c. <b>Gain/Loss</b> on sale → I&amp;E A/c. Book value of asset deducted from asset in Balance Sheet.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">7️⃣ Sale of Periodicals / Sports Material <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Recurring in nature → shown as <b>income</b> in I&amp;E Account.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">8️⃣ Honorarium <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Payment to a <b>non-employee</b> (e.g., guest artist) → Expenditure side of I&amp;E Account.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">9️⃣ Endowment Fund <span>▾</span></button>
+  <div class="accordion-body">
+    <p>Fund from a bequest/gift; income devoted to a specific purpose → <b>Capital receipt</b> → shown as a specific purpose fund on Liabilities side.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">🔟 Government Grant <span>▾</span></button>
+  <div class="accordion-body">
+    <table>
+      <tr><th>Type</th><th>Treatment</th></tr>
+      <tr><td>Maintenance Grant (recurring)</td><td>Revenue receipt → I&amp;E A/c</td></tr>
+      <tr><td>Building Grant (capital)</td><td>Transferred to Building Fund A/c</td></tr>
+      <tr><td>Cash Subsidy</td><td>Revenue income for year received</td></tr>
+    </table>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">1️⃣1️⃣ Stationery Consumed <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Purchases (per R&amp;P) + Opening Stock − Closing Stock
+= Stationery Consumed → I&amp;E A/c (expenditure side)
+    </div>
+    <p>If credit purchases exist, adjust for Creditors too (Purchases − Op. Creditors + Cl. Creditors = Purchases for the year).</p>
+  </div>
+
+  <div class="mnemonic">🧠 <b>Mnemonic — "SoDoLE-Life-Entry-SaleHo-EndGov-Stat":</b> Subscription, Donation, Legacy, Life Membership, Entrance fee, Sale of asset, Honorarium, Endowment, Govt Grant, Stationery — the 10 peculiar items, in exam order of frequency.</div>
+</div>
+
+<!-- SECTION 7 - SPECIAL FUNDS -->
+<div class="section" id="s7">
+  <h2>🎯 Special / Specific Purpose Funds <span class="tag tag-orange">🟠</span></h2>
+  <p>E.g., Prize Fund, Match Fund, Sports Fund. Created for a defined purpose.</p>
+  <div class="decision-tree">
+    <div class="dt-q">Is there a Special Fund (e.g., Prize Fund)?</div>
+    <div class="dt-branch">
+      <div class="dt-yes"><b>YES</b> → Income from fund investments ADDED to fund (not I&amp;E). Expenses related to fund DEDUCTED from fund. Shown in Balance Sheet.</div>
+      <div class="dt-no"><b>Balance goes negative?</b> → Debit balance transferred to I&amp;E Account (expenditure side).</div>
+    </div>
+  </div>
+  <div class="formula-box">
+Fund (Opening) + Related Income + Donations for Fund
+− Related Expenses = Net Fund Balance (Balance Sheet)
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> "Show how Prize Fund, Prize Fund Investments and related income/expenses will appear in the financial statements."</div>
+</div>
+
+<!-- SECTION 8/9 - Trial Balance based & Trading Activity -->
+<div class="section" id="s9">
+  <h2>🏓 1.8 Incidental Trading Activity <span class="tag tag-yellow">🟡</span></h2>
+  <div class="def-box"><b>Definition:</b> Some NPOs conduct a small trading activity alongside their main service (e.g., a club running a canteen, or billiard table). Result of such activity is worked out separately in a mini Trading Account and only the <b>net profit/loss</b> is shown in I&amp;E Account (not gross figures).</div>
+  <p><b>1.7 I&amp;E Account from Trial Balance:</b> Where a Trial Balance (not R&amp;P A/c) is given, prepare I&amp;E Account and Balance Sheet directly using standard adjustments (outstanding, prepaid, depreciation) — same principles as normal final accounts preparation.</p>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="section revision-sheet" id="rev">
+  <h2>🏁 One-Page Revision Sheet <span class="tag tag-green">🟢 Last-Day Ready</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item">✅ 3 Final Statements: R&amp;P A/c → I&amp;E A/c → Balance Sheet</div>
+    <div class="rev-item">✅ R&amp;P A/c = Cash Book summary; ALL periods; no depreciation</div>
+    <div class="rev-item">✅ I&amp;E A/c = P&amp;L equivalent; current year only; accrual basis</div>
+    <div class="rev-item">✅ Capital Fund replaces "Capital A/c"</div>
+    <div class="rev-item">✅ Specific Donation = Capitalised; General Donation = Income</div>
+    <div class="rev-item">✅ Legacy, Life Membership Fee, Entrance Fee (default) = Capital Fund</div>
+    <div class="rev-item">✅ Sale of asset: proceeds → R&amp;P; gain/loss → I&amp;E</div>
+    <div class="rev-item">✅ Honorarium = expenditure (paid to non-employee)</div>
+    <div class="rev-item">✅ Special funds: income added, expenses deducted from the fund itself, NOT I&amp;E</div>
+    <div class="rev-item">✅ Stationery consumed = Purchases + Op. Stock − Cl. Stock</div>
+  </div>
+
+  <h3 style="margin-top:16px;">⏱️ Last-Minute Memory Tricks</h3>
+  <div class="mnemonic">📌 <b>"Capital items → Capital Fund"</b>: Legacy, Life Membership, Entrance Fee (default), Specific Donation, Endowment Fund, Building Grant — all go to Capital Fund/Liabilities, NOT to I&amp;E Account income.</div>
+  <div class="mnemonic">📌 <b>"Recurring = Revenue"</b>: Subscription, General Donation, Sale of periodicals/sports material, Maintenance Grant, Cash Subsidy — all go to I&amp;E Account.</div>
+
+  <h3>Key Terms Quick List</h3>
+  <ul>
+    <li>Receipt &amp; Payment Account</li>
+    <li>Income &amp; Expenditure Account</li>
+    <li>Entrance Fee / Life Membership Fee</li>
+    <li>Special Receipts / Special Funds</li>
+    <li>Subscription / Donation / Legacy</li>
+    <li>Incidental Trading Activity</li>
+  </ul>
+
+  <h3>Timeline of Preparation Logic</h3>
+  <div class="timeline">
+    <div class="t-item"><div class="t-title">Step 1</div><div class="t-desc">Start from Cash Book → prepare R&amp;P A/c</div></div>
+    <div class="t-item"><div class="t-title">Step 2</div><div class="t-desc">Adjust for current-year-only + accruals → I&amp;E A/c</div></div>
+    <div class="t-item"><div class="t-title">Step 3</div><div class="t-desc">Carry Surplus/Deficit to Capital Fund → Balance Sheet</div></div>
+  </div>
+</div>
+
+</div>
+
+<button id="ttsBtn" onclick="speakPage()">🔊</button>
+
+<div class="footer-nav">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="ic">⬆️</span>Top</button>
+  <button onclick="toggleDark()"><span class="ic">🌓</span>Theme</button>
+  <button onclick="document.getElementById('rev').scrollIntoView({behavior:'smooth'})"><span class="ic">📋</span>Revision</button>
+  <button onclick="window.print()"><span class="ic">🖨️</span>Print</button>
+</div>
+
+<script>
+function toggleDark(){document.body.classList.toggle('dark');}
+function toggleAcc(btn){
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+  btn.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+let speaking=false;
+function speakPage(){
+  if(speaking){window.speechSynthesis.cancel(); speaking=false; return;}
+  const text = document.querySelector('.container').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0,4000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{speaking=false;};
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

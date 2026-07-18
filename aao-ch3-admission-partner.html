@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Admission of a Partner | AAO Exam</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2a20;
+  --blue:#1a5276; --blue-light:#2980b9;
+  --gold:#c8960c; --gold-light:#f4d35e;
+  --green:#1e8449; --orange:#d35400; --yellow:#b7950b;
+  --bg:#f7f4ee; --card:#ffffff; --ink:#222; --muted:#666;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body{ margin:0; font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; padding-bottom:60px; }
+body.dark{ --bg:#121417; --card:#1c1f24; --ink:#eee; --muted:#aaa; }
+header{ background:linear-gradient(135deg,var(--red),var(--blue)); color:#fff; padding:22px 16px 70px; text-align:center; position:relative; border-radius:0 0 30px 30px; }
+header h1{margin:0 0 6px; font-size:1.3rem;}
+header p{margin:0; font-size:.9rem; opacity:.9;}
+.badge-row{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.badge{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.4); padding:4px 10px; border-radius:20px; font-size:.72rem;}
+.top-controls{ display:flex; justify-content:center; gap:10px; margin:-46px auto 14px; max-width:420px; padding:0 10px; position:relative; z-index:5; }
+.ctrl-btn{ flex:1; background:var(--card); border:none; border-radius:12px; padding:10px 6px; box-shadow:0 3px 10px rgba(0,0,0,.15); font-size:.78rem; font-weight:600; color:var(--blue); }
+.container{max-width:480px; margin:0 auto; padding:0 12px;}
+.nav-chips{display:flex; overflow-x:auto; gap:8px; padding:6px 2px 14px; -webkit-overflow-scrolling:touch;}
+.nav-chips a{ flex:0 0 auto; background:var(--card); border:1px solid #ddd; padding:6px 12px; border-radius:20px; font-size:.72rem; text-decoration:none; color:var(--blue); white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.section{ background:var(--card); border-radius:var(--radius); margin-bottom:16px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.08); border-left:6px solid var(--blue); scroll-margin-top:12px; }
+.section h2{margin:0 0 10px; font-size:1.05rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+.section h3{font-size:.92rem; color:var(--red-dark); margin:14px 0 6px;}
+.tag{ display:inline-block; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
+.tag-red{background:#fdecea; color:var(--red);}
+.tag-orange{background:#fdf0e2; color:var(--orange);}
+.tag-yellow{background:#fdf7e0; color:var(--yellow);}
+.tag-green{background:#e9f7ef; color:var(--green);}
+p{font-size:.87rem; margin:6px 0;}
+ul,ol{font-size:.87rem; padding-left:20px; margin:6px 0;}
+li{margin-bottom:4px;}
+.def-box{ background:#fff8e6; border:1px dashed var(--gold); border-radius:10px; padding:10px 12px; font-size:.85rem; margin:8px 0; }
+.def-box b{color:#8a6d00;}
+.mnemonic{ background:#eaf4ff; border-left:4px solid var(--blue-light); border-radius:8px; padding:10px 12px; font-size:.83rem; margin:10px 0; }
+.mnemonic b{color:var(--blue);}
+table{width:100%; border-collapse:collapse; font-size:.75rem; margin:10px 0;}
+th,td{border:1px solid #ddd; padding:6px 6px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.7rem;}
+tr:nth-child(even){background:rgba(0,0,0,.03);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.04);}
+body.dark th{background:var(--blue-light);}
+.formula-box{ background:#f0fff4; border:1px solid var(--green); border-radius:10px; padding:10px 12px; font-size:.82rem; margin:8px 0; font-family:'Courier New',monospace; overflow-x:auto; }
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{ background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.8rem; text-align:center; }
+.flow-arrow{text-align:center; color:var(--blue); font-size:1.1rem; margin:-2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{ background:var(--gold); color:#fff; padding:8px 10px; border-radius:20px; font-size:.75rem; font-weight:600; text-align:center; }
+.mindmap .center{background:var(--red); font-size:.82rem; padding:10px 14px; width:100%; border-radius:12px;}
+.decision-tree{font-size:.8rem; margin:10px 0;}
+.dt-q{background:var(--red); color:#fff; padding:8px 10px; border-radius:8px 8px 0 0; font-weight:600;}
+.dt-branch{display:flex; gap:6px; margin-top:2px;}
+.dt-yes,.dt-no{flex:1; padding:8px; border-radius:0 0 8px 8px; font-size:.76rem;}
+.dt-yes{background:#e9f7ef; border:1px solid var(--green);}
+.dt-no{background:#fdecea; border:1px solid var(--red);}
+.qbox{ background:#fdf0e2; border-radius:8px; padding:8px 10px; font-size:.78rem; margin-top:8px; border-left:3px solid var(--orange); }
+.qbox b{color:var(--orange);}
+.accordion-toggle{ width:100%; text-align:left; background:none; border:none; font-size:.92rem; font-weight:700; color:var(--red-dark); padding:8px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+.accordion-body{display:none; padding:4px 2px 10px;}
+.accordion-body.open{display:block;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .t-item{margin-bottom:12px; position:relative;}
+.timeline .t-item::before{content:'●'; color:var(--gold); position:absolute; left:-19px; top:0;}
+.timeline .t-title{font-weight:700; font-size:.82rem; color:var(--blue);}
+.timeline .t-desc{font-size:.78rem; color:var(--muted);}
+.revision-sheet{ background:linear-gradient(135deg,#fff9e6,#fff); border:2px solid var(--gold); border-radius:14px; padding:14px; }
+.revision-sheet h2{color:var(--red-dark);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px;}
+.rev-item{background:#fff; border-radius:8px; padding:8px 10px; font-size:.78rem; border-left:4px solid var(--gold);}
+.footer-nav{ position:fixed; bottom:0; left:0; right:0; background:var(--card); box-shadow:0 -2px 10px rgba(0,0,0,.15); display:flex; justify-content:space-around; padding:8px 4px; z-index:10; }
+.footer-nav button{ background:none; border:none; font-size:.68rem; color:var(--blue); display:flex; flex-direction:column; align-items:center; gap:2px; }
+.footer-nav button span.ic{font-size:1.1rem;}
+#ttsBtn{ position:fixed; bottom:64px; right:14px; background:var(--red); color:#fff; border:none; border-radius:50%; width:48px; height:48px; font-size:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,.3); z-index:11; }
+.legend{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:.68rem; margin-bottom:14px; }
+.legend span{background:var(--card); padding:4px 8px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.08);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🆕 Chapter 3: Reconstitution – Admission of a Partner</h1>
+  <p>AAO Exam | NCERT Class XII Accountancy | Mobile Study Card</p>
+  <div class="badge-row">
+    <span class="badge">Pages 115–166</span>
+    <span class="badge">9 Sub-Topics</span>
+    <span class="badge">Goodwill Heavy</span>
+  </div>
+</header>
+
+<div class="top-controls">
+  <button class="ctrl-btn" onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="ctrl-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">⏭ Revision Sheet</button>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 Very Important</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual</span>
+  <span>🟢 Quick Revision</span>
+</div>
+
+<div class="nav-chips">
+  <a href="#s1">1.Modes</a>
+  <a href="#s2">2.Admission</a>
+  <a href="#s3">3.New PSR</a>
+  <a href="#s4">4.Sacrificing</a>
+  <a href="#s5">5.Goodwill</a>
+  <a href="#s6">6.GW Methods</a>
+  <a href="#s7">7.GW Treatment</a>
+  <a href="#s8">8.Reserves</a>
+  <a href="#s9">9.Revaluation</a>
+  <a href="#s10">10.Capitals</a>
+  <a href="#s11">11.Change PSR</a>
+  <a href="#rev">12.Revision</a>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <h2>🔄 3.1 Modes of Reconstitution <span class="tag tag-yellow">🟡</span></h2>
+  <div class="def-box"><b>Definition:</b> Any change in the existing agreement among partners = <b>Reconstitution</b> of the firm. Old agreement ends; new one begins. Firm continues.</div>
+  <div class="mindmap">
+    <div class="node center">4 Modes of Reconstitution</div>
+    <div class="node">Admission of Partner</div>
+    <div class="node">Change in PSR (existing partners)</div>
+    <div class="node">Retirement of Partner</div>
+    <div class="node">Death of Partner</div>
+  </div>
+  <p style="font-size:.78rem;color:var(--muted);">*This chapter covers Admission + Change in PSR. Retirement/Death → Chapter 4.</p>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <h2>➕ 3.2 Admission of a New Partner <span class="tag tag-red">🔴</span></h2>
+  <ul>
+    <li>Per Partnership Act 1932: admission needs <b>unanimous consent</b> of all existing partners (unless deed says otherwise)</li>
+    <li>New partner gets 2 rights: (1) share of <b>assets</b>, (2) share of <b>profits</b></li>
+    <li>Brings agreed <b>capital</b> + often <b>premium/goodwill</b> to compensate old partners for loss of super-profit share</li>
+  </ul>
+  <h3>6 Matters Requiring Adjustment on Admission <span class="tag tag-red">🔴 EXAM FAVOURITE LIST</span></h3>
+  <ol>
+    <li>New Profit Sharing Ratio</li>
+    <li>Sacrificing Ratio</li>
+    <li>Valuation &amp; Adjustment of Goodwill</li>
+    <li>Revaluation of Assets &amp; Reassessment of Liabilities</li>
+    <li>Distribution of Accumulated Profits (Reserves)</li>
+    <li>Adjustment of Partners' Capitals</li>
+  </ol>
+  <div class="mnemonic">🧠 <b>Mnemonic — "NSGRAC":</b> New ratio, Sacrificing ratio, Goodwill, Revaluation, Accumulated profits, Capital adjustment</div>
+  <div class="qbox">📝 <b>Probable Q:</b> "State the matters that require adjustment at the time of admission of a new partner." — Nearly guaranteed short-answer question.</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <h2>🧮 3.3 New Profit Sharing Ratio <span class="tag tag-red">🔴</span></h2>
+  <p>New partner acquires his share from old partners — old partners' ratio changes accordingly. If not specified how the new partner acquires his share, it's assumed he gets it from old partners in <b>their old profit sharing ratio</b>.</p>
+  <div class="formula-box">
+New Partner's Share = as agreed
+Remaining Share (for old partners) = 1 − New Partner's Share
+Old Partner's New Share = Remaining Share × his Old Ratio proportion
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> Numerical — "A and B share profits 3:2. They admit C for 1/5 share. Calculate new profit sharing ratio." (Very frequent, 1-2 marks standalone or part of larger sum)</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <h2>🎁 3.4 Sacrificing Ratio <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> The ratio in which old partners agree to sacrifice their share of profit in favour of the incoming partner.</div>
+  <div class="formula-box">Sacrificing Ratio = Old Share − New Share (for each old partner)</div>
+  <ul>
+    <li>Used to <b>distribute the goodwill/premium</b> brought by new partner among old partners</li>
+    <li>Default (if unspecified): sacrificing ratio = <b>old profit sharing ratio</b></li>
+    <li>If new ratio is given directly (not the acquisition ratio) → sacrificing ratio MUST be calculated as Old Share − New Share</li>
+  </ul>
+  <div class="mnemonic">🧠 <b>Mnemonic — "Sacrifice = Old minus New"</b>: Whoever's share drops, sacrificed; whoever's share rises... that's the new partner (or a gaining partner in PSR change).</div>
+  <div class="qbox">📝 <b>Probable Q (very high frequency):</b> "Calculate the sacrificing ratio of old partners." — Standard opening step in almost every admission numerical.</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <h2>💎 3.5 Goodwill — Meaning &amp; Factors <span class="tag tag-red">🔴 HIGH WEIGHTAGE</span></h2>
+  <div class="def-box"><b>Definition:</b> Goodwill = monetary value of a firm's good name, reputation &amp; business connections built over time — an <b>intangible asset</b>. It is the "present value of a firm's anticipated <b>excess (super) earnings</b>." Goodwill exists ONLY when the firm earns <b>super profits</b> (above normal). Firms earning only normal profit or losses have NO goodwill.</div>
+
+  <h3>5 Factors Affecting Goodwill <span class="tag tag-orange">🟠</span></h3>
+  <ul>
+    <li><b>Nature of business</b> — stable demand/high value products = higher goodwill</li>
+    <li><b>Location</b> — central, high customer traffic = higher goodwill</li>
+    <li><b>Efficiency of management</b> — better productivity &amp; cost control</li>
+    <li><b>Market situation</b> — monopoly/limited competition = higher goodwill</li>
+    <li><b>Special advantages</b> — licences, patents, trademarks, favourable long-term contracts</li>
+  </ul>
+  <div class="mnemonic">🧠 <b>Mnemonic — "NLEMS":</b> Nature, Location, Efficiency, Market, Special advantages</div>
+
+  <h3>6 Occasions Needing Goodwill Valuation <span class="tag tag-yellow">🟡</span></h3>
+  <ol>
+    <li>Change in PSR among existing partners</li>
+    <li>Admission of new partner</li>
+    <li>Retirement of a partner</li>
+    <li>Death of a partner</li>
+    <li>Dissolution (sale of business as going concern)</li>
+    <li>Amalgamation of firms</li>
+  </ol>
+</div>
+
+<!-- SECTION 6 - GOODWILL METHODS -->
+<div class="section" id="s6">
+  <h2>🧾 3.5.4 Methods of Valuation of Goodwill <span class="tag tag-red">🔴 NUMERICAL CORE</span></h2>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">1️⃣ Average Profits Method <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">Goodwill = Average Profits × No. of Years' Purchase</div>
+    <p>Based on the idea that a new business earns nothing in its first few years — so the buyer pays goodwill equal to expected profits for those years.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">2️⃣ Super Profits Method <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Normal Profit = Capital Employed × Normal Rate of Return / 100
+Super Profit  = Average Profit − Normal Profit
+Goodwill      = Super Profit × No. of Years' Purchase
+    </div>
+    <p><b>4 Steps:</b> (1) Calculate average profit → (2) Calculate normal profit → (3) Super profit = Average − Normal → (4) Goodwill = Super profit × years purchase.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">3️⃣ Capitalisation Method <span>▾</span></button>
+  <div class="accordion-body">
+    <p><b>(a) Capitalisation of Average Profits:</b></p>
+    <div class="formula-box">
+Capitalised Value = Average Profits × 100 / Normal Rate of Return
+Capital Employed = Total Assets (excl. goodwill) − Outside Liabilities
+Goodwill = Capitalised Value − Capital Employed
+    </div>
+    <p><b>(b) Capitalisation of Super Profits:</b></p>
+    <div class="formula-box">Goodwill = Super Profit × 100 / Normal Rate of Return</div>
+  </div>
+
+  <div class="mnemonic">🧠 <b>Mnemonic — "A-S-C":</b> Average profits method (simplest), Super profits method (excess only), Capitalisation method (back-calculate from normal rate)</div>
+  <div class="qbox">📝 <b>Probable Q:</b> Numerical on ANY of the 3 methods — extremely common, 4-6 marks. Practice all three with capital employed &amp; normal rate given.</div>
+</div>
+
+<!-- SECTION 7 - GOODWILL TREATMENT -->
+<div class="section" id="s7">
+  <h2>⚖️ 3.5.5 Treatment of Goodwill on Admission <span class="tag tag-red">🔴 MOST TESTED TOPIC</span></h2>
+
+  <div class="decision-tree">
+    <div class="dt-q">Does new partner bring goodwill in cash?</div>
+    <div class="dt-branch">
+      <div class="dt-yes"><b>YES → Premium Method</b></div>
+      <div class="dt-no"><b>NO → Revaluation Method</b></div>
+    </div>
+  </div>
+
+  <h3>(a) Premium Method <span class="tag tag-orange">🟠</span></h3>
+  <p>New partner pays goodwill in cash → shared by old partners in <b>sacrificing ratio</b>.</p>
+  <div class="formula-box">
+Cash A/c Dr.
+   To Premium/Goodwill A/c
+Premium/Goodwill A/c Dr.
+   To Old Partners' Capital A/cs (in sacrificing ratio)
+  </div>
+  <p>If old partners withdraw the premium: <br><span style="font-family:monospace;font-size:.78rem;">Old Partners' Capital A/c Dr. → To Cash A/c</span></p>
+
+  <h3>(b) Revaluation Method (Hidden/Implicit Goodwill) <span class="tag tag-orange">🟠</span></h3>
+  <p>New partner brings NO cash for goodwill → Goodwill A/c raised in books, credited to <b>old partners in OLD ratio</b> (not sacrificing ratio, since goodwill wasn't there before).</p>
+  <div class="formula-box">
+Goodwill A/c Dr. (full value)
+   To Old Partners' Capital A/cs (in old ratio)
+  </div>
+
+  <h3>(c) Hidden Goodwill <span class="tag tag-yellow">🟡</span></h3>
+  <p>When goodwill value isn't directly given — inferred by comparing implied total capital (based on new partner's capital &amp; share) with actual total capital of all partners. The difference = hidden goodwill, shared by old partners in old ratio.</p>
+  <div class="formula-box">
+Implied Total Capital = New Partner's Capital × (1 / his share)
+Hidden Goodwill = Implied Total Capital − Actual Combined Capital
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic — "Premium=Sacrificing ratio; Revaluation/Hidden=Old ratio"</b>: Cash goodwill → distributed by SACRIFICE; raised-in-books goodwill → distributed by OLD ratio.</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed):</b> "Pass journal entries for treatment of goodwill" under each of the 3 scenarios — appears virtually every exam.</div>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section" id="s8">
+  <h2>📦 3.6 Accumulated Profits &amp; Losses <span class="tag tag-orange">🟠</span></h2>
+  <div class="def-box">General Reserve, Reserve Fund, or P&amp;L (Cr) balance existing before admission → <b>belongs to OLD partners only</b> → distributed to their capital A/cs in <b>old ratio</b>. Similarly, accumulated LOSSES (P&amp;L Dr balance) are also transferred to old partners in old ratio.</div>
+  <div class="formula-box">
+General Reserve A/c Dr.
+   To Old Partners' Capital A/cs (old ratio)   [if reserve]
+
+Old Partners' Capital A/cs Dr. (old ratio)
+   To P&amp;L A/c (Dr balance)                     [if accumulated loss]
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> "Pass journal entries for adjustment of General Reserve and accumulated losses at the time of admission." — Common 2-3 mark sub-part.</div>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section" id="s9">
+  <h2>🔍 3.7 Revaluation of Assets &amp; Reassessment of Liabilities <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box">At admission, assets/liabilities are revalued to reflect current values. Gain/loss goes through the <b>Revaluation Account</b>; net result shared by <b>OLD partners in old ratio</b> (new partner NOT entitled — these gains/losses relate to pre-admission period).</div>
+
+  <table>
+    <tr><th>Event</th><th>Revaluation A/c Entry</th></tr>
+    <tr><td>Increase in Asset</td><td>Asset Dr. → To Revaluation (Gain)</td></tr>
+    <tr><td>Decrease in Asset</td><td>Revaluation Dr. → To Asset (Loss)</td></tr>
+    <tr><td>Increase in Liability</td><td>Revaluation Dr. → To Liability (Loss)</td></tr>
+    <tr><td>Decrease in Liability</td><td>Liability Dr. → To Revaluation (Gain)</td></tr>
+    <tr><td>Unrecorded Asset found</td><td>Cash/Asset Dr. → To Revaluation (Gain)</td></tr>
+    <tr><td>Unrecorded Liability found</td><td>Revaluation Dr. → To Cash/Liability (Loss)</td></tr>
+  </table>
+  <div class="flow">
+    <div class="flow-step">Revaluation A/c shows CREDIT balance → Net Gain → Cr. to Old Partners (old ratio)</div>
+    <div class="flow-arrow">↕</div>
+    <div class="flow-step">Revaluation A/c shows DEBIT balance → Net Loss → Dr. to Old Partners (old ratio)</div>
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic — "Asset Up=Gain, Liability Up=Loss"</b>: increase in asset value and decrease in liability = gain (credit revaluation); decrease in asset value and increase in liability = loss (debit revaluation).</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed):</b> Numerical — "Prepare Revaluation Account, Partners' Capital Accounts and Balance Sheet after admission." — The BIGGEST question type in this chapter (8-10 marks).</div>
+</div>
+
+<!-- SECTION 10 -->
+<div class="section" id="s10">
+  <h2>💰 3.8 Adjustment of Capitals <span class="tag tag-yellow">🟡</span></h2>
+  <p>Sometimes partners agree capitals should be made <b>proportionate to the new profit sharing ratio</b>. New partner's capital is often used as the base to calculate what old partners' capitals should be.</p>
+  <div class="flow">
+    <div class="flow-step">1. New partner's capital ÷ his share = Total Capital of new firm</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Total Capital × each old partner's new share = his required capital</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Compare with adjusted old capital (after goodwill/revaluation/reserves)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">4. Shortfall → partner brings in cash; Surplus → partner withdraws cash</div>
+  </div>
+</div>
+
+<!-- SECTION 11 -->
+<div class="section" id="s11">
+  <h2>🔁 3.9 Change in PSR Among Existing Partners <span class="tag tag-yellow">🟡</span></h2>
+  <p>Partners may change their PSR <b>without any admission/retirement</b>. Some partners <b>gain</b>, others <b>sacrifice</b> — essentially one partner "buying" profit share from another.</p>
+  <ul>
+    <li>Goodwill adjustment: raise goodwill at full value in <b>old ratio</b>, then write off in <b>new ratio</b> — OR directly debit gaining partners, credit sacrificing partners</li>
+    <li>Same adjustments apply as in admission: revaluation of assets/liabilities, accumulated profits/losses, capital adjustment (if specified)</li>
+  </ul>
+  <div class="formula-box">
+Gaining Ratio = New Share − Old Share (for gaining partners)
+Sacrificing Ratio = Old Share − New Share (for sacrificing partners)
+  </div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="section revision-sheet" id="rev">
+  <h2>🏁 One-Page Revision Sheet <span class="tag tag-green">🟢 Last-Day Ready</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item">✅ Reconstitution = 4 modes: Admission, Change in PSR, Retirement, Death</div>
+    <div class="rev-item">✅ 6 matters on admission: New Ratio, Sacrificing Ratio, Goodwill, Revaluation, Reserves, Capital adjustment</div>
+    <div class="rev-item">✅ Sacrificing Ratio = Old Share − New Share</div>
+    <div class="rev-item">✅ Goodwill exists only when firm earns SUPER profits</div>
+    <div class="rev-item">✅ 3 valuation methods: Average Profits, Super Profits, Capitalisation</div>
+    <div class="rev-item">✅ Premium Method (cash brought) → distributed in SACRIFICING ratio</div>
+    <div class="rev-item">✅ Revaluation/Hidden Goodwill Method (no cash) → distributed in OLD ratio</div>
+    <div class="rev-item">✅ Reserves/Accumulated P&amp;L → belongs to OLD partners → old ratio</div>
+    <div class="rev-item">✅ Revaluation A/c gain/loss → OLD partners only → old ratio</div>
+    <div class="rev-item">✅ Change in PSR (no admission): Gaining Ratio = New − Old; Sacrificing = Old − New</div>
+  </div>
+
+  <h3 style="margin-top:16px;">⏱️ Last-Minute Memory Tricks</h3>
+  <div class="mnemonic">📌 <b>"NSGRAC"</b>: New ratio → Sacrificing ratio → Goodwill → Revaluation → Accumulated profits → Capital adjustment (sequence to solve any admission problem).</div>
+  <div class="mnemonic">📌 <b>"Cash=Sacrifice, No-Cash=Old"</b>: Goodwill distribution ratio depends on whether cash was brought in.</div>
+  <div class="mnemonic">📌 <b>"NLEMS"</b>: Nature, Location, Efficiency, Market, Special advantages — factors affecting goodwill.</div>
+
+  <h3>Key Terms Quick List</h3>
+  <ul>
+    <li>Reconstitution of Partnership</li>
+    <li>New Profit Sharing Ratio / Sacrificing Ratio</li>
+    <li>Goodwill (Average/Super Profit/Capitalisation methods)</li>
+    <li>Premium Method / Revaluation Method / Hidden Goodwill</li>
+    <li>Revaluation Account</li>
+    <li>Accumulated Profits &amp; Losses (Reserves)</li>
+    <li>Adjustment of Capitals</li>
+    <li>Gaining Ratio</li>
+  </ul>
+
+  <h3>Solving Sequence for Admission Numericals</h3>
+  <div class="timeline">
+    <div class="t-item"><div class="t-title">Step 1</div><div class="t-desc">Calculate New PSR &amp; Sacrificing Ratio</div></div>
+    <div class="t-item"><div class="t-title">Step 2</div><div class="t-desc">Treat Goodwill (Premium or Revaluation method)</div></div>
+    <div class="t-item"><div class="t-title">Step 3</div><div class="t-desc">Prepare Revaluation A/c for assets/liabilities</div></div>
+    <div class="t-item"><div class="t-title">Step 4</div><div class="t-desc">Distribute Reserves/Accumulated P&amp;L to old partners</div></div>
+    <div class="t-item"><div class="t-title">Step 5</div><div class="t-desc">Adjust Capitals if required by new PSR</div></div>
+    <div class="t-item"><div class="t-title">Step 6</div><div class="t-desc">Prepare new Balance Sheet</div></div>
+  </div>
+</div>
+
+</div>
+
+<button id="ttsBtn" onclick="speakPage()">🔊</button>
+
+<div class="footer-nav">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="ic">⬆️</span>Top</button>
+  <button onclick="toggleDark()"><span class="ic">🌓</span>Theme</button>
+  <button onclick="document.getElementById('rev').scrollIntoView({behavior:'smooth'})"><span class="ic">📋</span>Revision</button>
+  <button onclick="window.print()"><span class="ic">🖨️</span>Print</button>
+</div>
+
+<script>
+function toggleDark(){document.body.classList.toggle('dark');}
+function toggleAcc(btn){
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+  btn.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+let speaking=false;
+function speakPage(){
+  if(speaking){window.speechSynthesis.cancel(); speaking=false; return;}
+  const text = document.querySelector('.container').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0,4000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{speaking=false;};
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

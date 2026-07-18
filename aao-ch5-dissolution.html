@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Dissolution of Partnership Firm | AAO Exam</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2a20;
+  --blue:#1a5276; --blue-light:#2980b9;
+  --gold:#c8960c; --gold-light:#f4d35e;
+  --green:#1e8449; --orange:#d35400; --yellow:#b7950b;
+  --bg:#f7f4ee; --card:#ffffff; --ink:#222; --muted:#666;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body{ margin:0; font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; padding-bottom:60px; }
+body.dark{ --bg:#121417; --card:#1c1f24; --ink:#eee; --muted:#aaa; }
+header{ background:linear-gradient(135deg,var(--red),var(--blue)); color:#fff; padding:22px 16px 70px; text-align:center; position:relative; border-radius:0 0 30px 30px; }
+header h1{margin:0 0 6px; font-size:1.3rem;}
+header p{margin:0; font-size:.9rem; opacity:.9;}
+.badge-row{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.badge{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.4); padding:4px 10px; border-radius:20px; font-size:.72rem;}
+.top-controls{ display:flex; justify-content:center; gap:10px; margin:-46px auto 14px; max-width:420px; padding:0 10px; position:relative; z-index:5; }
+.ctrl-btn{ flex:1; background:var(--card); border:none; border-radius:12px; padding:10px 6px; box-shadow:0 3px 10px rgba(0,0,0,.15); font-size:.78rem; font-weight:600; color:var(--blue); }
+.container{max-width:480px; margin:0 auto; padding:0 12px;}
+.nav-chips{display:flex; overflow-x:auto; gap:8px; padding:6px 2px 14px; -webkit-overflow-scrolling:touch;}
+.nav-chips a{ flex:0 0 auto; background:var(--card); border:1px solid #ddd; padding:6px 12px; border-radius:20px; font-size:.72rem; text-decoration:none; color:var(--blue); white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.section{ background:var(--card); border-radius:var(--radius); margin-bottom:16px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.08); border-left:6px solid var(--blue); scroll-margin-top:12px; }
+.section h2{margin:0 0 10px; font-size:1.05rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+.section h3{font-size:.92rem; color:var(--red-dark); margin:14px 0 6px;}
+.tag{ display:inline-block; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
+.tag-red{background:#fdecea; color:var(--red);}
+.tag-orange{background:#fdf0e2; color:var(--orange);}
+.tag-yellow{background:#fdf7e0; color:var(--yellow);}
+.tag-green{background:#e9f7ef; color:var(--green);}
+p{font-size:.87rem; margin:6px 0;}
+ul,ol{font-size:.87rem; padding-left:20px; margin:6px 0;}
+li{margin-bottom:4px;}
+.def-box{ background:#fff8e6; border:1px dashed var(--gold); border-radius:10px; padding:10px 12px; font-size:.85rem; margin:8px 0; }
+.def-box b{color:#8a6d00;}
+.mnemonic{ background:#eaf4ff; border-left:4px solid var(--blue-light); border-radius:8px; padding:10px 12px; font-size:.83rem; margin:10px 0; }
+.mnemonic b{color:var(--blue);}
+table{width:100%; border-collapse:collapse; font-size:.75rem; margin:10px 0;}
+th,td{border:1px solid #ddd; padding:6px 6px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.7rem;}
+tr:nth-child(even){background:rgba(0,0,0,.03);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.04);}
+body.dark th{background:var(--blue-light);}
+.formula-box{ background:#f0fff4; border:1px solid var(--green); border-radius:10px; padding:10px 12px; font-size:.82rem; margin:8px 0; font-family:'Courier New',monospace; overflow-x:auto; }
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{ background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.8rem; text-align:center; }
+.flow-arrow{text-align:center; color:var(--blue); font-size:1.1rem; margin:-2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{ background:var(--gold); color:#fff; padding:8px 10px; border-radius:20px; font-size:.75rem; font-weight:600; text-align:center; }
+.mindmap .center{background:var(--red); font-size:.82rem; padding:10px 14px; width:100%; border-radius:12px;}
+.decision-tree{font-size:.8rem; margin:10px 0;}
+.dt-q{background:var(--red); color:#fff; padding:8px 10px; border-radius:8px 8px 0 0; font-weight:600;}
+.dt-branch{display:flex; gap:6px; margin-top:2px;}
+.dt-yes,.dt-no{flex:1; padding:8px; border-radius:0 0 8px 8px; font-size:.76rem;}
+.dt-yes{background:#e9f7ef; border:1px solid var(--green);}
+.dt-no{background:#fdecea; border:1px solid var(--red);}
+.qbox{ background:#fdf0e2; border-radius:8px; padding:8px 10px; font-size:.78rem; margin-top:8px; border-left:3px solid var(--orange); }
+.qbox b{color:var(--orange);}
+.accordion-toggle{ width:100%; text-align:left; background:none; border:none; font-size:.92rem; font-weight:700; color:var(--red-dark); padding:8px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+.accordion-body{display:none; padding:4px 2px 10px;}
+.accordion-body.open{display:block;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .t-item{margin-bottom:12px; position:relative;}
+.timeline .t-item::before{content:'●'; color:var(--gold); position:absolute; left:-19px; top:0;}
+.timeline .t-title{font-weight:700; font-size:.82rem; color:var(--blue);}
+.timeline .t-desc{font-size:.78rem; color:var(--muted);}
+.revision-sheet{ background:linear-gradient(135deg,#fff9e6,#fff); border:2px solid var(--gold); border-radius:14px; padding:14px; }
+.revision-sheet h2{color:var(--red-dark);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px;}
+.rev-item{background:#fff; border-radius:8px; padding:8px 10px; font-size:.78rem; border-left:4px solid var(--gold);}
+.footer-nav{ position:fixed; bottom:0; left:0; right:0; background:var(--card); box-shadow:0 -2px 10px rgba(0,0,0,.15); display:flex; justify-content:space-around; padding:8px 4px; z-index:10; }
+.footer-nav button{ background:none; border:none; font-size:.68rem; color:var(--blue); display:flex; flex-direction:column; align-items:center; gap:2px; }
+.footer-nav button span.ic{font-size:1.1rem;}
+#ttsBtn{ position:fixed; bottom:64px; right:14px; background:var(--red); color:#fff; border:none; border-radius:50%; width:48px; height:48px; font-size:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,.3); z-index:11; }
+.legend{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:.68rem; margin-bottom:14px; }
+.legend span{background:var(--card); padding:4px 8px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.final-badge{ background:linear-gradient(135deg,var(--gold),#e8b923); color:#fff; text-align:center; padding:10px; border-radius:10px; font-size:.85rem; font-weight:700; margin-bottom:14px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏁 Chapter 5: Dissolution of Partnership Firm</h1>
+  <p>AAO Exam | NCERT Class XII Accountancy | Mobile Study Card</p>
+  <div class="badge-row">
+    <span class="badge">Pages 226–253</span>
+    <span class="badge">4 Sub-Topics</span>
+    <span class="badge">Final Chapter</span>
+  </div>
+</header>
+
+<div class="top-controls">
+  <button class="ctrl-btn" onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="ctrl-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">⏭ Revision Sheet</button>
+</div>
+
+<div class="container">
+
+<div class="final-badge">🎉 Final Chapter — Completes Full NCERT Accountancy Coverage for AAO Exam</div>
+
+<div class="legend">
+  <span>🔴 Very Important</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual</span>
+  <span>🟢 Quick Revision</span>
+</div>
+
+<div class="nav-chips">
+  <a href="#s1">1.Dissoln of Partnership</a>
+  <a href="#s2">2.Dissoln of Firm</a>
+  <a href="#s3">3.Distinction</a>
+  <a href="#s4">4.Settlement</a>
+  <a href="#s5">5.Realisation A/c</a>
+  <a href="#s6">6.Journal Entries</a>
+  <a href="#rev">7.Revision</a>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <h2>🔀 5.1 Dissolution of Partnership <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> Changes the existing relationship between partners, but the <b>firm may continue</b> its business as before.</div>
+  <h3>7 Ways Partnership Dissolves</h3>
+  <ol>
+    <li>Change in existing Profit Sharing Ratio among partners</li>
+    <li>Admission of a new partner</li>
+    <li>Retirement of a partner</li>
+    <li>Death of a partner</li>
+    <li>Insolvency of a partner</li>
+    <li>Completion of the venture (if firm formed for a specific purpose)</li>
+    <li>Expiry of the partnership period (if formed for a fixed term)</li>
+  </ol>
+  <div class="mnemonic">🧠 <b>Mnemonic — "CARDIC-E":</b> Change in PSR, Admission, Retirement, Death, Insolvency, Completion, Expiry</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <h2>⚖️ 5.2 Dissolution of a Firm <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Section 39, Indian Partnership Act 1932:</b> Dissolution of partnership between <b>ALL partners</b> of a firm = Dissolution of the Firm. Brings the firm's existence to an <b>end</b> — no business transacted afterward except winding-up activities.</div>
+  <p style="font-size:.78rem;color:var(--muted);">⚠️ Dissolution of Firm ALWAYS involves dissolution of partnership, but NOT vice versa.</p>
+
+  <h3>5 Modes of Dissolution of Firm <span class="tag tag-red">🔴 EXAM FAVOURITE LIST</span></h3>
+  <button class="accordion-toggle" onclick="toggleAcc(this)">1️⃣ By Agreement <span>▾</span></button>
+  <div class="accordion-body"><p>With consent of all partners, or per a contract between them.</p></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">2️⃣ Compulsory Dissolution <span>▾</span></button>
+  <div class="accordion-body">
+    <ul>
+      <li>All partners (or all but one) become insolvent</li>
+      <li>Business becomes illegal</li>
+      <li>Unlawful event occurs (e.g., partner becomes alien enemy due to war)</li>
+    </ul>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">3️⃣ On Happening of Certain Contingencies <span>▾</span></button>
+  <div class="accordion-body">
+    <ul>
+      <li>Expiry of fixed term</li>
+      <li>Completion of the venture</li>
+      <li>Death of a partner</li>
+      <li>Adjudication of a partner as insolvent</li>
+    </ul>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">4️⃣ By Notice <span>▾</span></button>
+  <div class="accordion-body"><p>In "partnership at will" — any partner gives written notice of intent to dissolve.</p></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">5️⃣ By Court <span>▾</span></button>
+  <div class="accordion-body">
+    <p>At the suit of a partner, court may order dissolution when:</p>
+    <ul>
+      <li>A partner becomes insane</li>
+      <li>A partner becomes permanently incapable of performing duties</li>
+      <li>A partner is guilty of misconduct affecting the business</li>
+      <li>A partner persistently breaches the partnership agreement</li>
+      <li>A partner transfers his whole interest to a third party</li>
+      <li>Business can only be carried on at a loss</li>
+      <li>Court finds it "just and equitable" on any ground</li>
+    </ul>
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic — "ACCND":</b> Agreement, Compulsory, Contingencies, Notice, Dissolution-by-Court</div>
+  <div class="qbox">📝 <b>Probable Q:</b> "Explain the various modes/grounds of dissolution of a partnership firm." — Very common 4-6 mark descriptive question.</div>
+</div>
+
+<!-- SECTION 3 - DISTINCTION -->
+<div class="section" id="s3">
+  <h2>📊 Distinction: Dissolution of Partnership vs Dissolution of Firm <span class="tag tag-red">🔴 GUARANTEED QUESTION</span></h2>
+  <table>
+    <tr><th>Basis</th><th>Dissolution of Partnership</th><th>Dissolution of Firm</th></tr>
+    <tr><td>Business termination</td><td>NOT terminated</td><td>Business is closed</td></tr>
+    <tr><td>Assets/Liabilities</td><td>Revalued; new Balance Sheet drawn</td><td>Assets sold, liabilities paid off</td></tr>
+    <tr><td>Court's intervention</td><td>No — dissolved by mutual agreement</td><td>Can be by court's order</td></tr>
+    <tr><td>Economic relationship</td><td>Continues (in changed form)</td><td>Comes to an end</td></tr>
+    <tr><td>Closure of books</td><td>Not required</td><td>Books of account ARE closed</td></tr>
+    <tr><td>Interdependence</td><td>May or may not involve firm's dissolution</td><td>Necessarily involves partnership dissolution</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic — "BACEC"</b>: Business, Assets, Court, Economic relationship, Closure of books — the 5 comparison points to always cover.</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed, nearly every year):</b> "Distinguish between Dissolution of Partnership and Dissolution of Firm." — Write as a table for full marks.</div>
+</div>
+
+<!-- SECTION 4 - SETTLEMENT -->
+<div class="section" id="s4">
+  <h2>💰 5.3 Settlement of Accounts <span class="tag tag-red">🔴 SECTION 48 &amp; 49</span></h2>
+
+  <h3>(a) Treatment of Losses — Section 48 <span class="tag tag-orange">🟠</span></h3>
+  <div class="flow">
+    <div class="flow-step">1st: Out of Profits</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2nd: Out of Capital of Partners</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3rd (last resort): Partners individually, in PSR</div>
+  </div>
+
+  <h3>(b) Application of Assets — Order of Payment <span class="tag tag-red">🔴 MUST MEMORISE ORDER</span></h3>
+  <div class="flow">
+    <div class="flow-step">1. Pay outside Debts of the firm (creditors, loans, O.D., bills payable)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Pay Partners' Loans/Advances (proportionately, NOT capital)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Pay Partners' Capital balances</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">4. Residue (if any) → distributed in Profit Sharing Ratio</div>
+  </div>
+  <p style="font-size:.78rem;color:var(--muted);">*Secured loans have precedence over unsecured loans.</p>
+
+  <h3>Private Debts vs Firm's Debts — Section 49</h3>
+  <table>
+    <tr><th>Rule</th><th>Order of Application</th></tr>
+    <tr><td>Firm's property</td><td>First → Firm's debts; Surplus → divided among partners for their private debts</td></tr>
+    <tr><td>Partner's private property</td><td>First → his private debts; Surplus → firm's debts (if firm's liabilities exceed its assets)</td></tr>
+  </table>
+  <p style="font-size:.78rem;color:var(--muted);">*Private property EXCLUDES personal property of a partner's wife/children.</p>
+
+  <div class="def-box"><b>Garner vs. Murray Rule:</b> If a partner is insolvent and cannot bring in his capital deficiency, the loss is a <b>capital loss</b> for the firm, borne by the <b>solvent partners in the ratio of their capitals</b> as on the date of dissolution (not profit sharing ratio). <span style="font-size:.75rem;">*Detailed accounting treatment for insolvency not covered at this level.</span></div>
+
+  <div class="mnemonic">🧠 <b>Mnemonic — "DCLR"</b>: Debts (outside) → Capital-type loans of partners → Loans... wait, order is: Debts, then Partners' Loans, then Capital, then Residue = "D-L-C-R"</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed):</b> "State the order of settlement of accounts on dissolution of a firm as per Section 48." — Must reproduce exact order.</div>
+</div>
+
+<!-- SECTION 5 - REALISATION ACCOUNT -->
+<div class="section" id="s5">
+  <h2>📑 5.4 Accounting Treatment — Realisation Account <span class="tag tag-red">🔴 CORE NUMERICAL TOOL</span></h2>
+  <div class="def-box"><b>Definition:</b> Prepared to ascertain the <b>net profit or loss on realisation</b> of assets and payment of liabilities. ALL assets (except cash/bank &amp; fictitious assets) and ALL external liabilities are transferred to this account. Balance = profit/loss on realisation → transferred to Partners' Capital A/cs in PSR.</div>
+
+  <h3>Format (Fig 5.1)</h3>
+  <table>
+    <tr><th>Dr. (Assets transferred + Payments)</th><th>Cr. (Liabilities transferred + Receipts)</th></tr>
+    <tr><td>Land, Building, Plant, Furniture, Debtors, Bills Receivable (book values)</td><td>Sundry Creditors, Bills Payable, Bank O.D., O/s Expenses, Provision for Doubtful Debts</td></tr>
+    <tr><td>Cash/Bank (payment of liabilities)</td><td>Cash/Bank (sale of assets)</td></tr>
+    <tr><td>Cash/Bank (unrecorded liabilities paid)</td><td>Partner's Capital A/c (asset taken over by partner)</td></tr>
+    <tr><td>Partner's Capital A/c (liability assumed by partner)</td><td>Loss transferred to Partners' Capital A/cs (PSR)</td></tr>
+    <tr><td>Profit transferred to Partners' Capital A/cs (PSR)</td><td></td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic — "Realisation ≠ Revaluation"</b>: Realisation A/c = used ONLY at dissolution (firm closes); Revaluation A/c = used at admission/retirement/death (firm continues). This is a very common confusion — a frequent exam question!</div>
+</div>
+
+<!-- SECTION 6 - JOURNAL ENTRIES -->
+<div class="section" id="s6">
+  <h2>✍️ 5.4.1 Journal Entries on Dissolution <span class="tag tag-red">🔴 MOST TESTED — MEMORISE ALL</span></h2>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">1. Transfer of Assets <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">Realisation A/c Dr. → To Assets A/c (individually, at book value)</div>
+    <p>Debtors transferred at GROSS value; Provision for Doubtful Debts goes to credit side (with liabilities).</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">2. Transfer of Liabilities <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Liabilities A/c (individually) Dr. → To Realisation A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">3. Sale of Assets <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Bank A/c Dr. → To Realisation A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">4. Asset Taken Over by a Partner <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Partner's Capital A/c Dr. → To Realisation A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">5. Payment of Liabilities <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Realisation A/c Dr. → To Bank A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">6. Liability Taken Over by a Partner <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Realisation A/c Dr. → To Partner's Capital A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">7. Creditor Accepts Asset (Full/Part Settlement) <span>▾</span></button>
+  <div class="accordion-body">
+    <p><b>Part settlement</b> (asset value &lt; amount due) — pay cash for balance:</p>
+    <div class="formula-box">Realisation A/c Dr. → To Bank A/c (balance cash paid)</div>
+    <p><b>If asset value &gt; amount due</b> — creditor pays cash difference to firm:</p>
+    <div class="formula-box">Bank A/c Dr. → To Realisation A/c</div>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">8. Realisation Expenses <span>▾</span></button>
+  <div class="accordion-body">
+    <p><b>(a) Paid by firm:</b> Realisation A/c Dr. → To Bank A/c</p>
+    <p><b>(b) Paid by a partner on firm's behalf:</b> Realisation A/c Dr. → To Partner's Capital A/c</p>
+    <p><b>(c) Partner undertakes dissolution work for agreed remuneration:</b></p>
+    <ul>
+      <li>If firm pays expenses: Partner's Capital A/c Dr. → To Bank A/c</li>
+      <li>If partner personally pays: <b>No entry required</b></li>
+      <li>For agreed remuneration: Realisation A/c Dr. → To Partner's Capital A/c</li>
+    </ul>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">9. Realisation of Unrecorded Asset (incl. Goodwill) <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Bank A/c Dr. → To Realisation A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">10. Settlement of Unrecorded Liability <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Realisation A/c Dr. → To Bank A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">11. Transfer of Profit/Loss on Realisation <span>▾</span></button>
+  <div class="accordion-body">
+    <p><b>Profit:</b> Realisation A/c Dr. → To Partners' Capital A/cs (PSR)</p>
+    <p><b>Loss:</b> Partners' Capital A/cs Dr. (PSR) → To Realisation A/c</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">12. Transfer of Reserve Fund / General Reserve <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Reserve Fund/General Reserve A/c Dr. → To Partners' Capital A/cs (PSR)</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">13. Transfer of Fictitious Assets <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Partners' Capital A/cs Dr. (PSR) → To Fictitious Asset A/c</div></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">14. Payment of Partners' Loan <span>▾</span></button>
+  <div class="accordion-body"><div class="formula-box">Partner's Loan A/c Dr. → To Bank A/c</div>
+  <p style="font-size:.78rem;color:var(--muted);">*NOT via Realisation A/c — paid directly, and AFTER outside creditors but BEFORE capital.</p></div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">15. Final Settlement of Partners' Capital <span>▾</span></button>
+  <div class="accordion-body">
+    <p><b>Debit balance (partner owes firm):</b> Bank A/c Dr. → To Partner's Capital A/c</p>
+    <p><b>Credit balance (firm owes partner):</b> Partners' Capital A/cs Dr. → To Bank A/c</p>
+    <p style="font-size:.78rem;color:var(--muted);">*Final check: total payable to partners MUST equal available Bank/Cash balance — all accounts close to zero.</p>
+  </div>
+
+  <div class="mnemonic">🧠 <b>Mnemonic — "TALS-PLR-URRPF"</b>: Transfer Assets, transfer Liabilities, Sale of assets, asset taken over, Payment of liabilities, Liability taken over, Realisation expenses — then Unrecorded items, Reserve transfer, Profit/loss, Fictitious assets, Loan, final Settlement.</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed, biggest question in chapter):</b> "Prepare Realisation Account, Partners' Capital Accounts and Bank Account on dissolution of the firm." — 8-10 marks, appears almost every exam without fail.</div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="section revision-sheet" id="rev">
+  <h2>🏁 One-Page Revision Sheet <span class="tag tag-green">🟢 Last-Day Ready</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item">✅ Sec 39: Dissolution of Firm = dissolution among ALL partners; business ends</div>
+    <div class="rev-item">✅ Dissolution of Partnership: business continues; Dissolution of Firm: business closes, books closed</div>
+    <div class="rev-item">✅ 7 ways partnership dissolves: CARDIC-E (Change-PSR, Admission, Retirement, Death, Insolvency, Completion, Expiry)</div>
+    <div class="rev-item">✅ 5 modes firm dissolves: Agreement, Compulsory, Contingencies, Notice, Court</div>
+    <div class="rev-item">✅ Sec 48 — Order of asset application: Outside Debts → Partners' Loans → Partners' Capital → Residue in PSR</div>
+    <div class="rev-item">✅ Sec 48 — Losses paid: Profits first → Capital next → Partners individually (PSR) last</div>
+    <div class="rev-item">✅ Sec 49 — Firm's property first for firm's debts; Private property first for private debts</div>
+    <div class="rev-item">✅ Garner vs Murray: insolvent partner's deficiency borne by solvent partners in CAPITAL ratio (not PSR)</div>
+    <div class="rev-item">✅ Realisation A/c ≠ Revaluation A/c — Realisation is ONLY for dissolution</div>
+    <div class="rev-item">✅ Partner's Loan paid directly via Bank A/c — NOT through Realisation A/c</div>
+  </div>
+
+  <h3 style="margin-top:16px;">⏱️ Last-Minute Memory Tricks</h3>
+  <div class="mnemonic">📌 <b>"D-L-C-R"</b>: Debts (outside) → Loans (partners') → Capital (partners') → Residue (PSR) — the sacred order of asset application on dissolution.</div>
+  <div class="mnemonic">📌 <b>"Realisation = Firm dies; Revaluation = Firm lives"</b> — quick way to never mix up the two accounts.</div>
+  <div class="mnemonic">📌 <b>"CARDIC-E"</b> for the 7 causes of partnership dissolution; <b>"ACCND"</b> for the 5 modes of firm dissolution.</div>
+
+  <h3>Key Terms Quick List</h3>
+  <ul>
+    <li>Dissolution of Partnership / Dissolution of Firm</li>
+    <li>Partnership at Will</li>
+    <li>Compulsory Dissolution / Dissolution by Notice</li>
+    <li>Realisation Account / Realisation Expenses</li>
+    <li>Garner vs. Murray Rule</li>
+  </ul>
+
+  <h3>Solving Sequence for Dissolution Numericals</h3>
+  <div class="timeline">
+    <div class="t-item"><div class="t-title">Step 1</div><div class="t-desc">Transfer all assets (excl. cash/bank/fictitious) &amp; external liabilities to Realisation A/c</div></div>
+    <div class="t-item"><div class="t-title">Step 2</div><div class="t-desc">Record sale of assets, payment of liabilities, realisation expenses</div></div>
+    <div class="t-item"><div class="t-title">Step 3</div><div class="t-desc">Record assets/liabilities taken over by partners</div></div>
+    <div class="t-item"><div class="t-title">Step 4</div><div class="t-desc">Transfer unrecorded assets/liabilities</div></div>
+    <div class="t-item"><div class="t-title">Step 5</div><div class="t-desc">Balance Realisation A/c → Profit/Loss → Partners' Capital A/cs (PSR)</div></div>
+    <div class="t-item"><div class="t-title">Step 6</div><div class="t-desc">Transfer Reserves/Fictitious Assets to Capital A/cs</div></div>
+    <div class="t-item"><div class="t-title">Step 7</div><div class="t-desc">Pay off Partners' Loan A/c directly via Bank</div></div>
+    <div class="t-item"><div class="t-title">Step 8</div><div class="t-desc">Settle final Capital A/c balances — Bank/Cash reduces to zero</div></div>
+  </div>
+</div>
+
+</div>
+
+<button id="ttsBtn" onclick="speakPage()">🔊</button>
+
+<div class="footer-nav">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="ic">⬆️</span>Top</button>
+  <button onclick="toggleDark()"><span class="ic">🌓</span>Theme</button>
+  <button onclick="document.getElementById('rev').scrollIntoView({behavior:'smooth'})"><span class="ic">📋</span>Revision</button>
+  <button onclick="window.print()"><span class="ic">🖨️</span>Print</button>
+</div>
+
+<script>
+function toggleDark(){document.body.classList.toggle('dark');}
+function toggleAcc(btn){
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+  btn.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+let speaking=false;
+function speakPage(){
+  if(speaking){window.speechSynthesis.cancel(); speaking=false; return;}
+  const text = document.querySelector('.container').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0,4000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{speaking=false;};
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

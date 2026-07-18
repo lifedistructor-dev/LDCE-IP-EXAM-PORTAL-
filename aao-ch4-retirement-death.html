@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 4: Retirement/Death of a Partner | AAO Exam</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2a20;
+  --blue:#1a5276; --blue-light:#2980b9;
+  --gold:#c8960c; --gold-light:#f4d35e;
+  --green:#1e8449; --orange:#d35400; --yellow:#b7950b;
+  --bg:#f7f4ee; --card:#ffffff; --ink:#222; --muted:#666;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+body{ margin:0; font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; padding-bottom:60px; }
+body.dark{ --bg:#121417; --card:#1c1f24; --ink:#eee; --muted:#aaa; }
+header{ background:linear-gradient(135deg,var(--red),var(--blue)); color:#fff; padding:22px 16px 70px; text-align:center; position:relative; border-radius:0 0 30px 30px; }
+header h1{margin:0 0 6px; font-size:1.3rem;}
+header p{margin:0; font-size:.9rem; opacity:.9;}
+.badge-row{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.badge{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.4); padding:4px 10px; border-radius:20px; font-size:.72rem;}
+.top-controls{ display:flex; justify-content:center; gap:10px; margin:-46px auto 14px; max-width:420px; padding:0 10px; position:relative; z-index:5; }
+.ctrl-btn{ flex:1; background:var(--card); border:none; border-radius:12px; padding:10px 6px; box-shadow:0 3px 10px rgba(0,0,0,.15); font-size:.78rem; font-weight:600; color:var(--blue); }
+.container{max-width:480px; margin:0 auto; padding:0 12px;}
+.nav-chips{display:flex; overflow-x:auto; gap:8px; padding:6px 2px 14px; -webkit-overflow-scrolling:touch;}
+.nav-chips a{ flex:0 0 auto; background:var(--card); border:1px solid #ddd; padding:6px 12px; border-radius:20px; font-size:.72rem; text-decoration:none; color:var(--blue); white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.section{ background:var(--card); border-radius:var(--radius); margin-bottom:16px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.08); border-left:6px solid var(--blue); scroll-margin-top:12px; }
+.section h2{margin:0 0 10px; font-size:1.05rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+.section h3{font-size:.92rem; color:var(--red-dark); margin:14px 0 6px;}
+.tag{ display:inline-block; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
+.tag-red{background:#fdecea; color:var(--red);}
+.tag-orange{background:#fdf0e2; color:var(--orange);}
+.tag-yellow{background:#fdf7e0; color:var(--yellow);}
+.tag-green{background:#e9f7ef; color:var(--green);}
+p{font-size:.87rem; margin:6px 0;}
+ul,ol{font-size:.87rem; padding-left:20px; margin:6px 0;}
+li{margin-bottom:4px;}
+.def-box{ background:#fff8e6; border:1px dashed var(--gold); border-radius:10px; padding:10px 12px; font-size:.85rem; margin:8px 0; }
+.def-box b{color:#8a6d00;}
+.mnemonic{ background:#eaf4ff; border-left:4px solid var(--blue-light); border-radius:8px; padding:10px 12px; font-size:.83rem; margin:10px 0; }
+.mnemonic b{color:var(--blue);}
+table{width:100%; border-collapse:collapse; font-size:.75rem; margin:10px 0;}
+th,td{border:1px solid #ddd; padding:6px 6px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.7rem;}
+tr:nth-child(even){background:rgba(0,0,0,.03);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.04);}
+body.dark th{background:var(--blue-light);}
+.formula-box{ background:#f0fff4; border:1px solid var(--green); border-radius:10px; padding:10px 12px; font-size:.82rem; margin:8px 0; font-family:'Courier New',monospace; overflow-x:auto; }
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{ background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.8rem; text-align:center; }
+.flow-arrow{text-align:center; color:var(--blue); font-size:1.1rem; margin:-2px 0;}
+.mindmap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:10px 0;}
+.mindmap .node{ background:var(--gold); color:#fff; padding:8px 10px; border-radius:20px; font-size:.75rem; font-weight:600; text-align:center; }
+.mindmap .center{background:var(--red); font-size:.82rem; padding:10px 14px; width:100%; border-radius:12px;}
+.decision-tree{font-size:.8rem; margin:10px 0;}
+.dt-q{background:var(--red); color:#fff; padding:8px 10px; border-radius:8px 8px 0 0; font-weight:600;}
+.dt-branch{display:flex; gap:6px; margin-top:2px;}
+.dt-yes,.dt-no{flex:1; padding:8px; border-radius:0 0 8px 8px; font-size:.76rem;}
+.dt-yes{background:#e9f7ef; border:1px solid var(--green);}
+.dt-no{background:#fdecea; border:1px solid var(--red);}
+.qbox{ background:#fdf0e2; border-radius:8px; padding:8px 10px; font-size:.78rem; margin-top:8px; border-left:3px solid var(--orange); }
+.qbox b{color:var(--orange);}
+.accordion-toggle{ width:100%; text-align:left; background:none; border:none; font-size:.92rem; font-weight:700; color:var(--red-dark); padding:8px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+.accordion-body{display:none; padding:4px 2px 10px;}
+.accordion-body.open{display:block;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .t-item{margin-bottom:12px; position:relative;}
+.timeline .t-item::before{content:'●'; color:var(--gold); position:absolute; left:-19px; top:0;}
+.timeline .t-title{font-weight:700; font-size:.82rem; color:var(--blue);}
+.timeline .t-desc{font-size:.78rem; color:var(--muted);}
+.revision-sheet{ background:linear-gradient(135deg,#fff9e6,#fff); border:2px solid var(--gold); border-radius:14px; padding:14px; }
+.revision-sheet h2{color:var(--red-dark);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px;}
+.rev-item{background:#fff; border-radius:8px; padding:8px 10px; font-size:.78rem; border-left:4px solid var(--gold);}
+.footer-nav{ position:fixed; bottom:0; left:0; right:0; background:var(--card); box-shadow:0 -2px 10px rgba(0,0,0,.15); display:flex; justify-content:space-around; padding:8px 4px; z-index:10; }
+.footer-nav button{ background:none; border:none; font-size:.68rem; color:var(--blue); display:flex; flex-direction:column; align-items:center; gap:2px; }
+.footer-nav button span.ic{font-size:1.1rem;}
+#ttsBtn{ position:fixed; bottom:64px; right:14px; background:var(--red); color:#fff; border:none; border-radius:50%; width:48px; height:48px; font-size:1.2rem; box-shadow:0 3px 10px rgba(0,0,0,.3); z-index:11; }
+.legend{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:.68rem; margin-bottom:14px; }
+.legend span{background:var(--card); padding:4px 8px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.08);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🚪 Chapter 4: Reconstitution – Retirement / Death of a Partner</h1>
+  <p>AAO Exam | NCERT Class XII Accountancy | Mobile Study Card</p>
+  <div class="badge-row">
+    <span class="badge">Pages 176–217</span>
+    <span class="badge">9 Sub-Topics</span>
+    <span class="badge">Goodwill + Settlement Focus</span>
+  </div>
+</header>
+
+<div class="top-controls">
+  <button class="ctrl-btn" onclick="toggleDark()">🌓 Dark Mode</button>
+  <button class="ctrl-btn" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">⏭ Revision Sheet</button>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span>🔴 Very Important</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual</span>
+  <span>🟢 Quick Revision</span>
+</div>
+
+<div class="nav-chips">
+  <a href="#s1">1.Amount Due</a>
+  <a href="#s2">2.New PSR</a>
+  <a href="#s3">3.Gaining Ratio</a>
+  <a href="#s4">4.Goodwill</a>
+  <a href="#s5">5.Revaluation</a>
+  <a href="#s6">6.Reserves</a>
+  <a href="#s7">7.Disposal</a>
+  <a href="#s8">8.Capitals</a>
+  <a href="#s9">9.Death</a>
+  <a href="#rev">10.Revision</a>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <h2>🧾 4.1 Amount Due to Retiring/Deceased Partner <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> The sum finally payable to the outgoing partner (retiring) or his legal representatives/executors (deceased), after all adjustments.</div>
+
+  <h3>➕ Additions (Credits)</h3>
+  <ul>
+    <li>Credit balance of Capital A/c (+ Current A/c)</li>
+    <li>Share of Goodwill</li>
+    <li>Share of Accumulated Profits (reserves)</li>
+    <li>Share of gain on Revaluation</li>
+    <li>Share of profit up to date of retirement/death</li>
+    <li>Interest on capital (if applicable, up to that date)</li>
+    <li>Salary/commission due up to that date</li>
+  </ul>
+  <h3>➖ Deductions</h3>
+  <ul>
+    <li>Debit balance of Current A/c</li>
+    <li>Share of goodwill written off (if any)</li>
+    <li>Share of accumulated losses</li>
+    <li>Share of loss on revaluation</li>
+    <li>Share of loss up to that date; drawings; interest on drawings</li>
+  </ul>
+
+  <h3>8 Accounting Aspects Involved <span class="tag tag-red">🔴 EXAM FAVOURITE LIST</span></h3>
+  <ol>
+    <li>New Profit Sharing Ratio &amp; Gaining Ratio</li>
+    <li>Treatment of Goodwill</li>
+    <li>Revaluation of Assets &amp; Liabilities</li>
+    <li>Unrecorded Assets/Liabilities adjustment</li>
+    <li>Distribution of Accumulated Profits/Losses</li>
+    <li>Share of Profit/Loss up to date of retirement/death</li>
+    <li>Adjustment of Capital (if required)</li>
+    <li>Settlement of Amount Due</li>
+  </ol>
+  <div class="mnemonic">🧠 <b>Mnemonic — "RGRUASC-S":</b> Ratio-Gaining, Goodwill, Revaluation, Unrecorded items, Accumulated P&amp;L, Share of profit, Capital adj, Settlement</div>
+  <div class="qbox">📝 <b>Probable Q:</b> "What items constitute the amount due to a retiring partner?" / "List the accounting aspects involved in retirement of a partner." — Guaranteed short-answer.</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <h2>🧮 4.2 New Profit Sharing Ratio <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box">Ratio in which <b>remaining</b> partners share future profits after retirement/death.</div>
+  <div class="formula-box">New Share = Old Share + Share Acquired from Outgoing Partner</div>
+  <h3>3 Situations</h3>
+  <ol>
+    <li><b>No info given</b> → remaining partners acquire in their <b>OLD ratio</b> among themselves (default assumption)</li>
+    <li><b>Acquisition ratio specified</b> (other than old ratio) → calculate new share using the formula above</li>
+    <li><b>New ratio directly specified</b> → just use it as given</li>
+  </ol>
+  <div class="qbox">📝 <b>Probable Q:</b> "A, B, C share profits 5:3:2. B retires; A and C acquire his share 2:1. Find new profit sharing ratio." — Standard opening calc in nearly every numerical.</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <h2>📈 4.3 Gaining Ratio <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Definition:</b> The ratio in which continuing partners <b>acquire</b> the share of the retiring/deceased partner.</div>
+  <div class="formula-box">Gaining Ratio = New Share − Old Share (for each continuing partner)</div>
+  <ul>
+    <li>Needed for calculation ONLY when the <b>new PSR</b> of continuing partners is directly specified</li>
+    <li>If they acquire in old ratio → Gaining Ratio = Old Ratio (no calculation needed)</li>
+    <li>Used to distribute the <b>goodwill compensation</b> burden among gaining partners</li>
+  </ul>
+
+  <h3>⚖️ Gaining Ratio vs Sacrificing Ratio</h3>
+  <table>
+    <tr><th>Basis</th><th>Gaining Ratio</th><th>Sacrificing Ratio</th></tr>
+    <tr><td>Meaning</td><td>Ratio of gain in future profit share</td><td>Ratio of loss/sacrifice in profit share</td></tr>
+    <tr><td>Formula</td><td>New Share − Old Share</td><td>Old Share − New Share</td></tr>
+    <tr><td>When used</td><td>Retirement / Death</td><td>Admission</td></tr>
+    <tr><td>Who benefits</td><td>Continuing (remaining) partners</td><td>Incoming new partner</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic — "Gain=New−Old (Retirement); Sacrifice=Old−New (Admission)"</b></div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed):</b> "Distinguish between Gaining Ratio and Sacrificing Ratio." — Direct repeat of the "Do it Yourself" exercise; asked almost every year.</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <h2>💎 4.4 Treatment of Goodwill <span class="tag tag-red">🔴 MOST TESTED TOPIC</span></h2>
+  <div class="def-box">Retiring/deceased partner is compensated for his share of goodwill by the <b>gaining partners</b>, in their <b>gaining ratio</b> — because gaining partners benefit from the increased future profit share.</div>
+
+  <h3>4.4.1 When Goodwill Does NOT Appear in Books — 4 Methods <span class="tag tag-red">🔴</span></h3>
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(a) Raised at Full Value &amp; Retained <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Goodwill A/c Dr. (full value)
+   To All Partners' Capital A/cs (incl. retiring/deceased) — OLD ratio
+    </div>
+    <p>Goodwill stays in the Balance Sheet of reconstituted firm.</p>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(b) Raised at Full Value &amp; Written Off <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Step 1: Goodwill A/c Dr. (full value) → To All Partners' Capital A/cs — OLD ratio
+Step 2: Remaining Partners' Capital A/cs Dr. → To Goodwill A/c — NEW ratio
+    </div>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(c) Raised Only to Retiring Partner's Share <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Step 1: Goodwill A/c Dr. (retiring partner's share only) → To Retiring Partner's Capital A/c
+Step 2: Remaining Partners' Capital A/cs Dr. → To Goodwill A/c — GAINING ratio
+    </div>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(d) No Goodwill A/c Raised at All (Most Common) <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Continuing Partners' Capital A/cs Dr. (in GAINING ratio)
+   To Retiring/Deceased Partner's Capital A/c
+    </div>
+    <p>Simplest &amp; most frequently used method in exam numericals.</p>
+  </div>
+
+  <h3>4.4.2 When Goodwill Already Appears in Books <span class="tag tag-orange">🟠</span></h3>
+  <p>Written off by debiting <b>all partners' capital A/cs</b> (including retiring/deceased) in their <b>old ratio</b>, then re-raised/adjusted per the required method above.</p>
+
+  <div class="mnemonic">🧠 <b>Mnemonic — "Raise = Old ratio; Write-off = New/Gaining ratio"</b>: Whenever goodwill is CREDITED to partners (raised), it's in OLD ratio (everyone contributed to it). Whenever it's DEBITED (written off/adjusted), it's in NEW or GAINING ratio (only those who benefit going forward pay).</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed):</b> "Pass journal entries for treatment of goodwill on retirement" under all 4 alternatives — very frequently tested, sometimes as MCQ too.</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <h2>🔍 4.5 Revaluation of Assets &amp; Liabilities <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box">Same process as in admission — Revaluation Account prepared for gain/loss on asset/liability revaluation and unrecorded items. <b>KEY DIFFERENCE from Admission:</b> net gain/loss is shared among <b>ALL partners INCLUDING the retiring/deceased partner</b>, in the OLD profit sharing ratio (since it relates to the period before reconstitution, and all partners were part of the firm then).</div>
+  <table>
+    <tr><th>Event</th><th>Entry</th></tr>
+    <tr><td>Increase in Asset</td><td>Asset Dr. → To Revaluation (Gain)</td></tr>
+    <tr><td>Decrease in Asset</td><td>Revaluation Dr. → To Asset (Loss)</td></tr>
+    <tr><td>Increase in Liability</td><td>Revaluation Dr. → To Liability (Loss)</td></tr>
+    <tr><td>Decrease in Liability</td><td>Liability Dr. → To Revaluation (Gain)</td></tr>
+    <tr><td>Unrecorded Asset</td><td>Asset Dr. → To Revaluation (Gain)</td></tr>
+    <tr><td>Unrecorded Liability</td><td>Revaluation Dr. → To Liability (Loss)</td></tr>
+  </table>
+  <div class="formula-box">Net Gain/Loss on Revaluation → transferred to ALL Partners' Capital A/cs (old ratio) — including outgoing partner</div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <h2>📦 4.6 Accumulated Profits &amp; Losses <span class="tag tag-orange">🟠</span></h2>
+  <div class="def-box">Reserves/P&amp;L balance belong to <b>ALL partners</b> (old ratio) — including outgoing partner.</div>
+  <div class="formula-box">
+Reserves A/c Dr. → To All Partners' Capital A/cs (old ratio) [if reserve/profit]
+All Partners' Capital A/cs Dr. (old ratio) → To P&amp;L A/c [if accumulated loss]
+  </div>
+  <div class="qbox">📝 <b>Probable Q:</b> Journal entry for transfer of General Reserve on retirement — standard 2-mark sub-part.</div>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section" id="s7">
+  <h2>💵 4.7 Disposal of Amount Due to Retiring Partner <span class="tag tag-red">🔴</span></h2>
+  <div class="def-box"><b>Section 37, Indian Partnership Act 1932:</b> If no agreement on settlement mode, the outgoing partner may choose EITHER (a) <b>interest @ 6% p.a.</b> till payment, OR (b) a share of profits earned using his money (based on capital ratio).</div>
+
+  <div class="decision-tree">
+    <div class="dt-q">How is retiring partner settled?</div>
+    <div class="dt-branch">
+      <div class="dt-yes"><b>Full cash immediately:</b><br>Retiring Partner's Capital A/c Dr. → To Cash/Bank A/c</div>
+      <div class="dt-no"><b>Treated as Loan:</b><br>Retiring Partner's Capital A/c Dr. → To Retiring Partner's Loan A/c</div>
+    </div>
+  </div>
+  <p><b>Partly cash + partly loan:</b></p>
+  <div class="formula-box">
+Retiring Partner's Capital A/c Dr. (Total Amount Due)
+   To Cash/Bank A/c (Amount Paid)
+   To Retiring Partner's Loan A/c (Balance)
+  </div>
+  <p><b>Instalment payment (principal + interest):</b></p>
+  <div class="formula-box">
+(a) Interest A/c Dr. → To Retiring Partner's Loan A/c
+(b) Retiring Partner's Loan A/c Dr. → To Cash/Bank A/c
+  </div>
+  <p style="font-size:.78rem;color:var(--muted);">*Note: Loan balance shown on Liabilities side of Balance Sheet until fully paid.</p>
+  <div class="qbox">📝 <b>Probable Q:</b> Numerical — "Prepare Retiring Partner's Loan Account showing instalment payments with interest." — Common 4-6 mark question.</div>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section" id="s8">
+  <h2>💰 4.8 Adjustment of Partners' Capitals <span class="tag tag-yellow">🟡</span></h2>
+  <p>Remaining partners may adjust capitals to be proportionate to the new PSR. Sum of continuing partners' capitals = total capital of new firm (unless specified). Then divide as per new PSR to find each partner's required capital.</p>
+  <div class="formula-box">
+Excess Capital → Partners' Capital A/c Dr. → To Cash/Bank A/c (withdrawn)
+Capital Shortfall → Cash/Bank A/c Dr. → To Partners' Capital A/c (brought in)
+  </div>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section" id="s9">
+  <h2>⚰️ 4.9 Death of a Partner <span class="tag tag-red">🔴 UNIQUE TO THIS SECTION</span></h2>
+  <div class="def-box">Accounting treatment is <b>similar to retirement</b> — claim goes to the deceased partner's <b>Executors</b>, settled the same way. <b>Key difference:</b> Death can occur <b>any time</b> during the year (not just at year-end) — so the deceased partner's claim must include profit/loss, interest on capital/drawings for the <b>intervening period</b> (from last Balance Sheet date to date of death).</div>
+
+  <h3>Calculating Deceased Partner's Share of Profit (Intervening Period) <span class="tag tag-red">🔴 UNIQUE NUMERICAL</span></h3>
+  <p>Since closing books mid-year is impractical, profit for the intervening period is estimated by 3 methods:</p>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(a) On Basis of Previous Year's Profit <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Deceased's Share = Last Year's Profit × (Period/12) × His Share
+    </div>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(b) On Basis of Average Profit of Past Years <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Average Profit = Total Profit of past years / No. of years
+Deceased's Share = Average Profit × (Period/12) × His Share
+    </div>
+  </div>
+
+  <button class="accordion-toggle" onclick="toggleAcc(this)">(c) On Basis of Sales (Turnover) <span>▾</span></button>
+  <div class="accordion-body">
+    <div class="formula-box">
+Profit Rate = Last Year's Profit / Last Year's Sales
+Estimated Profit (intervening period) = Profit Rate × Sales in Intervening Period
+Deceased's Share = Estimated Profit × His Share
+    </div>
+  </div>
+
+  <h3>Journal Entry</h3>
+  <div class="formula-box">
+Profit &amp; Loss Suspense A/c Dr.
+   To Deceased Partner's Capital A/c
+(Share of profit for intervening period)
+  </div>
+  <div class="mnemonic">🧠 <b>Mnemonic — "Death = Retirement + Time-Slice Profit"</b>: Same steps as retirement, PLUS calculate intervening-period profit using Last Year / Average / Sales-basis method, credited via P&amp;L Suspense A/c.</div>
+  <div class="qbox">📝 <b>Probable Q (guaranteed):</b> "X died on [mid-year date]. Calculate his share of profit for the period... and pass the journal entry." Also: "Prepare deceased partner's Executor's Account." — Very high frequency, unique to this topic.</div>
+</div>
+
+<!-- REVISION SHEET -->
+<div class="section revision-sheet" id="rev">
+  <h2>🏁 One-Page Revision Sheet <span class="tag tag-green">🟢 Last-Day Ready</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item">✅ 8 accounting aspects: New Ratio, Gaining Ratio, Goodwill, Revaluation, Unrecorded items, Accumulated P&amp;L, Profit-to-date, Capital adj, Settlement</div>
+    <div class="rev-item">✅ New Share = Old Share + Acquired Share; default = remaining partners acquire in OLD ratio</div>
+    <div class="rev-item">✅ Gaining Ratio = New Share − Old Share (opposite of Sacrificing Ratio)</div>
+    <div class="rev-item">✅ Goodwill compensation: gaining partners pay retiring/deceased partner in GAINING ratio</div>
+    <div class="rev-item">✅ Goodwill "raised" entries = OLD ratio; "written off" entries = NEW/GAINING ratio</div>
+    <div class="rev-item">✅ Revaluation gain/loss shared by ALL partners (incl. outgoing) in OLD ratio</div>
+    <div class="rev-item">✅ Reserves/Accumulated losses shared by ALL partners in OLD ratio</div>
+    <div class="rev-item">✅ Section 37, Partnership Act 1932: unpaid balance → 6% interest OR profit-share option</div>
+    <div class="rev-item">✅ Unpaid amount → Retiring/Deceased Partner's Loan A/c (shown in Liabilities till paid)</div>
+    <div class="rev-item">✅ Death only: add intervening-period profit via P&amp;L Suspense A/c (3 methods: last year / average / sales basis)</div>
+  </div>
+
+  <h3 style="margin-top:16px;">⏱️ Last-Minute Memory Tricks</h3>
+  <div class="mnemonic">📌 <b>"Gain = New − Old; Sacrifice = Old − New"</b> — never confuse retirement (gaining) with admission (sacrificing).</div>
+  <div class="mnemonic">📌 <b>"Credit Goodwill = Old ratio; Debit Goodwill = New/Gaining ratio"</b></div>
+  <div class="mnemonic">📌 <b>"Death = Retirement + Time Slice"</b> — remember P&amp;L Suspense A/c for the extra step unique to death cases.</div>
+
+  <h3>Key Terms Quick List</h3>
+  <ul>
+    <li>Retirement of a Partner / Death of a Partner</li>
+    <li>Gaining Ratio</li>
+    <li>Executor of Deceased Partner / Executor's Account</li>
+    <li>Profit &amp; Loss Suspense Account</li>
+    <li>Retiring/Deceased Partner's Loan Account</li>
+  </ul>
+
+  <h3>Solving Sequence for Retirement/Death Numericals</h3>
+  <div class="timeline">
+    <div class="t-item"><div class="t-title">Step 1</div><div class="t-desc">Calculate New PSR &amp; Gaining Ratio of continuing partners</div></div>
+    <div class="t-item"><div class="t-title">Step 2</div><div class="t-desc">Treat Goodwill — compensate outgoing partner via gaining partners</div></div>
+    <div class="t-item"><div class="t-title">Step 3</div><div class="t-desc">Prepare Revaluation A/c — share among ALL partners (old ratio)</div></div>
+    <div class="t-item"><div class="t-title">Step 4</div><div class="t-desc">Distribute Reserves/Accumulated P&amp;L to ALL partners (old ratio)</div></div>
+    <div class="t-item"><div class="t-title">Step 5</div><div class="t-desc">If death: add intervening period profit via P&amp;L Suspense A/c</div></div>
+    <div class="t-item"><div class="t-title">Step 6</div><div class="t-desc">Settle amount due — cash / loan / instalments</div></div>
+    <div class="t-item"><div class="t-title">Step 7</div><div class="t-desc">Adjust continuing partners' capitals if required; prepare new Balance Sheet</div></div>
+  </div>
+</div>
+
+</div>
+
+<button id="ttsBtn" onclick="speakPage()">🔊</button>
+
+<div class="footer-nav">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="ic">⬆️</span>Top</button>
+  <button onclick="toggleDark()"><span class="ic">🌓</span>Theme</button>
+  <button onclick="document.getElementById('rev').scrollIntoView({behavior:'smooth'})"><span class="ic">📋</span>Revision</button>
+  <button onclick="window.print()"><span class="ic">🖨️</span>Print</button>
+</div>
+
+<script>
+function toggleDark(){document.body.classList.toggle('dark');}
+function toggleAcc(btn){
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+  btn.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+}
+let speaking=false;
+function speakPage(){
+  if(speaking){window.speechSynthesis.cancel(); speaking=false; return;}
+  const text = document.querySelector('.container').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0,4000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{speaking=false;};
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>
