@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 9 — Financial Statements I | Exam Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14213D; --navy2:#1E2F55; --gold:#C89B3C; --gold-soft:#E8CE8C;
+  --cream:#FBF7EE; --paper:#F4EEDD; --ink:#1F2937; --ink-soft:#5B6472;
+  --red:#B3261E; --red-soft:#F6DEDB; --amber:#B5650A; --amber-soft:#F7E6C8;
+  --blue:#1F5EA8; --blue-soft:#DCE8F7; --teal:#0F6B5C; --teal-soft:#D8EEE8;
+  --rule:#D8CDA9; --shadow:0 8px 24px rgba(20,33,61,.10);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;}
+::selection{background:var(--gold-soft);}
+h1,h2,h3,h4{font-family:'Fraunces',serif;color:var(--navy);margin:0 0 .4em;}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 65%,#233863 100%);color:var(--cream);
+  padding:38px 20px 46px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(200,155,60,.08) 28px);}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;}
+.eyebrow{font-family:'JetBrains Mono',monospace;letter-spacing:.12em;font-size:12px;color:var(--gold-soft);text-transform:uppercase;}
+.hero h1{color:#fff;font-size:clamp(28px,7vw,42px);margin:.25em 0 .15em;font-weight:700;}
+.hero p.sub{color:#CBD5E6;max-width:60ch;font-size:15px;margin:0 0 18px;}
+.ledger-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.ledger-strip span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  color:#EDE3C8;font-size:12px;padding:5px 10px;border-radius:999px;font-family:'JetBrains Mono',monospace;}
+
+/* ===== NAV ===== */
+.jumpnav{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:2px solid var(--navy);
+  overflow-x:auto;white-space:nowrap;padding:8px 12px;}
+.jumpnav a{display:inline-block;font-size:12.5px;font-weight:600;color:var(--navy);text-decoration:none;
+  padding:6px 10px;margin-right:4px;border-radius:6px;}
+.jumpnav a:hover{background:var(--gold-soft);}
+
+/* ===== LEGEND ===== */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0;}
+.legend span{font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:8px;border:1px solid var(--rule);background:#fff;}
+
+/* ===== TAGS ===== */
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin:0 4px 4px 0;white-space:nowrap;}
+.t-vip{background:var(--red-soft);color:var(--red);} .t-vip::before{content:"🔴 ";}
+.t-freq{background:var(--amber-soft);color:var(--amber);} .t-freq::before{content:"🟠 ";}
+.t-concept{background:var(--blue-soft);color:var(--blue);} .t-concept::before{content:"🟡 ";}
+.t-quick{background:var(--teal-soft);color:var(--teal);} .t-quick::before{content:"🟢 ";}
+
+/* ===== SECTION / LEDGER CARD ===== */
+.section{margin-top:44px;}
+.section > h2{font-size:23px;border-bottom:3px solid var(--gold);padding-bottom:8px;display:flex;align-items:center;gap:10px;}
+.section > h2 .num{font-family:'JetBrains Mono',monospace;background:var(--navy);color:var(--gold-soft);
+  font-size:13px;padding:3px 9px;border-radius:5px;}
+
+.card{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--navy);border-radius:10px;
+  padding:18px 20px;margin:16px 0;box-shadow:var(--shadow);position:relative;}
+.card h3{font-size:17px;}
+.card.gold{border-left-color:var(--gold);}
+.card.red{border-left-color:var(--red);}
+.card.teal{border-left-color:var(--teal);}
+
+.def-box{background:var(--paper);border:1px dashed var(--gold);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:14.5px;}
+.def-box b{color:var(--navy);}
+
+.qbox{background:var(--navy);color:#EDE3C8;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:13px;}
+.qbox b{color:var(--gold-soft);}
+
+/* ===== TREE (Chapter > Sub > Micro > Nano) ===== */
+.tree{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:20px;box-shadow:var(--shadow);}
+.tree-level{margin-left:0;padding-left:0;list-style:none;}
+.tree-level li{position:relative;padding:6px 0 6px 26px;font-size:14px;}
+.tree-level li::before{content:"";position:absolute;left:6px;top:0;bottom:0;border-left:2px solid var(--rule);}
+.tree-level li::after{content:"";position:absolute;left:6px;top:16px;width:14px;border-top:2px solid var(--rule);}
+.L1{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:16px;padding-left:0 !important;}
+.L1::before,.L1::after{display:none;}
+.L2{color:var(--navy2);font-weight:600;}
+.L3{margin-left:20px;color:var(--ink-soft);}
+.L4{margin-left:40px;font-size:12.5px;color:var(--amber);}
+
+/* ===== TABLES ===== */
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0;background:#fff;}
+caption{caption-side:top;text-align:left;font-weight:700;color:var(--navy);padding-bottom:6px;font-family:'Fraunces',serif;font-size:15px;}
+th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-size:12px;}
+td{padding:7px 10px;border-bottom:1px solid var(--rule);}
+tr:nth-child(even) td{background:var(--paper);}
+.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--rule);}
+.total-row td{font-weight:700;background:var(--gold-soft) !important;border-top:2px solid var(--navy);}
+
+/* ===== FLOWCHART ===== */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin:18px 0;}
+.flow .fbox{background:#fff;border:2px solid var(--navy);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;
+  text-align:center;color:var(--navy);min-width:120px;}
+.flow .fbox.op{background:var(--navy);color:#fff;border-color:var(--navy);}
+.flow .arrow{font-size:20px;color:var(--gold);padding:0 10px;font-weight:700;}
+.flow-vert{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.flow-vert .arrow{transform:rotate(90deg);padding:2px 0;}
+
+/* ===== DECISION TREE ===== */
+.dtree{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:20px;box-shadow:var(--shadow);}
+.dnode{background:var(--paper);border:2px solid var(--navy);border-radius:8px;padding:8px 12px;
+  font-size:13px;font-weight:600;text-align:center;display:inline-block;}
+.dbranch{display:flex;justify-content:center;gap:40px;margin:14px 0;position:relative;}
+.dbranch::before{content:"";position:absolute;top:-14px;left:50%;width:1px;height:14px;background:var(--rule);}
+.dopt{text-align:center;font-size:12.5px;}
+.dopt .lbl{font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700;display:block;margin-bottom:4px;}
+.dresult{background:var(--teal-soft);border:1px solid var(--teal);color:var(--teal);border-radius:6px;
+  padding:6px 10px;font-size:12px;font-weight:700;margin-top:6px;display:inline-block;}
+.dresult.cap{background:var(--blue-soft);border-color:var(--blue);color:var(--blue);}
+
+/* ===== COMPARISON ===== */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+.compare .cbox{border-radius:10px;padding:14px;font-size:13px;}
+.compare .cbox.a{background:var(--blue-soft);border:1px solid var(--blue);}
+.compare .cbox.b{background:var(--teal-soft);border:1px solid var(--teal);}
+.compare h4{margin-top:0;font-size:14px;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+
+/* ===== MNEMONIC / MEMORY ===== */
+.mnemonic{background:linear-gradient(135deg,#FFF7E6,#FBEFD0);border:1px solid var(--gold);border-radius:10px;
+  padding:14px 16px;margin:14px 0;}
+.mnemonic .word{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--amber);font-size:14px;}
+
+/* ===== ACCORDION (grouped items) ===== */
+details{background:#fff;border:1px solid var(--rule);border-radius:8px;margin:8px 0;overflow:hidden;}
+summary{cursor:pointer;padding:10px 14px;font-weight:700;color:var(--navy);font-size:13.5px;list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"▸ ";color:var(--gold);}
+details[open] summary::before{content:"▾ ";}
+details .inner{padding:0 16px 14px;font-size:13px;}
+
+/* ===== REVISION SHEET ===== */
+.revsheet{background:var(--navy);color:#EDE3C8;border-radius:14px;padding:22px;margin-top:20px;}
+.revsheet h2{color:#fff;}
+.revgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+.revgrid .rbox{background:rgba(255,255,255,.06);border:1px solid rgba(232,206,140,.35);border-radius:8px;padding:10px 12px;font-size:12.5px;}
+.revgrid .rbox b{color:var(--gold-soft);display:block;margin-bottom:4px;font-size:12px;}
+@media(max-width:600px){.revgrid{grid-template-columns:1fr;}}
+
+/* ===== LASTDAY ===== */
+.lastday{background:var(--red-soft);border:2px dashed var(--red);border-radius:12px;padding:16px 18px;margin-top:16px;}
+.lastday h3{color:var(--red);margin-top:0;}
+.lastday ul{margin:6px 0;padding-left:20px;font-size:13.5px;}
+
+footer{text-align:center;color:var(--ink-soft);font-size:12px;margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);}
+
+/* dark mode toggle */
+.dm-btn{position:fixed;bottom:16px;right:16px;z-index:60;background:var(--navy);color:var(--gold-soft);
+  border:none;border-radius:50%;width:46px;height:46px;font-size:18px;cursor:pointer;box-shadow:var(--shadow);}
+body.dark{background:#0F1626;color:#E4E7EE;}
+body.dark .card,body.dark table,body.dark .tree,body.dark .dtree,body.dark details{background:#182238;color:#E4E7EE;border-color:#2A3654;}
+body.dark td{border-color:#2A3654;}
+body.dark tr:nth-child(even) td{background:#141C30;}
+body.dark .def-box{background:#141C30;}
+body.dark .jumpnav{background:#0F1626;}
+body.dark h1,body.dark h2,body.dark h3,body.dark h4{color:var(--gold-soft);}
+body.dark .legend span{background:#182238;color:#E4E7EE;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Class 12 · Accountancy · Part I</div>
+    <h1>Chapter 9 — Financial Statements I</h1>
+    <p class="sub">From Trial Balance to Balance Sheet: stakeholders, capital vs revenue, Trading &amp; P&amp;L Account, Gross/Operating/Net Profit, Balance Sheet, and the Opening Entry — mapped exam-ready.</p>
+    <div class="ledger-strip">
+      <span>7 Micro-topics</span><span>3 Core Formulas</span><span>2 Full Formats</span><span>Exam Weight: High</span>
+    </div>
+  </div>
+</div>
+
+<div class="jumpnav">
+  <a href="#tree">🗂 Map</a><a href="#stake">9.1 Stakeholders</a><a href="#capvrev">9.2 Capital/Revenue</a>
+  <a href="#tpl">9.3-9.4 Trading&amp;P&amp;L</a><a href="#opprofit">9.5 Operating Profit</a>
+  <a href="#bs">9.6 Balance Sheet</a><a href="#oe">9.7 Opening Entry</a><a href="#rev">📋 Revision</a><a href="#last">🚨 Last Day</a>
+</div>
+
+<div class="wrap">
+
+  <div class="legend">
+    <span class="t-vip">Very Important</span>
+    <span class="t-freq">Frequently Asked</span>
+    <span class="t-concept">Conceptual</span>
+    <span class="t-quick">Quick Revision</span>
+  </div>
+
+  <div class="section" id="tree">
+    <h2><span class="num">MAP</span>Chapter Breakdown</h2>
+    <div class="tree">
+      <ul class="tree-level">
+        <li class="L1">📘 Chapter 9 — Financial Statements I</li>
+        <li class="L2">9.1 Stakeholders &amp; Information Needs</li>
+        <li class="L3">→ Internal users (owner, manager)</li>
+        <li class="L3">→ External users (govt, bank, prospective owner)</li>
+        <li class="L2">9.2 Capital vs Revenue</li>
+        <li class="L3">→ Expenditure (capital / revenue / deferred revenue)</li>
+        <li class="L4">↳ Nano: benefit period test (1 yr rule)</li>
+        <li class="L3">→ Receipts (capital / revenue)</li>
+        <li class="L2">9.3–9.4 Trading &amp; Profit and Loss Account</li>
+        <li class="L3">→ Debit-side items (opening stock…rent)</li>
+        <li class="L3">→ Credit-side items (sales, other income)</li>
+        <li class="L4">↳ Nano: closing entries (5 journal patterns)</li>
+        <li class="L2">9.5 Operating Profit (EBIT)</li>
+        <li class="L3">→ Gross Profit → Net Profit → Operating Profit chain</li>
+        <li class="L2">9.6 Balance Sheet</li>
+        <li class="L3">→ Format, items, marshalling &amp; grouping</li>
+        <li class="L4">↳ Nano: order of permanence vs liquidity</li>
+        <li class="L2">9.7 Opening Entry</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9.1 -->
+  <div class="section" id="stake">
+    <h2><span class="num">9.1</span>Stakeholders &amp; Information Needs</h2>
+    <span class="tag t-concept">Conceptual</span><span class="tag t-quick">Quick Revision</span>
+    <div class="def-box"><b>Definition:</b> A <b>stakeholder</b> is any person associated with the business whose stake may be monetary or non-monetary, active or passive, direct or indirect.</div>
+    <div class="tbl-wrap"><table>
+      <caption>Users of Accounting Information</caption>
+      <tr><th>User</th><th>Type</th><th>What they want to know</th></tr>
+      <tr><td>Current owners</td><td>Internal</td><td>Profit &amp; position of assets/liabilities</td></tr>
+      <tr><td>Manager</td><td>Internal</td><td>Profit + financial position (their "report card")</td></tr>
+      <tr><td>Government</td><td>External</td><td>Profitability for tax; protecting stakeholder rights</td></tr>
+      <tr><td>Prospective owner</td><td>External</td><td>Past profit &amp; position → future performance</td></tr>
+      <tr><td>Bank</td><td>External</td><td>Safety of principal + interest; liquidity of assets</td></tr>
+    </table></div>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Classify the following users as internal/external and state their information need." (2–3 marks, very common)</div>
+  </div>
+
+  <!-- 9.2 -->
+  <div class="section" id="capvrev">
+    <h2><span class="num">9.2</span>Capital vs Revenue</h2>
+    <span class="tag t-vip">Very Important</span><span class="tag t-freq">Frequently Asked</span>
+    <div class="def-box"><b>Expenditure:</b> outlay other than settlement of an existing liability. If benefit lasts ≤1 accounting year → <b>Revenue Expenditure</b>. If benefit lasts &gt;1 year → <b>Capital Expenditure</b>.</div>
+
+    <div class="dtree">
+      <div style="text-align:center;"><div class="dnode">Is the benefit of expenditure for more than ONE accounting year?</div></div>
+      <div class="dbranch">
+        <div class="dopt"><span class="lbl">NO</span>Day-to-day expense (salary, rent)<br><span class="dresult">Revenue Expenditure</span></div>
+        <div class="dopt"><span class="lbl">YES</span>Acquiring/extending fixed assets<br><span class="dresult cap">Capital Expenditure</span></div>
+      </div>
+      <p style="text-align:center;font-size:12px;color:var(--ink-soft);margin:8px 0 0;">Special case: heavy advertising benefiting &gt;1 year → <b>Deferred Revenue Expenditure</b> (written off over the benefit period, same treatment as capital expenditure)</p>
+    </div>
+
+    <div class="compare">
+      <div class="cbox a"><h4>💠 Capital Expenditure</h4>
+        <ul style="margin:6px 0 0;padding-left:18px;">
+          <li>Increases earning capacity</li>
+          <li>Acquires fixed assets</li>
+          <li>Non-recurring</li>
+          <li>Benefits &gt;1 year</li>
+          <li>Shown in Balance Sheet (subject to depreciation)</li>
+        </ul></div>
+      <div class="cbox b"><h4>💠 Revenue Expenditure</h4>
+        <ul style="margin:6px 0 0;padding-left:18px;">
+          <li>Maintains earning capacity</li>
+          <li>Day-to-day conduct of business</li>
+          <li>Recurring</li>
+          <li>Benefits 1 year</li>
+          <li>Shown in Trading &amp; P&amp;L A/c</li>
+        </ul></div>
+    </div>
+
+    <div class="def-box"><b>Receipts:</b> If it creates an obligation to return money (loan, additional capital) or is sale of a fixed asset → <b>Capital Receipt</b>. Otherwise (sales, interest received) → <b>Revenue Receipt</b>.</div>
+
+    <div class="card red">
+      <h3>⚠️ Effect of Wrong Classification</h3>
+      <p style="font-size:13.5px;margin:0;">Revenue item wrongly treated as Capital → <b>profit overstated</b>, assets overstated.<br>Capital item wrongly treated as Revenue → <b>profit understated</b>, assets understated.</p>
+      <div class="qbox">🎯 <b>Probable Question:</b> Numerical — "Rs. X of repairs wrongly debited to Machinery A/c; find correct profit." (4–6 marks — very frequent)</div>
+    </div>
+
+    <div class="mnemonic"><span class="word">Remember:</span> "F.A.R." — <b>F</b>ixed asset acquisition, <b>A</b>ccounting period &gt;1 yr, <b>R</b>ecurs rarely = Capital Expenditure test.</div>
+  </div>
+
+  <!-- 9.3-9.4 -->
+  <div class="section" id="tpl">
+    <h2><span class="num">9.3–9.4</span>Trading &amp; Profit and Loss Account</h2>
+    <span class="tag t-vip">Very Important</span>
+    <div class="def-box"><b>Definition:</b> An account prepared to determine profit/loss of the business — a summary of revenues and expenses for the period, derived from the Trial Balance.</div>
+
+    <details><summary>📥 Debit-side items (12 items — click to expand)</summary>
+      <div class="inner">Opening stock · Purchases (less returns) · Wages · Carriage/Freight inwards · Fuel/Water/Power/Gas ·
+      Packaging material · Salaries · Rent paid · Interest paid · Commission paid · Repairs · Miscellaneous expenses</div>
+    </details>
+    <details><summary>📤 Credit-side items</summary>
+      <div class="inner">Sales (less returns) · Other incomes (rent, dividend, interest, discount, commission received)</div>
+    </details>
+
+    <div class="tbl-wrap"><table>
+      <caption>Format — Trading &amp; Profit and Loss A/c</caption>
+      <tr><th>Dr. — Expenses/Losses</th><th>Amt</th><th>Cr. — Revenues/Gains</th><th>Amt</th></tr>
+      <tr><td>Opening stock</td><td>…</td><td>Sales</td><td>…</td></tr>
+      <tr><td>Purchases, Wages, Carriage inwards</td><td>…</td><td></td><td></td></tr>
+      <tr><td>Gross Profit c/d</td><td>xxx</td><td></td><td>xxx</td></tr>
+      <tr><td>Rent, Salaries, Bad debts…</td><td>…</td><td>Gross Profit b/d</td><td>…</td></tr>
+      <tr class="total-row"><td>Net Profit → Capital A/c</td><td>…</td><td>Other incomes</td><td>…</td></tr>
+    </table></div>
+
+    <div class="flow">
+      <div class="fbox">Sales</div><span class="arrow">−</span>
+      <div class="fbox">Purchases + Direct Exp.</div><span class="arrow">=</span>
+      <div class="fbox op">Gross Profit</div>
+    </div>
+
+    <details><summary>📑 Closing Entries — 5 standard journal patterns</summary>
+      <div class="inner" style="font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.9;">
+        1. Trading A/c Dr. → To Opening Stock, Purchases, Wages, Carriage Inwards, Direct Exp.<br>
+        2. Purchases Return A/c Dr. → To Purchases A/c<br>
+        3. Sales A/c Dr. → To Sales Return A/c<br>
+        4. Sales A/c Dr. → To Trading A/c<br>
+        5. Profit &amp; Loss A/c Dr. → To Expenses/Losses  |  Incomes/Gains Dr. → To Profit &amp; Loss A/c
+      </div>
+    </details>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Prepare Trading and P&amp;L A/c from the following Trial Balance." (Full numerical, 8 marks — appears almost every year)</div>
+  </div>
+
+  <!-- 9.5 -->
+  <div class="section" id="opprofit">
+    <h2><span class="num">9.5</span>Operating Profit (EBIT)</h2>
+    <span class="tag t-vip">Very Important</span><span class="tag t-freq">Frequently Asked</span>
+    <div class="def-box"><b>Definition:</b> Profit from normal business operations only — excludes purely financial items and abnormal items (e.g., loss by fire). Also called <b>Profit Before Interest and Tax</b>.</div>
+
+    <div class="flow-vert">
+      <div class="fbox">Sales − (Purchases + Direct Exp.) = <b>Gross Profit</b></div>
+      <span class="arrow">↓</span>
+      <div class="fbox op">Gross Profit + Other Income − Indirect Expenses = <b>Net Profit</b></div>
+      <span class="arrow">↓</span>
+      <div class="fbox">Net Profit + Non-operating Exp. − Non-operating Income = <b>Operating Profit</b></div>
+    </div>
+
+    <div class="tbl-wrap"><table>
+      <caption>Worked Example</caption>
+      <tr><th>Item</th><th>Amount (Rs.)</th></tr>
+      <tr><td>Net Profit</td><td>19,000</td></tr>
+      <tr><td>+ Non-operating expense (Interest)</td><td>500</td></tr>
+      <tr><td>− Non-operating income</td><td>Nil</td></tr>
+      <tr class="total-row"><td>Operating Profit</td><td>19,500</td></tr>
+    </table></div>
+    <div class="qbox">🎯 <b>Probable Question:</b> MCQ — "Correct chronological order: Gross Profit → Operating Profit → Net Profit? or Gross → Net → Operating?" <br><b>Answer:</b> Gross Profit → Net Profit → Operating Profit is the ascertainment order shown in the account, but conceptually Operating Profit ≠ simply mid-way; always apply the formula, don't just guess order.</div>
+    <div class="mnemonic"><span class="word">Remember:</span> "GP→NP→OP, but OP = NP + Non-Op Exp − Non-Op Income" (adjust AFTER net profit).</div>
+  </div>
+
+  <!-- 9.6 -->
+  <div class="section" id="bs">
+    <h2><span class="num">9.6</span>Balance Sheet</h2>
+    <span class="tag t-vip">Very Important</span>
+    <div class="def-box"><b>Definition:</b> A statement (not an account) showing the financial position of the business — assets, liabilities, and capital — as on a given date. Debit balances not transferred to Trading/P&amp;L → Assets side; Credit balances → Liabilities side.</div>
+
+    <div class="tbl-wrap"><table>
+      <caption>Format — Balance Sheet (Horizontal)</caption>
+      <tr><th>Liabilities</th><th>Amt</th><th>Assets</th><th>Amt</th></tr>
+      <tr><td>Capital + Profit</td><td>…</td><td>Furniture</td><td>…</td></tr>
+      <tr><td>Long-term loan</td><td>…</td><td>Cash, Bank</td><td>…</td></tr>
+      <tr><td>Sundry creditors</td><td>…</td><td>Goodwill, Debtors</td><td>…</td></tr>
+      <tr><td>Bank overdraft, Bills payable</td><td>…</td><td>Land &amp; Building, Closing Stock</td><td>…</td></tr>
+    </table></div>
+
+    <details open><summary>🏷 8 Key Items in Balance Sheet</summary>
+      <div class="inner">
+        <b>1. Current Assets</b> — cash/convertible within a year (debtors, stock, bills receivable)<br>
+        <b>2. Current Liabilities</b> — payable within a year (bank OD, bills payable, creditors)<br>
+        <b>3. Fixed Assets</b> — long-term, not for resale (land, plant, furniture)<br>
+        <b>4. Intangible Assets</b> — Goodwill, Patents, Trademarks<br>
+        <b>5. Investments</b> — shown at cost; footnote if market price is lower<br>
+        <b>6. Long-term Liabilities</b> — payable after 1 year<br>
+        <b>7. Capital</b> — assets minus outside liabilities<br>
+        <b>8. Drawings</b> — deducted from Capital, not shown as an asset
+      </div>
+    </details>
+
+    <div class="compare">
+      <div class="cbox a"><h4>📐 Order of Permanence</h4><p style="margin:6px 0 0;">Most permanent asset/liability listed first (Capital → Long-term loan → Creditors; Furniture → Debtors → Bank → Cash).</p></div>
+      <div class="cbox b"><h4>💧 Order of Liquidity</h4><p style="margin:6px 0 0;">Order reversed — most liquid (Cash) listed first (Creditors → Loan → Capital; Cash → Bank → Debtors → Furniture).</p></div>
+    </div>
+    <div class="def-box"><b>Marshalling</b> = arranging assets/liabilities in a particular order (permanence or liquidity). <b>Grouping</b> = clubbing similar items under one heading (e.g., "Current Assets").</div>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Prepare the Balance Sheet in order of liquidity/permanence with proper grouping." (Frequently combined with the Trading &amp; P&amp;L numerical — 4 marks extra)</div>
+  </div>
+
+  <!-- 9.7 -->
+  <div class="section" id="oe">
+    <h2><span class="num">9.7</span>Opening Entry</h2>
+    <span class="tag t-quick">Quick Revision</span>
+    <div class="def-box">Next year's books open with an entry that re-records all Balance Sheet accounts — this year's closing Balance Sheet becomes next year's opening Trial Balance.</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Particulars</th><th>Dr.</th><th>Cr.</th></tr>
+      <tr><td>Furniture A/c … Dr.</td><td>15,000</td><td></td></tr>
+      <tr><td>Debtors A/c … Dr.</td><td>15,500</td><td></td></tr>
+      <tr><td>Bank A/c … Dr.</td><td>5,000</td><td></td></tr>
+      <tr><td>Cash A/c … Dr.</td><td>1,000</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;To Capital A/c</td><td></td><td>16,500</td></tr>
+      <tr><td>&nbsp;&nbsp;To 10% Long-term Loan A/c</td><td></td><td>5,000</td></tr>
+      <tr><td>&nbsp;&nbsp;To Creditors A/c</td><td></td><td>15,000</td></tr>
+    </table></div>
+  </div>
+
+  <!-- REVISION SHEET -->
+  <div class="revsheet" id="rev">
+    <h2>📋 One-Page Revision Sheet</h2>
+    <div class="revgrid">
+      <div class="rbox"><b>Gross Profit</b>Sales − (Purchases + Direct Expenses)</div>
+      <div class="rbox"><b>Net Profit</b>Gross Profit + Other Income − Indirect Expenses</div>
+      <div class="rbox"><b>Operating Profit</b>Net Profit + Non-op. Exp. − Non-op. Income</div>
+      <div class="rbox"><b>Capital Expenditure</b>Benefit &gt;1 year, acquires fixed asset, non-recurring</div>
+      <div class="rbox"><b>Revenue Expenditure</b>Benefit ≤1 year, day-to-day, recurring</div>
+      <div class="rbox"><b>Capital Receipt</b>Creates obligation to repay / sale of fixed asset</div>
+      <div class="rbox"><b>Current Assets</b>Cash or convertible to cash within a year</div>
+      <div class="rbox"><b>Fixed Assets</b>Long-term, not held for resale</div>
+      <div class="rbox"><b>Marshalling</b>Order = Permanence OR Liquidity</div>
+      <div class="rbox"><b>Grouping</b>Clubbing similar items under one heading</div>
+      <div class="rbox"><b>Balance Sheet</b>Statement, NOT an account; assets = liabilities</div>
+      <div class="rbox"><b>Opening Entry</b>Re-opens all Balance Sheet accounts next year</div>
+    </div>
+  </div>
+
+  <!-- LAST DAY -->
+  <div class="lastday" id="last">
+    <h3>🚨 Last-Day Revision Notes</h3>
+    <ul>
+      <li>Wages → Trading A/c (direct); Salaries → P&amp;L A/c (indirect) — a classic mix-up trap.</li>
+      <li>Deferred revenue expenditure is treated <b>like capital expenditure</b> — written off over its benefit period.</li>
+      <li>Balance Sheet is a <b>statement</b>, never call it an "account" in answers.</li>
+      <li>Drawings reduce Capital — shown by deduction, never as a separate asset.</li>
+      <li>Schedule III of Companies Act 2013 prescribes B/S format only for <b>companies</b>, not sole proprietors.</li>
+      <li>Always double-check: Net Profit transfers to Capital A/c via P&amp;L A/c Dr. → To Capital A/c.</li>
+    </ul>
+    <div class="mnemonic"><span class="word">Quick Trick — "CROP":</span> <b>C</b>apital stays (Balance Sheet), <b>R</b>evenue is <b>O</b>ne-year, <b>P</b>&amp;L absorbs revenue items.</div>
+  </div>
+
+</div>
+
+<footer>Class 12 Accountancy · Chapter 9 — Financial Statements I · Exam-Prep Infographic</footer>
+
+<button class="dm-btn" onclick="document.body.classList.toggle('dark')" title="Toggle dark mode">🌙</button>
+
+</body>
+</html>

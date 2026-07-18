@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 12–15 — Computerised Accounting &amp; Database | Exam Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14213D; --navy2:#1E2F55; --gold:#C89B3C; --gold-soft:#E8CE8C;
+  --cream:#FBF7EE; --paper:#F4EEDD; --ink:#1F2937; --ink-soft:#5B6472;
+  --red:#B3261E; --red-soft:#F6DEDB; --amber:#B5650A; --amber-soft:#F7E6C8;
+  --blue:#1F5EA8; --blue-soft:#DCE8F7; --teal:#0F6B5C; --teal-soft:#D8EEE8;
+  --rule:#D8CDA9; --shadow:0 8px 24px rgba(20,33,61,.10);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;color:var(--navy);margin:0 0 .4em;}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 65%,#233863 100%);color:var(--cream);
+  padding:38px 20px 46px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(200,155,60,.08) 28px);}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;}
+.eyebrow{font-family:'JetBrains Mono',monospace;letter-spacing:.12em;font-size:12px;color:var(--gold-soft);text-transform:uppercase;}
+.hero h1{color:#fff;font-size:clamp(22px,5.6vw,34px);margin:.25em 0 .15em;font-weight:700;}
+.hero p.sub{color:#CBD5E6;max-width:64ch;font-size:15px;margin:0 0 18px;}
+.ledger-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.ledger-strip span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  color:#EDE3C8;font-size:12px;padding:5px 10px;border-radius:999px;font-family:'JetBrains Mono',monospace;}
+.jumpnav{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:2px solid var(--navy);
+  overflow-x:auto;white-space:nowrap;padding:8px 12px;}
+.jumpnav a{display:inline-block;font-size:11.5px;font-weight:600;color:var(--navy);text-decoration:none;
+  padding:6px 8px;margin-right:1px;border-radius:6px;}
+.jumpnav a:hover{background:var(--gold-soft);}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0;}
+.legend span{font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:8px;border:1px solid var(--rule);background:#fff;}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin:0 4px 4px 0;white-space:nowrap;}
+.t-vip{background:var(--red-soft);color:var(--red);} .t-vip::before{content:"🔴 ";}
+.t-freq{background:var(--amber-soft);color:var(--amber);} .t-freq::before{content:"🟠 ";}
+.t-concept{background:var(--blue-soft);color:var(--blue);} .t-concept::before{content:"🟡 ";}
+.t-quick{background:var(--teal-soft);color:var(--teal);} .t-quick::before{content:"🟢 ";}
+.section{margin-top:44px;}
+.section > h2{font-size:21px;border-bottom:3px solid var(--gold);padding-bottom:8px;display:flex;align-items:center;gap:10px;}
+.section > h2 .num{font-family:'JetBrains Mono',monospace;background:var(--navy);color:var(--gold-soft);
+  font-size:12px;padding:3px 8px;border-radius:5px;}
+.card{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--navy);border-radius:10px;
+  padding:16px 18px;margin:14px 0;box-shadow:var(--shadow);}
+.card h3{font-size:16px;}
+.def-box{background:var(--paper);border:1px dashed var(--gold);border-radius:10px;padding:12px 16px;margin:10px 0;font-size:14px;}
+.def-box b{color:var(--navy);}
+.qbox{background:var(--navy);color:#EDE3C8;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:12.5px;}
+.qbox b{color:var(--gold-soft);}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0;background:#fff;}
+caption{caption-side:top;text-align:left;font-weight:700;color:var(--navy);padding-bottom:6px;font-family:'Fraunces',serif;font-size:14.5px;}
+th{background:var(--navy);color:#fff;padding:7px 9px;text-align:left;font-size:11.5px;}
+td{padding:6px 9px;border-bottom:1px solid var(--rule);}
+tr:nth-child(even) td{background:var(--paper);}
+.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--rule);}
+.mindmap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0;}
+.mindmap .node{background:#fff;border:2px solid var(--navy);border-radius:10px;padding:8px 12px;
+  font-size:12.5px;font-weight:600;color:var(--navy);text-align:center;min-width:110px;}
+.mindmap .node.core{background:var(--navy);color:#fff;font-size:14px;}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.compare .cbox{border-radius:10px;padding:14px;font-size:13px;}
+.compare .cbox.a{background:var(--blue-soft);border:1px solid var(--blue);}
+.compare .cbox.b{background:var(--teal-soft);border:1px solid var(--teal);}
+.compare h4{margin-top:0;font-size:14px;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+.mnemonic{background:linear-gradient(135deg,#FFF7E6,#FBEFD0);border:1px solid var(--gold);border-radius:10px;
+  padding:12px 16px;margin:12px 0;font-size:13px;}
+.mnemonic .word{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--amber);font-size:14px;}
+details{background:#fff;border:1px solid var(--rule);border-radius:8px;margin:8px 0;overflow:hidden;}
+summary{cursor:pointer;padding:10px 14px;font-weight:700;color:var(--navy);font-size:13px;list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"▸ ";color:var(--gold);}
+details[open] summary::before{content:"▾ ";}
+details .inner{padding:0 16px 14px;font-size:13px;}
+.entry{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--paper);border-radius:6px;
+  padding:8px 12px;margin:8px 0;line-height:1.7;white-space:pre-wrap;}
+.revsheet{background:var(--navy);color:#EDE3C8;border-radius:14px;padding:22px;margin-top:20px;}
+.revsheet h2{color:#fff;}
+.revgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+.revgrid .rbox{background:rgba(255,255,255,.06);border:1px solid rgba(232,206,140,.35);border-radius:8px;padding:9px 11px;font-size:12px;}
+.revgrid .rbox b{color:var(--gold-soft);display:block;margin-bottom:4px;font-size:12px;}
+@media(max-width:600px){.revgrid{grid-template-columns:1fr;}}
+.lastday{background:var(--red-soft);border:2px dashed var(--red);border-radius:12px;padding:16px 18px;margin-top:16px;}
+.lastday h3{color:var(--red);margin-top:0;}
+.lastday ul{margin:6px 0;padding-left:20px;font-size:13.5px;}
+footer{text-align:center;color:var(--ink-soft);font-size:12px;margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);}
+.dm-btn{position:fixed;bottom:16px;right:16px;z-index:60;background:var(--navy);color:var(--gold-soft);
+  border:none;border-radius:50%;width:46px;height:46px;font-size:18px;cursor:pointer;box-shadow:var(--shadow);}
+body.dark{background:#0F1626;color:#E4E7EE;}
+body.dark .card,body.dark table,body.dark details,body.dark .mindmap .node{background:#182238;color:#E4E7EE;border-color:#2A3654;}
+body.dark td{border-color:#2A3654;}
+body.dark tr:nth-child(even) td{background:#141C30;}
+body.dark .def-box,body.dark .entry{background:#141C30;}
+body.dark .jumpnav{background:#0F1626;}
+body.dark h1,body.dark h2,body.dark h3,body.dark h4{color:var(--gold-soft);}
+body.dark .legend span{background:#182238;color:#E4E7EE;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Class 12 · Accountancy · Part II</div>
+    <h1>Ch 12–15 — Computerised Accounting &amp; Database Design</h1>
+    <p class="sub">From "why computers in accounting" through the ER Model to building tables, forms, queries and reports in MS Access — the conceptual backbone tested in theory questions.</p>
+    <div class="ledger-strip">
+      <span>4 Chapters</span><span>6 Computer System Elements</span><span>3 Query Types</span><span>Exam Weight: Moderate</span>
+    </div>
+  </div>
+</div>
+
+<div class="jumpnav">
+  <a href="#c12">Ch12 · CAS Basics</a><a href="#cap">Capabilities</a><a href="#lim">Limitations</a>
+  <a href="#c13">Ch13 · Manual vs Computerised</a><a href="#pkg">Software Types</a>
+  <a href="#c14">Ch14 · ER Model</a><a href="#c15">Ch15 · MS Access</a><a href="#rev">📋 Revision</a><a href="#last">🚨 Last Day</a>
+</div>
+
+<div class="wrap">
+  <div class="legend">
+    <span class="t-vip">Very Important</span><span class="t-freq">Frequently Asked</span>
+    <span class="t-concept">Conceptual</span><span class="t-quick">Quick Revision</span>
+  </div>
+
+  <!-- CH12 -->
+  <div class="section" id="c12">
+    <h2><span class="num">CH 12</span>Applications of Computers in Accounting</h2>
+    <span class="tag t-vip">Very Important</span>
+    <div class="def-box"><b>Computer System</b> = a combination of <b>6 elements</b>: Hardware, Software, People, Procedures, Data, and Connectivity.</div>
+    <div class="mindmap">
+      <div class="node core">Computer System</div>
+      <div class="node">🖥 Hardware</div><div class="node">💾 Software (6 types)</div>
+      <div class="node">🧑 People (live-ware)</div><div class="node">📋 Procedures</div>
+      <div class="node">📊 Data</div><div class="node">🔗 Connectivity</div>
+    </div>
+    <details><summary>💾 6 Types of Software</summary>
+      <div class="inner">Operating System · Utility Programmes · Application Software · Language Processors · System Software · Connectivity Software</div>
+    </details>
+    <details><summary>🧑 People (Live-ware) — 3 Roles</summary>
+      <div class="inner"><b>System Analysts</b> design data processing systems · <b>Programmers</b> write programmes · <b>Operators</b> operate the computers</div>
+    </details>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Name and briefly explain the six elements of a computer system." (5–6 marks, very standard theory question)</div>
+  </div>
+
+  <!-- Capabilities -->
+  <div class="section" id="cap">
+    <h2><span class="num">12.2</span>Capabilities of Computer System</h2>
+    <span class="tag t-freq">Frequently Asked</span>
+    <div class="tbl-wrap"><table>
+      <tr><th>Capability</th><th>Meaning</th></tr>
+      <tr><td>Speed</td><td>Fraction-of-a-second operations; measured in MIPS</td></tr>
+      <tr><td>Accuracy</td><td>Rarely commits errors; most errors trace to bad programming/data entry</td></tr>
+      <tr><td>Reliability</td><td>Immune to fatigue; performs repetitive tasks consistently</td></tr>
+      <tr><td>Versatility</td><td>Handles diverse tasks — business, scientific, technical</td></tr>
+      <tr><td>Storage</td><td>Huge data capacity in very small physical space</td></tr>
+    </table></div>
+    <div class="mnemonic"><span class="word">Remember: "SARVS"</span> Speed · Accuracy · Reliability · Versatility · Storage</div>
+  </div>
+
+  <!-- Limitations -->
+  <div class="section" id="lim">
+    <h2><span class="num">12.3</span>Limitations of Computer System</h2>
+    <span class="tag t-concept">Conceptual</span>
+    <div class="tbl-wrap"><table>
+      <tr><th>Limitation</th><th>Meaning</th></tr>
+      <tr><td>Lack of Common Sense</td><td>No algorithm exists to programme common sense</td></tr>
+      <tr><td>Zero IQ</td><td>Dumb devices — must be directed for every action</td></tr>
+      <tr><td>Lack of Decision-Making</td><td>Cannot judge beyond what it's programmed to handle</td></tr>
+    </table></div>
+    <div class="def-box"><b>Components of Computer:</b> Input Unit → CPU (ALU + Memory Unit + Control Unit) → Output Unit.</div>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Distinguish between capabilities and limitations of a computer system." (theory, 4 marks)</div>
+  </div>
+
+  <!-- CH13 -->
+  <div class="section" id="c13">
+    <h2><span class="num">CH 13</span>Computerised Accounting System</h2>
+    <span class="tag t-vip">Very Important</span>
+    <div class="def-box">Accounting is the process of <b>identifying → recording → classifying → summarising</b> transactions — conceptually IDENTICAL in manual and computerised systems, only the technology differs.</div>
+    <div class="tbl-wrap"><table>
+      <caption>Manual vs Computerised Accounting</caption>
+      <tr><th>Activity</th><th>Manual</th><th>Computerised</th></tr>
+      <tr><td>Recording</td><td>Books of original entry</td><td>Stored in accounting database</td></tr>
+      <tr><td>Classification</td><td>Posting to ledger (data duplication)</td><td>No duplication — data reprocessed for reports</td></tr>
+      <tr><td>Summarising</td><td>Ledger → Trial Balance (pre-requisite)</td><td>Trial Balance directly from stored data</td></tr>
+      <tr><td>Financial Statements</td><td>Needs Trial Balance first</td><td>Independent of Trial Balance generation</td></tr>
+      <tr><td>Closing Books</td><td>Closing/reversing journal entries</td><td>Year-end processing creates opening balances</td></tr>
+    </table></div>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Compare manual and computerised accounting on any 4 parameters." (Guaranteed table-style question, 6–8 marks)</div>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">13.3–13.4</span>Advantages &amp; Limitations of CAS</h2>
+    <span class="tag t-freq">Frequently Asked</span>
+    <div class="compare">
+      <div class="cbox a"><h4>✅ Advantages</h4>
+        <ul style="margin:6px 0 0;padding-left:18px;">
+          <li>Speed, Accuracy, Reliability</li>
+          <li>Up-to-date info (real-time updates)</li>
+          <li>Automated document production</li>
+          <li>Scalability, Legibility, Efficiency</li>
+          <li>Quality &amp; MIS Reports</li>
+          <li>Better storage &amp; retrieval</li>
+        </ul></div>
+      <div class="cbox b"><h4>⚠️ Limitations</h4>
+        <ul style="margin:6px 0 0;padding-left:18px;">
+          <li>High training cost</li>
+          <li>Staff opposition / fear of redundancy</li>
+          <li>Disruption during transition</li>
+          <li>System failure risk (viruses, crashes)</li>
+          <li>Cannot detect unanticipated errors</li>
+          <li>Security breaches; health effects</li>
+        </ul></div>
+    </div>
+  </div>
+
+  <!-- Software types -->
+  <div class="section" id="pkg">
+    <h2><span class="num">13.5</span>Sourcing of Accounting Software</h2>
+    <span class="tag t-vip">Very Important</span>
+    <div class="tbl-wrap"><table>
+      <caption>Ready-to-Use vs Customised vs Tailored</caption>
+      <tr><th>Basis</th><th>Ready to Use</th><th>Customised</th><th>Tailored</th></tr>
+      <tr><td>Business size</td><td>Small, conventional</td><td>Large, medium</td><td>Large, typical (multi-location)</td></tr>
+      <tr><td>Installation cost</td><td>Low</td><td>Relatively high</td><td>High</td></tr>
+      <tr><td>Secrecy level</td><td>Low</td><td>Relatively high</td><td>Relatively high</td></tr>
+      <tr><td>Users</td><td>Limited</td><td>As per spec</td><td>Unlimited</td></tr>
+      <tr><td>Training needs</td><td>Low</td><td>Medium</td><td>High</td></tr>
+    </table></div>
+    <details><summary>🔎 8 Considerations before Sourcing Software</summary>
+      <div class="inner">Flexibility · Cost of Installation/Maintenance · Size of Organisation · Ease of Adaptation &amp; Training ·
+      Utilities/MIS Reports · Expected Level of Secrecy · Exporting/Importing Data Facility · Vendor's Reputation</div>
+    </details>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Differentiate between Ready-to-use, Customised, and Tailored accounting software." (Very frequently repeated table question — 6 marks)</div>
+    <div class="mnemonic"><span class="word">Remember "FEST-U":</span> <b>F</b>lexibility, <b>E</b>xport/Import, <b>S</b>ize, <b>T</b>raining, sec<b>U</b>rity — key sourcing considerations.</div>
+  </div>
+
+  <!-- CH14 -->
+  <div class="section" id="c14">
+    <h2><span class="num">CH 14</span>Structuring Database for Accounting — ER Model</h2>
+    <span class="tag t-vip">Very Important</span>
+    <div class="def-box"><b>Entity:</b> Anything in the real world with independent existence — physical (car, person) or conceptual (company, account, voucher).<br><b>Attributes:</b> Properties describing an entity (e.g., Code, Name for Accounts).</div>
+
+    <details><summary>🏷 5 Types of Attributes</summary>
+      <div class="inner">
+        <b>1. Composite vs Simple</b> — Name (composite: First/Middle/Last) vs Height (simple)<br>
+        <b>2. Single-valued vs Multi-valued</b> — Height (single) vs Qualifications (multiple)<br>
+        <b>3. Stored vs Derived</b> — Date of Birth (stored) vs Age (derived)<br>
+        <b>4. Null Values</b> — attribute doesn't apply / unknown / doesn't exist<br>
+        <b>5. Complex Attributes</b> — nested composite + multi-valued; () for composite, {} for multi-valued
+      </div>
+    </details>
+
+    <div class="def-box"><b>Key/Identifier Attribute:</b> An attribute with unique values that identifies each entity instance (e.g., Code for Accounts). Two+ attributes together = <b>composite key</b>. Entities with NO key attribute = <b>Weak Entity Types</b> (identified only via their owner entity, e.g., SupportDocuments depends on Vouchers).</div>
+
+    <details><summary>🔗 Relationships — Key Concepts</summary>
+      <div class="inner">
+        <b>Degree:</b> Binary (2 entities) / Ternary (3 entities)<br>
+        <b>Role Names:</b> role each entity plays (e.g., Employee = creator, Voucher = created)<br>
+        <b>Cardinality Ratio:</b> 1:1, 1:N, N:1, N:M<br>
+        <b>Participation:</b> Total (existence-dependent, double line in ER diagram) vs Partial (single line)
+      </div>
+    </details>
+    <div class="qbox">🎯 <b>Probable Question:</b> "Define Entity, Attribute, and Weak Entity Type with examples." / "Explain types of cardinality ratios." (5–6 marks each — very common)</div>
+    <div class="mnemonic"><span class="word">Remember:</span> Weak Entity = "No ID of its own — borrows its owner's."</div>
+  </div>
+
+  <!-- CH15 -->
+  <div class="section" id="c15">
+    <h2><span class="num">CH 15</span>Accounting System using Database Management System</h2>
+    <span class="tag t-freq">Frequently Asked</span>
+    <div class="def-box">Practical implementation in <b>MS Access</b>: Tables → Forms (data entry) → Queries (information retrieval) → Reports (formatted output).</div>
+
+    <div class="mindmap">
+      <div class="node">📋 Tables</div><div class="node">→</div>
+      <div class="node">🖊 Forms</div><div class="node">→</div>
+      <div class="node">🔍 Queries</div><div class="node">→</div>
+      <div class="node core">📊 Reports</div>
+    </div>
+
+    <details open><summary>🔍 3 Types of Queries (15.4.2)</summary>
+      <div class="inner">
+        <b>Simple Query</b> — fixed/constant criteria (e.g., WHERE Debit='711001')<br>
+        <b>Parameter Query</b> — prompts user for criteria via input box; reusable with different values<br>
+        <b>Summary Query</b> — aggregates data (SUM, GROUP BY) — most used for accounting reports
+      </div>
+    </details>
+
+    <div class="entry">SELECT Code, Name, Sum(Amount)
+FROM Vouchers INNER JOIN Accounts
+ON (Accounts.Code=Vouchers.Debit)
+GROUP BY Code, Name</div>
+    <div class="qbox">🎯 <b>Probable Question:</b> "What are the different types of queries used in Access? Explain with example." (5 marks — appears regularly)</div>
+  </div>
+
+  <!-- REVISION -->
+  <div class="revsheet" id="rev">
+    <h2>📋 One-Page Revision Sheet</h2>
+    <div class="revgrid">
+      <div class="rbox"><b>6 Computer Elements</b>Hardware, Software, People, Procedures, Data, Connectivity</div>
+      <div class="rbox"><b>Capabilities (SARVS)</b>Speed, Accuracy, Reliability, Versatility, Storage</div>
+      <div class="rbox"><b>Limitations</b>No common sense, Zero IQ, No decision-making</div>
+      <div class="rbox"><b>Accounting process</b>Identify → Record → Classify → Summarise (same in both systems)</div>
+      <div class="rbox"><b>3 Software categories</b>Ready-to-use / Customised / Tailored</div>
+      <div class="rbox"><b>Entity</b>Real-world object with independent existence</div>
+      <div class="rbox"><b>Weak Entity</b>No key attribute of its own — depends on owner entity</div>
+      <div class="rbox"><b>3 Query Types</b>Simple / Parameter / Summary</div>
+    </div>
+  </div>
+
+  <!-- LAST DAY -->
+  <div class="lastday" id="last">
+    <h3>🚨 Last-Day Revision Notes</h3>
+    <ul>
+      <li>Accounting PROCESS is conceptually identical in manual and computerised systems — only the mechanism changes.</li>
+      <li>Ready-to-use software = low cost + low secrecy; Tailored = high cost + high secrecy — inversely linked.</li>
+      <li>An entity type becomes "weak" only when it has NO key attribute of its own (needs an owner).</li>
+      <li>Cardinality ratio types: 1:1, 1:N, N:1, N:M — memorize with the Voucher:Employee (N:1) example.</li>
+      <li>Summary Query is the workhorse of accounting reports — always involves GROUP BY / aggregate functions.</li>
+    </ul>
+    <div class="mnemonic"><span class="word">Quick Trick — "TFQR":</span> <b>T</b>ables store → <b>F</b>orms enter → <b>Q</b>ueries retrieve → <b>R</b>eports present.</div>
+  </div>
+
+</div>
+
+<footer>Class 12 Accountancy · Chapters 12–15 — Computerised Accounting &amp; Database Design · Exam-Prep Infographic</footer>
+<button class="dm-btn" onclick="document.body.classList.toggle('dark')" title="Toggle dark mode">🌙</button>
+</body>
+</html>
