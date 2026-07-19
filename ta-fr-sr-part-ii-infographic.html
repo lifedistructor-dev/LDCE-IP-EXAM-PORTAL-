@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TA Study Cards | यात्रा भत्ता — FR SR Part II</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#FFB81C;
+  --bg:#f7f6f2; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a; --line:#e4e1d8;
+  --vimp:#c8102e; --freq:#e07b00; --concept:#c9a300; --quick:#1f8a4c;
+}
+*{box-sizing:border-box;}
+body.dark{ --bg:#12141a; --card:#1b1e26; --ink:#eef0f4; --sub:#a7adb8; --line:#2a2e38; }
+body{margin:0; font-family:"Noto Sans",Arial,sans-serif; background:var(--bg); color:var(--ink); padding-bottom:60px; transition:background .25s,color .25s;}
+header.top{background:linear-gradient(135deg,var(--blue),#001a4d 70%); color:#fff; padding:18px 16px 60px; position:relative; overflow:hidden;}
+header.top::after{content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px; background:radial-gradient(circle,var(--gold) 0%, transparent 70%); opacity:.35;}
+header.top h1{margin:0 0 4px; font-size:1.3rem; line-height:1.3;}
+header.top p{margin:0; font-size:.85rem; opacity:.9;}
+.badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.badge-row span{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); padding:3px 9px; border-radius:20px; font-size:.68rem;}
+.controls{position:sticky; top:0; z-index:50; background:var(--card); border-bottom:2px solid var(--gold); display:flex; gap:6px; padding:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:-40px; border-radius:14px 14px 0 0; box-shadow:0 4px 14px rgba(0,0,0,.15);}
+.controls button{flex:0 0 auto; border:1px solid var(--line); background:var(--bg); color:var(--ink); padding:8px 12px; border-radius:20px; font-size:.7rem; font-weight:600; cursor:pointer;}
+.controls button.active{background:var(--red); color:#fff; border-color:var(--red);}
+.darkbtn{margin-left:auto; background:var(--ink); color:var(--bg); border:none; padding:8px 12px; border-radius:20px; font-size:.72rem; cursor:pointer;}
+main{max-width:760px; margin:0 auto; padding:14px;}
+.topic{display:none;} .topic.active{display:block;}
+.hero{background:var(--card); border:1px solid var(--line); border-left:6px solid var(--red); border-radius:12px; padding:14px; margin:14px 0; box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.hero h2{margin:0 0 6px; font-size:1.1rem; color:var(--red);}
+.hero .hi{font-size:.95rem; color:var(--sub); margin:0 0 8px;}
+.chip{display:inline-block; font-size:.65rem; font-weight:700; padding:2px 8px; border-radius:10px; color:#fff; margin-right:4px;}
+.chip.vimp{background:var(--vimp);} .chip.freq{background:var(--freq);} .chip.concept{background:var(--concept); color:#1c1c1c;} .chip.quick{background:var(--quick);}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; margin:10px 0; overflow:hidden; box-shadow:0 1px 5px rgba(0,0,0,.05);}
+.card summary{list-style:none; cursor:pointer; padding:12px 14px; font-weight:700; display:flex; align-items:center; gap:8px; background:linear-gradient(90deg,rgba(200,16,46,.06),transparent);}
+.card summary::-webkit-details-marker{display:none;}
+.card summary::after{content:"▾"; margin-left:auto; transition:transform .2s;}
+.card[open] summary::after{transform:rotate(180deg);}
+.card .body{padding:0 14px 14px;}
+.section-label{font-size:.7rem; text-transform:uppercase; letter-spacing:.5px; color:var(--sub); font-weight:700; margin:10px 0 4px; border-bottom:1px dashed var(--line); padding-bottom:2px;}
+ul.pts{margin:4px 0; padding-left:18px;} ul.pts li{margin:4px 0; font-size:.88rem;}
+.hindi{color:var(--sub); font-size:.82rem;}
+table{width:100%; border-collapse:collapse; font-size:.78rem; margin:6px 0;}
+th,td{border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.7rem;}
+tr:nth-child(even){background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03);}
+.qbox{background:rgba(255,184,28,.12); border:1px dashed var(--gold); border-radius:8px; padding:8px 10px; font-size:.78rem; margin-top:6px;}
+.qbox b{color:var(--red);}
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flow .step{background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.76rem; text-align:center; width:92%; max-width:340px;}
+.flow .arrow{font-size:1.1rem; color:var(--red); margin:2px 0;}
+.flow .branch{display:flex; gap:8px; width:100%; justify-content:center; flex-wrap:wrap;}
+.flow .branch .step{background:var(--red); width:45%; min-width:130px;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .tl-item{margin-bottom:12px; position:relative;}
+.timeline .tl-item::before{content:""; position:absolute; left:-19px; top:3px; width:10px; height:10px; border-radius:50%; background:var(--red);}
+.timeline .tl-time{font-weight:700; color:var(--red); font-size:.8rem;}
+.timeline .tl-text{font-size:.82rem;}
+.mnemonic{background:linear-gradient(135deg,rgba(0,48,135,.08),rgba(255,184,28,.1)); border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:8px 0; font-size:.85rem;}
+.mnemonic b{color:var(--blue);}
+.revision-sheet{background:var(--card); border:2px solid var(--red); border-radius:14px; padding:14px; margin:20px 0;}
+.revision-sheet h2{color:var(--red); margin-top:0;}
+.revision-sheet h3{color:var(--blue); font-size:.95rem; margin:14px 0 6px;}
+.tag-legend{font-size:.72rem; display:flex; flex-wrap:wrap; gap:10px; margin:10px 0;}
+.tag-legend span{display:flex; align-items:center; gap:4px;}
+.dot{width:10px; height:10px; border-radius:50%; display:inline-block;}
+.decision{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px; margin:10px 0; font-size:.82rem;}
+.decision .q{font-weight:700; color:var(--blue);}
+.decision .a-yes{color:var(--quick); font-weight:600;}
+.decision .a-no{color:var(--red); font-weight:600;}
+footer{text-align:center; font-size:.7rem; color:var(--sub); padding:20px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>🚆 TA Study Cards — FR SR Part II: Travelling Allowance</h1>
+  <p>यात्रा भत्ता (Travelling Allowance) — Grades, Kinds of TA, Conveyance, Mileage, Duty Point, Travel Entitlements, Reimbursements</p>
+  <div class="badge-row">
+    <span>🔴 अति महत्वपूर्ण / Very Imp</span>
+    <span>🟠 बार-बार पूछा गया / Frequent</span>
+    <span>🟡 संकल्पनात्मक / Concept</span>
+    <span>🟢 त्वरित पुनरावृत्ति / Quick</span>
+  </div>
+</header>
+
+<div class="controls">
+  <button data-t="t1" class="active">1️⃣ Grades</button>
+  <button data-t="t2">2️⃣ Kinds of TA</button>
+  <button data-t="t3">3️⃣ Conveyance</button>
+  <button data-t="t4">4️⃣ Mileage & Duty Point</button>
+  <button data-t="t5">5️⃣ Travel Entitlements</button>
+  <button data-t="t6">6️⃣ Worked Example</button>
+  <button data-t="t7">📄 Revision Sheet</button>
+  <button class="darkbtn" id="darkToggle">🌙</button>
+</div>
+
+<main>
+
+<!-- ============ TOPIC 1: GRADES ============ -->
+<section class="topic active" id="t1">
+  <div class="hero">
+    <h2>Grades of Government Servants <span class="chip freq">🟠 FREQUENT</span></h2>
+    <p class="hi">सरकारी कर्मचारियों की श्रेणियाँ — Pay Level निर्धारण का आधार</p>
+    <p><b>Chapter → Sub-Chapter → Micro:</b><br>
+    TA Rules → Grades → Pay-Level Determination → Transit/Attendant Rules</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition / परिभाषा <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <div class="section-label">English</div>
+      <p>A Government servant's entitlement for Travelling Allowance purposes is based on the <b>Pay Level</b> of the post currently held — irrespective of whether it is held substantively, temporarily, in an officiating capacity, or on ad hoc basis. Daily-rated staff, piece-workers, casual labourers, and unskilled staff brought onto monthly rates are treated at par with regular staff.</p>
+      <div class="section-label">हिंदी</div>
+      <p class="hindi">यात्रा भत्ते के प्रयोजन हेतु किसी सरकारी कर्मचारी की पात्रता उस पद के <b>पे लेवल</b> पर आधारित होती है जिसे वह वर्तमान में धारण कर रहा है — चाहे वह स्थायी, अस्थायी, कार्यवाहक या तदर्थ आधार पर हो। दैनिक वेतनभोगी, टुकड़ा-श्रमिक, आकस्मिक श्रमिक और मासिक दर पर लाए गए अकुशल कर्मचारी नियमित कर्मचारियों के समान माने जाते हैं।</p>
+      <div class="qbox"><b>Probable Q:</b> On what basis is the grade of a Government servant determined for TA purposes?</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule/Point</th><th>Provision (English)</th><th>प्रावधान (हिंदी)</th></tr>
+        <tr><td>Determination of Grade</td><td>Entitlement based on Pay Level of the post held (permanent/temporary/officiating/ad hoc — all same).</td><td>पात्रता वर्तमान पद के पे लेवल पर आधारित होती है।</td></tr>
+        <tr><td>In Transit Between Posts</td><td>A Govt servant transitioning between two posts is ranked at the <b>lower</b> of the two grades.</td><td>दो पदों के बीच संक्रमण में <b>निम्नतम</b> श्रेणी के अनुसार माना जाएगा।</td></tr>
+        <tr><td>Attendants/Escorts</td><td>An attendant/escort accompanying a disabled Govt. servant on tour/training gets <b>Mileage Allowance only</b> — <b>no Daily Allowance</b>.</td><td>दिव्यांग सरकारी सेवक के साथ यात्रा करने वाले परिचारक को केवल <b>मार्गीय भत्ता</b> मिलेगा, <b>दैनिक भत्ता नहीं</b>।</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What allowance is admissible to an attendant accompanying a disabled Government servant on tour, and what is NOT admissible?<br><b>Ans:</b> Mileage Allowance admissible; Daily Allowance NOT admissible.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Daily-rated/piece-worker/casual/unskilled staff brought to monthly rates → treated as regular staff for grade purposes (exception to the general assumption that only regular staff counts).</li>
+        <li>In-transit rule is an exception to "current post" rule — here the LOWER of two grades applies, not the current one.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "Grade follows the Post, Transit follows the Lower, Attendant gets only Mileage" — three quick rules to remember for Grades chapter.
+  </div>
+</section>
+
+<!-- ============ TOPIC 2: KINDS OF TA ============ -->
+<section class="topic" id="t2">
+  <div class="hero">
+    <h2>Different Kinds of Travelling Allowance <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">यात्रा भत्ते के प्रकार — SR Rule 21</p>
+  </div>
+
+  <div class="flow">
+    <div class="step">SR Rule-21: 5 Kinds of Travelling Allowance</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">1. Permanent TA</div>
+      <div class="step">2. Conveyance/Horse Allowance</div>
+    </div>
+    <div class="branch">
+      <div class="step">3. Mileage Allowance</div>
+      <div class="step">4. Daily Allowance</div>
+    </div>
+    <div class="step">5. Actual Cost of Travelling</div>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> SR Rule-21 lists five kinds of Travelling Allowance that may be drawn by Government servants under different circumstances: Permanent TA, Conveyance/Horse Allowance, Mileage Allowance, Daily Allowance, and Actual Cost of Travelling.</p>
+      <p class="hindi"><b>हिंदी:</b> SR नियम-21 सरकारी कर्मचारियों को विभिन्न परिस्थितियों में मिलने वाले पाँच प्रकार के यात्रा भत्ते सूचीबद्ध करता है: स्थायी TA, वाहन/घोड़ा भत्ता, मार्गीय भत्ता, दैनिक भत्ता और यात्रा की वास्तविक लागत।</p>
+      <div class="qbox"><b>Probable Q:</b> List the five kinds of Travelling Allowance as per SR Rule-21.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 1. Permanent Travelling Allowance <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Fixed monthly allowance for Govt. servants whose duties necessitate extensive travel.</li>
+        <li>Covers cost of all journeys within official responsibilities; paid year-round regardless of actual travel.</li>
+        <li>For journeys <b>outside</b> official sphere → normal TA + DA claimable for entire trip (incl. portion inside sphere).</li>
+        <li>🔴 <b>Not applicable</b> during leave, temporary transfer, or joining time.</li>
+        <li>🔴 Cannot be claimed concurrently with any other TA type unless specifically authorized. (SR 22, 23 & 24)</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> During which periods is Permanent Travelling Allowance NOT admissible? <b>Ans:</b> Leave, temporary transfer, joining time.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 2. Conveyance or Horse Allowance <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>For Govt. servants requiring extensive travel at/near headquarters, not qualifying for Daily Allowance.</li>
+        <li>Available year-round; NOT forfeited during absence from HQ (unlike some other TA types).</li>
+        <li>Unlike Permanent TA — <b>can be claimed alongside</b> other TA types.</li>
+        <li>If authorized specifically for motorcycle/motor car maintenance → no mileage allowance for journeys on that vehicle (up to approved limit).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>PC-MDA</b>" → Permanent, Conveyance, Mileage, Daily, Actual cost — the 5 kinds of TA under SR-21.
+  </div>
+</section>
+
+<!-- ============ TOPIC 3: CONVEYANCE CONDITIONS ============ -->
+<section class="topic" id="t3">
+  <div class="hero">
+    <h2>Conditions for Grant of Conveyance Allowance <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">वाहन भत्ता स्वीकृति की शर्तें</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Important Conditions (5 Rules) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>#</th><th>Condition</th><th>शर्त (हिंदी)</th></tr>
+        <tr><td>1</td><td>Minimum Distance: average distance travelled for duty must exceed <b>200 km/month</b></td><td>न्यूनतम दूरी: प्रतिमाह 200 किमी से अधिक</td></tr>
+        <tr><td>2</td><td>Travel Mode: journeys on foot or bicycle do <b>not</b> qualify</td><td>पैदल या साइकिल यात्रा पात्र नहीं</td></tr>
+        <tr><td>3</td><td>Salary Criteria: motor-car conveyance allowance NOT for pay &lt; ₹2,800/month (4th Pay Commission, pre-revised scale). <b>Exception: CGHS doctors exempt</b></td><td>वेतन मानदंड: ₹2,800 से कम वेतन पर अनुमन्य नहीं; CGHS डॉक्टरों को छूट</td></tr>
+        <tr><td>4</td><td>Vehicle Requirement: officer must own & maintain motor car in working condition, used for all official journeys claimed</td><td>वाहन आवश्यकता: अधिकारी के पास स्वयं का कार्यशील वाहन हो</td></tr>
+        <tr><td>5</td><td>Non-Admissibility during: (a) joining time/leave/temp transfer/adjacent holidays; (b) tour/temp duty away from HQ ≥15 days; (c) vehicle unmaintained/out-of-order &gt;15 days or unused for official journeys</td><td>अनुमन्य नहीं: जॉइनिंग टाइम/अवकाश/15+ दिन दौरे पर/वाहन 15+ दिन खराब</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the minimum monthly distance required for grant of Conveyance Allowance? <b>Ans: 200 km.</b></div>
+      <div class="qbox"><b>Probable Q:</b> Who is exempted from the ₹2,800 salary criteria for motor-car conveyance allowance? <b>Ans: CGHS doctors.</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Claim Conveyance Allowance?</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Distance &gt; 200 km/month? NO → Not Admissible</div>
+      <div class="step">Foot/Bicycle? YES → Not Admissible</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">Owns & maintains motor car, used for official duty → ✅ Admissible (subject to non-admissibility periods)</div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>200-2800-15</b>" → 200 km minimum distance, ₹2,800 minimum pay, 15 days = cut-off for tour/vehicle-fault non-admissibility.
+  </div>
+</section>
+
+<!-- ============ TOPIC 4: MILEAGE & DUTY POINT ============ -->
+<section class="topic" id="t4">
+  <div class="hero">
+    <h2>Mileage Allowance & Duty Point <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">मार्गीय भत्ता एवं ड्यूटी प्वाइंट — SR 29 to SR 32, SR 71</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition — Mileage Allowance <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> Mileage Allowance (SR 29) is a form of Travelling Allowance calculated based on the distance travelled, intended to cover the cost of a specific journey.</p>
+      <p class="hindi"><b>हिंदी:</b> मार्गीय भत्ता (SR 29) यात्रा भत्ते का वह रूप है जो तय की गई दूरी के आधार पर गणना की जाती है, जो किसी विशिष्ट यात्रा की लागत को कवर करने हेतु है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Principles of Calculation (SR 30-31) <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Route Calculation:</b> Based on shortest practicable route; if multiple equally-short routes, choose cheapest. If alternative rail routes don't significantly differ in time/cost, actual route may be used even if slightly longer.</li>
+        <li><b>Cheaper Routes:</b> If servant travels a cheaper (not shortest) route, mileage = actual route used, ensuring no profit to recipient. (SR 30)</li>
+        <li><b>Competent Authority Discretion:</b> May allow mileage based on route actually used, with documented reasons. Delegated to all Heads of Departments. (SR 31)</li>
+        <li><b>Road Mileage for Rail-Connected Journeys:</b> Competent Authority decides full road mileage vs rail-limited amount; may consider public interest (time savings/inspections). (SR 31)</li>
+        <li><b>Non-Admissibility of Longer Routes:</b> Not permissible if shortest route couldn't be used due to unavailability of reserved accommodation in entitled class. (SR 31)</li>
+        <li><b>Disruptions in Train Service:</b> Floods/strikes → stations deemed temporarily disconnected from rail → full road mileage claimable without restriction. (SR 31)</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> If train service is disrupted due to floods/strikes, what mileage can be claimed? <b>Ans:</b> Full road mileage without restriction (stations deemed disconnected from rail).</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Duty Point Rules (SR 32) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>At Headquarters:</b> the location/office where the Govt. servant performs duties.</li>
+        <li><b>At Outstation:</b> the location/office visited for work; if multiple points exist, decided by mode of arrival:</li>
+        <li>Arrived by <b>rail/steamer/air</b> → duty point = location <b>farthest</b> from the railway station/harbour/jetty/airport.</li>
+        <li>Arrived by <b>road</b> → duty point = location <b>farthest</b> from where the journey began.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> How is the duty point determined at an outstation when a Government servant arrives by air?<br><b>Ans:</b> The location farthest from the airport.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Temporary Duty at Headquarters (SR 71) <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <p>When temporary duty is assigned at a location within HQ different from the normal place of work, and the servant need not attend their own office that day → duty point = location where duty is <b>actually performed</b> that day.</p>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Journey Undertaken</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Shortest Route Available? → Mileage on shortest route</div>
+      <div class="step">Cheaper Longer Route Used? → Mileage on actual (no profit)</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">Rail Disrupted (flood/strike)? → Full Road Mileage, no restriction</div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>Farthest from the Gate</b>" — for duty point, always the point <u>farthest</u> from the entry (station/airport/road start).
+  </div>
+</section>
+
+<!-- ============ TOPIC 5: TRAVEL ENTITLEMENTS ============ -->
+<section class="topic" id="t5">
+  <div class="hero">
+    <h2>Travel Entitlements, Premium Trains & International Travel <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">पे लेवल अनुसार यात्रा पात्रता — घरेलू, प्रीमियम ट्रेन एवं अंतर्राष्ट्रीय</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Domestic Travel — Rail/Air on Tour or Training <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Pay Level</th><th>Entitlement</th></tr>
+        <tr><td>14 and above</td><td>Business/Club class (air) or AC-1 by train</td></tr>
+        <tr><td>12 and 13</td><td>Economy class (air) or AC-1 by train</td></tr>
+        <tr><td>6 to 11</td><td>Economy class (air) or AC-II by train</td></tr>
+        <tr><td>5 and below</td><td>First Class / AC-III / AC Chair Car by train</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the travel entitlement for a Pay Level 12 officer on tour? <b>Ans:</b> Economy class by air OR AC-1 by train.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Premium Train Travel <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <p>Officials may travel by Premium, Premium Tatkal, and Suvidha Trains. Reimbursable: Premium Tatkal charges, Dynamic/Flexi-fare (Shatabdi/Rajdhani/Duronto), Tatkal Seva charges.</p>
+      <table>
+        <tr><th>Pay Level</th><th>Entitlement</th></tr>
+        <tr><td>12 and above</td><td>Executive/AC 1st class (highest available in Premium/Premium Tatkal/Suvidha/Shatabdi/Rajdhani)</td></tr>
+        <tr><td>6 to 11</td><td>AC 2nd Class/Chair Car (Shatabdi Trains)</td></tr>
+        <tr><td>5 and below</td><td>AC 3rd Class/Chair Car</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Additional Guidelines & International Travel <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>(a) Locations not rail-connected: AC bus for those entitled to AC-II Tier & above; others by Deluxe/ordinary bus.</li>
+        <li>(b) Road travel between rail-connected places: any public transport allowed if fare ≤ train fare of entitled class. (Rule 34, SR 48-8)</li>
+      </ul>
+      <table>
+        <tr><th>Pay Level</th><th>International Entitlement</th></tr>
+        <tr><td>17 and above</td><td>First class</td></tr>
+        <tr><td>14 to 16</td><td>Business/Club class</td></tr>
+        <tr><td>13 and below</td><td>Economy class</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the international travel entitlement for Pay Level 15? <b>Ans:</b> Business/Club class.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Sportsmen & Reimbursement Guidelines <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Managers/Coaches/Sportspersons in national/international events within India → <b>First Class by train</b> (SR 34), regardless of pay level.</li>
+        <li>Reservation/sleeper/telegram/special supplementary charges for SuperFast Express → reimbursable (SR 34).</li>
+        <li>Cancellation & reservation charges for journeys cancelled in public interest → reimbursable.</li>
+        <li>Railway fare includes passenger tax (GIO 7, SR 34). Service Tax & Education Cess also reimbursable (GIO 7, SR 116).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>14=Business, 12-13=Economy/AC1, 6-11=Eco/AC2, ≤5=1st/AC3</b>" for domestic; "<b>17=1st, 14-16=Business, ≤13=Economy</b>" for international — note international sets bar 2 levels higher than domestic for same class!
+  </div>
+</section>
+
+<!-- ============ TOPIC 6: WORKED EXAMPLE ============ -->
+<section class="topic" id="t6">
+  <div class="hero">
+    <h2>Worked Numerical Example — Transfer TA Bill <span class="chip vimp">🔴 VERY IMP (Numerical Type)</span></h2>
+    <p class="hi">स्थानांतरण यात्रा भत्ता बिल — हल किया गया उदाहरण</p>
+  </div>
+
+  <details class="card">
+    <summary>🧮 Example: Shri 'X', Pay Level 12, Pay ₹1,30,400 <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <div class="section-label">Given</div>
+      <ul class="pts">
+        <li>Transferred Station A → B, 1,362 km by rail (no air connectivity), 1st Class fare ₹1,820</li>
+        <li>Family: wife, 3 sons (24, 22, 20 yrs) — dependent; married daughter (not dependent); domestic servant</li>
+        <li>Self & wife: AC-1 for 800 km + 1st Class for balance</li>
+        <li>1st son (24): air, student concession, ₹2,000 fare</li>
+        <li>3rd son (20): bus, ₹500 fare</li>
+        <li>2nd son (22): traveled 6 months later with married daughter, Sleeper Class ₹585</li>
+        <li>Domestic servant & chauffeur: Sleeper Class, ₹585 each</li>
+        <li>Personal effects freight: ₹21,025 actual vs ₹18,325 (6,000 kg by goods train — the cap)</li>
+        <li>Car transport freight: ₹13,500</li>
+      </ul>
+
+      <div class="section-label">Answer — Self & Family</div>
+      <table>
+        <tr><th>Item</th><th>Amount (₹)</th></tr>
+        <tr><td>Composite Transfer Grant (80% of ₹1,30,400)</td><td>1,04,320</td></tr>
+        <tr><td>Rail fare A→B: ₹3,650 × 2 (self + wife)</td><td>7,300</td></tr>
+        <tr><td>1st son (P→B) air fare</td><td>2,000</td></tr>
+        <tr><td>3rd son (Q→B) bus fare</td><td>500</td></tr>
+        <tr><td>Chauffeur (II Class fare)</td><td>585</td></tr>
+        <tr><td><b>Total (self & family)</b></td><td><b>1,14,705</b></td></tr>
+      </table>
+
+      <div class="section-label">Answer — Personal Effects</div>
+      <table>
+        <tr><th>Item</th><th>Amount (₹)</th></tr>
+        <tr><td>Actual expenditure</td><td>21,025</td></tr>
+        <tr><td>Max admissible (6,000 kg by goods train)</td><td>18,325</td></tr>
+        <tr><td><b>Allowed (lower of the two)</b></td><td><b>18,325</b></td></tr>
+      </table>
+
+      <div class="section-label">Answer — Conveyance & Grand Total</div>
+      <table>
+        <tr><th>Item</th><th>Amount (₹)</th></tr>
+        <tr><td>Car transport freight (actual)</td><td>13,500</td></tr>
+        <tr><td><b>Grand Total</b></td><td><b>1,46,530</b></td></tr>
+      </table>
+
+      <div class="section-label">🔑 Key Exam Notes on this Example</div>
+      <ul class="pts">
+        <li>🔴 Married daughter <b>not dependent</b> → excluded from "family" definition → her TA is <b>not admissible</b>.</li>
+        <li>🟠 Son who travelled <b>6 months later</b> is NOT regarded as "accompanying" the officer — unless competent authority sanctions relaxation of the time-limit.</li>
+        <li>🟡 Chauffeur allowed only <b>one II Class fare</b> (SR 116(a)(I)(iv)).</li>
+        <li>🔴 Maid/domestic servant NOT eligible for TA — not included in definition of "family".</li>
+        <li>🟢 For personal effects: always take the <b>lower</b> of actual expenditure vs. maximum admissible (weight-based cap).</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Why is TA not admissible for the married daughter in a transfer TA claim? <b>Ans:</b> She is not dependent on the officer, hence not included in the definition of "family".</div>
+    </div>
+  </details>
+
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">Time Limit Rule</div><div class="tl-text">Family members must travel within a reasonable period to be regarded as "accompanying" the transferred officer — else competent authority sanction needed for relaxation.</div></div>
+    <div class="tl-item"><div class="tl-time">Weight Cap Rule</div><div class="tl-text">Personal effects transport reimbursement = lower of (actual freight paid) or (freight for maximum admissible weight by goods train).</div></div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>D-M-C</b>" → <u>D</u>ependent family only, <u>M</u>arried daughter excluded (unless dependent), <u>C</u>hauffeur gets only II Class — remember these 3 traps in every TA numerical.
+  </div>
+</section>
+
+<!-- ============ REVISION SHEET ============ -->
+<section class="topic" id="t7">
+  <div class="revision-sheet">
+    <h2>📄 One-Page Last-Day Revision Sheet</h2>
+    <div class="tag-legend">
+      <span><span class="dot" style="background:var(--vimp)"></span>Very Imp</span>
+      <span><span class="dot" style="background:var(--freq)"></span>Frequent</span>
+      <span><span class="dot" style="background:var(--concept)"></span>Concept</span>
+      <span><span class="dot" style="background:var(--quick)"></span>Quick</span>
+    </div>
+
+    <h3>1️⃣ Grades</h3>
+    <ul class="pts">
+      <li>🔴 Grade = Pay Level of current post (any tenure type)</li>
+      <li>🟠 In transit → lower of two grades applies</li>
+      <li>🟡 Attendant of disabled officer → Mileage only, no DA</li>
+    </ul>
+
+    <h3>2️⃣ Kinds of TA (SR-21)</h3>
+    <ul class="pts">
+      <li>🔴 5 kinds: Permanent, Conveyance/Horse, Mileage, Daily, Actual Cost</li>
+      <li>🟠 Permanent TA NOT admissible during leave/temp transfer/joining time</li>
+    </ul>
+
+    <h3>3️⃣ Conveyance Allowance Conditions</h3>
+    <ul class="pts">
+      <li>🔴 Min 200 km/month; not for foot/bicycle</li>
+      <li>🟠 Min pay ₹2,800 (except CGHS doctors exempt)</li>
+      <li>🟢 Non-admissible if vehicle unused/faulty &gt;15 days or tour ≥15 days</li>
+    </ul>
+
+    <h3>4️⃣ Mileage & Duty Point</h3>
+    <ul class="pts">
+      <li>🔴 Shortest/cheapest route principle; no profit motive</li>
+      <li>🟠 Rail disruption (flood/strike) → full road mileage, no cap</li>
+      <li>🟡 Duty point = farthest point from station/airport/road-start</li>
+    </ul>
+
+    <h3>5️⃣ Travel Entitlements</h3>
+    <ul class="pts">
+      <li>🔴 Domestic: L14+ =Business; L12-13=Eco/AC1; L6-11=Eco/AC2; L≤5=1st/AC3</li>
+      <li>🔴 International: L17+ =1st; L14-16=Business; L≤13=Economy</li>
+      <li>🟠 Sportspersons in national events → First Class by train regardless of pay level</li>
+    </ul>
+
+    <h3>6️⃣ Transfer TA Numerical — Traps</h3>
+    <ul class="pts">
+      <li>🔴 Non-dependent married daughter — no TA</li>
+      <li>🔴 Domestic servant/maid — no TA (not "family")</li>
+      <li>🟠 Late-traveling family member (e.g. after 6 months) — not "accompanying" unless relaxation sanctioned</li>
+      <li>🟢 Personal effects — reimbursed at lower of actual vs. max admissible weight-cap</li>
+    </ul>
+
+    <h3>🔢 Key Numbers to Remember</h3>
+    <table>
+      <tr><th>Number</th><th>Where it applies</th></tr>
+      <tr><td>200 km/month</td><td>Minimum distance for Conveyance Allowance</td></tr>
+      <tr><td>₹2,800</td><td>Minimum pay for motor-car conveyance allowance (pre-revised, 4th CPC)</td></tr>
+      <tr><td>15 days</td><td>Tour/vehicle-fault cut-off for conveyance non-admissibility</td></tr>
+      <tr><td>80%</td><td>Composite Transfer Grant (% of pay)</td></tr>
+      <tr><td>Pay Level 12/13</td><td>Economy air / AC-1 rail threshold</td></tr>
+      <tr><td>Pay Level 17</td><td>International First Class threshold</td></tr>
+    </table>
+
+    <h3>🧠 All Mnemonics Together</h3>
+    <div class="mnemonic">PC-MDA → Permanent, Conveyance, Mileage, Daily, Actual — 5 kinds of TA</div>
+    <div class="mnemonic">200-2800-15 → Conveyance Allowance thresholds</div>
+    <div class="mnemonic">Farthest from the Gate → Duty point rule</div>
+    <div class="mnemonic">D-M-C → Dependent-only family, Married daughter excluded, Chauffeur II Class — transfer TA traps</div>
+  </div>
+</section>
+
+</main>
+
+<footer>LDCE IP Exam Portal Study Card • FR SR Part-II Travelling Allowance • For personal exam preparation use</footer>
+
+<script>
+const buttons = document.querySelectorAll('.controls button[data-t]');
+const topics = document.querySelectorAll('.topic');
+buttons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    topics.forEach(t=>t.classList.remove('active'));
+    document.getElementById(btn.dataset.t).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+document.getElementById('darkToggle').addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+});
+</script>
+</body>
+</html>

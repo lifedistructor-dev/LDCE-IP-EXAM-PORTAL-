@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>LTC Rules | अवकाश यात्रा रियायत - IP Exam Infographic</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003893; --gold:#FFB81C;
+  --bg:#f7f4ef; --card:#ffffff; --text:#1a1a1a; --muted:#5a5a5a;
+  --very:#d32f2f; --freq:#f57c00; --concept:#fbc02d; --quick:#2e7d32;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; padding-bottom:60px;}
+body.dark{--bg:#121212; --card:#1e1e1e; --text:#f0f0f0; --muted:#b0b0b0;}
+header{background:linear-gradient(135deg,var(--blue),var(--red)); color:#fff; padding:18px 14px; text-align:center; position:relative;}
+header h1{font-size:1.2rem;}
+header .sub{font-size:0.85rem; opacity:0.95; margin-top:4px;}
+header .gold-bar{height:4px; background:var(--gold); margin-top:10px;}
+.controls{display:flex; justify-content:center; gap:10px; padding:10px; flex-wrap:wrap;}
+.controls button{background:var(--card); border:2px solid var(--blue); color:var(--blue); padding:6px 12px; border-radius:20px; font-size:0.8rem; font-weight:600;}
+body.dark .controls button{color:var(--gold); border-color:var(--gold);}
+.legend{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; padding:8px 14px 14px;}
+.legend span{font-size:0.72rem; background:var(--card); border-radius:12px; padding:4px 9px; box-shadow:0 1px 3px rgba(0,0,0,0.15);}
+.container{max-width:820px; margin:0 auto; padding:10px 12px;}
+
+.revsheet{background:var(--card); border:2px solid var(--gold); border-radius:12px; padding:12px; margin-bottom:16px; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.revsheet h2{color:var(--red); font-size:1.05rem; margin-bottom:8px;}
+.revsheet table{width:100%; border-collapse:collapse; font-size:0.78rem;}
+.revsheet td,.revsheet th{border:1px solid #ddd; padding:5px 6px; text-align:left; vertical-align:top;}
+.revsheet th{background:var(--blue); color:#fff;}
+
+.section-label{text-align:center; font-weight:700; color:var(--red); margin:18px 0 8px; font-size:1rem; border-top:2px dashed var(--gold); padding-top:14px;}
+body.dark .section-label{color:var(--gold);}
+
+.topic-card{background:var(--card); border-radius:10px; padding:12px; margin-bottom:10px; box-shadow:0 2px 6px rgba(0,0,0,0.12); border-left:5px solid var(--red);}
+.topic-card h3{font-size:0.95rem; color:var(--red); margin-bottom:4px;}
+.topic-card h3 .en{color:var(--blue); font-size:0.8rem; display:block; font-weight:500;}
+body.dark .topic-card h3 .en{color:var(--gold);}
+.tag{display:inline-block; font-size:0.7rem; border-radius:8px; padding:2px 6px; margin:2px 3px 2px 0; color:#fff; font-weight:600;}
+.tag.very{background:var(--very);} .tag.freq{background:var(--freq);} .tag.concept{background:var(--concept); color:#333;} .tag.quick{background:var(--quick);}
+
+.black-btn{display:inline-block; background:#1a1a1a; color:#fff; padding:6px 12px; border-radius:6px; font-size:0.78rem; margin-top:6px; cursor:pointer;}
+.detail{display:none; margin-top:8px; border-top:1px dashed #ccc; padding-top:8px;}
+.detail.open{display:block;}
+.detail h4{color:var(--blue); font-size:0.82rem; margin:8px 0 3px;}
+body.dark .detail h4{color:var(--gold);}
+.detail p, .detail li{font-size:0.82rem; color:var(--text);}
+.detail ul{padding-left:18px; margin-bottom:6px;}
+.hi{font-size:0.82rem; margin-bottom:2px;}
+.en-txt{font-size:0.78rem; color:var(--muted); font-style:italic; margin-bottom:6px;}
+
+table.mini{width:100%; border-collapse:collapse; font-size:0.75rem; margin:6px 0;}
+table.mini td, table.mini th{border:1px solid #ccc; padding:4px 5px;}
+table.mini th{background:var(--gold); color:#1a1a1a;}
+
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:8px 0; font-size:0.75rem;}
+.flow .box{background:var(--blue); color:#fff; padding:6px 8px; border-radius:6px; text-align:center;}
+.flow .arrow2{color:var(--red); font-weight:bold;}
+
+.qbox{background:#fff8e1; border-left:4px solid var(--gold); padding:6px 8px; margin-top:8px; font-size:0.78rem; border-radius:4px;}
+body.dark .qbox{background:#332b00;}
+.qbox b{color:var(--red);}
+
+.mnemonic{background:#e8f5e9; border-left:4px solid var(--quick); padding:6px 8px; margin-top:6px; font-size:0.78rem; border-radius:4px;}
+body.dark .mnemonic{background:#132a13;}
+
+.timeline{display:flex; flex-direction:column; gap:6px; margin:8px 0;}
+.timeline .item{display:flex; gap:8px; align-items:flex-start; font-size:0.76rem;}
+.timeline .dot{min-width:10px; height:10px; border-radius:50%; background:var(--red); margin-top:4px;}
+
+footer{text-align:center; font-size:0.72rem; color:var(--muted); padding:20px 10px;}
+.searchbox{width:100%; padding:8px; border-radius:8px; border:1px solid #ccc; margin-bottom:12px; font-size:0.85rem;}
+.progress{background:var(--card); border-radius:8px; padding:8px; text-align:center; font-size:0.8rem; margin-bottom:10px; box-shadow:0 1px 4px rgba(0,0,0,0.1);}
+.progress-bar-bg{background:#ddd; border-radius:6px; height:8px; margin-top:4px; overflow:hidden;}
+.progress-bar{background:linear-gradient(90deg,var(--blue),var(--red)); height:100%; width:0%; transition:width .3s;}
+
+.decision{background:var(--card); border-radius:10px; padding:12px; margin:10px 0; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.decision .q{font-weight:700; color:var(--blue); font-size:0.85rem;}
+body.dark .decision .q{color:var(--gold);}
+.decision .yn{display:flex; gap:8px; margin-top:6px; flex-wrap:wrap;}
+.decision .yn div{flex:1; min-width:120px; padding:6px; border-radius:6px; font-size:0.75rem;}
+.decision .yes{background:#e8f5e9;} .decision .no{background:#ffebee;}
+body.dark .decision .yes{background:#132a13;} body.dark .decision .no{background:#330d0d;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>✈️ LEAVE TRAVEL CONCESSION (LTC) RULES</h1>
+  <div class="sub">अवकाश यात्रा रियायत (LTC) नियम — DoPT OM dt. 30.04.2024 — IP Exam Master Infographic</div>
+  <div class="gold-bar"></div>
+</header>
+
+<div class="controls">
+  <button onclick="document.body.classList.toggle('dark')">🌓 Dark/Light</button>
+  <button onclick="expandAll()">⬇️ Expand All</button>
+  <button onclick="collapseAll()">⬆️ Collapse All</button>
+  <button onclick="speakPage()">🔊 Read Aloud</button>
+</div>
+
+<div class="legend">
+  <span>🔴 Very Important</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual</span>
+  <span>🟢 Quick Revision</span>
+</div>
+
+<div class="container">
+
+<input type="text" class="searchbox" id="searchBox" placeholder="🔍 Search topic / keyword..." onkeyup="filterTopics()">
+
+<div class="progress">
+  Study Progress: <span id="progressText">0 / 17 topics studied</span>
+  <div class="progress-bar-bg"><div class="progress-bar" id="progressBar"></div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="revsheet">
+  <h2>⚡ One-Page Last-Day Revision Sheet | अंतिम दिन रिवीजन शीट</h2>
+  <table>
+    <tr><th>Rule</th><th>Key Point</th><th>Tag</th></tr>
+    <tr><td>Rule 1(3)/(4)</td><td>Applies to civil employees, deputationists, contract, re-employed; NOT to casual/daily-rated, Railways*, Armed Forces, local recruits abroad</td><td>🔴</td></tr>
+    <tr><td>Rule 2</td><td>Deputationists/contract/re-employed: LTC after 1 yr continuous service + certified likely to continue 2 yrs (hometown) / 4 yrs (India)</td><td>🔴</td></tr>
+    <tr><td>Rule 4(d)</td><td>Family = spouse + 2 surviving children (born after 20.10.1997); parents/step-parents if dependent; certain siblings/daughters</td><td>🔴</td></tr>
+    <tr><td>Rule 5</td><td>Hometown change allowed ONLY ONCE in entire service</td><td>🔴</td></tr>
+    <tr><td>Rule 7(1)</td><td>1 year continuous service needed before availing LTC (categories i & iii)</td><td>🔴</td></tr>
+    <tr><td>Rule 8(a)</td><td>Hometown LTC: once in block of 2 years</td><td>🔴</td></tr>
+    <tr><td>Rule 8(b)</td><td>Any Place in India LTC: once in block of 4 years</td><td>🔴</td></tr>
+    <tr><td>Current Block</td><td>2022-2025 (sub-blocks: 2022-23, 2024-25)</td><td>🟠</td></tr>
+    <tr><td>Rule 10</td><td>Carry forward permitted into 1st year of next block only</td><td>🔴</td></tr>
+    <tr><td>Rule 12</td><td>LTC entitlement = TA entitlement (except air travel for Level 6-8, which is TA-only, not LTC)</td><td>🔴</td></tr>
+    <tr><td>Rule 13</td><td>Reimbursement only for shortest direct route, point-to-point, through ticket; no incidentals/local journey</td><td>🟠</td></tr>
+    <tr><td>Rule 14</td><td>Claim forfeited if not submitted within 3 months of return journey (no advance drawn); can extend to 6 months with FA concurrence</td><td>🔴</td></tr>
+    <tr><td>Rule 15</td><td>Advance = 4/5th of estimated cost; refund in full if journey not commenced within 30 days; claim submission within 1 month if advance drawn</td><td>🔴</td></tr>
+    <tr><td>Leave Encashment</td><td>Up to 10 days per LTC occasion; not deducted from retirement encashment; max 60 days career-wise</td><td>🔴</td></tr>
+    <tr><td>Rule 16</td><td>Fraudulent claim → LTC withheld during disciplinary proceedings + next 2 sets withheld if penalty imposed</td><td>🔴</td></tr>
+    <tr><td>Rule 17</td><td>Doubts referred to DoPT for decision</td><td>🟢</td></tr>
+    <tr><td>Rule 18</td><td>Relaxation power with Ministry/Dept, but only with DoPT concurrence</td><td>🟢</td></tr>
+    <tr><td>Suspended employee</td><td>Cannot avail LTC himself; family members CAN</td><td>🔴</td></tr>
+    <tr><td>Fresh Recruits</td><td>3 hometown trips + 1 All-India trip in a block of 4 yrs — only for first 2 blocks after joining</td><td>🟠</td></tr>
+  </table>
+  <div class="mnemonic">🧠 <b>Mnemonic:</b> "2-4-1-3" → Hometown every 2 yrs, India every 4 yrs, Hometown change only 1 time, Claim submit within 3 months.<br>
+  <b>याद रखें:</b> "Ghar-2, Bharat-4, Naam-1baar, Bill-3maheene" (Home-2yr, India-4yr, Name(hometown)-once, Bill-3months)</div>
+</div>
+
+<div class="section-label">📘 CHAPTER 1: APPLICABILITY & ELIGIBILITY</div>
+
+<!-- TOPIC 1 -->
+<div class="topic-card" data-title="applicability rule 1 प्रयोज्यता">
+  <h3>1️⃣ Applicability of LTC Rules <span class="en">(Rule 1(3)&(4)) — प्रयोज्यता</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">LTC नियम सिविल सेवा कर्मचारियों, प्रतिनियुक्ति पर आए राज्य कर्मचारियों, संविदा नियुक्ति एवं पुनः नियोजित कर्मचारियों पर लागू होते हैं।</p>
+    <p class="en-txt">LTC Rules apply to civil service employees, State Govt employees on deputation to Centre, contract appointees, and re-employed pensioners.</p>
+
+    <table class="mini">
+      <tr><th>✅ Applicable</th><th>❌ NOT Applicable</th></tr>
+      <tr><td>Civil services/posts (incl. civilian Defence staff)</td><td>Not-whole-time Govt servants</td></tr>
+      <tr><td>State Govt employees on deputation to Centre</td><td>Casual/daily-rated employees</td></tr>
+      <tr><td>Contract appointees</td><td>Persons paid from contingencies</td></tr>
+      <tr><td>Re-employed after retirement</td><td>🔴 Railway servants* (special dispensation)</td></tr>
+      <tr><td>-</td><td>Armed Forces members</td></tr>
+      <tr><td>-</td><td>Local recruits in Indian Missions abroad</td></tr>
+      <tr><td>-</td><td>Persons eligible for any other travel concession</td></tr>
+    </table>
+
+    <h4>⚠️ Important Exceptions</h4>
+    <ul>
+      <li>*Railway employees CAN avail "All India LTC" once in a block of 4 years under CCS(LTC) Rules 1988, subject to conditions [OM dt. 27.03.2018].</li>
+      <li>Autonomous body officers on deputation to Centre → treated as temporary Govt servants for LTC.</li>
+      <li>Industrial/work-charged staff with regular leave entitlement → eligible; their first block was 1960-61.</li>
+    </ul>
+
+    <div class="mnemonic">🧠 "Civil-Deputation-Contract-ReEmployed = Haan; Casual-Railway-Army-Abroad Local = Na"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Are members of the Armed Forces eligible for LTC under these rules? Can Railway employees avail any LTC? / क्या सेना कर्मियों को LTC मिलता है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 2 -->
+<div class="topic-card" data-title="special provisions rule 2 deputation contract विशेष प्रावधान">
+  <h3>2️⃣ Special Provisions for Certain Categories <span class="en">(Rule 2) — विशेष प्रावधान</span></h3>
+  <span class="tag very">🔴 Very Important</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">प्रतिनियुक्ति, संविदा एवं पुनः नियोजित कर्मचारियों को 1 वर्ष सतत सेवा पूर्ण करने पर LTC मिलता है, बशर्ते वे कम से कम 2 वर्ष (hometown) या 4 वर्ष (India) सेवा में बने रहने की संभावना प्रमाणित हो।</p>
+    <p class="en-txt">Deputationist/contract/re-employed categories get LTC on completing 1 year continuous service, subject to certification of likely continuation for at least 2 years (hometown LTC) or 4 years (All India LTC).</p>
+
+    <table class="mini">
+      <tr><th>Category</th><th>Condition</th></tr>
+      <tr><td>Deputation/Contract/Re-employed</td><td>1 yr service + certified continuation: 2 yrs (hometown) / 4 yrs (India)</td></tr>
+      <tr><td>Contract extended</td><td>Total contract duration counted</td></tr>
+      <tr><td>Re-employed (no break)</td><td>Previous service treated continuous; concession as if never retired</td></tr>
+    </table>
+
+    <div class="qbox">❓ <b>Probable Q:</b> What certification is required for a deputationist to avail Any-Place-in-India LTC? / प्रतिनियुक्ति कर्मचारी को All-India LTC हेतु क्या प्रमाणन चाहिए?</div>
+  </div>
+</div>
+
+<!-- TOPIC 3 -->
+<div class="topic-card" data-title="definitions family rule 3 4 परिवार परिभाषा">
+  <h3>3️⃣ Scope & Definitions — "Family" <span class="en">(Rules 3 & 4) — परिवार की परिभाषा</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">LTC सरकारी कर्मचारी स्वयं तथा उसके परिवार को कवर करता है। "परिवार" में पति/पत्नी, 2 जीवित आश्रित अविवाहित बच्चे, आश्रित माता-पिता आदि शामिल हैं।</p>
+    <p class="en-txt">LTC covers the Government servant and family. "Family" includes spouse, two surviving dependent unmarried children, dependent parents, and certain other relatives.</p>
+
+    <table class="mini">
+      <tr><th>Included in Family</th><th>Condition</th></tr>
+      <tr><td>Spouse</td><td>Only 1 wife (2nd allowed only if Govt-permitted 2nd marriage)</td></tr>
+      <tr><td>2 surviving unmarried children/stepchildren</td><td>Wholly dependent (residing or not)</td></tr>
+      <tr><td>Divorced/abandoned/separated/widowed daughters</td><td>Residing with + wholly dependent</td></tr>
+      <tr><td>Parents/step-parents</td><td>Wholly dependent (residing or not)</td></tr>
+      <tr><td>Unmarried minor brothers, unmarried/divorced/widowed sisters</td><td>Residing with + dependent + parents not alive/dependent</td></tr>
+    </table>
+
+    <h4>⚠️ Important Exceptions (2-child restriction)</h4>
+    <ul>
+      <li>Applies from 20.10.1997 — does NOT apply to those who already had &gt;2 children before this date.</li>
+      <li>Children born WITHIN 1 year of 20.10.1997 — excluded from restriction.</li>
+      <li>2nd child birth results in multiple births (twins etc.) — all covered.</li>
+      <li>Children of divorced/widowed SISTERS are NOT included in "family".</li>
+    </ul>
+
+    <h4>🟡 Conceptual Notes</h4>
+    <ul>
+      <li>Husband & wife (both Govt servants) — dependency condition NOT applicable; treated as one unit.</li>
+      <li>Female Govt servant marrying while on hometown LTC → husband's onward journey from hometown to HQ also covered; new wife's journey too.</li>
+      <li>LTC to hometown/India allowed during leave preparatory to retirement, if return journey completes before leave ends.</li>
+    </ul>
+
+    <div class="mnemonic">🧠 "2 Bacche 1997 ke baad, Twins/Pehle-se-jyada Exempt" | "Pati-Patni = 1 Unit, Dependency Nahi Chahiye"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> From which date is the 2-surviving-children restriction applicable for LTC family definition? Is the dependency condition applicable between husband and wife? / परिवार की परिभाषा में 2-बच्चे की सीमा किस तारीख से लागू है?</div>
+  </div>
+</div>
+
+<div class="section-label">📗 CHAPTER 2: HOMETOWN, DECLARATION & ADMISSIBILITY</div>
+
+<!-- TOPIC 4 -->
+<div class="topic-card" data-title="change hometown rule 5 गृहनगर परिवर्तन">
+  <h3>4️⃣ Change of Hometown <span class="en">(Rule 5) — गृहनगर में परिवर्तन</span></h3>
+  <span class="tag very">🔴 Very Important</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">एक बार घोषित एवं नियंत्रण अधिकारी द्वारा स्वीकृत गृहनगर अंतिम माना जाता है। असाधारण परिस्थितियों में इसे केवल एक बार बदला जा सकता है।</p>
+    <p class="en-txt">Hometown once declared & accepted by Controlling Officer is FINAL. Change permitted only in exceptional circumstances, and NOT MORE THAN ONCE during entire service.</p>
+
+    <div class="flow">
+      <div class="box">Declare Hometown</div><span class="arrow2">→</span>
+      <div class="box">Controlling Officer Accepts</div><span class="arrow2">→</span>
+      <div class="box">Final (changeable only ONCE)</div>
+    </div>
+
+    <h4>📖 Test for Hometown</h4>
+    <p>Place where the Govt servant would normally reside but for his absence due to Government service.</p>
+
+    <div class="mnemonic">🧠 "Ek Zindagi mein Sirf Ek Baar Hometown Badal Sakte Hain"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> How many times during entire service can a Government servant change his declared hometown? / पूरी सेवा में गृहनगर कितनी बार बदला जा सकता है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 5 -->
+<div class="topic-card" data-title="declaration place visit rule 6 स्थान घोषणा">
+  <h3>5️⃣ Declaration of Place of Visit (Any Place in India) <span class="en">(Rule 6) — स्थान की घोषणा</span></h3>
+  <span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">Any Place in India LTC हेतु स्थान की घोषणा यात्रा प्रारंभ होने से पूर्व नियंत्रण अधिकारी को करनी होगी।</p>
+    <p class="en-txt">Intended place of visit must be declared in advance to Controlling Officer for "Any Place in India" LTC.</p>
+
+    <h4>⚠️ Exception</h4>
+    <p>Declared place CAN be changed before journey commencement in exceptional circumstances beyond the employee's control — relaxation by Administrative Ministry/HoD.</p>
+
+    <div class="qbox">❓ <b>Probable Q:</b> Can the declared place of visit be changed after journey commencement? / क्या यात्रा शुरू होने के बाद घोषित स्थान बदला जा सकता है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 6 -->
+<div class="topic-card" data-title="admissibility rule 7 प्रवेश्यता one year service">
+  <h3>6️⃣ Admissibility of LTC <span class="en">(Rule 7) — LTC की प्रवेश्यता</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">LTC श्रेणी (i) व (iii) [सिविल सेवा व संविदा] के कर्मचारियों को यात्रा दिनांक तक 1 वर्ष सतत सेवा पूर्ण होने पर देय है। यह किसी भी अवकाश (आकस्मिक अवकाश सहित) के दौरान देय है।</p>
+    <p class="en-txt">Admissible to categories (i) & (iii) only if 1 year continuous service completed on date of journey. Admissible during any leave, including casual and special casual leave.</p>
+
+    <h4>📖 Important Rules / Notes</h4>
+    <ul>
+      <li>Not admissible for journeys during weekend holidays without any leave.</li>
+      <li>LTC also admissible during Child Care Leave (CCL) and Study Leave.</li>
+      <li>Technical resignation within 8 years + rejoining Govt post → LTC entitlement carried forward (else treated as fresh recruit).</li>
+      <li>Hometown declared outside India → LTC admissible but with LIMITED Government assistance.</li>
+      <li>Suspended Govt servant → CANNOT avail LTC himself; family members ARE entitled.</li>
+      <li>Both spouses (Govt servants, residing together) → CAN claim LTC separately (subject to conditions).</li>
+    </ul>
+
+    <div class="flow">
+      <div class="box">Join Service</div><span class="arrow2">→</span>
+      <div class="box">1 Year Continuous Service</div><span class="arrow2">→</span>
+      <div class="box">LTC Admissible</div>
+    </div>
+
+    <div class="mnemonic">🧠 "1 Saal Seva = LTC Chalu; Suspend mein Khud Nahi, Family Haan"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Can a suspended Government servant avail LTC? Are his family members entitled? / क्या निलंबित कर्मचारी LTC ले सकता है?</div>
+  </div>
+</div>
+
+<div class="section-label">📙 CHAPTER 3: TYPES, BLOCKS & CARRY FORWARD</div>
+
+<!-- TOPIC 7 -->
+<div class="topic-card" data-title="types ltc rule 8 hometown any place india प्रकार">
+  <h3>7️⃣ Types of LTC <span class="en">(Rule 8) — LTC के प्रकार</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">दो प्रकार: (a) गृहनगर LTC — हर 2 वर्ष के ब्लॉक में एक बार; (b) भारत में कहीं भी LTC — हर 4 वर्ष के ब्लॉक में एक बार।</p>
+    <p class="en-txt">Two types: (a) Hometown LTC — once in a block of 2 calendar years; (b) Any Place in India LTC — once in a block of 4 calendar years.</p>
+
+    <table class="mini">
+      <tr><th>Type</th><th>Frequency</th><th>Distance</th></tr>
+      <tr><td>(a) Hometown LTC</td><td>Once per 2-year block</td><td>Irrespective of distance</td></tr>
+      <tr><td>(b) Any Place in India LTC</td><td>Once per 4-year block</td><td>Irrespective of distance</td></tr>
+      <tr><td>(c) Family stays at hometown option</td><td>Every year (self only)</td><td>In lieu of all other concessions</td></tr>
+    </table>
+
+    <h4>📖 Current Block</h4>
+    <p><b>Block 2022-2025</b> (4-year block); sub-blocks: 2022-2023 and 2024-2025 (2-year blocks each).</p>
+
+    <h4>⚠️ Important Rule</h4>
+    <p>Any-Place-in-India LTC availed = adjusted AGAINST the Hometown LTC available at time of journey commencement (i.e. it replaces one hometown LTC turn).</p>
+
+    <div class="mnemonic">🧠 "Hometown = 2 saal mein 1 baar; India = 4 saal mein 1 baar; India LTC lene se Hometown ka ek turn chala jaata hai"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> What is the current LTC block? Is Any-Place-in-India LTC adjusted against Hometown LTC? / वर्तमान LTC ब्लॉक क्या है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 8 -->
+<div class="topic-card" data-title="counting blocks rule 9 carry over rule 10 ब्लॉक गणना">
+  <h3>8️⃣ Counting Against Blocks & Carry Over <span class="en">(Rules 9 & 10) — ब्लॉक गणना एवं आगे ले जाना</span></h3>
+  <span class="tag very">🔴 Very Important</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">यात्रा उस ब्लॉक में गिनी जाती है जिसमें बाहर जाने वाली यात्रा (outward journey) शुरू हुई, भले ही वापसी यात्रा ब्लॉक समाप्त होने के बाद हो। अप्रयुक्त LTC अगले ब्लॉक के पहले वर्ष में ले जाई जा सकती है।</p>
+    <p class="en-txt">LTC is counted against the block in which the OUTWARD journey commenced, even if return journey is after block expiry. Unavailed LTC can be carried forward into the FIRST YEAR of the next block only.</p>
+
+    <div class="flow">
+      <div class="box">Outward Journey Starts in Block X</div><span class="arrow2">→</span>
+      <div class="box">Counted in Block X</div><span class="arrow2">(even if return after expiry)</span>
+    </div>
+
+    <h4>⚠️ Important Rule — Carry Forward Chain</h4>
+    <p>To carry forward "Any Place in India" LTC (4-yr block), the Govt servant must have ALSO carried forward the Hometown LTC of the 2nd 2-year sub-block within that 4-year block.</p>
+
+    <div class="mnemonic">🧠 "Carry Forward sirf Agle Block ke Pehle Saal tak"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Into which year can an unavailed LTC be carried forward? / अप्रयुक्त LTC किस वर्ष तक आगे ले जाई जा सकती है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 9 -->
+<div class="topic-card" data-title="place visited rule 11 entitlement rule 12 स्थान यात्रा">
+  <h3>9️⃣ Place to be Visited & Travel Entitlement <span class="en">(Rules 11 & 12) — यात्रा स्थान एवं पात्रता</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">कर्मचारी एवं परिवार के प्रत्येक सदस्य Any Place in India LTC में अलग-अलग स्थान चुन सकते हैं; एक ही स्थान जाना अनिवार्य नहीं।</p>
+    <p class="en-txt">Government servant & each family member may visit DIFFERENT places of their choice during the 4-year block; not necessary to visit the same place.</p>
+
+    <h4>📖 Travel Entitlement (Rule 12)</h4>
+    <p>Same as TA entitlement (MoF OM dt. 13.07.2017) — EXCEPT air travel entitlement for Level 6-8 of Pay Matrix, which is allowed for TA (tour) ONLY, NOT for LTC.</p>
+
+    <div class="mnemonic">🧠 "Level 6-8 ka Air Travel sirf TA mein, LTC mein Nahi"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Is air travel entitlement for Level 6-8 employees applicable to LTC? / क्या Level 6-8 का हवाई यात्रा लाभ LTC में मिलता है?</div>
+  </div>
+</div>
+
+<div class="section-label">📕 CHAPTER 4: REIMBURSEMENT, ADVANCE & PENALTIES</div>
+
+<!-- TOPIC 10 -->
+<div class="topic-card" data-title="reimbursement rule 13 shortest route प्रतिपूर्ति">
+  <h3>🔟 Reimbursement of LTC Claim <span class="en">(Rule 13) — LTC दावे की प्रतिपूर्ति</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">प्रतिपूर्ति केवल शॉर्टेस्ट डायरेक्ट रूट पर point-to-point through ticket के आधार पर होगी; स्थानीय यात्रा एवं आकस्मिक व्यय शामिल नहीं।</p>
+    <p class="en-txt">Reimbursement only for shortest direct route, point-to-point, through ticket. Incidental expenses and local journey costs NOT covered.</p>
+
+    <h4>🗓️ Key Time Limits (Claim Processing)</h4>
+    <table class="mini">
+      <tr><th>Stage</th><th>Time Limit</th></tr>
+      <tr><td>Leave Sanction</td><td>5 + 3 working days*</td></tr>
+      <tr><td>LTC Advance/Leave Encashment Sanction</td><td>5 + 3 working days*</td></tr>
+      <tr><td>Verification of LTC claim (Admin)</td><td>10 + 3 working days*</td></tr>
+      <tr><td>DDO processing</td><td>5 + 3 working days*</td></tr>
+      <tr><td>PAO processing</td><td>5 + 3 working days*</td></tr>
+    </table>
+    <p style="font-size:0.72rem">*Additional 3 days transit time if posting away from HQ.</p>
+
+    <h4>⚠️ Important Rules</h4>
+    <ul>
+      <li>PNR number mandatory for LTC claims (post-computerized railway booking).</li>
+      <li>Service Tax/Education Cess/similar levies on travel — reimbursable.</li>
+      <li>Travel agent service charges (for booking) — NOT reimbursable.</li>
+      <li>Air tickets purchasable ONLY via 3 Authorized Travel Agents: BLCL, Ashok Travels & Tours, IRCTC.</li>
+      <li>Children aged &lt;5 yrs — NO air fare reimbursement if parent not air-entitled; children 5-12 yrs — actual rail fare reimbursed.</li>
+      <li>Private/personal transport beyond public transport availability — reimbursed up to max 200 km (100 km each side) on self-certification.</li>
+    </ul>
+
+    <div class="mnemonic">🧠 "Shortest Route + Through Ticket + PNR Mandatory"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> What is the time limit for administration to verify an LTC claim after bill submission? / LTC दावे के सत्यापन हेतु प्रशासन को कितना समय मिलता है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 11 -->
+<div class="topic-card" data-title="forfeiture claim rule 14 समय सीमा 3 माह">
+  <h3>1️⃣1️⃣ Forfeiture of Claim <span class="en">(Rule 14) — दावे का समापहरण</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">यदि अग्रिम नहीं लिया गया हो, तो वापसी यात्रा पूर्ण होने के 3 महीने के भीतर दावा प्रस्तुत करना अनिवार्य है, अन्यथा दावा समाप्त (forfeit) हो जाएगा — कोई छूट नहीं।</p>
+    <p class="en-txt">If no advance drawn, claim must be submitted within 3 months of completing return journey. Failure → claim is FORFEITED — no relaxation permissible.</p>
+
+    <div class="timeline">
+      <div class="item"><div class="dot"></div><div><b>Within 3 months</b> — normal deadline (no advance drawn)</div></div>
+      <div class="item"><div class="dot"></div><div><b>Up to 6 months</b> — Ministry/Dept with FA concurrence may admit claim (no advance drawn), without reference to DoPT</div></div>
+      <div class="item"><div class="dot"></div><div><b>Within 1 month</b> — if advance WAS drawn, claim must be submitted after return journey completion</div></div>
+    </div>
+
+    <h4>⚠️ Important Rule</h4>
+    <p>🔴 No relaxation permissible beyond stated limits for the 3-month forfeiture rule itself (only the 3→6 month extension is allowed with FA concurrence).</p>
+
+    <div class="mnemonic">🧠 "3 Mahine — No Advance; 1 Mahina — Advance Liya Tha"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Within what time must an LTC claim be submitted if no advance was drawn? What if an advance was drawn? / अग्रिम न लेने पर दावा कितने समय में देना होगा?</div>
+  </div>
+</div>
+
+<!-- TOPIC 12 -->
+<div class="topic-card" data-title="advance rule 15 four fifth अग्रिम">
+  <h3>1️⃣2️⃣ Grant of Advance & Adjustment <span class="en">(Rule 15) — अग्रिम की स्वीकृति</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">LTC अग्रिम अनुमानित यात्रा व्यय (आने-जाने) का अधिकतम 4/5वां भाग तक स्वीकृत किया जा सकता है।</p>
+    <p class="en-txt">Advance limited to 4/5th (80%) of the estimated round-trip cost.</p>
+
+    <h4>📖 Key Conditions</h4>
+    <ul>
+      <li>Family travelling separately → advance may be drawn separately.</li>
+      <li>Advance for BOTH forward & return journey together — only if leave/absence period ≤ 90 days (3 months). If exceeded, advance for OUTWARD journey only.</li>
+      <li>If 90-day limit exceeded AFTER advance drawn for both journeys → half the advance must be refunded immediately.</li>
+      <li>🔴 Outward journey must commence within 30 days of advance grant, else FULL refund required.</li>
+      <li>If reservation made 60 days in advance → tickets must be produced within 10 days of drawal of advance.</li>
+    </ul>
+
+    <table class="mini">
+      <tr><th>Situation</th><th>Consequence</th></tr>
+      <tr><td>Advance drawn, journey not started in 30 days</td><td>Full refund</td></tr>
+      <tr><td>Absence exceeds 90 days after both-journey advance</td><td>Half refund immediately</td></tr>
+      <tr><td>Claim not submitted within 1 month (advance drawn)</td><td>Refund entire advance lump sum (no instalments)</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 "4/5th Advance, 30 din mein Yatra Shuru, 90 din Limit"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> What percentage of estimated cost can be drawn as LTC advance? What happens if the outward journey isn't commenced within 30 days? / LTC अग्रिम कितने % तक स्वीकृत हो सकता है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 13 -->
+<div class="topic-card" data-title="leave encashment 10 days अवकाश नकदीकरण">
+  <h3>1️⃣3️⃣ Leave Encashment with LTC <span class="en">— अवकाश नकदीकरण</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">CCS (Leave) Rules 1972 के अंतर्गत आने वाले कर्मचारी दोनों प्रकार के LTC (Hometown/India) के समय 10 दिनों तक अर्जित अवकाश नकदीकरण कर सकते हैं।</p>
+    <p class="en-txt">Employees governed by CCS(Leave) Rules 1972 may encash up to 10 days of Earned Leave at the time of availing EITHER type of LTC.</p>
+
+    <table class="mini">
+      <tr><th>Rule</th><th>Detail</th></tr>
+      <tr><td>Max per occasion</td><td>10 days</td></tr>
+      <tr><td>Max career-wise</td><td>60 days (each, if both spouses Govt servants)</td></tr>
+      <tr><td>Effect on retirement encashment</td><td>NOT deducted from max encashable EL at retirement</td></tr>
+      <tr><td>Same LTC availed separately by employee & family</td><td>Encashment restricted to ONE occasion only</td></tr>
+      <tr><td>Re-employed pensioner</td><td>Up to 60 days total under Rule 38-A of CCS(Leave) Rules</td></tr>
+    </table>
+
+    <div class="mnemonic">🧠 "10 din har baar, 60 din Career mein Max, Retirement Encashment se Alag"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Is leave encashed at the time of LTC deducted from the maximum encashable leave at retirement? / क्या LTC पर नकदीकृत अवकाश सेवानिवृत्ति नकदीकरण से घटाया जाता है?</div>
+  </div>
+</div>
+
+<div class="section-label">📔 CHAPTER 5: FRAUD, INTERPRETATION & RELAXATION</div>
+
+<!-- TOPIC 14 -->
+<div class="topic-card" data-title="fraudulent claim rule 16 penalty धोखाधड़ी दावा दंड">
+  <h3>1️⃣4️⃣ Fraudulent Claim of LTC <span class="en">(Rule 16) — धोखाधड़ी दावा</span></h3>
+  <span class="tag very">🔴 Very Important</span><span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Definition | परिभाषा</h4>
+    <p class="hi">धोखाधड़ी वाले LTC दावे पर अनुशासनिक कार्यवाही होने पर, कार्यवाही पूर्ण होने तक LTC नहीं मिलेगा। दंड लगने पर 2 अतिरिक्त सेट भी रोके जाएंगे।</p>
+    <p class="en-txt">If disciplinary proceedings initiated for fraudulent LTC claim, LTC is withheld till finalization. If penalty (under CCS-CCA Rule 11) is imposed, next TWO sets of LTC also withheld — in addition to sets already withheld.</p>
+
+    <div class="flow">
+      <div class="box">Fraudulent Claim Alleged</div><span class="arrow2">→</span>
+      <div class="box">Disciplinary Proceedings Start</div><span class="arrow2">→</span>
+      <div class="box">LTC Withheld till Finalization</div><span class="arrow2">→</span>
+      <div class="box">Penalty Imposed?</div>
+    </div>
+    <div class="decision">
+      <div class="yn">
+        <div class="yes">✅ Fully Exonerated → withheld LTC allowed as ADDITIONAL sets in future blocks (before superannuation)</div>
+        <div class="no">❌ Penalty Imposed → next 2 sets ALSO withheld (Controlling Authority may disallow MORE for recorded reasons)</div>
+      </div>
+    </div>
+
+    <h4>📖 Explanation</h4>
+    <p>Hometown LTC + Any Place in India LTC = TWO SETS of LTC for this rule's purpose.</p>
+
+    <h4>📖 Verification</h4>
+    <p>PNR number mandatory for claim verification (post computerized railway booking system) [OM dt. 23.04.2001].</p>
+
+    <div class="mnemonic">🧠 "Galat Dava = Jaanch tak Rok, Saza mile to 2 Set Aur Rok"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> How many additional sets of LTC are withheld if a penalty is imposed for a fraudulent claim? What happens if fully exonerated? / धोखाधड़ी दावे पर दंड लगने पर कितने अतिरिक्त सेट रोके जाते हैं?</div>
+  </div>
+</div>
+
+<!-- TOPIC 15 -->
+<div class="topic-card" data-title="interpretation rule 17 power relax rule 18 saving rule 19 व्याख्या शक्ति">
+  <h3>1️⃣5️⃣ Interpretation, Power to Relax & Saving <span class="en">(Rules 17, 18, 19) — व्याख्या एवं शिथिलीकरण शक्ति</span></h3>
+  <span class="tag quick">🟢 Quick Revision</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📖 Rule 17 — Interpretation</h4>
+    <p>Any doubt regarding provisions → referred to Department of Personnel & Training (DoPT) for decision.</p>
+
+    <h4>📖 Rule 18 — Power to Relax</h4>
+    <p>Ministry/Department may relax rule requirements in cases of undue hardship, by recorded written order — BUT ONLY with DoPT's concurrence.</p>
+
+    <h4>📖 Rule 19 — Saving</h4>
+    <p>Existing instructions not contrary to these rules, and matters not specifically covered, continue in force until amended/modified/cancelled.</p>
+
+    <div class="mnemonic">🧠 "Doubt → DoPT; Relax → DoPT ki Sehmati Zaroori"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> Whose concurrence is mandatory before a Ministry relaxes any LTC rule? / LTC नियम में छूट देने से पहले किसकी सहमति आवश्यक है?</div>
+  </div>
+</div>
+
+<!-- TOPIC 16 -->
+<div class="topic-card" data-title="fresh recruits special dispensation ne region nascar northeast fresh recruit">
+  <h3>1️⃣6️⃣ Fresh Recruits & Special Dispensation (NE/J&K/Ladakh/A&N) <span class="en">नए भर्ती एवं विशेष क्षेत्र सुविधा</span></h3>
+  <span class="tag freq">🟠 Frequently Asked</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📌 Fresh Recruits — Special LTC Facility</h4>
+    <p class="hi">नए भर्ती कर्मचारी 4 वर्ष के ब्लॉक में परिवार सहित 3 बार गृहनगर तथा चौथे अवसर पर भारत में कहीं भी यात्रा कर सकते हैं — यह सुविधा केवल पहले 2 ब्लॉक तक।</p>
+    <p class="en-txt">Fresh recruits may travel to hometown with family on 3 occasions in a 4-year block, and Any Place in India on the 4th occasion — available only for first 2 blocks of 4 years after joining.</p>
+
+    <h4>📖 Special Dispensation — NE/Ladakh/J&K/A&N/Lakshadweep</h4>
+    <ul>
+      <li>Employees posted in these regions who leave family behind (without availing transfer TA) get special LTC options.</li>
+      <li>"Emergency Passage Concession" — 2 additional occasions during ENTIRE career.</li>
+      <li>Air travel scheme to NER/J&K/Ladakh/A&N extended periodically (e.g. 26.09.2022 to 25.09.2024).</li>
+    </ul>
+
+    <div class="mnemonic">🧠 "Naye Bharti: 3 Hometown + 1 India (4 saal), sirf pehle 2 Block tak"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> How many hometown trips and India trips can a fresh recruit avail in a 4-year block? For how many blocks is this facility available? / नए भर्ती कर्मचारी को 4 वर्ष के ब्लॉक में कितनी हॉमटाउन यात्राएं मिलती हैं?</div>
+  </div>
+</div>
+
+<!-- TOPIC 17 -->
+<div class="topic-card" data-title="deputation psu training headquarters misc rules प्रतिनियुक्ति">
+  <h3>1️⃣7️⃣ Deputation, Training & Miscellaneous Provisions <span class="en">प्रतिनियुक्ति, प्रशिक्षण एवं विविध प्रावधान</span></h3>
+  <span class="tag concept">🟡 Conceptual</span>
+  <div class="black-btn" onclick="toggleDetail(this)">विवरण देखें / View Details ▼</div>
+  <div class="detail">
+    <h4>📖 Key Miscellaneous Rules</h4>
+    <ul>
+      <li>Officer deputed for training → place of training becomes new HQ for LTC purposes too.</li>
+      <li>Deputationist to PSU → option to choose PSU's LTC OR Central Govt Rules, whichever more favourable; fresh option allowed if PSU rules revised later.</li>
+      <li>Deputation to PSU top-level post (where LTC unavailable) → still eligible for Central Govt-pattern LTC if incorporated in foreign service order.</li>
+      <li>Handicapped single Govt servant → LTC facility extended to an escort accompanying them.</li>
+      <li>Tours by ITDC/STDC/IRCTC → qualify for LTC purposes (subject to conditions).</li>
+      <li>Flexi-fare (dynamic fare) in Rajdhani/Shatabdi/Duronto — admissible for LTC (not for non-entitled employees flying & claiming train-class reimbursement).</li>
+    </ul>
+
+    <div class="mnemonic">🧠 "Training Place = Naya HQ for LTC" | "PSU Deputation: Jo Behtar ho wo Chuno"</div>
+    <div class="qbox">❓ <b>Probable Q:</b> When an officer is deputed for training, what becomes his headquarters for LTC purposes? / प्रशिक्षण पर प्रतिनियुक्त अधिकारी का LTC हेतु मुख्यालय क्या माना जाता है?</div>
+  </div>
+</div>
+
+</div><!-- container -->
+
+<footer>
+  📘 LDCE IP Exam Portal | LTC Rules Infographic (based on DoPT OM No.DOPT-1714455840135 dated 30.04.2024)<br>
+  For internal exam-preparation use — always verify with latest official OM/Gazette notification for authoritative text.
+</footer>
+
+<script>
+function toggleDetail(btn){
+  const d = btn.nextElementSibling;
+  d.classList.toggle('open');
+  btn.textContent = d.classList.contains('open') ? '▲ छुपाएं / Hide' : 'विवरण देखें / View Details ▼';
+  updateProgress();
+}
+function expandAll(){
+  document.querySelectorAll('.detail').forEach(d=>d.classList.add('open'));
+  document.querySelectorAll('.black-btn').forEach(b=>b.textContent='▲ छुपाएं / Hide');
+  updateProgress();
+}
+function collapseAll(){
+  document.querySelectorAll('.detail').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('.black-btn').forEach(b=>b.textContent='विवरण देखें / View Details ▼');
+  updateProgress();
+}
+function updateProgress(){
+  const total = document.querySelectorAll('.topic-card').length;
+  const opened = document.querySelectorAll('.detail.open').length;
+  document.getElementById('progressText').textContent = opened + ' / ' + total + ' topics studied';
+  document.getElementById('progressBar').style.width = (opened/total*100) + '%';
+}
+function filterTopics(){
+  const q = document.getElementById('searchBox').value.toLowerCase();
+  document.querySelectorAll('.topic-card').forEach(card=>{
+    const t = card.getAttribute('data-title') + card.innerText.toLowerCase();
+    card.style.display = t.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+function speakPage(){
+  if(!('speechSynthesis' in window)){ alert('TTS not supported on this device'); return; }
+  const text = document.querySelector('.revsheet').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'hi-IN';
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

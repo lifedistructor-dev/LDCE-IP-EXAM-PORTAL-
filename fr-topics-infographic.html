@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FR Study Cards | सामान्य सेवा शर्तें, वेतन प्रत्यायोजन, बर्खास्तगी व निलंबन, जॉइनिंग टाइम</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#FFB81C;
+  --bg:#f7f6f2; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a;
+  --line:#e4e1d8;
+  --vimp:#c8102e; --freq:#e07b00; --concept:#c9a300; --quick:#1f8a4c;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --bg:#12141a; --card:#1b1e26; --ink:#eef0f4; --sub:#a7adb8; --line:#2a2e38;
+}
+body{
+  margin:0; font-family:"Noto Sans",Arial,sans-serif; background:var(--bg); color:var(--ink);
+  transition:background .25s, color .25s;
+  padding-bottom:60px;
+}
+header.top{
+  background:linear-gradient(135deg,var(--blue),#001a4d 70%);
+  color:#fff; padding:18px 16px 60px; position:relative; overflow:hidden;
+}
+header.top::after{
+  content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px;
+  background:radial-gradient(circle,var(--gold) 0%, transparent 70%); opacity:.35;
+}
+header.top h1{margin:0 0 4px; font-size:1.35rem; line-height:1.3;}
+header.top p{margin:0; font-size:.85rem; opacity:.9;}
+.badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.badge-row span{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4);
+  padding:3px 9px; border-radius:20px; font-size:.68rem;
+}
+.controls{
+  position:sticky; top:0; z-index:50; background:var(--card); border-bottom:2px solid var(--gold);
+  display:flex; gap:6px; padding:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  margin-top:-40px; border-radius:14px 14px 0 0; box-shadow:0 4px 14px rgba(0,0,0,.15);
+}
+.controls button{
+  flex:0 0 auto; border:1px solid var(--line); background:var(--bg); color:var(--ink);
+  padding:8px 12px; border-radius:20px; font-size:.72rem; font-weight:600; cursor:pointer;
+}
+.controls button.active{background:var(--red); color:#fff; border-color:var(--red);}
+.darkbtn{
+  margin-left:auto; background:var(--ink); color:var(--bg); border:none; padding:8px 12px;
+  border-radius:20px; font-size:.72rem; cursor:pointer;
+}
+main{max-width:760px; margin:0 auto; padding:14px;}
+.topic{display:none;}
+.topic.active{display:block;}
+.hero{
+  background:var(--card); border:1px solid var(--line); border-left:6px solid var(--red);
+  border-radius:12px; padding:14px; margin:14px 0; box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+.hero h2{margin:0 0 6px; font-size:1.15rem; color:var(--red);}
+.hero .hi{font-size:.95rem; color:var(--sub); margin:0 0 8px;}
+.chip{
+  display:inline-block; font-size:.65rem; font-weight:700; padding:2px 8px; border-radius:10px;
+  color:#fff; margin-right:4px;
+}
+.chip.vimp{background:var(--vimp);} .chip.freq{background:var(--freq);}
+.chip.concept{background:var(--concept); color:#1c1c1c;} .chip.quick{background:var(--quick);}
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:12px; margin:10px 0;
+  overflow:hidden; box-shadow:0 1px 5px rgba(0,0,0,.05);
+}
+.card summary{
+  list-style:none; cursor:pointer; padding:12px 14px; font-weight:700; display:flex;
+  align-items:center; gap:8px; background:linear-gradient(90deg,rgba(200,16,46,.06),transparent);
+}
+.card summary::-webkit-details-marker{display:none;}
+.card summary::after{content:"▾"; margin-left:auto; transition:transform .2s;}
+.card[open] summary::after{transform:rotate(180deg);}
+.card .body{padding:0 14px 14px;}
+.section-label{
+  font-size:.7rem; text-transform:uppercase; letter-spacing:.5px; color:var(--sub);
+  font-weight:700; margin:10px 0 4px; border-bottom:1px dashed var(--line); padding-bottom:2px;
+}
+ul.pts{margin:4px 0; padding-left:18px;}
+ul.pts li{margin:4px 0; font-size:.88rem;}
+.hindi{color:var(--sub); font-size:.82rem;}
+table{width:100%; border-collapse:collapse; font-size:.8rem; margin:6px 0;}
+th,td{border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.72rem;}
+tr:nth-child(even){background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03);}
+
+.qbox{
+  background:rgba(255,184,28,.12); border:1px dashed var(--gold); border-radius:8px;
+  padding:8px 10px; font-size:.78rem; margin-top:6px;
+}
+.qbox b{color:var(--red);}
+
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flow .step{
+  background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.78rem;
+  text-align:center; width:90%; max-width:320px;
+}
+.flow .arrow{font-size:1.1rem; color:var(--red); margin:2px 0;}
+.flow .branch{display:flex; gap:10px; width:100%; justify-content:center; flex-wrap:wrap;}
+.flow .branch .step{background:var(--red); width:44%; min-width:130px;}
+
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .tl-item{margin-bottom:12px; position:relative;}
+.timeline .tl-item::before{
+  content:""; position:absolute; left:-19px; top:3px; width:10px; height:10px; border-radius:50%;
+  background:var(--red);
+}
+.timeline .tl-time{font-weight:700; color:var(--red); font-size:.8rem;}
+.timeline .tl-text{font-size:.82rem;}
+
+.mnemonic{
+  background:linear-gradient(135deg,rgba(0,48,135,.08),rgba(255,184,28,.1));
+  border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:8px 0; font-size:.85rem;
+}
+.mnemonic b{color:var(--blue);}
+
+.revision-sheet{
+  background:var(--card); border:2px solid var(--red); border-radius:14px; padding:14px; margin:20px 0;
+}
+.revision-sheet h2{color:var(--red); margin-top:0;}
+.revision-sheet h3{color:var(--blue); font-size:.95rem; margin:14px 0 6px;}
+.tag-legend{font-size:.72rem; display:flex; flex-wrap:wrap; gap:10px; margin:10px 0;}
+.tag-legend span{display:flex; align-items:center; gap:4px;}
+.dot{width:10px; height:10px; border-radius:50%; display:inline-block;}
+
+footer{text-align:center; font-size:.7rem; color:var(--sub); padding:20px;}
+
+@media(min-width:640px){
+  .flow .step{width:60%;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>📘 FR Study Cards — General Conditions, FR 6 Delegation, Dismissal/Suspension, Joining Time</h1>
+  <p>सामान्य सेवा शर्तें (FR 10-18) • मूल नियम 6 अंतर्गत वेतन प्रत्यायोजन • बर्खास्तगी, निष्कासन व निलंबन (FR 52-55) • CCS (जॉइनिंग टाइम) नियम 1979</p>
+  <div class="badge-row">
+    <span>🔴 अति महत्वपूर्ण / Very Imp</span>
+    <span>🟠 बार-बार पूछा गया / Frequent</span>
+    <span>🟡 संकल्पनात्मक / Concept</span>
+    <span>🟢 त्वरित पुनरावृत्ति / Quick</span>
+  </div>
+</header>
+
+<div class="controls">
+  <button data-t="t1" class="active">1️⃣ General Conditions</button>
+  <button data-t="t2">2️⃣ FR 6 Delegation</button>
+  <button data-t="t3">3️⃣ Dismissal/Suspension</button>
+  <button data-t="t4">4️⃣ Joining Time</button>
+  <button data-t="t5">📄 Revision Sheet</button>
+  <button class="darkbtn" id="darkToggle">🌙</button>
+</div>
+
+<main>
+
+<!-- ===================== TOPIC 1 ===================== -->
+<section class="topic active" id="t1">
+  <div class="hero">
+    <h2>General Conditions of Service <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">सामान्य सेवा शर्तें — Fundamental Rules, Chapter III, FR 10 to FR 18</p>
+    <p><b>Chapter → Sub-Chapter → Micro → Nano:</b><br>
+    FR Part I → Chapter III (General Conditions) → Medical Cert./Lien/Transfer/Leave → individual sub-rules (a)(b)(c)</p>
+  </div>
+
+  <div class="flow">
+    <div class="step">FR 10 — Medical Certificate before appointment</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 11 — Whole time at disposal of Govt.</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 12-A to 14-B — Lien rules</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 15-16 — Transfer & Provident Fund</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 17-17A — Pay drawing & unauthorized absence</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 18 — Max continuous leave 5 years</div>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition / परिभाषा <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <div class="section-label">English</div>
+      <p>General Conditions of Service (Chapter III) lay down the basic rules governing a government servant's entry into service (medical fitness), the government's claim on his whole time, the concept of <b>lien</b> on a post, conditions for transfer, mandatory fund subscription, when pay begins/ends, treatment of unauthorized absence/strikes, and the ceiling on continuous leave.</p>
+      <div class="section-label">हिंदी</div>
+      <p class="hindi">सामान्य सेवा शर्तें (अध्याय III) किसी सरकारी कर्मचारी की सेवा में प्रवेश (मेडिकल फिटनेस), सरकार का उसके पूरे समय पर अधिकार, किसी पद पर "लियन" की अवधारणा, स्थानांतरण की शर्तें, फंड सदस्यता, वेतन प्रारंभ/समाप्ति, अनधिकृत अनुपस्थिति/हड़ताल तथा निरंतर अवकाश की अधिकतम सीमा को नियंत्रित करती हैं।</p>
+      <div class="qbox"><b>Probable Q:</b> Define "Lien" as per FR 9(13). / लियन की परिभाषा दीजिए।</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Sections / Rules <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule</th><th>Provision (English)</th><th>प्रावधान (हिंदी)</th></tr>
+        <tr><td>FR 10</td><td>No appointment without medical certificate of health; Central Govt may exempt classes.</td><td>बिना मेडिकल प्रमाणपत्र के नियुक्ति नहीं; केंद्र सरकार छूट दे सकती है।</td></tr>
+        <tr><td>FR 11</td><td>Whole time of Govt. servant at disposal of Govt.; no extra remuneration claim.</td><td>कर्मचारी का पूरा समय सरकार के अधीन; अतिरिक्त पारिश्रमिक का दावा नहीं।</td></tr>
+        <tr><td>FR 12-A</td><td>Acquiring new lien ends any earlier lien.</td><td>नया लियन प्राप्त होते ही पुराना लियन समाप्त।</td></tr>
+        <tr><td>FR 13</td><td>Lien retained: on duty, foreign service/temp post/officiating, joining time, leave, suspension.</td><td>लियन बना रहता है: ड्यूटी, विदेश सेवा, जॉइनिंग टाइम, अवकाश, निलंबन में।</td></tr>
+        <tr><td>FR 14-A</td><td>Lien can't be terminated leaving servant without lien on a regular post (exception: new lien acquired outside cadre).</td><td>लियन तब तक समाप्त नहीं जब तक किसी नियमित पद पर लियन न हो।</td></tr>
+        <tr><td>FR 14-B</td><td>President may transfer lien within same cadre.</td><td>राष्ट्रपति उसी कैडर में लियन स्थानांतरित कर सकते हैं।</td></tr>
+        <tr><td>FR 15</td><td>Transfer not to lower-pay post except (1) inefficiency/misbehaviour or (2) written request.</td><td>कम वेतन वाले पद पर स्थानांतरण नहीं, सिवाय अक्षमता/कदाचार या लिखित अनुरोध के।</td></tr>
+        <tr><td>FR 16</td><td>Compulsory subscription to Provident/Family Pension Fund.</td><td>भविष्य निधि/परिवार पेंशन निधि में अनिवार्य अंशदान।</td></tr>
+        <tr><td>FR 17</td><td>Pay begins from date duties assumed; ceases when duties cease; no pay for unauthorized absence.</td><td>वेतन ड्यूटी ग्रहण करने की तारीख से शुरू; अनधिकृत अनुपस्थिति में वेतन नहीं।</td></tr>
+        <tr><td>FR 17-A</td><td>Unauthorized absence/illegal strike = break in service (unless competent authority decides otherwise) for LTC, quasi-permanency, exam eligibility.</td><td>अनधिकृत अनुपस्थिति/अवैध हड़ताल = सेवा में विच्छेद माना जाएगा।</td></tr>
+        <tr><td>FR 18</td><td>No leave of any kind for continuous period exceeding 5 years (except exceptional circumstances).</td><td>निरंतर 5 वर्ष से अधिक किसी भी प्रकार का अवकाश नहीं।</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> Under what conditions is a Government servant's lien on a post retained? List all five (FR 13 a–e).</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>FR 10: Central Govt can dispense with medical certificate in individual cases or exempt a class by general order.</li>
+        <li>FR 15: Transfer to lower-pay post allowed if (a) inefficiency/misbehaviour, or (b) on written request, or (c) case covered by FR 49.</li>
+        <li>FR 17-A: Absence can be treated as NOT a break if competent authority (Appointing Authority) decides so.</li>
+        <li>FR 18: 5-year leave ceiling can be relaxed by President in exceptional circumstances.</li>
+        <li>FR 14-A: Lien terminates automatically on acquiring lien on another post outside the cadre (Central or State Govt.).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📅 Important Dates <span class="chip quick">🟢</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>FR came into force: <b>1 January 1922</b></li>
+        <li>Max continuous leave ceiling: <b>5 years</b> (FR 18)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>President</b> — grants exceptions to FR 18 (leave >5 yrs), interprets rules (FR 8)</li>
+        <li><b>Central Government</b> — makes rules on medical certificates (FR 10), fund rules (FR 16), determines competent authority for FR 17-A</li>
+        <li><b>Appointing/Competent Authority</b> — decides break-in-service question under FR 17-A</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⏱️ Important Time Limits <span class="chip quick">🟢</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Continuous leave: not exceeding <b>5 years</b> (default rule)</li>
+        <li>No fixed timeline for lien retention — governed by event (duty/leave/suspension continuing)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>❌ Important Penalties <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Unauthorized absence beyond authorized period → treated as <b>break in service</b>, affects LTC, quasi-permanency, and exam eligibility (FR 17-A).</li>
+        <li>Wilful absence after joining time expiry → may be treated as <b>misbehaviour</b> under FR 15 (cross-link to Topic 4).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic (लियन कब बना रहता है):</b> "<b>DFJLS</b>" — <u>D</u>uty, <u>F</u>oreign service/officiating, <u>J</u>oining time on transfer, <u>L</u>eave, <u>S</u>uspension. (FR 13 a-e)
+  </div>
+</section>
+
+<!-- ===================== TOPIC 2 ===================== -->
+<section class="topic" id="t2">
+  <div class="hero">
+    <h2>Delegation of Powers under Fundamental Rule 6 <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">मूल नियम 6 के अंतर्गत शक्तियों का प्रत्यायोजन (Pay/Chapter IV area, Rule 6-8)</p>
+  </div>
+
+  <div class="flow">
+    <div class="step">FR 6 — Central Govt delegates powers to officers</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">EXCEPTION (a)<br>All rule-making powers</div>
+      <div class="step">EXCEPTION (b)<br>Powers under Rules 6, 9(6)(b), 44, 45-A/B/C, 83, 108-A, 119, 121, 127(c)</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 7 — Delegated power exercised only after consulting Ministry of Finance</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 8 — Interpretation of Rules reserved to President only</div>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition / परिभाषा <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> FR 6 empowers the Central Government to delegate to any of its officers any power conferred on it by the Fundamental Rules, subject to conditions it may impose — but two categories of power can never be delegated: (a) the power to make rules, and (b) powers specifically listed under certain named rules.</p>
+      <p class="hindi"><b>हिंदी:</b> मूल नियम 6 केंद्र सरकार को अपने किसी भी अधिकारी को मूल नियमों द्वारा प्रदत्त किसी भी शक्ति का प्रत्यायोजन करने का अधिकार देता है, परंतु (a) नियम बनाने की शक्ति और (b) कुछ विशेष रूप से सूचीबद्ध नियमों की शक्तियाँ कभी प्रत्यायोजित नहीं की जा सकतीं।</p>
+      <div class="qbox"><b>Probable Q:</b> List the rules whose powers cannot be delegated under FR 6(b). / FR 6(b) के तहत कौन-सी शक्तियाँ प्रत्यायोजित नहीं की जा सकतीं?</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Non-Delegable Rules under FR 6(b) — Table <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule No.</th><th>Subject Matter (short)</th></tr>
+        <tr><td>Rule 6</td><td>The delegation power itself (cannot sub-delegate delegation power)</td></tr>
+        <tr><td>Rule 9(6)(b)</td><td>Treating a period as "duty" for training/instruction</td></tr>
+        <tr><td>Rule 44</td><td>Compensatory allowance rules</td></tr>
+        <tr><td>Rule 45-A</td><td>Licence fee assessment — Govt.-owned residence (general category officers)</td></tr>
+        <tr><td>Rule 45-B</td><td>Licence fee assessment — other than Rule 45-A category</td></tr>
+        <tr><td>Rule 45-C</td><td>Definition of "emoluments" for licence fee</td></tr>
+        <tr><td>Rule 83</td><td>(Leave-related, not printed here — general leave power)</td></tr>
+        <tr><td>Rule 108-A</td><td>Joining time pay for person appointed from private employment</td></tr>
+        <tr><td>Rule 119</td><td>Remission of pension/leave-salary contributions in foreign service</td></tr>
+        <tr><td>Rule 121</td><td>Sanction for accepting pension/gratuity from foreign employer</td></tr>
+        <tr><td>Rule 127(c)</td><td>Reducing/forgoing recovery of additional establishment cost</td></tr>
+      </table>
+      <div class="qbox"><b>🧠 Memory Trick:</b> "<b>6-9(6)(b)-44-45ABC-83-108A-119-121-127c</b>" → Group as: Delegation(6) + Duty(9-6-b) + Allowance(44) + Housing(45ABC) + Leave(83) + JoiningTime(108A) + ForeignService(119,121) + Establishment(127c)</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>FR 6 itself permits delegation "subject to any conditions" the Central Govt may impose — so delegation is conditional, not absolute.</li>
+        <li>FR 7 exception: Ministry of Finance may prescribe by general/special order cases where its consent is <b>presumed</b> to have been given (i.e., no fresh consultation needed each time).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Central Government</b> — the delegating authority (FR 6)</li>
+        <li><b>Ministry of Finance</b> — mandatory consultee for any delegated power exercise (FR 7)</li>
+        <li><b>President</b> — sole authority to interpret the Fundamental Rules (FR 8)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⏱️ Time Limits & 🔴 Penalties <span class="chip quick">🟢</span></summary>
+    <div class="body">
+      <p><i>No specific time limit prescribed in FR 6-8; consultation with Ministry of Finance is mandatory before exercising delegated power (FR 7) — a procedural safeguard, not a numeric deadline.</i></p>
+      <p><b>Penalty angle:</b> Any exercise of delegated power without required Finance consultation would be procedurally invalid/ultra vires.</p>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>Rule Making + 11 Rules = Never Delegated</b>" — Remember it as 1 broad exception (a) + 11 specific rule-numbers (b).
+  </div>
+</section>
+
+<!-- ===================== TOPIC 3 ===================== -->
+<section class="topic" id="t3">
+  <div class="hero">
+    <h2>Dismissal, Removal and Suspension <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">बर्खास्तगी, निष्कासन एवं निलंबन — Chapter VIII, FR 52 to FR 55</p>
+  </div>
+
+  <div class="flow">
+    <div class="step">FR 52 — Pay & allowances cease from date of dismissal/removal</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 53 — Subsistence Allowance during suspension</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 54/54-A/54-B — Reinstatement & pay fixation on appeal/review/Court order</div>
+    <div class="arrow">↓</div>
+    <div class="step">FR 55 — No leave during suspension</div>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> This chapter governs the financial consequences of dismissal, removal and suspension — what a suspended employee is paid (subsistence allowance), and how pay/allowances are re-fixed if the employee is later reinstated by appeal, review, or court order.</p>
+      <p class="hindi"><b>हिंदी:</b> यह अध्याय बर्खास्तगी, निष्कासन और निलंबन के वित्तीय परिणामों को नियंत्रित करता है — निलंबित कर्मचारी को क्या भुगतान मिलेगा (जीविका भत्ता), और बाद में अपील/समीक्षा/न्यायालय आदेश से पुनर्स्थापन पर वेतन कैसे तय होगा।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules — Subsistence Allowance (FR 53) <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Point</th><th>Provision</th></tr>
+        <tr><td>Base rate</td><td>Equal to leave salary on half average pay / half pay + admissible DA</td></tr>
+        <tr><td>After 3 months (delay <u>not</u> attributable to employee)</td><td>May be <b>increased</b> up to 50% of first-3-month amount</td></tr>
+        <tr><td>After 3 months (delay attributable to employee)</td><td>May be <b>reduced</b> up to 50% of first-3-month amount</td></tr>
+        <tr><td>Condition</td><td>Employee must certify he is not engaged in any other employment/business/profession</td></tr>
+        <tr><td>Special case</td><td>Dismissed/removed/compulsorily retired but deemed under suspension (CCA Rule 12(3)/(4)) — if certificate not given, entitled only to amount by which earnings fall short of subsistence allowance</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> By how much can subsistence allowance be varied after 3 months of suspension, and on what grounds?</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Reinstatement & Pay Fixation (FR 54, 54-A, 54-B) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule</th><th>Scenario</th><th>Outcome</th></tr>
+        <tr><td>FR 54(2)</td><td>Fully exonerated on appeal/review</td><td>Full pay & allowances; period treated as duty for all purposes</td></tr>
+        <tr><td>FR 54 proviso</td><td>Delay attributable to employee</td><td>Only such amount (not whole) as authority determines, after 60-day representation opportunity</td></tr>
+        <tr><td>FR 54(4)</td><td>Not fully exonerated / order set aside only on Art. 311 non-compliance</td><td>Competent authority determines partial pay; period NOT automatically treated as duty</td></tr>
+        <tr><td>FR 54-A</td><td>Court of Law sets aside dismissal</td><td>If solely on Art. 311 ground → partial pay as FR 54(4); if on merits → full pay, period = duty</td></tr>
+        <tr><td>FR 54-B</td><td>Reinstatement after mere suspension (no dismissal)</td><td>If suspension wholly unjustified → full pay; else authority determines amount</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum period given to a Government servant to make representation against a proposed reduced pay order under FR 54? <b>Ans: 60 days.</b></div>
+    </div>
+  </details>
+
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">Day 0</div><div class="tl-text">Dismissal / Removal / Suspension ordered</div></div>
+    <div class="tl-item"><div class="tl-time">Month 1-3</div><div class="tl-text">Standard subsistence allowance (half pay/half average pay + DA)</div></div>
+    <div class="tl-item"><div class="tl-time">After Month 3</div><div class="tl-text">Authority may vary allowance ±50% based on cause of delay</div></div>
+    <div class="tl-item"><div class="tl-time">On Reinstatement</div><div class="tl-text">Authority gives notice of proposed pay quantum; employee gets <b>60 days</b> to represent</div></div>
+    <div class="tl-item"><div class="tl-time">Final Order</div><div class="tl-text">Pay fixed per FR 54/54-A/54-B; adjustment for any outside earnings during the period</div></div>
+  </div>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>No leave may be granted to a suspended Government servant (FR 55) — absolute rule, no exception listed.</li>
+        <li>FR 53(2) proviso: even without certificate, dismissed/removed/compulsorily-retired-but-deemed-suspended employees get the shortfall amount if they earned less than subsistence allowance elsewhere.</li>
+        <li>FR 54-B(2): if suspended employee dies before proceedings conclude, period from suspension to death = duty, full pay to family (adjusted against subsistence already paid).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Appointing Authority</b> — orders suspension</li>
+        <li><b>Authority competent to order reinstatement</b> — decides pay/allowance treatment on reinstatement</li>
+        <li><b>Court of Law</b> — governs FR 54-A scenarios</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⏱️ Important Time Limits <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>3 months</b> — trigger point for varying subsistence allowance rate</li>
+        <li><b>50%</b> — maximum increase/decrease in subsistence allowance after 3 months</li>
+        <li><b>60 days</b> — representation period before final pay-quantum order (FR 54, 54-A, 54-B)</li>
+        <li><b>12 months</b> — demand period for recovery of short-recovered licence fee (cross-reference, FR 45)</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>❌ Important Penalties <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Dismissal/removal → all pay & allowances cease immediately (FR 52).</li>
+        <li>Delay in disciplinary proceedings attributable to employee → reduced pay on reinstatement (not full back-pay).</li>
+        <li>False certificate of non-employment during suspension → forfeiture adjustment against outside earnings.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>3-50-60</b>" → after <b>3</b> months allowance can change by <b>50</b>%; reinstatement notice gives <b>60</b> days to reply.
+  </div>
+</section>
+
+<!-- ===================== TOPIC 4 ===================== -->
+<section class="topic" id="t4">
+  <div class="hero">
+    <h2>CCS (Joining Time) Rules, 1979 <span class="chip freq">🟠 FREQUENT</span></h2>
+    <p class="hi">भारांतरण/नई पदस्थापना के समय जॉइनिंग टाइम नियम — FR Chapter XI (FR 105-108, 108-A) cross-refers to CCS (Joining Time) Rules 1979</p>
+  </div>
+
+  <div class="hero" style="border-left-color:var(--gold);">
+    <p><b>Note:</b> FR 105–107 are "Not Printed" in this compilation — the Fundamental Rules themselves direct readers to the <b>CCS (Joining Time) Rules, 1979</b> for the detailed joining-time provisions. FR 108 and 108-A remain part of the Fundamental Rules and are exam-relevant.</p>
+    <p class="hindi">FR 105-107 इस संकलन में मुद्रित नहीं हैं — विस्तृत नियमों हेतु <b>CCS (जॉइनिंग टाइम) नियम, 1979</b> देखें। FR 108 व 108-A मूल नियमों में ही सम्मिलित रहते हैं।</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> "Joining time" (FR 9(10)) means the time allowed to a Government servant to join a new post or to travel to/from a station to which he is posted. The CCS (Joining Time) Rules, 1979 govern its calculation, extension, and pay during this period.</p>
+      <p class="hindi"><b>हिंदी:</b> "जॉइनिंग टाइम" (FR 9(10)) का अर्थ है वह समय जो किसी सरकारी कर्मचारी को नए पद पर कार्यभार ग्रहण करने या स्थानांतरण के दौरान यात्रा हेतु दिया जाता है।</p>
+      <div class="qbox"><b>Probable Q:</b> Define "Joining Time" as per Fundamental Rule 9(10).</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule</th><th>Provision (English)</th><th>प्रावधान (हिंदी)</th></tr>
+        <tr><td>FR 9(10)</td><td>Definition of Joining time.</td><td>जॉइनिंग टाइम की परिभाषा।</td></tr>
+        <tr><td>FR 9(6)(a)(ii)</td><td>Joining time is included within the definition of "Duty".</td><td>जॉइनिंग टाइम "ड्यूटी" की परिभाषा में शामिल है।</td></tr>
+        <tr><td>FR 105-107</td><td>Not printed — refer CCS (Joining Time) Rules, 1979 for entitlement, calculation & extension.</td><td>मुद्रित नहीं — विवरण हेतु CCS (जॉइनिंग टाइम) नियम 1979 देखें।</td></tr>
+        <tr><td>FR 108</td><td>No pay/leave salary if servant does not join within joining time; wilful absence after expiry = misbehaviour under FR 15.</td><td>जॉइनिंग टाइम के भीतर कार्यभार न लेने पर वेतन/अवकाश वेतन नहीं; जानबूझकर अनुपस्थिति FR 15 के तहत कदाचार मानी जाएगी।</td></tr>
+        <tr><td>FR 108-A</td><td>Person from private employment appointed to Govt post: treated as on joining time while preparing/traveling to join, and again on reversion; pay = private pay/leave-salary drawn OR Govt. post pay — whichever is less.</td><td>निजी नियोजन से सरकारी सेवा में आने वाले व्यक्ति को यात्रा हेतु जॉइनिंग टाइम मिलेगा; वेतन दोनों में से जो कम हो, वही देय।</td></tr>
+        <tr><td>FR 26(e)</td><td>Joining time counts for increment — per FR 105(a)/(c) in lien-post scale; per FR 105(b) in last-leave-post scale.</td><td>जॉइनिंग टाइम वेतन वृद्धि हेतु गिना जाता है।</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What happens if a Government servant does not join his post within the sanctioned joining time? (FR 108)</div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Transfer / New Posting Ordered</div>
+    <div class="arrow">↓</div>
+    <div class="step">Joining Time Sanctioned (per CCS JT Rules 1979)</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Joins within Time → Pay & Duty continue normally</div>
+      <div class="step">Fails to Join → No pay/leave salary (FR 108); wilful = misbehaviour (FR 15)</div>
+    </div>
+  </div>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>FR 108-A special category: private-sector appointee gets joining time treatment both ways (joining & reversion), with pay capped at the lower of two comparators.</li>
+        <li>Joining time granted under FR 105(a)/(c) counts for increment differently than under FR 105(b) — depends on which post's time-scale applies.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Competent/Appointing Authority</b> — sanctions and can extend joining time under CCS (JT) Rules 1979</li>
+        <li><b>Government (via 108-A)</b> — decides discretionary treatment for private-employment appointees</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>❌ Important Penalties <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>No pay or leave salary after joining time expires without joining (FR 108).</li>
+        <li>Wilful absence beyond joining time → may be treated as <b>misbehaviour</b>, inviting action under FR 15 (transfer/disciplinary consequences).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>No Join → No Pay, Wilful → Naughty (Misbehaviour)</b>" — remember FR 108's two-part consequence.
+  </div>
+</section>
+
+<!-- ===================== REVISION SHEET ===================== -->
+<section class="topic" id="t5">
+  <div class="revision-sheet">
+    <h2>📄 One-Page Last-Day Revision Sheet</h2>
+    <div class="tag-legend">
+      <span><span class="dot" style="background:var(--vimp)"></span>Very Imp</span>
+      <span><span class="dot" style="background:var(--freq)"></span>Frequent</span>
+      <span><span class="dot" style="background:var(--concept)"></span>Concept</span>
+      <span><span class="dot" style="background:var(--quick)"></span>Quick</span>
+    </div>
+
+    <h3>1️⃣ General Conditions of Service</h3>
+    <ul class="pts">
+      <li>🔴 FR 10 = Medical cert before appointment</li>
+      <li>🔴 FR 13 = Lien retained (DFJLS): Duty, Foreign/officiating, Joining time, Leave, Suspension</li>
+      <li>🟠 FR 15 = No transfer to lower pay except inefficiency/misbehaviour/written request</li>
+      <li>🟢 FR 18 = Max continuous leave = 5 years</li>
+    </ul>
+
+    <h3>2️⃣ FR 6 Delegation</h3>
+    <ul class="pts">
+      <li>🔴 Non-delegable: (a) all rule-making + (b) Rules 6, 9(6)(b), 44, 45-A/B/C, 83, 108-A, 119, 121, 127(c)</li>
+      <li>🟠 FR 7 = Ministry of Finance consultation mandatory (consent can be "presumed" by general order)</li>
+      <li>🟡 FR 8 = Only President interprets FRs</li>
+    </ul>
+
+    <h3>3️⃣ Dismissal, Removal & Suspension</h3>
+    <ul class="pts">
+      <li>🔴 FR 52 = Pay ceases from dismissal/removal date</li>
+      <li>🔴 FR 53 = Subsistence = half pay/half avg pay + DA; ±50% variable after 3 months</li>
+      <li>🔴 FR 54 = 60 days representation before reduced-pay order on reinstatement</li>
+      <li>🟢 FR 55 = No leave during suspension</li>
+    </ul>
+
+    <h3>4️⃣ CCS (Joining Time) Rules 1979</h3>
+    <ul class="pts">
+      <li>🔴 FR 9(10) = Joining time definition</li>
+      <li>🔴 FR 108 = No join in time → no pay/leave salary; wilful = misbehaviour under FR 15</li>
+      <li>🟡 FR 108-A = Private employment → Govt: pay = lower of private/Govt. pay during transit</li>
+    </ul>
+
+    <h3>🔢 Key Numbers to Remember</h3>
+    <table>
+      <tr><th>Number</th><th>Where it applies</th></tr>
+      <tr><td>1 Jan 1922</td><td>FRs came into force (FR 1)</td></tr>
+      <tr><td>5 years</td><td>Max continuous leave (FR 18)</td></tr>
+      <tr><td>3 months</td><td>Subsistence allowance review trigger (FR 53)</td></tr>
+      <tr><td>±50%</td><td>Subsistence allowance variation limit (FR 53)</td></tr>
+      <tr><td>60 days</td><td>Representation period on reinstatement (FR 54/54-A/54-B)</td></tr>
+      <tr><td>11 rules</td><td>Non-delegable rules under FR 6(b)</td></tr>
+    </table>
+
+    <h3>🧠 All Mnemonics Together</h3>
+    <div class="mnemonic">DFJLS → Lien retained: Duty, Foreign/officiating, Joining time, Leave, Suspension</div>
+    <div class="mnemonic">3-50-60 → Suspension: 3 months trigger, 50% variation, 60 days representation</div>
+    <div class="mnemonic">No Join → No Pay, Wilful → Naughty → FR 108 consequence chain</div>
+  </div>
+</section>
+
+</main>
+
+<footer>LDCE IP Exam Portal Study Card • Fundamental Rules Compilation • For personal exam preparation use</footer>
+
+<script>
+const buttons = document.querySelectorAll('.controls button[data-t]');
+const topics = document.querySelectorAll('.topic');
+buttons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    topics.forEach(t=>t.classList.remove('active'));
+    document.getElementById(btn.dataset.t).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+document.getElementById('darkToggle').addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+});
+</script>
+</body>
+</html>

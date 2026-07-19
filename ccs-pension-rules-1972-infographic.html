@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pension Rules Study Cards | CCS (पेंशन) नियम 1972 एवं Commutation नियम 1981</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#FFB81C;
+  --bg:#f7f6f2; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a; --line:#e4e1d8;
+  --vimp:#c8102e; --freq:#e07b00; --concept:#c9a300; --quick:#1f8a4c;
+}
+*{box-sizing:border-box;}
+body.dark{ --bg:#12141a; --card:#1b1e26; --ink:#eef0f4; --sub:#a7adb8; --line:#2a2e38; }
+body{margin:0; font-family:"Noto Sans",Arial,sans-serif; background:var(--bg); color:var(--ink); padding-bottom:60px; transition:background .25s,color .25s;}
+header.top{background:linear-gradient(135deg,var(--blue),#001a4d 70%); color:#fff; padding:18px 16px 60px; position:relative; overflow:hidden;}
+header.top::after{content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px; background:radial-gradient(circle,var(--gold) 0%, transparent 70%); opacity:.35;}
+header.top h1{margin:0 0 4px; font-size:1.22rem; line-height:1.3;}
+header.top p{margin:0; font-size:.85rem; opacity:.9;}
+.badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.badge-row span{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); padding:3px 9px; border-radius:20px; font-size:.68rem;}
+.controls{position:sticky; top:0; z-index:50; background:var(--card); border-bottom:2px solid var(--gold); display:flex; gap:6px; padding:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:-40px; border-radius:14px 14px 0 0; box-shadow:0 4px 14px rgba(0,0,0,.15);}
+.controls button{flex:0 0 auto; border:1px solid var(--line); background:var(--bg); color:var(--ink); padding:8px 11px; border-radius:20px; font-size:.65rem; font-weight:600; cursor:pointer;}
+.controls button.active{background:var(--red); color:#fff; border-color:var(--red);}
+.darkbtn{margin-left:auto; background:var(--ink); color:var(--bg); border:none; padding:8px 12px; border-radius:20px; font-size:.72rem; cursor:pointer;}
+main{max-width:780px; margin:0 auto; padding:14px;}
+.topic{display:none;} .topic.active{display:block;}
+.hero{background:var(--card); border:1px solid var(--line); border-left:6px solid var(--red); border-radius:12px; padding:14px; margin:14px 0; box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.hero h2{margin:0 0 6px; font-size:1.05rem; color:var(--red);}
+.hero .hi{font-size:.92rem; color:var(--sub); margin:0 0 8px;}
+.chip{display:inline-block; font-size:.65rem; font-weight:700; padding:2px 8px; border-radius:10px; color:#fff; margin-right:4px;}
+.chip.vimp{background:var(--vimp);} .chip.freq{background:var(--freq);} .chip.concept{background:var(--concept); color:#1c1c1c;} .chip.quick{background:var(--quick);}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; margin:10px 0; overflow:hidden; box-shadow:0 1px 5px rgba(0,0,0,.05);}
+.card summary{list-style:none; cursor:pointer; padding:12px 14px; font-weight:700; display:flex; align-items:center; gap:8px; background:linear-gradient(90deg,rgba(200,16,46,.06),transparent); font-size:.9rem;}
+.card summary::-webkit-details-marker{display:none;}
+.card summary::after{content:"▾"; margin-left:auto; transition:transform .2s;}
+.card[open] summary::after{transform:rotate(180deg);}
+.card .body{padding:0 14px 14px;}
+.section-label{font-size:.66rem; text-transform:uppercase; letter-spacing:.5px; color:var(--sub); font-weight:700; margin:10px 0 4px; border-bottom:1px dashed var(--line); padding-bottom:2px;}
+ul.pts{margin:4px 0; padding-left:18px;} ul.pts li{margin:4px 0; font-size:.85rem;}
+.hindi{color:var(--sub); font-size:.8rem;}
+table{width:100%; border-collapse:collapse; font-size:.75rem; margin:6px 0;}
+th,td{border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.67rem;}
+tr:nth-child(even){background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03);}
+.qbox{background:rgba(255,184,28,.12); border:1px dashed var(--gold); border-radius:8px; padding:8px 10px; font-size:.75rem; margin-top:6px;}
+.qbox b{color:var(--red);}
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flow .step{background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.72rem; text-align:center; width:92%; max-width:340px;}
+.flow .arrow{font-size:1.1rem; color:var(--red); margin:2px 0;}
+.flow .branch{display:flex; gap:8px; width:100%; justify-content:center; flex-wrap:wrap;}
+.flow .branch .step{background:var(--red); width:45%; min-width:130px;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .tl-item{margin-bottom:12px; position:relative;}
+.timeline .tl-item::before{content:""; position:absolute; left:-19px; top:3px; width:10px; height:10px; border-radius:50%; background:var(--red);}
+.timeline .tl-time{font-weight:700; color:var(--red); font-size:.76rem;}
+.timeline .tl-text{font-size:.78rem;}
+.mnemonic{background:linear-gradient(135deg,rgba(0,48,135,.08),rgba(255,184,28,.1)); border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:8px 0; font-size:.8rem;}
+.mnemonic b{color:var(--blue);}
+.revision-sheet{background:var(--card); border:2px solid var(--red); border-radius:14px; padding:14px; margin:20px 0;}
+.revision-sheet h2{color:var(--red); margin-top:0;}
+.revision-sheet h3{color:var(--blue); font-size:.9rem; margin:14px 0 6px;}
+.tag-legend{font-size:.68rem; display:flex; flex-wrap:wrap; gap:10px; margin:10px 0;}
+.tag-legend span{display:flex; align-items:center; gap:4px;}
+.dot{width:10px; height:10px; border-radius:50%; display:inline-block;}
+.leave-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.leave-box{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px; font-size:.72rem; text-align:center;}
+.leave-box b{display:block; color:var(--red); font-size:.92rem;}
+@media(max-width:420px){.leave-grid{grid-template-columns:1fr;}}
+footer{text-align:center; font-size:.7rem; color:var(--sub); padding:20px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>🏛️ Pension Rules Study Cards — CCS (Pension) Rules, 1972</h1>
+  <p>केंद्रीय सिविल सेवा (पेंशन) नियम, 1972 एवं CCS (Commutation of Pension) Rules, 1981</p>
+  <div class="badge-row">
+    <span>🔴 अति महत्वपूर्ण / Very Imp</span>
+    <span>🟠 बार-बार पूछा गया / Frequent</span>
+    <span>🟡 संकल्पनात्मक / Concept</span>
+    <span>🟢 त्वरित पुनरावृत्ति / Quick</span>
+  </div>
+</header>
+
+<div class="controls">
+  <button data-t="t1" class="active">1️⃣ Preliminary</button>
+  <button data-t="t2">2️⃣ General Conditions</button>
+  <button data-t="t3">3️⃣ Qualifying Service</button>
+  <button data-t="t4">4️⃣ Emoluments</button>
+  <button data-t="t5">5️⃣ Classes of Pension</button>
+  <button data-t="t6">6️⃣ Amount of Pension</button>
+  <button data-t="t7">7️⃣ Determination/Auth.</button>
+  <button data-t="t8">8️⃣ Family Pension/Death Gratuity</button>
+  <button data-t="t9">9️⃣ Commutation Rules 1981</button>
+  <button data-t="t10">📄 Revision Sheet</button>
+  <button class="darkbtn" id="darkToggle">🌙</button>
+</div>
+
+<main>
+
+<!-- ============ TOPIC 1: PRELIMINARY ============ -->
+<section class="topic active" id="t1">
+  <div class="hero">
+    <h2>Preliminary <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">प्रारंभिक — Rules 1 to 4</p>
+    <p><b>Chapter → Sub-Chapter → Micro:</b><br>
+    CCS (Pension) Rules 1972 → Preliminary → Short Title/Application/Definitions/Transfer</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> The Central Civil Services (Pension) Rules, 1972 came into force on <b>1 June 1972</b>. They apply to Govt. servants appointed <b>on or before 31 December 2003</b> to civil services/posts of the Union on pensionable establishments (incl. civilian Defence Service Govt. servants appointed substantively), subject to 8 listed exclusions.</p>
+      <p class="hindi"><b>हिंदी:</b> केंद्रीय सिविल सेवा (पेंशन) नियम, 1972 <b>1 जून 1972</b> से लागू हुए। ये <b>31 दिसंबर 2003 तक</b> नियुक्त सरकारी कर्मचारियों पर लागू होते हैं (नई पेंशन योजना NPS के कारण यह कट-ऑफ तिथि महत्वपूर्ण है), 8 अपवादों के अधीन।</p>
+      <div class="qbox"><b>Probable Q:</b> Up to what date of appointment do the CCS (Pension) Rules, 1972 apply? <b>Ans: Appointments on or before 31 December 2003</b> (after this, NPS applies).</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 2 — Application: 8 Exclusions <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>#</th><th>Excluded Category</th></tr>
+        <tr><td>(a)</td><td>Railway servants</td></tr>
+        <tr><td>(b)</td><td>Casual & daily-rated employees</td></tr>
+        <tr><td>(c)</td><td>Persons paid from contingencies</td></tr>
+        <tr><td>(d)</td><td>Persons entitled to Contributory Provident Fund benefit</td></tr>
+        <tr><td>(e)</td><td>Members of All India Services</td></tr>
+        <tr><td>(f)</td><td>Locally recruited staff — diplomatic/consular establishments abroad</td></tr>
+        <tr><td>(g)</td><td>Contract employees (unless contract says otherwise)</td></tr>
+        <tr><td>(h)</td><td>Persons regulated by Constitution/other law</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> Name any three categories excluded from CCS (Pension) Rules, 1972.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 3 — Key Definitions <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Term</th><th>Meaning</th></tr>
+        <tr><td>Average Emoluments</td><td>As determined under Rule 34 (last 10 months)</td></tr>
+        <tr><td>Child</td><td>Son under 25 yrs; unmarried daughter under 25 yrs</td></tr>
+        <tr><td>Emoluments</td><td>As defined under Rule 33 (basic pay)</td></tr>
+        <tr><td>Family Pension</td><td>"Family Pension 1964" under Rule 54 — excludes dearness relief</td></tr>
+        <tr><td>Gratuity</td><td>Includes Service Gratuity (R.49), Retirement/Death Gratuity (R.50(1)), Residuary Gratuity (R.50(2))</td></tr>
+        <tr><td>Minor</td><td>A person who has NOT completed 18 years of age</td></tr>
+        <tr><td>Pension</td><td>Includes gratuity (unless used in contradistinction to gratuity); excludes dearness relief</td></tr>
+        <tr><td>Qualifying Service</td><td>Service rendered while on duty or otherwise, counted for pension/gratuity</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> Does the term "Pension" include Gratuity under Rule 3? <b>Ans: Yes, unless used in contradistinction to gratuity; but it excludes dearness relief.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 4 — Transfer From Non-Applicable Service <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Servant permanently transferred to a CCS(Pension)-Rules post from one where these rules don't apply → automatically becomes subject to these rules.</li>
+        <li>🔴 <b>Option:</b> Within <b>6 months</b> of the transfer order (or 6 months from return from leave, if on leave) → may elect to remain under his earlier pension rules.</li>
+        <li>Option must be in writing, communicated to the transferring authority; <b>once exercised, is final</b>.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Within how many months must a transferred Government servant exercise the option to retain his old pension rules? <b>Ans: 6 months.</b></div>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>1-6-1972 to 31-12-2003</b>" → CCS Pension Rules commencement and cut-off (NPS applies after). "<b>6-Month Option, Final Forever</b>" → Rule 4 transfer option.
+  </div>
+</section>
+
+<!-- ============ TOPIC 2: GENERAL CONDITIONS ============ -->
+<section class="topic" id="t2">
+  <div class="hero">
+    <h2>General Conditions <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">सामान्य शर्तें — Rules 5, 7-12</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 5 — Regulation of Claims <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Claim to pension/family pension is regulated by rules in force <b>at the time of retirement/discharge/resignation/death</b>.</li>
+        <li>The day of retirement/discharge/resignation is treated as the <b>last working day</b>; date of death is also a working day.</li>
+        <li>🟠 Exception: for premature/voluntary retirement under FR 56(j)-(m) or Rule 48/48-A, the retirement date is treated as a <b>non-working day</b>.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Is the date of voluntary retirement treated as a working day or non-working day? <b>Ans: Non-working day (exception under Rule 5).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 7 — Limitation on Number of Pensions <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>A Govt. servant shall <b>not earn two pensions</b> in the same service/post at the same time or by the same continuous service.</li>
+        <li>Except as provided in Rule 19 (military service), a re-employed pensioner (after superannuation/retiring pension) is <b>not entitled to a separate pension/gratuity</b> for the re-employment period.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 8 & 9 — Pension Subject to Good Conduct / President's Right <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 8:</b> Future good conduct is an implied condition. Appointing authority may withhold/withdraw pension (whole/part, permanent/specified period) if pensioner is convicted of a serious crime or found guilty of grave misconduct. Minimum pension after reduction: <b>₹375/month</b> (historic figure in rule; revised over time).</li>
+        <li>🔴 <b>Show-cause notice:</b> 15 days to respond (extendable by another 15 days by appointing authority) before action under Rule 8(3).</li>
+        <li><b>Rule 9:</b> <b>President</b> reserves the right to withhold/withdraw pension/gratuity (full or part) or order recovery of pecuniary loss, if found guilty of grave misconduct/negligence in departmental/judicial proceedings — even for service including re-employment.</li>
+        <li>🔴 <b>UPSC consultation mandatory</b> before final orders under Rule 9.</li>
+        <li>Appeal against an order under Rule 8(1) (if passed by authority other than President) lies to the <b>President</b>, in consultation with UPSC.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Whose consultation is mandatory before the President passes a final order under Rule 9? <b>Ans: Union Public Service Commission (UPSC).</b></div>
+      <div class="qbox"><b>Probable Q:</b> How many days does a pensioner get to respond to a show-cause notice under Rule 8? <b>Ans: 15 days (extendable by another 15 days).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 10-12 — Post-Retirement Restrictions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 10:</b> Restrictions on commercial employment after retirement.</li>
+        <li><b>Rule 11:</b> Restriction on practice in income tax and other cases after retirement.</li>
+        <li><b>Rule 12:</b> Restrictions on employment after retirement under a Government outside India.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Pensioner Convicted / Grave Misconduct Found</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Rule 8: Appointing Authority acts (min. pension protected)</div>
+      <div class="step">Rule 9: President acts — UPSC consultation mandatory</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">15-day show-cause notice → representation considered → order passed</div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>No Two Pensions, Good Conduct Forever, UPSC Before President's Final Word</b>" — Rules 7, 8, 9 core themes.
+  </div>
+</section>
+
+<!-- ============ TOPIC 3: QUALIFYING SERVICE ============ -->
+<section class="topic" id="t3">
+  <div class="hero">
+    <h2>Qualifying Service <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">अर्हकारी सेवा — Rules 13-32, 48A, 48B, 48C</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> Qualifying Service means service rendered while on duty or otherwise, which is taken into account for pension/gratuity purposes. It commences from the date a Government servant takes charge of the post (Rule 13).</p>
+      <p class="hindi"><b>हिंदी:</b> अर्हकारी सेवा का अर्थ है वह सेवा जो ड्यूटी पर या अन्यथा प्रदान की गई हो, जिसे पेंशन/उपदान के प्रयोजन हेतु गिना जाता है। यह उस तारीख से प्रारंभ होती है जब कर्मचारी पद ग्रहण करता है (नियम 13)।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Key Rules Overview <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule Group</th><th>Rules</th><th>Subject</th></tr>
+        <tr><td>Commencement</td><td>13</td><td>Qualifying service starts from date of taking charge</td></tr>
+        <tr><td>Counting of Service</td><td>15-20</td><td>Probation, apprentice, contract, re-employment, military/war service</td></tr>
+        <tr><td>Counting of Periods</td><td>21-23</td><td>Leave, training, suspension periods</td></tr>
+        <tr><td>Forfeiture</td><td>24, 26</td><td>Dismissal/removal (24); resignation (26)</td></tr>
+        <tr><td>Interruption</td><td>27, 28</td><td>Effect of & condonation of interruption in service</td></tr>
+        <tr><td>Addition</td><td>29,30,48A,48B,48C</td><td>Surplus declaration, special circumstances, voluntary retirement additions</td></tr>
+        <tr><td>Verification</td><td>32</td><td>Verification after 18 years' service / 5 years before retirement</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 24 & 26 — Forfeiture of Service <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 24:</b> Dismissal or removal from service → entails <b>forfeiture of past service</b>.</li>
+        <li><b>Rule 26:</b> Resignation → also entails forfeiture of past service (with certain exceptions, e.g., resigning to join another post under Govt. of India through proper channel).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 27-28 — Interruption in Service <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 27:</b> Interruption in service (other than by dismissal/removal/resignation) does not automatically forfeit past service, but the interruption period itself does not count as qualifying service unless condoned.</li>
+        <li><b>Rule 28:</b> Competent authority may <b>condone</b> interruptions in service in certain circumstances (e.g., where interruption is due to reasons beyond the servant's control), treating the total service as continuous for pension.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 48, 48A, 48B, 48C — Retirement & Additions <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 48:</b> Retirement on completion of <b>30 years' qualifying service</b>.</li>
+        <li><b>Rule 48-A:</b> Retirement on completion of <b>20 years' qualifying service</b> (voluntary retirement).</li>
+        <li><b>Rule 48-B:</b> Addition to qualifying service granted on voluntary retirement (weightage).</li>
+        <li><b>Rule 48-C:</b> Addition to qualifying service for Pioneers in General Reserve Engineers Force.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> After how many years of qualifying service can a Government servant seek voluntary retirement under Rule 48-A? <b>Ans: 20 years.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 32 — Verification of Qualifying Service <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p>Head of Office must verify and determine qualifying service after <b>18 years of service</b>, and again <b>5 years before retirement</b> — communicated to the Government servant in <b>Form 24</b>.</p>
+      <div class="qbox"><b>Probable Q:</b> At what two points is qualifying service required to be verified under Rule 32? <b>Ans: After 18 years of service, and 5 years before retirement.</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Service Commences (Rule 13)</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Dismissal/Removal (R.24) → Forfeited</div>
+      <div class="step">Resignation (R.26) → Forfeited</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">Verification: 18 yrs service + 5 yrs before retirement (Form 24)</div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>18-and-5</b>" → Qualifying service verified after 18 years of service AND 5 years before retirement. "<b>30 Full, 20 Voluntary</b>" → Retirement completion thresholds (Rules 48, 48-A).
+  </div>
+</section>
+
+<!-- ============ TOPIC 4: EMOLUMENTS ============ -->
+<section class="topic" id="t4">
+  <div class="hero">
+    <h2>Emoluments and Average Emoluments <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">परिलब्धियाँ एवं औसत परिलब्धियाँ — Rules 33-34</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition — Rule 33 (Emoluments) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> "Emoluments" means basic pay (as per FR 9(21)(a)(i)) which a Govt. servant was receiving <b>immediately before retirement</b> or on the date of death; also includes <b>Non-Practising Allowance</b> for medical officers and <b>Stagnation Increment</b>.</p>
+      <p class="hindi"><b>हिंदी:</b> "परिलब्धियाँ" का अर्थ है मूल वेतन (FR 9(21)(a)(i) अनुसार) जो सेवानिवृत्ति से ठीक पहले या मृत्यु की तारीख पर प्राप्त हो रहा था; इसमें चिकित्सा अधिकारियों का गैर-व्यवसाय भत्ता एवं स्थिरता वेतन वृद्धि भी शामिल है।</p>
+      <div class="qbox"><b>Probable Q:</b> Does "Emoluments" include Special Pay or Personal Pay? <b>Ans: No — only basic pay, Non-Practising Allowance, and Stagnation Increment count.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 33 — Key Notes <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>If absent on leave (leave-salary payable) or reinstated after suspension without forfeiture → emoluments = what he would have drawn had he not been absent.</li>
+        <li>If on EOL or under suspension (not counting as service) → emoluments = last drawn before such leave/suspension.</li>
+        <li>Increment earned during EL (even if not actually drawn) counts as emoluments, if earned within the first <b>120 days</b> of EL.</li>
+        <li>Pay drawn on deputation to Armed Forces of India → counted as emoluments; pay on foreign service → NOT counted (notional Govt. pay used instead).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📖 Definition — Rule 34 (Average Emoluments) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> Average Emoluments are determined with reference to emoluments drawn during the <b>last 10 months</b> of service.</p>
+      <p class="hindi"><b>हिंदी:</b> औसत परिलब्धियाँ सेवा के अंतिम <b>10 महीनों</b> के दौरान प्राप्त परिलब्धियों के आधार पर निर्धारित की जाती हैं।</p>
+      <ul class="pts">
+        <li>If absent on leave (with leave salary) or reinstated after suspension → notional emoluments considered.</li>
+        <li>If on EOL/suspension (not counting as service) during last 10 months → that period disregarded; an equal period before the 10 months is included instead.</li>
+        <li>Increment earned during EL in last 10 months (within first 120 days of that EL) → included even if not actually drawn.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Over what period is Average Emoluments calculated? <b>Ans: The last 10 months of service (Rule 34).</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Retirement/Death — Which figure to use?</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Emoluments (R.33): last pay drawn</div>
+      <div class="step">Average Emoluments (R.34): avg. of last 10 months</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">Rule 49: Pension = 50% of whichever is MORE beneficial</div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>33 = Last Pay, 34 = Last 10 Months' Average</b>" — and Rule 49 always picks whichever is higher for the pensioner.
+  </div>
+</section>
+
+<!-- ============ TOPIC 5: CLASSES OF PENSIONS ============ -->
+<section class="topic" id="t5">
+  <div class="hero">
+    <h2>Classes of Pensions & Conditions Governing Grant <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">पेंशन के प्रकार एवं अनुदान की शर्तें — Rules 35, 36, 37, 38-41</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 The 6 Classes of Pension <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Rule</th><th>Type</th><th>Condition for Grant</th></tr>
+        <tr><td>35</td><td>Superannuation Pension</td><td>Retirement on attaining age of compulsory retirement</td></tr>
+        <tr><td>36</td><td>Retiring Pension</td><td>Retires/retired in advance of compulsory age (R.48/48-A/FR 56) OR surplus servant opting voluntary retirement (R.29)</td></tr>
+        <tr><td>37</td><td>Pension on Absorption</td><td>Absorbed in a corporation/company/body owned/controlled by Govt. — deemed retired from date of absorption</td></tr>
+        <tr><td>38</td><td>Invalid Pension</td><td>Retires due to permanent bodily/mental incapacity — needs Medical Board/Civil Surgeon certificate</td></tr>
+        <tr><td>39</td><td>Compensation Pension</td><td>Discharged due to abolition of permanent post — option of compensation pension OR new appointment</td></tr>
+        <tr><td>40</td><td>Compulsory Retirement Pension</td><td>Compulsorily retired as a penalty — pension between 2/3rd and full compensation pension</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the minimum percentage of compensation pension that must be granted to a compulsorily-retired (as penalty) Government servant? <b>Ans: Not less than two-thirds (Rule 40).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 38 — Invalid Pension Details <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Medical certificate needed from: <b>Medical Board</b> (Gazetted officer, or non-gazetted with pay &gt; specified limit) or <b>Civil Surgeon/District Medical Officer</b> (other cases).</li>
+        <li>A lady doctor must be included in the Medical Board when examining a woman candidate.</li>
+        <li>Medical certificate form: <b>Form 23</b>.</li>
+        <li>If declared fit for less-laborious work → employed on lower post if willing; only if no such post available → admitted to invalid pension.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 39 — Compensation Pension Details <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>🔴 <b>3 months' notice</b> required before discharge due to post abolition.</li>
+        <li>If notice &lt; 3 months and no alternative employment given → pay & allowances for the shortfall period may be sanctioned.</li>
+        <li>No compensation pension for period covered by pay-in-lieu-of-notice.</li>
+        <li>If servant accepts new appointment instead of compensation pension, and later gets a pension of any class → that pension shall not be less than the compensation pension he could have claimed.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the minimum notice period before discharge due to abolition of post? <b>Ans: 3 months (Rule 39).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 41 — Compassionate Allowance <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Dismissed/removed servants normally <b>forfeit pension and gratuity entirely</b>.</li>
+        <li>🔴 <b>Exception:</b> Competent authority (that dismissed/removed him) may, in deserving cases, sanction a Compassionate Allowance <b>not exceeding two-thirds</b> of the pension/gratuity that would have been admissible on compensation pension.</li>
+        <li>Compassionate Allowance can be commuted, like other classes of pension.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum Compassionate Allowance that can be sanctioned to a dismissed employee? <b>Ans: Not exceeding two-thirds of admissible pension/gratuity.</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Why is the Govt. servant leaving service?</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Age (compulsory) → Superannuation Pension (R.35)</div>
+      <div class="step">Early/Voluntary → Retiring Pension (R.36)</div>
+    </div>
+    <div class="branch">
+      <div class="step">Medically Unfit → Invalid Pension (R.38)</div>
+      <div class="step">Post Abolished → Compensation Pension (R.39)</div>
+    </div>
+    <div class="branch">
+      <div class="step">Penalty → Compulsory Retirement Pension (R.40)</div>
+      <div class="step">Dismissed but deserving → Compassionate Allowance (R.41)</div>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>S-R-A-I-C-C-C</b>" → Superannuation, Retiring, Absorption, Invalid, Compensation, Compulsory-retirement, Compassionate — the 6+1 pension classes in rule order (35-41).
+  </div>
+</section>
+
+<!-- ============ TOPIC 6: AMOUNT OF PENSION ============ -->
+<section class="topic" id="t6">
+  <div class="hero">
+    <h2>Regulation of Amount of Pensions <span class="chip vimp">🔴 VERY IMP (Numerical-heavy)</span></h2>
+    <p class="hi">पेंशन की राशि का विनियमन — Rules 49-55A</p>
+  </div>
+
+  <div class="leave-grid">
+    <div class="leave-box"><b>10 years</b>Min qualifying service for pension (else Service Gratuity)</div>
+    <div class="leave-box"><b>50%</b>Pension rate of emoluments/avg emoluments</div>
+    <div class="leave-box"><b>5 years</b>Min qualifying service for Retirement Gratuity</div>
+    <div class="leave-box"><b>16½ times</b>Max Retirement Gratuity (emoluments multiple)</div>
+    <div class="leave-box"><b>₹10 lakh</b>Max ceiling — Retirement/Death Gratuity</div>
+    <div class="leave-box"><b>30%</b>Family Pension rate (uniform, of last pay)</div>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 49 — Amount of Pension / Service Gratuity <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Qualifying service <b>&lt; 10 years</b> → <b>Service Gratuity</b> = half month's emoluments per completed 6-monthly period.</li>
+        <li>Qualifying service <b>≥ 10 years</b> → <b>Pension</b> = 50% of emoluments or average emoluments, whichever is more beneficial.</li>
+        <li>Fraction of qualifying service ≥ <b>3 months</b> → rounded to next completed half-year.</li>
+        <li>Final pension amount → rounded to next higher rupee.</li>
+        <li>🟢 <b>Additional pension for very senior citizens</b> (age-linked, on top of basic pension):</li>
+      </ul>
+      <table>
+        <tr><th>Age of Pensioner</th><th>Additional Pension</th></tr>
+        <tr><td>80 to &lt;85 years</td><td>20% of basic pension</td></tr>
+        <tr><td>85 to &lt;90 years</td><td>30% of basic pension</td></tr>
+        <tr><td>90 to &lt;95 years</td><td>40% of basic pension</td></tr>
+        <tr><td>95 to &lt;100 years</td><td>50% of basic pension</td></tr>
+        <tr><td>100 years or more</td><td>100% of basic pension</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> A pensioner's age is 87. What additional pension is he entitled to? <b>Ans: 30% of basic pension.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 50 — Retirement/Death Gratuity <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>Retirement Gratuity</b> (min. 5 years' qualifying service): ¼ of emoluments per completed 6-monthly period, max <b>16½ times</b> emoluments.</p>
+      <p><b>Death Gratuity Table</b> (if dies while in service):</p>
+      <table>
+        <tr><th>Length of Qualifying Service</th><th>Rate of Death Gratuity</th></tr>
+        <tr><td>Less than 1 year</td><td>2 × emoluments</td></tr>
+        <tr><td>1 year or more but &lt; 5 years</td><td>6 × emoluments</td></tr>
+        <tr><td>5 years or more but &lt; 20 years</td><td>12 × emoluments</td></tr>
+        <tr><td>20 years or more</td><td>½ emoluments per 6-month period, max <b>33 × emoluments</b></td></tr>
+      </table>
+      <p>🔴 <b>Maximum ceiling</b> (retirement or death gratuity): <b>₹10,00,000</b> (ten lakh rupees).</p>
+      <p><b>"Family" for gratuity</b> (Rule 50(6)) includes: wife/wives, husband, sons (incl. step/adopted), unmarried & widowed daughters, father, mother, brothers &lt;18 yrs, unmarried/widowed sisters, married daughters, children of pre-deceased son.</p>
+      <div class="qbox"><b>Probable Q:</b> What is the death gratuity rate for a Government servant who dies with 8 years of qualifying service? <b>Ans: 12 times emoluments (5 yrs to &lt;20 yrs slab).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 54 — Family Pension 1964 <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Normal Family Pension = <b>30% of basic pay</b> (uniform rate), subject to min/max as prescribed.</li>
+        <li>🔴 <b>Enhanced Family Pension</b> (50% of last pay) — applicable if death occurred: (a) in service after 7+ years' continuous service, or (b) after retirement while in receipt of pension.</li>
+        <li>Enhanced rate payable for: <b>10 years</b> (if died in service) OR <b>7 years / until age 67</b>, whichever is earlier (if died after retirement) — then reverts to normal 30% rate.</li>
+        <li>Additional family pension for pensioners 80+ years — same age-slab % structure as Rule 49 pension.</li>
+        <li>Family pension period: widow/widower — until death/remarriage; unmarried son — till 25 yrs/marriage/earning; unmarried/widowed/divorced daughter — till marriage/remarriage/earning; disabled child — for life (with Medical Board certification); dependent parents — for life.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> For how long is Enhanced Family Pension payable if the Government servant dies while in service? <b>Ans: 10 years from the date following death.</b></div>
+      <div class="qbox"><b>Probable Q:</b> What is the normal rate of Family Pension? <b>Ans: 30% of last pay drawn (uniform rate).</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Government Servant Dies</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">In service, 7+ yrs continuous → Enhanced FP (50%) for 10 yrs, then Normal (30%)</div>
+      <div class="step">After retirement, already pensioner → Enhanced FP for 7 yrs / till age 67 (whichever less), then Normal (30%)</div>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>10-50-5-16.5-2/6/12/33-10L-30-50-10-7/67</b>" — memorize as a numeric chain: 10 yrs (pension eligibility), 50% (pension rate), 5 yrs (gratuity eligibility), 16.5× (max retirement gratuity), 2/6/12/33× (death gratuity slabs), 10 lakh (gratuity cap), 30% (normal FP), 50% (enhanced FP), 10 yrs / 7yrs-till-67 (enhanced FP duration).
+  </div>
+</section>
+
+<!-- ============ TOPIC 7: DETERMINATION/AUTHORIZATION ============ -->
+<section class="topic" id="t7">
+  <div class="hero">
+    <h2>Determination & Authorization of Pension and Gratuity <span class="chip vimp">🔴 VERY IMP (Timeline-heavy)</span></h2>
+    <p class="hi">पेंशन एवं उपदान की राशि का निर्धारण एवं प्राधिकरण — Rules 56-74</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 56 — List of Retiring Government Servants <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Head of Department prepares a list <b>every 3 months</b> (1 Jan/Apr/Jul/Oct) of servants due to retire in the next <b>12-15 months</b>.</li>
+        <li>Copy to Accounts Officer by end of that quarter month (31 Jan/30 Apr/31 Jul/31 Oct).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 57 — No Demand Certificate <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <p>Head of Office writes to Directorate of Estates <b>at least 1 year</b> before anticipated retirement (for allottees of Govt. accommodation), for issue of "No Demand Certificate" covering the period up to <b>8 months before</b> retirement.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 58-61 — Preparation of Pension Papers (The Big Timeline) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p>Pension paper preparation (Form 7) begins <b>1 year before</b> superannuation date or date of proceeding on LPR, whichever is earlier — divided into 3 stages:</p>
+      <table>
+        <tr><th>Stage</th><th>Task</th><th>Deadline</th></tr>
+        <tr><td>1st</td><td>Verification of service (using pay bills/acquittance rolls; reference to other Head of Office if needed — reply in 2 months)</td><td>Completed by <b>8 months before</b> retirement</td></tr>
+        <tr><td>2nd</td><td>Making good omissions in Service Book; verify last 10 months' emoluments (may check last 24 months)</td><td>Along with/after 1st stage</td></tr>
+        <tr><td>3rd</td><td>Certificate of qualifying service & emoluments to servant; Form 5 issued</td><td>Not later than <b>8 months before</b> retirement; Form 5 to reach Head of Office <b>6 months before</b> retirement</td></tr>
+      </table>
+      <ul class="pts">
+        <li>Servant's objection to certified service/emoluments → must respond within <b>2 months</b>.</li>
+        <li><b>Rule 60:</b> Head of Office completes Part I of Form 7 not later than <b>4 months before</b> retirement.</li>
+        <li><b>Rule 61:</b> Pension papers forwarded to Accounts Officer.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> How many months before retirement must the Head of Office complete Part I of Form 7? <b>Ans: 4 months (Rule 60).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 65 — Authorization by Accounts Officer <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Superannuation cases: Accounts Officer issues Pension Payment Order (PPO) not later than <b>1 month in advance</b> of retirement date.</li>
+        <li>Other retirement cases: PPO issued within <b>3 months</b> of receiving pension papers from Head of Office.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Within how many months must the Accounts Officer issue the PPO for non-superannuation retirements? <b>Ans: 3 months from receipt of pension papers.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 68 — Interest on Delayed Gratuity Payment <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>If gratuity payment is delayed due to <b>administrative reasons/lapses</b> (not due to the employee's own default) → interest payable at the <b>GPF rate</b>.</li>
+        <li>Secretary of the Ministry/Department sanctions the interest payment; Presidential sanction issued thereafter.</li>
+        <li>Responsibility fixed and disciplinary action taken against the official(s) responsible for the delay.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 83-85 — Payment of Pension <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 83:</b> Pension (other than family pension) becomes payable from the date the servant ceases to be borne on establishment; pension is payable for the day the recipient dies.</li>
+        <li><b>Rule 84:</b> Pension payable in Indian rupees, in India only.</li>
+        <li><b>Rule 85:</b> Gratuity paid in lump sum; monthly pension payable on/after last working day of the month (except March — paid on/after 1st working day of April, for budgetary reasons).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">12-15 months before</div><div class="tl-text">Name appears on retirement list (Rule 56)</div></div>
+    <div class="tl-item"><div class="tl-time">1 year before</div><div class="tl-text">Pension paper work begins (Rule 58); No Demand Certificate process initiated (Rule 57)</div></div>
+    <div class="tl-item"><div class="tl-time">8 months before</div><div class="tl-text">Stage 1 & 3 completed: service verified, certificate given to servant</div></div>
+    <div class="tl-item"><div class="tl-time">6 months before</div><div class="tl-text">Form 5 must reach Head of Office</div></div>
+    <div class="tl-item"><div class="tl-time">4 months before</div><div class="tl-text">Head of Office completes Part I of Form 7 (Rule 60)</div></div>
+    <div class="tl-item"><div class="tl-time">1 month before</div><div class="tl-text">Accounts Officer issues PPO (Rule 65) for superannuation cases</div></div>
+    <div class="tl-item"><div class="tl-time">Retirement Date</div><div class="tl-text">Pension becomes payable from date of ceasing to be borne on establishment (Rule 83)</div></div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>12/15-1yr-8mo-6mo-4mo-1mo</b>" — the countdown ladder to retirement for pension paperwork. Each number is a checkpoint before the retirement date.
+  </div>
+</section>
+
+<!-- ============ TOPIC 8: FAMILY PENSION/DEATH GRATUITY (DYING IN SERVICE) ============ -->
+<section class="topic" id="t8">
+  <div class="hero">
+    <h2>Determination & Authorization of Family Pension & Death Gratuity <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">सेवाकाल में मृत्यु पर पारिवारिक पेंशन एवं मृत्यु उपदान का निर्धारण — Rules 77-80D</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 77 — Obtaining Claims <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>On intimation of death while in service, Head of Office ascertains death gratuity/family pension eligibility.</li>
+        <li>Addresses nominee(s) in <b>Form 10/11</b> for gratuity claim (<b>Form 12</b>); eligible family member/guardian in <b>Form 13</b> for family pension claim (<b>Form 14</b>).</li>
+        <li>Child who has attained <b>18 years</b> may claim directly without guardian.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 78 — Completion of Form 18 <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Form 18 completed within <b>1 month</b> of intimation of death.</li>
+        <li>Emoluments verified for max <b>1 year preceding death</b> (or before EOL commencement if servant was on EOL at death).</li>
+        <li>Entire process (qualifying service + emoluments determination + family pension/gratuity calculation) completed within <b>1 month</b> of intimation.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Within how many months must Form 18 be completed after intimation of death? <b>Ans: 1 month.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 79 — Incomplete Service Records <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>If service &gt;1 yr but &lt;7 yrs → verify last year's service/emoluments; determine Family Pension under R.54(2)/(2A).</li>
+        <li>If service &gt;7 yrs → verify last 7 years + last year's emoluments; determine per R.54(3) (enhanced rate).</li>
+        <li>If last 7 yrs unverifiable but last year verifiable → provisional normal-rate family pension first; verify remaining 7-yr spell within next <b>2 months</b>, then re-determine enhanced rate.</li>
+        <li>Death gratuity: if 5-20 yrs verified → 12× emoluments; if &gt;20 yrs but unverifiable → provisional 12× emoluments, final amount determined within <b>6 months</b> of provisional authorization.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> If the last 7 years' service cannot be immediately verified, within how long must it be verified thereafter? <b>Ans: Within 2 months.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 80, 80A-80D — Forwarding, Provisional Payment & Deputation Deaths <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 80:</b> Head of Office forwards Form 18 to Accounts Officer within <b>1 month</b> of receipt of claim. Max <b>10% of gratuity or ₹1,000 (whichever is less)</b> may be held over pending final dues determination.</li>
+        <li><b>Rule 80-A:</b> Head of Office draws <b>provisional family pension</b> (up to max family pension) and <b>100% of gratuity</b> as determined, pending final authorization.</li>
+        <li><b>Rule 80-C:</b> Adjustment of Government dues against gratuity.</li>
+        <li><b>Rule 80-D:</b> Payment of family pension/death gratuity when a Government servant dies while on deputation.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">Day 0</div><div class="tl-text">Death intimated to Head of Office</div></div>
+    <div class="tl-item"><div class="tl-time">Within 1 month</div><div class="tl-text">Form 18 completed; qualifying service & emoluments determined (Rule 78)</div></div>
+    <div class="tl-item"><div class="tl-time">Within 1 month (of claim)</div><div class="tl-text">Forwarded to Accounts Officer (Rule 80)</div></div>
+    <div class="tl-item"><div class="tl-time">Immediately</div><div class="tl-text">Provisional family pension + 100% gratuity drawn (Rule 80-A)</div></div>
+    <div class="tl-item"><div class="tl-time">Within 2-6 months (if incomplete records)</div><div class="tl-text">Final verification & determination completed (Rule 79)</div></div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>Death → 1 Month Form 18 → 1 Month Forward → Provisional Now, Final Later (2-6 months)</b>" — the family-pension-on-death timeline.
+  </div>
+</section>
+
+<!-- ============ TOPIC 9: COMMUTATION RULES 1981 ============ -->
+<section class="topic" id="t9">
+  <div class="hero">
+    <h2>CCS (Commutation of Pension) Rules, 1981 <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">केंद्रीय सिविल सेवा (पेंशन विनिमय) नियम, 1981</p>
+    <p style="font-size:.75rem; color:var(--sub);">Note: These are standalone rules (footnoted in CCS(Pension) Rules 1972 as the successor to Article 918-A, CSR); presented here based on standard exam-reference material.</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> Commutation of pension means converting a portion of the monthly pension into a lump-sum, one-time payment. The pensioner surrenders that portion of monthly pension for a specified number of years, in exchange for an immediate lump sum calculated using a Commutation Table (age-based factor).</p>
+      <p class="hindi"><b>हिंदी:</b> पेंशन का विनिमय (कम्यूटेशन) का अर्थ है मासिक पेंशन के एक भाग को एकमुश्त राशि में परिवर्तित करना। पेंशनभोगी एक निश्चित वर्षों के लिए मासिक पेंशन के उस भाग को त्याग देता है, बदले में आयु-आधारित तालिका के अनुसार गणना की गई एकमुश्त राशि प्राप्त करता है।</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Important Rules — Key Provisions <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Point</th><th>Provision</th></tr>
+        <tr><td>Maximum commutable portion</td><td>Up to <b>40%</b> of pension may be commuted</td></tr>
+        <tr><td>Commutation without medical exam</td><td>Allowed if application made within <b>1 year</b> of retirement (based on age next birthday)</td></tr>
+        <tr><td>Commutation with medical exam</td><td>Required if applied for <b>after 1 year</b> of retirement, or in specified other cases</td></tr>
+        <tr><td>Restoration of commuted pension</td><td>Commuted portion restored after <b>15 years</b> from the date of commutation (i.e., date of drawal of the lump sum)</td></tr>
+        <tr><td>Basis of commutation value</td><td>Age next birthday, applied to a Commutation Table factor × 12 × commuted amount</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum percentage of pension that can be commuted? <b>Ans: 40%.</b></div>
+      <div class="qbox"><b>Probable Q:</b> After how many years is the commuted portion of pension restored? <b>Ans: 15 years.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Government servants who retire under Rule 40 (compulsory retirement as penalty) or Rule 41 (compassionate allowance) — commutation still permissible, but administratively confirmed case-by-case.</li>
+        <li>Pension from Invalid Pension or Compensation Pension — commutation subject to medical certification of life expectancy in some cases.</li>
+        <li>If a pensioner dies before the commutation payment is disbursed — commutation application is treated as not having taken effect (lump sum not paid to estate).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>🏛️ Important Authorities <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Head of Office</b> — receives and forwards commutation application.</li>
+        <li><b>Accounts Officer</b> — authorizes the commuted value payment along with pension.</li>
+        <li><b>Competent Medical Authority</b> — certifies fitness where medical examination is required.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⏱️ Important Time Limits <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>1 year</b> from retirement — window for commutation without medical examination.</li>
+        <li><b>15 years</b> — restoration period of commuted pension.</li>
+        <li>Commuted value normally becomes payable along with/soon after the first pension payment for applications made in time.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Pensioner Applies to Commute Pension</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Applied within 1 year → No medical exam needed</div>
+      <div class="step">Applied after 1 year → Medical exam required</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">Max 40% commuted → Lump sum paid</div>
+    <div class="arrow">↓</div>
+    <div class="step">After 15 years → Full pension restored</div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>40-1-15</b>" → Max 40% commutable, 1 year window (no medical exam), 15 years to restoration.
+  </div>
+</section>
+
+<!-- ============ REVISION SHEET ============ -->
+<section class="topic" id="t10">
+  <div class="revision-sheet">
+    <h2>📄 One-Page Last-Day Revision Sheet</h2>
+    <div class="tag-legend">
+      <span><span class="dot" style="background:var(--vimp)"></span>Very Imp</span>
+      <span><span class="dot" style="background:var(--freq)"></span>Frequent</span>
+      <span><span class="dot" style="background:var(--concept)"></span>Concept</span>
+      <span><span class="dot" style="background:var(--quick)"></span>Quick</span>
+    </div>
+
+    <h3>1️⃣ Preliminary</h3>
+    <ul class="pts">
+      <li>🔴 In force: 1 June 1972; applies to appointments up to 31 Dec 2003</li>
+      <li>🟠 8 exclusions (Railway, casual/daily, contingency-paid, CPF, AIS, foreign-local, contract, special-law)</li>
+      <li>🟡 Transfer option: 6 months, final once exercised (Rule 4)</li>
+    </ul>
+
+    <h3>2️⃣ General Conditions</h3>
+    <ul class="pts">
+      <li>🔴 No two pensions same time/service (Rule 7)</li>
+      <li>🔴 Rule 8: Appointing Authority acts (min pension ₹375 floor, historic); Rule 9: President acts, UPSC mandatory</li>
+      <li>🟠 15-day show-cause notice period</li>
+    </ul>
+
+    <h3>3️⃣ Qualifying Service</h3>
+    <ul class="pts">
+      <li>🔴 Verification: after 18 years service + 5 years before retirement (Form 24)</li>
+      <li>🔴 Retirement: 30 years (normal, R.48) / 20 years (voluntary, R.48-A)</li>
+      <li>🟡 Dismissal/removal (R.24) & resignation (R.26) forfeit past service</li>
+    </ul>
+
+    <h3>4️⃣ Emoluments</h3>
+    <ul class="pts">
+      <li>🔴 Emoluments (R.33) = basic pay just before retirement/death</li>
+      <li>🔴 Average Emoluments (R.34) = average of last 10 months</li>
+      <li>🟢 Pension based on whichever (33 or 34) is MORE beneficial</li>
+    </ul>
+
+    <h3>5️⃣ Classes of Pensions</h3>
+    <ul class="pts">
+      <li>🔴 6 classes: Superannuation(35), Retiring(36), Absorption(37), Invalid(38), Compensation(39), Compulsory-retirement(40) + Compassionate Allowance(41)</li>
+      <li>🟠 Compensation pension: 3 months' notice; Compulsory retirement pension: min 2/3rd</li>
+      <li>🔴 Compassionate Allowance: max 2/3rd, for dismissed/removed in deserving cases</li>
+    </ul>
+
+    <h3>6️⃣ Amount of Pension</h3>
+    <ul class="pts">
+      <li>🔴 &lt;10 yrs service → Service Gratuity; ≥10 yrs → Pension = 50% of emoluments</li>
+      <li>🔴 Retirement Gratuity: ¼ emoluments/6-month period, max 16.5×; Death Gratuity: 2×/6×/12×/33× slabs</li>
+      <li>🔴 Max gratuity ceiling: ₹10 lakh</li>
+      <li>🔴 Family Pension: 30% normal; 50% enhanced (10 yrs if died in service; 7yrs/till-67 if died post-retirement)</li>
+      <li>🟢 Additional pension for 80+ years: 20%→100% by age slab</li>
+    </ul>
+
+    <h3>7️⃣ Determination & Authorization (Pension/Gratuity)</h3>
+    <ul class="pts">
+      <li>🔴 Paperwork starts 1 year before retirement; 3-stage process</li>
+      <li>🔴 Certificate to servant + Form 5 issued: 8 months before; Form 5 due back: 6 months before</li>
+      <li>🔴 Form 7 Part I complete: 4 months before; PPO issued: 1 month before (superannuation) / 3 months (other retirement)</li>
+    </ul>
+
+    <h3>8️⃣ Family Pension/Death Gratuity (Death in Service)</h3>
+    <ul class="pts">
+      <li>🔴 Form 18 completed within 1 month of death intimation</li>
+      <li>🟠 Forwarded to Accounts Officer within 1 month of claim receipt</li>
+      <li>🟡 Provisional family pension + 100% gratuity drawn immediately; final determination within 2-6 months if records incomplete</li>
+    </ul>
+
+    <h3>9️⃣ Commutation of Pension Rules 1981</h3>
+    <ul class="pts">
+      <li>🔴 Max 40% of pension commutable</li>
+      <li>🔴 No medical exam if applied within 1 year of retirement</li>
+      <li>🔴 Restoration after 15 years</li>
+    </ul>
+
+    <h3>🔢 Key Numbers to Remember</h3>
+    <table>
+      <tr><th>Number</th><th>Where it applies</th></tr>
+      <tr><td>1 June 1972</td><td>CCS (Pension) Rules commencement</td></tr>
+      <tr><td>31 Dec 2003</td><td>Cut-off for CCS (Pension) Rules applicability (NPS after)</td></tr>
+      <tr><td>18 yrs + 5 yrs-before-retirement</td><td>Qualifying service verification points</td></tr>
+      <tr><td>10 years</td><td>Min qualifying service for pension (else gratuity only)</td></tr>
+      <tr><td>5 years</td><td>Min qualifying service for Retirement Gratuity</td></tr>
+      <tr><td>50%</td><td>Pension rate of emoluments/average emoluments</td></tr>
+      <tr><td>16.5×</td><td>Max Retirement Gratuity multiple</td></tr>
+      <tr><td>₹10 lakh</td><td>Max gratuity ceiling</td></tr>
+      <tr><td>30% / 50%</td><td>Normal / Enhanced Family Pension rate</td></tr>
+      <tr><td>10 yrs / 7yrs-till-67</td><td>Enhanced FP duration (in-service death / post-retirement death)</td></tr>
+      <tr><td>40% / 1 yr / 15 yrs</td><td>Commutation: max %, medical-exam-free window, restoration period</td></tr>
+    </table>
+
+    <h3>🧠 All Mnemonics Together</h3>
+    <div class="mnemonic">1-6-1972 to 31-12-2003 → CCS Pension Rules validity window</div>
+    <div class="mnemonic">18-and-5 → Qualifying service verification checkpoints</div>
+    <div class="mnemonic">33 = Last Pay, 34 = Last 10 Months Average → Emoluments vs Average Emoluments</div>
+    <div class="mnemonic">S-R-A-I-C-C-C → 6+1 classes of pension in rule order</div>
+    <div class="mnemonic">10-50-5-16.5-2/6/12/33-10L-30-50-10-7/67 → Amount of Pension numeric chain</div>
+    <div class="mnemonic">12/15-1yr-8mo-6mo-4mo-1mo → Retirement paperwork countdown</div>
+    <div class="mnemonic">Death → 1mo Form18 → 1mo Forward → Provisional Now, Final in 2-6mo → Family pension timeline</div>
+    <div class="mnemonic">40-1-15 → Commutation: max %, exam-free window, restoration years</div>
+  </div>
+</section>
+
+</main>
+
+<footer>LDCE IP Exam Portal Study Card • CCS (Pension) Rules, 1972 & CCS (Commutation of Pension) Rules, 1981 • For personal exam preparation use</footer>
+
+<script>
+const buttons = document.querySelectorAll('.controls button[data-t]');
+const topics = document.querySelectorAll('.topic');
+buttons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    topics.forEach(t=>t.classList.remove('active'));
+    document.getElementById(btn.dataset.t).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+document.getElementById('darkToggle').addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+});
+</script>
+</body>
+</html>

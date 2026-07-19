@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave Rules Study Cards | CCS (अवकाश) नियम 1972 — FR SR Part III</title>
+<style>
+:root{
+  --red:#C8102E; --blue:#003087; --gold:#FFB81C;
+  --bg:#f7f6f2; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a; --line:#e4e1d8;
+  --vimp:#c8102e; --freq:#e07b00; --concept:#c9a300; --quick:#1f8a4c;
+}
+*{box-sizing:border-box;}
+body.dark{ --bg:#12141a; --card:#1b1e26; --ink:#eef0f4; --sub:#a7adb8; --line:#2a2e38; }
+body{margin:0; font-family:"Noto Sans",Arial,sans-serif; background:var(--bg); color:var(--ink); padding-bottom:60px; transition:background .25s,color .25s;}
+header.top{background:linear-gradient(135deg,var(--blue),#001a4d 70%); color:#fff; padding:18px 16px 60px; position:relative; overflow:hidden;}
+header.top::after{content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px; background:radial-gradient(circle,var(--gold) 0%, transparent 70%); opacity:.35;}
+header.top h1{margin:0 0 4px; font-size:1.28rem; line-height:1.3;}
+header.top p{margin:0; font-size:.85rem; opacity:.9;}
+.badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.badge-row span{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); padding:3px 9px; border-radius:20px; font-size:.68rem;}
+.controls{position:sticky; top:0; z-index:50; background:var(--card); border-bottom:2px solid var(--gold); display:flex; gap:6px; padding:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:-40px; border-radius:14px 14px 0 0; box-shadow:0 4px 14px rgba(0,0,0,.15);}
+.controls button{flex:0 0 auto; border:1px solid var(--line); background:var(--bg); color:var(--ink); padding:8px 12px; border-radius:20px; font-size:.68rem; font-weight:600; cursor:pointer;}
+.controls button.active{background:var(--red); color:#fff; border-color:var(--red);}
+.darkbtn{margin-left:auto; background:var(--ink); color:var(--bg); border:none; padding:8px 12px; border-radius:20px; font-size:.72rem; cursor:pointer;}
+main{max-width:780px; margin:0 auto; padding:14px;}
+.topic{display:none;} .topic.active{display:block;}
+.hero{background:var(--card); border:1px solid var(--line); border-left:6px solid var(--red); border-radius:12px; padding:14px; margin:14px 0; box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.hero h2{margin:0 0 6px; font-size:1.08rem; color:var(--red);}
+.hero .hi{font-size:.93rem; color:var(--sub); margin:0 0 8px;}
+.chip{display:inline-block; font-size:.65rem; font-weight:700; padding:2px 8px; border-radius:10px; color:#fff; margin-right:4px;}
+.chip.vimp{background:var(--vimp);} .chip.freq{background:var(--freq);} .chip.concept{background:var(--concept); color:#1c1c1c;} .chip.quick{background:var(--quick);}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; margin:10px 0; overflow:hidden; box-shadow:0 1px 5px rgba(0,0,0,.05);}
+.card summary{list-style:none; cursor:pointer; padding:12px 14px; font-weight:700; display:flex; align-items:center; gap:8px; background:linear-gradient(90deg,rgba(200,16,46,.06),transparent); font-size:.92rem;}
+.card summary::-webkit-details-marker{display:none;}
+.card summary::after{content:"▾"; margin-left:auto; transition:transform .2s;}
+.card[open] summary::after{transform:rotate(180deg);}
+.card .body{padding:0 14px 14px;}
+.section-label{font-size:.68rem; text-transform:uppercase; letter-spacing:.5px; color:var(--sub); font-weight:700; margin:10px 0 4px; border-bottom:1px dashed var(--line); padding-bottom:2px;}
+ul.pts{margin:4px 0; padding-left:18px;} ul.pts li{margin:4px 0; font-size:.86rem;}
+.hindi{color:var(--sub); font-size:.8rem;}
+table{width:100%; border-collapse:collapse; font-size:.76rem; margin:6px 0;}
+th,td{border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.68rem;}
+tr:nth-child(even){background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03);}
+.qbox{background:rgba(255,184,28,.12); border:1px dashed var(--gold); border-radius:8px; padding:8px 10px; font-size:.76rem; margin-top:6px;}
+.qbox b{color:var(--red);}
+.flow{display:flex; flex-direction:column; align-items:center; margin:12px 0;}
+.flow .step{background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; font-size:.74rem; text-align:center; width:92%; max-width:340px;}
+.flow .arrow{font-size:1.1rem; color:var(--red); margin:2px 0;}
+.flow .branch{display:flex; gap:8px; width:100%; justify-content:center; flex-wrap:wrap;}
+.flow .branch .step{background:var(--red); width:45%; min-width:130px;}
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .tl-item{margin-bottom:12px; position:relative;}
+.timeline .tl-item::before{content:""; position:absolute; left:-19px; top:3px; width:10px; height:10px; border-radius:50%; background:var(--red);}
+.timeline .tl-time{font-weight:700; color:var(--red); font-size:.78rem;}
+.timeline .tl-text{font-size:.8rem;}
+.mnemonic{background:linear-gradient(135deg,rgba(0,48,135,.08),rgba(255,184,28,.1)); border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:8px 0; font-size:.82rem;}
+.mnemonic b{color:var(--blue);}
+.revision-sheet{background:var(--card); border:2px solid var(--red); border-radius:14px; padding:14px; margin:20px 0;}
+.revision-sheet h2{color:var(--red); margin-top:0;}
+.revision-sheet h3{color:var(--blue); font-size:.92rem; margin:14px 0 6px;}
+.tag-legend{font-size:.7rem; display:flex; flex-wrap:wrap; gap:10px; margin:10px 0;}
+.tag-legend span{display:flex; align-items:center; gap:4px;}
+.dot{width:10px; height:10px; border-radius:50%; display:inline-block;}
+footer{text-align:center; font-size:.7rem; color:var(--sub); padding:20px;}
+.leave-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.leave-box{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px; font-size:.75rem; text-align:center;}
+.leave-box b{display:block; color:var(--red); font-size:.95rem;}
+@media(max-width:420px){.leave-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>🏖️ Leave Rules Study Cards — CCS (Leave) Rules, 1972</h1>
+  <p>केंद्रीय सिविल सेवा (अवकाश) नियम, 1972 — Preliminary, General Conditions, Kinds of Leave, Special Leave</p>
+  <div class="badge-row">
+    <span>🔴 अति महत्वपूर्ण / Very Imp</span>
+    <span>🟠 बार-बार पूछा गया / Frequent</span>
+    <span>🟡 संकल्पनात्मक / Concept</span>
+    <span>🟢 त्वरित पुनरावृत्ति / Quick</span>
+  </div>
+</header>
+
+<div class="controls">
+  <button data-t="t1" class="active">1️⃣ Preliminary</button>
+  <button data-t="t2">2️⃣ General Conditions</button>
+  <button data-t="t3">3️⃣ Earned & Half Pay</button>
+  <button data-t="t4">4️⃣ Commuted/Not Due/EOL</button>
+  <button data-t="t5">5️⃣ Maternity/Paternity/CCL</button>
+  <button data-t="t6">6️⃣ Disability/Hospital/Dept.</button>
+  <button data-t="t7">📄 Revision Sheet</button>
+  <button class="darkbtn" id="darkToggle">🌙</button>
+</div>
+
+<main>
+
+<!-- ============ TOPIC 1: PRELIMINARY ============ -->
+<section class="topic active" id="t1">
+  <div class="hero">
+    <h2>Chapter I — Preliminary <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">प्रारंभिक — Rules 1 to 6</p>
+    <p><b>Chapter → Sub-Chapter → Micro:</b><br>
+    CCS (Leave) Rules 1972 → Preliminary → Short Title/Extent/Definitions/Transfer Provisions</p>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition / परिभाषा <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <div class="section-label">English</div>
+      <p>The Central Civil Services (Leave) Rules, 1972 came into force on <b>1 June 1972</b>. They apply to Government servants in civil services/posts connected with the affairs of the Union, subject to 11 listed exclusions (Railway servants, casual/daily-rated/part-time staff, workmen in industrial establishments, AIS members, etc.).</p>
+      <div class="section-label">हिंदी</div>
+      <p class="hindi">केंद्रीय सिविल सेवा (अवकाश) नियम, 1972 <b>1 जून 1972</b> से लागू हुए। ये संघ के कार्यों से संबंधित सिविल सेवाओं/पदों पर लागू होते हैं, परंतु 11 सूचीबद्ध श्रेणियों (रेलवे कर्मचारी, आकस्मिक/दैनिक वेतनभोगी, औद्योगिक स्थापना कर्मी, अखिल भारतीय सेवा सदस्य आदि) को छोड़कर।</p>
+      <div class="qbox"><b>Probable Q:</b> When did the CCS (Leave) Rules, 1972 come into force? <b>Ans: 1 June 1972.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 2 — Extent of Application: 11 Exclusions <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>#</th><th>Excluded Category</th></tr>
+        <tr><td>(a)</td><td>Railway servants</td></tr>
+        <tr><td>(b)</td><td>Casual / daily-rated / part-time employees</td></tr>
+        <tr><td>(c)</td><td>Persons paid from contingencies</td></tr>
+        <tr><td>(d)</td><td>Workmen in industrial establishments</td></tr>
+        <tr><td>(e)</td><td>Persons in work-charged establishments</td></tr>
+        <tr><td>(f)</td><td>Members of All India Services</td></tr>
+        <tr><td>(g)</td><td>Locally recruited staff in foreign Diplomatic/Consular establishments</td></tr>
+        <tr><td>(h)</td><td>Contract employees (unless contract provides otherwise)</td></tr>
+        <tr><td>(i)</td><td>Persons with special Constitutional/legal provisions</td></tr>
+        <tr><td>(j)</td><td>Persons governed by FR/CSR for leave purposes</td></tr>
+        <tr><td>(k)</td><td>Persons on deputation from State Govt./elsewhere for limited duration</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> Name any three categories excluded from CCS (Leave) Rules, 1972.</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 3 — Key Definitions <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Term</th><th>Meaning</th></tr>
+        <tr><td>Completed years of service</td><td>Continuous service incl. duty + leave (incl. extraordinary leave)</td></tr>
+        <tr><td>Date of retirement</td><td>Afternoon of last day of the month of attaining prescribed retirement age</td></tr>
+        <tr><td>Foreign service</td><td>Service where pay is drawn (with Govt. sanction) from a source other than Consolidated Fund of India/State/UT</td></tr>
+        <tr><td>Govt. servant in quasi-permanent employ</td><td>Officer on UPSC-eligible temp/officiating post w/ written expectation of permanency, not confirmed after 3 yrs; OR declared quasi-permanent under CCS (Temp. Services) Rules 1965</td></tr>
+        <tr><td>Govt. servant in permanent employ</td><td>Holds substantively (or provisionally-substantively) a permanent post, or holds/would hold a lien on one</td></tr>
+        <tr><td>Vacation Department</td><td>A department with regular vacations during which staff may be absent from duty</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> Define "Government servant in quasi-permanent employ".</div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rules 4-6 — Transfer & Special Provisions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 4:</b> On temporary transfer to Railways/State Govt./foreign service within India → these rules continue to apply. On foreign service outside India or transfer to Armed Forces → rules apply only per terms of transfer.</li>
+        <li><b>Rule 5:</b> Permanent Govt. servant transferred temporarily to a CCS(Leave)-Rules post → continues under old leave rules. If appointed substantively to a permanent post under these rules → becomes subject to these rules; leave at credit carried forward subject to Rule 26 max (300 days), old leave exhausted first.</li>
+        <li><b>Rule 6:</b> If posted to an industrial establishment (Factories Act, 1948) → cash-equivalent of EL+HPL at credit granted (max 300 days) on ceasing to be governed by these rules; encashment on return capped so lifetime encashment doesn't exceed 300 days.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What happens to a Government servant's leave account when he moves to an industrial establishment governed by the Factories Act, 1948?</div>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>1-6-1972</b>" → CCS (Leave) Rules came into force on 1 June 1972. For exclusions: "<b>Railway, Casual, Contingency, Industrial, Work-Charged, AIS, Foreign-local, Contract, Special-law, FR-governed, Deputation</b>" — 11 categories, first letters spell no clean acronym but group as "Employment-type exclusions" + "Governed-elsewhere exclusions".
+  </div>
+</section>
+
+<!-- ============ TOPIC 2: GENERAL CONDITIONS ============ -->
+<section class="topic" id="t2">
+  <div class="hero">
+    <h2>Chapter II — General Conditions <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">सामान्य शर्तें — Rules 7 to 13</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 7-8 — Right to Leave & Regulation <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 7:</b> Leave <b>cannot be claimed as of right</b>. Competent authority may refuse/revoke leave when exigencies of public service require — but cannot change the <b>kind</b> of leave except at the servant's written request.</li>
+        <li><b>Rule 8:</b> Claim to leave is regulated by rules in force <b>at the time leave is applied for and granted</b> (not when it accrued).</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Can leave be claimed as a matter of right? <b>Ans: No (Rule 7).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 9 — Effect of Dismissal/Removal/Resignation on Leave <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Leave at credit <b>lapses</b> on dismissal/removal/resignation (except as provided in Rule 39 — encashment).</li>
+        <li><b>Exception:</b> If servant resigns to join another post under Govt. of India (outside parent dept., application forwarded through proper channel) → leave does <b>NOT</b> lapse.</li>
+        <li>If reinstated on appeal/revision after dismissal/removal → prior service counts for leave.</li>
+        <li>Re-employed pensioner allowed to count past service for pension → also entitled to count former service towards leave.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Does leave lapse if a Government servant resigns to take up another post under Govt. of India through proper channel? <b>Ans: No — exception under Rule 9(2).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 10-11 — Commutation & Combination <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>Rule 10:</b> Leave may be commuted retrospectively into a different kind (that was due & admissible) at servant's request — not a matter of right. Request must be made within <b>30 days</b> of rejoining duty after the leave.</li>
+        <li><b>Rule 11:</b> Any kind of leave may be combined with/continued into any other kind, <b>except</b> Casual Leave (not "leave" under these rules) cannot be combined with any recognized leave.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Within how many days must a request for commutation of leave be made after rejoining duty? <b>Ans: 30 days.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 12 — Max Continuous Leave <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p>No Government servant shall be granted leave of any kind for a continuous period exceeding <b>5 years</b>, unless the President determines otherwise in exceptional circumstances.</p>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 13 — Acceptance of Service/Employment While on Leave <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>No employment elsewhere (incl. private practice) while on leave without prior sanction: <b>President</b> if abroad; <b>Appointing Authority</b> if in India.</li>
+        <li>Ordinarily not permitted to take other employment while on leave (other than LPR — Leave Preparatory to Retirement).</li>
+        <li>On LPR: private employment NOT permitted; but Public Sector Undertaking employment may be permitted (leave salary as per Rule 40).</li>
+        <li>If recalled to duty from LPR before retirement and agrees → unexpired leave from rejoining date is <b>cancelled</b> and can be encashed under Rule 39(2).</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Who grants sanction for accepting employment abroad while on leave? <b>Ans: The President.</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Leave Applied For</div>
+    <div class="arrow">↓</div>
+    <div class="step">Rule 8: Governed by rules in force AT TIME of application/grant</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Granted → Regulated normally</div>
+      <div class="step">Refused (public exigency) → No change of KIND without written consent</div>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>7-No-Right, 12-Five-Years, 13-Prior-Sanction</b>" — quick rule-number to concept linking for Chapter II.
+  </div>
+</section>
+
+<!-- ============ TOPIC 3: EARNED & HALF PAY LEAVE ============ -->
+<section class="topic" id="t3">
+  <div class="hero">
+    <h2>Earned Leave & Half Pay Leave <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">अर्जित अवकाश एवं अर्ध वेतन अवकाश — Rules 26-29</p>
+  </div>
+
+  <div class="leave-grid">
+    <div class="leave-box"><b>2.5 days</b>Earned Leave per completed month (Rule 27)</div>
+    <div class="leave-box"><b>5/3 days</b>Half Pay Leave per completed month (Rule 29)</div>
+    <div class="leave-box"><b>15+15</b>EL credited twice yearly (Jan 1 & Jul 1)</div>
+    <div class="leave-box"><b>10+10</b>HPL credited twice yearly (Jan 1 & Jul 1)</div>
+    <div class="leave-box"><b>300 days</b>Max EL accumulation</div>
+    <div class="leave-box"><b>180 days</b>Max EL at a time (in India)</div>
+  </div>
+
+  <details class="card">
+    <summary>📖 Definition — Rule 26 (Earned Leave) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> Every Government servant (non-military, non-Vacation Dept.) is credited with Earned Leave in advance — <b>two instalments of 15 days each</b> on 1 January and 1 July. Maximum accumulation is <b>300 days</b> (plus any days encashed with LTC). Unavailed joining time (up to 15 days) can be credited as EL under specified conditions.</p>
+      <p class="hindi"><b>हिंदी:</b> प्रत्येक सरकारी कर्मचारी (सैन्य व अवकाश-विभाग को छोड़कर) को अग्रिम रूप से अर्जित अवकाश जमा किया जाता है — <b>1 जनवरी और 1 जुलाई को 15-15 दिनों की दो किश्तों</b> में। अधिकतम संचय <b>300 दिन</b> है।</p>
+      <div class="qbox"><b>Probable Q:</b> How much Earned Leave is credited on 1 January and 1 July each year? <b>Ans: 15 days each.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 26 — Key Provisions & Limits <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>Point</th><th>Value</th></tr>
+        <tr><td>Advance credit</td><td>15 days on 1 Jan + 15 days on 1 Jul</td></tr>
+        <tr><td>Max accumulation</td><td>300 days (+ LTC-encashed days)</td></tr>
+        <tr><td>Max EL at a time (in India)</td><td>180 days</td></tr>
+        <tr><td>Max EL at a time (partly/wholly abroad, Class I/II)</td><td>Up to 300 days, if spent outside India/Bangladesh/Bhutan/Burma/Sri Lanka/Nepal/Pakistan</td></tr>
+        <tr><td>If credit balance is 285-300 days at half-year end</td><td>New 15-day credit kept separate, adjusted first against leave taken, balance credited (subject to 300-day cap)</td></tr>
+      </table>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum Earned Leave that can be granted at one time within India? <b>Ans: 180 days.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 27 — Calculation of Earned Leave <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Credited at <b>2½ days per completed calendar month</b> of service likely to be rendered in that half-year.</li>
+        <li>In half-year of retirement/resignation → credit only up to actual date, at 2½ days/month.</li>
+        <li>On removal/dismissal → credit up to end of calendar month <b>preceding</b> the month of removal/dismissal.</li>
+        <li>On death in service → credit up to date of death.</li>
+        <li>If Extraordinary Leave/dies-non taken in a half-year → next half-year credit reduced by 1/10th of that period (max 15 days reduction).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 28 — Earned Leave for Vacation Departments <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>No EL if <b>full vacation availed</b> in a year.</li>
+        <li>If <b>partial</b> vacation availed → EL admissible proportionate to (30 days × unavailed vacation / full vacation).</li>
+        <li>If <b>no vacation</b> availed in a year → EL admissible under Rule 26 (normal formula).</li>
+        <li>Max accumulation still 300 days.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Is an employee in a Vacation Department entitled to Earned Leave if he avails the full vacation? <b>Ans: No.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📖 Definition — Rule 29 (Half Pay Leave) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p><b>English:</b> Half Pay Leave (HPL) account is credited in advance — <b>two instalments of 10 days each</b> on 1 January and 1 July, at the rate of <b>5/3 days per completed calendar month</b>. May be granted on medical certificate or for private affairs. No fixed upper accumulation limit (unlike EL's 300-day cap).</p>
+      <p class="hindi"><b>हिंदी:</b> अर्ध वेतन अवकाश (HPL) खाते में अग्रिम रूप से <b>1 जनवरी और 1 जुलाई को 10-10 दिनों</b> की दो किश्तों में जमा होता है, दर <b>5/3 दिन प्रति पूर्ण कैलेंडर माह</b>।</p>
+      <div class="qbox"><b>Probable Q:</b> At what rate is Half Pay Leave credited per completed month? <b>Ans: 5/3 days.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>⚠️ Important Exceptions <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>HPL not granted to non-permanent/quasi-permanent employees unless authority believes they'll return to duty — <b>except</b> if declared completely & permanently incapacitated by Medical Authority.</li>
+        <li>Departmental leave under Rule 49 → 20 days HPL on completion of 12 months actual duty (special provision).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>2.5 EL, 5/3 HPL, 15+15 & 10+10</b>" — EL rate is 2.5 days/month (15+15 credit); HPL rate is 5/3 days/month (10+10 credit). "300 caps EL, no cap on HPL."
+  </div>
+</section>
+
+<!-- ============ TOPIC 4: COMMUTED / NOT DUE / EOL ============ -->
+<section class="topic" id="t4">
+  <div class="hero">
+    <h2>Commuted Leave, Leave Not Due & Extraordinary Leave <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">रूपांतरित अवकाश, अननुज्ञात अवकाश एवं असाधारण अवकाश — Rules 30-33</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 30 — Commuted Leave <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Commuted leave (not exceeding <b>half of HPL due</b>) may be granted on medical certificate.</li>
+        <li>🔴 <b>Twice</b> the amount of commuted leave is debited against HPL account.</li>
+        <li>Up to <b>180 days</b> HPL may be commuted (without medical certificate) during entire service for an approved course of study certified in public interest.</li>
+        <li>If servant resigns/retires voluntarily without returning to duty after commuted leave → treated as HPL; difference in leave salary recovered (unless retirement due to ill-health or death).</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> How much HPL is debited when commuted leave is granted? <b>Ans: Twice the amount of commuted leave taken.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 31 — Leave Not Due <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Granted to permanent/quasi-permanent employees, <b>max 360 days</b> during entire service, on medical certificate.</li>
+        <li>Limited to HPL likely to be earned later; debited against future HPL earnings.</li>
+        <li>Also available to <b>temporary</b> employees suffering from TB, Leprosy, Cancer, or Mental Illness (max 360 days), subject to min. 1 year service + post likely to last till return + medical certificate.</li>
+        <li>Not available for Leave Preparatory to Retirement (LPR).</li>
+        <li>If resigns/retires voluntarily without returning → leave cancelled, leave salary recovered (except ill-health/death, or compulsory retirement under Pension Rule 48(1)(b) or FR 56(i)/(j)).</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum period of Leave Not Due admissible during entire service? <b>Ans: 360 days.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 32 — Extraordinary Leave (EOL) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <p>Granted when no other leave is admissible, or servant applies in writing for it despite other leave being due.</p>
+      <table>
+        <tr><th>Limit</th><th>Condition</th></tr>
+        <tr><td>3 months</td><td>Default max on one occasion (non-permanent/quasi-permanent)</td></tr>
+        <tr><td>6 months</td><td>If completed 1 year continuous service + medical certificate supports it (incl. the 3-month EOL)</td></tr>
+        <tr><td>18 months</td><td>For TB/Pleurisy/Leprosy/Cancer/Mental illness treatment (after 1 year continuous service)</td></tr>
+        <tr><td>24 months</td><td>For studies certified in public interest (after 3 years continuous service)</td></tr>
+      </table>
+      <ul class="pts">
+        <li>🔴 For 24-month study leave → must execute a <b>Bond (Form 6)</b> to refund expenditure if not returning to duty or quitting within 3 years after return; Bond needs sureties from <b>2 permanent Govt. servants</b> of comparable/higher status.</li>
+        <li>SC/ST candidates → EOL may be granted (relaxing sub-rule 2) for Pre-Examination Training Course by Head of Department.</li>
+        <li>Two spells of EOL, if separated only by other leave, are treated as <b>one continuous spell</b> for limit purposes.</li>
+        <li>Competent authority may commute retrospective unauthorized absence into EOL.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum Extraordinary Leave admissible for pursuing studies certified as in public interest, and what condition applies? <b>Ans: 24 months, after completing 3 years' continuous service, with a Bond (Form 6).</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Extraordinary Leave Requested</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Default → 3 months max</div>
+      <div class="step">1 yr service + medical cert → 6 months</div>
+    </div>
+    <div class="branch">
+      <div class="step">TB/Leprosy/Cancer/Mental (1 yr service) → 18 months</div>
+      <div class="step">Studies in public interest (3 yrs service) → 24 months + Bond</div>
+    </div>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 33 — Leave to Probationer/Apprentice <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Probationer entitled to leave only if he held the post substantively otherwise than on probation.</li>
+        <li>If services are to be terminated → leave granted cannot extend beyond sanctioned probation period or earlier termination date.</li>
+        <li>Apprentice: medical-certificate leave at half-pay leave salary, max <b>1 month per year</b> of apprenticeship; also eligible for Extraordinary Leave under Rule 32.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>3-6-18-24</b>" → EOL limits in months: 3 (default), 6 (medical, 1 yr service), 18 (TB/Cancer/Leprosy/Mental), 24 (study, 3 yrs service + Bond). "Commuted = Half taken, Double debited."
+  </div>
+</section>
+
+<!-- ============ TOPIC 5: MATERNITY/PATERNITY/CCL ============ -->
+<section class="topic" id="t5">
+  <div class="hero">
+    <h2>Maternity, Paternity & Child Care Leave <span class="chip vimp">🔴 VERY IMP</span></h2>
+    <p class="hi">प्रसूति, पितृत्व एवं बाल देखभाल अवकाश — Rules 43 to 43-C</p>
+  </div>
+
+  <div class="leave-grid">
+    <div class="leave-box"><b>180 days</b>Maternity Leave (Rule 43)</div>
+    <div class="leave-box"><b>45 days</b>Maternity Leave for miscarriage/abortion</div>
+    <div class="leave-box"><b>15 days</b>Paternity Leave (Rule 43-A)</div>
+    <div class="leave-box"><b>15 days</b>Paternity Leave for Adoption (43-AA)</div>
+    <div class="leave-box"><b>180 days</b>Child Adoption Leave — female (43-B)</div>
+    <div class="leave-box"><b>730 days</b>Child Care Leave — 2 years (43-C)</div>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 43 — Maternity Leave <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Female Govt. servant (incl. apprentice) with <b>fewer than 2 surviving children</b> → 180 days from commencement.</li>
+        <li>Leave salary = pay drawn immediately before leave (reduced by ESI Act benefit, if applicable).</li>
+        <li><b>45 days</b> for miscarriage/abortion (irrespective of number of surviving children), on medical certificate — available once during entire service (post-1995 amendment).</li>
+        <li>May be combined with any other leave; leave of any kind (incl. commuted leave up to 60 days, and leave not due) up to <b>2 years</b> may follow in continuation, without medical certificate requirement.</li>
+        <li>🔴 <b>Not debited</b> against leave account.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the duration of Maternity Leave, and how many surviving children make a female Govt servant ineligible? <b>Ans: 180 days; ineligible if she already has 2 or more surviving children.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 43-A / 43-AA — Paternity Leave <span class="chip freq">🟠</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li><b>43-A (Childbirth):</b> Male Govt. servant with &lt;2 surviving children → 15 days, from up to 15 days before to 6 months after delivery.</li>
+        <li><b>43-AA (Adoption):</b> Male servant with &lt;2 surviving children, adopting child &lt;1 year → 15 days within 6 months of valid adoption.</li>
+        <li>Both: full pay as leave salary; combinable with any other leave; not debited to leave account.</li>
+        <li>🔴 If not availed within the specified window → <b>lapses</b>.</li>
+        <li>🟡 Note: "Shall not normally be refused under any circumstances."</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What happens if Paternity Leave is not availed within the specified period? <b>Ans: It lapses.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 43-B — Child Adoption Leave (Female) <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Female servant, &lt;2 surviving children, valid adoption of child &lt;1 year → <b>180 days</b> immediately after adoption.</li>
+        <li>Full pay as leave salary; combinable with any leave; not debited to leave account.</li>
+        <li>May follow with further leave up to (1 year − age of adopted child on adoption date), incl. leave not due & commuted leave (max 60 days, no medical cert needed) — <b>not</b> admissible if she already has 2 surviving children.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 43-C — Child Care Leave (CCL) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Woman Govt. servant with minor children (&lt;18 years) and <b>no Earned Leave at credit</b> → max <b>2 years (730 days)</b> during entire service.</li>
+        <li>For up to <b>2 children</b>; purposes: rearing, examination, sickness, or other needs.</li>
+        <li>Full pay as leave salary; combinable with any other leave; not debited to leave account.</li>
+        <li>May be availed in <b>more than one spell</b>.</li>
+        <li>Can be extended by up to 1 year (leave of kind due, incl. commuted leave ≤60 days, leave not due) without medical certificate, in continuation.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum Child Care Leave admissible during entire service, and for how many children? <b>Ans: 730 days (2 years), for up to 2 children.</b></div>
+    </div>
+  </details>
+
+  <div class="flow">
+    <div class="step">Female Govt Servant — Life Event</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="step">Childbirth (&lt;2 kids) → 180 days Maternity Leave</div>
+      <div class="step">Miscarriage/Abortion → 45 days (once in service)</div>
+    </div>
+    <div class="branch">
+      <div class="step">Adoption &lt;1yr (&lt;2 kids) → 180 days Child Adoption Leave</div>
+      <div class="step">Child &lt;18yrs, no EL at credit → up to 730 days CCL</div>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>180-45-15-15-180-730</b>" → Maternity(180), Miscarriage(45), Paternity-birth(15), Paternity-adopt(15), Child-Adoption-female(180), CCL(730). All conditioned on &lt;2 surviving children except CCL (which needs minor children &lt;18 and zero EL balance).
+  </div>
+</section>
+
+<!-- ============ TOPIC 6: DISABILITY/HOSPITAL/DEPARTMENTAL ============ -->
+<section class="topic" id="t6">
+  <div class="hero">
+    <h2>Special Disability, Hospital, Seamen's & Departmental Leave <span class="chip freq">🟠 FREQUENT</span></h2>
+    <p class="hi">विशेष असमर्थता, अस्पताल, नाविक एवं विभागीय अवकाश — Rules 44 to 49</p>
+  </div>
+
+  <details class="card">
+    <summary>📜 Rule 44 — Special Disability Leave (Intentional Injury) <span class="chip vimp">🔴</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>For injury intentionally inflicted in/consequence of due performance of official duty or official position (permanent or temporary servant).</li>
+        <li>Disability must manifest within <b>3 months</b> of the occurrence (relaxable if authority is satisfied on cause).</li>
+        <li>Max <b>24 months</b> for any one disability (may be granted more than once if aggravated/reproduced, but overall cap remains 24 months per disability).</li>
+        <li>Counted as duty for pension; NOT debited to leave account (with a specific proviso exception).</li>
+        <li>Leave salary: <b>first 120 days</b> = EL rate; <b>remaining period</b> = HPL rate. Optional extension of EL-rate period by another 120 days (debited to HPL account).</li>
+        <li>Also applies to civil servants disabled via military service (discharged unfit, not fully incapacitated) & related certified disabilities.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> Within how many months must a disability manifest itself to qualify for Special Disability Leave? <b>Ans: 3 months.</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 45 — Special Disability Leave (Accidental Injury) <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Applies Rule 44 to injuries <b>accidentally</b> incurred in due performance of duty, or illness from a duty that increased risk beyond ordinary.</li>
+        <li>Disease-based disability must be certified as directly due to performance of the particular duty.</li>
+        <li>If contracted otherwise than with military force → must be "exceptional in character" per competent authority's opinion.</li>
+        <li>EL-rate leave under this rule capped at <b>120 days</b> (no extension option, unlike Rule 44).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 46 — Hospital Leave <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>For Class IV servants, and Class III servants handling dangerous machinery/explosives/poisonous drugs/hazardous tasks — while under medical treatment for duty-related illness/injury.</li>
+        <li>Requires medical certificate from Authorized Medical Attendant.</li>
+        <li>Leave salary: first <b>120 days</b> at EL rate; remainder at HPL rate.</li>
+        <li>Not debited to leave account; combinable with other leave; total combined leave capped at <b>28 months</b>.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 47 — Seamen's Sick Leave <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>Officer/warrant officer/petty officer on Govt. vessel, sick/injured, on vessel or in hospital → leave on <b>full pay</b>, max <b>6 weeks</b>.</li>
+        <li><b>Not</b> granted if certified as malingering or ill-health due to drunkenness/self-indulgence/self-inflicted aggravation.</li>
+        <li>Disabled in exercise of duty → full pay leave up to <b>3 months</b>, if: disability certified by Govt. Medical Officer; not due to own carelessness; vacancy not filled.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What is the maximum Seamen's Sick Leave on full pay for ordinary sickness, and for disability incurred on duty? <b>Ans: 6 weeks (ordinary); 3 months (disabled in exercise of duty).</b></div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>📜 Rule 49 — Departmental Leave <span class="chip concept">🟡</span></summary>
+    <div class="body">
+      <ul class="pts">
+        <li>For Class III (field/recess duty in Survey of India) & Class IV staff, and seasonal P&T staff.</li>
+        <li>Granted only when services are temporarily not required (in addition to leave otherwise due).</li>
+        <li>Leave salary = <b>25%</b> of pay admissible during EL, plus DA only.</li>
+        <li>Recess leave extendable up to <b>18 months</b> total by higher authority; non-recess leave up to <b>6 months at a time</b>, extendable to <b>1 year</b> by Surveyor-General.</li>
+        <li>Does NOT count as duty; not debited to leave account; may be granted even when no leave is due; combinable with other leave.</li>
+      </ul>
+      <div class="qbox"><b>Probable Q:</b> What percentage of Earned-Leave-salary is paid during Departmental Leave? <b>Ans: 25%.</b></div>
+    </div>
+  </details>
+
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">Rule 44/46</div><div class="tl-text">120 days EL-rate → then HPL-rate (Special Disability-intentional & Hospital Leave)</div></div>
+    <div class="tl-item"><div class="tl-time">Rule 45</div><div class="tl-text">120 days EL-rate cap, no extension (accidental disability)</div></div>
+    <div class="tl-item"><div class="tl-time">Rule 46 combined cap</div><div class="tl-text">28 months total (Hospital Leave + combined leave)</div></div>
+    <div class="tl-item"><div class="tl-time">Rule 47</div><div class="tl-text">6 weeks (sick) / 3 months (on-duty disability) — Seamen</div></div>
+    <div class="tl-item"><div class="tl-time">Rule 49</div><div class="tl-text">18 months (recess) / 1 year (non-recess, extended) — Departmental Leave</div></div>
+  </div>
+
+  <div class="mnemonic">
+    🧠 <b>Mnemonic:</b> "<b>120-120-28-6wk-3mo-18mo</b>" → 120 days EL rate (Rule 44/46), 120 days cap (Rule 45), 28 months combined cap (Rule 46), 6 weeks/3 months (Seamen-47), 18 months (Departmental-49 recess).
+  </div>
+</section>
+
+<!-- ============ REVISION SHEET ============ -->
+<section class="topic" id="t7">
+  <div class="revision-sheet">
+    <h2>📄 One-Page Last-Day Revision Sheet</h2>
+    <div class="tag-legend">
+      <span><span class="dot" style="background:var(--vimp)"></span>Very Imp</span>
+      <span><span class="dot" style="background:var(--freq)"></span>Frequent</span>
+      <span><span class="dot" style="background:var(--concept)"></span>Concept</span>
+      <span><span class="dot" style="background:var(--quick)"></span>Quick</span>
+    </div>
+
+    <h3>1️⃣ Preliminary</h3>
+    <ul class="pts">
+      <li>🔴 Came into force: 1 June 1972</li>
+      <li>🟠 11 categories excluded (Rule 2) — Railway, casual/daily/part-time, contingency-paid, industrial workmen, work-charged, AIS, foreign-local, contract, special-law, FR/CSR-governed, limited deputation</li>
+    </ul>
+
+    <h3>2️⃣ General Conditions</h3>
+    <ul class="pts">
+      <li>🔴 Leave NOT a right (Rule 7); kind can't change without written request</li>
+      <li>🟠 Commutation request within 30 days of rejoining (Rule 10)</li>
+      <li>🔴 Max continuous leave: 5 years (Rule 12)</li>
+      <li>🟠 Employment abroad while on leave → President's sanction; in India → Appointing Authority's sanction (Rule 13)</li>
+    </ul>
+
+    <h3>3️⃣ Earned Leave & Half Pay Leave</h3>
+    <ul class="pts">
+      <li>🔴 EL: 2.5 days/month; credited 15+15 (Jan/Jul); max 300 days; max 180 at a time in India</li>
+      <li>🔴 HPL: 5/3 days/month; credited 10+10 (Jan/Jul); no accumulation cap</li>
+      <li>🟡 Vacation Dept.: no EL if full vacation availed</li>
+    </ul>
+
+    <h3>4️⃣ Commuted / Not Due / Extraordinary Leave</h3>
+    <ul class="pts">
+      <li>🔴 Commuted Leave: max half of HPL due; double debited to HPL</li>
+      <li>🔴 Leave Not Due: max 360 days entire service</li>
+      <li>🔴 EOL limits: 3 / 6 / 18 / 24 months (default/medical/TB-cancer-etc/study+Bond)</li>
+    </ul>
+
+    <h3>5️⃣ Maternity / Paternity / CCL</h3>
+    <ul class="pts">
+      <li>🔴 Maternity: 180 days (&lt;2 kids); 45 days miscarriage (once, any no. of kids)</li>
+      <li>🟠 Paternity (birth/adopt): 15 days each, lapses if not availed in window</li>
+      <li>🟡 Child Adoption Leave (female): 180 days</li>
+      <li>🔴 Child Care Leave: 730 days (2 yrs), up to 2 children, needs zero EL at credit</li>
+    </ul>
+
+    <h3>6️⃣ Disability / Hospital / Departmental</h3>
+    <ul class="pts">
+      <li>🔴 Special Disability (intentional): 3-month manifestation window; max 24 months; 120 days EL-rate + rest HPL-rate</li>
+      <li>🟡 Special Disability (accidental): 120 days EL-rate cap, no extension</li>
+      <li>🟡 Hospital Leave: 120 days EL-rate + rest HPL-rate; combined cap 28 months</li>
+      <li>🟡 Seamen's Sick Leave: 6 weeks (sick) / 3 months (on-duty disability), full pay</li>
+      <li>🟡 Departmental Leave: 25% of EL-salary; recess ext. up to 18 months</li>
+    </ul>
+
+    <h3>🔢 Key Numbers to Remember</h3>
+    <table>
+      <tr><th>Number</th><th>Where it applies</th></tr>
+      <tr><td>1 June 1972</td><td>CCS (Leave) Rules commencement</td></tr>
+      <tr><td>2.5 days/month</td><td>Earned Leave accrual rate</td></tr>
+      <tr><td>5/3 days/month</td><td>Half Pay Leave accrual rate</td></tr>
+      <tr><td>300 days</td><td>Max EL accumulation</td></tr>
+      <tr><td>180 days</td><td>Max EL at a time in India; Maternity Leave; Child Adoption Leave</td></tr>
+      <tr><td>360 days</td><td>Max Leave Not Due (entire service)</td></tr>
+      <tr><td>730 days</td><td>Max Child Care Leave (entire service)</td></tr>
+      <tr><td>3/6/18/24 months</td><td>Extraordinary Leave limits</td></tr>
+      <tr><td>30 days</td><td>Commutation request window after rejoining</td></tr>
+      <tr><td>5 years</td><td>Max continuous leave of any kind</td></tr>
+    </table>
+
+    <h3>🧠 All Mnemonics Together</h3>
+    <div class="mnemonic">1-6-1972 → CCS Leave Rules commencement date</div>
+    <div class="mnemonic">2.5 EL, 5/3 HPL, 15+15 & 10+10 → accrual rates & credit instalments</div>
+    <div class="mnemonic">3-6-18-24 → Extraordinary Leave month limits</div>
+    <div class="mnemonic">180-45-15-15-180-730 → Maternity/Miscarriage/Paternity(x2)/Adoption/CCL durations</div>
+    <div class="mnemonic">120-120-28-6wk-3mo-18mo → Disability/Hospital/Seamen/Departmental leave limits</div>
+  </div>
+</section>
+
+</main>
+
+<footer>LDCE IP Exam Portal Study Card • CCS (Leave) Rules, 1972 — FR SR Part III • For personal exam preparation use</footer>
+
+<script>
+const buttons = document.querySelectorAll('.controls button[data-t]');
+const topics = document.querySelectorAll('.topic');
+buttons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    topics.forEach(t=>t.classList.remove('active'));
+    document.getElementById(btn.dataset.t).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+document.getElementById('darkToggle').addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+});
+</script>
+</body>
+</html>
