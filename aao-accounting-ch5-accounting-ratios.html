@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch.5 Accounting Ratios | AAO Exam Accounting Basics</title>
+<style>
+:root{
+  --ink:#12213f; --ink2:#1e3358; --paper:#f6f1e4; --paper2:#efe7d3;
+  --gold:#c1922f; --gold-dark:#96701d; --teal:#2f6f5e; --red:#b23b3b;
+  --line:#d8cba9; --text:#26241c; --white:#fffdf7;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --ink:#0c1524; --ink2:#16233d; --paper:#151b16; --paper2:#1b2118;
+  --gold:#e0ac4a; --gold-dark:#c1922f; --teal:#4fae94; --red:#e06060;
+  --line:#3a3a2e; --text:#eae4d3; --white:#1c2419;
+}
+body{margin:0;font-family:"Georgia","Noto Serif",serif;background:var(--paper);color:var(--text);line-height:1.5;transition:background .3s,color .3s;}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px;}
+.hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--white);padding:22px 16px 26px;border-bottom:6px solid var(--gold);position:relative;}
+.hero .crumb{font-family:Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;color:#d9c68f;margin-bottom:8px;}
+.hero h1{font-size:1.5rem;margin:0 0 6px;color:var(--white);border-left:4px solid var(--gold);padding-left:10px;}
+.hero p.sub{font-family:Arial,sans-serif;font-size:.85rem;color:#cfd8e6;margin:0 0 14px;}
+.top-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-chip{font-family:Arial,sans-serif;font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 10px;border-radius:20px;cursor:pointer;}
+.btn-chip:active{transform:scale(.96);}
+.navpills{display:flex;gap:6px;overflow-x:auto;padding:10px 4px;background:var(--paper2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;-webkit-overflow-scrolling:touch;}
+.navpills a{flex:0 0 auto;font-family:Arial,sans-serif;font-size:.72rem;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:6px 10px;border-radius:14px;text-decoration:none;white-space:nowrap;}
+body.dark .navpills a{color:var(--gold);}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;margin:16px 0;padding:14px 14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.card h2{font-size:1.08rem;margin:0 0 10px;color:var(--ink);display:flex;align-items:center;gap:8px;}
+body.dark .card h2{color:var(--gold);}
+.card h2 .num{font-family:Arial,sans-serif;font-size:.65rem;background:var(--gold);color:var(--white);padding:2px 7px;border-radius:10px;}
+h3.sub{font-size:.95rem;margin:14px 0 6px;color:var(--gold-dark);border-bottom:1px dashed var(--line);padding-bottom:3px;}
+.tree{font-family:Arial,sans-serif;font-size:.82rem;}
+.tree ul{list-style:none;padding-left:18px;border-left:2px dotted var(--gold);margin:4px 0;}
+.tree li{margin:5px 0;position:relative;}
+.tree li::before{content:"↳ ";color:var(--gold-dark);}
+.tree .lvl1{font-weight:bold;color:var(--ink);}
+body.dark .tree .lvl1{color:var(--gold);}
+.tag{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;padding:1px 6px;border-radius:4px;margin-right:4px;font-weight:bold;vertical-align:middle;white-space:nowrap;}
+.tag.vip{background:#f6dede;color:#8c1f1f;}
+.tag.faq{background:#fce6cc;color:#96500e;}
+.tag.concept{background:#fbf1c8;color:#7a6412;}
+.tag.quick{background:#dcefe3;color:#1f6b3f;}
+body.dark .tag.vip{background:#3a1414;color:#f0a0a0;}
+body.dark .tag.faq{background:#3a2a12;color:#f0c088;}
+body.dark .tag.concept{background:#3a3412;color:#f0e0a0;}
+body.dark .tag.quick{background:#12321f;color:#a0e0bc;}
+.qbox{background:var(--paper2);border-left:4px solid var(--teal);font-family:Arial,sans-serif;font-size:.78rem;padding:7px 10px;margin:8px 0;border-radius:0 6px 6px 0;}
+.qbox b{color:var(--teal);}
+table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.74rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--white);font-size:.7rem;}
+tr:nth-child(even) td{background:var(--paper2);}
+.flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.flow .step{background:var(--ink);color:var(--white);font-family:Arial,sans-serif;font-size:.8rem;padding:9px 12px;border-radius:8px;border-left:5px solid var(--gold);}
+.flow .arrow{text-align:center;color:var(--gold-dark);font-size:1.1rem;margin:2px 0;}
+.flow .step small{display:block;color:#d8d8d8;font-size:.68rem;margin-top:2px;}
+body.dark .flow .step small{color:#b8b8a8;}
+.mnem{background:linear-gradient(135deg,#fdf3d8,#f6e3ae);border:1px dashed var(--gold-dark);border-radius:8px;padding:10px 12px;margin:8px 0;font-family:Arial,sans-serif;font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2c250f,#3a2e10);}
+.mnem b{color:var(--gold-dark);}
+.acc-head{cursor:pointer;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+.acc-body{display:none;padding:8px 4px 4px;font-size:.82rem;}
+.acc-body.open{display:block;}
+.acc-head .arrow-i{transition:transform .2s;}
+.acc-head.active .arrow-i{transform:rotate(90deg);}
+.formula{font-family:"Courier New",monospace;font-size:.78rem;background:#fbf8ef;border:1px solid var(--line);border-radius:6px;padding:9px 10px;margin:6px 0;text-align:center;}
+body.dark .formula{background:#10150e;color:#dcd6bd;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-item{background:var(--paper2);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:7px 10px;font-family:Arial,sans-serif;font-size:.78rem;}
+.rev-item b{color:var(--ink);}
+body.dark .rev-item b{color:var(--gold);}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:Arial,sans-serif;font-size:.75rem;}
+.cmp2 .col{border-radius:8px;padding:8px 9px;}
+.cmp2 .col.a{background:#e4eef0;border:1px solid #b6d3d6;}
+.cmp2 .col.b{background:#f2e6d8;border:1px solid #d9bd94;}
+body.dark .cmp2 .col.a{background:#0f2224;border-color:#245050;}
+body.dark .cmp2 .col.b{background:#2a2013;border-color:#5a4523;}
+.cmp2 h4{margin:0 0 4px;font-size:.82rem;}
+.cmp2 ul{margin:0;padding-left:16px;}
+.onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,var(--paper2) 23px);border:2px solid var(--ink);border-radius:8px;padding:12px;font-family:Arial,sans-serif;font-size:.72rem;}
+body.dark .onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,#141a12 23px);}
+.onepage h4{margin:10px 0 4px;color:var(--gold-dark);font-size:.8rem;}
+.onepage ul{margin:2px 0;padding-left:16px;}
+footer{text-align:center;font-family:Arial,sans-serif;font-size:.72rem;color:var(--gold-dark);padding:20px 10px 8px;}
+.chapnav{display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.78rem;margin-top:10px;}
+.chapnav span{background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:6px 10px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="crumb">AAO Exam &rsaquo; Accounting Basics &rsaquo; Company Accounts &rsaquo; <b>Chapter 5</b></div>
+  <h1>Ch. 5 — Accounting Ratios</h1>
+  <p class="sub">Company Accounts &amp; Analysis of Financial Statements | Exam-oriented infographic notes</p>
+  <div class="top-controls">
+    <button class="btn-chip" onclick="document.body.classList.toggle('dark')">🌓 Dark Mode</button>
+    <button class="btn-chip" onclick="speakPage()">🔊 Read Aloud</button>
+    <button class="btn-chip" onclick="stopSpeak()">⏹ Stop</button>
+    <button class="btn-chip" onclick="markStudied()">✅ Mark Studied</button>
+  </div>
+</div>
+
+<div class="navpills">
+  <a href="#topic">Topic</a>
+  <a href="#mindmap">Mind Map</a>
+  <a href="#objectives">Objectives</a>
+  <a href="#advantages">Advantages</a>
+  <a href="#limitations">Limitations</a>
+  <a href="#types">Classification</a>
+  <a href="#liquidity">Liquidity Ratios</a>
+  <a href="#solvency">Solvency Ratios</a>
+  <a href="#activity">Activity Ratios</a>
+  <a href="#profitability">Profitability Ratios</a>
+  <a href="#benchmarks">Ideal Ratios</a>
+  <a href="#mnemonics">Mnemonics</a>
+  <a href="#onepager">One-Page Sheet</a>
+  <a href="#lastday">Last-Day Notes</a>
+</div>
+
+<div class="wrap">
+
+<!-- TOPIC / DEFINITION -->
+<div class="card" id="topic">
+  <h2><span class="num">1</span> Topic &amp; Definition <span class="tag vip">🔴 VIP — Highest Weightage Chapter</span></h2>
+  <p><b>Topic:</b> Accounting Ratios are a key tool of financial statement analysis, used to assess the liquidity, solvency, efficiency and profitability of an enterprise.</p>
+  <p><b>Definition:</b> A ratio is a mathematical number expressing the relationship between two or more numbers — as a fraction, proportion, percentage, or number of times. When calculated from financial statement figures, it is an <b>accounting ratio</b>.</p>
+  <p style="font-family:Arial;font-size:.8rem;"><b>Golden Rule:</b> A ratio is meaningful only when the two numbers are logically related — e.g. Furniture vs Purchases gives a number (a ratio value) but has no analytical relevance.</p>
+  <div class="qbox"><b>Likely Q:</b> "What is an accounting ratio? Why must the two variables used be logically related?"</div>
+</div>
+
+<!-- MIND MAP -->
+<div class="card" id="mindmap">
+  <h2><span class="num">2</span> Mind Map — Full Chapter Structure <span class="tag vip">🔴 VIP</span></h2>
+  <div class="tree">
+    <div class="lvl1">Accounting Ratios</div>
+    <ul>
+      <li>Traditional Classification: Statement of P&amp;L Ratios | Balance Sheet Ratios | Composite Ratios</li>
+      <li>Functional Classification (most used):
+        <ul>
+          <li><b>Liquidity Ratios</b> (2): Current Ratio, Quick/Liquid Ratio</li>
+          <li><b>Solvency Ratios</b> (5): Debt-Equity, Debt to Capital Employed, Proprietary, Total Assets to Debt, Interest Coverage</li>
+          <li><b>Activity/Turnover Ratios</b> (6): Inventory, Trade Receivables, Trade Payables, Net Assets/Capital Employed, Fixed Assets, Working Capital Turnover</li>
+          <li><b>Profitability Ratios</b> (10): Gross Profit, Operating, Operating Profit, Net Profit, ROI/ROCE, RONW, EPS, Book Value/Share, Dividend Payout, P/E Ratio</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="mnem"><b>Mnemonic — "LSAP"</b>: <b>L</b>iquidity → <b>S</b>olvency → <b>A</b>ctivity → <b>P</b>rofitability — the 4 functional categories, short-term to long-term to efficiency to earnings.</div>
+  <div class="qbox"><b>Likely Q:</b> "Classify accounting ratios on a functional basis." (Almost guaranteed 2–3 mark question every year)</div>
+</div>
+
+<!-- OBJECTIVES -->
+<div class="card" id="objectives">
+  <h2><span class="num">3</span> Objectives of Ratio Analysis <span class="tag concept">🟡 Conceptual</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>Identify areas needing more attention</li>
+    <li>Identify potential areas for improvement</li>
+    <li>Provide deeper analysis of profitability, liquidity, solvency, efficiency</li>
+    <li>Enable cross-sectional analysis vs industry standards</li>
+    <li>Support projections/estimates for the future</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "What are the objectives of ratio analysis?"</div>
+</div>
+
+<!-- ADVANTAGES -->
+<div class="card" id="advantages">
+  <h2><span class="num">4</span> Advantages of Ratio Analysis <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <ol style="font-family:Arial;font-size:.82rem;">
+    <li>Helps understand efficacy of decisions</li>
+    <li>Simplifies complex figures &amp; shows relationships</li>
+    <li>Helpful in comparative analysis (trend over years)</li>
+    <li>Identification of problem areas</li>
+    <li>Enables SWOT analysis</li>
+    <li>Various comparisons: Intra-firm (time series), Inter-firm (cross-sectional), vs Industry standard</li>
+  </ol>
+  <div class="qbox"><b>Likely Q:</b> "State any four advantages of ratio analysis."</div>
+</div>
+
+<!-- LIMITATIONS -->
+<div class="card" id="limitations">
+  <h2><span class="num">5</span> Limitations of Ratio Analysis <span class="tag vip">🔴 VIP</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;">Two sub-groups: limitations <b>inherited from financial statements</b>, and limitations <b>of ratios themselves</b>.</p>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>From Financial Statements (5)</h4>
+      <ul>
+        <li>Limitations of accounting data (judgement-based)</li>
+        <li>Ignores price-level changes</li>
+        <li>Ignores qualitative/non-monetary aspects</li>
+        <li>Variations in accounting practices (hurts comparability)</li>
+        <li>Forecasting purely from history isn't reliable</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Of Ratios Themselves (5)</h4>
+      <ul>
+        <li>Means, not the end</li>
+        <li>Lack ability to resolve problems (only indicative)</li>
+        <li>Lack of standardised definitions (e.g. "liquid liabilities")</li>
+        <li>Lack of universally accepted ideal/standard levels</li>
+        <li>Ratios based on unrelated figures are meaningless</li>
+      </ul>
+    </div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "State any five limitations of ratio analysis." (Very frequently asked)</div>
+</div>
+
+<!-- TYPES/CLASSIFICATION -->
+<div class="card" id="types">
+  <h2><span class="num">6</span> Classification of Ratios <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <table>
+    <tr><th>Traditional (by statement)</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td>Statement of P&amp;L Ratios</td><td>Both variables from P&amp;L</td><td>Gross Profit Ratio</td></tr>
+    <tr><td>Balance Sheet Ratios</td><td>Both variables from Balance Sheet</td><td>Current Ratio</td></tr>
+    <tr><td>Composite Ratios</td><td>One from P&amp;L, one from Balance Sheet</td><td>Trade Receivables Turnover Ratio</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "What is a composite ratio? Give an example."</div>
+</div>
+
+<!-- LIQUIDITY RATIOS -->
+<div class="card" id="liquidity">
+  <h2><span class="num">7</span> Liquidity Ratios <span class="tag vip">🔴 VIP — Guaranteed Numerical</span></h2>
+  <div class="acc-head" onclick="toggleAcc(this)">1. Current Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">Current Ratio = Current Assets ÷ Current Liabilities</div>
+    <p style="font-family:Arial;font-size:.78rem;">Ideal: <b>2:1</b>. Includes: Current investments, Inventories, Trade receivables, Cash &amp; equivalents, ST loans/advances, other current assets (prepaid exp., advance tax) ÷ ST borrowings, Trade payables, Other current liabilities, ST provisions.</p>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">2. Quick (Liquid / Acid-Test) Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">Quick Ratio = Quick Assets ÷ Current Liabilities</div>
+    <p style="font-family:Arial;font-size:.78rem;">Quick Assets = Current Assets − (Inventories + Prepaid Expenses + Advance Tax). Ideal: <b>1:1</b>. Also called Acid-Test Ratio — excludes least liquid current assets.</p>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Calculate Current Ratio and Quick Ratio from the given Balance Sheet." (Guaranteed numerical, every year)</div>
+</div>
+
+<!-- SOLVENCY RATIOS -->
+<div class="card" id="solvency">
+  <h2><span class="num">8</span> Solvency Ratios <span class="tag vip">🔴 VIP — Guaranteed Numerical</span></h2>
+  <div class="acc-head" onclick="toggleAcc(this)">1. Debt-Equity Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">Debt-Equity Ratio = Long-term Debts ÷ Shareholders' Funds</div>
+    <p style="font-family:Arial;font-size:.78rem;">Shareholders' Funds = Share Capital + Reserves &amp; Surplus + Money received against Share Warrants (= Non-current Assets + Working Capital − Non-current Liabilities). Ideal/safe: <b>2:1</b> (varies by industry).</p>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">2. Debt to Capital Employed Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Long-term Debt ÷ Capital Employed (or Net Assets)</div>
+    <p style="font-family:Arial;font-size:.78rem;">Capital Employed = Long-term Debt + Shareholders' Funds = Total Assets − Current Liabilities.</p>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">3. Proprietary Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Shareholders' Funds ÷ Capital Employed (or Total Assets)</div>
+    <p style="font-family:Arial;font-size:.78rem;"><b>Key relation:</b> Debt to Capital Employed Ratio + Proprietary Ratio = 1 (i.e. 100%).</p>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">4. Total Assets to Debt Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Total Assets ÷ Long-term Debts</div>
+    <p style="font-family:Arial;font-size:.78rem;">Higher ratio = better coverage of debt by assets. Its reciprocal (using net assets) = Debt to Capital Employed Ratio.</p>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">5. Interest Coverage Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Net Profit before Interest &amp; Tax ÷ Interest on Long-term Debts</div>
+    <p style="font-family:Arial;font-size:.78rem;">Reveals how many times interest is covered by available profit — higher = safer for lenders.</p>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Calculate Debt-Equity Ratio, Proprietary Ratio and Total Assets to Debt Ratio from the given Balance Sheet." (Multi-part numerical, very common)</div>
+</div>
+
+<!-- ACTIVITY RATIOS -->
+<div class="card" id="activity">
+  <h2><span class="num">9</span> Activity (Turnover) Ratios <span class="tag vip">🔴 VIP — Guaranteed Numerical</span></h2>
+  <div class="acc-head" onclick="toggleAcc(this)">1. Inventory Turnover Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Cost of Revenue from Operations ÷ Average Inventory</div>
+    <p style="font-family:Arial;font-size:.78rem;">Average Inventory = (Opening + Closing Inventory) ÷ 2. Low = bad buying/obsolete stock; too high = risk of stockouts.</p>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">2. Trade Receivables Turnover Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Net Credit Revenue from Operations ÷ Average Trade Receivables</div>
+    <div class="formula">Average Collection Period = 365 (or 12) ÷ Trade Receivables Turnover Ratio</div>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">3. Trade Payables Turnover Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Net Credit Purchases ÷ Average Trade Payables</div>
+    <div class="formula">Average Payment Period = 365 (or 12) ÷ Trade Payables Turnover Ratio</div>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">4. Net Assets (Capital Employed) Turnover Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Revenue from Operations ÷ Capital Employed</div>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">5. Fixed Assets Turnover Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Net Revenue from Operations ÷ Net Fixed Assets</div>
+  </div>
+  <div class="acc-head" onclick="toggleAcc(this)">6. Working Capital Turnover Ratio <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <div class="formula">= Net Revenue from Operations ÷ Working Capital</div>
+    <p style="font-family:Arial;font-size:.78rem;">Higher turnover of capital employed/fixed assets/working capital = better utilisation of resources.</p>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Calculate Inventory Turnover Ratio and Trade Receivables Turnover Ratio, along with the Average Collection Period." (Classic multi-part numerical)</div>
+</div>
+
+<!-- PROFITABILITY RATIOS -->
+<div class="card" id="profitability">
+  <h2><span class="num">10</span> Profitability Ratios <span class="tag vip">🔴 VIP — Guaranteed Numerical (10 ratios!)</span></h2>
+  <table>
+    <tr><th>Ratio</th><th>Formula</th></tr>
+    <tr><td>Gross Profit Ratio</td><td>Gross Profit ÷ Net Revenue from Operations × 100</td></tr>
+    <tr><td>Operating Ratio</td><td>(Cost of Revenue from Ops + Operating Expenses) ÷ Net Revenue from Ops × 100</td></tr>
+    <tr><td>Operating Profit Ratio</td><td>100 − Operating Ratio; or Operating Profit ÷ Revenue from Ops × 100</td></tr>
+    <tr><td>Net Profit Ratio</td><td>Net Profit (after tax) ÷ Revenue from Operations × 100</td></tr>
+    <tr><td>Return on Investment (ROI/ROCE)</td><td>Profit Before Interest &amp; Tax ÷ Capital Employed × 100</td></tr>
+    <tr><td>Return on Shareholders' Funds (RONW)</td><td>Profit after Tax ÷ Shareholders' Funds × 100</td></tr>
+    <tr><td>Earnings per Share (EPS)</td><td>(Profit after Tax − Preference Dividend) ÷ No. of Equity Shares</td></tr>
+    <tr><td>Book Value per Share</td><td>Equity Shareholders' Funds ÷ No. of Equity Shares</td></tr>
+    <tr><td>Dividend Payout Ratio</td><td>Dividend per Share ÷ Earnings per Share</td></tr>
+    <tr><td>Price/Earnings (P/E) Ratio</td><td>Market Price per Share ÷ Earnings per Share</td></tr>
+  </table>
+  <div class="mnem"><b>Mnemonic — "GO-ON-Bring Really Excellent Dividend Prices"</b>: <b>G</b>ross profit → <b>O</b>perating → <b>O</b>perating profit → <b>N</b>et profit → <b>R</b>OI → <b>R</b>ONW → <b>E</b>PS → Book value → <b>D</b>ividend payout → <b>P</b>/E ratio.</div>
+  <div class="qbox"><b>Likely Q:</b> "From the given Statement of Profit and Loss, calculate Gross Profit Ratio, Operating Ratio and Net Profit Ratio." (Very frequent 3-in-1 numerical)</div>
+</div>
+
+<!-- BENCHMARKS -->
+<div class="card" id="benchmarks">
+  <h2><span class="num">11</span> Ideal / Benchmark Ratios <span class="tag vip">🔴 VIP — MCQ Favorite</span></h2>
+  <table>
+    <tr><th>Ratio</th><th>Ideal/Safe Level</th></tr>
+    <tr><td>Current Ratio</td><td>2 : 1</td></tr>
+    <tr><td>Quick (Liquid) Ratio</td><td>1 : 1</td></tr>
+    <tr><td>Debt-Equity Ratio</td><td>2 : 1 (varies by industry)</td></tr>
+    <tr><td>Debt to Capital Employed + Proprietary Ratio</td><td>Always sum to 1 (100%)</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q (MCQ):</b> "The ideal current ratio is considered to be: (a) 1:1 (b) 2:1 (c) 3:1 (d) 1:2" → Answer: 2:1</div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <h2><span class="num">12</span> Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="mnem"><b>4 Categories:</b> "LSAP" — Liquidity, Solvency, Activity, Profitability.</div>
+  <div class="mnem"><b>Liquidity (2):</b> "Current comes first, Quick follows" — Current Ratio (all CA/CL), Quick Ratio (excludes inventory + prepaid + advance tax).</div>
+  <div class="mnem"><b>Solvency (5):</b> "Debt Dances Proudly To Interest" — Debt-Equity, Debt to Capital Employed, Proprietary, Total assets to debt, Interest coverage.</div>
+  <div class="mnem"><b>Activity (6):</b> "I Trade Trade, Net Fixed Working" — Inventory, Trade receivables, Trade payables, Net assets, Fixed assets, Working capital turnover.</div>
+  <div class="mnem"><b>Profitability (10):</b> "GO-ON-Bring Really Excellent Dividend Prices" (see section 10).</div>
+  <div class="mnem"><b>Proprietary + Debt-to-CE = 1:</b> Remember this relationship saves a full calculation in exams.</div>
+</div>
+
+<!-- ONE PAGE -->
+<div class="card" id="onepager">
+  <h2><span class="num">13</span> One-Page Revision Sheet <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="onepage">
+    <h4>4 Categories (LSAP)</h4>
+    <ul><li>Liquidity (2) → Solvency (5) → Activity (6) → Profitability (10)</li></ul>
+    <h4>Liquidity</h4>
+    <ul><li>Current = CA/CL (2:1); Quick = (CA−Inventory−Prepaid−AdvTax)/CL (1:1)</li></ul>
+    <h4>Solvency</h4>
+    <ul><li>Debt-Equity = LT Debt/SH Funds; Proprietary = SH Funds/Capital Employed; sum of Debt-to-CE + Proprietary = 1</li></ul>
+    <h4>Activity</h4>
+    <ul><li>Inventory TO = COGS/Avg Inventory; Receivables TO = Credit Sales/Avg Receivables; Collection period = 365/TO ratio</li></ul>
+    <h4>Profitability</h4>
+    <ul><li>GP% = GP/Sales×100; NP% = NP/Sales×100; ROI = PBIT/Capital Employed×100; EPS = (PAT−Pref Div)/No. of Equity Shares</li></ul>
+    <h4>Key Benchmarks</h4>
+    <ul><li>Current 2:1 | Quick 1:1 | Debt-Equity 2:1 (industry-dependent)</li></ul>
+    <h4>Limitations — 2 Groups of 5</h4>
+    <ul><li>From FS: judgement-bias, price-level, non-monetary, accounting variation, poor forecasting</li>
+    <li>Of ratios: means-not-end, no problem-solving, no standard definitions, no universal ideal levels, unrelated-figure risk</li></ul>
+  </div>
+</div>
+
+<!-- LAST DAY -->
+<div class="card" id="lastday">
+  <h2><span class="num">14</span> Last-Day Revision Notes <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>✓</b> Ratio = mathematical relationship between two logically-connected numbers.</div>
+    <div class="rev-item"><b>✓</b> Functional classification: Liquidity → Solvency → Activity → Profitability (LSAP).</div>
+    <div class="rev-item"><b>✓</b> Current Ratio ideal = 2:1; Quick Ratio ideal = 1:1.</div>
+    <div class="rev-item"><b>✓</b> Quick Assets = Current Assets − Inventories − Prepaid Expenses − Advance Tax.</div>
+    <div class="rev-item"><b>✓</b> Debt-Equity Ratio = Long-term Debt ÷ Shareholders' Funds; safe level ~2:1.</div>
+    <div class="rev-item"><b>✓</b> Proprietary Ratio + Debt to Capital Employed Ratio = 1 (always).</div>
+    <div class="rev-item"><b>✓</b> Interest Coverage Ratio = PBIT ÷ Interest on long-term debt.</div>
+    <div class="rev-item"><b>✓</b> Inventory Turnover = Cost of Revenue from Operations ÷ Average Inventory.</div>
+    <div class="rev-item"><b>✓</b> Average Collection/Payment Period = 365 ÷ respective Turnover Ratio.</div>
+    <div class="rev-item"><b>✓</b> ROI (ROCE) uses Profit BEFORE Interest and Tax (PBIT); RONW uses Profit AFTER Tax.</div>
+    <div class="rev-item"><b>✓</b> EPS = (Profit after Tax − Preference Dividend) ÷ Number of Equity Shares.</div>
+    <div class="rev-item"><b>✓</b> P/E Ratio = Market Price per Share ÷ EPS.</div>
+    <div class="rev-item"><b>✓</b> 10 limitations total: 5 inherited from financial statements + 5 inherent to ratios themselves.</div>
+  </div>
+</div>
+
+<div class="chapnav">
+  <span>⏮ Ch. 4 — Analysis of FS</span>
+  <span>Ch. 6 — Cash Flow Statement ⏭</span>
+</div>
+
+<footer>
+  AAO Exam · Accounting Basics · Chapter 5 of 6 · Source: NCERT Accountancy — Company Accounts &amp; Analysis of Financial Statements
+</footer>
+</div>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('active');
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+var utter=null;
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported on this device.');return;}
+  stopSpeak();
+  var text = document.querySelector('.wrap').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+function markStudied(){
+  try{
+    localStorage.setItem('aao_ch5_studied','true');
+    alert('Chapter 5 marked as studied ✅');
+  }catch(e){alert('Could not save progress on this device.');}
+}
+(function(){
+  try{
+    if(localStorage.getItem('aao_ch5_studied')==='true'){
+      document.title = '✅ ' + document.title;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

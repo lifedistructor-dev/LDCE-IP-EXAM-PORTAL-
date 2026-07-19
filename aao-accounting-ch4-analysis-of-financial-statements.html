@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch.4 Analysis of Financial Statements | AAO Exam Accounting Basics</title>
+<style>
+:root{
+  --ink:#12213f; --ink2:#1e3358; --paper:#f6f1e4; --paper2:#efe7d3;
+  --gold:#c1922f; --gold-dark:#96701d; --teal:#2f6f5e; --red:#b23b3b;
+  --line:#d8cba9; --text:#26241c; --white:#fffdf7;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --ink:#0c1524; --ink2:#16233d; --paper:#151b16; --paper2:#1b2118;
+  --gold:#e0ac4a; --gold-dark:#c1922f; --teal:#4fae94; --red:#e06060;
+  --line:#3a3a2e; --text:#eae4d3; --white:#1c2419;
+}
+body{margin:0;font-family:"Georgia","Noto Serif",serif;background:var(--paper);color:var(--text);line-height:1.5;transition:background .3s,color .3s;}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px;}
+.hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--white);padding:22px 16px 26px;border-bottom:6px solid var(--gold);position:relative;}
+.hero .crumb{font-family:Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;color:#d9c68f;margin-bottom:8px;}
+.hero h1{font-size:1.5rem;margin:0 0 6px;color:var(--white);border-left:4px solid var(--gold);padding-left:10px;}
+.hero p.sub{font-family:Arial,sans-serif;font-size:.85rem;color:#cfd8e6;margin:0 0 14px;}
+.top-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-chip{font-family:Arial,sans-serif;font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 10px;border-radius:20px;cursor:pointer;}
+.btn-chip:active{transform:scale(.96);}
+.navpills{display:flex;gap:6px;overflow-x:auto;padding:10px 4px;background:var(--paper2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;-webkit-overflow-scrolling:touch;}
+.navpills a{flex:0 0 auto;font-family:Arial,sans-serif;font-size:.72rem;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:6px 10px;border-radius:14px;text-decoration:none;white-space:nowrap;}
+body.dark .navpills a{color:var(--gold);}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;margin:16px 0;padding:14px 14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.card h2{font-size:1.08rem;margin:0 0 10px;color:var(--ink);display:flex;align-items:center;gap:8px;}
+body.dark .card h2{color:var(--gold);}
+.card h2 .num{font-family:Arial,sans-serif;font-size:.65rem;background:var(--gold);color:var(--white);padding:2px 7px;border-radius:10px;}
+h3.sub{font-size:.95rem;margin:14px 0 6px;color:var(--gold-dark);border-bottom:1px dashed var(--line);padding-bottom:3px;}
+.tree{font-family:Arial,sans-serif;font-size:.82rem;}
+.tree ul{list-style:none;padding-left:18px;border-left:2px dotted var(--gold);margin:4px 0;}
+.tree li{margin:5px 0;position:relative;}
+.tree li::before{content:"↳ ";color:var(--gold-dark);}
+.tree .lvl1{font-weight:bold;color:var(--ink);}
+body.dark .tree .lvl1{color:var(--gold);}
+.tag{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;padding:1px 6px;border-radius:4px;margin-right:4px;font-weight:bold;vertical-align:middle;white-space:nowrap;}
+.tag.vip{background:#f6dede;color:#8c1f1f;}
+.tag.faq{background:#fce6cc;color:#96500e;}
+.tag.concept{background:#fbf1c8;color:#7a6412;}
+.tag.quick{background:#dcefe3;color:#1f6b3f;}
+body.dark .tag.vip{background:#3a1414;color:#f0a0a0;}
+body.dark .tag.faq{background:#3a2a12;color:#f0c088;}
+body.dark .tag.concept{background:#3a3412;color:#f0e0a0;}
+body.dark .tag.quick{background:#12321f;color:#a0e0bc;}
+.qbox{background:var(--paper2);border-left:4px solid var(--teal);font-family:Arial,sans-serif;font-size:.78rem;padding:7px 10px;margin:8px 0;border-radius:0 6px 6px 0;}
+.qbox b{color:var(--teal);}
+table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.76rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--white);font-size:.72rem;}
+tr:nth-child(even) td{background:var(--paper2);}
+.flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.flow .step{background:var(--ink);color:var(--white);font-family:Arial,sans-serif;font-size:.8rem;padding:9px 12px;border-radius:8px;border-left:5px solid var(--gold);}
+.flow .arrow{text-align:center;color:var(--gold-dark);font-size:1.1rem;margin:2px 0;}
+.flow .step small{display:block;color:#d8d8d8;font-size:.68rem;margin-top:2px;}
+body.dark .flow .step small{color:#b8b8a8;}
+.mnem{background:linear-gradient(135deg,#fdf3d8,#f6e3ae);border:1px dashed var(--gold-dark);border-radius:8px;padding:10px 12px;margin:8px 0;font-family:Arial,sans-serif;font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2c250f,#3a2e10);}
+.mnem b{color:var(--gold-dark);}
+.formula{font-family:"Courier New",monospace;font-size:.8rem;background:#fbf8ef;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;text-align:center;}
+body.dark .formula{background:#10150e;color:#dcd6bd;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-item{background:var(--paper2);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:7px 10px;font-family:Arial,sans-serif;font-size:.78rem;}
+.rev-item b{color:var(--ink);}
+body.dark .rev-item b{color:var(--gold);}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:Arial,sans-serif;font-size:.75rem;}
+.cmp2 .col{border-radius:8px;padding:8px 9px;}
+.cmp2 .col.a{background:#e4eef0;border:1px solid #b6d3d6;}
+.cmp2 .col.b{background:#f2e6d8;border:1px solid #d9bd94;}
+body.dark .cmp2 .col.a{background:#0f2224;border-color:#245050;}
+body.dark .cmp2 .col.b{background:#2a2013;border-color:#5a4523;}
+.cmp2 h4{margin:0 0 4px;font-size:.82rem;}
+.cmp2 ul{margin:0;padding-left:16px;}
+.onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,var(--paper2) 23px);border:2px solid var(--ink);border-radius:8px;padding:12px;font-family:Arial,sans-serif;font-size:.74rem;}
+body.dark .onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,#141a12 23px);}
+.onepage h4{margin:10px 0 4px;color:var(--gold-dark);font-size:.8rem;}
+.onepage ul{margin:2px 0;padding-left:16px;}
+footer{text-align:center;font-family:Arial,sans-serif;font-size:.72rem;color:var(--gold-dark);padding:20px 10px 8px;}
+.chapnav{display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.78rem;margin-top:10px;}
+.chapnav span{background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:6px 10px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="crumb">AAO Exam &rsaquo; Accounting Basics &rsaquo; Company Accounts &rsaquo; <b>Chapter 4</b></div>
+  <h1>Ch. 4 — Analysis of Financial Statements</h1>
+  <p class="sub">Company Accounts &amp; Analysis of Financial Statements | Exam-oriented infographic notes</p>
+  <div class="top-controls">
+    <button class="btn-chip" onclick="document.body.classList.toggle('dark')">🌓 Dark Mode</button>
+    <button class="btn-chip" onclick="speakPage()">🔊 Read Aloud</button>
+    <button class="btn-chip" onclick="stopSpeak()">⏹ Stop</button>
+    <button class="btn-chip" onclick="markStudied()">✅ Mark Studied</button>
+  </div>
+</div>
+
+<div class="navpills">
+  <a href="#topic">Topic</a>
+  <a href="#significance">Significance</a>
+  <a href="#objectives">Objectives</a>
+  <a href="#tools">Tools</a>
+  <a href="#compare-stmt">Comparative Stmt</a>
+  <a href="#commonsize">Common Size Stmt</a>
+  <a href="#compare2">Horizontal vs Vertical</a>
+  <a href="#limitations">Limitations</a>
+  <a href="#authorities">Users/Authorities</a>
+  <a href="#mnemonics">Mnemonics</a>
+  <a href="#onepager">One-Page Sheet</a>
+  <a href="#lastday">Last-Day Notes</a>
+</div>
+
+<div class="wrap">
+
+<!-- TOPIC / DEFINITION -->
+<div class="card" id="topic">
+  <h2><span class="num">1</span> Topic &amp; Definition <span class="tag vip">🔴 VIP</span></h2>
+  <p><b>Topic:</b> Financial statements alone are just summarised reports — to be useful for decisions, they must be critically analysed and interpreted. This chapter covers the meaning and tools of Financial Statement Analysis.</p>
+  <p><b>Definition:</b> The process of critical evaluation of financial information in the financial statements to understand and make decisions regarding the operations of the firm.</p>
+  <p><b>Analysis vs Interpretation:</b> <i>Analysis</i> = methodical simplification/classification of data. <i>Interpretation</i> = explaining the meaning and significance of that data. They are complementary — analysis without interpretation is useless.</p>
+  <div class="qbox"><b>Likely Q:</b> "Distinguish between Analysis and Interpretation of financial statements."</div>
+</div>
+
+<!-- SIGNIFICANCE -->
+<div class="card" id="significance">
+  <h2><span class="num">2</span> Significance — Who Uses Financial Analysis? <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="tree">
+    <div class="lvl1">7 User Groups &amp; Their Interest</div>
+    <ul>
+      <li><b>Finance Manager</b> — managerial performance, credit rating, operational efficiency</li>
+      <li><b>Top Management</b> — overall resource efficiency, internal control</li>
+      <li><b>Trade Payables</b> — short-term liquidity (can the firm pay us soon?)</li>
+      <li><b>Lenders</b> — long-term solvency, capital structure, ability to pay interest/principal</li>
+      <li><b>Investors</b> — present &amp; future profitability, buy/sell/hold decisions</li>
+      <li><b>Labour Unions</b> — wage increase affordability</li>
+      <li><b>Others</b> — economists, researchers, government (pricing, taxation)</li>
+    </ul>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Explain the significance of financial analysis to any four different parties."</div>
+</div>
+
+<!-- OBJECTIVES -->
+<div class="card" id="objectives">
+  <h2><span class="num">3</span> Objectives of Financial Analysis <span class="tag concept">🟡 Conceptual</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>Assess current profitability &amp; operational efficiency</li>
+    <li>Ascertain relative importance of different components of financial position</li>
+    <li>Identify reasons for change in profitability/financial position</li>
+    <li>Judge ability to repay debt — both short-term &amp; long-term liquidity</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "State the objectives of analysis of financial statements."</div>
+</div>
+
+<!-- TOOLS -->
+<div class="card" id="tools">
+  <h2><span class="num">4</span> Tools of Financial Analysis <span class="tag vip">🔴 VIP</span></h2>
+  <div class="flow">
+    <div class="step">1. Comparative Statements <small>Compare 2+ periods; absolute &amp; % change; a.k.a. Horizontal Analysis</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Common Size Statements <small>Express items as % of a common base; a.k.a. Vertical Analysis</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">3. Trend Analysis <small>% relationship of each year's item to the same item in a base year</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">4. Ratio Analysis <small>Relationships between BS &amp; P&amp;L items — covered fully in Ch. 5</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">5. Cash Flow Analysis <small>Actual movement of cash in/out — covered fully in Ch. 6</small></div>
+  </div>
+  <div class="mnem"><b>Mnemonic — "Come Common Trend Ratios Cash"</b>: <b>Com</b>parative → <b>Common</b> size → <b>Trend</b> → <b>Ratio</b>s → <b>Cash</b> flow.</div>
+  <div class="qbox"><b>Likely Q:</b> "List and briefly explain the five tools of financial statement analysis."</div>
+</div>
+
+<!-- COMPARATIVE STATEMENT -->
+<div class="card" id="compare-stmt">
+  <h2><span class="num">5</span> Comparative Statements — Method &amp; Formula <span class="tag vip">🔴 VIP — Guaranteed Numerical</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;">Also called <b>Horizontal Analysis</b>. Shows figures for two (or more) periods side by side with absolute and % change — same accounting principles must be used, else deviations are footnoted.</p>
+  <div class="formula">% Increase/Decrease = (Absolute Change ÷ First Year Figure) × 100</div>
+  <table>
+    <tr><th>Column</th><th>Content</th></tr>
+    <tr><td>1</td><td>Particulars</td></tr>
+    <tr><td>2</td><td>First Year (Rs.)</td></tr>
+    <tr><td>3</td><td>Second Year (Rs.)</td></tr>
+    <tr><td>4</td><td>Absolute Increase(+)/Decrease(−) = Col.3 − Col.2</td></tr>
+    <tr><td>5</td><td>% Increase(+)/Decrease(−) = (Col.4 ÷ Col.2) × 100</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Prepare a Comparative Statement of Profit and Loss from the given data for two years." (Appears almost every year — practice the % formula carefully)</div>
+</div>
+
+<!-- COMMON SIZE STATEMENT -->
+<div class="card" id="commonsize">
+  <h2><span class="num">6</span> Common Size Statements — Method &amp; Formula <span class="tag vip">🔴 VIP — Guaranteed Numerical</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;">Also called <b>Vertical Analysis</b> / Component Percentage Statement. Each item is expressed as a % of a common base within the <i>same</i> period — enables inter-firm comparison of companies with different sizes.</p>
+  <div class="formula">Common Size % = (Individual Item ÷ Base Item) × 100</div>
+  <table>
+    <tr><th>Statement</th><th>Base (100%)</th></tr>
+    <tr><td>Common Size Balance Sheet</td><td>Total Assets (also = Total Equity &amp; Liabilities)</td></tr>
+    <tr><td>Common Size Statement of P&amp;L</td><td>Revenue from Operations (Net Sales)</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Prepare a Common Size Statement of Profit and Loss taking Revenue from Operations as 100." (Guaranteed numerical)</div>
+</div>
+
+<!-- HORIZONTAL VS VERTICAL -->
+<div class="card" id="compare2">
+  <h2><span class="num">7</span> Comparison — Horizontal vs Vertical Analysis <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Comparative Statement (Horizontal)</h4>
+      <ul>
+        <li>Compares figures ACROSS two or more periods</li>
+        <li>Base = same item's own prior-year figure</li>
+        <li>Shows absolute + % change over time</li>
+        <li>Good for time-series / intra-firm trend</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Common Size Statement (Vertical)</h4>
+      <ul>
+        <li>Compares items WITHIN the same period</li>
+        <li>Base = common total (Sales or Total Assets)</li>
+        <li>Shows proportion/structure at a point in time</li>
+        <li>Good for inter-firm comparison (different sizes)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Distinguish between Horizontal Analysis and Vertical Analysis." (Very frequently asked, 3–4 marks)</div>
+</div>
+
+<!-- LIMITATIONS -->
+<div class="card" id="limitations">
+  <h2><span class="num">8</span> Limitations of Financial Analysis <span class="tag vip">🔴 VIP</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>Does not consider <b>price level changes</b> (inflation)</li>
+    <li>Misleading without knowledge of <b>changes in accounting procedure</b></li>
+    <li>Just a study of the <b>reports</b> of the company — nothing beyond what's disclosed</li>
+    <li>Only <b>monetary information</b> considered; non-monetary aspects ignored</li>
+    <li>Based on accounting concepts — does not reflect <b>current position</b> (inherits limitations of financial statements themselves)</li>
+  </ul>
+  <div class="mnem"><b>Mnemonic — "PAMS-C"</b>: <b>P</b>rice level ignored, <b>A</b>ccounting procedure changes misleading, <b>M</b>ere study of reports, <b>M</b>onetary only, <b>S</b>tatements' own limitation → <b>C</b>urrent position not reflected.</div>
+  <div class="qbox"><b>Likely Q:</b> "State any four limitations of financial analysis."</div>
+</div>
+
+<!-- USERS/AUTHORITIES -->
+<div class="card" id="authorities">
+  <h2><span class="num">9</span> Key Terms &amp; Reference Points <span class="tag concept">🟡 Conceptual</span></h2>
+  <table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td>Intra-firm Comparison</td><td>Comparing a firm's own performance across different years</td></tr>
+    <tr><td>Inter-firm Comparison</td><td>Comparing performance with other firms (cross-sectional analysis)</td></tr>
+    <tr><td>Horizontal Analysis</td><td>Another name for Comparative Statement analysis</td></tr>
+    <tr><td>Vertical Analysis</td><td>Another name for Common Size Statement analysis</td></tr>
+    <tr><td>Annual Report</td><td>Contains Balance Sheet, Statement of P&amp;L, Cash Flow Statement + management's discussion of performance</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "What is meant by inter-firm and intra-firm comparison?"</div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <h2><span class="num">10</span> Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="mnem"><b>5 Tools:</b> "Come Common Trend Ratios Cash" — Comparative, Common size, Trend, Ratio, Cash flow analysis.</div>
+  <div class="mnem"><b>Horizontal = History:</b> Both start similar — Horizontal analysis studies history/trend ACROSS years.</div>
+  <div class="mnem"><b>Vertical = Volume in one Void (period):</b> Vertical analysis studies proportion WITHIN one period.</div>
+  <div class="mnem"><b>Limitations:</b> "PAMS-C" — Price level, Accounting changes, Mere reports, Monetary only, Current position (statements' limitation).</div>
+</div>
+
+<!-- ONE PAGE -->
+<div class="card" id="onepager">
+  <h2><span class="num">11</span> One-Page Revision Sheet <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="onepage">
+    <h4>Meaning</h4>
+    <ul><li>Analysis = simplify data; Interpretation = explain meaning; both complementary</li></ul>
+    <h4>5 Tools</h4>
+    <ul><li>Comparative Statements, Common Size Statements, Trend Analysis, Ratio Analysis, Cash Flow Analysis</li></ul>
+    <h4>Comparative Statement Formula</h4>
+    <ul><li>% Change = (Absolute Change ÷ First Year Figure) × 100 = Horizontal Analysis</li></ul>
+    <h4>Common Size Formula</h4>
+    <ul><li>% = (Item ÷ Base) × 100; Base = Net Sales (P&amp;L) or Total Assets (BS) = Vertical Analysis</li></ul>
+    <h4>Comparisons</h4>
+    <ul><li>Intra-firm (own years) vs Inter-firm (other firms/industry)</li></ul>
+    <h4>Limitations — 5</h4>
+    <ul><li>No price-level adjustment, accounting-change risk, reports-only, monetary-only, inherits FS limitations</li></ul>
+  </div>
+</div>
+
+<!-- LAST DAY -->
+<div class="card" id="lastday">
+  <h2><span class="num">12</span> Last-Day Revision Notes <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>✓</b> Financial Analysis = Analysis (simplify) + Interpretation (explain) — complementary.</div>
+    <div class="rev-item"><b>✓</b> 5 tools: Comparative Statement, Common Size Statement, Trend Analysis, Ratio Analysis, Cash Flow Analysis.</div>
+    <div class="rev-item"><b>✓</b> Comparative Statement = Horizontal Analysis; compares figures across 2+ periods.</div>
+    <div class="rev-item"><b>✓</b> % Change formula = (Absolute Change ÷ First Year Figure) × 100.</div>
+    <div class="rev-item"><b>✓</b> Common Size Statement = Vertical Analysis; compares items within the same period as % of a base.</div>
+    <div class="rev-item"><b>✓</b> Common Size base: Net Sales for P&amp;L, Total Assets for Balance Sheet.</div>
+    <div class="rev-item"><b>✓</b> Intra-firm = own firm across years; Inter-firm = vs other firms/industry.</div>
+    <div class="rev-item"><b>✓</b> Trend Analysis uses a base year; ratio analysis = Ch. 5; cash flow analysis = Ch. 6.</div>
+    <div class="rev-item"><b>✓</b> 5 limitations: ignores price-level changes, accounting-policy changes can mislead, mere study of reports, monetary-only, inherits limitations of financial statements.</div>
+    <div class="rev-item"><b>✓</b> 7 user groups of financial analysis: Finance manager, Top management, Trade payables, Lenders, Investors, Labour unions, Others (economists/govt).</div>
+  </div>
+</div>
+
+<div class="chapnav">
+  <span>⏮ Ch. 3 — Financial Statements</span>
+  <span>Ch. 5 — Accounting Ratios ⏭</span>
+</div>
+
+<footer>
+  AAO Exam · Accounting Basics · Chapter 4 of 6 · Source: NCERT Accountancy — Company Accounts &amp; Analysis of Financial Statements
+</footer>
+</div>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('active');
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+var utter=null;
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported on this device.');return;}
+  stopSpeak();
+  var text = document.querySelector('.wrap').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+function markStudied(){
+  try{
+    localStorage.setItem('aao_ch4_studied','true');
+    alert('Chapter 4 marked as studied ✅');
+  }catch(e){alert('Could not save progress on this device.');}
+}
+(function(){
+  try{
+    if(localStorage.getItem('aao_ch4_studied')==='true'){
+      document.title = '✅ ' + document.title;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

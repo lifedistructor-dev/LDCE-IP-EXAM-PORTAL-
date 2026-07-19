@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch.6 Cash Flow Statement | AAO Exam Accounting Basics</title>
+<style>
+:root{
+  --ink:#12213f; --ink2:#1e3358; --paper:#f6f1e4; --paper2:#efe7d3;
+  --gold:#c1922f; --gold-dark:#96701d; --teal:#2f6f5e; --red:#b23b3b;
+  --line:#d8cba9; --text:#26241c; --white:#fffdf7;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --ink:#0c1524; --ink2:#16233d; --paper:#151b16; --paper2:#1b2118;
+  --gold:#e0ac4a; --gold-dark:#c1922f; --teal:#4fae94; --red:#e06060;
+  --line:#3a3a2e; --text:#eae4d3; --white:#1c2419;
+}
+body{margin:0;font-family:"Georgia","Noto Serif",serif;background:var(--paper);color:var(--text);line-height:1.5;transition:background .3s,color .3s;}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px;}
+.hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--white);padding:22px 16px 26px;border-bottom:6px solid var(--gold);position:relative;}
+.hero .crumb{font-family:Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;color:#d9c68f;margin-bottom:8px;}
+.hero h1{font-size:1.5rem;margin:0 0 6px;color:var(--white);border-left:4px solid var(--gold);padding-left:10px;}
+.hero p.sub{font-family:Arial,sans-serif;font-size:.85rem;color:#cfd8e6;margin:0 0 14px;}
+.top-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-chip{font-family:Arial,sans-serif;font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 10px;border-radius:20px;cursor:pointer;}
+.btn-chip:active{transform:scale(.96);}
+.navpills{display:flex;gap:6px;overflow-x:auto;padding:10px 4px;background:var(--paper2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;-webkit-overflow-scrolling:touch;}
+.navpills a{flex:0 0 auto;font-family:Arial,sans-serif;font-size:.72rem;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:6px 10px;border-radius:14px;text-decoration:none;white-space:nowrap;}
+body.dark .navpills a{color:var(--gold);}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;margin:16px 0;padding:14px 14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.card h2{font-size:1.08rem;margin:0 0 10px;color:var(--ink);display:flex;align-items:center;gap:8px;}
+body.dark .card h2{color:var(--gold);}
+.card h2 .num{font-family:Arial,sans-serif;font-size:.65rem;background:var(--gold);color:var(--white);padding:2px 7px;border-radius:10px;}
+h3.sub{font-size:.95rem;margin:14px 0 6px;color:var(--gold-dark);border-bottom:1px dashed var(--line);padding-bottom:3px;}
+.tree{font-family:Arial,sans-serif;font-size:.82rem;}
+.tree ul{list-style:none;padding-left:18px;border-left:2px dotted var(--gold);margin:4px 0;}
+.tree li{margin:5px 0;position:relative;}
+.tree li::before{content:"↳ ";color:var(--gold-dark);}
+.tree .lvl1{font-weight:bold;color:var(--ink);}
+body.dark .tree .lvl1{color:var(--gold);}
+.tag{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;padding:1px 6px;border-radius:4px;margin-right:4px;font-weight:bold;vertical-align:middle;white-space:nowrap;}
+.tag.vip{background:#f6dede;color:#8c1f1f;}
+.tag.faq{background:#fce6cc;color:#96500e;}
+.tag.concept{background:#fbf1c8;color:#7a6412;}
+.tag.quick{background:#dcefe3;color:#1f6b3f;}
+body.dark .tag.vip{background:#3a1414;color:#f0a0a0;}
+body.dark .tag.faq{background:#3a2a12;color:#f0c088;}
+body.dark .tag.concept{background:#3a3412;color:#f0e0a0;}
+body.dark .tag.quick{background:#12321f;color:#a0e0bc;}
+.qbox{background:var(--paper2);border-left:4px solid var(--teal);font-family:Arial,sans-serif;font-size:.78rem;padding:7px 10px;margin:8px 0;border-radius:0 6px 6px 0;}
+.qbox b{color:var(--teal);}
+table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.76rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--white);font-size:.72rem;}
+tr:nth-child(even) td{background:var(--paper2);}
+.flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.flow .step{background:var(--ink);color:var(--white);font-family:Arial,sans-serif;font-size:.8rem;padding:9px 12px;border-radius:8px;border-left:5px solid var(--gold);}
+.flow .arrow{text-align:center;color:var(--gold-dark);font-size:1.1rem;margin:2px 0;}
+.flow .step small{display:block;color:#d8d8d8;font-size:.68rem;margin-top:2px;}
+body.dark .flow .step small{color:#b8b8a8;}
+.mnem{background:linear-gradient(135deg,#fdf3d8,#f6e3ae);border:1px dashed var(--gold-dark);border-radius:8px;padding:10px 12px;margin:8px 0;font-family:Arial,sans-serif;font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2c250f,#3a2e10);}
+.mnem b{color:var(--gold-dark);}
+.acc-head{cursor:pointer;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+.acc-body{display:none;padding:8px 4px 4px;font-size:.82rem;}
+.acc-body.open{display:block;}
+.acc-head .arrow-i{transition:transform .2s;}
+.acc-head.active .arrow-i{transform:rotate(90deg);}
+.journal{font-family:"Courier New",monospace;font-size:.74rem;background:#fbf8ef;border:1px solid var(--line);border-radius:6px;padding:9px 10px;margin:8px 0;white-space:pre;overflow-x:auto;}
+body.dark .journal{background:#10150e;color:#dcd6bd;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-item{background:var(--paper2);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:7px 10px;font-family:Arial,sans-serif;font-size:.78rem;}
+.rev-item b{color:var(--ink);}
+body.dark .rev-item b{color:var(--gold);}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:Arial,sans-serif;font-size:.75rem;}
+.cmp2 .col{border-radius:8px;padding:8px 9px;}
+.cmp2 .col.a{background:#e4eef0;border:1px solid #b6d3d6;}
+.cmp2 .col.b{background:#f2e6d8;border:1px solid #d9bd94;}
+body.dark .cmp2 .col.a{background:#0f2224;border-color:#245050;}
+body.dark .cmp2 .col.b{background:#2a2013;border-color:#5a4523;}
+.cmp2 h4{margin:0 0 4px;font-size:.82rem;}
+.cmp2 ul{margin:0;padding-left:16px;}
+.onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,var(--paper2) 23px);border:2px solid var(--ink);border-radius:8px;padding:12px;font-family:Arial,sans-serif;font-size:.72rem;}
+body.dark .onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,#141a12 23px);}
+.onepage h4{margin:10px 0 4px;color:var(--gold-dark);font-size:.8rem;}
+.onepage ul{margin:2px 0;padding-left:16px;}
+footer{text-align:center;font-family:Arial,sans-serif;font-size:.72rem;color:var(--gold-dark);padding:20px 10px 8px;}
+.chapnav{display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.78rem;margin-top:10px;}
+.chapnav span{background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:6px 10px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="crumb">AAO Exam &rsaquo; Accounting Basics &rsaquo; Company Accounts &rsaquo; <b>Chapter 6</b></div>
+  <h1>Ch. 6 — Cash Flow Statement</h1>
+  <p class="sub">Company Accounts &amp; Analysis of Financial Statements | Exam-oriented infographic notes</p>
+  <div class="top-controls">
+    <button class="btn-chip" onclick="document.body.classList.toggle('dark')">🌓 Dark Mode</button>
+    <button class="btn-chip" onclick="speakPage()">🔊 Read Aloud</button>
+    <button class="btn-chip" onclick="stopSpeak()">⏹ Stop</button>
+    <button class="btn-chip" onclick="markStudied()">✅ Mark Studied</button>
+  </div>
+</div>
+
+<div class="navpills">
+  <a href="#topic">Topic</a>
+  <a href="#objectives">Objectives/Benefits</a>
+  <a href="#cashequiv">Cash Equivalents</a>
+  <a href="#classification">3 Activities</a>
+  <a href="#flowchart">Classification Flowchart</a>
+  <a href="#peculiar">Peculiar Items</a>
+  <a href="#indirect">Indirect Method</a>
+  <a href="#investfinance">Investing/Financing Calc</a>
+  <a href="#exceptions">Exceptions</a>
+  <a href="#mnemonics">Mnemonics</a>
+  <a href="#onepager">One-Page Sheet</a>
+  <a href="#lastday">Last-Day Notes</a>
+</div>
+
+<div class="wrap">
+
+<!-- TOPIC -->
+<div class="card" id="topic">
+  <h2><span class="num">1</span> Topic &amp; Definition <span class="tag vip">🔴 VIP</span></h2>
+  <p><b>Topic:</b> Cash Flow Statement is the third key financial statement — showing inflows and outflows of cash and cash equivalents classified into Operating, Investing, and Financing activities.</p>
+  <p><b>Governing Standard:</b> <b>AS-3 (Revised)</b>, issued by ICAI — mandatory for all listed companies to prepare and present alongside other financial statements annually. It replaced the earlier Fund Flow Statement, which is no longer relevant.</p>
+  <div class="qbox"><b>Likely Q:</b> "Which Accounting Standard governs the preparation of Cash Flow Statement? Is it mandatory for all companies?"</div>
+</div>
+
+<!-- OBJECTIVES/BENEFITS -->
+<div class="card" id="objectives">
+  <h2><span class="num">2</span> Objectives &amp; Benefits <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;"><b>Primary objective:</b> Provide useful information about cash inflows/outflows during a period, classified as operating, investing and financing — helping users assess the enterprise's ability to generate cash and its need to utilise it.</p>
+  <ul style="font-family:Arial;font-size:.8rem;">
+    <li>Evaluates changes in net assets, financial structure (liquidity/solvency)</li>
+    <li>Helps develop models to assess/compare present value of future cash flows</li>
+    <li>Enhances comparability by eliminating effects of differing accounting treatments</li>
+    <li>Helps balance cash inflow/outflow and check accuracy of past cash flow forecasts</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "State any three benefits of preparing a Cash Flow Statement."</div>
+</div>
+
+<!-- CASH EQUIVALENTS -->
+<div class="card" id="cashequiv">
+  <h2><span class="num">3</span> Cash &amp; Cash Equivalents (as per AS-3) <span class="tag vip">🔴 VIP</span></h2>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Cash</h4>
+      <ul>
+        <li>Cash in hand</li>
+        <li>Demand deposits with banks</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Cash Equivalents</h4>
+      <ul>
+        <li>Short-term, highly liquid investments</li>
+        <li>Readily convertible to known cash amounts</li>
+        <li>Insignificant risk of value change</li>
+        <li>Maturity ≤ <b>3 months</b> from date of acquisition</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-family:Arial;font-size:.8rem;"><b>Note:</b> Investment in shares is generally EXCLUDED from cash equivalents — except e.g. preference shares acquired shortly before their specified redemption date with insignificant repayment risk.</p>
+  <div class="mnem"><b>Mnemonic:</b> "3 months or less, or it's not cash-less" — the 3-month maturity test is the key exam fact.</div>
+  <div class="qbox"><b>Likely Q:</b> "What is the maximum maturity period for an investment to qualify as a cash equivalent?" → 3 months</div>
+</div>
+
+<!-- CLASSIFICATION -->
+<div class="card" id="classification">
+  <h2><span class="num">4</span> Classification of Activities <span class="tag vip">🔴 VIP — Core of the Chapter</span></h2>
+  <table>
+    <tr><th>Activity</th><th>Meaning</th><th>Examples</th></tr>
+    <tr><td><b>Operating</b></td><td>Principal revenue-generating activities (not investing/financing)</td><td>Cash sales, receipts from customers, payments to suppliers/employees, income tax paid</td></tr>
+    <tr><td><b>Investing</b></td><td>Acquisition &amp; disposal of long-term assets and investments not in cash equivalents</td><td>Purchase/sale of fixed assets, purchase/sale of investments, interest &amp; dividend received</td></tr>
+    <tr><td><b>Financing</b></td><td>Changes in size/composition of owners' capital and borrowings</td><td>Issue of shares/debentures, loan raised/repaid, interest &amp; dividend paid</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Classify the following into Operating/Investing/Financing activities: [list of 10 items]." (Guaranteed classification question every year)</div>
+</div>
+
+<!-- CLASSIFICATION FLOWCHART -->
+<div class="card" id="flowchart">
+  <h2><span class="num">5</span> Cash Inflow/Outflow Map <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="flow">
+    <div class="step">OPERATING <small>+ Sale of goods/services, royalties, fees, commission<br>− Payments to suppliers, employees, taxes</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">INVESTING <small>+ Sale of PPE, long-term investments; interest/dividend received<br>− Purchase of PPE, non-current investments</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">FINANCING <small>+ Issue of shares/debentures, loans raised<br>− Redemption of shares/debentures, loan repayment, dividend &amp; interest paid</small></div>
+  </div>
+  <div class="mnem"><b>Special Note:</b> Same activity can classify differently by business type — e.g. purchase/sale of shares is an OPERATING activity for a share brokerage firm, but an INVESTING activity for any other enterprise.</div>
+  <div class="qbox"><b>Likely Q:</b> "Why is purchase of shares an operating activity for a share broker but an investing activity for a manufacturing company?"</div>
+</div>
+
+<!-- PECULIAR ITEMS -->
+<div class="card" id="peculiar">
+  <h2><span class="num">6</span> Treatment of Peculiar/Special Items <span class="tag vip">🔴 VIP — Most Confusing Part</span></h2>
+  <div class="acc-head" onclick="toggleAcc(this)">1. Extraordinary Items <span class="arrow-i">▶</span></div>
+  <div class="acc-body">Non-recurring items (e.g. loss by theft/earthquake/flood) — classified &amp; disclosed SEPARATELY under whichever activity (operating/investing/financing) they relate to.</div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">2. Interest &amp; Dividend — Non-Financial Enterprise <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Classification</th></tr>
+      <tr><td>Interest paid</td><td>Financing Activity</td></tr>
+      <tr><td>Dividend paid</td><td>Financing Activity</td></tr>
+      <tr><td>Interest received</td><td>Investing Activity</td></tr>
+      <tr><td>Dividend received</td><td>Investing Activity</td></tr>
+    </table>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">3. Interest &amp; Dividend — Financial Enterprise <span class="arrow-i">▶</span></div>
+  <div class="acc-body">Interest paid, interest received, AND dividend received → all OPERATING activities (its main business is lending/borrowing). Only dividend PAID remains a Financing activity.</div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">4. Taxes on Income &amp; Gains <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Tax on operating profit → <b>Operating</b> activity</li>
+      <li>Dividend tax → <b>Financing</b> activity (along with dividend paid)</li>
+      <li>Capital gains tax on sale of fixed assets → <b>Investing</b> activity</li>
+    </ul>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">5. Non-Cash Transactions <span class="arrow-i">▶</span></div>
+  <div class="acc-body">Transactions not involving cash/cash equivalents are EXCLUDED entirely from the Cash Flow Statement — e.g. acquisition of machinery by issue of shares, or redemption of debentures by issue of shares. Disclosed elsewhere in the financial statements instead.</div>
+
+  <div class="mnem"><b>Mnemonic — Non-financial firm:</b> "Pay = Finance, Receive = Invest" for both interest and dividend.</div>
+  <div class="qbox"><b>Likely Q:</b> "How is interest paid and dividend received treated in the cash flow statement of a non-financial company?" (Extremely common trap question)</div>
+</div>
+
+<!-- INDIRECT METHOD -->
+<div class="card" id="indirect">
+  <h2><span class="num">7</span> Indirect Method — Operating Activities <span class="tag vip">🔴 VIP — Guaranteed Numerical</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;">Starts from <b>Net Profit before Tax and Extraordinary Items</b> (NOT the final Statement of P&amp;L figure) and adjusts for non-cash &amp; non-operating items, then working capital changes.</p>
+  <div class="journal">Net Profit before Tax &amp; Extraordinary Items
++ Non-cash items (Depreciation, Goodwill w/off, Provisions)
++ Non-operating expenses (Finance costs, Loss on sale of assets)
+− Non-operating incomes (Dividend received, Profit on sale of assets)
+= Operating Profit before Working Capital changes
+
++ Increase in Current Liabilities      + Decrease in Current Assets
+− Increase in Current Assets           − Decrease in Current Liabilities
+= Cash Generated from Operations
+
+− Income Tax Paid
+± Effect of Extraordinary Items
+= NET CASH FROM OPERATING ACTIVITIES</div>
+  <div class="mnem"><b>Mnemonic — Working Capital adjustments:</b> "CA up = cash down; CL up = cash up" — Increase in Current Assets is deducted; Increase in Current Liabilities is added (and vice versa).</div>
+  <div class="qbox"><b>Likely Q:</b> "Calculate Net Cash from Operating Activities using the Indirect Method from the given Balance Sheets and additional information." (Guaranteed 8-mark numerical, appears every single year)</div>
+</div>
+
+<!-- INVESTING/FINANCING CALC -->
+<div class="card" id="investfinance">
+  <h2><span class="num">8</span> Ascertaining Cash from Investing &amp; Financing <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;">Prepare a <b>ledger account</b> (e.g. Machinery A/c, Long-term Loan A/c) using opening/closing balances plus additional info (sale/purchase, depreciation) — the balancing figure gives the purchase/proceeds figure needed for the Cash Flow Statement.</p>
+  <div class="flow">
+    <div class="step">1. Open the relevant asset/liability account <small>e.g. Machinery A/c, Investment A/c, Long-term Loan A/c</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Post opening balance, additions (via P&amp;L for profit on sale), disposals</div>
+    <div class="arrow">▼</div>
+    <div class="step">3. Closing balance = given figure; balancing figure = cash paid/received</div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "From the following details of Machinery Account, calculate cash flow from investing activities." (Classic ledger-based numerical)</div>
+</div>
+
+<!-- EXCEPTIONS -->
+<div class="card" id="exceptions">
+  <h2><span class="num">9</span> Important Exceptions <span class="tag concept">🟡 Conceptual</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>Purchase/sale of dealing or trading securities → classified as <b>Operating</b> activity (they are inventory for resale), NOT investing.</li>
+    <li>Cash advances/loans made by a <b>financial enterprise</b> → Operating activity (its main business); by any other enterprise → Investing activity.</li>
+    <li>A single transaction may split across categories — e.g. instalment on a deferred-payment asset purchase: interest portion → Financing; principal/loan portion → Investing.</li>
+    <li>Non-cash investing/financing transactions are <b>excluded entirely</b> from the Cash Flow Statement (disclosed elsewhere only).</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "Why are cash flows from dealing/trading securities classified as operating activities and not investing activities?"</div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <h2><span class="num">10</span> Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="mnem"><b>3 Activities:</b> "OIF" — Operating, Investing, Financing (in the order they appear in the statement).</div>
+  <div class="mnem"><b>Cash equivalent test:</b> "3 months or less, or it's not cash-less."</div>
+  <div class="mnem"><b>Non-financial firm — interest/dividend:</b> "Pay = Finance, Receive = Invest."</div>
+  <div class="mnem"><b>Financial firm — interest/dividend:</b> "Interest (paid+received) &amp; Dividend received = Operating; only Dividend Paid = Financing."</div>
+  <div class="mnem"><b>Working capital in indirect method:</b> "CA up = cash down; CL up = cash up."</div>
+  <div class="mnem"><b>Indirect method starting point:</b> Always "Net Profit BEFORE Tax and Extraordinary Items" — never the final P&amp;L figure.</div>
+</div>
+
+<!-- ONE PAGE -->
+<div class="card" id="onepager">
+  <h2><span class="num">11</span> One-Page Revision Sheet <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="onepage">
+    <h4>Governing Standard</h4>
+    <ul><li>AS-3 (Revised), ICAI; mandatory for listed companies; replaced Fund Flow Statement</li></ul>
+    <h4>Cash Equivalents Test</h4>
+    <ul><li>Short-term, highly liquid, insignificant risk, maturity ≤ 3 months</li></ul>
+    <h4>3 Activities</h4>
+    <ul><li>Operating (main business) → Investing (long-term assets/investments) → Financing (owners' capital + borrowings)</li></ul>
+    <h4>Non-Financial Firm</h4>
+    <ul><li>Interest/Dividend PAID → Financing; Interest/Dividend RECEIVED → Investing</li></ul>
+    <h4>Financial Firm</h4>
+    <ul><li>Interest paid/received + Dividend received → Operating; Dividend paid → Financing</li></ul>
+    <h4>Tax Treatment</h4>
+    <ul><li>Income tax on operating profit → Operating; Dividend tax → Financing; Capital gains tax → Investing</li></ul>
+    <h4>Indirect Method Skeleton</h4>
+    <ul><li>Net Profit before Tax &amp; Extraordinary Items → +non-cash/non-operating exp − non-operating income → ± working capital changes → −Tax paid → Net Cash from Operations</li></ul>
+    <h4>Non-Cash Transactions</h4>
+    <ul><li>Fully excluded from Cash Flow Statement (e.g. asset bought via share issue)</li></ul>
+  </div>
+</div>
+
+<!-- LAST DAY -->
+<div class="card" id="lastday">
+  <h2><span class="num">12</span> Last-Day Revision Notes <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>✓</b> Cash Flow Statement governed by AS-3 (Revised), ICAI — mandatory for listed companies.</div>
+    <div class="rev-item"><b>✓</b> Cash equivalents = short-term, highly liquid, ≤3 months maturity, insignificant risk of value change.</div>
+    <div class="rev-item"><b>✓</b> 3 activities: Operating, Investing, Financing — in that order in the statement.</div>
+    <div class="rev-item"><b>✓</b> Purchase/sale of trading/dealing securities = Operating activity (inventory for resale).</div>
+    <div class="rev-item"><b>✓</b> Non-financial firm: interest/dividend PAID = Financing; RECEIVED = Investing.</div>
+    <div class="rev-item"><b>✓</b> Financial firm: interest paid/received + dividend received = Operating; dividend paid = Financing.</div>
+    <div class="rev-item"><b>✓</b> Income tax on operating profit = Operating; dividend tax = Financing; capital gains tax = Investing.</div>
+    <div class="rev-item"><b>✓</b> Non-cash transactions (e.g. asset via share issue) excluded entirely from Cash Flow Statement.</div>
+    <div class="rev-item"><b>✓</b> Indirect method starts from Net Profit BEFORE Tax &amp; Extraordinary Items, not the final P&amp;L figure.</div>
+    <div class="rev-item"><b>✓</b> Working capital rule: ↑Current Assets = deduct; ↑Current Liabilities = add (and vice versa).</div>
+    <div class="rev-item"><b>✓</b> Income tax paid is deducted LAST, just before arriving at Net Cash from Operating Activities.</div>
+    <div class="rev-item"><b>✓</b> Investing/Financing cash flows are best found by preparing ledger accounts (Machinery A/c, Loan A/c) and using the balancing figure.</div>
+  </div>
+</div>
+
+<div class="chapnav">
+  <span>⏮ Ch. 5 — Accounting Ratios</span>
+  <span>🏁 End of Accounting Basics (6/6)</span>
+</div>
+
+<footer>
+  AAO Exam · Accounting Basics · Chapter 6 of 6 · Source: NCERT Accountancy — Company Accounts &amp; Analysis of Financial Statements
+</footer>
+</div>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('active');
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+var utter=null;
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported on this device.');return;}
+  stopSpeak();
+  var text = document.querySelector('.wrap').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+function markStudied(){
+  try{
+    localStorage.setItem('aao_ch6_studied','true');
+    alert('Chapter 6 marked as studied ✅ — All 6 chapters complete!');
+  }catch(e){alert('Could not save progress on this device.');}
+}
+(function(){
+  try{
+    if(localStorage.getItem('aao_ch6_studied')==='true'){
+      document.title = '✅ ' + document.title;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

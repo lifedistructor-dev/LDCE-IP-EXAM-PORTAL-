@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch.3 Financial Statements of a Company | AAO Exam Accounting Basics</title>
+<style>
+:root{
+  --ink:#12213f; --ink2:#1e3358; --paper:#f6f1e4; --paper2:#efe7d3;
+  --gold:#c1922f; --gold-dark:#96701d; --teal:#2f6f5e; --red:#b23b3b;
+  --line:#d8cba9; --text:#26241c; --white:#fffdf7;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --ink:#0c1524; --ink2:#16233d; --paper:#151b16; --paper2:#1b2118;
+  --gold:#e0ac4a; --gold-dark:#c1922f; --teal:#4fae94; --red:#e06060;
+  --line:#3a3a2e; --text:#eae4d3; --white:#1c2419;
+}
+body{margin:0;font-family:"Georgia","Noto Serif",serif;background:var(--paper);color:var(--text);line-height:1.5;transition:background .3s,color .3s;}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px;}
+.hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--white);padding:22px 16px 26px;border-bottom:6px solid var(--gold);position:relative;}
+.hero .crumb{font-family:Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;color:#d9c68f;margin-bottom:8px;}
+.hero h1{font-size:1.5rem;margin:0 0 6px;color:var(--white);border-left:4px solid var(--gold);padding-left:10px;}
+.hero p.sub{font-family:Arial,sans-serif;font-size:.85rem;color:#cfd8e6;margin:0 0 14px;}
+.top-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-chip{font-family:Arial,sans-serif;font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 10px;border-radius:20px;cursor:pointer;}
+.btn-chip:active{transform:scale(.96);}
+.navpills{display:flex;gap:6px;overflow-x:auto;padding:10px 4px;background:var(--paper2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;-webkit-overflow-scrolling:touch;}
+.navpills a{flex:0 0 auto;font-family:Arial,sans-serif;font-size:.72rem;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:6px 10px;border-radius:14px;text-decoration:none;white-space:nowrap;}
+body.dark .navpills a{color:var(--gold);}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;margin:16px 0;padding:14px 14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.card h2{font-size:1.08rem;margin:0 0 10px;color:var(--ink);display:flex;align-items:center;gap:8px;}
+body.dark .card h2{color:var(--gold);}
+.card h2 .num{font-family:Arial,sans-serif;font-size:.65rem;background:var(--gold);color:var(--white);padding:2px 7px;border-radius:10px;}
+h3.sub{font-size:.95rem;margin:14px 0 6px;color:var(--gold-dark);border-bottom:1px dashed var(--line);padding-bottom:3px;}
+.tree{font-family:Arial,sans-serif;font-size:.82rem;}
+.tree ul{list-style:none;padding-left:18px;border-left:2px dotted var(--gold);margin:4px 0;}
+.tree li{margin:5px 0;position:relative;}
+.tree li::before{content:"↳ ";color:var(--gold-dark);}
+.tree .lvl1{font-weight:bold;color:var(--ink);}
+body.dark .tree .lvl1{color:var(--gold);}
+.tag{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;padding:1px 6px;border-radius:4px;margin-right:4px;font-weight:bold;vertical-align:middle;white-space:nowrap;}
+.tag.vip{background:#f6dede;color:#8c1f1f;}
+.tag.faq{background:#fce6cc;color:#96500e;}
+.tag.concept{background:#fbf1c8;color:#7a6412;}
+.tag.quick{background:#dcefe3;color:#1f6b3f;}
+body.dark .tag.vip{background:#3a1414;color:#f0a0a0;}
+body.dark .tag.faq{background:#3a2a12;color:#f0c088;}
+body.dark .tag.concept{background:#3a3412;color:#f0e0a0;}
+body.dark .tag.quick{background:#12321f;color:#a0e0bc;}
+.qbox{background:var(--paper2);border-left:4px solid var(--teal);font-family:Arial,sans-serif;font-size:.78rem;padding:7px 10px;margin:8px 0;border-radius:0 6px 6px 0;}
+.qbox b{color:var(--teal);}
+table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.78rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--white);font-size:.72rem;}
+tr:nth-child(even) td{background:var(--paper2);}
+.flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.flow .step{background:var(--ink);color:var(--white);font-family:Arial,sans-serif;font-size:.8rem;padding:9px 12px;border-radius:8px;border-left:5px solid var(--gold);}
+.flow .arrow{text-align:center;color:var(--gold-dark);font-size:1.1rem;margin:2px 0;}
+.flow .step small{display:block;color:#d8d8d8;font-size:.68rem;margin-top:2px;}
+body.dark .flow .step small{color:#b8b8a8;}
+.mnem{background:linear-gradient(135deg,#fdf3d8,#f6e3ae);border:1px dashed var(--gold-dark);border-radius:8px;padding:10px 12px;margin:8px 0;font-family:Arial,sans-serif;font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2c250f,#3a2e10);}
+.mnem b{color:var(--gold-dark);}
+.acc-head{cursor:pointer;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+.acc-body{display:none;padding:8px 4px 4px;font-size:.82rem;}
+.acc-body.open{display:block;}
+.acc-head .arrow-i{transition:transform .2s;}
+.acc-head.active .arrow-i{transform:rotate(90deg);}
+.journal{font-family:"Courier New",monospace;font-size:.72rem;background:#fbf8ef;border:1px solid var(--line);border-radius:6px;padding:9px 10px;margin:8px 0;white-space:pre;overflow-x:auto;}
+body.dark .journal{background:#10150e;color:#dcd6bd;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-item{background:var(--paper2);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:7px 10px;font-family:Arial,sans-serif;font-size:.78rem;}
+.rev-item b{color:var(--ink);}
+body.dark .rev-item b{color:var(--gold);}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:Arial,sans-serif;font-size:.75rem;}
+.cmp2 .col{border-radius:8px;padding:8px 9px;}
+.cmp2 .col.a{background:#e4eef0;border:1px solid #b6d3d6;}
+.cmp2 .col.b{background:#f2e6d8;border:1px solid #d9bd94;}
+body.dark .cmp2 .col.a{background:#0f2224;border-color:#245050;}
+body.dark .cmp2 .col.b{background:#2a2013;border-color:#5a4523;}
+.cmp2 h4{margin:0 0 4px;font-size:.82rem;}
+.cmp2 ul{margin:0;padding-left:16px;}
+.onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,var(--paper2) 23px);border:2px solid var(--ink);border-radius:8px;padding:12px;font-family:Arial,sans-serif;font-size:.74rem;}
+body.dark .onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,#141a12 23px);}
+.onepage h4{margin:10px 0 4px;color:var(--gold-dark);font-size:.8rem;}
+.onepage ul{margin:2px 0;padding-left:16px;}
+footer{text-align:center;font-family:Arial,sans-serif;font-size:.72rem;color:var(--gold-dark);padding:20px 10px 8px;}
+.chapnav{display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.78rem;margin-top:10px;}
+.chapnav span{background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:6px 10px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="crumb">AAO Exam &rsaquo; Accounting Basics &rsaquo; Company Accounts &rsaquo; <b>Chapter 3</b></div>
+  <h1>Ch. 3 — Financial Statements of a Company</h1>
+  <p class="sub">Company Accounts &amp; Analysis of Financial Statements | Exam-oriented infographic notes</p>
+  <div class="top-controls">
+    <button class="btn-chip" onclick="document.body.classList.toggle('dark')">🌓 Dark Mode</button>
+    <button class="btn-chip" onclick="speakPage()">🔊 Read Aloud</button>
+    <button class="btn-chip" onclick="stopSpeak()">⏹ Stop</button>
+    <button class="btn-chip" onclick="markStudied()">✅ Mark Studied</button>
+  </div>
+</div>
+
+<div class="navpills">
+  <a href="#topic">Topic</a>
+  <a href="#nature">Nature</a>
+  <a href="#objectives">Objectives</a>
+  <a href="#bs">Balance Sheet Format</a>
+  <a href="#sharecap">Share Capital Disclosure</a>
+  <a href="#pl">P&amp;L Format</a>
+  <a href="#sections">Sections/Rules</a>
+  <a href="#exceptions">Exceptions</a>
+  <a href="#dates">Dates/Limits</a>
+  <a href="#authorities">Authorities</a>
+  <a href="#uses">Uses</a>
+  <a href="#limitations">Limitations</a>
+  <a href="#mnemonics">Mnemonics</a>
+  <a href="#onepager">One-Page Sheet</a>
+  <a href="#lastday">Last-Day Notes</a>
+</div>
+
+<div class="wrap">
+
+<!-- TOPIC / DEFINITION -->
+<div class="card" id="topic">
+  <h2><span class="num">1</span> Topic &amp; Definition <span class="tag vip">🔴 VIP</span></h2>
+  <p><b>Topic:</b> Financial Statements are the end products of the accounting process, communicating a company's financial results and position to shareholders and other external parties.</p>
+  <p><b>Definition (AICPA):</b> Statements prepared for the purpose of presenting a periodical review of report by management on the status of investment and results achieved, reflecting a combination of <i>recorded facts, accounting principles, and personal judgements.</i></p>
+  <p><b>Two Core Statements:</b> (a) Balance Sheet (position statement, as at a date) and (b) Statement of Profit and Loss (performance over a period). Cash Flow Statement is now also treated as an integral component.</p>
+  <div class="qbox"><b>Likely Q:</b> "Define financial statements. What are its two main components?"</div>
+</div>
+
+<!-- NATURE -->
+<div class="card" id="nature">
+  <h2><span class="num">2</span> Nature of Financial Statements <span class="tag concept">🟡 Conceptual</span></h2>
+  <div class="tree">
+    <div class="lvl1">4 Pillars of "Nature"</div>
+    <ul>
+      <li><b>Recorded Facts</b> — based on historical cost, not current market price</li>
+      <li><b>Accounting Conventions</b> — e.g. inventory at cost or market price whichever is lower; materiality for small items</li>
+      <li><b>Postulates</b> — Going Concern, Money Measurement, Realisation</li>
+      <li><b>Personal Judgements</b> — depreciation estimates, doubtful debt provisions (guided by Conservatism)</li>
+    </ul>
+  </div>
+  <div class="mnem"><b>Mnemonic — "RAPP"</b>: <b>R</b>ecorded facts, <b>A</b>ccounting conventions, <b>P</b>ostulates, <b>P</b>ersonal judgements.</div>
+  <div class="qbox"><b>Likely Q:</b> "Explain the nature of financial statements." (4 pillars — a guaranteed 4-mark question)</div>
+</div>
+
+<!-- OBJECTIVES -->
+<div class="card" id="objectives">
+  <h2><span class="num">3</span> Objectives of Financial Statements <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <ol style="font-family:Arial;font-size:.82rem;">
+    <li>Provide information about economic resources &amp; obligations</li>
+    <li>Provide information about earning capacity</li>
+    <li>Provide information about cash flows</li>
+    <li>Judge effectiveness of management</li>
+    <li>Report activities affecting society</li>
+    <li>Disclose accounting policies</li>
+  </ol>
+  <div class="qbox"><b>Likely Q:</b> "State any four objectives of preparing financial statements of a company."</div>
+</div>
+
+<!-- BALANCE SHEET FORMAT -->
+<div class="card" id="bs">
+  <h2><span class="num">4</span> Balance Sheet — Schedule III Format <span class="tag vip">🔴 VIP — Highest Weightage</span></h2>
+  <p style="font-family:Arial;font-size:.8rem;">Every company under Companies Act 2013 must prepare its Balance Sheet as per <b>Schedule III</b> (applicable to financial years starting on/after 1 April 2011). Vertical format is mandatory.</p>
+  <div class="flow">
+    <div class="step">I. EQUITY AND LIABILITIES</div>
+    <div class="arrow">▼</div>
+    <div class="step">1. Shareholders' Funds <small>Share Capital + Reserves &amp; Surplus + Money received against Share Warrants</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Share Application Money Pending Allotment</div>
+    <div class="arrow">▼</div>
+    <div class="step">3. Non-Current Liabilities <small>Long-term borrowings, Deferred tax liabilities, Other LT liabilities, Long-term provisions</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">4. Current Liabilities <small>Short-term borrowings, Trade payables, Other current liabilities, Short-term provisions</small></div>
+    <div class="arrow">▼ TOTAL (must equal Assets total)</div>
+    <div class="step">II. ASSETS</div>
+    <div class="arrow">▼</div>
+    <div class="step">1. Non-Current Assets <small>Fixed assets (Tangible/Intangible/CWIP), Non-current investments, Deferred tax assets, LT loans &amp; advances, Other non-current assets</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Current Assets <small>Current investments, Inventories, Trade receivables, Cash &amp; cash equivalents, ST loans &amp; advances, Other current assets</small></div>
+  </div>
+  <div class="mnem"><b>Mnemonic — Equity/Liabilities order "SSNC"</b>: <b>S</b>hareholders' funds → <b>S</b>hare application money pending → <b>N</b>on-current liabilities → <b>C</b>urrent liabilities.</div>
+  <div class="qbox"><b>Likely Q:</b> "Prepare a Balance Sheet of a company as per Schedule III." (Guaranteed numerical, 6–8 marks, every single year)</div>
+</div>
+
+<!-- SHARE CAPITAL DISCLOSURE -->
+<div class="card" id="sharecap">
+  <h2><span class="num">5</span> Share Capital — Notes to Accounts Disclosures <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <ul style="font-family:Arial;font-size:.8rem;">
+    <li>Number of shares outstanding at beginning &amp; end of the reporting period, for each class</li>
+    <li>Rights, preferences, restrictions attached to each class (incl. dividend &amp; capital repayment restrictions)</li>
+    <li>Shares held by holding company / ultimate holding company (incl. subsidiaries/associates)</li>
+    <li>Shareholders holding <b>more than 5%</b> shares — disclosed individually with number held</li>
+    <li>For the preceding <b>5 years</b>: shares allotted without cash payment, bonus shares issued, shares bought back</li>
+  </ul>
+  <div class="mnem"><b>Mnemonic — "5 and 5"</b>: 5% shareholding threshold for disclosure + 5-year lookback for bonus/buyback/non-cash allotment history.</div>
+  <div class="qbox"><b>Likely Q:</b> "What disclosures are required regarding share capital in Notes to Accounts under Schedule III?"</div>
+</div>
+
+<!-- P&L FORMAT -->
+<div class="card" id="pl">
+  <h2><span class="num">6</span> Statement of Profit &amp; Loss — Schedule III Format <span class="tag vip">🔴 VIP</span></h2>
+  <div class="flow">
+    <div class="step">I. Revenue from Operations</div>
+    <div class="arrow">+</div>
+    <div class="step">II. Other Income</div>
+    <div class="arrow">=</div>
+    <div class="step">III. Total Revenue (I + II)</div>
+    <div class="arrow">−</div>
+    <div class="step">IV. Expenses <small>Cost of materials, Purchases of stock-in-trade, Changes in inventory, Employee benefit expense, Finance costs, Depreciation &amp; amortisation, Other expenses</small></div>
+    <div class="arrow">=</div>
+    <div class="step">V. Profit Before Exceptional &amp; Extraordinary Items and Tax</div>
+    <div class="arrow">− Exceptional items, − Extraordinary items</div>
+    <div class="step">IX. Profit Before Tax</div>
+    <div class="arrow">− Tax (Current + Deferred)</div>
+    <div class="step">XI. Profit for the Period (continuing operations)</div>
+    <div class="arrow">± Discontinuing operations (net of tax)</div>
+    <div class="step">XV. Profit/(Loss) for the Period <small>XVI: EPS — Basic &amp; Diluted</small></div>
+  </div>
+  <table>
+    <tr><th>Expense Head</th><th>Meaning</th></tr>
+    <tr><td>Cost of Materials Consumed</td><td>Raw material consumed in manufacturing (manufacturing cos.)</td></tr>
+    <tr><td>Purchases of Stock-in-Trade</td><td>Goods purchased for trading</td></tr>
+    <tr><td>Changes in Inventories</td><td>Opening − Closing stock of finished goods/WIP/stock-in-trade</td></tr>
+    <tr><td>Employee Benefit Expense</td><td>Salary, wages, leave encashment, staff welfare</td></tr>
+    <tr><td>Finance Cost</td><td>Interest on borrowings only (bank charges go under Other Expenses)</td></tr>
+    <tr><td>Depreciation &amp; Amortisation</td><td>Depreciation = tangible assets; Amortisation = intangible assets</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Prepare Statement of Profit and Loss as per Schedule III from the given trial balance." (Guaranteed numerical)</div>
+</div>
+
+<!-- SECTIONS / RULES -->
+<div class="card" id="sections">
+  <h2><span class="num">7</span> Important Sections &amp; Rules <span class="tag vip">🔴 VIP</span></h2>
+  <table>
+    <tr><th>Provision</th><th>Detail</th></tr>
+    <tr><td>Companies Act, 2013 — Schedule III</td><td>Prescribes format of Balance Sheet, Statement of P&amp;L, and Notes to Accounts</td></tr>
+    <tr><td>MCA Notification dated 28.02.2011</td><td>Originally prescribed Revised Schedule VI under Companies Act 1956 — precursor to Schedule III</td></tr>
+    <tr><td>Applicability date</td><td>Financial periods beginning on/after <b>1 April 2011</b></td></tr>
+    <tr><td>Not applicable to</td><td>Insurance companies, Banking companies, and companies for which a specific format is prescribed under another Act</td></tr>
+    <tr><td>Precedence rule</td><td><b>Accounting Standards prevail</b> over Schedule III wherever there is a conflict</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Which companies are exempt from following Schedule III format? What prevails in case of conflict — Schedule III or Accounting Standards?"</div>
+</div>
+
+<!-- EXCEPTIONS -->
+<div class="card" id="exceptions">
+  <h2><span class="num">8</span> Important Exceptions <span class="tag concept">🟡 Conceptual</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>Schedule III does <b>not apply</b> to Insurance/Banking companies or companies governed by a special Act's own format.</li>
+    <li>A <b>debit balance</b> in Statement of Profit and Loss must be shown as a <b>negative figure</b> under "Surplus" — not hidden or netted off elsewhere.</li>
+    <li>'Sundry Debtors'/'Sundry Creditors' are <b>replaced</b> by 'Trade Receivables'/'Trade Payables' — old terms are not acceptable in Schedule III format.</li>
+    <li>Rounding-off is <b>mandatory</b>, not optional, and depends on turnover size (see Time Limits section).</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "How should a debit balance in Statement of Profit and Loss be disclosed as per Schedule III?"</div>
+</div>
+
+<!-- DATES/LIMITS -->
+<div class="card" id="dates">
+  <h2><span class="num">9</span> Important Thresholds (Dates &amp; Turnover Limits) <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <table>
+    <tr><th>Criteria</th><th>Rounding-off Unit</th></tr>
+    <tr><td>Turnover &lt; ₹100 crore</td><td>Nearest hundreds, thousands, lakhs or millions (or decimal thereof)</td></tr>
+    <tr><td>Turnover ≥ ₹100 crore</td><td>Nearest lakhs or millions (or decimal thereof)</td></tr>
+  </table>
+  <p style="font-family:Arial;font-size:.8rem;"><b>Applicability:</b> Schedule III applies to financial statements for periods beginning on/after <b>1 April 2011</b>.</p>
+  <div class="mnem"><b>Mnemonic:</b> "100 crore is the line — below it, round small; above it, round big (lakhs/millions only)."</div>
+  <div class="qbox"><b>Likely Q:</b> "What is the rounding-off requirement for a company with turnover above ₹100 crore?"</div>
+</div>
+
+<!-- AUTHORITIES -->
+<div class="card" id="authorities">
+  <h2><span class="num">10</span> Important Authorities <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <table>
+    <tr><th>Authority</th><th>Role</th></tr>
+    <tr><td>Ministry of Corporate Affairs (MCA)</td><td>Prescribes Schedule III format; issued original Revised Schedule VI notification (2011)</td></tr>
+    <tr><td>ICAI (Accounting Standards Board)</td><td>Issues Accounting Standards, which prevail over Schedule III in case of conflict</td></tr>
+    <tr><td>Board of Directors</td><td>Approves financial statements before placing them before shareholders in AGM</td></tr>
+    <tr><td>Statutory Auditor</td><td>Reports on true &amp; fair view of financial statements</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Who prescribes the format of financial statements for Indian companies?"</div>
+</div>
+
+<!-- USES -->
+<div class="card" id="uses">
+  <h2><span class="num">11</span> Uses &amp; Importance of Financial Statements <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="tree">
+    <ul>
+      <li>Report on <b>Stewardship function</b> (management performance vs owner expectation)</li>
+      <li>Basis for <b>fiscal policies</b> (taxation, industrial policy)</li>
+      <li>Basis for <b>granting of credit</b> by banks/institutions</li>
+      <li>Guide for <b>prospective investors</b> (security, liquidity, profitability)</li>
+      <li>Guide to value of <b>investment already made</b></li>
+      <li>Aids <b>trade associations</b> in developing standard ratios</li>
+      <li>Helps <b>stock exchanges</b> assess transparency &amp; protect investors</li>
+    </ul>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Explain any four uses of financial statements to different stakeholders."</div>
+</div>
+
+<!-- LIMITATIONS -->
+<div class="card" id="limitations">
+  <h2><span class="num">12</span> Limitations of Financial Statements <span class="tag vip">🔴 VIP</span></h2>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Limitation</h4>
+      <ul>
+        <li>Do not reflect current situation</li>
+        <li>Assets may not realise stated value</li>
+        <li>Bias (personal judgement-driven)</li>
+        <li>Aggregate, not detailed, information</li>
+        <li>Vital info missing (loss of markets etc.)</li>
+        <li>No qualitative information</li>
+        <li>Only interim reports</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Why</h4>
+      <ul>
+        <li>Based on historical cost, not market price</li>
+        <li>Values reflect unexpired/unamortised cost only</li>
+        <li>Estimates (depreciation, doubtful debts) vary by accountant</li>
+        <li>Users can't drill into specifics</li>
+        <li>Balance Sheet silent on non-monetary risks</li>
+        <li>No data on industrial relations, morale, etc.</li>
+        <li>Snapshot in time — future changes not depicted</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mnem"><b>Mnemonic — "7 Limitations = CAB-AVNI"</b>: <b>C</b>urrent situation not reflected, <b>A</b>ssets may not realise, <b>B</b>ias, <b>A</b>ggregate info only, <b>V</b>ital info missing, <b>N</b>o qualitative info, <b>I</b>nterim reports only.</div>
+  <div class="qbox"><b>Likely Q:</b> "State any five limitations of financial statements." (Almost certain to appear, 4–5 marks)</div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <h2><span class="num">13</span> Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="mnem"><b>Nature (4):</b> "RAPP" — Recorded facts, Accounting conventions, Postulates, Personal judgements.</div>
+  <div class="mnem"><b>Balance Sheet order:</b> "SSNC" — Shareholders' funds, Share application money pending, Non-current liabilities, Current liabilities.</div>
+  <div class="mnem"><b>Disclosure numbers:</b> "5 and 5" — 5% shareholding threshold + 5-year lookback (bonus/buyback/non-cash allotment).</div>
+  <div class="mnem"><b>Turnover cutoff:</b> "100 crore line" for rounding-off rules.</div>
+  <div class="mnem"><b>Limitations (7):</b> "CAB-AVNI".</div>
+</div>
+
+<!-- ONE PAGE -->
+<div class="card" id="onepager">
+  <h2><span class="num">14</span> One-Page Revision Sheet <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="onepage">
+    <h4>2 Core Statements</h4>
+    <ul><li>Balance Sheet (position) + Statement of P&amp;L (performance); Cash Flow Statement now integral</li></ul>
+    <h4>Nature — 4 Pillars</h4>
+    <ul><li>Recorded facts, Accounting conventions, Postulates, Personal judgements</li></ul>
+    <h4>Format Source</h4>
+    <ul><li>Schedule III, Companies Act 2013; applies from FY beginning 1 Apr 2011; AS prevail over Schedule III</li></ul>
+    <h4>Balance Sheet Sequence</h4>
+    <ul><li>Shareholders' Funds → Share App. Money Pending → Non-Current Liabilities → Current Liabilities || Non-Current Assets → Current Assets</li></ul>
+    <h4>Share Capital Disclosure</h4>
+    <ul><li>Rights/preferences, 5% holders, 5-yr bonus/buyback/non-cash history</li></ul>
+    <h4>Rounding Off</h4>
+    <ul><li>&lt;₹100cr turnover: nearest 100s/1000s/lakhs; ≥₹100cr: nearest lakhs/millions only</li></ul>
+    <h4>Limitations — 7</h4>
+    <ul><li>Historical cost, asset realisation risk, bias, aggregation, missing vital info, no qualitative data, interim snapshot only</li></ul>
+  </div>
+</div>
+
+<!-- LAST DAY -->
+<div class="card" id="lastday">
+  <h2><span class="num">15</span> Last-Day Revision Notes <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>✓</b> Financial statements = Balance Sheet + Statement of P&amp;L (+ Cash Flow Statement, now integral).</div>
+    <div class="rev-item"><b>✓</b> Format prescribed by Schedule III, Companies Act 2013; vertical format is mandatory.</div>
+    <div class="rev-item"><b>✓</b> Applicable to FY beginning on/after 1 April 2011; NOT applicable to Insurance/Banking companies.</div>
+    <div class="rev-item"><b>✓</b> Accounting Standards prevail over Schedule III in case of conflict.</div>
+    <div class="rev-item"><b>✓</b> Debit balance in Statement of P&amp;L shown as negative under "Surplus."</div>
+    <div class="rev-item"><b>✓</b> Sundry Debtors/Creditors → renamed Trade Receivables/Payables.</div>
+    <div class="rev-item"><b>✓</b> Rounding-off mandatory: turnover &lt;₹100cr → small units; ≥₹100cr → lakhs/millions only.</div>
+    <div class="rev-item"><b>✓</b> Share capital notes: rights/preferences, 5%+ holders, 5-year bonus/buyback/non-cash allotment history.</div>
+    <div class="rev-item"><b>✓</b> P&amp;L flow: Revenue from Operations + Other Income − Expenses → PBT → Tax → Profit for period → EPS.</div>
+    <div class="rev-item"><b>✓</b> Finance cost = interest on borrowings ONLY; bank charges go under Other Expenses.</div>
+    <div class="rev-item"><b>✓</b> 7 limitations: historical cost basis, asset realisation risk, bias, aggregation, missing vital info, no qualitative info, interim reports only.</div>
+  </div>
+</div>
+
+<div class="chapnav">
+  <span>⏮ Ch. 2 — Debentures</span>
+  <span>Ch. 4 — Analysis of Financial Statements ⏭</span>
+</div>
+
+<footer>
+  AAO Exam · Accounting Basics · Chapter 3 of 6 · Source: NCERT Accountancy — Company Accounts &amp; Analysis of Financial Statements
+</footer>
+</div>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('active');
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+var utter=null;
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported on this device.');return;}
+  stopSpeak();
+  var text = document.querySelector('.wrap').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+function markStudied(){
+  try{
+    localStorage.setItem('aao_ch3_studied','true');
+    alert('Chapter 3 marked as studied ✅');
+  }catch(e){alert('Could not save progress on this device.');}
+}
+(function(){
+  try{
+    if(localStorage.getItem('aao_ch3_studied')==='true'){
+      document.title = '✅ ' + document.title;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

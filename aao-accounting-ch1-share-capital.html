@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch.1 Accounting for Share Capital | AAO Exam Accounting Basics</title>
+<style>
+:root{
+  --ink:#12213f;
+  --ink2:#1e3358;
+  --paper:#f6f1e4;
+  --paper2:#efe7d3;
+  --gold:#c1922f;
+  --gold-dark:#96701d;
+  --teal:#2f6f5e;
+  --red:#b23b3b;
+  --line:#d8cba9;
+  --text:#26241c;
+  --white:#fffdf7;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --ink:#0c1524;
+  --ink2:#16233d;
+  --paper:#151b16;
+  --paper2:#1b2118;
+  --gold:#e0ac4a;
+  --gold-dark:#c1922f;
+  --teal:#4fae94;
+  --red:#e06060;
+  --line:#3a3a2e;
+  --text:#eae4d3;
+  --white:#1c2419;
+}
+body{
+  margin:0;
+  font-family:"Georgia","Noto Serif",serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.5;
+  transition:background .3s,color .3s;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px;}
+
+/* ===== HEADER ===== */
+.hero{
+  background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);
+  color:var(--white);
+  padding:22px 16px 26px;
+  border-bottom:6px solid var(--gold);
+  position:relative;
+}
+.hero .crumb{
+  font-family:Arial,sans-serif;
+  font-size:11.5px;
+  letter-spacing:.4px;
+  color:#d9c68f;
+  margin-bottom:8px;
+}
+.hero h1{
+  font-size:1.5rem;
+  margin:0 0 6px;
+  color:var(--white);
+  border-left:4px solid var(--gold);
+  padding-left:10px;
+}
+.hero p.sub{
+  font-family:Arial,sans-serif;
+  font-size:.85rem;
+  color:#cfd8e6;
+  margin:0 0 14px;
+}
+.top-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-chip{
+  font-family:Arial,sans-serif;
+  font-size:.72rem;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.35);
+  color:var(--white);
+  padding:6px 10px;
+  border-radius:20px;
+  cursor:pointer;
+}
+.btn-chip:active{transform:scale(.96);}
+
+/* ===== NAV PILLS ===== */
+.navpills{
+  display:flex;gap:6px;overflow-x:auto;
+  padding:10px 4px;background:var(--paper2);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:10;
+  -webkit-overflow-scrolling:touch;
+}
+.navpills a{
+  flex:0 0 auto;
+  font-family:Arial,sans-serif;
+  font-size:.72rem;
+  color:var(--ink);
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:6px 10px;
+  border-radius:14px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+body.dark .navpills a{color:var(--gold);}
+
+/* ===== SECTION CARD ===== */
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:10px;
+  margin:16px 0;
+  padding:14px 14px 16px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+.card h2{
+  font-size:1.08rem;
+  margin:0 0 10px;
+  color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .card h2{color:var(--gold);}
+.card h2 .num{
+  font-family:Arial,sans-serif;
+  font-size:.65rem;
+  background:var(--gold);
+  color:var(--white);
+  padding:2px 7px;
+  border-radius:10px;
+}
+h3.sub{font-size:.95rem;margin:14px 0 6px;color:var(--gold-dark);border-bottom:1px dashed var(--line);padding-bottom:3px;}
+
+/* breadcrumb tree */
+.tree{font-family:Arial,sans-serif;font-size:.82rem;}
+.tree ul{list-style:none;padding-left:18px;border-left:2px dotted var(--gold);margin:4px 0;}
+.tree li{margin:5px 0;position:relative;}
+.tree li::before{content:"↳ ";color:var(--gold-dark);}
+.tree .lvl1{font-weight:bold;color:var(--ink);}
+body.dark .tree .lvl1{color:var(--gold);}
+
+/* tags */
+.tag{
+  display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;
+  padding:1px 6px;border-radius:4px;margin-right:4px;font-weight:bold;
+  vertical-align:middle;white-space:nowrap;
+}
+.tag.vip{background:#f6dede;color:#8c1f1f;}
+.tag.faq{background:#fce6cc;color:#96500e;}
+.tag.concept{background:#fbf1c8;color:#7a6412;}
+.tag.quick{background:#dcefe3;color:#1f6b3f;}
+body.dark .tag.vip{background:#3a1414;color:#f0a0a0;}
+body.dark .tag.faq{background:#3a2a12;color:#f0c088;}
+body.dark .tag.concept{background:#3a3412;color:#f0e0a0;}
+body.dark .tag.quick{background:#12321f;color:#a0e0bc;}
+
+/* Q callout */
+.qbox{
+  background:var(--paper2);
+  border-left:4px solid var(--teal);
+  font-family:Arial,sans-serif;
+  font-size:.78rem;
+  padding:7px 10px;
+  margin:8px 0;
+  border-radius:0 6px 6px 0;
+}
+.qbox b{color:var(--teal);}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.8rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--white);font-size:.74rem;}
+tr:nth-child(even) td{background:var(--paper2);}
+
+/* flowchart */
+.flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.flow .step{
+  background:var(--ink);color:var(--white);
+  font-family:Arial,sans-serif;font-size:.8rem;
+  padding:9px 12px;border-radius:8px;
+  border-left:5px solid var(--gold);
+}
+.flow .arrow{text-align:center;color:var(--gold-dark);font-size:1.1rem;margin:2px 0;}
+.flow .step small{display:block;color:#d8d8d8;font-size:.68rem;margin-top:2px;}
+body.dark .flow .step small{color:#b8b8a8;}
+
+/* decision tree */
+.dtree{font-family:Arial,sans-serif;font-size:.8rem;}
+.dtree .q{background:var(--gold-dark);color:var(--white);padding:7px 10px;border-radius:6px;margin-bottom:6px;}
+.dtree .branch{display:flex;gap:8px;margin:6px 0 6px 14px;flex-wrap:wrap;}
+.dtree .opt{
+  flex:1;min-width:130px;background:var(--paper2);
+  border:1px solid var(--line);border-radius:6px;padding:7px 8px;
+}
+.dtree .opt b{color:var(--teal);display:block;margin-bottom:2px;}
+
+/* mnemonic */
+.mnem{
+  background:linear-gradient(135deg,#fdf3d8,#f6e3ae);
+  border:1px dashed var(--gold-dark);
+  border-radius:8px;padding:10px 12px;margin:8px 0;
+  font-family:Arial,sans-serif;font-size:.82rem;
+}
+body.dark .mnem{background:linear-gradient(135deg,#2c250f,#3a2e10);}
+.mnem b{color:var(--gold-dark);}
+
+/* accordion */
+.acc-head{
+  cursor:pointer;background:var(--paper2);
+  border:1px solid var(--line);border-radius:6px;
+  padding:8px 10px;font-family:Arial,sans-serif;font-weight:bold;
+  font-size:.85rem;display:flex;justify-content:space-between;align-items:center;
+  margin-top:6px;
+}
+.acc-body{display:none;padding:8px 4px 4px;font-size:.82rem;}
+.acc-body.open{display:block;}
+.acc-head .arrow-i{transition:transform .2s;}
+.acc-head.active .arrow-i{transform:rotate(90deg);}
+
+/* ledger journal entry block */
+.journal{
+  font-family:"Courier New",monospace;font-size:.74rem;
+  background:#fbf8ef;border:1px solid var(--line);
+  border-radius:6px;padding:9px 10px;margin:8px 0;
+  white-space:pre;overflow-x:auto;
+}
+body.dark .journal{background:#10150e;color:#dcd6bd;}
+.journal .dr{color:var(--red);font-weight:bold;}
+.journal .cr{color:var(--teal);font-weight:bold;}
+
+/* revision grid */
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-item{
+  background:var(--paper2);border-left:4px solid var(--gold);
+  border-radius:0 6px 6px 0;padding:7px 10px;font-family:Arial,sans-serif;font-size:.78rem;
+}
+.rev-item b{color:var(--ink);}
+body.dark .rev-item b{color:var(--gold);}
+
+/* comparison bars */
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:Arial,sans-serif;font-size:.75rem;}
+.cmp2 .col{border-radius:8px;padding:8px 9px;}
+.cmp2 .col.a{background:#e4eef0;border:1px solid #b6d3d6;}
+.cmp2 .col.b{background:#f2e6d8;border:1px solid #d9bd94;}
+body.dark .cmp2 .col.a{background:#0f2224;border-color:#245050;}
+body.dark .cmp2 .col.b{background:#2a2013;border-color:#5a4523;}
+.cmp2 h4{margin:0 0 4px;font-size:.82rem;}
+.cmp2 ul{margin:0;padding-left:16px;}
+
+/* tts + tools */
+.tools{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0;}
+.tools button{
+  font-family:Arial,sans-serif;font-size:.72rem;
+  background:var(--ink);color:var(--white);border:none;
+  padding:6px 10px;border-radius:14px;cursor:pointer;
+}
+.tools button.bm.active{background:var(--gold-dark);}
+
+/* onepage sheet */
+.onepage{
+  background:repeating-linear-gradient(var(--white),var(--white) 22px,var(--paper2) 23px);
+  border:2px solid var(--ink);border-radius:8px;padding:12px;
+  font-family:Arial,sans-serif;font-size:.74rem;
+}
+body.dark .onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,#141a12 23px);}
+.onepage h4{margin:10px 0 4px;color:var(--gold-dark);font-size:.8rem;}
+.onepage ul{margin:2px 0;padding-left:16px;}
+
+footer{
+  text-align:center;font-family:Arial,sans-serif;font-size:.72rem;
+  color:var(--gold-dark);padding:20px 10px 8px;
+}
+.chapnav{
+  display:flex;justify-content:space-between;font-family:Arial,sans-serif;
+  font-size:.78rem;margin-top:10px;
+}
+.chapnav span{background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:6px 10px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="crumb">AAO Exam &rsaquo; Accounting Basics &rsaquo; Company Accounts &rsaquo; <b>Chapter 1</b></div>
+  <h1>Ch. 1 — Accounting for Share Capital</h1>
+  <p class="sub">Company Accounts &amp; Analysis of Financial Statements | Exam-oriented infographic notes</p>
+  <div class="top-controls">
+    <button class="btn-chip" onclick="document.body.classList.toggle('dark')">🌓 Dark Mode</button>
+    <button class="btn-chip" onclick="speakPage()">🔊 Read Aloud</button>
+    <button class="btn-chip" onclick="stopSpeak()">⏹ Stop</button>
+    <button class="btn-chip" onclick="markStudied()">✅ Mark Studied</button>
+  </div>
+</div>
+
+<div class="navpills">
+  <a href="#topic">Topic</a>
+  <a href="#mindmap">Mind Map</a>
+  <a href="#flow">Flowchart</a>
+  <a href="#sections">Sections</a>
+  <a href="#rules">Rules</a>
+  <a href="#exceptions">Exceptions</a>
+  <a href="#dates">Dates/Limits</a>
+  <a href="#authorities">Authorities</a>
+  <a href="#penalties">Penalties</a>
+  <a href="#compare">Comparisons</a>
+  <a href="#journals">Journal Cheat-Sheet</a>
+  <a href="#forfeit">Forfeit/Reissue</a>
+  <a href="#mnemonics">Mnemonics</a>
+  <a href="#onepager">One-Page Sheet</a>
+  <a href="#lastday">Last-Day Notes</a>
+</div>
+
+<div class="wrap">
+
+<!-- TOPIC / DEFINITION -->
+<div class="card" id="topic">
+  <h2><span class="num">1</span> Topic &amp; Definition <span class="tag vip">🔴 VIP</span></h2>
+  <p><b>Topic:</b> A company raises long-term capital mainly through <b>Shares</b> (ownership capital) and <b>Debentures</b> (debt capital). This chapter covers accounting for <b>Share Capital</b> — issue, calls, forfeiture and reissue of shares.</p>
+  <p><b>Definition — Company:</b> Per Chief Justice Marshall — a company is <i>"a person, artificial, invisible, intangible and existing only in the eyes of law."</i> It is registered under the <b>Companies Act, 2013</b>.</p>
+  <p><b>Definition — Share:</b> A share is a fractional unit into which the total share capital of a company is divided; it is the basis of ownership interest.</p>
+  <div class="qbox"><b>Likely Q:</b> "Define a company. State its main features." / "What is a share? Distinguish it from a debenture."</div>
+
+  <h3 class="sub">Nano-Topic Breakdown <span class="tag concept">🟡 Concept</span></h3>
+  <div class="tree">
+    <div class="lvl1">Chapter 1: Accounting for Share Capital</div>
+    <ul>
+      <li>Sub-Chapter: Nature of a Company
+        <ul>
+          <li>Micro: Features (Body corporate, Separate legal entity, Limited liability, Perpetual succession, Common seal, Transferability, Sue/Be sued)</li>
+          <li>Micro: Kinds of Companies (by liability &amp; by members)</li>
+        </ul>
+      </li>
+      <li>Sub-Chapter: Share Capital
+        <ul>
+          <li>Micro: Categories (Authorised → Issued → Subscribed → Called-up → Paid-up → Reserve)</li>
+          <li>Micro: Kinds of Shares (Equity, Preference)</li>
+        </ul>
+      </li>
+      <li>Sub-Chapter: Issue of Shares
+        <ul>
+          <li>Nano: Application, Allotment, Calls</li>
+          <li>Nano: At Par / Premium / Discount</li>
+          <li>Nano: Over-subscription, Under-subscription</li>
+          <li>Nano: Calls-in-Arrears, Calls-in-Advance</li>
+          <li>Nano: Issue for Consideration other than Cash</li>
+        </ul>
+      </li>
+      <li>Sub-Chapter: Forfeiture &amp; Reissue of Shares
+        <ul>
+          <li>Nano: Forfeiture at Par / Premium</li>
+          <li>Nano: Reissue &amp; Capital Reserve transfer</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- MIND MAP -->
+<div class="card" id="mindmap">
+  <h2><span class="num">2</span> Mind Map — Share Capital Categories <span class="tag concept">🟡 Conceptual</span></h2>
+  <div class="flow">
+    <div class="step">AUTHORISED CAPITAL <small>Max capital as per Memorandum of Association (also: Nominal/Registered Capital)</small></div>
+    <div class="arrow">▼ (part offered to public)</div>
+    <div class="step">ISSUED CAPITAL <small>Part of authorised capital actually offered for subscription</small></div>
+    <div class="arrow">▼ (part actually taken up)</div>
+    <div class="step">SUBSCRIBED CAPITAL <small>Part of issued capital actually subscribed by public</small></div>
+    <div class="arrow">▼ (part demanded so far)</div>
+    <div class="step">CALLED-UP CAPITAL <small>Part of face value the company has actually called/demanded</small></div>
+    <div class="arrow">▼ (minus Calls-in-Arrears)</div>
+    <div class="step">PAID-UP CAPITAL <small>Called-up Capital − Calls-in-Arrears = amount actually received</small></div>
+  </div>
+  <p style="font-family:Arial;font-size:.78rem;margin-top:8px;"><b>Uncalled Capital</b> = Subscribed − Called-up. <b>Reserve Capital</b> = portion of uncalled capital kept back, callable only on winding-up.</p>
+  <div class="qbox"><b>Likely Q:</b> "Distinguish between Called-up Capital and Paid-up Capital." / "What is Reserve Capital?"</div>
+</div>
+
+<!-- FLOWCHART: Share Issue Process -->
+<div class="card" id="flow">
+  <h2><span class="num">3</span> Flowchart — Share Issue Process <span class="tag vip">🔴 VIP</span></h2>
+  <div class="flow">
+    <div class="step">1. Issue of Prospectus <small>Invitation to public to subscribe capital</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Receipt of Applications + Application Money <small>Deposited in a scheduled bank</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">3. Minimum Subscription Check <small>Must be ≥ 90% of issue (SEBI DIP Guidelines 2000)</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">4. Allotment of Shares <small>Contract formed; applicant → shareholder</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">5. Calls (First Call → Second &amp; Final Call) <small>Balance of face value collected in instalments</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">6. Default? → Forfeiture <small>Non-payment of allotment/call money</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">7. Reissue of Forfeited Shares <small>At par, premium or discount (discount ≤ amount forfeited)</small></div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Explain the procedure for issue of shares by a company." (Very common 6-mark theory question)</div>
+</div>
+
+<!-- DECISION TREE: Over subscription -->
+<div class="card">
+  <h2><span class="num">3.1</span> Decision Tree — Over-Subscription Handling <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="dtree">
+    <div class="q">Applications received &gt; Shares offered → Over-Subscription. What do directors do?</div>
+    <div class="branch">
+      <div class="opt"><b>Option 1: Full Rejection</b>Accept some applications in full, reject others fully; refund rejected money in full.</div>
+      <div class="opt"><b>Option 2: Pro-Rata Allotment</b>Allot proportionately to all; excess application money adjusted towards allotment due.</div>
+      <div class="opt"><b>Option 3: Combination</b>Partly reject + partly pro-rata — the most common practice.</div>
+    </div>
+  </div>
+  <p style="font-family:Arial;font-size:.78rem;"><b>Under-Subscription:</b> Applications &lt; shares offered. Allotment possible only if Minimum Subscription (90%) is met.</p>
+  <div class="qbox"><b>Likely Q:</b> "What alternatives are available to directors in case of over-subscription of shares? Explain with journal entries."</div>
+</div>
+
+<!-- IMPORTANT SECTIONS -->
+<div class="card" id="sections">
+  <h2><span class="num">4</span> Important Sections <span class="tag vip">🔴 VIP</span></h2>
+  <table>
+    <tr><th>Section/Rule</th><th>Provision</th></tr>
+    <tr><td>Sec. 43, Companies Act 2013</td><td>Defines <b>Preference Share</b> (preferential right to dividend + capital repayment) and <b>Equity Share</b> (share which is not a preference share)</td></tr>
+    <tr><td>Sec. 2(62), Companies Act 2013</td><td>Defines <b>One Person Company (OPC)</b> — a company with only one member</td></tr>
+    <tr><td>Rule 3, Companies (Incorporation) Rules 2014</td><td>Conditions for OPC: Indian citizen &amp; resident only; no NBFC activity; paid-up capital ≤ ₹50 lakh; avg. turnover (3 yrs) ≤ ₹2 crore</td></tr>
+    <tr><td>Sec. 73(2), Companies Act 2013</td><td>Delay beyond 8 days in refunding subscription → company liable to pay interest @ 15% p.a.</td></tr>
+    <tr><td>Table F, Companies Act 2013</td><td>Model Articles — governs interest on calls-in-arrears/advance &amp; forfeiture procedure if Articles are silent</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "What is a One Person Company? State the conditions under Rule 3 of the Companies (Incorporation) Rules, 2014."</div>
+</div>
+
+<!-- RULES -->
+<div class="card" id="rules">
+  <h2><span class="num">5</span> Important Rules (Table F / SEBI) <span class="tag vip">🔴 VIP</span></h2>
+  <table>
+    <tr><th>Rule</th><th>Limit</th></tr>
+    <tr><td>Minimum Application Money</td><td>≥ 5% of face value of share</td></tr>
+    <tr><td>Minimum Subscription</td><td>≥ 90% of the issued amount (SEBI DIP Guidelines 2000)</td></tr>
+    <tr><td>Gap between two calls</td><td>At least 1 month (unless Articles say otherwise)</td></tr>
+    <tr><td>Amount per call</td><td>Not more than 25% of face value of share</td></tr>
+    <tr><td>Notice period for a call</td><td>Minimum 14 days' notice to shareholders</td></tr>
+    <tr><td>Calls must be made</td><td>On a uniform basis on all shares of same class</td></tr>
+  </table>
+  <div class="mnem"><b>Mnemonic — "5-25-1-14"</b>: <b>5</b>% min. application → <b>25</b>% max. per call → <b>1</b> month gap between calls → <b>14</b> days' notice.</div>
+  <div class="qbox"><b>Likely Q:</b> "State the rules regarding calls on shares as per Table F." (Very frequently asked, 3–4 marks)</div>
+</div>
+
+<!-- EXCEPTIONS -->
+<div class="card" id="exceptions">
+  <h2><span class="num">6</span> Important Exceptions <span class="tag concept">🟡 Conceptual</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>A company <b>cannot ordinarily issue shares at a discount</b> — EXCEPT: (a) reissue of forfeited shares, and (b) issue of sweat equity shares.</li>
+    <li>Discount on reissue of forfeited shares <b>cannot exceed</b> the amount originally forfeited (received) on those shares.</li>
+    <li>Unlimited companies are legally permitted under the Companies Act but <b>not found in practice in India</b>.</li>
+    <li>Where Articles are silent on interest for calls-in-arrears/advance, <b>Table F rates automatically apply</b> — otherwise no interest need be charged at all if nothing is specified.</li>
+    <li>Securities Premium is <b>NOT debited</b> at forfeiture if premium was already fully received — only debited if premium is still outstanding.</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "Under what circumstances can a company issue shares at a discount?"</div>
+</div>
+
+<!-- DATES / TIME LIMITS -->
+<div class="card" id="dates">
+  <h2><span class="num">7</span> Important Dates &amp; Time Limits <span class="tag vip">🔴 VIP</span></h2>
+  <div class="flow">
+    <div class="step">Day 0 — Prospectus Issued</div>
+    <div class="arrow">▼ within 120 days</div>
+    <div class="step">Minimum Subscription must be received <small>(else no allotment can be made)</small></div>
+    <div class="arrow">▼ within 130 days of prospectus</div>
+    <div class="step">If min. subscription not received → Application money refunded in full</div>
+    <div class="arrow">▼</div>
+    <div class="step">Refund delay beyond 8 days of closure of subscription list <small>→ Interest @ 15% p.a. payable [Sec 73(2)]</small></div>
+  </div>
+  <table style="margin-top:10px;">
+    <tr><th>Time Limit</th><th>Value</th></tr>
+    <tr><td>Min. subscription received within</td><td>120 days of prospectus</td></tr>
+    <tr><td>Refund if min. subscription not met, within</td><td>130 days of prospectus</td></tr>
+    <tr><td>Grace period before interest on refund delay</td><td>8 days</td></tr>
+    <tr><td>Interest rate on delayed refund</td><td>15% p.a.</td></tr>
+    <tr><td>Gap required between two calls</td><td>1 month minimum</td></tr>
+    <tr><td>Notice period before a call is due</td><td>14 days minimum</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Within how many days must minimum subscription be received? What happens if it is not received?"</div>
+</div>
+
+<!-- AUTHORITIES -->
+<div class="card" id="authorities">
+  <h2><span class="num">8</span> Important Authorities <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <table>
+    <tr><th>Authority</th><th>Role</th></tr>
+    <tr><td>Board of Directors</td><td>Decides on allotment, forfeiture, reissue, making of calls</td></tr>
+    <tr><td>SEBI</td><td>Regulates minimum subscription (90%) via DIP Guidelines, 2000</td></tr>
+    <tr><td>Registrar of Companies (ROC) / MCA</td><td>Registers company under Companies Act 2013; administers Rule 3 (OPC)</td></tr>
+    <tr><td>Table F (Model Articles)</td><td>Default rulebook when company's own Articles are silent on calls/forfeiture/interest</td></tr>
+    <tr><td>Scheduled Bank</td><td>Holds application money in a separate account until allotment</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Who prescribes the minimum subscription percentage for a public issue of shares?"</div>
+</div>
+
+<!-- PENALTIES / INTEREST -->
+<div class="card" id="penalties">
+  <h2><span class="num">9</span> Important Penalties &amp; Interest Rates <span class="tag vip">🔴 VIP — Most Confused Topic</span></h2>
+  <table>
+    <tr><th>Situation</th><th>Max Rate (Table F)</th></tr>
+    <tr><td>Interest on <b>Calls-in-Arrears</b> (shareholder owes company)</td><td>Not exceeding <b>10% p.a.</b></td></tr>
+    <tr><td>Interest on <b>Calls-in-Advance</b> (company owes shareholder)</td><td>Not exceeding <b>12% p.a.</b></td></tr>
+    <tr><td>Delay in refund beyond 8 days [Sec 73(2)]</td><td><b>15% p.a.</b></td></tr>
+  </table>
+  <div class="mnem"><b>Memory Trick:</b> "Arrears is <u>10</u>, Advance is <u>12</u>" — think alphabetically A-r-r-e-a-r-s (shorter word) = smaller number (10); Advance (company's liability, must incentivise) = bigger number (12).</div>
+  <div class="qbox"><b>Likely Q (MCQ favorite):</b> "Interest on Calls-in-Arrears is charged under Table F at: (a) 6% (b) 8% (c) 10% (d) 12%" → Answer: 10%</div>
+</div>
+
+<!-- COMPARISONS -->
+<div class="card" id="compare">
+  <h2><span class="num">10</span> Comparison Charts <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <h3 class="sub">Equity Shares vs Preference Shares</h3>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Equity Shares</h4>
+      <ul>
+        <li>No fixed/preferential dividend</li>
+        <li>Paid after preference shareholders</li>
+        <li>Voting rights (generally)</li>
+        <li>No preferential capital repayment</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Preference Shares</h4>
+      <ul>
+        <li>Fixed/preferential dividend rate</li>
+        <li>Paid before equity shareholders</li>
+        <li>Preferential repayment on winding up</li>
+        <li>Can be cumulative/non-cumulative, participating/non-participating, redeemable/irredeemable</li>
+      </ul>
+    </div>
+  </div>
+  <h3 class="sub">Calls-in-Arrears vs Calls-in-Advance</h3>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Calls-in-Arrears</h4>
+      <ul>
+        <li>Shareholder has NOT paid a due call</li>
+        <li>It's an asset-side deduction (debit balance)</li>
+        <li>Company MAY charge interest (max 10% p.a.)</li>
+        <li>Can lead to forfeiture</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Calls-in-Advance</h4>
+      <ul>
+        <li>Shareholder has PAID before it was called</li>
+        <li>It's a liability (current liability in Balance Sheet)</li>
+        <li>Company MAY pay interest (max 12% p.a.)</li>
+        <li>Not part of paid-up capital</li>
+      </ul>
+    </div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Distinguish between Equity Shares and Preference Shares." / "Differentiate Calls-in-Arrears from Calls-in-Advance."</div>
+</div>
+
+<!-- JOURNAL CHEAT SHEET -->
+<div class="card" id="journals">
+  <h2><span class="num">11</span> Journal Entries — Ledger Cheat-Sheet <span class="tag vip">🔴 VIP</span></h2>
+
+  <div class="acc-head" onclick="toggleAcc(this)">1. On Application <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Bank A/c                    Dr.</span>
+      To Share Application A/c
+(Application money received on ___ shares @ Rs.___)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">2. On Allotment (5 entries) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Share Application A/c       Dr.</span>
+      To Share Capital A/c
+(Transfer of application money to capital)
+
+<span class="dr">Share Application A/c       Dr.</span>
+      To Bank A/c
+(Refund on rejected applications)
+
+<span class="dr">Share Allotment A/c         Dr.</span>
+      To Share Capital A/c
+(Amount due on allotment)
+
+<span class="dr">Share Application A/c       Dr.</span>
+      To Share Allotment A/c
+(Excess application money adjusted to allotment)
+
+<span class="dr">Bank A/c                    Dr.</span>
+      To Share Allotment A/c
+(Allotment money received)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">3. On Calls <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Share Call A/c              Dr.</span>
+      To Share Capital A/c
+(Call money due on ___ shares @ Rs.___)
+
+<span class="dr">Bank A/c                    Dr.</span>
+      To Share Call A/c
+(Call money received)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">4. Calls-in-Arrears / Calls-in-Advance <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Bank A/c                    Dr.</span>
+<span class="dr">Calls-in-Arrears A/c        Dr.</span>
+      To Share Call A/c
+(Call received except on ___ shares)
+
+<span class="dr">Bank A/c                    Dr.</span>
+      To Calls-in-Advance A/c
+(Amount received before call was due)
+
+<span class="dr">Calls-in-Advance A/c        Dr.</span>
+      To Particular Call A/c
+(Advance adjusted against call due)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">5. Issue at Premium <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Bank A/c / Share Allotment A/c  Dr.</span>
+      To Share Capital A/c   (face value)
+      To Securities Premium Reserve A/c (premium)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">6. Forfeiture of Shares (issued at par) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Share Capital A/c (called-up amt)  Dr.</span>
+      To Share Forfeiture A/c (paid-up amt)
+      To Share Allotment A/c (unpaid)
+      To Share Calls A/c (unpaid, individually)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">7. Forfeiture (premium not received) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Share Capital A/c            Dr.</span>
+<span class="dr">Securities Premium Reserve A/c  Dr.</span>
+      To Share Forfeiture A/c
+      To Share Allotment/Calls A/c</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">8. Reissue of Forfeited Shares <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Bank A/c                     Dr.</span>
+<span class="dr">Share Forfeiture A/c (discount)  Dr.</span>
+      To Share Capital A/c
+
+<span class="dr">Share Forfeiture A/c (profit bal.) Dr.</span>
+      To Capital Reserve A/c
+(Profit on reissue transferred)</div>
+  </div>
+
+  <div class="qbox"><b>Likely Q:</b> Every board exam/AAO paper has at least one full numerical on "Journalise the transactions" covering application → allotment → calls → forfeiture → reissue. Practice the full chain, not entries in isolation.</div>
+</div>
+
+<!-- FORFEITURE/REISSUE WORKED FLOW -->
+<div class="card" id="forfeit">
+  <h2><span class="num">12</span> Forfeiture &amp; Reissue — Worked Logic <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="flow">
+    <div class="step">Shareholder defaults on call money</div>
+    <div class="arrow">▼</div>
+    <div class="step">Directors forfeit shares (per Table F/Articles) <small>Share Capital debited (called-up amt); unpaid calls credited back; balance → Share Forfeiture A/c</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">Reissue decided — at par / premium / discount <small>Discount allowed ≤ amount already forfeited on those shares</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">Balance left in Share Forfeiture A/c (for reissued shares only) → transferred to <b>Capital Reserve A/c</b></div>
+  </div>
+  <p style="font-family:Arial;font-size:.78rem;"><b>Key Rule:</b> Only the PROPORTIONATE profit on shares actually reissued goes to Capital Reserve — not the whole Share Forfeiture balance, if only part of the forfeited shares were reissued.</p>
+  <div class="qbox"><b>Likely Q:</b> Numerical: "200 shares forfeited, 150 reissued at discount — pass entries and find amount transferred to Capital Reserve." (classic proportion-based question)</div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <h2><span class="num">13</span> Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="mnem"><b>Share Capital flow:</b> "<b>A</b>unty <b>I</b>s <b>S</b>inging <b>C</b>arols <b>P</b>eacefully" → <b>A</b>uthorised → <b>I</b>ssued → <b>S</b>ubscribed → <b>C</b>alled-up → <b>P</b>aid-up.</div>
+  <div class="mnem"><b>Share issue stages:</b> "<b>A</b>pple <b>A</b>te <b>C</b>ake" → <b>A</b>pplication → <b>A</b>llotment → <b>C</b>alls.</div>
+  <div class="mnem"><b>Interest rates:</b> "10 before, 12 after" — Arrears (before company gets money) = 10%; Advance (after, company owes) = 12%.</div>
+  <div class="mnem"><b>Rules number set:</b> 5-25-1-14 (application%-call%-month gap-notice days).</div>
+  <div class="mnem"><b>Discount exception:</b> "<b>R</b>e-issue &amp; <b>S</b>weat" — only <b>R</b>eissue of forfeited shares and <b>S</b>weat equity shares can be issued at discount.</div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card" id="onepager">
+  <h2><span class="num">14</span> One-Page Revision Sheet <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="onepage">
+    <h4>Capital Flow</h4>
+    <ul><li>Authorised → Issued → Subscribed → Called-up → Paid-up</li></ul>
+    <h4>Key %'s</h4>
+    <ul><li>Min. Application: 5% | Max Call: 25% | Min. Subscription: 90%</li></ul>
+    <h4>Key Days</h4>
+    <ul><li>Min. subscription: 120 days | Refund if not met: 130 days | Grace before interest: 8 days</li></ul>
+    <h4>Interest Rates (Table F max)</h4>
+    <ul><li>Calls-in-Arrears: 10% | Calls-in-Advance: 12% | Refund delay [Sec 73(2)]: 15%</li></ul>
+    <h4>Shares at Discount — only for</h4>
+    <ul><li>Reissue of forfeited shares | Sweat equity shares</li></ul>
+    <h4>Forfeiture Formula</h4>
+    <ul><li>Share Capital (called-up) Dr. → Forfeiture A/c (paid-up) + Allotment/Calls (unpaid)</li></ul>
+    <h4>Reissue Profit</h4>
+    <ul><li>Balance in Forfeiture A/c (for reissued shares only) → Capital Reserve</li></ul>
+  </div>
+</div>
+
+<!-- LAST DAY NOTES -->
+<div class="card" id="lastday">
+  <h2><span class="num">15</span> Last-Day Revision Notes <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>✓</b> Companies Act, 2013 — Sec 43 defines equity &amp; preference shares.</div>
+    <div class="rev-item"><b>✓</b> OPC: only Indian resident citizen; paid-up ≤ ₹50L; turnover ≤ ₹2Cr (3-yr avg).</div>
+    <div class="rev-item"><b>✓</b> Minimum subscription = 90% of issue; must come within 120 days; refund within 130 days.</div>
+    <div class="rev-item"><b>✓</b> Application money ≥ 5% of face value.</div>
+    <div class="rev-item"><b>✓</b> Call ≤ 25% of face value; 1 month gap; 14 days' notice.</div>
+    <div class="rev-item"><b>✓</b> Calls-in-Arrears interest max 10%; Calls-in-Advance interest max 12%.</div>
+    <div class="rev-item"><b>✓</b> Shares at discount allowed ONLY on reissue of forfeited shares &amp; sweat equity.</div>
+    <div class="rev-item"><b>✓</b> Forfeiture: Share Capital Dr. (called-up) → credit unpaid Allotment/Calls + Forfeiture A/c (paid-up).</div>
+    <div class="rev-item"><b>✓</b> On reissue: discount debited to Forfeiture A/c ≤ amount originally forfeited.</div>
+    <div class="rev-item"><b>✓</b> Profit on reissue (proportionate only) → transferred to Capital Reserve.</div>
+    <div class="rev-item"><b>✓</b> Securities Premium NOT touched at forfeiture if premium already received in full.</div>
+    <div class="rev-item"><b>✓</b> Delay in refund beyond 8 days → 15% p.a. interest [Sec 73(2)].</div>
+  </div>
+</div>
+
+<div class="chapnav">
+  <span>⏮ Start of Portal</span>
+  <span>Ch. 2 — Debentures ⏭ (coming next)</span>
+</div>
+
+<footer>
+  AAO Exam · Accounting Basics · Chapter 1 of 6 · Source: NCERT Accountancy — Company Accounts &amp; Analysis of Financial Statements
+</footer>
+</div>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('active');
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+var utter=null;
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported on this device.');return;}
+  stopSpeak();
+  var text = document.querySelector('.wrap').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+function markStudied(){
+  try{
+    localStorage.setItem('aao_ch1_studied','true');
+    alert('Chapter 1 marked as studied ✅');
+  }catch(e){alert('Could not save progress on this device.');}
+}
+(function(){
+  try{
+    if(localStorage.getItem('aao_ch1_studied')==='true'){
+      document.title = '✅ ' + document.title;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

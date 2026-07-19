@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch.2 Issue &amp; Redemption of Debentures | AAO Exam Accounting Basics</title>
+<style>
+:root{
+  --ink:#12213f; --ink2:#1e3358; --paper:#f6f1e4; --paper2:#efe7d3;
+  --gold:#c1922f; --gold-dark:#96701d; --teal:#2f6f5e; --red:#b23b3b;
+  --line:#d8cba9; --text:#26241c; --white:#fffdf7;
+}
+*{box-sizing:border-box;}
+body.dark{
+  --ink:#0c1524; --ink2:#16233d; --paper:#151b16; --paper2:#1b2118;
+  --gold:#e0ac4a; --gold-dark:#c1922f; --teal:#4fae94; --red:#e06060;
+  --line:#3a3a2e; --text:#eae4d3; --white:#1c2419;
+}
+body{margin:0;font-family:"Georgia","Noto Serif",serif;background:var(--paper);color:var(--text);line-height:1.5;transition:background .3s,color .3s;}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px;}
+.hero{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);color:var(--white);padding:22px 16px 26px;border-bottom:6px solid var(--gold);position:relative;}
+.hero .crumb{font-family:Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;color:#d9c68f;margin-bottom:8px;}
+.hero h1{font-size:1.5rem;margin:0 0 6px;color:var(--white);border-left:4px solid var(--gold);padding-left:10px;}
+.hero p.sub{font-family:Arial,sans-serif;font-size:.85rem;color:#cfd8e6;margin:0 0 14px;}
+.top-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-chip{font-family:Arial,sans-serif;font-size:.72rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 10px;border-radius:20px;cursor:pointer;}
+.btn-chip:active{transform:scale(.96);}
+.navpills{display:flex;gap:6px;overflow-x:auto;padding:10px 4px;background:var(--paper2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;-webkit-overflow-scrolling:touch;}
+.navpills a{flex:0 0 auto;font-family:Arial,sans-serif;font-size:.72rem;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:6px 10px;border-radius:14px;text-decoration:none;white-space:nowrap;}
+body.dark .navpills a{color:var(--gold);}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;margin:16px 0;padding:14px 14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.card h2{font-size:1.08rem;margin:0 0 10px;color:var(--ink);display:flex;align-items:center;gap:8px;}
+body.dark .card h2{color:var(--gold);}
+.card h2 .num{font-family:Arial,sans-serif;font-size:.65rem;background:var(--gold);color:var(--white);padding:2px 7px;border-radius:10px;}
+h3.sub{font-size:.95rem;margin:14px 0 6px;color:var(--gold-dark);border-bottom:1px dashed var(--line);padding-bottom:3px;}
+.tree{font-family:Arial,sans-serif;font-size:.82rem;}
+.tree ul{list-style:none;padding-left:18px;border-left:2px dotted var(--gold);margin:4px 0;}
+.tree li{margin:5px 0;position:relative;}
+.tree li::before{content:"↳ ";color:var(--gold-dark);}
+.tree .lvl1{font-weight:bold;color:var(--ink);}
+body.dark .tree .lvl1{color:var(--gold);}
+.tag{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;padding:1px 6px;border-radius:4px;margin-right:4px;font-weight:bold;vertical-align:middle;white-space:nowrap;}
+.tag.vip{background:#f6dede;color:#8c1f1f;}
+.tag.faq{background:#fce6cc;color:#96500e;}
+.tag.concept{background:#fbf1c8;color:#7a6412;}
+.tag.quick{background:#dcefe3;color:#1f6b3f;}
+body.dark .tag.vip{background:#3a1414;color:#f0a0a0;}
+body.dark .tag.faq{background:#3a2a12;color:#f0c088;}
+body.dark .tag.concept{background:#3a3412;color:#f0e0a0;}
+body.dark .tag.quick{background:#12321f;color:#a0e0bc;}
+.qbox{background:var(--paper2);border-left:4px solid var(--teal);font-family:Arial,sans-serif;font-size:.78rem;padding:7px 10px;margin:8px 0;border-radius:0 6px 6px 0;}
+.qbox b{color:var(--teal);}
+table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.8rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--white);font-size:.74rem;}
+tr:nth-child(even) td{background:var(--paper2);}
+.flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.flow .step{background:var(--ink);color:var(--white);font-family:Arial,sans-serif;font-size:.8rem;padding:9px 12px;border-radius:8px;border-left:5px solid var(--gold);}
+.flow .arrow{text-align:center;color:var(--gold-dark);font-size:1.1rem;margin:2px 0;}
+.flow .step small{display:block;color:#d8d8d8;font-size:.68rem;margin-top:2px;}
+body.dark .flow .step small{color:#b8b8a8;}
+.dtree{font-family:Arial,sans-serif;font-size:.8rem;}
+.dtree .q{background:var(--gold-dark);color:var(--white);padding:7px 10px;border-radius:6px;margin-bottom:6px;}
+.dtree .branch{display:flex;gap:8px;margin:6px 0 6px 14px;flex-wrap:wrap;}
+.dtree .opt{flex:1;min-width:130px;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:7px 8px;}
+.dtree .opt b{color:var(--teal);display:block;margin-bottom:2px;}
+.mnem{background:linear-gradient(135deg,#fdf3d8,#f6e3ae);border:1px dashed var(--gold-dark);border-radius:8px;padding:10px 12px;margin:8px 0;font-family:Arial,sans-serif;font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2c250f,#3a2e10);}
+.mnem b{color:var(--gold-dark);}
+.acc-head{cursor:pointer;background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+.acc-body{display:none;padding:8px 4px 4px;font-size:.82rem;}
+.acc-body.open{display:block;}
+.acc-head .arrow-i{transition:transform .2s;}
+.acc-head.active .arrow-i{transform:rotate(90deg);}
+.journal{font-family:"Courier New",monospace;font-size:.74rem;background:#fbf8ef;border:1px solid var(--line);border-radius:6px;padding:9px 10px;margin:8px 0;white-space:pre;overflow-x:auto;}
+body.dark .journal{background:#10150e;color:#dcd6bd;}
+.journal .dr{color:var(--red);font-weight:bold;}
+.journal .cr{color:var(--teal);font-weight:bold;}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:8px;}
+.rev-item{background:var(--paper2);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:7px 10px;font-family:Arial,sans-serif;font-size:.78rem;}
+.rev-item b{color:var(--ink);}
+body.dark .rev-item b{color:var(--gold);}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:Arial,sans-serif;font-size:.75rem;}
+.cmp2 .col{border-radius:8px;padding:8px 9px;}
+.cmp2 .col.a{background:#e4eef0;border:1px solid #b6d3d6;}
+.cmp2 .col.b{background:#f2e6d8;border:1px solid #d9bd94;}
+body.dark .cmp2 .col.a{background:#0f2224;border-color:#245050;}
+body.dark .cmp2 .col.b{background:#2a2013;border-color:#5a4523;}
+.cmp2 h4{margin:0 0 4px;font-size:.82rem;}
+.cmp2 ul{margin:0;padding-left:16px;}
+.onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,var(--paper2) 23px);border:2px solid var(--ink);border-radius:8px;padding:12px;font-family:Arial,sans-serif;font-size:.74rem;}
+body.dark .onepage{background:repeating-linear-gradient(var(--white),var(--white) 22px,#141a12 23px);}
+.onepage h4{margin:10px 0 4px;color:var(--gold-dark);font-size:.8rem;}
+.onepage ul{margin:2px 0;padding-left:16px;}
+footer{text-align:center;font-family:Arial,sans-serif;font-size:.72rem;color:var(--gold-dark);padding:20px 10px 8px;}
+.chapnav{display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:.78rem;margin-top:10px;}
+.chapnav span{background:var(--paper2);border:1px solid var(--line);border-radius:6px;padding:6px 10px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="crumb">AAO Exam &rsaquo; Accounting Basics &rsaquo; Company Accounts &rsaquo; <b>Chapter 2</b></div>
+  <h1>Ch. 2 — Issue &amp; Redemption of Debentures</h1>
+  <p class="sub">Company Accounts &amp; Analysis of Financial Statements | Exam-oriented infographic notes</p>
+  <div class="top-controls">
+    <button class="btn-chip" onclick="document.body.classList.toggle('dark')">🌓 Dark Mode</button>
+    <button class="btn-chip" onclick="speakPage()">🔊 Read Aloud</button>
+    <button class="btn-chip" onclick="stopSpeak()">⏹ Stop</button>
+    <button class="btn-chip" onclick="markStudied()">✅ Mark Studied</button>
+  </div>
+</div>
+
+<div class="navpills">
+  <a href="#topic">Topic</a>
+  <a href="#mindmap">Mind Map</a>
+  <a href="#compare1">Shares vs Debentures</a>
+  <a href="#flow">Issue Flowchart</a>
+  <a href="#sixcases">6 Cases</a>
+  <a href="#collateral">Collateral</a>
+  <a href="#sections">Sections</a>
+  <a href="#rules">Rules/DRR</a>
+  <a href="#exceptions">Exceptions</a>
+  <a href="#dates">Dates/Limits</a>
+  <a href="#authorities">Authorities</a>
+  <a href="#penalties">Penalties</a>
+  <a href="#redemption">Redemption</a>
+  <a href="#journals">Journal Cheat-Sheet</a>
+  <a href="#mnemonics">Mnemonics</a>
+  <a href="#onepager">One-Page Sheet</a>
+  <a href="#lastday">Last-Day Notes</a>
+</div>
+
+<div class="wrap">
+
+<!-- TOPIC / DEFINITION -->
+<div class="card" id="topic">
+  <h2><span class="num">1</span> Topic &amp; Definition <span class="tag vip">🔴 VIP</span></h2>
+  <p><b>Topic:</b> When share capital is not enough to meet long-term needs, companies borrow long-term funds by issuing <b>Debentures</b> — through private placement or public offer.</p>
+  <p><b>Definition — Debenture:</b> From Latin <i>'debere'</i> (to borrow). A written instrument under the company's common seal acknowledging a debt, containing a contract for repayment of principal and payment of interest at a fixed rate.</p>
+  <p><b>Sec. 2(30), Companies Act 2013:</b> 'Debenture' includes Debenture Inventory, Bonds, and any other securities of a company, whether constituting a charge on assets or not.</p>
+  <p><b>Bond:</b> Also an instrument acknowledging debt; traditionally issued by Government, now the terms 'debenture' and 'bond' are used interchangeably.</p>
+  <div class="qbox"><b>Likely Q:</b> "Define debenture. What does Section 2(30) of the Companies Act, 2013 include in this term?"</div>
+</div>
+
+<!-- MIND MAP: Types -->
+<div class="card" id="mindmap">
+  <h2><span class="num">2</span> Mind Map — Types of Debentures <span class="tag vip">🔴 VIP</span></h2>
+  <div class="tree">
+    <div class="lvl1">Types of Debentures (5 classification angles)</div>
+    <ul>
+      <li>By Security: <b>Secured</b> (fixed/floating charge) vs <b>Unsecured/Naked</b></li>
+      <li>By Tenure: <b>Redeemable</b> vs <b>Irredeemable/Perpetual</b></li>
+      <li>By Convertibility: <b>Convertible</b> (Fully/Partly) vs <b>Non-Convertible</b></li>
+      <li>By Coupon Rate: <b>Specific Coupon Rate</b> vs <b>Zero Coupon Rate</b> (Deep Discount)</li>
+      <li>By Registration: <b>Registered</b> vs <b>Bearer</b> (transferable by delivery, uses coupons)</li>
+    </ul>
+  </div>
+  <div class="mnem"><b>Mnemonic — "STCCR"</b>: <b>S</b>ecurity, <b>T</b>enure, <b>C</b>onvertibility, <b>C</b>oupon rate, <b>R</b>egistration — the 5 angles to classify debentures.</div>
+  <div class="qbox"><b>Likely Q:</b> "Explain the various types of debentures a company can issue." (classic theory question, 4–6 marks)</div>
+</div>
+
+<!-- COMPARISON: Shares vs Debentures -->
+<div class="card" id="compare1">
+  <h2><span class="num">3</span> Comparison — Shares vs Debentures <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Shares</h4>
+      <ul>
+        <li>Represents ownership (owned capital)</li>
+        <li>Return = Dividend (variable, appropriation of profit)</li>
+        <li>Not normally repaid during company's life</li>
+        <li>Voting rights to holders</li>
+        <li>Not secured by any charge</li>
+        <li>Cannot be converted into debentures</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Debentures</h4>
+      <ul>
+        <li>Acknowledgement of debt (borrowed capital)</li>
+        <li>Return = Interest (fixed, charge against profit — payable even if no profit)</li>
+        <li>Repayable on expiry of specified period</li>
+        <li>No voting rights normally</li>
+        <li>Usually secured — fixed or floating charge</li>
+        <li>Can be converted into shares if terms provide (Convertible Debentures)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Distinguish between shares and debentures." (Very common — appears almost every year)</div>
+</div>
+
+<!-- FLOWCHART: Issue at Par/Discount/Premium -->
+<div class="card" id="flow">
+  <h2><span class="num">4</span> Flowchart — Issue of Debentures for Cash <span class="tag vip">🔴 VIP</span></h2>
+  <div class="flow">
+    <div class="step">1. Prospectus issued / Private Placement offered</div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Application money received <small>Bank A/c Dr. → Debenture Application A/c</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">3. Allotment made <small>At Par / at Discount / at Premium — Debentures A/c credited at face value; difference to Discount or Securities Premium Reserve</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">4. Calls (if instalments) <small>Same pattern as share calls</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">5. Interest paid periodically till redemption <small>Charge against profit; TDS deducted</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">6. Redemption on maturity <small>Lump sum / Instalments / Open market purchase / Conversion</small></div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> Numerical: "Pass journal entries for issue of debentures at discount, payable in instalments." (Guaranteed numerical in every paper)</div>
+</div>
+
+<!-- SIX CASES TABLE -->
+<div class="card" id="sixcases">
+  <h2><span class="num">5</span> The "6 Classic Cases" — Issue vs Redemption <span class="tag vip">🔴 VIP — Exam Favorite</span></h2>
+  <table>
+    <tr><th>#</th><th>Issued At</th><th>Redeemable At</th><th>Key Entry Effect</th></tr>
+    <tr><td>1</td><td>Par</td><td>Par</td><td>No discount/premium/loss account needed</td></tr>
+    <tr><td>2</td><td>Discount</td><td>Par</td><td>Discount on Issue of Debentures A/c debited</td></tr>
+    <tr><td>3</td><td>Premium</td><td>Par</td><td>Securities Premium Reserve A/c credited</td></tr>
+    <tr><td>4</td><td>Par</td><td>Premium</td><td>Loss on Issue of Debentures A/c Dr. (= premium on redemption); Premium on Redemption of Debentures A/c credited</td></tr>
+    <tr><td>5</td><td>Discount</td><td>Premium</td><td>Loss on Issue = Discount on issue + Premium on redemption (both combined)</td></tr>
+    <tr><td>6</td><td>Premium</td><td>Premium</td><td>Securities Premium credited on issue; Loss on Issue (= premium on redemption only) debited separately</td></tr>
+  </table>
+  <div class="mnem"><b>Memory Trick:</b> Whatever is promised extra at <u>redemption</u> (premium) is always a <b>Loss on Issue of Debentures</b> booked <u>at the time of issue itself</u> — because redemption premium is a known future liability.</div>
+  <div class="qbox"><b>Likely Q:</b> "A company issued debentures at a discount of 5%, redeemable at a premium of 10%. Pass journal entries." (Combines Case 5 — most tested variant)</div>
+</div>
+
+<!-- COLLATERAL SECURITY -->
+<div class="card" id="collateral">
+  <h2><span class="num">6</span> Debentures as Collateral Security <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <p style="font-family:Arial;font-size:.82rem;">When a company takes a loan/overdraft, the lender may ask for debentures as <b>additional/secondary security</b> besides the primary security (asset pledged). If the company defaults, the lender first recovers from the primary security; if it falls short, the lender can invoke the collateral debentures.</p>
+  <div class="cmp2">
+    <div class="col a">
+      <h4>Method 1 — No Entry</h4>
+      <ul>
+        <li>No journal entry passed (no liability created)</li>
+        <li>Just a <b>note</b> below the loan in Notes to Accounts: "Secured by issue of ___ debentures as collateral security"</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h4>Method 2 — Entry Passed</h4>
+      <ul>
+        <li><b>Debenture Suspense A/c Dr.</b> → To Debentures A/c</li>
+        <li>Debenture Suspense shown as deduction from Debentures in Notes to Accounts</li>
+        <li>Reversed when loan is repaid</li>
+      </ul>
+    </div>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "What is meant by issue of debentures as collateral security? Explain the two methods of recording it in the books."</div>
+</div>
+
+<!-- SECTIONS -->
+<div class="card" id="sections">
+  <h2><span class="num">7</span> Important Sections <span class="tag vip">🔴 VIP</span></h2>
+  <table>
+    <tr><th>Section/Rule</th><th>Provision</th></tr>
+    <tr><td>Sec. 2(30), Companies Act 2013</td><td>Defines "Debenture" — includes debenture inventory, bonds, and other securities, secured or unsecured</td></tr>
+    <tr><td>Sec. 71, Companies Act 2013</td><td>Governs issue of debentures, including convertible debentures &amp; DRR requirement</td></tr>
+    <tr><td>Rule 18(7), Companies (Share Capital &amp; Debentures) Rules, 2014</td><td>Lays down Debenture Redemption Reserve (DRR) requirements &amp; investment norms</td></tr>
+    <tr><td>Income Tax Act, 1961</td><td>Requires TDS (Tax Deducted at Source) on debenture interest above prescribed limit</td></tr>
+    <tr><td>Sec. 77A/77B (pre-2013 amendment reference)</td><td>Permitted companies to buy back shares — contrast point vs debentures which are always repayable</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "What is TDS on debenture interest and how is it accounted for?"</div>
+</div>
+
+<!-- RULES / DRR -->
+<div class="card" id="rules">
+  <h2><span class="num">8</span> Important Rules — Debenture Redemption Reserve (DRR) <span class="tag vip">🔴 VIP — Most Tested Rule</span></h2>
+  <table>
+    <tr><th>Category of Company</th><th>DRR Requirement</th></tr>
+    <tr><td>All India Financial Institutions (AIFIs) &amp; Banking Companies</td><td><b>No DRR required</b> (public or private issue)</td></tr>
+    <tr><td>NBFCs &amp; Housing Finance Companies (public issue)</td><td>25% of outstanding debentures (public issue); <b>Nil</b> for privately placed</td></tr>
+    <tr><td>Other companies (manufacturing/infra) — public issue</td><td><b>25%</b> of value of outstanding debentures</td></tr>
+    <tr><td>Listed companies — private placement</td><td><b>25%</b> DRR required</td></tr>
+    <tr><td>Unlisted companies — private placement</td><td>25% of value of outstanding debentures</td></tr>
+  </table>
+  <p style="font-family:Arial;font-size:.8rem;"><b>Investment condition:</b> On/before <b>30th April</b> each year, invest/deposit ≥ <b>15%</b> of debentures maturing during that financial year (in bank deposits, Govt securities, or notified bonds).</p>
+  <div class="mnem"><b>Mnemonic — "25 by Public, 15 by April"</b>: DRR = 25% of debentures; invest 15% of maturing debentures by 30 April.</div>
+  <div class="qbox"><b>Likely Q:</b> "What percentage of Debenture Redemption Reserve is required as per Rule 18(7) of Companies (Share Capital and Debentures) Rules, 2014? Which companies are exempt?"</div>
+</div>
+
+<!-- EXCEPTIONS -->
+<div class="card" id="exceptions">
+  <h2><span class="num">9</span> Important Exceptions <span class="tag concept">🟡 Conceptual</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>The Companies Act, 2013 places <b>no restriction</b> on issuing debentures at a discount (unlike shares, which cannot ordinarily be issued at a discount).</li>
+    <li><b>No DRR is required</b> for debentures issued by AIFIs and Banking Companies — a blanket exemption regardless of public/private issue.</li>
+    <li>Companies exempted from creating DRR may redeem debentures <b>wholly out of capital</b>; others must transfer 100% of face value to DRR if redeeming purely out of profits.</li>
+    <li>DRR is required only in respect of the <b>non-convertible portion</b> of partly convertible debentures — the convertible portion is exempt.</li>
+    <li>Debentures issued as <b>Collateral Security</b> create no liability by themselves — hence Method 1 requires no journal entry at all.</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "Is a company required to create DRR for fully convertible debentures? Justify."</div>
+</div>
+
+<!-- DATES / LIMITS -->
+<div class="card" id="dates">
+  <h2><span class="num">10</span> Important Dates &amp; Time Limits <span class="tag vip">🔴 VIP</span></h2>
+  <table>
+    <tr><th>Event</th><th>Time Limit</th></tr>
+    <tr><td>Interest on debentures — usual payment frequency</td><td>Half-yearly (e.g. 30 Sept &amp; 31 March)</td></tr>
+    <tr><td>Investment/deposit for DRR-covered debentures</td><td>On or before <b>30th April</b> each year</td></tr>
+    <tr><td>Minimum amount to be invested for DRR</td><td>≥ 15% of debentures maturing during the year ending 31st March next</td></tr>
+    <tr><td>Discount/Loss on issue of debentures — writing off period</td><td>Over 3 to 5 years (as per ICAI guidance), never in year of issue</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "By which date must a company invest the amount required for DRR purposes each year?"</div>
+</div>
+
+<!-- AUTHORITIES -->
+<div class="card" id="authorities">
+  <h2><span class="num">11</span> Important Authorities <span class="tag faq">🟠 Frequently Asked</span></h2>
+  <table>
+    <tr><th>Authority</th><th>Role</th></tr>
+    <tr><td>SEBI</td><td>Issue and Listing of Debt Securities Regulations, 2008 — sets DRR adequacy norms for public issues</td></tr>
+    <tr><td>Reserve Bank of India (RBI)</td><td>Regulates AIFIs, NBFCs, Banking Companies — determines their DRR exemption status</td></tr>
+    <tr><td>National Housing Bank</td><td>Regulates Housing Finance Companies for DRR purposes</td></tr>
+    <tr><td>Income Tax Department</td><td>Receives TDS deducted on debenture interest</td></tr>
+    <tr><td>ICAI</td><td>Issues guidance on writing off discount/loss on issue of debentures (3–5 year period)</td></tr>
+  </table>
+  <div class="qbox"><b>Likely Q:</b> "Which regulator governs the DRR adequacy norms for debentures issued through public issue?"</div>
+</div>
+
+<!-- PENALTIES -->
+<div class="card" id="penalties">
+  <h2><span class="num">12</span> Important Penalties / Charges <span class="tag vip">🔴 VIP</span></h2>
+  <ul style="font-family:Arial;font-size:.82rem;">
+    <li>Interest on debentures is a <b>charge against profit</b> — must be paid even if the company earns no profit (unlike dividend, which is only an appropriation).</li>
+    <li>Failure to deduct/deposit TDS on debenture interest attracts Income Tax Act penal provisions (disallowance/interest under IT law).</li>
+    <li>Amount credited to DRR <b>cannot be utilised for any purpose other than debenture redemption</b> — misuse is a compliance violation.</li>
+  </ul>
+  <div class="qbox"><b>Likely Q:</b> "Why is interest on debentures called a 'charge against profits' and not an 'appropriation of profits'?"</div>
+</div>
+
+<!-- REDEMPTION METHODS -->
+<div class="card" id="redemption">
+  <h2><span class="num">13</span> Methods of Redemption of Debentures <span class="tag vip">🔴 VIP</span></h2>
+  <div class="flow">
+    <div class="step">1. Payment in Lump Sum <small>Whole amount paid at maturity, at par or premium</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">2. Payment in Instalments <small>Total liability divided by years; specific debentures drawn by lot</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">3. Purchase in Open Market <small>Company buys back its own debentures for cancellation</small></div>
+    <div class="arrow">▼</div>
+    <div class="step">4. Conversion into Shares/New Debentures <small>Only for Convertible Debentures; based on actual proceeds originally realised</small></div>
+  </div>
+  <h3 class="sub">Sinking Fund Method — 11-Step Logic <span class="tag concept">🟡 Conceptual</span></h3>
+  <div class="tree">
+    <ul>
+      <li>Year 1: Set aside fixed profit → Debenture Redemption Fund (DRF) A/c → invest in DRF Investment (DRFI)</li>
+      <li>Yr 2 onward: Receive interest on DRFI → transfer to DRF → invest interest + fresh appropriation</li>
+      <li>Last year: Receive interest, set aside final profit, <b>encash all DRFI</b></li>
+      <li>Transfer profit/loss on encashment to DRF A/c → Pay debentureholders → Transfer DRF balance to <b>General Reserve</b></li>
+    </ul>
+  </div>
+  <div class="qbox"><b>Likely Q:</b> "Explain the Sinking Fund method of redemption of debentures with the necessary journal entries." (High-value numerical, 8 marks)</div>
+</div>
+
+<!-- JOURNAL CHEAT SHEET -->
+<div class="card" id="journals">
+  <h2><span class="num">14</span> Journal Entries — Ledger Cheat-Sheet <span class="tag vip">🔴 VIP</span></h2>
+
+  <div class="acc-head" onclick="toggleAcc(this)">1. Issue at Par (2 instalments) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Bank A/c                       Dr.</span>
+      To Debenture Application A/c
+(Application money received)
+
+<span class="dr">Debenture Application A/c      Dr.</span>
+      To Debentures A/c
+(Transferred on allotment)
+
+<span class="dr">Debenture Allotment A/c        Dr.</span>
+      To Debentures A/c
+(Amount due on allotment)
+
+<span class="dr">Bank A/c                       Dr.</span>
+      To Debenture Allotment A/c
+(Allotment money received)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">2. Issue at Discount, Redeemable at Par <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debenture Allotment A/c        Dr.</span>
+<span class="dr">Discount on Issue of Debentures A/c  Dr.</span>
+      To Debentures A/c   (face value)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">3. Issue at Premium, Redeemable at Par <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debenture Allotment A/c        Dr.</span>
+      To Debentures A/c   (face value)
+      To Securities Premium Reserve A/c   (premium)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">4. Issue at Par, Redeemable at Premium <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debenture Allotment A/c        Dr.</span>
+<span class="dr">Loss on Issue of Debentures A/c  Dr.</span> (premium on redemption)
+      To Debentures A/c   (face value)
+      To Premium on Redemption of Debentures A/c</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">5. Collateral Security (Method 2) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debenture Suspense A/c        Dr.</span>
+      To Debentures A/c
+(Issued as collateral security for bank loan)
+
+<span class="cr">-- reversed on loan repayment --</span>
+<span class="dr">Debentures A/c                Dr.</span>
+      To Debenture Suspense A/c</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">6. Interest on Debentures (with TDS) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debenture Interest A/c        Dr.</span>
+      To Income Tax Payable A/c (TDS)
+      To Debentureholders A/c
+
+<span class="dr">Debentureholders A/c          Dr.</span>
+      To Bank A/c
+(Interest paid)
+
+<span class="dr">Income Tax Payable A/c        Dr.</span>
+      To Bank A/c
+(TDS deposited with govt.)
+
+<span class="dr">Statement of P&amp;L              Dr.</span>
+      To Debenture Interest A/c
+(Transferred at year-end)</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">7. Redemption at Par (Lump Sum) <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debentures A/c                Dr.</span>
+      To Debentureholders A/c
+
+<span class="dr">Debentureholders A/c          Dr.</span>
+      To Bank A/c</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">8. Redemption at Premium <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Debentures A/c                Dr.</span>
+<span class="dr">Premium on Redemption of Debentures A/c  Dr.</span>
+      To Debentureholders A/c
+
+<span class="dr">Debentureholders A/c          Dr.</span>
+      To Bank A/c</div>
+  </div>
+
+  <div class="acc-head" onclick="toggleAcc(this)">9. Sinking Fund — Key Entries <span class="arrow-i">▶</span></div>
+  <div class="acc-body">
+<div class="journal"><span class="dr">Statement of P&amp;L              Dr.</span>
+      To Debenture Redemption Fund (DRF) A/c
+(Fixed profit set aside)
+
+<span class="dr">DRF Investment A/c            Dr.</span>
+      To Bank A/c
+(Amount invested)
+
+<span class="dr">Bank A/c                      Dr.</span>
+      To Interest on DRFI A/c
+(Interest received, reinvested each year except last)
+
+<span class="dr">DRF A/c                       Dr.</span>
+      To General Reserve A/c
+(Final transfer after redemption)</div>
+  </div>
+
+  <div class="qbox"><b>Likely Q:</b> Board papers commonly ask for the FULL chain: "Issue at discount, redeemable at premium, with DRR transfer and final redemption" — practice it as one continuous problem.</div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <h2><span class="num">15</span> Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="mnem"><b>Debenture vs Share return:</b> "Share gets a Slice (dividend, variable); Debenture gets a Deal (interest, fixed)."</div>
+  <div class="mnem"><b>DRR %:</b> "25 for the Reserve, 15 by April" — 25% DRR of outstanding debentures; invest 15% of maturing amount by 30 April.</div>
+  <div class="mnem"><b>Redemption methods:</b> "<b>L</b>ittle <b>I</b>nvestors <b>P</b>refer <b>C</b>onversion" → <b>L</b>ump sum, <b>I</b>nstalments, open market <b>P</b>urchase, <b>C</b>onversion.</div>
+  <div class="mnem"><b>No DRR needed:</b> "Banks &amp; AIFIs Don't Reserve" — Banking Cos. and All India Financial Institutions are exempt from DRR.</div>
+</div>
+
+<!-- ONE PAGE SHEET -->
+<div class="card" id="onepager">
+  <h2><span class="num">16</span> One-Page Revision Sheet <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="onepage">
+    <h4>Debenture = Debt</h4>
+    <ul><li>Interest = charge (payable regardless of profit); TDS deducted</li></ul>
+    <h4>6 Issue/Redemption Combos</h4>
+    <ul><li>Par/Par, Discount/Par, Premium/Par, Par/Premium, Discount/Premium, Premium/Premium</li></ul>
+    <h4>Discount on Issue — Companies Act</h4>
+    <ul><li>No restriction (unlike shares)</li></ul>
+    <h4>DRR (Rule 18(7), 2014 Rules)</h4>
+    <ul><li>25% of outstanding debentures (most companies); Nil for AIFIs/Banks</li></ul>
+    <h4>DRR Investment Deadline</h4>
+    <ul><li>≥15% of maturing debentures, invested by 30th April</li></ul>
+    <h4>Redemption Methods</h4>
+    <ul><li>Lump sum | Instalments | Open Market Purchase | Conversion</li></ul>
+    <h4>Sinking Fund</h4>
+    <ul><li>Annual appropriation + reinvested interest → encashed in final year → pay holders → balance to General Reserve</li></ul>
+  </div>
+</div>
+
+<!-- LAST DAY NOTES -->
+<div class="card" id="lastday">
+  <h2><span class="num">17</span> Last-Day Revision Notes <span class="tag quick">🟢 Quick Revision</span></h2>
+  <div class="rev-grid">
+    <div class="rev-item"><b>✓</b> Debenture = Sec. 2(30) Companies Act 2013; includes bonds and any company security, secured or not.</div>
+    <div class="rev-item"><b>✓</b> 5 ways to classify debentures: Security, Tenure, Convertibility, Coupon rate, Registration.</div>
+    <div class="rev-item"><b>✓</b> Interest on debentures = charge against profit (must pay even in loss); dividend = appropriation.</div>
+    <div class="rev-item"><b>✓</b> No restriction on issuing debentures at discount under Companies Act 2013.</div>
+    <div class="rev-item"><b>✓</b> Whatever premium is promised on redemption → "Loss on Issue of Debentures" booked at issue time.</div>
+    <div class="rev-item"><b>✓</b> Collateral security: Method 1 = no entry + note; Method 2 = Debenture Suspense A/c entry.</div>
+    <div class="rev-item"><b>✓</b> DRR = 25% of outstanding debentures for most companies; Nil for AIFIs/Banking Cos.</div>
+    <div class="rev-item"><b>✓</b> Invest ≥15% of maturing debentures by 30th April each year.</div>
+    <div class="rev-item"><b>✓</b> 4 redemption methods: Lump sum, Instalments, Open Market Purchase, Conversion.</div>
+    <div class="rev-item"><b>✓</b> Sinking Fund: fixed annual profit + reinvested interest, encashed in final year, DRF balance → General Reserve.</div>
+    <div class="rev-item"><b>✓</b> Discount/Loss on issue written off over 3–5 years, not in the year of issue.</div>
+  </div>
+</div>
+
+<div class="chapnav">
+  <span>⏮ Ch. 1 — Share Capital</span>
+  <span>Ch. 3 — Financial Statements ⏭ (coming next)</span>
+</div>
+
+<footer>
+  AAO Exam · Accounting Basics · Chapter 2 of 6 · Source: NCERT Accountancy — Company Accounts &amp; Analysis of Financial Statements
+</footer>
+</div>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('active');
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+var utter=null;
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported on this device.');return;}
+  stopSpeak();
+  var text = document.querySelector('.wrap').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+function markStudied(){
+  try{
+    localStorage.setItem('aao_ch2_studied','true');
+    alert('Chapter 2 marked as studied ✅');
+  }catch(e){alert('Could not save progress on this device.');}
+}
+(function(){
+  try{
+    if(localStorage.getItem('aao_ch2_studied')==='true'){
+      document.title = '✅ ' + document.title;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
