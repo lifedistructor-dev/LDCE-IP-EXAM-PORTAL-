@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>CCS Conduct Rules 1964 | केंद्रीय सिविल सेवा (आचरण) नियम | LDCE IP/AAO</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2b1f; --blue:#1a3c6e; --blue-light:#2a5ca8;
+  --gold:#c99a2e; --bg:#f7f3ea; --card:#ffffff; --text:#222; --muted:#666;
+  --imp1:#e74c3c; --imp2:#e67e22; --imp3:#f1c40f; --imp4:#27ae60;
+  --border:#e2d9c3; --radius:14px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body.dark{
+  --bg:#121417; --card:#1c2024; --text:#eee; --muted:#aaa; --border:#333;
+}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:80px;
+  transition:background .3s, color .3s;
+}
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:#fff; padding:12px 14px; box-shadow:0 3px 10px rgba(0,0,0,.25);
+}
+.topbar h1{font-size:1.05rem; text-align:center; line-height:1.3;}
+.topbar h1 span{display:block; font-size:.8rem; font-weight:400; opacity:.9;}
+.controls{display:flex; gap:8px; justify-content:center; margin-top:10px; flex-wrap:wrap;}
+.btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4);
+  color:#fff; padding:6px 12px; border-radius:20px; font-size:.75rem; cursor:pointer;
+}
+.btn.active{background:var(--gold); border-color:var(--gold); color:#222; font-weight:600;}
+#searchBox{
+  width:100%; max-width:500px; margin:10px auto 0; display:block;
+  padding:9px 14px; border-radius:20px; border:none; font-size:.85rem;
+}
+.container{max-width:900px; margin:0 auto; padding:12px;}
+
+/* Legend */
+.legend{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:6px;
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:12px; margin:14px 0; font-size:.78rem;
+}
+.legend div{display:flex; align-items:center; gap:6px;}
+
+/* Section headers */
+.section-title{
+  font-size:1.1rem; font-weight:700; color:var(--red); margin:22px 0 10px;
+  border-left:5px solid var(--red); padding-left:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.section-title.blue{color:var(--blue); border-color:var(--blue);}
+.section-title.gold{color:var(--gold); border-color:var(--gold);}
+.sub{font-size:.8rem; color:var(--muted); font-weight:400;}
+
+/* One-page revision sheet */
+.revision-card{
+  background:linear-gradient(135deg,#fff8e6,#fff);
+  border:2px solid var(--gold); border-radius:var(--radius); padding:14px; margin-bottom:16px;
+}
+body.dark .revision-card{background:linear-gradient(135deg,#2a2410,#1c2024);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px; font-size:.82rem;}
+.rev-item{
+  background:var(--card); border-left:4px solid var(--gold); border-radius:8px;
+  padding:8px 10px;
+}
+.rev-item b{color:var(--red);}
+
+/* Accordion */
+.acc{
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  margin-bottom:10px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+.acc-head{
+  padding:12px 14px; cursor:pointer; display:flex; justify-content:space-between;
+  align-items:center; gap:8px; font-weight:600; font-size:.92rem;
+}
+.acc-head:hover{background:rgba(192,57,43,.06);}
+.acc-head .rulebadge{
+  background:var(--blue); color:#fff; font-size:.7rem; padding:2px 8px; border-radius:10px;
+  white-space:nowrap;
+}
+.acc-head .tag{font-size:.9rem;}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.acc-body-inner{padding:0 14px 16px;}
+.acc.open .acc-body{max-height:4000px;}
+.acc-arrow{transition:transform .3s; font-size:.8rem; color:var(--muted);}
+.acc.open .acc-arrow{transform:rotate(90deg);}
+
+/* subcard */
+.subcard{
+  border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin:8px 0;
+  background:var(--bg);
+}
+.subcard h4{font-size:.85rem; color:var(--blue); margin-bottom:4px;}
+body.dark .subcard h4{color:#7cb0ff;}
+.subcard p{font-size:.82rem;}
+.hi{font-size:.82rem;}
+
+.imp-tag{font-weight:700; font-size:.72rem; padding:2px 7px; border-radius:8px; color:#fff; margin-right:4px; display:inline-block;}
+.imp1{background:var(--imp1);} .imp2{background:var(--imp2);} .imp3{background:var(--imp3); color:#222;} .imp4{background:var(--imp4);}
+
+.q-box{
+  background:#eaf3ff; border-left:4px solid var(--blue); border-radius:8px;
+  padding:8px 10px; margin-top:8px; font-size:.78rem;
+}
+body.dark .q-box{background:#12233a;}
+.q-box b{color:var(--blue);}
+body.dark .q-box b{color:#7cb0ff;}
+
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.78rem;}
+th,td{border:1px solid var(--border); padding:6px 8px; text-align:left;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even){background:rgba(0,0,0,.03)}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03)}
+
+/* Flow / mindmap */
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:12px 0; font-size:.8rem;}
+.flow-box{
+  background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; text-align:center;
+  width:100%; max-width:340px;
+}
+.flow-box.alt{background:var(--red);}
+.flow-box.gold{background:var(--gold); color:#222;}
+.flow-arrow{color:var(--muted); font-size:1rem;}
+.flow-branches{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; width:100%;}
+.flow-branches .flow-box{flex:1; min-width:130px; font-size:.72rem;}
+
+.mindmap{
+  display:flex; flex-direction:column; gap:8px; margin:10px 0;
+}
+.mm-root{
+  background:var(--red); color:#fff; padding:8px 14px; border-radius:20px; text-align:center;
+  font-weight:700; font-size:.85rem; align-self:center;
+}
+.mm-branch{
+  display:flex; gap:8px; align-items:flex-start; padding-left:14px; border-left:2px dashed var(--gold);
+  margin-left:10px; font-size:.78rem;
+}
+.mm-branch .dot{color:var(--gold); font-weight:900;}
+
+/* timeline */
+.timeline{position:relative; margin:14px 0; padding-left:20px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:12px; font-size:.78rem;}
+.t-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px;
+  border-radius:50%; background:var(--red); border:2px solid #fff;
+}
+.t-item b{color:var(--blue);}
+body.dark .t-item b{color:#7cb0ff;}
+
+/* mnemonic */
+.mnem{
+  background:linear-gradient(135deg,#fff0f0,#fff); border:2px dashed var(--red); border-radius:12px;
+  padding:12px; margin:10px 0; font-size:.82rem;
+}
+body.dark .mnem{background:linear-gradient(135deg,#2a1414,#1c2024);}
+.mnem b{color:var(--red);}
+
+.speak-btn{
+  background:var(--blue); color:#fff; border:none; border-radius:50%; width:28px; height:28px;
+  font-size:.8rem; cursor:pointer; flex-shrink:0;
+}
+
+.lastday{
+  background:linear-gradient(135deg,var(--red),var(--red-dark)); color:#fff; border-radius:var(--radius);
+  padding:14px; margin:20px 0;
+}
+.lastday h3{margin-bottom:8px;}
+.lastday ul{padding-left:18px; font-size:.85rem;}
+.lastday li{margin-bottom:6px;}
+
+footer{text-align:center; font-size:.72rem; color:var(--muted); padding:20px;}
+
+.fab{
+  position:fixed; bottom:16px; right:16px; background:var(--gold); color:#222;
+  border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 3px 10px rgba(0,0,0,.3); font-size:1.3rem; cursor:pointer; z-index:99; border:none;
+}
+.hidden{display:none!important;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>CENTRAL CIVIL SERVICES (CONDUCT) RULES, 1964
+    <span>केंद्रीय सिविल सेवा (आचरण) नियम, 1964 — India Post LDCE IP / AAO Exam Notes</span>
+  </h1>
+  <div class="controls">
+    <button class="btn" id="darkToggle">🌙 Dark Mode</button>
+    <button class="btn" id="ttsToggle">🔊 Read Aloud</button>
+    <button class="btn" onclick="document.getElementById('revSheet').scrollIntoView({behavior:'smooth'})">📋 Revision Sheet</button>
+    <button class="btn" onclick="document.getElementById('lastday').scrollIntoView({behavior:'smooth'})">🔥 Last Day Notes</button>
+  </div>
+  <input type="text" id="searchBox" placeholder="🔍 Search Rule / नियम खोजें... (e.g. gift, dowry, 13, राजनीति)">
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div><span class="imp-tag imp1">🔴</span> Very Important / अति महत्वपूर्ण</div>
+    <div><span class="imp-tag imp2">🟠</span> Frequently Asked / बार-बार पूछा गया</div>
+    <div><span class="imp-tag imp3">🟡</span> Conceptual / अवधारणात्मक</div>
+    <div><span class="imp-tag imp4">🟢</span> Quick Revision / त्वरित रिवीजन</div>
+  </div>
+
+  <!-- ONE PAGE REVISION SHEET -->
+  <div id="revSheet" class="revision-card">
+    <div class="section-title gold" style="margin-top:0;">📋 One-Page Revision Sheet <span class="sub">एक पृष्ठ रिवीजन शीट</span></div>
+    <div class="rev-grid">
+      <div class="rev-item"><b>Total Rules:</b> 25 main rules (Rules 1–25) + sub-rules 3-A, 3-B, 3-C, 13-A, 15-A, 18-A, 22-A = <b>32 provisions</b></div>
+      <div class="rev-item"><b>Does NOT apply to:</b> Railway servants, Members of All India Services (IAS/IPS/IFS), posts exempted by President order</div>
+      <div class="rev-item"><b>Rule 3 core duties (5 words):</b> Integrity, Devotion to duty, Political neutrality, Courtesy, Accountability</div>
+      <div class="rev-item"><b>Gift limit without report (Rule 13):</b> Group A/B ₹1,500 | Group C/D ₹500 (from person with no official dealing, non-relative)</div>
+      <div class="rev-item"><b>Gift report threshold (relatives/functions):</b> Group A ₹25,000 | Group B ₹15,000 | Group C ₹7,500</div>
+      <div class="rule item rev-item"><b>Foreign dignitary gift limit:</b> ₹1,000 per occasion (Rule 13(4))</div>
+      <div class="rev-item"><b>Movable property report threshold (Rule 18(3)):</b> exceeds <b>2 months' basic pay</b>, report within <b>1 month</b></div>
+      <div class="rev-item"><b>Vindication via Court/Press (Rule 19):</b> needs sanction; if no reply in <b>3 months</b> → deemed granted</div>
+      <div class="rev-item"><b>Marriage restriction (Rule 21):</b> no bigamy without Govt permission; must intimate if spouse is foreign national</div>
+      <div class="rev-item"><b>Child labour prohibition (Rule 22-A):</b> below <b>14 years</b></div>
+      <div class="rev-item"><b>Prescribed Authority for property:</b> Group A → Government | Group B → Head of Department | Group C/D → Head of Office</div>
+      <div class="rev-item"><b>Rule with maximum amendments:</b> Rule 18 (14 amendments) — most exam-important rule</div>
+      <div class="rev-item"><b>1964 Rules replaced by:</b> Original CCS Conduct Rules 1964 predate the 2014-updated version; note: current India Post material sometimes references CCS (Conduct) Rules 1964 vs newer nomenclature drafts</div>
+    </div>
+  </div>
+
+  <!-- APPLICABILITY DECISION TREE -->
+  <div class="section-title">🌳 Applicability Decision Tree <span class="sub">प्रयोज्यता निर्णय वृक्ष</span></div>
+  <div class="acc" data-imp="1">
+    <div class="flow">
+      <div class="flow-box">Is the person appointed to a civil service/post in connection with affairs of the Union?</div>
+      <div class="flow-arrow">↓ YES</div>
+      <div class="flow-branches">
+        <div class="flow-box alt">Railway Servant? → EXCLUDED</div>
+        <div class="flow-box alt">Member of All India Service? → EXCLUDED</div>
+        <div class="flow-box alt">President-exempted post? → EXCLUDED</div>
+      </div>
+      <div class="flow-arrow">↓ None of above</div>
+      <div class="flow-box gold">CCS (Conduct) Rules, 1964 APPLY 🔴</div>
+    </div>
+    <div class="q-box"><b>Probable Q:</b> Which category of Government servants is NOT covered under CCS Conduct Rules, 1964? <br><b>संभावित प्रश्न:</b> रेलवे सेवक इन नियमों के अंतर्गत क्यों नहीं आते?</div>
+  </div>
+
+  <!-- MAIN RULE ACCORDIONS -->
+  <div class="section-title">📚 Rule-wise Detailed Notes <span class="sub">नियमवार विस्तृत नोट्स</span></div>
+
+  <!-- Rule 1 -->
+  <div class="acc" data-search="rule 1 short title commencement application short title application railway all india service">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rule 1 — Short Title, Commencement & Application</span>
+      <span class="rulebadge">R.1</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard">
+        <h4>Definition / परिभाषा</h4>
+        <p>Chapter → Preliminary. Sub-Chapter → Applicability. Micro Topic → Exemptions. Nano Topic → Rs.500/month exemption clause.</p>
+        <p>Rules commence "at once" (1964) and apply to every person appointed to a civil service/post connected with Union affairs, including civilians in Defence Service.</p>
+      </div>
+      <div class="subcard">
+        <h4>Important Exceptions 🔴</h4>
+        <p>(a) Railway servants under Railway Services (Conduct) Rules; (b) Members of All India Services (IAS, IPS, IFoS); (c) Posts exempted by President's special order.</p>
+        <p>Second proviso: Rules 4, 6, 7, 12, 14, 15(3), 16, 18(1)(2)(3), 19, 20, 21 don't apply to non-gazetted staff earning ≤ Rs.500/month in ports, defence installations, mines, factories, etc.</p>
+      </div>
+      <div class="q-box"><b>Probable Q:</b> Name three categories of persons excluded from CCS Conduct Rules 1964. <br><b>MCQ Trap:</b> All India Service members ARE excluded (they have separate Conduct Rules).</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 2 -->
+  <div class="acc" data-search="rule 2 definitions government servant members of family wife husband dependent">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Rule 2 — Definitions</span>
+      <span class="rulebadge">R.2</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <table>
+        <tr><th>Term</th><th>Meaning</th></tr>
+        <tr><td>Government</td><td>Central Government</td></tr>
+        <tr><td>Government Servant</td><td>Any person appointed to civil service/post connected with Union affairs; incl. civilian in Defence Service; incl. deputationists to companies (deemed Govt servant)</td></tr>
+        <tr><td>Members of Family</td><td>Spouse (not judicially separated) + son/daughter/step-child wholly dependent + any blood/marriage relative wholly dependent on the Govt servant</td></tr>
+      </table>
+      <div class="q-box"><b>Probable Q:</b> A judicially separated spouse is/is not a "member of family"? <br><b>Answer:</b> NOT included (excluded by definition).</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 3 -->
+  <div class="acc" data-search="rule 3 general integrity devotion duty political neutrality courtesy accountability supervisory oral direction">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 3 — General (Code of Ethics)</span>
+      <span class="rulebadge">R.3</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="mindmap">
+        <div class="mm-root">Rule 3(1): Every Govt Servant shall...</div>
+        <div class="mm-branch"><span class="dot">•</span> Maintain absolute integrity & devotion to duty</div>
+        <div class="mm-branch"><span class="dot">•</span> Uphold supremacy of Constitution & democratic values</div>
+        <div class="mm-branch"><span class="dot">•</span> Defend sovereignty, integrity, security, public order</div>
+        <div class="mm-branch"><span class="dot">•</span> Maintain political neutrality</div>
+        <div class="mm-branch"><span class="dot">•</span> Promote merit, fairness, impartiality</div>
+        <div class="mm-branch"><span class="dot">•</span> Maintain accountability & transparency</div>
+        <div class="mm-branch"><span class="dot">•</span> Not misuse position for financial/material benefit</div>
+        <div class="mm-branch"><span class="dot">•</span> Maintain confidentiality of sensitive information</div>
+      </div>
+      <div class="subcard">
+        <h4>Rule 3(2) — Supervisory & Oral Directions 🔴</h4>
+        <p>Supervisory officer must ensure integrity/devotion of subordinates. Directions should ordinarily be in <b>writing</b>; if oral, official superior must confirm in writing "immediately thereafter"; subordinate must seek written confirmation "as early as possible".</p>
+      </div>
+      <div class="mnem">
+        <b>Mnemonic (English):</b> "I DID PMAC" → Integrity, Devotion, Impartial, Democratic values, Political neutrality, Merit, Accountability, Confidentiality.<br>
+        <b>याद रखने की तरकीब:</b> "ईमानदारी सर्वोपरि" — ई(मानदारी)-सत्यनिष्ठा, कर्तव्यनिष्ठा, राजनीतिक तटस्थता, जवाबदेही।
+      </div>
+      <div class="q-box"><b>Probable Q:</b> Oral instruction from superior must be confirmed in writing — who initiates confirmation if superior doesn't? <br><b>Answer:</b> The subordinate must seek written confirmation "as early as possible" (Explanation II safeguards this).</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 3A-3C -->
+  <div class="acc" data-search="rule 3a 3b 3c promptness courtesy sexual harassment working women policies environment">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rules 3-A, 3-B, 3-C</span>
+      <span class="rulebadge">R.3A-C</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>3-A: Promptness and Courtesy</h4><p>No discourteous conduct; no dilatory tactics or wilful delay in disposing work.</p></div>
+      <div class="subcard"><h4>3-B: Observance of Government's Policies</h4><p>Must act per policies on: age of marriage, environment preservation, wildlife/heritage protection, prevention of crime against women.</p></div>
+      <div class="subcard"><h4>3-C: Prohibition of Sexual Harassment 🔴 (Very Exam-Important)</h4>
+        <p><b>Sexual harassment includes:</b> physical contact/advances; demand for sexual favours; sexually coloured remarks; showing pornography; unwelcome conduct of sexual nature.</p>
+        <p><b>Workplace includes:</b> Govt-funded establishments, hospitals, sports venues, transport during employment, even a dwelling place/house.</p>
+      </div>
+      <div class="q-box"><b>Probable Q:</b> Does "workplace" under Rule 3-C include a dwelling place? <br><b>Answer:</b> Yes — explicitly included in the Explanation.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 4 -->
+  <div class="acc" data-search="rule 4 employment near relatives companies firms class i officer sanction">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rule 4 — Employment of Near Relatives in Companies/Firms</span>
+      <span class="rulebadge">R.4</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">No Govt servant may use position/influence to secure employment for family in any company/firm. Class I officers need prior sanction if son/daughter/dependant joins a firm with official dealings; if urgent, employment may be accepted provisionally with post-facto report.</p>
+      <p class="hi">Govt servant must not deal with matters/contracts involving a firm where a family member is employed/interested — refer to superior instead.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 5 -->
+  <div class="acc" data-search="rule 5 politics elections political party canvass vote electoral symbol">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 5 — Taking Part in Politics & Elections</span>
+      <span class="rulebadge">R.5</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">Govt Servant + Political Party/Movement</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box alt">PROHIBITED: membership, association, subscribing, assisting</div>
+      </div>
+      <div class="subcard"><h4>Voting Rights</h4><p>May vote (right preserved) but must NOT reveal how they voted or intend to vote. Displaying electoral symbol on person/vehicle/residence = "using influence" (deemed violation).</p></div>
+      <div class="subcard"><h4>Family Members</h4><p>Must try to prevent family from political activity subversive of Government; if unable, must report to Government.</p></div>
+      <div class="q-box"><b>Probable Q:</b> Displaying an electoral symbol on one's residence amounts to what? <br><b>Answer:</b> Using influence in connection with election — a violation of Rule 5(4).</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 6 & 7 -->
+  <div class="acc" data-search="rule 6 7 joining associations demonstration strikes coercion physical duress">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rules 6 & 7 — Associations, Demonstrations & Strikes</span>
+      <span class="rulebadge">R.6-7</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>Rule 6:</b> No joining associations prejudicial to sovereignty, integrity, public order, or morality.</p>
+      <p class="hi"><b>Rule 7:</b> No participation in demonstrations prejudicial to sovereignty/security/foreign relations/public order/decency, or involving contempt of court/defamation. No strikes, coercion, or physical duress related to service matters.</p>
+      <div class="q-box"><b>Probable Q:</b> Is participation in a strike allowed under any condition? <br><b>Answer:</b> No — absolutely prohibited under Rule 7(ii), including "abetting" a strike.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 8, 9, 10 -->
+  <div class="acc" data-search="rule 8 9 10 press media criticism government evidence committee sanction radio broadcast">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rules 8, 9, 10 — Media, Criticism, Evidence</span>
+      <span class="rulebadge">R.8-10</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Rule 8: Connection with Press/Media</h4><p>Cannot own/edit/manage newspaper or electronic media without sanction. Publishing a book/participating in media in official discharge is exempt. Must clarify views are personal, not Government's.</p></div>
+      <div class="subcard"><h4>Rule 9: Criticism of Government 🔴</h4><p>No adverse criticism of Central/State Govt policy via broadcast, publication, or press that could embarrass Centre–State or Centre–foreign relations. Exception: bona fide trade union office-bearer views on service conditions (for eligible categories); official-capacity statements exempt.</p></div>
+      <div class="subcard"><h4>Rule 10: Evidence before Committee</h4><p>Sanction needed to give evidence before any enquiry (except: statutory enquiry authorities, judicial enquiry, departmental enquiry by subordinate authority). Cannot criticise Govt policy while giving sanctioned evidence.</p></div>
+      <div class="q-box"><b>Probable Q:</b> In which 3 situations is prior sanction NOT required to give evidence? <br><b>Answer:</b> Enquiry by Parliament/State Legislature-appointed authority; judicial enquiry; departmental enquiry by subordinate authority.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 11, 12 -->
+  <div class="acc" data-search="rule 11 12 communication official information rti subscriptions">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Rules 11 & 12 — Official Info & Subscriptions</span>
+      <span class="rulebadge">R.11-12</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>Rule 11:</b> Info must be shared per RTI Act 2005 in good faith. Unauthorized communication of official/classified documents is prohibited unless by general/special order.</p>
+      <p class="hi"><b>Rule 12:</b> Cannot solicit or accept contributions/collections for any purpose without prior sanction.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 13 - GIFTS (very important) -->
+  <div class="acc" data-search="rule 13 gifts limit group a b c d dowry sanction 25000 15000 7500 1500 500 foreign dignitary">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 13 — Gifts (HIGH-WEIGHTAGE)</span>
+      <span class="rulebadge">R.13</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">"Gift" includes free transport, boarding, lodging, or pecuniary advantage from anyone other than a near relative/personal friend with no official dealings. Casual meal/lift = NOT a gift.</p>
+      <table>
+        <tr><th>Occasion / Group</th><th>Report Threshold</th></tr>
+        <tr><td>Weddings/functions from relatives/friends (no official dealing) — Group A</td><td>₹25,000</td></tr>
+        <tr><td>Same — Group B</td><td>₹15,000</td></tr>
+        <tr><td>Same — Group C</td><td>₹7,500</td></tr>
+        <tr><td>Any other case — Group A/B (sanction needed above)</td><td>₹1,500</td></tr>
+        <tr><td>Any other case — Group C/D (sanction needed above)</td><td>₹500</td></tr>
+        <tr><td>From foreign dignitary, one occasion</td><td>₹1,000</td></tr>
+      </table>
+      <div class="subcard"><h4>Foreign Firm Gifts 🔴</h4><p>Cannot accept gift from a foreign firm contracting with/dealing with Govt of India; from other firms, subject to normal sub-rule (3) limits.</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "A-25, B-15, C-7.5 (thousand, on occasions) | A/B-1.5k, C/D-0.5k (otherwise) | Foreign VIP-1k".<br>
+      <b>याद रखें:</b> ग्रुप घटता है, सीमा भी घटती है (Group A→D, limit decreases)।</div>
+      <div class="q-box"><b>Probable Q:</b> A Group C employee receives a wedding gift worth ₹8,000 from a relative — must it be reported? <br><b>Answer:</b> Yes, since it exceeds the ₹7,500 threshold for Group C.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 13A -->
+  <div class="acc" data-search="rule 13a dowry prohibition act 1961">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rule 13-A — Dowry</span>
+      <span class="rulebadge">R.13A</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Total prohibition: giving, taking, abetting, or demanding dowry (directly/indirectly). "Dowry" meaning per Dowry Prohibition Act, 1961.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 14 -->
+  <div class="acc" data-search="rule 14 public demonstrations honour testimonial farewell entertainment">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Rule 14 — Public Demonstrations in Honour</span>
+      <span class="rulebadge">R.14</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Sanction needed to accept complimentary/valedictory address or testimonial. Exceptions: private/informal farewell on retirement/transfer; simple inexpensive entertainment by public bodies. Coercing Class III/IV staff for subscriptions is forbidden.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 15 -->
+  <div class="acc" data-search="rule 15 private trade employment elective office sponsored media sanction honorary charitable">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 15 — Private Trade or Employment</span>
+      <span class="rulebadge">R.15</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <table>
+        <tr><th>Needs Sanction (15(1))</th><th>No Sanction Needed (15(2))</th></tr>
+        <tr><td>Trade/business (direct/indirect)</td><td>Honorary social/charitable work</td></tr>
+        <tr><td>Other employment</td><td>Occasional literary/artistic/scientific work</td></tr>
+        <tr><td>Elective office / canvassing for one</td><td>Amateur sports participation</td></tr>
+        <tr><td>Canvassing for family's insurance/commission agency</td><td>Non-elective role in literary/scientific/charitable society</td></tr>
+        <tr><td>Bank/company registration & management role</td><td>Non-elective role in co-operative society for Govt servants' benefit</td></tr>
+        <tr><td>Sponsored/private media (TV/radio) programme</td><td>—</td></tr>
+      </table>
+      <p class="hi">For allowed activities (d)/(e): must report within <b>1 month</b> of taking part, and discontinue if Government directs.</p>
+      <div class="q-box"><b>Probable Q:</b> Does amateur sports participation need sanction? <br><b>Answer:</b> No — expressly exempted under Rule 15(2)(c).</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 15A -->
+  <div class="acc" data-search="rule 15a sub-letting government accommodation vacate">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp4">🟢</span> Rule 15-A — Sub-letting Govt Accommodation</span>
+      <span class="rulebadge">R.15A</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">No sub-letting/leasing of allotted Govt accommodation to others. Must vacate within time-limit set by allotting authority once allotment is cancelled.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 16 -->
+  <div class="acc" data-search="rule 16 investment lending borrowing speculation ipo shares">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 16 — Investment, Lending & Borrowing</span>
+      <span class="rulebadge">R.16</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">No speculation in stock/shares (frequent buy-sell = speculation). Occasional investment through licensed brokers is allowed.</p>
+      <p class="hi">Cannot invest in ways that embarrass official duty (e.g., Director-quota shares). Officers deciding IPO/FPO pricing of a CPSE cannot apply for shares in that IPO/FPO (self or family).</p>
+      <p class="hi">No lending/borrowing/depositing money with persons/firms having official dealings, except: small interest-free loans to/from relatives/friends, bona fide tradesman credit accounts, or pay advance to private employee.</p>
+      <div class="q-box"><b>Probable Q:</b> Can an officer deciding CPSE share pricing apply for shares in that company's IPO? <br><b>Answer:</b> No — explicitly barred under Rule 16(2)(ii), even through family members.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 17 -->
+  <div class="acc" data-search="rule 17 insolvency habitual indebtedness burden of proof">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Rule 17 — Insolvency & Habitual Indebtedness</span>
+      <span class="rulebadge">R.17</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Must manage private affairs to avoid habitual debt/insolvency. Must report legal proceedings for debt recovery/insolvency to Government. <b>Burden of proof</b> that insolvency was due to unforeseeable circumstances lies on the Government servant.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 18 -->
+  <div class="acc" data-search="rule 18 movable immovable property return assets liabilities prescribed authority group a b c d two months basic pay one month">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 18 — Movable, Immovable & Valuable Property (MOST AMENDED)</span>
+      <span class="rulebadge">R.18</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">On First Appointment</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box gold">Submit Return of Assets & Liabilities (immovable property, shares/cash, other movables, debts)</div>
+      </div>
+      <div class="subcard"><h4>Annual Return 🔴 (Group A & B only)</h4><p>Must submit annual return of immovable property details — every year.</p></div>
+      <table>
+        <tr><th>Prescribed Authority</th><th>Applicable Group</th></tr>
+        <tr><td>Government</td><td>Group A</td></tr>
+        <tr><td>Head of Department</td><td>Group B</td></tr>
+        <tr><td>Head of Office</td><td>Group C / D</td></tr>
+      </table>
+      <div class="subcard"><h4>Key Thresholds ⏱️</h4>
+        <p>• Movable property transaction: report within <b>1 month</b> if value exceeds <b>2 months' basic pay</b>.<br>
+        • Immovable property: previous knowledge of prescribed authority needed always; previous <b>sanction</b> needed if transacting with a person having official dealings.<br>
+        • Group D: sub-rule (1) not ordinarily applicable unless directed.<br>
+        • Small movable items under ₹10,000 can be lumped as one figure; daily-use articles excluded.</p>
+      </div>
+      <div class="subcard"><h4>Movable Property Definition includes</h4><p>Jewellery, insurance policies (premium > 2 months' pay), shares/securities/debentures, loans given/taken, vehicles, refrigerators/radios/TVs.</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "A-Govt, B-HOD, C/D-HOO" for Prescribed Authority. <br><b>याद रखें:</b> "जितनी बड़ी ग्रुप, उतनी ऊँची अथॉरिटी।"</div>
+      <div class="q-box"><b>Probable Q:</b> Who is the Prescribed Authority for a Group B officer's property return? <br><b>Answer:</b> Head of Department.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 18A -->
+  <div class="acc" data-search="rule 18a immovable property outside india foreigners transactions sanction">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rule 18-A — Property Outside India / Transactions with Foreigners</span>
+      <span class="rulebadge">R.18A</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Prior sanction of prescribed authority required to: acquire/dispose immovable property outside India, or enter any property transaction (acquisition/disposal) with a foreigner, foreign Government, or foreign organisation — for self or family.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 19 -->
+  <div class="acc" data-search="rule 19 vindication acts character court press three months deemed sanction private character">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Rule 19 — Vindication of Acts & Character</span>
+      <span class="rulebadge">R.19</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">Official act criticised/defamed</div><div class="flow-arrow">↓</div>
+        <div class="flow-box">Apply for sanction to approach Court/Press</div><div class="flow-arrow">↓</div>
+        <div class="flow-box gold">No reply within 3 months → Deemed GRANTED 🔴</div>
+      </div>
+      <p class="hi">Vindicating <b>private</b> character/acts done in private capacity does NOT require sanction, but action taken must be reported to prescribed authority.</p>
+      <div class="q-box"><b>Probable Q:</b> If no reply to a sanction request under Rule 19 is received within how many months, is it deemed granted? <br><b>Answer:</b> 3 months.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 20 -->
+  <div class="acc" data-search="rule 20 canvassing outside influence superior authority">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp4">🟢</span> Rule 20 — Canvassing Non-official/Outside Influence</span>
+      <span class="rulebadge">R.20</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Prohibits bringing political or outside influence to bear on superior authority to further one's own service interests.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 21 -->
+  <div class="acc" data-search="rule 21 marriage restriction bigamy spouse living foreign national personal law">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rule 21 — Restriction Regarding Marriage</span>
+      <span class="rulebadge">R.21</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">No marriage with a person who has a living spouse, nor marrying again while own spouse is living — EXCEPT with Central Government permission (if personal law allows AND other valid grounds exist).</p>
+      <p class="hi">Marrying a non-Indian national → must intimate the Government forthwith.</p>
+      <div class="q-box"><b>Probable Q:</b> Under what two conditions may Government permit a bigamous marriage under Rule 21? <br><b>Answer:</b> (a) permissible under personal law, AND (b) other valid grounds exist — both conditions needed.</div>
+    </div></div>
+  </div>
+
+  <!-- Rule 22 & 22A -->
+  <div class="acc" data-search="rule 22 22a intoxicating drinks drugs public place children below 14 years">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Rules 22 & 22-A — Intoxication & Child Labour</span>
+      <span class="rulebadge">R.22-22A</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>Rule 22:</b> Must abide by local intoxication laws; must NOT be under influence during duty; must not consume in a "public place" (incl. conveyances accessible to public); must not appear intoxicated in public; no excessive use.</p>
+      <p class="hi"><b>Rule 22-A:</b> No employing any child below <b>14 years</b> of age to work.</p>
+    </div></div>
+  </div>
+
+  <!-- Rule 23, 24, 25 -->
+  <div class="acc" data-search="rule 23 24 25 interpretation delegation powers repeal saving">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp4">🟢</span> Rules 23, 24, 25 — Interpretation, Delegation, Repeal</span>
+      <span class="rulebadge">R.23-25</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>Rule 23:</b> Interpretation disputes go to Government — decision final.</p>
+      <p class="hi"><b>Rule 24:</b> Government may delegate powers (except Rules 23 & 24 itself) to any officer/authority.</p>
+      <p class="hi"><b>Rule 25:</b> Old corresponding rules repealed; prior actions deemed taken under new rules; contravention of old rules still punishable as if under new rules.</p>
+    </div></div>
+  </div>
+
+  <!-- COMPARISON: Gift limits chart -->
+  <div class="section-title blue">📊 Comparison Chart — Gift & Property Thresholds <span class="sub">तुलना चार्ट</span></div>
+  <div class="acc" style="padding:14px;">
+    <table>
+      <tr><th>Provision</th><th>Group A</th><th>Group B</th><th>Group C</th><th>Group D</th></tr>
+      <tr><td>Gift report (occasion, relative/friend)</td><td>₹25,000</td><td>₹15,000</td><td>₹7,500</td><td>—</td></tr>
+      <tr><td>Gift sanction needed above</td><td>₹1,500</td><td>₹1,500</td><td>₹500</td><td>₹500</td></tr>
+      <tr><td>Annual property return (Rule 18(ii))</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><td>Prescribed Authority</td><td>Government</td><td>Head of Dept</td><td>Head of Office</td><td>Head of Office</td></tr>
+    </table>
+  </div>
+
+  <!-- TIMELINE of amendments -->
+  <div class="section-title blue">🕒 Key Amendment Timeline <span class="sub">महत्वपूर्ण संशोधन समयरेखा</span></div>
+  <div class="acc" style="padding:14px 18px;">
+    <div class="timeline">
+      <div class="t-item"><b>1964 (12 Dec):</b> Principal Rules notified — S.O. No. 4177</div>
+      <div class="t-item"><b>1976:</b> Rule 4, 13, 13-A inserted/amended — S.O. 846 (dowry provision, employment of near relatives)</div>
+      <div class="t-item"><b>1995 (GSR 355):</b> Rules 3-A, 3-B, 8, 9, 19 introduced — Promptness/Courtesy, Govt policy observance</div>
+      <div class="t-item"><b>1996 (GSR 367):</b> Rules 13, 15, 15-A, 16, 18 amended — media programme restriction added</div>
+      <div class="t-item"><b>1998 (GSR 49):</b> Rule 3-C inserted — Sexual harassment prohibition</div>
+      <div class="t-item"><b>1999 (GSR 342):</b> Rule 22-A inserted — Child labour prohibition</div>
+      <div class="t-item"><b>2005 (GSR 376):</b> Rule 11 amended — aligned with RTI Act 2005</div>
+      <div class="t-item"><b>2011 (GSR 370(E)):</b> Rule 18 amended — IPO/FPO share restriction added</div>
+      <div class="t-item"><b>2014 (GSR 149(E) & 823(E) & 845(E)):</b> Rules 13, 3-C, 3 amended — latest updates, gift limits revised, ethics clauses expanded</div>
+    </div>
+    <div class="q-box"><b>Probable Q:</b> In which year was the sexual harassment prohibition (Rule 3-C) first inserted? <br><b>Answer:</b> 1998 (GSR 49, dated 7th March 1998).</div>
+  </div>
+
+  <!-- MNEMONICS SECTION -->
+  <div class="section-title gold">🧠 Master Mnemonics <span class="sub">मास्टर स्मृति-सूत्र</span></div>
+  <div class="acc" style="padding:14px;">
+    <div class="mnem">
+      <b>All Prohibited Activities (no sanction ever possible in some, sanction-based in others):</b><br>
+      "PEDCB-GISM" → Politics, Elections-canvass, Dowry, Child labour, Bigamy-without-permission, Gifts-above-limit, Insolvency-hiding, Strike, Media-unsanctioned.
+    </div>
+    <div class="mnem">
+      <b>Rule numbers to remember by theme (हिंदी में):</b><br>
+      राजनीति = नियम 5 | उपहार = नियम 13 | दहेज = नियम 13A | संपत्ति = नियम 18 | विवाह = नियम 21 | नशा = नियम 22 | बाल श्रम = नियम 22A
+    </div>
+    <div class="mnem">
+      <b>"3 महीने" (3-month) rule:</b> Rule 19 vindication sanction — silence for 3 months = deemed granted. Only 3-month rule in this Act — easy trap in MCQs vs "1 month" (Rule 18(3) property report) and "14 years" (child labour age, Rule 22-A) and "500/1500/7500/15000/25000" (gift ladder).
+    </div>
+  </div>
+
+  <!-- LAST DAY REVISION -->
+  <div id="lastday" class="lastday">
+    <h3>🔥 Last Day Revision Notes / अंतिम दिन रिवीजन नोट्स</h3>
+    <ul>
+      <li>🔴 Rule 3 = Core Ethics (Integrity, Devotion, Neutrality, Accountability)</li>
+      <li>🔴 Rule 13 = Gift ladder: 25k/15k/7.5k (occasion) & 1.5k/500 (otherwise) & 1k (foreign VIP)</li>
+      <li>🔴 Rule 18 = Property return + 2 months' pay / 1 month report rule — MOST amended rule (14 times)</li>
+      <li>🔴 Rule 19 = 3 months silence = deemed sanction granted</li>
+      <li>🔴 Rule 22-A = Child labour ban below 14 years</li>
+      <li>🟠 Rule 5 = No politics; can vote but can't reveal preference; no electoral symbols displayed</li>
+      <li>🟠 Rule 21 = No bigamy without CG permission (2 conditions needed)</li>
+      <li>🟢 Excluded persons: Railway staff, All India Service members, President-exempted posts</li>
+      <li>🟢 Prescribed Authority ladder: A→Govt, B→HOD, C/D→HOO</li>
+    </ul>
+  </div>
+
+  <div class="section-title">📝 Extra Practice MCQs <span class="sub">अभ्यास प्रश्न</span></div>
+  <div class="acc" style="padding:14px;">
+    <table>
+      <tr><th>#</th><th>Question</th></tr>
+      <tr><td>1</td><td>What is the report threshold for a Group A officer receiving a wedding gift from a relative?</td></tr>
+      <tr><td>2</td><td>Within how many days/months must a movable property transaction exceeding 2 months' basic pay be reported?</td></tr>
+      <tr><td>3</td><td>Which rule prohibits sexual harassment at the workplace and what does "workplace" include?</td></tr>
+      <tr><td>4</td><td>What happens if Government doesn't respond to a Rule 19 sanction request within 3 months?</td></tr>
+      <tr><td>5</td><td>Name the Prescribed Authority for Group C government servants under Rule 18.</td></tr>
+      <tr><td>6</td><td>Under Rule 16, can an officer deciding IPO pricing apply for shares in that company?</td></tr>
+      <tr><td>7</td><td>Which categories of employees are exempt from Rule 1 due to the Rs.500/month proviso?</td></tr>
+      <tr><td>8</td><td>What is the minimum age below which child employment is banned under Rule 22-A?</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<button class="fab" id="topFab" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+<footer>LDCE IP / AAO Exam Portal • CCS (Conduct) Rules, 1964 (Updated to 31.12.2014) • For personal exam preparation use</footer>
+
+<script>
+function toggleAcc(head){
+  const acc = head.parentElement;
+  acc.classList.toggle('open');
+}
+
+// Dark mode
+const darkBtn = document.getElementById('darkToggle');
+darkBtn.addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+  darkBtn.classList.toggle('active');
+});
+
+// TTS
+let ttsOn = false;
+let currentUtterance = null;
+const ttsBtn = document.getElementById('ttsToggle');
+ttsBtn.addEventListener('click', ()=>{
+  ttsOn = !ttsOn;
+  ttsBtn.classList.toggle('active');
+  if(!ttsOn && window.speechSynthesis){
+    window.speechSynthesis.cancel();
+  }
+});
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click', ()=>{
+    if(ttsOn && window.speechSynthesis){
+      window.speechSynthesis.cancel();
+      const body = h.parentElement.querySelector('.acc-body-inner');
+      if(body){
+        const text = body.innerText;
+        const utter = new SpeechSynthesisUtterance(text.slice(0,1500));
+        window.speechSynthesis.speak(utter);
+      }
+    }
+  });
+});
+
+// Search
+const searchBox = document.getElementById('searchBox');
+searchBox.addEventListener('input', ()=>{
+  const q = searchBox.value.trim().toLowerCase();
+  document.querySelectorAll('.acc[data-search], .acc[data-imp]').forEach(acc=>{
+    const dataText = (acc.getAttribute('data-search')||'') + ' ' + acc.innerText.toLowerCase();
+    if(q === '' || dataText.toLowerCase().includes(q)){
+      acc.classList.remove('hidden');
+      if(q !== '') acc.classList.add('open');
+    } else {
+      acc.classList.add('hidden');
+    }
+  });
+});
+</script>
+</body>
+</html>

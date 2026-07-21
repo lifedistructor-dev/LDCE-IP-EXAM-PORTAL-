@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Natural Justice & Constitution of India | प्राकृतिक न्याय एवं संविधान | LDCE IP/AAO</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2b1f; --blue:#1a3c6e; --blue-light:#2a5ca8;
+  --gold:#c99a2e; --bg:#f7f3ea; --card:#ffffff; --text:#222; --muted:#666;
+  --border:#e2d9c3; --radius:14px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body.dark{ --bg:#121417; --card:#1c2024; --text:#eee; --muted:#aaa; --border:#333; }
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:80px;
+  transition:background .3s, color .3s;
+}
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:#fff; padding:12px 14px; box-shadow:0 3px 10px rgba(0,0,0,.25);
+}
+.topbar h1{font-size:1.02rem; text-align:center; line-height:1.3;}
+.topbar h1 span{display:block; font-size:.8rem; font-weight:400; opacity:.9;}
+.controls{display:flex; gap:8px; justify-content:center; margin-top:10px; flex-wrap:wrap;}
+.btn{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); color:#fff; padding:6px 12px; border-radius:20px; font-size:.75rem; cursor:pointer;}
+.btn.active{background:var(--gold); border-color:var(--gold); color:#222; font-weight:600;}
+#searchBox{width:100%; max-width:500px; margin:10px auto 0; display:block; padding:9px 14px; border-radius:20px; border:none; font-size:.85rem;}
+.container{max-width:900px; margin:0 auto; padding:12px;}
+.legend{display:grid; grid-template-columns:repeat(2,1fr); gap:6px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:12px; margin:14px 0; font-size:.78rem;}
+.legend div{display:flex; align-items:center; gap:6px;}
+.section-title{font-size:1.1rem; font-weight:700; color:var(--red); margin:22px 0 10px; border-left:5px solid var(--red); padding-left:10px; display:flex; align-items:center; gap:8px;}
+.section-title.blue{color:var(--blue); border-color:var(--blue);}
+.section-title.gold{color:var(--gold); border-color:var(--gold);}
+.sub{font-size:.8rem; color:var(--muted); font-weight:400;}
+.revision-card{background:linear-gradient(135deg,#fff8e6,#fff); border:2px solid var(--gold); border-radius:var(--radius); padding:14px; margin-bottom:16px;}
+body.dark .revision-card{background:linear-gradient(135deg,#2a2410,#1c2024);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px; font-size:.82rem;}
+.rev-item{background:var(--card); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;}
+.rev-item b{color:var(--red);}
+.acc{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:10px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.acc-head{padding:12px 14px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:8px; font-weight:600; font-size:.92rem;}
+.acc-head:hover{background:rgba(192,57,43,.06);}
+.acc-head .rulebadge{background:var(--blue); color:#fff; font-size:.7rem; padding:2px 8px; border-radius:10px; white-space:nowrap;}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.acc-body-inner{padding:0 14px 16px;}
+.acc.open .acc-body{max-height:5000px;}
+.acc-arrow{transition:transform .3s; font-size:.8rem; color:var(--muted);}
+.acc.open .acc-arrow{transform:rotate(90deg);}
+.subcard{border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin:8px 0; background:var(--bg);}
+.subcard h4{font-size:.85rem; color:var(--blue); margin-bottom:4px;}
+body.dark .subcard h4{color:#7cb0ff;}
+.subcard p{font-size:.82rem;}
+.hi{font-size:.82rem;}
+.imp-tag{font-weight:700; font-size:.72rem; padding:2px 7px; border-radius:8px; color:#fff; margin-right:4px; display:inline-block;}
+.imp1{background:#e74c3c;} .imp2{background:#e67e22;} .imp3{background:#f1c40f; color:#222;} .imp4{background:#27ae60;}
+.q-box{background:#eaf3ff; border-left:4px solid var(--blue); border-radius:8px; padding:8px 10px; margin-top:8px; font-size:.78rem;}
+body.dark .q-box{background:#12233a;}
+.q-box b{color:var(--blue);}
+body.dark .q-box b{color:#7cb0ff;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.78rem;}
+th,td{border:1px solid var(--border); padding:6px 8px; text-align:left;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even){background:rgba(0,0,0,.03)}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03)}
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:12px 0; font-size:.8rem;}
+.flow-box{background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; text-align:center; width:100%; max-width:340px;}
+.flow-box.alt{background:var(--red);}
+.flow-box.gold{background:var(--gold); color:#222;}
+.flow-arrow{color:var(--muted); font-size:1rem;}
+.flow-branches{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; width:100%;}
+.flow-branches .flow-box{flex:1; min-width:130px; font-size:.72rem;}
+.mindmap{display:flex; flex-direction:column; gap:8px; margin:10px 0;}
+.mm-root{background:var(--red); color:#fff; padding:8px 14px; border-radius:20px; text-align:center; font-weight:700; font-size:.85rem; align-self:center;}
+.mm-branch{display:flex; gap:8px; align-items:flex-start; padding-left:14px; border-left:2px dashed var(--gold); margin-left:10px; font-size:.78rem;}
+.mm-branch .dot{color:var(--gold); font-weight:900;}
+.timeline{position:relative; margin:14px 0; padding-left:20px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:12px; font-size:.78rem;}
+.t-item::before{content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--red); border:2px solid #fff;}
+.t-item b{color:var(--blue);}
+body.dark .t-item b{color:#7cb0ff;}
+.mnem{background:linear-gradient(135deg,#fff0f0,#fff); border:2px dashed var(--red); border-radius:12px; padding:12px; margin:10px 0; font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2a1414,#1c2024);}
+.mnem b{color:var(--red);}
+.lastday{background:linear-gradient(135deg,var(--red),var(--red-dark)); color:#fff; border-radius:var(--radius); padding:14px; margin:20px 0;}
+.lastday h3{margin-bottom:8px;}
+.lastday ul{padding-left:18px; font-size:.85rem;}
+.lastday li{margin-bottom:6px;}
+footer{text-align:center; font-size:.72rem; color:var(--muted); padding:20px;}
+.fab{position:fixed; bottom:16px; right:16px; background:var(--gold); color:#222; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,.3); font-size:1.3rem; cursor:pointer; z-index:99; border:none;}
+.hidden{display:none!important;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>GENERAL PRINCIPLES OF NATURAL JUSTICE &amp; CONSTITUTIONAL SAFEGUARDS
+    <span>प्राकृतिक न्याय के सिद्धांत एवं संवैधानिक सुरक्षा (Preamble, Arts. 14, 21, 22, 32, 226, 227, 311) — India Post LDCE IP / AAO Exam Notes</span>
+  </h1>
+  <div class="controls">
+    <button class="btn" id="darkToggle">🌙 Dark Mode</button>
+    <button class="btn" id="ttsToggle">🔊 Read Aloud</button>
+    <button class="btn" onclick="document.getElementById('revSheet').scrollIntoView({behavior:'smooth'})">📋 Revision Sheet</button>
+    <button class="btn" onclick="document.getElementById('lastday').scrollIntoView({behavior:'smooth'})">🔥 Last Day Notes</button>
+  </div>
+  <input type="text" id="searchBox" placeholder="🔍 Search Article / अनुच्छेद खोजें... (e.g. 311, writ, hearing, आयुक्त)">
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div><span class="imp-tag imp1">🔴</span> Very Important / अति महत्वपूर्ण</div>
+    <div><span class="imp-tag imp2">🟠</span> Frequently Asked / बार-बार पूछा गया</div>
+    <div><span class="imp-tag imp3">🟡</span> Conceptual / अवधारणात्मक</div>
+    <div><span class="imp-tag imp4">🟢</span> Quick Revision / त्वरित रिवीजन</div>
+  </div>
+
+  <!-- ONE PAGE REVISION SHEET -->
+  <div id="revSheet" class="revision-card">
+    <div class="section-title gold" style="margin-top:0;">📋 One-Page Revision Sheet <span class="sub">एक पृष्ठ रिवीजन शीट</span></div>
+    <div class="rev-grid">
+      <div class="rev-item"><b>Preamble adopted:</b> 26 November 1949 | Words "Sovereign Democratic Republic" → "Sovereign Socialist Secular Democratic Republic" added by <b>42nd Amendment, 1976</b> (w.e.f. 3-1-1977)</div>
+      <div class="rev-item"><b>Preamble gives:</b> Justice (social, economic, political); Liberty (thought, expression, belief, faith, worship); Equality (status, opportunity); Fraternity (dignity + unity/integrity of Nation)</div>
+      <div class="rev-item"><b>Art. 14:</b> Equality before law + equal protection of laws — foundation of natural justice (non-arbitrariness)</div>
+      <div class="rev-item"><b>Art. 21:</b> No deprivation of life/personal liberty except by "procedure established by law" — expanded by judiciary to mean fair, just & reasonable procedure</div>
+      <div class="rev-item"><b>Art. 21A:</b> Free & compulsory education, ages 6–14 (inserted by 86th Amendment, 2002)</div>
+      <div class="rev-item"><b>Art. 22:</b> Arrested person's rights — informed of grounds; right to counsel; produced before magistrate within <b>24 hours</b> (excluding travel time)</div>
+      <div class="rev-item"><b>Art. 22(4):</b> Preventive detention beyond 3 months needs Advisory Board opinion</div>
+      <div class="rev-item"><b>Art. 32:</b> "Heart and soul of the Constitution" (Dr. Ambedkar) — right to move Supreme Court for enforcement of Fundamental Rights; 5 writs: Habeas Corpus, Mandamus, Prohibition, Quo Warranto, Certiorari</div>
+      <div class="rev-item"><b>Art. 226:</b> High Court writ power — WIDER than Art. 32 (for FR enforcement + "any other purpose")</div>
+      <div class="rev-item"><b>Art. 226(3):</b> Interim order vacation application must be disposed within <b>2 weeks</b></div>
+      <div class="rev-item"><b>Art. 227:</b> High Court's power of superintendence over all courts/tribunals in its territory (except Armed Forces tribunals)</div>
+      <div class="rev-item"><b>Art. 311:</b> Civil servant dismissal/removal safeguards — cannot be dismissed by authority subordinate to appointing authority; needs inquiry + reasonable opportunity of hearing</div>
+      <div class="rev-item"><b>Art. 311(2) exceptions (no inquiry needed):</b> (a) conviction on criminal charge, (b) not reasonably practicable, (c) security of State</div>
+      <div class="rev-item"><b>Natural Justice — 2 Pillars:</b> Audi Alteram Partem (hear the other side) + Nemo Judex in Causa Sua (no one judge in own cause / rule against bias)</div>
+    </div>
+  </div>
+
+  <!-- NATURAL JUSTICE MINDMAP -->
+  <div class="section-title">🌳 Principles of Natural Justice — Mind Map <span class="sub">प्राकृतिक न्याय के सिद्धांत</span></div>
+  <div class="acc" data-search="natural justice audi alteram partem nemo judex bias reasoned decision speaking order">
+    <div class="mindmap">
+      <div class="mm-root">Principles of Natural Justice</div>
+      <div class="mm-branch"><span class="dot">1.</span> <b>Audi Alteram Partem</b> — "Hear the other side": right to notice, right to present case, right to know evidence against oneself, right to cross-examine, right to legal representation (in serious cases)</div>
+      <div class="mm-branch"><span class="dot">2.</span> <b>Nemo Judex in Causa Sua</b> — "No one shall be a judge in his own cause": Rule against Bias — pecuniary bias, personal bias, subject-matter bias, departmental bias</div>
+      <div class="mm-branch"><span class="dot">3.</span> <b>Reasoned Decision / Speaking Order</b> — decisions must state reasons (judicially recognised as part of natural justice; linked to Art. 14 non-arbitrariness)</div>
+    </div>
+    <div class="subcard"><h4>Constitutional Anchoring 🔴</h4><p>Natural justice is not separately "written" in the Constitution but is read into Art. 14 (non-arbitrariness), Art. 21 (fair procedure), and Art. 311(2) (reasonable opportunity of hearing) by judicial interpretation — most famously in <i>Maneka Gandhi v. Union of India (1978)</i>, which held Art. 21's "procedure" must be fair, just & reasonable.</p></div>
+    <div class="q-box"><b>Probable Q:</b> Name the two fundamental principles of natural justice. <br><b>Answer:</b> Audi Alteram Partem (hear the other side) and Nemo Judex in Causa Sua (rule against bias).</div>
+  </div>
+
+  <!-- PREAMBLE -->
+  <div class="section-title">📜 The Preamble <span class="sub">प्रस्तावना</span></div>
+  <div class="acc" data-search="preamble sovereign socialist secular democratic republic justice liberty equality fraternity 26 november 1949 42nd amendment">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Preamble to the Constitution of India</span>
+      <span class="rulebadge">Preamble</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">WE, THE PEOPLE OF INDIA</div>
+        <div class="flow-arrow">↓ resolved to constitute</div>
+        <div class="flow-box gold">SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC</div>
+        <div class="flow-arrow">↓ secure to all citizens</div>
+        <div class="flow-branches">
+          <div class="flow-box">JUSTICE — social, economic, political</div>
+          <div class="flow-box">LIBERTY — thought, expression, belief, faith, worship</div>
+          <div class="flow-box">EQUALITY — status & opportunity</div>
+          <div class="flow-box">FRATERNITY — dignity of individual + unity/integrity of Nation</div>
+        </div>
+      </div>
+      <div class="subcard"><h4>Amendment History 🔴</h4><p>Original text: "SOVEREIGN DEMOCRATIC REPUBLIC". Words <b>"SOCIALIST"</b> and <b>"SECULAR"</b> and <b>"integrity"</b> (added to "unity of the Nation") inserted by the <b>Constitution (Forty-second Amendment) Act, 1976</b>, effective <b>3 January 1977</b>.</p></div>
+      <p class="hi">Adopted in Constituent Assembly on <b>26 November 1949</b> (celebrated as Constitution Day / National Law Day).</p>
+      <div class="mnem"><b>Mnemonic:</b> "SSSDR - JLEF" → Sovereign Socialist Secular Democratic Republic; Justice Liberty Equality Fraternity.</div>
+      <div class="q-box"><b>Probable Q:</b> Which amendment inserted "Socialist" and "Secular" into the Preamble, and when did it take effect? <br><b>Answer:</b> 42nd Amendment Act, 1976, effective 3 January 1977.</div>
+    </div></div>
+  </div>
+
+  <!-- ARTICLE 14 -->
+  <div class="acc" data-search="article 14 equality before law equal protection of laws non arbitrariness reasonable classification">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Article 14 — Equality Before Law</span>
+      <span class="rulebadge">Art. 14</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Text</h4><p>"The State shall not deny to any person <b>equality before the law</b> or the <b>equal protection of the laws</b> within the territory of India."</p></div>
+      <table>
+        <tr><th>Concept</th><th>Origin</th><th>Meaning</th></tr>
+        <tr><td>Equality before law</td><td>British (negative concept)</td><td>No special privileges; all subject to ordinary law</td></tr>
+        <tr><td>Equal protection of laws</td><td>American (positive concept)</td><td>Equals treated equally; permits reasonable classification</td></tr>
+      </table>
+      <div class="subcard"><h4>Twin Test for Valid Classification 🔴</h4><p>(i) Intelligible differentia distinguishing grouped persons from others; (ii) Rational nexus between the differentia and the object sought to be achieved.</p></div>
+      <p class="hi">Art. 14 is the constitutional root of the <b>rule against arbitrariness</b> — connects directly to natural justice, since an arbitrary (unheard/unreasoned) decision violates Art. 14.</p>
+      <div class="q-box"><b>Probable Q:</b> What is the "twin test" for a valid classification under Article 14? <br><b>Answer:</b> Intelligible differentia + rational nexus with the object of the law.</div>
+    </div></div>
+  </div>
+
+  <!-- ARTICLE 21 & 21A -->
+  <div class="acc" data-search="article 21 21a protection of life personal liberty procedure established by law free compulsory education maneka gandhi">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Article 21 & 21A — Life, Personal Liberty & Education</span>
+      <span class="rulebadge">Art. 21-21A</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Article 21 — Text</h4><p>"No person shall be deprived of his <b>life</b> or <b>personal liberty</b> except according to <b>procedure established by law</b>."</p></div>
+      <div class="flow">
+        <div class="flow-box">Pre-1978: "Procedure established by law" = any enacted procedure (A.K. Gopalan case)</div>
+        <div class="flow-arrow">↓ Maneka Gandhi v. UOI (1978) 🔴</div>
+        <div class="flow-box gold">Procedure must be FAIR, JUST & REASONABLE (not arbitrary)</div>
+      </div>
+      <div class="subcard"><h4>Article 21A 🟢</h4><p>Free & compulsory education for children aged <b>6 to 14 years</b> — inserted by the <b>86th Amendment Act, 2002</b> (implemented via RTE Act, 2009).</p></div>
+      <p class="hi">Judicial expansion: Art. 21 now covers right to livelihood, dignity, privacy, clean environment, speedy trial, legal aid, etc. — all read via natural justice reasoning.</p>
+      <div class="q-box"><b>Probable Q:</b> Which landmark case held that "procedure established by law" under Article 21 must be fair, just and reasonable? <br><b>Answer:</b> Maneka Gandhi v. Union of India (1978).</div>
+    </div></div>
+  </div>
+
+  <!-- ARTICLE 22 -->
+  <div class="acc" data-search="article 22 protection against arrest detention 24 hours magistrate legal practitioner preventive detention advisory board three months">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Article 22 — Protection Against Arrest & Detention</span>
+      <span class="rulebadge">Art. 22</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Art. 22(1) & (2): Ordinary Arrest Rights 🔴</h4>
+        <p>• Informed of grounds of arrest "as soon as may be"<br>
+        • Right to consult and be defended by a legal practitioner of choice<br>
+        • Produced before nearest magistrate within <b>24 hours</b> of arrest (excluding journey time)<br>
+        • No detention beyond 24 hours without magistrate's authority</p>
+      </div>
+      <div class="subcard"><h4>Art. 22(3): Exceptions — Rights DON'T Apply To 🟠</h4><p>(a) Enemy alien; (b) Person arrested/detained under a preventive detention law.</p></div>
+      <div class="subcard"><h4>Art. 22(4)-(7): Preventive Detention Safeguards</h4>
+        <p>Detention beyond <b>3 months</b> needs an Advisory Board (persons qualified as/who are/have been High Court Judges) to report sufficient cause before expiry of 3 months. Detained person must be told grounds "as soon as may be" and given earliest opportunity to represent (Art. 22(5)) — <b>but</b> facts against public interest need not be disclosed (Art. 22(6)).</p>
+      </div>
+      <div class="mnem"><b>Mnemonic:</b> "24 hrs to magistrate, 3 months for Advisory Board" — two different clocks, don't confuse in MCQs.</div>
+      <div class="q-box"><b>Probable Q:</b> Within how many hours must an arrested person be produced before a magistrate, and what time is excluded from this count? <br><b>Answer:</b> 24 hours, excluding the journey time from the place of arrest to the magistrate's court.</div>
+    </div></div>
+  </div>
+
+  <!-- ARTICLE 32 -->
+  <div class="acc" data-search="article 32 remedies for enforcement supreme court writs habeas corpus mandamus prohibition quo warranto certiorari heart and soul ambedkar">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Article 32 — Right to Constitutional Remedies</span>
+      <span class="rulebadge">Art. 32</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Guarantees the right to move the <b>Supreme Court</b> directly for enforcement of Fundamental Rights. Dr. B.R. Ambedkar called it the <b>"heart and soul of the Constitution."</b></p>
+      <table>
+        <tr><th>Writ</th><th>Meaning / Purpose</th></tr>
+        <tr><td>Habeas Corpus</td><td>"To have the body" — produce detained person before court; check illegal detention</td></tr>
+        <tr><td>Mandamus</td><td>"We command" — directs public authority to perform a public/statutory duty</td></tr>
+        <tr><td>Prohibition</td><td>Issued by higher court to lower court/tribunal to stop exceeding jurisdiction</td></tr>
+        <tr><td>Quo Warranto</td><td>"By what authority" — questions legality of a person holding a public office</td></tr>
+        <tr><td>Certiorari</td><td>"To be certified" — quashes an order already passed by a lower court/tribunal for excess of jurisdiction/error</td></tr>
+      </table>
+      <div class="subcard"><h4>Art. 32(3) & (4)</h4><p>Parliament may empower other courts with similar power within local limits (S.32(3)); the Art. 32 right itself cannot be suspended except as constitutionally provided (e.g., Emergency) (S.32(4)).</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "HMPQC" → Habeas corpus, Mandamus, Prohibition, Quo warranto, Certiorari. Say: "Ham Public ko Quick Certificate denge."</div>
+      <div class="q-box"><b>Probable Q:</b> Which writ is used to challenge illegal detention of a person? <br><b>Answer:</b> Habeas Corpus.</div>
+    </div></div>
+  </div>
+
+  <!-- ARTICLE 226 & 227 -->
+  <div class="acc" data-search="article 226 227 power of high courts writs superintendence tribunals two weeks armed forces">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Articles 226 & 227 — High Court Writ & Superintendence Powers</span>
+      <span class="rulebadge">Art. 226-227</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Article 226 🔴</h4><p>Every High Court may issue the <b>same 5 writs</b> as Art. 32 — but for <b>TWO purposes</b>: (i) enforcement of Fundamental Rights (Part III), AND (ii) <b>"any other purpose"</b> (i.e., any legal right). This makes Art. 226 <b>wider</b> in scope than Art. 32, though Art. 32 remains a Fundamental Right itself while Art. 226 is a constitutional (not fundamental) right.</p></div>
+      <div class="subcard"><h4>Art. 226(3): Interim Order Vacation 🟠</h4><p>If a party affected by an ex-parte interim order applies for vacation (with copy served on the other side), the High Court must dispose of the vacation application within <b>2 weeks</b> — else the interim order stands automatically vacated.</p></div>
+      <table>
+        <tr><th>Aspect</th><th>Article 32</th><th>Article 226</th></tr>
+        <tr><td>Court</td><td>Supreme Court only</td><td>Concerned High Court</td></tr>
+        <tr><td>Purpose</td><td>Only Fundamental Rights</td><td>Fundamental Rights + any other legal right</td></tr>
+        <tr><td>Nature of right</td><td>Fundamental Right itself</td><td>Constitutional power (discretionary)</td></tr>
+        <tr><td>Can be suspended</td><td>Yes, during Emergency (per Constitution)</td><td>Not itself a Fundamental Right to suspend</td></tr>
+      </table>
+      <div class="subcard"><h4>Article 227 — Superintendence 🟠</h4><p>Every High Court has power of <b>superintendence over all courts and tribunals</b> within its territorial jurisdiction — may call for returns, make rules for their practice/procedure, prescribe account-keeping forms, settle fee tables. <b>Exception:</b> does NOT extend to tribunals constituted under Armed Forces law (Art. 227(4)).</p></div>
+      <div class="q-box"><b>Probable Q:</b> Why is the writ jurisdiction under Article 226 considered wider than under Article 32? <br><b>Answer:</b> Because Art. 226 writs can be issued for enforcement of Fundamental Rights AND for "any other purpose" (any legal right), whereas Art. 32 is limited strictly to Fundamental Rights.</div>
+    </div></div>
+  </div>
+
+  <!-- ARTICLE 311 -->
+  <div class="acc" data-search="article 311 dismissal removal reduction in rank civil service inquiry reasonable opportunity exceptions criminal conviction not practicable security of state">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Article 311 — Protection to Civil Servants (MOST IMPORTANT for IP/AAO)</span>
+      <span class="rulebadge">Art. 311</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Art. 311(1): Rule of Equal/Higher Authority 🔴</h4><p>No member of a civil service of the Union/State/All-India Service, or holder of a civil post, shall be dismissed or removed by an authority <b>subordinate</b> to the one that appointed him.</p></div>
+      <div class="flow">
+        <div class="flow-box">Proposed dismissal / removal / reduction in rank</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box gold">MUST hold an Inquiry: inform charges + reasonable opportunity of being heard 🔴</div>
+        <div class="flow-arrow">↓ EXCEPT (Art. 311(2) proviso)</div>
+        <div class="flow-branches">
+          <div class="flow-box alt">(a) Conviction on a criminal charge</div>
+          <div class="flow-box alt">(b) Not reasonably practicable to hold inquiry</div>
+          <div class="flow-box alt">(c) President/Governor satisfied — Security of the State</div>
+        </div>
+      </div>
+      <div class="subcard"><h4>Direct Link to Natural Justice 🔴</h4><p>Art. 311(2)'s "reasonable opportunity of being heard" is the constitutional codification of <b>Audi Alteram Partem</b> for civil servants — this is the single most direct connection between natural justice and the Constitution for IP/AAO exam purposes.</p></div>
+      <p class="hi">Where penalty is proposed after inquiry, it may be imposed based on evidence already on record — no separate opportunity needed on the penalty itself (post-42nd Amendment change). If a dispute arises whether holding an inquiry was "reasonably practicable," the decision of the dismissing authority is <b>final</b> (Art. 311(3)).</p>
+      <div class="mnem"><b>Mnemonic:</b> "CPS" exceptions → Criminal conviction, Practicability issue, Security of State — no inquiry needed in these three.</div>
+      <div class="q-box"><b>Probable Q:</b> What are the three circumstances under Article 311(2) where the inquiry requirement does not apply? <br><b>Answer:</b> (a) Conviction on a criminal charge; (b) not reasonably practicable to hold inquiry; (c) security of the State considerations.</div>
+    </div></div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="section-title blue">📊 Comparison Chart — Articles at a Glance <span class="sub">तुलना चार्ट</span></div>
+  <div class="acc" style="padding:14px;">
+    <table>
+      <tr><th>Article</th><th>Subject</th><th>Key Number/Limit</th></tr>
+      <tr><td>14</td><td>Equality before law</td><td>Twin test: differentia + nexus</td></tr>
+      <tr><td>21</td><td>Life & personal liberty</td><td>Procedure must be fair, just, reasonable</td></tr>
+      <tr><td>21A</td><td>Right to education</td><td>Ages 6–14; 86th Amendment 2002</td></tr>
+      <tr><td>22</td><td>Arrest/detention protection</td><td>24 hours to magistrate; 3 months preventive detention cap</td></tr>
+      <tr><td>32</td><td>SC writ jurisdiction</td><td>5 writs; FR enforcement only</td></tr>
+      <tr><td>226</td><td>HC writ jurisdiction</td><td>5 writs; FR + any other purpose; 2-week interim order rule</td></tr>
+      <tr><td>227</td><td>HC superintendence</td><td>Over all courts/tribunals except Armed Forces tribunals</td></tr>
+      <tr><td>311</td><td>Civil servant dismissal safeguard</td><td>Inquiry + hearing; 3 exceptions (C-P-S)</td></tr>
+    </table>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-title blue">🕒 Key Constitutional Timeline <span class="sub">महत्वपूर्ण समयरेखा</span></div>
+  <div class="acc" style="padding:14px 18px;">
+    <div class="timeline">
+      <div class="t-item"><b>26 November 1949:</b> Constitution adopted by Constituent Assembly (Preamble finalised)</div>
+      <div class="t-item"><b>26 January 1950:</b> Constitution comes into force (Republic Day)</div>
+      <div class="t-item"><b>1963:</b> 15th Amendment — restructured Art. 311(2) and (3)</div>
+      <div class="t-item"><b>1971:</b> 24th Amendment — inserted Art. 13(4) (Parliament's amending power under Art. 368 not limited by Art. 13)</div>
+      <div class="t-item"><b>1976:</b> 42nd Amendment — added "Socialist," "Secular" to Preamble; "integrity" to Fraternity; substituted Art. 226 (narrowed then later widened again); amended Art. 311(2) proviso (w.e.f. 3-1-1977)</div>
+      <div class="t-item"><b>1977–78:</b> 43rd & 44th Amendments — restored/expanded Art. 226 writ scope, repealed Art. 226A/32A/228A (w.e.f. 13-4-1978, 1-8-1979)</div>
+      <div class="t-item"><b>2002:</b> 86th Amendment — inserted Art. 21A (Right to Education)</div>
+    </div>
+    <div class="q-box"><b>Probable Q:</b> Which amendment added "Socialist" and "Secular" to the Preamble, and which amendment inserted the Right to Education? <br><b>Answer:</b> 42nd Amendment (1976) for Preamble words; 86th Amendment (2002) for Article 21A.</div>
+  </div>
+
+  <!-- MNEMONICS SECTION -->
+  <div class="section-title gold">🧠 Master Mnemonics <span class="sub">मास्टर स्मृति-सूत्र</span></div>
+  <div class="acc" style="padding:14px;">
+    <div class="mnem">
+      <b>Article sequence for this topic:</b> "14-21-22-32-226-227-311" — Equality, Life, Arrest, SC Writs, HC Writs, HC Superintendence, Civil Servant Protection.<br>
+      याद रखें: "जीवन (21) से पहले समानता (14), जीवन के बाद गिरफ्तारी (22), फिर उपचार (32, 226, 227), अंत में सेवा सुरक्षा (311)।"
+    </div>
+    <div class="mnem">
+      <b>Writs — "Ham Public Quick Certificate denge":</b> Habeas corpus, Mandamus, Prohibition, Quo warranto, Certiorari.
+    </div>
+    <div class="mnem">
+      <b>Natural Justice — Two Latin Pillars:</b> "AA-NJ" → Audi Alteram partem (hear other side) + Nemo Judex (no bias). Both trace to Art. 14 + Art. 311(2).
+    </div>
+    <div class="mnem">
+      <b>311 Exceptions — "CPS":</b> Criminal conviction, Practicability (not reasonably practicable), Security of State.
+    </div>
+  </div>
+
+  <!-- LAST DAY REVISION -->
+  <div id="lastday" class="lastday">
+    <h3>🔥 Last Day Revision Notes / अंतिम दिन रिवीजन नोट्स</h3>
+    <ul>
+      <li>🔴 Preamble: 26-11-1949 adopted; Socialist/Secular added by 42nd Amendment 1976 (w.e.f. 3-1-1977)</li>
+      <li>🔴 Art. 14 = Equality before law (British) + Equal protection of laws (American); twin test for classification</li>
+      <li>🔴 Art. 21 = Procedure must be fair/just/reasonable (Maneka Gandhi, 1978)</li>
+      <li>🔴 Art. 22 = 24 hrs to magistrate; preventive detention cap 3 months without Advisory Board</li>
+      <li>🔴 Art. 32 = SC writs for FR only; "heart and soul" — Ambedkar</li>
+      <li>🔴 Art. 226 = HC writs for FR + any other purpose (WIDER than 32); 2-week interim vacation rule</li>
+      <li>🟠 Art. 227 = HC superintendence over courts/tribunals, NOT Armed Forces tribunals</li>
+      <li>🔴 Art. 311 = No dismissal by subordinate authority; inquiry + hearing mandatory; exceptions = CPS (Criminal conviction, Practicability, Security)</li>
+      <li>🟢 Natural Justice = Audi Alteram Partem + Nemo Judex in Causa Sua + Reasoned Decision</li>
+      <li>🟢 21A (RTE) inserted by 86th Amendment, 2002 — ages 6-14</li>
+    </ul>
+  </div>
+
+  <div class="section-title">📝 Extra Practice MCQs <span class="sub">अभ्यास प्रश्न</span></div>
+  <div class="acc" style="padding:14px;">
+    <table>
+      <tr><th>#</th><th>Question</th></tr>
+      <tr><td>1</td><td>What are the two pillars of natural justice and which article codifies them for civil servants?</td></tr>
+      <tr><td>2</td><td>What is the twin test for a valid classification under Article 14?</td></tr>
+      <tr><td>3</td><td>Which case established that Article 21's procedure must be fair, just and reasonable?</td></tr>
+      <tr><td>4</td><td>Within what time must an arrested person be produced before a magistrate under Article 22?</td></tr>
+      <tr><td>5</td><td>Name the five writs available under Articles 32 and 226.</td></tr>
+      <tr><td>6</td><td>Why is Article 226 considered wider in scope than Article 32?</td></tr>
+      <tr><td>7</td><td>What are the three exceptions under Article 311(2) where inquiry is not mandatory?</td></tr>
+      <tr><td>8</td><td>Which amendment inserted the words "Socialist" and "Secular" into the Preamble?</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<button class="fab" id="topFab" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+<footer>LDCE IP / AAO Exam Portal • Natural Justice & Constitutional Safeguards • For personal exam preparation use</footer>
+
+<script>
+function toggleAcc(head){
+  const acc = head.parentElement;
+  acc.classList.toggle('open');
+}
+const darkBtn = document.getElementById('darkToggle');
+darkBtn.addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+  darkBtn.classList.toggle('active');
+});
+let ttsOn = false;
+const ttsBtn = document.getElementById('ttsToggle');
+ttsBtn.addEventListener('click', ()=>{
+  ttsOn = !ttsOn;
+  ttsBtn.classList.toggle('active');
+  if(!ttsOn && window.speechSynthesis){ window.speechSynthesis.cancel(); }
+});
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click', ()=>{
+    if(ttsOn && window.speechSynthesis){
+      window.speechSynthesis.cancel();
+      const body = h.parentElement.querySelector('.acc-body-inner');
+      if(body){
+        const text = body.innerText;
+        const utter = new SpeechSynthesisUtterance(text.slice(0,1500));
+        window.speechSynthesis.speak(utter);
+      }
+    }
+  });
+});
+const searchBox = document.getElementById('searchBox');
+searchBox.addEventListener('input', ()=>{
+  const q = searchBox.value.trim().toLowerCase();
+  document.querySelectorAll('.acc[data-search], .acc[data-imp]').forEach(acc=>{
+    const dataText = (acc.getAttribute('data-search')||'') + ' ' + acc.innerText.toLowerCase();
+    if(q === '' || dataText.toLowerCase().includes(q)){
+      acc.classList.remove('hidden');
+      if(q !== '') acc.classList.add('open');
+    } else {
+      acc.classList.add('hidden');
+    }
+  });
+});
+</script>
+</body>
+</html>

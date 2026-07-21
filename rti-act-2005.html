@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Right to Information Act, 2005 | सूचना का अधिकार अधिनियम | LDCE IP/AAO</title>
+<style>
+:root{
+  --red:#c0392b; --red-dark:#8e2b1f; --blue:#1a3c6e; --blue-light:#2a5ca8;
+  --gold:#c99a2e; --bg:#f7f3ea; --card:#ffffff; --text:#222; --muted:#666;
+  --border:#e2d9c3; --radius:14px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body.dark{ --bg:#121417; --card:#1c2024; --text:#eee; --muted:#aaa; --border:#333; }
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:80px;
+  transition:background .3s, color .3s;
+}
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:#fff; padding:12px 14px; box-shadow:0 3px 10px rgba(0,0,0,.25);
+}
+.topbar h1{font-size:1.05rem; text-align:center; line-height:1.3;}
+.topbar h1 span{display:block; font-size:.8rem; font-weight:400; opacity:.9;}
+.controls{display:flex; gap:8px; justify-content:center; margin-top:10px; flex-wrap:wrap;}
+.btn{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); color:#fff; padding:6px 12px; border-radius:20px; font-size:.75rem; cursor:pointer;}
+.btn.active{background:var(--gold); border-color:var(--gold); color:#222; font-weight:600;}
+#searchBox{width:100%; max-width:500px; margin:10px auto 0; display:block; padding:9px 14px; border-radius:20px; border:none; font-size:.85rem;}
+.container{max-width:900px; margin:0 auto; padding:12px;}
+.legend{display:grid; grid-template-columns:repeat(2,1fr); gap:6px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:12px; margin:14px 0; font-size:.78rem;}
+.legend div{display:flex; align-items:center; gap:6px;}
+.section-title{font-size:1.1rem; font-weight:700; color:var(--red); margin:22px 0 10px; border-left:5px solid var(--red); padding-left:10px; display:flex; align-items:center; gap:8px;}
+.section-title.blue{color:var(--blue); border-color:var(--blue);}
+.section-title.gold{color:var(--gold); border-color:var(--gold);}
+.sub{font-size:.8rem; color:var(--muted); font-weight:400;}
+.revision-card{background:linear-gradient(135deg,#fff8e6,#fff); border:2px solid var(--gold); border-radius:var(--radius); padding:14px; margin-bottom:16px;}
+body.dark .revision-card{background:linear-gradient(135deg,#2a2410,#1c2024);}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:8px; font-size:.82rem;}
+.rev-item{background:var(--card); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;}
+.rev-item b{color:var(--red);}
+.acc{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:10px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.acc-head{padding:12px 14px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:8px; font-weight:600; font-size:.92rem;}
+.acc-head:hover{background:rgba(192,57,43,.06);}
+.acc-head .rulebadge{background:var(--blue); color:#fff; font-size:.7rem; padding:2px 8px; border-radius:10px; white-space:nowrap;}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.acc-body-inner{padding:0 14px 16px;}
+.acc.open .acc-body{max-height:5000px;}
+.acc-arrow{transition:transform .3s; font-size:.8rem; color:var(--muted);}
+.acc.open .acc-arrow{transform:rotate(90deg);}
+.subcard{border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin:8px 0; background:var(--bg);}
+.subcard h4{font-size:.85rem; color:var(--blue); margin-bottom:4px;}
+body.dark .subcard h4{color:#7cb0ff;}
+.subcard p{font-size:.82rem;}
+.hi{font-size:.82rem;}
+.imp-tag{font-weight:700; font-size:.72rem; padding:2px 7px; border-radius:8px; color:#fff; margin-right:4px; display:inline-block;}
+.imp1{background:#e74c3c;} .imp2{background:#e67e22;} .imp3{background:#f1c40f; color:#222;} .imp4{background:#27ae60;}
+.q-box{background:#eaf3ff; border-left:4px solid var(--blue); border-radius:8px; padding:8px 10px; margin-top:8px; font-size:.78rem;}
+body.dark .q-box{background:#12233a;}
+.q-box b{color:var(--blue);}
+body.dark .q-box b{color:#7cb0ff;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.78rem;}
+th,td{border:1px solid var(--border); padding:6px 8px; text-align:left;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even){background:rgba(0,0,0,.03)}
+body.dark tr:nth-child(even){background:rgba(255,255,255,.03)}
+.flow{display:flex; flex-direction:column; align-items:center; gap:4px; margin:12px 0; font-size:.8rem;}
+.flow-box{background:var(--blue); color:#fff; padding:8px 12px; border-radius:8px; text-align:center; width:100%; max-width:340px;}
+.flow-box.alt{background:var(--red);}
+.flow-box.gold{background:var(--gold); color:#222;}
+.flow-arrow{color:var(--muted); font-size:1rem;}
+.flow-branches{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; width:100%;}
+.flow-branches .flow-box{flex:1; min-width:130px; font-size:.72rem;}
+.mindmap{display:flex; flex-direction:column; gap:8px; margin:10px 0;}
+.mm-root{background:var(--red); color:#fff; padding:8px 14px; border-radius:20px; text-align:center; font-weight:700; font-size:.85rem; align-self:center;}
+.mm-branch{display:flex; gap:8px; align-items:flex-start; padding-left:14px; border-left:2px dashed var(--gold); margin-left:10px; font-size:.78rem;}
+.mm-branch .dot{color:var(--gold); font-weight:900;}
+.timeline{position:relative; margin:14px 0; padding-left:20px; border-left:3px solid var(--gold);}
+.t-item{position:relative; margin-bottom:12px; font-size:.78rem;}
+.t-item::before{content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--red); border:2px solid #fff;}
+.t-item b{color:var(--blue);}
+body.dark .t-item b{color:#7cb0ff;}
+.mnem{background:linear-gradient(135deg,#fff0f0,#fff); border:2px dashed var(--red); border-radius:12px; padding:12px; margin:10px 0; font-size:.82rem;}
+body.dark .mnem{background:linear-gradient(135deg,#2a1414,#1c2024);}
+.mnem b{color:var(--red);}
+.lastday{background:linear-gradient(135deg,var(--red),var(--red-dark)); color:#fff; border-radius:var(--radius); padding:14px; margin:20px 0;}
+.lastday h3{margin-bottom:8px;}
+.lastday ul{padding-left:18px; font-size:.85rem;}
+.lastday li{margin-bottom:6px;}
+footer{text-align:center; font-size:.72rem; color:var(--muted); padding:20px;}
+.fab{position:fixed; bottom:16px; right:16px; background:var(--gold); color:#222; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,.3); font-size:1.3rem; cursor:pointer; z-index:99; border:none;}
+.hidden{display:none!important;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>THE RIGHT TO INFORMATION ACT, 2005
+    <span>सूचना का अधिकार अधिनियम, 2005 (Act No. 22 of 2005) — India Post LDCE IP / AAO Exam Notes</span>
+  </h1>
+  <div class="controls">
+    <button class="btn" id="darkToggle">🌙 Dark Mode</button>
+    <button class="btn" id="ttsToggle">🔊 Read Aloud</button>
+    <button class="btn" onclick="document.getElementById('revSheet').scrollIntoView({behavior:'smooth'})">📋 Revision Sheet</button>
+    <button class="btn" onclick="document.getElementById('lastday').scrollIntoView({behavior:'smooth'})">🔥 Last Day Notes</button>
+  </div>
+  <input type="text" id="searchBox" placeholder="🔍 Search Section / धारा खोजें... (e.g. PIO, appeal, 8, penalty, आयुक्त)">
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div><span class="imp-tag imp1">🔴</span> Very Important / अति महत्वपूर्ण</div>
+    <div><span class="imp-tag imp2">🟠</span> Frequently Asked / बार-बार पूछा गया</div>
+    <div><span class="imp-tag imp3">🟡</span> Conceptual / अवधारणात्मक</div>
+    <div><span class="imp-tag imp4">🟢</span> Quick Revision / त्वरित रिवीजन</div>
+  </div>
+
+  <!-- ONE PAGE REVISION SHEET -->
+  <div id="revSheet" class="revision-card">
+    <div class="section-title gold" style="margin-top:0;">📋 One-Page Revision Sheet <span class="sub">एक पृष्ठ रिवीजन शीट</span></div>
+    <div class="rev-grid">
+      <div class="rev-item"><b>Act No.:</b> 22 of 2005 | Assented: <b>15 June 2005</b> | Extends to whole of India</div>
+      <div class="rev-item"><b>Commencement:</b> Ss.4(1), 5(1)(2), 12, 13, 15, 16, 24, 27, 28 — at once; rest on <b>120th day</b> of enactment (i.e. 12 Oct 2005)</div>
+      <div class="rev-item"><b>Total Chapters:</b> 6 | <b>Total Sections:</b> 31 | 2 Schedules (Oath form; Excluded intelligence/security orgs)</div>
+      <div class="rev-item"><b>Reply time (normal):</b> 30 days | <b>Life/liberty matters:</b> 48 hours</div>
+      <div class="rev-item"><b>Via Assistant PIO:</b> +5 extra days added to the 30/48-hr clock</div>
+      <div class="rev-item"><b>Transfer to other public authority:</b> within 5 days</div>
+      <div class="rev-item"><b>Third party notice:</b> within 5 days; third party representation: 10 days; PIO decision: within 40 days</div>
+      <div class="rev-item"><b>First Appeal:</b> 30 days (to senior officer) | <b>Second Appeal:</b> 90 days (to CIC/SIC)</div>
+      <div class="rev-item"><b>Appeal disposal:</b> 30 days, extendable to max <b>45 days</b> (with reasons)</div>
+      <div class="rev-item"><b>Penalty:</b> ₹250/day, max ₹25,000 per PIO, per request</div>
+      <div class="rev-item"><b>20-year rule (S.8(3)):</b> Info older than 20 years must be given (except clauses a, c, i of S.8(1))</div>
+      <div class="rev-item"><b>CIC/SIC composition:</b> 1 Chief + up to 10 Commissioners</div>
+      <div class="rev-item"><b>2019 Amendment:</b> Fixed 5-year term replaced by "term prescribed by Central Govt" (Ss.13, 16)</div>
+      <div class="rev-item"><b>Repealed Act:</b> Freedom of Information Act, 2002 (S.31)</div>
+    </div>
+  </div>
+
+  <!-- APPLICABILITY / RIGHT TO INFO FLOW -->
+  <div class="section-title">🌳 Right to Information — Process Flow <span class="sub">सूचना अधिकार प्रक्रिया प्रवाह</span></div>
+  <div class="acc" data-search="right to information process flow citizen request public authority">
+    <div class="flow">
+      <div class="flow-box">Citizen files request (writing/electronic, English/Hindi/local language) + fee</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">PIO receives request (S.6)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-branches">
+        <div class="flow-box alt">Held by another authority → Transfer within 5 days (S.6(3))</div>
+        <div class="flow-box gold">Concerns life/liberty → Reply in 48 hours (S.7(1) proviso)</div>
+        <div class="flow-box">Normal request → Reply within 30 days (S.7(1))</div>
+      </div>
+      <div class="flow-arrow">↓ No reply in time</div>
+      <div class="flow-box alt">Deemed Refusal (S.7(2)) 🔴</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">First Appeal (30 days) → Senior Officer</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box gold">Second Appeal (90 days) → CIC / SIC</div>
+    </div>
+    <div class="q-box"><b>Probable Q:</b> Within how many hours must information concerning life or liberty be provided? <br><b>Answer:</b> 48 hours (Section 7(1) proviso).</div>
+  </div>
+
+  <!-- MAIN SECTION ACCORDIONS -->
+  <div class="section-title">📚 Section-wise Detailed Notes <span class="sub">धारावार विस्तृत नोट्स</span></div>
+
+  <!-- S1 -->
+  <div class="acc" data-search="section 1 short title extent commencement 120 days whole of india">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Section 1 — Short Title, Extent & Commencement</span>
+      <span class="rulebadge">S.1</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Act extends to <b>whole of India</b> (J&K exclusion removed by Act 34 of 2019, effective 31-10-2019 — J&K reorganisation).</p>
+      <p class="hi">Ss.4(1), 5(1)&(2), 12, 13, 15, 16, 24, 27, 28 → in force <b>at once</b>. Remaining provisions → <b>120th day</b> after enactment (12 October 2005).</p>
+      <div class="q-box"><b>Probable Q:</b> Which sections came into force immediately (at once) on enactment? <br><b>Answer:</b> Ss.4(1), 5(1)&(2), 12, 13, 15, 16, 24, 27, 28.</div>
+    </div></div>
+  </div>
+
+  <!-- S2 -->
+  <div class="acc" data-search="section 2 definitions appropriate government competent authority information record public authority right to information third party">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 2 — Definitions</span>
+      <span class="rulebadge">S.2</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <table>
+        <tr><th>Term</th><th>Meaning</th></tr>
+        <tr><td>Appropriate Government</td><td>Centre if authority est./financed by Centre/UT; State if by State Govt</td></tr>
+        <tr><td>Competent Authority</td><td>Speaker (LS/Assembly), Chairman (RS/Council), CJI (SC), Chief Justice (HC), President/Governor (other constitutional bodies), Administrator (Art. 239)</td></tr>
+        <tr><td>Information</td><td>Any material in any form — records, documents, memos, e-mails, opinions, advices, press releases, circulars, orders, logbooks, contracts, reports, samples, models, electronic data; incl. info re: private body accessible under any other law</td></tr>
+        <tr><td>Record</td><td>Document/manuscript/file; microfilm/microfiche/facsimile; reproduction of microfilm images; computer-produced material</td></tr>
+        <tr><td>Right to Information</td><td>Inspection; taking notes/extracts/certified copies; taking certified samples; obtaining info in diskettes/electronic form/printouts</td></tr>
+        <tr><td>Public Authority</td><td>Body est./constituted by/under Constitution, by Parliament/State law, or by notification; incl. bodies owned/controlled/substantially financed (directly/indirectly) by appropriate Govt, incl. NGOs so financed</td></tr>
+        <tr><td>Third Party</td><td>Person other than the citizen making the request; includes a public authority</td></tr>
+      </table>
+      <div class="mnem"><b>Mnemonic:</b> "PARC-3T" → Public authority, Appropriate govt, Record, Competent authority, Third party, Information, RTI.</div>
+      <div class="q-box"><b>Probable Q:</b> Does the definition of "third party" include a public authority? <br><b>Answer:</b> Yes — explicitly included in S.2(n).</div>
+    </div></div>
+  </div>
+
+  <!-- S3 -->
+  <div class="acc" data-search="section 3 right to information citizens">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Section 3 — Right to Information</span>
+      <span class="rulebadge">S.3</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Subject to the Act's provisions, <b>all citizens</b> shall have the right to information. (Note: right is for "citizens" only, not all persons.)</p>
+      <div class="q-box"><b>Probable Q:</b> Is the right to information under RTI Act available to foreign nationals? <br><b>Answer:</b> No — the Act confers the right specifically on "citizens".</div>
+    </div></div>
+  </div>
+
+  <!-- S4 -->
+  <div class="acc" data-search="section 4 obligations of public authorities suo motu disclosure 120 days proactive disclosure">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 4 — Obligations of Public Authorities (Proactive Disclosure)</span>
+      <span class="rulebadge">S.4</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>S.4(1)(a): Record-keeping</h4><p>Maintain records catalogued/indexed; computerise appropriate records within reasonable time, subject to resources.</p></div>
+      <div class="subcard"><h4>S.4(1)(b): Suo-motu Publication (17 items) 🔴</h4>
+        <p>Within <b>120 days of enactment</b>, publish: org particulars/functions/duties; officer powers/duties; decision-making procedure; norms; rules/manuals; document categories; public consultation arrangements; boards/committees info; officer directory; monthly remuneration; budget; subsidy programme details; concessions/permits recipients; e-form info; facilities for citizens; PIO details; other prescribed info — <b>update annually</b>.</p>
+      </div>
+      <div class="subcard"><h4>S.4(1)(c)&(d)</h4><p>Publish relevant facts while formulating policies affecting public; provide reasons for administrative/quasi-judicial decisions to affected persons.</p></div>
+      <div class="subcard"><h4>S.4(2): Suo Motu Spirit</h4><p>Constant endeavour to provide info suo motu so public needs minimal recourse to formal RTI requests.</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "120 days to publish, then update every year" — Same 120-day figure as commencement, easy to confuse; remember: commencement 120 days is for the Act, S.4(1)(b) 120 days is for publication after enactment.</div>
+      <div class="q-box"><b>Probable Q:</b> Within how many days of enactment must a public authority publish the 17 categories under S.4(1)(b)? <br><b>Answer:</b> 120 days, updated every year thereafter.</div>
+    </div></div>
+  </div>
+
+  <!-- S5 -->
+  <div class="acc" data-search="section 5 designation of public information officers PIO assistant PIO 100 days five days">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 5 — Designation of Public Information Officers</span>
+      <span class="rulebadge">S.5</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">Within 100 days of enactment</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-branches">
+          <div class="flow-box">Designate CPIO/SPIO at all administrative units [S.5(1)]</div>
+          <div class="flow-box gold">Designate Assistant PIO at sub-divisional level [S.5(2)]</div>
+        </div>
+      </div>
+      <div class="subcard"><h4>Assistant PIO Role 🔴</h4><p>Receives applications/appeals & forwards to PIO/senior officer/Commission. <b>Adds 5 days</b> to the S.7(1) response period when application routed via APIO.</p></div>
+      <p class="hi">PIO may seek assistance of any other officer [S.5(4)]; that officer must render assistance and is treated as PIO for contravention purposes [S.5(5)].</p>
+      <div class="q-box"><b>Probable Q:</b> If an RTI application is submitted to an Assistant PIO, how many extra days are added to the response period? <br><b>Answer:</b> 5 days.</div>
+    </div></div>
+  </div>
+
+  <!-- S6 -->
+  <div class="acc" data-search="section 6 request for obtaining information writing electronic fee no reason transfer five days">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Section 6 — Request for Obtaining Information</span>
+      <span class="rulebadge">S.6</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Request in writing/electronic, in <b>English, Hindi, or the local official language</b>, with prescribed fee, to PIO or Assistant PIO.</p>
+      <p class="hi"><b>No reason needed</b> — applicant not required to disclose why info is sought (S.6(2)), only contact details.</p>
+      <div class="subcard"><h4>Transfer of Misdirected Applications 🔴</h4><p>If info held by/more closely connected with another public authority, application transferred within <b>5 days</b>, and applicant informed immediately.</p></div>
+      <div class="q-box"><b>Probable Q:</b> Is an applicant required to state reasons for seeking information? <br><b>Answer:</b> No — S.6(2) explicitly exempts this.</div>
+    </div></div>
+  </div>
+
+  <!-- S7 -->
+  <div class="acc" data-search="section 7 disposal of request 30 days 48 hours deemed refusal fee third party representation rejection">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 7 — Disposal of Request (HIGH-WEIGHTAGE)</span>
+      <span class="rulebadge">S.7</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <table>
+        <tr><th>Situation</th><th>Time Limit</th></tr>
+        <tr><td>Normal request</td><td>30 days</td></tr>
+        <tr><td>Life or liberty concerned</td><td>48 hours</td></tr>
+        <tr><td>Via Assistant PIO</td><td>+5 days added</td></tr>
+        <tr><td>No decision given in time</td><td>Deemed refusal (S.7(2))</td></tr>
+        <tr><td>Info free if authority misses deadline</td><td>S.7(6)</td></tr>
+      </table>
+      <div class="subcard"><h4>Fee & Free Categories</h4><p>Fee must be reasonable; <b>no fee</b> for persons below poverty line (BPL). If time limit breached, info provided <b>free of charge</b>.</p></div>
+      <div class="subcard"><h4>Rejection Communication (S.7(8))</h4><p>Must state: (i) reasons for rejection, (ii) appeal period, (iii) appellate authority particulars.</p></div>
+      <p class="hi">Info provided in form sought unless it would disproportionately divert resources or harm record preservation (S.7(9)). Sensorily disabled persons get special assistance (S.7(4)).</p>
+      <div class="mnem"><b>Mnemonic:</b> "30-48-5" → 30 days normal, 48 hours life/liberty, +5 days via APIO.</div>
+      <div class="q-box"><b>Probable Q:</b> If a PIO fails to decide within the specified period, what is the legal consequence? <br><b>Answer:</b> Deemed refusal of the request (S.7(2)).</div>
+    </div></div>
+  </div>
+
+  <!-- S8 -->
+  <div class="acc" data-search="section 8 exemption from disclosure sovereignty security cabinet papers personal information fiduciary 20 years">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 8 — Exemptions from Disclosure (MOST IMPORTANT)</span>
+      <span class="rulebadge">S.8</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="mindmap">
+        <div class="mm-root">S.8(1): No obligation to disclose...</div>
+        <div class="mm-branch"><span class="dot">a)</span> Prejudicial to sovereignty/integrity/security/strategic/economic interests/foreign relations/incitement to offence</div>
+        <div class="mm-branch"><span class="dot">b)</span> Expressly forbidden by court/tribunal; contempt of court</div>
+        <div class="mm-branch"><span class="dot">c)</span> Breach of privilege of Parliament/State Legislature</div>
+        <div class="mm-branch"><span class="dot">d)</span> Commercial confidence/trade secrets/IP — unless larger public interest</div>
+        <div class="mm-branch"><span class="dot">e)</span> Fiduciary relationship — unless larger public interest</div>
+        <div class="mm-branch"><span class="dot">f)</span> Received in confidence from foreign Government</div>
+        <div class="mm-branch"><span class="dot">g)</span> Endangers life/physical safety; reveals source of law-enforcement info</div>
+        <div class="mm-branch"><span class="dot">h)</span> Impedes investigation/apprehension/prosecution</div>
+        <div class="mm-branch"><span class="dot">i)</span> Cabinet papers incl. Council of Ministers deliberations (but disclosed after decision + matter complete)</div>
+        <div class="mm-branch"><span class="dot">j)</span> Personal info with no public activity nexus / unwarranted privacy invasion — unless larger public interest</div>
+      </div>
+      <div class="subcard"><h4>Overriding Proviso 🔴</h4><p>Info that <b>cannot be denied to Parliament/State Legislature</b> cannot be denied to any person (S.8(1)(j) proviso).</p></div>
+      <div class="subcard"><h4>S.8(2): Public Interest Override</h4><p>Notwithstanding Official Secrets Act 1923 or any S.8(1) exemption, disclosure allowed if public interest in disclosure outweighs harm to protected interests.</p></div>
+      <div class="subcard"><h4>S.8(3): 20-Year Rule 🔴</h4><p>Info relating to any occurrence >20 years old must be provided, <b>EXCEPT</b> clauses (a), (c), (i) of S.8(1) — i.e. sovereignty/security, parliamentary privilege, and cabinet papers remain exempt even after 20 years.</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "20-year survivors = a, c, i" → sovereigntY, breach of PrivilegE (Parliament), CabineT papers. Remember "ACI stays exempt."</div>
+      <div class="q-box"><b>Probable Q:</b> Which exemption clauses survive even after the 20-year rule under S.8(3)? <br><b>Answer:</b> Clauses (a), (c), and (i) of S.8(1).</div>
+    </div></div>
+  </div>
+
+  <!-- S9, S10 -->
+  <div class="acc" data-search="section 9 10 grounds for rejection copyright severability">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Sections 9 & 10 — Copyright Rejection & Severability</span>
+      <span class="rulebadge">S.9-10</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>S.9:</b> PIO may reject a request if it would infringe copyright subsisting in a person other than the State.</p>
+      <p class="hi"><b>S.10:</b> If part of a record is exempt, the non-exempt part must be severed and provided; applicant must be notified of the severance, reasons, officer's name, fee, and appeal rights.</p>
+    </div></div>
+  </div>
+
+  <!-- S11 -->
+  <div class="acc" data-search="section 11 third party information five days ten days forty days">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Section 11 — Third Party Information</span>
+      <span class="rulebadge">S.11</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">PIO intends to disclose third-party info treated as confidential</div>
+        <div class="flow-arrow">↓ within 5 days</div>
+        <div class="flow-box">Written notice to third party</div>
+        <div class="flow-arrow">↓ within 10 days</div>
+        <div class="flow-box">Third party makes representation</div>
+        <div class="flow-arrow">↓ within 40 days of original request</div>
+        <div class="flow-box gold">PIO's final decision + written notice to third party</div>
+      </div>
+      <p class="hi">Except trade/commercial secrets, disclosure allowed if public interest outweighs harm to third party. Third party can appeal under S.19 within 30 days.</p>
+      <div class="mnem"><b>Mnemonic:</b> "5-10-40" for third party: notice in 5, representation window 10, decision by 40.</div>
+      <div class="q-box"><b>Probable Q:</b> Within how many days must the PIO decide on third-party disclosure after receiving the original request? <br><b>Answer:</b> 40 days (notwithstanding the normal S.7 time limit).</div>
+    </div></div>
+  </div>
+
+  <!-- S12-14: CIC -->
+  <div class="acc" data-search="section 12 13 14 central information commission constitution chief information commissioner term removal delhi headquarters">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Sections 12-14 — Central Information Commission</span>
+      <span class="rulebadge">S.12-14</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="subcard"><h4>Constitution (S.12)</h4><p>By notification in Official Gazette. Consists of: Chief Information Commissioner (CIC) + up to <b>10</b> Information Commissioners.</p></div>
+      <div class="subcard"><h4>Appointment Committee 🔴</h4><p>President appoints on recommendation of: (i) PM (Chairperson), (ii) Leader of Opposition in Lok Sabha, (iii) a Union Cabinet Minister nominated by PM.</p></div>
+      <div class="subcard"><h4>Eligibility & Restrictions</h4><p>Persons of eminence in law, science, tech, social service, management, journalism, mass media, administration/governance. Cannot be MP/MLA, hold office of profit, be connected with political party, or carry on business/profession.</p></div>
+      <div class="subcard"><h4>Headquarters</h4><p>Delhi; may set up offices elsewhere with Central Govt approval.</p></div>
+      <div class="subcard"><h4>Term (S.13) — 2019 Amendment 🔴</h4><p>Originally fixed 5-year term; now term "as prescribed by Central Government" — but age cap remains <b>65 years</b>. Not eligible for reappointment. IC vacating office is eligible for appointment as CIC (max 5 years aggregate in both roles).</p></div>
+      <div class="subcard"><h4>Removal (S.14)</h4><p>By President on proved misbehaviour/incapacity, after Supreme Court inquiry on Presidential reference. Also removable for: insolvency, moral turpitude conviction, paid employment outside office, unfitness (mind/body), or prejudicial financial interest.</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "PM-LOP-Minister" for CIC appointment committee; "P-M-L" easy recall.</div>
+      <div class="q-box"><b>Probable Q:</b> What change did the RTI (Amendment) Act, 2019 bring to the Chief Information Commissioner's term? <br><b>Answer:</b> Replaced the fixed 5-year term with a term "as prescribed by the Central Government," while retaining the 65-year age cap.</div>
+    </div></div>
+  </div>
+
+  <!-- S15-17: SIC -->
+  <div class="acc" data-search="section 15 16 17 state information commission chief minister governor removal">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Sections 15-17 — State Information Commission</span>
+      <span class="rulebadge">S.15-17</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Mirrors CIC structure at State level. State Chief Information Commissioner + up to 10 State Information Commissioners, appointed by <b>Governor</b> on recommendation of committee: CM (Chairperson), Leader of Opposition in Assembly, a Cabinet Minister nominated by CM.</p>
+      <p class="hi">Removal by Governor (same grounds as S.14, via Supreme Court reference). Headquarters at place specified by State Govt notification.</p>
+      <div class="q-box"><b>Probable Q:</b> Who appoints the State Chief Information Commissioner? <br><b>Answer:</b> The Governor, on the recommendation of a committee headed by the Chief Minister.</div>
+    </div></div>
+  </div>
+
+  <!-- S18 -->
+  <div class="acc" data-search="section 18 powers functions information commissions complaint civil court summoning">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Section 18 — Powers & Functions of Information Commissions</span>
+      <span class="rulebadge">S.18</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi">Receives & inquires into complaints re: PIO not appointed, refused access, no timely response, unreasonable fee, incomplete/misleading/false info, or any other RTI-related matter.</p>
+      <div class="subcard"><h4>Civil Court Powers (S.18(3)) 🔴</h4><p>Summoning/enforcing attendance; requiring discovery/inspection of documents; receiving evidence on affidavit; requisitioning public records; issuing summons for witnesses/documents; any other prescribed matter.</p></div>
+      <p class="hi">Commission may examine any record under public authority's control during inquiry — <b>no record can be withheld</b> on any grounds (S.18(4)).</p>
+      <div class="q-box"><b>Probable Q:</b> Under which law's provisions does the Commission derive its civil-court-like powers? <br><b>Answer:</b> Code of Civil Procedure, 1908 (S.18(3)).</div>
+    </div></div>
+  </div>
+
+  <!-- S19: APPEAL -->
+  <div class="acc" data-search="section 19 appeal first second thirty days ninety days forty five days onus proof">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 19 — Appeal (HIGH-WEIGHTAGE)</span>
+      <span class="rulebadge">S.19</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <table>
+        <tr><th>Appeal</th><th>To</th><th>Time Limit</th></tr>
+        <tr><td>First Appeal</td><td>Senior officer (in same public authority)</td><td>30 days (extendable if sufficient cause)</td></tr>
+        <tr><td>Third-party appeal against S.11 disclosure order</td><td>Senior officer</td><td>30 days from date of order</td></tr>
+        <tr><td>Second Appeal</td><td>CIC / SIC</td><td>90 days (extendable if sufficient cause)</td></tr>
+        <tr><td>Appeal disposal</td><td>—</td><td>30 days, extendable to max 45 days (reasons recorded)</td></tr>
+      </table>
+      <div class="subcard"><h4>Onus of Proof 🔴</h4><p>Burden to prove denial was justified lies on the <b>PIO who denied</b> the request (S.19(5)).</p></div>
+      <div class="subcard"><h4>Commission's Powers on Decision (S.19(8))</h4>
+        <p>Require public authority to: provide access; appoint PIO; publish info; change record-management practices; enhance staff training; provide annual report — <b>plus</b> compensate complainant for loss/detriment, impose penalties, or reject application.</p>
+      </div>
+      <p class="hi">CIC/SIC decisions are <b>binding</b> (S.19(7)). Third party gets reasonable hearing opportunity if decision relates to their info (S.19(4)).</p>
+      <div class="mnem"><b>Mnemonic:</b> "30-30-90-45" → First appeal 30 days, third-party appeal 30 days, second appeal 90 days, max disposal 45 days.</div>
+      <div class="q-box"><b>Probable Q:</b> On whom does the burden of proof lie in appeal proceedings under RTI? <br><b>Answer:</b> On the PIO who denied the request (S.19(5)).</div>
+    </div></div>
+  </div>
+
+  <!-- S20: PENALTIES -->
+  <div class="acc" data-search="section 20 penalties 250 per day 25000 disciplinary action">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Section 20 — Penalties (HIGH-WEIGHTAGE)</span>
+      <span class="rulebadge">S.20</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <div class="flow">
+        <div class="flow-box">PIO — without reasonable cause — refuses application / misses deadline / malafide denial / incorrect-incomplete-misleading info / destroys info / obstructs</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box gold">Penalty: ₹250/day (till info furnished), MAX ₹25,000 🔴</div>
+      </div>
+      <p class="hi">PIO gets reasonable opportunity of hearing before penalty imposed; <b>burden to prove reasonable & diligent conduct</b> lies on the PIO (S.20(1) proviso).</p>
+      <div class="subcard"><h4>S.20(2): Disciplinary Action</h4><p>If failure is persistent/without reasonable cause, Commission recommends <b>disciplinary action</b> against the PIO under applicable service rules (separate from monetary penalty).</p></div>
+      <div class="mnem"><b>Mnemonic:</b> "250 x 100 = 25,000" → ₹250/day penalty caps at ₹25,000 (i.e., after 100 days of delay).</div>
+      <div class="q-box"><b>Probable Q:</b> What is the maximum penalty a PIO can face under Section 20 for one complaint? <br><b>Answer:</b> ₹25,000 (at ₹250/day).</div>
+    </div></div>
+  </div>
+
+  <!-- S21-24 -->
+  <div class="acc" data-search="section 21 22 23 24 protection good faith overriding effect bar jurisdiction courts not apply intelligence security organisations second schedule">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp1">🔴</span> Sections 21-24 — Good Faith, Overriding Effect, Court Bar, Exclusions</span>
+      <span class="rulebadge">S.21-24</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>S.21:</b> No suit/prosecution/legal proceeding against anyone for good-faith action under the Act.</p>
+      <p class="hi"><b>S.22:</b> RTI Act has <b>overriding effect</b> over Official Secrets Act 1923 and any inconsistent law.</p>
+      <p class="hi"><b>S.23:</b> Courts barred from entertaining suits re: orders under this Act — only remedy is appeal under the Act.</p>
+      <div class="subcard"><h4>S.24: Intelligence & Security Organisations Excluded 🔴</h4>
+        <p>Act does not apply to organisations in the <b>Second Schedule</b> (e.g., IB, R&AW, CBI, NIA, Enforcement Directorate, NTRO, etc.) — <b>EXCEPT</b>:</p>
+        <p>• Info on <b>corruption</b> and <b>human rights violations</b> allegations is NOT excluded.<br>
+        • Human rights violation info: only after <b>CIC/SIC approval</b>, provided within <b>45 days</b>.</p>
+      </div>
+      <div class="q-box"><b>Probable Q:</b> Even for excluded intelligence organisations, what two categories of information must still be disclosed? <br><b>Answer:</b> Allegations of corruption, and allegations of human rights violations.</div>
+    </div></div>
+  </div>
+
+  <!-- S25-30 -->
+  <div class="acc" data-search="section 25 26 27 28 29 30 monitoring reporting programmes rules laying difficulties eighteen months">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp3">🟡</span> Sections 25-30 — Monitoring, Programmes & Rule-Making</span>
+      <span class="rulebadge">S.25-30</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>S.25:</b> CIC/SIC prepares annual report on Act's implementation; laid before Parliament/State Legislature.</p>
+      <p class="hi"><b>S.26:</b> Appropriate Govt develops educational programmes; must compile a public guide within <b>18 months</b> of commencement.</p>
+      <p class="hi"><b>S.27 & 28:</b> Rule-making power of appropriate Government and competent authority respectively (fees, term/salary of Commissioners post-2019 amendment, appeal procedure, etc.)</p>
+      <p class="hi"><b>S.29:</b> Rules laid before Parliament/State Legislature for 30 days (modification/annulment possible).</p>
+      <p class="hi"><b>S.30:</b> Power to remove difficulties — Central Govt order, but <b>not after 2 years</b> from commencement.</p>
+      <div class="q-box"><b>Probable Q:</b> Within how many months of commencement must the appropriate Government publish a public guide under S.26? <br><b>Answer:</b> 18 months.</div>
+    </div></div>
+  </div>
+
+  <!-- S31 & Schedules -->
+  <div class="acc" data-search="section 31 repeal freedom of information act first schedule oath second schedule intelligence organisations">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span><span class="imp-tag imp2">🟠</span> Section 31 & Schedules</span>
+      <span class="rulebadge">S.31 + Sch.</span><span class="acc-arrow">▶</span>
+    </div>
+    <div class="acc-body"><div class="acc-body-inner">
+      <p class="hi"><b>S.31 — Repeal:</b> Freedom of Information Act, 2002 is repealed by RTI Act, 2005.</p>
+      <div class="subcard"><h4>First Schedule</h4><p>Form of Oath/Affirmation for CIC/IC/State CIC/SIC — swear/affirm allegiance to Constitution, uphold sovereignty & integrity of India, perform duties without fear/favour.</p></div>
+      <div class="subcard"><h4>Second Schedule — Excluded Organisations (partial list)</h4><p>Intelligence Bureau, R&AW, Directorate of Revenue Intelligence, CBI, NIA, Enforcement Directorate, Narcotics Control Bureau, BSF, CRPF, CISF, NSG, Assam Rifles, Special Protection Group, DRDO, National Security Council Secretariat, etc. (26 organisations, amended periodically).</p></div>
+      <div class="q-box"><b>Probable Q:</b> Which Act was repealed by the RTI Act, 2005? <br><b>Answer:</b> The Freedom of Information Act, 2002.</div>
+    </div></div>
+  </div>
+
+  <!-- COMPARISON: Time limits -->
+  <div class="section-title blue">📊 Comparison Chart — All Time Limits at a Glance <span class="sub">तुलना चार्ट — सभी समय सीमाएं</span></div>
+  <div class="acc" style="padding:14px;">
+    <table>
+      <tr><th>Provision</th><th>Time Limit</th></tr>
+      <tr><td>Normal information request (S.7)</td><td>30 days</td></tr>
+      <tr><td>Life/liberty matters (S.7)</td><td>48 hours</td></tr>
+      <tr><td>Via Assistant PIO</td><td>+5 days added</td></tr>
+      <tr><td>Transfer of misdirected application (S.6(3))</td><td>5 days</td></tr>
+      <tr><td>Third party notice (S.11(1))</td><td>5 days</td></tr>
+      <tr><td>Third party representation window (S.11(2))</td><td>10 days</td></tr>
+      <tr><td>Third party final decision (S.11(3))</td><td>40 days</td></tr>
+      <tr><td>Third party appeal against disclosure (S.19(2))</td><td>30 days</td></tr>
+      <tr><td>First Appeal (S.19(1))</td><td>30 days</td></tr>
+      <tr><td>Second Appeal to CIC/SIC (S.19(3))</td><td>90 days</td></tr>
+      <tr><td>Appeal disposal (S.19(6))</td><td>30 days (max 45 days)</td></tr>
+      <tr><td>Excluded org's human rights info (S.24)</td><td>45 days</td></tr>
+      <tr><td>Public guide compilation (S.26(2))</td><td>18 months</td></tr>
+      <tr><td>Suo-motu publication after enactment (S.4(1)(b))</td><td>120 days</td></tr>
+      <tr><td>PIO designation (S.5)</td><td>100 days</td></tr>
+      <tr><td>Difficulty-removal order validity (S.30)</td><td>within 2 years of commencement</td></tr>
+      <tr><td>20-year historical info rule (S.8(3))</td><td>20 years (except a,c,i)</td></tr>
+    </table>
+    <div class="q-box"><b>MCQ Trap:</b> Don't confuse 100 days (PIO designation) with 120 days (Act commencement / suo-motu publication) — both appear in S.4 & S.5 close together!</div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-title blue">🕒 Key Legislative Timeline <span class="sub">महत्वपूर्ण विधायी समयरेखा</span></div>
+  <div class="acc" style="padding:14px 18px;">
+    <div class="timeline">
+      <div class="t-item"><b>15 June 2005:</b> RTI Act, 2005 receives assent — Act No. 22 of 2005</div>
+      <div class="t-item"><b>12 October 2005:</b> Full Act comes into force (120th day of enactment)</div>
+      <div class="t-item"><b>28 Sept 2005:</b> First amendment to Second Schedule (G.S.R. 347)</div>
+      <div class="t-item"><b>27 March 2008:</b> Second Schedule amended (G.S.R. 235(E))</div>
+      <div class="t-item"><b>9 June 2011:</b> National Technical Research Organisation & Financial Intelligence Unit added</div>
+      <div class="t-item"><b>2019:</b> RTI (Amendment) Act, 2019 — replaced fixed 5-year term of CIC/IC/SCIC/SIC with Centre-prescribed term; salaries/allowances also to be Centre-prescribed</div>
+      <div class="t-item"><b>31 Oct 2019:</b> J&K exclusion removed (Act 34 of 2019, Fifth Schedule) — Act now extends fully to J&K too</div>
+      <div class="t-item"><b>4 May 2021:</b> Second Schedule further updated (G.S.R. 253)</div>
+    </div>
+    <div class="q-box"><b>Probable Q:</b> On what date did the RTI Act, 2005 fully come into force? <br><b>Answer:</b> 12 October 2005 (120th day after 15 June 2005 enactment).</div>
+  </div>
+
+  <!-- MNEMONICS SECTION -->
+  <div class="section-title gold">🧠 Master Mnemonics <span class="sub">मास्टर स्मृति-सूत्र</span></div>
+  <div class="acc" style="padding:14px;">
+    <div class="mnem">
+      <b>Time Limit Ladder:</b> "48hr - 5d - 30d - 40d - 45d - 90d - 100d - 120d - 18mo - 20yr"<br>
+      Life/liberty(48hr) → Transfer/Notice(5d) → Reply/1st Appeal(30d) → 3rd-party decision(40d) → Max appeal disposal(45d) → 2nd Appeal(90d) → PIO designation(100d) → Suo-motu publication(120d) → Public guide(18mo) → Historical info(20yr)
+    </div>
+    <div class="mnem">
+      <b>Section numbers by theme (हिंदी में):</b><br>
+      परिभाषाएं = धारा 2 | अनिवार्य प्रकटीकरण = धारा 4 | PIO = धारा 5 | अनुरोध = धारा 6 | निपटारा = धारा 7 | छूट = धारा 8 | अपील = धारा 19 | शास्ति = धारा 20
+    </div>
+    <div class="mnem">
+      <b>S.8(1) exemption clauses — "SCPT-CF-LIP-C":</b> Sovereignty, Court-forbidden, Parliamentary privilege, Trade secrets, Confidence-fiduciary, Foreign govt confidence, Life-endangering, Investigation-impeding, Personal-privacy, Cabinet papers.
+    </div>
+    <div class="mnem">
+      <b>Penalty formula:</b> "₹250 × 100 days = ₹25,000 cap" — easy multiplication trick to recall the exact ceiling.
+    </div>
+  </div>
+
+  <!-- LAST DAY REVISION -->
+  <div id="lastday" class="lastday">
+    <h3>🔥 Last Day Revision Notes / अंतिम दिन रिवीजन नोट्स</h3>
+    <ul>
+      <li>🔴 S.7 = 30 days normal / 48 hrs life-liberty / +5 days via APIO</li>
+      <li>🔴 S.8 = 10 exemption clauses (a-j); 20-year rule exempts only a, c, i</li>
+      <li>🔴 S.11 = Third party: notice 5d, representation 10d, decision 40d</li>
+      <li>🔴 S.19 = First appeal 30d, Second appeal 90d, disposal max 45d; onus on PIO</li>
+      <li>🔴 S.20 = Penalty ₹250/day, max ₹25,000; + disciplinary action recommendation</li>
+      <li>🔴 S.24 = Intelligence/security orgs excluded EXCEPT corruption & human rights info (45-day rule)</li>
+      <li>🟠 S.5 = PIO designated within 100 days; Assistant PIO at sub-divisional level</li>
+      <li>🟠 CIC/SIC = Chief + up to 10 Commissioners; President/Governor appoints via PM/CM-led committee</li>
+      <li>🟢 Act extends to whole of India (J&K included since 31-10-2019)</li>
+      <li>🟢 S.31 repealed the Freedom of Information Act, 2002</li>
+    </ul>
+  </div>
+
+  <div class="section-title">📝 Extra Practice MCQs <span class="sub">अभ्यास प्रश्न</span></div>
+  <div class="acc" style="padding:14px;">
+    <table>
+      <tr><th>#</th><th>Question</th></tr>
+      <tr><td>1</td><td>What is the maximum penalty a PIO can be fined under Section 20?</td></tr>
+      <tr><td>2</td><td>Within how many days must a PIO respond to a request concerning life or liberty?</td></tr>
+      <tr><td>3</td><td>Which three exemption clauses of Section 8(1) survive even after 20 years?</td></tr>
+      <tr><td>4</td><td>On whom does the burden of proof lie in an RTI appeal proceeding?</td></tr>
+      <tr><td>5</td><td>Who chairs the committee that recommends the Chief Information Commissioner's appointment?</td></tr>
+      <tr><td>6</td><td>What is the time limit for the second appeal to the CIC/SIC?</td></tr>
+      <tr><td>7</td><td>Which Act was repealed by the RTI Act, 2005?</td></tr>
+      <tr><td>8</td><td>What change did the 2019 Amendment make to the Commissioners' term of office?</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<button class="fab" id="topFab" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+<footer>LDCE IP / AAO Exam Portal • Right to Information Act, 2005 (Act No. 22 of 2005) • For personal exam preparation use</footer>
+
+<script>
+function toggleAcc(head){
+  const acc = head.parentElement;
+  acc.classList.toggle('open');
+}
+const darkBtn = document.getElementById('darkToggle');
+darkBtn.addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+  darkBtn.classList.toggle('active');
+});
+let ttsOn = false;
+const ttsBtn = document.getElementById('ttsToggle');
+ttsBtn.addEventListener('click', ()=>{
+  ttsOn = !ttsOn;
+  ttsBtn.classList.toggle('active');
+  if(!ttsOn && window.speechSynthesis){ window.speechSynthesis.cancel(); }
+});
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click', ()=>{
+    if(ttsOn && window.speechSynthesis){
+      window.speechSynthesis.cancel();
+      const body = h.parentElement.querySelector('.acc-body-inner');
+      if(body){
+        const text = body.innerText;
+        const utter = new SpeechSynthesisUtterance(text.slice(0,1500));
+        window.speechSynthesis.speak(utter);
+      }
+    }
+  });
+});
+const searchBox = document.getElementById('searchBox');
+searchBox.addEventListener('input', ()=>{
+  const q = searchBox.value.trim().toLowerCase();
+  document.querySelectorAll('.acc[data-search], .acc[data-imp]').forEach(acc=>{
+    const dataText = (acc.getAttribute('data-search')||'') + ' ' + acc.innerText.toLowerCase();
+    if(q === '' || dataText.toLowerCase().includes(q)){
+      acc.classList.remove('hidden');
+      if(q !== '') acc.classList.add('open');
+    } else {
+      acc.classList.add('hidden');
+    }
+  });
+});
+</script>
+</body>
+</html>
