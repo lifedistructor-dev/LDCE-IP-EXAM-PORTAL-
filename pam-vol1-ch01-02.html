@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAM Vol-I | Ch 1-2: Definitions, Organisation & Control</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dk:#B71C1C; --blue:#1565C0; --blue-dk:#0D47A1;
+  --gold:#F9A825; --gold-dk:#E65100; --green:#2E7D32; --bg:#FAF7F2; --card:#ffffff;
+  --text:#1c1c1c; --muted:#5f5f5f; --border:#e5ded2;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--text);
+  line-height:1.55; padding-bottom:60px; transition:background .3s,color .3s;
+}
+body.dark{ --bg:#121212; --card:#1e1e1e; --text:#f0f0f0; --muted:#b0b0b0; --border:#333; }
+
+header{
+  background:linear-gradient(135deg,var(--red) 0%,var(--red-dk) 45%,var(--blue-dk) 100%);
+  color:#fff; padding:22px 16px 26px; text-align:center; position:relative;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+header h1{font-size:1.35rem; margin-bottom:4px;}
+header .sub{font-size:.85rem; opacity:.92;}
+header .hi{font-size:.95rem; margin-top:6px; font-weight:600; color:#FFF3CD;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:12px;}
+.badge{background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4); border-radius:20px; padding:4px 10px; font-size:.7rem;}
+
+.topbar{
+  position:sticky; top:0; z-index:50; background:var(--card); display:flex; gap:8px;
+  padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.12); flex-wrap:wrap; justify-content:center;
+}
+.topbar button{
+  border:none; border-radius:8px; padding:8px 12px; font-size:.75rem; font-weight:600;
+  cursor:pointer; background:var(--blue); color:#fff;
+}
+.topbar button.alt{background:var(--gold-dk);}
+.topbar button.alt2{background:var(--green);}
+
+.container{max-width:820px; margin:0 auto; padding:14px;}
+
+.legend{
+  display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card);
+  border-radius:12px; padding:12px; margin:14px 0; border:1px solid var(--border); font-size:.75rem;
+}
+
+.chapter-card{
+  background:var(--card); border-radius:14px; margin-bottom:16px; overflow:hidden;
+  box-shadow:0 3px 10px rgba(0,0,0,.08); border:1px solid var(--border);
+}
+.chapter-head{
+  background:linear-gradient(90deg,var(--blue-dk),var(--blue)); color:#fff; padding:14px 16px;
+  cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+}
+.chapter-head h2{font-size:1.05rem;}
+.chapter-head .arrow{transition:transform .3s; font-size:1.1rem;}
+.chapter-body{display:none; padding:14px 16px;}
+.chapter-body.open{display:block;}
+.chapter-card.open .arrow{transform:rotate(180deg);}
+
+.subcard{
+  border:1px solid var(--border); border-radius:10px; margin:10px 0; overflow:hidden;
+}
+.subhead{
+  background:#FFF3E0; color:var(--red-dk); padding:9px 12px; font-weight:700; font-size:.88rem;
+  cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+}
+body.dark .subhead{background:#332417;}
+.subbody{display:none; padding:10px 12px; font-size:.85rem;}
+.subbody.open{display:block;}
+
+.tag{display:inline-block; font-size:.68rem; padding:2px 6px; border-radius:6px; margin-left:4px; font-weight:700;}
+.t-vi{background:#FFEBEE; color:var(--red-dk);}
+.t-fa{background:#FFF3E0; color:var(--gold-dk);}
+.t-cu{background:#FFFDE7; color:#8a7000;}
+.t-qr{background:#E8F5E9; color:var(--green);}
+body.dark .t-vi{background:#4a1414;} body.dark .t-fa{background:#4a2f0e;}
+body.dark .t-cu{background:#453e0e;} body.dark .t-qr{background:#123a17;}
+
+.hi-text{color:var(--gold-dk); font-weight:600; font-family:'Noto Sans',Arial; direction:rtl; unicode-bidi:embed;}
+body.dark .hi-text{color:#FFD54F;}
+.en-text{color:var(--text);}
+.bi-block{background:#F5F9FF; border-left:3px solid var(--blue); padding:8px 10px; border-radius:6px; margin:6px 0;}
+body.dark .bi-block{background:#152436;}
+
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.78rem;}
+th{background:var(--blue-dk); color:#fff; padding:6px 7px; text-align:left;}
+td{padding:6px 7px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+
+.def-item{border-bottom:1px dashed var(--border); padding:6px 0;}
+.def-item b{color:var(--red-dk);}
+body.dark .def-item b{color:#ff8a80;}
+
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{
+  background:linear-gradient(90deg,#E3F2FD,#FFF); border:1px solid var(--blue); border-radius:8px;
+  padding:8px 10px; font-size:.8rem; position:relative;
+}
+body.dark .flow-step{background:#16232f;}
+.flow-arrow{text-align:center; color:var(--blue); font-size:1rem;}
+
+.q-box{
+  background:#FFF8E1; border:1px dashed var(--gold-dk); border-radius:8px; padding:8px 10px;
+  font-size:.78rem; margin:8px 0;
+}
+body.dark .q-box{background:#332708;}
+.q-box b{color:var(--red-dk);}
+body.dark .q-box b{color:#ff8a80;}
+
+.mnemonic{
+  background:linear-gradient(90deg,#E8F5E9,#FFFDE7); border-left:4px solid var(--green);
+  padding:8px 10px; border-radius:6px; font-size:.8rem; margin:8px 0;
+}
+body.dark .mnemonic{background:#122316;}
+
+.rev-sheet{background:var(--card); border:2px dashed var(--red); border-radius:14px; padding:14px; margin:16px 0;}
+.rev-sheet h3{color:var(--red-dk); margin-bottom:8px;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px; font-size:.78rem;}
+.rev-grid div{background:#FFF3E0; border-radius:6px; padding:6px 8px;}
+body.dark .rev-grid div{background:#2b2010;}
+
+.speak-btn{
+  background:none; border:1px solid var(--blue); color:var(--blue); border-radius:6px;
+  font-size:.68rem; padding:2px 7px; cursor:pointer; margin-left:6px;
+}
+body.dark .speak-btn{color:#82b1ff; border-color:#82b1ff;}
+
+.chip-row{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+.chip{background:var(--blue); color:#fff; border-radius:14px; padding:3px 9px; font-size:.68rem;}
+
+footer{text-align:center; padding:20px; font-size:.72rem; color:var(--muted);}
+
+::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-thumb{background:var(--blue); border-radius:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Postal Accounts Manual – Vol I</h1>
+  <div class="sub">Chapter I: Definitions & General System of Accounts &nbsp;|&nbsp; Chapter II: Organisation & Control</div>
+  <div class="hi">📘 डाक लेखा नियमावली – भाग I | अध्याय 1 व 2</div>
+  <div class="badge-row">
+    <span class="badge">LDCE AAO Paper II</span>
+    <span class="badge">LDCE IP Exam</span>
+    <span class="badge">2nd Edition Aug-2021</span>
+  </div>
+</header>
+
+<div class="topbar">
+  <button onclick="document.body.classList.toggle('dark')">🌙 Dark/Light</button>
+  <button class="alt" onclick="expandAll()">⬇️ Expand All</button>
+  <button class="alt2" onclick="collapseAll()">⬆️ Collapse All</button>
+  <button onclick="speakPage()">🔊 Read Page</button>
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <div>🔴 <b>Very Important</b> for Exam</div>
+    <div>🟠 <b>Frequently Asked</b></div>
+    <div>🟡 <b>Conceptual</b> Understanding</div>
+    <div>🟢 <b>Quick Revision</b> Point</div>
+  </div>
+
+  <!-- ================= CHAPTER I ================= -->
+  <div class="chapter-card" id="c1">
+    <div class="chapter-head" onclick="toggleChapter('c1')">
+      <h2>Chapter I — Definitions & General System of Accounts<br><span class="hi-text" style="font-size:.8rem">अध्याय 1 — परिभाषाएँ एवं लेखा की सामान्य प्रणाली</span></h2>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="chapter-body">
+
+      <!-- Sub 1: Definitions -->
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">1.01 Key Definitions (a–t) <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p class="mnemonic">🧠 <b>Mnemonic (order of first letters):</b> "A-B-A-B-B-B-C-C-C-C-D-D-G-G-H-R-S-T" — Accounting Authority, Bank, Branch Audit/PAO, CAG, Chief Acctg Authority, Controller Genl of Accounts, Director Genl/Audit, Department, Debt Heads, Govt/Govt A/c, HQ Office, Remittance, State, Treasury.</p>
+          <div class="def-item"><b>Accounting Authority (लेखा प्राधिकारी):</b> GM(Finance) Postal Accounts incl. DA(Postal) & Dy.DA(Postal) exercising accounting functions.</div>
+          <div class="def-item"><b>Accounts Officer:</b> Any officer subordinate to CAA/Accounting Authority who exercises accounting functions.</div>
+          <div class="def-item"><b>Audit Officer:</b> Officer subordinate to C&AG exercising audit functions.</div>
+          <div class="def-item"><b>Bank:</b> RBI or its offices/branches; SBI branch acting as RBI's agent; subsidiary bank u/s 2 of SBI(Subsidiary Banks) Act 1959; or any RBI-appointed agency.</div>
+          <div class="def-item"><b>Branch Audit Office:</b> Office of Director of Audit / Audit officer in-charge of a Postal & Telecom Audit Office.</div>
+          <div class="def-item"><b>Branch Postal Accounts Office (PAO):</b> Office of GM(Finance) Postal Accounts / DA(Postal) / Dy.DA(Postal) in-charge of the Circle's Postal Accounts Office.</div>
+          <div class="def-item"><b>Constitution:</b> The Constitution of India.</div>
+          <div class="def-item"><b>Chief Accounting Authority (CAA) <span class="tag t-vi">🔴</span>:</b> Secretary of the Department/Ministry with overall control of accounting functions — <i>i.e., Secretary, Department of Posts.</i></div>
+          <div class="def-item"><b>Comptroller and Auditor General (C&AG):</b> The Comptroller and Auditor General of India.</div>
+          <div class="def-item"><b>Controller General of Accounts (CGA) <span class="tag t-fa">🟠</span>:</b> Controller of Accounts, Ministry of Finance (Dept. of Expenditure) — responsible for maintaining a sound Payment-cum-Accounting system across departmentalised accounts offices and prescribing rules for custody/payment/withdrawal of Govt money.</div>
+          <div class="def-item"><b>Director General:</b> Director General, Postal Services.</div>
+          <div class="def-item"><b>Director of Audit:</b> Director of Audit, P&T.</div>
+          <div class="def-item"><b>Department:</b> Department of Posts.</div>
+          <div class="def-item"><b>Debt Heads:</b> Heads of Account recording Debt, Deposits, Sinking Funds, Advances & Suspense transactions.</div>
+          <div class="def-item"><b>Government:</b> Central or State Government, or both, per context.</div>
+          <div class="def-item"><b>Government Account <span class="tag t-fa">🟠</span>:</b> Relates to the Consolidated Fund of India (Art. 266(1)) or Public Account of India (Art. 266(2)). Contingency Fund = established under Contingency Fund of India Act 1950, per Art. 267(1).</div>
+          <div class="def-item"><b>Head Quarter Office:</b> Office of the Director General, Postal Services.</div>
+          <div class="def-item"><b>Remittance Heads:</b> Heads of account for transactions relating to remittance business.</div>
+          <div class="def-item"><b>State:</b> Any state specified in the First Schedule of the Constitution.</div>
+          <div class="def-item"><b>Treasury:</b> Includes a sub-treasury.</div>
+          <div class="bi-block hi-text">परिभाषाएँ: मुख्य लेखा प्राधिकारी (CAA) = डाक विभाग के सचिव; नियंत्रक महालेखाकार (CGA) = वित्त मंत्रालय में भुगतान-सह-लेखा प्रणाली के प्रभारी</div>
+          <div class="q-box"><b>Likely Q:</b> Who is the Chief Accounting Authority for Department of Posts? → <i>Secretary, Department of Posts.</i></div>
+        </div>
+      </div>
+
+      <!-- Sub 2: General Outlines -->
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">1.02 General Outlines of System of Accounts <span class="tag t-cu">🟡 Concept</span><span>▾</span></div>
+        <div class="subbody">
+          <p>General outlines of the Central Govt accounts system (Chapter III, Account Code Vol. I) apply <i>mutatis mutandis</i> to DoP accounts. CAA ensures suitable accounts are maintained by subordinate officers in prescribed forms.</p>
+          <p>Postal accounts follow, as far as practicable, <b>Commercial Book Keeping</b> practice. Two key features:</p>
+          <div class="flow">
+            <div class="flow-step">(i) A <b>Capital Account</b> is maintained to exhibit value of assets</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">(ii) A Govt ledger head shows the true/commercial <b>Profit or Loss</b> on Department's working — Dept bears charges to other Depts & gets credit for services rendered</div>
+          </div>
+          <p>Revenue realisations booked under Major Head <b>1201-Postal Receipts</b>; working expenses under <b>3201-Postal Services</b> — divided into sub-major, minor, sub & detailed heads.</p>
+        </div>
+      </div>
+
+      <!-- Sub 3: Profit and Loss / Initial Accounts / RMS -->
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">1.03 Profit & Loss A/c, Initial Accounts, RMS <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p><b>Profit & Loss Account:</b> Dept meets all liabilities from own revenue; surplus/deficit appropriated to/from <b>Postal Capital Reserve Fund</b>. It is a real account within Govt accounts, prepared <u>annually</u> from net P&L in the Ledger after final closure — includes inter-branch adjustments. Shown in Finance & Revenue Accounts and DG's financial review for Appropriation Accounts.</p>
+          <p><b>Initial Accounts:</b> Each <b>Head Post Office</b> is the primary accounting unit — renders an e-account of receipts/disbursements to Circle Accounts Office. Transactions classified at point of origin via Daily Transaction Report, Treasurer's Cash Book. <span class="tag t-vi">🔴</span> Month's account is <b>freezed on 5th of following month.</b></p>
+          <p><b>Railway Mail Service:</b> Head Record Office is the RMS accounting unit — renders monthly e-account return to Circle Accounts Office (same rules as HPO).</p>
+          <div class="q-box"><b>Likely Q:</b> By which date is a month's account freezed? → <i>5th of the following month.</i></div>
+        </div>
+      </div>
+
+      <!-- Sub 4: Compilation & Finance Accounts -->
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">1.04 Compilation Flow: HPO → PAO → Directorate → CGA <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="flow">
+            <div class="flow-step">HPOs push DDO-wise accounts to <b>PFMS on T+3 basis</b> (transaction date + 3 days)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Monthly CGA report generated → cross-checked with PFMS data → variations adjusted GL-wise via <b>Transfer Entries</b></div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">PAO consolidates in PFMS after Transfer Entries → flows to <b>e-Lekha</b></div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Postal Accounts Wing (HQ) submits monthly accounts in PFMS (digitally signed) + e-Lekha for DoP as a whole</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">HQ compiles <b>Annual Accounts</b> → incorporated into <b>Combined Finance & Revenue Accounts</b> of Central Govt + <b>Appropriation Accounts</b></div>
+          </div>
+          <p><b>Finance Accounts:</b> Prepared annually by Ministry of Finance — receipts/payments, financial results of Revenue & Capital accounts, public debt, liabilities & assets. Secretary, DoP (as CAA) is responsible for accuracy/timeliness of Postal material furnished.</p>
+          <p><b>Duties of an Accounting Authority</b> (3 main): (a) compile e-accounts of Circle's receipts/disbursements (b) transfer inter-Circle items via system & adjust items transferred by others (c) generate monthly detailed e-account, forward to PA Wing HQ.</p>
+          <p>DG's duty: prepare monthly detailed account (major-head-wise) of Dept & submit extract to Ministry of Finance and CGA.</p>
+        </div>
+      </div>
+
+      <!-- Sub 5: Major Heads Table -->
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">1.05 Major Heads of Account <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <table>
+            <tr><th>Code</th><th>Head</th></tr>
+            <tr><td>1201</td><td>Postal Receipts</td></tr>
+            <tr><td>0049</td><td>Interest Receipts</td></tr>
+            <tr><td>2049</td><td>Interest Payments</td></tr>
+            <tr><td>3201</td><td>Postal Services (Working Expenses)</td></tr>
+            <tr><td>5201</td><td>Capital Outlay on Postal Services</td></tr>
+            <tr><td>3465</td><td>Grants to IPPB / Revenue</td></tr>
+            <tr><td>5465</td><td>IPPB – Capital Outlay</td></tr>
+            <tr><td>2552</td><td>Revenue Expenditure – NE (North East)</td></tr>
+            <tr><td>4552</td><td>Capital Expenditure – NE</td></tr>
+          </table>
+          <p>3 broad transaction groups: <b>(i) Revenue Receipts</b> (1201) <b>(ii) Working Expenses</b> (3201) <b>(iii) Capital Outlay</b> (5201). Detailed classification (incl. Debt & Remittance heads) → <b>Appendix 5</b>. Director General may open detailed heads at discretion; change beyond detailed heads needs <b>Ministry of Finance</b> approval. General classification rules → Articles 29-41, Account Code Vol. I.</p>
+          <p class="mnemonic">🧠 "1-2-0-1 Receive, 3-2-0-1 Spend, 5-2-0-1 Build" — 1201 Receipts, 3201 Expenses, 5201 Capital.</p>
+        </div>
+      </div>
+
+      <!-- Sub 6: CCA/CA Role Annexure -->
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Annexure-1: Role of Pr.CCA/CCA/CA (13 functions) <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Per revised Charter of Integrated Finance Scheme (CGA, MoF) — CCA/CA function under CGA's direction. 13 broad categories:</p>
+          <table>
+            <tr><th>#</th><th>Function</th></tr>
+            <tr><td>i</td><td>Receipts, Payments & Accounts (timely accurate compilation/reporting)</td></tr>
+            <tr><td>ii</td><td>Financial Management Systems</td></tr>
+            <tr><td>iii</td><td>Internal Audit / Performance Audit</td></tr>
+            <tr><td>iv</td><td>FRBM-related tasks (disclosure statements)</td></tr>
+            <tr><td>v</td><td>Expenditure & Cash Management</td></tr>
+            <tr><td>vi</td><td>Non-Tax Receipts</td></tr>
+            <tr><td>vii</td><td>Monitoring Assets & Liabilities</td></tr>
+            <tr><td>viii</td><td>Accounts & Audit (keeping FAs informed)</td></tr>
+            <tr><td>ix</td><td>Budget Formulation (itemized → budgetary control)</td></tr>
+            <tr><td>x</td><td>Outcome Budget</td></tr>
+            <tr><td>xi</td><td>Performance Budget</td></tr>
+            <tr><td>xii</td><td>Reporting – Annual Finance Report & Outcome/Systems Report</td></tr>
+            <tr><td>xiii</td><td>Interaction between MoF & FAs</td></tr>
+          </table>
+          <p class="mnemonic">🧠 <b>"RF-I-F-E-N-A-A-B-O-P-R-I"</b> Receipts→Financial Mgmt→Internal Audit→FRBM→Expenditure→Non-tax→Assets→Budget→Outcome→Performance→Reporting→Interaction.</p>
+        </div>
+      </div>
+
+      <div class="q-box">
+        <b>Probable Exam Questions – Chapter I:</b><br>
+        1. Define "Chief Accounting Authority" as per PAM Vol-I. <span class="tag t-vi">🔴</span><br>
+        2. What are the two key features of DoP's commercial accounting system? <span class="tag t-cu">🟡</span><br>
+        3. Explain the flow of accounts from HPO to Finance Accounts. <span class="tag t-vi">🔴</span><br>
+        4. Which Major Head records Postal Capital Outlay? <span class="tag t-qr">🟢</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CHAPTER II ================= -->
+  <div class="chapter-card" id="c2">
+    <div class="chapter-head" onclick="toggleChapter('c2')">
+      <h2>Chapter II — Organisation & Control<br><span class="hi-text" style="font-size:.8rem">अध्याय 2 — संगठन एवं नियंत्रण</span></h2>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="chapter-body">
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.01 Directorate Structure <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="flow">
+            <div class="flow-step"><b>Secretary, DoP</b> = Chief Accounting Authority — responsible for (a) compiling/consolidating monthly & annual accounts (b) Postal portion of Combined Finance & Revenue Accounts (c) annual Appropriation Accounts</div>
+            <div class="flow-arrow">↓ advises</div>
+            <div class="flow-step"><b>AS&FA</b> (Additional Secretary & Financial Advisor) — advises CAA on accounts/finance matters</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><b>Sr. DDG (Postal Accounts & Finance)</b> — professional functionary of Postal Services Board; trains/controls Postal Accounts establishment; responsible for professional efficiency & correctness of accounts</div>
+          </div>
+          <p><b>7 Sections of Postal Accounts Wing (Directorate):</b></p>
+          <div class="chip-row">
+            <span class="chip">Control & Examination</span><span class="chip">Administration</span>
+            <span class="chip">Budget</span><span class="chip">Book I & II</span>
+            <span class="chip">PEA & PACE</span><span class="chip">Technical I & II</span>
+            <span class="chip">Internal Check</span>
+          </div>
+          <p class="mnemonic">🧠 "CABBY PIT" — Control&Exam, Admin, Budget, Book I&II, PEA/PACE, Technical I&II, Internal check.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.02 Circle Postal Accounts Offices (23 Offices) <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p>23 Circle PAOs work under overall supervision of Head of Circle, functionally responsible to <b>Sr. DDG(PAF)</b>. Headed by GM(PAF)/Director(PAF)/Dy.DA(PAF) depending on Circle size.</p>
+          <table>
+            <tr><th>Circle</th><th>PAO Location</th><th>Head Designation</th></tr>
+            <tr><td>Gujarat</td><td>Ahmedabad</td><td>GM (PAF)</td></tr>
+            <tr><td>Haryana</td><td>Ambala</td><td>Director (PAF)</td></tr>
+            <tr><td>Karnataka</td><td>Bangalore</td><td>GM (PAF)</td></tr>
+            <tr><td>Madhya Pradesh</td><td>Bhopal</td><td>GM (PAF)</td></tr>
+            <tr><td>Tamil Nadu</td><td>Chennai</td><td>GM (PAF)</td></tr>
+            <tr><td>Odisha</td><td>Cuttack</td><td>Director (PAF)</td></tr>
+            <tr><td>Uttarakhand</td><td>Dehradun</td><td>Director (PAF)</td></tr>
+            <tr><td>Delhi</td><td>Delhi</td><td>GM (PAF)</td></tr>
+            <tr><td>Assam</td><td>Guwahati</td><td>Director (PAF)</td></tr>
+            <tr><td>Telangana</td><td>Hyderabad</td><td>Director (PAF)</td></tr>
+            <tr><td>Rajasthan</td><td>Jaipur</td><td>GM (PAF)</td></tr>
+            <tr><td>J&K</td><td>Jammu</td><td>Director (PAF)</td></tr>
+            <tr><td>Punjab</td><td>Kapurthala</td><td>Dy. Director (PAF)</td></tr>
+            <tr><td>West Bengal</td><td>Kolkata</td><td>GM (PAF)</td></tr>
+            <tr><td>Uttar Pradesh</td><td>Lucknow</td><td>GM (PAF)</td></tr>
+            <tr><td>Maharashtra</td><td>Nagpur (+ Mumbai)</td><td>Director of Accounts / GM(F) Mumbai</td></tr>
+            <tr><td>Bihar</td><td>Patna</td><td>GM (PAF)</td></tr>
+            <tr><td>Chhattisgarh</td><td>Raipur</td><td>Director (PAF)</td></tr>
+            <tr><td>Jharkhand</td><td>Ranchi</td><td>Director (PAF)</td></tr>
+            <tr><td>North East</td><td>Shillong</td><td>Director (PAF)</td></tr>
+            <tr><td>Himachal Pradesh</td><td>Sunder Nagar</td><td>Director (PAF)</td></tr>
+            <tr><td>Kerala</td><td>Thiruvananthapuram</td><td>Director of Accounts (PAF)</td></tr>
+            <tr><td>Andhra Pradesh</td><td>Vijayawada (+ Mumbai CPMG fn.)</td><td>GM (PAF)</td></tr>
+          </table>
+          <p>PAOs monitor/reconcile/compile accounts of HPOs, RMS Divisions, Mail Motor Services, Postal Stock Depots, Regional Offices, PED, PCD, Postal Training Centres, PAO itself, CEPT & all NCDDOs.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.03 Section Structure inside a PAO <span class="tag t-cu">🟡 Concept</span><span>▾</span></div>
+        <div class="subbody">
+          <table>
+            <tr><th>General Accounts</th><th>Technical Accounts</th><th>Miscellaneous</th></tr>
+            <tr><td>Postal Accounts Section</td><td>Money Order & IPO</td><td>Central Co-ordination</td></tr>
+            <tr><td>Pension Section</td><td>Account Current Section</td><td>Central Inspection / Audit</td></tr>
+            <tr><td>GPF incl. NPS & NPS Lite</td><td>Cash Certificates/Govt Securities</td><td>Administration</td></tr>
+            <tr><td>Budget, Finance & Control</td><td>Book & Remittance</td><td>Establishment</td></tr>
+            <tr><td>PA (Miscellaneous)</td><td>—</td><td>IPPB/WUMT/PLI/PSB recon., Army Postal A/c, Training</td></tr>
+          </table>
+          <p>Head of PAO may (with HQ approval) split or merge sections for efficiency.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.04 Staff Strength, Statistics & Establishment Norms <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p><b>Staff requirement basis</b> <span class="tag t-vi">🔴</span>: average work of <b>5 continuous months, January–May</b> of the proposal year. Budget staff proposals due to Circle Head & HQ by <b>30th June</b> each year. (For GPF/NPS/SDBS/Book: 1st-of-month figures used.)</p>
+          <p>Responsibility for accurate statistics: <b>AAO of the section</b> personally; independently rechecked by another AAO; Branch Officer also checks; both sign the statement.</p>
+          <p>Central Inspection/Internal Check must verify registers of statistics for <b>≥10% of sections</b> per group (min. 1 section like PA, Admin, Account Current, Pension) during independent recheck.</p>
+          <p>Routine sections (Money Order, Cash Certificates) = flexible strength, varies with transaction volume. Non-routine sections (Postal Accounts, Pension, A/c Current, GPF, Coordination, Admin) = not flexible, changed only on manifest workload shift. <b>Concept of man-days/outturn per day is abolished</b> — work must be completed day-to-day without arrears (invoking FR 11 for internal staff redistribution).</p>
+          <div class="q-box"><b>Likely Q:</b> On what basis are staff requirements computed? → <i>Average work of Jan–May (5 months) of the proposal year; proposals submitted by 30th June.</i></div>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.05 Calendar of Returns (COR) & State of Work Report (SWR) <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Each section maintains a <b>Calendar of Returns – Form Sy.264</b> showing due/actual dates for: (a) dispatch of returns due from section (b) submission of accounts/objections/statements/registers to Branch Officer (c) receipt of returns due to section (d) special watch items. Subdivided by periodicity: Bi-weekly, Weekly, Fortnightly, Monthly, Bi-monthly, Quarterly, Half-yearly, Yearly.</p>
+          <table>
+            <tr><th>Return/Report</th><th>Frequency / Due Date</th><th>Responsible</th></tr>
+            <tr><td>Calendar of Returns – submission for review</td><td>Every Monday</td><td>AAO → Branch Officer</td></tr>
+            <tr><td>Register of Returns – review</td><td>15th of every month</td><td>AAO → Branch Officer</td></tr>
+            <tr><td>State of Work Report (SWR) – Form DG(PA)-17(A to L)</td><td>4th of following month</td><td>Branch PAO → HQ</td></tr>
+            <tr><td>HQ Office State of Work Report</td><td>5th of following month</td><td>Technical Section</td></tr>
+          </table>
+          <p>When COR is copied afresh: Accountant + AAO certify all valid items carried over (except discontinued ones) and that all prescribed periodical returns are duly noted with no omissions.</p>
+          <p class="mnemonic">🧠 "Monday review, 15 Register, 4 SWR to HQ, 5 HQ compiles" — memory chain for the 4 key dates.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.06 Scales of Pay (7th CPC) & Cash Handling Allowance <span class="tag t-qr">🟢 QR</span><span>▾</span></div>
+        <div class="subbody">
+          <table>
+            <tr><th>Post</th><th>Level (7th CPC)</th></tr>
+            <tr><td>Senior Accounts Officer (Gazetted)</td><td>Level 10</td></tr>
+            <tr><td>Accounts Officer</td><td>Level 9</td></tr>
+            <tr><td>Assistant Accounts Officer</td><td>Level 8</td></tr>
+            <tr><td>Senior Accountant</td><td>Level 6</td></tr>
+            <tr><td>Junior Accountant</td><td>Level 5</td></tr>
+            <tr><td>Lower Division Clerk</td><td>Level 2</td></tr>
+            <tr><td>Stenographer</td><td>Level 4 & 6</td></tr>
+            <tr><td>MTS</td><td>Level 1</td></tr>
+          </table>
+          <p><b>Cash Handling Allowance</b> (w.e.f. 1.7.2017, per DoPT OM dt. 18.01.2019):</p>
+          <table>
+            <tr><th>Monthly Cash Disbursed</th><th>Special Pay</th></tr>
+            <tr><td>Up to ₹5 lakh</td><td>₹700 p.m.</td></tr>
+            <tr><td>Over ₹5 lakh</td><td>₹1000 p.m.</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">2.07 Record Room Procedure – Preservation & Destruction <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="flow">
+            <div class="flow-step">Files/registers/voucher bundles bound after closure; outer cover shows year of destruction (Form Sy.322C, dated signature of AO)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Kept in section for <b>not more than 3 calendar years</b></div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Transferred to Departmental Record Room with duplicate list (File No./Classification, Year, Date of Review/Destruction, Record Room Index No.)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Record Room verifies, retains 1 copy, returns 1 signed copy with Index No. to section</div>
+          </div>
+          <p>No file issued without a requisition signed by Sectional Head (showing Index No.); requisition slip kept in file's place until returned. <b>Non-receipt within 1 month</b> → Record Keeper reminds the section. Detailed preservation periods → <b>Appendix-III</b> of this volume.</p>
+        </div>
+      </div>
+
+      <div class="q-box">
+        <b>Probable Exam Questions – Chapter II:</b><br>
+        1. Name the 7 sections of the Postal Accounts Wing at Directorate. <span class="tag t-fa">🟠</span><br>
+        2. What is the basis period for computing staff requirements, and the submission deadline? <span class="tag t-vi">🔴</span><br>
+        3. What Form number is used for Calendar of Returns / State of Work Report? <span class="tag t-qr">🟢</span><br>
+        4. For how long are records kept in the section before transfer to Record Room? <span class="tag t-fa">🟠</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ONE PAGE REVISION SHEET ============ -->
+  <div class="rev-sheet">
+    <h3>⚡ One-Page Revision Sheet</h3>
+    <div class="rev-grid">
+      <div>🔴 CAA for DoP = <b>Secretary, Department of Posts</b></div>
+      <div>🔴 Month's account freezed = <b>5th of following month</b></div>
+      <div>🔴 T+3 basis = transaction date + 3 days push to PFMS</div>
+      <div>🔴 Major Heads: 1201-Receipts | 3201-Expenses | 5201-Capital</div>
+      <div>🔴 Staff calc period = Jan–May (5 months); proposals due <b>30 June</b></div>
+      <div>🟠 CGA = Controller of Accounts, MoF (Dept. of Expenditure)</div>
+      <div>🟠 COR Form = <b>Sy.264</b>; SWR Form = <b>DG(PA)-17(A-L)</b></div>
+      <div>🟠 SWR due to HQ = <b>4th</b>; HQ SWR compiled by <b>5th</b></div>
+      <div>🟢 23 Circle Postal Accounts Offices nationwide</div>
+      <div>🟢 Records held in section max <b>3 years</b> before Record Room</div>
+      <div>🟢 Cash Handling Allowance: ≤₹5L → ₹700; >₹5L → ₹1000 p.m.</div>
+      <div>🟢 Man-days/outturn-per-day concept = <b>abolished</b></div>
+    </div>
+    <p class="hi-text" style="margin-top:8px;">📌 अंतिम-क्षण रिवीज़न: CAA = सचिव डाक विभाग | खाता फ्रीज़ = अगले माह की 5 तारीख | स्टाफ प्रस्ताव अंतिम तिथि = 30 जून</p>
+  </div>
+
+</div>
+
+<footer>LDCE AAO / IP Exam Portal &nbsp;•&nbsp; Source: Postal Accounts Manual Vol-I, 2nd Edition, Aug 2021 &nbsp;•&nbsp; Built for mobile revision</footer>
+
+<script>
+function toggleChapter(id){
+  const card=document.getElementById(id);
+  const body=card.querySelector('.chapter-body');
+  body.classList.toggle('open');
+  card.classList.toggle('open');
+}
+function toggleSub(el){
+  const body=el.nextElementSibling;
+  body.classList.toggle('open');
+}
+function expandAll(){
+  document.querySelectorAll('.chapter-body').forEach(b=>b.classList.add('open'));
+  document.querySelectorAll('.chapter-card').forEach(c=>c.classList.add('open'));
+  document.querySelectorAll('.subbody').forEach(b=>b.classList.add('open'));
+}
+function collapseAll(){
+  document.querySelectorAll('.chapter-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.chapter-card').forEach(c=>c.classList.remove('open'));
+  document.querySelectorAll('.subbody').forEach(b=>b.classList.remove('open'));
+}
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported.'); return;}
+  const text=document.querySelector('.container').innerText;
+  const u=new SpeechSynthesisUtterance(text.slice(0,3000));
+  u.rate=0.95;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+// open chapter 1 by default
+toggleChapter('c1');
+</script>
+
+</body>
+</html>

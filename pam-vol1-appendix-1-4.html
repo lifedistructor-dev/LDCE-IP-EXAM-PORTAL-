@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAM Vol-I | Appendices I-IV: Checks, Registers, Preservation & Forms</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dk:#B71C1C; --blue:#1565C0; --blue-dk:#0D47A1;
+  --gold:#F9A825; --gold-dk:#E65100; --green:#2E7D32; --bg:#FAF7F2; --card:#ffffff;
+  --text:#1c1c1c; --muted:#5f5f5f; --border:#e5ded2;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:60px; transition:background .3s,color .3s;}
+body.dark{ --bg:#121212; --card:#1e1e1e; --text:#f0f0f0; --muted:#b0b0b0; --border:#333; }
+header{background:linear-gradient(135deg,var(--red) 0%,var(--red-dk) 45%,var(--blue-dk) 100%); color:#fff; padding:22px 16px 26px; text-align:center; box-shadow:0 4px 14px rgba(0,0,0,.25);}
+header h1{font-size:1.25rem; margin-bottom:4px;}
+header .sub{font-size:.85rem; opacity:.92;}
+header .hi{font-size:.95rem; margin-top:6px; font-weight:600; color:#FFF3CD;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:12px;}
+.badge{background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4); border-radius:20px; padding:4px 10px; font-size:.7rem;}
+.topbar{position:sticky; top:0; z-index:50; background:var(--card); display:flex; gap:8px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.12); flex-wrap:wrap; justify-content:center;}
+.topbar button{border:none; border-radius:8px; padding:8px 12px; font-size:.75rem; font-weight:600; cursor:pointer; background:var(--blue); color:#fff;}
+.topbar button.alt{background:var(--gold-dk);}
+.topbar button.alt2{background:var(--green);}
+.container{max-width:820px; margin:0 auto; padding:14px;}
+.legend{display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border-radius:12px; padding:12px; margin:14px 0; border:1px solid var(--border); font-size:.75rem;}
+.chapter-card{background:var(--card); border-radius:14px; margin-bottom:16px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.08); border:1px solid var(--border);}
+.chapter-head{background:linear-gradient(90deg,var(--blue-dk),var(--blue)); color:#fff; padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+.chapter-head h2{font-size:1.0rem;}
+.chapter-head .arrow{transition:transform .3s; font-size:1.1rem;}
+.chapter-body{display:none; padding:14px 16px;}
+.chapter-body.open{display:block;}
+.chapter-card.open .arrow{transform:rotate(180deg);}
+.subcard{border:1px solid var(--border); border-radius:10px; margin:10px 0; overflow:hidden;}
+.subhead{background:#FFF3E0; color:var(--red-dk); padding:9px 12px; font-weight:700; font-size:.86rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+body.dark .subhead{background:#332417;}
+.subbody{display:none; padding:10px 12px; font-size:.83rem;}
+.subbody.open{display:block;}
+.tag{display:inline-block; font-size:.68rem; padding:2px 6px; border-radius:6px; margin-left:4px; font-weight:700;}
+.t-vi{background:#FFEBEE; color:var(--red-dk);}
+.t-fa{background:#FFF3E0; color:var(--gold-dk);}
+.t-cu{background:#FFFDE7; color:#8a7000;}
+.t-qr{background:#E8F5E9; color:var(--green);}
+body.dark .t-vi{background:#4a1414;} body.dark .t-fa{background:#4a2f0e;}
+body.dark .t-cu{background:#453e0e;} body.dark .t-qr{background:#123a17;}
+.hi-text{color:var(--gold-dk); font-weight:600; direction:rtl; unicode-bidi:embed;}
+body.dark .hi-text{color:#FFD54F;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.73rem;}
+th{background:var(--blue-dk); color:#fff; padding:6px 7px; text-align:left;}
+td{padding:6px 7px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.q-box{background:#FFF8E1; border:1px dashed var(--gold-dk); border-radius:8px; padding:8px 10px; font-size:.78rem; margin:8px 0;}
+body.dark .q-box{background:#332708;}
+.q-box b{color:var(--red-dk);}
+body.dark .q-box b{color:#ff8a80;}
+.mnemonic{background:linear-gradient(90deg,#E8F5E9,#FFFDE7); border-left:4px solid var(--green); padding:8px 10px; border-radius:6px; font-size:.8rem; margin:8px 0;}
+body.dark .mnemonic{background:#122316;}
+.rev-sheet{background:var(--card); border:2px dashed var(--red); border-radius:14px; padding:14px; margin:16px 0;}
+.rev-sheet h3{color:var(--red-dk); margin-bottom:8px;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px; font-size:.78rem;}
+.rev-grid div{background:#FFF3E0; border-radius:6px; padding:6px 8px;}
+body.dark .rev-grid div{background:#2b2010;}
+.chip-row{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+.chip{background:var(--blue); color:#fff; border-radius:14px; padding:3px 9px; font-size:.68rem;}
+.pill-perm{background:var(--red-dk);} .pill-5{background:var(--gold-dk);} .pill-3{background:var(--blue);} .pill-2{background:#455A64;} .pill-1{background:var(--green);}
+.pill-row{display:flex; gap:6px; flex-wrap:wrap; margin:6px 0;}
+.pill{color:#fff; border-radius:12px; padding:2px 9px; font-size:.66rem; font-weight:700;}
+footer{text-align:center; padding:20px; font-size:.72rem; color:var(--muted);}
+::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-thumb{background:var(--blue); border-radius:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Postal Accounts Manual – Vol I</h1>
+  <div class="sub">Appendices I–IV: Checks, Registers, Record Preservation & Forms</div>
+  <div class="hi">📘 डाक लेखा नियमावली – भाग I | परिशिष्ट 1-4</div>
+  <div class="badge-row">
+    <span class="badge">LDCE AAO Paper II</span>
+    <span class="badge">LDCE IP Exam</span>
+    <span class="badge">Reference Appendices</span>
+  </div>
+</header>
+
+<div class="topbar">
+  <button onclick="document.body.classList.toggle('dark')">🌙 Dark/Light</button>
+  <button class="alt" onclick="expandAll()">⬇️ Expand All</button>
+  <button class="alt2" onclick="collapseAll()">⬆️ Collapse All</button>
+  <button onclick="speakPage()">🔊 Read Page</button>
+</div>
+
+<div class="container">
+  <div class="legend">
+    <div>🔴 <b>Very Important</b> for Exam</div>
+    <div>🟠 <b>Frequently Asked</b></div>
+    <div>🟡 <b>Conceptual</b> Understanding</div>
+    <div>🟢 <b>Quick Revision</b> Point</div>
+  </div>
+
+  <!-- APPENDIX I -->
+  <div class="chapter-card open" id="a1">
+    <div class="chapter-head" onclick="toggleChapter('a1')">
+      <h2>Appendix I — Extent of Checks by Postal Accounts Offices<br><span class="hi-text" style="font-size:.78rem">परिशिष्ट 1 — डाक लेखा कार्यालयों द्वारा जांच की सीमा</span></h2>
+      <span class="arrow">▲</span>
+    </div>
+    <div class="chapter-body open">
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Governing Principle & Sample Check Table <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p><b>Default rule:</b> Where periodicity is not specifically defined, extent of check = <b>cent-percent (100%)</b> of transactions. Checker maintains working papers & initials vouchers "checked/objection raised."</p>
+          <table>
+            <tr><th>Item of Work</th><th>Extent of Check</th></tr>
+            <tr><td>Establishment Pay Bills — nominal & numerical</td><td>Half-yearly</td></tr>
+            <tr><td>Medical Attendance Bills / TA Bills</td><td>Quarterly</td></tr>
+            <tr><td>Contingent Bills / GPF Vouchers</td><td>Quarterly</td></tr>
+            <tr><td>Loans/Advances — detailed a/c at Circle PAO</td><td>All vouchers, every month</td></tr>
+            <tr><td>Pension bills (compassionate gratuity, provisional/military, HO pension, commuted value)</td><td>Half-yearly</td></tr>
+            <tr><td>Check of Classifications</td><td>Concurrent</td></tr>
+            <tr><td>Losses of Govt Property / Scrutiny of Contracts / Advances Drawn</td><td>Monthly</td></tr>
+            <tr><td>Discharged PO Certificates &gt;₹100</td><td>100%</td></tr>
+            <tr><td>Discharged PO Certificates ≤₹100</td><td>1 month in a year</td></tr>
+            <tr><td>IPOs ₹50/₹100 denomination</td><td>100%</td></tr>
+            <tr><td>IPOs ₹10-₹40 denomination</td><td>25%</td></tr>
+            <tr><td>IPOs below ₹10</td><td>10%</td></tr>
+            <tr><td>Civil Works — Final Running A/c, sanctioned above Division level</td><td>100%</td></tr>
+            <tr><td>Civil Works — Running A/c &gt;₹1 lakh</td><td>100%</td></tr>
+            <tr><td>Civil Works — Running A/c ₹10,000-₹1 lakh</td><td>50%</td></tr>
+            <tr><td>Civil Works — Running A/c ≤₹10,000</td><td>25%</td></tr>
+            <tr><td>GPF cards of staff on deputation</td><td>All by JAO end of quarter; 25% by BO in Jan & Jun</td></tr>
+            <tr><td>Annual GPF Account Statement</td><td>100%</td></tr>
+            <tr><td>All Pension Payments — annual review</td><td>Once a year</td></tr>
+          </table>
+          <p class="mnemonic">🧠 Pattern: Higher monetary value → higher check % (100%); routine/low-value items → sampled quarterly/half-yearly/annual review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPENDIX II -->
+  <div class="chapter-card" id="a2">
+    <div class="chapter-head" onclick="toggleChapter('a2')">
+      <h2>Appendix II — Statements & Registers in PAOs<br><span class="hi-text" style="font-size:.78rem">परिशिष्ट 2 — विवरण एवं पंजियाँ</span></h2>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="chapter-body">
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Postal Accounts Section — Key Statements & Registers <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Computerised (ERP) data drives most statements now; Branch Officer ensures report availability via Technology Division. Illustrative statements:</p>
+          <div class="chip-row">
+            <span class="chip">Customs duty figures</span><span class="chip">Suspense items & liquidation</span>
+            <span class="chip">DOP cash balance vs CGA (monthly)</span><span class="chip">Commission to Authorised Agents</span>
+            <span class="chip">IPOs sold/paid</span><span class="chip">Remittances after March closure</span>
+            <span class="chip">Quarterly deposit forfeiture/refund</span><span class="chip">Review of Balances</span>
+          </div>
+          <p>Illustrative registers: Manuscript register for paid vouchers/contingent bills, Calendar of Returns, Salary Check Register, Fly Leaf Register, Register of Defalcations/Losses, Register of Waived Objections, Remittance Check Register, Register of Lapsed Deposits.</p>
+        </div>
+      </div>
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">GPF Section — 17 Key Registers <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="chip-row">
+            <span class="chip">Register of GPF A/c — Form DG(PA)-77</span>
+            <span class="chip">Unit & Consolidated Broadsheet</span>
+            <span class="chip">Register of Inward/Outward Transfers</span>
+            <span class="chip">Register of Unposted Items</span>
+            <span class="chip">Register of Missing Credits</span>
+            <span class="chip">Final Closure Register (retirement)</span>
+            <span class="chip">Interest Suspense Broadsheet</span>
+            <span class="chip">Register of Unclaimed/Lapsed Deposits</span>
+            <span class="chip">Register of Provident Fund Suspense</span>
+            <span class="chip">Register — Death/Dismissal/Retirement cases</span>
+            <span class="chip">Register — Interest on GPF Budget Provision</span>
+            <span class="chip">Register — Deposit-Linked Insurance finalisation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPENDIX III -->
+  <div class="chapter-card" id="a3">
+    <div class="chapter-head" onclick="toggleChapter('a3')">
+      <h2>Appendix III — Period of Preservation of Records<br><span class="hi-text" style="font-size:.78rem">परिशिष्ट 3 — अभिलेख संरक्षण अवधि</span></h2>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="chapter-body">
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Governing Rules & Destruction Procedure <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Old Record Branch entries in <b>Form Sy-257</b>. Weeding list prepared in <b>Form Sy-256-A</b>, requires <b>Head of Office's written sanction</b> before actual destruction. Half-yearly report on state of old records accompanies the September & March State of Work returns.</p>
+          <p>Records organised into <b>8 sections</b>: I-General, II-Administration/Establishment/Records, III-GPF, IV(a)-PO Certificates, IV(b)-NSC, IV(c)-Defence Savings Certificates, V-Postal Orders/IRC, VI-SB/CTD, VII-Money Order, VIII-Govt Securities.</p>
+        </div>
+      </div>
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Representative Preservation Periods (Section I - General) <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="pill-row">
+            <span class="pill pill-perm">Permanent</span><span class="pill pill-5">5 years</span>
+            <span class="pill pill-3">3 years</span><span class="pill pill-2">2 years</span><span class="pill pill-1">1 year</span>
+          </div>
+          <table>
+            <tr><th>Record</th><th>Period</th></tr>
+            <tr><td>Register of Lapsed Deposits</td><td><b>Permanent</b></td></tr>
+            <tr><td>PMG/DG General Order Files, Circular Files</td><td>5 years</td></tr>
+            <tr><td>Sanctions for HBA + Annual Acknowledgements</td><td>5 years</td></tr>
+            <tr><td>Monthly Customs Duty Statements</td><td>5 years</td></tr>
+            <tr><td>Register/Broadsheet of Balances under Advances</td><td>5 years</td></tr>
+            <tr><td>Scale Check Register, Contingent/TA Bills, Remittance Check Register, Statement of Remittances, Progress Report, Objection Statements, Objection Books, Adjustment Book, Register of Misc. P&T Advances, Fund Statements, PLI Statements, Sanctions for Compassionate Gratuities</td><td>3 years</td></tr>
+            <tr><td>Register of Objection Statements, Advice/Acceptance of Transfer, Statements of Disbursers' A/cs, Income Tax Statements</td><td>2 years</td></tr>
+            <tr><td>Register of Reminders, Peon Books, State of Work Returns, Register of Pending Letters, MO Discrepancy Recoveries</td><td>1 year</td></tr>
+          </table>
+          <p class="q-box"><b>Likely Q:</b> What is the preservation period for the Register of Lapsed Deposits? → <i>Permanent.</i></p>
+        </div>
+      </div>
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Preservation — GPF, Certificates & Securities Sections <span class="tag t-cu">🟡 Concept</span><span>▾</span></div>
+        <div class="subbody">
+          <p><b>Section III (GPF):</b> Core ledger/nomination records generally preserved <b>Permanently</b> or long-term given their legal/financial significance for retirees.</p>
+          <p><b>Section IV (PO/NSC/Defence Certificates):</b> Issue Registers and core certificate registers → <b>Permanent</b>; transactional vouchers → shorter periods (3-5 years).</p>
+          <p><b>Section VIII (Govt Securities):</b> Core registers → <b>Permanent</b>, given they evidence Government's continuing liability/asset position.</p>
+          <p class="mnemonic">🧠 General exam pattern: <b>Registers that establish continuing rights/liabilities</b> (GPF ledgers, Lapsed Deposits, Securities registers, Certificate Issue Registers) = <b>Permanent</b>. <b>Routine transactional/procedural records</b> = 1-5 years.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPENDIX IV -->
+  <div class="chapter-card" id="a4">
+    <div class="chapter-head" onclick="toggleChapter('a4')">
+      <h2>Appendix IV — List of Forms & Major/Minor Heads<br><span class="hi-text" style="font-size:.78rem">परिशिष्ट 4 — प्रपत्र सूची एवं प्रमुख/लघु शीर्ष</span></h2>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="chapter-body">
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Key DG(PA) Forms to Remember <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>DoP maintains a standardised numbering series (DG(PA)-nn) for registers not yet fully computerised. Frequently-tested forms:</p>
+          <table>
+            <tr><th>Form No.</th><th>Description</th></tr>
+            <tr><td>DG(PA)-17</td><td>State of Work Report to Headquarters</td></tr>
+            <tr><td>DG(PA)-50</td><td>Progress Report of work in Accounts Sections</td></tr>
+            <tr><td>DG(PA)-68</td><td>Register of Items Written Off</td></tr>
+            <tr><td>DG(PA)-70</td><td>Register of Deposits</td></tr>
+            <tr><td>DG(PA)-71</td><td>Register of Lapsed Deposits</td></tr>
+            <tr><td>DG(PA)-77</td><td>Register of GPF Accounts</td></tr>
+            <tr><td>DG(PA)-78</td><td>Authority for Final Payment of GPF</td></tr>
+            <tr><td>DG(PA)-80B</td><td>Register of Missing Credits</td></tr>
+            <tr><td>DG(PA)-90</td><td>Appropriation Check Register</td></tr>
+            <tr><td>DG(PA)-97 / 97A</td><td>Inspection Report Issue/Disposal Register / &gt;6-month Outstanding Register</td></tr>
+            <tr><td>DG(PA)-99F</td><td>Pension Payment Order</td></tr>
+            <tr><td>DG(PA)-503</td><td>Gratuity Payment Order</td></tr>
+            <tr><td>DG(PA)-506 / 523</td><td>Register of Unlinked Items (Bank Scrolls / Postal Schedules)</td></tr>
+            <tr><td>DG(PA)-507 / 524</td><td>Register of Comparison — P&T figures vs Bank / Treasury figures</td></tr>
+            <tr><td>DG(PA)-508 / 525</td><td>Circle Broadsheet — Bank / Treasury</td></tr>
+            <tr><td>DG(PA)-519</td><td>Abstract of Adjustments</td></tr>
+            <tr><td>DG(PA)-522</td><td>Skeleton Register for Treasury Schedules</td></tr>
+            <tr><td>DG(PA)-526</td><td>Register of Advices Received</td></tr>
+            <tr><td>DG(PA)-527</td><td>Register of Outward Advices</td></tr>
+            <tr><td>DG(PA)-528</td><td>Register of Compilation of Schedules</td></tr>
+            <tr><td>DG(PA)-561</td><td>Journal</td></tr>
+            <tr><td>DG(PA)-562</td><td>Trial Balance Sheet</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">Major Head Quick Index (from across all chapters) <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <table>
+            <tr><th>Major Head</th><th>Meaning</th></tr>
+            <tr><td>1201</td><td>Postal Receipts</td></tr>
+            <tr><td>0049 / 2049</td><td>Interest Receipts / Interest Payments</td></tr>
+            <tr><td>3201 / 2552</td><td>Postal Services (Working Expenses) / NE Region</td></tr>
+            <tr><td>5201 / 4552 / 5465</td><td>Capital Outlay on Postal Services / NE Capital / IPPB Capital</td></tr>
+            <tr><td>3465</td><td>Grants to IPPB / Revenue</td></tr>
+            <tr><td>7610</td><td>Loans and Advances</td></tr>
+            <tr><td>8014</td><td>PLI Scheme</td></tr>
+            <tr><td>8015 / 8016</td><td>Investment of POLI Fund / Income-Expenditure of POLI Fund</td></tr>
+            <tr><td>8443 / 8446 / 8553 / 8661</td><td>Various Suspense/Deposit heads (Civil Deposits/RBI Suspense/Recoverable Advances/Suspense A/c)</td></tr>
+            <tr><td>8675</td><td>Deposits with Reserve Bank</td></tr>
+            <tr><td>8782</td><td>Cash Remittances (incl. CTS Grid Clearance)</td></tr>
+            <tr><td>8009</td><td>State Provident Funds (Unfunded)</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="q-box">
+        <b>Note:</b> Appendix IV also contains the full <b>List of Major & Minor Heads of Account — DoP</b> (published as a large separate reference, Appendix 5 to the Manual). For exam purposes, know the Major Head <b>categories</b> (Receipts=1201, Expenditure=3201/2552, Capital=5201/5465, Loans=7610, Insurance=8014-8016, Suspense=8443/8446/8553/8661, RBI=8675) rather than memorising every minor/detailed head.
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ One-Page Revision Sheet — Appendices I-IV</h3>
+    <div class="rev-grid">
+      <div>🔴 Default check extent (unless specified) = <b>100%</b></div>
+      <div>🔴 Register of Lapsed Deposits = preserved <b>Permanently</b></div>
+      <div>🔴 Record destruction needs Head of Office's <b>written sanction</b> (Form Sy-256-A)</div>
+      <div>🟠 GPF Register = DG(PA)-77; Final Payment Authority = DG(PA)-78</div>
+      <div>🟠 Trial Balance Sheet = DG(PA)-562; Journal = DG(PA)-561</div>
+      <div>🟢 8 Preservation Sections: General, Admin/Estt, GPF, PO/NSC/Defence Certificates, Postal Orders, SB/CTD, Money Order, Govt Securities</div>
+      <div>🟢 Old records reviewed half-yearly with Sept & March State of Work returns</div>
+    </div>
+    <p class="hi-text" style="margin-top:8px;">📌 डिफ़ॉल्ट जांच = 100% | लैप्स्ड डिपॉज़िट रजिस्टर = स्थायी संरक्षण | विनाश हेतु कार्यालय प्रमुख की लिखित स्वीकृति आवश्यक</p>
+  </div>
+
+</div>
+
+<footer>LDCE AAO / IP Exam Portal &nbsp;•&nbsp; Source: Postal Accounts Manual Vol-I, 2nd Edition, Aug 2021 &nbsp;•&nbsp; Appendices I-IV — Series Complete! 🎉</footer>
+
+<script>
+function toggleChapter(id){const c=document.getElementById(id);c.querySelector('.chapter-body').classList.toggle('open');c.classList.toggle('open');}
+function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
+function expandAll(){document.querySelectorAll('.chapter-body,.chapter-card,.subbody').forEach(e=>e.classList.add('open'));}
+function collapseAll(){document.querySelectorAll('.chapter-body,.chapter-card,.subbody').forEach(e=>e.classList.remove('open'));}
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported.'); return;}
+  const text=document.querySelector('.container').innerText;
+  const u=new SpeechSynthesisUtterance(text.slice(0,3000));
+  u.rate=0.95; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>

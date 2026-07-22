@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAM Vol-I | Chapter XIII: Pension</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dk:#B71C1C; --blue:#1565C0; --blue-dk:#0D47A1;
+  --gold:#F9A825; --gold-dk:#E65100; --green:#2E7D32; --bg:#FAF7F2; --card:#ffffff;
+  --text:#1c1c1c; --muted:#5f5f5f; --border:#e5ded2;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:60px; transition:background .3s,color .3s;}
+body.dark{ --bg:#121212; --card:#1e1e1e; --text:#f0f0f0; --muted:#b0b0b0; --border:#333; }
+header{background:linear-gradient(135deg,var(--red) 0%,var(--red-dk) 45%,var(--blue-dk) 100%); color:#fff; padding:22px 16px 26px; text-align:center; box-shadow:0 4px 14px rgba(0,0,0,.25);}
+header h1{font-size:1.3rem; margin-bottom:4px;}
+header .sub{font-size:.85rem; opacity:.92;}
+header .hi{font-size:.95rem; margin-top:6px; font-weight:600; color:#FFF3CD;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:12px;}
+.badge{background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4); border-radius:20px; padding:4px 10px; font-size:.7rem;}
+.topbar{position:sticky; top:0; z-index:50; background:var(--card); display:flex; gap:8px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.12); flex-wrap:wrap; justify-content:center;}
+.topbar button{border:none; border-radius:8px; padding:8px 12px; font-size:.75rem; font-weight:600; cursor:pointer; background:var(--blue); color:#fff;}
+.topbar button.alt{background:var(--gold-dk);}
+.topbar button.alt2{background:var(--green);}
+.container{max-width:820px; margin:0 auto; padding:14px;}
+.legend{display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border-radius:12px; padding:12px; margin:14px 0; border:1px solid var(--border); font-size:.75rem;}
+.chapter-card{background:var(--card); border-radius:14px; margin-bottom:16px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.08); border:1px solid var(--border);}
+.chapter-head{background:linear-gradient(90deg,var(--blue-dk),var(--blue)); color:#fff; padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+.chapter-head h2{font-size:1.05rem;}
+.chapter-head .arrow{transition:transform .3s; font-size:1.1rem;}
+.chapter-body{display:none; padding:14px 16px;}
+.chapter-body.open{display:block;}
+.chapter-card.open .arrow{transform:rotate(180deg);}
+.subcard{border:1px solid var(--border); border-radius:10px; margin:10px 0; overflow:hidden;}
+.subhead{background:#FFF3E0; color:var(--red-dk); padding:9px 12px; font-weight:700; font-size:.88rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+body.dark .subhead{background:#332417;}
+.subbody{display:none; padding:10px 12px; font-size:.85rem;}
+.subbody.open{display:block;}
+.tag{display:inline-block; font-size:.68rem; padding:2px 6px; border-radius:6px; margin-left:4px; font-weight:700;}
+.t-vi{background:#FFEBEE; color:var(--red-dk);}
+.t-fa{background:#FFF3E0; color:var(--gold-dk);}
+.t-cu{background:#FFFDE7; color:#8a7000;}
+.t-qr{background:#E8F5E9; color:var(--green);}
+body.dark .t-vi{background:#4a1414;} body.dark .t-fa{background:#4a2f0e;}
+body.dark .t-cu{background:#453e0e;} body.dark .t-qr{background:#123a17;}
+.hi-text{color:var(--gold-dk); font-weight:600; direction:rtl; unicode-bidi:embed;}
+body.dark .hi-text{color:#FFD54F;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.76rem;}
+th{background:var(--blue-dk); color:#fff; padding:6px 7px; text-align:left;}
+td{padding:6px 7px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{background:linear-gradient(90deg,#E3F2FD,#FFF); border:1px solid var(--blue); border-radius:8px; padding:8px 10px; font-size:.8rem;}
+body.dark .flow-step{background:#16232f;}
+.flow-arrow{text-align:center; color:var(--blue); font-size:1rem;}
+.q-box{background:#FFF8E1; border:1px dashed var(--gold-dk); border-radius:8px; padding:8px 10px; font-size:.78rem; margin:8px 0;}
+body.dark .q-box{background:#332708;}
+.q-box b{color:var(--red-dk);}
+body.dark .q-box b{color:#ff8a80;}
+.mnemonic{background:linear-gradient(90deg,#E8F5E9,#FFFDE7); border-left:4px solid var(--green); padding:8px 10px; border-radius:6px; font-size:.8rem; margin:8px 0;}
+body.dark .mnemonic{background:#122316;}
+.rev-sheet{background:var(--card); border:2px dashed var(--red); border-radius:14px; padding:14px; margin:16px 0;}
+.rev-sheet h3{color:var(--red-dk); margin-bottom:8px;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px; font-size:.78rem;}
+.rev-grid div{background:#FFF3E0; border-radius:6px; padding:6px 8px;}
+body.dark .rev-grid div{background:#2b2010;}
+.chip-row{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+.chip{background:var(--blue); color:#fff; border-radius:14px; padding:3px 9px; font-size:.68rem;}
+footer{text-align:center; padding:20px; font-size:.72rem; color:var(--muted);}
+::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-thumb{background:var(--blue); border-radius:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Postal Accounts Manual – Vol I</h1>
+  <div class="sub">Chapter XIII: Pension</div>
+  <div class="hi">📘 डाक लेखा नियमावली – भाग I | अध्याय 13: पेंशन</div>
+  <div class="badge-row">
+    <span class="badge">LDCE AAO Paper II</span>
+    <span class="badge">LDCE IP Exam</span>
+    <span class="badge">CCS(Pension) Rules 1972</span>
+  </div>
+</header>
+
+<div class="topbar">
+  <button onclick="document.body.classList.toggle('dark')">🌙 Dark/Light</button>
+  <button class="alt" onclick="expandAll()">⬇️ Expand All</button>
+  <button class="alt2" onclick="collapseAll()">⬆️ Collapse All</button>
+  <button onclick="speakPage()">🔊 Read Page</button>
+</div>
+
+<div class="container">
+  <div class="legend">
+    <div>🔴 <b>Very Important</b> for Exam</div>
+    <div>🟠 <b>Frequently Asked</b></div>
+    <div>🟡 <b>Conceptual</b> Understanding</div>
+    <div>🟢 <b>Quick Revision</b> Point</div>
+  </div>
+
+  <div class="chapter-card open" id="c13">
+    <div class="chapter-head" onclick="toggleChapter('c13')">
+      <h2>Chapter XIII — Pension<br><span class="hi-text" style="font-size:.8rem">अध्याय 13 — पेंशन</span></h2>
+      <span class="arrow">▲</span>
+    </div>
+    <div class="chapter-body open">
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.01 Role of Pension Section <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>GM/Director/Dy.Director of Accounts (Postal) responsible for quick, correct pension finalisation for all eligible employees/dependants. <b>11 main functions:</b></p>
+          <div class="chip-row">
+            <span class="chip">Service verification (Rule 32, CCS Pension Rules 1972)</span>
+            <span class="chip">Enfacement Report on applications</span>
+            <span class="chip">Issue PPO/Family Pension/DCRG orders</span>
+            <span class="chip">Check/audit pension & gratuity vouchers</span>
+            <span class="chip">Periodical returns compilation</span>
+            <span class="chip">Third-party pension processing</span>
+            <span class="chip">Service charge realisation</span>
+            <span class="chip">Bank disbursement processing</span>
+            <span class="chip">Deputation/Foreign Service records</span>
+            <span class="chip">Revision of pension cases</span>
+            <span class="chip">Family pension authorisation post-death</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.02 Verification of Service (Rule 32) <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p><b>2 types of verification cases:</b></p>
+          <table>
+            <tr><th>Type</th><th>Trigger</th></tr>
+            <tr><td>1. Qualifying Service Verification</td><td>After <b>18 years</b> of service, or when <b>5 years remain</b> before retirement — whichever is earlier (Rule 32, CCS Pension Rules 1972)</td></tr>
+            <tr><td>2. Final Verification</td><td>At Enfacement Report stage while finalising the pension case</td></tr>
+          </table>
+          <p>Register of applications maintained in <b>Form Sy-133</b>. Service Book checked for: completeness, non-qualifying period entries, annual verification notes, acquittance-roll verification (Rule 58(a)(iv)&(v)), military/training service counting, Form-3 pasted, CGEGIS entries.</p>
+          <p class="q-box"><b>🔴 Key timeline:</b> Verification statements disposed within <b>15 working days</b> of receipt; fortnightly outstanding-case report submitted on <b>1st and 16th</b> of each month (1st also to Head of PAO via Director/Dy.Director).</p>
+          <p>Verification under Rule 32(1)&(2) is <b>final</b> — not re-opened except for a subsequent rule change.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.03 Reporting on Applications for Pension <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Applications registered in <b>Form Sy-134</b> (per Rules 67, 80, 82 CCS Pension Rules). PPOs must issue <b>not later than 1 month before</b> retirement date. Emoluments check limited to a maximum of <b>24 months</b> preceding retirement (not a full Service Book audit).</p>
+          <p><b>12 key checks on each application (a–l):</b> proper form; service duly verified; sub-qualifying-age service rejected; competent-authority orders for non-qualifying period recorded; correct qualifying/non-qualifying entries; correct pension class & calculation; Form-7/18 entries proper; uniform spelling across documents; photos/specimen signatures attested (Rule 55); outstanding dues intimated (Form-8); no pending/contemplated disciplinary case; terminal benefits — once authorised, not alterable except for typographical error with Govt approval.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.04 Classes of Pension — Special Checks <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <table>
+            <tr><th>Pension Class</th><th>Key Check</th></tr>
+            <tr><td>Compensation Pension</td><td>Discharged on abolition of post; no suitable alternative employment; savings from abolition exceed pension cost</td></tr>
+            <tr><td>Invalid Pension</td><td>Medical authority certifies permanent incapacity; leave debited + duty beyond report date ≤ <b>6 months</b></td></tr>
+            <tr><td>Superannuation Pension</td><td>Attained compulsory retirement age per <b>Rule 35</b>, verified against DOB</td></tr>
+            <tr><td>Retiring Pension</td><td>Required qualifying service put in (30/20 years, or prescribed lesser period)</td></tr>
+            <tr><td>Family Pension</td><td>Admissible per <b>Rule 54</b>; nominations received; correctly determined; minors via valid guardian</td></tr>
+          </table>
+          <p class="mnemonic">🧠 "C-I-S-R-F" — Compensation, Invalid, Superannuation, Retiring, Family — the 5 pension classes.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.05 Commutation of Pension <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Authority for commuted-value payment issued by Director/Dy.Director (Postal); reduced pension effective from <b>actual payment date</b> or <b>3 months</b> from authority-issue date, whichever applies. Disbursing Officer notes date + reduced pension on both PPO halves.</p>
+          <p>Recorded in <b>Commutation Payment Register — Form Sy-170</b>; reconciled monthly with Detail Book. <b>No separate check register</b> for commuted pensions — noted directly in PPO Register & Pension Check Register (guards against overpayment).</p>
+          <p>Pensioner refused commutation on medical grounds, or applying for re-examination after declining age-addition recommendation → re-examined by Medical Board (Rules 26 & 27, CCS Commutation Rules 1981). Re-examination under Rule 26 only after <b>≥1 year</b> from first exam; Rule 27 application within <b>1 month</b> of receiving Part III of Form 4.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.06 Adjustment of Pensionary Charges (Inter-Govt) <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Governed by <b>Section IV, Appendix 3, Account Code Vol-I</b> — constitutes the Article 280 (Constitution) agreement on pensionary charge distribution between Governments.</p>
+          <div class="flow">
+            <div class="flow-step">Govt granting a pensionary concession (e.g. condoning deficiency) needing another Govt's additional liability → must obtain that Govt's <b>prior sanction</b></div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">If one Govt's pension rules are more generous → other Govt bears only its own (lower) proportionate share</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Concession granted unilaterally → granting Govt bears full increase, unless the other Govt accepts a share (then split by length of service under each)</div>
+          </div>
+          <p><b>3-year convention:</b> Past-transaction adjustments between Departments generally limited to <b>3 years</b> from date mistake is <i>discovered</i> (not 3 financial years back) — a convention, not a rigid rule; mutual agreement can override.</p>
+          <p>"Length of Service" = qualifying service per Rule 3(i), Section IV, Appendix 3 — unverified service cannot be ignored for apportionment.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.07 Pension Check Register & Objections <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <table>
+            <tr><th>Register</th><th>Form</th></tr>
+            <tr><td>Pension Check Register</td><td>MSO(T)-48</td></tr>
+            <tr><td>Gratuity Payment Register</td><td>MSO(T)-50</td></tr>
+            <tr><td>Provisional Pension Check Register</td><td>MSO(T)-48A</td></tr>
+          </table>
+          <p>Family Pension check register kept <b>separate</b> from other pension check registers. Every entry attested by AAO, countersigned by Branch Officer.</p>
+          <p>Objection Book closed <b>≥2 clear working days</b> before submission due date; reviewed by Accounts Officer on the <b>28th of each month</b>. Items unsettled &gt;6 months tracked in a separate register.</p>
+          <p><b>Non-drawal reporting:</b> Head Postmaster reports every <b>6 months</b> (due early June/December; reminder if not received by <b>10th</b>) — cases of non-drawal &gt;1 year (all others) and &gt;3 years (service pension, separately flagged).</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">13.08 Records Destruction & Bank Disbursement <span class="tag t-cu">🟡 Concept</span><span>▾</span></div>
+        <div class="subbody">
+          <p><b>Destruction of Pension Records:</b> Weeded out <b>7 years after pensioner's/family pensioner's death</b>, provided all arrears claims are settled & no further eligible Family Pension claimants exist.</p>
+          <p><b>Disbursement via Banks:</b> Per 'Scheme for Payment of Pensions to Central Govt. Civil Pensioners by Authorized Banks.' PAO issues PPO → sent to Bank's <b>CPPC (Centralised Pension Processing Centre)</b>. Payment adjustment via <b>RBI-CAS Nagpur</b>; scroll from CPPC → Account Current Section posts TE to <b>Major Head 3201-07</b> → transferred to Pension Section for <b>cent-percent audit</b> (until further orders).</p>
+          <p><b>Military Personnel Payments:</b> "IMP Payments" head reconciled with supporting schedule; consolidated debit raised against <b>CDA(P) Allahabad</b> via Settlement Account, routed through <b>Kapurthala PAO</b>.</p>
+        </div>
+      </div>
+
+      <div class="q-box">
+        <b>Probable Exam Questions – Chapter XIII:</b><br>
+        1. When is qualifying service verification under Rule 32 triggered? <span class="tag t-vi">🔴</span><br>
+        2. By what timeline must a PPO be issued before an employee's retirement date? <span class="tag t-vi">🔴</span><br>
+        3. List the 5 classes of pension under CCS (Pension) Rules 1972. <span class="tag t-fa">🟠</span><br>
+        4. What is the "3-year convention" for adjustment of pensionary charges between Governments? <span class="tag t-fa">🟠</span><br>
+        5. After how many years are pension records weeded out following a pensioner's death? <span class="tag t-qr">🟢</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ One-Page Revision Sheet — Chapter XIII</h3>
+    <div class="rev-grid">
+      <div>🔴 Rule 32 verification triggers: <b>18 years</b> service OR <b>5 years</b> before retirement</div>
+      <div>🔴 Verification statements disposed in <b>15 working days</b></div>
+      <div>🔴 PPO issued <b>≥1 month before</b> retirement</div>
+      <div>🔴 Emoluments check limited to <b>24 months</b> before retirement</div>
+      <div>🟠 5 pension classes: Compensation, Invalid, Superannuation, Retiring, Family</div>
+      <div>🟠 Invalid pension: leave+duty beyond medical report ≤ <b>6 months</b></div>
+      <div>🟠 3-year convention for inter-Govt pensionary-charge adjustment (Appendix 3, Sec-IV)</div>
+      <div>🟢 Pension records weeded out <b>7 years</b> after pensioner's death</div>
+      <div>🟢 Non-drawal report due early <b>June & December</b>; reminder after <b>10th</b></div>
+      <div>🟢 Objection Book reviewed by AO on <b>28th</b> of month</div>
+      <div>🟢 Bank disbursement adjusted via <b>RBI-CAS Nagpur</b>, audited 100% by Pension Section</div>
+    </div>
+    <p class="hi-text" style="margin-top:8px;">📌 सेवा सत्यापन = 18 वर्ष या सेवानिवृत्ति से 5 वर्ष पूर्व | PPO जारी = सेवानिवृत्ति से 1 माह पहले</p>
+  </div>
+
+</div>
+
+<footer>LDCE AAO / IP Exam Portal &nbsp;•&nbsp; Source: Postal Accounts Manual Vol-I, 2nd Edition, Aug 2021 &nbsp;•&nbsp; Chapter XIII of 18</footer>
+
+<script>
+function toggleChapter(id){const c=document.getElementById(id);c.querySelector('.chapter-body').classList.toggle('open');c.classList.toggle('open');}
+function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
+function expandAll(){document.querySelectorAll('.chapter-body,.chapter-card,.subbody').forEach(e=>e.classList.add('open'));}
+function collapseAll(){document.querySelectorAll('.chapter-body,.chapter-card,.subbody').forEach(e=>e.classList.remove('open'));}
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported.'); return;}
+  const text=document.querySelector('.container').innerText;
+  const u=new SpeechSynthesisUtterance(text.slice(0,3000));
+  u.rate=0.95; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>

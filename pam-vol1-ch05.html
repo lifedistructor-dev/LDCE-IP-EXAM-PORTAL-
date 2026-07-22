@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAM Vol-I | Chapter V: Remittances</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dk:#B71C1C; --blue:#1565C0; --blue-dk:#0D47A1;
+  --gold:#F9A825; --gold-dk:#E65100; --green:#2E7D32; --bg:#FAF7F2; --card:#ffffff;
+  --text:#1c1c1c; --muted:#5f5f5f; --border:#e5ded2;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; padding-bottom:60px; transition:background .3s,color .3s;}
+body.dark{ --bg:#121212; --card:#1e1e1e; --text:#f0f0f0; --muted:#b0b0b0; --border:#333; }
+header{background:linear-gradient(135deg,var(--red) 0%,var(--red-dk) 45%,var(--blue-dk) 100%); color:#fff; padding:22px 16px 26px; text-align:center; box-shadow:0 4px 14px rgba(0,0,0,.25);}
+header h1{font-size:1.3rem; margin-bottom:4px;}
+header .sub{font-size:.85rem; opacity:.92;}
+header .hi{font-size:.95rem; margin-top:6px; font-weight:600; color:#FFF3CD;}
+.badge-row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:12px;}
+.badge{background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4); border-radius:20px; padding:4px 10px; font-size:.7rem;}
+.topbar{position:sticky; top:0; z-index:50; background:var(--card); display:flex; gap:8px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.12); flex-wrap:wrap; justify-content:center;}
+.topbar button{border:none; border-radius:8px; padding:8px 12px; font-size:.75rem; font-weight:600; cursor:pointer; background:var(--blue); color:#fff;}
+.topbar button.alt{background:var(--gold-dk);}
+.topbar button.alt2{background:var(--green);}
+.container{max-width:820px; margin:0 auto; padding:14px;}
+.legend{display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border-radius:12px; padding:12px; margin:14px 0; border:1px solid var(--border); font-size:.75rem;}
+.chapter-card{background:var(--card); border-radius:14px; margin-bottom:16px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.08); border:1px solid var(--border);}
+.chapter-head{background:linear-gradient(90deg,var(--blue-dk),var(--blue)); color:#fff; padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+.chapter-head h2{font-size:1.05rem;}
+.chapter-head .arrow{transition:transform .3s; font-size:1.1rem;}
+.chapter-body{display:none; padding:14px 16px;}
+.chapter-body.open{display:block;}
+.chapter-card.open .arrow{transform:rotate(180deg);}
+.subcard{border:1px solid var(--border); border-radius:10px; margin:10px 0; overflow:hidden;}
+.subhead{background:#FFF3E0; color:var(--red-dk); padding:9px 12px; font-weight:700; font-size:.88rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+body.dark .subhead{background:#332417;}
+.subbody{display:none; padding:10px 12px; font-size:.85rem;}
+.subbody.open{display:block;}
+.tag{display:inline-block; font-size:.68rem; padding:2px 6px; border-radius:6px; margin-left:4px; font-weight:700;}
+.t-vi{background:#FFEBEE; color:var(--red-dk);}
+.t-fa{background:#FFF3E0; color:var(--gold-dk);}
+.t-cu{background:#FFFDE7; color:#8a7000;}
+.t-qr{background:#E8F5E9; color:var(--green);}
+body.dark .t-vi{background:#4a1414;} body.dark .t-fa{background:#4a2f0e;}
+body.dark .t-cu{background:#453e0e;} body.dark .t-qr{background:#123a17;}
+.hi-text{color:var(--gold-dk); font-weight:600; direction:rtl; unicode-bidi:embed;}
+body.dark .hi-text{color:#FFD54F;}
+.bi-block{background:#F5F9FF; border-left:3px solid var(--blue); padding:8px 10px; border-radius:6px; margin:6px 0;}
+body.dark .bi-block{background:#152436;}
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.76rem;}
+th{background:var(--blue-dk); color:#fff; padding:6px 7px; text-align:left;}
+td{padding:6px 7px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(0,0,0,.02);}
+body.dark tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.def-item{border-bottom:1px dashed var(--border); padding:6px 0;}
+.def-item b{color:var(--red-dk);}
+body.dark .def-item b{color:#ff8a80;}
+.flow{display:flex; flex-direction:column; gap:6px; margin:10px 0;}
+.flow-step{background:linear-gradient(90deg,#E3F2FD,#FFF); border:1px solid var(--blue); border-radius:8px; padding:8px 10px; font-size:.8rem;}
+body.dark .flow-step{background:#16232f;}
+.flow-arrow{text-align:center; color:var(--blue); font-size:1rem;}
+.q-box{background:#FFF8E1; border:1px dashed var(--gold-dk); border-radius:8px; padding:8px 10px; font-size:.78rem; margin:8px 0;}
+body.dark .q-box{background:#332708;}
+.q-box b{color:var(--red-dk);}
+body.dark .q-box b{color:#ff8a80;}
+.mnemonic{background:linear-gradient(90deg,#E8F5E9,#FFFDE7); border-left:4px solid var(--green); padding:8px 10px; border-radius:6px; font-size:.8rem; margin:8px 0;}
+body.dark .mnemonic{background:#122316;}
+.rev-sheet{background:var(--card); border:2px dashed var(--red); border-radius:14px; padding:14px; margin:16px 0;}
+.rev-sheet h3{color:var(--red-dk); margin-bottom:8px;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:6px; font-size:.78rem;}
+.rev-grid div{background:#FFF3E0; border-radius:6px; padding:6px 8px;}
+body.dark .rev-grid div{background:#2b2010;}
+.chip-row{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0;}
+.chip{background:var(--blue); color:#fff; border-radius:14px; padding:3px 9px; font-size:.68rem;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0;}
+.compare div{border-radius:10px; padding:10px; font-size:.78rem;}
+.c-left{background:#E3F2FD; border:1px solid var(--blue);}
+.c-right{background:#FFF3E0; border:1px solid var(--gold-dk);}
+body.dark .c-left{background:#16232f;} body.dark .c-right{background:#332417;}
+footer{text-align:center; padding:20px; font-size:.72rem; color:var(--muted);}
+::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-thumb{background:var(--blue); border-radius:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Postal Accounts Manual – Vol I</h1>
+  <div class="sub">Chapter V: Remittances</div>
+  <div class="hi">📘 डाक लेखा नियमावली – भाग I | अध्याय 5: प्रेषण (रेमिटेंस)</div>
+  <div class="badge-row">
+    <span class="badge">LDCE AAO Paper II</span>
+    <span class="badge">LDCE IP Exam</span>
+    <span class="badge">RSAO / POR / CTS-Grid</span>
+  </div>
+</header>
+
+<div class="topbar">
+  <button onclick="document.body.classList.toggle('dark')">🌙 Dark/Light</button>
+  <button class="alt" onclick="expandAll()">⬇️ Expand All</button>
+  <button class="alt2" onclick="collapseAll()">⬆️ Collapse All</button>
+  <button onclick="speakPage()">🔊 Read Page</button>
+</div>
+
+<div class="container">
+  <div class="legend">
+    <div>🔴 <b>Very Important</b> for Exam</div>
+    <div>🟠 <b>Frequently Asked</b></div>
+    <div>🟡 <b>Conceptual</b> Understanding</div>
+    <div>🟢 <b>Quick Revision</b> Point</div>
+  </div>
+
+  <div class="chapter-card open" id="c5">
+    <div class="chapter-head" onclick="toggleChapter('c5')">
+      <h2>Chapter V — Remittances<br><span class="hi-text" style="font-size:.8rem">अध्याय 5 — प्रेषण</span></h2>
+      <span class="arrow">▲</span>
+    </div>
+    <div class="chapter-body open">
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.01 Introduction — What is a Remittance <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Remittance = transfer of cash/cheque between jurisdiction of one Head Post Office and another (Rule 152, P&T FHB Vol-I). Also covers liabilities/emergent advances paid by one HPO on another's behalf, charged as remittance.</p>
+          <div class="compare">
+            <div class="c-left"><b>RSAO</b><br>Remittance within Same Accounts Office — i.e. <b>intra-circle</b> remittance (same Circle PAO jurisdiction)</div>
+            <div class="c-right"><b>POR</b><br>Post Office Remittance — i.e. <b>inter-circle</b> remittance (2+ different Circles; per Rule 785, Postal Manual Vol-II)</div>
+          </div>
+          <p>Under CBS, SB deposits/withdrawals at a unit other than the account-holding unit are also settled via Remittance Heads (reconciled by PAO). CBS cheques are realized via <b>Central Grid Circle</b>, accounted at originating office through Remittance heads.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.02 Key Definitions <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="def-item"><b>Remittance:</b> Transfer of funds/equivalent between two disbursing officers of same/other Department.</div>
+          <div class="def-item"><b>Inter-sol Remittance GL:</b> CBS remittances between two Service Outlets.</div>
+          <div class="def-item"><b>Grid Clearance Remittance GL:</b> Transactions via instruments realized at Central Grid Circle across different Circles.</div>
+          <div class="def-item"><b>Intra-circle Remittance (RSAO):</b> Within same circle accounts jurisdiction.</div>
+          <div class="def-item"><b>Inter-circle Remittance (POR):</b> Between two different circle accounts jurisdictions.</div>
+          <div class="def-item"><b>Presentation Session (CTS):</b> Morning session — other-bank cheques received by POs & POSB cheques received by banks are presented for clearing.</div>
+          <div class="def-item"><b>Return Session (CTS):</b> Afternoon session — "Realised"/"Returned" remarks marked by banks & POs.</div>
+          <div class="def-item"><b>Outward/Inward Presentation:</b> Bank cheques PO presents to banks (Outward) / PO cheques banks present to PO (Inward).</div>
+          <div class="def-item"><b>Outward/Inward Return:</b> Rejected PO cheques returned to banks (Outward) / rejected bank cheques returned to PO (Inward).</div>
+          <p class="mnemonic">🧠 "RSAO stays home, POR travels" — RSAO = same circle, POR = across circles.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.03 POR Head Rationalisation & Apportionment <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p>All POR Heads (circle-wise) rationalised to just <b>2 heads: POR Inward & POR Outward</b> (per Appendix V charter of accounts). ERP records both "from circle" & "to circle" for each transaction → generates e-schedules for reconciliation.</p>
+          <p>Apportionment of Revenue/Expenditure across circles done periodically by the <b>Nodal Office</b> in consultation with Circle PAO — original credit/debit sum retained at originating circle; transfer only after competent authority approval.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.04 Cash-in-Transit & Cheque-in-Transit Monitoring <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <div class="flow">
+            <div class="flow-step">Cash transferred between units of <b>same DDO</b> → checked for delay in receiving-office acknowledgement; system-paired</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Until acknowledged, amount = <b>"Cash in Transit"</b> in remitting office's books</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Cash between <b>different DDOs</b> → watched meticulously; unacknowledged delays → objection statement</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">Cheque transfers HO→sub-units → accounted as <b>"Cheque in Transit"</b>, GL mapped & system-paired</div>
+          </div>
+          <p>No manual/direct posting permitted — all remittances must be <b>system paired</b>; un-reconciled list sent to Head of Office & Regional Heads for corrective action.</p>
+          <p><b>CBS Inter-sol:</b> For a day, the Remittance Head should net to <b>zero residuary balance</b> DOP-wide. A Nodal PAO monitors CBS Inter-sol auto-pairing/balancing; variations referred to CBS tech team at <b>CEPT (Centre of Excellence – Postal Technology)</b>.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.05 Role of HPO / Postmaster — RA Numbering <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Remittances brought to schedule (Outward & Inward separately) with a <b>Remittance Advice (RA) Number</b> — running serial starting from <b>1 on 1st April</b> each financial year.</p>
+          <table>
+            <tr><th>Annexure</th><th>Covers</th></tr>
+            <tr><td>Annexure-I</td><td>Schedule of Remittances within circle — RSAO Intra-circle</td></tr>
+            <tr><td>Annexure-II</td><td>Schedule of Remittances between circles — POR Inter-circle</td></tr>
+            <tr><td>Annexure-III</td><td>Monthly Statement of Remittances between Postal Circles</td></tr>
+          </table>
+          <p>Both Annexure I & II schedules contain: Date, RA No., Receiving Office, Description, Debit/Credit Amount, Remarks.</p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.06 Role of Postal Accounts Office — Reconciliation <span class="tag t-vi">🔴 VI</span><span>▾</span></div>
+        <div class="subbody">
+          <p>PAO maintains <b>Register of Remittances</b> per circle; confirms e-schedule abstract matches CGA report during T+3 upload.</p>
+          <p>Register/e-register scrutinised & reviewed by AAO + Branch Officer <b>fortnightly</b>. Abnormal variation/non-adjustment beyond <b>3 months</b> → reported to Head of Office/PAO.</p>
+          <p><b>Annexure-III (Monthly Statement):</b> Sent by <b>6th of the 2nd month</b> following month of account; receiving office returns it verified by <b>last week of the 2nd month</b>. Electronic (PDF/Excel) format preferred over manual.</p>
+          <p><b>Unlinked Items:</b> Separate registers for Debit & Credit unlinked items; broadsheet register per circle, closed monthly, submitted to <b>DAP</b>. Delay beyond <b>2 months</b> → reported to Divisional Heads.</p>
+          <p class="q-box"><b>Likely Q:</b> By what date is the Monthly Statement of Remittances sent to other Circles, and by when must it be returned? → <i>Sent by 6th of 2nd following month; returned by last week of that 2nd month.</i></p>
+        </div>
+      </div>
+
+      <div class="subcard">
+        <div class="subhead" onclick="toggleSub(this)">5.07 CTS Grid Clearance – Chennai, Mumbai, Delhi <span class="tag t-fa">🟠 FAQ</span><span>▾</span></div>
+        <div class="subbody">
+          <p>Dedicated GL for Grid clearance: <b>RSAO – Grid Clearance (GL 4878200013 / 87200013)</b>, mapped to CGA <b>Major Head 8782</b>.</p>
+          <p>Postmaster prepares separate Inward/Outward e-schedules per circle with RA numbers (FY-wise from 1st April); PAO verifies RSAO grid-clearance GL against schedule figure; discrepancies taken up with Postmaster; manual schedules discouraged.</p>
+          <p class="mnemonic">🧠 "8782 = the Grid gateway" — CTS Grid Clearance maps to Major Head 8782.</p>
+        </div>
+      </div>
+
+      <div class="q-box">
+        <b>Probable Exam Questions – Chapter V:</b><br>
+        1. Differentiate RSAO and POR with examples. <span class="tag t-vi">🔴</span><br>
+        2. What are the two rationalised POR Heads of Account? <span class="tag t-fa">🟠</span><br>
+        3. What is the RA Number system, and when does it reset? <span class="tag t-vi">🔴</span><br>
+        4. Which Major Head is CTS Grid Clearance mapped to? <span class="tag t-qr">🟢</span><br>
+        5. Within how many months should unlinked remittance items normally be settled before escalation? <span class="tag t-fa">🟠</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-sheet">
+    <h3>⚡ One-Page Revision Sheet — Chapter V</h3>
+    <div class="rev-grid">
+      <div>🔴 RSAO = Intra-circle | POR = Inter-circle</div>
+      <div>🔴 RA Number resets to 1 every <b>1st April</b> (financial year)</div>
+      <div>🔴 CTS Grid Clearance GL → CGA Major Head <b>8782</b></div>
+      <div>🟠 2 rationalised POR Heads: <b>POR Inward</b> & <b>POR Outward</b></div>
+      <div>🟠 Register review: <b>fortnightly</b> by AAO + Branch Officer</div>
+      <div>🟠 Annexure-III sent by <b>6th of 2nd following month</b>; returned by last week of that month</div>
+      <div>🟢 Unadjusted remittance variation flagged after <b>3 months</b></div>
+      <div>🟢 Unlinked items delay flagged after <b>2 months</b> to Divisional Heads</div>
+      <div>🟢 CBS Inter-sol GL should net to <b>zero</b> DOP-wide each day</div>
+      <div>🟢 Grid Clearance operates via Chennai, Mumbai, Delhi</div>
+    </div>
+    <p class="hi-text" style="margin-top:8px;">📌 RSAO = एक ही सर्कल के भीतर | POR = अलग सर्कल के बीच | RA नंबर हर 1 अप्रैल को नया शुरू होता है</p>
+  </div>
+
+</div>
+
+<footer>LDCE AAO / IP Exam Portal &nbsp;•&nbsp; Source: Postal Accounts Manual Vol-I, 2nd Edition, Aug 2021 &nbsp;•&nbsp; Chapter V of 18</footer>
+
+<script>
+function toggleChapter(id){const c=document.getElementById(id);c.querySelector('.chapter-body').classList.toggle('open');c.classList.toggle('open');}
+function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
+function expandAll(){document.querySelectorAll('.chapter-body,.chapter-card,.subbody').forEach(e=>e.classList.add('open'));}
+function collapseAll(){document.querySelectorAll('.chapter-body,.chapter-card,.subbody').forEach(e=>e.classList.remove('open'));}
+function speakPage(){
+  if(!('speechSynthesis' in window)){alert('Text-to-speech not supported.'); return;}
+  const text=document.querySelector('.container').innerText;
+  const u=new SpeechSynthesisUtterance(text.slice(0,3000));
+  u.rate=0.95; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
