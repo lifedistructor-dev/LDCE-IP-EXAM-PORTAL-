@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postal Accounts Manual Vol-II | IP Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E1616; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-light:#F2D675; --bg:#FDFBF6; --card:#ffffff;
+  --text:#1c1c1c; --muted:#5f5f5f; --border:#e4dcc8;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825;
+}
+[data-theme="dark"]{
+  --bg:#121212; --card:#1e1e1e; --text:#f2f2f2; --muted:#b5b5b5; --border:#3a3a3a;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Tahoma,Arial,sans-serif; background:var(--bg); color:var(--text);
+  transition:background .3s,color .3s; padding-bottom:60px;
+}
+header{
+  background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 60%,var(--blue) 100%);
+  color:#fff; padding:22px 16px 28px; text-align:center; position:relative;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+header h1{margin:0; font-size:1.35rem; letter-spacing:.5px;}
+header .hi{font-size:1.05rem; font-weight:400; opacity:.95; margin-top:4px;}
+header .sub{font-size:.8rem; margin-top:8px; opacity:.85;}
+.topbar{
+  display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;
+}
+.topbar button{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  padding:6px 14px; border-radius:20px; font-size:.75rem; cursor:pointer;
+}
+.topbar button:hover{background:rgba(255,255,255,.3);}
+.container{max-width:900px; margin:0 auto; padding:14px;}
+
+.legend{
+  display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:16px 0;
+  font-size:.72rem;
+}
+.legend span{background:var(--card); border:1px solid var(--border); padding:4px 9px; border-radius:14px;}
+
+/* Chapter nav pills */
+.chapnav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:18px;}
+.chapnav a{
+  text-decoration:none; font-size:.72rem; font-weight:600; padding:7px 12px; border-radius:8px;
+  color:#fff; box-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+.c1{background:var(--red);} .c2{background:var(--blue);} .c3{background:var(--gold); color:#3a2c00 !important;}
+.c6{background:var(--green);} .c8{background:var(--orange);} .c9{background:#6A1B9A;} .c10{background:#00838F;}
+
+/* Accordion */
+.accordion{
+  background:var(--card); border:1px solid var(--border); border-radius:12px; margin-bottom:14px;
+  overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.acc-head{
+  padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+  font-weight:700; font-size:.95rem; color:#fff;
+}
+.acc-head .arrow{transition:transform .25s;}
+.acc-head.open .arrow{transform:rotate(90deg);}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.acc-body-inner{padding:14px 16px 18px;}
+
+.ch1 .acc-head{background:linear-gradient(90deg,var(--red),var(--red-dark));}
+.ch2 .acc-head{background:linear-gradient(90deg,var(--blue),var(--blue-light));}
+.ch3 .acc-head{background:linear-gradient(90deg,#B8860B,var(--gold));}
+.ch6 .acc-head{background:linear-gradient(90deg,var(--green),#1B5E20);}
+.ch8 .acc-head{background:linear-gradient(90deg,var(--orange),#B34700);}
+.ch9 .acc-head{background:linear-gradient(90deg,#6A1B9A,#4A148C);}
+.ch10 .acc-head{background:linear-gradient(90deg,#00838F,#005662);}
+
+h3.sec{
+  font-size:.9rem; margin:16px 0 6px; padding-bottom:4px; border-bottom:2px solid var(--gold);
+  color:var(--blue); display:flex; align-items:center; gap:6px;
+}
+[data-theme="dark"] h3.sec{color:var(--gold-light);}
+p, li{font-size:.85rem; line-height:1.55;}
+.hindi{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;}
+
+table{width:100%; border-collapse:collapse; margin:8px 0 14px; font-size:.78rem;}
+th, td{border:1px solid var(--border); padding:6px 8px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even) td{background:rgba(0,0,0,.03);}
+[data-theme="dark"] tr:nth-child(even) td{background:rgba(255,255,255,.04);}
+
+.tag{display:inline-block; font-size:.68rem; font-weight:700; padding:2px 7px; border-radius:10px; margin-right:4px;}
+.t-red{background:#FFE0E0; color:var(--red-dark);}
+.t-orange{background:#FFE9CC; color:var(--orange);}
+.t-yellow{background:#FFF6CC; color:#8a6d00;}
+.t-green{background:#DFF3E0; color:var(--green);}
+[data-theme="dark"] .t-red{background:#4a1414;color:#ff9a9a;}
+[data-theme="dark"] .t-orange{background:#4a2c00;color:#ffc069;}
+[data-theme="dark"] .t-yellow{background:#4a4300;color:#ffe680;}
+[data-theme="dark"] .t-green{background:#123c17;color:#8fe39a;}
+
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:10px 0; font-size:.78rem;}
+.flow .box{background:var(--blue); color:#fff; padding:7px 11px; border-radius:8px; font-weight:600;}
+.flow .arrow{font-weight:900; color:var(--gold);}
+
+.qbox{
+  background:linear-gradient(135deg,#FFF8E1,#FFE9B3); border-left:4px solid var(--gold);
+  border-radius:6px; padding:8px 10px; font-size:.76rem; margin:8px 0; color:#4a3800;
+}
+[data-theme="dark"] .qbox{background:#3a3110; color:#f2dfa0; border-left-color:var(--gold-light);}
+.qbox b{color:var(--red);}
+
+.mnemonic{
+  background:linear-gradient(135deg,#E3F2FD,#BBDEFB); border-left:4px solid var(--blue);
+  border-radius:6px; padding:8px 10px; font-size:.78rem; margin:8px 0; color:#0d2c4d;
+}
+[data-theme="dark"] .mnemonic{background:#0d2c4d; color:#bbdefb;}
+
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .item{position:relative; margin-bottom:12px; font-size:.78rem;}
+.timeline .item::before{content:''; position:absolute; left:-19px; top:3px; width:9px; height:9px; border-radius:50%; background:var(--red);}
+
+.revision-page{
+  background:var(--card); border:2px solid var(--gold); border-radius:14px; padding:16px; margin:22px 0;
+}
+.revision-page h2{color:var(--red); text-align:center; margin-top:0;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-card{background:rgba(0,0,0,.03); border-left:4px solid var(--blue); border-radius:6px; padding:8px 10px; font-size:.78rem;}
+[data-theme="dark"] .rev-card{background:rgba(255,255,255,.04);}
+
+.speak-btn{
+  background:var(--gold); border:none; color:#3a2c00; border-radius:6px; padding:4px 10px;
+  font-size:.7rem; cursor:pointer; margin:6px 0; font-weight:700;
+}
+
+footer{text-align:center; font-size:.72rem; color:var(--muted); margin-top:30px; padding:14px;}
+
+.toc-note{text-align:center; font-size:.75rem; color:var(--muted); margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📮 Postal Accounts Manual Vol-II</h1>
+  <div class="hi hindi">डाक लेखा नियमावली खंड-II — परीक्षा इन्फोग्राफिक</div>
+  <div class="sub">IP Exam Paper Preparation | Chapters I, II, III, VI, VIII, IX, X</div>
+  <div class="topbar">
+    <button onclick="toggleTheme()">🌙 Dark / Light</button>
+    <button onclick="speakPage()">🔊 Read Aloud</button>
+    <button onclick="expandAll()">⬇️ Expand All</button>
+    <button onclick="collapseAll()">⬆️ Collapse All</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="legend">
+    <span>🔴 Very Important for Exam</span>
+    <span>🟠 Frequently Asked</span>
+    <span>🟡 Conceptual Understanding</span>
+    <span>🟢 Quick Revision Point</span>
+  </div>
+
+  <div class="chapnav">
+    <a class="c1" href="#ch1">Ch-I eMO/FMO/VPMO</a>
+    <a class="c2" href="#ch2">Ch-II Cash Certificates</a>
+    <a class="c3" href="#ch3">Ch-III IPO/e-IPO</a>
+    <a class="c6" href="#ch6">Ch-VI Savings Bank</a>
+    <a class="c8" href="#ch8">Ch-VIII Customs Duty</a>
+    <a class="c9" href="#ch9">Ch-IX GST</a>
+    <a class="c10" href="#ch10">Ch-X PRS</a>
+  </div>
+  <p class="toc-note">Chapter → Sub-Chapter → Micro-Topic → Nano-Topic ढांचे में व्यवस्थित | Source: Postal Accounts Manual Volume-II (2021), PAF Wing, DoP</p>
+
+  <!-- ============ CHAPTER I ============ -->
+  <div class="accordion ch1" id="ch1">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter I — Electronic / Foreign / Value Payable Money Orders</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p><span class="tag t-red">🔴</span><b>eMO</b> is a web-based rapid money transfer service — an order issued by a post office for payment of a sum of money electronically to a named payee. <span class="hindi">eMO एक वेब-आधारित तीव्र धन हस्तांतरण सेवा है जिसके द्वारा डाकघर द्वारा इलेक्ट्रॉनिक रूप से भुगतान किया जाता है।</span></p>
+      <p><b>VPMO (Value Payable MO):</b> System to collect payment for articles (goods/bills/RRs) at the time of delivery, on behalf of traders/senders.</p>
+      <p><b>FMO / IFS-eIMO:</b> Foreign Money Order (paper-based, with Nepal & Bhutan) vs IFS-eIMO (electronic international remittance via UPU's International Financial System, currently with France's La Poste & UAE).</p>
+
+      <h3 class="sec">📌 Important Rules & Limits</h3>
+      <table>
+        <tr><th>Point</th><th>Rule / Limit</th></tr>
+        <tr><td>Max eMO amount</td><td>₹5,000 (no fraction of rupee); limit N/A for Postal Service MOs</td></tr>
+        <tr><td>Currency of eMO</td><td>2 months (month of issue + next month) — after which "Void"</td></tr>
+        <tr><td>eMO Head kept open</td><td>3 financial years, then lapses to Revenue as "Forfeited Money Orders"</td></tr>
+        <tr><td>Max VP article amount</td><td>₹5,000 (registered parcels/letters/book packets)</td></tr>
+        <tr><td>IFS-eIMO cash payment</td><td>Up to ₹50,000 in cash; above ₹50,000 by cheque, max USD 2,500</td></tr>
+        <tr><td>IFS-eIMO transactions</td><td>Max 30 per person per year</td></tr>
+        <tr><td>MO Number digits</td><td>UAE = 9 digits; France = 26 digits</td></tr>
+        <tr><td>Object. escalation</td><td>Overpayment/short-credit &gt; ₹1,000 → reported to Regional Head/HoC</td></tr>
+      </table>
+
+      <h3 class="sec">⚖️ Key Sections/Rules Cited</h3>
+      <ul>
+        <li>Rules in <b>Post Office Guide Part-I</b>; procedure in <b>Postal Manual Vol-VI Part-II</b></li>
+        <li><b>FHB Vol-I Rule 110–113</b> — acceptance of cheques for eMO</li>
+        <li><b>Section 44, Indian Post Office Act 1898</b> — attachment of eMO by civil court (Rule 65, PM VI Part-II procedure)</li>
+      </ul>
+
+      <h3 class="sec">🏛️ Important Authorities</h3>
+      <ul>
+        <li>General Manager/Director (PAF) — 23 circle-wise Postal Accounts Offices (list includes Ahmedabad, Delhi, Kolkata, Mumbai (CPMG functions), Chennai etc.)</li>
+        <li>CF Section, IR&GB Division, Postal Directorate — nodal for FMO/IFS-eIMO rules</li>
+        <li>DAA Section — settles FMO/IFS-eIMO accounts (Value Statement / Repayment Statement)</li>
+        <li>IFS Helpdesk — functional at <b>CEPT Mysore</b></li>
+      </ul>
+
+      <h3 class="sec">⏱️ Important Time Limits</h3>
+      <div class="timeline">
+        <div class="item"><b>T+3 day</b> — Check eMO issue value/commission vs CGA/PFMS report</div>
+        <div class="item"><b>5th of following month</b> — Detail check & rectification before monthly consolidation</div>
+        <div class="item"><b>15th April</b> — Nodal PAO transfers unpaid eMOs of previous FY as "forfeited" to revenue</div>
+        <div class="item"><b>End of month following month of account</b> — Random debit-check of eMO payment completed</div>
+        <div class="item"><b>31st August</b> — Consolidated eMO statistics sent to PA Wing after March Supplementary</div>
+        <div class="item"><b>20th September</b> — Annual eMO Report sent by PA wing to Statistics Section</div>
+      </div>
+
+      <h3 class="sec">🚫 Exceptions</h3>
+      <ul>
+        <li>Commission NOT charged on Service eMO or specially exempted eMOs (by DG Posts notification)</li>
+        <li>Void MO CAN still be paid after currency expiry if payment is otherwise possible (subject to release procedure)</li>
+        <li>No MO re-issue to heir of deceased remitter/payee unless claim acknowledged by competent authority</li>
+      </ul>
+
+      <h3 class="sec">💰 Head of Account / Penalties (Erroneous Debits/Credits)</h3>
+      <table>
+        <tr><th>Situation</th><th>Head of Account</th></tr>
+        <tr><td>Overpayment recovery credited to</td><td>8553 – Postal Advances – eMO overpayment</td></tr>
+        <tr><td>Short-payment charge debited to</td><td>8446 – Postal Deposits – eMO short payment</td></tr>
+        <tr><td>Excess/short commission credit</td><td>1201 – Commission on eMO</td></tr>
+      </table>
+      <p><span class="tag t-orange">🟠</span> Outstanding items pending &gt; 6 months → reported to Regional Head for settlement.</p>
+
+      <h3 class="sec">🔀 Flowchart: eMO Life Cycle</h3>
+      <div class="flow">
+        <div class="box">Booking (HO/SO/BO)</div><div class="arrow">→</div>
+        <div class="box">Transmission (eMO App)</div><div class="arrow">→</div>
+        <div class="box">Payment at Dest. Office</div><div class="arrow">→</div>
+        <div class="box">Paid / Unpaid?</div>
+      </div>
+      <div class="flow">
+        <div class="box">If Unpaid within 2 months</div><div class="arrow">→</div>
+        <div class="box">"Void" MO</div><div class="arrow">→</div>
+        <div class="box">e-Stored (3 FY)</div><div class="arrow">→</div>
+        <div class="box">Forfeited to Revenue</div>
+      </div>
+
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>5-2-3</b>" for eMO — Max ₹<b>5</b>,000 · Currency <b>2</b> months · Head open <b>3</b> years.</div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> What is the maximum amount for a single eMO? What is the currency period of an eMO before it becomes void? Under which section can a Civil Court attach an eMO? What is the incentive structure difference between service eMO and normal eMO regarding commission?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CHAPTER II ============ -->
+  <div class="accordion ch2" id="ch2">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter II — Post Office Cash Certificates (NSC/KVP)</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p>Government of India instituted National Savings Certificates of various denominations sold at Post Offices doing SB business, redeemable per Post Office Guide rules. <span class="hindi">छोटी बचत को बढ़ावा देने हेतु सरकार द्वारा जारी प्रमाणपत्र योजनाएँ।</span></p>
+      <p><span class="tag t-red">🔴</span> Sale of pre-printed Cash Certificates <b>stopped from 01.07.2016</b> in all CBS/non-CBS offices; pass books now issued on opening NSC/KVP accounts.</p>
+
+      <h3 class="sec">📌 Important Rules</h3>
+      <table>
+        <tr><th>Scheme</th><th>Minimum / Multiple</th></tr>
+        <tr><td>NSC VIII Issue</td><td>Min ₹1,000, multiples of ₹100</td></tr>
+        <tr><td>KVP</td><td>Min ₹1,000, multiples of ₹1,000</td></tr>
+      </table>
+      <p>Governing manual: <b>PO SB Manual Volume-II</b>. Main check register: <b>Stock & Issue Register (SIR)</b> Form D.G.(PA)-323 (now largely replaced by PATRAM software in CC Section).</p>
+
+      <h3 class="sec">📜 Discontinued Certificate Series (dates of discontinuation)</h3>
+      <table>
+        <tr><th>Certificate</th><th>Discontinued</th></tr>
+        <tr><td>5 Yr Cash Certificate</td><td>14-06-1947</td></tr>
+        <tr><td>10 Yr D.S.C.</td><td>30-09-1943</td></tr>
+        <tr><td>12 Yr N.S.C.</td><td>31-05-1957</td></tr>
+        <tr><td>I.V.P.</td><td>15-07-1999</td></tr>
+        <tr><td>10 yr NSC IX Issue</td><td>20-12-2015</td></tr>
+      </table>
+      <p class="hindi" style="font-size:.72rem;">(पूर्ण सूची 20 श्रृंखलाओं की मूल दस्तावेज़ में उपलब्ध है — परीक्षा हेतु प्रमुख तिथियाँ याद रखें।)</p>
+
+      <h3 class="sec">🔴🟠 Very Important: SCWF (Senior Citizen Welfare Fund) Rules 2016 — Unclaimed Account Time Limits</h3>
+      <table>
+        <tr><th>Scheme Type</th><th>Unclaimed Period</th></tr>
+        <tr><td>TD (1,2,3,5 Yr), MIS, NSC, KVP, SSA</td><td>10 years from date of maturity</td></tr>
+        <tr><td>NSS-87 & NSS-92</td><td>10 years from last withdrawal</td></tr>
+        <tr><td>RD (not extended)</td><td>10 years from date of maturity</td></tr>
+        <tr><td>RD (extended)</td><td>10 years from revised maturity date</td></tr>
+        <tr><td>SCSS (not extended)</td><td>10 years from maturity</td></tr>
+        <tr><td>SCSS (extended)</td><td>10 years from extended maturity date</td></tr>
+        <tr><td>Savings Account (any type)</td><td>7 yrs from "Silent" status (≈10 yrs from last transaction FY)</td></tr>
+        <tr><td>PPF (not extended)</td><td>10 years from maturity</td></tr>
+        <tr><td>PPF (extended)</td><td>10 years from revised maturity date</td></tr>
+        <tr><td>Discontinued Scheme A/c</td><td>10 years from maturity / discontinuance</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>10 साल की चुप्पी = SCWF</b>" — लगभग हर स्कीम में मानक समय-सीमा <b>10 वर्ष</b> है (बचत खाता अपवाद: 7 वर्ष silent से)।</div>
+      <p><span class="tag t-orange">🟠</span> Freeze code: <b>"SCWFR"</b> applied centrally every <b>30th September</b>; published on indiapost.gov.in in first week of October. Post office must attempt contact <b>at least twice within 60 days</b> of notice display.</p>
+
+      <h3 class="sec">🏛️ Authorities & Process for Closure of Unclaimed A/c</h3>
+      <ul>
+        <li>Closure permitted <b>only at Head Post Offices</b></li>
+        <li>Requires fresh self-attested KYC of account holder + 2 witnesses</li>
+        <li>Head Postmaster endorses "CLOSURE ALLOWED" with signature + designation stamp</li>
+        <li>Two different HO Supervisors — one unfreezes, another verifies in Finacle CBS (segregation of duties)</li>
+      </ul>
+
+      <h3 class="sec">⚖️ Key Head of Accounts</h3>
+      <ul>
+        <li>Lapsed certificate balances (after 3 FY) → Minor Head <b>"0075-00-101 Unclaimed Deposits"</b> (GL 8007500010)</li>
+        <li>Subsequent claim payments → debited to <b>"0075-900 Deduct Refunds"</b> (GL 8007500090)</li>
+        <li>Duplicate certificate issue — <b>Rule 567(8) & 573(1), P&T Manual Vol-VI Part-II</b></li>
+      </ul>
+
+      <h3 class="sec">🔀 Flowchart: Unclaimed Certificate → SCWF → Closure</h3>
+      <div class="flow">
+        <div class="box">Matured & Unclaimed (10 yrs)</div><div class="arrow">→</div>
+        <div class="box">Frozen "SCWFR" (30 Sep)</div><div class="arrow">→</div>
+        <div class="box">Published on Website</div><div class="arrow">→</div>
+        <div class="box">Holder contacted 2x/60 days</div><div class="arrow">→</div>
+        <div class="box">Closure only at HO</div>
+      </div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> From which date was the sale of pre-printed cash certificates discontinued? What is the minimum & multiple amount for NSC VIII / KVP? What is the SCWF unclaimed period for a Savings Account vs NSC? Which freeze code is used for SCWF Rules 2016?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CHAPTER III ============ -->
+  <div class="accordion ch3" id="ch3">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter III — Indian Postal Orders (IPO) & e-IPO</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p>IPO is a means of sending/receiving small amounts of money across India, sold and paid at all Head/Sub/GPOs. <span class="hindi">भारतीय पोस्टल ऑर्डर — छोटी राशि भेजने का सरल माध्यम।</span></p>
+      <p><b>e-IPO:</b> Electronic purchase of IPO via e-Post Office Portal (epostoffice.gov.in) using debit/credit card — mainly to enable <b>RTI Act 2005</b> fee payment for citizens in India & abroad.</p>
+
+      <h3 class="sec">📌 Important Rules</h3>
+      <ul>
+        <li>Stock indent: HO stock fixed by Divisional Head (6-month requirement); SO stock fixed by Head Postmaster (1-month requirement)</li>
+        <li>Supply source: <b>Security Printing Press, Hyderabad – 500063</b> (annual indent for 12 months' requirement from following January)</li>
+        <li>Governing manual: <b>Postal Manual Volume-VI Part-II</b></li>
+        <li>Lost IPO after payment: certificate of payment under <b>Rule 402/24, Postal Manual Vol-VI Part-I</b></li>
+      </ul>
+
+      <h3 class="sec">⏱️ Important Time Limits</h3>
+      <table>
+        <tr><th>Item</th><th>Time Limit</th></tr>
+        <tr><td>IPO sold-figure vs inventory check report</td><td>By 15th of following month</td></tr>
+        <tr><td>Extra commission on order paid after</td><td>6 months (else charged separately)</td></tr>
+        <tr><td>AAO review of 2% highest-denomination paid orders</td><td>Ongoing/monthly</td></tr>
+        <tr><td>Unclaimed IPO preservation before transfer</td><td>12 months from month of issue</td></tr>
+        <tr><td>IPO head kept open (then lapses)</td><td>2 financial years → "Forfeited Indian Postal Orders"</td></tr>
+        <tr><td>Paid IPO record destruction</td><td>April of 2nd year following year of payment</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> IPO = "<b>2 साल में गायब</b>" (2 FY then lapses) vs eMO = "3 साल में गायब" (3 FY) — याद रखें eMO का समय IPO से ज़्यादा है।</div>
+
+      <h3 class="sec">💰 Head of Account</h3>
+      <table>
+        <tr><th>Transaction</th><th>Head</th></tr>
+        <tr><td>IPO sold (value)</td><td>8446-001-01 Postal Deposits – IPO Sold</td></tr>
+        <tr><td>Commission on IPO</td><td>1201-001-02-03 Commission on IPO</td></tr>
+        <tr><td>Short/excess credit</td><td>8553-001-01 Postal Advances</td></tr>
+        <tr><td>Forfeited/unclaimed/unpaid balance</td><td>Dr 8446 → Cr 1201-008-00 Other Receipts</td></tr>
+      </table>
+
+      <h3 class="sec">🚫 Important Exceptions / Irregular Orders</h3>
+      <ul>
+        <li>IPO cut, defaced, mutilated, altered, or with erasures → placed under objection (Postal Advances) and Postmaster asked to recover from party at fault</li>
+        <li>If order not defaced by paying office → flagged as irregularity in audit</li>
+      </ul>
+
+      <h3 class="sec">🔀 Flowchart: IPO Supply Chain</h3>
+      <div class="flow">
+        <div class="box">Security Press Hyderabad</div><div class="arrow">→</div>
+        <div class="box">Postal Stores Depot (PSD)</div><div class="arrow">→</div>
+        <div class="box">Head Post Office</div><div class="arrow">→</div>
+        <div class="box">Sub Post Office</div><div class="arrow">→</div>
+        <div class="box">Sale to Public</div>
+      </div>
+
+      <h3 class="sec">🏛️ Authorities</h3>
+      <ul>
+        <li>Postal accounts Office <b>Delhi</b> — checks e-IPO credits at <b>Sansad Marg HPO</b> (centralised booking point for e-IPO)</li>
+        <li>Authority for e-IPO: DOP PO Division OM dated 07-09-2017</li>
+      </ul>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> For how many years is the IPO head kept open before lapsing to revenue? What is e-IPO used for primarily? Where are e-IPO credits centrally accounted? What certificate is required for a lost-after-payment IPO?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CHAPTER VI ============ -->
+  <div class="accordion ch6" id="ch6">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter VI — Savings Bank (Para 6.01 to 6.13)</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p>Department of Posts manages Post Office Savings Accounts as an <b>agent of the Government of India</b>, receiving deposits & paying withdrawals per rules in the <b>Post Office SB Manual</b>. <span class="hindi">डाकघर बचत बैंक — भारत सरकार की ओर से डाक विभाग द्वारा संचालित।</span></p>
+      <p><span class="tag t-red">🔴</span> All POSA transactions run on <b>Core Banking Solution (CBS)</b> — Finacle app — pushed to <b>DOP ERP (CSI F&A)</b> on <b>T+1</b> basis, and reconciled with <b>e-Lekha (PFMS)</b>.</p>
+
+      <h3 class="sec">👥 Roles & Responsibilities (Micro-Topics)</h3>
+      <table>
+        <tr><th>Level</th><th>Key Duties</th></tr>
+        <tr><td>Sub Postmaster (SO/BO)</td><td>Cross-verify Finacle vs Daily Transaction Report; no direct voucher posting in PB segment; non-CBS data emailed to HO daily</td></tr>
+        <tr><td>Head Postmaster (HO)</td><td>Verify CSI F&A vs Finacle; check cheque realisation; ensure nil 0382 office account balance; check PB segment GL correctness</td></tr>
+        <tr><td>Postal Accounts Office (PAO)</td><td>Generate CGA report T+3; clear adverse balances; conduct Internal Audit; Statistical Returns; Review of Balances</td></tr>
+        <tr><td>Postal Directorate (PA Wing, Book Section)</td><td>SAP for new POSB products; review Major Head 8001/8006; compute POSB remuneration; Civil Check Register</td></tr>
+      </table>
+
+      <h3 class="sec">⏱️ Important Time Limits (Returns Due Dates)</h3>
+      <div class="timeline">
+        <div class="item"><b>By 10th of following month</b> — SB Statistical Register generated by PAO</div>
+        <div class="item"><b>25th of following month</b> — Transaction e-statements (Sep/Nov/Jan/Feb/Mar) to PA Wing</div>
+        <div class="item"><b>10th August</b> — Annual SB Accounts Transfer (Inland) statement</div>
+        <div class="item"><b>16th August</b> — Annual consolidated SB transaction statement (Form D.G.(PA)-361)</div>
+        <div class="item"><b>10th August</b> — Category-wise SB balances statement per circle</div>
+        <div class="item"><b>31st July</b> — Statement of total interest on SB deposits (previous year, adjusted in current year)</div>
+        <div class="item"><b>31st August</b> — Review of Balances statement (ROB) under SB deposits</div>
+        <div class="item"><b>15th June</b> — Transaction-count statement for Cost calculation</div>
+        <div class="item"><b>2nd of Oct/Dec/Feb</b> — Book Section compiles figures to DG P.S. (STT Section)</div>
+      </div>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>10-16-31 अगस्त</b>" याद रखें — SB स्टेटिस्टिकल रिटर्न अगस्त महीने में केंद्रित होते हैं (10th, 16th, 31st सभी अगस्त की तारीखें)।</div>
+
+      <h3 class="sec">📊 24 Schemes Covered under Control Account (Form D.G.(PA)-358 A/B/C)</h3>
+      <p>POSB A/c 1981 · Sukanya Samriddhi · RD 1981 · 1/2/3/5-Yr TD · MIS 1987 · SCSS 2004 · NSS 1987 & 1992 · NREGS Wages A/c, etc. — control account maintained circle-wise to track Government's liability toward SB deposits.</p>
+
+      <h3 class="sec">⚖️ Key Head of Accounts</h3>
+      <ul>
+        <li><b>Major Head 8001, 8006</b> — reviewed monthly for adverse balances</li>
+        <li>Register: <b>D.G.(PA)-340</b> — Progress of Work register</li>
+        <li>Register: <b>D.G.(PA)-444</b> — AAO Review Diary</li>
+      </ul>
+
+      <h3 class="sec">🔀 Flowchart: SB Transaction Reconciliation</h3>
+      <div class="flow">
+        <div class="box">CBS Finacle (SOL-ID)</div><div class="arrow">→</div>
+        <div class="box">DOP ERP / CSI F&A (T+1)</div><div class="arrow">→</div>
+        <div class="box">e-Lekha / PFMS</div><div class="arrow">→</div>
+        <div class="box">CGA Report</div><div class="arrow">→</div>
+        <div class="box">Ministry of Finance</div>
+      </div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> On what basis are CBS transactions pushed to DOP ERP (T+? day)? By which date is the SB Statistical Register generated? Which Major Heads are reviewed for adverse balances in SB (8001/8006)? Name the register used to track P.O./circle-wise Government liability for SB deposits.</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CHAPTER VIII ============ -->
+  <div class="accordion ch8" id="ch8">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter VIII — Customs Duty</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p>India Post acts as an <b>agent of the Customs Department</b> for clearance and realisation of Customs Duty on dutiable inward foreign mail articles/parcels. <span class="hindi">डाक विभाग सीमा शुल्क विभाग के एजेंट के रूप में कार्य करता है।</span></p>
+      <p>Governing rules: <b>Chapter 1, Posts & Telegraphs Manual Vol-VI Part-I</b>; procedure in <b>Foreign Post Manuals</b>.</p>
+
+      <h3 class="sec">🏛️ Offices of Exchange</h3>
+      <p><span class="tag t-red">🔴</span> Main: <b>Mumbai, Kolkata, Delhi, Chennai</b>; Sub-exchange: <b>Jaipur, Ahmedabad, Cochin, Bangalore</b>.</p>
+
+      <h3 class="sec">💰 Commission Rate</h3>
+      <table>
+        <tr><th>Item</th><th>Rate</th></tr>
+        <tr><td>Commission on Customs Duty realised</td><td><b>10%</b> of total duty realised</td></tr>
+        <tr><td>Commission on net sale of abandoned parcels</td><td><b>10%</b> of net sale proceeds</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "Customs = <b>10% Commission Club</b>" — दोनों ही जगह (duty realised व abandoned parcel sale) दर <b>10%</b> ही है — भ्रमित न हों।</div>
+
+      <h3 class="sec">📑 Returns Due to PAO</h3>
+      <table>
+        <tr><th>Return</th><th>By Whom</th><th>Frequency</th><th>Due</th></tr>
+        <tr><td>Parcel Bill</td><td>Office of Exchange</td><td>Weekly</td><td>End of corresponding week of following month</td></tr>
+        <tr><td>Letter Mail Register</td><td>Office of Exchange</td><td>Weekly</td><td>Same as above</td></tr>
+        <tr><td>Custom Bills</td><td>Office of Exchange</td><td>Monthly</td><td>Within 3 days of freezing CSI data</td></tr>
+        <tr><td>Schedule of Customs Duty (ACG-90)</td><td>Head Office</td><td>Monthly</td><td>Within 3 days of freezing CSI data</td></tr>
+      </table>
+
+      <h3 class="sec">⏱️ Important Time Limits</h3>
+      <div class="timeline">
+        <div class="item"><b>Within 3 days</b> of CSI freezing — Schedule (ACG-90) submission by HO to PAO</div>
+        <div class="item"><b>15th</b> of following month — PAO forwards Custom Duty schedules to PA Misc. Section</div>
+        <div class="item"><b>25th</b> of following month — Broadsheet of balances submitted to A.O.</div>
+        <div class="item"><b>15th</b> of each month — Adjustment Book (CPWA-54) closed</div>
+        <div class="item"><b>16th</b> of each month — Abstract sent to Book Section</div>
+        <div class="item"><b>7th of 6th month</b> following assessment — Ledger extract to DG Postal Services (PA Wing)</div>
+        <div class="item"><b>5th of 2nd month</b> following account month — Monthly statement to Chief Controller of Accounts, CBEC</div>
+      </div>
+
+      <h3 class="sec">⚖️ Key Heads of Account</h3>
+      <ul>
+        <li><b>0037 – Customs Duty</b> (postage/other charges under 1201-101 sale of postage)</li>
+        <li>GL <b>8003700020</b> / Compact Code <b>0037000800120000</b> — Customs Duty for Inward Foreign Mail Articles</li>
+        <li><b>0037 Postal Advances</b> – Excess debit/short recovery on Customs Duty</li>
+        <li>Postal Deposits – short debit/excess recovery on Customs Duty (Form ATC-80/ATC-64)</li>
+      </ul>
+      <p><span class="tag t-green">🟢</span> No GST liability arises separately on Customs Duty — the GL covers basic price + Basic Customs Duty + IGST + appropriate postage (₹30 or ₹100).</p>
+
+      <h3 class="sec">🔀 Flowchart: Customs Duty Realisation</h3>
+      <div class="flow">
+        <div class="box">Inward Foreign Parcel</div><div class="arrow">→</div>
+        <div class="box">Office of Exchange</div><div class="arrow">→</div>
+        <div class="box">Customs Dept Examination</div><div class="arrow">→</div>
+        <div class="box">Delivery + Duty Collected</div><div class="arrow">→</div>
+        <div class="box">10% Commission to DoP</div>
+      </div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> At what rate does DoP earn commission on Customs Duty realised? Name the four main Offices of Exchange in India. What is Form ACG-90 used for? Within how many days must the Customs Duty schedule reach the PAO after CSI data freezing?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CHAPTER IX ============ -->
+  <div class="accordion ch9" id="ch9">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter IX — Goods & Services Tax (GST) — DOP Perspective</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p>GST is a <b>comprehensive, multi-stage, destination-based</b> indirect tax on supply of goods & services, subsuming most former indirect taxes. <span class="hindi">वस्तु एवं सेवा कर — गंतव्य आधारित बहु-स्तरीय अप्रत्यक्ष कर।</span></p>
+
+      <h3 class="sec">🔀 Comparison Chart: Types of GST</h3>
+      <table>
+        <tr><th>Type</th><th>Governing Act</th><th>Revenue Goes To</th></tr>
+        <tr><td>CGST</td><td>Central GST Act 2016 (2017)</td><td>Central Government</td></tr>
+        <tr><td>SGST (UGST in UTs)</td><td>State GST Act 2016 (2017)</td><td>State Government / UT</td></tr>
+        <tr><td>IGST</td><td>Integrated GST Act 2016 (2017)</td><td>Shared between Centre & State (inter-state, import/export)</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>C</b>entre gets <b>C</b>GST, <b>S</b>tate gets <b>S</b>GST, <b>I</b>nter-state gets <b>I</b>GST (shared)."</div>
+
+      <h3 class="sec">⚖️ Key Sections</h3>
+      <ul>
+        <li><span class="tag t-red">🔴</span> <b>Sections 22–24, GST Act</b> (read with Rule 12) — mandatory DDO registration under GSTIN</li>
+        <li><b>Sections 24, 25(6), 51</b> — DDOs dealing under third-party payments must register</li>
+        <li><b>Section 51</b> — TDS deductor registers without threshold limit; may use TAN if no PAN</li>
+        <li><b>Section 2(57), GST Rules</b> & <b>Section 2(1)(d), IGST Act</b> — definition of Input Tax Credit (ITC)</li>
+        <li><b>Section 140</b> — Transitional credit carry-forward (post-GST rollout, June 30, 2017 cut-off)</li>
+        <li><b>Section 31</b> — Invoice requirements for ITC claim</li>
+        <li><b>Section 50(1)</b> — Interest on wrongly availed ITC</li>
+      </ul>
+
+      <h3 class="sec">💸 Penalty / Interest (TDS default)</h3>
+      <table>
+        <tr><th>Situation</th><th>Rate</th></tr>
+        <tr><td>DDO fails to deduct TDS → pays on own with interest</td><td>Max <b>18%</b></td></tr>
+        <tr><td>TDS on intra-state supply</td><td><b>2%</b> total (1% CGST + 1% SGST)</td></tr>
+        <tr><td>TDS on inter-state supply</td><td><b>2%</b> (IGST)</td></tr>
+      </table>
+
+      <h3 class="sec">📄 Returns / Forms</h3>
+      <table>
+        <tr><th>Form</th><th>Purpose</th></tr>
+        <tr><td>GSTR-1</td><td>Outward supplies details filed by DDO</td></tr>
+        <tr><td>GSTR-2 / 2A</td><td>Inward supplies (auto-populated)</td></tr>
+        <tr><td>GSTR-6</td><td>Input Service Distributor (ISD) return</td></tr>
+        <tr><td>GST PMT-05</td><td>Electronic Cash Ledger — tax/interest/penalty/fee payment</td></tr>
+      </table>
+
+      <h3 class="sec">👥 Roles (Micro-Topics)</h3>
+      <table>
+        <tr><th>Level</th><th>Responsibility</th></tr>
+        <tr><td>HPOs/DDOs</td><td>GST registration, collect/pay CGST-SGST-UGST-IGST, maintain GST Register, monthly e-schedules</td></tr>
+        <tr><td>Circle Office</td><td>Monitor accounting records, prepare consolidated GST statement, ensure timely payment/returns</td></tr>
+        <tr><td>Circle PAO</td><td>Match e-schedule to CGA (T+3); reconcile receivables; check ITC; audit GST operations</td></tr>
+      </table>
+
+      <h3 class="sec">🔀 Flowchart: ITC Availment Process</h3>
+      <div class="flow">
+        <div class="box">Supply Invoice (Sec 31)</div><div class="arrow">→</div>
+        <div class="box">GSTR-2A Auto-Populate</div><div class="arrow">→</div>
+        <div class="box">DDO Confirms in GSTR-2</div><div class="arrow">→</div>
+        <div class="box">ITC Availed</div><div class="arrow">→</div>
+        <div class="box">Net Payment via GST PMT-05</div>
+      </div>
+
+      <p><span class="tag t-yellow">🟡</span> Every DDO/HPO must ensure the amount under certain Minor Heads (86610010160-165) is <b>ZERO</b> at close of Financial Year — indicates full reconciliation of GST collections and remittances.</p>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> Under which sections must a DDO register for GSTIN? What is the maximum interest rate a DDO pays for failing to deduct TDS under GST? Differentiate CGST, SGST and IGST in terms of revenue distribution. What form is used for outward supply details (GSTR-1)?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CHAPTER X ============ -->
+  <div class="accordion ch10" id="ch10">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>Chapter X — India Post Passenger Reservation System (PRS)</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p>Railway Reservation tickets sold at selected Post Offices (rural/semi-rural areas without rail-head), in association with Ministry of Railways (MOR), under a Memorandum of Understanding dated <b>31 July 2007</b>. <span class="hindi">डाकघरों के माध्यम से रेलवे आरक्षण टिकट सेवा।</span></p>
+      <p><span class="tag t-orange">🟠</span> Presently available at <b>333 Post Offices</b> across India.</p>
+
+      <h3 class="sec">⚖️ Head of Accounts</h3>
+      <table>
+        <tr><th>Purpose</th><th>Head</th></tr>
+        <tr><td>Collection on sale of railway tickets</td><td>8783-101-01 (Sector M – Remittances)</td></tr>
+        <tr><td>Service charges (sale/cancellation)</td><td>1201-108 – Postal Receipts</td></tr>
+        <tr><td>Credit passed to Railways</td><td>Dr 8763 / Cr 8675 (RBI Deposits)</td></tr>
+      </table>
+
+      <h3 class="sec">👥 Roles (Micro-Topics)</h3>
+      <table>
+        <tr><th>Level</th><th>Duty</th></tr>
+        <tr><td>Sub Post Office</td><td>Collect ticket amount, show as receipt in SO Summary/Daily Account</td></tr>
+        <tr><td>Head Post Office</td><td>Account for collection, prepare schedule to DA(P) with PNR-wise details</td></tr>
+        <tr><td>Postal Accounts Office</td><td>Monthly Broad Sheet; reconcile with railway clearance memo</td></tr>
+        <tr><td>Nodal PAO — <b>Director of Accounts (Postal), Nagpur</b></td><td>Consolidate circle-wise payable amount; instruct RBI Nagpur to credit Railways daily</td></tr>
+      </table>
+
+      <h3 class="sec">💰 Incentive to Postal Staff</h3>
+      <table>
+        <tr><th>Role</th><th>Rate per Ticket</th></tr>
+        <tr><td>Booking Assistant at PRS counter</td><td>₹3</td></tr>
+        <tr><td>Supervisor at PRS counter</td><td>₹1</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>3 for Booking, 1 for Boss</b>" — Booking Assistant ₹3, Supervisor ₹1 per ticket.</div>
+
+      <h3 class="sec">📜 MoU Key Points (31 July 2007)</h3>
+      <ul>
+        <li>Signed between <b>MOR (Additional Member Commercial)</b> and <b>India Post (CGM, BD&M Directorate)</b></li>
+        <li>MOR provides hardware/communication equipment (cost borne by MOR); India Post provides accommodation & staff (at own cost)</li>
+        <li><span class="tag t-red">🔴</span> MoU valid for <b>5 years</b>, reviewed annually, renewable</li>
+        <li>India Post fully liable/indemnifies Railways for losses due to its own act/omission</li>
+      </ul>
+
+      <h3 class="sec">🔀 Flowchart: PRS Ticket Money Flow</h3>
+      <div class="flow">
+        <div class="box">SO/HO Collects Fare+Charges</div><div class="arrow">→</div>
+        <div class="box">HO Cash Book / Schedule to DA(P)</div><div class="arrow">→</div>
+        <div class="box">PAO Broad Sheet</div><div class="arrow">→</div>
+        <div class="box">Nodal PAO Nagpur</div><div class="arrow">→</div>
+        <div class="box">RBI Nagpur credits MOR daily</div>
+      </div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> How many Post Offices currently offer PRS ticketing? What is the incentive rate for Booking Assistant vs Supervisor? Which office is the Nodal PAO for PRS (Director of Accounts Postal, Nagpur)? What is the validity period of the MOR-India Post MoU?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ ONE PAGE REVISION SHEET ============ -->
+  <div class="revision-page" id="revision">
+    <h2>📝 One-Page Revision Sheet | अंतिम दिन के लिए रिवीज़न</h2>
+    <div class="rev-grid">
+      <div class="rev-card"><b>Ch-I eMO:</b> Max ₹5,000 · Currency 2 months · Head open 3 FY · Commission 10% N/A on service eMO · Sec 44 IPO Act 1898 (court attachment)</div>
+      <div class="rev-card"><b>Ch-II Cash Certificates:</b> Pre-printed sale stopped 01.07.2016 · NSC min ₹1,000/₹100 · KVP min ₹1,000/₹1,000 · SCWF unclaimed = 10 yrs (SB a/c = 7 yrs silent) · Freeze code "SCWFR" every 30 Sep</div>
+      <div class="rev-card"><b>Ch-III IPO:</b> Head open 2 FY (shorter than eMO's 3 FY) · Security Press Hyderabad-500063 · e-IPO mainly for RTI Act 2005 fee · Extra commission if paid after 6 months</div>
+      <div class="rev-card"><b>Ch-VI Savings Bank:</b> CBS Finacle → ERP T+1 → e-Lekha/PFMS · SB Statistical Register by 10th · Most SB returns due in August (10th/16th/31st) · Major Head 8001, 8006</div>
+      <div class="rev-card"><b>Ch-VIII Customs Duty:</b> Commission 10% flat (on duty & on abandoned parcel sale) · Offices of Exchange: Mumbai, Kolkata, Delhi, Chennai · Form ACG-90 · Head 0037</div>
+      <div class="rev-card"><b>Ch-IX GST:</b> CGST→Centre, SGST→State, IGST→Shared · Sec 22-24 DDO registration · TDS default interest max 18% (2% intra, 2% IGST inter-state) · GSTR-1 outward, GSTR-2A inward</div>
+      <div class="rev-card"><b>Ch-X PRS:</b> 333 Post Offices · MoU dated 31.07.2007, valid 5 years · Incentive ₹3 (Booking Asst) / ₹1 (Supervisor) · Nodal PAO = Nagpur · Head 8783-101-01</div>
+    </div>
+
+    <h3 class="sec">🔑 Master Mnemonic Chain</h3>
+    <div class="mnemonic hindi">
+      "<b>eMO 2-3, IPO 2, SB दस अगस्त, Custom 10%, GST CSI, PRS 333</b>" — यह वाक्य क्रमशः याद दिलाता है: eMO की currency 2 माह/head 3 वर्ष, IPO head 2 वर्ष, Savings Bank returns अगस्त में केंद्रित, Customs commission 10%, GST में CSGT-SGST-IGST, और PRS 333 डाकघरों में उपलब्ध।
+    </div>
+
+    <h3 class="sec">🔢 Numbers Comparison Table (High-Yield for MCQs)</h3>
+    <table>
+      <tr><th>Chapter</th><th>Key Number</th><th>Meaning</th></tr>
+      <tr><td>I</td><td>5,000 / 2 / 3</td><td>Max eMO ₹ / currency months / head-open years</td></tr>
+      <tr><td>II</td><td>10</td><td>SCWF unclaimed years (most schemes)</td></tr>
+      <tr><td>III</td><td>2</td><td>IPO head-open years before lapse</td></tr>
+      <tr><td>VI</td><td>T+1</td><td>CBS to ERP posting cycle</td></tr>
+      <tr><td>VIII</td><td>10%</td><td>DoP commission on Customs Duty</td></tr>
+      <tr><td>IX</td><td>18%</td><td>Max interest on TDS default</td></tr>
+      <tr><td>X</td><td>333 / 5 yrs</td><td>PRS post offices / MoU validity</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  📮 Postal Accounts Manual Vol-II — IP/AAO Exam Study Aid | Prepared for LDCE Postal Exam Portal<br>
+  Source: Postal Accounts Manual Volume-II (PAF Wing, DoP, 2021) — Chapters I, II, III, VI, VIII, IX, X
+</footer>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('open');
+  const body = el.nextElementSibling;
+  if(body.style.maxHeight){ body.style.maxHeight = null; }
+  else { body.style.maxHeight = body.scrollHeight + 40 + "px"; }
+}
+function expandAll(){
+  document.querySelectorAll('.acc-head').forEach(h=>{
+    h.classList.add('open');
+    const body = h.nextElementSibling;
+    body.style.maxHeight = body.scrollHeight + 40 + "px";
+  });
+}
+function collapseAll(){
+  document.querySelectorAll('.acc-head').forEach(h=>{
+    h.classList.remove('open');
+    h.nextElementSibling.style.maxHeight = null;
+  });
+}
+function toggleTheme(){
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let synth = window.speechSynthesis;
+function speakPage(){
+  if(synth.speaking){ synth.cancel(); return; }
+  const text = document.querySelector('.container').innerText.slice(0, 3000);
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'en-IN';
+  synth.speak(utter);
+}
+// open first accordion by default
+document.addEventListener('DOMContentLoaded', ()=>{
+  const first = document.querySelector('.acc-head');
+  if(first) toggleAcc(first);
+});
+</script>
+
+</body>
+</html>
