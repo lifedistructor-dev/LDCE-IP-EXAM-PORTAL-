@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appendix-V to PAM Vol-I | IP/AAO Exam Infographic</title>
+<style>
+:root{
+  --red:#D32F2F; --red-dark:#8E1616; --blue:#0D47A1; --blue-light:#1565C0;
+  --gold:#C9A227; --gold-light:#F2D675; --bg:#FDFBF6; --card:#ffffff;
+  --text:#1c1c1c; --muted:#5f5f5f; --border:#e4dcc8;
+  --green:#2E7D32; --orange:#EF6C00; --yellow:#F9A825; --purple:#6A1B9A; --teal:#00838F;
+}
+[data-theme="dark"]{
+  --bg:#121212; --card:#1e1e1e; --text:#f2f2f2; --muted:#b5b5b5; --border:#3a3a3a;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Tahoma,Arial,sans-serif; background:var(--bg); color:var(--text);
+  transition:background .3s,color .3s; padding-bottom:60px;
+}
+header{
+  background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 60%,var(--red) 100%);
+  color:#fff; padding:22px 16px 28px; text-align:center; position:relative;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+header h1{margin:0; font-size:1.3rem; letter-spacing:.5px;}
+header .hi{font-size:1.02rem; font-weight:400; opacity:.95; margin-top:4px;}
+header .sub{font-size:.78rem; margin-top:8px; opacity:.85;}
+.topbar{display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;}
+.topbar button{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  padding:6px 14px; border-radius:20px; font-size:.75rem; cursor:pointer;
+}
+.topbar button:hover{background:rgba(255,255,255,.3);}
+.container{max-width:900px; margin:0 auto; padding:14px;}
+
+.legend{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:16px 0; font-size:.72rem;}
+.legend span{background:var(--card); border:1px solid var(--border); padding:4px 9px; border-radius:14px;}
+
+.chapnav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:18px;}
+.chapnav a{text-decoration:none; font-size:.7rem; font-weight:600; padding:7px 11px; border-radius:8px; color:#fff; box-shadow:0 2px 5px rgba(0,0,0,.2);}
+.c1{background:var(--blue);} .c2{background:var(--red);} .c3{background:var(--green);}
+.c4{background:var(--orange);} .c5{background:var(--purple);} .c6{background:var(--teal);}
+.c7{background:#5D4037;} .c8{background:#AD1457;}
+
+.accordion{background:var(--card); border:1px solid var(--border); border-radius:12px; margin-bottom:14px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.acc-head{padding:14px 16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:.92rem; color:#fff;}
+.acc-head .arrow{transition:transform .25s;}
+.acc-head.open .arrow{transform:rotate(90deg);}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.acc-body-inner{padding:14px 16px 18px;}
+
+.ch1 .acc-head{background:linear-gradient(90deg,var(--blue),var(--blue-light));}
+.ch2 .acc-head{background:linear-gradient(90deg,var(--red),var(--red-dark));}
+.ch3 .acc-head{background:linear-gradient(90deg,var(--green),#1B5E20);}
+.ch4 .acc-head{background:linear-gradient(90deg,var(--orange),#B34700);}
+.ch5 .acc-head{background:linear-gradient(90deg,var(--purple),#4A148C);}
+.ch6 .acc-head{background:linear-gradient(90deg,var(--teal),#005662);}
+.ch7 .acc-head{background:linear-gradient(90deg,#5D4037,#3E2723);}
+.ch8 .acc-head{background:linear-gradient(90deg,#AD1457,#6A0F3A);}
+
+h3.sec{font-size:.9rem; margin:16px 0 6px; padding-bottom:4px; border-bottom:2px solid var(--gold); color:var(--blue); display:flex; align-items:center; gap:6px;}
+[data-theme="dark"] h3.sec{color:var(--gold-light);}
+p, li{font-size:.85rem; line-height:1.55;}
+.hindi{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;}
+
+table{width:100%; border-collapse:collapse; margin:8px 0 14px; font-size:.75rem;}
+th, td{border:1px solid var(--border); padding:5px 7px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff;}
+tr:nth-child(even) td{background:rgba(0,0,0,.03);}
+[data-theme="dark"] tr:nth-child(even) td{background:rgba(255,255,255,.04);}
+.mono{font-family:'Consolas',monospace; font-weight:700; color:var(--red-dark);}
+[data-theme="dark"] .mono{color:#ff9a9a;}
+
+.tag{display:inline-block; font-size:.68rem; font-weight:700; padding:2px 7px; border-radius:10px; margin-right:4px;}
+.t-red{background:#FFE0E0; color:var(--red-dark);}
+.t-orange{background:#FFE9CC; color:var(--orange);}
+.t-yellow{background:#FFF6CC; color:#8a6d00;}
+.t-green{background:#DFF3E0; color:var(--green);}
+[data-theme="dark"] .t-red{background:#4a1414;color:#ff9a9a;}
+[data-theme="dark"] .t-orange{background:#4a2c00;color:#ffc069;}
+[data-theme="dark"] .t-yellow{background:#4a4300;color:#ffe680;}
+[data-theme="dark"] .t-green{background:#123c17;color:#8fe39a;}
+
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:10px 0; font-size:.76rem;}
+.flow .box{background:var(--blue); color:#fff; padding:7px 10px; border-radius:8px; font-weight:600;}
+.flow .arrow{font-weight:900; color:var(--gold);}
+
+.qbox{background:linear-gradient(135deg,#FFF8E1,#FFE9B3); border-left:4px solid var(--gold); border-radius:6px; padding:8px 10px; font-size:.76rem; margin:8px 0; color:#4a3800;}
+[data-theme="dark"] .qbox{background:#3a3110; color:#f2dfa0; border-left-color:var(--gold-light);}
+.qbox b{color:var(--red);}
+
+.mnemonic{background:linear-gradient(135deg,#E3F2FD,#BBDEFB); border-left:4px solid var(--blue); border-radius:6px; padding:8px 10px; font-size:.78rem; margin:8px 0; color:#0d2c4d;}
+[data-theme="dark"] .mnemonic{background:#0d2c4d; color:#bbdefb;}
+
+.timeline{border-left:3px solid var(--gold); margin:10px 0 10px 8px; padding-left:14px;}
+.timeline .item{position:relative; margin-bottom:12px; font-size:.78rem;}
+.timeline .item::before{content:''; position:absolute; left:-19px; top:3px; width:9px; height:9px; border-radius:50%; background:var(--red);}
+
+.revision-page{background:var(--card); border:2px solid var(--gold); border-radius:14px; padding:16px; margin:22px 0;}
+.revision-page h2{color:var(--red); text-align:center; margin-top:0;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-card{background:rgba(0,0,0,.03); border-left:4px solid var(--blue); border-radius:6px; padding:8px 10px; font-size:.78rem;}
+[data-theme="dark"] .rev-card{background:rgba(255,255,255,.04);}
+
+.tree{margin:10px 0; font-size:.78rem;}
+.tree ul{list-style:none; padding-left:18px; border-left:2px dashed var(--gold); margin:4px 0;}
+.tree li{margin:4px 0; position:relative;}
+.tree li::before{content:'└─'; color:var(--gold); margin-right:4px;}
+
+footer{text-align:center; font-size:.72rem; color:var(--muted); margin-top:30px; padding:14px;}
+.toc-note{text-align:center; font-size:.75rem; color:var(--muted); margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📊 Appendix-V to Postal Accounts Manual Vol-I</h1>
+  <div class="hi hindi">डाक लेखा नियमावली खंड-I परिशिष्ट-V — लेखा शीर्ष वर्गीकरण</div>
+  <div class="sub">IP / AAO Exam Prep | List of Account Heads – Receipt &amp; Expenditure (5th Edition, Aug 2021)</div>
+  <div class="topbar">
+    <button onclick="toggleTheme()">🌙 Dark / Light</button>
+    <button onclick="speakPage()">🔊 Read Aloud</button>
+    <button onclick="expandAll()">⬇️ Expand All</button>
+    <button onclick="collapseAll()">⬆️ Collapse All</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="legend">
+    <span>🔴 Very Important for Exam</span>
+    <span>🟠 Frequently Asked</span>
+    <span>🟡 Conceptual Understanding</span>
+    <span>🟢 Quick Revision Point</span>
+  </div>
+
+  <div class="chapnav">
+    <a class="c1" href="#ch1">Classification Structure</a>
+    <a class="c2" href="#ch2">Sectors A-N</a>
+    <a class="c3" href="#ch3">Consolidated Fund</a>
+    <a class="c4" href="#ch4">Public Account</a>
+    <a class="c5" href="#ch5">Postal Deposits 8446</a>
+    <a class="c6" href="#ch6">Suspense &amp; GST 8661</a>
+    <a class="c7" href="#ch7">Money Orders 8781</a>
+    <a class="c8" href="#ch8">Cash Balance 8999</a>
+  </div>
+  <p class="toc-note">Chapter → Sub-Chapter → Micro-Topic → Nano-Topic ढांचे में व्यवस्थित | Source: Appendix-V to PAM Vol-I, 5th Edition, August 2021 (PAF Wing, DoP)</p>
+
+  <!-- ============ CH 1: CLASSIFICATION STRUCTURE ============ -->
+  <div class="accordion ch1" id="ch1">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>1. Classification Structure — Why &amp; How Accounts Are Coded</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition | परिभाषा</h3>
+      <p><span class="tag t-red">🔴</span> Classification structure is devised to depict the total expenditure of Government on each function/programme/activity — it aids budgetary analysis, decision-making, and performance evaluation. <span class="hindi">वर्गीकरण संरचना सरकार के प्रत्येक कार्य/कार्यक्रम पर कुल व्यय को दर्शाने हेतु बनाई गई है।</span></p>
+
+      <h3 class="sec">🎯 Why Classification (Purpose)</h3>
+      <ul>
+        <li>To ensure Uniformity &amp; standardization</li>
+        <li>To present objectives/purposes of govt. expenditure in terms of functions, programmes, activities</li>
+        <li>To bring expenditure of a function/programme together irrespective of department</li>
+        <li>To help management with timely accounts data for monitoring &amp; analysis</li>
+        <li>To secure itemized control over expenditure</li>
+      </ul>
+
+      <h3 class="sec">🌳 6-Tier Classification Structure (15-digit CGA code)</h3>
+      <div class="tree">
+        <ul>
+          <li><b>Sector</b> (A, B, C, D... — letter of alphabet)
+            <ul><li><b>Major Head</b> (4-digit — indicates Government function, e.g. 1201, 8446)
+              <ul><li><b>Minor Head</b> (scheme/programme under the function)
+                <ul><li><b>Sub-Head</b> (identifies specific scheme/organisation)
+                  <ul><li><b>Detailed Head</b> (sub-ordinate admin level / sub-scheme)
+                    <ul><li><b>Object Head</b> (nature of expenditure — salary, DTE etc. = unit of appropriation)</li></ul>
+                  </li></ul>
+                </li></ul>
+              </li></ul>
+            </li></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>S</b>coring <b>M</b>arks <b>M</b>eans <b>S</b>uper <b>D</b>edicated <b>O</b>bjective" → <b>S</b>ector → <b>M</b>ajor Head → <b>M</b>inor Head → <b>S</b>ub Head → <b>D</b>etailed Head → <b>O</b>bject Head.</div>
+
+      <h3 class="sec">🔢 GL Code vs CGA Head</h3>
+      <table>
+        <tr><th>Term</th><th>Digits</th><th>Purpose</th></tr>
+        <tr><td>CGA Head of Account</td><td><span class="mono">15-digit</span></td><td>Government-wide classification (Sector→Object Head)</td></tr>
+        <tr><td>DOP ERP GL Code</td><td><span class="mono">10-digit</span></td><td>System-level code introduced post-ERP implementation, mapped 1:1 to the 15-digit CGA head</td></tr>
+      </table>
+      <p><span class="tag t-orange">🟠</span> Classification to the correct Head of Account is essential — where linked to Grant, it also enforces <b>Budget Discipline</b>.</p>
+
+      <h3 class="sec">📌 Head-Level Definitions (Micro-Topics)</h3>
+      <table>
+        <tr><th>Head</th><th>What it Represents</th></tr>
+        <tr><td>Major Head</td><td>Government function (corresponds to Scheme classification / non-scheme sector)</td></tr>
+        <tr><td>Minor Head</td><td>Scheme/non-scheme programme under the function — classification is by <i>purpose</i>, not by department incurring it</td></tr>
+        <tr><td>Sub-Head</td><td>Identifies the specific scheme in pursuance of the programme (e.g. organisation)</td></tr>
+        <tr><td>Detailed Head</td><td>Sub-ordinate administrative level / sub-scheme</td></tr>
+        <tr><td>Object Head</td><td>Itemised control — object/nature of expenditure (salary, DTE) = unit of appropriation</td></tr>
+      </table>
+
+      <h3 class="sec">🏛️ Authority</h3>
+      <ul>
+        <li>Errors/omissions reported to <b>Postal Directorate (PA Wing)</b> for amendments</li>
+        <li>Corrections/additions approved by <b>Secretary &amp; Chief Accounting Authority, DoP</b></li>
+        <li>Consistent with <b>Appendix-2 to the Account Code, Volume-I</b></li>
+      </ul>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> How many digits does the CGA Head of Account have? Name the six tiers of classification in order. What does the "Object Head" represent? Who approves corrections/amendments to Appendix-V?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 2: SECTORS ============ -->
+  <div class="accordion ch2" id="ch2">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>2. Sectoral Classification &amp; Government Accounts Parts</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition</h3>
+      <p>Government Accounts follow sectoral classification into 4 broad sectors, distinguished by a letter of the alphabet:</p>
+      <table>
+        <tr><th>Sector</th><th>Name</th></tr>
+        <tr><td>A</td><td>General Services</td></tr>
+        <tr><td>B</td><td>Social &amp; Community Services</td></tr>
+        <tr><td>C</td><td>Economic Services</td></tr>
+        <tr><td>D</td><td>Grant-in-aid and Contributions</td></tr>
+      </table>
+
+      <h3 class="sec">📚 Three Parts of Government Accounts</h3>
+      <table>
+        <tr><th>Part</th><th>Description</th></tr>
+        <tr><td>Part I – Consolidated Fund</td><td>Grouped into Sectors (General/Social/Economic Services) → Major Heads (sub-sectors where needed)</td></tr>
+        <tr><td>Part II – Contingency Fund</td><td>Single Major Head only; all Contingency Fund transactions recorded under it</td></tr>
+        <tr><td>Part III – Public Account</td><td>Grouped into Sectors/Sub-Sectors (lettered) → Major Heads</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>C</b>onsolidated has <b>C</b>ategories, <b>C</b>ontingency is <b>C</b>oncise (1 head), <b>P</b>ublic has <b>P</b>arts too" — remember Contingency Fund = only 1 Major Head, unlike the other two Parts.</div>
+
+      <h3 class="sec">🔀 Flowchart: Consolidated Fund Structure</h3>
+      <div class="flow">
+        <div class="box">Consolidated Fund</div><div class="arrow">→</div>
+        <div class="box">Sector (A/B/C/D)</div><div class="arrow">→</div>
+        <div class="box">Major Head</div><div class="arrow">→</div>
+        <div class="box">Minor Head</div><div class="arrow">→</div>
+        <div class="box">Sub/Detailed/Object Head</div>
+      </div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> How many Major Heads exist under the Contingency Fund (Part-II)? Name the 4 sectors of Government Accounts. Which Part of accounts covers Public Account transactions?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 3: CONSOLIDATED FUND MAJOR HEADS ============ -->
+  <div class="accordion ch3" id="ch3">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>3. Consolidated Fund — Receipt &amp; Expenditure Major Heads</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">💰 A. Tax Revenue (Receipts)</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">0021</td><td>Taxes on Income &amp; Expenditure – other than Corporation Tax</td></tr>
+        <tr><td class="mono">0037</td><td>Taxes on commodities &amp; services – <b>Customs</b></td></tr>
+      </table>
+
+      <h3 class="sec">💰 B. Non-Tax Revenue (Receipts)</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">0049</td><td>Interest Receipts, Dividends &amp; Profits – Interest Receipts</td></tr>
+        <tr><td class="mono">0050</td><td>Dividends &amp; Profits – India Post Payment Bank</td></tr>
+        <tr><td class="mono">0051</td><td>Other Non-Tax Revenue – Public Service Commission</td></tr>
+        <tr><td class="mono">0070</td><td>Other Non-Tax Revenue – Other Administrative Services</td></tr>
+        <tr><td class="mono">0071</td><td>Contributions &amp; Recoveries – Pension &amp; Retirement benefits</td></tr>
+        <tr><td class="mono">0075</td><td>Other Non-Tax Revenue – Miscellaneous General Services</td></tr>
+        <tr><td class="mono">0210</td><td>Social Services – Medical &amp; Public Health</td></tr>
+        <tr><td class="mono">0216</td><td>Social Services – Housing</td></tr>
+        <tr><td class="mono">0235</td><td>Social Services – Social Security &amp; Welfare</td></tr>
+        <tr><td class="mono">1201</td><td><span class="tag t-red">🔴</span> Economic Services – <b>Postal Receipts</b></td></tr>
+      </table>
+
+      <h3 class="sec">💸 Expenditure Heads — A. General Services</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">2016</td><td>Organs of State – Audit (P&amp;T)</td></tr>
+        <tr><td class="mono">2049</td><td>Interest Payments &amp; Servicing of Debt</td></tr>
+        <tr><td class="mono">2061</td><td>Revenue for POPSK from MEA</td></tr>
+        <tr><td class="mono">2071</td><td>Pension &amp; Retirement Benefits (Non-Postal)</td></tr>
+        <tr><td class="mono">2075</td><td>Miscellaneous General Services</td></tr>
+      </table>
+
+      <h3 class="sec">💸 Expenditure Heads — B. Social Services</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">2235</td><td>Social Welfare &amp; Nutrition – Social Security &amp; Welfare</td></tr>
+        <tr><td class="mono">2505</td><td>Service Charges for Wage Disbursement – Rural Employment Guarantee Scheme</td></tr>
+        <tr><td class="mono">2552</td><td>North Eastern Areas</td></tr>
+      </table>
+
+      <h3 class="sec">💸 Expenditure Heads — C. Economic Services (Postal, 3201)</h3>
+      <table>
+        <tr><th>Sub-Major</th><th>Function</th></tr>
+        <tr><td class="mono">3201-01</td><td>General Operation</td></tr>
+        <tr><td class="mono">3201-02</td><td>Operation</td></tr>
+        <tr><td class="mono">3201-03</td><td>Agency Services</td></tr>
+        <tr><td class="mono">3201-04</td><td>Accounts &amp; Audit</td></tr>
+        <tr><td class="mono">3201-05</td><td>Engineering</td></tr>
+        <tr><td class="mono">3201-06</td><td>Amenities to Staff</td></tr>
+        <tr><td class="mono">3201-07</td><td>Pension</td></tr>
+        <tr><td class="mono">3201-08</td><td>Stationery &amp; Printing</td></tr>
+        <tr><td class="mono">3201-60</td><td>Other Expenses</td></tr>
+        <tr><td class="mono">3465</td><td>Grants to Infrastructure Development for IPPB</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>3201</b> = <b>P</b>ostal <b>O</b>perations" — remember 3201 as the Postal Services Economic-Services function head, sub-divided 01–08 &amp; 60.</div>
+
+      <h3 class="sec">💸 Capital &amp; Loans</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">4552</td><td>Capital Outlay on North Eastern Areas</td></tr>
+        <tr><td class="mono">5201</td><td>Capital Outlay on Postal Services</td></tr>
+        <tr><td class="mono">5465</td><td>Investment in IPPB</td></tr>
+        <tr><td class="mono">7405</td><td>Major Works – Infrastructure for POPSK from MEA</td></tr>
+        <tr><td class="mono">7475 / 7610</td><td>Loans for Other General Economic Services</td></tr>
+        <tr><td class="mono">7615</td><td>Miscellaneous Loans</td></tr>
+      </table>
+
+      <h3 class="sec">📝 Important Notes on Specific Heads (Inclusions)</h3>
+      <ul>
+        <li><span class="tag t-orange">🟠</span> <b>0049</b> includes penal interest recovered from officials for defalcation/losses of public money in SB, CC etc.</li>
+        <li><b>0210</b> includes CGHS contribution recovered from P&amp;T Audit employees' pay monthly</li>
+        <li><b>1201 Postal Receipts</b> includes: franking machine resetting charges from private companies; postage redirection fee &amp; insurance fee on inward foreign parcels; refund of postage on maliciously-sent unpaid articles; excess postage realisation; sale proceeds of stamps at Civil Treasuries; MO commission adjustments (Nagpur/Kolkata); customs duty adjustments on prepaid outward parcels to UK; value of unserviceable/obsolete stamps written off; balance of Inland MOs after 2nd year transferred here; balance of IPOs after year following issue transferred here</li>
+      </ul>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> Which Major Head covers "Postal Receipts"? What does Major Head 3201 represent and what are its sub-heads (01–08, 60)? After how many years is the balance under "Inland Money Orders" transferred to Postal Receipts? Which head covers Customs (Tax Revenue)?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 4: PUBLIC ACCOUNT ============ -->
+  <div class="accordion ch4" id="ch4">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>4. Public Account — Small Savings, Deposits, Suspense, Remittances</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">🏦 I. Small Savings, Provident Funds etc.</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">8001</td><td>🔴 National Savings Deposits</td></tr>
+        <tr><td class="mono">8002</td><td>🔴 National Savings Certificates</td></tr>
+        <tr><td class="mono">8006</td><td>🔴 Public Provident Funds</td></tr>
+        <tr><td class="mono">8008</td><td>Income &amp; Expenditure of National Small Savings Fund</td></tr>
+        <tr><td class="mono">8009</td><td>State Provident Funds</td></tr>
+        <tr><td class="mono">8011</td><td>Insurance &amp; Pension Funds</td></tr>
+        <tr><td class="mono">8012</td><td>Special Deposits &amp; Accounts</td></tr>
+        <tr><td class="mono">8013</td><td>Other Deposits &amp; Accounts</td></tr>
+        <tr><td class="mono">8014</td><td>Receipts – Postal Life Insurance Schemes</td></tr>
+        <tr><td class="mono">8015</td><td>Post Office Insurance Fund – POIF Investment</td></tr>
+        <tr><td class="mono">8016</td><td>Income &amp; Expenditure of Post Office Insurance Fund</td></tr>
+      </table>
+
+      <h3 class="sec">📌 Major Head 8001 — Scheme-wise Minor Heads (High-Yield Table)</h3>
+      <table>
+        <tr><th>Minor Head</th><th>Scheme</th></tr>
+        <tr><td>101</td><td>POSB A/c 1981 · Social Security Pension A/c · Workers' Wages (NREGS)</td></tr>
+        <tr><td>105</td><td>PO Recurring Deposit (RD) 1981</td></tr>
+        <tr><td>106/107/108/109</td><td>PO 1/2/3/5 Year TD 1981</td></tr>
+        <tr><td>110</td><td>Monthly Income Scheme 1987</td></tr>
+        <tr><td>111</td><td>Senior Citizen Savings Scheme 2004</td></tr>
+        <tr><td>112-01/02</td><td>NSS 1987 / NSS 1992</td></tr>
+        <tr><td>112-03</td><td>PO 5/10/15 Yr CTD &amp; POSB Fixed Deposits</td></tr>
+        <tr><td>113-01</td><td>Sukanya Samriddhi</td></tr>
+      </table>
+      <div class="mnemonic hindi">🧠 <b>Mnemonic:</b> "8001 = आम बचत योजनाएँ (POSB, RD, TD, MIS, SCSS, NSS, Sukanya)" — 8001 के अंदर सभी छोटी बचत योजनाओं के Minor Head क्रमांक 101 से 113 तक हैं।</div>
+
+      <h3 class="sec">💳 K. Deposits &amp; Advances</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">8336</td><td>Civil Deposits – Deposits bearing Interest</td></tr>
+        <tr><td class="mono">8342</td><td>Other Deposits bearing Interest</td></tr>
+        <tr><td class="mono">8443</td><td>Civil Deposits – not bearing Interest</td></tr>
+        <tr><td class="mono">8446</td><td>🔴 Postal Deposits – not bearing Interest</td></tr>
+        <tr><td class="mono">8455</td><td>Settlement A/c with IPPB</td></tr>
+        <tr><td class="mono">8553</td><td>🔴 Postal Advances</td></tr>
+      </table>
+
+      <h3 class="sec">🗄️ L. Suspense &amp; Miscellaneous</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">8661</td><td>🔴 Suspense – Suspense Accounts (Postal)</td></tr>
+        <tr><td class="mono">8670</td><td>Cheques &amp; Bills</td></tr>
+        <tr><td class="mono">8671</td><td>Departmental Balances</td></tr>
+        <tr><td class="mono">8672</td><td>Permanent Cash Imprest</td></tr>
+        <tr><td class="mono">8674</td><td>Security Deposit made by Government</td></tr>
+        <tr><td class="mono">8675</td><td>Deposits with Reserve Bank</td></tr>
+        <tr><td class="mono">8677</td><td>Remittance into Bank/Treasury</td></tr>
+      </table>
+
+      <h3 class="sec">📮 M. Remittances</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">8781</td><td>🔴 Money Order &amp; Other Remittances – Money Orders</td></tr>
+        <tr><td class="mono">8782</td><td>Cash Remittances/Adjustments between officers rendering to same AO</td></tr>
+        <tr><td class="mono">8783</td><td>Sale of Railway Tickets (PRS)</td></tr>
+        <tr><td class="mono">8787</td><td>Adjustment Accounts with Railways</td></tr>
+        <tr><td class="mono">8789</td><td>Adjustment Accounts with Defence</td></tr>
+      </table>
+
+      <h3 class="sec">💵 N. Cash Balance</h3>
+      <table>
+        <tr><th>Major Head</th><th>Particulars</th></tr>
+        <tr><td class="mono">8999</td><td>🔴 Cash Balance (Cash in Treasuries / RBI Deposits / Remittance in Transit)</td></tr>
+      </table>
+
+      <h3 class="sec">🔀 Comparison Chart: Deposits vs Advances vs Suspense</h3>
+      <table>
+        <tr><th>Head</th><th>Nature</th><th>Example</th></tr>
+        <tr><td>8446 Postal Deposits</td><td>Amounts held, not bearing interest (liability)</td><td>IPO, Short payment/excess credit on MO, Silent A/c Savings Fund</td></tr>
+        <tr><td>8553 Postal Advances</td><td>Amounts advanced (asset, to be recovered)</td><td>Overpayment on eMO, short credit on Customs Duty</td></tr>
+        <tr><td>8661 Suspense</td><td>Temporary parking head pending final classification</td><td>GST collections (CGST/SGST/UGST/IGST) on Courier, Banking, PLI, RPLI services</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>D</b>eposits = <b>D</b>ue to others, <b>A</b>dvances = <b>A</b>mount recoverable, <b>S</b>uspense = <b>S</b>till pending classification."</div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> Under which Major Head is Sukanya Samriddhi Account classified (Minor Head 113-01)? Differentiate Postal Deposits (8446) from Postal Advances (8553). Which Major Head parks GST collections on Courier/Banking/PLI services before final remittance? What is booked under Major Head 8783?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 5: 8446 DETAIL ============ -->
+  <div class="accordion ch5" id="ch5">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>5. Major Head 8446 — Postal Deposits (Detailed Sub-Heads)</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition</h3>
+      <p>Postal Deposits (8446) records amounts collected/held by DoP that do <b>not bear interest</b> and are payable to a third party — covers IPOs, short/excess payments across various instruments, and miscellaneous departmental deposit heads.</p>
+
+      <h3 class="sec">📋 Selected High-Yield Sub-Heads (Minor Head 101)</h3>
+      <table>
+        <tr><th>Sub-Head</th><th>Description</th></tr>
+        <tr><td>01</td><td>Postal Deposit – Indian Postal Orders</td></tr>
+        <tr><td>02</td><td>British Postal Orders</td></tr>
+        <tr><td>05</td><td>Silent Account Savings Fund</td></tr>
+        <tr><td>06</td><td>Short Payment/Excess Credit on Money Orders</td></tr>
+        <tr><td>08/09</td><td>International Reply Coupons – Issued / Exchanged</td></tr>
+        <tr><td>12</td><td>Customs Duty – Foreign Parcels to UK</td></tr>
+        <tr><td>15</td><td>5-Year Cash Certificate Short Payment/Excess Credit</td></tr>
+        <tr><td>17</td><td>Defence Savings Certificate Short Payment/Excess Credit</td></tr>
+        <tr><td>21</td><td>Recovery of Wrong MO Payments</td></tr>
+        <tr><td>22</td><td>Refund of Customs Duty – Inward Foreign Mail Articles</td></tr>
+        <tr><td>23</td><td>Short Debit or Excess Recovery of Customs Duty</td></tr>
+        <tr><td>26–30</td><td>Short Payment/Excess Credit on various NSC series (5/7/10/12-year) &amp; National Plan Certificates</td></tr>
+      </table>
+      <p><span class="tag t-yellow">🟡</span> Pattern to notice: Most "Short Payment/Excess Credit" heads under 8446 mirror a matching instrument-specific certificate/order series — useful for matching-type MCQs.</p>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> Under Major Head 8446, which sub-head covers "Recovery of Wrong Money Order Payments"? Where is refund of Customs Duty on inward foreign mail articles classified? What GL prefix is used for Postal Deposit heads (884600xxx pattern)?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 6: 8661 SUSPENSE/GST ============ -->
+  <div class="accordion ch6" id="ch6">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>6. Major Head 8661 — Suspense Accounts (Postal) &amp; GST Sub-Heads</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📖 Definition</h3>
+      <p>8661 is the <b>temporary parking head</b> for transactions awaiting final classification — most prominently GST collections (CGST/SGST/UTGST/IGST + penalties) service-category-wise, pending remittance to tax authorities.</p>
+
+      <h3 class="sec">📋 GST Sub-Head Pattern (Minor Head 101, Sub-Head by Service)</h3>
+      <table>
+        <tr><th>Sub-Head</th><th>Service Category</th></tr>
+        <tr><td>60</td><td>Courier Services</td></tr>
+        <tr><td>61</td><td>Banking &amp; Financial Services</td></tr>
+        <tr><td>62</td><td>Postal Life Insurance (PLI)</td></tr>
+        <tr><td>63 (pattern)</td><td>Rural PLI (RPLI)</td></tr>
+      </table>
+      <p>Within each service, Detailed Heads follow a consistent 13-step numbering pattern: <b>01</b> CGST · <b>02</b> Penalty-CGST · <b>03</b> SGST · <b>04</b> Penalty-SGST · <b>05</b> UTGST · <b>06</b> Penalty-UTGST · <b>07</b> IGST · <b>08</b> Penalty-IGST · <b>09</b> Ded. Input Tax Credit · <b>10-13</b> Ded. Remit to CGST/SGST/UTGST/IGST.</p>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>C-P-S-P-U-P-I-P</b>" (CGST, Penalty, SGST, Penalty, UTGST, Penalty, IGST, Penalty) — the repeating 8-step tax+penalty pattern before ITC deduction &amp; remittance steps.</div>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> Under which Major Head are GST collections on Courier/Banking/PLI services temporarily parked? What is the Detailed Head numbering pattern for CGST vs Penalty on CGST? What does "Ded I/P Tax Credit" represent in the GST sub-head sequence?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 7: 8781 MONEY ORDERS ============ -->
+  <div class="accordion ch7" id="ch7">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>7. Major Head 8781 — Money Orders (Detailed Classification)</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📋 Minor Head Pattern by MO Type</h3>
+      <table>
+        <tr><th>Minor Head</th><th>Type</th></tr>
+        <tr><td>101</td><td>Manual MO / Electronic MO / Mobile Money Remittances (Sub-heads 01-04)</td></tr>
+        <tr><td>102</td><td>Foreign MO (country-wise: UK, Germany, Switzerland, Italy, Denmark, Mauritius, France, etc.) &amp; International MO through IFS</td></tr>
+        <tr><td>103</td><td>Western Union Money Transfer / International Money Transfer / MoneyGram</td></tr>
+        <tr><td>105</td><td>Credits of receipts of International eMO under IFS</td></tr>
+      </table>
+
+      <h3 class="sec">📅 Sub-Head Pattern: Year of Issue (Manual/Instant/Electronic MO)</h3>
+      <table>
+        <tr><th>Sub-Head</th><th>Meaning</th></tr>
+        <tr><td>01</td><td>First Year of Issue – Current Year</td></tr>
+        <tr><td>02</td><td>Second Year of Issue – Previous Year</td></tr>
+        <tr><td>03</td><td>Third Year of Issue – Previous to Previous Year</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>1-2-3 = Current-Previous-PrePrevious</b>" — same 3-year ageing pattern repeats for Manual, Instant &amp; Electronic MO sub-heads. This matches the "3 financial years then forfeited" rule you learned in Postal Accounts Manual Vol-II, Chapter I.</div>
+
+      <h3 class="sec">🌍 Sample Foreign MO Country List (for recognition, not memorization)</h3>
+      <p>UK · Germany (Munich) · Switzerland · Italy · Denmark · Mauritius · France · Portuguese Settlement · Egypt · British Central Africa · Malta · Seychelles · Zanzibar · South Africa · British Guiana · Norway · Trinidad · Somaliland — each has a dedicated GL code, reflecting India's historic bilateral MO exchange agreements.</p>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> What does Sub-Head "03" mean under Manual MO (year of issue pattern)? Which Minor Head covers Western Union Money Transfer? How many years does the ageing pattern (Current/Previous/Pre-Previous) run for MO heads — does it match Postal Accounts Manual Vol-II's MO forfeiture rule?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ CH 8: 8999 CASH BALANCE ============ -->
+  <div class="accordion ch8" id="ch8">
+    <div class="acc-head" onclick="toggleAcc(this)"><span>8. Major Head 8999 — Cash Balance</span><span class="arrow">▶</span></div>
+    <div class="acc-body"><div class="acc-body-inner">
+
+      <h3 class="sec">📋 Sub-Heads</h3>
+      <table>
+        <tr><th>Sub Major Head</th><th>Particulars</th></tr>
+        <tr><td>00 / 101</td><td>Cash in Treasuries</td></tr>
+        <tr><td>01 / 102</td><td>Deposits with Reserve Bank</td></tr>
+        <tr><td>02 / 103</td><td>Remittance in Transit – Local</td></tr>
+        <tr><td>03 / 104</td><td>Remittance in Transit – Foreign</td></tr>
+      </table>
+      <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>Cash-RBI-Local-Foreign</b>" — 8999's four sub-heads move outward: cash in hand → with RBI → in transit locally → in transit abroad.</div>
+
+      <h3 class="sec">📎 Annexure-I: HR Pay Package GLs (for reference)</h3>
+      <p>Annexure-I lists GL codes exclusively for the HR Pay Package (15-digit CGA mapping: <span class="mono">844600101360000</span>), covering items like Flood/Drought/Cyclone Advance, Claims, TNPC Bank Recovery, Union Subscription, Pay Advance Recovery, Fines/Penalties, Punishment Recoveries, Audit Office Recovery, Loss Recovery, License Fee, CGHS, etc. — separately coded for Postal Directorate and Circle Office.</p>
+
+      <div class="qbox">❓ <b>Probable Qs:</b> Name the four sub-heads under Major Head 8999. What is Annexure-I of Appendix-V used for? Which single 15-digit CGA head maps all HR Pay Package GLs?</div>
+
+    </div></div>
+  </div>
+
+  <!-- ============ ONE PAGE REVISION SHEET ============ -->
+  <div class="revision-page" id="revision">
+    <h2>📝 One-Page Revision Sheet | अंतिम दिन के लिए रिवीज़न</h2>
+    <div class="rev-grid">
+      <div class="rev-card"><b>Structure:</b> Sector → Major Head (4-digit) → Minor Head → Sub-Head → Detailed Head → Object Head = 15-digit CGA code; 10-digit DOP ERP GL code maps to it.</div>
+      <div class="rev-card"><b>Sectors:</b> A-General Services · B-Social Services · C-Economic Services · D-Grant-in-aid. Contingency Fund (Part-II) = only 1 Major Head.</div>
+      <div class="rev-card"><b>Key Receipt Heads:</b> 0037-Customs · 0049-Interest Receipts · 1201-Postal Receipts (🔴 most important)</div>
+      <div class="rev-card"><b>Postal Function Head:</b> 3201 (Economic Services – Postal Operations), sub-divided 01-08 &amp; 60</div>
+      <div class="rev-card"><b>Small Savings:</b> 8001-National Savings Deposits (POSB/RD/TD/MIS/SCSS/NSS/Sukanya) · 8002-NSC · 8006-PPF</div>
+      <div class="rev-card"><b>Deposits vs Advances vs Suspense:</b> 8446-Postal Deposits (liability, no interest) · 8553-Postal Advances (recoverable) · 8661-Suspense (temporary, incl. GST)</div>
+      <div class="rev-card"><b>Remittances:</b> 8781-Money Orders · 8783-Railway Ticket Sale (PRS) · 8787-Railways Adjustment · 8789-Defence Adjustment</div>
+      <div class="rev-card"><b>Cash Balance:</b> 8999 — Cash in Treasury / RBI Deposits / Remittance in Transit (Local &amp; Foreign)</div>
+    </div>
+
+    <h3 class="sec">🔑 Master Mnemonic Chain</h3>
+    <div class="mnemonic hindi">
+      "<b>0037 सीमा शुल्क, 1201 डाक प्राप्ति, 3201 डाक कार्य, 8001 बचत, 8446 जमा, 8553 अग्रिम, 8661 निलंबन, 8781 मनीऑर्डर, 8999 नकद शेष</b>" — यह वाक्य क्रमांक के क्रम में प्रमुख Major Heads को याद दिलाता है: Customs (0037) → Postal Receipts (1201) → Postal Operations (3201) → Small Savings (8001) → Deposits (8446) → Advances (8553) → Suspense (8661) → Money Orders (8781) → Cash Balance (8999).
+    </div>
+
+    <h3 class="sec">🔢 Numbers Comparison Table (High-Yield for MCQs)</h3>
+    <table>
+      <tr><th>Major Head</th><th>Key Number/Fact</th></tr>
+      <tr><td>0037</td><td>Customs (Tax Revenue Sector-A)</td></tr>
+      <tr><td>1201</td><td>Postal Receipts (Non-Tax Revenue, Economic Services)</td></tr>
+      <tr><td>3201</td><td>Postal Services function — 01 to 08 + 60 sub-divisions</td></tr>
+      <tr><td>8001/8002/8006</td><td>National Savings Deposits / Certificates / PPF</td></tr>
+      <tr><td>8446 vs 8553</td><td>Deposits (payable out) vs Advances (recoverable)</td></tr>
+      <tr><td>8661</td><td>Suspense — parks GST (CGST/SGST/UTGST/IGST) pending remittance</td></tr>
+      <tr><td>8781</td><td>Money Orders — 3-year ageing pattern (Current/Prev/Pre-Prev)</td></tr>
+      <tr><td>8999</td><td>Cash Balance — 4 sub-heads (Treasury/RBI/Local-Transit/Foreign-Transit)</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  📊 Appendix-V to Postal Accounts Manual Vol-I — IP/AAO Exam Study Aid | Prepared for LDCE Postal Exam Portal<br>
+  Source: Appendix-V to Postal Accounts Manual Volume-I, 5th Edition, August 2021 (PAF Wing, DoP)
+</footer>
+
+<script>
+function toggleAcc(el){
+  el.classList.toggle('open');
+  const body = el.nextElementSibling;
+  if(body.style.maxHeight){ body.style.maxHeight = null; }
+  else { body.style.maxHeight = body.scrollHeight + 40 + "px"; }
+}
+function expandAll(){
+  document.querySelectorAll('.acc-head').forEach(h=>{
+    h.classList.add('open');
+    const body = h.nextElementSibling;
+    body.style.maxHeight = body.scrollHeight + 40 + "px";
+  });
+}
+function collapseAll(){
+  document.querySelectorAll('.acc-head').forEach(h=>{
+    h.classList.remove('open');
+    h.nextElementSibling.style.maxHeight = null;
+  });
+}
+function toggleTheme(){
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let synth = window.speechSynthesis;
+function speakPage(){
+  if(synth.speaking){ synth.cancel(); return; }
+  const text = document.querySelector('.container').innerText.slice(0, 3000);
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'en-IN';
+  synth.speak(utter);
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  const first = document.querySelector('.acc-head');
+  if(first) toggleAcc(first);
+});
+</script>
+
+</body>
+</html>
