@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>DFPR 2024 | Delegation of Financial Powers — Department of Posts (AAO/IP Exam Notes)</title>
+<style>
+:root{
+  --red:#C8102E; --red-dark:#8f0b20; --blue:#0B3D91; --blue-dark:#062a66;
+  --gold:#D4AF37; --gold-dark:#a8871f;
+  --bg:#f7f5ef; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a;
+  --line:#e3ddc9; --shadow:0 4px 14px rgba(0,0,0,.08);
+  --r-hi:#d32f2f; --r-freq:#e67e22; --r-concept:#f1c40f; --r-quick:#27ae60;
+}
+[data-theme="dark"]{
+  --bg:#121212; --card:#1e1e1e; --ink:#eee; --sub:#b9b9b9; --line:#333;
+  --shadow:0 4px 14px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Tahoma,Arial,sans-serif; background:var(--bg); color:var(--ink);
+  transition:background .3s,color .3s; padding-bottom:80px;
+}
+.hi{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;}
+header.top{
+  background:linear-gradient(135deg,var(--red) 0%,var(--blue) 65%,var(--gold) 100%);
+  color:#fff; padding:22px 16px 28px; text-align:center; position:relative; overflow:hidden;
+}
+header.top::before{content:"✉";position:absolute;font-size:120px;opacity:.12;left:-10px;top:-20px;}
+header.top::after{content:"💰";position:absolute;font-size:120px;opacity:.12;right:-10px;bottom:-30px;}
+header.top h1{margin:0 0 4px;font-size:1.35rem;}
+header.top h2{margin:0 0 10px;font-size:1rem;font-weight:500;opacity:.95;}
+header.top p{margin:0;font-size:.85rem;opacity:.9;}
+.badge-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.badge-row span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
+  padding:3px 9px;border-radius:20px;font-size:.72rem;}
+
+.toolbar{
+  position:sticky; top:0; z-index:50; display:flex; gap:6px; padding:8px 10px;
+  background:var(--card); border-bottom:2px solid var(--gold); flex-wrap:wrap; justify-content:center;
+  box-shadow:var(--shadow);
+}
+.toolbar button{
+  background:var(--blue); color:#fff; border:none; padding:7px 12px; border-radius:8px;
+  font-size:.78rem; cursor:pointer;
+}
+.toolbar button.alt{background:var(--red);}
+.toolbar button.gold{background:var(--gold-dark);}
+
+.container{max-width:920px;margin:0 auto;padding:14px;}
+
+.legend{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:6px; margin:14px 0;
+  font-size:.78rem;
+}
+.legend div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 8px;box-shadow:var(--shadow);}
+
+.section-title{
+  display:flex; align-items:center; gap:8px; margin:26px 0 10px; font-size:1.1rem;
+  color:var(--blue-dark); border-left:5px solid var(--red); padding-left:8px;
+}
+[data-theme="dark"] .section-title{color:#8fb4ff;}
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px;
+  margin-bottom:12px; box-shadow:var(--shadow);
+}
+.acc{cursor:pointer;}
+.acc-head{
+  display:flex; justify-content:space-between; align-items:center; font-weight:600;
+  font-size:.95rem; color:var(--red-dark);
+}
+[data-theme="dark"] .acc-head{color:#ff8a8a;}
+.acc-body{display:none; margin-top:10px; font-size:.87rem; line-height:1.55;}
+.acc.open .acc-body{display:block;}
+.acc-head .arrow{transition:transform .25s;}
+.acc.open .acc-head .arrow{transform:rotate(90deg);}
+
+.tag{display:inline-block;padding:2px 7px;border-radius:6px;font-size:.72rem;font-weight:700;color:#fff;margin-right:4px;}
+.tag.hi{background:var(--r-hi);}
+.tag.freq{background:var(--r-freq);}
+.tag.concept{background:var(--r-concept);color:#333;}
+.tag.quick{background:var(--r-quick);}
+
+table{width:100%;border-collapse:collapse;font-size:.78rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--blue);color:#fff;font-size:.76rem;}
+tr:nth-child(even) td{background:rgba(212,175,55,.08);}
+
+.flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.flow .step{
+  background:linear-gradient(90deg,var(--blue) 0%,var(--blue-dark) 100%);color:#fff;
+  padding:8px 10px;border-radius:8px;font-size:.82rem;position:relative;
+}
+.flow .step::after{content:"⬇";display:block;text-align:center;color:var(--gold);font-size:1rem;margin-top:4px;}
+.flow .step:last-child::after{display:none;}
+
+.mindmap{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0;}
+.mindmap .node{
+  background:var(--gold); color:#3a2c00; padding:8px 12px; border-radius:20px; font-size:.78rem;
+  font-weight:600; box-shadow:var(--shadow);
+}
+.mindmap .node.center{background:var(--red);color:#fff;font-size:.9rem;padding:12px 18px;}
+
+.dtree{font-size:.83rem;}
+.dtree .q{background:var(--red);color:#fff;padding:6px 10px;border-radius:8px;margin:6px 0;}
+.dtree .a{background:var(--card);border:1px dashed var(--gold-dark);padding:6px 10px;border-radius:8px;margin:4px 0 4px 20px;}
+
+.qbox{
+  background:linear-gradient(135deg,#fff9e6,#fff);border:1px solid var(--gold);
+  border-left:4px solid var(--gold-dark); padding:8px 10px;border-radius:8px;font-size:.8rem;margin-top:8px;
+}
+[data-theme="dark"] .qbox{background:#2a2410;}
+.qbox b{color:var(--red-dark);}
+[data-theme="dark"] .qbox b{color:#ff8a8a;}
+
+.mnem{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;padding:10px 12px;
+  border-radius:10px;margin:8px 0;font-size:.85rem;
+}
+.mnem b{color:var(--gold);}
+
+.timeline{border-left:3px solid var(--gold-dark);margin-left:10px;padding-left:16px;}
+.tl-item{margin-bottom:14px;position:relative;}
+.tl-item::before{content:"";position:absolute;left:-22px;top:3px;width:10px;height:10px;background:var(--red);border-radius:50%;}
+
+.revision-sheet{
+  background:linear-gradient(135deg,var(--red-dark),var(--blue-dark));color:#fff;border-radius:14px;
+  padding:16px; margin:16px 0;
+}
+.revision-sheet h3{margin-top:0;color:var(--gold);}
+.revision-sheet ul{padding-left:18px;margin:6px 0;font-size:.83rem;line-height:1.6;}
+
+.progress-wrap{background:var(--line);border-radius:8px;height:8px;margin:10px 0;overflow:hidden;}
+.progress-bar{background:var(--gold-dark);height:100%;width:0%;transition:width .3s;}
+
+footer{text-align:center;padding:18px;font-size:.75rem;color:var(--sub);}
+
+.fab{
+  position:fixed;bottom:14px;right:14px;background:var(--red);color:#fff;border:none;
+  width:50px;height:50px;border-radius:50%;font-size:1.3rem;box-shadow:var(--shadow);z-index:60;
+}
+@media print{.toolbar,.fab{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>💰 DFPR 2024 — Delegation of Financial Powers <span class="hi">(वित्तीय शक्तियों का प्रत्यायोजन)</span></h1>
+  <h2 class="hi">डाक विभाग (Department of Posts) — HOC / HOD / Divisional Heads शक्ति अनुसूची</h2>
+  <p>Bilingual Visual Infographic • Based on DoP OM F.No.6-1/2025-FA(P) dated 28.03.2025 • India Post LDCE-AAO/IP Paper Prep</p>
+  <div class="badge-row">
+    <span>🔴 Very Important</span><span>🟠 Frequently Asked</span>
+    <span>🟡 Conceptual</span><span>🟢 Quick Revision</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button onclick="toggleTheme()">🌓 Dark/Light</button>
+  <button class="alt" onclick="speakPage()">🔊 Read Aloud</button>
+  <button class="alt" onclick="stopSpeak()">⏹ Stop</button>
+  <button class="gold" onclick="expandAll()">📂 Expand All</button>
+  <button class="gold" onclick="collapseAll()">📁 Collapse All</button>
+  <button onclick="window.print()">🖨 Print/PDF</button>
+</div>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="container">
+<!-- ================= CHAPTER 1: BACKGROUND ================= -->
+<div class="section-title">🗂 Chapter 1: Background & Overview <span class="hi">(पृष्ठभूमि)</span></div>
+<div class="card">
+  <p><b>Topic:</b> Office Memorandum F.No.6-1/2025-FA(P) dated <b>28th March 2025</b>, issued by Integrated Finance Wing, Department of Posts — "Delegation of Financial Powers to Heads of Circles (HOC), Heads of Department (HOD), Independent Directors and Divisional Heads of Department of Posts."</p>
+  <p class="hi"><b>विषय:</b> डाक विभाग में विभिन्न प्राधिकारियों (HOC, HOD, स्वतंत्र निदेशक, मंडल प्रधान) को नई DFPR 2024 के अंतर्गत वित्तीय शक्तियाँ पुनः प्रत्यायोजित करने वाला परिपत्र।</p>
+  <span class="tag hi">🔴 HIGH</span><span class="tag freq">🟠 FREQUENT</span>
+  <div class="qbox"><b>Exam Q:</b> OM delegating revised DFPR 2024 powers to DoP authorities — dated? <i>Ans: 28th March 2025 (F.No.6-1/2025-FA(P))</i></div>
+</div>
+
+<div class="card">
+  <div class="acc-head" style="margin-bottom:8px;">🕰 Timeline — Evolution of Financial Powers in Dept. of Posts</div>
+  <div class="timeline">
+    <div class="tl-item"><b>Pre-1985:</b> P&T Department — Schedule of Financial Powers of Posts & Telegraphs officers followed.</div>
+    <div class="tl-item"><b>January 1985:</b> Bifurcation into Department of Posts (DoP) & Department of Telecommunications (DoT); separate Schedule of Financial Powers drawn up for DoP.</div>
+    <div class="tl-item"><b>1st April 1988:</b> DoP brought under the erstwhile <b>Delegation of Financial Powers Rules (DFPR), 1978</b>.</div>
+    <div class="tl-item"><b>30th July 2021:</b> Last revision of DoP's Schedules of Financial Powers vide OM No.6-1/2021-Fin.Coord.</div>
+    <div class="tl-item"><b>1st April 2024:</b> Ministry of Finance replaces <b>DFPR 1978 with DFPR 2024</b> — many old Schedule items lose relevance. 🔴</div>
+    <div class="tl-item"><b>28th March 2025:</b> Secretary (Posts), in consultation with AS&FA, delegates revised financial powers under <b>Rule 12(2) of DFPR 2024</b> via Schedule II-A, II-B, II-C and Schedule III. 🔴</div>
+    <div class="tl-item"><b>1st April 2025:</b> Revised delegated powers come into force, replacing earlier Schedule II-A/II-B/II-C/III. 🔴</div>
+  </div>
+  <div class="qbox"><b>Exam Q:</b> DFPR 1978 replaced by DFPR 2024 — effective from? <i>Ans: 1st April 2024 🔴</i><br>
+  <b>Exam Q:</b> Revised Schedules for DoP officers came into force from? <i>Ans: 1st April 2025 🔴 (Don't confuse with DFPR 2024's own effective date!)</i></div>
+</div>
+
+<div class="mnem">🧠 <b>Mnemonic:</b> "1985-Split, 1988-DFPR78, 2021-Revised, 2024-DFPR-New, 2025-DoP-Applied"
+<br class="hi">याद रखें: <b>"85 बंटवारा, 88 नियम, 21 संशोधन, 24 नया कानून, 25 डाक विभाग लागू"</b></div>
+<!-- ================= CHAPTER 2: STRUCTURE ================= -->
+<div class="section-title">🧭 Chapter 2: Structure of Schedules & Authorities</div>
+
+<div class="card">
+  <div class="acc-head" style="margin-bottom:8px;">🧠 Mind Map — Four Schedules</div>
+  <div class="mindmap"><div class="node center">DFPR 2024 (DoP Delegation)</div></div>
+  <div class="mindmap">
+    <div class="node">Schedule II-A: HOC & HOD</div>
+    <div class="node">Schedule II-B: Independent Directors</div>
+    <div class="node">Schedule II-C: Sr.DDG(PAF), GM(Finance), DAP</div>
+    <div class="node">Schedule III: Divisional Heads</div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Who is "Head of Department" (HOD)? — Note 1</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>For this Schedule, "Head of Department" includes: Secretary Postal Services Board, Chief Postmasters General (CPMG), Chief General Managers (CGM), Director RAKNPA, Postmasters General (PMG), Sr. DDG (PAF), General Managers (PAF), General Manager (CEPT), Chief Engineers, and Director (Foreign Post).</p>
+    <div class="qbox"><b>Exam Q:</b> Name any 3 officers classified as "Head of Department" under DFPR-2024 DoP Schedule. <i>Ans: CPMG, CGM, Director RAKNPA (also PMG, GM-CEPT, Chief Engineers) 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Notes 2–5 — Special Provisions</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li><b>Note 2:</b> Sr. DDG (PAF) & General Managers (Finance) exercise only powers in Schedule II-C relevant to their operational role. Director-level officers heading PAOs are treated as "Head of Office" with specific powers under Schedule II-C for uniformity.</li>
+      <li><b>Note 3:</b> In-charge of Foreign Post exercises powers equivalent to HoD (Sch. II-A) / Independent Director (Sch. II-B) / Divisional Head (Sch. III), as applicable.</li>
+      <li><b>Note 4:</b> Certain listed items (e.g. a(ii), a(iii), a(iv), 11(xix)(a), 15(i)/(ii)/(iv), 18(iv), 22, 24(vii), 25(i)/(ii), 27(iii)/(iv)/(v), 28(i), 31, 34(i)-(v) etc.) of Schedule II-A can be exercised <b>ONLY by HOC</b> (not by HOD generally).</li>
+      <li><b>Note 5:</b> Certain HOC-only items (11(xix)(a), 15(i)/(ii)/(iv), 18(iv), 22, 24(vii), 27(iii)/(iv), 28(i)) are <b>also</b> exercisable by Director (RAKNPA) and CGM (PD/BD/PLI).</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Which officers besides HOC can exercise the HOC-only items listed in Note 5? <i>Ans: Director (RAKNPA) and CGM (PD/BD/PLI) 🟠</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 General Conditions Applicable to All Delegated Powers (Para 4)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ol>
+      <li>No work requiring sanction of higher authority may be sanctioned by splitting it into two or more distinct parts.</li>
+      <li>If a contract extends over a period of time, the <b>total value over its entire currency</b> is taken for applying the monetary limit.</li>
+      <li>Limits for sanctioning estimates/passing excess apply not just to individual estimates but to <b>projects comprising multiple constituent estimates</b> — competency is based on total project cost.</li>
+      <li>Where financial powers are authorized to Gazetted Officers (Rule 12(3), DFPR 2024), the <b>Head of Department remains responsible</b> for correctness, regularity & propriety of their decisions.</li>
+      <li>All conditions/instructions/remarks against each item of expenditure in the Schedules must be complied with.</li>
+    </ol>
+    <div class="qbox"><b>Exam Q:</b> Can a Rs.15 lakh work be split into two Rs.7.5 lakh sanctions to avoid higher approval? <i>Ans: No — splitting to avoid sanction of higher authority is expressly prohibited (Condition (i)) 🔴</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 3: SCHEDULE II-A PART 1 ================= -->
+<div class="section-title">👔 Chapter 3: Schedule II-A (HOC & HOD) — Pay, Rewards & Training</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Object Head 01 (Salaries) & Ad-hoc Arrears</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>HOC</th><th>HOD</th></tr>
+      <tr><td>Salaries</td><td colspan="2">Full Powers</td></tr>
+      <tr><td>Ad-hoc payment of arrears of Pay & Allowances</td><td>Rs. 1,00,000</td><td>Rs. 50,000</td></tr>
+      <tr><td>Payment of pay/allowances of deceased officials</td><td colspan="2">Full Powers</td></tr>
+      <tr><td>Honorarium & Rewards to Govt. servant</td><td colspan="2">Up to limit prescribed by GoI/DoP; IFA needed beyond Rs.2,500/case</td></tr>
+    </table>
+    <p>🟢 HOC can authorise investigation of pay-arrear claims <b>more than 6 years old</b> where records are unavailable in Circle Accounts Office, up to delegated powers.</p>
+    <div class="qbox"><b>Exam Q:</b> Ad-hoc payment of arrears of pay — HOC limit vs HOD limit? <i>Ans: HOC Rs.1,00,000 / HOD Rs.50,000 🔴 Very frequently confused!</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Object Head 05 (Rewards)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Cash Award to Postal employees (Hindi etc.)</td><td>Rs. 10,000</td></tr>
+      <tr><td>Reward to GDS (in any one case)</td><td>Rs. 2,000</td></tr>
+      <tr><td>Rewards to persons not in Govt. service</td><td>Rs. 1,000</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Object Head 09 (Training Expenses)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Domestic training expenses: monetary limits fixed for HOC/HOD (subject to Nodal Dept. rules); IFA consultation applies as per limits.</li>
+      <li><b>Foreign training expenses: Full Powers</b>, but subject to prior approval of competent authority [Secretary (Posts) / Hon'ble MOC / SCoSI].</li>
+      <li>Hiring outsourced services from Training Institutions for specialised training programmes: <b>Up to Rs. 2 Crore per annum</b> — delegated <b>only to Director (RAKNPA)</b>; IFA consultation required.</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Who can sanction outsourced training services up to Rs.2 crore/annum? <i>Ans: Director, RAKNPA only 🟡</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 4: OFFICE EXPENSES / CONTINGENT ================= -->
+<div class="section-title">🧾 Chapter 4: Schedule II-A — Office Expenses & Contingent Expenditure (Object Head 13)</div>
+
+<div class="card">
+  <p>🟢 Threshold rule: Office equipment/furniture <b>not exceeding Rs.1 lakh or 3 years useful life</b> (whichever) is booked as "Office Expenses" (revenue); beyond that → classified as <b>capital expenditure</b> under "Machinery & Equipment" / "Furniture & Fixtures". <b>Vehicles</b> are always capital ("Motor Vehicles"), regardless of usage.</p>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Contingent Expenditure Limits (HOC vs HOD)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>HOC</th><th>HOD</th><th>IFA consultation required beyond</th></tr>
+      <tr><td>Recurring contingent exp. (no scale/limit fixed elsewhere)</td><td>Rs. 2 Lakh/case</td><td>Rs. 1 Lakh/case</td><td>Rs. 75,000/case</td></tr>
+      <tr><td>Non-recurring contingent exp. (no other limit specified)</td><td>Rs. 3 Lakh/case</td><td>Rs. 1 Lakh/case</td><td>Rs. 1,00,000/case</td></tr>
+      <tr><td>Electric/Gas/Water/Telephone/Internet/Cable charges</td><td colspan="2">Full Powers</td><td>Rs. 2,00,000/case</td></tr>
+      <tr><td>Petty local purchase of stationery</td><td>Rs. 5 Lakh/annum</td><td>Rs. 2 Lakh/annum</td><td>Rs. 2,00,000/case</td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> Non-recurring contingent expenditure sanction limit — HOC? <i>Ans: Rs. 3 Lakh in each case 🔴</i><br>
+    <b>Exam Q:</b> IFA consultation mandatory for recurring contingent expenditure beyond what amount? <i>Ans: Rs. 75,000 per case 🔴</i></div>
+  </div>
+</div>
+
+<div class="card">
+  <b>🔎 Decision Tree — When is IFA Consultation Required? (Office Expenses example)</b>
+  <div class="dtree">
+    <div class="q">Is it Recurring Contingent Expenditure?</div>
+    <div class="a">✅ Within HOC/HOD limit AND ≤ Rs.75,000/case → No IFA needed</div>
+    <div class="a">❌ Beyond Rs.75,000/case → IFA consultation required</div>
+    <div class="q">Is it Non-Recurring Contingent Expenditure?</div>
+    <div class="a">✅ ≤ Rs.1,00,000/case → No IFA needed</div>
+    <div class="a">❌ Beyond Rs.1,00,000/case → IFA consultation required</div>
+  </div>
+</div>
+<!-- ================= CHAPTER 5: RENTING OF ACCOMMODATION ================= -->
+<div class="section-title">🏢 Chapter 5: Schedule II-A — Renting of Accommodation (Object Head 14)</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rent Limits by City Class — Office / Office-cum-Residence</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Authority</th><th>City Class</th><th>Limit/month</th></tr>
+      <tr><td>HOC</td><td>All classes</td><td>Rs. 10 Lakh</td></tr>
+      <tr><td rowspan="3">HOD</td><td>X Class city</td><td>Rs. 2 Lakh</td></tr>
+      <tr><td>Y Class city</td><td>Rs. 1 Lakh</td></tr>
+      <tr><td>Z Class city</td><td>Rs. 50,000</td></tr>
+    </table>
+    <p>Same structure applies whether for <b>Administrative/Operative offices</b> (incl. Inspection Room/Rest Houses) or for <b>Office-cum-Residence</b>.</p>
+    <p>🟠 For <b>residential & other purposes</b> only: X class Rs.30,000/month, Y class Rs.20,000/month, Z class Rs.15,000/month.</p>
+    <p>🟡 Postal staff in Project areas/New Township: rent must not exceed <b>8% of Capital cost</b> of the building.</p>
+    <ul style="margin-top:6px;">
+      <li>🟢 Max hiring period: <b>5 years at a time</b>.</li>
+      <li>🟢 Variation allowed in residential accommodation standard: up to <b>5%</b>.</li>
+      <li>🟡 No accommodation to be hired at <b>Delhi, Mumbai, Chennai, Shimla, Kolkata</b> for offices entitled to general pool accommodation.</li>
+      <li>🟡 CPWD must be consulted where it operates — non-availability certificate required.</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> HOD's rent sanctioning limit for office accommodation in a Y-class city? <i>Ans: Rs. 1 Lakh per month 🔴</i><br>
+    <b>Exam Q:</b> Max period for which accommodation can be hired at a time? <i>Ans: 5 years 🟢</i></div>
+  </div>
+</div>
+
+<div class="card">
+  <b>🔎 Flowchart — Renting Office Accommodation Process</b>
+  <div class="flow">
+    <div class="step">1️⃣ Check scale of accommodation per approved schedule</div>
+    <div class="step">2️⃣ Obtain certificate of reasonableness of rent (Postal Civil Wing / Rent Control Authority)</div>
+    <div class="step">3️⃣ Where CPWD operates → obtain non-availability certificate</div>
+    <div class="step">4️⃣ Confirm within HOC/HOD monetary limit for that city class</div>
+    <div class="step">5️⃣ Assessment of rent by Departmental Committee (FRAC)</div>
+    <div class="step">6️⃣ Sanction — max 5 years validity</div>
+  </div>
+</div>
+<!-- ================= CHAPTER 6: PRINTING / ICT / BUILDINGS / ETC ================= -->
+<div class="section-title">🖥 Chapter 6: Schedule II-A — Printing, ICT, Buildings, Furniture, Advertising & Professional Services</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Printing & Publication (Obj. Head 16)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Printing/Binding via Directorate of Printing</td><td>Full Powers</td></tr>
+      <tr><td>Printing through Private Presses (essential/non-essential forms)</td><td>Full Powers</td></tr>
+      <tr><td>Others (printing at private presses within schedule of rates)</td><td>Rs. 1.5 Lakh/annum; IFA beyond Rs.50,000/case</td></tr>
+      <tr><td>Official/Non-official publications; newspapers/magazines/e-books</td><td>Full Powers; IFA beyond Rs.2,00,000/case</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 ICT Equipment (Obj. Head 71) — Computers & Laptops</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Desktop computers (official use, non-scheme)</td><td>Rs. 5 Lakh/case</td></tr>
+      <tr><td>Desktop computer replacement (non-scheme)</td><td>Up to Rs. 20 Lakh/case</td></tr>
+      <tr><td>Computerization of POs/PAOs/admin offices under schemes</td><td>Full Powers <i>(HOC only)</i></td></tr>
+      <tr><td>Laptop/notebook for eligible officers</td><td>Rs. 1,00,000 + taxes (Rs.1,30,000+taxes if Make-in-India component &gt;40%) <i>(HOC only)</i></td></tr>
+      <tr><td>Laptops for office use (not individual issue)</td><td>Up to Rs. 5 Lakh/annum <i>(HOC only)</i></td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> Price ceiling for a laptop with Make-in-India component &gt;40%? <i>Ans: Rs. 1,30,000 + taxes 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Buildings & Structures (Obj. Head 72) — Major Works</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Project estimates — construction/reconstruction of postal buildings/staff quarters</td><td>Up to Rs. 10 Crore <i>(HOC only)</i></td></tr>
+      <tr><td>Addition/alteration/replacement — non-residential buildings</td><td>Up to Rs. 2 Crore (excl. overhead)/case</td></tr>
+      <tr><td>Addition/alteration/replacement — residential buildings</td><td>Up to Rs. 2 Crore (excl. overhead)/case</td></tr>
+      <tr><td>Procurement of infrastructural assets</td><td>Rs. 2 Crore/case; IFA beyond Rs.2 Lakh</td></tr>
+    </table>
+    <p>🟡 Plinth-area variation for residential buildings allowed up to <b>5%</b> on structural grounds. 🟡 Limit includes ETP charges for CPWD/State PWD works.</p>
+    <div class="qbox"><b>Exam Q:</b> HOC's power for construction of postal buildings/staff quarters? <i>Ans: Up to Rs. 10 Crore 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟢 Furniture & Fixtures (Obj. Head 74)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Procurement of furniture/fixtures for official/functional use: <b>Full Powers</b>, but ONLY items <b>exceeding the Rs.1 lakh/3-year threshold</b> fall under this Object Head (below that = "Office Expenses").</p>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Advertising & Publicity (Obj. Head 26) and Minor Civil/Electric Works (Obj. Head 27)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Advertising charges via BOC/DAVP</td><td>Rs. 5 Lakh/case; IFA beyond Rs.2,00,000</td></tr>
+      <tr><td>Advertising/publicity via other media (print/TV/outdoor/internet)</td><td>Rs. 2 Lakh/case</td></tr>
+      <tr><td>Minor Civil/Electrical works — Govt. Buildings</td><td>Rs. 10 Lakh/case; IFA beyond Rs.2,00,000</td></tr>
+      <tr><td>Minor Civil/Electrical works — Rented Buildings</td><td>Rs. 5 Lakh/case</td></tr>
+      <tr><td>Minor electrical works — removable fittings (rented)</td><td>Rs. 5 Lakh/case</td></tr>
+      <tr><td>Dismantling of Building</td><td>Up to Rs. 50 Lakh <i>(HOC only)</i></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Professional Services (Obj. Head 28)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>HOC</th><th>HOD</th></tr>
+      <tr><td>Engagement of Chartered Accountants/Artists/Consultants (incl. GST)</td><td>Rs. 1 Crore/annum</td><td>Rs. 20 Lakh/annum</td></tr>
+    </table>
+    <p>🟢 Non-recurring contingent exp. for market survey/studies/consultants: Rs. 50 Lakh/case <i>[CGM (BD)/(PD)/(PLI) only]</i>; IFA beyond Rs.2 Lakh.</p>
+    <p>🟢 Legal charges (Law suits/Prosecution), Arbitration cases, teaching/training fees to professionals, payments to artists — all <b>Full Powers</b> (subject to conditions).</p>
+    <div class="qbox"><b>Exam Q:</b> HOD's annual limit for engaging Chartered Accountants/Consultants? <i>Ans: Rs. 20 Lakh per annum 🟠</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 7: SCHEDULE III DIVISIONAL HEADS ================= -->
+<div class="section-title">🏤 Chapter 7: Schedule III — Divisional Heads <span class="hi">(मंडल प्रधान)</span> 🔴 MOST IMPORTANT FOR IP EXAM</div>
+
+<div class="card">
+  <p>🔴 Divisional Heads = Superintendents of Post Offices/RMS Divisions etc. — the level most directly relevant to <b>Inspector Posts (IP)</b> functioning. Salaries, Wages, Pensionary Charges, Allowances, LTC, Domestic & Foreign Travel Expenses: all <b>Full Powers</b> (subject to FR/SR, FHB) — but if rules explicitly mandate IFA consultation, the matter is <b>referred up to HOD/HOC</b> (Divisional Heads don't consult IFA directly).</p>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Office Expenses (Object Head 13) — Divisional Head Limits</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Contingent charges (non-recurring)</td><td>Rs. 10,000/case</td></tr>
+      <tr><td>Electric/Gas/Water/Telephone/Internet/Cable</td><td>Full Powers</td></tr>
+      <tr><td>Hot & cold weather charges</td><td>Up to Rs. 10,000/case</td></tr>
+      <tr><td>Purchase of fixtures & furniture</td><td>Up to Rs. 2 Lakh/annum per division</td></tr>
+      <tr><td>Customer meets (folders/hiring/tea-snacks/stationery)</td><td>Up to Rs.10,000/meet [hiring cap Rs.2,000; tea/snacks Rs.200/head; stationery Rs.100/head]</td></tr>
+      <tr><td>Office equipment (excl. computers), below threshold</td><td>Up to Rs. 5,000/case</td></tr>
+      <tr><td>Fixed stationery charges</td><td>Full Powers (as authorized by Directorate)</td></tr>
+      <tr><td>Emergent purchase of stock/stationery (non-availability certificate needed)</td><td>Up to Rs. 50,000/annum</td></tr>
+      <tr><td>Carriage of mails by modes other than rail/air</td><td>Up to Rs. 3,000/month/case</td></tr>
+      <tr><td>Cash/mail chest embedding, technical books, letterbox painting</td><td>Up to Rs. 10,000/case</td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> Divisional Head's limit for non-recurring contingent charges? <i>Ans: Rs. 10,000 in each case 🔴</i><br>
+    <b>Exam Q:</b> Ceiling for furniture/fixture purchase per division per annum? <i>Ans: Rs. 2 Lakh per annum 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Renting of Buildings (Object Head 14) — Divisional Head</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>City Class</th><th>Rent Limit/month (office use)</th></tr>
+      <tr><td>X Class city</td><td>Up to Rs. 15,000</td></tr>
+      <tr><td>Y Class city</td><td>Up to Rs. 12,000</td></tr>
+      <tr><td>Z Class city</td><td>Up to Rs. 8,000</td></tr>
+    </table>
+    <p>🟠 Hiring accommodation for examinations/customer meets etc.: <b>Up to Rs. 5,000/case</b>. 🟢 Rates & taxes legally assessed on buildings/vehicles in charge: <b>Full Powers</b>.</p>
+    <p>🟡 Quarterly report on all hiring cases to be sent to PMG (copy to DAP); reviewed at inspection.</p>
+    <div class="qbox"><b>Exam Q:</b> Divisional Head's rent limit for office building in a Z-class city? <i>Ans: Rs. 8,000 per month 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Printing, Equipment Rental & Minor Works — Divisional Head</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Printing & Binding (rate charts/mailers/brochures etc.)</td><td>Up to Rs. 20,000/annum (all activities)</td></tr>
+      <tr><td>Renting of equipment (office/computer/AC/security/furniture etc.)</td><td>Rs. 2 Lakh/annum</td></tr>
+      <tr><td>Minor Civil/Electrical works — Govt. Buildings</td><td>Up to Rs. 50,000/case</td></tr>
+      <tr><td>Minor Civil/Electrical works — Rented Buildings</td><td>Rs. 5,000/case</td></tr>
+      <tr><td>Minor electrical works (removable fittings, rented)</td><td>Rs. 5,000/case</td></tr>
+      <tr><td>Legal charges & obtaining judgement copies</td><td>Rate/scale fixed by Govt.; max ceiling Rs. 2 Lakh/case</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Other Financial Powers of Divisional Heads — Refunds</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>All the following carry <b>Full Powers</b> for Divisional Heads:</p>
+    <ul>
+      <li>(a) Refund of earnest money to tenderers — within the divisional head's tender competency</li>
+      <li>(b) Refund of air surcharge/fee difference for surcharged air mail delayed & sent by surface route due to service fault</li>
+      <li>(c) Refund of postage on articles maliciously sent unpaid to annoy the addressee</li>
+      <li>(d) Refund of coins, currency notes, unused stamps/postcards/envelopes/stamp booklets found in letter boxes or counters & credited to office accounts</li>
+      <li>(e) Refund of amounts over-paid or short-paid by/to a member of public, found in excess in office accounts</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Divisional Head's power to refund postage on maliciously-sent unpaid articles? <i>Ans: Full Powers 🔴 — classic IP exam trick question (candidates assume monetary cap exists)!</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 8: SCHEDULE II-B / II-C ================= -->
+<div class="section-title">👥 Chapter 8: Schedule II-B & II-C — Independent Directors and Accounts Officers</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Schedule II-B: Directors of Postal Services (Independent Charge)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Covers officers who are <b>Directors of Postal Services having Independent Charge</b>. Generally mirrors HOD's item structure but with its own (often lower) monetary ceilings, e.g.:</p>
+    <table>
+      <tr><th>Item</th><th>Limit</th></tr>
+      <tr><td>Ad-hoc payment of arrears of pay/allowances</td><td>Rs. 10,000</td></tr>
+      <tr><td>Honorarium & Rewards to Govt. servant</td><td>Rs. 2,500 (IFA not required at this level)</td></tr>
+      <tr><td>Honorarium — SB control work</td><td>Rs. 2,500</td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> Independent Director's ad-hoc arrears payment limit (Sch. II-B)? <i>Ans: Rs. 10,000 🟡</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Schedule II-C: Sr. DDG (PAF), GM (Finance) & Directors of Accounts (Postal)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Uniquely structured as a <b>3-column table</b> — Sr. DDG (PAF), GM (Finance), and DAP each get separately listed powers for the same item (unlike other Schedules with a single "authority" column).</p>
+    <p>Example: Salaries → <b>Full Powers</b> for all three (Sr.DDG-PAF / GM-Finance / DAP alike).</p>
+    <p>🟢 Sr. DDG (PAF) heads the Postal Accounts Wing in the Directorate; GM (Finance) exercises only powers relevant to operational requirements; Director-level PAO heads are treated as "Head of Office" for uniformity in large establishments.</p>
+  </div>
+</div>
+
+<div class="card">
+  <b>🔎 Master Comparison Chart — Key Items Across All Authority Levels</b>
+  <table>
+    <tr><th>Item</th><th>HOC</th><th>HOD</th><th>Divisional Head</th></tr>
+    <tr><td>Non-recurring contingent exp.</td><td>Rs. 3 Lakh</td><td>Rs. 1 Lakh</td><td>Rs. 10,000</td></tr>
+    <tr><td>Recurring contingent exp.</td><td>Rs. 2 Lakh</td><td>Rs. 1 Lakh</td><td>—(Full Power for utilities only)</td></tr>
+    <tr><td>Furniture/Fixture purchase</td><td>Full Powers</td><td>Full Powers</td><td>Rs. 2 Lakh/annum per division</td></tr>
+    <tr><td>Renting office bldg. — X class city</td><td>Rs.10 Lakh/month (all classes)</td><td>Rs. 2 Lakh/month</td><td>Rs. 15,000/month</td></tr>
+    <tr><td>Renting office bldg. — Z class city</td><td>Rs.10 Lakh/month (all classes)</td><td>Rs. 50,000/month</td><td>Rs. 8,000/month</td></tr>
+    <tr><td>Printing & Publication (Others)</td><td>Rs. 1.5 Lakh/annum</td><td>—</td><td>Rs. 20,000/annum</td></tr>
+    <tr><td>Minor Civil/Electric works (Govt. bldg.)</td><td>Rs. 10 Lakh/case</td><td>—</td><td>Rs. 50,000/case</td></tr>
+    <tr><td>Legal charges ceiling</td><td>Full Powers</td><td>Full Powers</td><td>Rs. 2 Lakh/case</td></tr>
+  </table>
+  <p class="hi">🟢 पैटर्न याद रखें: हर स्तर पर सीमा घटती जाती है — HOC सबसे ज्यादा, फिर HOD, फिर Divisional Head सबसे कम।</p>
+  <div class="qbox"><b>Exam Q:</b> True/False: Divisional Heads have higher contingent expenditure powers than HOD. <i>Ans: False — powers decrease down the hierarchy 🔴</i></div>
+</div>
+<!-- ================= ONE PAGE REVISION SHEET ================= -->
+<div class="section-title">📝 One-Page Revision Sheet <span class="hi">(अंतिम दिन रिवीज़न)</span></div>
+<div class="revision-sheet">
+  <h3>🔴 MUST-KNOW NUMBERS (DFPR 2024 — Dept. of Posts)</h3>
+  <ul>
+    <li>OM date: <b>28 March 2025</b> | Effective: <b>1 April 2025</b></li>
+    <li>DFPR 2024 (Ministry of Finance) effective from: <b>1 April 2024</b></li>
+    <li>DoP brought under old DFPR 1978 from: <b>1 April 1988</b></li>
+    <li>Bifurcation of P&T into DoP/DoT: <b>January 1985</b></li>
+    <li>Last pre-2025 revision: OM dated <b>30 July 2021</b></li>
+    <li>Ad-hoc arrears of pay: HOC <b>Rs.1,00,000</b> | HOD <b>Rs.50,000</b> | Independent Director <b>Rs.10,000</b></li>
+    <li>Recurring contingent exp.: HOC <b>Rs.2 Lakh</b> | HOD <b>Rs.1 Lakh</b> | IFA beyond <b>Rs.75,000</b></li>
+    <li>Non-recurring contingent exp.: HOC <b>Rs.3 Lakh</b> | HOD <b>Rs.1 Lakh</b> | Div. Head <b>Rs.10,000</b> | IFA beyond <b>Rs.1,00,000</b> (HOC/HOD)</li>
+    <li>Petty stationery purchase: HOC <b>Rs.5 Lakh/annum</b> | HOD <b>Rs.2 Lakh/annum</b></li>
+    <li>Renting office accommodation (per month): HOC <b>Rs.10 Lakh</b> (all classes) | HOD: X-Rs.2L, Y-Rs.1L, Z-Rs.50k | Div.Head: X-Rs.15k, Y-Rs.12k, Z-Rs.8k</li>
+    <li>Max accommodation hiring period: <b>5 years</b></li>
+    <li>Furniture/equipment revenue-vs-capital threshold: <b>Rs.1 lakh or 3 years</b> useful life</li>
+    <li>Laptop price ceiling: <b>Rs.1,00,000+tax</b> (general) / <b>Rs.1,30,000+tax</b> (MII &gt;40%)</li>
+    <li>HOC's building construction/reconstruction power: <b>Up to Rs.10 Crore</b></li>
+    <li>Addition/alteration to buildings (non-res/res): <b>Up to Rs.2 Crore</b> each (excl. overhead)</li>
+    <li>Dismantling of Building (HOC only): <b>Up to Rs.50 Lakh</b></li>
+    <li>HOC/HOD professional services (CA/consultants): HOC <b>Rs.1 Crore/annum</b> | HOD <b>Rs.20 Lakh/annum</b></li>
+    <li>Outsourced training institution hiring (Director RAKNPA only): <b>Up to Rs.2 Crore/annum</b></li>
+    <li>Divisional Head furniture/fixture cap: <b>Rs.2 Lakh/annum per division</b></li>
+    <li>Divisional Head printing cap: <b>Rs.20,000/annum</b> (all activities)</li>
+    <li>Divisional Head legal charges ceiling: <b>Rs.2 Lakh/case</b></li>
+  </ul>
+</div>
+
+<div class="mnem">🧠 <b>Master Mnemonic — Hierarchy of Powers (highest to lowest):</b><br>
+"<b>H</b>OC → <b>H</b>OD → <b>I</b>ndependent Director / <b>G</b>M-Finance/DAP → <b>D</b>ivisional Head"
+<br class="hi">(शक्ति क्रम: सर्कल प्रधान > विभाग प्रधान > स्वतंत्र निदेशक/GM-वित्त > मंडल प्रधान)</div>
+
+<div class="mnem">🧠 <b>Mnemonic — Schedule Letters:</b><br>
+"<b>II-A</b> = All (HOC & HOD), <b>II-B</b> = Bosses with independent charge (Directors), <b>II-C</b> = Cash/Accounts people (Sr.DDG-PAF, GM-Finance, DAP), <b>III</b> = Third-tier field (Divisional Heads)"</div>
+
+<div class="card">
+  <b>🎯 Top 12 Probable Exam Questions</b>
+  <ol style="font-size:.85rem;line-height:1.7;">
+    <li>DFPR 2024 replaced DFPR 1978 effective from? → <b>1 April 2024</b></li>
+    <li>Revised DoP Schedules under DFPR 2024 effective from? → <b>1 April 2025</b></li>
+    <li>Ad-hoc arrears of pay: HOC vs HOD limit? → <b>Rs.1,00,000 vs Rs.50,000</b></li>
+    <li>Non-recurring contingent expenditure — HOC limit? → <b>Rs.3 Lakh/case</b></li>
+    <li>Non-recurring contingent expenditure — Divisional Head limit? → <b>Rs.10,000/case</b></li>
+    <li>HOC's rent limit for office accommodation (all city classes)? → <b>Rs.10 Lakh/month</b></li>
+    <li>Divisional Head's rent limit — Z class city? → <b>Rs.8,000/month</b></li>
+    <li>HOC's power for postal building construction/reconstruction? → <b>Up to Rs.10 Crore</b></li>
+    <li>Threshold for Office Expenses vs capital classification (furniture/equipment)? → <b>Rs.1 lakh or 3 years</b></li>
+    <li>Who can sanction outsourced training up to Rs.2 Crore/annum? → <b>Director, RAKNPA only</b></li>
+    <li>Divisional Head's power to refund maliciously-sent unpaid postage? → <b>Full Powers</b></li>
+    <li>Max period accommodation can be hired at a time? → <b>5 years</b></li>
+  </ol>
+</div>
+
+<div class="legend">
+  <div>🔴 <b>Very Important</b> — core numbers/authorities, asked almost every exam</div>
+  <div>🟠 <b>Frequently Asked</b> — recurring MCQ pattern topics</div>
+  <div>🟡 <b>Conceptual</b> — understand logic, not just numbers</div>
+  <div>🟢 <b>Quick Revision</b> — easy recall / one-line facts</div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--red);">
+  <b>⚠️ Note on this document:</b> This infographic is derived from a scanned copy of DoP's OM F.No.6-1/2025-FA(P) dated 28.03.2025 (150 pages). Figures shown here have been carefully cross-checked against the source for the major, most exam-relevant items across Schedules II-A, II-B, II-C and III. For item-by-item verification of every single Object Head entry, please cross-check against your original circular copy before relying on this for a live exam answer.
+</div>
+<!--CONTENT_MARKER-->
+</div>
+
+<footer>
+  💰 Delegation of Financial Powers — Department of Posts Schedules (2025) — Study Notes for India Post LDCE-AAO/IP<br>
+  Prepared for personal exam preparation • Not an official Government publication • Verify figures against the original OM before use
+</footer>
+
+<button class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<script>
+function toggleTheme(){
+  const html = document.documentElement;
+  const cur = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', cur==='dark' ? 'light' : 'dark');
+  try{ localStorage.setItem('dfpr2024-theme', html.getAttribute('data-theme')); }catch(e){}
+}
+try{
+  const saved = localStorage.getItem('dfpr2024-theme');
+  if(saved) document.documentElement.setAttribute('data-theme', saved);
+}catch(e){}
+
+function expandAll(){ document.querySelectorAll('.acc').forEach(a=>a.classList.add('open')); }
+function collapseAll(){ document.querySelectorAll('.acc').forEach(a=>a.classList.remove('open')); }
+
+let utter = null;
+function speakPage(){
+  stopSpeak();
+  const text = document.querySelector('.container').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  window.speechSynthesis.cancel();
+}
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressBar').style.width = scrolled + '%';
+});
+</script>
+</body>
+</html>
