@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>DFPR 1978 | Delegation of Financial Powers Rules — AAO Exam Notes</title>
+<style>
+:root{
+  --red:#C8102E; --red-dark:#8f0b20; --blue:#0B3D91; --blue-dark:#062a66;
+  --gold:#D4AF37; --gold-dark:#a8871f;
+  --bg:#f7f5ef; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a;
+  --line:#e3ddc9; --shadow:0 4px 14px rgba(0,0,0,.08);
+  --r-hi:#d32f2f; --r-freq:#e67e22; --r-concept:#f1c40f; --r-quick:#27ae60;
+}
+[data-theme="dark"]{
+  --bg:#121212; --card:#1e1e1e; --ink:#eee; --sub:#b9b9b9; --line:#333;
+  --shadow:0 4px 14px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Segoe UI',Tahoma,Arial,sans-serif; background:var(--bg); color:var(--ink);
+  transition:background .3s,color .3s; padding-bottom:80px;
+}
+.hi{font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;}
+header.top{
+  background:linear-gradient(135deg,var(--red) 0%,var(--blue) 65%,var(--gold) 100%);
+  color:#fff; padding:22px 16px 28px; text-align:center; position:relative; overflow:hidden;
+}
+header.top::before{content:"✉";position:absolute;font-size:120px;opacity:.12;left:-10px;top:-20px;}
+header.top::after{content:"🏛";position:absolute;font-size:120px;opacity:.12;right:-10px;bottom:-30px;}
+header.top h1{margin:0 0 4px;font-size:1.4rem;}
+header.top h2{margin:0 0 10px;font-size:1rem;font-weight:500;opacity:.95;}
+header.top p{margin:0;font-size:.85rem;opacity:.9;}
+.badge-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.badge-row span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
+  padding:3px 9px;border-radius:20px;font-size:.72rem;}
+
+.toolbar{
+  position:sticky; top:0; z-index:50; display:flex; gap:6px; padding:8px 10px;
+  background:var(--card); border-bottom:2px solid var(--gold); flex-wrap:wrap; justify-content:center;
+  box-shadow:var(--shadow);
+}
+.toolbar button{
+  background:var(--blue); color:#fff; border:none; padding:7px 12px; border-radius:8px;
+  font-size:.78rem; cursor:pointer;
+}
+.toolbar button.alt{background:var(--red);}
+.toolbar button.gold{background:var(--gold-dark);}
+
+.container{max-width:900px;margin:0 auto;padding:14px;}
+
+.legend{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:6px; margin:14px 0;
+  font-size:.78rem;
+}
+.legend div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 8px;box-shadow:var(--shadow);}
+
+.section-title{
+  display:flex; align-items:center; gap:8px; margin:26px 0 10px; font-size:1.1rem;
+  color:var(--blue-dark); border-left:5px solid var(--red); padding-left:8px;
+}
+[data-theme="dark"] .section-title{color:#8fb4ff;}
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px;
+  margin-bottom:12px; box-shadow:var(--shadow);
+}
+.acc{cursor:pointer;}
+.acc-head{
+  display:flex; justify-content:space-between; align-items:center; font-weight:600;
+  font-size:.95rem; color:var(--red-dark);
+}
+[data-theme="dark"] .acc-head{color:#ff8a8a;}
+.acc-body{display:none; margin-top:10px; font-size:.88rem; line-height:1.55;}
+.acc.open .acc-body{display:block;}
+.acc-head .arrow{transition:transform .25s;}
+.acc.open .acc-head .arrow{transform:rotate(90deg);}
+
+.tag{display:inline-block;padding:2px 7px;border-radius:6px;font-size:.72rem;font-weight:700;color:#fff;margin-right:4px;}
+.tag.hi{background:var(--r-hi);}
+.tag.freq{background:var(--r-freq);}
+.tag.concept{background:var(--r-concept);color:#333;}
+.tag.quick{background:var(--r-quick);}
+
+table{width:100%;border-collapse:collapse;font-size:.8rem;margin:8px 0;}
+th,td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;}
+th{background:var(--blue);color:#fff;font-size:.78rem;}
+tr:nth-child(even) td{background:rgba(212,175,55,.08);}
+
+.flow{display:flex;flex-direction:column;gap:6px;margin:10px 0;}
+.flow .step{
+  background:linear-gradient(90deg,var(--blue) 0%,var(--blue-dark) 100%);color:#fff;
+  padding:8px 10px;border-radius:8px;font-size:.82rem;position:relative;
+}
+.flow .step::after{content:"⬇";display:block;text-align:center;color:var(--gold);font-size:1rem;margin-top:4px;}
+.flow .step:last-child::after{display:none;}
+
+.mindmap{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0;}
+.mindmap .node{
+  background:var(--gold); color:#3a2c00; padding:8px 12px; border-radius:20px; font-size:.78rem;
+  font-weight:600; box-shadow:var(--shadow);
+}
+.mindmap .node.center{background:var(--red);color:#fff;font-size:.9rem;padding:12px 18px;}
+
+.dtree{font-size:.83rem;}
+.dtree .q{background:var(--red);color:#fff;padding:6px 10px;border-radius:8px;margin:6px 0;}
+.dtree .a{background:var(--card);border:1px dashed var(--gold-dark);padding:6px 10px;border-radius:8px;margin:4px 0 4px 20px;}
+
+.qbox{
+  background:linear-gradient(135deg,#fff9e6,#fff);border:1px solid var(--gold);
+  border-left:4px solid var(--gold-dark); padding:8px 10px;border-radius:8px;font-size:.8rem;margin-top:8px;
+}
+[data-theme="dark"] .qbox{background:#2a2410;}
+.qbox b{color:var(--red-dark);}
+[data-theme="dark"] .qbox b{color:#ff8a8a;}
+
+.mnem{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;padding:10px 12px;
+  border-radius:10px;margin:8px 0;font-size:.85rem;
+}
+.mnem b{color:var(--gold);}
+
+.timeline{border-left:3px solid var(--gold-dark);margin-left:10px;padding-left:16px;}
+.tl-item{margin-bottom:14px;position:relative;}
+.tl-item::before{content:"";position:absolute;left:-22px;top:3px;width:10px;height:10px;background:var(--red);border-radius:50%;}
+
+.revision-sheet{
+  background:linear-gradient(135deg,var(--red-dark),var(--blue-dark));color:#fff;border-radius:14px;
+  padding:16px; margin:16px 0;
+}
+.revision-sheet h3{margin-top:0;color:var(--gold);}
+.revision-sheet ul{padding-left:18px;margin:6px 0;font-size:.83rem;line-height:1.6;}
+
+.progress-wrap{background:var(--line);border-radius:8px;height:8px;margin:10px 0;overflow:hidden;}
+.progress-bar{background:var(--gold-dark);height:100%;width:0%;transition:width .3s;}
+
+footer{text-align:center;padding:18px;font-size:.75rem;color:var(--sub);}
+
+.fab{
+  position:fixed;bottom:14px;right:14px;background:var(--red);color:#fff;border:none;
+  width:50px;height:50px;border-radius:50%;font-size:1.3rem;box-shadow:var(--shadow);z-index:60;
+}
+@media print{.toolbar,.fab{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>📘 Delegation of Financial Powers Rules, 1978 <span class="hi">(वित्तीय शक्तियों का प्रत्यायोजन नियम)</span></h1>
+  <h2 class="hi">AAO / LDCE परीक्षा हेतु दृश्य अध्ययन सामग्री (DFPR 1978)</h2>
+  <p>Bilingual Visual Infographic • India Post LDCE-AAO Paper II Preparation</p>
+  <div class="badge-row">
+    <span>🔴 Very Important</span><span>🟠 Frequently Asked</span>
+    <span>🟡 Conceptual</span><span>🟢 Quick Revision</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button onclick="toggleTheme()">🌓 Dark/Light</button>
+  <button class="alt" onclick="speakPage()">🔊 Read Aloud</button>
+  <button class="alt" onclick="stopSpeak()">⏹ Stop</button>
+  <button class="gold" onclick="expandAll()">📂 Expand All</button>
+  <button class="gold" onclick="collapseAll()">📁 Collapse All</button>
+  <button onclick="window.print()">🖨 Print/PDF</button>
+</div>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="container">
+<!-- ================= CHAPTER 1: OVERVIEW / MIND MAP ================= -->
+<div class="section-title">🗂 Chapter 1: Topic Overview <span class="hi">(विषय परिचय)</span></div>
+<div class="card">
+  <p><b>Topic:</b> Delegation of Financial Powers Rules, 1978 (DFPR) — issued by Finance Department, Govt. of Orissa vide No. 12000-Codes-12/78-F, superseding Finance Dept. Resolution No. 14028-F dated 1 April 1967.</p>
+  <p class="hi"><b>विषय:</b> यह नियम राज्य सरकार के विभिन्न प्राधिकारियों (Departments, Heads of Departments, Collectors आदि) को वित्तीय व्यय स्वीकृत करने की शक्तियाँ प्रत्यायोजित (delegate) करता है।</p>
+  <span class="tag hi">🔴 HIGH</span><span class="tag freq">🟠 FREQUENT</span>
+  <div class="qbox"><b>Exam Q:</b> DFPR 1978 supersedes which earlier Resolution? <br><i>Ans: Finance Dept. Resolution No. 14028-F dated 1st April 1967</i></div>
+</div>
+
+<div class="card">
+  <div class="acc-head" style="margin-bottom:8px;">🧠 Mind Map — Structure of DFPR 1978</div>
+  <div class="mindmap">
+    <div class="node center">DFPR 1978</div>
+  </div>
+  <div class="mindmap">
+    <div class="node">R.1-2 Title & Definitions</div>
+    <div class="node">R.3-5 Budget & Allotment</div>
+    <div class="node">R.6-7 Limitations & Residuary Powers</div>
+    <div class="node">R.8-9 Posts & Re-appropriation</div>
+    <div class="node">R.10-11 Contingent Exp. & Grants</div>
+    <div class="node">R.12-13 Contracts & Admin Approval</div>
+    <div class="node">R.14-16 Refunds/Write-off/Stationery</div>
+    <div class="node">R.17-20 Expenditure Sanction & Subordinate Powers</div>
+    <div class="node">R.21-22 Misc & Financial Adviser</div>
+    <div class="node">Annexures A-E</div>
+  </div>
+</div>
+<!-- ================= CHAPTER 2: DEFINITIONS ================= -->
+<div class="section-title">📖 Chapter 2: Definitions — Rule 2 <span class="hi">(परिभाषाएँ)</span></div>
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Key Terms (Rule 2 a–n)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Term</th><th>Definition (English)</th><th class="hi">परिभाषा (हिंदी)</th></tr>
+      <tr><td>Appropriation</td><td>Assignment to meet expenditure of funds included in a Primary unit of appropriation</td><td class="hi">प्राथमिक विनियोग इकाई में शामिल निधियों का व्यय हेतु आवंटन</td></tr>
+      <tr><td>Contingent Expenditure</td><td>Incidental/other expenditure for management of office, technical establishments (lab, workshop, farm etc.)</td><td class="hi">कार्यालय प्रबंधन व तकनीकी प्रतिष्ठानों पर होने वाला आकस्मिक व्यय</td></tr>
+      <tr><td>Department of Government</td><td>State Dept. as notified; includes Governor's & Legislative Assembly Secretariat</td><td class="hi">राज्यपाल एवं विधानसभा सचिवालय भी शामिल</td></tr>
+      <tr><td>Each Case</td><td>Non-recurring: expenditure at a point of time; Recurring: each type of recurring expenditure</td><td class="hi">एकबारगी व्यय = एक समय पर; आवर्ती व्यय = प्रत्येक प्रकार अलग से</td></tr>
+      <tr><td>Finance Department</td><td>Finance Dept. of State Govt.</td><td class="hi">राज्य का वित्त विभाग</td></tr>
+      <tr><td>Financial Adviser</td><td>Includes Assistant Financial Adviser</td><td class="hi">सहायक वित्तीय सलाहकार भी शामिल</td></tr>
+      <tr><td>Head of Department</td><td>As mentioned in Appendix 3 of Orissa Service Code</td><td class="hi">उड़ीसा सेवा संहिता परिशिष्ट-3 अनुसार</td></tr>
+      <tr><td>Non-recurring Expenditure</td><td>Expenditure other than recurring</td><td class="hi">आवर्ती के अतिरिक्त व्यय</td></tr>
+      <tr><td>Primary Unit of Appropriation</td><td>As defined in Rule 30 of Orissa Budget Manual</td><td class="hi">उड़ीसा बजट नियमावली नियम 30 अनुसार</td></tr>
+      <tr><td>Public Works</td><td>Civil, public health, electrical, irrigation, navigation, embankment & drainage work</td><td class="hi">सिविल, विद्युत, सिंचाई, नौवहन, तटबंध व जल निकासी कार्य</td></tr>
+      <tr><td>Re-appropriation</td><td>Transfer of funds from one primary unit to another</td><td class="hi">एक इकाई से दूसरी इकाई में निधि अंतरण</td></tr>
+      <tr><td>Recurring Expenditure</td><td>Expenditure incurred regularly at periodical intervals</td><td class="hi">नियमित समयांतराल पर होने वाला व्यय</td></tr>
+      <tr><td>Sub-ordinate Authority</td><td>Authority subordinate to a Department/Head of Department</td><td class="hi">विभाग/विभागाध्यक्ष के अधीनस्थ प्राधिकारी</td></tr>
+      <tr><td>Government Company</td><td>Same meaning as Companies Act, 1956</td><td class="hi">कंपनी अधिनियम 1956 अनुसार</td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> "Each case" — non-recurring vs recurring expenditure interpretation? A recurring item sanctioned up to Rs.1,500/annum can be sanctioned on multiple occasions within that limit. <b>Very Common MCQ.</b></div>
+  </div>
+</div>
+<div class="mnem">🧠 <b>Mnemonic (Rule 2 terms):</b> "A Contingent Department Each Finance Adviser Head's Non-recurring Primary Public Re-appropriates Recurring Subordinate Govt-Company"
+ <br class="hi">याद रखें: <b>"अ.क.वि.हर वि.स.गैर-प्रा.स.पु.प्रा.उप.आ.सर."</b> — हर शब्द का पहला अक्षर क्रम में!</div>
+<!-- ================= CHAPTER 3: BUDGETING (R.3-5) ================= -->
+<div class="section-title">💰 Chapter 3: Budgeting, Funds Provision & Allotment — Rules 3–5</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Rule 3: Budgeting Process</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Finance Dept. indicates ceilings of committed expenditure in advance. Schemes continuing >2 years admitted based on past actuals.</p>
+    <div class="flow">
+      <div class="step">1️⃣ Finance Dept. sets expenditure ceilings by Major Heads</div>
+      <div class="step">2️⃣ Controlling Officers report past actuals (Accountant-General too)</div>
+      <div class="step">3️⃣ Files for continuing non-plan schemes (&lt;2 yrs) → sent to Finance Dept. for pre-Budget scrutiny</div>
+      <div class="step">4️⃣ Finance Dept. prepares consolidated Budget slips by Major Heads</div>
+      <div class="step">5️⃣ Planning & Co-ordination Dept. indicates Plan ceilings</div>
+      <div class="step">6️⃣ Committee scrutiny (Secretary + HoD + Financial Adviser + Finance + Planning reps)</div>
+      <div class="step">7️⃣ New Demand Schedules furnished to Finance Dept.</div>
+    </div>
+    <p>🟢 <b>Quick Point:</b> No lump sum Budget provision except works &lt; <b>Rs.10 lakh</b>; splitting estimates to stay under Rs.10 lakh is prohibited.</p>
+    <div class="qbox"><b>Exam Q:</b> Lump sum Budget provision permissible for works costing less than? <br><i>Ans: Rs. 10 lakhs (Rule 3(6))</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Rule 4: Provision of Funds by Legislature</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Demands for grants/appropriation for Charged Expenditure presented to Legislature. After Demands voted & Appropriation Act passed → funds become available for appropriation/re-appropriation.</p>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 5: Allotment of Funds</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Administrative Depts allot provision among Controlling Officers before start of financial year.</li>
+      <li>Schemes reserved for scrutiny → allotment restricted to <b>first 4 months (till end of June)</b> for continuing posts, contingencies & TA.</li>
+      <li>Expenditure can be incurred only after appropriation authorised by law.</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Restricted allotment period for schemes under scrutiny = ? <br><i>Ans: Till end of June (4 months) 🔴</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 4: GENERAL LIMITATIONS (R.6-7) ================= -->
+<div class="section-title">⚖️ Chapter 4: General Limitations & Residuary Powers — Rules 6–7</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 6: General Limitations on Power to Sanction Expenditure</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Public revenue spent only on <b>legitimate objects</b> of public expenditure.</li>
+      <li>Recurring sanction operative once funds for 1st year appropriated; continues in subsequent years subject to appropriation & sanction terms.</li>
+      <li>Authority can sanction expenditure only if authorised by: (a) these/other rules (b) provisions of law (c) general/special order of Governor.</li>
+      <li>New principle/practice likely to increase future expenditure → needs <b>prior Finance Dept. concurrence</b>.</li>
+      <li>No expenditure without funds available via appropriation/re-appropriation.</li>
+    </ul>
+    <div class="dtree">
+      <div class="q">Can authority sanction expenditure?</div>
+      <div class="a">✅ Yes — if funds available + authorised by rules/law/order</div>
+      <div class="a">❌ No — if involves new principle without Finance Dept. concurrence</div>
+      <div class="a">❌ No — if funds not appropriated/re-appropriated</div>
+    </div>
+    <div class="qbox"><b>Exam Q:</b> Sanctioning new principle likely to increase future expenditure requires? <br><i>Ans: Prior concurrence of Finance Department (Rule 6(4)) 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟢 Rule 7: Residuary Financial Powers</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Any financial power <b>not specifically delegated</b> to any authority vests in the <b>Finance Department</b>.</p>
+    <div class="qbox"><b>Exam Q:</b> Powers not delegated under DFPR vest in? <i>Ans: Finance Department 🟢 (very easy recall question)</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 5: POSTS & RE-APPROPRIATION (R.8-9) ================= -->
+<div class="section-title">👥 Chapter 5: Creation of Posts & Re-appropriation — Rules 8–9</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 8: Creation, Extension & Permanency of Temporary Posts</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Old practice: create/extend temp. posts <b>1 year at a time</b> → avoidable paperwork. New rule: posts continue until <b>terminated by competent authority</b> (Finance Dept. Resolution No. 10806-F dated 2 March 1978).</li>
+      <li>Conditions for creating temp. posts: (i) specific Budget provision with Finance Dept. concurrence (ii) Rules of Business observed (iii) similar posts must exist on approved pay scale.</li>
+      <li>Permanency of temp. posts: full powers with Admin Dept., BUT NOT for posts to be made permanent <b>before 3 years</b> or linked to time-bound schemes.</li>
+      <li>Post in Govt. Company/undertaking with max pay ≥ <b>Rs. 4,100</b> → needs Govt. approval + Finance Dept. concurrence + Chief Minister's orders via Minister.</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Post in Govt. Company requiring CM's approval — pay threshold? <i>Ans: Rs. 4,100 or more 🔴</i><br>
+    <b>Exam Q:</b> Permanency of temp. post barred if made permanent before? <i>Ans: 3 years</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 9: Re-appropriation — 12 Key Restrictions</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Administrative Depts have <b>full powers</b> to sanction re-appropriation subject to:</p>
+    <table>
+      <tr><th>#</th><th>Restriction</th></tr>
+      <tr><td>i</td><td>No transfer between Major Heads of account</td></tr>
+      <tr><td>ii</td><td>No re-appropriation from Plan grants to Non-Plan expenditure</td></tr>
+      <tr><td>iii</td><td>No transfer across State/Central/Centrally Sponsored Plan groups</td></tr>
+      <tr><td>iv</td><td>No transfer from special non-plan scheme grants</td></tr>
+      <tr><td>v</td><td>No funds for expenditure not sanctioned by competent authority</td></tr>
+      <tr><td>vi</td><td>Charged ↔ Voted expenditure: no inter-transfer</td></tr>
+      <tr><td>vii</td><td>No transfer to/from Secret Service expenditure</td></tr>
+      <tr><td>viii</td><td>No transfer between Primary Units augmenting provision by <b>&gt;25%</b></td></tr>
+      <tr><td>ix</td><td>Office Exp./TA/Contingent — no augmentation between primary units for special purposes (e.g. vehicle purchase)</td></tr>
+      <tr><td>x</td><td>"Other allowances" cannot be augmented</td></tr>
+      <tr><td>xi</td><td>No re-appropriation from savings met via Reserve Funds/Statutory Bodies</td></tr>
+      <tr><td>xii</td><td>Works expenditure — needs admin approval + technical sanction; excess needs revised sanction</td></tr>
+    </table>
+    <p>🟠 <b>Powers for Works re-appropriation (Rule 9(1)(xii)(h)):</b></p>
+    <table>
+      <tr><th>Authority</th><th>Limit (each case)</th></tr>
+      <tr><td>Works, I&P, U.D. Departments</td><td>Rs. 2,00,000</td></tr>
+      <tr><td>Chief Engineers</td><td>Rs. 50,000</td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> Max % augmentation allowed between Primary Units in re-appropriation? <i>Ans: 25% (Rule 9(1)(viii)) 🔴 — Frequently tested!</i></div>
+  </div>
+</div>
+<div class="mnem">🧠 <b>Mnemonic (Rule 9 restrictions):</b> "Major-Plan-Group-Special-Sanctioned-Charged-Secret-25%-Allowance-Reserve-Works"
+<br class="hi">क्रम याद रखें: <b>"मे.प्ला.ग्रु.स्पे.स्वी.चा.गु.25.भ.रि.व."</b></div>
+<!-- ================= CHAPTER 6: CONTINGENT EXP & GRANTS (R.10-11) ================= -->
+<div class="section-title">🧾 Chapter 6: Contingent Expenditure, Grants & Loans — Rules 10–11</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 10: Sanction of Contingent Expenditure — Monetary Limits</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Authority</th><th>Recurring</th><th>Non-recurring</th></tr>
+      <tr><td>Departments of Govt.</td><td>Full powers</td><td>Full powers</td></tr>
+      <tr><td>Member, Board of Revenue</td><td>Rs. 10,000/annum each case</td><td>Rs. 30,000 each case</td></tr>
+      <tr><td>Heads of Department</td><td>Rs. 7,000/annum each case</td><td>Rs. 20,000 each case</td></tr>
+    </table>
+    <p>🟡 Secretary/Head of Dept. may authorise a Gazetted Officer to exercise these powers in writing, but remains <b>responsible</b> for correctness.</p>
+    <p>🟢 Inspector-General of Police has <b>full powers</b> for clothing/kits of Police personnel (special exception).</p>
+    <div class="qbox"><b>Exam Q:</b> Non-recurring contingent expenditure limit for Heads of Department? <i>Ans: Rs. 20,000 in each case 🔴</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Rule 11 & 11A: Grants, Loans, Stipends & Share Capital Investment</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Admin Depts: full powers for grant-in-aid (incl. Stipends/Scholarships) & loans, subject to Finance Dept. concurrence on rules, interest rate & repayment period.</li>
+      <li>Heads of Depts competent to sanction grants-in-aid if allotment under sub-head not exceeded; utilisation certificate must be furnished for earlier grants.</li>
+      <li><b>Rule 11A (Investment of share capital):</b> Admin Depts may release funds NOT exceeding <b>Rs. 10 lakh/annum</b> as equity in wholly State-owned Statutory Corporation/Company; <b>Rs. 1 lakh/annum</b> for other corporate bodies.</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Max equity investment/annum in State-owned Statutory Corporation? <i>Ans: Rs. 10 lakh (Rule 11A) 🟠</i><br>
+    <b>Exam Q:</b> Limit for "other corporate bodies" under 11A? <i>Ans: Rs. 1 lakh/annum</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 7: CONTRACTS & ADMIN APPROVAL (R.12-13) ================= -->
+<div class="section-title">📑 Chapter 7: Contracts & Administrative Approval — Rules 12–13</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 12: Contracts for Purchase & Works</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Authority</th><th>Power</th></tr>
+      <tr><td>Administrative Departments</td><td>Full powers</td></tr>
+      <tr><td>Head of Departments</td><td>Rs. 12.5 lakhs</td></tr>
+    </table>
+    <p>No consultancy/foreign technical collaboration contract without <b>prior Finance Dept. concurrence</b>.</p>
+    <p>🟠 Committee process for HoD office: scrutinises cases Rs.10,000 – Rs.25 lakh → HoD sanctions up to <b>Rs.12.5 lakh</b>; beyond that, forwarded with comments to Admin Dept. which may sanction up to <b>Rs.25 lakh</b>.</p>
+    <p>Committee in Admin Dept. (Secretary + Finance + Law + Export Promotion reps + HoD, Financial Adviser as Member-Secretary) considers cases <b>&gt; Rs.25 lakh</b> → recommendations placed before Government.</p>
+    <div class="flow">
+      <div class="step">Case ≤ Rs.10,000 → HoD Committee not required</div>
+      <div class="step">Rs.10,000 – 12.5 lakh → HoD Committee → HoD sanctions</div>
+      <div class="step">Rs.12.5 lakh – 25 lakh → forwarded to Admin Dept. → sanctions</div>
+      <div class="step">&gt; Rs.25 lakh → Admin Dept. Committee → Government decision</div>
+    </div>
+    <p>🟢 Rule 12 delegation <b>does not apply</b> to cases regulated by Orissa Public Works Department Code.</p>
+    <div class="qbox"><b>Exam Q:</b> HoD's sanctioning limit for contracts/purchases under Rule 12? <i>Ans: Rs. 12.5 lakh 🔴 (very frequently asked)</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Rule 13: Administrative Approval — Works Monetary Limits</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Powers of Heads of Department (other than Member Board of Revenue/RDC & Works/Irrigation/Energy/RD/HUD Depts):</p>
+    <table>
+      <tr><th>Item</th><th>Limit (Rs.)</th></tr>
+      <tr><td>Residential Buildings</td><td>4,50,000</td></tr>
+      <tr><td>Non-residential Buildings</td><td>7,50,000</td></tr>
+      <tr><td>Circuit House/Inspection Bungalow/Rest Shed</td><td>3,00,000</td></tr>
+      <tr><td>Sanitary & Water Supply (Non-Res/Res)</td><td>76,000 / 30,000</td></tr>
+      <tr><td>Electrical Installation (Non-Res/Res)</td><td>76,000 / 30,000</td></tr>
+      <tr><td>Rural Water Supply</td><td>45,000</td></tr>
+      <tr><td>Communications incl. Culverts</td><td>3,00,000</td></tr>
+      <tr><td>Other items</td><td>45,000</td></tr>
+    </table>
+    <p>🟡 <b>Admin Depts</b> (other than Revenue/Works/Irrigation/Energy/RD/HUD) = <b>double</b> the HoD limits above.</p>
+    <p>🟡 <b>Revenue/Works/Irrigation/Energy/RD/HUD Depts</b> have separate higher limits (e.g. Residential Rs.13,50,000; Non-Residential Rs.30,40,000; Communication/Irrigation/PH&Electricity Rs.38,00,000).</p>
+    <p>🟢 Note: A group of works forming one project = considered <b>one work</b> for administrative approval purposes.</p>
+    <div class="qbox"><b>Exam Q:</b> HoD's admin approval limit for Non-residential building (general depts)? <i>Ans: Rs. 7,50,000 🟠</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 8: REFUND, WRITE-OFF, STATIONERY (R.14-16) ================= -->
+<div class="section-title">🧮 Chapter 8: Refund of Revenue, Write-off & Stationery — Rules 14–16</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Rule 14: Power to Refund Revenue</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Authority in whose favour revenue credited may refund it for: (a) wrong credits (b) over-payments (c) abandoned scheme where fee realised in advance. Refund procedure per Orissa GFR Rules 166–169 & Orissa Treasury Code SR 345–349-A.</p>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 15: Power to Write Off Losses</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Authority</th><th>Extent of Powers</th></tr>
+      <tr><td>Administrative Department</td><td>Rs. 15,000 each case</td></tr>
+      <tr><td>Member, Board of Revenue</td><td>Rs. 10,000 each case</td></tr>
+      <tr><td>Heads of Departments</td><td>Rs. 7,500 each case</td></tr>
+      <tr><td>Collectors</td><td>Rs. 3,000 each case</td></tr>
+      <tr><td>Heads of other Subordinate Offices</td><td>Rs. 1,500 each case</td></tr>
+    </table>
+    <p>Conditions: (a) loss must not disclose a rule/procedure defect needing higher orders/Finance concurrence (b) no serious negligence warranting disciplinary action. Value assessment: <b>Book value</b> where price accounts maintained, else <b>Replacement value</b>.</p>
+    <div class="qbox"><b>Exam Q:</b> Write-off power of Collectors under Rule 15? <i>Ans: Rs. 3,000 in each case 🔴 (compare with HoD Rs.7,500 — common confusion trap!)</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟢 Rule 16: Local Purchase of Stationery</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Local purchase generally <b>prohibited</b>. Exceptionally, Head of Office may sanction up to <b>Rs.400 at a time</b>, subject to max <b>Rs.1,000 in a financial year</b>.</p>
+    <div class="qbox"><b>Exam Q:</b> Max local stationery purchase per financial year? <i>Ans: Rs. 1,000 (single instance cap Rs.400) 🟢</i></div>
+  </div>
+</div>
+
+<div class="card">
+  <b>🔎 Comparison Chart — Write-off vs Contingent Expenditure Powers</b>
+  <table>
+    <tr><th>Authority</th><th>Write-off (R.15)</th><th>Contingent Non-recurring (R.10)</th></tr>
+    <tr><td>Admin Dept.</td><td>Rs.15,000</td><td>Full powers</td></tr>
+    <tr><td>Member, BoR</td><td>Rs.10,000</td><td>Rs.30,000</td></tr>
+    <tr><td>HoD</td><td>Rs.7,500</td><td>Rs.20,000</td></tr>
+  </table>
+</div>
+<!-- ================= CHAPTER 9: EXPENDITURE SANCTION (R.17-20) ================= -->
+<div class="section-title">✅ Chapter 9: Expenditure Sanction, Insurance, Trading, Subordinate Powers — Rules 17–20</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 17: Expenditure Sanction</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Required only for schemes/services with financial provision via <b>New Demand Schedules</b>.</p>
+    <ul>
+      <li>Works Projects (PWD Code): no separate sanction needed if Budget provision available, but admin approval must precede commencement.</li>
+      <li>If work begins before admin approval (exceptional): Govt. authorisation needed; admin approval must follow within <b>3 months</b> of commencement, else no further expenditure allowed.</li>
+      <li>Unresolved pre-Budget schemes: Admin Dept. may sanction expenditure for <b>first 4 months (till end June)</b> — restricted to continuing posts, contingent/TA, grants-in-aid for continuing schemes.</li>
+      <li>Prior Finance Dept. concurrence needed for: time-bound post continuance, purchase of tools/plant/vehicles/heavy machinery, and contingent expenses <b>exceeding Rs.1 lakh</b>.</li>
+    </ul>
+    <div class="timeline">
+      <div class="tl-item"><b>Day 0:</b> Work commences on Govt. authorisation (without admin approval)</div>
+      <div class="tl-item"><b>Within 3 months:</b> Administrative approval MUST be obtained</div>
+      <div class="tl-item"><b>After 3 months (if not obtained):</b> No further expenditure can be incurred 🔴</div>
+    </div>
+    <div class="qbox"><b>Exam Q:</b> Time limit to obtain admin approval after work commences on authorisation? <i>Ans: 3 months 🔴 Very important time-limit question!</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Rule 18: Insurance of Government Property</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Govt. property <b>ordinarily NOT insured</b>. No subordinate authority may undertake insurance expenditure without prior Finance Dept. concurrence — except where Admin Dept./HoD has full discretion to sanction (their own decision to insure).</p>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟡 Rule 19: Trading Operations</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>All proposals for: (a) purchase of commodities for sale/issue to public (b) fixing prices of direct trading operations (c) Govt. companies' price fixation — must go to Finance Dept. for concurrence.</p>
+    <p>🟢 <b>Exception:</b> Proposals under (a)/(b) need NOT go to Finance Dept. if transaction value is <b>below Rs. 2 lakh</b>.</p>
+    <div class="qbox"><b>Exam Q:</b> Threshold below which trading proposals skip Finance Dept. concurrence? <i>Ans: Rs. 2 lakh 🟡</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟠 Rule 20: Powers of Subordinate Authorities (Contingent Expenditure)</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <table>
+      <tr><th>Authority</th><th>Recurring</th><th>Non-recurring</th></tr>
+      <tr><td>Collectors</td><td>Rs. 6,000/annum each case</td><td>Rs. 15,000 each case</td></tr>
+      <tr><td>Heads of Subordinate Offices</td><td>Rs. 2,000/annum each case</td><td>Rs. 5,000 each case</td></tr>
+    </table>
+    <div class="qbox"><b>Exam Q:</b> Collector's non-recurring contingent expenditure sanctioning power? <i>Ans: Rs. 15,000 in each case 🟠</i></div>
+  </div>
+</div>
+
+<div class="card">
+  <b>🔎 Master Comparison — Contingent Expenditure Non-Recurring Limits (Rs.)</b>
+  <table>
+    <tr><th>Authority</th><th>Rule</th><th>Limit</th></tr>
+    <tr><td>Department of Govt.</td><td>R.10</td><td>Full powers</td></tr>
+    <tr><td>Member, Board of Revenue</td><td>R.10</td><td>30,000</td></tr>
+    <tr><td>Heads of Department</td><td>R.10</td><td>20,000</td></tr>
+    <tr><td>Collectors</td><td>R.20</td><td>15,000</td></tr>
+    <tr><td>Heads of Subordinate Offices</td><td>R.20</td><td>5,000</td></tr>
+  </table>
+</div>
+<!-- ================= CHAPTER 10: MISC & FINANCIAL ADVISER (R.21-22) ================= -->
+<div class="section-title">🧑‍💼 Chapter 10: Miscellaneous & Financial Adviser — Rules 21–22</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🟢 Rule 21: Miscellaneous</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <ul>
+      <li>Unspecified matters → governed by general/special orders with Finance Dept. concurrence.</li>
+      <li>Authority already exercising higher powers on an item shall <b>continue</b> to do so.</li>
+      <li>Powers delegated apply to <b>past cases</b> too (pending on date rules came into force); expenditure already incurred beyond powers = irregular, needs ex-post-facto sanction by authority competent <b>when incurred</b> (not later).</li>
+      <li>Delegated powers subject to any general/special <b>economy ban</b> by State Govt.</li>
+    </ul>
+    <div class="qbox"><b>Exam Q:</b> Ex-post-facto sanction for irregular expenditure — by whom? <i>Ans: Authority competent to incur expenditure AT THE TIME it was incurred, not the authority who later became competent. 🟢 Tricky conceptual Q!</i></div>
+  </div>
+</div>
+
+<div class="card acc" onclick="this.classList.toggle('open')">
+  <div class="acc-head"><span>🔴 Rule 22: Financial Adviser — Duties & Responsibilities</span><span class="arrow">▶</span></div>
+  <div class="acc-body">
+    <p>Financial Advisers/Assistant FAs assist Admin Depts in Budget formulation, project scrutiny, and post-Budget vigilance.</p>
+    <p><b>Key duties (Annexure E, 21 points) include:</b></p>
+    <ul>
+      <li>Ensure Budget drawn per Finance Dept. instructions; scrutinise Budget proposals</li>
+      <li>Ensure complete departmental accounts maintained per Orissa GFR</li>
+      <li>Watch/review expenditure progress vs sanctioned grants; issue timely warnings</li>
+      <li>Maintain Register of liabilities & commitments</li>
+      <li>Screen supplementary demand proposals & further delegation proposals</li>
+      <li>Associate with scheme formulation from <b>initial stage</b> (cardinal principle)</li>
+      <li>Ensure compliance of audit objections/inspection reports/Draft Audit Paras</li>
+      <li>Screen expenditure proposals referred to Finance Dept.</li>
+      <li>Reconcile departmental figures with Accountant-General <b>monthly</b>; finalise accounts before <b>end of June</b></li>
+      <li>Control/supervise Internal Auditors; ensure prompt revenue collection</li>
+    </ul>
+    <p>🟡 <b>Important carve-out:</b> FA should NOT be burdened with routine service matters — Subsistence Allowance, Special Pay, Pay Fixation, Pension, TA pre-audit, disciplinary proceedings — as these detract from core duties.</p>
+    <p>🔴 Where Secretary proposes to <b>overrule</b> FA's advice → reference must be made to <b>Finance Department</b>.</p>
+    <div class="qbox"><b>Exam Q:</b> If Secretary wants to overrule Financial Adviser's advice, what must happen? <i>Ans: Matter referred to Finance Department 🔴</i><br>
+    <b>Exam Q:</b> Reconciliation of final accounts of year must be completed before? <i>Ans: End of June</i></div>
+  </div>
+</div>
+<!-- ================= CHAPTER 11: ANNEXURES ================= -->
+<div class="section-title">📎 Chapter 11: Annexures A–E — Quick Map</div>
+<div class="card">
+  <div class="timeline">
+    <div class="tl-item"><b>Annexure A</b> — Power to Create Posts (See Rule 8): Admin Dept full powers for Gazetted/Non-Gazetted posts (outside Secretariat) with Finance concurrence at pre-budget stage.</div>
+    <div class="tl-item"><b>Annexure B</b> — Finance Dept. Resolution No.10806-Codes-1/78-F dated <b>2 March 1978</b>: temp. posts continue till terminated; annual establishment review — Feb (Heads of Offices) → 1st fortnight March (HoDs) → by 15 April (Secretaries report to Finance Dept.). 🔴 Pay for April withheld if certificate not furnished!</div>
+    <div class="tl-item"><b>Annexure C</b> — Sanction of Contingent Expenditure: item-wise monetary limits (motor vehicles, law charges, hiring accommodation, telephones, typewriters, etc.)</div>
+    <div class="tl-item"><b>Annexure D</b> — Powers of Heads of Offices to sanction contingent expenditure (parallel to Annexure C at subordinate level)</div>
+    <div class="tl-item"><b>Annexure E</b> — Duties & Responsibilities of Financial Adviser/Assistant FA (21-point list, see Chapter 10)</div>
+  </div>
+  <div class="qbox"><b>Exam Q:</b> Annual Establishment Review certificate — Secretaries must send to Finance Dept. by which date? <i>Ans: 15th April 🔴</i></div>
+</div>
+
+<div class="card">
+  <b>🏛 Important Authorities — Quick Reference</b>
+  <table>
+    <tr><th>Authority</th><th>Key Power</th></tr>
+    <tr><td>Finance Department</td><td>Residuary powers (R.7); concurrence for new principles, insurance, share capital, trading etc.</td></tr>
+    <tr><td>Administrative Department</td><td>Full powers — contingent exp., contracts, re-appropriation (subject to conditions)</td></tr>
+    <tr><td>Head of Department (HoD)</td><td>Rs.12.5 lakh contracts; Rs.20,000 contingent; Rs.7,500 write-off</td></tr>
+    <tr><td>Collector</td><td>Rs.15,000 contingent; Rs.3,000 write-off</td></tr>
+    <tr><td>Member, Board of Revenue</td><td>Rs.30,000 contingent; Rs.10,000 write-off</td></tr>
+    <tr><td>Financial Adviser</td><td>Consulted on all delegated power exercises; disputes go to Finance Dept.</td></tr>
+    <tr><td>Chief Engineers</td><td>Rs.50,000 re-appropriation on works</td></tr>
+    <tr><td>Inspector-General of Police</td><td>Full powers — clothing/kits budget</td></tr>
+  </table>
+</div>
+<!-- ================= ONE PAGE REVISION SHEET ================= -->
+<div class="section-title">📝 One-Page Revision Sheet <span class="hi">(अंतिम दिन रिवीज़न)</span></div>
+<div class="revision-sheet">
+  <h3>🔴 MUST-KNOW NUMBERS (DFPR 1978)</h3>
+  <ul>
+    <li>Rules effective from: <b>1 April 1978</b></li>
+    <li>Superseded Resolution: <b>No.14028-F dated 1 April 1967</b></li>
+    <li>Lump sum Budget provision cap: <b>Rs. 10 lakh</b> works</li>
+    <li>Restricted allotment period: <b>till end June (4 months)</b></li>
+    <li>Re-appropriation augmentation cap between Primary Units: <b>25%</b></li>
+    <li>Post in Govt. Company needing CM approval: pay <b>≥ Rs.4,100</b></li>
+    <li>Temp. post permanency bar: before <b>3 years</b></li>
+    <li>Contracts — HoD limit: <b>Rs.12.5 lakh</b>; Admin Dept: <b>Full powers</b></li>
+    <li>Committee (HoD office) scrutiny band: <b>Rs.10,000 – Rs.25 lakh</b></li>
+    <li>Admin approval after unauthorised work start: within <b>3 months</b></li>
+    <li>Contingent expenditure needing Finance concurrence: <b>&gt; Rs.1 lakh</b></li>
+    <li>Trading proposal exemption threshold: <b>below Rs.2 lakh</b></li>
+    <li>11A Equity investment: <b>Rs.10 lakh</b> (Statutory Corp) / <b>Rs.1 lakh</b> (other corporate)</li>
+    <li>Local stationery purchase: <b>Rs.400/time, Rs.1,000/year</b></li>
+    <li>Write-off powers: Admin Dept <b>15,000</b> | Member BoR <b>10,000</b> | HoD <b>7,500</b> | Collector <b>3,000</b> | Subordinate Office <b>1,500</b></li>
+    <li>Annual establishment review — Secretaries report to Finance Dept. by <b>15 April</b></li>
+    <li>Reconciliation of final accounts before: <b>end of June</b></li>
+  </ul>
+</div>
+
+<div class="mnem">🧠 <b>Master Mnemonic — Rule sequence:</b><br>
+"<b>T</b>itle-<b>D</b>efinitions-<b>B</b>udget-<b>P</b>rovision-<b>A</b>llotment-<b>L</b>imitations-<b>R</b>esiduary-<b>P</b>osts-<b>R</b>eappropriation-<b>C</b>ontingent-<b>G</b>rants-<b>C</b>ontracts-<b>A</b>pproval-<b>R</b>efund-<b>W</b>riteoff-<b>S</b>tationery-<b>E</b>xpSanction-<b>I</b>nsurance-<b>T</b>rading-<b>S</b>ubordinate-<b>M</b>isc-<b>F</b>A"
+<br class="hi">(R.1 से R.22 तक क्रम याद रखने हेतु प्रथम अक्षर विधि)</div>
+
+<div class="card">
+  <b>🎯 Top 10 Probable Exam Questions</b>
+  <ol style="font-size:.85rem;line-height:1.7;">
+    <li>DFPR 1978 supersedes which Resolution? → <b>No.14028-F (1.4.1967)</b></li>
+    <li>Max % augmentation in re-appropriation between Primary Units? → <b>25%</b></li>
+    <li>HoD's contract sanctioning limit? → <b>Rs.12.5 lakh</b></li>
+    <li>Time limit for admin approval after unauthorised work commencement? → <b>3 months</b></li>
+    <li>Pay threshold for Govt. Company post needing CM approval? → <b>Rs.4,100</b></li>
+    <li>Collector's write-off power limit? → <b>Rs.3,000</b></li>
+    <li>Lump sum budget provision ceiling for works? → <b>Rs.10 lakh</b></li>
+    <li>Who decides on overruling Financial Adviser's advice? → <b>Reference to Finance Dept.</b></li>
+    <li>Local stationery purchase yearly cap? → <b>Rs.1,000</b></li>
+    <li>Trading proposal Finance concurrence exemption? → <b>below Rs.2 lakh</b></li>
+  </ol>
+</div>
+
+<div class="legend">
+  <div>🔴 <b>Very Important</b> — core numbers/authorities, asked almost every exam</div>
+  <div>🟠 <b>Frequently Asked</b> — recurring MCQ pattern topics</div>
+  <div>🟡 <b>Conceptual</b> — understand logic, not just numbers</div>
+  <div>🟢 <b>Quick Revision</b> — easy recall / one-line facts</div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  📘 Delegation of Financial Powers Rules, 1978 — Study Notes for India Post LDCE-AAO Paper II<br>
+  Prepared for personal exam preparation • Not an official Government publication
+</footer>
+
+<button class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<script>
+function toggleTheme(){
+  const html = document.documentElement;
+  const cur = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', cur==='dark' ? 'light' : 'dark');
+  try{ localStorage.setItem('dfpr-theme', html.getAttribute('data-theme')); }catch(e){}
+}
+try{
+  const saved = localStorage.getItem('dfpr-theme');
+  if(saved) document.documentElement.setAttribute('data-theme', saved);
+}catch(e){}
+
+function expandAll(){ document.querySelectorAll('.acc').forEach(a=>a.classList.add('open')); }
+function collapseAll(){ document.querySelectorAll('.acc').forEach(a=>a.classList.remove('open')); }
+
+let utter = null;
+function speakPage(){
+  stopSpeak();
+  const text = document.querySelector('.container').innerText;
+  utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  window.speechSynthesis.cancel();
+}
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progressBar').style.width = scrolled + '%';
+});
+</script>
+</body>
+</html>
+
