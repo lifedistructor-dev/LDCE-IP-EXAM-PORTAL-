@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FHB Vol-II | Stamps-Revenue-Accounts-RMS-Pension | LDCE AAO/IP Exam</title>
+<style>
+:root{
+  --red:#c8102e; --red-dark:#8f0c20; --blue:#003087; --blue-dark:#001d54;
+  --gold:#d4a017; --gold-light:#f2d675;
+  --bg:#f7f5ef; --card:#ffffff; --text:#1c1c1c; --muted:#5c5c5c;
+  --very-imp:#e74c3c; --freq:#e67e22; --concept:#f1c40f; --quick:#27ae60;
+  --border:#e2ddd0; --shadow:0 4px 14px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--text);
+  line-height:1.55; padding-bottom:60px; transition:background .3s,color .3s;
+}
+body.dark{ --bg:#12141c; --card:#1c2030; --text:#eee6d8; --muted:#a9a9b8; --border:#333850; }
+body.dark{ background:var(--bg); color:var(--text); }
+
+/* ===== Header ===== */
+header{
+  background:linear-gradient(120deg,var(--red) 0%, var(--red-dark) 45%, var(--blue-dark) 100%);
+  color:#fff; padding:18px 14px 22px; position:relative; overflow:hidden;
+}
+header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%, rgba(212,160,23,.35), transparent 55%);}
+header h1{font-size:1.25rem; text-align:center; position:relative; z-index:1;}
+header h1 span.hi{display:block; font-size:1.05rem; font-weight:400; margin-top:2px; color:var(--gold-light);}
+header .sub{text-align:center; font-size:.8rem; margin-top:6px; opacity:.9; position:relative; z-index:1;}
+.topbar{
+  display:flex; justify-content:center; gap:10px; margin-top:12px; flex-wrap:wrap; position:relative; z-index:1;
+}
+.topbar button{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); color:#fff;
+  padding:6px 12px; border-radius:20px; font-size:.75rem; cursor:pointer; backdrop-filter:blur(4px);
+}
+.topbar button:hover{background:rgba(255,255,255,.3);}
+
+/* ===== Legend ===== */
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center; padding:10px 8px;
+  background:var(--card); border-bottom:2px solid var(--gold);
+}
+.legend span{
+  font-size:.68rem; padding:3px 8px; border-radius:12px; background:var(--bg); border:1px solid var(--border); white-space:nowrap;
+}
+
+/* ===== Nav pills ===== */
+.chapnav{display:flex; overflow-x:auto; gap:8px; padding:10px 10px; background:var(--bg); position:sticky; top:0; z-index:50; border-bottom:1px solid var(--border);}
+.chapnav a{
+  flex:0 0 auto; background:var(--card); border:2px solid var(--blue); color:var(--blue); font-weight:600;
+  font-size:.72rem; padding:7px 12px; border-radius:20px; text-decoration:none; white-space:nowrap;
+}
+body.dark .chapnav a{color:var(--gold-light); border-color:var(--gold);}
+.chapnav a:hover{background:var(--blue); color:#fff;}
+
+.wrap{max-width:900px; margin:0 auto; padding:14px 10px;}
+
+/* ===== Chapter block ===== */
+.chapter{margin-bottom:26px;}
+.chapter-head{
+  background:linear-gradient(100deg,var(--blue),var(--blue-dark));
+  color:#fff; padding:14px 16px; border-radius:14px 14px 0 0; box-shadow:var(--shadow);
+}
+.chapter-head h2{font-size:1.05rem;}
+.chapter-head .hi{font-size:.92rem; color:var(--gold-light); font-weight:400; margin-top:2px;}
+.chapter-head .rules-range{font-size:.72rem; opacity:.85; margin-top:4px;}
+
+/* ===== Accordion ===== */
+.accordion{border:1px solid var(--border); border-top:none; border-radius:0 0 14px 14px; overflow:hidden; background:var(--card); box-shadow:var(--shadow);}
+.acc-item{border-bottom:1px solid var(--border);}
+.acc-item:last-child{border-bottom:none;}
+.acc-btn{
+  width:100%; text-align:left; background:var(--card); border:none; padding:12px 14px; font-size:.88rem; font-weight:600;
+  display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:var(--text); gap:8px;
+}
+.acc-btn:hover{background:var(--bg);}
+.acc-btn .arrow{transition:transform .25s; color:var(--gold); font-size:1rem; flex:0 0 auto;}
+.acc-item.open .arrow{transform:rotate(90deg);}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.acc-item.open .acc-body{max-height:6000px;}
+.acc-inner{padding:4px 16px 16px;}
+
+/* subchapter cards */
+.subcard{background:var(--bg); border-left:4px solid var(--gold); border-radius:8px; padding:10px 12px; margin:10px 0;}
+body.dark .subcard{background:#232840;}
+.subcard h4{font-size:.85rem; color:var(--blue); margin-bottom:4px;}
+body.dark .subcard h4{color:var(--gold-light);}
+.subcard h4 .hi{font-weight:400; color:var(--muted); font-size:.78rem;}
+.microtopic{margin:6px 0 0 8px; font-size:.82rem;}
+.nanotopic{margin:4px 0 0 16px; font-size:.78rem; color:var(--muted); border-left:2px dashed var(--border); padding-left:8px;}
+
+/* tag badges */
+.tag{display:inline-block; font-size:.68rem; font-weight:700; padding:2px 7px; border-radius:10px; margin-right:4px; color:#fff;}
+.tag.vi{background:var(--very-imp);}
+.tag.fa{background:var(--freq);}
+.tag.cu{background:var(--concept); color:#333;}
+.tag.qr{background:var(--quick);}
+
+/* field grid (Definition, Sections, Rules, etc.) */
+.fieldgrid{display:grid; grid-template-columns:1fr; gap:8px; margin-top:8px;}
+.field{background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px 10px;}
+.field b{color:var(--red); font-size:.76rem; display:block; margin-bottom:3px;}
+body.dark .field b{color:#ff8a80;}
+.field p, .field li{font-size:.8rem;}
+.field ul{margin-left:16px;}
+
+/* exam question box */
+.examq{
+  background:linear-gradient(100deg,#fff8e1,#fff3cd); border:1px dashed var(--gold); border-radius:8px;
+  padding:8px 10px; margin-top:8px; font-size:.78rem;
+}
+body.dark .examq{background:#2b2410; border-color:var(--gold);}
+.examq b{color:var(--red-dark);}
+body.dark .examq b{color:#ff8a80;}
+
+/* tables */
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.76rem;}
+th,td{border:1px solid var(--border); padding:6px 7px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.72rem;}
+tr:nth-child(even) td{background:var(--bg);}
+body.dark tr:nth-child(even) td{background:#1a1e2c;}
+
+/* flowchart */
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:10px 0; justify-content:center;}
+.flow .box{
+  background:var(--blue); color:#fff; padding:8px 10px; border-radius:8px; font-size:.72rem; text-align:center; min-width:100px;
+}
+.flow .arrow2{font-size:1.1rem; color:var(--gold);}
+
+/* mindmap simple */
+.mindmap{display:flex; flex-direction:column; align-items:center; gap:6px; margin:10px 0;}
+.mindmap .center{background:var(--red); color:#fff; padding:8px 14px; border-radius:20px; font-weight:700; font-size:.8rem;}
+.mindmap .branches{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:6px;}
+.mindmap .branch{background:var(--gold); color:#3a2c00; padding:6px 10px; border-radius:8px; font-size:.72rem; font-weight:600;}
+
+/* timeline */
+.timeline{position:relative; margin:14px 4px; padding-left:18px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:14px;}
+.tl-item::before{content:"";position:absolute; left:-24px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--red); border:2px solid #fff;}
+.tl-item .date{font-weight:700; color:var(--red); font-size:.78rem;}
+.tl-item .desc{font-size:.78rem;}
+
+/* decision tree */
+.dtree{margin:10px 0; font-size:.78rem;}
+.dtree ul{list-style:none; margin-left:14px; border-left:2px dotted var(--border); padding-left:12px;}
+.dtree li{margin:5px 0;}
+.dtree .q{font-weight:700; color:var(--blue);}
+body.dark .dtree .q{color:var(--gold-light);}
+
+/* mnemonic box */
+.mnemonic{background:linear-gradient(100deg,#e8f5e9,#dcedc8); border:2px solid var(--quick); border-radius:10px; padding:10px 12px; margin:10px 0; font-size:.8rem;}
+body.dark .mnemonic{background:#16241a; border-color:var(--quick);}
+.mnemonic b{color:#1b5e20;}
+body.dark .mnemonic b{color:#81c784;}
+
+/* revision sheet */
+.revision-sheet{background:var(--card); border:3px solid var(--red); border-radius:14px; padding:14px; margin-top:20px;}
+.revision-sheet h2{color:var(--red); text-align:center; margin-bottom:10px; font-size:1.05rem;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-block{background:var(--bg); border-left:4px solid var(--blue); border-radius:8px; padding:8px 10px; font-size:.78rem;}
+.rev-block h4{color:var(--blue); font-size:.82rem; margin-bottom:4px;}
+body.dark .rev-block h4{color:var(--gold-light);}
+
+/* TTS button */
+.tts-btn{
+  background:var(--gold); border:none; color:#3a2c00; font-size:.68rem; font-weight:700; padding:4px 8px; border-radius:12px; cursor:pointer; margin-left:6px;
+}
+
+/* progress / search */
+.searchbar{padding:8px; text-align:center;}
+.searchbar input{width:100%; max-width:500px; padding:9px 12px; border-radius:20px; border:2px solid var(--gold); font-size:.85rem;}
+
+footer{text-align:center; font-size:.7rem; color:var(--muted); padding:20px 10px;}
+
+@media(min-width:640px){
+  .fieldgrid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Financial Handbook Vol-II<span class="hi">वित्तीय हस्तपुस्तिका खंड-II</span></h1>
+  <div class="sub">Supply of Stamps • Revenue Receipts • Post Office Accounts • RMS Accounts • Pension Payments</div>
+  <div class="sub">डाक टिकट आपूर्ति • राजस्व प्राप्तियाँ • डाकघर लेखे • RMS लेखे • पेंशन भुगतान | LDCE-IP / LDCE-AAO Exam</div>
+  <div class="topbar">
+    <button onclick="document.body.classList.toggle('dark')">🌓 Dark/Light</button>
+    <button onclick="toggleTTSGlobal()">🔊 Read Aloud</button>
+    <button onclick="location.href='#revision'">📝 Revision Sheet</button>
+  </div>
+</header>
+
+<div class="legend">
+  <span>🔴 Very Important for Exam</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual Understanding</span>
+  <span>🟢 Quick Revision Point</span>
+</div>
+
+<div class="searchbar">
+  <input type="text" id="searchBox" placeholder="🔍 Search rule, topic, keyword... रूल/विषय खोजें" onkeyup="liveSearch()">
+</div>
+
+<nav class="chapnav">
+  <a href="#ch2">Ch.II Stamps</a>
+  <a href="#ch3">Ch.III Revenue</a>
+  <a href="#ch4">Ch.IV PO Accounts</a>
+  <a href="#ch5">Ch.V RMS Accounts</a>
+  <a href="#ch7">Ch.VII Pension</a>
+  <a href="#revision">📝 Revision Sheet</a>
+  <a href="#mnemonics">🧠 Mnemonics</a>
+</nav>
+
+<div class="wrap" id="content">
+
+<!-- ============ CHAPTER II - SUPPLY OF STAMPS ============ -->
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <h2>Chapter II — Supply of Stamps <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय II — डाक टिकट आपूर्ति</div>
+    <div class="rules-range">Rules 3 – 12 | Pages 2–5</div>
+  </div>
+  <div class="accordion">
+
+    <!-- Topic Overview -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Chapter II lays down rules for the procurement, custody, distribution, and accounting of postage stamps, revenue stamps, postal stationery, and International Reply Coupons at Post Offices.<br><span style="color:var(--muted)">डाकघरों में डाक टिकट, राजस्व टिकट, डाक स्टेशनरी और अंतरराष्ट्रीय उत्तर कूपन की खरीद, अभिरक्षा, वितरण व लेखांकन के नियम।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>Rule 3 – Introductory (Appendix 2)</li>
+            <li>Rule 4 – Stock at Post Offices</li>
+            <li>Rule 5 – HPO supply from CSD</li>
+            <li>Rule 6 – Supply from Stamp Depot</li>
+            <li>Rule 7 – Commemorative stamps</li>
+            <li>Rule 8-10 – Sale, balance, write-off</li>
+            <li>Rule 11 – RMS Offices</li>
+            <li>Rule 12 – Intl. Reply Coupons</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">Supply of Stamps</div>
+          <div class="branches">
+            <div class="branch">Stock Fixation (R.4)</div>
+            <div class="branch">CSD Supply (R.5-6)</div>
+            <div class="branch">Commemorative (R.7)</div>
+            <div class="branch">Sale & Balance (R.8-9)</div>
+            <div class="branch">Write-off (R.10)</div>
+            <div class="branch">RMS Advance (R.11)</div>
+            <div class="branch">IRC (R.12)</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Sub-chapter: Stock fixation -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Stock Fixation Authority <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 4 — Maximum Stamp Balance <span class="hi">अधिकतम टिकट शेष</span></h4>
+          <p class="microtopic">Officer-in-charge of each PO holds stock of postage stamps, revenue stamps & savings certificates up to a fixed maximum value.</p>
+          <table>
+            <tr><th>Postmaster Category</th><th>Fixing Authority</th></tr>
+            <tr><td>Non-Gazetted Postmasters</td><td>Divisional Head</td></tr>
+            <tr><td>Group 'B' Postmasters</td><td>DPS (Divisional Supdt.)</td></tr>
+            <tr><td>Group 'A' Postmasters</td><td>CPMG / PMG</td></tr>
+          </table>
+          <p class="nanotopic"><b>Note 1:</b> "Stamps" here = postage stamps + non-postal stamps + envelopes + post cards.</p>
+          <p class="nanotopic"><b>Note 2:</b> Detailed rules on fixation of stamp balances → Chapters 1 & 2 of P&T Manual Vol. VIII.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Who fixes the maximum stamp balance for a Group 'A' Postmaster? — <i>Ans: CPMG/PMG</i></div>
+      </div></div>
+    </div>
+
+    <!-- Supply from CSD -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Supply from Central Stamp Depot (CSD) <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 5 & 6 — Procurement Flow <span class="hi">आपूर्ति प्रवाह</span></h4>
+          <div class="flow">
+            <div class="box">HPO requisitions supply</div><div class="arrow2">➜</div>
+            <div class="box">Circle Stamp Depot (CSD)</div><div class="arrow2">➜</div>
+            <div class="box">Verify vs Invoice (≤3 days)</div><div class="arrow2">➜</div>
+            <div class="box">Acknowledge copy returned</div>
+          </div>
+          <p class="microtopic">Revenue stamps are obtained from <b>Treasuries</b> on cash payment using Form <b>ACG 39</b> (prepared in duplicate).</p>
+          <p class="nanotopic">Receipt & verification time limit: <b>within 3 days</b> of receipt of supply — 🔴 exam favourite.</p>
+          <p class="nanotopic">Value entered in: Treasurer's Cash Book → Head Office Summary → Head Office Cash Book.</p>
+          <p class="nanotopic">Consolidated Schedule of Stamps prepared in <b>triplicate</b>; 2 copies sent to Circle PAO with monthly Cash Account.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Within how many days must a Postmaster verify and acknowledge stamps received from the Circle Stamp Depot? — <i>Ans: 3 days</i></div>
+      </div></div>
+    </div>
+
+    <!-- Commemorative stamps -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Commemorative Stamps (Nasik Security Press) <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 7 <span class="hi">स्मारक डाक टिकट</span></h4>
+          <div class="timeline">
+            <div class="tl-item"><span class="date">Step 1</span><div class="desc">Nasik Press dispatches to Philatelic Bureau / Presidency PO with invoice (triplicate); 1 copy direct to PAO.</div></div>
+            <div class="tl-item"><span class="date">Step 2</span><div class="desc">Packet opened before Postmaster / Group officer.</div></div>
+            <div class="tl-item"><span class="date">Step 3</span><div class="desc">Value credited same day under "Stamps received from CSD"; classified as 1201-Postal Receipts-101-Sale of Postage Stamps.</div></div>
+            <div class="tl-item"><span class="date">Step 4</span><div class="desc">2 acknowledged copies (1st & 2nd) returned to Nasik Press immediately.</div></div>
+            <div class="tl-item"><span class="date">Step 5</span><div class="desc">Supplied to Philatelic Bureau against permanent advance.</div></div>
+          </div>
+          <p class="nanotopic">Presidency Postmasters (Mumbai, Kolkata, Chennai) receive supply directly from Central Stamps Store, Nasik.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Sale, balance, write off -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Sale, Balance & Write-off <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rules 8, 9, 10 <span class="hi">बिक्री, शेष व अपलेखन</span></h4>
+          <p class="microtopic"><b>Rule 8:</b> Sale as per Rule 45 of P&T Manual Vol. VI; officials must sign memo acknowledging stamps received.</p>
+          <p class="microtopic"><b>Rule 9:</b> Stamp balances of sub/branch/head office shown in monthly Cash Balance Report.</p>
+          <p class="microtopic"><b>Rule 10:</b> Lost/damaged/obsolete stamps written off under orders of <b>competent authority</b>; order copy sent to PAO with a copy to CSD.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Who orders write-off of damaged/obsolete postage stamps? — <i>Ans: Competent Authority</i></div>
+      </div></div>
+    </div>
+
+    <!-- RMS -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Railway Mail Service Offices <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 11 <span class="hi">रेलवे मेल सेवा कार्यालय</span></h4>
+          <p class="microtopic">Stamps advanced to RMS Mail Office → receipt granted by Sub-Record/Head Record Officer, <b>countersigned by Superintendent RMS</b>.</p>
+          <p class="microtopic">Shown in accounts of Post Office as part of its own stamp balance.</p>
+          <p class="nanotopic"><b>Important Date:</b> Receipts renewed on <b>1st April every year</b>, and whenever charge is transferred.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- International Reply Coupons -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ International Reply Coupons (IRC) <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 12 <span class="hi">अंतरराष्ट्रीय उत्तर कूपन</span></h4>
+          <p class="microtopic">Arrangement with <b>International Bureau at Berne</b>. HPOs authorised to hold IRC stock for sale & exchange with Indian postage stamps.</p>
+          <p class="microtopic">Supplied by <b>General Manager (Postal Accounts & Finance), Kolkata</b> with invoice in duplicate.</p>
+          <div class="dtree">
+            <div class="q">Discrepancy found on receipt of coupons?</div>
+            <ul>
+              <li>✅ Reported at once to GM(PAF) → Postmaster not liable.</li>
+              <li>❌ Not reported at receipt time → Postmaster held <b>personally responsible</b> for value of coupons found short later.</li>
+            </ul>
+          </div>
+          <p class="nanotopic">Value credited as an <b>Unclassified Receipt</b>; coupon must be date-stamped before handing to purchaser.</p>
+          <p class="nanotopic">Spoiled coupons sent for destruction to GM(PAF) Kolkata — value written off or replaced with fresh coupons.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Who supplies International Reply Coupons to Head Post Offices? — <i>Ans: General Manager (Postal Accounts & Finance), Kolkata</i></div>
+      </div></div>
+    </div>
+
+    <!-- Authorities table -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">🏛️ Important Authorities (Ch. II) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Authority</th><th>Role</th></tr>
+          <tr><td>CPMG / PMG</td><td>Fix max. stamp balance – Group A Postmaster</td></tr>
+          <tr><td>DPS</td><td>Fix max. stamp balance – Group B Postmaster</td></tr>
+          <tr><td>Divisional Head</td><td>Fix max. stamp balance – Non-Gazetted PM</td></tr>
+          <tr><td>Circle Stamp Depot (CSD)</td><td>Supplies stamps/stationery to HPOs</td></tr>
+          <tr><td>Nasik Security Press</td><td>Supplies commemorative stamps</td></tr>
+          <tr><td>GM (Postal Accounts & Finance), Kolkata</td><td>Supplies/destroys International Reply Coupons</td></tr>
+          <tr><td>Superintendent, RMS</td><td>Countersigns RMS stamp receipts</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER III - REVENUE RECEIPTS ============ -->
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <h2>Chapter III — Revenue Receipts <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय III — राजस्व प्राप्तियाँ</div>
+    <div class="rules-range">Rules 13 – 29 | Pages 5–10</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Deals with all sources of Departmental revenue — postage collections, postal receipts (commission on MOs/IPOs), receipts of other departments (Customs Duty, LIC premia), and their accounting procedure.<br><span style="color:var(--muted)">डाक राजस्व के सभी स्रोत — डाक संग्रहण, कमीशन, अन्य विभागों की प्राप्तियाँ जैसे सीमा शुल्क व LIC प्रीमियम।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>R.13 – Postage Revenue</li>
+            <li>R.14 – Deposit for bearing letters</li>
+            <li>R.15-17 – Cash prepayment system</li>
+            <li>R.18 – Regd. newspaper w/o prepayment</li>
+            <li>R.19 – Unpaid Postage</li>
+            <li>R.20-24A – Postal Receipts (commission)</li>
+            <li>R.25-28 – Customs Duty</li>
+            <li>R.29 – LIC Premia</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">Revenue Receipts</div>
+          <div class="branches">
+            <div class="branch">Postage Revenue</div>
+            <div class="branch">Postal Receipts (Commission)</div>
+            <div class="branch">Receipts of Other Depts.</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Postage Collections & Cash Prepayment <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>R.14 — Deposit for Bearing Letters <span class="hi">वहन-पत्र जमा</span></h4>
+          <p class="microtopic">Planters, regiments, mercantile firms may open deposit accounts for postage due on unpaid articles.</p>
+          <p class="nanotopic">Total amount shown daily under head "C" in Head Office Summary; sub-offices show balance in Remarks column.</p>
+        </div>
+        <div class="subcard">
+          <h4>R.15-16 — Cash Prepayment of Postage <span class="hi">नकद अग्रिम भुगतान</span></h4>
+          <div class="flow">
+            <div class="box">Sender presents specimen packet + Form ACG.46 (Part A)</div><div class="arrow2">➜</div>
+            <div class="box">Asst. PM Sorting calculates total postage & signs Certificate B</div><div class="arrow2">➜</div>
+            <div class="box">Treasurer recovers cash, issues receipt ACG.47</div><div class="arrow2">➜</div>
+            <div class="box">Packets handed over for dispatch, 2nd certificate signed</div>
+          </div>
+          <p class="nanotopic">Authorised under Rule 75 / 75-A of P&T Manual Vol. VIII.</p>
+          <p class="nanotopic">🔴 <b>Time limit:</b> Counterfoils of used receipt books (ACG.47) kept in personal custody for <b>5 years</b> (Rule 8 Note 1, FHB Vol. I).</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> For how many years should counterfoils of receipt books (ACG.47) be retained? — <i>Ans: 5 years</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Registered Newspapers without Prepayment <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>R.18 <span class="hi">बिना अग्रिम भुगतान समाचार पत्र</span></h4>
+          <p class="microtopic">License granted by Head of Circle/Region under Rule 136, PO Guide Part-I; invoice in duplicate accompanies each posting.</p>
+          <p class="nanotopic">Bills (Form MS-98) prepared <b>fortnightly</b> (1st–15th, 16th–end) and presented on the <b>16th and 1st</b> of each month.</p>
+          <p class="nanotopic">🔴 <b>Exception:</b> Licence deemed <b>cancelled</b> if bill remains unpaid by end of the fortnight following the fortnight it relates to.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Postal Receipts — Commission Heads <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Rule</th><th>Commission Head</th><th>Governing Manual</th></tr>
+          <tr><td>R.20</td><td>Commission on Money Orders</td><td>Ch. II, Postal Manual Vol. VI Part II</td></tr>
+          <tr><td>R.21</td><td>Contribution from private individuals — <i>Deleted (w.e.f. 01.04.2003)</i></td><td>—</td></tr>
+          <tr><td>R.22</td><td>Fees – window delivery tickets, P.O. boxes/bags</td><td>Credited as Unclassified Receipts</td></tr>
+          <tr><td>R.23</td><td>Commission on Indian Postal Orders</td><td>Ch. V, Postal Manual Vol. VI Part II</td></tr>
+          <tr><td>R.24/24A</td><td>Commission for various services (Passport forms, UPSC forms, pension of Railways/EPFS/BSNL etc.)</td><td>Credited as Unclassified Receipts</td></tr>
+        </table>
+        <div class="examq"><b>Probable Question:</b> Rule 21 relating to contribution from private individuals was deleted with effect from which date? — <i>Ans: 01.04.2003</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Receipts of Other Departments — Customs Duty & LIC <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>R.25-27 — Customs Duty <span class="hi">सीमा शुल्क</span></h4>
+          <p class="microtopic">Dutiable foreign parcels/letter-mail articles assessed by Collector of Customs; duty collected by PO from addressee along with departmental dues.</p>
+          <p class="microtopic">Schedule of Customs Duty realised in cash (Form <b>ACG-90</b>) sent with Cash Account to Home PAO on the <b>1st of each month</b>.</p>
+          <p class="nanotopic">🔴 <b>Exception:</b> Duty on parcels for a Govt. official in official capacity may be paid by affixing & defacing <b>postage stamps</b> instead of cash.</p>
+        </div>
+        <div class="subcard">
+          <h4>R.29 — LIC Premia <span class="hi">LIC प्रीमियम</span></h4>
+          <p class="microtopic">Accepted only at rural SB-working offices <b>specially authorised</b> by Head of Circle in consultation with LIC.</p>
+          <p class="nanotopic">Governed by Rule 55-B, P&T Manual Vol. VI Part I & Rule 51-C, Rules for Branch Offices.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Comparison: Cash Prepayment vs Deposit Account <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Aspect</th><th>Deposit for Bearing Letters (R.14)</th><th>Cash Prepayment (R.15-16)</th></tr>
+          <tr><td>Who uses</td><td>Planters, regiments, firms</td><td>Firms with bulk unregistered/registered packets</td></tr>
+          <tr><td>When paid</td><td>Postage due on received unpaid articles</td><td>Before posting (advance)</td></tr>
+          <tr><td>Form used</td><td>Deposit Account (local)</td><td>ACG.46 & ACG.47</td></tr>
+          <tr><td>Head of credit</td><td>Head "C" in HO Summary</td><td>Unclassified Receipts</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER IV - POST OFFICE ACCOUNTS ============ -->
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <h2>Chapter IV — Post Office Accounts <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय IV — डाकघर लेखे</div>
+    <div class="rules-range">Rules 30 – 67 | Pages 11–43 (Largest chapter — highest weightage)</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Covers duties of the Treasurer, maintenance of the Treasurer's Cash Book, consolidation into Head Office Summary/Cash Book, submission of Cash Account & Cash Balance Report to PAO, and the complete "Accounts Bundle" of monthly returns.<br><span style="color:var(--muted)">कोषाध्यक्ष के कर्तव्य, नकद बही, हेड ऑफिस सारांश, PAO को खातों का मासिक बंडल भेजना।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>R.30 – Treasurer duties</li>
+            <li>R.31 – Treasurer's Cash Book</li>
+            <li>R.40-43 – Payment of Money</li>
+            <li>R.46 – Account Books maintained</li>
+            <li>R.47 – Head Office Summary</li>
+            <li>R.53-56 – HO Cash Book, Schedules, Submission</li>
+            <li>R.66 – Correction of Errors</li>
+            <li>R.67 – Accounts Bundle to PAO (Time Table)</li>
+          </ul></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Duties & Responsibility of the Treasurer <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 30 <span class="hi">कोषाध्यक्ष के कर्तव्य</span></h4>
+          <p class="microtopic">One Postal Assistant in every HO is selected as <b>Treasurer</b>. Custody of cash/stamps/BPO/IPO is <b>joint</b> with Postmaster (each holds a safe key).</p>
+          <ul style="margin-left:16px; font-size:.8rem;">
+            <li>(i) Supplies funds to subordinate offices, postmen, village postmen.</li>
+            <li>(ii) Takes over account bags from Delivery PA / Branch office bags from mail.</li>
+            <li>(iii) Receives collections (postage, registration fee, customs duty) from postmen/PAs.</li>
+            <li>(c) Converts deficient-postage cash collections into postage stamps, defaces with date-stamp.</li>
+          </ul>
+        </div>
+        <div class="dtree">
+          <div class="q">Custody responsibility — during vs after working hours?</div>
+          <ul>
+            <li><b>During working hours:</b> Treasurer <u>solely</u> responsible for safe custody of current-transaction safe.</li>
+            <li><b>Reserve safe:</b> Jointly responsible with Postmaster.</li>
+            <li><b>After close of office:</b> Jointly responsible with Postmaster that balances tally before locking.</li>
+          </ul>
+        </div>
+        <div class="examq"><b>Probable Question:</b> During working hours, who is solely responsible for the safe custody of the current transactions safe? — <i>Ans: The Treasurer</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Treasurer's Cash Book (Form ACG-2) <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 31 <span class="hi">कोषाध्यक्ष नकद बही</span></h4>
+          <p class="microtopic">Records all sums (including stamps) actually received/paid by Treasurer, entered by him personally as transactions occur. Entries serially numbered under Receipts & Payments.</p>
+          <p class="nanotopic"><b>Note 1:</b> Presidency/large HOs may maintain subsidiary registers for Treasurer's assistants, with Head of Circle/Region's concurrence.</p>
+          <p class="nanotopic"><b>Note 3:</b> Only <b>actual cash transactions</b> entered — book-transfer entries excluded.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Payment of Money — General & RMS/Telegraph <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rules 40-43 <span class="hi">भुगतान संबंधी नियम</span></h4>
+          <p class="microtopic"><b>R.41 – Payment to Head Record Officer, RMS:</b> Remittance presented at HPO; particulars entered in schedule of payments to HRO.</p>
+          <p class="microtopic"><b>R.43 – Responsibility for Accounts:</b> Head Postmaster personally responsible except under special orders of Head of Circle.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Account Books maintained in Head Office <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 46 <span class="hi">रखे जाने वाले लेखा बही</span></h4>
+          <table>
+            <tr><th>#</th><th>Register/Book</th><th>Form No.</th><th>Purpose</th></tr>
+            <tr><td>1</td><td>Head Office Summary</td><td>ACG.1</td><td>HO transactions incl. MO/SB at windows</td></tr>
+            <tr><td>2</td><td>Sub Office Summary</td><td>ACG.3</td><td>Transactions of sub offices</td></tr>
+            <tr><td>3</td><td>Branch Office Summary</td><td>ACG.3(A)</td><td>Transactions of Branch offices + village postmen</td></tr>
+            <tr><td>4</td><td>Unpaid Postage Abstract</td><td>ACG.45 (revised)</td><td>Unpaid Postage Account of HO</td></tr>
+            <tr><td>5</td><td>HO Cash Book & Postmaster's Balance Sheet</td><td>ACG.4</td><td>Whole postal district transactions</td></tr>
+          </table>
+        </div>
+        <div class="mindmap">
+          <div class="center">5 Account Books (R.46)</div>
+          <div class="branches">
+            <div class="branch">ACG.1 HO Summary</div>
+            <div class="branch">ACG.3 SO Summary</div>
+            <div class="branch">ACG.3(A) BO Summary</div>
+            <div class="branch">ACG.45 Unpaid Postage</div>
+            <div class="branch">ACG.4 HO Cash Book</div>
+          </div>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>H</b>appy <b>S</b>ub <b>B</b>ranch <b>U</b>ncles <b>C</b>ount" → <b>H</b>O Summary, <b>S</b>ub-office Summary, <b>B</b>ranch office Summary, <b>U</b>npaid Postage Abstract, <b>C</b>ash Book.</div>
+        <div class="examq"><b>Probable Question:</b> Which Form number is used for the Head Office Summary? — <i>Ans: ACG.1</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Correction of Errors <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 66 <span class="hi">त्रुटि सुधार</span></h4>
+          <p class="microtopic">Any alteration to a cash account/return already submitted to PAO must be <b>promptly reported by letter</b>. Postmasters must NOT send revised accounts unless expressly asked.</p>
+          <p class="nanotopic">Report should be concise, clear, and sent as soon as the mistake is discovered.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ ⏰ Accounts Bundle — Submission Time Table <span class="tag vi">🔴 Very High Weightage</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 67 <span class="hi">खाता बंडल — प्रेषण तालिका</span></h4>
+          <p class="microtopic">Head Offices submit the "Accounts Bundle" to Director/Dy. Director of Accounts (Postal), accompanied by a list of contents in <b>Form ACG 31</b>.</p>
+        </div>
+        <table>
+          <tr><th>Return</th><th>Due Date</th></tr>
+          <tr><td>Cash Account & Cash Balance Report; Customs Duty schedules; RMS payments; remittance schedules; Capital Outlay schedule</td><td><b>1st</b> of following month</td></tr>
+          <tr><td>SB & Post Office Certificate returns</td><td><b>1st</b></td></tr>
+          <tr><td>Schedule of Unclassified Receipts</td><td><b>1st & 16th</b></td></tr>
+          <tr><td>Schedule of PLI/RPLI payments</td><td><b>1st & 16th</b></td></tr>
+          <tr><td>Money Order returns</td><td><b>2nd & 16th</b></td></tr>
+          <tr><td>Summaries of MO issued/paid (2nd period)</td><td><b>2nd</b></td></tr>
+          <tr><td>List of Void Money Orders</td><td><b>16th</b></td></tr>
+          <tr><td>Consolidated Treasury Receipt</td><td>By <b>15th</b> of following month</td></tr>
+          <tr><td>Schedule of Telephone Receipts</td><td><b>4th</b> of following month</td></tr>
+          <tr><td>LIC premia consolidation & payment schedule</td><td><b>1st</b></td></tr>
+          <tr><td>Western Union Money Transfer schedules</td><td><b>1st & 16th</b></td></tr>
+          <tr><td>Premium Products / PSSK / Stamp vendor commission / Income Tax / Service Tax / New Pension Scheme schedules</td><td><b>1st</b> of following month</td></tr>
+        </table>
+        <div class="mindmap">
+          <div class="center">Key Recurring Dates</div>
+          <div class="branches">
+            <div class="branch">1st — Most schedules</div>
+            <div class="branch">1st & 16th — Unclassified Receipts, PLI/RPLI, WU Transfer</div>
+            <div class="branch">2nd & 16th — Money Orders</div>
+            <div class="branch">4th — Telephone Receipts</div>
+            <div class="branch">15th — Consolidated Treasury Receipt</div>
+          </div>
+        </div>
+        <div class="subcard">
+          <h4>Exceptions <span class="hi">अपवाद</span></h4>
+          <p class="microtopic"><b>Exception 1:</b> Presidency POs (Kolkata, Mumbai, Chennai) may dispatch British/Indian Postal Order returns by <b>5th</b> instead of 1st.</p>
+          <p class="microtopic"><b>Exception 2:</b> Presidency POs may submit MO Abstracts for 1st & 2nd periods on <b>18th</b> of month and <b>4th</b> of next month respectively, via special messenger in sealed covers.</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>1</b>st is for most, <b>2</b>nd for Money orders, <b>4</b>th for phone, <b>15</b>th for Treasury, <b>16</b>th repeats the rest." — remembers the recurring due-dates pattern.</div>
+        <div class="examq"><b>Probable Question:</b> By which date should the Consolidated Treasury Receipt be submitted? — <i>Ans: By the 15th of the following month</i><br><b>Probable Question:</b> What is the due date for the Schedule of Unclassified Receipts? — <i>Ans: 1st and 16th</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">🏛️ Important Authorities (Ch. IV) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Authority</th><th>Role</th></tr>
+          <tr><td>Treasurer</td><td>Custody of daily cash/stamps; maintains Treasurer's Cash Book</td></tr>
+          <tr><td>Head Postmaster</td><td>Personally responsible for accounts; joint custody with Treasurer</td></tr>
+          <tr><td>Director / Dy. Director of Accounts (Postal)</td><td>Receives monthly Accounts Bundle</td></tr>
+          <tr><td>Head of Circle / Region</td><td>Sanctions subsidiary Treasurer's Cash Book registers</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER V - RAILWAY MAIL SERVICE ACCOUNTS ============ -->
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <h2>Chapter V — Railway Mail Service Accounts <span class="tag fa">🟠 FA</span></h2>
+    <div class="hi">अध्याय V — रेलवे मेल सेवा लेखे</div>
+    <div class="rules-range">Rules 68 – 73 | Pages 42–43</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Governs the accounting responsibility, Cash Book, Cash Abstract, receipts, and submission of accounts by RMS Head Record/Record/Sub-Record Offices.<br><span style="color:var(--muted)">RMS हेड रिकॉर्ड/रिकॉर्ड/सब-रिकॉर्ड कार्यालयों की लेखा जिम्मेदारी, नकद बही व लेखा जमा करने की प्रक्रिया।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>R.68 – Responsibility for Accounts</li>
+            <li>R.69 – Cash Book (ACG 35)</li>
+            <li>R.70 – Cash Abstract (ACG 33)</li>
+            <li>R.71-72 – Receipts</li>
+            <li>R.73 – Submission of Accounts to PAO</li>
+          </ul></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Responsibility for Accounts <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 68 <span class="hi">लेखा उत्तरदायित्व</span></h4>
+          <p class="microtopic">(a) <b>Head Record Officer</b> is personally responsible for all monetary transactions of the division & correctness of accounts.</p>
+          <p class="microtopic">(b) An <b>Accountant</b> (selected by Superintendent from among sorters) assists with clerical account work — bills, MOs, Cash Book, Cash Abstract — but HRO remains solely responsible for correctness.</p>
+          <p class="microtopic">(c) Safe held in <b>joint custody</b> of HRO and Accountant, each with a safe key. Accountant responsible for writing Cash Abstract; jointly responsible with HRO for daily verification of balance.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Who is personally responsible for all monetary transactions of an RMS division? — <i>Ans: The Head Record Officer</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Cash Book & Cash Abstract <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Register</th><th>Form No.</th><th>Maintained By</th><th>Purpose</th></tr>
+          <tr><td>Cash Book</td><td>ACG 35</td><td>Head Record Officer</td><td>Cash received from local HO & MOs granted on bills drawn</td></tr>
+          <tr><td>Cash Abstract</td><td>ACG 33</td><td>Head Record/Record/Sub-Record Office (Accountant for HRO)</td><td>Money transactions — Pay & Allowances, Permanent Advance (contingencies/stamps), Miscellaneous receipts</td></tr>
+        </table>
+        <p class="nanotopic">Cash Book has 2 parts — "Receipts" and "Payments"; both sides' totals are always equal → <b>no opening/closing balance</b>.</p>
+        <p class="nanotopic">All bills cashed at the local PO in a month are numbered in a monthly consecutive series.</p>
+        <div class="examq"><b>Probable Question:</b> Why does the RMS Cash Book have no opening or closing balance? — <i>Ans: Because totals of Receipts and Payments sides are always equal (self-balancing)</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Receipts <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rules 71-72 <span class="hi">प्राप्तियाँ</span></h4>
+          <p class="microtopic">Miscellaneous sums received by RMS officials entered in Register <b>Form ACG-40</b>; monthly extract sent to Superintendent RMS.</p>
+          <p class="microtopic">All such sums paid into local Post Office; receipt obtained from Postmaster and forwarded in original to Superintendent for verification & inclusion in monthly statement to PAO.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ ⏰ Submission of Accounts to PAO <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 73 <span class="hi">PAO को लेखा प्रस्तुति</span></h4>
+          <div class="timeline">
+            <div class="tl-item"><span class="date">15th of month</span><div class="desc">Cash Book closed; Cash Account (Form ACG-36) prepared — exact copy of Cash Book.</div></div>
+            <div class="tl-item"><span class="date">Last working day</span><div class="desc">Cash Book closed again; 2nd Cash Account of the month prepared.</div></div>
+          </div>
+          <p class="nanotopic">Signed by HRO, dispatched by first post/next day in a registered account envelope with contents list (Form ACG.31); duplicate retained at Head Record office.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> On which two occasions each month is the RMS Cash Book closed for submission to the PAO? — <i>Ans: 15th and the last working day of the month</i></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Comparison: PO Accounts vs RMS Accounts <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Aspect</th><th>Post Office Accounts (Ch. IV)</th><th>RMS Accounts (Ch. V)</th></tr>
+          <tr><td>Key custodian</td><td>Treasurer + Postmaster</td><td>Head Record Officer + Accountant</td></tr>
+          <tr><td>Cash Book form</td><td>ACG-2 (Treasurer's Cash Book)</td><td>ACG-35</td></tr>
+          <tr><td>Submission frequency</td><td>Monthly (with 1st/16th sub-schedules)</td><td>Twice monthly (15th & last working day)</td></tr>
+          <tr><td>Cash Account form to PAO</td><td>Various schedules</td><td>ACG-36</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER VII - PENSION PAYMENTS ============ -->
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <h2>Chapter VII — Pension Payments <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय VII — पेंशन भुगतान</div>
+    <div class="rules-range">Rules 84 – 140 | Pages 48–87 (Largest & highest-scoring chapter)</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Regulates procedure for payment, at any post office in India, of service pensions payable out of Departmental revenues, subject to the Pensions Act 1871, Civil Service Regulations, and CCS(Pension) Rules 1972.<br><span style="color:var(--muted)">भारत में किसी भी डाकघर में सेवा पेंशन के भुगतान की प्रक्रिया, पेंशन अधिनियम 1871 व CCS (पेंशन) नियम 1972 के अधीन।</span></p></div>
+          <div class="field"><b>Important Sections / महत्वपूर्ण धाराएँ</b><ul>
+            <li>Sec 11, Pensions Act XXIII of 1871 – Pension exempt from attachment by Civil Court</li>
+            <li>Sec 95(1), Indian Lunacy Act 1912 – Pension of a lunatic pensioner</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">Pension Payments</div>
+          <div class="branches">
+            <div class="branch">Place & Authority (R.87-96)</div>
+            <div class="branch">Due Date (R.99)</div>
+            <div class="branch">Payment of Claims (R.101-107)</div>
+            <div class="branch">Identification (R.124-125)</div>
+            <div class="branch">Undrawn & Arrears (R.126)</div>
+            <div class="branch">Death of Pensioner (R.127-128)</div>
+            <div class="branch">Commutation & Gratuity (R.121-123)</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Section 11 -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📜 Rule 84-86 — Introductory & Section 11 Protection <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 84-86 <span class="hi">परिचय व धारा 11 का संरक्षण</span></h4>
+          <p class="microtopic">Governs payment of service pensions in India, subject to Pensions Act 1871, CSRs, or Presidential orders.</p>
+          <div class="field"><b>Important Section — Sec 11, Pensions Act 1871</b><p>Pension granted on political grounds, past service, infirmity, or as compassionate allowance — <b>cannot be seized, attached, or sequestered</b> by any Civil Court in India at a creditor's instance.</p></div>
+          <p class="nanotopic"><b>R.85:</b> "Service pension" = pension for past employment under Indian P&T Dept (sanctioned on/after 1 April 1921); includes gratuity.</p>
+          <p class="nanotopic"><b>R.86:</b> Family Pension Fund sums & Workmen's Compensation Act sums are <b>NOT</b> covered by this Chapter.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Under which Section can a pension NOT be attached by a Civil Court decree? — <i>Ans: Section 11, Pensions Act XXIII of 1871</i></div>
+      </div></div>
+    </div>
+
+    <!-- Place & authority -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Place of Payment & Pension Payment Order (PPO) <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 87-89 <span class="hi">भुगतान स्थान व पेंशन भुगतान आदेश</span></h4>
+          <p class="microtopic">Service pensions payable at any authorised Head/Sub/Branch PO in India; <b>first payment</b> must be at the HO/SO in whose jurisdiction the pensioner elected to receive payment.</p>
+          <p class="nanotopic"><b>Note 1:</b> GDS BOs/SOs doing SB work can be authorised to pay <b>pension only, NOT gratuity</b>.</p>
+          <p class="nanotopic"><b>Note 3:</b> Provisional Pension drawn by the Head of Office where the Govt. servant served immediately before retirement.</p>
+          <p class="microtopic">R.88: Payment only on <b>Pension Payment Order</b> (Form DG(PA)-99(j)/(k) or 99(L)/(M)) issued by Director of Accounts (Postal) to the paying HO. Accompanied by specimen signature/thumb impression + attested photograph.</p>
+          <p class="nanotopic">R.89: Postmaster's half kept in separate files by pension class, marked prominently in red ink, in personal custody of Postmaster.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Can a GDS Branch Post Office doing SB work disburse a gratuity payment? — <i>Ans: No — GDS BO/SO can pay pension only, not gratuity</i></div>
+      </div></div>
+    </div>
+
+    <!-- Due date -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ ⏰ Due Date of Pension Payment <span class="tag vi">🔴 Very High Weightage</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 99 <span class="hi">देय तिथि</span></h4>
+          <p class="microtopic">Pension fixed at monthly rates is payable monthly <b>on or after the last working day of the month</b>.</p>
+          <p class="nanotopic">🔴 <b>Exception:</b> Pension for the month of <b>March</b> is paid on the <b>first working day of April</b> (Authority: GOI DoPPW Notification 43/4/92-P&PW(G) dated 27-11-1992).</p>
+          <p class="nanotopic">Proviso: If pension rate varies due to disbursement of commuted value, pension for the broken part of month (at original rate) may be paid before month-end.</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>March waits for April</b>" — pension of March alone is credited on 1st working day of April, all other months on the last working day.</div>
+        <div class="examq"><b>Probable Question:</b> On which date is pension for the month of March credited? — <i>Ans: First working day of April</i></div>
+      </div></div>
+    </div>
+
+    <!-- Payment of claims / personal appearance -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Payment of Claims — Personal Appearance & Life Certificate <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rules 101-107 <span class="hi">दावों का भुगतान — जीवन प्रमाण पत्र</span></h4>
+          <p class="microtopic">R.101: Pensioner must ordinarily take payment <b>in person</b> after identification against the PPO (except provisional pension via Head of Office).</p>
+        </div>
+        <div class="dtree">
+          <div class="q">Who is exempted from personal appearance? (R.102-103)</div>
+          <ul>
+            <li>Pensioner exempted by competent authority</li>
+            <li>Female pensioner not accustomed to appear in public (purdanashin)</li>
+            <li>Pensioner unable due to bodily illness/infirmity — via representative with life certificate</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h4>Rule 103 — Who can sign the Life Certificate? <span class="hi">जीवन प्रमाण पत्र हस्ताक्षरकर्ता</span></h4>
+          <ul style="margin-left:16px; font-size:.8rem;">
+            <li>A person exercising Magistrate powers under CrPC</li>
+            <li>Registrar/Sub-Registrar (Indian Registration Act)</li>
+            <li>Group A or B Government servant</li>
+            <li>Police officer not below Sub-Inspector in-charge of a station</li>
+            <li>Postmaster / Departmental Sub-Postmaster / Inspector of Post Offices</li>
+            <li>Class I Officer of RBI / SBI (or subsidiary) Grade II officer</li>
+            <li>A pensioned officer who, before retirement, exercised Magistrate powers</li>
+            <li>Justice of Peace</li>
+            <li>Block Development Officer, Munsif, Tehsildar, Naib Tehsildar</li>
+            <li>Head of Village/Gram Panchayat or Executive Committee</li>
+          </ul>
+        </div>
+        <div class="fieldgrid">
+          <div class="field"><b>R.104 — NRI Pensioner</b><p>May draw pension in India through authorised agent (valid power of attorney) who must produce life certificate each time — unless an indemnity bond is executed, then <b>once a year</b>.</p></div>
+          <div class="field"><b>R.105-106 — Resident Pensioner via Agent</b><p>Exempted from personal appearance if agent executes bond to refund overpayments + produces life certificate <b>at least once a year</b>. Payment stops if certificate more than a year old.</p></div>
+        </div>
+        <div class="examq"><b>Probable Question:</b> How frequently must an authorised agent (with indemnity bond) produce a life certificate for an NRI pensioner? — <i>Ans: At least once a year</i></div>
+      </div></div>
+    </div>
+
+    <!-- Minor/incapable pensioner -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Minor / Incapacitated Pensioner & Lunacy Act <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 107 <span class="hi">अवयस्क / अक्षम पेंशनभोगी</span></h4>
+          <p class="microtopic">Payments to guardian on production of a certificate from the Collector/Deputy Commissioner declaring him manager/guardian; same payment procedure as original pensioner.</p>
+          <div class="field"><b>Important Section — Sec 95(1), Indian Lunacy Act 1912</b><p>Governs payment of pension where the pensioner is certified by a Magistrate as a lunatic — sums may be paid to a manager appointed under the Act.</p></div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Periodical identification -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Periodical Identification of Pensioners <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rules 124-125 <span class="hi">पेंशनभोगी की सामयिक पहचान</span></h4>
+          <p class="microtopic">R.124: On <b>first appearance on/after 1st April each year</b>, Disbursing Officer takes thumb + all-finger impressions on the pension bill (unless specimen signature already on PPO); identified against disburser's half of PPO.</p>
+          <p class="microtopic">R.125: Disbursing Officer must, <b>at least once a year</b>, obtain proof of continued existence independent of the life certificate; require personal attendance of male pensioners not incapacitated.</p>
+          <p class="nanotopic">🔴 Disbursing Officer is <b>personally responsible</b> for any wrongly-made payment; must consult Director/Dy. Director of Accounts (Postal) in doubtful cases.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> From which date each year must a pensioner's fresh identification (thumb/finger impressions) be taken? — <i>Ans: On first appearance on or after 1st April</i></div>
+      </div></div>
+    </div>
+
+    <!-- Undrawn pension -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ Undrawn Pensions & Arrears <span class="tag vi">🔴 Very High Weightage</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 126 <span class="hi">अनुद्धृत पेंशन व बकाया</span></h4>
+          <p class="microtopic">Pension undrawn for <b>more than 1 year</b> ceases to be payable by the Disbursing Officer.</p>
+        </div>
+        <div class="dtree">
+          <div class="q">Arrears sanction — who approves?</div>
+          <ul>
+            <li>Normal resumption after &gt;1 yr → payable by DO, but <b>arrears need prior sanction</b> of the pension-sanctioning authority (via Director/CCA) IF:
+              <ul style="margin-left:16px;"><li>(i) it's the FIRST-time payment of arrears, OR</li><li>(ii) arrears exceed <b>₹50,000</b></li></ul>
+            </li>
+            <li>Pension undrawn for <b>3 years</b> → cannot be paid without authority of Director/Dy. Director of Accounts (Postal) or Circle Accountant (Telecom).</li>
+            <li>Delay due to error/neglect of a Govt. officer → Director/CCA may direct payment on own authority.</li>
+          </ul>
+        </div>
+        <p class="nanotopic">A <b>Gratuity Payment Order</b> remains in force for <b>1 year only</b>; unpaid orders are void and returned to PAO/CCA.</p>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>1-50-3</b>" → Undrawn beyond <b>1 year</b> stops; arrears over <b>₹50,000</b> need sanction; undrawn beyond <b>3 years</b> needs Director/CCA authority.</div>
+        <div class="examq"><b>Probable Question:</b> Beyond what amount of arrears does sanction of the pension-sanctioning authority become mandatory? — <i>Ans: ₹50,000</i></div>
+      </div></div>
+    </div>
+
+    <!-- Death of pensioner -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">7️⃣ Death of Pensioner — Payment of Arrears <span class="tag vi">🔴 Very High Weightage</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 127-128 <span class="hi">पेंशनभोगी की मृत्यु व बकाया भुगतान</span></h4>
+          <p class="microtopic">(a) Pension can be drawn for the <b>day of death</b> itself — the hour of death is immaterial.</p>
+          <p class="microtopic">(b) Arrears may be paid to heirs if they apply <b>within 1 year</b> of death; thereafter needs sanction of competent authority.</p>
+        </div>
+        <table>
+          <tr><th>Gross Arrears</th><th>Sanctioning Authority / Requirement</th></tr>
+          <tr><td>Up to ₹5,000</td><td>Accounting Authority may sanction on own authority</td></tr>
+          <tr><td>₹5,000 – ₹25,000</td><td>Orders of Head of Department + Indemnity Bond (Form TR-14) with sureties</td></tr>
+          <tr><td>Above ₹25,000 / doubtful cases</td><td>Payment on production of legal authority (succession certificate etc.)</td></tr>
+        </table>
+        <p class="nanotopic">Sureties: normally <b>2 sureties</b> of known financial stability; if claim &lt; ₹7,500, accepting authority may allow just 1 surety.</p>
+        <div class="subcard">
+          <h4>Rule 128 — Nomination Rules 1983 <span class="hi">नामांकन नियम 1983</span></h4>
+          <p class="microtopic">Employee submits nomination in <b>Form A</b> (triplicate) to Head of Office <b>within 3 months</b> before/after retirement.</p>
+          <p class="microtopic">Head of Office verifies & returns duplicate to pensioner <b>within 30 days</b> of receiving the nomination.</p>
+          <p class="nanotopic">Modification of nomination submitted in <b>Form B</b>.</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>5-25</b> rule" → up to ₹5,000 self-sanction; ₹5,000–25,000 needs Indemnity Bond TR-14.</div>
+        <div class="examq"><b>Probable Question:</b> Within how many days of retirement must Form A nomination be submitted? — <i>Ans: Within 3 months before or after the date of retirement</i><br><b>Probable Question:</b> Within how many days must the Head of Office verify and return the duplicate nomination copy? — <i>Ans: 30 days</i></div>
+      </div></div>
+    </div>
+
+    <!-- Commutation and gratuity -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">8️⃣ Commutation Money & Gratuities (incl. Penal Interest) <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Rule 121 — Commutation <span class="hi">कम्यूटेशन राशि</span></h4>
+          <p class="microtopic">Payment of commuted value only upon authority of GM(F)/Director of Accounts(Postal)/CCA, and only to the legally entitled person.</p>
+        </div>
+        <div class="subcard">
+          <h4>Rule 122-123 — Gratuities <span class="hi">उपदान</span></h4>
+          <p class="microtopic">Gratuity paid in a <b>single sum</b>, not in installments; only on authority from PAO/CCA communicating the sanction.</p>
+          <p class="nanotopic">Compassionate gratuity — <b>no separate authority</b> needed; paid directly from PO specified in the sanction order.</p>
+        </div>
+        <div class="field" style="border-color:var(--red);"><b>⚠️ Important Penalty — Delayed Gratuity Interest</b>
+        <table style="margin-top:6px;">
+          <tr><th>Delay Period</th><th>Interest Rate (w.e.f. 28-7-1984)</th></tr>
+          <tr><td>Beyond 3 months up to 1 year</td><td><b>7% per annum</b></td></tr>
+          <tr><td>Beyond 1 year</td><td><b>10% per annum</b></td></tr>
+        </table>
+        <p class="nanotopic">Interest sanctioned by Administrative Ministry in consultation with MHA/DoPT; authorised via <b>Presidential Sanction</b>. Disciplinary action to be taken against the officer responsible for delay.</p>
+        </div>
+        <p class="nanotopic">Where disciplinary/judicial proceedings are pending at retirement, <b>no gratuity</b> can be paid until conclusion of proceedings.</p>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>3 months free, then 7-then-10</b>" → No interest for first 3 months' delay; 7% p.a. up to 1 year; 10% p.a. beyond 1 year.</div>
+        <div class="examq"><b>Probable Question:</b> What interest rate applies if gratuity payment is delayed beyond one year? — <i>Ans: 10% per annum</i></div>
+      </div></div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Comparison: Time Limits at a Glance (Pension Chapter) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Event</th><th>Time Limit</th></tr>
+          <tr><td>Pension payment (monthly)</td><td>Last working day of month (March pension → 1st working day of April)</td></tr>
+          <tr><td>Life certificate by bonded agent</td><td>Once a year</td></tr>
+          <tr><td>Fresh identification of pensioner</td><td>On first appearance on/after 1 April each year</td></tr>
+          <tr><td>Pension undrawn — ceases payable</td><td>&gt; 1 year</td></tr>
+          <tr><td>Pension undrawn — needs Director/CCA authority</td><td>&gt; 3 years</td></tr>
+          <tr><td>Arrears claim by heirs after death</td><td>Within 1 year (else needs sanction)</td></tr>
+          <tr><td>Gratuity Payment Order validity</td><td>1 year</td></tr>
+          <tr><td>Nomination (Form A) submission</td><td>Within 3 months before/after retirement</td></tr>
+          <tr><td>Verification of nomination by Head of Office</td><td>Within 30 days of receipt</td></tr>
+          <tr><td>Gratuity delay — interest starts</td><td>Beyond 3 months of due date</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+    <!-- Authorities -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">🏛️ Important Authorities (Ch. VII) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Authority</th><th>Role</th></tr>
+          <tr><td>Director / Dy. Director of Accounts (Postal) or CCA/Joint CCA</td><td>Issues PPO; sanctions arrears beyond limits; authorises commutation payment</td></tr>
+          <tr><td>Disbursing Officer (Postmaster)</td><td>Identification, personally responsible for wrong payment</td></tr>
+          <tr><td>Head of Department</td><td>Orders payment of arrears ₹5,000–25,000 on death</td></tr>
+          <tr><td>Collector / Deputy Commissioner</td><td>Certifies guardian for minor/incapacitated pensioner</td></tr>
+          <tr><td>Head of Office</td><td>Receives & verifies nomination (Form A/B)</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-sheet" id="revision">
+  <h2>📝 One-Page Revision Sheet <span style="display:block; font-size:.8rem; color:var(--muted); font-weight:400;">एक-पृष्ठ रिवीजन शीट</span></h2>
+  <div class="rev-grid">
+    <div class="rev-block">
+      <h4>🔴 Ch. II — Supply of Stamps</h4>
+      <ul style="margin-left:16px;">
+        <li>Max stamp balance fixed by: Divisional Head (Non-Gaz.) / DPS (Gp B) / CPMG-PMG (Gp A)</li>
+        <li>Stamp verification on receipt from CSD: within <b>3 days</b></li>
+        <li>Consolidated Schedule of Stamps: <b>triplicate</b></li>
+        <li>IRC supplied by: <b>GM (Postal Accounts & Finance), Kolkata</b></li>
+        <li>RMS stamp receipts renewed: <b>1st April</b> every year</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🔴 Ch. III — Revenue Receipts</h4>
+      <ul style="margin-left:16px;">
+        <li>Receipt-book (ACG.47) counterfoils retained: <b>5 years</b></li>
+        <li>Unpaid newspaper bill (MS-98): fortnightly, presented 16th & 1st</li>
+        <li>Licence cancelled if bill unpaid by end of following fortnight</li>
+        <li>Customs Duty schedule (ACG-90) to PAO: <b>1st of month</b></li>
+        <li>Rule 21 (private contribution) deleted w.e.f. <b>01.04.2003</b></li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🔴 Ch. IV — Post Office Accounts</h4>
+      <ul style="margin-left:16px;">
+        <li>5 Account Books: ACG.1 (HO Summary), ACG.3 (SO), ACG.3(A) (BO), ACG.45 (Unpaid Postage), ACG.4 (HO Cash Book)</li>
+        <li>Accounts Bundle: most schedules <b>1st</b>; Unclassified Receipts/PLI <b>1st & 16th</b>; Money Orders <b>2nd & 16th</b>; Telephone <b>4th</b>; Consolidated Treasury Receipt <b>15th</b></li>
+        <li>Presidency POs exception: BPO/IPO returns by <b>5th</b>; MO abstracts 18th & 4th</li>
+        <li>Correction of errors: report by letter, never send unsolicited revised accounts</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🟠 Ch. V — RMS Accounts</h4>
+      <ul style="margin-left:16px;">
+        <li>HRO personally responsible; Accountant assists (from sorters)</li>
+        <li>Cash Book: ACG 35 (no opening/closing balance — self-balancing)</li>
+        <li>Cash Abstract: ACG 33</li>
+        <li>Cash Account to PAO: ACG-36, closed <b>15th & last working day</b></li>
+        <li>Miscellaneous receipts register: ACG-40</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🔴 Ch. VII — Pension Payments</h4>
+      <ul style="margin-left:16px;">
+        <li>Sec 11, Pensions Act 1871 — pension immune from Civil Court attachment</li>
+        <li>Due date: last working day of month; March → 1st working day of April</li>
+        <li>Life certificate by bonded agent: once a year</li>
+        <li>Undrawn &gt;1 yr → stops; arrears &gt;₹50,000 needs sanction; &gt;3 yrs needs Director/CCA authority</li>
+        <li>Death: arrears claim within 1 yr; ₹5,000/₹25,000 slabs for sanction; Form A nomination within 3 months of retirement, verified in 30 days</li>
+        <li>Gratuity delay interest: 7% (3mo-1yr), 10% (&gt;1yr)</li>
+        <li>Gratuity Payment Order valid: 1 year only</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION NOTES ============ -->
+<div class="revision-sheet" style="border-color:var(--blue);">
+  <h2 style="color:var(--blue);">⚡ Last-Day Revision Notes <span style="display:block; font-size:.8rem; color:var(--muted); font-weight:400;">परीक्षा-पूर्व त्वरित रिवीजन</span></h2>
+  <div class="rev-grid">
+    <div class="rev-block">
+      <h4>Numbers to Memorise</h4>
+      <table>
+        <tr><td>3 days</td><td>Verify stamps received from CSD</td></tr>
+        <tr><td>5 years</td><td>Retain ACG.47 counterfoils</td></tr>
+        <tr><td>1 year</td><td>Undrawn pension stops / arrears claim by heirs / Gratuity Payment Order validity</td></tr>
+        <tr><td>3 years</td><td>Undrawn pension needs Director/CCA sanction</td></tr>
+        <tr><td>₹50,000</td><td>Arrears threshold needing sanction</td></tr>
+        <tr><td>₹5,000 / ₹25,000</td><td>Death-arrears sanction slabs</td></tr>
+        <tr><td>3 months</td><td>Nomination Form A submission window / Gratuity interest-free period</td></tr>
+        <tr><td>30 days</td><td>Head of Office verifies nomination</td></tr>
+        <tr><td>7% / 10%</td><td>Gratuity delay interest rates</td></tr>
+      </table>
+    </div>
+    <div class="rev-block">
+      <h4>Forms to Memorise</h4>
+      <table>
+        <tr><td>ACG.1</td><td>Head Office Summary</td></tr>
+        <tr><td>ACG.2</td><td>Treasurer's Cash Book</td></tr>
+        <tr><td>ACG.3 / 3(A)</td><td>Sub / Branch Office Summary</td></tr>
+        <tr><td>ACG.4</td><td>HO Cash Book & Postmaster's Balance Sheet</td></tr>
+        <tr><td>ACG.31</td><td>List of contents of Account Bundle</td></tr>
+        <tr><td>ACG.33</td><td>RMS Cash Abstract</td></tr>
+        <tr><td>ACG.35</td><td>RMS Cash Book</td></tr>
+        <tr><td>ACG.36</td><td>RMS Cash Account to PAO</td></tr>
+        <tr><td>ACG.39</td><td>Treasury requisition for revenue stamps</td></tr>
+        <tr><td>ACG.45</td><td>Unpaid Postage Abstract</td></tr>
+        <tr><td>ACG.46 / 47</td><td>Cash prepayment memo / Treasurer's receipt</td></tr>
+        <tr><td>ACG.90</td><td>Schedule of Customs Duty realised in cash</td></tr>
+        <tr><td>ACG.108</td><td>Bill for drawal of gratuity</td></tr>
+        <tr><td>TR-14</td><td>Indemnity Bond (death arrears)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MNEMONICS ============ -->
+<div class="revision-sheet" id="mnemonics" style="border-color:var(--gold);">
+  <h2 style="color:#8a6d00;">🧠 Memory Tricks & Mnemonics <span style="display:block; font-size:.8rem; color:var(--muted); font-weight:400;">याद रखने की तरकीबें</span></h2>
+  <div class="mnemonic">📮 <b>Stamps supply chain:</b> "<b>CSD gives, PO verifies in 3, triplicate arrives</b>" — Circle Stamp Depot supplies → Post Office verifies within 3 days → schedule made in triplicate.</div>
+  <div class="mnemonic">💰 <b>5 Account Books (R.46):</b> "<b>H</b>appy <b>S</b>ub <b>B</b>ranch <b>U</b>ncles <b>C</b>ount" → HO Summary, Sub-office Summary, Branch-office Summary, Unpaid Postage Abstract, Cash Book.</div>
+  <div class="mnemonic">📅 <b>Accounts Bundle dates:</b> "<b>1</b>st is for most, <b>2</b>nd for Money orders, <b>4</b>th for phone, <b>15</b>th for Treasury, <b>16</b>th repeats the rest."</div>
+  <div class="mnemonic">🚂 <b>RMS submission:</b> "<b>Mid-month & Month-end</b>" — RMS Cash Account goes to PAO twice: 15th and last working day.</div>
+  <div class="mnemonic">🎂 <b>Pension due date:</b> "<b>March waits for April</b>" — every month's pension on last working day, except March which is paid 1st working day of April.</div>
+  <div class="mnemonic">⏳ <b>Undrawn pension ladder:</b> "<b>1 stops it, 3 needs boss</b>" — 1 year undrawn stops payment; 3 years undrawn needs Director/CCA sanction.</div>
+  <div class="mnemonic">💵 <b>Death arrears slabs:</b> "<b>5 is free, 25 needs a bond, above is a court call</b>" — up to ₹5,000 self-sanction; ₹5,000–25,000 Indemnity Bond TR-14; above needs legal authority.</div>
+  <div class="mnemonic">📈 <b>Gratuity interest:</b> "<b>3 months free, then 7-then-10</b>" — no interest for 3 months; 7% p.a. till 1 year; 10% p.a. beyond.</div>
+</div>
+
+<footer>
+  Prepared for LDCE-IP / LDCE-AAO Exam Preparation | Source: Financial Handbook Volume II (P&T / India Post)<br>
+  डाक विभागीय परीक्षा तैयारी हेतु | © LDCE Postal Exam Portal
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+function toggleAcc(btn){
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+
+function toggleTTSGlobal(){
+  if('speechSynthesis' in window){
+    if(speechSynthesis.speaking){
+      speechSynthesis.cancel();
+      return;
+    }
+    const mainText = document.getElementById('content').innerText.slice(0, 4000);
+    const utter = new SpeechSynthesisUtterance(mainText);
+    utter.rate = 0.95;
+    speechSynthesis.speak(utter);
+  } else {
+    alert('Text-to-speech not supported in this browser.');
+  }
+}
+
+function liveSearch(){
+  const q = document.getElementById('searchBox').value.toLowerCase();
+  const items = document.querySelectorAll('.acc-item');
+  items.forEach(item=>{
+    const txt = item.innerText.toLowerCase();
+    if(q === ''){
+      item.style.display = '';
+      item.classList.remove('open');
+    } else if(txt.includes(q)){
+      item.style.display = '';
+      item.classList.add('open');
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

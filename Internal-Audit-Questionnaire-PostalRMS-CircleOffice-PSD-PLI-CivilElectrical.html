@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Audit Questionnaire 2021 | Postal-RMS-CircleOffice-PSD-PLI-CivilElectrical | LDCE AAO/IP Exam</title>
+<style>
+:root{
+  --red:#c8102e; --red-dark:#8f0c20; --blue:#003087; --blue-dark:#001d54;
+  --gold:#d4a017; --gold-light:#f2d675;
+  --bg:#f7f5ef; --card:#ffffff; --text:#1c1c1c; --muted:#5c5c5c;
+  --very-imp:#e74c3c; --freq:#e67e22; --concept:#f1c40f; --quick:#27ae60;
+  --border:#e2ddd0; --shadow:0 4px 14px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI',Roboto,Arial,sans-serif; background:var(--bg); color:var(--text);
+  line-height:1.55; padding-bottom:60px; transition:background .3s,color .3s;
+}
+body.dark{ --bg:#12141c; --card:#1c2030; --text:#eee6d8; --muted:#a9a9b8; --border:#333850; }
+body.dark{ background:var(--bg); color:var(--text); }
+
+/* ===== Header ===== */
+header{
+  background:linear-gradient(120deg,var(--red) 0%, var(--red-dark) 45%, var(--blue-dark) 100%);
+  color:#fff; padding:18px 14px 22px; position:relative; overflow:hidden;
+}
+header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%, rgba(212,160,23,.35), transparent 55%);}
+header h1{font-size:1.25rem; text-align:center; position:relative; z-index:1;}
+header h1 span.hi{display:block; font-size:1.05rem; font-weight:400; margin-top:2px; color:var(--gold-light);}
+header .sub{text-align:center; font-size:.8rem; margin-top:6px; opacity:.9; position:relative; z-index:1;}
+.topbar{
+  display:flex; justify-content:center; gap:10px; margin-top:12px; flex-wrap:wrap; position:relative; z-index:1;
+}
+.topbar button{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); color:#fff;
+  padding:6px 12px; border-radius:20px; font-size:.75rem; cursor:pointer; backdrop-filter:blur(4px);
+}
+.topbar button:hover{background:rgba(255,255,255,.3);}
+
+/* ===== Legend ===== */
+.legend{
+  display:flex; flex-wrap:wrap; gap:6px; justify-content:center; padding:10px 8px;
+  background:var(--card); border-bottom:2px solid var(--gold);
+}
+.legend span{
+  font-size:.68rem; padding:3px 8px; border-radius:12px; background:var(--bg); border:1px solid var(--border); white-space:nowrap;
+}
+
+/* ===== Nav pills ===== */
+.chapnav{display:flex; overflow-x:auto; gap:8px; padding:10px 10px; background:var(--bg); position:sticky; top:0; z-index:50; border-bottom:1px solid var(--border);}
+.chapnav a{
+  flex:0 0 auto; background:var(--card); border:2px solid var(--blue); color:var(--blue); font-weight:600;
+  font-size:.72rem; padding:7px 12px; border-radius:20px; text-decoration:none; white-space:nowrap;
+}
+body.dark .chapnav a{color:var(--gold-light); border-color:var(--gold);}
+.chapnav a:hover{background:var(--blue); color:#fff;}
+
+.wrap{max-width:900px; margin:0 auto; padding:14px 10px;}
+
+/* ===== Chapter block ===== */
+.chapter{margin-bottom:26px;}
+.chapter-head{
+  background:linear-gradient(100deg,var(--blue),var(--blue-dark));
+  color:#fff; padding:14px 16px; border-radius:14px 14px 0 0; box-shadow:var(--shadow);
+}
+.chapter-head h2{font-size:1.05rem;}
+.chapter-head .hi{font-size:.92rem; color:var(--gold-light); font-weight:400; margin-top:2px;}
+.chapter-head .rules-range{font-size:.72rem; opacity:.85; margin-top:4px;}
+
+/* ===== Accordion ===== */
+.accordion{border:1px solid var(--border); border-top:none; border-radius:0 0 14px 14px; overflow:hidden; background:var(--card); box-shadow:var(--shadow);}
+.acc-item{border-bottom:1px solid var(--border);}
+.acc-item:last-child{border-bottom:none;}
+.acc-btn{
+  width:100%; text-align:left; background:var(--card); border:none; padding:12px 14px; font-size:.88rem; font-weight:600;
+  display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:var(--text); gap:8px;
+}
+.acc-btn:hover{background:var(--bg);}
+.acc-btn .arrow{transition:transform .25s; color:var(--gold); font-size:1rem; flex:0 0 auto;}
+.acc-item.open .arrow{transform:rotate(90deg);}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.acc-item.open .acc-body{max-height:6000px;}
+.acc-inner{padding:4px 16px 16px;}
+
+/* subchapter cards */
+.subcard{background:var(--bg); border-left:4px solid var(--gold); border-radius:8px; padding:10px 12px; margin:10px 0;}
+body.dark .subcard{background:#232840;}
+.subcard h4{font-size:.85rem; color:var(--blue); margin-bottom:4px;}
+body.dark .subcard h4{color:var(--gold-light);}
+.subcard h4 .hi{font-weight:400; color:var(--muted); font-size:.78rem;}
+.microtopic{margin:6px 0 0 8px; font-size:.82rem;}
+.nanotopic{margin:4px 0 0 16px; font-size:.78rem; color:var(--muted); border-left:2px dashed var(--border); padding-left:8px;}
+
+/* tag badges */
+.tag{display:inline-block; font-size:.68rem; font-weight:700; padding:2px 7px; border-radius:10px; margin-right:4px; color:#fff;}
+.tag.vi{background:var(--very-imp);}
+.tag.fa{background:var(--freq);}
+.tag.cu{background:var(--concept); color:#333;}
+.tag.qr{background:var(--quick);}
+
+/* field grid (Definition, Sections, Rules, etc.) */
+.fieldgrid{display:grid; grid-template-columns:1fr; gap:8px; margin-top:8px;}
+.field{background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px 10px;}
+.field b{color:var(--red); font-size:.76rem; display:block; margin-bottom:3px;}
+body.dark .field b{color:#ff8a80;}
+.field p, .field li{font-size:.8rem;}
+.field ul{margin-left:16px;}
+
+/* exam question box */
+.examq{
+  background:linear-gradient(100deg,#fff8e1,#fff3cd); border:1px dashed var(--gold); border-radius:8px;
+  padding:8px 10px; margin-top:8px; font-size:.78rem;
+}
+body.dark .examq{background:#2b2410; border-color:var(--gold);}
+.examq b{color:var(--red-dark);}
+body.dark .examq b{color:#ff8a80;}
+
+/* tables */
+table{width:100%; border-collapse:collapse; margin:8px 0; font-size:.76rem;}
+th,td{border:1px solid var(--border); padding:6px 7px; text-align:left; vertical-align:top;}
+th{background:var(--blue); color:#fff; font-size:.72rem;}
+tr:nth-child(even) td{background:var(--bg);}
+body.dark tr:nth-child(even) td{background:#1a1e2c;}
+
+/* flowchart */
+.flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:10px 0; justify-content:center;}
+.flow .box{
+  background:var(--blue); color:#fff; padding:8px 10px; border-radius:8px; font-size:.72rem; text-align:center; min-width:100px;
+}
+.flow .arrow2{font-size:1.1rem; color:var(--gold);}
+
+/* mindmap simple */
+.mindmap{display:flex; flex-direction:column; align-items:center; gap:6px; margin:10px 0;}
+.mindmap .center{background:var(--red); color:#fff; padding:8px 14px; border-radius:20px; font-weight:700; font-size:.8rem;}
+.mindmap .branches{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:6px;}
+.mindmap .branch{background:var(--gold); color:#3a2c00; padding:6px 10px; border-radius:8px; font-size:.72rem; font-weight:600;}
+
+/* timeline */
+.timeline{position:relative; margin:14px 4px; padding-left:18px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:14px;}
+.tl-item::before{content:"";position:absolute; left:-24px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--red); border:2px solid #fff;}
+.tl-item .date{font-weight:700; color:var(--red); font-size:.78rem;}
+.tl-item .desc{font-size:.78rem;}
+
+/* decision tree */
+.dtree{margin:10px 0; font-size:.78rem;}
+.dtree ul{list-style:none; margin-left:14px; border-left:2px dotted var(--border); padding-left:12px;}
+.dtree li{margin:5px 0;}
+.dtree .q{font-weight:700; color:var(--blue);}
+body.dark .dtree .q{color:var(--gold-light);}
+
+/* mnemonic box */
+.mnemonic{background:linear-gradient(100deg,#e8f5e9,#dcedc8); border:2px solid var(--quick); border-radius:10px; padding:10px 12px; margin:10px 0; font-size:.8rem;}
+body.dark .mnemonic{background:#16241a; border-color:var(--quick);}
+.mnemonic b{color:#1b5e20;}
+body.dark .mnemonic b{color:#81c784;}
+
+/* revision sheet */
+.revision-sheet{background:var(--card); border:3px solid var(--red); border-radius:14px; padding:14px; margin-top:20px;}
+.revision-sheet h2{color:var(--red); text-align:center; margin-bottom:10px; font-size:1.05rem;}
+.rev-grid{display:grid; grid-template-columns:1fr; gap:10px;}
+.rev-block{background:var(--bg); border-left:4px solid var(--blue); border-radius:8px; padding:8px 10px; font-size:.78rem;}
+.rev-block h4{color:var(--blue); font-size:.82rem; margin-bottom:4px;}
+body.dark .rev-block h4{color:var(--gold-light);}
+
+/* TTS button */
+.tts-btn{
+  background:var(--gold); border:none; color:#3a2c00; font-size:.68rem; font-weight:700; padding:4px 8px; border-radius:12px; cursor:pointer; margin-left:6px;
+}
+
+/* progress / search */
+.searchbar{padding:8px; text-align:center;}
+.searchbar input{width:100%; max-width:500px; padding:9px 12px; border-radius:20px; border:2px solid var(--gold); font-size:.85rem;}
+
+footer{text-align:center; font-size:.7rem; color:var(--muted); padding:20px 10px;}
+
+@media(min-width:640px){
+  .fieldgrid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Internal Audit Questionnaire 2021<span class="hi">आंतरिक लेखा परीक्षा प्रश्नावली 2021</span></h1>
+  <div class="sub">Postal &amp; RMS Units • Circle/Regional Office • Postal Stores Depot • Postal Life Insurance • Civil &amp; Electrical Wing</div>
+  <div class="sub">डाक व RMS यूनिट • सर्कल/क्षेत्रीय कार्यालय • डाक भंडार डिपो • डाक जीवन बीमा • सिविल व विद्युत विंग | LDCE-IP / LDCE-AAO Exam</div>
+  <div class="topbar">
+    <button onclick="document.body.classList.toggle('dark')">🌓 Dark/Light</button>
+    <button onclick="toggleTTSGlobal()">🔊 Read Aloud</button>
+    <button onclick="location.href='#revision'">📝 Revision Sheet</button>
+  </div>
+</header>
+
+<div class="legend">
+  <span>🔴 Very Important for Exam</span>
+  <span>🟠 Frequently Asked</span>
+  <span>🟡 Conceptual Understanding</span>
+  <span>🟢 Quick Revision Point</span>
+</div>
+
+<div class="searchbar">
+  <input type="text" id="searchBox" placeholder="🔍 Search rule, topic, keyword... रूल/विषय खोजें" onkeyup="liveSearch()">
+</div>
+
+<nav class="chapnav">
+  <a href="#ch1">Ch.I Postal &amp; RMS</a>
+  <a href="#ch2">Ch.II Circle/Regional Office</a>
+  <a href="#ch3">Ch.III Stores Depot</a>
+  <a href="#ch5">Ch.V PLI</a>
+  <a href="#ch12">Ch.XII Civil/Electrical</a>
+  <a href="#revision">📝 Revision Sheet</a>
+  <a href="#mnemonics">🧠 Mnemonics</a>
+</nav>
+
+<div class="wrap" id="content">
+
+<!-- ============ CHAPTER I - POSTAL AND RMS UNITS ============ -->
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <h2>Chapter I — Postal and RMS Units <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय I — डाक व RMS यूनिट</div>
+    <div class="rules-range">Pages 2–68 | Largest chapter — general cash, GL, establishment & stores checks</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>The Internal Audit questionnaire for Post Offices & RMS units prescribes checks over cash arrangements, GL/DTR reconciliation, TRCA/pay drawal, pension, buildings/rent, stores, money orders, IPOs, and stamp inventories conducted by Postal Accounts Offices.<br><span style="color:var(--muted)">डाकघरों व RMS इकाइयों की आंतरिक लेखा परीक्षा में नकद, GL/DTR मिलान, वेतन आहरण, पेंशन, भवन/किराया, भंडार, मनीऑर्डर व टिकट भंडार की जाँच होती है।</span></p></div>
+          <div class="field"><b>Important Authorities / महत्वपूर्ण प्राधिकारी</b><ul>
+            <li>Internal Audit Officer (I.A. Officer)</li>
+            <li>CDDO (Cheque Drawing & Disbursing Officer)</li>
+            <li>Postal Accounts Office (PAO)</li>
+            <li>Head of Postal Accounts Office</li>
+            <li>Divisional Head / DPS / CPMG</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">Postal & RMS Audit Checks</div>
+          <div class="branches">
+            <div class="branch">Cash & DTR/GL</div>
+            <div class="branch">Establishment/Pay/TRCA</div>
+            <div class="branch">Pension & Life Certificates</div>
+            <div class="branch">Buildings & Rent</div>
+            <div class="branch">Deposits/EMD</div>
+            <div class="branch">Stores & Contracts</div>
+            <div class="branch">MO / IPO / Stamps</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Cash & GL checks -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Cash Arrangements, DTR & GL Checks <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 1-2 — Cash Custody <span class="hi">नकद व्यवस्था जाँच</span></h4>
+          <p class="microtopic">Procedure/rules of Postal FHB Vol. I to be verified for DOP cash, cheque books, accountable items. <b>No physical verification of cash/stamps</b> needed by IA (executive inspection covers that). Test check to cover the marked month <b>+ 3 days of inspection</b>.</p>
+        </div>
+        <div class="subcard">
+          <h4>Item 17 — GL Report Review <span class="hi">GL रिपोर्ट समीक्षा</span></h4>
+          <p class="microtopic">🔴 <b>15%</b> of the entries of various GL reports of Field Units should be reviewed while checking Field Units.</p>
+        </div>
+        <div class="subcard">
+          <h4>Item 19 — RMS DTR <span class="hi">RMS दैनिक लेन-देन रिपोर्ट</span></h4>
+          <p class="microtopic">In RMS Offices, DTR should be generated in the System; correctness of reversals verified with supporting documents; Cash Remittance/Receipts verified from concerned Cash/Account office.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> What percentage of GL report entries of Field Units should be reviewed during Internal Audit? — <i>Ans: 15%</i></div>
+      </div></div>
+    </div>
+
+    <!-- Cash balance limits -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Cash Balance Limits & Physical Verification <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 5 <span class="hi">नकद शेष सीमा</span></h4>
+          <p class="microtopic">Test check the cash balance of the <b>first and last working days</b> of the test-checked month + one week apart from those dates, to verify balances are within authorised limits.</p>
+          <p class="nanotopic">If actual balance exceeds authorised limit, reasons must be investigated & recorded in the Inspection Report.</p>
+        </div>
+        <div class="flow">
+          <div class="box">1st working day balance</div><div class="arrow2">+</div>
+          <div class="box">Last working day balance</div><div class="arrow2">+</div>
+          <div class="box">1 week apart check</div><div class="arrow2">=</div>
+          <div class="box">Complete cash balance test</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Registered newspapers, refunds -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Register of Refunds & Void Money Orders <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 54 — Register of Refunds <span class="hi">वापसी रजिस्टर</span></h4>
+          <p class="microtopic">Prescribed under <b>Rule 76 of Postal Financial Hand Book</b>. Checked to the extent of <b>25%</b>.</p>
+        </div>
+        <div class="subcard">
+          <h4>Item 101 — Void Money Orders <span class="hi">रद्द मनीऑर्डर</span></h4>
+          <p class="microtopic">No void Money Order should be kept in deposit at the Post Office beyond the period allowed under Postal Manual Volume VI (Part II).</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> To what extent is the Register of Refunds (Rule 76) checked during Internal Audit? — <i>Ans: 25%</i></div>
+      </div></div>
+    </div>
+
+    <!-- Life Certificates & Pension -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Pension Payments & Life Certificates <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 37-40 <span class="hi">पेंशन भुगतान व जीवन प्रमाण पत्र</span></h4>
+          <p class="microtopic">🔴 <b>Cent-percent (100%)</b> check on availability of Life Certificates / Jeevan Praman must be conducted.</p>
+          <p class="microtopic">PPO files where no beneficiary is available (after pensioner's death) must be sent back to PAO — no erroneous payment to be made in the month of audit.</p>
+          <p class="nanotopic">Similar checks apply to Telecom Pension / Railway Pension etc.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> To what extent should availability of Life Certificates/Jeevan Praman be checked? — <i>Ans: Cent percent (100%)</i></div>
+      </div></div>
+    </div>
+
+    <!-- NPS/SDBS -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ NPS / SDBS Contribution Checks <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Scheme</th><th>Key Point</th></tr>
+          <tr><td>NPS (New Pension Scheme)</td><td>Every new entrant must have <b>16-digit PRAN No.</b></td></tr>
+          <tr><td>NPS Contribution</td><td><b>10% of BP+DA</b> = employee contribution; <b>14% of BP+DA</b> = Govt. contribution, charged to service head <b>3201</b></td></tr>
+          <tr><td>SDBS (GDS)</td><td>Govt. credits <b>₹300 per mensum</b> if GDS works entire month</td></tr>
+          <tr><td>SDBS Enrolment</td><td>All GDS appointed regularly, on completion of <b>1 year</b>, enrolled in SDBS</td></tr>
+        </table>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>10 gives, 14 lives</b>" — Employee gives 10% of BP+DA; Government contributes 14% of BP+DA to NPS.</div>
+        <div class="examq"><b>Probable Question:</b> What is the employee's and Government's contribution rate (of BP+DA) to NPS? — <i>Ans: Employee 10%, Government 14%</i></div>
+      </div></div>
+    </div>
+
+    <!-- Deposits and forfeiture -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ Deposits, EMD & Forfeiture Rules <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 52 <span class="hi">जमा व EMD नियम</span></h4>
+          <p class="microtopic">🔴 Deposits under Appendix 28 of P&T FHB Vol. I — unclaimed deposits are <b>transferred to Postal Revenue on expiry of 3 years</b> (forfeiture rule).</p>
+          <p class="nanotopic">Whether EMD refund voucher postings followed proper procedure to be checked.</p>
+        </div>
+        <div class="subcard">
+          <h4>Definitive Stamps & Unpaid IPOs <span class="hi">परिभाषित टिकट व अवैतनिक IPO</span></h4>
+          <p class="microtopic">Definitive Stamp sales — reviewed after expiry of <b>1 year</b> from date of sale.</p>
+          <p class="microtopic">🔴 Unpaid IPOs over a period of <b>3 calendar years</b> transferred to revenue as forfeited IPOs, at the end of the respective 3rd year.</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>3 years, forfeited years</b>" — both unclaimed deposits and unpaid IPOs are forfeited to revenue after 3 years.</div>
+        <div class="examq"><b>Probable Question:</b> After how many years are unpaid IPOs transferred to revenue as forfeited? — <i>Ans: 3 calendar years</i></div>
+      </div></div>
+    </div>
+
+    <!-- Buildings and rent -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">7️⃣ Buildings & Standard Rent Checks <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Item</th><th>Rule</th><th>Detail</th></tr>
+          <tr><td>Standard rent check</td><td>Supplementary Rule 324</td><td>10% check exercised</td></tr>
+          <tr><td>Rent recovery (occupant)</td><td>Rule 542, Postal Manual Vol. II</td><td>Standard rent or 10% of emoluments</td></tr>
+          <tr><td>Rent recovery (unauthorised occupation)</td><td>Rule 543, Postal Manual Vol. II</td><td>2% of the amount in whole/part cases</td></tr>
+          <tr><td>Encroachment prevention</td><td>Rule 461, Postal Manual</td><td>Action to prevent encroachment</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+    <!-- Cheque books & advances -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">8️⃣ Cheque Books, Advances & Liquidated Damages <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Cheque Book Retention <span class="hi">चेक बुक धारण अवधि</span></h4>
+          <p class="microtopic">Under Rule 172, P&T FHB Vol. I — used cheque books to be preserved for <b>3 years</b> and then destroyed.</p>
+          <p class="nanotopic">At least <b>10%</b> of paid cheques of the selected month to be checked.</p>
+        </div>
+        <div class="subcard">
+          <h4>Procurement Thresholds <span class="hi">खरीद सीमा</span></h4>
+          <table>
+            <tr><th>Value</th><th>Procurement Mode</th></tr>
+            <tr><td>Up to ₹25,000</td><td>Direct purchase</td></tr>
+            <tr><td>Above ₹25,000 up to ₹5 lakh</td><td>Comparison of 3 OEMs</td></tr>
+            <tr><td>Above ₹5 lakh</td><td>Bid / Reverse Auction (RA)</td></tr>
+          </table>
+        </div>
+        <div class="field" style="border-color:var(--red);"><b>⚠️ Important Penalty — Liquidated Damages</b><p>Charged at <b>0.5% per week</b> (or part of week) of delayed period, <b>not exceeding 5%</b> of contract value, if the seller fails to deliver goods/services in time.</p></div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>Half a percent a week, five is the peak</b>" — 0.5% liquidated damages per week, capped at 5% of contract value.</div>
+        <div class="examq"><b>Probable Question:</b> What is the maximum liquidated damages that can be charged on a delayed contract? — <i>Ans: 5% of the contract value (at 0.5% per week)</i></div>
+      </div></div>
+    </div>
+
+    <!-- Money orders, PLI CPC -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">9️⃣ Money Order, ESS Portal & Related Checks <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 100-107 <span class="hi">मनीऑर्डर व सेवा-अनुरोध जाँच</span></h4>
+          <p class="microtopic">Money orders issued credited to respective GLs; no void MO kept beyond permitted period; value payable article journals disposed of regularly.</p>
+          <p class="nanotopic">All personal claims (TA/LTC/GPF/Advances) to be processed through <b>ESS Portal</b>.</p>
+          <p class="nanotopic">Agency commission (on services rendered) should not exceed <b>10%</b> of commission earned by the Department.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Comparison chart -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Comparison: Percentage Checks at a Glance (Ch. I) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Item Checked</th><th>% Coverage</th></tr>
+          <tr><td>GL report entries — Field Units</td><td>15%</td></tr>
+          <tr><td>Register of Refunds (Rule 76)</td><td>25%</td></tr>
+          <tr><td>Life Certificates / Jeevan Praman</td><td>Cent percent (100%)</td></tr>
+          <tr><td>Standard rent check (SR 324)</td><td>10%</td></tr>
+          <tr><td>Paid cheques of selected month</td><td>At least 10%</td></tr>
+          <tr><td>NPS employee contribution (BP+DA)</td><td>10%</td></tr>
+          <tr><td>NPS Government contribution (BP+DA)</td><td>14%</td></tr>
+          <tr><td>Commission agency cap</td><td>Up to 10%</td></tr>
+          <tr><td>Liquidated damages (per week / cap)</td><td>0.5% / 5%</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER II - CIRCLE OFFICE AND REGIONAL OFFICES ============ -->
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <h2>Chapter II — Circle Office and Regional Offices <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय II — सर्कल कार्यालय व क्षेत्रीय कार्यालय</div>
+    <div class="rules-range">Pages 69–87</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Questionnaire for the Cash Branch of Circle Office/Office of Regional PMG — covers Treasurer's Cash Book, Establishment pay verification, Service Books, TA bills, and land/building estimates at the Circle level.<br><span style="color:var(--muted)">सर्कल कार्यालय/क्षेत्रीय पीएमजी कार्यालय की कैश शाखा के लिए प्रश्नावली — कोषाध्यक्ष नकद बही, स्थापना वेतन सत्यापन, सेवा पुस्तिका, TA बिल व भूमि/भवन अनुमान।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>Note 2 below Rule 124, P&T FHB Vol. I — Cash Book balancing</li>
+            <li>Supplementary Rules 197 & 205 — Service Book maintenance</li>
+            <li>Rule 446, Postal FHB Vol. I — Estimate scrutiny</li>
+            <li>Rule 485, Postal FHB Vol. I — Subsidiary Register (rent)</li>
+          </ul></div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Treasurer's cash book -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Treasurer's Cash Book — Circle Office <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 3-4 <span class="hi">कोषाध्यक्ष नकद बही</span></h4>
+          <p class="microtopic">Cash Book & DTR balanced <b>each day</b> (Note 2 below Rule 124, P&T FHB Vol. I) and duly vetted by the NCDDO concerned.</p>
+          <p class="microtopic">Private cash/accounts of Department members must <b>NOT</b> be mixed with the regular Cash Balance.</p>
+          <p class="nanotopic">Verification of actual cash in chest counted on the <b>last working day</b> of each month.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Who vets the daily balancing of the Treasurer's Cash Book and DTR? — <i>Ans: The NCDDO concerned</i></div>
+      </div></div>
+    </div>
+
+    <!-- Establishment pay verification -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Establishment Pay Verification & e-Service Book <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 10-11 <span class="hi">स्थापना वेतन सत्यापन</span></h4>
+          <p class="microtopic">Flow of data to e-Service Book checked at <b>10%</b> of total sanctioned strength.</p>
+          <p class="microtopic">🔴 e-Service Books verified thoroughly to the extent of <b>25%</b> — including leave accounts & employees retiring within <b>5 years</b>.</p>
+          <p class="nanotopic">A <b>10%</b> check of Establishment Pay sheet entries against Service Books is sufficient (N.B.).</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>10 flows, 25 verifies</b>" — data-flow check 10%, thorough e-Service Book verification 25%.</div>
+        <div class="examq"><b>Probable Question:</b> To what extent should e-Service Books be thoroughly verified during Circle Office audit? — <i>Ans: 25%</i></div>
+      </div></div>
+    </div>
+
+    <!-- Service Book -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Service Book / Service Roll Checks <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 19-20 <span class="hi">सेवा पुस्तिका जाँच</span></h4>
+          <p class="microtopic">Maintained under <b>Supplementary Rules 197 & 205</b> for every non-Gazetted Government servant. Checked to the extent of <b>25%</b> (incl. those retiring in next 5 years).</p>
+        </div>
+        <div class="dtree">
+          <div class="q">Key Service Book verification points (Item 20)</div>
+          <ul>
+            <li>First-page entries <b>re-attested every 5 years</b></li>
+            <li>Date of Birth — no alteration without competent authority sanction; entered in words & figures</li>
+            <li>Thumb & finger impressions taken</li>
+            <li>No break in continuity of service entries</li>
+            <li>Annual verification-of-service certificate recorded</li>
+            <li>LTC encashment of Earned Leave — <b>max. 60 days</b></li>
+          </ul>
+        </div>
+        <div class="examq"><b>Probable Question:</b> How often must the first-page entries of a Service Book be re-attested? — <i>Ans: Every 5 years</i></div>
+      </div></div>
+    </div>
+
+    <!-- TA Bills -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Travelling Allowance (TA) Bills <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 27-30 <span class="hi">यात्रा भत्ता बिल</span></h4>
+          <p class="microtopic">TA Bills on Tour/Transfer checked per Supplementary Rules; if processed via PA30 (instead of ESS), amount payable must match sanction.</p>
+          <p class="nanotopic">🔴 No TA bills processed if <b>Sanction/Claim submitted after 60 days</b> of journey/completion of journey.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Within how many days of completion of journey must a TA claim be submitted? — <i>Ans: 60 days</i></div>
+      </div></div>
+    </div>
+
+    <!-- Buildings/land/rent at circle level -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Land, Building Estimates & Standard Rent <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 39-40 <span class="hi">भूमि, भवन अनुमान व मानक किराया</span></h4>
+          <p class="microtopic">🔴 <b>5% to 10%</b> (decided by Heads of Accounts Postal) of estimates relating to land acquisition/building construction/RMS vans, sanctioned by Head of Circle and not sent to Accounts Office, should be scrutinised (Rule 446, Postal FHB Vol. I).</p>
+          <p class="nanotopic">Subsidiary Register for standard rent maintained under <b>Rule 485</b>, Postal FHB Vol. I; revision of standard rent action taken wherever necessary.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Comparison chart -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Comparison: Chapter I (PO/RMS) vs Chapter II (Circle Office) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Aspect</th><th>Ch. I — Postal/RMS Units</th><th>Ch. II — Circle/Regional Office</th></tr>
+          <tr><td>Focus</td><td>Field-level cash, GL, pension, stores</td><td>Cash Branch, establishment, TA, estimates</td></tr>
+          <tr><td>Cash Book vetting</td><td>Postmaster/Treasurer</td><td>NCDDO</td></tr>
+          <tr><td>Service Book check %</td><td>—</td><td>25%</td></tr>
+          <tr><td>Estimate scrutiny threshold</td><td>—</td><td>5–10% (Rule 446)</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER III - POSTAL STORES DEPOT ============ -->
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <h2>Chapter III — Postal Stores Depot <span class="tag fa">🟠 FA</span></h2>
+    <div class="hi">अध्याय III — डाक भंडार डिपो</div>
+    <div class="rules-range">Pages 88–98</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Covers audit of Receipt Day Book, Stock Register, transport/freight accounts, local purchases, invoices, unserviceable material disposal, and saleable publications at Postal Stores Depots — governed by Postal Manual Volume II & VIII.<br><span style="color:var(--muted)">डाक भंडार डिपो में प्राप्ति दैनिक बही, स्टॉक रजिस्टर, परिवहन/माल भाड़ा, स्थानीय खरीद, अनुपयोगी सामग्री निपटान व विक्रय योग्य प्रकाशनों का लेखा परीक्षण।</span></p></div>
+          <div class="field"><b>Important Rules & Forms / महत्वपूर्ण नियम व प्रपत्र</b><ul>
+            <li>Rule 360, Postal Manual Vol. VIII — Stock Register (SK-51)</li>
+            <li>Rule 361/387(f) — Freight Account (SK-52)</li>
+            <li>Rule 362 — Index of Invoices Despatched (SK-53)</li>
+            <li>Rule 367 — Local Purchase Book (SK-54)</li>
+            <li>Rule 372 — Invoices</li>
+            <li>Rule 376 — Duplicate Keys Register</li>
+            <li>Rule 712, Postal Manual Vol. II — Saleable Publications</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">Postal Stores Depot</div>
+          <div class="branches">
+            <div class="branch">Receipt Day Book</div>
+            <div class="branch">Stock Register SK-51</div>
+            <div class="branch">Freight A/c SK-52</div>
+            <div class="branch">Invoices SK-53</div>
+            <div class="branch">Local Purchase SK-54</div>
+            <div class="branch">Unserviceable Disposal</div>
+            <div class="branch">Saleable Publications</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Receipt Day Book / Stock Register -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Receipt Day Book & Stock Register <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 7-8 <span class="hi">प्राप्ति दैनिक बही व स्टॉक रजिस्टर</span></h4>
+          <p class="microtopic">Receipt Day Book — <b>Form SK-51(a)</b> — records all stock articles received day by day (Aligarh Workshop / POs / Record offices / local purchase).</p>
+          <p class="microtopic">Stock Register — <b>SK-51</b> — maintained per <b>Rule 360, Postal Manual Vol. VIII</b>; "Number received"/"Number issued" columns must be initialled by Superintendent/Manager.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Under which Rule is the Postal Stores Depot Stock Register (SK-51) maintained? — <i>Ans: Rule 360, Postal Manual Volume VIII</i></div>
+      </div></div>
+    </div>
+
+    <!-- Freight and transport -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Freight, Muster Rolls & Transport Charges <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 9 — SK-52 <span class="hi">माल ढुलाई खाता</span></h4>
+          <p class="microtopic">Compared with Railway Receipt/Steamer Bill of Lading; total charge initialled by Manager (Rule 387(f) read with Rule 361, Postal Manual Vol. II).</p>
+          <p class="microtopic">Lowest negotiated tender rates must be used for transporting goods/stationery.</p>
+          <p class="nanotopic">Mazdoor payments via Muster Rolls — arithmetical correctness, scheduled labour rates, no unusual delay, unpaid balances accounted for.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Index of invoices / watch over expenditure -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Index of Invoices & Watch Over Expenditure <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 10-11 <span class="hi">चालान सूचकांक व व्यय पर निगरानी</span></h4>
+          <p class="microtopic">Index of Invoices Despatched (<b>SK-53</b>) — separate pages per office, consecutive annual series; closing number sent to concerned offices on <b>31st March every year</b> (Rule 362, Postal Manual Vol. II).</p>
+          <p class="microtopic">Watch over expenditure from <b>1st April</b> up to inspection date, checked against annual allotment proportion (Rule 363).</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> By which date must the closing invoice number of the annual series be communicated to each office? — <i>Ans: 31st March every year</i></div>
+      </div></div>
+    </div>
+
+    <!-- Local purchase / invoices -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Local Purchase Book, Invoices & Duplicate Keys <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 12-14 <span class="hi">स्थानीय खरीद बही, चालान व डुप्लीकेट चाबी</span></h4>
+          <p class="microtopic">Local Purchase Book — <b>Form SK-54</b>, per Rule 367; only for items not supplied by Postal Workshops, at lowest tendered rate.</p>
+          <p class="microtopic">Invoices — office copies filed per office in separate bundles; acknowledgements filed together; wanting acknowledgements followed up (Rule 372).</p>
+          <p class="microtopic">Duplicate Keys Register — safes' duplicate keys held in a locked safe under <b>joint custody of Manager and Superintendent/Head Asst. of Circle Office</b> (Rule 376).</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Physical verification / inspection -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Physical Verification & Stock Inspection <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 16-17 <span class="hi">भौतिक सत्यापन व स्टॉक निरीक्षण</span></h4>
+          <p class="microtopic">🔴 Store Depot inspected by Head of Circle or DPS <b>every half year</b>; during the half-year ending <b>30th September</b>, physical verification of all articles must be carried out.</p>
+          <p class="microtopic">Continuous verification by an independent stock verifier; <b>weekly report</b> submitted to Head of Circle.</p>
+        </div>
+        <div class="timeline">
+          <div class="tl-item"><span class="date">Every half-year</span><div class="desc">Inspection by Head of Circle / DPS</div></div>
+          <div class="tl-item"><span class="date">Half-year ending 30 Sept</span><div class="desc">Full physical verification of all articles</div></div>
+          <div class="tl-item"><span class="date">Weekly</span><div class="desc">Independent stock verifier's report to Head of Circle</div></div>
+        </div>
+        <div class="examq"><b>Probable Question:</b> During which half-year period must physical verification of all articles at a Postal Stores Depot be carried out? — <i>Ans: The half-year ending 30th September</i></div>
+      </div></div>
+    </div>
+
+    <!-- Unserviceable materials / saleable publications -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ Disposal of Unserviceable Materials & Saleable Publications <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 18, 21 <span class="hi">अनुपयोगी सामग्री निपटान व विक्रय प्रकाशन</span></h4>
+          <p class="microtopic">Unserviceable materials — register maintained for articles declared unserviceable by competent authority; auction/sale credits per rules; sale proceeds of empty deal wood cases & auctioned articles credited to Government.</p>
+          <p class="microtopic">Saleable Publications — invoices checked & signed by officer-in-charge (<b>Rule 712, Postal Manual Vol. II</b>); Stock Book value reconciliation of received vs. unsold copies vs. credited amount.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Responsibility of Inspecting Officer -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">7️⃣ Responsibility of Inspecting Officer <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Concluding Section <span class="hi">निरीक्षण अधिकारी का उत्तरदायित्व</span></h4>
+          <p class="microtopic">Distribution memo issued at commencement with dated signature of each Party member against items allotted.</p>
+          <p class="microtopic">Inspecting staff submit brief <b>daily progress reports</b>; scrutinised & passed by the Inspecting Officer.</p>
+          <p class="nanotopic">Each item marked "Completed" under dated signature; Inspecting Officer sends the distribution memo + daily reports to HQ with a certificate that no prescribed check was overlooked.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> What must be endorsed on the distribution memo at the close of inspection? — <i>Ans: A certificate that no item of prescribed check has been overlooked</i></div>
+      </div></div>
+    </div>
+
+    <!-- Comparison chart of Forms -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Forms Used in Postal Stores Depot </button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Form No.</th><th>Register/Book</th></tr>
+          <tr><td>SK-51(a)</td><td>Receipt Day Book</td></tr>
+          <tr><td>SK-51</td><td>Stock Register</td></tr>
+          <tr><td>SK-52</td><td>Account of Transport Charges</td></tr>
+          <tr><td>SK-53</td><td>Index of Invoices Despatched</td></tr>
+          <tr><td>SK-54</td><td>Book of Orders for Local Purchase</td></tr>
+        </table>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>R</b>eceive-<b>S</b>tock-<b>T</b>ransport-<b>I</b>nvoice-<b>L</b>ocal" (SK 51a-51-52-53-54) → SK numbers rise in order of the depot's workflow.</div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER V - POSTAL LIFE INSURANCE ============ -->
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <h2>Chapter V — Postal Life Insurance (PLI) <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय V — डाक जीवन बीमा</div>
+    <div class="rules-range">Pages 146–176 | Second-largest chapter</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Audit of PLI business — proposal scrutiny, premium ledger cards, assignments/nominations, lapses/revivals, loans, bonus, and claim settlement — governed by "Rules relating to PLI and Endowment Assurance" and the PLI Manual for Circle Offices.<br><span style="color:var(--muted)">प्रस्ताव जाँच, प्रीमियम लेजर कार्ड, समनुदेशन/नामांकन, व्यपगति/पुनरुद्धार, ऋण, बोनस व दावा निपटान का लेखा परीक्षण।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>Rule 10, PO Insurance Fund Rules — DG Posts administers the Fund</li>
+            <li>Rules 546-558, Ch. XVII, Postal FHB Vol. I — Accounts procedure</li>
+            <li>Rule 21(iv) PLI Manual — Priority of assignment claims</li>
+            <li>Rules 39 & 40, PO Insurance Fund Rules — Lapse & Forfeiture</li>
+            <li>Rule 67(b), PLI Manual — Untraced credits</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">PLI Audit</div>
+          <div class="branches">
+            <div class="branch">Scrutiny of Proposals</div>
+            <div class="branch">Assignment & Nomination</div>
+            <div class="branch">Premium Ledger Review</div>
+            <div class="branch">Lapse & Revival</div>
+            <div class="branch">Loans</div>
+            <div class="branch">Bonus & Claims</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Administration -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Administration of the PO Insurance Fund <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>General <span class="hi">सामान्य प्रशासन</span></h4>
+          <p class="microtopic">Under <b>Rule 10</b> of the PO Insurance Fund Rules, administration of the Fund is vested in the <b>Director General of Posts</b>, who may issue subsidiary regulations not inconsistent with President's Rules.</p>
+          <p class="nanotopic">Accounting procedure — <b>Rules 546 to 558, Chapter XVII, Postal FHB Vol. I</b>.</p>
+          <p class="nanotopic">Valuation & morality investigation work centralised in the office of the <b>Director, PLI, Kolkata</b> (Controller of Insurance, Shimla, for triennial valuation).</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> In whom is the administration of the Post Office Insurance Fund vested? — <i>Ans: The Director General of Posts</i></div>
+      </div></div>
+    </div>
+
+    <!-- Scrutiny of proposals -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Scrutiny of Proposals <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>General <span class="hi">प्रस्तावों की जाँच</span></h4>
+          <p class="microtopic">Checked per <b>Rule 10 of PLI Manual for Circle Offices</b> to see: eligibility (Rules 2, 2-A, 2-B, 2-C), amount of insurance covered by Rule 3, class/condition of policy (Rule 13), medical officer's recommendation (Rule 9), sum already assured limit within Rule 3.</p>
+          <p class="nanotopic">Register of Proposals Rejected — reasons noted vide <b>Rule 11(b)</b> of PLI Manual.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Credit of first premium -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Check of Credit of First Premium <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 5 <span class="hi">प्रथम प्रीमियम जमा जाँच</span></h4>
+          <p class="microtopic">🔴 <b>3%</b> of the entries in the Register of Proposals reviewed to verify first premium payment appeared in the certified list (Form L.I. 50 / L.I. 51) or schedules.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> What percentage of proposal entries is checked for credit of first premium? — <i>Ans: 3%</i></div>
+      </div></div>
+    </div>
+
+    <!-- Assignment & Nomination -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Assignment & Nomination <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 6 <span class="hi">समनुदेशन व नामांकन</span></h4>
+          <p class="microtopic">Rules in <b>Chapter III, PLI Manual of Circle Offices</b>; Register of Assignments (Appendix A) & Nominations (Appendix B) maintained in PLI Section.</p>
+          <div class="dtree">
+            <div class="q">When is an assignment legally operative?</div>
+            <ul>
+              <li>✅ Only when due notice of assignment has been <b>delivered to the Postmaster General</b>.</li>
+              <li>Priority of claims under a policy is governed by the <b>date the notice of assignment was received</b> (Rule 21(iv)).</li>
+            </ul>
+          </div>
+          <p class="nanotopic">All entries/changes attested by the AAO as required by <b>Rule 31(7)</b>.</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> An assignment of a PLI policy becomes legally operative only when — <i>Ans: Due notice has been delivered to the Postmaster General</i></div>
+      </div></div>
+    </div>
+
+    <!-- Review of ledger cards -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Review of Premium Ledger Cards, Lapse & Revival <span class="tag vi">🔴 Very High Weightage</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 8 <span class="hi">प्रीमियम लेजर कार्ड, व्यपगति व पुनरुद्धार</span></h4>
+          <p class="microtopic">🔴 <b>2%</b> of Ledger Cards test-checked for: correct/timely recovery rate, annual notification of non-credits/double-credits/short-credits, lapses/forfeiture under <b>Rules 39 & 40</b> of PO Insurance Fund Rules promptly notified & revival action under <b>Rule 39 or 41</b>.</p>
+          <div class="field" style="border-color:var(--red);"><b>⚠️ Important Penalty — Short Credit Interest</b><p>At the end of the contract period, entire short credits are charged with <b>8% interest</b> thereon.</p></div>
+          <p class="nanotopic">🔴 Notice of <b>discontinuance of premium</b> must be issued at least <b>6 months</b> before the month up to which premium is payable, to avoid unnecessary refund.</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>2% cards, 8% penalty, 6-month notice</b>" — Ledger cards 2% checked; short-credit interest 8%; discontinuance notice given 6 months ahead.</div>
+        <div class="examq"><b>Probable Question:</b> What interest rate is charged on short credits at the end of the contract period? — <i>Ans: 8%</i><br><b>Probable Question:</b> How many months before premium cessation must a discontinuance notice be issued? — <i>Ans: At least 6 months</i></div>
+      </div></div>
+    </div>
+
+    <!-- Loans -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ Loans, Safe Custody & Surrender/Maturity <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Loan Registers & Valuation <span class="hi">ऋण रजिस्टर व मूल्यांकन</span></h4>
+          <p class="microtopic">Sanctions for Loan, Loan Ledger Cards review, Register of Safe Custody, Vouchers for Loan Payments — checked with reference to <b>Rule 42</b> of PO Insurance Fund Rules for exceptional circumstances.</p>
+          <p class="microtopic">Valuation calculation on surrender & maturity examined w.r.t. Old/New <b>Rule 40</b> — automatic paid-up provisions.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Claims settlement -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">7️⃣ Claim Settlement, Bonus & Untraced Credits <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 31 — Bonus & Claims <span class="hi">बोनस व दावा निपटान</span></h4>
+          <p class="microtopic">Bonus additions correctly accounted for; claims from outside India paid through a Post Office in India.</p>
+          <p class="microtopic">On death — premium recovered for the month of death (unless death on 1st of the month).</p>
+        </div>
+        <div class="subcard">
+          <h4>Untraced Credits & Special Register <span class="hi">अप्रमाणित जमा</span></h4>
+          <p class="microtopic">Under <b>Rule 67(b)</b>, PLI Manual — if a claim is settled on the Drawing/Disbursing Officer's certificate but credit is not yet traced in Circle Office accounts, the untraced credit is entered in the <b>Special Register</b>.</p>
+          <p class="nanotopic">Nominee payments — instructions under <b>Rule 9(4)(h)</b>, PO Insurance Fund Rules, must be observed.</p>
+          <p class="nanotopic">Historical note: Pakistan-paid premia up to <b>31.3.1948</b>, confirmed by Director PLI Karachi, recorded per Rule 67(i).</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Percentage Checks — PLI Chapter at a Glance <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Item</th><th>% / Time Limit</th></tr>
+          <tr><td>Register of Proposals — first premium credit check</td><td>3%</td></tr>
+          <tr><td>Ledger Cards test check</td><td>2%</td></tr>
+          <tr><td>Short-credit interest at contract end</td><td>8%</td></tr>
+          <tr><td>Discontinuance notice before premium cessation</td><td>Min. 6 months</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+    <!-- Authorities -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">🏛️ Important Authorities (Ch. V — PLI) <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Authority</th><th>Role</th></tr>
+          <tr><td>Director General of Posts</td><td>Administers the PO Insurance Fund (Rule 10)</td></tr>
+          <tr><td>Director, PLI, Kolkata</td><td>Centralised valuation/morality investigation work</td></tr>
+          <tr><td>Controller of Insurance, Shimla</td><td>Triennial valuation of PO Insurance Fund</td></tr>
+          <tr><td>Postmaster General</td><td>Assignment notices delivered to PMG for validity</td></tr>
+          <tr><td>AAO (PLI Section)</td><td>Attests assignment/nomination entries (Rule 31(7))</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CHAPTER XII - CIVIL & ELECTRICAL WING ============ -->
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <h2>Chapter XII — Civil & Electrical Wing <span class="tag vi">🔴 VI</span></h2>
+    <div class="hi">अध्याय XII — सिविल व विद्युत विंग</div>
+    <div class="rules-range">Pages 224–255 | Governed by CPWD Manual & CPWA Code</div>
+  </div>
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📌 Topic Overview / विषय सारांश <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="fieldgrid">
+          <div class="field"><b>Definition / परिभाषा</b><p>Audit of Postal Civil/Electrical Sub-Divisions — Measurement Books, Contractors' Ledger, running/final bills, secured advances, Muster Rolls, stores, estimates, and financial powers — governed by CPWD Manual Vol. II/III and CPWA Code.<br><span style="color:var(--muted)">डाक सिविल/विद्युत उपखंडों का लेखा परीक्षण — माप पुस्तिका, ठेकेदार खाता, RA/अंतिम बिल, सुरक्षित अग्रिम, हाजरी पत्रक व वित्तीय शक्तियाँ।</span></p></div>
+          <div class="field"><b>Important Rules / महत्वपूर्ण नियम</b><ul>
+            <li>Rules 50 & 51, Sec. 7 CPWD Manual Vol. II — Measurement Book review</li>
+            <li>Rule 10.2.6, CPWA Code — Register of Measurement Books</li>
+            <li>Rules 30-32, Sec. 7 CPWD Manual — Test-check of measurements</li>
+            <li>Rule 10 Sec. 20, CPWD Manual — AHR/ALR items</li>
+            <li>Section 33, CPWD Manual — Advance Payment to Contractors</li>
+          </ul></div>
+        </div>
+        <div class="mindmap">
+          <div class="center">Civil & Electrical Wing</div>
+          <div class="branches">
+            <div class="branch">Measurement Books</div>
+            <div class="branch">Contractors' Ledger</div>
+            <div class="branch">Running/Final Bills</div>
+            <div class="branch">Secured Advances</div>
+            <div class="branch">EMD/Security Deposit</div>
+            <div class="branch">Muster Rolls</div>
+            <div class="branch">Financial Powers</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Measurement books -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">1️⃣ Measurement Books (MBs) <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 1.1-1.4 <span class="hi">माप पुस्तिका</span></h4>
+          <p class="microtopic">🔴 MBs sent by Sub-Divisions to Divisional Office for review by the <b>Divisional Accountant in September each year</b> (Rules 50 & 51, Sec. 7 CPWD Manual Vol. II; Rule 10.2.9, CPWA Code).</p>
+          <p class="microtopic">Loss of MB → reported to <b>C.E. (Chief Engineer)</b> for sanction to write off, by competent authority.</p>
+          <p class="nanotopic">Register of MBs maintained in <b>Form CPWD-92</b> (Rule 10.2.6, CPWA Code & Rule 7, Sec. 7 CPWD Manual).</p>
+        </div>
+        <div class="examq"><b>Probable Question:</b> In which month each year are Measurement Books reviewed by the Divisional Accountant? — <i>Ans: September</i></div>
+      </div></div>
+    </div>
+
+    <!-- Contractor's ledger -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">2️⃣ Contractors' Ledger <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 2.1-2.6 <span class="hi">ठेकेदार खाता</span></h4>
+          <p class="microtopic">Separate folio per work/contractor; properly indexed; <b>closed & balanced monthly</b> (Para 10.7.6 CPWA Code; Rule 7 Sec. II CPWD Manual).</p>
+          <p class="microtopic">Recoveries for materials issued to contractors made <b>in full from the first bill</b> authorising payment, unless reasons recorded by Divisional Officer (Rule 8, Sec. 27 CPWD Manual; Rule 10.3.7 CPWA Code).</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Running / Final Bills -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">3️⃣ Running/Final Bills of Contractors <span class="tag vi">🔴 Very High Weightage</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 4.1-4.23 <span class="hi">चालू/अंतिम बिल जाँच</span></h4>
+          <p class="microtopic">🔴 A.E. test-checks measurements to the extent of <b>50%</b>; E.E. checks the required percentage (Rules 30-32, Sec. 7 CPWD Manual; Rule 10.2.16 CPWA Code).</p>
+          <p class="microtopic">Extra/substituted items — need sanction of competent authority; unsanctioned items get only <b>part-rates</b>.</p>
+          <p class="microtopic">🔴 Income Tax at <b>2%</b> of cost of work deducted from every RA/Final Bill (Item 4.19).</p>
+          <p class="microtopic">Contractor must return at least <b>90%</b> of total empty plastic bags to authorised agents; shortfall recovered from final bill (Item 4.16).</p>
+          <p class="nanotopic">Secured advance (Form 26(a)) fully adjusted from RA/Final Bill.</p>
+        </div>
+        <div class="mnemonic">🧠 <b>Mnemonic:</b> "<b>50 checks, 2 taxes, 90 returns</b>" — AE checks 50% of measurements, 2% Income Tax deducted, 90% empty bags to be returned.</div>
+        <div class="examq"><b>Probable Question:</b> To what extent must the Assistant Engineer (AE) test-check measurements of a running bill? — <i>Ans: 50%</i><br><b>Probable Question:</b> What percentage of Income Tax is deducted from every RA/Final Bill? — <i>Ans: 2%</i></div>
+      </div></div>
+    </div>
+
+    <!-- Advance payment & secured advances -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">4️⃣ Advance Payment & Secured Advances <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 5-6 <span class="hi">अग्रिम भुगतान व सुरक्षित अग्रिम</span></h4>
+          <p class="microtopic">Advance payments require <b>previous sanction of SE, Postal Civil Circle</b>; made only in exceptional cases of real necessity; monthly statement submitted to SE (Section 33, CPWD Manual; Rules 10.2.25 & 10.2.18, CPWA Code).</p>
+          <p class="microtopic">Secured advances — against security of materials brought to site; must be adjusted in full from RA/Final Bill.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- EMD -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">5️⃣ Earnest Money, Security Deposits & Arbitration <span class="tag fa">🟠</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4><span class="hi">बयाना राशि व सुरक्षा जमा</span></h4>
+          <p class="microtopic">Earnest Money obtained from each tenderer; refunded to unsuccessful tenderers. Security Deposit noted in Security Deposit Register; refunded on proper sanction after satisfactory completion of work (Section 21, CPWD Manual Vol. II).</p>
+          <p class="microtopic">Arbitration/Court cases — action per <b>Section 36, CPWD Manual Vol. II</b>; reviewed periodically by Divisional Officer; register maintained up to date.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Muster Rolls -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">6️⃣ Muster Rolls & Casual Labour <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4><span class="hi">हाजरी पत्रक व अस्थायी श्रम</span></h4>
+          <p class="microtopic">Casual mazdoor wages per approved schedule of labour rates; unpaid items entered in <b>Register of Unpaid Wages, Form 21A</b> at Sub-Division.</p>
+          <p class="nanotopic">🔴 Sanction of SE/CE required for employment of labour beyond <b>3 months</b> and <b>6 months</b> respectively (Para 27.02, CPWD Manual Vol. III).</p>
+        </div>
+        <div class="dtree">
+          <div class="q">Sanction thresholds for casual labour employment duration</div>
+          <ul>
+            <li>Beyond 3 months → SE sanction required</li>
+            <li>Beyond 6 months → CE sanction required</li>
+          </ul>
+        </div>
+        <div class="examq"><b>Probable Question:</b> Beyond how many months of employing casual labour is CE's sanction required? — <i>Ans: 6 months (SE's sanction needed beyond 3 months)</i></div>
+      </div></div>
+    </div>
+
+    <!-- Annual maintenance estimates -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">7️⃣ Annual Maintenance & Repair Estimates <span class="tag cu">🟡</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4><span class="hi">वार्षिक अनुरक्षण अनुमान</span></h4>
+          <p class="microtopic">Expenditure must be within the prescribed percentage of the capital cost of respective buildings (Para 52-64, Sec. 4 CPWD Manual Vol. II).</p>
+          <p class="nanotopic">Work-Charged Staff provided per prescribed yardstick (Appendix 8, CPWD Manual Vol. II).</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Financial powers / estimates -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">8️⃣ Financial Powers & Check of Estimates <span class="tag vi">🔴</span><span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="subcard">
+          <h4>Item 18-19 <span class="hi">वित्तीय शक्तियाँ व अनुमान जाँच</span></h4>
+          <p class="microtopic">Financial powers of CE/SE/EE for expenditure/awarding works/tender acceptance/single tender negotiations — examined for correct exercise.</p>
+          <p class="microtopic">Administrative approval + Expenditure sanction + Technical Sanction of Competent Authority must all exist before starting any work.</p>
+          <p class="nanotopic">Savings under one section/project cannot be diverted to another work without sanction of Competent Authority (Para 91, 'D' Code).</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Comparison of authority hierarchy -->
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">📊 Authority Hierarchy — Civil/Electrical Wing <span class="arrow">▶</span></button>
+      <div class="acc-body"><div class="acc-inner">
+        <table>
+          <tr><th>Authority</th><th>Key Powers</th></tr>
+          <tr><td>Chief Engineer (CE)</td><td>Sanctions write-off of lost MBs; labour beyond 6 months; top financial powers</td></tr>
+          <tr><td>Superintending Engineer (SE)</td><td>Sanctions advance payments to contractors; labour beyond 3 months</td></tr>
+          <tr><td>Executive Engineer (EE)</td><td>Test-checks bills; awards works within delegated powers</td></tr>
+          <tr><td>Assistant Engineer (AE)</td><td>Test-checks 50% of measurements</td></tr>
+          <tr><td>Divisional Accountant</td><td>Reviews Measurement Books every September</td></tr>
+        </table>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ ONE PAGE REVISION SHEET ============ -->
+<div class="revision-sheet" id="revision">
+  <h2>📝 One-Page Revision Sheet <span style="display:block; font-size:.8rem; color:var(--muted); font-weight:400;">एक-पृष्ठ रिवीजन शीट</span></h2>
+  <div class="rev-grid">
+    <div class="rev-block">
+      <h4>🔴 Ch. I — Postal & RMS Units</h4>
+      <ul style="margin-left:16px;">
+        <li>GL report review: <b>15%</b> of entries</li>
+        <li>Register of Refunds (Rule 76): <b>25%</b> check</li>
+        <li>Life Certificates: <b>Cent percent (100%)</b> check</li>
+        <li>NPS: employee <b>10%</b>, Govt <b>14%</b> of BP+DA (service head 3201)</li>
+        <li>SDBS: Govt credit ₹300/mensum; enrol after 1 year of regular GDS appointment</li>
+        <li>Unclaimed deposits & unpaid IPOs forfeited to revenue after <b>3 years</b></li>
+        <li>Cheque books preserved <b>3 years</b>; 10% of paid cheques checked</li>
+        <li>Liquidated damages: 0.5%/week, max <b>5%</b> of contract value</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🔴 Ch. II — Circle/Regional Office</h4>
+      <ul style="margin-left:16px;">
+        <li>Cash Book/DTR balanced daily, vetted by NCDDO (Note 2, Rule 124 FHB-I)</li>
+        <li>e-Service Book data-flow check: <b>10%</b>; thorough verification: <b>25%</b></li>
+        <li>Service Book first-page re-attested every <b>5 years</b></li>
+        <li>LTC Earned Leave encashment: max <b>60 days</b></li>
+        <li>TA claim must be submitted within <b>60 days</b> of journey</li>
+        <li>Land/building estimate scrutiny: <b>5–10%</b> (Rule 446, FHB-I)</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🟠 Ch. III — Postal Stores Depot</h4>
+      <ul style="margin-left:16px;">
+        <li>Forms: SK-51(a) Receipt Day Book, SK-51 Stock Register, SK-52 Transport, SK-53 Invoice Index, SK-54 Local Purchase</li>
+        <li>Index of Invoices closing no. sent to offices on <b>31st March</b></li>
+        <li>Physical verification of all articles: half-year ending <b>30th September</b></li>
+        <li>Inspection by Head of Circle/DPS: every half-year; weekly stock-verifier report</li>
+        <li>Saleable publications governed by Rule 712, Postal Manual Vol. II</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🔴 Ch. V — Postal Life Insurance</h4>
+      <ul style="margin-left:16px;">
+        <li>PO Insurance Fund administered by <b>Director General of Posts</b> (Rule 10)</li>
+        <li>First premium credit check: <b>3%</b> of proposals</li>
+        <li>Ledger Cards test check: <b>2%</b></li>
+        <li>Short-credit interest at contract end: <b>8%</b></li>
+        <li>Discontinuance notice: at least <b>6 months</b> before premium cessation</li>
+        <li>Assignment operative only when notice delivered to <b>Postmaster General</b></li>
+        <li>Lapse/Forfeiture — Rules 39 & 40; Revival — Rules 39/41 PO Insurance Fund Rules</li>
+      </ul>
+    </div>
+    <div class="rev-block">
+      <h4>🔴 Ch. XII — Civil & Electrical Wing</h4>
+      <ul style="margin-left:16px;">
+        <li>Measurement Books reviewed by Divisional Accountant every <b>September</b></li>
+        <li>AE test-checks <b>50%</b> of measurements</li>
+        <li>Income Tax deducted from RA/Final Bill: <b>2%</b> of cost of work</li>
+        <li>Empty plastic bags: contractor must return min. <b>90%</b></li>
+        <li>Casual labour sanction: SE beyond <b>3 months</b>, CE beyond <b>6 months</b></li>
+        <li>Advance payment to contractors needs prior sanction of <b>SE, Postal Civil Circle</b></li>
+        <li>Contractors' Ledger closed & balanced <b>monthly</b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LAST DAY REVISION NOTES ============ -->
+<div class="revision-sheet" style="border-color:var(--blue);">
+  <h2 style="color:var(--blue);">⚡ Last-Day Revision Notes <span style="display:block; font-size:.8rem; color:var(--muted); font-weight:400;">परीक्षा-पूर्व त्वरित रिवीजन</span></h2>
+  <div class="rev-grid">
+    <div class="rev-block">
+      <h4>Percentages to Memorise</h4>
+      <table>
+        <tr><td>2%</td><td>PLI Ledger Cards check / Income Tax on RA-Final Bills (Civil)</td></tr>
+        <tr><td>3%</td><td>PLI first-premium credit check</td></tr>
+        <tr><td>8%</td><td>PLI short-credit interest at contract end</td></tr>
+        <tr><td>10%</td><td>NPS employee contribution / Establishment pay-sheet check / Standard rent check / e-Service Book data-flow / Paid cheques check</td></tr>
+        <tr><td>14%</td><td>NPS Government contribution</td></tr>
+        <tr><td>15%</td><td>GL report entries review (Field Units)</td></tr>
+        <tr><td>25%</td><td>Register of Refunds check / e-Service Book thorough verification / Service Book check</td></tr>
+        <tr><td>50%</td><td>AE test-check of running/final bill measurements</td></tr>
+        <tr><td>90%</td><td>Minimum empty plastic bags to be returned by contractor</td></tr>
+        <tr><td>100%</td><td>Life Certificates / Jeevan Praman check</td></tr>
+      </table>
+    </div>
+    <div class="rev-block">
+      <h4>Time Limits to Memorise</h4>
+      <table>
+        <tr><td>3 days</td><td>Extra test check window beyond marked month (Ch. I)</td></tr>
+        <tr><td>3 months</td><td>SE sanction threshold for casual labour</td></tr>
+        <tr><td>6 months</td><td>CE sanction threshold for casual labour / PLI discontinuance notice</td></tr>
+        <tr><td>60 days</td><td>TA claim submission window / max Earned Leave LTC encashment</td></tr>
+        <tr><td>1 year</td><td>GDS regular appointment → SDBS enrolment / Definitive Stamp sale review</td></tr>
+        <tr><td>3 years</td><td>Cheque book retention / Unclaimed deposits & unpaid IPO forfeiture</td></tr>
+        <tr><td>5 years</td><td>Service Book first-page re-attestation</td></tr>
+        <tr><td>September (half-year)</td><td>Full physical verification at Stores Depot</td></tr>
+        <tr><td>31 March</td><td>Closing invoice number communicated (Stores Depot)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MNEMONICS ============ -->
+<div class="revision-sheet" id="mnemonics" style="border-color:var(--gold);">
+  <h2 style="color:#8a6d00;">🧠 Memory Tricks & Mnemonics <span style="display:block; font-size:.8rem; color:var(--muted); font-weight:400;">याद रखने की तरकीबें</span></h2>
+  <div class="mnemonic">📊 <b>Postal/RMS % ladder:</b> "<b>GL-15, Refund-25, Life-100</b>" — GL review 15%, Refunds check 25%, Life Certificates cent-percent.</div>
+  <div class="mnemonic">💰 <b>NPS split:</b> "<b>10 gives, 14 lives</b>" — Employee gives 10% of BP+DA; Government contributes 14%.</div>
+  <div class="mnemonic">⚖️ <b>Liquidated damages:</b> "<b>Half a percent a week, five is the peak</b>" — 0.5%/week, capped at 5%.</div>
+  <div class="mnemonic">👴 <b>Circle Office ladder:</b> "<b>10 flows, 25 verifies, 5 re-attests</b>" — data-flow 10%, e-Service Book 25%, Service Book re-attestation every 5 years.</div>
+  <div class="mnemonic">📦 <b>Stores Depot forms:</b> "<b>R</b>eceive-<b>S</b>tock-<b>T</b>ransport-<b>I</b>nvoice-<b>L</b>ocal" → SK-51(a), 51, 52, 53, 54 in workflow order.</div>
+  <div class="mnemonic">🗓️ <b>Stores Depot verification:</b> "<b>September Sees Stock</b>" — Physical verification at half-year ending 30th September.</div>
+  <div class="mnemonic">💌 <b>PLI ladder:</b> "<b>3 premium, 2 ledger, 8 penalty, 6-month notice</b>" — 3% first-premium check, 2% ledger check, 8% short-credit interest, 6-month discontinuance notice.</div>
+  <div class="mnemonic">🏗️ <b>Civil Wing:</b> "<b>50 checks, 2 taxes, 90 returns</b>" — AE checks 50% measurements, 2% Income Tax on bills, 90% bags returned.</div>
+  <div class="mnemonic">👷 <b>Labour sanction ladder:</b> "<b>3 for SE, 6 for CE</b>" — beyond 3 months SE sanctions, beyond 6 months CE sanctions casual labour.</div>
+</div>
+
+<footer>
+  Prepared for LDCE-IP / LDCE-AAO Exam Preparation | Source: Internal Audit Questionnaire 2021 (India Post / PAO)<br>
+  डाक विभागीय परीक्षा तैयारी हेतु | © LDCE Postal Exam Portal
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+function toggleAcc(btn){
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+
+function toggleTTSGlobal(){
+  if('speechSynthesis' in window){
+    if(speechSynthesis.speaking){
+      speechSynthesis.cancel();
+      return;
+    }
+    const mainText = document.getElementById('content').innerText.slice(0, 4000);
+    const utter = new SpeechSynthesisUtterance(mainText);
+    utter.rate = 0.95;
+    speechSynthesis.speak(utter);
+  } else {
+    alert('Text-to-speech not supported in this browser.');
+  }
+}
+
+function liveSearch(){
+  const q = document.getElementById('searchBox').value.toLowerCase();
+  const items = document.querySelectorAll('.acc-item');
+  items.forEach(item=>{
+    const txt = item.innerText.toLowerCase();
+    if(q === ''){
+      item.style.display = '';
+      item.classList.remove('open');
+    } else if(txt.includes(q)){
+      item.style.display = '';
+      item.classList.add('open');
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
