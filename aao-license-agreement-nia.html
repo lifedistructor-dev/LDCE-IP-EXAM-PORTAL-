@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>License Agreement & NIA | AAO Paper IV | India Post LDCE</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.35rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.05rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.02rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:6000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.85rem;}
+th{background:var(--blue); color:#fff; padding:8px 6px; text-align:left; font-size:.8rem;}
+td{padding:7px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.timeline{position:relative; margin:16px 4px 6px 4px; padding-left:20px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%;
+  background:var(--red); border:2px solid var(--gold);
+}
+.tl-year{font-weight:800; color:var(--red); font-size:.9rem;}
+.tl-body{font-size:.83rem; margin-top:2px;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.decision{margin:12px 0; font-size:.85rem;}
+.dbox{
+  border:2px solid var(--blue); border-radius:10px; padding:8px 10px; margin-bottom:6px; background:var(--light-blue);
+}
+.dq{font-weight:800; color:var(--blue); font-size:16px;}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.formula-box{
+  background:var(--blue); color:#fff; border-radius:10px; padding:10px 12px; font-family:monospace;
+  font-size:.85rem; margin:8px 0; overflow-x:auto;
+}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.83rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.tts-btn{
+  background:var(--blue); color:#fff; border:none; border-radius:8px; padding:6px 10px; font-size:12px; cursor:pointer; margin-top:6px;
+}
+.progress-btn{
+  display:inline-block; margin-top:8px; font-size:11px; padding:4px 10px; border-radius:14px; border:1px solid var(--border);
+  background:transparent; color:var(--sub); cursor:pointer;
+}
+.progress-btn.done{background:var(--green); color:#fff; border-color:var(--green);}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">AAO PAPER IV • भाग IV</span>
+      <div class="title-en">License Agreement & NIA</div>
+      <div class="title-hi">लाइसेंस एग्रीमेंट और एन.आई.ए.</div>
+      <div class="subtitle">Exam-Focused Bilingual Infographic Notes | परीक्षा-केंद्रित द्विभाषी नोट्स</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#types">License Types</a>
+    <a class="chip" href="#financial">Financial Cond.</a>
+    <a class="chip" href="#bg">Bank Guarantees</a>
+    <a class="chip" href="#accounts">Accounts</a>
+    <a class="chip" href="#agr">AGR/ApGR</a>
+    <a class="chip" href="#nia">NIA Timeline</a>
+    <a class="chip" href="#numerical">Numericals</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">रंग-कोड: लाल=अति महत्वपूर्ण, नारंगी=बार-बार पूछा गया, पीला=अवधारणा, हरा=त्वरित पुनरीक्षण</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Topic Overview <span class="hi">विषय अवलोकन</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> License Agreement & NIA<br><span class="hi">लाइसेंस एग्रीमेंट और एन.आई.ए.</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> Financial Conditions of License Agreements <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> SUC & Bank Guarantees in NIA (2010 onwards) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> AGR vs P&L Reconciliation <span class="tag tag-freq">🟠</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 4:</b> Numerical Practice (LF/SUC calculation) <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="subhead">Definition <span class="hi">परिभाषा</span></div>
+    <p>Telecom <b>License Agreements</b> are legal contracts issued by the regulator (DoT) granting operators permission to provide services within defined financial & operational frameworks.</p>
+    <p class="hi">टेलीकॉम लाइसेंस एग्रीमेंट वे कानूनी अनुबंध हैं जो नियामक (DoT) द्वारा ऑपरेटरों को निर्धारित वित्तीय व परिचालन ढांचे के भीतर सेवाएं प्रदान करने की अनुमति देते हैं।</p>
+    <div class="subhead">Important Authority <span class="hi">महत्वपूर्ण प्राधिकरण</span></div>
+    <ul>
+      <li><b>Licensor:</b> Department of Telecommunications (DoT) <span class="tag tag-vip">🔴</span></li>
+      <li><b>Regulator:</b> TRAI (Telecom Regulatory Authority of India) <span class="tag tag-freq">🟠</span></li>
+      <li><b>Space Segment Authority:</b> Department of Space (DoS) / NOCC</li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> Who is the "Licensor" under Unified License? <span class="hi">"लाइसेंसर" कौन है?</span> → DoT</div>
+  </div></div>
+</div>
+
+<!-- LICENSE TYPES -->
+<div class="card" id="types">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🗂️ Types of License <span class="hi">लाइसेंस के प्रकार</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <table>
+      <tr><th>#</th><th>License Type</th><th class="hi">हिंदी</th></tr>
+      <tr><td>1</td><td>Unified License (UL)</td><td class="hi">एकीकृत लाइसेंस</td></tr>
+      <tr><td>2</td><td>UL (Virtual Network Operator)</td><td class="hi">वर्चुअल नेटवर्क ऑपरेटर</td></tr>
+      <tr><td>3</td><td>NLD Service</td><td class="hi">राष्ट्रीय लंबी दूरी सेवा</td></tr>
+      <tr><td>4</td><td>ILD Service</td><td class="hi">अंतरराष्ट्रीय लंबी दूरी सेवा</td></tr>
+      <tr><td>5</td><td>PMRTS Service</td><td class="hi">सार्वजनिक मोबाइल रेडियो ट्रंकिंग</td></tr>
+      <tr><td>6</td><td>VSAT CUG Service</td><td class="hi">वीसैट सीयूजी सेवा</td></tr>
+      <tr><td>7</td><td>INSAT MSS-R Service</td><td class="hi">इनसैट मोबाइल सैटेलाइट सिस्टम</td></tr>
+    </table>
+    <span class="tag tag-quick">🟢 Quick tip: Remember order UL → VNO → NLD → ILD → PMRTS → VSAT → INSAT</span>
+  </div></div>
+</div>
+
+<!-- FINANCIAL CONDITIONS -->
+<div class="card" id="financial">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💰 Financial Conditions <span class="hi">वित्तीय शर्तें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">Micro Topic: Entry Fee <span class="tag tag-vip">🔴</span></div>
+    <div class="flow">
+      <div class="flow-box"><b>Entry Fee</b> — One-time, non-refundable, per authorized service<br>Max: <b>₹15 Crore</b></div>
+    </div>
+
+    <div class="subhead">Micro Topic: License Fee (LF) <span class="tag tag-vip">🔴</span></div>
+    <div class="flow">
+      <div class="flow-box">Annual LF = % of <b>AGR</b>, paid service-area-wise</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">LF = <b>8% of AGR</b> (includes USO Levy, presently <b>5% of AGR</b>)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">From 2nd year: LF ≥ <b>10% of Entry Fee</b> (minimum floor)</div>
+    </div>
+    <div class="qbox"><b>Probable Q:</b> LF is what % of AGR? <span class="hi">LF, AGR का कितना % है?</span> → <b>8%</b> (USO levy 5% included)</div>
+
+    <div class="subhead">Nano Topic: Space Segment Charges <span class="tag tag-concept">🟡</span></div>
+    <ul>
+      <li>Payable to <b>Department of Space (DoS)</b> for satellite-based service</li>
+      <li>Monitoring charges payable to <b>NOCC</b> (Network Operations Control Centre)</li>
+    </ul>
+
+    <div class="subhead">Micro Topic: Payment Schedule <span class="tag tag-freq">🟠</span></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">Quarterly</div><div class="tl-body">LF payable in <b>4 quarterly instalments</b>, FY starts <b>1st April</b></div></div>
+      <div class="tl-item"><div class="tl-year">Within 15 days</div><div class="tl-body">Adjustment of last quarter's advance vs. actual dues</div></div>
+      <div class="tl-item"><div class="tl-year">On delay</div><div class="tl-body">Interest = <b>2% above 1-yr MCLR</b> of SBI (as on 1st April), compounded <b>Annually</b></div></div>
+    </div>
+    <p class="hi">विलंब पर ब्याज = SBI की 1-वर्षीय MCLR + 2%, वार्षिक रूप से चक्रवृद्धि</p>
+    <div class="qbox"><b>Probable Q:</b> Interest rate on delayed LF payment? → <b>SBI 1-yr MCLR + 2%, compounded annually</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- BANK GUARANTEES -->
+<div class="card" id="bg">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🏦 Bank Guarantees <span class="hi">बैंक गारंटी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>PBG 🔴</h4>
+        Performance Bank Guarantee<br>
+        Max: <b>₹44 Cr</b> (prev ₹220 Cr)<br>
+        Validity: <b>1 year</b><br>
+        Purpose: covers violation of license conditions
+      </div>
+      <div class="compare-col b">
+        <h4>FBG 🔴</h4>
+        Financial Bank Guarantee<br>
+        Max: <b>₹8.8 Cr</b> (prev ₹44 Cr)<br>
+        = <b>20%</b> of estimated LF for <b>2 quarters</b> + other dues<br>
+        Reviewed every <b>6 months</b>
+      </div>
+    </div>
+    <div class="subhead">Important Rules <span class="hi">महत्वपूर्ण नियम</span></div>
+    <ul>
+      <li>BGs must be renewed/extended at least <b>1 month before expiry</b> by Licensee on its own</li>
+      <li>Failure to renew → violation → Licensor can <b>encash & convert to cash security</b></li>
+      <li>No interest/compensation payable by Licensor on encashment</li>
+      <li>Partially encashed BG must be <b>restored to full amount</b></li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "PBG Performs, FBG Finances" — P for Performance (violation cover), F for Financial (dues cover) <br><span class="hi">याद रखें: PBG = परफॉर्मेंस (उल्लंघन कवर), FBG = फाइनेंशियल (बकाया कवर)</span></div>
+    <div class="qbox"><b>Probable Q:</b> Current max PBG amount? → <b>₹44 Crore</b> | Current max FBG amount? → <b>₹8.8 Crore</b></div>
+  </div></div>
+</div>
+
+<!-- ACCOUNTS -->
+<div class="card" id="accounts">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📑 Preparation of Accounts <span class="hi">खातों की तैयारी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li><b>(a)</b> Maintain quarterly accounting records — costs, revenue, financial position</li>
+      <li><b>(b)</b> Auditor's report on accounting statements — deliver within <b>3 months</b> of end of accounting period <span class="tag tag-vip">🔴</span></li>
+      <li><b>(c)</b> Certified affidavit of Revenue each quarter with payment</li>
+      <li><b>(d)</b> Full details of inter-operator settlements via <b>normal banking channel</b></li>
+    </ul>
+    <div class="subhead">Key Clause Numbers <span class="hi">महत्वपूर्ण खंड संख्याएं</span></div>
+    <table>
+      <tr><th>Clause</th><th>Provision</th></tr>
+      <tr><td>22.3(a)</td><td>Licensor/TRAI can call for books of accounts anytime, no reasons needed</td></tr>
+      <tr><td>22.3(b)</td><td>Preserve billing/accounting records for <b>3 years</b> from audited accounts date <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>22.4</td><td>Records subject to scrutiny for revenue-share verification</td></tr>
+      <tr><td>22.5</td><td>Licensor can order Audit if statements inaccurate/misleading; auditor has Companies Act 1956 Sec 227 powers</td></tr>
+      <tr><td>22.6</td><td>"Special Audit" by Special Auditors — cost borne by Licensee</td></tr>
+      <tr><td>22.7</td><td>Annual financial accounts as per prescribed norms</td></tr>
+      <tr><td>22.8</td><td>Licensor may add/modify/amend Chapter-III conditions</td></tr>
+    </table>
+    <div class="qbox"><b>Probable Q:</b> Record preservation period? → <b>3 years</b> from date of publishing audited accounts <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- AGR -->
+<div class="card" id="agr">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📊 GR → ApGR → AGR <span class="hi">सकल राजस्व से समायोजित सकल राजस्व</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="decision">
+      <div class="dbox"><b>Gross Revenue (GR)</b><br>All income — service, leasing, fees, calls, equipment sale, interest, dividends. <b>No set-off of expenses.</b></div>
+      <div class="flow-arrow">↓ minus</div>
+      <div class="dbox"><b>= Applicable Gross Revenue (ApGR)</b><br>Excludes: (i) non-telecom revenue (ii) I&B Ministry license revenue (iii) USO Fund receipts (iv) dividend, interest, capital gains, forex gains, property rent, insurance claims, bad debts recovered, excess provisions written back</div>
+      <div class="flow-arrow">↓ minus</div>
+      <div class="dbox"><b>= Adjusted Gross Revenue (AGR)</b><br>Excludes from ApGR: (a) pass-through charges to other telecom operators (b) GST paid to Govt</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic for ApGR exclusions:</b> "DIC-GIBE" → Dividend, Interest, Capital gains, Gains(forex), Insurance, Bad debts recovered, Excess provisions <br><span class="hi">ApGR से घटाई जाने वाली मदें याद रखने की ट्रिक</span></div>
+    <div class="qbox"><b>Probable Q:</b> What is excluded from ApGR to get AGR? → <b>Pass-through charges + GST</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- NIA TIMELINE -->
+<div class="card" id="nia">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🕒 NIA Timeline (2010–2024) <span class="hi">एनआईए समयरेखा</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">NIA = Notice Inviting Applications — स्पेक्ट्रम नीलामी हेतु आधिकारिक दस्तावेज़ जो DoT द्वारा जारी होता है।</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">NIA 2010 🔴</div><div class="tl-body">First 3G + BWA auction. Bands: 2100 MHz (3G), 2300 MHz (BWA). SUC = % of AGR.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2012</div><div class="tl-body">Post Supreme Court cancellation of 122 2G licenses. Band: 1800 MHz. SUC: 3%–8% of AGR.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2013</div><div class="tl-body">Re-auction for 2012 losers. Bands: 1800, 900 MHz (new). SUC: weighted average.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2014</div><div class="tl-body">Renewal/reallocation. Bands: 900, 1800 MHz. SUC: weighted average.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2015</div><div class="tl-body">Major 4G auction. Bands: 800, 900, 1800, 2100 MHz. SUC: weighted average.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2016</div><div class="tl-body">Large-scale 4G. Band 700 MHz introduced (unsold). Also 800/900/1800/2100/2300/2500 MHz.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2021 🟠</div><div class="tl-body">Post-COVID 4G+. <b>Zero SUC for new spectrum</b> reform begins. Legacy holdings: weighted average SUC.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2022 🔴</div><div class="tl-body">First <b>5G</b> auction. Bands: 600, 700 MHz, 3.3-3.67 GHz (mid), 26 GHz (mmWave). Zero SUC for new spectrum.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2023</div><div class="tl-body">2nd 5G round. Same bands as 2022. Zero SUC continues for new acquisitions.</div></div>
+      <div class="tl-item"><div class="tl-year">NIA 2024</div><div class="tl-body">Continuation of 5G expansion, more spectrum availability.</div></div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "2021 se Zero" — Yaad rakho: 2021 se SUC reform shuru, naye spectrum par SUC ZERO hai (sirf legacy holdings par weighted average lagta hai).</div>
+    <div class="qbox"><b>Probable Q:</b> From which NIA year is SUC zero for new spectrum? → <b>NIA 2021</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- NUMERICALS -->
+<div class="card" id="numerical">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧮 Numerical Formulas & Solved Examples <span class="hi">सूत्र व हल किए गए उदाहरण</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Core Formulas <span class="tag tag-vip">🔴</span></div>
+    <div class="formula-box">AGR = Service Revenue + Other Income − Non-Telecom Revenue</div>
+    <div class="formula-box">SUC = SUC Rate % × AGR</div>
+    <div class="formula-box">Minimum Annual LF = 10% × Entry Fee (from 2nd year)</div>
+    <div class="formula-box">Minimum Quarterly LF = Annual Minimum LF ÷ 4</div>
+    <div class="formula-box">Pro-rata LF = (Days in effect ÷ Days in full quarter) × Full Quarter LF</div>
+
+    <div class="subhead">Example: AGR & SUC</div>
+    <table>
+      <tr><th>Item</th><th>Value</th></tr>
+      <tr><td>Service Revenue</td><td>₹500 Cr</td></tr>
+      <tr><td>Other Income</td><td>₹50 Cr</td></tr>
+      <tr><td>Non-Telecom Revenue</td><td>₹10 Cr (excluded)</td></tr>
+      <tr><td><b>AGR</b></td><td><b>500+50−10 = ₹540 Cr</b></td></tr>
+      <tr><td><b>SUC @5%</b></td><td><b>5% × 540 = ₹27 Cr</b></td></tr>
+    </table>
+
+    <div class="subhead">Rule: Minimum LF Floor <span class="tag tag-freq">🟠</span></div>
+    <p>If actual LF (8% of AGR) is less than the minimum floor (10% of Entry Fee ÷ 4 per quarter), the <b>higher (minimum floor)</b> amount is payable — especially critical for the first quarter.</p>
+    <p class="hi">यदि वास्तविक LF, न्यूनतम फ्लोर से कम है, तो न्यूनतम राशि देय होगी (विशेषकर पहली तिमाही में)।</p>
+
+    <div class="subhead">Rule: Pro-rata for Mid-Year Start <span class="tag tag-freq">🟠</span></div>
+    <p>If license effective mid-quarter, LF = (days effective ÷ total days in quarter) × full quarter LF.</p>
+    <div class="formula-box">Example: License from 15.11 → 47 days/92 days × ₹12,000 = ₹6,130</div>
+
+    <div class="subhead">Rule: Excess LF Paid <span class="tag tag-quick">🟢</span></div>
+    <p>Any excess license fee paid gets <b>adjusted in the next financial year</b> — not refunded.</p>
+
+    <div class="subhead">Rule: Q4 Floor <span class="tag tag-concept">🟡</span></div>
+    <p>License fee payable for the 4th quarter should <b>not be less than</b> the license fee paid during the 3rd quarter.</p>
+
+    <div class="qbox"><b>Probable Q (numerical):</b> Entry Fee ₹2,00,000. What is minimum quarterly LF? → 10% of 2,00,000 = ₹20,000/year → ₹5,000/quarter <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">एक-पृष्ठ पुनरीक्षण शीट</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Entry Fee:</b> One-time, max ₹15 Cr</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>License Fee:</b> 8% of AGR (incl. 5% USO); min 10% of Entry Fee from Yr-2</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>LF Payment:</b> 4 quarterly instalments, FY from 1 April; adjust within 15 days</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Delay Interest:</b> SBI 1-yr MCLR + 2%, compounded annually</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>PBG:</b> Max ₹44 Cr, valid 1 year, covers license violations</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>FBG:</b> Max ₹8.8 Cr = 20% of 2 quarters' LF, reviewed 6-monthly</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>BG Renewal:</b> 1 month before expiry, else encashable</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Record Preservation:</b> 3 years from audited accounts date</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Auditor Report:</b> deliver within 3 months of accounting period end</div></div>
+      <div class="rev-row"><span class="rev-icon">🟡</span><div><b>GR → ApGR → AGR:</b> GR minus non-telecom/other income items = ApGR; ApGR minus pass-through+GST = AGR</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>NIA 2021 onwards:</b> Zero SUC for newly auctioned spectrum</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>NIA 2022:</b> First 5G auction (600/700 MHz, 3.3-3.67 GHz, 26 GHz)</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Excess LF paid</b> → adjusted next FY (not refunded)</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Q4 LF</b> ≥ Q3 LF paid (floor rule)</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">अंतिम-दिन पुनरीक्षण नोट्स</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>LF = <b>8%</b> AGR | Min from Yr2 = <b>10%</b> Entry Fee</li>
+      <li>PBG max = <b>₹44 Cr</b> | FBG max = <b>₹8.8 Cr</b></li>
+      <li>Interest on delay = <b>MCLR+2%</b>, Annual compounding</li>
+      <li>Records kept = <b>3 years</b></li>
+      <li>Auditor report in <b>3 months</b></li>
+      <li>BG renewal = <b>1 month prior</b> to expiry</li>
+      <li>FBG = <b>20%</b> of 2-quarter LF estimate</li>
+      <li>SUC zero from <b>NIA 2021</b></li>
+      <li>First 5G auction = <b>NIA 2022</b></li>
+      <li>AGR excludes: pass-through charges + GST</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">याद रखने की तरकीबें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"8-5-10"</b> → LF is 8% of AGR (5% is USO within it), minimum floor is 10% of Entry Fee.</div>
+    <div class="mnemonic"><b>"PBG Punishes, FBG Funds"</b> → PBG covers violations/performance; FBG covers financial dues.</div>
+    <div class="mnemonic"><b>"44-8.8"</b> → PBG max ₹44 Cr is exactly 5× FBG max ₹8.8 Cr — easy to cross-check in exam.</div>
+    <div class="mnemonic"><b>"3-3-1"</b> → Records preserved 3 years, Auditor report in 3 months, BG renewal 1 month before expiry.</div>
+    <div class="mnemonic"><b>"2021 Zero, 2022 Panch-G"</b> → 2021 = Zero SUC begins; 2022 = 5G ("Panch-G") auction begins.</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">स्रोत टिप्पणी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह इन्फोग्राफिक आपकी अपलोड की गई "License Agreement & NIA – AAO Paper IV Notes" (postaladda.com) फ़ाइल के आधार पर तैयार किया गया है। परीक्षा उपयोग हेतु स्व-निर्मित सारांश है; मूल दस्तावेज़ से क्रॉस-वेरीफाई करें।</p>
+    <p style="margin-top:6px;">This infographic is built from your uploaded "License Agreement & NIA – AAO Paper IV Notes" source file. Cross-verify with the original document before final exam use.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">LDCE AAO Exam Portal · License Agreement & NIA · Paper IV<br>Tap section headers to expand/collapse · टैप करके सेक्शन खोलें/बंद करें</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+// open first two cards by default already handled via class="open"
+</script>
+</body>
+</html>

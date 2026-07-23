@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPS | IP Exam 2025 | India Post LDCE</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.35rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.05rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.02rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:9000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.85rem;}
+th{background:var(--blue); color:#fff; padding:8px 6px; text-align:left; font-size:.8rem;}
+td{padding:7px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.timeline{position:relative; margin:16px 4px 6px 4px; padding-left:20px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%;
+  background:var(--red); border:2px solid var(--gold);
+}
+.tl-year{font-weight:800; color:var(--red); font-size:.9rem;}
+.tl-body{font-size:.83rem; margin-top:2px;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.decision{margin:12px 0; font-size:.85rem;}
+.dbox{
+  border:2px solid var(--blue); border-radius:10px; padding:8px 10px; margin-bottom:6px; background:var(--light-blue);
+}
+.dq{font-weight:800; color:var(--blue); font-size:14px;}
+.dyes{border-left:4px solid var(--green);}
+.dno{border-left:4px solid var(--red);}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.83rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+.pillgrid{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:10px 0;}
+.pill{border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:.78rem; background:var(--light-blue);}
+.pill b{display:block; font-size:.85rem; color:var(--blue);}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} .pillgrid{grid-template-columns:repeat(3,1fr);} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">IP EXAM 2025 • Tips 13</span>
+      <div class="title-en">National Pension System (NPS)</div>
+      <div class="title-hi">राष्ट्रीय पेंशन प्रणाली</div>
+      <div class="subtitle">Exam-Focused Bilingual Infographic Notes | परीक्षा-केंद्रित द्विभाषी नोट्स</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#abbr">Abbreviations</a>
+    <a class="chip" href="#tiers">Tier I/II</a>
+    <a class="chip" href="#contrib">Contribution</a>
+    <a class="chip" href="#pran">PRAN/CRA</a>
+    <a class="chip" href="#special">Suspension/Leave</a>
+    <a class="chip" href="#death">Death Benefits</a>
+    <a class="chip" href="#exit">Exit & Annuity</a>
+    <a class="chip" href="#withdraw">Withdrawal</a>
+    <a class="chip" href="#tax">Tax Benefits</a>
+    <a class="chip" href="#pfrda">PFRDA/CRA-NSDL</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked (IP 2023)</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">रंग-कोड: लाल=अति महत्वपूर्ण, नारंगी=बार-बार पूछा गया (IP 2023 में पूछा गया), पीला=अवधारणा, हरा=त्वरित पुनरीक्षण</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Introduction to NPS <span class="hi">एनपीएस परिचय</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> National Pension System <span class="hi">राष्ट्रीय पेंशन प्रणाली</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> Introduction, Abbreviations, Tiers <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> Contribution Rules (normal/suspension/leave) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> PRAN, CRA, NSDL — Administration <span class="tag tag-freq">🟠</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 4:</b> Death/Exit/Annuity/Withdrawal Rules <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 5:</b> Tax Benefits & PFRDA <span class="tag tag-freq">🟠</span></div>
+    </div>
+    <div class="subhead">Definition <span class="hi">परिभाषा</span></div>
+    <p><b>NPS</b> (originally "New Pension Scheme", now "National Pension System") is a defined-contribution pension scheme for Govt. servants joining service on or after 01.01.2004.</p>
+    <p class="hi">एनपीएस (मूल रूप से "नई पेंशन योजना", अब "राष्ट्रीय पेंशन प्रणाली") 01.01.2004 या उसके बाद सेवा में शामिल होने वाले सरकारी कर्मचारियों के लिए एक अंशदान-आधारित पेंशन योजना है।</p>
+    <div class="subhead">Important Dates <span class="hi">महत्वपूर्ण तिथियां</span></div>
+    <table>
+      <tr><th>Event</th><th>Date</th></tr>
+      <tr><td>NPS operational from</td><td><b>01.01.2004</b> <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>Contribution rates revised</td><td>w.e.f. <b>01.04.2019</b> <span class="tag tag-vip">🔴</span></td></tr>
+    </table>
+    <div class="qbox"><b>Probable Q:</b> From which date did NPS become operational? <span class="hi">एनपीएस कब से लागू हुई?</span> → <b>01.01.2004</b></div>
+  </div></div>
+</div>
+
+<!-- ABBREVIATIONS -->
+<div class="card" id="abbr">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🔤 Important Abbreviations <span class="hi">महत्वपूर्ण संक्षिप्त रूप</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <table>
+      <tr><th>Abbr.</th><th>Full Form</th></tr>
+      <tr><td>ASP</td><td>Annuity Service Provider <span class="tag tag-freq">🟠 IP 2023</span></td></tr>
+      <tr><td>CRA</td><td>Central Record Keeping Agency <span class="tag tag-freq">🟠 IP 2023</span></td></tr>
+      <tr><td>KYC</td><td>Know Your Customer <span class="tag tag-freq">🟠 IP 2023</span></td></tr>
+      <tr><td>PFRDA</td><td>Pension Fund Regulatory and Development Authority <span class="tag tag-freq">🟠 IP 2023</span></td></tr>
+      <tr><td>PFM</td><td>Pension Fund Managers</td></tr>
+      <tr><td>POP</td><td>Point of Presence <span class="tag tag-freq">🟠 IP 2023</span></td></tr>
+      <tr><td>PRAN</td><td>Permanent Retirement Account Number</td></tr>
+      <tr><td>PPAN</td><td>Permanent Pension Account Number (old term, now PRAN)</td></tr>
+      <tr><td>NSDL</td><td>National Securities Depository Limited</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "A-C-K-P-P-P" → ASP, CRA, KYC, PFRDA, PFM, POP — all repeatedly asked full-forms.</div>
+    <div class="qbox"><b>Probable Q:</b> Full form of ASP, CRA, POP? → <b>Annuity Service Provider, Central Record Keeping Agency, Point of Presence</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- TIERS -->
+<div class="card" id="tiers">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🏛️ Tier-I vs Tier-II <span class="hi">टियर-1 बनाम टियर-2</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>Tier-I 🔴</h4>
+        <ul>
+          <li><b>Mandatory</b> for Govt servants joining on/after 01.01.2004</li>
+          <li>Exit allowed at/after <b>60 years</b> age</li>
+          <li>Min <b>40%</b> pension wealth → mandatory annuity investment at exit</li>
+          <li>Exit before 60 yrs → <b>80%</b> mandatory investment</li>
+          <li>Provides lifetime pension to subscriber, then dependant</li>
+        </ul>
+      </div>
+      <div class="compare-col b">
+        <h4>Tier-II 🟠</h4>
+        <ul>
+          <li><b>Optional</b>, at discretion of Govt servant</li>
+          <li>Can continue only if Tier-I is active</li>
+          <li>Auto-closes when Tier-I account closes</li>
+          <li>One-way switch: funds can move <b>Tier-II → Tier-I</b> only <span class="tag tag-freq">🟠 IP 2023</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "40-Stay, 80-Early-Pay" → 40% mandatory at normal exit (60 yrs), 80% mandatory if exiting early.</div>
+    <div class="qbox"><b>Probable Q:</b> Can Tier-II continue after Tier-I closes? → <b>No</b>, it auto-closes <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- CONTRIBUTION -->
+<div class="card" id="contrib">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💰 Contribution Rules (from 01.04.2019) <span class="hi">अंशदान नियम</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="pillgrid">
+      <div class="pill"><b>Employee</b>10% of Pay+DA</div>
+      <div class="pill"><b>Government</b>14% of Pay+DA</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "10 by You, 14 by Govt" — Govt contributes 4% more than employee.</div>
+
+    <div class="subhead">First Contribution — Time Limit <span class="tag tag-vip">🔴</span></div>
+    <p>Credited within <b>20 days</b> of application submission, OR by the last date of the month of joining — <b>whichever is later</b>.</p>
+
+    <div class="subhead">"Emolument" for NPS includes: <span class="tag tag-freq">🟠</span></div>
+    <ul>
+      <li>Basic pay (FR 9(21)(a)(i))</li>
+      <li>Non-Practising Allowance (Medical Officers, in lieu of private practice)</li>
+      <li>Admissible Dearness Allowance</li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> What % does Govt contribute to NPS Tier-I? → <b>14% of Pay+DA</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- PRAN -->
+<div class="card" id="pran">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🆔 PRAN & Allotting Agency <span class="hi">पीआरएएन एवं आवंटन एजेंसी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="flow">
+      <div class="flow-box"><b>PRAN</b> = Permanent Retirement Account Number — <b>12-digit</b> number <span class="tag tag-vip">🔴 (IP 2013)</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Allotted to subscriber by <b>Central Recordkeeping Agency (CRA)</b></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">PRAN <b>communicated to PAOs</b> by <b>NSDL</b> (National Securities Depository Limited)</div>
+    </div>
+    <p class="hi">पहले PPAN (Permanent Pension Account Number) आवंटित होता था, अब PRAN (12 अंकों का) आवंटित होता है।</p>
+    <div class="qbox"><b>Probable Q:</b> Which agency allots and communicates PRAN to PAOs? → <b>NSDL</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- SUSPENSION/LEAVE -->
+<div class="card" id="special">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚠️ Contribution during Suspension, Absence & Leave <span class="hi">निलंबन, अनुपस्थिति व अवकाश के दौरान अंशदान</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">During Suspension <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Subsistence allowance drawn in a month = counted as emolument</li>
+      <li>Subscriber's contribution: <b>optional</b>, at his discretion</li>
+      <li>If period later regularized as duty/leave: contribution difference credited with <b>interest</b></li>
+      <li>Govt's contribution: based on subsistence allowance, <b>UNLESS</b> subscriber opted out of his own contribution</li>
+    </ul>
+
+    <div class="subhead">During Absence from Duty (no pay/leave salary) <span class="tag tag-freq">🟠</span></div>
+    <p><b>No contribution</b> by subscriber during such absence.</p>
+
+    <div class="subhead">During Leave <span class="tag tag-vip">🔴</span></div>
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>Subscriber's Contribution</h4>
+        Based on leave salary payable.<br>
+        <b>Extraordinary Leave</b> → no leave salary → <b>NO contribution</b>
+      </div>
+      <div class="compare-col b">
+        <h4>Government's Contribution</h4>
+        If leave is on <b>medical grounds</b>, <b>civil commotion</b>, or <b>higher studies</b> (useful to official duty) and leave salary is nil/less than full pay → Govt contributes <b>14%</b> of notional Pay+DA
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "MCH" → Medical, Civil commotion, Higher studies — the 3 leave grounds where Govt still contributes 14%.</div>
+    <div class="qbox"><b>Probable Q:</b> Is Govt contribution made during Extraordinary Leave? → <b>No employee contribution</b> since no leave salary is payable <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- DEATH BENEFITS -->
+<div class="card" id="death">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚰️ Death & Invalidation — Option Facility <span class="hi">मृत्यु व अशक्तता — विकल्प सुविधा</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Rule <span class="tag tag-vip">🔴</span></div>
+    <p>Under <b>Rule 10, CCS (Implementation of NPS) Rules, 2021</b>, NPS-covered officials must exercise an option in <b>Form 1</b> to choose benefits under NPS OR CCS (Pension) Rules, 1972, in case of death/invalidation.</p>
+    <ul>
+      <li>One copy kept in <b>Service Book</b></li>
+      <li>Another copy forwarded to <b>CRA</b> by Head of Office</li>
+    </ul>
+
+    <div class="subhead">Family Entitlement on Death <span class="tag tag-vip">🔴</span></div>
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>(A) Opted for Old Pension Scheme</h4>
+        Family Pension, Death Gratuity, Leave encashment, CGEGIS — same as Old Pension Scheme.<br>
+        Govt's NPS contribution + returns → transferred to Govt account.<br>
+        Employee's NPS contribution + returns → paid to family.
+      </div>
+      <div class="compare-col b">
+        <h4>(B) NPS Corpus Benefits</h4>
+        PRAN closed; family gets:<br>
+        • Lumpsum up to <b>20%</b> of accumulated pension wealth<br>
+        • Annuity from remaining wealth via ASP (per PFRDA Exit & Withdrawal Regs 2015)<br>
+        Death gratuity/leave encashment/CGEGIS — same as Old Pension Scheme.
+      </div>
+    </div>
+    <div class="qbox"><b>Probable Q:</b> Max lump sum % payable to family under NPS corpus on death? → <b>20%</b> of accumulated pension wealth <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- EXIT & ANNUITY -->
+<div class="card" id="exit">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🚪 Exit, Deferment & Annuity Rules <span class="hi">निकास, स्थगन एवं वार्षिकी नियम</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">Deferment of Balance Annuity Amount <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Can be deferred up to age <b>75 years</b></li>
+      <li>Must intimate Authority <b>15 days before</b> superannuation retirement date</li>
+      <li>If subscriber dies before due date after deferment → annuity <b>mandatorily purchased by spouse</b> (life annuity for spouse)</li>
+    </ul>
+
+    <div class="subhead">Decision: Mandatory Annuity % at Exit</div>
+    <div class="decision">
+      <div class="dbox dq">At/after Superannuation (60 yrs)?</div>
+      <div class="dbox dyes"><b>YES →</b> 40% mandatory annuity purchase. If corpus ≤ <b>₹5 lakh</b>, full withdrawal allowed without annuity <span class="tag tag-vip">🔴</span></div>
+      <div class="dbox dno"><b>NO (Before superannuation / voluntary retirement) →</b> 80% mandatory annuity purchase. If corpus ≤ <b>₹2.5 lakh</b>, full withdrawal allowed without annuity <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "40-5, 80-2.5" → Superannuation: 40% annuity, ₹5L exemption. Early exit: 80% annuity, ₹2.5L exemption.</div>
+
+    <div class="subhead">Annuity Options Available <span class="tag tag-concept">🟡</span></div>
+    <ul>
+      <li><b>Default Scheme:</b> Annuity for subscriber + spouse life, purchase price returned to family in order — dependent father → dependent mother → surviving children/legal heirs</li>
+      <li><b>Annuity for life + return of purchase price to nominee</b></li>
+      <li><b>Annuity for life only</b> — no return of purchase price</li>
+    </ul>
+    <p class="hi">सभी ASP सभी विकल्प प्रदान नहीं करते; मूल्य निर्धारण भी ASP अनुसार भिन्न होता है।</p>
+    <div class="qbox"><b>Probable Q:</b> Deadline to intimate deferment before superannuation? → <b>15 days prior</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- WITHDRAWAL -->
+<div class="card" id="withdraw">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💸 NPS Withdrawal Conditions <span class="hi">एनपीएस निकासी शर्तें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Rules <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Withdrawal allowed only after <b>3 years</b> from date of joining</li>
+      <li>Max withdrawal = <b>25%</b> of subscriber's own contribution <span class="tag tag-freq">🟠 IP 2023</span></li>
+      <li>Purposes allowed: children's higher education, children's marriage, construction/purchase of flat (no prior house), medical treatment (self/spouse/children/dependent parents)</li>
+      <li>Max <b>3 withdrawals</b> allowed during entire tenure <span class="tag tag-freq">🟠 IP 2023</span></li>
+      <li><b>Not allowed for:</b> Foreign travel <span class="tag tag-freq">🟠 IP 2023</span></li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "3-25-3" → 3 years wait, 25% max withdrawal, 3 max withdrawals lifetime.</div>
+    <div class="qbox"><b>Probable Q (Actual IP 2023):</b> For what purpose is NPS withdrawal NOT allowed? → <b>Foreign travel</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- TAX BENEFITS -->
+<div class="card" id="tax">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧾 Tax Benefits under NPS <span class="hi">कर लाभ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <table>
+      <tr><th>Provision</th><th>Benefit</th></tr>
+      <tr><td>Sec 80-CCD(1)</td><td>Employee contribution up to 10% of Pay+DA (capped ₹1,50,000 under 80-C via 80-CCE)</td></tr>
+      <tr><td>Sec 80-CCD(2)</td><td>Govt's 14% contribution — separate deduction</td></tr>
+      <tr><td>Sec 80-CCD(1-B)</td><td>Additional deduction over ₹1,50,000, max <b>₹50,000</b> (voluntary, any citizen incl. Old Pension Scheme members) <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>Partial withdrawal</td><td>Tax-free</td></tr>
+      <tr><td>Superannuation lumpsum (40%)</td><td>Tax-free</td></tr>
+      <tr><td>Amount used to purchase annuity</td><td>Not taxable at time of purchase</td></tr>
+    </table>
+    <div class="subhead">Important Exception <span class="tag tag-vip">🔴</span></div>
+    <p><b>No tax benefit</b> on Tier-II contributions <span class="tag tag-freq">🟠 IP 2023</span></p>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1-2-1B" → 80CCD(1) employee, 80CCD(2) govt, 80CCD(1B) extra ₹50,000.</div>
+    <div class="qbox"><b>Probable Q:</b> Max additional deduction under 80-CCD(1-B)? → <b>₹50,000</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- PFRDA / CRA-NSDL -->
+<div class="card" id="pfrda">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🏢 PFRDA, CRA & NSDL <span class="hi">पीएफआरडीए, सीआरए एवं एनएसडीएल</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Composition of PFRDA <span class="tag tag-freq">🟠 IP 2023</span></div>
+    <p>1 Chairperson + <b>3 whole-time members</b> + <b>3 part-time members</b></p>
+
+    <div class="subhead">Empanelled Annuity Service Providers (ASP) <span class="tag tag-concept">🟡</span></div>
+    <ul>
+      <li>Life Insurance Corporation of India (LIC)</li>
+      <li>SBI Life Insurance Co. Ltd</li>
+      <li>ICICI Prudential Life Insurance Co. Ltd</li>
+      <li>HDFC Standard Life Insurance Co. Ltd</li>
+      <li>Star Union Dai-ichi Life Insurance Co. Ltd</li>
+    </ul>
+    <p class="hi">(सूची समय-समय पर बदलती रहती है)</p>
+
+    <div class="subhead">CRA vs NSDL — Functions <span class="tag tag-vip">🔴</span></div>
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>CRA</h4>
+        Part of Postal Accounts Office (like Accounts Branch in Head Office); compulsory unit.<br>
+        Forwards all data electronically to NSDL, keeps documents itself.<br>
+        Receives subscriber grievances (via Divisional Head) and forwards to NSDL.
+      </div>
+      <div class="compare-col b">
+        <h4>NSDL</h4>
+        Private organisation, based in <b>Mumbai</b>.<br>
+        Handles NPS-related work for all Postal Accounts Offices in India.<br>
+        Communicates only <b>PRAN number</b> to CRA; all else (annuity payment, claim settlement) direct to subscriber via Head Office.<br>
+        Subscribers <b>cannot contact NSDL directly</b>.
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CRA keeps, NSDL speaks (only PRAN)" — CRA retains documents; NSDL only communicates PRAN back to CRA.</div>
+    <div class="qbox"><b>Probable Q:</b> Where is NSDL located, and what does it communicate to CRA? → <b>Mumbai; only the PRAN number</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">एक-पृष्ठ पुनरीक्षण शीट</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>NPS operational:</b> 01.01.2004</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Contribution (from 01.04.2019):</b> Employee 10%, Govt 14% of Pay+DA</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>PRAN:</b> 12-digit, allotted by CRA; communicated to PAOs by NSDL</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>First contribution credit:</b> within 20 days of application, or by month-end of joining, whichever later</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Tier-I:</b> mandatory, exit at 60; 40% annuity mandatory (80% if early exit)</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Tier-II:</b> optional, auto-closes with Tier-I; one-way switch Tier-II→Tier-I</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Superannuation exit:</b> 40% annuity mandatory; full withdrawal if corpus ≤ ₹5 lakh</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Early exit:</b> 80% annuity mandatory; full withdrawal if corpus ≤ ₹2.5 lakh</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Deferment:</b> up to age 75, intimate 15 days before superannuation</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Withdrawal:</b> after 3 yrs; max 25% of own contribution; max 3 times; NOT for foreign travel</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Death (NPS corpus):</b> lumpsum up to 20%, rest as annuity via ASP</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>PFRDA composition:</b> 1 Chairperson + 3 whole-time + 3 part-time members</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Tax:</b> 80CCD(1) 10% capped ₹1.5L; 80CCD(2) Govt 14%; 80CCD(1B) extra ₹50,000</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>No tax benefit</b> on Tier-II contribution</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>CRA</b> = part of Postal Accounts Office; <b>NSDL</b> = private, Mumbai, communicates only PRAN</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Option Form 1</b> under Rule 10, CCS (Implementation of NPS) Rules 2021 — NPS vs CCS Pension Rules 1972</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">अंतिम-दिन पुनरीक्षण नोट्स</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>NPS from = <b>01.01.2004</b></li>
+      <li>Contribution = Employee <b>10%</b>, Govt <b>14%</b></li>
+      <li>PRAN = <b>12 digits</b>, by CRA; PAOs informed by <b>NSDL</b></li>
+      <li>First contribution credited = within <b>20 days</b></li>
+      <li>Tier-I exit at <b>60</b>; 40%/80% annuity rule</li>
+      <li>Withdrawal after <b>3 yrs</b>, max <b>25%</b>, max <b>3 times</b>, not for foreign travel</li>
+      <li>Death corpus lumpsum = up to <b>20%</b></li>
+      <li>PFRDA = 1 Chair + <b>3+3</b> members</li>
+      <li>80CCD(1B) extra deduction = <b>₹50,000</b></li>
+      <li>No tax benefit on <b>Tier-II</b></li>
+      <li>Deferment intimation = <b>15 days</b> before superannuation, up to age <b>75</b></li>
+      <li>5 ASPs: LIC, SBI Life, ICICI Pru, HDFC Std Life, Star Union Dai-ichi</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">याद रखने की तरकीबें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"10-14"</b> → Employee 10%, Govt 14% contribution.</div>
+    <div class="mnemonic"><b>"40-5, 80-2.5"</b> → Superannuation: 40% annuity/₹5L exempt; Early exit: 80% annuity/₹2.5L exempt.</div>
+    <div class="mnemonic"><b>"3-25-3"</b> → 3 years wait, 25% max withdrawal, 3 max times.</div>
+    <div class="mnemonic"><b>"MCH"</b> → Medical, Civil commotion, Higher studies — leave grounds where Govt still pays 14%.</div>
+    <div class="mnemonic"><b>"1-2-1B"</b> → 80CCD(1) employee, 80CCD(2) govt, 80CCD(1B) extra ₹50,000.</div>
+    <div class="mnemonic"><b>"CRA keeps, NSDL speaks PRAN only"</b> → division of function between the two agencies.</div>
+    <div class="mnemonic"><b>"3+3+1"</b> → PFRDA = 3 whole-time + 3 part-time members + 1 Chairperson.</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">स्रोत टिप्पणी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह इन्फोग्राफिक आपकी अपलोड की गई "NPS – IP 2025 Tips 13" (saposts.com, P.Karunanithy) फ़ाइल के आधार पर तैयार किया गया है। परीक्षा उपयोग हेतु स्व-निर्मित सारांश है; मूल दस्तावेज़ से क्रॉस-वेरीफाई करें।</p>
+    <p style="margin-top:6px;">This infographic is built from your uploaded "NPS – IP 2025 Tips 13" source file (saposts.com / P. Karunanithy). Cross-verify with the original document before final exam use.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">LDCE IP Exam Portal · National Pension System · IP 2025<br>Tap section headers to expand/collapse · टैप करके सेक्शन खोलें/बंद करें</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

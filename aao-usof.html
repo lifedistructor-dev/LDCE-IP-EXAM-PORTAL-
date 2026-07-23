@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USOF | AAO Paper IV | India Post LDCE</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.35rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.05rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.02rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:8000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.85rem;}
+th{background:var(--blue); color:#fff; padding:8px 6px; text-align:left; font-size:.8rem;}
+td{padding:7px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.timeline{position:relative; margin:16px 4px 6px 4px; padding-left:20px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%;
+  background:var(--red); border:2px solid var(--gold);
+}
+.tl-year{font-weight:800; color:var(--red); font-size:.9rem;}
+.tl-body{font-size:.83rem; margin-top:2px;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.decision{margin:12px 0; font-size:.85rem;}
+.dbox{
+  border:2px solid var(--blue); border-radius:10px; padding:8px 10px; margin-bottom:6px; background:var(--light-blue);
+}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.formula-box{
+  background:var(--blue); color:#fff; border-radius:10px; padding:10px 12px; font-family:monospace;
+  font-size:.83rem; margin:8px 0; overflow-x:auto; white-space:pre-wrap;
+}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.83rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+.stream-grid{display:grid; grid-template-columns:1fr; gap:6px; margin:10px 0;}
+.stream-card{border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:.82rem; background:var(--light-blue);}
+.stream-card b{color:var(--blue);}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} .stream-grid{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">AAO PAPER IV • भाग IV</span>
+      <div class="title-en">USOF — Universal Service Obligation Fund</div>
+      <div class="title-hi">यूएसओएफ — सार्वभौमिक सेवा दायित्व निधि</div>
+      <div class="subtitle">Exam-Focused Bilingual Infographic Notes | परीक्षा-केंद्रित द्विभाषी नोट्स</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#objectives">Objectives</a>
+    <a class="chip" href="#funding">Funding</a>
+    <a class="chip" href="#streams">Streams</a>
+    <a class="chip" href="#schemes">Schemes</a>
+    <a class="chip" href="#financial">Financial Cond.</a>
+    <a class="chip" href="#bharatnet">BharatNet</a>
+    <a class="chip" href="#numerical">Numerical</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">रंग-कोड: लाल=अति महत्वपूर्ण, नारंगी=बार-बार पूछा गया, पीला=अवधारणा, हरा=त्वरित पुनरीक्षण</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Introduction to USOF <span class="hi">यूएसओएफ का परिचय</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> USOF <span class="hi">यूएसओएफ</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> Introduction & Objectives <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> Funding, Streams & Schemes <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> Financial Conditions in Agreements <span class="tag tag-freq">🟠</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 4:</b> BharatNet Case Study <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 5:</b> Numerical (FBG Calculation) <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="subhead">Definition <span class="hi">परिभाषा</span></div>
+    <p><b>USOF</b> — a fund established to ensure universal, affordable telecom access in rural/remote India, financed by a levy on telecom operators' revenue.</p>
+    <p class="hi">यूएसओएफ — ग्रामीण/दूरस्थ भारत में सार्वभौमिक, किफायती टेलीकॉम पहुंच सुनिश्चित करने हेतु स्थापित निधि, जो ऑपरेटरों के राजस्व पर लेवी से वित्तपोषित होती है।</p>
+    <div class="subhead">Important Dates <span class="hi">महत्वपूर्ण तिथियां</span></div>
+    <table>
+      <tr><th>Event</th><th>Date</th></tr>
+      <tr><td>USOF established</td><td><b>2002</b> <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>Legal basis</td><td>Indian Telegraph (Amendment) Act, <b>2003</b> <span class="tag tag-vip">🔴</span></td></tr>
+    </table>
+    <div class="subhead">Important Authorities <span class="hi">महत्वपूर्ण प्राधिकरण</span></div>
+    <ul>
+      <li>Administered by <b>Department of Telecommunications (DoT)</b></li>
+      <li>Under the <b>Ministry of Communications</b></li>
+    </ul>
+    <div class="subhead">Funding Mechanism <span class="hi">वित्तपोषण तंत्र</span></div>
+    <div class="flow">
+      <div class="flow-box">Financed via <b>Universal Service Levy (USL)</b></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">USL = <b>5%</b> of Adjusted Gross Revenue (AGR) of telecom licensees <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="qbox"><b>Probable Q:</b> USOF was set up in which year, under which Act? <span class="hi">यूएसओएफ किस वर्ष, किस अधिनियम के तहत बना?</span> → <b>2002; Indian Telegraph (Amendment) Act 2003</b></div>
+  </div></div>
+</div>
+
+<!-- OBJECTIVES -->
+<div class="card" id="objectives">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🎯 Key Objectives of USOF Schemes <span class="hi">मुख्य उद्देश्य</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="flow">
+      <div class="flow-box"><b>1. Promoting Rural Telecom Access</b> — equitable access in underserved/rural areas <span class="tag tag-freq">🟠</span></div>
+      <div class="flow-box"><b>2. Enhancing Digital Connectivity</b> — BharatNet, public Wi-Fi, satellite tech</div>
+      <div class="flow-box"><b>3. Security & Connectivity in Remote Areas</b> — LWE-affected & border regions</div>
+      <div class="flow-box"><b>4. Bridging the Digital Divide</b> — urban-rural gap</div>
+      <div class="flow-box"><b>5. Supporting Women & Social Development</b> — empowering rural women & marginalized communities</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "RED-BS" → Rural access, Enhancing connectivity, Digital divide, Border/security, Support women — 5 objectives in order.</div>
+    <div class="qbox"><b>Probable Q:</b> Name any 2 objectives of USOF schemes. <span class="hi">यूएसओएफ योजनाओं के कोई 2 उद्देश्य बताएं।</span></div>
+  </div></div>
+</div>
+
+<!-- FUNDING -->
+<div class="card" id="funding">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💰 Funding & Financials <span class="hi">वित्तपोषण एवं वित्तीय</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Rules <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Fund source: <b>USL = 5% of AGR</b> from all telecom licensees</li>
+      <li>Budget: Over <b>₹55,000 crore</b> allocated since inception <span class="tag tag-vip">🔴</span></li>
+      <li>Disbursement: to telecom operators for rural/remote infrastructure deployment & maintenance</li>
+    </ul>
+    <div class="subhead">Functions of USOF Administration <span class="hi">प्रशासन के कार्य</span></div>
+    <ul>
+      <li>Development of schemes across streams</li>
+      <li>Implementation agreements with ISPs/TSPs & organizations</li>
+      <li>Overseeing execution of schemes; disbursing subsidies</li>
+      <li>Post-implementation reviews</li>
+      <li>Budgeting & auditing of USOF activities</li>
+      <li>Engaging with international organizations</li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> How much has USOF allocated since inception? → <b>₹55,000+ crore</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- STREAMS -->
+<div class="card" id="streams">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🌊 Streams of USOF Activities <span class="hi">यूएसओएफ गतिविधि की धाराएं</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह छह "धाराएं" (Streams) समय-समय पर अपडेट होती हैं — याद रखने के लिए क्रम महत्वपूर्ण है।</p>
+    <div class="stream-grid">
+      <div class="stream-card"><b>Stream I:</b> Public Access Service (VPTs & FRCPs)</div>
+      <div class="stream-card"><b>Stream II:</b> Household Telephones in Rural Areas (RDELs)</div>
+      <div class="stream-card"><b>Stream III:</b> Mobile Infrastructure Phase I (Rural/Remote)</div>
+      <div class="stream-card"><b>Stream IV:</b> Broadband Connectivity — phased (Wire Line + Rural Public Service Terminals)</div>
+      <div class="stream-card"><b>Stream V:</b> General Infrastructure — Optical Fiber Cable for Assam</div>
+      <div class="stream-card"><b>Stream VI:</b> New Technology Induction — e.g. Solar Mobile Charging pilot</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "PHM-B GN" → Public access, Household phone, Mobile infra, Broadband, General infra, New tech (Streams I–VI in order) <span class="tag tag-vip">🔴</span></div>
+    <div class="qbox"><b>Probable Q:</b> Which Stream covers Mobile Infrastructure Phase I? → <b>Stream III</b></div>
+  </div></div>
+</div>
+
+<!-- SCHEMES -->
+<div class="card" id="schemes">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📋 Ongoing Schemes Sponsored by USOF <span class="hi">वर्तमान प्रायोजित योजनाएं</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <table>
+      <tr><th>#</th><th>Scheme</th></tr>
+      <tr><td>1</td><td>BharatNet (previously NOFN) <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>2</td><td>Left Wing Extremist (LWE) Area — Phase II</td></tr>
+      <tr><td>3</td><td>25,000 WiFi Hotspots</td></tr>
+      <tr><td>4</td><td>354 Uncovered Villages Project</td></tr>
+      <tr><td>5</td><td>502 Uncovered Villages Project</td></tr>
+      <tr><td>6</td><td>Submarine OFC — Mainland India to A&N Islands</td></tr>
+      <tr><td>7</td><td>CSC Wi-Fi Choupal</td></tr>
+      <tr><td>8</td><td>Pilot Wi-Fi Hotspots — RailTel</td></tr>
+      <tr><td>9</td><td>Pilot Wi-Fi Hotspots — BSNL</td></tr>
+      <tr><td>10</td><td>10 Gbps Bandwidth for Agartala from BSCCL, Bangladesh</td></tr>
+      <tr><td>11</td><td>Bandwidth Augmentation in ANI</td></tr>
+      <tr><td>12</td><td>4G Mobile Services in A&N Islands</td></tr>
+      <tr><td>13</td><td>Augmentation of 10 2G BTS with EDGE — Lakshadweep</td></tr>
+    </table>
+    <div class="qbox"><b>Probable Q:</b> BharatNet was previously known as? → <b>NOFN (National Optical Fibre Network)</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- FINANCIAL CONDITIONS -->
+<div class="card" id="financial">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📑 Financial Conditions in USOF Agreements <span class="hi">वित्तीय शर्तें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">Purpose <span class="tag tag-concept">🟡</span></div>
+    <ul>
+      <li>Ensure financial discipline</li>
+      <li>Regulate disbursements for telecom infra projects</li>
+      <li>Promote transparency & accountability</li>
+      <li>Ensure timely completion with clear financial guidelines</li>
+    </ul>
+
+    <div class="subhead">1. Funding & Contributions <span class="tag tag-vip">🔴</span></div>
+    <p>Telecom license fee contribution = <b>~5% of AGR</b> towards USOF. Fund usage: enhancing rural infra in commercially non-viable areas.</p>
+
+    <div class="subhead">2. Subsidy Disbursement Conditions <span class="tag tag-freq">🟠</span></div>
+    <div class="flow">
+      <div class="flow-box"><b>Milestone-based payments</b> — tied to predefined infra milestones</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Phased structure: <b>Initial</b> (project start) → <b>Intermediate</b> (mid-milestones) → <b>Final</b> (after verified completion)</div>
+    </div>
+
+    <div class="subhead">3. Eligibility & Selection Criteria</div>
+    <ul>
+      <li><b>Competitive Bidding:</b> lowest bidder for an area gets the subsidy</li>
+      <li><b>Compliance:</b> non-compliance → reduction/cancellation of subsidy</li>
+    </ul>
+
+    <div class="subhead">4. Performance-Based Incentives</div>
+    <ul>
+      <li>QoS standards linked to higher subsidies/bonuses</li>
+      <li>Early completion → bonus; delays → penalty</li>
+    </ul>
+
+    <div class="subhead">5. Penalty Clauses <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li><b>Financial penalties for delays</b> — deducted from future subsidy or reclaimed</li>
+      <li><b>Revocation of Contracts</b> — severe non-compliance → govt revokes contract & reclaims disbursed subsidy</li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> On what basis is a service provider selected for USOF subsidy? → <b>Competitive bidding (lowest bidder)</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- BHARATNET -->
+<div class="card" id="bharatnet">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🌐 BharatNet (formerly NOFN) <span class="hi">भारतनेट (पूर्व एनओएफएन)</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Introduction <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Aims to connect all <b>2,50,000 Gram Panchayats</b> with broadband</li>
+      <li>Approved by Union Cabinet: <b>25 Oct 2011</b></li>
+      <li>Implemented by SPV <b>Bharat Broadband Network Limited (BBNL)</b>, incorporated <b>25 Feb 2012</b> under Companies Act 1956</li>
+      <li>Non-discriminatory access to all telecom service providers (mobile, ISPs, cable TV, content)</li>
+      <li>Supports e-health, e-education, e-governance</li>
+    </ul>
+
+    <div class="subhead">Three Phases <span class="hi">तीन चरण</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">Phase I</div><div class="tl-body">1,00,000 GPs — by BSNL, RailTel, PGCIL (CPSUs). Target: <b>March 2017</b></div></div>
+      <div class="tl-item"><div class="tl-year">Phase II</div><div class="tl-body">Remaining GPs — underground/aerial OFC + radio + satellite, via CPSUs & state Discoms. Target: <b>Dec 2018</b></div></div>
+      <div class="tl-item"><div class="tl-year">Phase III</div><div class="tl-body">Futuristic ring-topology network linking districts/blocks/GPs. Target: <b>2023</b></div></div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1-1-1" → Phase I: 1 lakh GPs by 2017; Phase II: remaining GPs by 2018; Phase III: ring network by 2023.</div>
+
+    <div class="subhead">Financial Agreement (USOF ↔ BBNL) <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>USOF covers full <b>Capex + Net Opex</b> (excluding revenue) for <b>5 years</b> from 25 Feb 2012</li>
+      <li>Approval of total Capex+Opex needed from <b>Telecom Commission</b></li>
+      <li>Total funding capped at <b>₹20,100 crore</b> <span class="tag tag-vip">🔴</span> (revisable on Net Cost approval)</li>
+    </ul>
+    <div class="formula-box">Net Cost = Capex + (Opex − Revenue)</div>
+    <div class="qbox"><b>Probable Q:</b> Total USOF funding cap for BBNL under the agreement? → <b>₹20,100 crore</b> <span class="tag tag-vip">🔴</span></div>
+
+    <div class="subhead">Fund Release depends on: <span class="hi">निधि जारी निर्भर करती है</span></div>
+    <ul>
+      <li>(a) Requirement of Fund</li>
+      <li>(b) Physical Progress of project</li>
+      <li>(c) Approval of Telecom Commission / DoT</li>
+    </ul>
+    <p>BBNL submits <b>monthly</b> physical & financial progress reports to CCAs.</p>
+
+    <div class="subhead">Schedule of Disbursement <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>Fund Release</th><th>Condition</th></tr>
+      <tr><td>Initial 10%</td><td>Mobilisation advance on requisition</td></tr>
+      <tr><td>25% of total funding</td><td>Based on demand + utilisation certificate</td></tr>
+      <tr><td>Beyond 75% of approved amount</td><td>Only after 55% physical progress achieved</td></tr>
+      <tr><td>Every +5% fund release</td><td>For every +5% physical progress, up to max 95%</td></tr>
+      <tr><td>Balance 5%</td><td>Released 1 year after commissioning, on 100% completion certificate</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "10-25-55-95-5" → 10% mobilisation, 25% on UC, 55% progress unlocks &gt;75% release, 95% cap via 5% steps, final 5% after 1 yr.</div>
+
+    <div class="subhead">Material Procurement Funds</div>
+    <p>Up to <b>95%</b> of material cost released on request; final <b>5%</b> after utilization/commissioning by BBNL.</p>
+
+    <div class="subhead">Mode of Payment & No-Interest Rule <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Payment via cheque/electronic transfer through Cash Section, DoT HQ, <b>Sanchar Bhawan</b></li>
+      <li><b>No interest</b> paid by USOF Administrator for short/late payments to BBNL</li>
+    </ul>
+
+    <div class="subhead">Annual Audit <span class="tag tag-freq">🟠</span></div>
+    <ul>
+      <li>Auditors appointed under <b>Section 225 / Section 619, Companies Act 1956</b></li>
+      <li>Audit report to USOF Administrator: within <b>7 calendar days</b> of signing, but not later than <b>30 September</b> of following year <span class="tag tag-vip">🔴</span></li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> Deadline for BBNL's audit report submission? → <b>Within 7 days of signing, latest by 30th September</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- NUMERICAL -->
+<div class="card" id="numerical">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧮 Numerical Question — FBG Calculation <span class="hi">संख्यात्मक प्रश्न — FBG गणना</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Method / Formula <span class="tag tag-vip">🔴</span></div>
+    <div class="formula-box">Step 1: Average LF = (Q1+Q2+Q3+Q4 License Fees) ÷ 4
+Step 2: Double it → 2 × Average LF
+Step 3: Add 10% buffer → Value + (Value × 10%)
+Step 4: Round off to nearest higher thousand = Required FBG</div>
+
+    <div class="subhead">Solved Example (FY 2019-20) <span class="tag tag-freq">🟠</span></div>
+    <table>
+      <tr><th>Quarter</th><th>AGR (₹)</th><th>License Fee Payable (₹)</th></tr>
+      <tr><td>Q1 (Apr-Jun)</td><td>15,71,875</td><td>1,25,750</td></tr>
+      <tr><td>Q2 (Jul-Sep)</td><td>11,94,500</td><td>95,560</td></tr>
+      <tr><td>Q3 (Oct-Dec)</td><td>12,12,300</td><td>96,984</td></tr>
+      <tr><td>Q4 (Jan-Mar)</td><td>30,29,200</td><td>2,42,336</td></tr>
+    </table>
+    <div class="formula-box">Average LF = ¼(125750+95560+96984+242336) = ₹1,41,657.50
+Double = 2 × 1,41,657.50 = ₹2,83,315
++10% buffer = 2,83,315 + 28,331.50 = ₹3,11,646.50
+Rounded up = ₹3,12,000 (Required FBG)</div>
+    <div class="compare">
+      <div class="compare-col a"><h4>Existing FBG</h4>₹1,16,000</div>
+      <div class="compare-col b"><h4>Required FBG</h4>₹3,12,000</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Avg-Double-Ten-Round" (A-D-T-R) → Average LF → Double it → +10% → Round up to nearest thousand.</div>
+    <div class="qbox"><b>Probable Q:</b> If average quarterly LF is ₹1,00,000, what is the FBG requirement (before rounding)? → 2×1,00,000 = 2,00,000 + 10% = <b>₹2,20,000</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">एक-पृष्ठ पुनरीक्षण शीट</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>USOF established:</b> 2002, under Indian Telegraph (Amendment) Act 2003</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Administered by:</b> DoT, under Ministry of Communications</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>USL:</b> 5% of AGR of telecom licensees</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Total allocated (since inception):</b> ₹55,000+ crore</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Selection:</b> Competitive bidding, lowest bidder wins subsidy</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Payment phases:</b> Initial → Intermediate → Final (milestone-based)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>BharatNet target:</b> 2,50,000 Gram Panchayats; Cabinet approval 25 Oct 2011; BBNL incorporated 25 Feb 2012</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>BharatNet phases:</b> I (2017) → II (2018) → III (2023)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>USOF-BBNL funding cap:</b> ₹20,100 crore, for 5 years from 25 Feb 2012</div></div>
+      <div class="rev-row"><span class="rev-icon">🟡</span><div><b>Net Cost</b> = Capex + (Opex − Revenue)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Disbursement steps:</b> 10% mobilisation → 25% on UC → &gt;75% needs 55% progress → 95% max via 5% steps → final 5% after 1 yr</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>No interest</b> paid by USOF for short/late payment to BBNL</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Audit:</b> Sec 225/619 Companies Act 1956; report within 7 days, by 30 Sept</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>FBG formula:</b> Avg LF ×2, +10%, round up to nearest thousand</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>BharatNet</b> was earlier called <b>NOFN</b></div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">अंतिम-दिन पुनरीक्षण नोट्स</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>USOF est. <b>2002</b>, Act <b>2003</b></li>
+      <li>USL = <b>5%</b> AGR</li>
+      <li>Allocation so far = <b>₹55,000+ Cr</b></li>
+      <li>BharatNet target = <b>2.5 lakh GPs</b></li>
+      <li>BBNL incorporated <b>25 Feb 2012</b></li>
+      <li>Funding cap (BBNL) = <b>₹20,100 Cr</b>, for <b>5 years</b></li>
+      <li>Phase I target = <b>2017</b>, Phase II = <b>2018</b>, Phase III = <b>2023</b></li>
+      <li>Audit report deadline = <b>7 days / 30 Sept</b></li>
+      <li>No interest on delayed BBNL payment</li>
+      <li>FBG = (Avg LF ×2) +10%, rounded up</li>
+      <li>BharatNet earlier name = <b>NOFN</b></li>
+      <li>6 Streams: Public Access → Household → Mobile → Broadband → General Infra → New Tech</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">याद रखने की तरकीबें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"2002-2003-5%"</b> → USOF born 2002, legalized 2003, funded by 5% AGR levy.</div>
+    <div class="mnemonic"><b>"PHM-B GN"</b> → 6 Streams: Public access, Household phones, Mobile infra, Broadband, General infra, New tech.</div>
+    <div class="mnemonic"><b>"1-1-1"</b> → BharatNet Phase I (2017), Phase II (2018 — 1 yr later), Phase III (2023).</div>
+    <div class="mnemonic"><b>"20,100 for 5"</b> → BBNL funding cap ₹20,100 Cr for 5 years.</div>
+    <div class="mnemonic"><b>"7-30"</b> → Audit report: 7 days after signing, not later than 30th September.</div>
+    <div class="mnemonic"><b>"Avg-Double-Ten-Round" (A-D-T-R)</b> → FBG formula steps.</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">स्रोत टिप्पणी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह इन्फोग्राफिक आपकी अपलोड की गई "USOF – AAO Paper IV Sample Notes" (postaladda.com) फ़ाइल के आधार पर तैयार किया गया है। परीक्षा उपयोग हेतु स्व-निर्मित सारांश है; मूल दस्तावेज़ से क्रॉस-वेरीफाई करें।</p>
+    <p style="margin-top:6px;">This infographic is built from your uploaded "USOF – AAO Paper IV Sample Notes" source file. Cross-verify with the original document before final exam use.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">LDCE AAO Exam Portal · USOF · Paper IV<br>Tap section headers to expand/collapse · टैप करके सेक्शन खोलें/बंद करें</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

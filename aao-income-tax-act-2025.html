@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income Tax Act 2025 — Salary, TDS, DDO Returns & Deductions | AAO Paper IV</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.25rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.0rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.0rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:12000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.82rem;}
+th{background:var(--blue); color:#fff; padding:8px 6px; text-align:left; font-size:.78rem;}
+td{padding:7px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.timeline{position:relative; margin:16px 4px 6px 4px; padding-left:20px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%;
+  background:var(--red); border:2px solid var(--gold);
+}
+.tl-year{font-weight:800; color:var(--red); font-size:.9rem;}
+.tl-body{font-size:.83rem; margin-top:2px;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.decision{margin:12px 0; font-size:.85rem;}
+.dbox{
+  border:2px solid var(--blue); border-radius:10px; padding:8px 10px; margin-bottom:6px; background:var(--light-blue);
+}
+.dq{font-weight:800; color:var(--blue); font-size:14px;}
+.dyes{border-left:4px solid var(--green);}
+.dno{border-left:4px solid var(--red);}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.82rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+.pillgrid{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:10px 0;}
+.pill{border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:.78rem; background:var(--light-blue);}
+.pill b{display:block; font-size:.85rem; color:var(--blue);}
+.secbadge{display:inline-block; background:var(--blue); color:#fff; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:8px; margin-left:4px;}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} .pillgrid{grid-template-columns:repeat(3,1fr);} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">AAO PAPER IV • भाग IV • Income-tax Act 2025</span>
+      <div class="title-en">Salary, TDS, DDO Returns & Deductions</div>
+      <div class="title-hi">वेतन, टीडीएस, डीडीओ रिटर्न व कटौतियां</div>
+      <div class="subtitle">Based on the new Income-tax Act, 2025 | नए आयकर अधिनियम 2025 पर आधारित</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#salarydef">Salary Definition</a>
+    <a class="chip" href="#perq">Perquisites</a>
+    <a class="chip" href="#salded">Sec 19 Deductions</a>
+    <a class="chip" href="#tds">TDS Sec 392</a>
+    <a class="chip" href="#ddoduty">DDO Duties Sec 397</a>
+    <a class="chip" href="#default">Default/Penalty</a>
+    <a class="chip" href="#deductions">Chapter Deductions</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">रंग-कोड: लाल=अति महत्वपूर्ण, नारंगी=बार-बार पूछा गया, पीला=अवधारणा, हरा=त्वरित पुनरीक्षण। सभी धाराएं नए Income-tax Act, 2025 की हैं (पुराने 1961 अधिनियम से क्रमांक भिन्न हैं)।</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Topic Overview <span class="hi">विषय अवलोकन</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> Income Tax & TDS — Salaried Employees/Pensioners <span class="hi">वेतनभोगी/पेंशनभोगी पर आयकर व टीडीएस</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> Income Tax on Salary/Pension — Sec 15-19 <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> TDS on Salary — Sec 392 <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> DDO Statements/Returns — Sec 397, 399 <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 4:</b> Default, Interest & Penalty — Sec 398, 412 <span class="tag tag-freq">🟠</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 5:</b> Admissible Deductions — Sec 123, 124, 126, 130-133 <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="subhead">Important Authorities <span class="hi">महत्वपूर्ण प्राधिकरण</span></div>
+    <ul>
+      <li><b>DDO / Person responsible for paying salary</b> — deducts & deposits TDS, files statements <span class="secbadge">Sec 392, 397</span></li>
+      <li><b>Assessing Officer</b> — determines default, levies penalty <span class="secbadge">Sec 398, 412</span></li>
+      <li><b>Central Government / Board (CBDT)</b> — prescribes forms, rates, time limits</li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> Under the Income-tax Act 2025, "Salaries" is which head of income? <span class="hi">"वेतन" किस मद के अंतर्गत आता है?</span> → <b>Head (a) — first among the 5 heads of income (Sec 13)</b></div>
+  </div></div>
+</div>
+
+<!-- SALARY DEFINITION -->
+<div class="card" id="salarydef">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💵 Definition of Salary <span class="hi">वेतन की परिभाषा</span> <span class="secbadge">Sec 15-16</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Section 15 — What is chargeable as "Salaries" <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Any salary <b>due</b> from employer, whether paid or not</li>
+      <li>Any salary <b>paid/allowed</b> though not yet due</li>
+      <li>Any <b>arrears of salary</b> paid/allowed, if not taxed earlier</li>
+      <li>"Employer" includes <b>former employer</b></li>
+      <li>Salary/bonus/commission paid to a <b>partner of a firm</b> is <b>NOT</b> salary under this head <span class="tag tag-freq">🟠</span></li>
+    </ul>
+
+    <div class="subhead">Section 16 — "Salary" includes <span class="tag tag-vip">🔴</span></div>
+    <div class="pillgrid">
+      <div class="pill">Wages</div>
+      <div class="pill">Annuity or <b>Pension</b></div>
+      <div class="pill">Gratuity</div>
+      <div class="pill">Fees or Commission</div>
+      <div class="pill">Perquisites</div>
+      <div class="pill">Profits in lieu of salary</div>
+      <div class="pill">Advance of salary</div>
+      <div class="pill">Leave encashment received</div>
+      <div class="pill">Recognised PF accretion (taxable portion)</div>
+      <div class="pill">Employer's pension scheme contribution (Sec 124)</div>
+      <div class="pill">Agniveer Corpus Fund contribution (Sec 125)</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "WAG-FPAAL" → Wages, Annuity/pension, Gratuity, Fees/commission, Perquisites, Advance, Leave encashment — key items under Sec 16.</div>
+    <div class="qbox"><b>Probable Q:</b> Is a partner's salary from a firm taxed under "Salaries"? → <b>No</b> — Sec 15(4) excludes it <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- PERQUISITES -->
+<div class="card" id="perq">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🎁 Perquisites <span class="hi">अनुलाभ</span> <span class="secbadge">Sec 17</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Includes (Sec 17(1)) <span class="tag tag-freq">🟠</span></div>
+    <ul>
+      <li>Rent-free / concessional accommodation</li>
+      <li>Free/concessional benefit or amenity (director / high-income employee)</li>
+      <li>Specified security / sweat equity shares</li>
+      <li>Employer's payment of employee's obligation</li>
+      <li>Employer's payment to effect life assurance/annuity (except recognised PF, approved superannuation fund, or Deposit-linked Insurance Fund)</li>
+      <li>Employer's contribution &gt; <b>₹7,50,000</b>/year to RPF + NPS(124) + superannuation fund combined <span class="tag tag-vip">🔴</span></li>
+      <li>Annual accretion (interest/dividend) on above excess contribution</li>
+    </ul>
+    <div class="subhead">Exemptions from Perquisite (Sec 17(2)) <span class="tag tag-concept">🟡</span></div>
+    <ul>
+      <li>Medical treatment in employer-maintained hospital</li>
+      <li>Medical treatment in Govt/local authority/approved hospital, or for prescribed diseases</li>
+      <li>Employer-paid health insurance premium (approved scheme)</li>
+      <li>Conveyance for office commute</li>
+      <li>Medical treatment/travel abroad (subject to RBI permission & income limits)</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "7.5 Lakh Cap" → Combined employer contribution to RPF+NPS+Superannuation above ₹7,50,000/yr is a taxable perquisite.</div>
+    <div class="qbox"><b>Probable Q:</b> What is the annual threshold for employer's combined RPF+NPS+Superannuation contribution to become a taxable perquisite? → <b>₹7,50,000</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- SECTION 19 DEDUCTIONS -->
+<div class="card" id="salded">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>➖ Deductions From Salary Income <span class="hi">वेतन आय से कटौतियां</span> <span class="secbadge">Sec 19</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p>Income under "Salaries" is computed <b>after</b> allowing deductions listed in the Sec 19 Table.</p>
+    <table>
+      <tr><th>Sl.</th><th>Nature of Sum</th><th>Amount of Deduction</th></tr>
+      <tr><td>1</td><td>Tax on employment (professional tax)</td><td>Entire amount</td></tr>
+      <tr><td>2</td><td><b>Standard Deduction</b> <span class="tag tag-vip">🔴</span></td><td>(a) ₹75,000 or salary, whichever less — if new tax regime (Sec 202(1)); (b) ₹50,000 or salary, whichever less — other cases</td></tr>
+      <tr><td>3</td><td>Death-cum-retirement gratuity</td><td>Entire amount</td></tr>
+      <tr><td>4</td><td>Retiring gratuity — Defence services Pension Code</td><td>Entire amount</td></tr>
+      <tr><td>5</td><td>Gratuity under Payment of Gratuity Act 1972</td><td>As per Act's Sec 4(2)/(3) formula</td></tr>
+      <tr><td>6</td><td>Other gratuity (retirement/incapacity/termination)</td><td>Min of: actual gratuity, notified limit, ½ month's salary × completed years</td></tr>
+      <tr><td>7</td><td><b>Commuted pension</b> — Govt/all-India/defence/State/local authority employees <span class="tag tag-vip">🔴</span></td><td>Entire amount exempt</td></tr>
+      <tr><td>8</td><td>Commuted pension — any other employer <span class="tag tag-freq">🟠</span></td><td>If gratuity also received: commuted value of ⅓ pension exempt; else ½ pension exempt</td></tr>
+      <tr><td>10-11</td><td>Retrenchment compensation</td><td>Min of compensation received / Industrial Disputes Act formula / ₹50,000 (or approved scheme = entire)</td></tr>
+      <tr><td>12</td><td>Voluntary retirement compensation (VRS)</td><td>Min of compensation / <b>₹5,00,000</b></td></tr>
+      <tr><td>13</td><td>Leave encashment (Central/State Govt employee, on retirement)</td><td>Entire amount exempt</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "75-50 Split" → Standard deduction ₹75,000 under new regime (202(1)), ₹50,000 otherwise. "⅓ if Gratuity, ½ if not" → private employee commuted pension rule.</div>
+    <div class="qbox"><b>Probable Q:</b> Max exemption limit for VRS compensation? → <b>₹5,00,000</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- TDS SEC 392 -->
+<div class="card" id="tds">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧾 TDS on Salary <span class="hi">वेतन पर टीडीएस</span> <span class="secbadge">Sec 392</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="flow">
+      <div class="flow-box">Person responsible for paying "Salaries" <b>shall deduct income-tax</b> at time of payment</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Deduction at the <b>average rate of income-tax</b>, computed on rates in force for the tax year</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Based on <b>estimated income</b> of employee for that year</div>
+    </div>
+
+    <div class="subhead">Employer's Option — Non-Monetary Perquisite <span class="tag tag-freq">🟠</span></div>
+    <p>Employer may, at his own option, pay tax on whole/part of non-monetary perquisite (Sec 17(1)) himself instead of deducting from employee.</p>
+
+    <div class="subhead">Particulars DDO Must Consider (Sec 392(4)) <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Salary from any other employer during the year</li>
+      <li>Relief under Sec 157 (Govt servant/company/co-op/local authority employee)</li>
+      <li>Loss under "Income from house property"</li>
+      <li>Income under any other head (except loss, other than house property loss)</li>
+      <li>Tax already deducted/collected at source for the year</li>
+    </ul>
+    <p><b>Restriction:</b> Tax deductible from Salary can be reduced <b>only</b> for house-property loss or other TDS/TCS already made — nothing else <span class="tag tag-vip">🔴</span></p>
+
+    <div class="subhead">DDO's Sec 392(5) Duties</div>
+    <ul>
+      <li>Furnish statement of perquisites/profits in lieu of salary with value, to employee</li>
+      <li>Obtain evidence/proof of claims from employee before allowing deductions</li>
+      <li>Adjust TDS for any excess/deficiency of earlier deduction</li>
+    </ul>
+
+    <div class="subhead">Special Cases</div>
+    <ul>
+      <li><b>Recognised PF trustees</b> — deduct tax on accumulated balance paid to employee (per Schedule XI)</li>
+      <li><b>EPF accumulated balance ≥ ₹50,000</b> — TDS at <b>10%</b> if includible in total income <span class="tag tag-freq">🟠</span></li>
+      <li>Salary paid in foreign currency — converted to ₹ at prescribed exchange rate for TDS</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Average Rate, Every Payment" — TDS on salary always uses the average rate method, unlike flat-rate TDS on other incomes.</div>
+    <div class="qbox"><b>Probable Q:</b> At what rate is TDS on EPF withdrawal ≥₹50,000 deducted (if taxable)? → <b>10%</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- DDO DUTIES -->
+<div class="card" id="ddoduty">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📅 DDO Statements, Returns & Time Limits <span class="hi">डीडीओ विवरण, रिटर्न व समय सीमा</span> <span class="secbadge">Sec 397, 399</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">TAN — Tax Deduction & Collection Account Number <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Every deductor must apply for <b>TAN</b> within prescribed time (Sec 397(1)(a))</li>
+      <li>TAN must be quoted in all challans/statements/certificates</li>
+    </ul>
+
+    <div class="subhead">PAN Requirement & Higher TDS <span class="tag tag-vip">🔴</span></div>
+    <p>If deductee fails to furnish valid PAN → higher of:</p>
+    <ul>
+      <li>Rate specified in the Act, OR</li>
+      <li>Rate(s) in force, OR</li>
+      <li><b>20%</b> (5% for specified virtual digital asset/other cases)</li>
+    </ul>
+
+    <div class="subhead">Payment & Statement Cycle — Sec 397(3) <span class="tag tag-vip">🔴</span></div>
+    <div class="flow">
+      <div class="flow-box"><b>Step 1:</b> Deduct TDS at time of salary payment</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box"><b>Step 2:</b> Pay TDS to credit of Central Government within prescribed time</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box"><b>Step 3:</b> Deliver a <b>statement</b> (TDS return) for the period, in prescribed form & time to Income-tax authority</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box"><b>Step 4 (if error):</b> Deliver a <b>correction statement</b> within <b>2 years</b> from end of tax year of original statement <span class="tag tag-vip">🔴</span></div>
+    </div>
+
+    <div class="subhead">Government DDO — Special Provision (Sec 397(3)(e)) <span class="tag tag-freq">🟠</span></div>
+    <p>Where TDS paid to Govt credit without a challan, the <b>Pay & Accounts Officer / Treasury Officer / Cheque Drawing & Disbursing Officer</b> must deliver the statement.</p>
+
+    <div class="subhead">Processing of Statements — Sec 399 <span class="tag tag-concept">🟡</span></div>
+    <p>All TDS/TCS statements (incl. correction statements) are processed by adjusting for arithmetical errors or incorrect claims apparent from the statement; interest computed on amounts reflected.</p>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "TAN-Pay-Statement-Correct" (T-P-S-C) → 4-step DDO compliance cycle under Sec 397.</div>
+    <div class="qbox"><b>Probable Q:</b> Within how long must a correction statement be filed? → <b>2 years</b> from end of the relevant tax year <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- DEFAULT & PENALTY -->
+<div class="card" id="default">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚠️ Default, Interest & Penalty <span class="hi">चूक, ब्याज एवं शास्ति</span> <span class="secbadge">Sec 398, 412</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">"Assessee in Default" — Sec 398(1) <span class="tag tag-vip">🔴</span></div>
+    <p>DDO who fails to deduct/pay TDS (wholly or partly) is deemed an <b>"assessee in default"</b>.</p>
+
+    <div class="subhead">Exception — Sec 398(2) <span class="tag tag-freq">🟠</span></div>
+    <p>Not treated as default if payee has: filed return of income, included the amount in that return, paid tax due — AND a CA's certificate to this effect is furnished.</p>
+
+    <div class="subhead">Interest for Default — Sec 398(3) <span class="tag tag-vip">🔴</span></div>
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>Failure to Deduct</h4>
+        <b>1% per month</b> (or part) — from date deductible to date actually deducted
+      </div>
+      <div class="compare-col b">
+        <h4>Deducted but Not Paid</h4>
+        <b>1.5% per month</b> (or part) — from date deducted to date actually paid
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "1 to Deduct, 1.5 to Deposit" → 1% for delay in deducting, 1.5% for delay in depositing after deduction.</div>
+
+    <div class="subhead">Time Limit for "Default" Order — Sec 398(5) <span class="tag tag-vip">🔴</span></div>
+    <p>No order can be made deeming default after <b>6 years</b> from end of tax year in which TDS was deductible, OR <b>2 years</b> from end of tax year in which correction statement was filed — whichever is <b>later</b>.</p>
+
+    <div class="subhead">Penalty — Sec 412 <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Penalty amount as Assessing Officer directs (continuing default → further amounts)</li>
+      <li>Total penalty <b>shall not exceed the amount of tax in arrears</b></li>
+      <li>No penalty without giving reasonable opportunity of being heard</li>
+      <li>No penalty if default was for "good and sufficient reasons"</li>
+      <li>Penalty not waived merely because tax was later paid</li>
+      <li>If tax demand later fully reduced on appeal → penalty cancelled & refunded</li>
+    </ul>
+    <div class="qbox"><b>Probable Q:</b> What is the maximum penalty leviable under Sec 412 for TDS default? → <b>Cannot exceed the amount of tax in arrears</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- DEDUCTIONS CHAPTER -->
+<div class="card" id="deductions">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💰 Admissible Deductions (Chapter — Gross Total Income) <span class="hi">स्वीकार्य कटौतियां</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <table>
+      <tr><th>Section</th><th>Deduction</th><th>Limit</th></tr>
+      <tr><td><b>123</b></td><td>Life insurance premium, PF, deferred annuity, etc. (old 80C equivalent) <span class="tag tag-vip">🔴</span></td><td>Aggregate cap <b>₹1,50,000</b></td></tr>
+      <tr><td><b>124(1)</b></td><td>Employer's NPS contribution</td><td><b>14%</b> if Central/State Govt employer; <b>10%</b> other employers (14% if new regime)</td></tr>
+      <tr><td><b>124(3)</b></td><td>Own additional NPS contribution <span class="tag tag-vip">🔴</span></td><td>Up to <b>₹50,000</b></td></tr>
+      <tr><td><b>125</b></td><td>Agnipath Scheme — Agniveer Corpus Fund contribution (own + Govt)</td><td>Entire amount</td></tr>
+      <tr><td><b>126</b></td><td>Health insurance premium <span class="tag tag-vip">🔴</span></td><td>Self/family ₹25,000; parents ₹25,000; medical expenditure ₹50,000 each (overall cap ₹50,000 combo)</td></tr>
+      <tr><td><b>130</b></td><td>Interest on home loan (residential house, specific 2016-17 window)</td><td>₹50,000</td></tr>
+      <tr><td><b>131</b></td><td>Interest on home loan (2019-22 window, not eligible under 130)</td><td>₹1,50,000</td></tr>
+      <tr><td><b>132</b></td><td>Interest on loan for electric vehicle</td><td>₹1,50,000</td></tr>
+      <tr><td><b>133</b></td><td>Donations — National Defence Fund, PM CARES, PM National Relief Fund, etc.</td><td>100% / 50% as per fund category</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "123-124-125-126" → sequential sections for savings(1.5L), pension(14/10%+50k), Agnipath, health insurance — easy to recall in order.</div>
+    <p class="hi">नोट: पुराने आयकर अधिनियम 1961 की धारा 80C/80D/80G अब नए अधिनियम में धारा 123/126/133 आदि में पुनर्क्रमांकित हैं।</p>
+    <div class="qbox"><b>Probable Q:</b> Under the new Act, which section corresponds to old Section 80C? → <b>Section 123</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">एक-पृष्ठ पुनरीक्षण शीट</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 15-16:</b> Salary chargeable on due/paid/arrears basis; includes wages, pension, gratuity, perquisites; partner's salary excluded</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 17:</b> Perquisite — employer's RPF+NPS+Superannuation contribution &gt;₹7,50,000/yr taxable</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 19:</b> Standard Deduction ₹75,000 (new regime) / ₹50,000 (other); Govt commuted pension fully exempt; VRS exemption ₹5,00,000</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 392:</b> DDO deducts TDS monthly at average rate on estimated annual salary</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>EPF withdrawal ≥₹50,000</b> → TDS at 10%</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 397:</b> TAN mandatory; PAN failure → TDS at 20% (or specified rate); correction statement within 2 years</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 398:</b> Failure to deduct = 1%/month interest; failure to deposit after deduction = 1.5%/month</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Default order time limit:</b> 6 years from tax year end / 2 years from correction statement, whichever later</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 412:</b> Penalty capped at amount of tax in arrears; hearing mandatory before levy</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 123:</b> Savings deduction cap ₹1,50,000 (LIC/PPF/EPF etc.)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 124:</b> NPS — employer 14%(Govt)/10%(other); own extra ₹50,000</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 126:</b> Health insurance — self/family ₹25,000, parents ₹25,000, medical exp ₹50,000 each</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Sec 130/131/132:</b> Home loan interest ₹50,000/₹1,50,000 (window-specific); EV loan interest ₹1,50,000</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div>Old 80C/80D/80G ≈ New Sections 123/126/133</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">अंतिम-दिन पुनरीक्षण नोट्स</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>Standard Deduction = <b>₹75,000</b> (new regime) / <b>₹50,000</b> (other)</li>
+      <li>Govt employee commuted pension = <b>fully exempt</b> (Sl.7)</li>
+      <li>Non-Govt commuted pension: ⅓ exempt if gratuity received, else ½ exempt</li>
+      <li>VRS exemption = min(compensation, <b>₹5,00,000</b>)</li>
+      <li>TDS on Salary (Sec 392) = <b>average rate</b> method, monthly</li>
+      <li>PAN not furnished → TDS at <b>20%</b> (or specified rate)</li>
+      <li>Correction statement deadline = <b>2 years</b></li>
+      <li>Interest: <b>1%/month</b> non-deduction, <b>1.5%/month</b> non-deposit</li>
+      <li>Default order limit = <b>6 years</b> / 2 years from correction, later</li>
+      <li>Sec 412 penalty ≤ tax in arrears</li>
+      <li>Sec 123 (80C-equiv) cap = <b>₹1,50,000</b></li>
+      <li>Sec 124 NPS: employer 14%/10%; self extra <b>₹50,000</b></li>
+      <li>Sec 126 health insurance: <b>₹25,000</b>+₹25,000(parents)+₹50,000+₹50,000(medical exp)</li>
+      <li>EPF TDS threshold = <b>₹50,000</b> at <b>10%</b></li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">याद रखने की तरकीबें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"75-New, 50-Old"</b> → Standard deduction ₹75,000 under new regime (202), ₹50,000 in old regime.</div>
+    <div class="mnemonic"><b>"⅓ with Gratuity, ½ without"</b> → Non-Govt employee commuted pension exemption rule.</div>
+    <div class="mnemonic"><b>"1 to Deduct, 1.5 to Deposit"</b> → interest rates for TDS default under Sec 398(3).</div>
+    <div class="mnemonic"><b>"6-2 Later Rule"</b> → default order time limit = later of 6 yrs / 2 yrs from correction statement.</div>
+    <div class="mnemonic"><b>"7.5 Lakh Combo Cap"</b> → RPF+NPS+Superannuation employer contribution ceiling for perquisite taxability.</div>
+    <div class="mnemonic"><b>"123-124-125-126"</b> → sequential deduction sections: savings, NPS, Agnipath, health insurance.</div>
+    <div class="mnemonic"><b>"TAN-Pay-Statement-Correct"</b> → DDO's 4-step compliance cycle under Sec 397.</div>
+    <div class="mnemonic"><b>"Penalty ≤ Arrears"</b> → Sec 412 penalty ceiling rule, easy one-liner.</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">स्रोत टिप्पणी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह इन्फोग्राफिक आपकी अपलोड की गई "Income-tax Act, 2025" (आधिकारिक incometaxindia.gov.in PDF, 666 पृष्ठ) फ़ाइल की धारा 13-19 (वेतन), 123-133 (कटौतियां), और 392-412 (टीडीएस/डिफॉल्ट/शास्ति) के आधार पर तैयार किया गया है। परीक्षा उपयोग हेतु स्व-निर्मित सारांश है; मूल अधिनियम व नवीनतम संशोधनों से क्रॉस-वेरीफाई करें।</p>
+    <p style="margin-top:6px;">This infographic is built directly from your uploaded official "Income-tax Act, 2025" PDF (666 pages, incometaxindia.gov.in), covering Sections 13-19 (Salaries), 123-133 (Deductions), and 392-412 (TDS/Default/Penalty). Cross-verify with the original Act and latest amendments before final exam use — some provisions (e.g. Sec 397(1)(c)) were substituted by Act No. 4 of 2026 w.e.f. 1-10-2026.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">LDCE AAO Exam Portal · Income Tax Act 2025 · Paper IV<br>Tap section headers to expand/collapse · टैप करके सेक्शन खोलें/बंद करें</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>

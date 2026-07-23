@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GST | AAO Paper IV | India Post LDCE</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.35rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.05rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.02rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:9000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.85rem;}
+th{background:var(--blue); color:#fff; padding:8px 6px; text-align:left; font-size:.8rem;}
+td{padding:7px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.timeline{position:relative; margin:16px 4px 6px 4px; padding-left:20px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%;
+  background:var(--red); border:2px solid var(--gold);
+}
+.tl-year{font-weight:800; color:var(--red); font-size:.9rem;}
+.tl-body{font-size:.83rem; margin-top:2px;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.decision{margin:12px 0; font-size:.85rem;}
+.dbox{
+  border:2px solid var(--blue); border-radius:10px; padding:8px 10px; margin-bottom:6px; background:var(--light-blue);
+}
+.dq{font-weight:800; color:var(--blue); font-size:14px;}
+.dyes{border-left:4px solid var(--green);}
+.dno{border-left:4px solid var(--red);}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.83rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+.pillgrid{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:10px 0;}
+.pill{border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:.8rem; text-align:center; background:var(--light-blue);}
+.pill b{display:block; font-size:1rem; color:var(--blue);}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} .pillgrid{grid-template-columns:repeat(4,1fr);} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">AAO PAPER IV • भाग IV</span>
+      <div class="title-en">GST — Goods & Services Tax</div>
+      <div class="title-hi">जीएसटी — वस्तु एवं सेवा कर</div>
+      <div class="subtitle">Exam-Focused Bilingual Infographic Notes | परीक्षा-केंद्रित द्विभाषी नोट्स</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#pregst">Pre-GST Taxes</a>
+    <a class="chip" href="#features">Features</a>
+    <a class="chip" href="#registration">Registration</a>
+    <a class="chip" href="#exempt">Not Required/Compulsory</a>
+    <a class="chip" href="#returns">Returns</a>
+    <a class="chip" href="#gstr1">GSTR-1</a>
+    <a class="chip" href="#gstr2a">GSTR-2A/2B</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">रंग-कोड: लाल=अति महत्वपूर्ण, नारंगी=बार-बार पूछा गया, पीला=अवधारणा, हरा=त्वरित पुनरीक्षण</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Introduction to GST <span class="hi">जीएसटी परिचय</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> GST <span class="hi">जीएसटी</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> Introduction, Pre-GST regime & Features <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> Registration Provisions (Sec 22-24) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> GST Returns (Sec 37-48) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 4:</b> Time Limits for Deposit of Dues <span class="tag tag-freq">🟠</span></div>
+    </div>
+    <div class="subhead">Definition <span class="hi">परिभाषा</span></div>
+    <p><b>GST</b> is a comprehensive, multi-stage, destination-based indirect tax levied on the supply of goods and services, replacing multiple older indirect taxes with a single domestic tax system.</p>
+    <p class="hi">जीएसटी एक व्यापक, बहु-चरणीय, गंतव्य-आधारित अप्रत्यक्ष कर है जो वस्तुओं व सेवाओं की आपूर्ति पर लगाया जाता है और कई पुराने अप्रत्यक्ष करों को एक ही घरेलू कर प्रणाली से बदलता है।</p>
+    <div class="subhead">Important Dates <span class="hi">महत्वपूर्ण तिथियां</span></div>
+    <table>
+      <tr><th>Event</th><th>Date</th></tr>
+      <tr><td>GST Act passed by Parliament</td><td><b>29 March 2017</b> <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>GST came into effect (appointed day)</td><td><b>1 July 2017</b> <span class="tag tag-vip">🔴</span></td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "29-March Pass, 1-July Live" — Act passed 29 March, enforced 1 July 2017.</div>
+    <div class="qbox"><b>Probable Q:</b> On which date did GST come into effect? <span class="hi">जीएसटी कब लागू हुआ?</span> → <b>1 July 2017</b></div>
+  </div></div>
+</div>
+
+<!-- PRE-GST TAXES -->
+<div class="card" id="pregst">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📜 Tax System Before GST <span class="hi">जीएसटी से पहले कर प्रणाली</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Concept <span class="tag tag-concept">🟡</span></div>
+    <ul>
+      <li>States collected via <b>VAT</b> (own rules per state)</li>
+      <li>Centre taxed inter-state sales via <b>CST</b> (Central Sales Tax)</li>
+      <li>Entertainment tax, octroi, local taxes → overlapping structures</li>
+      <li>Result: <b>"tax on tax" / cascading effect</b> (e.g., excise + VAT both on same goods) <span class="tag tag-vip">🔴</span></li>
+    </ul>
+    <div class="subhead">13 Indirect Taxes Replaced by GST <span class="hi">जीएसटी द्वारा प्रतिस्थापित 13 कर</span> <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>#</th><th>Tax</th></tr>
+      <tr><td>1</td><td>Central Excise Duty</td></tr>
+      <tr><td>2</td><td>Duties of Excise</td></tr>
+      <tr><td>3</td><td>Additional Duties of Excise</td></tr>
+      <tr><td>4</td><td>Additional Duties of Customs</td></tr>
+      <tr><td>5</td><td>Special Additional Duty of Customs (SAD) Cess</td></tr>
+      <tr><td>6</td><td>State VAT</td></tr>
+      <tr><td>7</td><td>Central Sales Tax (CST)</td></tr>
+      <tr><td>8</td><td>Purchase Tax</td></tr>
+      <tr><td>9</td><td>Luxury Tax</td></tr>
+      <tr><td>10</td><td>Entertainment Tax</td></tr>
+      <tr><td>11</td><td>Entry Tax</td></tr>
+      <tr><td>12</td><td>Taxes on Advertisements</td></tr>
+      <tr><td>13</td><td>Taxes on Lotteries, Betting & Gambling</td></tr>
+    </table>
+    <p>All replaced by → <b>CGST, SGST, IGST</b></p>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "CD-CASE Purchase Luxury Entertainment Entry Ad Lottery" — first letters help recall the 13 old taxes: Central Excise, Duties of Excise, Customs Additional, Special Addl Customs, Excise Addl, State VAT, Entry, Purchase, Luxury, Entertainment, Entry, Ad, Lottery.</div>
+    <div class="qbox"><b>Probable Q:</b> What is the "cascading effect" of taxes? → <b>Tax-on-tax</b>, e.g., VAT charged on price that already includes excise duty <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- FEATURES -->
+<div class="card" id="features">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⭐ Features of GST <span class="hi">जीएसटी की विशेषताएं</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="flow">
+      <div class="flow-box"><b>Unified/Single Tax Structure</b> — combines multiple indirect taxes <span class="tag tag-vip">🔴</span></div>
+      <div class="flow-box"><b>Dual GST Model</b> — CGST + SGST (intra-state), IGST (inter-state) <span class="tag tag-vip">🔴</span></div>
+      <div class="flow-box"><b>Destination-Based Taxation</b> — tax revenue goes to consuming state <span class="tag tag-freq">🟠</span></div>
+      <div class="flow-box"><b>Input Tax Credit (ITC)</b> — credit for tax paid on inputs, reduces burden</div>
+      <div class="flow-box"><b>E-Way Bill System</b> — digital waybill for goods movement</div>
+      <div class="flow-box"><b>E-Invoicing</b> — mandatory for certain businesses</div>
+      <div class="flow-box"><b>Threshold Limits</b> — small businesses below limit exempt</div>
+      <div class="flow-box"><b>Composition Scheme</b> — fixed % of turnover instead of regular GST</div>
+      <div class="flow-box"><b>Online Registration & Compliance</b> — registration, returns, payment online</div>
+    </div>
+    <div class="qbox"><b>Probable Q:</b> Which GST is levied on inter-state supply? → <b>IGST</b> | On intra-state? → <b>CGST + SGST</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- REGISTRATION -->
+<div class="card" id="registration">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📝 Provisions for Registration (Sec 22-30) <span class="hi">पंजीकरण प्रावधान</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Sections <span class="tag tag-vip">🔴</span></div>
+    <p>Registration provisions: <b>Section 22 to 30, CGST Act 2017</b></p>
+
+    <div class="subhead">Central Taxes Subsumed into GST</div>
+    <p>Central excise duty, Service Tax, Additional Duty of Excise, Additional Customs Duty, SAD, Central surcharges & cesses.</p>
+
+    <div class="subhead">Types of GST in India <span class="tag tag-vip">🔴 (Asked in AAO 2022)</span></div>
+    <div class="pillgrid">
+      <div class="pill"><b>SGST</b>State GST</div>
+      <div class="pill"><b>CGST</b>Central GST</div>
+      <div class="pill"><b>IGST</b>Integrated GST</div>
+      <div class="pill"><b>UGST</b>UT GST</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SCIU" → SGST, CGST, IGST, UGST — 4 types of GST in India.</div>
+    <div class="qbox"><b>Probable Q (Actual AAO 2022):</b> How many types of GST are there in India? → <b>4 (SGST, CGST, IGST, UGST)</b> <span class="tag tag-vip">🔴</span></div>
+
+    <div class="subhead">Who is Liable to Register — Sec 22 <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>Category</th><th>Threshold</th></tr>
+      <tr><td>Normal States</td><td>Aggregate turnover &gt; <b>₹20 lakh</b></td></tr>
+      <tr><td>Special Category States</td><td>Aggregate turnover &gt; <b>₹10 lakh</b></td></tr>
+      <tr><td>Existing licence holder (pre-GST law)</td><td>Registered w.e.f. <b>01.07.2017</b></td></tr>
+      <tr><td>Transfer of business</td><td>Transferee/successor liable from date of transfer</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "20-10 Split" → ₹20 lakh normal states, ₹10 lakh special category states.</div>
+    <div class="qbox"><b>Probable Q:</b> Turnover limit for GST registration in normal states? → <b>₹20 lakh</b>; special category? → <b>₹10 lakh</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- EXEMPT & COMPULSORY -->
+<div class="card" id="exempt">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚖️ Not Required vs Compulsory Registration <span class="hi">छूट बनाम अनिवार्य पंजीकरण</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>🔴 NOT Required — Sec 23</h4>
+        <ul>
+          <li>Exclusively supplying goods/services not liable to tax or wholly exempt</li>
+          <li>Category exempted by Govt notification (on Council's recommendation)</li>
+          <li>Agriculturist — to extent of supply of produce from cultivation</li>
+        </ul>
+      </div>
+      <div class="compare-col b">
+        <h4>🔴 COMPULSORY — Sec 24</h4>
+        <ul>
+          <li>Inter-state taxable suppliers</li>
+          <li>Casual taxable persons</li>
+          <li>Persons paying tax under reverse charge</li>
+          <li>Non-resident taxable persons</li>
+          <li>TDS deductors (Sec 51)</li>
+          <li>TCS collectors (Sec 52)</li>
+          <li>Agents supplying on behalf of others</li>
+          <li>Input Service Distributors (ISD)</li>
+          <li>Suppliers via e-commerce operator</li>
+          <li>E-commerce operators themselves</li>
+          <li>OIDAR service suppliers (from outside India to India)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hi">Sec 24 वाले व्यक्तियों को टर्नओवर सीमा चाहे जो भी हो, पंजीकरण करवाना ही होगा।</p>
+    <div class="mnemonic">🧠 <b>Mnemonic (Sec 24):</b> "I-C-R-N-T-T-A-I-E-E-O" → Inter-state, Casual, Reverse charge, Non-resident, TDS, TCS, Agent, ISD, E-comm supplier, E-comm operator, OIDAR.</div>
+    <div class="qbox"><b>Probable Q:</b> Is an agriculturist required to register under GST? → <b>No</b> (Sec 23, to extent of produce from own cultivation) <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- RETURNS OVERVIEW -->
+<div class="card" id="returns">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🗂️ GST Returns Overview (Sec 37-48) <span class="hi">जीएसटी रिटर्न अवलोकन</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Sections <span class="tag tag-vip">🔴</span></div>
+    <p>GST return provisions: <b>Section 37 to Section 48, CGST Act 2017</b></p>
+    <div class="decision">
+      <div class="dbox dq">Is aggregate turnover &gt; ₹5 crore?</div>
+      <div class="dbox dyes"><b>YES →</b> Monthly filing required</div>
+      <div class="dbox dno"><b>NO →</b> Can opt for QRMP (Quarterly Return, Monthly Payment) scheme</div>
+    </div>
+    <div class="qbox"><b>Probable Q:</b> What is QRMP scheme threshold? → Turnover <b>up to ₹5 crore</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- GSTR-1 -->
+<div class="card" id="gstr1">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📤 GSTR-1 (Section 37) <span class="hi">जीएसटीआर-1</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p>Return of <b>outward supplies</b> — filed by every registered person (except ISD, composition taxpayers, etc.)</p>
+
+    <div class="subhead">Important Time Limits <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>Filer Type</th><th>Due Date</th></tr>
+      <tr><td>Monthly (turnover &gt;₹5 Cr)</td><td><b>11th</b> of subsequent month (e.g., Aug → 11 Sept)</td></tr>
+      <tr><td>QRMP (turnover ≤₹5 Cr)</td><td><b>13th</b> of month following the quarter (e.g., Apr-Jun → 13 July)</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "11-Monthly, 13-Quarterly" — one-digit apart, easy to recall.</div>
+
+    <div class="subhead">Details Furnished in GSTR-1</div>
+    <ul>
+      <li>Invoice-wise details — B2B supplies</li>
+      <li>Consolidated details — B2C supplies</li>
+      <li>Debit/credit notes, exports, amendments</li>
+      <li>HSN code details</li>
+    </ul>
+
+    <div class="subhead">Rectification of Errors <span class="tag tag-freq">🟠</span></div>
+    <p>Corrections via amendment in subsequent month's GSTR-1 — but <b>NOT allowed after September</b> of the following FY, or filing of annual return, <b>whichever is earlier</b>.</p>
+
+    <div class="subhead">Important Penalties <span class="tag tag-vip">🔴</span></div>
+    <p>Non-filing → <b>late fee + penalty</b>; may also block filing of subsequent returns like <b>GSTR-3B</b> (affects ITC flow).</p>
+
+    <div class="subhead">Link with GSTR-2A/2B</div>
+    <p>Supplier's GSTR-1 data auto-populates into recipient's <b>GSTR-2A</b> and <b>GSTR-2B</b>, enabling ITC verification.</p>
+    <div class="qbox"><b>Probable Q:</b> Last date to rectify GSTR-1 errors? → <b>September of following FY or annual return filing, whichever earlier</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- GSTR-2A -->
+<div class="card" id="gstr2a">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📥 GSTR-2A (Section 38) <span class="hi">जीएसटीआर-2ए</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p><b>GSTR-2A</b> — auto-populated, <b>read-only</b> summary of inward supplies (purchases), generated from suppliers' GSTR-1 filings.</p>
+    <div class="flow">
+      <div class="flow-box">Supplier files <b>GSTR-1</b></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Auto-populates recipient's <b>GSTR-2A</b> (purchases, imports, reverse-charge supplies)</div>
+    </div>
+    <p><b>Section 38</b> governs communication of details of inward supplies to the recipient.</p>
+    <div class="qbox"><b>Probable Q:</b> Is GSTR-2A editable? → <b>No — it is read-only/auto-populated</b> <span class="tag tag-vip">🔴</span></div>
+    <p class="hi">नोट: GSTR-2B भी इसी प्रकार का auto-generated statement है, जो एक निश्चित तिथि तक की आपूर्ति का सारांश देता है (static, ITC क्लेम हेतु प्रयुक्त)।</p>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">एक-पृष्ठ पुनरीक्षण शीट</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>GST Act passed:</b> 29 March 2017; effective from <b>1 July 2017</b></div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>4 Types of GST:</b> SGST, CGST, IGST, UGST</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Registration provisions:</b> Sections 22 to 30, CGST Act 2017</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Turnover threshold:</b> ₹20 lakh (normal states), ₹10 lakh (special category states)</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Existing licence holders:</b> registered w.e.f. 01.07.2017</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Not required (Sec 23):</b> exempt supply, notified category, agriculturist</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Compulsory (Sec 24):</b> inter-state, casual, RCM, non-resident, TDS/TCS, agent, ISD, e-comm, OIDAR</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Returns provisions:</b> Sections 37 to 48, CGST Act 2017</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Monthly GSTR-1:</b> turnover &gt;₹5 Cr, due <b>11th</b> of next month</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>QRMP GSTR-1:</b> turnover ≤₹5 Cr, due <b>13th</b> of month after quarter</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>GSTR-1 rectification deadline:</b> September of next FY / annual return, whichever earlier</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>GSTR-2A</b> = auto-populated read-only inward supply summary (Sec 38)</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Cascading effect</b> = tax-on-tax under pre-GST regime</div></div>
+      <div class="rev-row"><span class="rev-icon">🟡</span><div><b>13 old indirect taxes</b> subsumed → replaced by CGST/SGST/IGST</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">अंतिम-दिन पुनरीक्षण नोट्स</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>GST Act passed = <b>29 March 2017</b>, effective = <b>1 July 2017</b></li>
+      <li>4 Types = <b>SGST, CGST, IGST, UGST</b></li>
+      <li>Registration = Sec <b>22-30</b></li>
+      <li>Threshold = <b>₹20L</b> (normal), <b>₹10L</b> (special category)</li>
+      <li>Not required = Sec <b>23</b> | Compulsory = Sec <b>24</b></li>
+      <li>Returns = Sec <b>37-48</b></li>
+      <li>GSTR-1 monthly due = <b>11th</b>; QRMP due = <b>13th</b></li>
+      <li>GSTR-1 threshold for monthly vs QRMP = <b>₹5 Cr</b></li>
+      <li>GSTR-2A = Sec <b>38</b>, auto-populated, read-only</li>
+      <li>Non-filing GSTR-1 → late fee + blocks GSTR-3B</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">याद रखने की तरकीबें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"29-3, 1-7"</b> → GST passed 29 March, effective 1 July 2017.</div>
+    <div class="mnemonic"><b>"SCIU"</b> → SGST, CGST, IGST, UGST — 4 types.</div>
+    <div class="mnemonic"><b>"20-10 Split"</b> → ₹20L normal states, ₹10L special category.</div>
+    <div class="mnemonic"><b>"11-13 Twins"</b> → GSTR-1 monthly due 11th, QRMP due 13th.</div>
+    <div class="mnemonic"><b>"22-23-24"</b> → Sec 22 who must register, Sec 23 who's exempt, Sec 24 who must register compulsorily — sequential and easy to recall.</div>
+    <div class="mnemonic"><b>"37-48"</b> → Returns chapter spans Sec 37 to 48.</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">स्रोत टिप्पणी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह इन्फोग्राफिक आपकी अपलोड की गई "GST – AAO Exam IV Sample Notes" (postaladda.com) फ़ाइल के आधार पर तैयार किया गया है। परीक्षा उपयोग हेतु स्व-निर्मित सारांश है; मूल दस्तावेज़ से क्रॉस-वेरीफाई करें। (यह अंश दस्तावेज़ के प्रारंभिक 28 पृष्ठों में से पहले भाग तक कवर करता है — GSTR-2A तक।)</p>
+    <p style="margin-top:6px;">This infographic is built from your uploaded "GST – AAO Exam IV Sample Notes" source file, covering the portion visible up through GSTR-2A (Section 38). Cross-verify with the original document and add remaining topics (GSTR-2B, GSTR-3B, payment timelines, penalties) once the full document is available.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">LDCE AAO Exam Portal · GST · Paper IV<br>Tap section headers to expand/collapse · टैप करके सेक्शन खोलें/बंद करें</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>
