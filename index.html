@@ -188,6 +188,8 @@
         .category-icon.indigo { background: rgba(79, 70, 229, 0.12); color: #4f46e5; }
         .category-icon.pink { background: rgba(219, 39, 119, 0.12); color: #db2777; }
         .category-icon.cyan { background: rgba(2, 132, 199, 0.12); color: #0284c7; }
+        .category-icon.orange { background: rgba(234, 88, 12, 0.12); color: #ea580c; }
+        .category-icon.fuchsia { background: rgba(192, 38, 211, 0.12); color: #c026d3; }
       
         .category-icon svg { width: 20px; height: 20px; }
         .category-title { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin: 0; flex: 1; }
@@ -210,6 +212,8 @@
         .category-header.tile-indigo { background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); box-shadow: 0 8px 20px rgba(67,56,202,0.28); }
         .category-header.tile-pink { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); box-shadow: 0 8px 20px rgba(190,24,101,0.28); }
         .category-header.tile-cyan { background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%); box-shadow: 0 8px 20px rgba(3,105,161,0.28); }
+        .category-header.tile-orange { background: linear-gradient(135deg, #fb923c 0%, #c2410c 100%); box-shadow: 0 8px 20px rgba(194,65,12,0.28); }
+        .category-header.tile-fuchsia { background: linear-gradient(135deg, #e879f9 0%, #a21caf 100%); box-shadow: 0 8px 20px rgba(162,28,175,0.28); }
         .category-cards { display: block; overflow: hidden; }
         .category-section.collapsed .category-cards { display: none; }
       .sub-card { background: var(--surface); border-radius: var(--radius); margin-bottom: 12px; padding: 0; box-shadow: var(--shadow-xs); border: 1px solid var(--border); display: flex; align-items: stretch; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; opacity: 0; transform: translateY(14px); animation: cardIn .5s ease forwards; }
@@ -228,6 +232,8 @@
         .card-accent.indigo { background: #4f46e5; }
         .card-accent.pink { background: #db2777; }
         .card-accent.cyan { background: #0284c7; }
+        .card-accent.orange { background: #ea580c; }
+        .card-accent.fuchsia { background: #c026d3; }
       
         .card-body { padding: 14px 16px; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
         .card-top-row { display: flex; align-items: center; gap: 6px; }
@@ -266,10 +272,14 @@
 .card-btn.pink-btn:hover { background: #be185d; }
       .card-btn.cyan-btn { background: #0284c7; }
 .card-btn.cyan-btn:hover { background: #0369a1; }
+      .card-btn.orange-btn { background: #ea580c; }
+.card-btn.orange-btn:hover { background: #c2410c; }
+      .card-btn.fuchsia-btn { background: #c026d3; }
+.card-btn.fuchsia-btn:hover { background: #a21caf; }
 
         /* Unified light-green Open button color (overrides all per-card variants above) */
-        .card-btn, .card-btn.red-btn, .card-btn.black-btn, .card-btn.yellow-btn, .card-btn.purple-btn, .card-btn.darkblue-btn, .card-btn.green-btn, .card-btn.teal-btn, .card-btn.indigo-btn, .card-btn.pink-btn, .card-btn.cyan-btn { background: #86efac; color: #14532d; }
-        .card-btn:hover, .card-btn.red-btn:hover, .card-btn.black-btn:hover, .card-btn.yellow-btn:hover, .card-btn.purple-btn:hover, .card-btn.darkblue-btn:hover, .card-btn.green-btn:hover, .card-btn.teal-btn:hover, .card-btn.indigo-btn:hover, .card-btn.pink-btn:hover, .card-btn.cyan-btn:hover { background: #4ade80; color: #14532d; }
+        .card-btn, .card-btn.red-btn, .card-btn.black-btn, .card-btn.yellow-btn, .card-btn.purple-btn, .card-btn.darkblue-btn, .card-btn.green-btn, .card-btn.teal-btn, .card-btn.indigo-btn, .card-btn.pink-btn, .card-btn.cyan-btn, .card-btn.orange-btn, .card-btn.fuchsia-btn { background: #86efac; color: #14532d; }
+        .card-btn:hover, .card-btn.red-btn:hover, .card-btn.black-btn:hover, .card-btn.yellow-btn:hover, .card-btn.purple-btn:hover, .card-btn.darkblue-btn:hover, .card-btn.green-btn:hover, .card-btn.teal-btn:hover, .card-btn.indigo-btn:hover, .card-btn.pink-btn:hover, .card-btn.cyan-btn:hover, .card-btn.orange-btn:hover, .card-btn.fuchsia-btn:hover { background: #4ade80; color: #14532d; }
         .card-btn svg { width: 14px; height: 14px; }
         .sub-card.is-studied { background: linear-gradient(180deg, var(--success-light) 0%, var(--surface) 30%); }
 
@@ -2167,7 +2177,7 @@
         <div class="category-section" data-cat="ldce-aao-exam">
             <div class="category-header" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
                 <div class="category-icon darkblue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12.083 12.083 0 0118 20.944m-6-6.944L5.84 10.578A12.083 12.083 0 006 20.944m12-10.472V19a2 2 0 01-2 2H8a2 2 0 01-2-2v-8.528"/></svg></div>
-                <h2 class="category-title">LDCE AAO EXAM PREPARATION <span>(Paper I / II / III / IV)</span></h2>
+                <h2 class="category-title">LDCE AAO EXAM PREPARATION <span>(Paper I / II / III / IV / V / VI)</span></h2>
                 <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </div>
             <div class="category-cards" style="padding:0;">
@@ -3698,6 +3708,88 @@
                         <div class="card-main-row">
                             <span class="act-title">5. NATIONAL PENSION SYSTEM<br><span class="gujarati">રાષ્ટ્રીય પેન્શન સિસ્ટમ</span></span>
                             <a href="ip-nps.html" class="card-btn cyan-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category-section collapsed" data-cat="aao-paper5">
+            <div class="category-header paper-tile tile-orange" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+                <div class="category-icon orange"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3v-6m-3 6v-9m12 9V7a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2z"/></svg></div>
+                <h2 class="category-title">PAPER V <span>(Logical, Analytical &amp; Quantitative Abilities + Language Skill)</span></h2>
+                <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="category-cards">
+
+                <div class="sub-card" data-id="aao-p5-2024-paper" data-search="aao ldce 2024 paper 5 logical analytical quantitative language skill previous year solved" style="animation-delay:.02s">
+                    <div class="card-accent orange"></div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <button class="icon-btn bookmark-btn" data-id="aao-p5-2024-paper" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p5-2024-paper" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                            <span class="studied-label-text">Studied</span>
+                        </div>
+                        <div class="card-main-row">
+                            <span class="act-title">AAO LDCE 2024 — PAPER V (Solved)<br><span class="gujarati">2024 પ્રશ્નપત્ર — સંપૂર્ણ ઉકેલ સાથે (55 MCQ + 5 વર્ણનાત્મક)</span></span>
+                            <a href="aao-paper5-2024-complete.html" class="card-btn orange-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-card" data-id="aao-p5-2018-paper" data-search="aao ldce 2018 paper 5 logical analytical quantitative language skill previous year solved" style="animation-delay:.04s">
+                    <div class="card-accent orange"></div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <button class="icon-btn bookmark-btn" data-id="aao-p5-2018-paper" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p5-2018-paper" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                            <span class="studied-label-text">Studied</span>
+                        </div>
+                        <div class="card-main-row">
+                            <span class="act-title">AAO LDCE 2018 — PAPER V (Solved)<br><span class="gujarati">2018 પ્રશ્નપત્ર — સંપૂર્ણ ઉકેલ સાથે (40 MCQ + 3 વર્ણનાત્મક)</span></span>
+                            <a href="aao-ldce-2018-paper5-complete.html" class="card-btn orange-btn" onclick="recordOpen(this)">Open <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category-section collapsed" data-cat="aao-paper6">
+            <div class="category-header paper-tile tile-fuchsia" onclick="toggleCategory(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCategory(this);}" role="button" tabindex="0" aria-expanded="false">
+                <div class="category-icon fuchsia"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                <h2 class="category-title">PAPER VI <span>(Information Technology)</span></h2>
+                <svg class="category-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="category-cards">
+
+                <div class="sub-card" data-id="aao-p6-it-fundamentals" data-search="information technology fundamentals computer basics networking cyber security paper 6" style="animation-delay:.02s">
+                    <div class="card-accent fuchsia"></div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <button class="icon-btn bookmark-btn" data-id="aao-p6-it-fundamentals" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p6-it-fundamentals" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                            <span class="studied-label-text">Studied</span>
+                        </div>
+                        <div class="card-main-row">
+                            <span class="act-title">1. IT FUNDAMENTALS &amp; CYBER SECURITY<br><span class="gujarati">માહિતી ટેકનોલોજી પાયાની બાબતો અને સાયબર સુરક્ષા</span></span>
+                            <span class="card-btn fuchsia-btn" style="opacity:.55; pointer-events:none;">Soon <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-card" data-id="aao-p6-postal-it-systems" data-search="cbs core banking solution finacle mccamish darpan software postal it systems paper 6" style="animation-delay:.04s">
+                    <div class="card-accent fuchsia"></div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <button class="icon-btn bookmark-btn" data-id="aao-p6-postal-it-systems" onclick="toggleBookmark(this)" title="Bookmark" aria-label="Bookmark this topic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 00-2 2v16l9-4 9 4V5a2 2 0 00-2-2H5z"/></svg></button>
+                            <label class="icon-btn studied-btn" title="Mark as Studied"><input type="checkbox" class="studied-checkbox" data-id="aao-p6-postal-it-systems" style="display:none;" onchange="toggleStudied(this)"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></label>
+                            <span class="studied-label-text">Studied</span>
+                        </div>
+                        <div class="card-main-row">
+                            <span class="act-title">2. POSTAL IT SYSTEMS (CBS, Darpan, McCamish)<br><span class="gujarati">પોસ્ટલ IT સિસ્ટમ્સ — CBS, દર્પણ, McCamish</span></span>
+                            <span class="card-btn fuchsia-btn" style="opacity:.55; pointer-events:none;">Soon <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
                         </div>
                     </div>
                 </div>

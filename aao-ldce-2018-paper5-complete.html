@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAO LDCE 2018 — Paper V Complete Answer Key</title>
+<style>
+:root{
+  --red:#c8102e; --red-dark:#8f0b21; --blue:#00247d; --blue-light:#e8edfb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f6f5f2; --card:#ffffff; --ink:#1c1c1c; --sub:#5a5a5a; --line:#e4e1d8;
+  --green:#1e8e3e; --green-bg:#e9f7ee; --warn:#b3540a; --warn-bg:#fdf0e2;
+  --shadow:0 2px 10px rgba(0,0,0,.06);
+}
+[data-theme="dark"]{
+  --bg:#111316; --card:#1b1e23; --ink:#eef0f2; --sub:#a7adb6; --line:#2b2f36;
+  --blue-light:#182238; --gold-light:#2a2415; --green-bg:#0f2818; --warn-bg:#2b1c0e;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);transition:background .25s,color .25s;padding-bottom:60px;}
+header{position:sticky;top:0;z-index:60;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 60%,#5c0716 100%);color:#fff;padding:14px 16px 16px;box-shadow:var(--shadow);}
+.hbar{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.badge{font-size:11px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:3px 8px;border-radius:20px;letter-spacing:.5px;}
+h1{font-size:16px;margin:8px 0 2px;line-height:1.3;}
+h1 .hi{display:block;font-size:13px;font-weight:500;opacity:.92;margin-top:2px;}
+.sub{font-size:12px;opacity:.85;margin:0;}
+.controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.controls button{flex:1;min-width:90px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;padding:8px 6px;border-radius:10px;font-size:12px;font-weight:600;}
+.controls button:active{background:rgba(255,255,255,.3);}
+
+.subnav{position:sticky;top:118px;z-index:55;background:var(--bg);padding:10px 14px 6px;display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid var(--line);}
+.subnav a{flex:none;font-size:11.5px;font-weight:700;padding:7px 12px;border-radius:20px;background:var(--card);border:1px solid var(--line);color:var(--blue);text-decoration:none;white-space:nowrap;box-shadow:var(--shadow);}
+.subnav a.red{color:var(--red);}
+
+.summary{margin:14px;background:var(--card);border-radius:16px;box-shadow:var(--shadow);border:1px solid var(--line);padding:14px;}
+.summary h2{font-size:14px;margin:0 0 10px;color:var(--red);}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;}
+.stat{background:var(--blue-light);border-radius:10px;padding:8px 4px;}
+.stat b{display:block;font-size:18px;color:var(--blue);}
+.stat span{font-size:10px;color:var(--sub);}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:11px;}
+.legend span{background:var(--gold-light);border:1px solid var(--gold);border-radius:8px;padding:3px 7px;}
+.notice{margin:14px;background:var(--warn-bg);border:1px solid var(--warn);border-radius:12px;padding:10px 12px;font-size:12px;color:var(--warn);}
+
+.section-title{margin:22px 14px 8px;font-size:15px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:8px;scroll-margin-top:170px;}
+.section-title .hi{font-weight:500;color:var(--sub);font-size:12px;}
+.section-title .count{margin-left:auto;font-size:11px;background:var(--red);color:#fff;padding:2px 8px;border-radius:20px;}
+
+.card{margin:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;}
+.card.flag{border-color:var(--warn);}
+.qhead{padding:12px 14px;display:flex;gap:10px;cursor:pointer;align-items:flex-start;}
+.qnum{flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.card.flag .qnum{background:var(--warn);}
+.qtext{flex:1;font-size:13.5px;line-height:1.45;}
+.tag{flex:none;font-size:14px;}
+.chev{flex:none;font-size:12px;color:var(--sub);transition:transform .2s;margin-top:4px;}
+.card.open .chev{transform:rotate(180deg);}
+.body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.card.open .body{max-height:900px;}
+.body-in{padding:0 14px 14px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px;}
+.opt{font-size:12.5px;padding:7px 9px;border-radius:8px;background:var(--bg);border:1px solid var(--line);}
+.opt.correct{background:var(--green-bg);border-color:var(--green);color:var(--green);font-weight:700;}
+.ans-line{font-size:12.5px;background:var(--gold-light);border-left:3px solid var(--gold);padding:8px 10px;border-radius:6px;margin-bottom:8px;}
+.flag-line{font-size:12.5px;background:var(--warn-bg);border-left:3px solid var(--warn);padding:8px 10px;border-radius:6px;margin-bottom:8px;color:var(--warn);}
+.expl{font-size:12.5px;color:var(--sub);line-height:1.5;border-top:1px dashed var(--line);padding-top:8px;}
+.speak{margin-top:8px;font-size:11px;background:var(--blue);color:#fff;border:none;padding:6px 10px;border-radius:8px;}
+
+.essay{margin:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px;}
+.essay h3{font-size:13.5px;color:var(--red);margin:0 0 2px;}
+.essay .marks{float:right;font-size:11px;background:var(--red);color:#fff;padding:2px 8px;border-radius:20px;}
+.wc{font-size:11px;color:var(--sub);margin-bottom:8px;}
+.model{background:var(--blue-light);border-radius:8px;padding:10px;margin-top:8px;font-size:12.5px;white-space:pre-wrap;line-height:1.55;}
+.essay .label{font-weight:700;color:var(--blue);font-size:12px;margin-top:8px;display:block;}
+.tip{font-size:12.5px;line-height:1.5;color:var(--ink);background:var(--gold-light);border-left:3px solid var(--gold);padding:8px 10px;border-radius:6px;margin-top:4px;}
+
+.progress-wrap{margin:14px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line);padding:12px 14px;}
+.progress-wrap .row{display:flex;justify-content:space-between;font-size:11px;color:var(--sub);margin-bottom:4px;}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--red));width:0%;transition:width .3s;}
+
+footer{text-align:center;font-size:11px;color:var(--sub);margin-top:24px;padding:0 20px;}
+.fab{position:fixed;bottom:16px;right:16px;background:var(--red);color:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:20px;z-index:60;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hbar">
+    <span class="badge">AAO LDCE 2018 · Paper V</span>
+    <span class="badge" id="themeToggle" onclick="toggleTheme()">🌙 Dark</span>
+  </div>
+  <h1>Logical, Analytical &amp; Quantitative Abilities and Language Skill — Full Solved Paper
+    <span class="hi">सहायक लेखाधिकारी 2018 — प्रश्न पत्र V संपूर्ण हल</span>
+  </h1>
+  <p class="sub">Every MCQ + every descriptive answer · Part A + Part B (English) · 100 Marks · 07/07/2018</p>
+  <div class="controls">
+    <button onclick="expandAll(true)">⬇ Expand All</button>
+    <button onclick="expandAll(false)">⬆ Collapse All</button>
+    <button onclick="window.print()">🖨 Print / PDF</button>
+  </div>
+</header>
+
+<div class="subnav">
+  <a href="#partA">Part A · Quant</a>
+  <a href="#partB1">Part B · Verbal</a>
+  <a href="#partB2" class="red">Part B · Descriptive</a>
+</div>
+
+<div class="summary">
+  <h2>📊 Paper Snapshot</h2>
+  <div class="grid4">
+    <div class="stat"><b>100</b><span>Max Marks</span></div>
+    <div class="stat"><b>3 hrs</b><span>Duration</span></div>
+    <div class="stat"><b>40</b><span>Total MCQs</span></div>
+    <div class="stat"><b>3</b><span>Descriptive Qs</span></div>
+  </div>
+  <div class="legend">
+    <span>🟢 Easy</span><span>🟡 Moderate</span><span>🟠 Calculation-heavy</span><span>🔴 Tricky / Conceptual</span>
+    <span>-1/2 mark for wrong MCQ · 0 for unattempted</span>
+  </div>
+</div>
+
+<div class="notice">⚠️ <b>Q6 (Part A)</b> — the question text was cut off between scanned pages (only options a) 552.5 b) 552 c) 553.5 d) 553 are visible). It has been included below as a flagged placeholder — please refer to the original paper/answer sheet to confirm this one. All other 39 MCQs and all 3 descriptive questions are fully solved.</div>
+
+<div class="progress-wrap">
+  <div class="row"><span>Reviewed</span><span id="progTxt">0 / 40</span></div>
+  <div class="bar"><i id="progBar"></i></div>
+</div>
+
+<div class="section-title" id="partA">🅰️ Part A — Quantitative &amp; Logical Reasoning <span class="hi">भाग-अ</span><span class="count">25 Q · 50 Marks</span></div>
+<div id="partAList"></div>
+
+<div class="section-title" id="partB1">🅱️ Part B (English) — Section 1 <span class="hi">Verbal Ability</span><span class="count">15 Q · 30 Marks</span></div>
+<div id="partB1List"></div>
+
+<div class="section-title" id="partB2">✍️ Part B (English) — Section 2 <span class="hi">Descriptive</span><span class="count">3 Q · 20 Marks</span></div>
+<div id="partB2List"></div>
+
+<footer>Prepared for LDCE AAO exam self-study · Verify against the official answer key when available.<br>Source: AAO LDCE 2018, Paper V (18 POD/18—P-V) · Part B may be attempted in English OR Hindi (Hindi section not included in the scanned pages provided).</footer>
+<button class="fab" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ---------------- DATA ---------------- */
+const partA = [
+{q:"City telephone rates: 50 paise/call for first 100 calls, 25 paise/call for next 50 calls, 20 paise/call after 150 calls. How many calls can be made in Rs. 60?", opts:["140","150","160","175"], ans:0, tag:"🟠",
+ exp:"Rs.60 = 6000 paise. First 100 calls cost 100×50=5000 paise, leaving 1000 paise. Next calls at 25 paise: 1000÷25=40 calls (within the 50-call slab). Total = 100+40 = 140 calls."},
+{q:"A boy's age is 1/4 of his father's age. Sum of their ages is 50. Father's age after 12 years?", opts:["38","62","55","52"], ans:3, tag:"🟢",
+ exp:"F + F/4 = 50 → 5F/4=50 → F=40. After 12 years: 40+12=52."},
+{q:"Number nearest to 75070 that is exactly divisible by 65?", opts:["75075","75065","74945","75010"], ans:0, tag:"🟡",
+ exp:"65×1155=75075 (difference 5); 65×1154=75010 (difference 60). 75075 is nearer."},
+{q:"Average age of 4 boys 5 years ago was 9. Including a new boy, present average of all 5 is 14. Present age of new boy?", opts:["14","15","16","19"], ans:0, tag:"🟡",
+ exp:"5 years ago, total of 4 boys = 36 → present total = 36+4×5=56. Present total of 5 boys = 14×5=70. New boy = 70−56 = 14."},
+{q:"Shopkeeper gives 12% discount, still gains 10%. Find Marked Price if article costs Rs. 400.", opts:["600","550","580","500"], ans:3, tag:"🟢",
+ exp:"SP = 400×1.10 = 440. MP×0.88 = 440 → MP = 500."},
+{q:"[Question text missing from scan — only options visible]", opts:["552.5","552","553.5","553"], ans:-1, tag:"⚠️", flag:true,
+ exp:"The question stem for Q6 was cut off between scanned pages, so it cannot be reliably solved here. Please check the original paper/official answer key for this question."},
+{q:"What is the sum of 15% of Rs. 34 and 40% of Rs. 60?", opts:["31.10","31","30","29.10"], ans:3, tag:"🟢",
+ exp:"15% of 34 = 5.10; 40% of 60 = 24. Sum = 5.10+24 = 29.10."},
+{q:"If 15 men take 60 days to complete a job, how many days will 45 men take?", opts:["15","17","18","20"], ans:3, tag:"🟢",
+ exp:"Men×Days is constant: 15×60 = 45×d → d = 900/45 = 20."},
+{q:"A train 280 m long moves at 60 km/hr. Time (in seconds) to cross a 220 m tunnel?", opts:["20","25","30","35"], ans:2, tag:"🟡",
+ exp:"Total distance = 280+220=500 m. Speed = 60 km/h = 16.67 m/s. Time = 500/16.67 ≈ 30 s."},
+{q:"Raju buys 550 ml milk daily; 1 litre costs Rs. 44. How much does he pay in 45 days?", opts:["Rs 1098","Rs 1079","Rs 1089","Rs 1099"], ans:2, tag:"🟢",
+ exp:"Total milk = 550×45 = 24,750 ml = 24.75 L. Cost = 24.75×44 = Rs. 1089."},
+{q:"A monkey starts climbing a 20 ft tree. Each hour it climbs 3 ft and slips back 2 ft. Time to reach the top?", opts:["21 hrs","12 hrs","18 hrs","15 hrs"], ans:2, tag:"🔴",
+ exp:"Net gain = 1 ft/hr. After 17 hours it has climbed 17 ft; in the 18th hour it climbs 3 ft more, reaching 20 ft (top) — it doesn't slip back once it reaches the top. Total = 18 hours."},
+{q:"An order of 19,000 units. Firm produces 1000 units/day, 5% unfit for sale. In how many days is the order completed?", opts:["18","19","20","22"], ans:2, tag:"🟠",
+ exp:"Usable output = 1000×0.95 = 950 units/day. Days = 19000/950 = 20."},
+{q:"Average monthly income of a person in a family of 5 is Rs. 10,000. If one person's income increases by Rs. 1,20,000 per year, what is the new average monthly income?", opts:["Rs. 12,000","Rs. 16,000","Rs. 20,000","Rs. 34,000"], ans:0, tag:"🟠",
+ exp:"Total monthly income = 5×10000=50,000. Increase/month = 1,20,000/12=10,000. New total=60,000. New average = 60,000/5 = Rs.12,000."},
+{q:"One-fifth of Ramu's expenditure equals one-half of his savings. Monthly income Rs. 6300. How much does he save?", opts:["Rs 1550","Rs 1800","Rs 2000","Rs 2350"], ans:1, tag:"🟠",
+ exp:"E+S=6300 and E/5=S/2 → E=5S/2. So 5S/2+S=6300 → 7S/2=6300 → S=1800."},
+{q:"Cost Price Rs. 600, Selling Price Rs. 650. Gain or loss percent?", opts:["8⅔% loss","8⅓% gain","2⅓% loss","7⅓% gain"], ans:1, tag:"🟢",
+ exp:"Gain = 50. Gain% = 50/600×100 = 8.33% = 8⅓% gain."},
+{q:"How will you write 1/3 as a percent?", opts:["33%","30%","33⅓%","75%"], ans:2, tag:"🟢",
+ exp:"1/3 × 100 = 33.33...% = 33⅓%."},
+{q:"Population of a town is 10,000 now and was 8,000 two years ago. At the same growth rate, what will it be 2 years hence?", opts:["12000","12500","2750","12755"], ans:1, tag:"🔴",
+ exp:"8000 grew to 10000 in 2 years → growth factor = 10000/8000 = 1.25 over 2 years. At the same rate, next 2 years: 10000×1.25 = 12,500."},
+{q:"Manufacturer's list price is 40% above manufacturing cost. He allows 10% trade discount on list price. Profit % based on cost price?", opts:["30%","28%","25%","26%"], ans:3, tag:"🟠",
+ exp:"Let cost=100. List=140. SP=140×0.9=126. Profit=26 → 26% of cost."},
+{q:"Multiply 48.08 × 12.5", opts:["600.0","601.0","6010","none of the above"], ans:1, tag:"🟢",
+ exp:"48.08×12.5 = 48.08×12 + 48.08×0.5 = 576.96+24.04 = 601.0."},
+{q:"If 75% of a number is added to 75, the result is the number itself. Find the number.", opts:["60","200","250","300"], ans:3, tag:"🟢",
+ exp:"0.75x+75=x → 75=0.25x → x=300."},
+{q:"How many bricks (25cm×11.25cm×6cm) are needed for a wall 8m long, 6m high, 22.5cm thick?", opts:["5600","6400","6900","None of the above"], ans:1, tag:"🟠",
+ exp:"Wall volume = 800×600×22.5 = 10,800,000 cm³. Brick volume = 25×11.25×6=1687.5 cm³. Bricks = 10,800,000/1687.5 = 6400."},
+{q:"How many millions will make 1 crore?", opts:["1","10","100","None of the above"], ans:1, tag:"🟢",
+ exp:"1 crore = 1,00,00,000 = 10,000,000 = 10 million."},
+{q:"A person allows 10% cash discount from marked price of a toy and still makes 10% gain. Marked price is Rs. 770. Find the cost price.", opts:["Rs. 610","Rs. 620","Rs. 630","Rs. 640"], ans:2, tag:"🟢",
+ exp:"SP = 770×0.9 = 693. CP = SP/1.10 = 693/1.10 = 630."},
+{q:"Pie chart of Mr Sharma's expenditure (Transport 5%, Rent 10%, Education 13%, Others 20%, Savings 15%, Clothes 10%, Food = remainder). Salary Rs. 25,000. Expenditure on food?", opts:["Rs 5500/-","Rs 6750/-","Rs 7000/-","Rs 6000/-"], ans:1, tag:"🟡",
+ exp:"Known % = 5+10+13+20+15+10 = 73%. Food = 100−73 = 27%. Amount = 25000×0.27 = Rs. 6750."},
+{q:"Venn diagram (Women I, Educated II, Unemployed III) — identify region representing women who are educated but NOT unemployed.", opts:["A, D, G","B only","D, E, F","D, G"], ans:1, tag:"🟡",
+ exp:"The overlap of Women & Educated excluding Unemployed is the region B (Women∩Educated, outside circle III)."}
+];
+
+const partB1 = [
+{q:"The court ___ cognisance of the criminal's work.", opts:["took","made","gave","allowed"], ans:0, tag:"🟢", exp:'"Took cognisance of" is the standard fixed legal/official expression.'},
+{q:"Gold is very costly, we ___ afford it.", opts:["may","don't","can't","will"], ans:2, tag:"🟢", exp:'Logical meaning: because gold is costly, "we can\'t afford it".'},
+{q:"Draft has been ___ accordingly.", opts:["Amended","Rectified","corrected","None of the above"], ans:0, tag:"🟠", exp:'"Amended accordingly" is the standard official-drafting phrase used when a document is revised as per instructions. (Note: "corrected"/"rectified" are close synonyms — verify against the official key if available.)'},
+{q:"People in all parts of the world play Football. (Rewrite in Passive voice.)", opts:["All parts of the world Football is played.","All parts of the world People play Football.","Football is played in all parts of the world.","In all parts of the world People play Football."], ans:2, tag:"🟢", exp:'Correct passive form: object "Football" becomes subject → "Football is played in all parts of the world."'},
+{q:"An empty space without air in English is called", opts:["Vacuum","Vacum","Vaccum","Vacumm"], ans:0, tag:"🟢", exp:'Correct spelling: "Vacuum".'},
+{q:'The phrase "a feather in one\'s cap" means:', opts:["A symbol of achievement","A symbol of disappointment","A symbol of rejection","A symbol of happiness"], ans:0, tag:"🟢", exp:'It refers to a notable personal achievement or honour.'},
+{q:'What is the synonym of "PERUSAL"?', opts:["Scrutiny","Read loudly","Reject","Approve"], ans:0, tag:"🟢", exp:'"Perusal" means careful reading/examination — closest to "Scrutiny".'},
+{q:"We are quickly approaching the deadline given by the headquarter. (Find the adverb.)", opts:["quickly","approaching","deadline","headquarter"], ans:0, tag:"🟢", exp:'"Quickly" modifies the verb "approaching" → it is the adverb.'},
+{q:'The opposite of "MANIFEST" is', opts:["Unmistakable","Apparent","Obscure","Irrelevant"], ans:2, tag:"🟢", exp:'"Manifest" means clearly visible/obvious; its opposite is "Obscure".'},
+{q:'Find the word that best represents: "A person whose thoughts are turned inwards"', opts:["Expressive","Invertebrate","Intelligent","Introvert"], ans:3, tag:"🟢", exp:'This is the definition of "Introvert".'},
+{q:"He was punished for the ___ of his duty.", opts:["Criticism","Immaturity","Percolation","Dereliction"], ans:3, tag:"🟢", exp:'"Dereliction of duty" is the standard fixed phrase for neglecting one\'s duty.'},
+{q:"Gandhiji's speeches always brought out his ___ for India and the well being of its ___.", opts:["Sadness, family","Greatness, residents","Joy, land","Love, people"], ans:3, tag:"🟢", exp:'Contextually fits best: his "love" for India and concern for its "people".'},
+{q:'Synonym of the word "Grave" is', opts:["Given","Serious","Greed","Hard"], ans:1, tag:"🟢", exp:'"Grave" (as an adjective) means serious/solemn.'},
+{q:'Which one is the closest meaning of "Temporal"?', opts:["Mild","Holy","Worldly","Angry"], ans:2, tag:"🟢", exp:'"Temporal" relates to worldly/material matters, as opposed to spiritual/eternal — closest to "Worldly".'},
+{q:"Fill in the blank: You are trying to drag me ___ a controversy.", opts:["in","into","from","for"], ans:1, tag:"🟢", exp:'"Drag someone into" a situation is the correct preposition usage.'}
+];
+
+const partB2 = [
+ {title:"1. Précis Writing", marks:"7 Marks", meta:"Passage on India's New Education Policy · Word limit: 100 words", body:
+   "India's new education policy marks a break from the colonial past, aiming to close the gap between education and employment and make the system responsive to the needs of a self-reliant, modern India. It seeks to replace the old structure — dominated by arts and science programmes suited to producing administrators for the British empire — with one linked to the productive economy, through functional literacy, vocationalisation and specialisation at different levels. Secondly, it promotes national integration over the fragmentation fostered by colonial-era education. Thirdly, it seeks to reform an examination system that prioritises marks over knowledge and stifles students' curiosity. Its success depends on balancing autonomy with accountability.\n\n(≈100 words)",
+  note:"A précis should be roughly 1/4–1/5 of the original passage, written in your own words, capturing the main argument of each paragraph without examples or repetition — and kept strictly within the stated word limit."},
+ {title:"2. Official Letter to Member (Finance), DoT", marks:"7 Marks", meta:"Acute shortage in AAO cadre · ~200 words", body:
+   "To,\nMember (Finance)\nDepartment of Telecommunications\nNew Delhi\n\nSubject: Acute shortage of officers in the AAO cadre in this office — request for remedial action.\n\nMadam,\n\nI am writing to bring to your kind notice the acute shortage of officers in the Assistant Accounts Officer (AAO) cadre currently being faced by this office. Against the sanctioned strength, a significant number of posts have remained vacant for a prolonged period on account of retirements, promotions and pending recruitment, resulting in a heavy workload on the existing staff and delays in accounts finalisation, audit compliance and pension-related work.\n\nIn order to address this shortage, it is requested that:\n(i) Immediate steps be taken to fill the vacant AAO posts through the ongoing LDCE/direct recruitment process;\n(ii) Officers be temporarily deputed from offices with surplus AAO strength, pending regular recruitment; and\n(iii) A review of the sanctioned strength of the AAO cadre be undertaken in view of the increasing workload.\n\nEarly action in this regard would greatly help restore normal functioning of this office.\n\nThis is submitted for your kind consideration.\n\nThanking you,\nYours faithfully,\n(Name)\n(Designation/Office)",
+  note:"For a 200-word official letter: state the problem with specifics (numbers/impact), then give 2–3 concrete, actionable requests, and close formally. Avoid vague requests — reviewers look for solutions, not just complaints."},
+ {title:"3. Proposal — Delhi Metro Train Wrap Advertisement for DoP", marks:"6 Marks", meta:"3-month campaign, ~Rs. 1 crore, via DAVP — for in-principle approval", body:
+   "NOTE FOR APPROVAL — ADVERTISEMENT OF DEPARTMENT OF POSTS PRODUCTS &amp; SERVICES THROUGH DELHI METRO TRAIN WRAP\n\n1. Background: The Department of Posts offers a wide range of products and services (Speed Post, savings schemes, insurance, parcel/logistics services) that need greater visibility, especially among urban, tech-savvy commuters.\n\n2. Proposal: It is proposed to advertise DoP's products and services through a full train wrap on Delhi Metro Rail for a period of three months, to be released through DAVP (empanelled agency for government advertising), at an estimated cost of approximately Rs. 1 crore.\n\n3. Justification:\n   • Delhi Metro carries lakhs of commuters daily across Delhi-NCR, offering high-frequency, high-visibility exposure over a sustained period.\n   • A train wrap ensures repeated, unavoidable brand recall for commuters, unlike static hoardings.\n   • Cost per impression works out favourably compared to conventional print/TV advertising given the volume of daily ridership.\n   • Aligns with DoP's ongoing branding push to reposition itself as a modern financial and logistics services provider, not just a mail carrier.\n\n4. Financial Implication: Estimated expenditure of Rs. 1 crore for a 3-month campaign, to be released through DAVP as per applicable government advertising norms and rate contracts.\n\n5. Recommendation: In view of the wide reach and cost-effectiveness of this medium, approval is sought for the proposed 3-month Delhi Metro train wrap campaign.\n\nSubmitted for in-principle approval of the Competent Authority.",
+  note:"A justification note should establish need → proposed solution → cost-benefit reasoning → financial implication → a clear approval ask, in that order."}
+];
+
+/* ---------------- RENDER ---------------- */
+function renderMCQ(container, list){
+  const el = document.getElementById(container);
+  const letters = ["a","b","c","d"];
+  list.forEach((item,i)=>{
+    const card = document.createElement("div");
+    card.className = "card" + (item.flag ? " flag" : "");
+    let optsHtml, ansBlock;
+    if(item.flag){
+      optsHtml = item.opts.map((o,idx)=>`<div class="opt">(${letters[idx]}) ${o}</div>`).join("");
+      ansBlock = `<div class="flag-line">⚠️ Question text incomplete in scan — answer cannot be confirmed here.</div>`;
+    } else {
+      optsHtml = item.opts.map((o,idx)=>`<div class="opt ${idx===item.ans?'correct':''}">(${letters[idx]}) ${o}${idx===item.ans?' ✔':''}</div>`).join("");
+      ansBlock = `<div class="ans-line">✅ Correct Answer: (${letters[item.ans]}) ${item.opts[item.ans]}</div>`;
+    }
+    card.innerHTML = `
+      <div class="qhead" onclick="openCard(this.parentElement)">
+        <div class="qnum">${i+1}</div>
+        <div class="qtext">${item.q}</div>
+        <div class="tag">${item.tag}</div>
+        <div class="chev">▼</div>
+      </div>
+      <div class="body"><div class="body-in">
+        <div class="opts">${optsHtml}</div>
+        ${ansBlock}
+        <div class="expl">${item.exp}</div>
+        ${item.flag ? "" : `<button class="speak" onclick="speak(this)" data-text="${item.q.replace(/"/g,'&quot;')}. Correct answer is option ${letters[item.ans]}, ${item.opts[item.ans]}. ${item.exp.replace(/"/g,'&quot;')}">🔊 Listen</button>`}
+      </div></div>`;
+    el.appendChild(card);
+  });
+}
+
+function renderEssay(container, list){
+  const el = document.getElementById(container);
+  list.forEach(item=>{
+    const div = document.createElement("div");
+    div.className = "essay";
+    div.innerHTML = `<span class="marks">${item.marks}</span><h3>${item.title}</h3><div class="wc">${item.meta}</div><div class="model">${item.body}</div><span class="label">💡 Tip</span><div class="tip">${item.note}</div>`;
+    el.appendChild(div);
+  });
+}
+
+renderMCQ("partAList", partA);
+renderMCQ("partB1List", partB1);
+renderEssay("partB2List", partB2);
+
+let reviewed = new Set();
+function openCard(card){
+  card.classList.toggle("open");
+  if(card.classList.contains("open")){
+    reviewed.add(card);
+    updateProgress();
+  }
+}
+function updateProgress(){
+  const total = document.querySelectorAll(".card").length;
+  document.getElementById("progTxt").textContent = reviewed.size + " / " + total;
+  document.getElementById("progBar").style.width = (reviewed.size/total*100) + "%";
+}
+function expandAll(open){
+  document.querySelectorAll(".card").forEach(c=>{
+    if(open){ c.classList.add("open"); reviewed.add(c);} else { c.classList.remove("open"); }
+  });
+  updateProgress();
+}
+function toggleTheme(){
+  const html = document.documentElement;
+  const dark = html.getAttribute("data-theme")==="dark";
+  html.setAttribute("data-theme", dark?"light":"dark");
+  document.getElementById("themeToggle").textContent = dark? "🌙 Dark" : "☀️ Light";
+}
+function speak(btn){
+  if(!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(btn.getAttribute("data-text"));
+  u.lang = "en-IN"; u.rate = 0.95;
+  window.speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
