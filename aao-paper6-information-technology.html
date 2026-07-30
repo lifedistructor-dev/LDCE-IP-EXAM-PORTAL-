@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper VI — Information Technology | AAO LDCE Exam Pattern & Revision</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.3rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.02rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.0rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:12000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.82rem;}
+th{background:var(--blue); color:#fff; padding:7px 6px; text-align:left; font-size:.76rem;}
+td{padding:6px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.82rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+.pillgrid{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:10px 0;}
+.pill{border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:.78rem; background:var(--light-blue);}
+.pill b{display:block; font-size:.85rem; color:var(--blue);}
+.mcq{border:1px solid var(--border); border-radius:10px; padding:9px 11px; margin-bottom:8px; font-size:.83rem;}
+.mcq .ans{color:var(--green); font-weight:700;}
+.secbadge{display:inline-block; background:var(--blue); color:#fff; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:8px; margin-left:4px;}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} .pillgrid{grid-template-columns:repeat(3,1fr);} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">AAO LDCE • Paper VI</span>
+      <div class="title-en">Information Technology — Exam Pattern & MCQ Revision</div>
+      <div class="title-hi">સૂચના પ્રૌદ્યોગિકી — પરીક્ષા પેટર્ન અને MCQ પુનરાવર્તન</div>
+      <div class="subtitle">Based on AAO LDCE 2022 & 2018 Paper VI Question Papers | postaladda.com</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#pattern">Exam Pattern</a>
+    <a class="chip" href="#instructions">Instructions</a>
+    <a class="chip" href="#mcqbasic">MCQ — Computer Basics</a>
+    <a class="chip" href="#mcqword">MCQ — MS Word</a>
+    <a class="chip" href="#mcqexcel">MCQ — MS Excel</a>
+    <a class="chip" href="#mcqppt">MCQ — PowerPoint</a>
+    <a class="chip" href="#mcqnet">MCQ — Internet/Email</a>
+    <a class="chip" href="#practical">Practical Questions</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">રંગ-કોડ: લાલ=અતિ મહત્વપૂર્ણ, નારંગી=વારંવાર પુછાયેલ, પીળો=ખ્યાલ, લીલો=ઝડપી પુનરાવર્તન</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Topic Overview <span class="hi">વિષય અવલોકન</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> Paper VI — Information Technology <span class="hi">પેપર VI — સૂચના પ્રૌદ્યોગિકી</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> Exam Pattern & Instructions <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> Part A — MCQ Concepts (Computer/Word/Excel/PPT/Internet) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> Part B — Practical Questions (Word/Excel/PowerPoint) <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="subhead">Definition <span class="hi">વ્યાખ્યા</span></div>
+    <p><b>Paper VI (Information Technology)</b> is a fully practical, 100-mark, 3-hour paper in the AAO LDCE exam testing MS Word, MS Excel, MS PowerPoint, and basic computer/internet knowledge — <b>no books allowed</b>.</p>
+    <div class="qbox"><b>Probable Q:</b> Is Paper VI open-book or closed-book? <span class="hi">પેપર VI ઓપન-બુક છે કે નહીં?</span> → <b>Closed book — "WITHOUT BOOKS"</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- EXAM PATTERN -->
+<div class="card" id="pattern">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📝 Exam Pattern Comparison <span class="hi">પરીક્ષા પેટર્ન સરખામણી</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>2018 Pattern 🔴</h4>
+        <ul>
+          <li>Part A: 30 marks (15 MCQs × 2 marks)</li>
+          <li>Part B: 70 marks (practical)</li>
+          <li>MCQ: 1 mark correct answer + 1 mark for typing in Word (Font size <b>14</b>)</li>
+          <li>3 files: A (Word), B (Excel), C (PPT) — named by <b>Roll Number</b></li>
+        </ul>
+      </div>
+      <div class="compare-col b">
+        <h4>2022 Pattern 🔴</h4>
+        <ul>
+          <li>Part A: 15 MCQs × 2 marks = 30 marks, no negative marking</li>
+          <li>Part B: 3 questions — Word (20), Excel (30), PPT (20) = 70 marks</li>
+          <li>MCQ answers reproduced fully in <b>MS Word</b></li>
+          <li>Pen drive provided if required; extra time for printout</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "30+70=100" → Part A always 30 marks, Part B always 70 marks, total 100 — pattern is consistent across years.</div>
+    <div class="qbox"><b>Probable Q:</b> Total marks and duration of Paper VI? → <b>100 marks, 3 hours</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="card" id="instructions">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📋 Key Instructions <span class="hi">મુખ્ય સૂચનાઓ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Rules <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>All questions <b>compulsory</b></li>
+      <li>No negative marking (2022 pattern) <span class="tag tag-freq">🟠</span></li>
+      <li>Roll number + Set number must appear in a box on <b>top-right corner</b> of every printed page</li>
+      <li>Files must be saved/printed on <b>A4 sheets</b></li>
+      <li>Extra time given beyond 3 hours for printout & submission, if required</li>
+    </ul>
+    <div class="subhead">File Naming Convention (2018 pattern) <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>File</th><th>Content</th><th>Naming</th></tr>
+      <tr><td>File 1</td><td>MCQ + Word</td><td>AXXXXXXX.doc/docx</td></tr>
+      <tr><td>File 2</td><td>Excel</td><td>BXXXXXXX.xls/xlsx</td></tr>
+      <tr><td>File 3</td><td>PowerPoint</td><td>CXXXXXXX.ppt/pptx</td></tr>
+    </table>
+    <p class="hi">XXXXXXX = ઉમેદવારનો રોલ નંબર</p>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "A-Word, B-Excel, C-PPT" → alphabetical file prefix matches subject order Word→Excel→PowerPoint.</div>
+    <div class="qbox"><b>Probable Q:</b> What is File "B" used for? → <b>Excel</b> (BXXXXXXX.xls/xlsx) <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- MCQ COMPUTER BASICS -->
+<div class="card" id="mcqbasic">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💻 MCQ Concepts — Computer Basics <span class="hi">કમ્પ્યુટર મૂળભૂત</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mcq"><b>Q:</b> Which is an input device? <span class="ans">→ Keyboard</span> (Monitor/CPU/Printer are not input) <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Which is NOT an application software? <span class="ans">→ Windows 7</span> (it's an OS; WordPad/Photoshop/Excel are applications) <span class="tag tag-freq">🟠</span></div>
+    <div class="mcq"><b>Q:</b> Services provided by Windows OS: <span class="ans">→ All of the above</span> (File mgmt, Hardware mgmt, User Interface)</div>
+    <div class="mcq"><b>Q:</b> Renaming a file/document: <span class="ans">→ Right-click icon → Rename from shortcut menu</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mcq"><b>Q:</b> Deleted file/document — which is true? <span class="ans">→ Sent to Recycle Bin, CAN be restored</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Maximize a reduced window: <span class="ans">→ Either double-click top bar OR click maximize icon (both)</span></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "OS Manages, App Does" → OS (Windows) = File+Hardware+UI management; Application = does specific tasks (Word, Excel, Photoshop).</div>
+  </div></div>
+</div>
+
+<!-- MCQ WORD -->
+<div class="card" id="mcqword">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 MCQ Concepts — MS Word <span class="hi">એમએસ વર્ડ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mcq"><b>Q:</b> New footnotes are created via which menu? <span class="ans">→ Insert</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Menu to cut, copy, paste: <span class="ans">→ Edit</span></div>
+    <div class="mcq"><b>Q:</b> "Ctrl+Home" in MS Word: <span class="ans">→ Moves cursor to beginning of the document</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> By default, Footers print on: <span class="ans">→ All Pages</span></div>
+    <div class="mcq"><b>Q:</b> Changing space between two lines — which menu? <span class="ans">→ Paragraph</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mcq"><b>Q:</b> Portrait & Landscape are types of: <span class="ans">→ Orientation</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Using the Undo button: <span class="ans">→ Removes new text, restores original text</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Insert-Foot, Paragraph-Space, Home-Start" → Footnotes via Insert, line spacing via Paragraph, Ctrl+Home → document start.</div>
+  </div></div>
+</div>
+
+<!-- MCQ EXCEL -->
+<div class="card" id="mcqexcel">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📊 MCQ Concepts — MS Excel <span class="hi">એમએસ એક્સેલ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mcq"><b>Q:</b> All formulas in Excel start with: <span class="ans">→ = (equals sign)</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> SUM, AVERAGE, MIN, MAX are examples of: <span class="ans">→ Functions</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> What displays the contents of the active cell? <span class="ans">→ Formula bar</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mcq"><b>Q:</b> Advantage of using a spreadsheet: <span class="ans">→ All of the above</span> (auto-calc, auto-update, flexibility)</div>
+    <div class="mcq"><b>Q:</b> To save edited sheet without losing the original: <span class="ans">→ Save As</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> To drag a selected data range to another worksheet in the same workbook: <span class="ans">→ Alt key</span> (hold Alt while dragging to switch sheet tabs)</div>
+    <div class="mcq"><b>Q:</b> Button to add up a series of numbers: <span class="ans">→ Auto Sum</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "= Starts It All" → every Excel formula/function begins with "=". "Alt-Drag-Switch" → Alt key while dragging moves data across worksheet tabs.</div>
+    <div class="qbox"><b>Probable Q:</b> What appears in the Name Box vs Formula Bar? → <b>Name Box shows cell reference; Formula Bar shows cell content/formula</b> <span class="tag tag-concept">🟡</span></div>
+  </div></div>
+</div>
+
+<!-- MCQ PPT -->
+<div class="card" id="mcqppt">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🎞️ MCQ Concepts — MS PowerPoint <span class="hi">એમએસ પાવરપોઈન્ટ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mcq"><b>Q:</b> Animation schemes can be applied to: <span class="ans">→ Selected slide(s)</span> (or as specified by user selection)</div>
+    <div class="mcq"><b>Q:</b> Key to view slide show: <span class="ans">→ F5</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> PowerPoint presentation file extension: <span class="ans">→ .ppt</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Effect used to replace one slide with another: <span class="ans">→ Slide Transition</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mcq"><b>Q:</b> How to put a chart in a presentation: <span class="ans">→ Insert → Chart</span></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "F5 = Full Show" → F5 starts the slideshow from beginning; "Transition ≠ Animation" → Transition = between slides, Animation = within a slide's objects.</div>
+    <div class="qbox"><b>Probable Q:</b> Difference between Slide Transition and Animation? → <b>Transition changes between slides; Animation moves objects within a slide</b> <span class="tag tag-concept">🟡</span></div>
+  </div></div>
+</div>
+
+<!-- MCQ INTERNET/EMAIL -->
+<div class="card" id="mcqnet">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🌐 MCQ Concepts — Internet & Email <span class="hi">ઇન્ટરનેટ અને ઈમેલ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mcq"><b>Q:</b> URL stands for: <span class="ans">→ Uniform Resource Locator</span> <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Computer receiving info from a server on the Internet is known as: <span class="ans">→ Downloading</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mcq"><b>Q:</b> Which is a correct email address? <span class="ans">→ rajesh@abc.com</span> (needs domain after @) <span class="tag tag-vip">🔴</span></div>
+    <div class="mcq"><b>Q:</b> Option to save an unfinished email without sending: <span class="ans">→ Save as Draft</span></div>
+    <div class="mcq"><b>Q:</b> Mail sent, "delivery failed" message — likely reason: <span class="ans">→ Email address is wrong</span> <span class="tag tag-freq">🟠</span></div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "URL = Address of Web" → Uniform Resource Locator; "Down = Server→You" → downloading is receiving FROM server.</div>
+  </div></div>
+</div>
+
+<!-- PRACTICAL QUESTIONS -->
+<div class="card" id="practical">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🛠️ Part B — Practical Question Patterns <span class="hi">પ્રેક્ટિકલ પ્રશ્નનો પ્રકાર</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+
+    <div class="subhead">MS Word Question Pattern (20 marks) <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Reproduce/type a given paragraph or letter with <b>exact formatting</b> (bold, underline, strikethrough, bullets, numbering)</li>
+      <li>Font size/style specified (e.g. size 12, Times New Roman)</li>
+      <li>Line spacing (e.g. 1.5)</li>
+      <li>Merge multiple tables into a single table with alignment</li>
+      <li>Justified alignment for body text; Left alignment for address/subject/sender</li>
+      <li>Page numbering in footer, specific format (e.g. "Scroll")</li>
+      <li><b>Word Count</b> to be typed at the end</li>
+    </ul>
+
+    <div class="subhead">MS Excel Question Pattern (30 marks) <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Build a table exactly as shown, with given headers/data</li>
+      <li>Calculate values using <b>formulas</b> (Totals, Percentages, computed columns)</li>
+      <li>Write the actual <b>formula</b> in a specified cell (not just the value)</li>
+      <li>Merge & Center cells for headings</li>
+      <li>Insert a <b>Chart</b> with title and <b>data labels</b></li>
+      <li>Format table exactly as shown (borders, alignment)</li>
+    </ul>
+
+    <div class="subhead">MS PowerPoint Question Pattern (20 marks) <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Create slide(s) with specified background, title, font size/style</li>
+      <li>Apply specific formatting: italics, underline, alignment, bullets (numeric)</li>
+      <li>Apply text effects like <b>Double Strikethrough</b></li>
+      <li>Insert a <b>Table</b> in a slide with chart-style formatting and data labels</li>
+    </ul>
+
+    <div class="subhead">Typical Excel Formula Types Seen <span class="tag tag-freq">🟠</span></div>
+    <table>
+      <tr><th>Column Type</th><th>Formula Logic</th></tr>
+      <tr><td>Total (row-wise sum)</td><td>=SUM(range) e.g. Net Saving = A+B−C</td></tr>
+      <tr><td>Total (column-wise sum)</td><td>=SUM(column range)</td></tr>
+      <tr><td>Percentage of total</td><td>=(part/whole)*100</td></tr>
+      <tr><td>Commission-type calc</td><td>=((E−D)*20)/1000 style nested formula</td></tr>
+      <tr><td>Projected increase</td><td>=C*5% (percentage multiplication)</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "Exact-as-Shown" → the single biggest scoring rule across all 3 practicals: match formatting EXACTLY as given in the question, not just get the right content.</div>
+    <div class="qbox"><b>Probable Q:</b> What is commonly asked to be typed at the end of a Word practical answer? → <b>Word Count</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">એક-પૃષ્ઠ પુનરાવર્તન શીટ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Pattern:</b> 100 marks, 3 hours, Part A (30, MCQ) + Part B (70, practical), no books</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Files:</b> A=Word/MCQ, B=Excel, C=PowerPoint, named by Roll No.</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Input device</b> = Keyboard; <b>NOT app software</b> = Windows (it's OS)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Deleted file</b> → Recycle Bin, restorable (not gone forever)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Word:</b> Footnotes→Insert menu; Ctrl+Home→doc start; line spacing→Paragraph menu; Portrait/Landscape→Orientation</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Excel:</b> Formulas start with "="; SUM/AVG/MIN/MAX = Functions; active cell content shown in Formula Bar; Save As keeps original file</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>PowerPoint:</b> F5=slideshow; .ppt extension; Slide Transition=between slides; Insert→Chart</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Internet/Email:</b> URL=Uniform Resource Locator; downloading=receiving from server; valid email needs "@domain.com"</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Practical scoring:</b> exact formatting match is critical — fonts, alignment, spacing, numbering all carry separate marks</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Word Count</b> typically required at end of Word practical answer</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Excel:</b> always write both the computed VALUE and the FORMULA where asked</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">છેલ્લા દિવસનું પુનરાવર્તન</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>Paper VI = <b>100 marks / 3 hours</b>, practical, no books</li>
+      <li>Part A = <b>30 marks</b> (15 MCQ × 2), Part B = <b>70 marks</b></li>
+      <li>Excel formula symbol = <b>"="</b></li>
+      <li>SUM/AVERAGE/MIN/MAX = <b>Functions</b></li>
+      <li>Active cell content shown in = <b>Formula Bar</b></li>
+      <li>Save without losing original = <b>Save As</b></li>
+      <li>Add series of numbers = <b>Auto Sum</b></li>
+      <li>PPT extension = <b>.ppt</b>; Slideshow key = <b>F5</b></li>
+      <li>Between-slide effect = <b>Slide Transition</b></li>
+      <li>URL = <b>Uniform Resource Locator</b></li>
+      <li>Receiving from server = <b>Downloading</b></li>
+      <li>Ctrl+Home (Word) = <b>start of document</b></li>
+      <li>Footnotes menu = <b>Insert</b>; Line spacing menu = <b>Paragraph</b></li>
+      <li>Deleted file → <b>Recycle Bin</b>, restorable</li>
+      <li>Rename file = <b>right-click → Rename</b></li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">યાદ રાખવાની યુક્તિઓ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"30+70=100"</b> → Part A (30) + Part B (70) = always 100 marks.</div>
+    <div class="mnemonic"><b>"A-Word, B-Excel, C-PPT"</b> → file naming order matches subject sequence.</div>
+    <div class="mnemonic"><b>"= Starts It All"</b> → every Excel formula begins with "=".</div>
+    <div class="mnemonic"><b>"F5 = Full Show"</b> → F5 launches the PowerPoint slideshow.</div>
+    <div class="mnemonic"><b>"URL = Address of Web"</b> → Uniform Resource Locator.</div>
+    <div class="mnemonic"><b>"Insert-Foot, Paragraph-Space, Home-Start"</b> → Word menu shortcuts for footnotes, spacing, cursor jump.</div>
+    <div class="mnemonic"><b>"Exact-as-Shown"</b> → the golden rule across all practicals — match formatting precisely.</div>
+    <div class="mnemonic"><b>"Down = Server→You"</b> → downloading direction, easy to distinguish from uploading.</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">સ્ત્રોત નોંધ</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">આ ઇન્ફોગ્રાફિક તમે અપલોડ કરેલ AAO LDCE 2022 (Set P) અને AAO/Assistant Accounts Officer LDCE 2018 (Set A) ના Paper VI: Information Technology પ્રશ્નપત્રો (postaladda.com) પરથી બનાવેલ છે. MCQ જવાબો સામાન્ય IT જ્ઞાનના આધારે આપેલા છે (documents માં official answer key નથી) — પરીક્ષા પહેલા verify કરવું ભલામણપાત્ર છે.</p>
+    <p style="margin-top:6px;">This infographic is built from your uploaded AAO LDCE 2022 (Set P) and AAO/Assistant Accounts Officer LDCE 2018 (Set A) Paper VI: Information Technology question papers (postaladda.com). MCQ answers are provided based on general IT knowledge, since no official answer key was present in the source documents — please verify before relying on them for exam preparation.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">LDCE AAO Exam Portal · Paper VI: Information Technology<br>Tap section headers to expand/collapse</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>
