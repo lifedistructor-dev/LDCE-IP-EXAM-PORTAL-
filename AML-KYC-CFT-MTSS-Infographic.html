@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AML / KYC / CFT Norms — MTSS & Money Changing | India Post Exam Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2545;
+  --navy2:#123163;
+  --gold:#c8952c;
+  --gold-l:#e8b95a;
+  --paper:#f7f3ea;
+  --paper2:#fffdf8;
+  --ink:#1a1f2b;
+  --line:#d8cba8;
+  --red:#c1272d;
+  --orange:#d9711f;
+  --yellow:#c99a12;
+  --green:#1c7a4d;
+  --blue:#1f5aa8;
+  --shadow: 0 10px 30px -12px rgba(11,37,69,.35);
+  --radius: 16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.55;
+  transition:background .3s,color .3s;
+}
+body.dark{
+  --paper:#0e1420;
+  --paper2:#151d2e;
+  --ink:#eee6d0;
+  --line:#31405c;
+  background:var(--paper);
+}
+.hi{font-family:'Noto Sans Devanagari',sans-serif;}
+h1,h2,h3,h4{font-family:'Fraunces',serif; margin:0 0 .3em; letter-spacing:.2px;}
+a{color:inherit;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px;}
+
+/* ===== HEADER ===== */
+header.top{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(120deg,var(--navy),var(--navy2) 60%, #1a3a6b);
+  color:#f6ecd4;
+  border-bottom:3px solid var(--gold);
+}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;max-width:1100px;margin:0 auto;gap:10px;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand .mark{
+  width:42px;height:42px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, var(--gold-l), var(--gold) 60%, #8a611c);
+  display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--navy);font-family:'Fraunces',serif;font-size:18px;
+  flex:none;
+}
+.brand h1{font-size:17px;margin:0;color:#fff8e6;line-height:1.2;}
+.brand small{display:block;font-size:11.5px;color:#c9d6ec;font-weight:500;letter-spacing:.3px;}
+.tools{display:flex;gap:8px;flex-wrap:wrap;}
+.tools button{
+  background:rgba(255,255,255,.08); color:#f6ecd4; border:1px solid rgba(255,255,255,.25);
+  padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:600;cursor:pointer;
+  display:flex;align-items:center;gap:6px;transition:.2s;
+}
+.tools button:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+/* ===== HERO ===== */
+.hero{
+  background:
+    radial-gradient(ellipse at top right, rgba(200,149,44,.18), transparent 60%),
+    linear-gradient(180deg,var(--navy) 0%, var(--navy2) 100%);
+  color:#f6ecd4; padding:34px 0 40px; position:relative; overflow:hidden;
+}
+.hero::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0 2px, transparent 2px 22px);pointer-events:none;}
+.hero .eyebrow{color:var(--gold-l);font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase;}
+.hero h2{font-size:clamp(24px,4.5vw,38px);color:#fffaf0;margin-top:6px;max-width:820px;}
+.hero p.sub{max-width:720px;color:#d7e0f2;font-size:15px;}
+.hero .actstat{color:#e8dcb8;font-size:14px;margin-top:6px;font-family:'Noto Sans Devanagari',sans-serif;}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.legend span{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+  padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:600;color:#f4ead0;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section{padding:34px 0;}
+.section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+.section-head .num{font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700;font-size:13px;background:var(--navy);padding:3px 9px;border-radius:6px;}
+.section-head h2{font-size:22px;color:var(--navy);}
+body.dark .section-head h2{color:var(--gold-l);}
+.section-head .en-hi{font-size:13px;color:#7a6a44;font-weight:600;}
+body.dark .section-head .en-hi{color:#b7a56b;}
+
+/* ===== TAGS ===== */
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.3px;white-space:nowrap;}
+.tag.vimp{background:#fde4e2;color:var(--red);}
+.tag.freq{background:#fde9d6;color:var(--orange);}
+.tag.concept{background:#fdf3cf;color:#8a6a08;}
+.tag.quick{background:#dcf3e6;color:var(--green);}
+body.dark .tag.vimp{background:#4a1b1b;color:#ff8d85;}
+body.dark .tag.freq{background:#4a2f14;color:#ffb673;}
+body.dark .tag.concept{background:#463c12;color:#f0d675;}
+body.dark .tag.quick{background:#153b28;color:#7fe0ab;}
+
+/* ===== ACCORDION CARDS ===== */
+.card{
+  background:var(--paper2); border:1px solid var(--line); border-radius:var(--radius);
+  margin-bottom:14px; box-shadow:var(--shadow); overflow:hidden;
+}
+.card > .head{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:14px 16px; cursor:pointer; user-select:none;
+}
+.card > .head .htxt{display:flex;flex-direction:column;gap:3px;}
+.card > .head h3{font-size:16px;color:var(--navy);margin:0;}
+body.dark .card{background:var(--paper2);}
+body.dark .card > .head h3{color:var(--gold-l);}
+.card > .head .tagsrow{display:flex;gap:6px;flex-wrap:wrap;}
+.card .chev{transition:transform .25s; color:var(--gold); font-weight:900; font-size:16px; flex:none;}
+.card.open .chev{transform:rotate(90deg);}
+.card .body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card .body-in{padding:0 16px 18px;}
+.card.open .body{max-height:4000px;}
+
+.microhead{font-weight:800;color:var(--blue);font-size:12.5px;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 6px;display:flex;align-items:center;gap:6px;}
+body.dark .microhead{color:#8fb4e8;}
+.microhead::before{content:"▸"; color:var(--gold);}
+
+p.bi{margin:.3em 0;}
+p.bi .hi{display:block; color:#5b5240; font-size:14px; margin-top:2px;}
+body.dark p.bi .hi{color:#b3a888;}
+
+ul.pts{margin:.2em 0 .6em; padding-left:20px;}
+ul.pts li{margin-bottom:6px;}
+ul.pts li .hi{color:#5b5240;font-size:13.5px;display:block;}
+body.dark ul.pts li .hi{color:#b3a888;}
+
+.qbox{
+  background:#f1ecd8; border-left:4px solid var(--gold); border-radius:8px;
+  padding:9px 12px; margin-top:8px; font-size:13px;
+}
+body.dark .qbox{background:#20293c;border-left-color:var(--gold);}
+.qbox b{color:var(--red);}
+body.dark .qbox b{color:#ff8d85;}
+
+/* ===== TABLES ===== */
+.tblwrap{overflow-x:auto; margin:12px 0; border-radius:12px; border:1px solid var(--line);}
+table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:520px;}
+th,td{padding:9px 11px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top;}
+th{background:var(--navy); color:#fce9c0; font-weight:700; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px;}
+tr:nth-child(even) td{background:rgba(200,149,44,.06);}
+body.dark tr:nth-child(even) td{background:rgba(200,149,44,.08);}
+td .hi{display:block;color:#6b6045;font-size:12.5px;}
+body.dark td .hi{color:#a89a70;}
+
+/* ===== FLOWCHART ===== */
+.flow{display:flex; flex-wrap:wrap; gap:10px; align-items:stretch; margin:14px 0;}
+.flow .step{
+  flex:1 1 160px; background:linear-gradient(160deg,var(--navy),var(--navy2));
+  color:#fdf3d8; border-radius:12px; padding:14px; position:relative; min-width:150px;
+  box-shadow:var(--shadow);
+}
+.flow .step h4{color:var(--gold-l); font-size:14px; margin-bottom:4px;}
+.flow .step p{font-size:12.5px; margin:0; color:#e3dcc4;}
+.flow .arrow{align-self:center; font-size:22px; color:var(--gold); flex:0 0 auto;}
+@media (max-width:640px){.flow{flex-direction:column;} .flow .arrow{transform:rotate(90deg); align-self:center;}}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative; margin:18px 0; padding-left:26px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:22px;}
+.tl-item::before{content:""; position:absolute; left:-33px; top:2px; width:14px;height:14px;border-radius:50%; background:var(--gold); border:3px solid var(--paper2);}
+.tl-item h4{font-size:14.5px; color:var(--navy); margin-bottom:2px;}
+body.dark .tl-item h4{color:var(--gold-l);}
+.tl-item p{margin:0; font-size:13px;}
+.tl-item .day{display:inline-block; background:var(--red); color:#fff; font-size:11px; font-weight:800; padding:2px 8px; border-radius:6px; margin-right:6px;}
+
+/* ===== DECISION TREE ===== */
+.dtree{display:flex;flex-direction:column;align-items:center;gap:6px;margin:16px 0;}
+.dnode{background:var(--paper2); border:2px solid var(--navy); border-radius:10px; padding:9px 14px; font-size:13px; text-align:center; font-weight:600; max-width:340px;}
+.dbranch{display:flex; gap:24px; justify-content:center; flex-wrap:wrap; width:100%;}
+.dline{color:var(--gold); font-weight:900;}
+.dyes{border-color:var(--green); }
+.dno{border-color:var(--red);}
+.dleaf{font-size:12.5px; padding:7px 12px; border-radius:8px; font-weight:700;}
+.dleaf.ok{background:#dcf3e6;color:var(--green);}
+.dleaf.stop{background:#fde4e2;color:var(--red);}
+body.dark .dnode{background:var(--paper2);}
+body.dark .dleaf.ok{background:#153b28;color:#7fe0ab;}
+body.dark .dleaf.stop{background:#4a1b1b;color:#ff8d85;}
+
+/* ===== NUMBER GRID (Quick revision) ===== */
+.numgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:14px 0;}
+.numcard{background:var(--paper2); border:1px solid var(--line); border-radius:12px; padding:12px; box-shadow:var(--shadow);}
+.numcard .val{font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--red); font-size:19px;}
+.numcard .lbl{font-size:12px; color:#6b6045; margin-top:3px;}
+body.dark .numcard .lbl{color:#a89a70;}
+
+/* ===== MNEMONIC ===== */
+.mnemo{
+  background:linear-gradient(135deg,#fff7e0,#fdeecb);
+  border:2px dashed var(--gold); border-radius:14px; padding:14px 16px; margin:10px 0;
+}
+body.dark .mnemo{background:linear-gradient(135deg,#241d0f,#2b2313); border-color:var(--gold);}
+.mnemo h4{color:#8a611c; font-size:14px; margin-bottom:5px;}
+body.dark .mnemo h4{color:var(--gold-l);}
+.mnemo .letters{font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--navy); font-size:14px;}
+body.dark .mnemo .letters{color:var(--gold-l);}
+
+/* ===== REVISION SHEET ===== */
+.revsheet{
+  background:var(--navy); color:#f4ead0; border-radius:18px; padding:22px; margin:20px 0;
+  border:2px solid var(--gold);
+}
+.revsheet h3{color:var(--gold-l);}
+.revsheet .grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:12px;}
+.revblock{background:rgba(255,255,255,.06); border-radius:10px; padding:10px 12px;}
+.revblock h5{margin:0 0 6px; color:var(--gold-l); font-size:13px; text-transform:uppercase; letter-spacing:.4px;}
+.revblock ul{margin:0; padding-left:18px; font-size:12.5px;}
+.revblock li{margin-bottom:4px;}
+
+/* ===== NANO STRUCTURE ===== */
+.struct{display:flex; flex-wrap:wrap; gap:8px; font-size:11.5px; font-weight:700; margin:10px 0; align-items:center;}
+.struct span{background:var(--navy); color:var(--gold-l); padding:4px 10px; border-radius:6px;}
+.struct .sep{color:var(--gold); background:none; padding:0;}
+
+/* ===== FOOTER / TOC ===== */
+.toc{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0;}
+.toc a{
+  background:var(--paper2); border:1px solid var(--line); padding:6px 12px; border-radius:999px;
+  font-size:12.5px; font-weight:600; color:var(--navy); text-decoration:none;
+}
+body.dark .toc a{color:var(--gold-l);}
+.toc a:hover{background:var(--gold); color:var(--navy);}
+
+footer{background:var(--navy); color:#c9d6ec; text-align:center; padding:26px 16px; font-size:12.5px;}
+footer b{color:var(--gold-l);}
+
+.printbtn{position:fixed; bottom:18px; right:18px; z-index:60; background:var(--gold); color:var(--navy);
+  border:none; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:var(--shadow); cursor:pointer; font-size:13px;}
+
+@media print{
+  header,.printbtn,.tools{display:none !important;}
+  .card .body{max-height:none !important;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark">₹</div>
+      <div>
+        <h1>AML · KYC · CFT Norms — MTSS &amp; Money Changing</h1>
+        <small>India Post | AAO / IP LDCE Exam Notes · <span class="hi">परीक्षा नोट्स</span></small>
+      </div>
+    </div>
+    <div class="tools">
+      <button id="darkToggle">🌙 Dark Mode</button>
+      <button id="ttsToggle">🔊 Read Aloud</button>
+      <button onclick="window.print()">🖨️ Print</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">PMLA 2002 · Amended 2009 &nbsp;|&nbsp; Guidelines for Post Offices</div>
+    <h2>Anti-Money Laundering / Know Your Customer / Combating Financing of Terrorism</h2>
+    <p class="sub">Complete visual exam-notes for International Money Transfer Service (MTSS - Inward) and Money Changing Services in India Post — for AAO &amp; Inspector Posts (IP) Departmental Examinations.</p>
+    <p class="actstat hi">धनशोधन निवारण अधिनियम (PMLA), 2002 के अंतर्गत डाकघरों के लिए KYC/AML/CFT दिशानिर्देश — AAO व IP परीक्षा हेतु संपूर्ण दृश्य नोट्स।</p>
+    <div class="legend">
+      <span>🔴 Very Important</span>
+      <span>🟠 Frequently Asked</span>
+      <span>🟡 Conceptual</span>
+      <span>🟢 Quick Revision</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="toc" id="toc"></div>
+</div>
+
+<!-- ================= QUICK NUMBER GRID ================= -->
+<div class="wrap section" id="numbers">
+  <div class="section-head"><span class="num">00</span><h2>Key Numbers at a Glance <span class="tag vimp">🔴 VIMP</span></h2></div>
+  <p class="en-hi hi" style="margin-top:-8px;">परीक्षा में सबसे ज़्यादा पूछी जाने वाली संख्याएँ</p>
+  <div class="numgrid">
+    <div class="numcard"><div class="val">₹50,000</div><div class="lbl">Level I / II boundary; cash payment cap to beneficiary; ID-copy threshold for forex purchase <span class="hi">— स्तर I/II सीमा, नकद भुगतान सीमा</span></div></div>
+    <div class="numcard"><div class="val">₹1,00,000</div><div class="lbl">Level II / III boundary <span class="hi">— स्तर II/III सीमा</span></div></div>
+    <div class="numcard"><div class="val">₹10 Lakh</div><div class="lbl">Cash Transaction Report (CTR) threshold <span class="hi">— नकद लेनदेन रिपोर्ट सीमा</span></div></div>
+    <div class="numcard"><div class="val">₹20,000</div><div class="lbl">Doubtful txn → Account Payee cheque mandatory <span class="hi">— संदिग्ध लेनदेन हेतु चेक अनिवार्य</span></div></div>
+    <div class="numcard"><div class="val">US $2,500</div><div class="lbl">Cap on individual remittance under MTSS <span class="hi">— व्यक्तिगत प्रेषण की सीमा</span></div></div>
+    <div class="numcard"><div class="val">US $1,000</div><div class="lbl">Cash payment to resident for forex purchase (per txn) <span class="hi">— निवासी को नकद भुगतान सीमा</span></div></div>
+    <div class="numcard"><div class="val">US $3,000</div><div class="lbl">Cash payment to foreign visitor / NRI (per txn) <span class="hi">— विदेशी/NRI को नकद भुगतान सीमा</span></div></div>
+    <div class="numcard"><div class="val">30 remittances</div><div class="lbl">Max receivable by one individual per calendar year <span class="hi">— प्रति वर्ष अधिकतम प्रेषण</span></div></div>
+    <div class="numcard"><div class="val">30 days</div><div class="lbl">Window to club transactions as "single transaction" <span class="hi">— लेनदेन को एक मानने की अवधि</span></div></div>
+    <div class="numcard"><div class="val">10 Years</div><div class="lbl">Record preservation period <span class="hi">— अभिलेख संरक्षण अवधि</span></div></div>
+    <div class="numcard"><div class="val">3 Months</div><div class="lbl">Max age of telephone / electricity bill as address proof <span class="hi">— पते के प्रमाण की वैधता</span></div></div>
+    <div class="numcard"><div class="val">3rd / 5th / 8th</div><div class="lbl">Working-day deadlines for CTR: PO→Div→Circle→Directorate <span class="hi">— CTR रिपोर्टिंग समय-सीमा</span></div></div>
+  </div>
+  <div class="qbox">💡 <b>Exam Trap:</b> STR (Suspicious Transaction Report) has <b>NO monetary threshold</b> and must be reported the <b>same day</b> at every level — unlike CTR which follows the 3rd/5th/8th working day schedule. <span class="hi">STR की कोई राशि सीमा नहीं होती — उसी दिन रिपोर्ट करना अनिवार्य है।</span></div>
+</div>
+
+<!-- ================= 1. INTRODUCTION ================= -->
+<div class="wrap section" id="s1">
+  <div class="card open">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>1. Introduction — Money Laundering &amp; Terrorism Financing <span class="hi">परिचय — धनशोधन एवं आतंकवाद वित्तपोषण</span></h3>
+        <div class="tagsrow"><span class="tag vimp">🔴 VIMP</span><span class="tag concept">🟡 Concept</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="struct"><span>Chapter: Introduction</span><span class="sep">→</span><span>Sub: Definitions</span><span class="sep">→</span><span>Micro: 3 Stages</span><span class="sep">→</span><span>Nano: Placement/Layering/Integration</span></div>
+
+      <div class="microhead">Definition — Money Laundering</div>
+      <p class="bi">Process of converting "dirty" money (from illegitimate sources) into "clean" money that appears legitimate.
+      <span class="hi">अवैध रूप से अर्जित धन को वैध रूप देने की प्रक्रिया को धनशोधन (Money Laundering) कहते हैं।</span></p>
+
+      <div class="microhead">3 Stages of Money Laundering 🔴</div>
+      <div class="flow">
+        <div class="step"><h4>1. Placement</h4><p>Physical disposal of illegal cash proceeds.<br><span class="hi">अवैध नकदी का भौतिक निपटान</span></p></div>
+        <div class="arrow">➜</div>
+        <div class="step"><h4>2. Layering</h4><p>Complex financial transactions to hide the audit trail.<br><span class="hi">जटिल लेनदेन द्वारा स्रोत छुपाना</span></p></div>
+        <div class="arrow">➜</div>
+        <div class="step"><h4>3. Integration</h4><p>Laundered money re-enters economy as "normal" business funds.<br><span class="hi">धन को वैध व्यवसाय के रूप में अर्थव्यवस्था में वापस लाना</span></p></div>
+      </div>
+      <div class="mnemo">
+        <h4>🧠 Mnemonic</h4>
+        <div class="letters">P-L-I → "Please Launder Immediately" 😄</div>
+        <p style="margin:4px 0 0;font-size:13px;">Placement → Layering → Integration (order matters for exam MCQs!)</p>
+      </div>
+
+      <div class="microhead">Definition — Financing of Terrorism</div>
+      <p class="bi">Transactions involving funds (owned or not by a terrorist) used, or intended to be used, to assist commission of terrorism.
+      <span class="hi">ऐसे धन का लेन-देन जो आतंकवादी गतिविधियों में प्रयोग हेतु हो, चाहे वह धन आतंकवादी का हो या न हो।</span></p>
+      <ul class="pts">
+        <li>Providing/collecting property for an act of terrorism <span class="hi">— आतंकवाद हेतु संपत्ति एकत्र करना</span></li>
+        <li>Providing services for terrorism purposes <span class="hi">— आतंकवाद हेतु सेवाएं देना</span></li>
+        <li>Arranging retention/control of terrorist property <span class="hi">— आतंकवादी संपत्ति का नियंत्रण</span></li>
+        <li>Dealing with terrorist property <span class="hi">— आतंकवादी संपत्ति से लेनदेन</span></li>
+      </ul>
+      <div class="qbox">❓ <b>Probable Question:</b> "What are the three stages of money laundering? Name them in order." / "Define Financing of Terrorism as per the Anti-Money Laundering Act."</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 2 & 3: Objective + Customer Definition ================= -->
+<div class="wrap section" id="s2">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>2 &amp; 3. Objective of AML/KYC/CFT &amp; Definition of "Customer" <span class="hi">उद्देश्य एवं "ग्राहक" की परिभाषा</span></h3>
+        <div class="tagsrow"><span class="tag freq">🟠 Frequent</span><span class="tag quick">🟢 Quick</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="microhead">Objective</div>
+      <p class="bi">To prevent money laundering / terrorist financing through cross-border inward remittance (MTSS) or forex purchase/sale, and help Post Offices know their customers &amp; manage risk prudently.
+      <span class="hi">MTSS व विदेशी मुद्रा लेनदेन के माध्यम से धनशोधन/आतंकवाद वित्तपोषण को रोकना ही मुख्य उद्देश्य है।</span></p>
+
+      <div class="microhead">Who is a "Customer" under KYC (for MTSS &amp; Money Exchange) 🟠</div>
+      <ul class="pts">
+        <li>Individual visiting PO for inward remittance (occasional/regular), or for sale/purchase of forex notes/TCs <span class="hi">— प्रेषण प्राप्त करने वाला व्यक्ति</span></li>
+        <li>Individual on whose behalf transaction is undertaken (<b>beneficial owner</b>) <span class="hi">— लाभकारी स्वामी</span></li>
+        <li>An entity having business relationship with the Post Office <span class="hi">— डाकघर से व्यावसायिक संबंध रखने वाली संस्था</span></li>
+      </ul>
+      <div class="qbox">❓ Who qualifies as a "customer" under KYC norms for MTSS and Money Exchange? List all three categories.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 4. CDD ================= -->
+<div class="wrap section" id="s4">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>4. Customer Due Diligence (CDD) <span class="hi">ग्राहक सम्यक तत्परता</span></h3>
+        <div class="tagsrow"><span class="tag vimp">🔴 VIMP</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <p class="bi">CDD means the Post Office obtains satisfactory evidence &amp; establishes identity/legal existence of any person doing business (remittance/forex) with it, substantiated by reliable independent documents.
+      <span class="hi">CDD का अर्थ है ग्राहक की पहचान व वैधानिक अस्तित्व को विश्वसनीय दस्तावेज़ों से स्थापित करना।</span></p>
+
+      <div class="microhead">When must CDD be conducted? (4.1) 🔴</div>
+      <ul class="pts">
+        <li>Establishing any business relationship <span class="hi">— व्यावसायिक संबंध स्थापित करते समय</span></li>
+        <li>Any suspicion of money laundering/terrorism financing <span class="hi">— संदेह होने पर</span></li>
+        <li>Doubt about veracity/adequacy of earlier information <span class="hi">— पूर्व जानकारी पर संदेह होने पर</span></li>
+      </ul>
+      <div class="microhead">CDD must at least comprise</div>
+      <ul class="pts">
+        <li>Identify &amp; verify the customer</li>
+        <li>Identify &amp; verify beneficial ownership/control</li>
+        <li>Obtain purpose &amp; intended nature of relationship</li>
+        <li>Conduct <b>ongoing</b> due diligence &amp; scrutiny</li>
+      </ul>
+      <div class="qbox">🔴 <b>Exam Trap:</b> Unwillingness of customer to provide info/cooperate = <b>itself a factor of suspicion</b>. Non-compliance → PO must <b>terminate</b> relationship + file <b>STR</b>.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 5. KYC POLICY ================= -->
+<div class="wrap section" id="s5">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>5. KYC Policy — Acceptance, Risk Categorization, Documentation, CIP <span class="hi">KYC नीति</span></h3>
+        <div class="tagsrow"><span class="tag vimp">🔴 VIMP</span><span class="tag freq">🟠 Frequent</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="struct"><span>Chapter: KYC Policy</span><span class="sep">→</span><span>5.1 Acceptance</span><span class="sep">→</span><span>5.2 CIP</span><span class="sep">→</span><span>5.3 Business Procedure</span></div>
+
+      <div class="microhead">5.1(a) Customer Acceptance — Prohibited/Watch Situations 🔴</div>
+      <ul class="pts">
+        <li>No anonymous / fictitious / benami transactions <span class="hi">— गुमनाम/काल्पनिक नाम से लेनदेन नहीं</span></li>
+        <li>Only <b>personal</b> remittances allowed (family maintenance, foreign tourists) — non-related persons need close monitoring</li>
+        <li>No commercial/investment/loan/charity/donation/property/NRE-credit transactions under MTSS</li>
+        <li>No transactions in the name of <b>minors</b></li>
+        <li>Watch: unusually frequent receipts, receiver using multiple IDs, forged IDs, no apparent family relation between sender-receiver, same person receiving from multiple senders (or vice-versa)</li>
+      </ul>
+      <div class="qbox">❓ List any five situations under Customer Acceptance Policy that require enhanced monitoring / are not acceptable.</div>
+
+      <div class="microhead">5.1(b) Risk Categorization — LEVEL I / II / III 🔴 (High-weight table)</div>
+      <div class="tblwrap"><table>
+        <tr><th>Level</th><th>Remittance Amount</th><th>Forex Purchase Amount</th></tr>
+        <tr><td><b>Level I</b><span class="hi">निम्न जोखिम</span></td><td>Up to ₹50,000</td><td>Less than ₹50,000</td></tr>
+        <tr><td><b>Level II</b><span class="hi">मध्यम जोखिम</span></td><td>Above ₹50,000 up to ₹1,00,000</td><td>In excess of ₹50,000</td></tr>
+        <tr><td><b>Level III</b><span class="hi">उच्च जोखिम</span></td><td>Family maintenance remittance above ₹1,00,000 sent by family member abroad; foreign tourists</td><td>—</td></tr>
+      </table></div>
+
+      <div class="microhead">Level III — Other High-Risk Triggers (memorize as a checklist) 🔴</div>
+      <ul class="pts">
+        <li>Collection from a different city than the photo ID city</li>
+        <li>No apparent family relation between sender &amp; receiver</li>
+        <li>Transactions from FATF high-risk countries (list below)</li>
+        <li>Sender has foreign name, receiver is Indian national</li>
+        <li>Same person receiving from multiple senders / same sender to multiple receivers</li>
+        <li>Non-resident customers; countries not applying FATF standards</li>
+        <li><b>High Net-worth Individuals (HNI)</b>; <b>Politically Exposed Persons (PEPs)</b></li>
+        <li>Non-face-to-face customers; dubious public reputation</li>
+        <li>Intentional structuring/breaking of transactions below ₹50,000 to evade reporting <span class="hi">(संरचनाकरण)</span></li>
+      </ul>
+
+      <div class="mnemo"><h4>🧠 Mnemonic for Level III triggers</h4>
+      <div class="letters">"Ph.D. HiNe P-PEP"</div>
+      <p style="font-size:13px;margin:4px 0 0;">Photo-city mismatch, High-risk country, Non-family, HNI, Non-face-to-face, PEP, Political... — build your own chain linking to these 9 points!</p></div>
+
+      <div class="microhead">FATF High-Risk Country Lists — ⚠️ TWO different lists in the same document! 🔴</div>
+      <div class="tblwrap"><table>
+        <tr><th>Section 5.1(b) list (Level III trigger)</th><th>Section 8(b) list (CFT — deficient AML/CFT regime)</th></tr>
+        <tr><td>Iran, Korea (DPRK), Algeria, Ecuador, Ethiopia, Indonesia, Kenya, Myanmar, Pakistan, Sao Tomé &amp; Principe, Tanzania, Turkey, Vietnam, Yemen</td>
+        <td>Iran, Uzbekistan, Pakistan, Turkmenistan, Sao Tomé &amp; Principe, DPRK, Bolivia, Cuba, Ethiopia, Kenya, Myanmar, Sri Lanka, Syria, Turkey, Nigeria</td></tr>
+      </table></div>
+      <div class="qbox">🔴 <b>Exam Trap:</b> Both lists must be referred to <b>FATF website (www.fatf-gafi.org)</b> for updates — lists are <i>not identical</i>. Common to both: Iran, Pakistan, DPRK/Korea, Sao Tomé &amp; Principe, Ethiopia, Kenya, Myanmar, Turkey.</div>
+
+      <div class="microhead">5.1(c) Documentation Requirement</div>
+      <ul class="pts">
+        <li>ID proof + Address proof required for <b>every</b> transaction</li>
+        <li>Originals personally checked; photograph matched with customer</li>
+        <li>Single document (Voter ID/Ration Card/Passport/DL/Aadhaar) with photo + current address = valid for both ID &amp; address</li>
+        <li>Foreign tourists: passport copy = ID + address; visa copy (Indian Immigration stamped) also kept; if no address on passport → passport + visa + signed declaration of permanent address</li>
+        <li>Level III (high risk): <b>additional</b> ID &amp; address proof required over and above normal proof</li>
+      </ul>
+
+      <div class="microhead">Acceptable ID / Address Proof Documents 🟠</div>
+      <div class="tblwrap"><table>
+        <tr><th>For Identity (photo)</th><th>For Address</th></tr>
+        <tr><td>Passport, PAN Card, Voter ID, Driving Licence (Indian, not learner's/foreign), Govt/Armed Forces/PSU employee ID (not police/army IDs for civilians), Letter from recognized public authority, Aadhaar (UIDAI) card <span class="hi">(आवेदन-रसीद मान्य नहीं)</span></td>
+        <td>Telephone bill (&lt;3 months), Bank a/c statement, Letter from public authority, Electricity bill (&lt;3 months), Ration Card, Employer letter (subject to Postmaster's satisfaction)</td></tr>
+      </table></div>
+      <div class="qbox">❓ Is a "letter of acknowledgement for having applied for Aadhaar" acceptable as ID proof? <b>Answer: No.</b> Only the actual UIDAI Aadhaar card is accepted.</div>
+
+      <div class="microhead">Special Case — Relatives living together</div>
+      <p class="bi">If utility bills aren't in the applicant's name (e.g., wife/son/daughter/parent living with family), Postmaster may accept the relative's ID + utility bill + a <b>declaration</b> from the relative confirming relationship &amp; co-residence.
+      <span class="hi">परिवार के साथ रहने वाले सदस्यों हेतु रिश्तेदार का पहचान पत्र व घोषणा-पत्र स्वीकार्य।</span></p>
+
+      <div class="microhead">Politically Exposed Persons (PEPs) 🔴</div>
+      <p class="bi">Individuals entrusted with prominent public functions in a <b>foreign country</b> — Heads of State/Govt, senior politicians, judicial/military officers, senior PSU executives, political party officials.</p>
+      <ul class="pts">
+        <li>Gather sufficient info + check public domain info</li>
+        <li>Verify identity + ascertain <b>source of wealth &amp; source of funds</b></li>
+        <li>Decision to accept a PEP → taken at <b>senior level</b></li>
+        <li>Subject to <b>enhanced ongoing monitoring</b></li>
+        <li>Norms also apply to family members/close relatives of PEPs, and to customers who <i>become</i> PEPs later, and where PEP is the ultimate beneficial owner</li>
+      </ul>
+
+      <div class="microhead">5.2 Customer Identification Procedure (CIP)</div>
+      <p class="bi">Identifying customer + verifying identity using reliable independent documents/data. Risk-based approach avoids disproportionate cost/burden. Periodic updation of ID data (incl. photographs) needed for continuing relationships.</p>
+
+      <div class="microhead">Business Entities (company/firm/trust)</div>
+      <p class="bi">Relationship established only after due diligence on documents; ongoing due diligence throughout relationship; if CDD becomes impossible → <b>terminate relationship + file STR with FIU-IND.</b></p>
+
+      <div class="microhead">🌳 Decision Tree — Should PO accept the customer?</div>
+      <div class="dtree">
+        <div class="dnode">Customer approaches PO for MTSS/Forex transaction</div>
+        <div class="dline">↓</div>
+        <div class="dnode">Can identity &amp; address be verified with valid documents?</div>
+        <div class="dbranch">
+          <div style="text-align:center;">
+            <div class="dline">NO ↓</div>
+            <div class="dleaf stop">Do NOT undertake transaction</div>
+          </div>
+          <div style="text-align:center;">
+            <div class="dline">YES ↓</div>
+            <div class="dnode dyes">Does PO suspect ML/TF or PO no longer confident of true identity?</div>
+          </div>
+        </div>
+        <div class="dline">↓ (if suspicious)</div>
+        <div class="dnode">Terminate business relation (if existing) + File <b>STR with FIU-IND</b> — same day, irrespective of amount</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 5.3 Business Procedure ================= -->
+<div class="wrap section" id="s53">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>5.3 Procedure for Undertaking Business (Payment / Purchase / Sale) <span class="hi">व्यवसाय हेतु प्रक्रिया</span></h3>
+        <div class="tagsrow"><span class="tag vimp">🔴 VIMP</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+
+      <div class="microhead">5.3.1 Payment to Beneficiaries under Money Transfer</div>
+      <ul class="pts">
+        <li>ID docs verified + copy retained with legible photo of beneficiary</li>
+        <li>Biometric identification also required for cash payment to beneficiary (to be linked to UID)</li>
+        <li>Cap: <b>US $2500</b> per individual remittance under the scheme</li>
+        <li>Cash payment: up to <b>₹50,000</b>; above → by cheque/DD/PO or credited directly to bank a/c (exception: foreign tourist may get higher cash in exceptional cases)</li>
+        <li>Max <b>30 remittances</b> receivable by one individual per calendar year</li>
+      </ul>
+
+      <div class="microhead">5.3.2 Purchase of Forex from Customers</div>
+      <ul class="pts">
+        <li>&lt; ₹50,000: photocopy of ID <b>not</b> required, but full details must be maintained</li>
+        <li>≥ ₹50,000: ID document verified + copy retained</li>
+        <li>Suspected structuring into series below ₹50,000 → verify identity/address + consider STR to FIU-IND</li>
+      </ul>
+      <div class="microhead">Payment to customer for purchase of forex (cash limits)</div>
+      <div class="tblwrap"><table>
+        <tr><th>Category</th><th>Max Cash (INR) per transaction</th></tr>
+        <tr><td>Resident customer</td><td>US $1000 equivalent</td></tr>
+        <tr><td>Foreign visitor / NRI</td><td>US $3000 equivalent</td></tr>
+      </table></div>
+      <p class="bi">All purchases within <b>30 days</b> of last transaction = treated as a single transaction (for limits &amp; reporting). Otherwise → payment only by <b>Account Payee cheque/DD</b>.</p>
+
+      <div class="microhead">5.3.3 Sale of Forex to Customers</div>
+      <ul class="pts">
+        <li><b>Passport mandatory</b> for ID — irrespective of amount; only on personal application</li>
+        <li>Payment &gt; ₹50,000 → crossed cheque (sponsor's bank a/c) / Banker's cheque / Pay Order / DD / debit-credit-prepaid card (subject to conditions)</li>
+        <li>30-day window rule applies here too; 2nd/subsequent drawal exceeding ₹50,000 cumulative → same restricted payment modes</li>
+        <li>Encashment Certificate to be insisted upon, wherever required</li>
+        <li>Currency Declaration Form (CDF) production insisted if forex tendered exceeds prescribed limits</li>
+      </ul>
+      <div class="qbox">❓ What is the maximum cash that can be paid to (a) a resident customer and (b) a foreign visitor/NRI for purchase of forex, per transaction?</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 5.4 & 5.5 Monitoring + Risk Mgmt ================= -->
+<div class="wrap section" id="s54">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>5.4 Monitoring of Transactions &amp; 5.5 Risk Management <span class="hi">निगरानी एवं जोखिम प्रबंधन</span></h3>
+        <div class="tagsrow"><span class="tag freq">🟠 Frequent</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <p class="bi">Ongoing monitoring is essential to KYC. Special attention to complex/unusually large/no-apparent-purpose transactions. High-risk txns need <b>intensified monitoring</b>. "Attempted transactions" abandoned by customer must still be reported as STR.</p>
+
+      <div class="microhead">5.5 Risk Management — Key Controls 🔴</div>
+      <ul class="pts">
+        <li>Level III: additional <b>Photo ID</b> — must be a <b>valid Passport or UID/Aadhaar card</b> (not a letter)</li>
+        <li>Level III: additional Address Proof — latest landline/mobile/electricity bill</li>
+        <li><b>Doubtful transactions</b> (documents complete but raises suspicion): payment via Account Payee cheque for <b>₹20,000 and above</b></li>
+        <li>Original ID/Address proof checked &amp; compared with copies for <b>all</b> transactions</li>
+        <li>Signature on ID proof must match signature on forms</li>
+        <li>All documents self-attested by customer</li>
+        <li>Photo on ID matched with the actual person transacting</li>
+        <li>Any doubt-clarifying questions must be recorded on the documents as proof</li>
+      </ul>
+      <div class="qbox">🔴 <b>Exam Trap:</b> Doubtful-transaction cheque threshold is <b>₹20,000</b> — different from the ₹50,000 Level I/II threshold. Don't confuse the two!</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 6-8: Inspection, Tech, CFT ================= -->
+<div class="wrap section" id="s6">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>6–8. Inspection/Audit, New Technologies &amp; Combating Financing of Terrorism <span class="hi">निरीक्षण, नई तकनीक एवं आतंकवाद वित्तपोषण नियंत्रण</span></h3>
+        <div class="tagsrow"><span class="tag concept">🟡 Concept</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="microhead">6. Inspection / Audit</div>
+      <p class="bi">Circles must ensure regular auditing for AML/KYC compliance; Inspectorial staff must be well-versed and give on-hand training; lapses reported by concurrent auditors must be escalated immediately to higher authorities.</p>
+
+      <div class="microhead">7. New Technologies</div>
+      <p class="bi">PO must watch for ML threats from new/developing technologies (e.g. internet transactions favouring anonymity) and take preventive measures.</p>
+
+      <div class="microhead">8. Combating Financing of Terrorism (CFT)</div>
+      <ul class="pts">
+        <li>Suspicious transaction = includes proceeds of an offence <b>regardless of value</b> — enhanced monitoring + swift STR to FIU-IND on priority</li>
+        <li>Countries with deficient AML/CFT regime (per FATF) — see Section 8(b) list above — special attention required</li>
+      </ul>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 9-12: Records ================= -->
+<div class="wrap section" id="s9">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>9–12. Records — Maintenance, Suspicious Transaction Definition, Preservation <span class="hi">अभिलेख — रखरखाव, संदिग्ध लेनदेन की परिभाषा, संरक्षण</span></h3>
+        <div class="tagsrow"><span class="tag vimp">🔴 VIMP</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="microhead">9. Records to be Maintained</div>
+      <ul class="pts">
+        <li>All cash transactions &gt; ₹10 lakh</li>
+        <li>Series of cash transactions &lt; ₹10 lakh but integrally connected within 1 month &amp; totalling &gt; ₹10 lakh</li>
+        <li>Transactions with forged/counterfeit currency, or forgery of documents/security</li>
+        <li>Attempted transactions involving forged currency/documents</li>
+        <li>All suspicious transactions (cash or otherwise)</li>
+      </ul>
+
+      <div class="microhead">10. Definition of "Suspicious Transaction" 🔴 (verbatim-style, high MCQ value)</div>
+      <p class="bi">A transaction (incl. an attempted one, cash or not) which to a person acting in good faith:</p>
+      <ul class="pts">
+        <li>(i) Gives reasonable ground of suspicion of proceeds of an offence, <b>regardless of value</b></li>
+        <li>(ii) Appears made in circumstances of unusual/unjustified complexity</li>
+        <li>(iii) Appears to have no economic rationale or bonafide purpose</li>
+        <li>(iv) Gives reasonable ground of suspicion of terrorism-financing activity</li>
+      </ul>
+      <p class="bi">'Transaction' = exchange/transfer of funds in any currency, cash/cheque/PO/other instruments/electronic or non-physical means.</p>
+
+      <div class="microhead">11. Information to be Preserved</div>
+      <ul class="pts">
+        <li>Nature of transaction</li>
+        <li>Amount &amp; currency</li>
+        <li>Date of transaction</li>
+        <li>Parties to the transaction</li>
+      </ul>
+
+      <div class="microhead">12. Maintenance &amp; Preservation of Records 🔴</div>
+      <div class="tblwrap"><table>
+        <tr><th>Record Type</th><th>Preservation Period</th></tr>
+        <tr><td>All transaction records (residents &amp; non-residents)</td><td><b>10 years</b> from date of transaction</td></tr>
+        <tr><td>Customer identification records (ID/address proof copies)</td><td><b>10 years</b> from date of <b>cessation</b> of business relationship</td></tr>
+      </table></div>
+      <div class="qbox">🔴 <b>Exam Trap:</b> Two different "10-year" start points — transaction records count from the <b>transaction date</b>, but ID records count from <b>cessation of relationship</b>. A very common MCQ confusion.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 13: Reporting ================= -->
+<div class="wrap section" id="s13">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>13. Reporting of Transactions — CTR &amp; STR Schedule <span class="hi">लेनदेन की रिपोर्टिंग — CTR व STR समय-सारणी</span></h3>
+        <div class="tagsrow"><span class="tag vimp">🔴 VIMP</span><span class="tag freq">🟠 Frequent</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="microhead">Transactions to be Reported</div>
+      <ul class="pts">
+        <li>(a) Cash transactions &gt; ₹10 lakh</li>
+        <li>(b) Series of connected cash transactions &lt; ₹10 lakh (within 1 month) totalling &gt; ₹10 lakh</li>
+        <li>(c) Forged/counterfeit currency accepted, or forgery of security/documents</li>
+        <li>(d) Attempted transactions with forged currency/documents</li>
+        <li>(e) All suspicious transactions (domestic + international) — <b>irrespective of amount</b></li>
+      </ul>
+
+      <div class="microhead">⏱ Reporting Timeline — Cash Transaction Report (CTR)</div>
+      <div class="timeline">
+        <div class="tl-item"><span class="day">Day 3</span><h4>Post Office In-charge → Head of Division</h4><p>Monthly list of qualifying cash transactions, by 3rd working day of the subsequent month.</p></div>
+        <div class="tl-item"><span class="day">Day 5</span><h4>Head of Division → Head of Circle</h4><p>Post-office-wise consolidated list, by 5th working day of the subsequent month.</p></div>
+        <div class="tl-item"><span class="day">Day 8</span><h4>Head of Circle → DDG (PCO), PMLA, Directorate</h4><p>Consolidated post-office-wise list, by 8th working day. <b>NIL report</b> mandatory if no transactions.</p></div>
+      </div>
+
+      <div class="microhead">⏱ Reporting Timeline — Suspicious Transaction Report (STR) 🔴</div>
+      <div class="timeline">
+        <div class="tl-item"><span class="day">Same Day</span><h4>Post Office In-charge → Head of Division (by name)</h4><p>List with nature, amount, name/address, date/place, PAN (if given), and detailed reason of suspicion.</p></div>
+        <div class="tl-item"><span class="day">Same Day</span><h4>Head of Division → Head of Circle (by name)</h4><p>On the very same day of receiving STR from PO.</p></div>
+        <div class="tl-item"><span class="day">Same Day</span><h4>Head of Circle → DDG (Public Compliance Officer), PMLA (by name)</h4><p>On the very same day of receiving STR from Divisional Office.</p></div>
+      </div>
+      <div class="mnemo"><h4>🧠 Mnemonic — CTR vs STR</h4>
+      <div class="letters">CTR = "3-5-8, Wait a Bit" (working days) &nbsp;|&nbsp; STR = "Same Day, No Delay"</div></div>
+
+      <div class="qbox">❓ Compare the reporting schedule and escalation chain of a CTR and an STR. Who is the final recipient authority in each case?<br><b>Note 1:</b> Abandoned/aborted transactions are still reportable as STR, irrespective of amount.<br><b>Note 2:</b> Deliberate splitting of amount to avoid CTR reporting must be reported as an STR.</div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= 14-18 ================= -->
+<div class="wrap section" id="s14">
+  <div class="card">
+    <div class="head" onclick="toggleCard(this)">
+      <div class="htxt">
+        <h3>14–18. Attestation, Comparison, Recording &amp; Training <span class="hi">सत्यापन, तुलना, अभिलेखन एवं प्रशिक्षण</span></h3>
+        <div class="tagsrow"><span class="tag quick">🟢 Quick</span></div>
+      </div>
+      <div class="chev">▶</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="microhead">14. Attestation of KYC Documents</div>
+      <p class="bi">All KYC documents must be <b>self-attested</b>. For illiterate customers: attested by Gazetted Officer / Sarpanch (Gram Panchayat) / any Postal Staff / GDS after comparing with original. PM/SPM/Supervisor (APM/DPM) must ensure attestation is done.</p>
+
+      <div class="microhead">15 &amp; 16. Comparison of Address &amp; Name</div>
+      <ul class="pts">
+        <li>Address in Booking/Receiving form must match address proof document</li>
+        <li>Name of sender/receiver in form must match Identity proof document</li>
+      </ul>
+
+      <div class="microhead">17. Recording Receipt of KYC Documents</div>
+      <p class="bi">PM/SPM/Supervisor records in writing, under <b>dated signature</b>, on the Booking/Receiving form: <i>"KYC Documents verified &amp; attached."</i></p>
+
+      <div class="microhead">18. Customer Education &amp; Employees' Training</div>
+      <ul class="pts">
+        <li><b>Customer Education:</b> Circles to prepare literature/pamphlets explaining KYC objectives; front-desk staff trained to handle customer queries</li>
+        <li><b>Employees' Training:</b> Ongoing training programme; different focus for frontline staff, compliance staff, staff dealing with new customers; steps on suspicious-transaction handling to be formulated by Circles</li>
+      </ul>
+
+      <div class="microhead">Final Responsibility Clause</div>
+      <p class="bi">PO must identify/assess ML/TF risk for customers, countries, geographical areas, products/services/delivery channels, and adopt enhanced measures for medium/high-risk categories. <b>Postmasters are solely responsible</b> for ensuring their location adheres to these guidelines.</p>
+    </div></div>
+  </div>
+</div>
+
+<!-- ================= AUTHORITIES COMPARISON ================= -->
+<div class="wrap section" id="authorities">
+  <div class="section-head"><span class="num">★</span><h2>Key Authorities Map <span class="tag freq">🟠 Frequent</span></h2></div>
+  <div class="tblwrap"><table>
+    <tr><th>Authority</th><th>Role</th></tr>
+    <tr><td>Post Master / SPM / Supervisor (APM/DPM)</td><td>Frontline KYC verification, attestation check, name/address comparison, recording receipt</td></tr>
+    <tr><td>Head of Division</td><td>Consolidates PO-wise CTR list; forwards STR same day</td></tr>
+    <tr><td>Head of Circle</td><td>Consolidates Division-wise data; forwards to Directorate</td></tr>
+    <tr><td>DDG (PCO), PMLA — Directorate</td><td>Apex recipient of CTR (via Circle, 8th working day) &amp; NIL reports</td></tr>
+    <tr><td>DDG (Public Compliance Officer), PMLA — Directorate</td><td>Apex recipient of STR (same day)</td></tr>
+    <tr><td>FIU-IND (Financial Intelligence Unit-India)</td><td>National authority to whom STRs are ultimately filed for action</td></tr>
+    <tr><td>Reserve Bank of India (RBI)</td><td>Reviews records/findings on complex or no-apparent-purpose transactions upon request</td></tr>
+  </table></div>
+</div>
+
+<!-- ================= COMPARISON: CTR vs STR ================= -->
+<div class="wrap section" id="ctrstr">
+  <div class="section-head"><span class="num">★★</span><h2>CTR vs STR — Comparison Chart <span class="tag vimp">🔴 VIMP</span></h2></div>
+  <div class="tblwrap"><table>
+    <tr><th>Feature</th><th>CTR (Cash Transaction Report)</th><th>STR (Suspicious Transaction Report)</th></tr>
+    <tr><td>Trigger</td><td>Cash txn &gt; ₹10 lakh (or connected series)</td><td>Any suspicion — <b>no amount threshold</b></td></tr>
+    <tr><td>PO → Division</td><td>3rd working day of next month</td><td>Same day</td></tr>
+    <tr><td>Division → Circle</td><td>5th working day of next month</td><td>Same day</td></tr>
+    <tr><td>Circle → Directorate</td><td>8th working day (to DDG-PCO); NIL if none</td><td>Same day (to DDG-Public Compliance Officer)</td></tr>
+    <tr><td>Covers attempted/abandoned txns?</td><td>No</td><td>Yes — always reportable</td></tr>
+  </table></div>
+</div>
+
+<!-- ================= ONE-PAGE REVISION SHEET ================= -->
+<div class="wrap section" id="revision">
+  <div class="section-head"><span class="num">📝</span><h2>One-Page Revision Sheet <span class="tag vimp">🔴 Last-Day Revision</span></h2></div>
+  <div class="revsheet">
+    <h3>AML / KYC / CFT — MTSS &amp; Money Changing <span class="hi">अंतिम दिन का पुनरीक्षण</span></h3>
+    <div class="grid2">
+      <div class="revblock"><h5>3 Stages of ML</h5><ul><li>Placement → Layering → Integration</li></ul></div>
+      <div class="revblock"><h5>Risk Levels</h5><ul><li>I: ≤₹50k</li><li>II: ₹50k–₹1L</li><li>III: &gt;₹1L (family) / high-risk factors</li></ul></div>
+      <div class="revblock"><h5>Individual Caps</h5><ul><li>MTSS cap: US$2500</li><li>Cash to beneficiary: ≤₹50,000</li><li>30 remittances/year max</li></ul></div>
+      <div class="revblock"><h5>Forex Purchase Cash Limits</h5><ul><li>Resident: US$1000</li><li>Foreign/NRI: US$3000</li></ul></div>
+      <div class="revblock"><h5>Forex Sale</h5><ul><li>Passport mandatory always</li><li>&gt;₹50,000 → cheque/DD/card only</li></ul></div>
+      <div class="revblock"><h5>Reporting Thresholds</h5><ul><li>CTR: &gt;₹10 lakh cash</li><li>STR: no threshold, same-day</li><li>Doubtful txn cheque: ≥₹20,000</li></ul></div>
+      <div class="revblock"><h5>Record Preservation</h5><ul><li>Transactions: 10 yrs from txn date</li><li>ID docs: 10 yrs from relationship end</li></ul></div>
+      <div class="revblock"><h5>Address Proof Validity</h5><ul><li>Telephone/electricity bill: &lt;3 months old</li></ul></div>
+      <div class="revblock"><h5>Level III Extra Docs</h5><ul><li>Photo ID: Passport/Aadhaar only (not letter)</li><li>Address: latest phone/electricity bill</li></ul></div>
+      <div class="revblock"><h5>CTR Escalation</h5><ul><li>PO→Div: Day 3</li><li>Div→Circle: Day 5</li><li>Circle→Directorate: Day 8</li></ul></div>
+      <div class="revblock"><h5>STR Escalation</h5><ul><li>Every level: Same day</li></ul></div>
+      <div class="revblock"><h5>Key Authority</h5><ul><li>STR final destination: FIU-IND</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MNEMONICS BLOCK ================= -->
+<div class="wrap section" id="mnemonics">
+  <div class="section-head"><span class="num">🧠</span><h2>Memory Tricks &amp; Mnemonics <span class="tag quick">🟢 Quick Revision</span></h2></div>
+  <div class="mnemo"><h4>ML Stages</h4><p><b>P-L-I</b> = Please Launder Immediately (Placement, Layering, Integration)</p></div>
+  <div class="mnemo"><h4>Risk Levels (I / II / III)</h4><p><b>50-1-More</b> = ≤50k (I), 50k–1L (II), &gt;1L / risky factors (III)</p></div>
+  <div class="mnemo"><h4>STR characteristics</h4><p><b>"SUN"</b> = <u>S</u>uspicious ground, <u>U</u>njustified complexity, <u>N</u>o economic rationale (+ terrorism financing ground)</p></div>
+  <div class="mnemo"><h4>CDD Trigger Points</h4><p><b>"E-S-D"</b> = <u>E</u>stablishing relationship, <u>S</u>uspicion of ML/TF, <u>D</u>oubt about earlier info</p></div>
+  <div class="mnemo"><h4>Reporting Speed</h4><p>CTR = "3-5-8, Wait a Bit" &nbsp;|&nbsp; STR = "Same Day, No Delay"</p></div>
+  <div class="mnemo"><h4 class="hi">जोखिम स्तर याद रखने की तरकीब</h4><p class="hi">"पचास-एक-ज़्यादा" — स्तर I ≤ 50 हज़ार, स्तर II 50 हज़ार–1 लाख, स्तर III 1 लाख से ऊपर या जोखिम कारक</p></div>
+</div>
+
+<div class="wrap" style="padding-bottom:20px;">
+  <p style="font-size:12px;color:#8a7a55;">Source: Guidelines on KYC/AML/CFT Norms under PMLA 2002 (as amended by PMLA Amendment Act 2009) for MTSS (Inward) &amp; Money Changing Services in India Post. Prepared as exam-revision notes — always cross-verify with the latest Department of Posts circular before the examination.</p>
+</div>
+
+<footer>
+  Prepared for <b>AAO &amp; LDCE-IP Exam Preparation</b> · India Post &nbsp;|&nbsp; <span class="hi">डाक विभाग परीक्षा तैयारी हेतु</span>
+</footer>
+
+<button class="printbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+
+// Build TOC
+const sections = [
+  ['#numbers','Key Numbers'],['#s1','1. Introduction'],['#s2','2-3. Objective/Customer'],
+  ['#s4','4. CDD'],['#s5','5. KYC Policy'],['#s53','5.3 Business Procedure'],
+  ['#s54','5.4-5.5 Monitoring/Risk'],['#s6','6-8. Inspection/CFT'],['#s9','9-12. Records'],
+  ['#s13','13. Reporting CTR/STR'],['#s14','14-18. Attestation/Training'],
+  ['#authorities','Authorities'],['#ctrstr','CTR vs STR'],['#revision','Revision Sheet'],['#mnemonics','Mnemonics']
+];
+const toc = document.getElementById('toc');
+sections.forEach(([href,label])=>{
+  const a=document.createElement('a'); a.href=href; a.textContent=label; toc.appendChild(a);
+});
+
+// Dark mode
+const darkBtn = document.getElementById('darkToggle');
+darkBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  darkBtn.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+});
+
+// TTS
+let speaking=false;
+const ttsBtn = document.getElementById('ttsToggle');
+ttsBtn.addEventListener('click',()=>{
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; ttsBtn.textContent='🔊 Read Aloud'; return; }
+  const text = document.querySelectorAll('.card.open .body-in, .hero .sub');
+  let full='';
+  text.forEach(t=>full+=t.innerText+'. ');
+  if(!full) full = document.querySelector('.hero .sub').innerText;
+  const utter = new SpeechSynthesisUtterance(full);
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking=false; ttsBtn.textContent='🔊 Read Aloud'; };
+  window.speechSynthesis.speak(utter);
+  speaking=true; ttsBtn.textContent='⏹️ Stop Reading';
+});
+</script>
+</body>
+</html>

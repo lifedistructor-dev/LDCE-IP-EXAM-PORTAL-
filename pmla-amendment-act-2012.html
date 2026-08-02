@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMLA (Amendment) Act, 2012 | India Post LDCE</title>
+<style>
+:root{
+  --red:#c8102e; --dark-red:#8e0b20; --blue:#003c71; --light-blue:#e8f1fb;
+  --gold:#d4a017; --gold-light:#fff6df;
+  --bg:#f7f8fb; --card-bg:#ffffff; --text:#1b2430; --sub:#5a6472;
+  --border:#e2e6ec; --green:#1c8a4b; --orange:#e07b00; --yellow:#c99a00;
+  --radius:16px; --shadow:0 4px 18px rgba(20,30,60,0.08);
+}
+[data-theme="dark"]{
+  --bg:#0f1420; --card-bg:#171d2b; --text:#eef1f6; --sub:#a7b0c0;
+  --border:#2a3248; --light-blue:#152238; --gold-light:#2a2412;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.55;
+  padding-bottom:60px; transition:background .3s,color .3s;
+}
+.header{
+  background:linear-gradient(120deg,var(--red),var(--dark-red) 60%, var(--blue));
+  color:#fff; padding:22px 16px 26px; position:sticky; top:0; z-index:50;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.header-top{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+  padding:3px 10px; border-radius:20px; font-size:11px; letter-spacing:.5px;
+}
+.title-en{font-size:1.25rem; font-weight:800; margin-top:6px;}
+.title-hi{font-size:1.0rem; font-weight:600; opacity:.95; margin-top:2px;}
+.subtitle{font-size:.78rem; opacity:.85; margin-top:6px;}
+.controls{display:flex; gap:8px;}
+.ctrl-btn{
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.5); color:#fff;
+  border-radius:10px; padding:8px 10px; font-size:14px; cursor:pointer;
+}
+.ctrl-btn:active{background:rgba(255,255,255,.35);}
+.chips{display:flex; gap:6px; overflow-x:auto; margin-top:14px; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.chip{
+  flex:0 0 auto; background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4);
+  padding:6px 12px; border-radius:20px; font-size:12px; text-decoration:none; white-space:nowrap;
+}
+.wrap{max-width:840px; margin:0 auto; padding:14px;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+}
+.card-head{
+  padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;
+  background:linear-gradient(90deg,var(--light-blue),transparent);
+}
+.card-head h2{font-size:1.0rem; color:var(--blue); display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .card-head h2{color:#7fb3ff;}
+.card-head .hi{display:block; font-size:.82rem; color:var(--sub); font-weight:500; margin-top:2px;}
+.chevron{transition:transform .25s; font-size:14px; color:var(--sub);}
+.card.open .chevron{transform:rotate(180deg);}
+.card-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.card.open .card-body{max-height:14000px;}
+.card-inner{padding:6px 16px 18px;}
+.tag{
+  display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:8px; margin-right:4px;
+}
+.tag-vip{background:#ffe3e6; color:var(--red);}
+.tag-freq{background:#ffe9d1; color:var(--orange);}
+.tag-concept{background:#fff6cf; color:var(--yellow);}
+.tag-quick{background:#dcf5e4; color:var(--green);}
+[data-theme="dark"] .tag-vip{background:#4a1420;}
+[data-theme="dark"] .tag-freq{background:#4a2f0a;}
+[data-theme="dark"] .tag-concept{background:#463c07;}
+[data-theme="dark"] .tag-quick{background:#0e3820;}
+.subhead{font-weight:700; color:var(--red); margin:14px 0 6px; font-size:.95rem; display:flex; gap:6px; align-items:center;}
+.subhead .hi{font-weight:600; color:var(--sub); font-size:.82rem;}
+p.hi, li .hi, td .hi, .note .hi{color:var(--sub); font-size:.85rem;}
+ul{padding-left:20px; margin:6px 0;}
+li{margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.8rem;}
+th{background:var(--blue); color:#fff; padding:7px 6px; text-align:left; font-size:.75rem;}
+td{padding:6px 6px; border-bottom:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:var(--light-blue);}
+.flow{display:flex; flex-direction:column; gap:6px; margin:12px 0;}
+.flow-box{
+  background:var(--light-blue); border:1.5px solid var(--blue); border-radius:10px; padding:9px 12px;
+  font-size:.85rem; position:relative;
+}
+.flow-box b{color:var(--blue);}
+.flow-arrow{text-align:center; color:var(--gold); font-size:18px; font-weight:900;}
+.mindmap{
+  display:grid; grid-template-columns:1fr; gap:8px; margin:12px 0;
+}
+.mind-node{
+  border:2px dashed var(--gold); border-radius:12px; padding:8px 10px; background:var(--gold-light); font-size:.83rem;
+}
+.mind-node b{color:var(--dark-red);}
+.timeline{position:relative; margin:16px 4px 6px 4px; padding-left:20px; border-left:3px solid var(--gold);}
+.tl-item{position:relative; margin-bottom:16px;}
+.tl-item::before{
+  content:''; position:absolute; left:-27px; top:2px; width:12px; height:12px; border-radius:50%;
+  background:var(--red); border:2px solid var(--gold);
+}
+.tl-year{font-weight:800; color:var(--red); font-size:.9rem;}
+.tl-body{font-size:.83rem; margin-top:2px;}
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+.compare-col{border-radius:12px; padding:10px; font-size:.82rem;}
+.compare-col.a{background:#ffe9ec; border:1px solid var(--red);}
+.compare-col.b{background:#e6f0ff; border:1px solid var(--blue);}
+[data-theme="dark"] .compare-col.a{background:#3a141a;}
+[data-theme="dark"] .compare-col.b{background:#132844;}
+.compare-col h4{margin-bottom:6px; font-size:.88rem;}
+.decision{margin:12px 0; font-size:.85rem;}
+.dbox{
+  border:2px solid var(--blue); border-radius:10px; padding:8px 10px; margin-bottom:6px; background:var(--light-blue);
+}
+.dq{font-weight:800; color:var(--blue); font-size:14px;}
+.dyes{border-left:4px solid var(--green);}
+.dno{border-left:4px solid var(--red);}
+.qbox{
+  background:var(--gold-light); border-left:4px solid var(--gold); border-radius:8px; padding:8px 10px;
+  font-size:.82rem; margin-top:8px;
+}
+.qbox b{color:var(--dark-red);}
+.mnemonic{
+  background:linear-gradient(120deg,#fff6df,#ffe9d1); border:1px dashed var(--orange); border-radius:12px;
+  padding:10px 12px; font-size:.85rem; margin:10px 0;
+}
+[data-theme="dark"] .mnemonic{background:linear-gradient(120deg,#2a2412,#3a2a0d);}
+.mnemonic b{color:var(--dark-red);}
+.revision-sheet{
+  background:linear-gradient(160deg,var(--gold-light),var(--card-bg)); border:2px solid var(--gold);
+  border-radius:16px; padding:14px;
+}
+.rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.82rem; align-items:flex-start;}
+.rev-icon{flex:0 0 auto;}
+.footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+.jump-top{
+  position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
+  width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
+}
+.pillgrid{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:10px 0;}
+.pill{border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:.78rem; background:var(--light-blue);}
+.pill b{display:block; font-size:.85rem; color:var(--blue);}
+.secbadge{display:inline-block; background:var(--blue); color:#fff; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:8px; margin-left:4px;}
+.tablewrap{overflow-x:auto;}
+@media(min-width:640px){ .mindmap{grid-template-columns:1fr 1fr;} .pillgrid{grid-template-columns:repeat(3,1fr);} }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <span class="badge">IP / AAO EXAM • Financial & Postal Acts</span>
+      <div class="title-en">Prevention of Money-Laundering (Amendment) Act, 2012</div>
+      <div class="title-hi">धन-शोधन निवारण (संशोधन) अधिनियम, 2012</div>
+      <div class="subtitle">Amends PMLA 2002 | No. 2 of 2013 | Gazette dated 4 January 2013</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
+      <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip" href="#overview">Overview</a>
+    <a class="chip" href="#definitions">New Definitions</a>
+    <a class="chip" href="#attachment">Attach/Freeze/Seize</a>
+    <a class="chip" href="#reporting">Reporting Entity Duties</a>
+    <a class="chip" href="#adjudication">Confiscation & Release</a>
+    <a class="chip" href="#burden">Burden of Proof</a>
+    <a class="chip" href="#authorities">Authorities</a>
+    <a class="chip" href="#penalty">Penalty & Recovery</a>
+    <a class="chip" href="#schedule">Schedule (Offences)</a>
+    <a class="chip" href="#revision">1-Page Revision</a>
+    <a class="chip" href="#mnemonics">Mnemonics</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- LEGEND -->
+<div class="card open">
+  <div class="card-inner" style="padding-top:14px;">
+    <span class="tag tag-vip">🔴 VIP for Exam</span>
+    <span class="tag tag-freq">🟠 Frequently Asked</span>
+    <span class="tag tag-concept">🟡 Conceptual</span>
+    <span class="tag tag-quick">🟢 Quick Revision</span>
+    <div class="hi" style="margin-top:6px;">रंग-कोड: लाल=अति महत्वपूर्ण, नारंगी=बार-बार पूछा गया, पीला=अवधारणा, हरा=त्वरित पुनरीक्षण</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="card open" id="overview">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📘 Topic Overview <span class="hi">विषय अवलोकन</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mindmap">
+      <div class="mind-node"><b>Chapter:</b> PMLA (Amendment) Act, 2012 <span class="hi">धन-शोधन निवारण संशोधन अधिनियम</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 1:</b> New/Amended Definitions (Sec 2) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 2:</b> Attachment, Seizure, Freezing (Sec 5, 8, 17, 18, 20, 21) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 3:</b> Reporting Entity Obligations (Sec 12, 12A, 13, 14, 15) <span class="tag tag-vip">🔴</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 4:</b> Burden of Proof & Special Court (Sec 24, 44, 58A, 58B) <span class="tag tag-freq">🟠</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 5:</b> Penalty, Recovery & Authorities (Sec 63, 69, 54) <span class="tag tag-freq">🟠</span></div>
+      <div class="mind-node">↳ <b>Sub-Chapter 6:</b> Schedule — Offences (Part A, 28 Paragraphs) <span class="tag tag-vip">🔴</span></div>
+    </div>
+    <div class="subhead">Definition <span class="hi">परिभाषा</span></div>
+    <p>The <b>PMLA (Amendment) Act, 2012</b> (No. 2 of 2013) further amends the <b>Prevention of Money-laundering Act, 2002</b> to widen definitions, introduce a new "reporting entity" concept (replacing "banking company, financial institution or intermediary"), enable freezing of property (not just attachment), and strengthen confiscation/recovery mechanisms.</p>
+    <div class="subhead">Important Dates <span class="hi">महत्वपूर्ण तिथियां</span></div>
+    <table>
+      <tr><th>Event</th><th>Date</th></tr>
+      <tr><td>Presidential assent</td><td><b>3 January 2013</b></td></tr>
+      <tr><td>Gazette publication</td><td><b>4 January 2013</b></td></tr>
+      <tr><td>Short title</td><td>PMLA (Amendment) Act, 2012 — <b>No. 2 of 2013</b></td></tr>
+      <tr><td>Commencement</td><td>Date to be notified by Central Govt (Sec 1(2))</td></tr>
+    </table>
+    <div class="qbox"><b>Probable Q:</b> What is the Act Number of the PMLA Amendment Act 2012? <span class="hi">इस संशोधन अधिनियम की संख्या क्या है?</span> → <b>No. 2 of 2013</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- DEFINITIONS -->
+<div class="card" id="definitions">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📖 New/Amended Definitions <span class="hi">नई/संशोधित परिभाषाएं</span> <span class="secbadge">Sec 2</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Newly Inserted Terms <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td><b>Beneficial owner</b> (fa)</td><td>Individual who ultimately owns/controls a client, or exercises ultimate effective control over a juridical person</td></tr>
+      <tr><td><b>Client</b> (ha)</td><td>Person engaged in financial transaction/activity with a reporting entity, incl. person on whose behalf they act</td></tr>
+      <tr><td><b>Corresponding law</b> (ia)</td><td>Any foreign law dealing with offences corresponding to scheduled offences</td></tr>
+      <tr><td><b>Dealer</b> (ib)</td><td>Same meaning as Sec 2(b), Central Sales Tax Act, 1956</td></tr>
+      <tr><td><b>Precious metal</b> (sb)</td><td>Gold, silver, platinum, palladium, rhodium, or notified metal</td></tr>
+      <tr><td><b>Precious stone</b> (sc)</td><td>Diamond, emerald, ruby, sapphire, or notified stone</td></tr>
+      <tr><td><b>Real estate agent</b> (va)</td><td>As defined in Sec 65(88), Finance Act, 1994</td></tr>
+      <tr><td><b>Reporting entity</b> (wa) <span class="tag tag-vip">🔴</span></td><td>A banking company, financial institution, intermediary, or person carrying on designated business/profession</td></tr>
+    </table>
+
+    <div class="subhead">Redefined Terms — Substituted <span class="tag tag-freq">🟠</span></div>
+    <table>
+      <tr><th>Term (l)</th><th>New Meaning</th></tr>
+      <tr><td><b>Financial institution</b></td><td>As per Sec 45-I(c), RBI Act 1934 + includes chit fund company, housing finance institution, authorised person, payment system operator, NBFC, and <b>Department of Posts, Govt of India</b> <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td><b>Intermediary</b> (n)</td><td>Stock-broker/sub-broker/merchant banker etc. registered under SEBI Act 1992; or FCRA-registered association; or PFRDA-registered intermediary; or recognised stock exchange</td></tr>
+    </table>
+
+    <div class="subhead">"Person carrying on designated business or profession" — Sec 2(sa) <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>(i) Games of chance for cash/kind (incl. casino activities)</li>
+      <li>(ii) Registrar/Sub-Registrar under Registration Act, 1908</li>
+      <li>(iii) Real estate agent</li>
+      <li>(iv) Dealer in precious metals/stones/high value goods</li>
+      <li>(v) Person engaged in safekeeping/administration of cash & liquid securities</li>
+      <li>(vi) Any other activity Central Govt may notify</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "GRRDS" → Games of chance, Registrar, Real estate agent, Dealer (precious), Safekeeping — 5 categories under Sec 2(sa).</div>
+    <div class="qbox"><b>Probable Q:</b> Is the Department of Posts included in the definition of "financial institution" under PMLA? → <b>Yes</b>, explicitly added by this amendment <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ATTACHMENT/FREEZE/SEIZE -->
+<div class="card" id="attachment">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🔒 Attachment, Seizure & Freezing of Property <span class="hi">कुर्की, जब्ती व फ्रीजिंग</span> <span class="secbadge">Sec 5, 8, 17, 18, 20, 21</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Provisional Attachment — Sec 5(1) <span class="tag tag-vip">🔴</span></div>
+    <p>Director/officer ≥ rank of <b>Deputy Director</b> may, on written reasons, provisionally attach property for a period <b>not exceeding 180 days</b> from date of order.</p>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "180 = 6 months of Attachment" → provisional attachment max period.</div>
+
+    <div class="subhead">NEW Concept: "Freezing" (in addition to Attachment/Seizure) <span class="tag tag-vip">🔴</span></div>
+    <p>This amendment <b>introduces freezing</b> as a third mechanism (Sec 17(1A)) — where property/record cannot be physically seized, an officer may order it <b>frozen</b> (not transferable) instead.</p>
+
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>Attachment (Sec 5)</h4>
+        Prevents transfer, but ownership/possession may remain undisturbed. Max <b>180 days</b>.
+      </div>
+      <div class="compare-col b">
+        <h4>Freezing (Sec 17(1A)) 🔴</h4>
+        Used when seizure NOT practicable — property cannot be transferred without prior permission of the ordering officer.
+      </div>
+    </div>
+
+    <div class="subhead">Retention of Property — Sec 20 <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Seized/frozen property may be retained/continue frozen for max <b>180 days</b> for adjudication under Sec 8</li>
+      <li>On expiry, property returned <b>unless</b> Adjudicating Authority permits continuation</li>
+      <li>After confiscation order (Sec 8(5)/(7)): non-involved property released; Director may <b>withhold release for 90 days</b> if relevant to appeal <span class="tag tag-freq">🟠</span></li>
+    </ul>
+
+    <div class="subhead">Retention of Records — Sec 21 <span class="tag tag-freq">🟠</span></div>
+    <p>Similar scheme: max <b>180 days</b> retention/freezing of seized records; person from whom seized is entitled to obtain copies.</p>
+
+    <div class="subhead">Time Limit — Application for Retention/Continuation — Sec 17(4) <span class="tag tag-vip">🔴</span></div>
+    <p>Authority must file application before Adjudicating Authority within <b>30 days</b> of seizure/freezing.</p>
+
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">30 Days</div><div class="tl-body">File application for retention/continuation of freezing (Sec 17(4))</div></div>
+      <div class="tl-item"><div class="tl-year">180 Days</div><div class="tl-body">Max period for provisional attachment (Sec 5), retention of seized/frozen property (Sec 20) and records (Sec 21)</div></div>
+      <div class="tl-item"><div class="tl-year">90 Days</div><div class="tl-body">Max period Director may withhold release of property/records post-confiscation-order, if relevant for appeal (Sec 20(6), 21(6))</div></div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "30-180-90" → File in 30 days, hold for 180 days, withhold-post-release for 90 days.</div>
+    <div class="qbox"><b>Probable Q:</b> Within how many days must an application for retention of seized property be filed before the Adjudicating Authority? → <b>30 days</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- REPORTING ENTITY -->
+<div class="card" id="reporting">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🏦 Reporting Entity — Records & Obligations <span class="hi">रिपोर्टिंग इकाई के दायित्व</span> <span class="secbadge">Sec 12, 12A, 13, 14, 15</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Section 12 — Duties of Every Reporting Entity <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>(a) Maintain record of all transactions</li>
+      <li>(b) Furnish info to Director within prescribed time</li>
+      <li>(c) Verify identity of clients</li>
+      <li>(d) Identify the <b>beneficial owner</b>, if any</li>
+      <li>(e) Maintain records of client identity documents & correspondence</li>
+    </ul>
+
+    <div class="subhead">Record Retention Time Limits <span class="tag tag-vip">🔴</span></div>
+    <table>
+      <tr><th>Record Type</th><th>Retention Period</th></tr>
+      <tr><td>Transaction records — Sec 12(1)(a)</td><td><b>5 years</b> from date of transaction</td></tr>
+      <tr><td>Client identity/correspondence — Sec 12(1)(e)</td><td><b>5 years</b> after business relationship ends/account closed, whichever is later</td></tr>
+    </table>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "5-5 Record Rule" → both transaction records and identity records kept for 5 years (measured from different trigger points).</div>
+
+    <div class="subhead">Section 12A — NEW: Access to Information <span class="tag tag-vip">🔴</span></div>
+    <p>Director may call for any Sec 12(1) records + additional info from any reporting entity, for purposes of the Act. Info kept confidential.</p>
+
+    <div class="subhead">Section 13 — Powers of Director on Non-Compliance <span class="tag tag-freq">🟠</span></div>
+    <ul>
+      <li>(a) Issue written warning</li>
+      <li>(b) Direct compliance with specific instructions</li>
+      <li>(c) Direct periodic reports on measures taken</li>
+      <li>(d) Impose <b>monetary penalty: not less than ₹10,000, up to ₹1,00,000 per failure</b> <span class="tag tag-vip">🔴</span></li>
+    </ul>
+    <p>Director may also order a special <b>audit by a chartered accountant</b> (Sec 13(1A)/(1B)) — expenses borne by Central Government.</p>
+
+    <div class="subhead">Section 14 — Immunity <span class="tag tag-concept">🟡</span></div>
+    <p>Reporting entity, its directors & employees have <b>no civil/criminal liability</b> for furnishing information under Sec 12(1)(b).</p>
+    <div class="qbox"><b>Probable Q:</b> What is the penalty range under Sec 13(2)(d) for non-compliance by a reporting entity? → <b>₹10,000 to ₹1,00,000 per failure</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ADJUDICATION/CONFISCATION -->
+<div class="card" id="adjudication">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚖️ Confiscation & Release of Property <span class="hi">जब्ती एवं संपत्ति की रिहाई</span> <span class="secbadge">Sec 8, 58A, 58B, 60</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Section 8(5)-(7) — Trial Outcomes <span class="tag tag-vip">🔴</span></div>
+    <div class="decision">
+      <div class="dbox dq">What does the Special Court conclude on trial?</div>
+      <div class="dbox dyes"><b>Money-laundering PROVEN →</b> Property confiscated to Central Government [Sec 8(5)]</div>
+      <div class="dbox dno"><b>NOT proven / not involved →</b> Property released to entitled person [Sec 8(6)]</div>
+      <div class="dbox" style="border-left:4px solid var(--gold);"><b>Trial cannot be concluded</b> (death/absconding of accused) → Special Court passes appropriate confiscation/release order on application [Sec 8(7)]</div>
+    </div>
+
+    <div class="subhead">Sections 58A & 58B — NEW: Foreign Trial Linkage <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li><b>58A:</b> If a foreign court finds money-laundering did NOT occur / property not involved, Indian Special Court may order release of the property in India</li>
+      <li><b>58B:</b> Where foreign trial cannot conclude, Central Govt forwards letter of request to Director → moves application before Special Court for appropriate confiscation/release order</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "58A Releases, 58B Requests" → 58A is about releasing property based on foreign court finding; 58B is about acting on a foreign request when their trial can't conclude.</div>
+
+    <div class="qbox"><b>Probable Q:</b> What happens to property if the Special Court concludes the offence of money-laundering was NOT committed? → <b>Released to the person entitled to receive it</b> [Sec 8(6)] <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- BURDEN OF PROOF -->
+<div class="card" id="burden">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚖️ Burden of Proof <span class="hi">सबूत का भार</span> <span class="secbadge">Sec 24</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Section 24 — Substituted (Important Rule) <span class="tag tag-vip">🔴</span></div>
+    <div class="compare">
+      <div class="compare-col a">
+        <h4>(a) Person charged under Sec 3</h4>
+        Authority/Court <b>shall PRESUME</b> proceeds of crime are involved in money-laundering, <b>unless the contrary is proved</b> — mandatory presumption <span class="tag tag-vip">🔴</span>
+      </div>
+      <div class="compare-col b">
+        <h4>(b) Any other person</h4>
+        Authority/Court <b>MAY presume</b> proceeds of crime are involved — discretionary presumption
+      </div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "SHALL for accused, MAY for others" → burden is reverse/mandatory for the accused himself, but discretionary for third parties.</div>
+    <div class="qbox"><b>Probable Q:</b> Under Sec 24(a), is the presumption of guilt mandatory or discretionary for the person charged under Sec 3? → <b>Mandatory ("shall presume")</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- AUTHORITIES -->
+<div class="card" id="authorities">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>👤 Key Authorities <span class="hi">मुख्य प्राधिकरण</span> <span class="secbadge">Sec 44, 54</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Sec 44 — Special Court Jurisdiction <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li>Offence under Sec 4 + connected scheduled offence → tried by <b>Special Court</b> of the area where committed</li>
+      <li>Special Court can take cognizance of Sec 3 offence <b>without accused being committed for trial</b></li>
+      <li>If a different court took cognizance of the scheduled offence, that case is <b>committed to the Special Court</b></li>
+      <li>Trial follows <b>Code of Criminal Procedure, 1973</b> (as for Sessions trial)</li>
+    </ul>
+
+    <div class="subhead">Sec 54 — "Authorities" for Assistance — NEW Additions <span class="tag tag-vip">🔴</span></div>
+    <p>Officers/members of these bodies are now bound to assist under PMLA:</p>
+    <div class="pillgrid">
+      <div class="pill">IRDA officers</div>
+      <div class="pill">Forward Markets Commission officers</div>
+      <div class="pill">PFRDA officers</div>
+      <div class="pill"><b>Dept of Posts officers</b></div>
+      <div class="pill">Registrars/Sub-Registrars (State)</div>
+      <div class="pill">Motor vehicle registering authority</div>
+      <div class="pill">ICAI officers/members</div>
+      <div class="pill">ICWAI (Cost Accountants) officers</div>
+      <div class="pill">ICSI (Company Secretaries) officers</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "I-F-P-D-R-M-C-C-C" → IRDA, FMC, PFRDA, DoP, Registrars, Motor Vehicle authority, CA/CWA/CS institutes — 9 new categories under Sec 54.</div>
+    <div class="qbox"><b>Probable Q:</b> Are officers of the Department of Posts included among authorities bound to assist under Sec 54? → <b>Yes</b> (newly added clause (he)) <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- PENALTY -->
+<div class="card" id="penalty">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>💰 Penalty & Recovery <span class="hi">शास्ति एवं वसूली</span> <span class="secbadge">Sec 63, 69</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Section 63(4) — NEW Provision <span class="tag tag-vip">🔴</span></div>
+    <p>Person who <b>intentionally disobeys</b> any direction under Sec 50 (summons/evidence powers) is also liable under <b>Section 174, Indian Penal Code</b> (non-attendance in obedience to summons).</p>
+
+    <div class="subhead">Section 69 — Recovery of Fine/Penalty — Substituted <span class="tag tag-vip">🔴</span></div>
+    <div class="flow">
+      <div class="flow-box">Fine/penalty (Sec 13 or Sec 63) <b>not paid within 6 months</b> of imposition</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Director/authorised officer may recover as prescribed in <b>Schedule II, Income-tax Act 1961</b></div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box">Officer gets powers of a <b>Tax Recovery Officer</b> for this purpose</div>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "6-Month Grace, Then IT-Act Recovery" → penalty unpaid for 6 months triggers Income Tax Act-style recovery.</div>
+    <div class="qbox"><b>Probable Q:</b> Within how many months must fine/penalty be paid before recovery proceedings under Schedule II of IT Act 1961 begin? → <b>6 months</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="card" id="schedule">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📜 Schedule — Scheduled Offences (Part A) <span class="hi">अनुसूची — निर्धारित अपराध</span> <span class="secbadge">Sec 30</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="subhead">Important Rule — Restructuring <span class="tag tag-vip">🔴</span></div>
+    <ul>
+      <li><b>Part A</b> substituted with <b>28 Paragraphs</b>, each listing offences under a specific Act</li>
+      <li><b>Part B</b> — Paragraphs 1 to 25 <b>omitted</b> (these offences moved/merged into Part A structure)</li>
+      <li><b>Part C</b> — Serial No. (2) and related entries <b>omitted</b></li>
+    </ul>
+
+    <div class="subhead">Part A — Paragraph-wise Acts Covered (Selected) <span class="tag tag-freq">🟠</span></div>
+    <div class="tablewrap">
+    <table>
+      <tr><th>Para</th><th>Act</th></tr>
+      <tr><td>1</td><td>Indian Penal Code, 1860 (murder, kidnapping, extortion, cheating, forgery, counterfeit currency etc.)</td></tr>
+      <tr><td>2</td><td>Narcotic Drugs and Psychotropic Substances Act, 1985</td></tr>
+      <tr><td>3</td><td>Explosive Substances Act, 1908</td></tr>
+      <tr><td>4</td><td>Unlawful Activities (Prevention) Act, 1967</td></tr>
+      <tr><td>5</td><td>Arms Act, 1959</td></tr>
+      <tr><td>6</td><td>Wild Life (Protection) Act, 1972</td></tr>
+      <tr><td>7</td><td>Immoral Traffic (Prevention) Act, 1956</td></tr>
+      <tr><td>8</td><td>Prevention of Corruption Act, 1988 <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>9</td><td>Explosives Act, 1884</td></tr>
+      <tr><td>10</td><td>Antiquities and Art Treasures Act, 1972</td></tr>
+      <tr><td>11</td><td>SEBI Act, 1992</td></tr>
+      <tr><td>12</td><td>Customs Act, 1962</td></tr>
+      <tr><td>13</td><td>Bonded Labour System (Abolition) Act, 1976</td></tr>
+      <tr><td>14</td><td>Child Labour (Prohibition and Regulation) Act, 1986</td></tr>
+      <tr><td>15</td><td>Transplantation of Human Organs Act, 1994</td></tr>
+      <tr><td>16</td><td>Juvenile Justice (Care and Protection of Children) Act, 2000</td></tr>
+      <tr><td>17</td><td>Emigration Act, 1983</td></tr>
+      <tr><td>18</td><td>Passports Act, 1967</td></tr>
+      <tr><td>19</td><td>Foreigners Act, 1946</td></tr>
+      <tr><td>20</td><td>Copyright Act, 1957</td></tr>
+      <tr><td>21</td><td>Trade Marks Act, 1999</td></tr>
+      <tr><td>22</td><td>Information Technology Act, 2000 <span class="tag tag-vip">🔴</span></td></tr>
+      <tr><td>23</td><td>Biological Diversity Act, 2002</td></tr>
+      <tr><td>24</td><td>Protection of Plant Varieties and Farmers' Rights Act, 2001</td></tr>
+      <tr><td>25</td><td>Environment Protection Act, 1986</td></tr>
+      <tr><td>26</td><td>Water (Prevention & Control of Pollution) Act, 1974</td></tr>
+      <tr><td>27</td><td>Air (Prevention & Control of Pollution) Act, 1981</td></tr>
+      <tr><td>28</td><td>Suppression of Unlawful Acts Against Safety of Maritime Navigation Act, 2002</td></tr>
+    </table>
+    </div>
+    <div class="mnemonic">🧠 <b>Mnemonic:</b> "IPC First, Environment Last" → Schedule starts with IPC offences (Para 1) and ends with environment/maritime safety acts (Para 25-28) — helps recall the overall span.</div>
+    <div class="qbox"><b>Probable Q:</b> How many paragraphs does the substituted Part A of the Schedule contain? → <b>28 Paragraphs</b> <span class="tag tag-vip">🔴</span></div>
+  </div></div>
+</div>
+
+<!-- ONE PAGE REVISION SHEET -->
+<div class="card open" id="revision">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>📄 One-Page Revision Sheet <span class="hi">एक-पृष्ठ पुनरीक्षण शीट</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="revision-sheet">
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Act:</b> PMLA (Amendment) Act, 2012 — No. 2 of 2013; assent 3 Jan 2013; published 4 Jan 2013</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>New definitions:</b> beneficial owner, client, corresponding law, dealer, reporting entity, precious metal/stone, real estate agent</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>"Financial institution"</b> now expressly includes <b>Department of Posts</b></div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Reporting entity</b> replaces "banking company/financial institution/intermediary" terminology</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Provisional attachment:</b> max 180 days (Sec 5)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>NEW "Freezing"</b> concept introduced where seizure isn't practicable (Sec 17(1A))</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Application for retention:</b> within 30 days of seizure/freezing</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Retention of property/records:</b> max 180 days; post-confiscation withholding up to 90 days</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Record retention (Sec 12):</b> 5 years (transactions); 5 years after relationship ends (identity docs)</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 13 penalty:</b> ₹10,000 to ₹1,00,000 per failure by reporting entity</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 24 Burden of Proof:</b> "shall presume" for accused (Sec 3), "may presume" for others</div></div>
+      <div class="rev-row"><span class="rev-icon">🟠</span><div><b>Sec 44:</b> Special Court can take cognizance of Sec 3 offence without committal</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 54 new authorities:</b> includes Department of Posts officers</div></div>
+      <div class="rev-row"><span class="rev-icon">🔴</span><div><b>Sec 69 recovery:</b> unpaid fine/penalty after 6 months → recovered like Income Tax Act 1961 Schedule II arrears</div></div>
+      <div class="rev-row"><span class="rev-icon">🟢</span><div><b>Schedule Part A:</b> substituted, now has 28 Paragraphs; Part B paras 1-25 omitted</div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- LAST DAY REVISION -->
+<div class="card" id="lastday">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>⚡ Last-Day Revision Notes <span class="hi">अंतिम-दिन पुनरीक्षण नोट्स</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <ul>
+      <li>Act No. = <b>2 of 2013</b>; assent <b>3 Jan 2013</b></li>
+      <li>New term = <b>"reporting entity"</b> (replaces old 3-part term)</li>
+      <li>Dept of Posts added to = <b>"financial institution"</b> definition AND Sec 54 authorities</li>
+      <li>Attachment max = <b>180 days</b></li>
+      <li>NEW mechanism = <b>Freezing</b> (when seizure not practicable)</li>
+      <li>Retention application deadline = <b>30 days</b></li>
+      <li>Post-confiscation withhold = <b>90 days</b></li>
+      <li>Record retention = <b>5 years</b></li>
+      <li>Sec 13 penalty = <b>₹10,000 – ₹1,00,000</b> per failure</li>
+      <li>Sec 24 = mandatory presumption for accused, discretionary for others</li>
+      <li>Sec 69 recovery trigger = <b>6 months</b> unpaid</li>
+      <li>Schedule Part A = <b>28 Paragraphs</b></li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- MNEMONICS -->
+<div class="card" id="mnemonics">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>🧠 Memory Tricks & Mnemonics <span class="hi">याद रखने की तरकीबें</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <div class="mnemonic"><b>"2013-2-Jan"</b> → Act No. 2 of 2013, assented 3 Jan, published 4 Jan 2013.</div>
+    <div class="mnemonic"><b>"DoP is In"</b> → Department of Posts added both as "financial institution" AND as an assisting authority (Sec 54).</div>
+    <div class="mnemonic"><b>"180 = 6 months of Attachment"</b> → provisional attachment/retention period.</div>
+    <div class="mnemonic"><b>"30-180-90"</b> → file retention application in 30 days, hold up to 180 days, post-order withhold up to 90 days.</div>
+    <div class="mnemonic"><b>"5-5 Record Rule"</b> → both transaction & identity records kept 5 years.</div>
+    <div class="mnemonic"><b>"10K-1L Penalty"</b> → Sec 13 monetary penalty range.</div>
+    <div class="mnemonic"><b>"SHALL for accused, MAY for others"</b> → Sec 24 burden of proof rule.</div>
+    <div class="mnemonic"><b>"6-Month Grace, Then IT-Act Recovery"</b> → Sec 69 penalty recovery trigger.</div>
+    <div class="mnemonic"><b>"IPC First, Environment Last"</b> → Schedule Part A spans Para 1 (IPC) to Para 28 (maritime/environment).</div>
+  </div></div>
+</div>
+
+<!-- SOURCE NOTE -->
+<div class="card">
+  <div class="card-head" onclick="toggleCard(this)">
+    <h2>ℹ️ Source & Usage Note <span class="hi">स्रोत टिप्पणी</span></h2>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="card-body"><div class="card-inner">
+    <p class="hi">यह इन्फोग्राफिक आपकी अपलोड की गई "The Prevention of Money-Laundering (Amendment) Act, 2012" (Gazette of India, No. 2 of 2013, dिनांक 4 जनवरी 2013) फ़ाइल के आधार पर तैयार किया गया है। परीक्षा उपयोग हेतु स्व-निर्मित सारांश है; मूल अधिनियम व नवीनतम संशोधनों से क्रॉस-वेरीफाई करें।</p>
+    <p style="margin-top:6px;">This infographic is built directly from your uploaded "The Prevention of Money-Laundering (Amendment) Act, 2012" (Gazette of India, No. 2 of 2013, dated 4 January 2013). Cross-verify with the principal PMLA 2002 and latest amendments (post-2013) before final exam use.</p>
+  </div></div>
+</div>
+
+</div>
+
+<button class="jump-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="footer">India Post LDCE Exam Portal · PMLA (Amendment) Act, 2012<br>Tap section headers to expand/collapse · टैप करके सेक्शन खोलें/बंद करें</div>
+
+<script>
+function toggleCard(headEl){
+  const card = headEl.parentElement;
+  card.classList.toggle('open');
+}
+function toggleTheme(){
+  const body = document.body;
+  body.setAttribute('data-theme', body.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+}
+let speaking = false;
+function speakPage(){
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; return; }
+  const text = document.querySelector('.wrap').innerText;
+  const utter = new SpeechSynthesisUtterance(text.slice(0, 6000));
+  utter.rate = 0.95;
+  utter.onend = ()=>{ speaking = false; };
+  speaking = true;
+  window.speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>
