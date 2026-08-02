@@ -4194,12 +4194,11 @@
     }
 
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(regs) {
-            regs.forEach(function(reg) { reg.unregister(); });
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./service-worker.js').catch(function(err) {
+                console.warn('Service worker registration failed:', err);
+            });
         });
-        if (window.caches) {
-            caches.keys().then(function(names) { names.forEach(function(name) { caches.delete(name); }); });
-        }
     }
 </script>
 
