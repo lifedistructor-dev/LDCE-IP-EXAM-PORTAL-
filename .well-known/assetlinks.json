@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.lifedistructor_dev.twa",
+      "sha256_cert_fingerprints": [
+        "DF:5A:0E:FB:70:A9:64:95:D8:DE:09:EB:13:FD:3D:3D:EB:F9:51:B3:5A:AF:7D:BA:91:F4:0A:7D:D2:02:AC:B2"
+      ]
+    }
+  }
+]
