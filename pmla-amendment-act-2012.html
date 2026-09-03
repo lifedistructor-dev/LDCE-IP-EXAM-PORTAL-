@@ -137,6 +137,7 @@ tr:nth-child(even) td{background:var(--light-blue);}
 .rev-row{display:flex; gap:8px; margin-bottom:8px; font-size:.82rem; align-items:flex-start;}
 .rev-icon{flex:0 0 auto;}
 .footer{text-align:center; font-size:.75rem; color:var(--sub); margin-top:24px; padding:0 20px;}
+@media print{.jump-top,.ctrl-btn{display:none !important;}}
 .jump-top{
   position:fixed; bottom:18px; right:18px; background:var(--red); color:#fff; border:none; border-radius:50%;
   width:44px; height:44px; font-size:18px; box-shadow:0 4px 12px rgba(0,0,0,.3); cursor:pointer; z-index:60;
@@ -160,6 +161,7 @@ tr:nth-child(even) td{background:var(--light-blue);}
       <div class="subtitle">Amends PMLA 2002 | No. 2 of 2013 | Gazette dated 4 January 2013</div>
     </div>
     <div class="controls">
+      <button class="ctrl-btn" onclick="downloadPagePDF()" title="Download PDF">⬇️</button>
       <button class="ctrl-btn" onclick="toggleTheme()" title="Dark Mode">🌓</button>
       <button class="ctrl-btn" onclick="speakPage()" title="Read Aloud">🔊</button>
     </div>
@@ -603,6 +605,19 @@ tr:nth-child(even) td{background:var(--light-blue);}
 function toggleCard(headEl){
   const card = headEl.parentElement;
   card.classList.toggle('open');
+}
+function downloadPagePDF(){
+  /* 1) જો આ જ નામની .pdf ફાઇલ સાથે મૂકેલી હશે તો સીધી download થશે.
+     2) નહીં હોય તો browser નું Print → Save as PDF ખૂલશે. */
+  var pdfPath = location.pathname.replace(/\.html?$/i, '.pdf');
+  fetch(pdfPath, {method:'HEAD'}).then(function(r){
+    if(r.ok){
+      var a=document.createElement('a');
+      a.href=pdfPath;
+      a.download=pdfPath.split('/').pop();
+      document.body.appendChild(a); a.click(); a.remove();
+    } else { window.print(); }
+  }).catch(function(){ window.print(); });
 }
 function toggleTheme(){
   const body = document.body;
