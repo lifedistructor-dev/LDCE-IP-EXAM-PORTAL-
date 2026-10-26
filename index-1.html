@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LDCE Postal Exam Portal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2f66e0">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="LDCE Portal">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--card:#fff;--ink:#0f1b3d;--muted:#64748b;--line:#e2e8f4;--blue:#1e3a8a;--soft:#e8f0ff;--ok:#16a34a;--shadow:0 4px 18px rgba(30,58,138,.10);--fs:16px;box-sizing:border-box}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans Gujarati",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:var(--fs);line-height:1.5;padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+button,input{font:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+body::before{content:"";position:fixed;left:0;right:0;top:0;height:86vh;z-index:-1;pointer-events:none;background:radial-gradient(85% 58% at 6% 6%,#1e4fd6 0%,rgba(30,79,214,0) 74%),radial-gradient(75% 52% at 98% 10%,#4b8df8 0%,rgba(75,141,248,0) 76%),linear-gradient(#bcd6ff 0%,rgba(205,226,255,.65) 42%,rgba(255,255,255,0) 100%)}
+.hd{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 12px;color:#fff;background:rgba(30,64,175,.22);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.logo{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:#fff;border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.ht{flex:1;min-width:0}
+.ht b{display:block;font-size:17px;line-height:1.2}
+.ht small{display:block;font-size:12px;letter-spacing:.08em;opacity:.78;text-transform:uppercase}
+.pbtn{flex:none;width:46px;height:46px;border-radius:14px;border:0;background:#fafafa;color:#0f1b3d;box-shadow:0 2px 10px rgba(0,0,0,.1);font-size:20px;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:18px 14px 0}
+.prof{background:var(--card);border-radius:26px;box-shadow:var(--shadow);padding:18px}
+.pt{display:flex;gap:16px;align-items:flex-start}
+.av{position:relative;flex:none;width:86px;height:86px;border-radius:50%;border:3px solid var(--blue);padding:3px;background:#fff}
+.av .im{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1e3a8a,#3b82f6) center/cover;color:#fff;display:grid;place-items:center;font-weight:800;font-size:28px}
+.av i{position:absolute;right:2px;bottom:4px;width:16px;height:16px;border-radius:50%;background:#10b981;border:3px solid #fff}
+.pi{flex:1;min-width:0}
+.pi h2{margin:2px 0 8px;font-size:18px;line-height:1.2;font-weight:800;text-transform:uppercase;overflow-wrap:anywhere}
+.pi p{margin:3px 0;font-size:14px;font-weight:600;text-transform:uppercase;color:#1f2d55}
+.clk{display:flex;align-items:center;gap:8px;margin-top:10px;padding:8px 14px;border-radius:999px;background:var(--soft);border:1px solid #cfe0ff;color:var(--blue);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.clk:before{content:"";width:9px;height:9px;border-radius:50%;background:#10b981}
+.ctl{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:16px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+.seg{display:flex;border-radius:999px;background:var(--soft);border:1px solid #cfe0ff;overflow:hidden}
+.seg button{border:0;background:transparent;color:var(--blue);font-weight:800;padding:10px 16px;cursor:pointer}
+.syl,.off{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font-weight:700;text-decoration:none;cursor:pointer}
+.syl{color:#fff;background:linear-gradient(135deg,#f59e0b,#c2410c);box-shadow:0 6px 14px rgba(194,65,12,.35)}
+.off{color:var(--blue);background:var(--soft);border:1px solid #cfe0ff}
+.pg{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-weight:700}
+.pg b{color:var(--blue)}
+.bar{height:11px;border-radius:99px;background:#dde5f2;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#1e3a8a,#3b82f6);transition:width .5s}
+.search{display:flex;align-items:center;gap:10px;margin:18px 0 6px;padding:0 18px;height:56px;border-radius:999px;background:#fff;border:1.5px solid var(--line);box-shadow:var(--shadow)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-size:16px}
+.st{display:flex;align-items:center;gap:8px;margin:20px 4px 10px;font-size:20px;font-weight:800}
+.st small{margin-left:auto;font-size:13px;font-weight:500;color:var(--muted)}
+.rail{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none}
+.rc{flex:none;width:230px;background:#fff;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.35}
+.rc small{display:block;margin-top:8px;font-weight:500;color:var(--muted);text-transform:none;font-size:13px}
+.exh{display:flex;align-items:center;gap:14px;width:100%;margin-top:22px;padding:6px 6px;border:0;background:transparent;color:var(--ink);text-align:left;cursor:pointer;font-size:18px;line-height:1.35}
+.eic{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:#e3e9f4}
+.etx{flex:1}
+.etx b{font-weight:800}
+.chev{flex:none;width:10px;height:10px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(-45deg);transition:transform .2s;margin:0 6px}
+.exh .chev{color:var(--blue)}
+.exh[aria-expanded="true"] .chev,.pc[open] summary .chev{transform:rotate(45deg)}
+.pc{margin-top:14px;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 10px 24px color-mix(in srgb,var(--g2) 30%,transparent)}
+.pc summary{list-style:none;display:flex;align-items:center;gap:14px;padding:18px 16px;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.pc summary::-webkit-details-marker{display:none}
+.pic{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:rgba(255,255,255,.22)}
+.ptx{flex:1;min-width:0;font-size:18px;line-height:1.35}
+.ptx b{font-weight:800}
+.ptx em{font-style:normal;opacity:.95}
+.pcn{flex:none;font-size:13px;font-weight:700;background:rgba(255,255,255,.24);border-radius:99px;padding:3px 10px}
+.pb{padding:4px 14px 10px}
+.ssh{display:flex;justify-content:space-between;margin:12px 0 2px;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.chk{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid #c3cde0;background:#fff;color:#fff;cursor:pointer;display:grid;place-items:center;font-size:15px;padding:0}
+.row.done .chk{background:var(--ok);border-color:var(--ok)}
+.row.done .t{color:var(--muted)}
+.t{flex:1;min-width:0;color:var(--ink);text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.t small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+.pdf{flex:none;border:1.5px solid var(--blue);color:var(--blue);background:transparent;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:800;cursor:pointer}
+.star{flex:none;border:0;background:none;font-size:22px;cursor:pointer;color:#cbd5e1;padding:2px 6px}
+.star.on{color:#f59e0b}
+.rcard{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:2px 14px}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+.mark{background:#fde68a;border-radius:3px}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(30,58,138,.08)}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:84px;padding:8px 14px;border:0;border-radius:18px;background:transparent;color:#7b88a3;font-size:12.5px;font-weight:600;cursor:pointer}
+.nav button[aria-current="page"]{background:var(--soft);color:var(--blue)}
+.nav svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+dialog{border:0;border-radius:24px;padding:20px;width:min(92vw,420px);box-shadow:0 20px 60px rgba(0,0,0,.35);color:var(--ink)}
+dialog::backdrop{background:rgba(10,20,50,.55)}
+dialog h3{margin:0 0 12px}
+dialog label{display:block;margin:10px 0 4px;font-size:13px;font-weight:700;color:var(--muted)}
+dialog input[type=text]{width:100%;height:46px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px}
+dialog input[type=file]{width:100%}
+.dact{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.dact button{border:0;border-radius:12px;padding:10px 18px;font-weight:700;cursor:pointer;background:var(--soft);color:var(--blue)}
+.dact button.pri{background:var(--blue);color:#fff}
+#vw{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);background:#172554}
+#vw[hidden]{display:none}
+.vb{display:flex;align-items:center;gap:10px;padding:8px 12px;background:linear-gradient(135deg,#1e3a8a,#172554);color:#fff}
+.vb button{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;border-radius:10px;height:38px;min-width:42px;padding:0 12px;font-weight:700;cursor:pointer}
+#vt{flex:1;min-width:0;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#vf{flex:1;width:100%;border:0;background:#fff}
+@media (prefers-reduced-motion:reduce){.bar i,.chev{transition:none}}
+</style>
+</head>
+<body>
+<header class="hd">
+  <span class="logo">📮</span>
+  <div class="ht"><b>LDCE Postal Exam Portal</b><small>India Post · Exam Prep</small></div>
+  <button class="pbtn" id="pb" aria-label="Edit profile">👤</button>
+</header>
+
+<div class="wrap">
+  <section class="prof" id="home-top">
+    <div class="pt">
+      <div class="av"><div class="im" id="avim"></div><i></i></div>
+      <div class="pi">
+        <h2 id="pn"></h2>
+        <p>💼 <span id="pp"></span></p>
+        <p>🏢 <span id="po"></span></p>
+        <div class="clk" id="clk"></div>
+      </div>
+    </div>
+    <div class="ctl">
+      <div class="seg"><button id="fm" aria-label="Smaller text">A-</button><button id="fp" aria-label="Larger text">A+</button></div>
+      <a class="syl" href="syllabus.html">📖 Syllabus</a>
+      <button class="off" id="off" title="Save all topics for offline use">⬇ Offline</button>
+    </div>
+    <div class="pg"><span>📊 Study Progress</span><b id="pcnt">0/0</b></div>
+    <div class="bar"><i id="pbar"></i></div>
+  </section>
+
+  <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Search Acts / Rules / PLI... (શોધો)" aria-label="Search topics"></label>
+  <div id="main"></div>
+</div>
+
+<nav class="nav" aria-label="Main">
+  <button data-n="home" aria-current="page"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home</button>
+  <button data-n="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Search</button>
+  <button data-n="saved"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Saved</button>
+</nav>
+
+<dialog id="pd">
+  <h3>Profile</h3>
+  <label for="fn">Name</label><input type="text" id="fn">
+  <label for="fo">Designation</label><input type="text" id="fo">
+  <label for="fl">Office</label><input type="text" id="fl">
+  <label for="ff">Photo</label><input type="file" id="ff" accept="image/*">
+  <p style="font-size:12.5px;color:var(--muted);margin:10px 0 0">માહિતી ફક્ત આ ફોનમાં સેવ થાય છે.</p>
+  <div class="dact"><button id="pc">Cancel</button><button class="pri" id="ps">Save</button></div>
+</dialog>
+
+<div id="vw" hidden>
+  <div class="vb"><button id="vback" aria-label="Back">←</button><span id="vt"></span><button id="vpdf" aria-label="Download as PDF">📄 PDF</button></div>
+  <iframe id="vf" title="Topic page"></iframe>
+</div>
+
+<script>
+var BASE="";
+// [exam, section, title, file]
+var D=[
+["IP","Acts","Post Office Act, 2023","post-office-act-2023.html"],
+["IP","Acts","Govt. Savings Promotion Act, 1873","act-1873.html"],
+["IP","Acts","Consumer Protection Act, 2019","cpa-2019.html"],
+["IP","Acts","Prevention of Money-Laundering Act, 2002","pmla.html"],
+["IP","Acts","Information Technology Act, 2000","it-act-2000.html"],
+["IP","Acts","PMLA (Amendment) Act, 2012","pmla-amendment-act-2012.html"],
+["IP","Acts","AML / KYC / CFT Norms: MTSS & Money Changing","aml-kyc-cft-mtss.html"],
+["IP","Rules","Post Office Rules, 2024","post_office_rules_2024.html"],
+["IP","Rules","Post Office Regulations, 2024","post_office_regulations_2024.html"],
+["IP","Rules","Govt. Savings Promotion Rules, 2018","gspr.html"],
+["IP","Rules","PO Savings Account Rules, 2019","posa_2019.html"],
+["IP","Rules","Recurring Deposit Scheme, 2019","rd_2019.html"],
+["IP","Rules","Time Deposit Scheme, 2019","TD_2019.html"],
+["IP","Rules","Monthly Income Account Scheme, 2019","mis2019.html"],
+["IP","Rules","Senior Citizens’ Savings Scheme, 2019","scss2019.html"],
+["IP","Rules","National Savings Certificates, 2019","nsc2019.html"],
+["IP","Rules","Kisan Vikas Patra, 2019","KVP2019.html"],
+["IP","Rules","Public Provident Fund, 2019","PPF2019.html"],
+["IP","Rules","Sukanya Samriddhi Account, 2019","SSA2019.html"],
+["IP","PLI / RPLI","Part I: POLI Rules 2011","pli-part1-english.html"],
+["IP","PLI / RPLI","Part II: Premium Table & Bonus","pli-part2-english.html"],
+["IP","PLI / RPLI","Part III: POIF Regulations 2016","pli-part3-english.html"],
+["IP","PLI / RPLI","Part IV: SOPs, Claims & Loans","pli-part4-english.html"],
+["IP","PLI / RPLI","Part V: Forms & ID Proof List","pli-part5-english.html"],
+["IP","PLI / RPLI","Part VI: Core Insurance Solution","pli-part6-english.html"],
+["IP","PLI / RPLI","Part VII: Miscellaneous","pli-part7-english.html"],
+["IP","Postal Manuals","Book of BO Rules","bo-rules-index.html"],
+["IP","Postal Manuals","Postal Manual Vol. II","postal-manual-vol2.html"],
+["IP","Postal Manuals","Postal Manual Vol. III","postal-manual-vol3-index.html"],
+["IP","Postal Manuals","Postal Manual Vol. IV (Leave, Pension)","postal-manual-vol4.html"],
+["IP","Postal Manuals","Postal Manual Vol. V","postal-manual-vol5.html"],
+["IP","Postal Manuals","Postal Manual Vol. VI, Part I","postal-manual-vol6-part1.html"],
+["IP","Postal Manuals","Postal Manual Vol. VI, Part II","postal-manual-vol6-part2.html"],
+["IP","Postal Manuals","Postal Manual Vol. VI, Part III","postal-manual-vol6-part3.html"],
+["IP","Postal Manuals","Postal Manual Vol. VII","postal-manual-vol7.html"],
+["IP","Postal Manuals","Postal Manual Vol. VIII","postal-manual-vol8.html"],
+["IP","Postal Manuals","Mail Operations & Money Remittances","mail-operations-money-remittances.html"],
+["IP","Guides & Schemes","Jan Suraksha & Asangathit Kshetra Schemes","Government_security_schemes.html"],
+["IP","Guides & Schemes","Post Office Guide Part I","po_guide1.html"],
+["IP","Guides & Schemes","Post Office Guide Part II","po_guide2.html"],
+["IP","Guides & Schemes","Domestic / Foreign Post Guidelines","domestic-foreign.html"],
+["IP","Guides & Schemes","DIGIPIN","digipin.html"],
+["IP","Guides & Schemes","Mail & Parcel Network Optimization Project","mail_network_optimization.html"],
+["IP","Guides & Schemes","Centralized Delivery of Postal Articles","centralized_delivery_policy.html"],
+["IP","Guides & Schemes","Dak Ghar Niryat Kendras (DNKs)","dak_ghar_niryat_kendras.html"],
+["IP","POSB, CBS & IT","POSB Manual Vol. I","POSB_Manual_Vol1_Infographic.html"],
+["IP","POSB, CBS & IT","POSB Manual Vol. II","POSB_Manual_Vol2_Infographic.html"],
+["IP","POSB, CBS & IT","POSB Manual Vol. III","POSB_Manual_Vol3_Infographic.html"],
+["IP","POSB, CBS & IT","CBS Manual Part 1 (Ch 1-3)","CBS_Manual_Part1_Ch1-3_Infographic.html"],
+["IP","POSB, CBS & IT","CBS Manual Part 2 (Ch 4-5)","CBS_Manual_Part2_Ch4-5_Infographic.html"],
+["IP","POSB, CBS & IT","CBS Manual Part 3 (Ch 6-11)","CBS_Manual_Part3_Ch6-11_Infographic.html"],
+["IP","POSB, CBS & IT","CBS Manual Part 4 (Ch 12-16)","CBS_Manual_Part4_Ch12-16_Infographic.html"],
+["IP","POSB, CBS & IT","CBS Manual Part 5 (Ch 17-20)","CBS_Manual_Part5_Ch17-20_Infographic.html"],
+["IP","POSB, CBS & IT","IT 2.0: Overview & Modules","IT_2.0_Overview_Modules_Infographic.html"],
+["IP","POSB, CBS & IT","IT 2.0: Intro, Segments & Dak Sewa","IT_2.0_Intro_Segments_DakSewa_Infographic.html"],
+["IP","POSB, CBS & IT","Finacle CBS Commands","Finacle_CBS_Commands_Reference_Infographic.html"],
+["IP","POSB, CBS & IT","IPPB Basics","IPPB_Basics_Infographic.html"],
+["IP","Annual Report 2024-25","Part 1 (A-G): Overview, Network, POSB/PLI/IPPB","AnnualReport_2024-25_Part1_A-G_Infographic.html"],
+["IP","Annual Report 2024-25","Part 2 (H-P): Karmayogi, Recruitment, Vigilance, UPU","AnnualReport_2024-25_Part2_H-P_Infographic.html"],
+["IP","Annual Report 2024-25","Part 3 (Q-X): IT 2.0, HR, Welfare, Audit","AnnualReport_2024-25_Part3_Q-X_Infographic.html"],
+["IP","Records","Records Preservation & Disposal (29 Sections)","Records_Preservation_Disposal_Compendium_Infographic.html"],
+["IP","Service Rules","CCS (Conduct) Rules, 1964","CCS_Conduct_Rules_1964_Infographic.html"],
+["IP","Service Rules","CCS (CCA) Rules, 1965","CCS_CCA_Rules_1965_Infographic.html"],
+["IP","Service Rules","CCS (Temporary Service) Rules, 1965","CCS_Temporary_Service_Rules_1965_Infographic.html"],
+["IP","Service Rules","GDS (Conduct & Engagement) Rules, 2020","gds-conduct-engagement-rules-2020.html"],
+["IP","Paper II: Noting & Drafting","2026 Paper II Model Answers","LDCE_IP_2026_PaperII_ModelAnswers.html"],
+["IP","Paper II: Noting & Drafting","Top 10 Noting Questions","top10-noting-questions-answers.html"],
+["IP","Paper II: Noting & Drafting","Top 10 Drafting Questions","top10-drafting-questions-answers.html"],
+["IP","Paper II: Noting & Drafting","Top 10 Major Penalty Charge Sheet","top10-charge-sheet-questions-answers.html"],
+["IP","Paper II: Noting & Drafting","India Post Digital Services","india-post-digital-services-en-hi.html"],
+["IP","Paper III: MCQ","Constitution of India","Constitution_of_India_Hindi_Infographic.html"],
+["IP","Paper III: MCQ","BNSS, 2023","BNSS_2023_Hindi_Infographic.html"],
+["IP","Paper III: MCQ","Central Administrative Tribunal Act, 1985","CAT_Act_1985_Hindi_Infographic.html"],
+["IP","Paper III: MCQ","Revenue Recovery Act, 1890","Revenue_Recovery_Act_1890_Hindi_Infographic.html"],
+["IP","Paper III: MCQ","Prevention of Corruption Act, 1988","Prevention_of_Corruption_Act_1988_Infographic.html"],
+["IP","Paper III: MCQ","RTI Act, 2005","RTI_Act_2005_Infographic.html"],
+["IP","Paper III: MCQ","RTI Rules, 2012","RTI_Rules_2012_Infographic.html"],
+["IP","Paper III: MCQ","General Financial Rules 2017","gfr-2017-chapter-2-6-infographic.html"],
+["IP","Paper III: MCQ","Fundamental & Supplementary Rules","fundamental-rules-supplementary-rules-infographic.html"],
+["IP","Paper III: MCQ","APAR Instructions","apar-infographic.html"],
+["IP","Paper III: MCQ","Procurement of Goods (Manual)","Manual_Procurement_Goods_2024_Infographic.html"],
+["IP","Paper III: MCQ","Procurement of Works (Manual)","Manual_Procurement_Works_2025_Infographic.html"],
+["IP","Paper III: MCQ","Procurement of Consultancy & Other Services","Manual_Procurement_Consultancy_2025_Infographic.html"],
+["IP","Paper III: MCQ","CCS (GPF) Rules, 1961","GPF_Rules_1960_Infographic.html"],
+["IP","Paper III: MCQ","CCS (Pension) Rules, 2021","CCS_Pension_Rules_2021_Infographic.html"],
+["IP","Paper III: MCQ","CCS (Commutation of Pension) Rules, 1981","CCS_Commutation_Pension_Rules_1981_Infographic.html"],
+["IP","Paper III: MCQ","Sexual Harassment of Women at Workplace Act, 2013","POSH_Act_2013_Infographic.html"],
+["IP","Paper III: MCQ","CCS (Implementation of NPS) Rules, 2021","ccs-implementation-of-nps-rules-2021.html"],
+["IP","Paper III: MCQ","CCS (Gratuity under NPS) Rules, 2021","ccs-gratuity-under-nps-rules-2021.html"],
+["IP","Paper III: MCQ","Brochure on Casual Labourers","casual-labourer-infographic.html"],
+["IP","Paper III: MCQ","Service Discharge Benefit Scheme, 2010","sdbs-2011-infographic.html"],
+["IP","Paper III: MCQ","Schedule of Financial Powers","dfpr-2024-infographic.html"],
+["IP","Paper III: MCQ","Welfare Measures (Employees & GDS)","welfare-schemes-infographic.html"],
+["IP","Paper III: MCQ","P&T FHB Volume I","FHB_Vol_I_Infographic.html"],
+["IP","Paper III: MCQ","P&T FHB Volume II","FHB_Vol_II_Infographic.html"],
+["IP","Paper III: MCQ","P&T FHB for Officers","FHB_Officers_Infographic.html"],
+["IP","Past papers","2025 Paper I, Series D","LDCE_IP_2025_PaperI_SeriesD_QnA.html"],
+["IP","Past papers","2025 Paper II: Noting, Drafting & Charge Sheet","LDCE_IP_PaperII_Noting_Drafting_ChargeSheet_ModelAnswers.html"],
+["IP","Past papers","2025 Paper III, Series D","LDCE_IP_2025_PaperIII_SeriesD_QnA.html"],
+["IP","Past papers","2026 Paper I, Series C","LDCE_IP_2026_PaperI_SeriesC_QnA.html"],
+["IP","Past papers","2026 Paper III, Series D","LDCE_IP_2026_PaperIII_SeriesD_QnA.html"],
+["AAO","Paper I: Rules & Book-keeping","General Financial Rules, 2017","gfr-financial-mgmt-budget-procurement-contract.html"],
+["AAO","Paper I: Rules & Book-keeping","FHB Volume I","pfhb-vol1-audit-accounts-cash-pay-establishment-contingent-loans-gpf.html"],
+["AAO","Paper I: Rules & Book-keeping","Basic Accounting Terms","basic-accounting-terms-gopal.html"],
+["AAO","Paper I: Rules & Book-keeping","Accounting Equation","accounting-equation-279.html"],
+["AAO","Paper I: Rules & Book-keeping","Journal","journal-329.html"],
+["AAO","Paper I: Rules & Book-keeping","Ledger","ledger-infographics.html"],
+["AAO","Paper I: Rules & Book-keeping","Bank Reconciliation Statement","brs-infographic.html"],
+["AAO","Paper I: Rules & Book-keeping","Trial Balance","trial-balance-infographic.html"],
+["AAO","Paper I: Rules & Book-keeping","Depreciation","chapter-11-depreciation.html"],
+["AAO","Paper I: Rules & Book-keeping","Accounting for Bills of Exchange","bills-of-exchange.html"],
+["AAO","Paper I: Rules & Book-keeping","Rectification of Errors","ch13-rectification-of-errors.html"],
+["AAO","Paper I: Rules & Book-keeping","Government Accounting Rules, 1990","government-accounting-rules-1990-infographic.html"],
+["AAO","Theory: Class 11 (EM)","01. Introduction to Accounting","aao-unit-01-introduction-to-accounting.html"],
+["AAO","Theory: Class 11 (EM)","02. Conceptual Framework of Accounting","aao-unit-02-conceptual-framework-of-accounting.html"],
+["AAO","Theory: Class 11 (EM)","03. Books of Prime Entry","aao-unit-03-books-of-prime-entry.html"],
+["AAO","Theory: Class 11 (EM)","04. Ledger","aao-unit-04-ledger.html"],
+["AAO","Theory: Class 11 (EM)","05. Trial Balance","aao-unit-05-trial-balance.html"],
+["AAO","Theory: Class 11 (EM)","06. Subsidiary Books I","aao-unit-06-subsidiary-books-1.html"],
+["AAO","Theory: Class 11 (EM)","07. Subsidiary Books II (Cash Book)","aao-unit-07-subsidiary-books-2-cash-book.html"],
+["AAO","Theory: Class 11 (EM)","08. Bank Reconciliation Statement","aao-unit-08-bank-reconciliation-statement.html"],
+["AAO","Theory: Class 11 (EM)","09. Rectification of Errors","aao-unit-09-rectification-of-errors.html"],
+["AAO","Theory: Class 11 (EM)","10. Depreciation Accounting","aao-unit-10-depreciation-accounting.html"],
+["AAO","Theory: Class 11 (EM)","11. Capital and Revenue Transactions","aao-unit-11-capital-and-revenue-transactions.html"],
+["AAO","Theory: Class 11 (EM)","12. Final Accounts of Sole Proprietors I","aao-unit-12-final-accounts-sole-proprietors-1.html"],
+["AAO","Theory: Class 11 (EM)","13. Final Accounts of Sole Proprietors II","aao-unit-13-final-accounts-sole-proprietors-2.html"],
+["AAO","Theory: Class 11 (EM)","14. Computerised Accounting","aao-unit-14-computerised-accounting.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","1. Introduction to Accounting","chapter1-introduction-to-accounting.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","2. Theory Base of Accounting","chapter2-theory-base-of-accounting.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","3. Recording of Transactions I","chapter3-recording-of-transactions-1.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","4. Recording of Transactions II","chapter4-recording-of-transactions-2.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","5. Bank Reconciliation Statement","chapter5-bank-reconciliation-statement.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","6. Depreciation, Provisions & Reserves","chapter7-depreciation-provisions-reserves.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","7. Bills of Exchange","chapter8-bills-of-exchange.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","8. Trial Balance & Rectification of Errors","chapter6-trial-balance-rectification.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","9. Financial Statements I","Ch9-Financial-Statements-I.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","10. Financial Statements II (Adjustments)","Ch10-Financial-Statements-II.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","11. Accounts from Incomplete Records","Ch11-Incomplete-Records.html"],
+["AAO","Theory: Class 11 (Part 1 & 2)","12-15. Computerised Accounting & Database","Ch12-15-Computerised-Accounting-DB.html"],
+["AAO","Theory: Class 12","Not-for-Profit Organisation","aao-ch1-nfpo.html"],
+["AAO","Theory: Class 12","Partnership: Basic Concepts","aao-ch2-partnership-basics.html"],
+["AAO","Theory: Class 12","Admission of a Partner","aao-ch3-admission-partner.html"],
+["AAO","Theory: Class 12","Retirement / Death of a Partner","aao-ch4-retirement-death.html"],
+["AAO","Theory: Class 12","Dissolution of Partnership Firm","aao-ch5-dissolution.html"],
+["AAO","Theory: Class 12","Accounting for Share Capital","aao-accounting-ch1-share-capital.html"],
+["AAO","Theory: Class 12","Issue and Redemption of Debentures","aao-accounting-ch2-debentures.html"],
+["AAO","Theory: Class 12","Financial Statements of a Company","aao-accounting-ch3-financial-statements.html"],
+["AAO","Theory: Class 12","Analysis of Financial Statements","aao-accounting-ch4-analysis-of-financial-statements.html"],
+["AAO","Theory: Class 12","Accounting Ratios","aao-accounting-ch5-accounting-ratios.html"],
+["AAO","Theory: Class 12","Cash Flow Statement","aao-accounting-ch6-cash-flow-statement.html"],
+["AAO","Paper II: Service Rules","FR SR Part I: General Rules, Suspension","fr-topics-infographic.html"],
+["AAO","Paper II: Service Rules","FR SR Part II: Travelling Allowances","ta-fr-sr-part-ii-infographic.html"],
+["AAO","Paper II: Service Rules","FR SR Part III: Leave Rules","ccs-leave-rules-1972-infographic.html"],
+["AAO","Paper II: Service Rules","CCS (Pension) Rules, 1972","ccs-pension-rules-1972-infographic.html"],
+["AAO","Paper II: Service Rules","GPF Rules, 1960","gpf-rules-1960.html"],
+["AAO","Paper II: Service Rules","LTC Rules","ltc-rules.html"],
+["AAO","Paper II: Service Rules","CCS (Conduct) Rules, 1964","ccs-conduct-rules-1964.html"],
+["AAO","Paper II: Service Rules","CEA Rules (Children Education Allowance)","cea-scheme.html"],
+["AAO","Paper II: Service Rules","CCS (CCA) Rules, 1965","ccs-cca-rules-1965-suspension-appeals.html"],
+["AAO","Paper II: Service Rules","RTI Act 2005","rti-act-2005.html"],
+["AAO","Paper II: Service Rules","Constitution: Natural Justice","natural-justice-constitution.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch I-II: Definitions & Organisation","pam-vol1-ch01-02.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch III","pam-vol1-ch03.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch IV: Compilation of Accounts","pam-vol1-ch04.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch V: Remittances","pam-vol1-ch05.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch VI: Account Current Section","pam-vol1-ch06.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch VII: Transfer Entries, Journal & Ledger","pam-vol1-ch07.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch IX: Budget & Budgetary Control","pam-vol1-ch09.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch X-XI: Capital Accounts & ECR","pam-vol1-ch10-11.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XIII: Pension","pam-vol1-ch13.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XV: General Provident Fund","pam-vol1-ch15.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XVIII: Internal Audit","pam-vol1-ch18.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XXI: Premium Product Services","pam-vol1-ch21.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XXII: Remotely Managed Franking","pam-vol1-ch22.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XXIV: PLI & Rural PLI","pam-vol1-ch24.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XXV: Western Union","pam-vol1-ch25.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Ch XXVI: India Post Payments Bank","pam-vol1-ch26.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. I, Appendix I-IV","pam-vol1-appendix-1-4.html"],
+["AAO","Paper III: Postal Accounts","Postal Accounts Manual Vol. II","pam2-infographic.html"],
+["AAO","Paper III: Postal Accounts","DFPR 1978","dfpr-1978-infographic.html"],
+["AAO","Paper III: Postal Accounts","DFPR 2024 Schedule","dfpr-2024-schedule-financial-powers.html"],
+["AAO","Paper III: Postal Accounts","Appendix V: Head of Account Classification","appendix5-infographic.html"],
+["AAO","Paper III: Postal Accounts","FHB Vol-II: Stamps, Revenue, RMS Accounts, Pension","FHB-Vol2-Stamps-Revenue-Accounts-RMS-Pension.html"],
+["AAO","Paper III: Postal Accounts","Internal Audit Questionnaire","Internal-Audit-Questionnaire-PostalRMS-CircleOffice-PSD-PLI-CivilElectrical.html"],
+["AAO","Paper IV: Tax & Telecom","Licence, Agreements and NIA","aao-license-agreement-nia.html"],
+["AAO","Paper IV: Tax & Telecom","USOF","aao-usof.html"],
+["AAO","Paper IV: Tax & Telecom","GST","aao-gst.html"],
+["AAO","Paper IV: Tax & Telecom","Income Tax","aao-income-tax-act-2025.html"],
+["AAO","Paper IV: Tax & Telecom","National Pension System","ip-nps.html"],
+["AAO","Paper V & VI","AAO 2024 Paper V, Solved","aao-paper5-2024-complete.html"],
+["AAO","Paper V & VI","AAO 2018 Paper V, Solved","aao-ldce-2018-paper5-complete.html"],
+["AAO","Paper V & VI","Paper VI: Information Technology","aao-paper6-information-technology.html"]
+];
+var EX={IP:"Inspector Posts",AAO:"AAO"};
+var EXH={IP:["LDCE IP EXAM PREPARATION","(Paper I / II / III + Q&A)","🎓"],AAO:["AAO EXAM PREPARATION","(Paper I – VI)","🧾"]};
+var GR=[
+{ex:"IP",id:"ip1",t:"PAPER I",s:"Acts / Rules / Manuals",ic:"📖",g:["#ef4444","#b91c1c"],secs:["Acts","Rules","PLI / RPLI","Postal Manuals","Guides & Schemes","POSB, CBS & IT","Annual Report 2024-25","Records","Service Rules"]},
+{ex:"IP",id:"ip2",t:"PAPER II",s:"Noting / Drafting / Charge Sheet",ic:"✍️",g:["#8b5cf6","#6d28d9"],secs:["Paper II: Noting & Drafting"]},
+{ex:"IP",id:"ip3",t:"PAPER III",s:"MCQ: Rules & Acts",ic:"📝",g:["#3b82f6","#1d4ed8"],secs:["Paper III: MCQ"]},
+{ex:"IP",id:"ip4",t:"PAST PAPERS",s:"2025 / 2026 Q&A",ic:"🎯",g:["#10b981","#047857"],secs:["Past papers"]},
+{ex:"AAO",id:"a1",t:"AAO PAPER I",s:"Rules & Book-keeping",ic:"🧮",g:["#f59e0b","#c2410c"],secs:["Paper I: Rules & Book-keeping","Theory: Class 11 (EM)","Theory: Class 11 (Part 1 & 2)","Theory: Class 12"]},
+{ex:"AAO",id:"a2",t:"AAO PAPER II",s:"Service Rules",ic:"🏛️",g:["#14b8a6","#0f766e"],secs:["Paper II: Service Rules"]},
+{ex:"AAO",id:"a3",t:"AAO PAPER III",s:"Postal Accounts",ic:"📮",g:["#ec4899","#be185d"],secs:["Paper III: Postal Accounts"]},
+{ex:"AAO",id:"a4",t:"AAO PAPER IV",s:"Tax & Telecom",ic:"💰",g:["#6366f1","#4338ca"],secs:["Paper IV: Tax & Telecom"]},
+{ex:"AAO",id:"a5",t:"AAO PAPER V & VI",s:"Solved Papers & IT",ic:"🧠",g:["#06b6d4","#0e7490"],secs:["Paper V & VI"]}
+];
+var $=function(i){return document.getElementById(i)};
+var S={done:{},fav:{},open:{},exc:{},recent:[],view:"home",fs:16,prof:{name:"Panthil Rajeshkumar Parmar",post:"Sorting Assistant",office:"NSH Ahmedabad",photo:""}};
+function load(){try{var r=localStorage.getItem("ldce-v3")||localStorage.getItem("ldce-v2");if(r){var o=JSON.parse(r);for(var k in o){if(k==="prof")for(var j in o.prof)S.prof[j]=o.prof[j];else S[k]=o[k]}}}catch(e){}S.view="home"}
+function save(){try{localStorage.setItem("ldce-v3",JSON.stringify(S))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function byFile(f){for(var i=0;i<D.length;i++)if(D[i][3]===f)return D[i]}
+
+function rowHTML(x,q,sub){
+  var f=x[3],t=esc(x[2]);
+  if(q){var i=x[2].toLowerCase().indexOf(q);if(i>=0)t=esc(x[2].slice(0,i))+'<span class="mark">'+esc(x[2].slice(i,i+q.length))+'</span>'+esc(x[2].slice(i+q.length))}
+  return '<div class="row'+(S.done[f]?' done':'')+'"><button class="chk" data-d="'+f+'" aria-label="Mark studied" aria-pressed="'+!!S.done[f]+'">'+(S.done[f]?'✓':'')+'</button>'
+  +'<a class="t" href="'+BASE+f+'">'+t+(sub?'<small>'+EX[x[0]]+' · '+esc(x[1])+'</small>':'')+'</a>'
+  +'<button class="pdf" data-p="'+f+'" aria-label="Download PDF">PDF</button>'
+  +'<button class="star'+(S.fav[f]?' on':'')+'" data-f="'+f+'" aria-label="Bookmark">'+(S.fav[f]?'★':'☆')+'</button></div>';
+}
+function paperHTML(g){
+  var all=D.filter(function(x){return x[0]===g.ex&&g.secs.indexOf(x[1])>=0}),dn=all.filter(function(x){return S.done[x[3]]}).length;
+  var h='<details class="pc" data-o="'+g.id+'"'+(S.open[g.id]?' open':'')+' style="--g1:'+g.g[0]+';--g2:'+g.g[1]+'"><summary><span class="pic">'+g.ic+'</span><span class="ptx"><b>'+g.t+'</b> <em>('+g.s+')</em></span><span class="pcn">'+dn+'/'+all.length+'</span><span class="chev"></span></summary><div class="pb">';
+  g.secs.forEach(function(sn){
+    var rs=all.filter(function(x){return x[1]===sn});if(!rs.length)return;
+    if(g.secs.length>1)h+='<div class="ssh"><span>'+esc(sn)+'</span><span>'+rs.filter(function(x){return S.done[x[3]]}).length+'/'+rs.length+'</span></div>';
+    rs.forEach(function(x){h+=rowHTML(x)});
+  });
+  return h+'</div></details>';
+}
+function render(){
+  var q=$("q").value.trim().toLowerCase(),h="";
+  if(q){
+    var rs=D.filter(function(x){return (x[2]+" "+x[1]).toLowerCase().indexOf(q)>=0});
+    h=rs.length?'<div class="st">🔍 Search results<small>'+rs.length+' topics</small></div><div class="rcard">'+rs.map(function(x){return rowHTML(x,q,1)}).join("")+'</div>':'<div class="empty">કોઈ પરિણામ મળ્યું નથી. બીજો શબ્દ શોધો.</div>';
+  }else if(S.view==="saved"){
+    var fv=D.filter(function(x){return S.fav[x[3]]});
+    h=fv.length?'<div class="st">⭐ Saved<small>'+fv.length+' topics</small></div><div class="rcard">'+fv.map(function(x){return rowHTML(x,"",1)}).join("")+'</div>':'<div class="empty">હજી કોઈ ટોપિક સેવ કર્યો નથી. ટોપિક આગળના ☆ પર ટેપ કરો.</div>';
+  }else{
+    var rc=(S.recent||[]).filter(byFile);
+    if(rc.length)h+='<div class="st">🕘 Recently Opened</div><div class="rail">'+rc.map(function(f){var x=byFile(f);return '<a class="rc" href="'+BASE+f+'">'+esc(x[2])+'<small>🕘 '+EX[x[0]]+' · '+esc(x[1])+'</small></a>'}).join("")+'</div>';
+    ["IP","AAO"].forEach(function(ex){
+      var open=!S.exc[ex];
+      h+='<button class="exh" data-e="'+ex+'" aria-expanded="'+open+'"><span class="eic">'+EXH[ex][2]+'</span><span class="etx"><b>'+EXH[ex][0]+'</b> '+EXH[ex][1]+'</span><span class="chev"></span></button>';
+      if(open)GR.forEach(function(g){if(g.ex===ex)h+=paperHTML(g)});
+    });
+  }
+  $("main").innerHTML=h;
+  var n=D.length,d=D.filter(function(x){return S.done[x[3]]}).length;
+  $("pcnt").textContent=d+"/"+n;$("pbar").style.width=(n?d/n*100:0)+"%";
+  Array.prototype.forEach.call(document.querySelectorAll(".nav button"),function(b){if(b.dataset.n===S.view||(b.dataset.n==="home"&&S.view==="search"))b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+}
+function paintProf(){
+  var p=S.prof;$("pn").textContent=p.name;$("pp").textContent=p.post;$("po").textContent=p.office;
+  var im=$("avim");
+  if(p.photo){im.style.backgroundImage="url("+p.photo+")";im.textContent=""}
+  else{im.style.backgroundImage="";im.textContent=(p.name||"?").split(/\s+/).slice(0,2).map(function(w){return w.charAt(0)}).join("").toUpperCase()}
+}
+function tick(){var d=new Date();$("clk").textContent=d.toLocaleDateString("en-GB")+" · "+d.toLocaleTimeString("en-US",{hour:"2-digit",minute:"2-digit",second:"2-digit"})}
+
+document.addEventListener("click",function(e){
+  var a=e.target.closest("a.t,a.rc");
+  if(a&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey){e.preventDefault();openV(a.getAttribute("href").slice(BASE.length),false);return}
+  var b=e.target.closest("button");if(!b)return;
+  var ds=b.dataset;
+  if(ds.d){if(S.done[ds.d])delete S.done[ds.d];else S.done[ds.d]=1;save();render()}
+  else if(ds.f){if(S.fav[ds.f])delete S.fav[ds.f];else S.fav[ds.f]=1;save();render()}
+  else if(ds.p){pdfOpen(ds.p)}
+  else if(ds.e){if(S.exc[ds.e])delete S.exc[ds.e];else S.exc[ds.e]=1;save();render()}
+  else if(ds.n){
+    if(ds.n==="search"){S.view="home";$("q").focus();window.scrollTo({top:$("q").getBoundingClientRect().top+scrollY-90,behavior:"smooth"})}
+    else{S.view=ds.n;$("q").value="";window.scrollTo({top:0,behavior:"smooth"})}
+    render();
+  }
+});
+document.addEventListener("toggle",function(e){var d=e.target;if(d.dataset&&d.dataset.o){if(d.open)S.open[d.dataset.o]=1;else delete S.open[d.dataset.o];save()}},true);
+$("q").addEventListener("input",render);
+function applyFs(){document.body.style.setProperty("--fs",S.fs+"px")}
+$("fm").onclick=function(){S.fs=Math.max(13,S.fs-1);applyFs();save()};
+$("fp").onclick=function(){S.fs=Math.min(22,S.fs+1);applyFs();save()};
+
+// profile dialog
+var newPhoto=null;
+$("pb").onclick=function(){$("fn").value=S.prof.name;$("fo").value=S.prof.post;$("fl").value=S.prof.office;newPhoto=null;$("ff").value="";$("pd").showModal()};
+$("pc").onclick=function(){$("pd").close()};
+$("ps").onclick=function(){S.prof.name=$("fn").value.trim()||S.prof.name;S.prof.post=$("fo").value.trim();S.prof.office=$("fl").value.trim();if(newPhoto!==null)S.prof.photo=newPhoto;save();paintProf();$("pd").close()};
+$("ff").onchange=function(){
+  var f=this.files[0];if(!f)return;
+  var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
+    var c=document.createElement("canvas"),s=Math.min(240/im.width,240/im.height,1);c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);
+    c.getContext("2d").drawImage(im,0,0,c.width,c.height);newPhoto=c.toDataURL("image/jpeg",.82)};im.src=r.result};r.readAsDataURL(f);
+};
+
+// viewer + PDF
+var vOpen=false,vPrint=false,vCur="";
+function T(f){var x=byFile(f);return x?x[2]:f}
+function openV(f,auto){
+  $("vt").textContent=T(f);vCur=f;$("vw").hidden=false;document.body.style.overflow="hidden";
+  S.recent=[f].concat((S.recent||[]).filter(function(x){return x!==f})).slice(0,6);save();
+  vPrint=!!auto;$("vf").src=BASE+f;
+  if(!vOpen){history.pushState({v:1},"");vOpen=true}
+}
+function closeV(){$("vw").hidden=true;$("vf").src="about:blank";document.body.style.overflow="";vOpen=false;render()}
+window.addEventListener("popstate",function(){if(vOpen)closeV()});
+$("vback").onclick=function(){if(vOpen)history.back()};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&vOpen)history.back()});
+function printV(){
+  var f=$("vf"),old=document.title;
+  try{
+    var d=f.contentDocument;
+    d.querySelectorAll("details").forEach(function(x){x.open=true});
+    if(!d.getElementById("pdfx")){var st=d.createElement("style");st.id="pdfx";st.textContent="@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}";d.head.appendChild(st)}
+    document.title=$("vt").textContent;
+    f.contentWindow.focus();f.contentWindow.print();
+    setTimeout(function(){document.title=old},2000);
+  }catch(e){window.open(f.src,"_blank")}
+}
+function pdfOpen(f){
+  var w=null;
+  try{w=window.open(BASE+f+"#pdf","_blank")}catch(e){}
+  if(!w){if(vOpen&&vCur===f)printV();else openV(f,true)}
+}
+$("vpdf").onclick=function(){pdfOpen(vCur)};
+$("vf").addEventListener("load",function(){
+  if(vPrint&&this.src.indexOf("about:blank")<0){vPrint=false;setTimeout(printV,700)}
+});
+
+// offline + service worker
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){navigator.serviceWorker.register("sw.js").catch(function(){})}
+$("off").onclick=async function(){
+  if(!("caches" in window)){alert("આ બ્રાઉઝરમાં ઓફલાઇન સેવ શક્ય નથી.");return}
+  var b=this,c=await caches.open("ldce-pages"),fail=0,done=0;b.disabled=true;
+  var L=D.map(function(x){return x[3]}).concat(["syllabus.html"]);
+  for(var i=0;i<L.length;i+=8){
+    await Promise.all(L.slice(i,i+8).map(async function(f){
+      try{var r=await fetch(BASE+f);if(r.ok)await c.put(BASE+f,r);else fail++}catch(e){fail++}
+      done++;b.textContent=Math.round(done/L.length*100)+"%";
+    }));
+  }
+  b.disabled=false;b.textContent="⬇ Offline";
+  alert(fail?("સેવ થયું, પણ "+fail+" પેજ સેવ ન થયા. ઇન્ટરનેટ ચાલુ રાખી ફરી પ્રયાસ કરો."):"બધા ટોપિક ઓફલાઇન માટે સેવ થઈ ગયા.");
+};
+load();applyFs();paintProf();tick();setInterval(tick,1000);render();
+</script>
+</body>
+</html>
