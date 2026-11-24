@@ -1,64 +1,371 @@
 <!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 1 - Postal Manual Vol. VI Part-I | Chapter 1</title>
+<html lang="hi"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Postal Manual Vol. VI Part-I | Chapter 1 – IP Exam Portal</title>
 <style>
-:root{
+html{scroll-behavior:smooth;scroll-padding-top:56px}body{margin:0;background:#FFF9F2}
+.part{margin:0;border-bottom:2px dashed #E5DED2}
+#jump{display:flex;gap:8px;align-items:center;justify-content:center;position:sticky;top:0;z-index:50;background:#7F1010;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+#jump select{flex:1;min-width:0;max-width:700px;display:block;padding:8px;font-size:14px;border-radius:8px;border:0}
+#p1{
   --ip-red:#B71C1C; --ip-red-dark:#7F1010; --ip-blue:#1A237E; --ip-blue-dark:#101560;
   --ip-gold:#FFB300; --ip-gold-soft:#FFF3D6;
   --cream:#FFF9F2; --ink:#22252E; --muted:#5A5F6E;
   --tier-red:#C62828; --tier-orange:#EF6C00; --tier-yellow:#F9A825; --tier-green:#2E7D32;
   --card:#FFFFFF; --line:#E5DED2;
 }
-*{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-behavior:smooth;}
-body{
+#p1 *{box-sizing:border-box; margin:0; padding:0;}
+#p1{scroll-behavior:smooth;}
+#p1{
   font-family:'Noto Sans Devanagari','Noto Sans','Hind','Mangal',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   background:var(--cream); color:var(--ink); line-height:1.55; font-size:16px;
   background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(183,28,28,0.035) 39px,rgba(183,28,28,0.035) 40px);
 }
-.hi{font-weight:700; display:block;}
-.en{font-style:italic; font-weight:400; color:var(--muted); display:block; font-size:0.93em;}
-.wrap{max-width:840px; margin:0 auto; padding:0 12px 60px;}
-header.hero{
+#p1 .hi{font-weight:700; display:block;}
+#p1 .en{font-style:italic; font-weight:400; color:var(--muted); display:block; font-size:0.93em;}
+#p1 .wrap{max-width:840px; margin:0 auto; padding:0 12px 60px;}
+#p1 header.hero{
   background:linear-gradient(135deg,var(--ip-red) 0%,var(--ip-red-dark) 55%,var(--ip-blue) 130%);
   color:#fff; padding:26px 14px 20px; text-align:center; position:relative; overflow:hidden;
   border-bottom:6px solid var(--ip-gold);
 }
-header.hero::before{
+#p1 header.hero::before{
   content:"डाक"; position:absolute; font-size:180px; font-weight:900; opacity:0.06;
   top:-40px; right:-20px; transform:rotate(-12deg); pointer-events:none;
 }
-.stamp-badge{
+#p1 .stamp-badge{
   display:inline-block; background:#fff; color:var(--ip-red); font-weight:800; font-size:13px;
   padding:6px 14px; border-radius:4px; letter-spacing:1px; margin-bottom:10px;
   outline:3px dashed rgba(255,255,255,.85); outline-offset:4px;
 }
-header.hero h1{font-size:clamp(21px,4.6vw,32px); line-height:1.3; margin:8px 0 4px;}
-header.hero .sub{font-size:clamp(13px,3vw,16px); opacity:.92; font-style:italic;}
-.hero-meta{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px;}
-.hero-meta span{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); padding:4px 12px; border-radius:20px; font-size:12.5px;}
-.legend{
+#p1 header.hero h1{font-size:clamp(21px,4.6vw,32px); line-height:1.3; margin:8px 0 4px;}
+#p1 header.hero .sub{font-size:clamp(13px,3vw,16px); opacity:.92; font-style:italic;}
+#p1 .hero-meta{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px;}
+#p1 .hero-meta span{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); padding:4px 12px; border-radius:20px; font-size:12.5px;}
+#p1 .legend{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:8px;
   background:var(--card); border:1.5px solid var(--line); border-radius:14px; padding:12px; margin:16px 0;
 }
-.legend div{font-size:13px; padding:6px 8px; border-radius:8px; font-weight:600;}
-.lg-red{background:#FDECEA; color:var(--tier-red);}
-.lg-orange{background:#FFF1E3; color:var(--tier-orange);}
-.lg-yellow{background:#FFF9DC; color:#8a6d00;}
-.lg-green{background:#E8F5E9; color:var(--tier-green);}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden; box-shadow:0 2px 6px rgba(34,37,46,.05);}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
-.block-head h2{font-size:clamp(16px,3.6vw,20px); line-height:1.35;}
-.block-head h2 .en{color:rgba(255,255,255,.85);}
-.rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7); font-size:11px; font-weight:800; padding:3px 9px; border-radius:6px; white-space:nowrap;}
-.block-body{padding:14px;}
-</style>
-</head>
-<body>
+#p1 .legend div{font-size:13px; padding:6px 8px; border-radius:8px; font-weight:600;}
+#p1 .lg-red{background:#FDECEA; color:var(--tier-red);}
+#p1 .lg-orange{background:#FFF1E3; color:var(--tier-orange);}
+#p1 .lg-yellow{background:#FFF9DC; color:#8a6d00;}
+#p1 .lg-green{background:#E8F5E9; color:var(--tier-green);}
+#p1 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden; box-shadow:0 2px 6px rgba(34,37,46,.05);}
+#p1 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p1 .bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
+#p1 .block-head h2{font-size:clamp(16px,3.6vw,20px); line-height:1.35;}
+#p1 .block-head h2 .en{color:rgba(255,255,255,.85);}
+#p1 .rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7); font-size:11px; font-weight:800; padding:3px 9px; border-radius:6px; white-space:nowrap;}
+#p1 .block-body{padding:14px;}
+#p2{
+  --ip-red:#B71C1C; --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --muted:#5A5F6E; --tier-green:#2E7D32; --card:#FFFFFF; --line:#E5DED2; --ip-gold-soft:#FFF3D6;
+}
+#p2 *{box-sizing:border-box; margin:0; padding:0;}
+#p2{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p2 .wrap{max-width:840px; margin:0 auto;}
+#p2 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p2 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p2 .bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
+#p2 .rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7); font-size:11px; padding:3px 9px; border-radius:6px;}
+#p2 .block-body{padding:14px;}
+#p2 .tree .lvl{border-radius:10px; padding:8px 12px; margin:6px 0; font-size:14px; border:1.6px solid;}
+#p2 .lvl1{background:var(--ip-red); color:#fff; border-color:var(--ip-red); font-weight:800;}
+#p2 .lvl2{background:#F2F4FF; border-color:var(--ip-blue); margin-left:18px;}
+#p2 .lvl3{background:var(--ip-gold-soft); border-color:#D9A400; margin-left:36px;}
+#p2 .lvl4{background:#F0F8F1; border-color:var(--tier-green); margin-left:54px; font-size:13px;}
+#p2 .tree .arrow{margin-left:26px; color:var(--ip-red); font-weight:900;}
+#p2 .pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0; font-size:14.5px;}
+#p2 .pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
+#p2 .tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px;}
+#p2 .tg-green{background:var(--tier-green); color:#fff;}
+#p3{
+  --ip-red:#B71C1C; --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --tier-green:#2E7D32; --card:#FFFFFF; --line:#E5DED2;
+}
+#p3 *{box-sizing:border-box; margin:0; padding:0;}
+#p3{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p3 .wrap{max-width:840px; margin:0 auto;}
+#p3 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p3 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p3 .bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
+#p3 .block-body{padding:14px;}
+#p3 .tree .lvl{border-radius:10px; padding:8px 12px; margin:6px 0; font-size:14px; border:1.6px solid;}
+#p3 .lvl2{background:#F2F4FF; border-color:var(--ip-blue); margin-left:18px;}
+#p3 .lvl3{background:#FFF3D6; border-color:#D9A400; margin-left:36px;}
+#p3 .lvl4{background:#F0F8F1; border-color:var(--tier-green); margin-left:54px; font-size:13px;}
+#p4{
+  --ip-red:#B71C1C; --ip-red-dark:#7F1010; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828;
+}
+#p4 *{box-sizing:border-box; margin:0; padding:0;}
+#p4{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p4 .wrap{max-width:840px; margin:0 auto;}
+#p4 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p4 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p4 .bh-red{background:linear-gradient(90deg,var(--ip-red),var(--ip-red-dark));}
+#p4 .rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7); font-size:11px; padding:3px 9px; border-radius:6px;}
+#p4 .block-body{padding:14px;}
+#p4 .pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0;}
+#p4 .pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
+#p4 .tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px;}
+#p4 .tg-red{background:var(--tier-red); color:#fff;}
+#p4 .mindmap{margin:14px 0;}
+#p4 .mm-root{background:linear-gradient(135deg,var(--ip-red),var(--ip-blue)); color:#fff; border-radius:14px; padding:12px; text-align:center; font-size:15px;}
+#p4 .mm-branches{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin-top:12px;}
+#p4 .mm-node{border:2px solid; border-radius:12px; overflow:hidden; background:#fff;}
+#p4 .mm-node h4{padding:8px 10px; font-size:13.5px; color:#fff;}
+#p4 .mm-node ul{list-style:none; padding:8px 10px;}
+#p4 .mm-node li{font-size:13px; padding:4px 0 4px 16px; position:relative;}
+#p4 .mm-b{border-color:var(--ip-blue);}
+#p4 .mm-b h4{background:var(--ip-blue);}
+#p4 .mm-r{border-color:var(--ip-red);}
+#p4 .mm-r h4{background:var(--ip-red);}
+#p5{
+  --ip-red:#B71C1C; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red-dark:#7F1010;
+}
+#p5 *{box-sizing:border-box; margin:0; padding:0;}
+#p5{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p5 .wrap{max-width:840px; margin:0 auto;}
+#p5 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p5 .block-body{padding:14px;}
+#p5 .mindmap{margin:14px 0;}
+#p5 .mm-branches{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px;}
+#p5 .mm-node{border:2px solid; border-radius:12px; overflow:hidden; background:#fff;}
+#p5 .mm-node h4{padding:8px 10px; font-size:13.5px; color:#fff;}
+#p5 .mm-node ul{list-style:none; padding:8px 10px;}
+#p5 .mm-node li{font-size:13px; padding:4px 0;}
+#p5 .mm-g{border-color:#C77F00;}
+#p5 .mm-g h4{background:#C77F00;}
+#p5 .mm-gr{border-color:#2E7D32;}
+#p5 .mm-gr h4{background:#2E7D32;}
+#p5 .mnq{background:linear-gradient(135deg,#FFF3D6,#FFE7AE); border:2px solid #D9A400; border-radius:12px; padding:11px 13px; margin:12px 0;}
+#p5 .mnq .mtitle{font-weight:900; color:#7a5a00; font-size:14px;}
+#p5 .mnq .mword{font-size:19px; font-weight:900; color:var(--ip-red-dark); letter-spacing:1px; margin:4px 0;}
+#p5 .mnq ul{list-style:none; margin-top:4px;}
+#p5 .mnq li b{color:var(--ip-red);}
+#p6{
+  --ip-red:#B71C1C; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828; --ip-red-dark:#7F1010; --tier-orange:#EF6C00;
+}
+#p6 *{box-sizing:border-box; margin:0; padding:0;}
+#p6{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p6 .wrap{max-width:840px; margin:0 auto;}
+#p6 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p6 .block-body{padding:14px;}
+#p6 .pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0;}
+#p6 .pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
+#p6 .pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
+#p6 .tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px;}
+#p6 .tg-red{background:var(--tier-red); color:#fff;}
+#p6 .tg-orange{background:var(--tier-orange); color:#fff;}
+#p6 .tbl-scroll{overflow-x:auto; margin:12px 0;}
+#p6 table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
+#p6 th{background:var(--ip-blue); color:#fff; padding:9px 10px; text-align:left;}
+#p6 td{padding:8px 10px; border-bottom:1px solid #EDE7DB; vertical-align:top;}
+#p6 table.t-red th{background:var(--ip-red);}
+#p6 td b{color:var(--ip-red-dark);}
+#p7{
+  --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-orange:#EF6C00; --tier-red:#C62828; --tier-green:#2E7D32; --ip-gold:#FFB300;
+}
+#p7 *{box-sizing:border-box; margin:0; padding:0;}
+#p7{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p7 .wrap{max-width:840px; margin:0 auto;}
+#p7 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p7 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p7 .bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
+#p7 .block-body{padding:14px;}
+#p7 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p7 .pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
+#p7 .tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px;}
+#p7 .tg-orange{background:var(--tier-orange); color:#fff;}
+#p7 .flow{display:flex; flex-direction:column; gap:4px; margin:14px 0;}
+#p7 .fbox{border:2px solid var(--ip-blue); background:#F2F4FF; border-radius:12px; padding:10px 12px; text-align:center; font-size:14px;}
+#p7 .fbox.start{background:var(--ip-blue); color:#fff;}
+#p7 .farrow{text-align:center; font-size:22px; color:var(--ip-red); line-height:1.1;}
+#p7 .fsplit{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+#p7 .flabel{text-align:center; font-size:12px; font-weight:800; background:var(--ip-gold); color:#3a2a00; border-radius:12px; padding:2px 10px; width:max-content; margin:0 auto 4px;}
+#p7 .fbox.ok{border-color:var(--tier-green); background:#F0F8F1;}
+#p7 .fbox.warn{border-color:var(--tier-red); background:#FDF1F0;}
+#p8{
+  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red-dark:#7F1010; --ip-red:#B71C1C; --tier-yellow:#F9A825; --tier-green:#2E7D32;
+}
+#p8 *{box-sizing:border-box; margin:0; padding:0;}
+#p8{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p8 .wrap{max-width:840px; margin:0 auto;}
+#p8 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p8 .block-body{padding:14px;}
+#p8 .timeline{position:relative; margin:14px 0 6px; padding-left:26px;}
+#p8 .timeline::before{content:""; position:absolute; left:9px; top:4px; bottom:4px; width:4px; background:linear-gradient(var(--ip-red),#FFB300,var(--ip-blue)); border-radius:2px;}
+#p8 .tl-item{position:relative; margin:0 0 14px;}
+#p8 .tl-item::before{content:""; position:absolute; left:-24px; top:5px; width:14px; height:14px; border-radius:50%; background:#fff; border:4px solid var(--ip-red);}
+#p8 .tl-time{font-weight:800; color:var(--ip-red-dark); font-size:14px;}
+#p8 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p8 .pt-yellow{border-left-color:var(--tier-yellow); background:#FFFBE8;}
+#p8 .pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
+#p8 .tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px;}
+#p8 .tg-yellow{background:var(--tier-yellow); color:#fff;}
+#p8 .tg-green{background:var(--tier-green); color:#fff;}
+#p9{
+  --ip-red:#B71C1C; --ip-red-dark:#7F1010; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828; --ip-blue:#1A237E;
+}
+#p9 *{box-sizing:border-box; margin:0; padding:0;}
+#p9{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p9 .wrap{max-width:840px; margin:0 auto;}
+#p9 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p9 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p9 .bh-red{background:linear-gradient(90deg,var(--ip-red),var(--ip-red-dark));}
+#p9 .block-body{padding:14px;}
+#p9 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p9 .pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
+#p9 .tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px;}
+#p9 .tg-red{background:var(--tier-red); color:#fff;}
+#p9 .flow{display:flex; flex-direction:column; gap:4px; margin:14px 0;}
+#p9 .fbox{border:2px solid var(--ip-blue); background:#F2F4FF; border-radius:12px; padding:10px 12px; text-align:center; font-size:14px;}
+#p10{
+  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red:#B71C1C;
+}
+#p10 *{box-sizing:border-box; margin:0; padding:0;}
+#p10{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p10 .wrap{max-width:840px; margin:0 auto;}
+#p10 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p10 .block-body{padding:14px;}
+#p10 .tbl-scroll{overflow-x:auto; margin:12px 0;}
+#p10 table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
+#p10 th{background:var(--ip-blue); color:#fff; padding:9px 10px; text-align:left;}
+#p10 td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
+#p10 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p10 .pt-orange{border-left-color:#EF6C00; background:#FFF6EC;}
+#p11{
+  --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828; --ip-red:#B71C1C;
+}
+#p11 *{box-sizing:border-box; margin:0; padding:0;}
+#p11{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p11 .wrap{max-width:840px; margin:0 auto;}
+#p11 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p11 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p11 .bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
+#p11 .block-body{padding:14px;}
+#p11 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p11 .pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
+#p11 .vs{display:grid; grid-template-columns:1fr auto 1fr; gap:8px; margin:14px 0;}
+#p11 .vs-card{border:2px solid; border-radius:12px; overflow:hidden; background:#fff; padding:10px;}
+#p11 .vs-blue{border-color:var(--ip-blue);}
+#p11 .vs-red{border-color:var(--ip-red);}
+#p11 .vs-mid{align-self:center; font-weight:900; color:#FFB300; background:var(--ip-blue); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center;}
+#p12{
+  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-orange:#EF6C00; --tier-yellow:#F9A825; --tier-green:#2E7D32;
+}
+#p12 *{box-sizing:border-box; margin:0; padding:0;}
+#p12{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p12 .wrap{max-width:840px; margin:0 auto;}
+#p12 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p12 .block-body{padding:14px;}
+#p12 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p12 .pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
+#p12 .pt-yellow{border-left-color:var(--tier-yellow); background:#FFFBE8;}
+#p12 .pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
+#p13{
+  --ip-red:#B71C1C; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828;
+}
+#p13 *{box-sizing:border-box; margin:0; padding:0;}
+#p13{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p13 .wrap{max-width:840px; margin:0 auto;}
+#p13 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p13 .block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
+#p13 .bh-red{background:linear-gradient(90deg,var(--ip-red),#7F1010);}
+#p13 .block-body{padding:14px;}
+#p13 .tbl-scroll{overflow-x:auto; margin:12px 0;}
+#p13 table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
+#p13 th{background:var(--ip-blue); color:#fff; padding:9px 10px;}
+#p13 td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
+#p13 table.t-red th{background:var(--ip-red);}
+#p14{
+  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red-dark:#7F1010;
+}
+#p14 *{box-sizing:border-box; margin:0; padding:0;}
+#p14{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p14 .wrap{max-width:840px; margin:0 auto;}
+#p14 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p14 .block-body{padding:14px;}
+#p14 .tbl-scroll{overflow-x:auto; margin:12px 0;}
+#p14 table{width:100%; border-collapse:collapse; font-size:13.5px;}
+#p14 th{background:var(--ip-blue); color:#fff; padding:9px 10px;}
+#p14 td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
+#p14 .mnq{background:linear-gradient(135deg,#FFF3D6,#FFE7AE); border:2px solid #D9A400; border-radius:12px; padding:11px 13px; margin:12px 0;}
+#p15{
+  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828;
+}
+#p15 *{box-sizing:border-box; margin:0; padding:0;}
+#p15{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p15 .wrap{max-width:840px; margin:0 auto;}
+#p15 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p15 .block-head{padding:14px 16px; color:#3a2a00; display:flex; align-items:center; gap:10px; background:linear-gradient(90deg,#E09600,#FFB300);}
+#p15 .block-body{padding:14px;}
+#p15 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p15 .pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
+#p15 .vs{display:grid; grid-template-columns:1fr auto 1fr; gap:8px; margin:14px 0;}
+#p15 .vs-card{border:2px solid; border-radius:12px; padding:10px; background:#fff;}
+#p16{
+  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-orange:#EF6C00; --tier-green:#2E7D32;
+}
+#p16 *{box-sizing:border-box; margin:0; padding:0;}
+#p16{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p16 .wrap{max-width:840px; margin:0 auto;}
+#p16 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p16 .block-body{padding:14px;}
+#p16 .pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
+#p16 .pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
+#p16 .pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
+#p17{
+  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red:#B71C1C;
+}
+#p17 *{box-sizing:border-box; margin:0; padding:0;}
+#p17{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p17 .wrap{max-width:840px; margin:0 auto;}
+#p17 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p17 .block-head{padding:14px 16px; color:#fff; background:linear-gradient(90deg,var(--ip-blue),#101560);}
+#p17 .block-body{padding:14px;}
+#p17 .mindmap{margin:14px 0;}
+#p17 .mm-root{background:linear-gradient(135deg,var(--ip-red),var(--ip-blue)); color:#fff; border-radius:14px; padding:12px; text-align:center;}
+#p17 .mm-branches{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px;}
+#p17 .mm-node{border:2px solid; border-radius:12px; padding:8px; background:#fff;}
+#p18{
+  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2;
+}
+#p18 *{box-sizing:border-box; margin:0; padding:0;}
+#p18{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p18 .wrap{max-width:840px; margin:0 auto;}
+#p18 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p18 .block-body{padding:14px;}
+#p18 .tbl-scroll{overflow-x:auto; margin:12px 0;}
+#p18 table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
+#p18 th{background:var(--ip-blue); color:#fff; padding:9px 10px;}
+#p18 td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
+#p19{
+  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-gold:#FFB300;
+}
+#p19 *{box-sizing:border-box; margin:0; padding:0;}
+#p19{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p19 .wrap{max-width:840px; margin:0 auto;}
+#p19 table{width:100%; border-collapse:collapse; font-size:13.5px; background:#fff;}
+#p19 th{background:#C77F00; color:#fff; padding:9px 10px; text-align:left;}
+#p19 td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
+#p20{
+  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-blue:#1A237E; --ip-red:#B71C1C;
+}
+#p20 *{box-sizing:border-box; margin:0; padding:0;}
+#p20{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
+#p20 .wrap{max-width:840px; margin:0 auto;}
+#p20 section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
+#p20 .block-body{padding:14px;}
+#p20 .mm-branches{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; text-align:center;}
+#p20 .mm-node{border:2px solid var(--ip-blue); border-radius:8px; padding:6px; background:#f9f9f9;}
+#p20 footer{margin-top:30px; text-align:center; font-size:12.5px; color:#5A5F6E; border-top:3px double #FFB300; padding-top:14px;}
+.np{margin:0;padding:12px;background:#FFF9F2;color:#22252E;font-family:'Noto Sans Devanagari',system-ui,sans-serif;line-height:1.55}
+.np .w{max-width:840px;margin:auto}.np h2{margin:0 0 8px;color:#fff;background:linear-gradient(90deg,#1A237E,#7F1010);padding:12px 14px;border-radius:12px;font-size:17px}
+.np .c{background:#fff;border:1.5px solid #E5DED2;border-left:7px solid;border-radius:12px;padding:10px 12px;margin:10px 0;color:#22252E}
+.np h3{margin:0 0 4px;font-size:15px}.np small{font-weight:700;font-size:11.5px}.np ul{margin:4px 0;padding-left:18px}.np li{margin:3px 0}
+.np .q{background:#FFF3D6;border-radius:8px;padding:6px 9px;font-size:13px;margin-top:6px;color:#5a3d00}.np .en{display:block;font-style:italic;color:#5A5F6E;font-size:.93em}.np .q .en{color:#5a3d00}.np h2 .en{font-size:13px;font-weight:400}#pdfbtn{flex:none;background:#FFB300;color:#2b1a00;border:0;border-radius:8px;padding:9px 12px;font-weight:700;font-size:14px;cursor:pointer}#pdfbtn:active{transform:scale(.97)}@media print{#jump{display:none!important}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.part{page-break-after:always;break-after:page;border:0}@page{margin:8mm}}</style></head><body>
+<div id="jump"><select onchange="if(this.value)location.hash=this.value"><option value="">☰ भाग चुनें / Jump to Part</option><option value="p1">Part 1 - Postal Manual Vol. VI Part-I | Chapter 1</option><option value="p2">Part 2 - Chapter Breakdown Structure</option><option value="p3">Part 3 - Structural Breakdown Continued</option><option value="p4">Part 4 - Post Office Departments Introduction</option><option value="p5">Part 5 - Valuables &amp; Departments Mnemonics</option><option value="p6">Part 6 - Tenure Rules &amp; Staff Registers</option><option value="p7">Part 7 - Sunday &amp; Holiday Regulations</option><option value="p8">Part 8 - Night Post Office Regulations</option><option value="p9">Part 9 - Postal Secrecy &amp; Exceptions</option><option value="p10">Part 10 - Legal Inspection of Records</option><option value="p11">Part 11 - Custody of Stamps &amp; Keys</option><option value="p12">Part 12 - Security &amp; Receipts Book</option><option value="p13">Part 13 - Disposal of Records Part 1</option><option value="p14">Part 14 - Disposal of Records Part 2</option><option value="p15">Part 15 - Cash &amp; Remittances</option><option value="p16">Part 16 - Stamp Stock Regulations</option><option value="p17">Part 17 - Customs Duty Assessment</option><option value="p18">Part 18 - Public Services Rules</option><option value="p19">Part 19 - Master Forms List</option><option value="p20">Part 20 - Complaints &amp; Timeline</option><option value="p21">Part 21 - Rules 5–10: ग्राम सूची, विज्ञापन, मृतक के पत्र / Rules 5–10: Village List, Advertisements, Deceased Addressee</option><option value="p22">Part 22 - Rules 11, 15, 16: सीमा शुल्क व तार-जाँच / Rules 11, 15, 16: Customs Duty &amp; Telegraph Check</option><option value="p23">Part 23 - Rules 18–23/1: नकद, सेफ, फॉर्म / Rules 18–23/1: Cash, Safe &amp; Blank Forms</option><option value="p24">Part 24 - Rules 26–29: रसीद, प्रेषण, लेखा बंडल / Rules 26–29: Receipts, Remittance &amp; Account Bundle</option><option value="p25">Part 25 - Rules 32/1–33: पहचान पत्र, BRC, VP / Rules 32/1–33: ID Card, BRC &amp; VP Articles</option><option value="p26">Part 26 - Rules 38–43: निरीक्षण व पर्यवेक्षण / Rules 38–43: Inspection &amp; Supervision</option><option value="p27">Part 27 - Rules 44–48-C: टिकट, VP जाँच, शिकायतें / Rules 44–48-C: Stamps, VP Enquiry &amp; Complaints</option><option value="p28">Part 28 - Rules 49–55-B: सेवा-पुस्तक, LIC, वेतन ज्ञापन / Rules 49–55-B: Service Books, LIC &amp; Pay Memo</option></select><button id="pdfbtn" type="button" onclick="dlPDF()" aria-label="Download PDF">📄 PDF</button></div>
+<div class="part" id="p1">
 <header class="hero">
   <div class="stamp-badge">📮 IP EXAM PORTAL · PAPER I</div>
   <h1><span class="hi">डाक मैनुअल खण्ड VI (भाग-I) — अध्याय 1: विविध नियम</span>
@@ -77,39 +384,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   <div class="lg-green">🟢 त्वरित पुनरावृत्ति · Quick Revision</div>
 </div>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 2 - Chapter Breakdown Structure</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --muted:#5A5F6E; --tier-green:#2E7D32; --card:#FFFFFF; --line:#E5DED2; --ip-gold-soft:#FFF3D6;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
-.rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7); font-size:11px; padding:3px 9px; border-radius:6px;}
-.block-body{padding:14px;}
-.tree .lvl{border-radius:10px; padding:8px 12px; margin:6px 0; font-size:14px; border:1.6px solid;}
-.lvl1{background:var(--ip-red); color:#fff; border-color:var(--ip-red); font-weight:800;}
-.lvl2{background:#F2F4FF; border-color:var(--ip-blue); margin-left:18px;}
-.lvl3{background:var(--ip-gold-soft); border-color:#D9A400; margin-left:36px;}
-.lvl4{background:#F0F8F1; border-color:var(--tier-green); margin-left:54px; font-size:13px;}
-.tree .arrow{margin-left:26px; color:var(--ip-red); font-weight:900;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0; font-size:14.5px;}
-.pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
-.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px;}
-.tg-green{background:var(--tier-green); color:#fff;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p2">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-blue"><span class="icon">🌳</span>
@@ -130,32 +406,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 3 - Structural Breakdown Continued</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --tier-green:#2E7D32; --card:#FFFFFF; --line:#E5DED2;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
-.block-body{padding:14px;}
-.tree .lvl{border-radius:10px; padding:8px 12px; margin:6px 0; font-size:14px; border:1.6px solid;}
-.lvl2{background:#F2F4FF; border-color:var(--ip-blue); margin-left:18px;}
-.lvl3{background:#FFF3D6; border-color:#D9A400; margin-left:36px;}
-.lvl4{background:#F0F8F1; border-color:var(--tier-green); margin-left:54px; font-size:13px;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p3">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-blue"><span class="icon">🌳</span>
@@ -177,42 +429,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 4 - Post Office Departments Introduction</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-red-dark:#7F1010; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-red{background:linear-gradient(90deg,var(--ip-red),var(--ip-red-dark));}
-.rule-chip{margin-left:auto; background:rgba(255,255,255,.2); border:1px dashed rgba(255,255,255,.7); font-size:11px; padding:3px 9px; border-radius:6px;}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0;}
-.pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
-.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px;}
-.tg-red{background:var(--tier-red); color:#fff;}
-.mindmap{margin:14px 0;}
-.mm-root{background:linear-gradient(135deg,var(--ip-red),var(--ip-blue)); color:#fff; border-radius:14px; padding:12px; text-align:center; font-size:15px;}
-.mm-branches{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin-top:12px;}
-.mm-node{border:2px solid; border-radius:12px; overflow:hidden; background:#fff;}
-.mm-node h4{padding:8px 10px; font-size:13.5px; color:#fff;}
-.mm-node ul{list-style:none; padding:8px 10px;}
-.mm-node li{font-size:13px; padding:4px 0 4px 16px; position:relative;}
-.mm-b{border-color:var(--ip-blue);} .mm-b h4{background:var(--ip-blue);}
-.mm-r{border-color:var(--ip-red);} .mm-r h4{background:var(--ip-red);}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p4">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-red"><span class="icon">🏤</span>
@@ -235,39 +453,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 5 - Valuables & Departments Mnemonics</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red-dark:#7F1010;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.mindmap{margin:14px 0;}
-.mm-branches{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px;}
-.mm-node{border:2px solid; border-radius:12px; overflow:hidden; background:#fff;}
-.mm-node h4{padding:8px 10px; font-size:13.5px; color:#fff;}
-.mm-node ul{list-style:none; padding:8px 10px;}
-.mm-node li{font-size:13px; padding:4px 0;}
-.mm-g{border-color:#C77F00;} .mm-g h4{background:#C77F00;}
-.mm-gr{border-color:#2E7D32;} .mm-gr h4{background:#2E7D32;}
-.mnq{background:linear-gradient(135deg,#FFF3D6,#FFE7AE); border:2px solid #D9A400; border-radius:12px; padding:11px 13px; margin:12px 0;}
-.mnq .mtitle{font-weight:900; color:#7a5a00; font-size:14px;}
-.mnq .mword{font-size:19px; font-weight:900; color:var(--ip-red-dark); letter-spacing:1px; margin:4px 0;}
-.mnq ul{list-style:none; margin-top:4px;}
-.mnq li b{color:var(--ip-red);}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p5">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -287,38 +474,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 6 - Tenure Rules & Staff Registers</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828; --ip-red-dark:#7F1010; --tier-orange:#EF6C00;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; border-radius:0 10px 10px 0; padding:10px 12px; margin:10px 0;}
-.pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
-.pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
-.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px; margin-bottom:5px;}
-.tg-red{background:var(--tier-red); color:#fff;}
-.tg-orange{background:var(--tier-orange); color:#fff;}
-.tbl-scroll{overflow-x:auto; margin:12px 0;}
-table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
-th{background:var(--ip-blue); color:#fff; padding:9px 10px; text-align:left;}
-td{padding:8px 10px; border-bottom:1px solid #EDE7DB; vertical-align:top;}
-table.t-red th{background:var(--ip-red);}
-td b{color:var(--ip-red-dark);}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p6">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -338,40 +495,8 @@ td b{color:var(--ip-red-dark);}
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 7 - Sunday & Holiday Regulations</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-orange:#EF6C00; --tier-red:#C62828; --tier-green:#2E7D32; --ip-gold:#FFB300;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
-.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px;}
-.tg-orange{background:var(--tier-orange); color:#fff;}
-.flow{display:flex; flex-direction:column; gap:4px; margin:14px 0;}
-.fbox{border:2px solid var(--ip-blue); background:#F2F4FF; border-radius:12px; padding:10px 12px; text-align:center; font-size:14px;}
-.fbox.start{background:var(--ip-blue); color:#fff;}
-.farrow{text-align:center; font-size:22px; color:var(--ip-red); line-height:1.1;}
-.fsplit{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
-.flabel{text-align:center; font-size:12px; font-weight:800; background:var(--ip-gold); color:#3a2a00; border-radius:12px; padding:2px 10px; width:max-content; margin:0 auto 4px;}
-.fbox.ok{border-color:var(--tier-green); background:#F0F8F1;}
-.fbox.warn{border-color:var(--tier-red); background:#FDF1F0;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p7">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-blue"><span class="icon">📅</span>
@@ -401,37 +526,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 8 - Night Post Office Regulations</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red-dark:#7F1010; --ip-red:#B71C1C; --tier-yellow:#F9A825; --tier-green:#2E7D32;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.timeline{position:relative; margin:14px 0 6px; padding-left:26px;}
-.timeline::before{content:""; position:absolute; left:9px; top:4px; bottom:4px; width:4px; background:linear-gradient(var(--ip-red),#FFB300,var(--ip-blue)); border-radius:2px;}
-.tl-item{position:relative; margin:0 0 14px;}
-.tl-item::before{content:""; position:absolute; left:-24px; top:5px; width:14px; height:14px; border-radius:50%; background:#fff; border:4px solid var(--ip-red);}
-.tl-time{font-weight:800; color:var(--ip-red-dark); font-size:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-yellow{border-left-color:var(--tier-yellow); background:#FFFBE8;}
-.pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
-.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px;}
-.tg-yellow{background:var(--tier-yellow); color:#fff;}
-.tg-green{background:var(--tier-green); color:#fff;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p8">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -450,34 +546,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 9 - Postal Secrecy & Exceptions</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-red-dark:#7F1010; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828; --ip-blue:#1A237E;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-red{background:linear-gradient(90deg,var(--ip-red),var(--ip-red-dark));}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
-.tag{display:inline-block; font-size:11px; font-weight:800; padding:2px 8px; border-radius:10px;}
-.tg-red{background:var(--tier-red); color:#fff;}
-.flow{display:flex; flex-direction:column; gap:4px; margin:14px 0;}
-.fbox{border:2px solid var(--ip-blue); background:#F2F4FF; border-radius:12px; padding:10px 12px; text-align:center; font-size:14px;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p9">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-red"><span class="icon">🤫</span>
@@ -495,32 +565,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 10 - Legal Inspection of Records</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red:#B71C1C;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.tbl-scroll{overflow-x:auto; margin:12px 0;}
-table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
-th{background:var(--ip-blue); color:#fff; padding:9px 10px; text-align:left;}
-td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-orange{border-left-color:#EF6C00; background:#FFF6EC;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p10">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -539,35 +585,8 @@ td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 11 - Custody of Stamps & Keys</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --ip-blue-dark:#101560; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828; --ip-red:#B71C1C;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-blue{background:linear-gradient(90deg,var(--ip-blue),var(--ip-blue-dark));}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
-.vs{display:grid; grid-template-columns:1fr auto 1fr; gap:8px; margin:14px 0;}
-.vs-card{border:2px solid; border-radius:12px; overflow:hidden; background:#fff; padding:10px;}
-.vs-blue{border-color:var(--ip-blue);}
-.vs-red{border-color:var(--ip-red);}
-.vs-mid{align-self:center; font-weight:900; color:#FFB300; background:var(--ip-blue); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p11">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-blue"><span class="icon">🔐</span>
@@ -588,30 +607,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 12 - Security & Receipts Book</title>
-<style>
-:root{
-  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-orange:#EF6C00; --tier-yellow:#F9A825; --tier-green:#2E7D32;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
-.pt-yellow{border-left-color:var(--tier-yellow); background:#FFFBE8;}
-.pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p12">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -627,33 +624,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 13 - Disposal of Records Part 1</title>
-<style>
-:root{
-  --ip-red:#B71C1C; --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; display:flex; align-items:center; gap:10px;}
-.bh-red{background:linear-gradient(90deg,var(--ip-red),#7F1010);}
-.block-body{padding:14px;}
-.tbl-scroll{overflow-x:auto; margin:12px 0;}
-table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
-th{background:var(--ip-blue); color:#fff; padding:9px 10px;}
-td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
-table.t-red th{background:var(--ip-red);}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p13">
 <div class="wrap">
 <section class="block">
   <div class="block-head bh-red"><span class="icon">🗑️</span>
@@ -672,31 +644,8 @@ table.t-red th{background:var(--ip-red);}
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 14 - Disposal of Records Part 2</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red-dark:#7F1010;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.tbl-scroll{overflow-x:auto; margin:12px 0;}
-table{width:100%; border-collapse:collapse; font-size:13.5px;}
-th{background:var(--ip-blue); color:#fff; padding:9px 10px;}
-td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
-.mnq{background:linear-gradient(135deg,#FFF3D6,#FFE7AE); border:2px solid #D9A400; border-radius:12px; padding:11px 13px; margin:12px 0;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p14">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -716,31 +665,8 @@ td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 15 - Cash & Remittances</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-red:#C62828;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#3a2a00; display:flex; align-items:center; gap:10px; background:linear-gradient(90deg,#E09600,#FFB300);}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-red{border-left-color:var(--tier-red); background:#FDF1F0;}
-.vs{display:grid; grid-template-columns:1fr auto 1fr; gap:8px; margin:14px 0;}
-.vs-card{border:2px solid; border-radius:12px; padding:10px; background:#fff;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p15">
 <div class="wrap">
 <section class="block">
   <div class="block-head"><span class="icon">💰</span>
@@ -761,29 +687,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 16 - Stamp Stock Regulations</title>
-<style>
-:root{
-  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --tier-orange:#EF6C00; --tier-green:#2E7D32;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.pt{border-left:5px solid var(--line); background:#FBFAF7; padding:10px 12px; margin:10px 0;}
-.pt-orange{border-left-color:var(--tier-orange); background:#FFF6EC;}
-.pt-green{border-left-color:var(--tier-green); background:#F0F8F1;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p16">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -797,31 +702,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 17 - Customs Duty Assessment</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-red:#B71C1C;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-head{padding:14px 16px; color:#fff; background:linear-gradient(90deg,var(--ip-blue),#101560);}
-.block-body{padding:14px;}
-.mindmap{margin:14px 0;}
-.mm-root{background:linear-gradient(135deg,var(--ip-red),var(--ip-blue)); color:#fff; border-radius:14px; padding:12px; text-align:center;}
-.mm-branches{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px;}
-.mm-node{border:2px solid; border-radius:12px; padding:8px; background:#fff;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p17">
 <div class="wrap">
 <section class="block">
   <div class="block-head"><span class="icon">🛃</span>
@@ -841,30 +723,8 @@ section.block{background:var(--card); border:1.5px solid var(--line); border-rad
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 18 - Public Services Rules</title>
-<style>
-:root{
-  --ip-blue:#1A237E; --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.tbl-scroll{overflow-x:auto; margin:12px 0;}
-table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
-th{background:var(--ip-blue); color:#fff; padding:9px 10px;}
-td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p18">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -879,27 +739,8 @@ td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
   </div>
 </section>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 19 - Master Forms List</title>
-<style>
-:root{
-  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-gold:#FFB300;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-table{width:100%; border-collapse:collapse; font-size:13.5px; background:#fff;}
-th{background:#C77F00; color:#fff; padding:9px 10px; text-align:left;}
-td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p19">
 <div class="wrap">
   <h4 style="margin-bottom:8px;">📚 महत्वपूर्ण पुस्तकें व फॉर्म नंबर</h4>
   <table>
@@ -912,29 +753,8 @@ td{padding:8px 10px; border-bottom:1px solid #EDE7DB;}
     <tr><td><b>ACG-3(a)</b></td><td>B.O. Summary — <b>अनिवार्यतः English में</b></td></tr>
   </table>
 </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Part 20 - Complaints & Timeline</title>
-<style>
-:root{
-  --cream:#FFF9F2; --ink:#22252E; --card:#FFFFFF; --line:#E5DED2; --ip-blue:#1A237E; --ip-red:#B71C1C;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); padding:12px;}
-.wrap{max-width:840px; margin:0 auto;}
-section.block{background:var(--card); border:1.5px solid var(--line); border-radius:16px; margin:20px 0; overflow:hidden;}
-.block-body{padding:14px;}
-.mm-branches{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; text-align:center;}
-.mm-node{border:2px solid var(--ip-blue); border-radius:8px; padding:6px; background:#f9f9f9;}
-footer{margin-top:30px; text-align:center; font-size:12.5px; color:#5A5F6E; border-top:3px double #FFB300; padding-top:14px;}
-</style>
-</head>
-<body>
+</div>
+<div class="part" id="p20">
 <div class="wrap">
 <section class="block">
   <div class="block-body">
@@ -947,15 +767,15 @@ footer{margin-top:30px; text-align:center; font-size:12.5px; color:#5A5F6E; bord
     </div>
     <br>
     <p>⏱️ <b>માસ્ટર ટાઈમલાઈન શોર્ટ નોટ્સ:</b><br>
-    • <b>1–14 मार्च:</b> Yearly Village Return (Ms-88) ભરો[span_2](start_span)[span_2](end_span).<br>
-    • <b>10 तारीख:</b> Statistical Memo HOC ને મોકલો[span_3](start_span)[span_3](end_span).<br>
-    • <b>5 तारीख:</b> ACG-26 સેલરી મેમો સબમિટ કરો[span_4](start_span)[span_4](end_span).<br>
-    • <b>R. 53-A:</b> એરક્રાફ્ટ અકસ્માતનો ખર્ચ <b>operating company</b> ભોગવશે[span_5](start_span)[span_5](end_span).</p>
+    • <b>1–14 मार्च:</b> Yearly Village Return (Ms-88) ભરો.<br>
+    • <b>10 तारीख:</b> Statistical Memo HOC ને મોકલો.<br>
+    • <b>5 तारीख:</b> ACG-26 સેલરી મેમો સબમિટ કરો.<br>
+    • <b>R. 53-A:</b> એરક્રાફ્ટ અકસ્માતનો ખર્ચ <b>operating company</b> ભોગવશે.</p>
   </div>
 </section>
 <footer>
-  <p><b>📮 IP Exam Portal · Final Part 20</b></p>
+  <p><b>📮 IP Exam Portal · Part 20</b></p>
 </footer>
 </div>
-</body>
-</html>
+</div>
+<div class="part np" id="p21"><div class="w"><h2>📮 Part 21 · Rules 5–10: ग्राम सूची, विज्ञापन, मृतक के पत्र<span class="en" style="color:#FFE0B2">Rules 5–10: Village List, Advertisements, Deceased Addressee</span></h2><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 5 – Village Sorting List / ग्राम छँटाई सूची</h3><ul><li>M-52 सूची और M-53 मार्ग-सूची उप-मंडल निरीक्षक देता है / Inspector supplies M-52 &amp; route list M-53<span class="en">Village sorting list M-52 and route list M-53 are supplied by the sub-divisional Inspector.</span></li><li>सूची उप-खाता क्लर्क की मेज़ के पास टाँगें; डाकपाल माह में एक बार क्लर्क की परीक्षा ले / Postmaster tests sub-account clerk monthly<span class="en">Hang the list near the sub-account clerk&#x27;s table; Postmaster tests the clerk on it once a month.</span></li></ul><div class="q">🎯 Q: ग्राम छँटाई सूची का फॉर्म? (M-52)<span class="en">Q: Form of village sorting list? (M-52)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 6 – Yearly Village Return / वार्षिक ग्राम विवरण</h3><ul><li>1 से 14 मार्च (दोनों दिन सहित), फॉर्म Ms-88 / 1–14 March, Form Ms-88<span class="en">Return in Form Ms-88 kept from 1st to 14th March, both days inclusive.</span></li><li>15 तारीख को जोड़कर, डाकपाल हस्ताक्षर, निरीक्षक को भेजें / totalled on 15th, signed, sent to Inspector<span class="en">Totalled and signed by Postmaster on the 15th; sent to the Inspector, copy kept.</span></li><li>अनिश्चित बीट के गाँव लाल स्याही में; पत्र-पेटी वाले गाँव &quot;LB&quot;, चल-प्लेट हो तो &quot;P&quot;<span class="en">Unfixed-beat villages in red ink; villages with letter-box marked &#x27;LB&#x27;, &#x27;P&#x27; if movable plates.</span></li></ul><div class="q">🎯 Q: Ms-88 कब भरा जाता है? (1–14 मार्च)<span class="en">Q: When is Ms-88 prepared? (1–14 March)</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 8 – Advertisements Prohibited / विज्ञापन वर्जित</h3><ul><li>डाकिया जनता की ओर से हैंडबिल/विज्ञापन बाँट नहीं सकता; ऐसे पैकेट लौटाएँ / Postmen cannot distribute advertisements; refuse such packets<span class="en">Postmen cannot distribute handbills or advertisements for the public; refuse such packets.</span></li></ul></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 9 – Redirected Articles Receipt / पुनर्निर्देशित पर रसीद</h3><ul><li>मुफ़्त पुनर्निर्देशन का दुरुपयोग हो तो डाकपाल मंडल प्रमुख को रिपोर्ट करे; प्रमुख रसीद लेने की अनुमति देता है<span class="en">If free redirection is abused, Postmaster reports; Head of Circle authorises taking a receipt.</span></li><li>रसीद पर दिया लेख दोबारा डाक में डाला जाए तो नया लेख मानकर डाक-महसूल लगेगा / re-posted = fresh posting<span class="en">An article delivered on such a receipt, if re-posted, is treated as a fresh posting and taxed.</span></li></ul><div class="q">🎯 Q: रसीद लेने का आदेश कौन देता है? (Head of Circle)<span class="en">Q: Who orders the receipt? (Head of Circle)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 10 – Articles to Deceased / मृतक के नाम का लेख</h3><ul><li>सामान्यतः अदावित (unclaimed) मानें / treat as unclaimed<span class="en">Treat as unclaimed and dispose accordingly.</span></li><li>बीमा-रहित, मूल्यवान न हो तो निकट संबंधी को देने का डाकपाल का विवेक<span class="en">Uninsured articles without valuables: Postmaster may hand over to a near relative at his discretion.</span></li><li>बीमा/मूल्यवान/संदिग्ध हक → मंडल प्रमुख से आवेदन<span class="en">Insured/valuable/doubtful title: applicant to approach the Head of Circle.</span></li></ul><div class="q">🎯 Q: मृतक के बीमा लेख पर किससे आदेश? (HoC)<span class="en">Q: Insured article for a deceased person – whom to refer? (HoC)</span></div></div></div></div><div class="part np" id="p22"><div class="w"><h2>📮 Part 22 · Rules 11, 15, 16: सीमा शुल्क व तार-जाँच<span class="en" style="color:#FFE0B2">Rules 11, 15, 16: Customs Duty &amp; Telegraph Check</span></h2><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 11 – Customs Duty / सीमा शुल्क निर्धारण</h3><ul><li>निर्धारण केवल विनिमय कार्यालय: बंबई, कलकत्ता, मद्रास, दिल्ली; उप-विनिमय: अहमदाबाद, बैंगलोर, कोचीन, जयपुर<span class="en">Assessed only at offices of exchange: Bombay, Calcutta, Madras, Delhi; sub-exchange: Ahmedabad, Bangalore, Cochin, Jaipur.</span></li><li>सामग्री सूची Ms-16 दो प्रतियों में; पता-धारक की उपस्थिति में बनाकर हस्ताक्षर कराएँ; मना करे तो नोट करें<span class="en">List of contents in duplicate in Form Ms-16, prepared in addressee&#x27;s presence and signed; refusal is noted.</span></li><li>मूल आवरण में दोबारा पैक, सुरक्षा बैग में, मूल नंबर देकर विनिमय कार्यालय को भेजें<span class="en">Repack in original wrapper, in a protecting cover, with original number; send to office of exchange.</span></li><li>आभूषण/मूल्यवान हो तो बीमा लिफ़ाफ़ा, वज़न ग्राम में<span class="en">Jewellery/valuables: insured envelope, weight marked in grams.</span></li><li>शुल्क ज्ञापन Ms-9(a), लेबल FP-53; शुल्क के साथ डाक-महसूल, पुनर्निर्देशन शुल्क भी नकद वसूल<span class="en">Duty memo Ms-9(a), label FP-53; postage, redirection and insurance fees also collected in cash.</span></li><li>अनुसूची और ज्ञापन नागपुर लेखा कार्यालय को<span class="en">Schedules and memos go to Nagpur Audit Office.</span></li></ul><div class="q">🎯 Q: सामग्री सूची का फॉर्म? (Ms-16) • ज्ञापन? (Ms-9(a))<span class="en">Q: Form for list of contents? (Ms-16) • Duty memo? (Ms-9(a))</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 15 – Telegraph Drafts / तार मसौदे</h3><ul><li>मसौदे 2 माह रखें, फिर तार जाँच कार्यालय को<span class="en">Drafts kept 2 months, then sent to Telegraph Check Office.</span></li><li>1–7 → 8 तारीख; 8–14 → 15; 15–21 → 22; 22–अंत → 1 (दूसरे आगामी माह की)<span class="en">1–7 → 8th; 8–14 → 15th; 15–21 → 22nd; 22–end → 1st (of the second following month).</span></li><li>लेबल MR-26 (बड़ा बंडल हो तो पार्सल, MR-20)<span class="en">Label MR-26 (large bundle as parcel: MR-20).</span></li></ul><div class="q">🎯 Q: 1–7 तारीख के मसौदे कब भेजें? (8 तारीख)<span class="en">Q: Drafts of 1st–7th go on? (8th)</span></div></div><div class="c" style="border-left-color:#2E7D32"><small style="color:#2E7D32">🟢 त्वरित दोहराव</small><h3>Rule 16 – Undelivered Messages / अवितरित संदेश</h3><ul><li>1–15 के अवितरित संदेश 16 तारीख को; 16–अंत के अगले माह की 1 तारीख को, पंजीकृत डाक से<span class="en">Undelivered messages of 1–15 go on the 16th; of 16–end on the 1st, by registered post.</span></li></ul></div></div></div><div class="part np" id="p23"><div class="w"><h2>📮 Part 23 · Rules 18–23/1: नकद, सेफ, फॉर्म<span class="en" style="color:#FFE0B2">Rules 18–23/1: Cash, Safe &amp; Blank Forms</span></h2><div class="c" style="border-left-color:#2E7D32"><small style="color:#2E7D32">🟢 त्वरित दोहराव</small><h3>Rule 18–20 – Cash, Change, Strangers / नकद, छुट्टा, अजनबी</h3><ul><li>भुगतान नकद या नोट में, प्राप्तकर्ता की इच्छा से / Pay in cash or notes as payee wishes<span class="en">Pay in cash or notes as the payee wishes.</span></li><li>नोट का छुट्टा सममूल्य पर, कोई शुल्क नहीं; बड़े नोट से छोटा शुल्क देने की कोशिश पर मना कर सकते हैं<span class="en">Change for notes at par, no fee; may refuse if a large note is offered for a small fee.</span></li><li>अजनबी व कर्मचारियों के रिश्तेदार अंदर नहीं; केवल अधीक्षक के लिखित आदेश से प्रवेशित उम्मीदवार<span class="en">Strangers and staff relatives not admitted, except candidates admitted by Superintendent&#x27;s written order.</span></li></ul></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 22, 22-A – Blank Forms & Receipt Books / रिक्त फॉर्म</h3><ul><li>डाकपाल की अभिरक्षा में ताला-चाबी; प्राप्ति पर जाँच, हस्ताक्षर व तिथि स्याही से<span class="en">Blank forms are kept under lock and key by Postmaster.</span></li><li>दोष वाली पुस्तकें स्टॉक रजिस्टर पर न चढ़ाएँ, स्टॉक डिपो को लौटाएँ<span class="en">Check books on receipt, sign and date in ink; defective ones go back to stock depot.</span></li><li>22-A: रोज़ कार्य-बंद से पहले पुस्तकों की जाँच; अंतिम रसीद पर संख्या व तिथि सहित आद्याक्षर<span class="en">22-A: check receipt books/journals daily before close; initial last receipt with number and date.</span></li></ul><div class="q">🎯 Q: रसीदों की रोज़ जाँच कौन करता है? (डाकपाल/पर्यवेक्षक)<span class="en">Q: Who checks receipts daily? (Postmaster/supervisor)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 23 – Government Money & Safe / सरकारी धन व तिजोरी</h3><ul><li>लोहे की सेफ; बड़े मुख्य डाकघर में दो (एक आरक्षित)<span class="en">Iron safe supplied; larger head offices get two (one reserve).</span></li><li>हर सेफ में दोहरा ताला: एक चाबी डाकपाल, दूसरी खजांची के पास; खजांची चाबी हमेशा शरीर पर रखे<span class="en">Double lock: one key with Postmaster, other with Treasurer; Treasurer keeps keys on person.</span></li><li>निजी आवास में धन/संपत्ति नहीं, सेफ में निजी धन नहीं<span class="en">No cash or property to private quarters; no private money in safe.</span></li><li>आरक्षित सेफ में मुहरबंद पैकेट (बीमा मुहर) + लेबल, मुख्य डाकपाल व खजांची के हस्ताक्षर<span class="en">Reserve safe: sealed packets (insurance seal), label signed by Head Postmaster and Treasurer.</span></li><li>मुख्य डाकघर में चौकीदार, मंडल प्रमुख के विवेक से<span class="en">Chowkidar for head office at night, at Head of Circle&#x27;s discretion.</span></li></ul><div class="q">🎯 Q: दो चाबियाँ किनके पास? (डाकपाल व खजांची)<span class="en">Q: Two safe keys – with whom? (Postmaster and Treasurer)</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 23/1 – Surplus Cash / अतिरिक्त नकदी</h3><ul><li>काउंटर क्लर्कों व टिकट विक्रेताओं से बीच-बीच में अधिशेष नकद/चेक लेकर खजांची को दें; रसीद पुस्तक में दर्ज<span class="en">Surplus cash/cheques of counter clerks and stamp vendors collected at intervals and handed to Treasurer, noted in receipt book.</span></li></ul></div></div></div><div class="part np" id="p24"><div class="w"><h2>📮 Part 24 · Rules 26–29: रसीद, प्रेषण, लेखा बंडल<span class="en" style="color:#FFE0B2">Rules 26–29: Receipts, Remittance &amp; Account Bundle</span></h2><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 26 – Hand-to-Hand Receipts / हाथ-से-हाथ रसीद</h3><ul><li>प्रपत्र Ms-7 (रसीद पुस्तक); डाकपाल रोज़ आद्याक्षर करे<span class="en">Receipts in Form Ms-7 (receipt book); Postmaster initials daily.</span></li><li>पंजीकृत → पंजीकृत सार; पार्सल → पार्सल सार; MO → MO रसीद पुस्तक; नकद/टिकट → खजांची का नकद-बही<span class="en">Registered → registered abstract; parcel → parcel abstract; MO → MO receipt book; cash/stamps → Treasurer&#x27;s cash book.</span></li></ul><div class="q">🎯 Q: रसीद पुस्तक का फॉर्म? (Ms-7)<span class="en">Q: Receipt book form? (Ms-7)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 27–28 – Remittance / प्रेषण</h3><ul><li>नकद, नोट, टिकट व रिप्लाई-कूपन नकद-थैले में; पहले कागज़ में लपेटें, खुला न डालें<span class="en">Cash, notes, stamps, reply-coupons go in cash bags, wrapped in paper first, never loose.</span></li><li>कपड़े का थैला सब कार्यालयों को; चमड़े का: औसतन ₹500 से अधिक माह में 10 बार भेजने वाले को<span class="en">Cloth bag for all offices; leather bag if average remittance exceeds Rs. 500 at least 10 times a month.</span></li><li>कपड़ा थैला: केवल नोट और ₹500 तक<span class="en">Cloth bag: notes only, up to Rs. 500.</span></li><li>नकद-मुहर से सील, वज़न प्रेषण-सूचना पर; मुख्य डाकघर → प्रेषण सूचना + पावती सेवा-पंजीकृत<span class="en">Seal with cash seal; weight noted on remittance advice; HO-to-HO advice + acknowledgement in service-registered cover.</span></li><li>विशेष वाहक: सामान्यतः ₹250 से अधिक थैले में<span class="en">Special carrier: cash over Rs. 250 ordinarily enclosed in a bag.</span></li></ul><div class="q">🎯 Q: चमड़े का थैला कब मिलता है? (₹500+, माह में 10 बार)<span class="en">Q: When is a leather bag supplied? (over Rs. 500, 10 times a month)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 29 – Account Bundle / लेखा बंडल</h3><ul><li>1 तारीख: नकद खाता व शेष रिपोर्ट, भारतीय डाक-आदेश सूची<span class="en">1st: cash account and balance report, list of Indian postal orders.</span></li><li>1 व 11: अवर्गीकृत प्राप्ति, देयक, भुगतान अनुसूचियाँ<span class="en">1st &amp; 11th: unclassified receipts, bills and payment schedules.</span></li><li>2 व 16: मनीऑर्डर विवरण (2 को मासिक योग; 16 को शून्य MO सूची)<span class="en">2nd &amp; 16th: money order returns (2nd monthly totals; 16th list of void MOs).</span></li></ul><div class="q">🎯 Q: MO विवरण की तारीखें? (2 व 16)<span class="en">Q: Dates of MO returns? (2nd and 16th)</span></div></div></div></div><div class="part np" id="p25"><div class="w"><h2>📮 Part 25 · Rules 32/1–33: पहचान पत्र, BRC, VP<span class="en" style="color:#FFE0B2">Rules 32/1–33: ID Card, BRC &amp; VP Articles</span></h2><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 32/1 – Identification Card / पहचान पत्र</h3><ul><li>पर्यटक, यात्री प्रतिनिधि जैसे लोगों के लिए; सहायक प्रमाण है, अकेला साधन नहीं<span class="en">For tourists, travelling representatives; corroborative evidence, not the sole means of identity.</span></li><li>फर्ज़ी उपयोग से ग़लत भुगतान/वितरण पर कर्मचारी दोषमुक्त नहीं<span class="en">Official not absolved if wrong payment/delivery results from fraudulent use of card.</span></li><li>मुख्य डाकघर में पंजीका; तिमाही रिपोर्ट मंडल प्रमुख को; प्रमुख अप्रैल में महानिदेशक को<span class="en">Register kept in head offices; quarterly report to Head of Circle; HoC reports to DG in April.</span></li><li>खोने पर &quot;Duplicate&quot; लाल स्याही में, घोषणा-पत्र लेकर<span class="en">Lost card: duplicate marked &#x27;Duplicate&#x27; in red ink, with written declaration.</span></li><li>शुल्क के बराबर टिकट कार्ड के पीछे लगाकर मुहर<span class="en">Fee converted into stamps affixed on the card&#x27;s reverse.</span></li></ul><div class="q">🎯 Q: ID कार्ड रिपोर्ट महानिदेशक को कब? (अप्रैल)<span class="en">Q: HoC reports ID cards to DG in which month? (April)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 32/2 – Business Reply Cards / व्यावसायिक उत्तर कार्ड</h3><ul><li>बिना टिकट पोस्ट; प्राप्तकर्ता से पूर्व-भुगतान दर पर वसूली<span class="en">Posted unpaid; addressee pays at prepaid rate on delivery.</span></li><li>परमिट की वार्षिक फीस ₹100, अग्रिम<span class="en">Annual permit fee Rs. 100, realised in advance.</span></li><li>ग़लत व्यक्ति को भेजा जाए तो अदत्त मानकर दोगुनी दर<span class="en">If sent to anyone other than printed addressee: treated unpaid, double the prepaid rate.</span></li></ul><div class="q">🎯 Q: BRC परमिट फीस? (₹100)<span class="en">Q: BRC annual fee? (Rs. 100)</span></div></div><div class="c" style="border-left-color:#2E7D32"><small style="color:#2E7D32">🟢 त्वरित दोहराव</small><h3>Rules 32/3, 32/4, 33 – Prepayment, Forces, VP / अग्रिम, सेना, VP</h3><ul><li>32/3: रोकड़ भुगतान फॉर्म ACG-46 व रसीद ACG-47<span class="en">32/3: Cash prepayment memo ACG-46; receipt ACG-47.</span></li><li>32/4: सेना के Forces Letters/Green Envelopes पर सेना डाकघर की मुहर हो तो कर नहीं<span class="en">32/4: Forces letters/Green envelopes with Army PO date-stamp are not taxed.</span></li><li>33: पत्र-पेटी में मिला VP लेख: Error Book (Ms-2) में अनियमितता; पूरा टिकट हो तो स्वीकार; अपूर्ण हो तो लौटाएँ, टिकट रद्द, लौटाई राशि नहीं<span class="en">33: VP article found in letter box noted in error book Ms-2; if fully paid and form present, accept; else return, stamps defaced, no refund.</span></li></ul></div></div></div><div class="part np" id="p26"><div class="w"><h2>📮 Part 26 · Rules 38–43: निरीक्षण व पर्यवेक्षण<span class="en" style="color:#FFE0B2">Rules 38–43: Inspection &amp; Supervision</span></h2><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 38 – Supervision / पर्यवेक्षण</h3><ul><li>डाकपाल पूरे कार्यालय का पर्यवेक्षक; विशेष कर्तव्य स्वयं करे<span class="en">Postmaster supervises all departments and personally performs his special duties.</span></li><li>राजपत्रित उप-डाकपाल का कार्यालय व प्रथम श्रेणी मुख्य डाकघर: वर्ष में एक बार SSPO/निदेशक और एक बार स्वयं<span class="en">Gazetted sub-office and first-class HO: inspected once a year by SSPO/Director and once by SPM/Postmaster himself.</span></li><li>परिणाम आदेश-पुस्तिका में; प्रति मंडल प्रमुख/SSPO को<span class="en">Result noted in order book; copy to HoC/SSPO.</span></li></ul><div class="q">🎯 Q: कितनी बार निरीक्षण? (वर्ष में दो: SSPO + स्वयं)<span class="en">Q: Inspections per year? (two: SSPO + self)</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 39–41 – Tests / परीक्षण</h3><ul><li>39: ग्रामीण डाकिये की पंजी Ms-85 व भ्रमण पुस्तक Ms-86 की जाँच; समय-प्लेट देखें<span class="en">39: Check village postman&#x27;s register Ms-85 and visit book Ms-86; examine hour-plates.</span></li><li>39-A: टाउन निरीक्षक की डायरी; MO सूची Genl-6 अगले माह की 5 तारीख तक<span class="en">39-A: Town Inspector&#x27;s diary examined; MO list Genl-6 submitted by the 5th.</span></li><li>40: अधीनस्थ कार्यालयों के अवितरित लेख की जाँच माह में कम से कम 2 बार<span class="en">40: Test undelivered articles of subordinate offices at least twice a month.</span></li><li>41: अधिकार-सीमा के बाहर काम न हो, हो तो तुरंत रिपोर्ट<span class="en">41: Postmaster ensures offices work within their powers; reports excess immediately.</span></li></ul><div class="q">🎯 Q: अधीनस्थ डाकघर की अवितरित लेख जाँच कितनी बार? (माह में 2 बार)<span class="en">Q: Test of subordinate office articles – how often? (twice a month)</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 42, 42/1, 43 – Statistics & Attendance / सांख्यिकी व उपस्थिति</h3><ul><li>सांख्यिकी ज्ञापन Ms-14(a): माह की 1 को तैयार, 10 को मंडल प्रमुख को<span class="en">Statistical memo Ms-14(a): prepared on 1st, submitted to HoC on 10th.</span></li><li>मुख्य डाकपाल कम से कम 20 प्रविष्टियाँ जाँचकर आद्याक्षर करे<span class="en">Head Postmaster checks at least 20 entries and initials them.</span></li><li>रजिस्टर Est-88/90/91(a)/91(b)/92(a)/92(b) रोज़ भरे जाएँ<span class="en">Registers Est-88/90/91(a)/91(b)/92(a)/92(b) filled daily.</span></li><li>43: समय-पालन, वर्दी, साफ़-सफ़ाई डाकपाल सुनिश्चित करे<span class="en">43: Postmaster ensures punctuality, dress and cleanliness.</span></li></ul><div class="q">🎯 Q: सांख्यिकी ज्ञापन किस तारीख तक? (10)<span class="en">Q: Statistical memo submission date? (10th)</span></div></div></div></div><div class="part np" id="p27"><div class="w"><h2>📮 Part 27 · Rules 44–48-C: टिकट, VP जाँच, शिकायतें<span class="en" style="color:#FFE0B2">Rules 44–48-C: Stamps, VP Enquiry &amp; Complaints</span></h2><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 44–46 – Stamps & Stationery / टिकट व लेखन-सामग्री</h3><ul><li>पर्याप्त स्टॉक; टिकट नमी से सुरक्षित, दिन भर का ही बाहर<span class="en">Keep sufficient stock; stamps safe from damp, only a day&#x27;s stock outside.</span></li><li>विक्रेता अग्रिम: विभागीय — जमानत का 3 गुना तक; ED — 2 गुना तक<span class="en">Vendor advance: departmental up to 3× security; extra-departmental up to 2×.</span></li><li>अग्रिम जमानत राशि से अधिक नहीं; औचक जाँच, पूर्व सूचना नहीं, परिणाम आदेश-पुस्तिका में<span class="en">Advance must not exceed security bond; surprise check, no prior warning, result in order book.</span></li><li>दोषी टिकट तिमाही नासिक रोड (नियंत्रक, केंद्रीय स्टाम्प भंडार) को<span class="en">Faulty stamps returned quarterly to Controller, Central Stamps Store, Nasik Road.</span></li><li>46: खजांची से आपूर्ति पंजी व मासिक विवरण; अधीक्षक 15 तारीख तक मंडल प्रमुख को<span class="en">46: Supply register and monthly statement; Superintendent sends to HoC by 15th.</span></li></ul><div class="q">🎯 Q: विभागीय विक्रेता अग्रिम सीमा? (जमानत का 3 गुना)<span class="en">Q: Departmental vendor advance limit? (3× security)</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 47 – VP Enquiry / VP लेख जाँच</h3><ul><li>प्रेषक या पाने वाले की शिकायत पर जाँच; प्रति लेख निर्धारित शुल्क डाक-टिकट से<span class="en">Enquiry on complaint by sender/addressee; prescribed fee paid per article in postage stamps.</span></li><li>शिकायत सही निकले तो शुल्क वापस, अधीक्षक की लिखित अनुमति से<span class="en">Fee refunded if complaint found well-grounded, with Superintendent&#x27;s written authority.</span></li></ul></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 48–48-C – Complaints & Books / शिकायतें</h3><ul><li>प्रथम श्रेणी: पंजी CPT-1; वर्ग A सेवा दोष, B नियंत्रण-बाहर, C कर्मचारी अपराध, D निराधार<span class="en">First-class HO: register CPT-1; classes A service fault, B beyond control, C human delinquency, D groundless.</span></li><li>मासिक विवरण Cpt-3 हर माह 1 को<span class="en">Monthly statement Cpt-3 on 1st of month.</span></li><li>48-A: आवक पत्राचार पंजी; हर शनिवार शाम जाँच<span class="en">48-A: Inward correspondence register checked every Saturday.</span></li><li>48-B: शिकायत/सुझाव पुस्तक (Ms-94) रोज़ शाम जाँच<span class="en">48-B: Complaint/Suggestion book Ms-94 examined daily.</span></li><li>48-C: सूचना पुस्तक Ms-104, डाकपाल की निजी अभिरक्षा में<span class="en">48-C: Book of Information Ms-104 in Postmaster&#x27;s personal custody.</span></li></ul><div class="q">🎯 Q: सुझाव पुस्तक की जाँच कब? (रोज़) • आवक पंजी? (हर शनिवार)<span class="en">Q: Suggestion book checked how often? (daily) • Inward register? (every Saturday)</span></div></div></div></div><div class="part np" id="p28"><div class="w"><h2>📮 Part 28 · Rules 49–55-B: सेवा-पुस्तक, LIC, वेतन ज्ञापन<span class="en" style="color:#FFE0B2">Rules 49–55-B: Service Books, LIC &amp; Pay Memo</span></h2><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 49–50 – Service Books & Order Book / सेवा पुस्तक, आदेश पुस्तिका</h3><ul><li>49: मुख्य डाकपाल सेवा-पुस्तकों/रोल का संरक्षक<span class="en">49: Head Postmaster is custodian of service books and rolls.</span></li><li>50: आदेश पुस्तिका Ms-1 — परीक्षण, अस्थायी व्यवस्था, असामान्य घटनाएँ, आदेश, थैलों का तिमाही निरीक्षण<span class="en">50: Order book Ms-1 records tests, temporary arrangements, unusual events, orders, quarterly bag stock.</span></li><li>हर प्रविष्टि पर मुख्य डाकपाल व संबंधित कर्मचारी के आद्याक्षर व तिथि<span class="en">Each entry initialled and dated by Head Postmaster and the official concerned.</span></li></ul><div class="q">🎯 Q: आदेश पुस्तिका का फॉर्म? (Ms-1)<span class="en">Q: Order book form? (Ms-1)</span></div></div><div class="c" style="border-left-color:#F9A825"><small style="color:#F9A825">🟡 समझने योग्य</small><h3>Rule 51, 53, 53-A – Notices, Delays, Air Accident / सूचना, विलंब, विमान दुर्घटना</h3><ul><li>51: कारोबार-समय की सूचना; बदलाव पर अधीक्षक/मंडल प्रमुख की संख्या-तिथि सहित संशोधित सूचना<span class="en">51: Notice of business hours; any change needs revised notice quoting order number and date.</span></li><li>53: रेल बाधा — मंडल प्रमुख सूचित करे; कनेक्शन चूकने पर फॉर्म M-7<span class="en">53: Railway interruption – HoC advises; missed connection noted in Form M-7.</span></li><li>53-A: विमान दुर्घटना — डाक जाँचें, क्षतिग्रस्त मरम्मत करें, शीघ्रतम मार्ग से भेजें, सत्यापन-नोट दें<span class="en">53-A: Air accident – check mails, repair, forward by quickest route, send verification note.</span></li><li>खर्च संचालक कंपनी वहन करेगी; मंडल प्रमुख वसूलेगा<span class="en">Operating company bears the expense; HoC recovers it.</span></li></ul><div class="q">🎯 Q: विमान दुर्घटना का खर्च किसका? (संचालक कंपनी)<span class="en">Q: Who pays air accident expenses? (operating company)</span></div></div><div class="c" style="border-left-color:#C62828"><small style="color:#C62828">🔴 अत्यंत महत्वपूर्ण</small><h3>Rule 54–55 – Pay Memo / वेतन ज्ञापन</h3><ul><li>ACG-26 अगले माह की 5 तारीख तक, सेवा-पंजीकृत लिफ़ाफ़े में, अधीक्षक/मंडल प्रमुख को<span class="en">ACG-26 pay memo to Superintendent/HoC by 5th of next month, in service-registered cover.</span></li><li>अपवाद: ₹100 से अधिक की रसीद (गैर-डाक कर्मचारी) ज्ञापन के साथ नहीं, खाता कार्यालय को<span class="en">Exception: receipts over Rs. 100 paid to non-postal persons go to Audit with establishment bill.</span></li><li>55: रसीदें माहवार बंडल, कैलेंडर वर्ष अंत में डाकघर में ही जिल्द; जिल्दसाज़ को बाहर ले जाने नहीं देना<span class="en">55: Acquittance rolls bound in books at year end, at the post office itself.</span></li></ul><div class="q">🎯 Q: वेतन ज्ञापन कब? (5 तारीख)<span class="en">Q: Pay memo due date? (5th)</span></div></div><div class="c" style="border-left-color:#EF6C00"><small style="color:#EF6C00">🟠 बार-बार पूछा</small><h3>Rule 55-A, 55-B – Cheques & LIC / चेक व LIC प्रीमियम</h3><ul><li>55-A: प्रमाणित चेक की गारंटी (डाक गाइड खंड 91), नवीनीकरण एक माह पहले<span class="en">55-A: Guarantee for certified cheques (Guide clause 91), renewal one month earlier.</span></li><li>55-B: केवल अधिकृत ग्रामीण कार्यालय; सटीक प्रीमियम, देरी शुल्क/ब्याज अलग दिखाएँ, अन्य राशि नहीं<span class="en">55-B: Only authorised rural offices; exact premium, late fee/interest shown separately, nothing else.</span></li><li>अस्थायी रसीद तीन प्रतियों में (कार्बन): प्रथम पॉलिसीधारक, द्वितीय खाता कार्यालय<span class="en">Temporary receipt in triplicate: 1st to policy-holder, 2nd to account office.</span></li><li>मुख्य डाकघर दैनिक समेकन; कमीशन काटकर शेष LIC को क्रॉस चेक/नकद<span class="en">Head Office daily consolidation; commission deducted; balance to LIC by crossed cheque/cash.</span></li><li>रसीद पुस्तकें लेखा-योग्य फॉर्म (accountable forms)<span class="en">Receipt books are accountable forms.</span></li></ul><div class="q">🎯 Q: LIC रसीद की दूसरी प्रति किसे? (खाता कार्यालय)<span class="en">Q: Who gets 2nd copy of LIC receipt? (account office)</span></div></div></div></div><script>function dlPDF(){var o=document.title;document.title="Postal-Manual-Vol6-Part1-Chapter1";alert("PDF के लिए खुलने वाली विंडो में “Save as PDF / PDF के रूप में सहेजें” चुनें.\nIn the print window choose “Save as PDF”.");window.print();setTimeout(function(){document.title=o},1500)}</script></body></html>
